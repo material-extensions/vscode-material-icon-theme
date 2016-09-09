@@ -24,12 +24,18 @@
         "theme",
         "material"
     ],
-    "homepage": "https://github.com/PKief/vscode-extension-markdown-checkbox/blob/master/README.md",
+    "homepage": "https://github.com/PKief/vscode-extension-material-icon-theme/blob/master/README.md",
     "repository": {
         "type": "git",
-        "url": "https://github.com/PKief/vscode-extension-markdown-checkbox.git"
+        "url": "https://github.com/PKief/vscode-extension-material-icon-theme.git"
     },
     "bugs": {
-        "url": "https://github.com/PKief/vscode-extension-markdown-checkbox/issues"
+        "url": "https://github.com/PKief/vscode-extension-material-icon-theme/issues"
     },
+    "license": "SEE LICENSE IN LICENSE.txt",
+    "icon": "images/material-icon-theme_icon.png",
+    "galleryBanner": {
+        "color": "#01579B",
+        "theme": "dark"
+    }
 }
