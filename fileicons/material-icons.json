@@ -1,0 +1,202 @@
+{
+	"iconDefinitions": {
+		// File types
+		"_file_json": {
+			"iconPath": "./images/json.png"
+		},
+		"_file_html": {
+			"iconPath": "./images/html.png"
+		},
+		"_file_markdown": {
+			"iconPath": "./images/markdown.png"
+		},
+		"_file_css": {
+			"iconPath": "./images/css.png"
+		},
+		"_file_git": {
+			"iconPath": "./images/git.png"
+		},
+		"_file_image": {
+			"iconPath": "./images/image.png"
+		},
+		"_file_xml": {
+			"iconPath": "./images/xml.png"
+		},
+		"_file_js": {
+			"iconPath": "./images/javascript.png"
+		},
+		"_file_ts": {
+			"iconPath": "./images/typescript.png"
+		},
+		"_file_php": {
+			"iconPath": "./images/php.png"
+		},
+		"_file_table": {
+			"iconPath": "./images/table.png"
+		},
+		"_file_vs": {
+			"iconPath": "./images/visualstudio.png"
+		},
+		"_file_csharp": {
+			"iconPath": "./images/csharp.png"
+		},
+		"_file_zip": {
+			"iconPath": "./images/zip.png"
+		},
+		"_file_exe": {
+			"iconPath": "./images/exe.png"
+		},
+		"_file_java": {
+			"iconPath": "./images/java.png"
+		},
+		"_file_python": {
+			"iconPath": "./images/python.png"
+		},
+		"_file_c": {
+			"iconPath": "./images/c-lang.png"
+		},
+		"_file_c++": {
+			"iconPath": "./images/cpp.png"
+		},
+		"_file_go": {
+			"iconPath": "./images/go.png"
+		},
+		// Folders
+		"_folder_dark": {
+			"iconPath": "./images/folder.png"
+		},
+		"_folder_open_dark": {
+			"iconPath": "./images/folder-outline.png"
+		},
+		"_file_dark": {
+			"iconPath": "./images/file.png"
+		},
+		"_folder_light": {
+			"iconPath": "./images/folder.png"
+		},
+		"_folder_open_light": {
+			"iconPath": "./images/folder-outline.png"
+		},
+		"_file_light": {
+			"iconPath": "./images/file_dark.png"
+		},
+		"_folder_nodejs": {
+			"iconPath": "./images/nodejs.png"
+		},
+		"_folder_open_nodejs": {
+			"iconPath": "./images/nodejs.png"
+		}
+	},
+	"folderExpanded": "_folder_open_dark",
+	"folder": "_folder_dark",
+	"file": "_file_dark",
+	"fileExtensions": {
+		// icons by file extension
+		"html": "_file_html",
+		"md": "_file_markdown",
+		"css": "_file_css",
+		"scss": "_file_css",
+		"sass": "_file_css",
+		"less": "_file_css",
+		"gitignore": "_file_git",
+		"json": "_file_json",
+		"xml": "_file_xml",
+		"xsd": "_file_xml",
+		"png": "_file_image",
+		"jpeg": "_file_image",
+		"jpg": "_file_image",
+		"gif": "_file_image",
+		"svg": "_file_image",
+		"tif": "_file_image",
+		"tiff": "_file_image",
+		"psd": "_file_image",
+		"psb": "_file_image",
+		"php": "_file_php",
+		"js": "_file_js",
+		"jsx": "_file_js",
+		"ts": "_file_ts",
+		"tsx": "_file_ts",
+		"xslx": "_file_table",
+		"xsl": "_file_table",
+		"csv": "_file_table",
+		"vscodeignore": "_file_vs",
+		"cs": "_file_csharp",
+		"csproj": "_file_vs",
+		"zip": "_file_zip",
+		"tar": "_file_zip",
+		"gz": "_file_zip",
+		"xz": "_file_zip",
+		"bzip2": "_file_zip",
+		"7z": "_file_zip",
+		"rar": "_file_zip",
+		"exe": "_file_exe",
+		"java": "_file_java",
+		"cc": "_file_c",
+		"py": "_file_python",
+		"cpp": "_file_c++",
+		"go": "_file_go"
+	},
+	"fileNames": {
+		// icons by file name
+	},
+	"folderNames": {
+		"node_modules": "_folder_nodejs"
+	},
+	"languageIds": {
+		// icons by language id
+	},
+	"light": {
+		"folderExpanded": "_folder_open_light",
+		"folder": "_folder_light",
+		"file": "_file_light",
+		"fileExtensions": {
+			// icons by file extension
+			"html": "_file_html",
+			"md": "_file_markdown",
+			"css": "_file_css",
+			"scss": "_file_css",
+			"sass": "_file_css",
+			"less": "_file_css",
+			"gitignore": "_file_git",
+			"json": "_file_json",
+			"xml": "_file_xml",
+			"xsd": "_file_xml",
+			"png": "_file_image",
+			"jpeg": "_file_image",
+			"jpg": "_file_image",
+			"gif": "_file_image",
+			"svg": "_file_image",
+			"tif": "_file_image",
+			"tiff": "_file_image",
+			"psd": "_file_image",
+			"psb": "_file_image",
+			"php": "_file_php",
+			"js": "_file_js",
+			"jsx": "_file_js",
+			"ts": "_file_ts",
+			"tsx": "_file_ts",
+			"xslx": "_file_table",
+			"xsl": "_file_table",
+			"csv": "_file_table",
+			"vscodeignore": "_file_vs",
+			"cs": "_file_csharp",
+			"csproj": "_file_vs",
+			"zip": "_file_zip",
+			"tar": "_file_zip",
+			"gz": "_file_zip",
+			"xz": "_file_zip",
+			"bzip2": "_file_zip",
+			"7z": "_file_zip",
+			"rar": "_file_zip",
+			"exe": "_file_exe",
+			"java": "_file_java",
+			"cc": "_file_c",
+			"py": "_file_python",
+			"cpp": "_file_c++",
+			"go": "_file_go"
+		}
+	},
+	"highContrast": {
+		// overrides for high contrast
+	}
+}

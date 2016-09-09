@@ -1,0 +1,35 @@
+{
+    "name": "material-icon-theme",
+    "displayName": "material-icon-theme",
+    "description": "Material Icon Theme",
+    "version": "0.0.1",
+    "publisher": "PKief",
+    "engines": {
+        "vscode": "^1.4.0"
+    },
+    "categories": [
+        "Themes"
+    ],
+    "contributes": {
+        "iconThemes": [
+            {
+                "id": "material-icon-theme",
+                "label": "Material Icon Theme",
+                "path": "./fileicons/material-icons.json"
+            }
+        ]
+    },
+    "keywords": [
+        "icons",
+        "theme",
+        "material"
+    ],
+    "homepage": "https://github.com/PKief/vscode-extension-markdown-checkbox/blob/master/README.md",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/PKief/vscode-extension-markdown-checkbox.git"
+    },
+    "bugs": {
+        "url": "https://github.com/PKief/vscode-extension-markdown-checkbox/issues"
+    },
+}
