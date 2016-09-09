@@ -1,7 +1,7 @@
 {
     "name": "material-icon-theme",
-    "displayName": "material-icon-theme",
-    "description": "Material Icon Theme",
+    "displayName": "Material Icon Theme",
+    "description": "Material Icon Theme for VS Code",
     "version": "0.0.1",
     "publisher": "PKief",
     "engines": {
