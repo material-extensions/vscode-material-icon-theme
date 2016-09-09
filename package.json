@@ -33,7 +33,7 @@
         "url": "https://github.com/PKief/vscode-extension-material-icon-theme/issues"
     },
     "license": "SEE LICENSE IN LICENSE.txt",
-    "icon": "https://raw.githubusercontent.com/PKief/vscode-extension-material-icon-theme/withimages/images/material-icon-theme_icon.png",
+    "icon": "./images/material-icon-theme_icon.png",
     "galleryBanner": {
         "color": "#01579B",
         "theme": "dark"
