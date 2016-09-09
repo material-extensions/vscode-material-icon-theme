@@ -2,7 +2,7 @@
 
 This theme provides icons in material design for the VS Code editor.
 
-![preview](./images/preview.png)
+![preview](https://raw.githubusercontent.com/PKief/vscode-extension-material-icon-theme/withimages/images/preview.PNG)
 
 ## Grabbed icons from
 * [https://design.google.com/icons/](https://design.google.com/icons/)
