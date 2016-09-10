@@ -2,7 +2,7 @@
     "name": "material-icon-theme",
     "displayName": "Material Icon Theme",
     "description": "Material Icon Theme",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "publisher": "PKief",
     "engines": {
         "vscode": "^1.5.0"
@@ -37,6 +37,6 @@
     "icon": "images/material-icon-theme_icon.png",
     "galleryBanner": {
         "color": "#e0e0e0",
-        "theme": "dark"
+        "theme": "light"
     }
 }
