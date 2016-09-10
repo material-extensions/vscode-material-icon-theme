@@ -1,11 +1,11 @@
 {
     "name": "material-icon-theme",
-    "displayName": "Material Icon Theme",
-    "description": "Material Icon Theme for VS Code",
-    "version": "0.0.1",
+    "displayName": "material-icon-theme",
+    "description": "Material Icon Theme",
+    "version": "1.0.0",
     "publisher": "PKief",
     "engines": {
-        "vscode": "^1.4.0"
+        "vscode": "^1.5.0"
     },
     "categories": [
         "Themes"
@@ -22,7 +22,9 @@
     "keywords": [
         "icons",
         "theme",
-        "material"
+        "material",
+        "icon-theme",
+        "customization"
     ],
     "homepage": "https://github.com/PKief/vscode-extension-material-icon-theme/blob/master/README.md",
     "repository": {
@@ -31,11 +33,10 @@
     },
     "bugs": {
         "url": "https://github.com/PKief/vscode-extension-material-icon-theme/issues"
-    },
-    "license": "SEE LICENSE IN LICENSE.txt",
+    },    
     "icon": "./images/material-icon-theme_icon.png",
     "galleryBanner": {
-        "color": "#01579B",
+        "color": "#212121",
         "theme": "dark"
     }
 }
