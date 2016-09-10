@@ -2,7 +2,7 @@
     "name": "material-icon-theme",
     "displayName": "material-icon-theme",
     "description": "Material Icon Theme",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "publisher": "PKief",
     "engines": {
         "vscode": "^1.4.0"
