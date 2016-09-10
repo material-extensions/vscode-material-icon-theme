@@ -14,4 +14,6 @@ This theme provides icons in material design for the VS Code editor.
 
 **Enjoy it!**
 
-<a href="https://twitter.com/PhilippKief" class="twitter-follow-button" data-show-count="false">Follow @PhilippKief</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+### Follow me
+- [Twitter](https://twitter.com/PhilippKief)
+- [Github](https://github.com/PKief)
