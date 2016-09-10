@@ -13,6 +13,9 @@
 		"_file_css": {
 			"iconPath": "./icons/css.png"
 		},
+		"_file_gradle": {
+			"iconPath": "./icons/gradle.png"
+		},
 		"_file_git": {
 			"iconPath": "./icons/git.png"
 		},
@@ -99,7 +102,7 @@
 			"iconPath": "./icons/folder-outline.png"
 		},
 		"_file_light": {
-			"iconPath": "./icons/file_dark.png"
+			"iconPath": "./icons/file.png"
 		},
 		"_folder_nodejs": {
 			"iconPath": "./icons/nodejs.png"
@@ -167,7 +170,9 @@
 		"url": "_file_url",
 		"sh": "_file_shell",
 		"bat": "_file_shell",
-		"ps1": "_file_shell"
+		"ps1": "_file_shell",
+		"gradle": "_file_gradle",
+		"jar": "_file_java"
 	},
 	"fileNames": {
 		"webpack.js": "_file_webpack",
@@ -176,7 +181,10 @@
 		"webpack.prod.js": "_file_webpack",
 		"webpack.common.js": "_file_webpack",
 		"gulpfile.js": "_file_gulp",
-		"package.json": "_folder_nodejs"
+		"package.json": "_folder_nodejs",
+		"gradle.properties": "_file_gradle",
+		"gradlew": "_file_gradle",
+		"gradle-wrapper.properties": "_file_gradle"
 	},
 	"folderNames": {
 		// folder names here
