@@ -64,6 +64,15 @@
 		"_file_text": {
 			"iconPath": "./icons/text.png"
 		},
+		"_file_pdf": {
+			"iconPath": "./icons/pdf.png"
+		},
+		"_file_settings": {
+			"iconPath": "./icons/settings.png"
+		},
+		"_file_url": {
+			"iconPath": "./icons/url.png"
+		},
 		// Folders
 		"_folder_dark": {
 			"iconPath": "./icons/folder.png"
@@ -110,6 +119,7 @@
 		"jpg": "_file_image",
 		"gif": "_file_image",
 		"svg": "_file_image",
+		"ico": "_file_image",
 		"tif": "_file_image",
 		"tiff": "_file_image",
 		"psd": "_file_image",
@@ -117,10 +127,15 @@
 		"php": "_file_php",
 		"js": "_file_js",
 		"jsx": "_file_js",
+		"ini": "_file_settings",
+		"dlc": "_file_settings",
+		"dll": "_file_settings",
+		"esx": "_file_js",
 		"ts": "_file_ts",
 		"tsx": "_file_ts",
-		"xslx": "_file_table",
-		"xsl": "_file_table",
+		"pdf": "_file_pdf",
+		"xlsx": "_file_table",
+		"xls": "_file_table",
 		"csv": "_file_table",
 		"vscodeignore": "_file_vs",
 		"cs": "_file_csharp",
