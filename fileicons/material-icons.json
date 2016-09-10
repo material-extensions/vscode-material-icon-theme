@@ -13,6 +13,9 @@
 		"_file_css": {
 			"iconPath": "./icons/css.png"
 		},
+		"_file_gradle": {
+			"iconPath": "./icons/gradle.png"
+		},
 		"_file_git": {
 			"iconPath": "./icons/git.png"
 		},
@@ -63,10 +66,7 @@
 		},
 		"_file_go": {
 			"iconPath": "./icons/go.png"
-		},
-		"_file_text": {
-			"iconPath": "./icons/text.png"
-		},
+		},		
 		"_file_pdf": {
 			"iconPath": "./icons/pdf.png"
 		},
@@ -81,6 +81,9 @@
 		},
 		"_file_shell": {
 			"iconPath": "./icons/shell.png"
+		},
+		"_file_word": {
+			"iconPath": "./icons/word.png"
 		},
 		// Folders
 		"_folder_dark": {
@@ -99,7 +102,7 @@
 			"iconPath": "./icons/folder-outline.png"
 		},
 		"_file_light": {
-			"iconPath": "./icons/file_dark.png"
+			"iconPath": "./icons/file.png"
 		},
 		"_folder_nodejs": {
 			"iconPath": "./icons/nodejs.png"
@@ -123,6 +126,8 @@
 		"json": "_file_json",
 		"xml": "_file_xml",
 		"xsd": "_file_xml",
+		"dtd": "_file_xml",
+		"xsl": "_file_xml",
 		"png": "_file_image",
 		"jpeg": "_file_image",
 		"jpg": "_file_image",
@@ -133,6 +138,26 @@
 		"tiff": "_file_image",
 		"psd": "_file_image",
 		"psb": "_file_image",
+		"ami": "_file_image",
+		"apx": "_file_image",
+		"bmp": "_file_image",
+		"bpg": "_file_image",
+		"brk": "_file_image",		
+		"cur": "_file_image",
+		"dds": "_file_image",
+		"dng": "_file_image",
+		"exr": "_file_image",
+		"fpx": "_file_image",
+		"gbr": "_file_image",
+		"img": "_file_image",
+		"jbig2": "_file_image",
+		"jb2": "_file_image",
+		"jng": "_file_image",
+		"jxr": "_file_image",
+		"pbm": "_file_image",
+		"pgf": "_file_image",
+		"pic": "_file_image",
+		"raw": "_file_image",		
 		"php": "_file_php",
 		"js": "_file_js",
 		"ejs": "_file_js",
@@ -159,15 +184,19 @@
 		"rar": "_file_zip",
 		"exe": "_file_exe",
 		"java": "_file_java",
+		"jar": "_file_java",
+		"jsp": "_file_java",
 		"cc": "_file_c",
 		"py": "_file_python",
 		"cpp": "_file_c++",
-		"go": "_file_go",
-		"txt": "_file_text",
+		"go": "_file_go",		
 		"url": "_file_url",
 		"sh": "_file_shell",
 		"bat": "_file_shell",
-		"ps1": "_file_shell"
+		"ps1": "_file_shell",
+		"gradle": "_file_gradle",
+		"doc": "_file_word",
+		"docx": "_file_word"
 	},
 	"fileNames": {
 		"webpack.js": "_file_webpack",
@@ -176,7 +205,10 @@
 		"webpack.prod.js": "_file_webpack",
 		"webpack.common.js": "_file_webpack",
 		"gulpfile.js": "_file_gulp",
-		"package.json": "_folder_nodejs"
+		"package.json": "_folder_nodejs",
+		"gradle.properties": "_file_gradle",
+		"gradlew": "_file_gradle",
+		"gradle-wrapper.properties": "_file_gradle"
 	},
 	"folderNames": {
 		// folder names here
