@@ -1,8 +1,8 @@
 {
     "name": "material-icon-theme",
-    "displayName": "material-icon-theme",
+    "displayName": "Material Icon Theme",
     "description": "Material Icon Theme",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "publisher": "PKief",
     "engines": {
         "vscode": "^1.5.0"
