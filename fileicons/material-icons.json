@@ -28,6 +28,9 @@
 		"_file_ts": {
 			"iconPath": "./icons/typescript.png"
 		},
+		"_file_webpack": {
+			"iconPath": "./icons/webpack.png"
+		},
 		"_file_php": {
 			"iconPath": "./icons/php.png"
 		},
@@ -72,6 +75,9 @@
 		},
 		"_file_url": {
 			"iconPath": "./icons/url.png"
+		},
+		"_file_gulp": {
+			"iconPath": "./icons/gulp.png"
 		},
 		// Folders
 		"_folder_dark": {
@@ -126,6 +132,7 @@
 		"psb": "_file_image",
 		"php": "_file_php",
 		"js": "_file_js",
+		"ejs": "_file_js",
 		"jsx": "_file_js",
 		"ini": "_file_settings",
 		"dlc": "_file_settings",
@@ -153,13 +160,20 @@
 		"py": "_file_python",
 		"cpp": "_file_c++",
 		"go": "_file_go",
-		"txt": "_file_text"
+		"txt": "_file_text",
+		"url": "_file_url"
 	},
 	"fileNames": {
-		// icons by file name
+		"webpack.js": "_file_webpack",
+		"webpack.config.js": "_file_webpack",
+		"webpack.dev.js": "_file_webpack",
+		"webpack.prod.js": "_file_webpack",
+		"webpack.common.js": "_file_webpack",
+		"gulpfile.js": "_file_gulp",
+		"package.json": "_folder_nodejs"
 	},
 	"folderNames": {
-		"node_modules": "_folder_nodejs"
+		// folder names here
 	},
 	"languageIds": {
 		// icons by language id
