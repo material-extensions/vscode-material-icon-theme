@@ -82,6 +82,9 @@
 		"_file_shell": {
 			"iconPath": "./icons/shell.png"
 		},
+		"_file_word": {
+			"iconPath": "./icons/word.png"
+		},
 		// Folders
 		"_folder_dark": {
 			"iconPath": "./icons/folder.png"
