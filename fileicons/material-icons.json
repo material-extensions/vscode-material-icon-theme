@@ -28,6 +28,9 @@
 		"_file_ts": {
 			"iconPath": "./icons/typescript.png"
 		},
+		"_file_webpack": {
+			"iconPath": "./icons/webpack.png"
+		},
 		"_file_php": {
 			"iconPath": "./icons/php.png"
 		},
@@ -63,6 +66,21 @@
 		},
 		"_file_text": {
 			"iconPath": "./icons/text.png"
+		},
+		"_file_pdf": {
+			"iconPath": "./icons/pdf.png"
+		},
+		"_file_settings": {
+			"iconPath": "./icons/settings.png"
+		},
+		"_file_url": {
+			"iconPath": "./icons/url.png"
+		},
+		"_file_gulp": {
+			"iconPath": "./icons/gulp.png"
+		},
+		"_file_shell": {
+			"iconPath": "./icons/shell.png"
 		},
 		// Folders
 		"_folder_dark": {
@@ -110,17 +128,24 @@
 		"jpg": "_file_image",
 		"gif": "_file_image",
 		"svg": "_file_image",
+		"ico": "_file_image",
 		"tif": "_file_image",
 		"tiff": "_file_image",
 		"psd": "_file_image",
 		"psb": "_file_image",
 		"php": "_file_php",
 		"js": "_file_js",
+		"ejs": "_file_js",
 		"jsx": "_file_js",
+		"ini": "_file_settings",
+		"dlc": "_file_settings",
+		"dll": "_file_settings",
+		"esx": "_file_js",
 		"ts": "_file_ts",
 		"tsx": "_file_ts",
-		"xslx": "_file_table",
-		"xsl": "_file_table",
+		"pdf": "_file_pdf",
+		"xlsx": "_file_table",
+		"xls": "_file_table",
 		"csv": "_file_table",
 		"vscodeignore": "_file_vs",
 		"cs": "_file_csharp",
@@ -138,13 +163,23 @@
 		"py": "_file_python",
 		"cpp": "_file_c++",
 		"go": "_file_go",
-		"txt": "_file_text"
+		"txt": "_file_text",
+		"url": "_file_url",
+		"sh": "_file_shell",
+		"bat": "_file_shell",
+		"ps1": "_file_shell"
 	},
 	"fileNames": {
-		// icons by file name
+		"webpack.js": "_file_webpack",
+		"webpack.config.js": "_file_webpack",
+		"webpack.dev.js": "_file_webpack",
+		"webpack.prod.js": "_file_webpack",
+		"webpack.common.js": "_file_webpack",
+		"gulpfile.js": "_file_gulp",
+		"package.json": "_folder_nodejs"
 	},
 	"folderNames": {
-		"node_modules": "_folder_nodejs"
+		// folder names here
 	},
 	"languageIds": {
 		// icons by language id
