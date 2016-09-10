@@ -79,6 +79,9 @@
 		"_file_gulp": {
 			"iconPath": "./icons/gulp.png"
 		},
+		"_file_shell": {
+			"iconPath": "./icons/shell.png"
+		},
 		// Folders
 		"_folder_dark": {
 			"iconPath": "./icons/folder.png"
@@ -161,7 +164,10 @@
 		"cpp": "_file_c++",
 		"go": "_file_go",
 		"txt": "_file_text",
-		"url": "_file_url"
+		"url": "_file_url",
+		"sh": "_file_shell",
+		"bat": "_file_shell",
+		"ps1": "_file_shell"
 	},
 	"fileNames": {
 		"webpack.js": "_file_webpack",
