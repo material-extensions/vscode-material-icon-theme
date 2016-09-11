@@ -28,6 +28,9 @@
 		"_file_js": {
 			"iconPath": "./icons/javascript.png"
 		},
+		"_file_js_map": {
+			"iconPath": "./icons/js_map.png"
+		},
 		"_file_ts": {
 			"iconPath": "./icons/typescript.png"
 		},
@@ -162,6 +165,7 @@
 		"js": "_file_js",
 		"ejs": "_file_js",
 		"jsx": "_file_js",
+		"js.map": "_file_js_map",
 		"ini": "_file_settings",
 		"dlc": "_file_settings",
 		"dll": "_file_settings",
