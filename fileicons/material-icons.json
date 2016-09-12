@@ -69,7 +69,7 @@
 		},
 		"_file_go": {
 			"iconPath": "./icons/go.png"
-		},		
+		},
 		"_file_pdf": {
 			"iconPath": "./icons/pdf.png"
 		},
@@ -145,7 +145,7 @@
 		"apx": "_file_image",
 		"bmp": "_file_image",
 		"bpg": "_file_image",
-		"brk": "_file_image",		
+		"brk": "_file_image",
 		"cur": "_file_image",
 		"dds": "_file_image",
 		"dng": "_file_image",
@@ -160,7 +160,7 @@
 		"pbm": "_file_image",
 		"pgf": "_file_image",
 		"pic": "_file_image",
-		"raw": "_file_image",		
+		"raw": "_file_image",
 		"php": "_file_php",
 		"js": "_file_js",
 		"ejs": "_file_js",
@@ -193,14 +193,15 @@
 		"cc": "_file_c",
 		"py": "_file_python",
 		"cpp": "_file_c++",
-		"go": "_file_go",		
+		"go": "_file_go",
 		"url": "_file_url",
 		"sh": "_file_shell",
 		"bat": "_file_shell",
 		"ps1": "_file_shell",
 		"gradle": "_file_gradle",
 		"doc": "_file_word",
-		"docx": "_file_word"
+		"docx": "_file_word",
+		"properties": "_file_settings"
 	},
 	"fileNames": {
 		"webpack.js": "_file_webpack",
@@ -219,5 +220,5 @@
 	},
 	"languageIds": {
 		// icons by language id
-	}	
+	}
 }
