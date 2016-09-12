@@ -108,7 +108,10 @@
 		},
 		"_file_jade": {
 			"iconPath": "./icons/jade.png"
-		},		
+		},	
+		"_file_ruby": {
+			"iconPath": "./icons/ruby.png"
+		},	
 		// Folders
 		"_folder_dark": {
 			"iconPath": "./icons/folder.png"
@@ -247,7 +250,8 @@
 		"sui": "_file_font",
 		"ntf": "_file_font",
 		"mrf": "_file_font",
-		"lib": "_file_lib"					
+		"lib": "_file_lib",
+		"rb": "_file_ruby"						
 	},
 	"fileNames": {
 		"webpack.js": "_file_webpack",
