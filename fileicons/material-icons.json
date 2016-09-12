@@ -270,7 +270,8 @@
 		"fs": "_file_fsharp",
 		"fsproj": "_file_fsharp",
 		"manifest": "_file_xml",
-		"swift": "_file_swift"
+		"swift": "_file_swift",
+		"dockerignore": "_file_docker"
 	},
 	"fileNames": {
 		"webpack.js": "_file_webpack",
@@ -284,7 +285,7 @@
 		"gradlew": "_file_gradle",
 		"androidmanifest.xml": "_file_android",
 		"gradle-wrapper.properties": "_file_gradle",
-		"dockerfile": "_file_docker"
+		"dockerfile": "_file_docker"		
 	},
 	"folderNames": {
 		// folder names here
