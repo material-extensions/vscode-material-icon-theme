@@ -105,7 +105,10 @@
 		},
 		"_file_lib": {
 			"iconPath": "./icons/lib.png"
-		},	
+		},
+		"_file_jade": {
+			"iconPath": "./icons/jade.png"
+		},		
 		// Folders
 		"_folder_dark": {
 			"iconPath": "./icons/folder.png"
@@ -138,6 +141,7 @@
 	"fileExtensions": {
 		// icons by file extension
 		"html": "_file_html",
+		"jade": "_file_jade",
 		"md": "_file_markdown",
 		"css": "_file_css",
 		"scss": "_file_css",
