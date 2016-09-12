@@ -115,6 +115,9 @@
 		"_file_fsharp": {
 			"iconPath": "./icons/fsharp.png"
 		},
+		"_file_manifest": {
+			"iconPath": "./icons/manifest.png"
+		},
 		// Folders
 		"_folder_dark": {
 			"iconPath": "./icons/folder.png"
@@ -260,7 +263,8 @@
 		"lib": "_file_lib",
 		"rb": "_file_ruby",
 		"fs": "_file_fsharp",
-		"fsproj": "_file_fsharp"
+		"fsproj": "_file_fsharp",
+		"manifest": "_file_manifest"
 	},
 	"fileNames": {
 		"webpack.js": "_file_webpack",
