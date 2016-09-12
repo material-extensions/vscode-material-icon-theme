@@ -99,6 +99,12 @@
 		},		
 		"_file_docker": {
 			"iconPath": "./icons/docker.png"
+		},
+		"_file_font": {
+			"iconPath": "./icons/font.png"
+		},
+		"_file_lib": {
+			"iconPath": "./icons/lib.png"
 		},	
 		// Folders
 		"_folder_dark": {
@@ -221,14 +227,30 @@
 		"crt": "_file_certificate",
 		"pub": "_file_key",
 		"pem": "_file_key",
-		"asc": "_file_key"		
+		"asc": "_file_key",
+		"woff": "_file_font",
+		"woff2": "_file_font",
+		"ttf": "_file_font",
+		"eot": "_file_font",
+		"suit": "_file_font",
+		"otf": "_file_font",
+		"bmap": "_file_font",
+		"fnt": "_file_font",
+		"odttf": "_file_font",
+		"ttc": "_file_font",
+		"font": "_file_font",
+		"fonts": "_file_font",
+		"sui": "_file_font",
+		"ntf": "_file_font",
+		"mrf": "_file_font",
+		"lib": "_file_lib"					
 	},
 	"fileNames": {
 		"webpack.js": "_file_webpack",
 		"webpack.config.js": "_file_webpack",
 		"webpack.dev.js": "_file_webpack",
 		"webpack.prod.js": "_file_webpack",
-		"webpack.common.js": "_file_webpack",
+		"webpack.common.js": "_file_webpack",	
 		"test.xml": "_file_gradle",
 		"gulpfile.js": "_file_gulp",
 		"package.json": "_folder_nodejs",
