@@ -88,6 +88,9 @@
 		"_file_word": {
 			"iconPath": "./icons/word.png"
 		},
+		"_file_android": {
+			"iconPath": "./icons/android.png"
+		},
 		// Folders
 		"_folder_dark": {
 			"iconPath": "./icons/folder.png"
@@ -209,6 +212,7 @@
 		"webpack.dev.js": "_file_webpack",
 		"webpack.prod.js": "_file_webpack",
 		"webpack.common.js": "_file_webpack",
+		"test.xml": "_file_gradle",
 		"gulpfile.js": "_file_gulp",
 		"package.json": "_folder_nodejs",
 		"gradle.properties": "_file_gradle",
