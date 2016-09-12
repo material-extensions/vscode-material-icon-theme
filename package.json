@@ -1,8 +1,8 @@
 {
     "name": "material-icon-theme",
-    "displayName": "material-icon-theme",
+    "displayName": "Material Icon Theme",
     "description": "Material Icon Theme",
-    "version": "1.0.0",
+    "version": "1.0.3",
     "publisher": "PKief",
     "engines": {
         "vscode": "^1.5.0"
@@ -34,9 +34,9 @@
     "bugs": {
         "url": "https://github.com/PKief/vscode-extension-material-icon-theme/issues"
     },    
-    "icon": "./images/material-icon-theme_icon.png",
+    "icon": "images/material-icon-theme_icon.png",
     "galleryBanner": {
         "color": "#e0e0e0",
-        "theme": "dark"
+        "theme": "light"
     }
 }

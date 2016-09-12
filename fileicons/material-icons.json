@@ -66,7 +66,7 @@
 		},
 		"_file_go": {
 			"iconPath": "./icons/go.png"
-		},		
+		},
 		"_file_pdf": {
 			"iconPath": "./icons/pdf.png"
 		},
@@ -79,11 +79,44 @@
 		"_file_gulp": {
 			"iconPath": "./icons/gulp.png"
 		},
-		"_file_shell": {
-			"iconPath": "./icons/shell.png"
+		"_file_console": {
+			"iconPath": "./icons/console.png"
 		},
 		"_file_word": {
 			"iconPath": "./icons/word.png"
+		},
+		"_file_android": {
+			"iconPath": "./icons/android.png"
+		},
+		"_file_database": {
+			"iconPath": "./icons/database.png"
+		},
+		"_file_certificate": {
+			"iconPath": "./icons/certificate.png"
+		},
+		"_file_key": {
+			"iconPath": "./icons/key.png"
+		},
+		"_file_docker": {
+			"iconPath": "./icons/docker.png"
+		},
+		"_file_font": {
+			"iconPath": "./icons/font.png"
+		},
+		"_file_lib": {
+			"iconPath": "./icons/lib.png"
+		},
+		"_file_jade": {
+			"iconPath": "./icons/jade.png"
+		},
+		"_file_ruby": {
+			"iconPath": "./icons/ruby.png"
+		},
+		"_file_fsharp": {
+			"iconPath": "./icons/fsharp.png"
+		},
+		"_file_swift": {
+			"iconPath": "./icons/swift.png"
 		},
 		// Folders
 		"_folder_dark": {
@@ -117,6 +150,7 @@
 	"fileExtensions": {
 		// icons by file extension
 		"html": "_file_html",
+		"jade": "_file_jade",
 		"md": "_file_markdown",
 		"css": "_file_css",
 		"scss": "_file_css",
@@ -128,6 +162,7 @@
 		"xsd": "_file_xml",
 		"dtd": "_file_xml",
 		"xsl": "_file_xml",
+		"xquery": "_file_xml",
 		"png": "_file_image",
 		"jpeg": "_file_image",
 		"jpg": "_file_image",
@@ -142,7 +177,7 @@
 		"apx": "_file_image",
 		"bmp": "_file_image",
 		"bpg": "_file_image",
-		"brk": "_file_image",		
+		"brk": "_file_image",
 		"cur": "_file_image",
 		"dds": "_file_image",
 		"dng": "_file_image",
@@ -157,7 +192,7 @@
 		"pbm": "_file_image",
 		"pgf": "_file_image",
 		"pic": "_file_image",
-		"raw": "_file_image",		
+		"raw": "_file_image",
 		"php": "_file_php",
 		"js": "_file_js",
 		"ejs": "_file_js",
@@ -165,6 +200,7 @@
 		"ini": "_file_settings",
 		"dlc": "_file_settings",
 		"dll": "_file_settings",
+		"config": "_file_settings",
 		"esx": "_file_js",
 		"ts": "_file_ts",
 		"tsx": "_file_ts",
@@ -173,6 +209,9 @@
 		"xls": "_file_table",
 		"csv": "_file_table",
 		"vscodeignore": "_file_vs",
+		"suo": "_file_vs",
+		"sln": "_file_vs",
+		"pdb": "_file_database",
 		"cs": "_file_csharp",
 		"csproj": "_file_vs",
 		"zip": "_file_zip",
@@ -182,6 +221,7 @@
 		"bzip2": "_file_zip",
 		"7z": "_file_zip",
 		"rar": "_file_zip",
+		"tgz": "_file_zip",
 		"exe": "_file_exe",
 		"java": "_file_java",
 		"jar": "_file_java",
@@ -189,14 +229,48 @@
 		"cc": "_file_c",
 		"py": "_file_python",
 		"cpp": "_file_c++",
-		"go": "_file_go",		
+		"go": "_file_go",
 		"url": "_file_url",
-		"sh": "_file_shell",
-		"bat": "_file_shell",
-		"ps1": "_file_shell",
+		"sh": "_file_console",
+		"bat": "_file_console",
+		"ps1": "_file_console",
 		"gradle": "_file_gradle",
 		"doc": "_file_word",
-		"docx": "_file_word"
+		"docx": "_file_word",
+		"rtf": "_file_word",
+		"properties": "_file_settings",
+		"prop": "_file_settings",
+		"sql": "_file_database",
+		"accdb": "_file_database",
+		"mdb": "_file_database",
+		"cer": "_file_certificate",
+		"cert": "_file_certificate",
+		"crt": "_file_certificate",		
+		"pub": "_file_key",
+		"key": "_file_key",
+		"pem": "_file_key",
+		"asc": "_file_key",
+		"woff": "_file_font",
+		"woff2": "_file_font",
+		"ttf": "_file_font",
+		"eot": "_file_font",
+		"suit": "_file_font",
+		"otf": "_file_font",
+		"bmap": "_file_font",
+		"fnt": "_file_font",
+		"odttf": "_file_font",
+		"ttc": "_file_font",
+		"font": "_file_font",
+		"fonts": "_file_font",
+		"sui": "_file_font",
+		"ntf": "_file_font",
+		"mrf": "_file_font",
+		"lib": "_file_lib",
+		"rb": "_file_ruby",
+		"fs": "_file_fsharp",
+		"fsproj": "_file_fsharp",
+		"manifest": "_file_xml",
+		"swift": "_file_swift"
 	},
 	"fileNames": {
 		"webpack.js": "_file_webpack",
@@ -208,12 +282,14 @@
 		"package.json": "_folder_nodejs",
 		"gradle.properties": "_file_gradle",
 		"gradlew": "_file_gradle",
-		"gradle-wrapper.properties": "_file_gradle"
+		"androidmanifest.xml": "_file_android",
+		"gradle-wrapper.properties": "_file_gradle",
+		"dockerfile": "_file_docker"
 	},
 	"folderNames": {
 		// folder names here
 	},
 	"languageIds": {
 		// icons by language id
-	}	
+	}
 }
