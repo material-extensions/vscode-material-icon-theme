@@ -96,7 +96,7 @@
 		},
 		"_file_key": {
 			"iconPath": "./icons/key.png"
-		},		
+		},
 		"_file_docker": {
 			"iconPath": "./icons/docker.png"
 		},
@@ -108,10 +108,13 @@
 		},
 		"_file_jade": {
 			"iconPath": "./icons/jade.png"
-		},	
+		},
 		"_file_ruby": {
 			"iconPath": "./icons/ruby.png"
-		},	
+		},
+		"_file_fsharp": {
+			"iconPath": "./icons/fsharp.png"
+		},
 		// Folders
 		"_folder_dark": {
 			"iconPath": "./icons/folder.png"
@@ -190,10 +193,11 @@
 		"php": "_file_php",
 		"js": "_file_js",
 		"ejs": "_file_js",
-		"jsx": "_file_js",		
+		"jsx": "_file_js",
 		"ini": "_file_settings",
 		"dlc": "_file_settings",
 		"dll": "_file_settings",
+		"config": "_file_settings",
 		"esx": "_file_js",
 		"ts": "_file_ts",
 		"tsx": "_file_ts",
@@ -202,6 +206,9 @@
 		"xls": "_file_table",
 		"csv": "_file_table",
 		"vscodeignore": "_file_vs",
+		"suo": "_file_vs",
+		"sln": "_file_vs",
+		"pdb": "_file_database",
 		"cs": "_file_csharp",
 		"csproj": "_file_vs",
 		"zip": "_file_zip",
@@ -251,14 +258,16 @@
 		"ntf": "_file_font",
 		"mrf": "_file_font",
 		"lib": "_file_lib",
-		"rb": "_file_ruby"						
+		"rb": "_file_ruby",
+		"fs": "_file_fsharp",
+		"fsproj": "_file_fsharp"
 	},
 	"fileNames": {
 		"webpack.js": "_file_webpack",
 		"webpack.config.js": "_file_webpack",
 		"webpack.dev.js": "_file_webpack",
 		"webpack.prod.js": "_file_webpack",
-		"webpack.common.js": "_file_webpack",	
+		"webpack.common.js": "_file_webpack",
 		"test.xml": "_file_gradle",
 		"gulpfile.js": "_file_gulp",
 		"package.json": "_folder_nodejs",
