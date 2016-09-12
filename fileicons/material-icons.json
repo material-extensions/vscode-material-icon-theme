@@ -115,6 +115,9 @@
 		"_file_fsharp": {
 			"iconPath": "./icons/fsharp.png"
 		},
+		"_file_swift": {
+			"iconPath": "./icons/swift.png"
+		},
 		// Folders
 		"_folder_dark": {
 			"iconPath": "./icons/folder.png"
@@ -234,9 +237,12 @@
 		"gradle": "_file_gradle",
 		"doc": "_file_word",
 		"docx": "_file_word",
+		"rtf": "_file_word",
 		"properties": "_file_settings",
 		"prop": "_file_settings",
 		"sql": "_file_database",
+		"accdb": "_file_database",
+		"mdb": "_file_database",
 		"cer": "_file_certificate",
 		"crt": "_file_certificate",
 		"pub": "_file_key",
@@ -261,14 +267,15 @@
 		"rb": "_file_ruby",
 		"fs": "_file_fsharp",
 		"fsproj": "_file_fsharp",
-		"manifest": "_file_xml"
+		"manifest": "_file_xml",
+		"swift": "_file_swift"
 	},
 	"fileNames": {
 		"webpack.js": "_file_webpack",
 		"webpack.config.js": "_file_webpack",
 		"webpack.dev.js": "_file_webpack",
 		"webpack.prod.js": "_file_webpack",
-		"webpack.common.js": "_file_webpack",		
+		"webpack.common.js": "_file_webpack",
 		"gulpfile.js": "_file_gulp",
 		"package.json": "_folder_nodejs",
 		"gradle.properties": "_file_gradle",
