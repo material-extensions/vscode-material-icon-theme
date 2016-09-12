@@ -115,9 +115,6 @@
 		"_file_fsharp": {
 			"iconPath": "./icons/fsharp.png"
 		},
-		"_file_manifest": {
-			"iconPath": "./icons/manifest.png"
-		},
 		// Folders
 		"_folder_dark": {
 			"iconPath": "./icons/folder.png"
@@ -264,15 +261,14 @@
 		"rb": "_file_ruby",
 		"fs": "_file_fsharp",
 		"fsproj": "_file_fsharp",
-		"manifest": "_file_manifest"
+		"manifest": "_file_xml"
 	},
 	"fileNames": {
 		"webpack.js": "_file_webpack",
 		"webpack.config.js": "_file_webpack",
 		"webpack.dev.js": "_file_webpack",
 		"webpack.prod.js": "_file_webpack",
-		"webpack.common.js": "_file_webpack",
-		"test.xml": "_file_gradle",
+		"webpack.common.js": "_file_webpack",		
 		"gulpfile.js": "_file_gulp",
 		"package.json": "_folder_nodejs",
 		"gradle.properties": "_file_gradle",
