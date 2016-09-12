@@ -201,6 +201,7 @@
 		"dlc": "_file_settings",
 		"dll": "_file_settings",
 		"config": "_file_settings",
+		"conf": "_file_settings",
 		"esx": "_file_js",
 		"ts": "_file_ts",
 		"tsx": "_file_ts",
