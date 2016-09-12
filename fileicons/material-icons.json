@@ -234,6 +234,7 @@
 		"package.json": "_folder_nodejs",
 		"gradle.properties": "_file_gradle",
 		"gradlew": "_file_gradle",
+		"androidmanifest.xml": "_file_android",
 		"gradle-wrapper.properties": "_file_gradle",
 		"dockerfile": "_file_docker"
 	},
