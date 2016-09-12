@@ -79,8 +79,8 @@
 		"_file_gulp": {
 			"iconPath": "./icons/gulp.png"
 		},
-		"_file_shell": {
-			"iconPath": "./icons/shell.png"
+		"_file_console": {
+			"iconPath": "./icons/console.png"
 		},
 		"_file_word": {
 			"iconPath": "./icons/word.png"
@@ -88,6 +88,18 @@
 		"_file_android": {
 			"iconPath": "./icons/android.png"
 		},
+		"_file_database": {
+			"iconPath": "./icons/database.png"
+		},
+		"_file_certificate": {
+			"iconPath": "./icons/certificate.png"
+		},
+		"_file_key": {
+			"iconPath": "./icons/key.png"
+		},		
+		"_file_docker": {
+			"iconPath": "./icons/docker.png"
+		},	
 		// Folders
 		"_folder_dark": {
 			"iconPath": "./icons/folder.png"
@@ -131,6 +143,7 @@
 		"xsd": "_file_xml",
 		"dtd": "_file_xml",
 		"xsl": "_file_xml",
+		"xquery": "_file_xml",
 		"png": "_file_image",
 		"jpeg": "_file_image",
 		"jpg": "_file_image",
@@ -185,6 +198,7 @@
 		"bzip2": "_file_zip",
 		"7z": "_file_zip",
 		"rar": "_file_zip",
+		"tgz": "_file_zip",
 		"exe": "_file_exe",
 		"java": "_file_java",
 		"jar": "_file_java",
@@ -194,13 +208,20 @@
 		"cpp": "_file_c++",
 		"go": "_file_go",
 		"url": "_file_url",
-		"sh": "_file_shell",
-		"bat": "_file_shell",
-		"ps1": "_file_shell",
+		"sh": "_file_console",
+		"bat": "_file_console",
+		"ps1": "_file_console",
 		"gradle": "_file_gradle",
 		"doc": "_file_word",
 		"docx": "_file_word",
-		"properties": "_file_settings"
+		"properties": "_file_settings",
+		"prop": "_file_settings",
+		"sql": "_file_database",
+		"cer": "_file_certificate",
+		"crt": "_file_certificate",
+		"pub": "_file_key",
+		"pem": "_file_key",
+		"asc": "_file_key"		
 	},
 	"fileNames": {
 		"webpack.js": "_file_webpack",
@@ -213,7 +234,8 @@
 		"package.json": "_folder_nodejs",
 		"gradle.properties": "_file_gradle",
 		"gradlew": "_file_gradle",
-		"gradle-wrapper.properties": "_file_gradle"
+		"gradle-wrapper.properties": "_file_gradle",
+		"dockerfile": "_file_docker"
 	},
 	"folderNames": {
 		// folder names here
