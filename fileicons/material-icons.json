@@ -118,6 +118,9 @@
 		"_file_swift": {
 			"iconPath": "./icons/swift.png"
 		},
+		"_file_tex": {
+			"iconPath": "./icons/tex.png"
+		},
 		// Folders
 		"_folder_dark": {
 			"iconPath": "./icons/folder.png"
@@ -272,7 +275,8 @@
 		"fsproj": "_file_fsharp",
 		"manifest": "_file_xml",
 		"swift": "_file_swift",
-		"dockerignore": "_file_docker"
+		"dockerignore": "_file_docker",
+		"tex": "_file_tex"
 	},
 	"fileNames": {
 		"webpack.js": "_file_webpack",
