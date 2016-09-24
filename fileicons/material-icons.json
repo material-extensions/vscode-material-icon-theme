@@ -120,7 +120,13 @@
 		},
 		"_file_tex": {
 			"iconPath": "./icons/tex.png"
-		},		
+		},
+		"_file_powerpoint": {
+			"iconPath": "./icons/powerpoint.png"
+		},
+		"_file_movie": {
+			"iconPath": "./icons/movie.png"
+		},
 		// Folders
 		"_folder_dark": {
 			"iconPath": "./icons/folder.png"
@@ -249,7 +255,7 @@
 		"mdb": "_file_database",
 		"cer": "_file_certificate",
 		"cert": "_file_certificate",
-		"crt": "_file_certificate",		
+		"crt": "_file_certificate",
 		"pub": "_file_key",
 		"key": "_file_key",
 		"pem": "_file_key",
@@ -277,7 +283,41 @@
 		"swift": "_file_swift",
 		"dockerignore": "_file_docker",
 		"tex": "_file_tex",
-		"bib": "_file_lib"		
+		"bib": "_file_lib",
+		"pptx": "_file_powerpoint",
+		"ppt": "_file_powerpoint",
+		"pptm": "_file_powerpoint",
+		"potx": "_file_powerpoint",
+		"pot": "_file_powerpoint",
+		"potm": "_file_powerpoint",
+		"ppsx": "_file_powerpoint",
+		"ppsm": "_file_powerpoint",
+		"pps": "_file_powerpoint",
+		"ppam": "_file_powerpoint",
+		"ppa": "_file_powerpoint",
+		"webm": "_file_movie",
+		"mkv": "_file_movie",
+		"flv": "_file_movie",
+		"vob": "_file_movie",
+		"ogv": "_file_movie",
+		"ogg": "_file_movie",
+		"gifv": "_file_movie",
+		"avi": "_file_movie",
+		"mov": "_file_movie",
+		"qt": "_file_movie",
+		"wmv": "_file_movie",
+		"yuv": "_file_movie",
+		"rm": "_file_movie",
+		"rmvb": "_file_movie",
+		"mp4": "_file_movie",
+		"m4p": "_file_movie",
+		"m4v": "_file_movie",
+		"mpg": "_file_movie",
+		"mp2": "_file_movie",
+		"mpeg": "_file_movie",
+		"mpe": "_file_movie",
+		"mpv": "_file_movie",
+		"m2v": "_file_movie"			
 	},
 	"fileNames": {
 		"webpack.js": "_file_webpack",
@@ -291,7 +331,7 @@
 		"gradlew": "_file_gradle",
 		"androidmanifest.xml": "_file_android",
 		"gradle-wrapper.properties": "_file_gradle",
-		"dockerfile": "_file_docker"		
+		"dockerfile": "_file_docker"
 	},
 	"folderNames": {
 		// folder names here
