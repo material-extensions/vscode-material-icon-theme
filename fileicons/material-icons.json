@@ -120,7 +120,7 @@
 		},
 		"_file_tex": {
 			"iconPath": "./icons/tex.png"
-		},
+		},		
 		// Folders
 		"_folder_dark": {
 			"iconPath": "./icons/folder.png"
@@ -276,7 +276,8 @@
 		"manifest": "_file_xml",
 		"swift": "_file_swift",
 		"dockerignore": "_file_docker",
-		"tex": "_file_tex"
+		"tex": "_file_tex",
+		"bib": "_file_lib"		
 	},
 	"fileNames": {
 		"webpack.js": "_file_webpack",
