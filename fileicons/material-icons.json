@@ -219,6 +219,7 @@
 		"xls": "_file_table",
 		"csv": "_file_table",
 		"vscodeignore": "_file_vs",
+		"vsixmanifest": "_file_vs",
 		"suo": "_file_vs",
 		"sln": "_file_vs",
 		"pdb": "_file_database",
@@ -317,7 +318,7 @@
 		"mpeg": "_file_movie",
 		"mpe": "_file_movie",
 		"mpv": "_file_movie",
-		"m2v": "_file_movie"			
+		"m2v": "_file_movie"		
 	},
 	"fileNames": {
 		"webpack.js": "_file_webpack",
@@ -331,7 +332,13 @@
 		"gradlew": "_file_gradle",
 		"androidmanifest.xml": "_file_android",
 		"gradle-wrapper.properties": "_file_gradle",
-		"dockerfile": "_file_docker"
+		"dockerfile": "_file_docker",
+		"license": "_file_certificate",
+		"license.md": "_file_certificate",
+		"license.txt": "_file_certificate",
+		"licence": "_file_certificate",
+		"licence.md": "_file_certificate",
+		"licence.txt": "_file_certificate"
 	},
 	"folderNames": {
 		// folder names here
