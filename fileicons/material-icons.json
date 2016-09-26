@@ -127,6 +127,15 @@
 		"_file_movie": {
 			"iconPath": "./icons/movie.svg"
 		},
+		"_file_virtual": {
+			"iconPath": "./icons/virtual.svg"
+		},
+		"_file_email": {
+			"iconPath": "./icons/email.svg"
+		},
+		"_file_music": {
+			"iconPath": "./icons/music.svg"
+		},
 		// Folders
 		"_folder_dark": {
 			"iconPath": "./icons/folder.svg"
@@ -166,6 +175,7 @@
 		"sass": "_file_css",
 		"less": "_file_css",
 		"gitignore": "_file_git",
+		"gitconfig": "_file_git",
 		"json": "_file_json",
 		"xml": "_file_xml",
 		"xsd": "_file_xml",
@@ -310,15 +320,23 @@
 		"yuv": "_file_movie",
 		"rm": "_file_movie",
 		"rmvb": "_file_movie",
-		"mp4": "_file_movie",
-		"m4p": "_file_movie",
+		"mp4": "_file_movie",		
 		"m4v": "_file_movie",
 		"mpg": "_file_movie",
 		"mp2": "_file_movie",
 		"mpeg": "_file_movie",
 		"mpe": "_file_movie",
 		"mpv": "_file_movie",
-		"m2v": "_file_movie"		
+		"m2v": "_file_movie",
+		"vdi": "_file_virtual",
+		"vbox": "_file_virtual",
+		"vbox-prev": "_file_virtual",
+		"ics": "_file_email",
+		"mp3": "_file_music",
+		"flac": "_file_music",
+		"m4a": "_file_music",				
+		"wma": "_file_music",		
+		"aiff": "_file_music"
 	},
 	"fileNames": {
 		"webpack.js": "_file_webpack",
