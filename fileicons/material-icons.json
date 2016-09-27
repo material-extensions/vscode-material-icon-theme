@@ -2,146 +2,164 @@
 	"iconDefinitions": {
 		// File types
 		"_file_json": {
-			"iconPath": "./icons/json.png"
+			"iconPath": "./icons/json.svg"
 		},
 		"_file_html": {
-			"iconPath": "./icons/html.png"
+			"iconPath": "./icons/html.svg"
 		},
 		"_file_markdown": {
-			"iconPath": "./icons/markdown.png"
+			"iconPath": "./icons/markdown.svg"
 		},
 		"_file_css": {
-			"iconPath": "./icons/css.png"
+			"iconPath": "./icons/css.svg"
 		},
 		"_file_gradle": {
-			"iconPath": "./icons/gradle.png"
+			"iconPath": "./icons/gradle.svg"
 		},
 		"_file_git": {
-			"iconPath": "./icons/git.png"
+			"iconPath": "./icons/git.svg"
 		},
 		"_file_image": {
-			"iconPath": "./icons/image.png"
+			"iconPath": "./icons/image.svg"
 		},
 		"_file_xml": {
-			"iconPath": "./icons/xml.png"
+			"iconPath": "./icons/xml.svg"
 		},
 		"_file_js": {
-			"iconPath": "./icons/javascript.png"
+			"iconPath": "./icons/javascript.svg"
 		},
 		"_file_ts": {
-			"iconPath": "./icons/typescript.png"
+			"iconPath": "./icons/typescript.svg"
 		},
 		"_file_webpack": {
-			"iconPath": "./icons/webpack.png"
+			"iconPath": "./icons/webpack.svg"
 		},
 		"_file_php": {
-			"iconPath": "./icons/php.png"
+			"iconPath": "./icons/php.svg"
 		},
 		"_file_table": {
-			"iconPath": "./icons/table.png"
+			"iconPath": "./icons/table.svg"
 		},
 		"_file_vs": {
-			"iconPath": "./icons/visualstudio.png"
+			"iconPath": "./icons/visualstudio.svg"
 		},
 		"_file_csharp": {
-			"iconPath": "./icons/csharp.png"
+			"iconPath": "./icons/csharp.svg"
 		},
 		"_file_zip": {
-			"iconPath": "./icons/zip.png"
+			"iconPath": "./icons/zip.svg"
 		},
 		"_file_exe": {
-			"iconPath": "./icons/exe.png"
+			"iconPath": "./icons/exe.svg"
 		},
 		"_file_java": {
-			"iconPath": "./icons/java.png"
+			"iconPath": "./icons/java.svg"
 		},
 		"_file_python": {
-			"iconPath": "./icons/python.png"
+			"iconPath": "./icons/python.svg"
 		},
 		"_file_c": {
-			"iconPath": "./icons/c-lang.png"
+			"iconPath": "./icons/c-lang.svg"
 		},
 		"_file_c++": {
-			"iconPath": "./icons/cpp.png"
+			"iconPath": "./icons/cpp.svg"
 		},
 		"_file_go": {
-			"iconPath": "./icons/go.png"
+			"iconPath": "./icons/go.svg"
 		},
 		"_file_pdf": {
-			"iconPath": "./icons/pdf.png"
+			"iconPath": "./icons/pdf.svg"
 		},
 		"_file_settings": {
-			"iconPath": "./icons/settings.png"
+			"iconPath": "./icons/settings.svg"
 		},
 		"_file_url": {
-			"iconPath": "./icons/url.png"
+			"iconPath": "./icons/url.svg"
 		},
 		"_file_gulp": {
-			"iconPath": "./icons/gulp.png"
+			"iconPath": "./icons/gulp.svg"
 		},
 		"_file_console": {
-			"iconPath": "./icons/console.png"
+			"iconPath": "./icons/console.svg"
 		},
 		"_file_word": {
-			"iconPath": "./icons/word.png"
+			"iconPath": "./icons/word.svg"
 		},
 		"_file_android": {
-			"iconPath": "./icons/android.png"
+			"iconPath": "./icons/android.svg"
 		},
 		"_file_database": {
-			"iconPath": "./icons/database.png"
+			"iconPath": "./icons/database.svg"
 		},
 		"_file_certificate": {
-			"iconPath": "./icons/certificate.png"
+			"iconPath": "./icons/certificate.svg"
 		},
 		"_file_key": {
-			"iconPath": "./icons/key.png"
+			"iconPath": "./icons/key.svg"
 		},
 		"_file_docker": {
-			"iconPath": "./icons/docker.png"
+			"iconPath": "./icons/docker.svg"
 		},
 		"_file_font": {
-			"iconPath": "./icons/font.png"
+			"iconPath": "./icons/font.svg"
 		},
 		"_file_lib": {
-			"iconPath": "./icons/lib.png"
+			"iconPath": "./icons/lib.svg"
 		},
 		"_file_jade": {
-			"iconPath": "./icons/jade.png"
+			"iconPath": "./icons/jade.svg"
 		},
 		"_file_ruby": {
-			"iconPath": "./icons/ruby.png"
+			"iconPath": "./icons/ruby.svg"
 		},
 		"_file_fsharp": {
-			"iconPath": "./icons/fsharp.png"
+			"iconPath": "./icons/fsharp.svg"
 		},
 		"_file_swift": {
-			"iconPath": "./icons/swift.png"
+			"iconPath": "./icons/swift.svg"
+		},
+		"_file_tex": {
+			"iconPath": "./icons/tex.svg"
+		},
+		"_file_powerpoint": {
+			"iconPath": "./icons/powerpoint.svg"
+		},
+		"_file_movie": {
+			"iconPath": "./icons/movie.svg"
+		},
+		"_file_virtual": {
+			"iconPath": "./icons/virtual.svg"
+		},
+		"_file_email": {
+			"iconPath": "./icons/email.svg"
+		},
+		"_file_music": {
+			"iconPath": "./icons/music.svg"
 		},
 		// Folders
 		"_folder_dark": {
-			"iconPath": "./icons/folder.png"
+			"iconPath": "./icons/folder.svg"
 		},
 		"_folder_open_dark": {
-			"iconPath": "./icons/folder-outline.png"
+			"iconPath": "./icons/folder-outline.svg"
 		},
 		"_file_dark": {
-			"iconPath": "./icons/file.png"
+			"iconPath": "./icons/file.svg"
 		},
 		"_folder_light": {
-			"iconPath": "./icons/folder.png"
+			"iconPath": "./icons/folder.svg"
 		},
 		"_folder_open_light": {
-			"iconPath": "./icons/folder-outline.png"
+			"iconPath": "./icons/folder-outline.svg"
 		},
 		"_file_light": {
-			"iconPath": "./icons/file.png"
+			"iconPath": "./icons/file.svg"
 		},
 		"_folder_nodejs": {
-			"iconPath": "./icons/nodejs.png"
+			"iconPath": "./icons/nodejs.svg"
 		},
 		"_folder_open_nodejs": {
-			"iconPath": "./icons/nodejs.png"
+			"iconPath": "./icons/nodejs.svg"
 		}
 	},
 	"folderExpanded": "_folder_open_dark",
@@ -157,11 +175,14 @@
 		"sass": "_file_css",
 		"less": "_file_css",
 		"gitignore": "_file_git",
+		"gitconfig": "_file_git",
 		"json": "_file_json",
 		"xml": "_file_xml",
 		"xsd": "_file_xml",
 		"dtd": "_file_xml",
 		"xsl": "_file_xml",
+		"resx": "_file_xml",
+		"iml": "_file_xml",
 		"xquery": "_file_xml",
 		"png": "_file_image",
 		"jpeg": "_file_image",
@@ -210,6 +231,7 @@
 		"xls": "_file_table",
 		"csv": "_file_table",
 		"vscodeignore": "_file_vs",
+		"vsixmanifest": "_file_vs",
 		"suo": "_file_vs",
 		"sln": "_file_vs",
 		"pdb": "_file_database",
@@ -241,12 +263,13 @@
 		"rtf": "_file_word",
 		"properties": "_file_settings",
 		"prop": "_file_settings",
+		"settings": "_file_settings",
 		"sql": "_file_database",
 		"accdb": "_file_database",
 		"mdb": "_file_database",
 		"cer": "_file_certificate",
 		"cert": "_file_certificate",
-		"crt": "_file_certificate",		
+		"crt": "_file_certificate",
 		"pub": "_file_key",
 		"key": "_file_key",
 		"pem": "_file_key",
@@ -272,7 +295,51 @@
 		"fsproj": "_file_fsharp",
 		"manifest": "_file_xml",
 		"swift": "_file_swift",
-		"dockerignore": "_file_docker"
+		"dockerignore": "_file_docker",
+		"tex": "_file_tex",
+		"bib": "_file_lib",
+		"pptx": "_file_powerpoint",
+		"ppt": "_file_powerpoint",
+		"pptm": "_file_powerpoint",
+		"potx": "_file_powerpoint",
+		"pot": "_file_powerpoint",
+		"potm": "_file_powerpoint",
+		"ppsx": "_file_powerpoint",
+		"ppsm": "_file_powerpoint",
+		"pps": "_file_powerpoint",
+		"ppam": "_file_powerpoint",
+		"ppa": "_file_powerpoint",
+		"webm": "_file_movie",
+		"mkv": "_file_movie",
+		"flv": "_file_movie",
+		"vob": "_file_movie",
+		"ogv": "_file_movie",
+		"ogg": "_file_movie",
+		"gifv": "_file_movie",
+		"avi": "_file_movie",
+		"mov": "_file_movie",
+		"qt": "_file_movie",
+		"wmv": "_file_movie",
+		"yuv": "_file_movie",
+		"rm": "_file_movie",
+		"rmvb": "_file_movie",
+		"mp4": "_file_movie",		
+		"m4v": "_file_movie",
+		"mpg": "_file_movie",
+		"mp2": "_file_movie",
+		"mpeg": "_file_movie",
+		"mpe": "_file_movie",
+		"mpv": "_file_movie",
+		"m2v": "_file_movie",
+		"vdi": "_file_virtual",
+		"vbox": "_file_virtual",
+		"vbox-prev": "_file_virtual",
+		"ics": "_file_email",
+		"mp3": "_file_music",
+		"flac": "_file_music",
+		"m4a": "_file_music",				
+		"wma": "_file_music",		
+		"aiff": "_file_music"
 	},
 	"fileNames": {
 		"webpack.js": "_file_webpack",
@@ -286,7 +353,13 @@
 		"gradlew": "_file_gradle",
 		"androidmanifest.xml": "_file_android",
 		"gradle-wrapper.properties": "_file_gradle",
-		"dockerfile": "_file_docker"		
+		"dockerfile": "_file_docker",
+		"license": "_file_certificate",
+		"license.md": "_file_certificate",
+		"license.txt": "_file_certificate",
+		"licence": "_file_certificate",
+		"licence.md": "_file_certificate",
+		"licence.txt": "_file_certificate"
 	},
 	"folderNames": {
 		// folder names here
