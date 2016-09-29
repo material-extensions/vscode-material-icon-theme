@@ -31,6 +31,9 @@
 		"_file_ts": {
 			"iconPath": "./icons/typescript.svg"
 		},
+		"_file_ts_def": {
+			"iconPath": "./icons/typescript-def.svg"
+		},
 		"_file_webpack": {
 			"iconPath": "./icons/webpack.svg"
 		},
@@ -226,6 +229,7 @@
 		"esx": "_file_js",
 		"ts": "_file_ts",
 		"tsx": "_file_ts",
+		"d.ts": "_file_ts_def",
 		"pdf": "_file_pdf",
 		"xlsx": "_file_table",
 		"xls": "_file_table",
