@@ -4,6 +4,9 @@
 		"_file_json": {
 			"iconPath": "./icons/json.svg"
 		},
+		"_file_yaml": {
+			"iconPath": "./icons/yaml.svg"
+		},
 		"_file_html": {
 			"iconPath": "./icons/html.svg"
 		},
@@ -180,6 +183,7 @@
 		"gitignore": "_file_git",
 		"gitconfig": "_file_git",
 		"json": "_file_json",
+		"yaml": "_file_yaml",
 		"xml": "_file_xml",
 		"xsd": "_file_xml",
 		"dtd": "_file_xml",
