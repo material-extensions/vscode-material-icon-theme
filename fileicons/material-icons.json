@@ -76,8 +76,11 @@
 		"_file_pdf": {
 			"iconPath": "./icons/pdf.svg"
 		},
-		"_file_settings": {
+        "_file_settings": {
 			"iconPath": "./icons/settings.svg"
+		},
+        "_file_tune": {
+			"iconPath": "./icons/tune.svg"
 		},
 		"_file_url": {
 			"iconPath": "./icons/url.svg"
@@ -332,7 +335,7 @@
 		"yuv": "_file_movie",
 		"rm": "_file_movie",
 		"rmvb": "_file_movie",
-		"mp4": "_file_movie",		
+		"mp4": "_file_movie",
 		"m4v": "_file_movie",
 		"mpg": "_file_movie",
 		"mp2": "_file_movie",
@@ -346,8 +349,8 @@
 		"ics": "_file_email",
 		"mp3": "_file_music",
 		"flac": "_file_music",
-		"m4a": "_file_music",				
-		"wma": "_file_music",		
+		"m4a": "_file_music",
+		"wma": "_file_music",
 		"aiff": "_file_music"
 	},
 	"fileNames": {
@@ -370,7 +373,7 @@
 		"gradle-wrapper.properties": "_file_gradle",
 		".editorconfig": "_file_settings",
 		"Procfile": "_file_settings",
-		".env": "_file_settings",
+		".env": "_file_tune",
 		"dockerfile": "_file_docker",
 		"license": "_file_certificate",
 		"license.md": "_file_certificate",
