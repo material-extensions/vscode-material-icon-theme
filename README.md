@@ -8,7 +8,7 @@
 ## Enable icons
 ![Installation](https://raw.githubusercontent.com/PKief/vscode-extension-material-icon-theme/withimages/images/installation.gif)
 
-## Icons come from
+## Icon source
 * [https://design.google.com/icons/](https://design.google.com/icons/)
 * [https://materialdesignicons.com/](https://materialdesignicons.com/)
 * self made
