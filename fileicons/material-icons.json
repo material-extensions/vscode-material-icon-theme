@@ -372,7 +372,7 @@
 		"androidmanifest.xml": "_file_android",
 		"gradle-wrapper.properties": "_file_gradle",
 		".editorconfig": "_file_settings",
-		"Procfile": "_file_settings",
+		"procfile": "_file_settings",
 		".env": "_file_tune",
 		"dockerfile": "_file_docker",
 		"license": "_file_certificate",
