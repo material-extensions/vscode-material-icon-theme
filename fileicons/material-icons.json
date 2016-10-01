@@ -4,6 +4,9 @@
 		"_file_json": {
 			"iconPath": "./icons/json.svg"
 		},
+		"_file_yaml": {
+			"iconPath": "./icons/yaml.svg"
+		},
 		"_file_html": {
 			"iconPath": "./icons/html.svg"
 		},
@@ -30,6 +33,9 @@
 		},
 		"_file_ts": {
 			"iconPath": "./icons/typescript.svg"
+		},
+		"_file_ts_def": {
+			"iconPath": "./icons/typescript-def.svg"
 		},
 		"_file_webpack": {
 			"iconPath": "./icons/webpack.svg"
@@ -70,8 +76,11 @@
 		"_file_pdf": {
 			"iconPath": "./icons/pdf.svg"
 		},
-		"_file_settings": {
+        "_file_settings": {
 			"iconPath": "./icons/settings.svg"
+		},
+        "_file_tune": {
+			"iconPath": "./icons/tune.svg"
 		},
 		"_file_url": {
 			"iconPath": "./icons/url.svg"
@@ -177,6 +186,8 @@
 		"gitignore": "_file_git",
 		"gitconfig": "_file_git",
 		"json": "_file_json",
+		"yaml": "_file_yaml",
+		"yml": "_file_yaml",
 		"xml": "_file_xml",
 		"xsd": "_file_xml",
 		"dtd": "_file_xml",
@@ -226,6 +237,7 @@
 		"esx": "_file_js",
 		"ts": "_file_ts",
 		"tsx": "_file_ts",
+		"d.ts": "_file_ts_def",
 		"pdf": "_file_pdf",
 		"xlsx": "_file_table",
 		"xls": "_file_table",
@@ -323,7 +335,7 @@
 		"yuv": "_file_movie",
 		"rm": "_file_movie",
 		"rmvb": "_file_movie",
-		"mp4": "_file_movie",		
+		"mp4": "_file_movie",
 		"m4v": "_file_movie",
 		"mpg": "_file_movie",
 		"mp2": "_file_movie",
@@ -337,8 +349,8 @@
 		"ics": "_file_email",
 		"mp3": "_file_music",
 		"flac": "_file_music",
-		"m4a": "_file_music",				
-		"wma": "_file_music",		
+		"m4a": "_file_music",
+		"wma": "_file_music",
 		"aiff": "_file_music"
 	},
 	"fileNames": {
@@ -351,8 +363,17 @@
 		"package.json": "_folder_nodejs",
 		"gradle.properties": "_file_gradle",
 		"gradlew": "_file_gradle",
+		".jscsrc": "_file_json",
+		".jshintrc": "_file_json",
+		".jshintignore": "_file_settings",
+		".npmignore": "_folder_nodejs",
+		"tsconfig.json": "_file_ts",
+		"tslint.json": "_file_ts",
 		"androidmanifest.xml": "_file_android",
 		"gradle-wrapper.properties": "_file_gradle",
+		".editorconfig": "_file_settings",
+		"Procfile": "_file_settings",
+		".env": "_file_tune",
 		"dockerfile": "_file_docker",
 		"license": "_file_certificate",
 		"license.md": "_file_certificate",
