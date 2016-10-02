@@ -1,12 +1,12 @@
 # Material Icon Theme
 
-![Icon set](https://raw.githubusercontent.com/PKief/vscode-extension-material-icon-theme/withimages/images/iconset.png)
+![Icon set](https://raw.githubusercontent.com/PKief/vscode-extension-material-icon-theme/master/src/iconset.png)
 
 ## Preview
-![Preview](https://raw.githubusercontent.com/PKief/vscode-extension-material-icon-theme/withimages/images/preview.PNG)
+![Preview](https://raw.githubusercontent.com/PKief/vscode-extension-material-icon-theme/master/src/preview.png)
 
 ## Enable icons
-![Installation](https://raw.githubusercontent.com/PKief/vscode-extension-material-icon-theme/withimages/images/installation.gif)
+![Installation](https://raw.githubusercontent.com/PKief/vscode-extension-material-icon-theme/master/src/installation.gif)
 
 ## Icon source
 * [https://design.google.com/icons/](https://design.google.com/icons/)
