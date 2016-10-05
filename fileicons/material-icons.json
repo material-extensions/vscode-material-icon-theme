@@ -151,6 +151,18 @@
 		"_file_coffee": {
 			"iconPath": "./icons/coffee.svg"
 		},
+		"_file_document": {
+			"iconPath": "./icons/document.svg"
+		},
+		"_file_nodejs": {
+			"iconPath": "./icons/nodejs.svg"
+		},
+		"_file_light": {
+			"iconPath": "./icons/file.svg"
+		},
+		"_file_dark": {
+			"iconPath": "./icons/file.svg"
+		},
 		// Folders
 		"_folder_dark": {
 			"iconPath": "./icons/folder.svg"
@@ -158,23 +170,11 @@
 		"_folder_open_dark": {
 			"iconPath": "./icons/folder-outline.svg"
 		},
-		"_file_dark": {
-			"iconPath": "./icons/file.svg"
-		},
 		"_folder_light": {
 			"iconPath": "./icons/folder.svg"
 		},
 		"_folder_open_light": {
 			"iconPath": "./icons/folder-outline.svg"
-		},
-		"_file_light": {
-			"iconPath": "./icons/file.svg"
-		},
-		"_folder_nodejs": {
-			"iconPath": "./icons/nodejs.svg"
-		},
-		"_folder_open_nodejs": {
-			"iconPath": "./icons/nodejs.svg"
 		}
 	},
 	"folderExpanded": "_folder_open_dark",
@@ -358,7 +358,8 @@
 		"m4a": "_file_music",
 		"wma": "_file_music",
 		"aiff": "_file_music",
-		"coffee": "_file_coffee"
+		"coffee": "_file_coffee",
+		"txt": "_file_document"
 	},
 	"fileNames": {
 		"webpack.js": "_file_webpack",
@@ -367,13 +368,13 @@
 		"webpack.prod.js": "_file_webpack",
 		"webpack.common.js": "_file_webpack",
 		"gulpfile.js": "_file_gulp",
-		"package.json": "_folder_nodejs",
+		"package.json": "_file_nodejs",
 		"gradle.properties": "_file_gradle",
 		"gradlew": "_file_gradle",
 		".jscsrc": "_file_json",
 		".jshintrc": "_file_json",
 		".jshintignore": "_file_settings",
-		".npmignore": "_folder_nodejs",
+		".npmignore": "_file_nodejs",
 		"tsconfig.json": "_file_ts",
 		"tslint.json": "_file_ts",
 		"androidmanifest.xml": "_file_android",
