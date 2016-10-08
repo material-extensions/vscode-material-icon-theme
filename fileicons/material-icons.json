@@ -359,7 +359,9 @@
 		"wma": "_file_music",
 		"aiff": "_file_music",
 		"coffee": "_file_coffee",
-		"txt": "_file_document"
+		"txt": "_file_document",
+		"sqlite": "_file_database",
+		"graphql": "_file_json"
 	},
 	"fileNames": {
 		"webpack.js": "_file_webpack",
