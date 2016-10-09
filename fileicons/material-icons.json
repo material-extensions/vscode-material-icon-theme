@@ -188,9 +188,7 @@
 		"css": "_file_css",
 		"scss": "_file_css",
 		"sass": "_file_css",
-		"less": "_file_css",
-		"gitignore": "_file_git",
-		"gitconfig": "_file_git",
+		"less": "_file_css",		
 		"json": "_file_json",
 		"yaml": "_file_yaml",
 		"yml": "_file_yaml",
@@ -393,7 +391,11 @@
 		"licence.txt": "_file_certificate",
 		".babelrc": "_file_babel",
 		".buildignore": "_file_settings",
-		".htaccess": "_file_xml"
+		".htaccess": "_file_xml",
+		"composer.lock": "_file_json",
+		".gitignore": "_file_git",
+		".gitconfig": "_file_git",
+		".gitattributes": "_file_git"
 	},
 	"folderNames": {
 		// folder names here
