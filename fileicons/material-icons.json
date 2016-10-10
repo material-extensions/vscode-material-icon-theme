@@ -272,6 +272,7 @@
 		"pgf": "_file_image",
 		"pic": "_file_image",
 		"raw": "_file_image",
+		"webp": "_file_image",
 		"php": "_file_php",
 		"js": "_file_js",
 		"ejs": "_file_js",
