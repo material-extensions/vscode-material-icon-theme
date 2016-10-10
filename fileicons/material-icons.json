@@ -16,6 +16,9 @@
 		"_file_css": {
 			"iconPath": "./icons/css.svg"
 		},
+		"_file_sass": {
+			"iconPath": "./icons/sass.svg"
+		},
 		"_file_gradle": {
 			"iconPath": "./icons/gradle.svg"
 		},
@@ -189,8 +192,8 @@
 		"jade": "_file_jade",
 		"md": "_file_markdown",
 		"css": "_file_css",
-		"scss": "_file_css",
-		"sass": "_file_css",
+		"scss": "_file_sass",
+		"sass": "_file_sass",
 		"less": "_file_css",		
 		"json": "_file_json",
 		"yaml": "_file_yaml",
