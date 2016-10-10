@@ -16,6 +16,9 @@
 		"_file_css": {
 			"iconPath": "./icons/css.svg"
 		},
+		"_file_sass": {
+			"iconPath": "./icons/sass.svg"
+		},
 		"_file_gradle": {
 			"iconPath": "./icons/gradle.svg"
 		},
@@ -39,6 +42,9 @@
 		},
 		"_file_webpack": {
 			"iconPath": "./icons/webpack.svg"
+		},
+		"_file_ionic": {
+			"iconPath": "./icons/ionic.svg"
 		},
 		"_file_php": {
 			"iconPath": "./icons/php.svg"
@@ -163,6 +169,7 @@
 		"_file_dark": {
 			"iconPath": "./icons/file.svg"
 		},
+
 		// Folders
 		"_folder_dark": {
 			"iconPath": "./icons/folder.svg"
@@ -175,10 +182,46 @@
 		},
 		"_folder_open_light": {
 			"iconPath": "./icons/folder-outline.svg"
+		},
+		"_folder_src": {
+			"iconPath": "./icons/folder-src.svg"
+		},
+		"_folder_src_open": {
+			"iconPath": "./icons/folder-src-outline.svg"
+		},
+		"_folder_image": {
+			"iconPath": "./icons/folder-image.svg"
+		},
+		"_folder_image_open": {
+			"iconPath": "./icons/folder-image-outline.svg"
 		}
 	},
-	"folderExpanded": "_folder_open_dark",
+
 	"folder": "_folder_dark",
+	"folderExpanded": "_folder_open_dark",
+	"folderNames": {
+		"src": "_folder_src",
+		"source": "_folder_src",
+		"sources": "_folder_src",
+		"image": "_folder_image",
+		"images": "_folder_image",
+		"img": "_folder_image",
+		"imgs": "_folder_image",
+		"icon": "_folder_image",
+		"icons": "_folder_image"
+	},
+	"folderNamesExpanded": {
+		"src": "_folder_src_open",
+		"source": "_folder_src_open",
+		"sources": "_folder_src_open",
+		"image": "_folder_image_open",
+		"images": "_folder_image_open",
+		"img": "_folder_image_open",
+		"imgs": "_folder_image_open",
+		"icon": "_folder_image_open",
+		"icons": "_folder_image_open"
+	},
+
 	"file": "_file_dark",
 	"fileExtensions": {
 		// icons by file extension
@@ -186,8 +229,8 @@
 		"jade": "_file_jade",
 		"md": "_file_markdown",
 		"css": "_file_css",
-		"scss": "_file_css",
-		"sass": "_file_css",
+		"scss": "_file_sass",
+		"sass": "_file_sass",
 		"less": "_file_css",		
 		"json": "_file_json",
 		"yaml": "_file_yaml",
@@ -229,6 +272,7 @@
 		"pgf": "_file_image",
 		"pic": "_file_image",
 		"raw": "_file_image",
+		"webp": "_file_image",
 		"php": "_file_php",
 		"js": "_file_js",
 		"ejs": "_file_js",
@@ -368,6 +412,8 @@
 		"webpack.dev.js": "_file_webpack",
 		"webpack.prod.js": "_file_webpack",
 		"webpack.common.js": "_file_webpack",
+		"ionic.config.json": "_file_ionic",
+		".io-config.json": "_file_ionic",
 		"gulpfile.js": "_file_gulp",
 		"package.json": "_file_nodejs",
 		"gradle.properties": "_file_gradle",
@@ -397,9 +443,6 @@
 		".gitignore": "_file_git",
 		".gitconfig": "_file_git",
 		".gitattributes": "_file_git"
-	},
-	"folderNames": {
-		// folder names here
 	},
 	"languageIds": {
 		// icons by language id
