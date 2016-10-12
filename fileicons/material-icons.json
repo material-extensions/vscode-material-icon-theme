@@ -166,6 +166,12 @@
 		"_file_yarn": {
 			"iconPath": "./icons/yarn.svg"
 		},
+		"_file_contributing": {
+			"iconPath": "./icons/contributing.svg"
+		},
+		"_file_readme": {
+			"iconPath": "./icons/readme.svg"
+		},
 		// Folders
 		"_folder_dark": {
 			"iconPath": "./icons/folder.svg"
@@ -390,9 +396,11 @@
 		"dockerfile": "_file_docker",
 		"license": "_file_certificate",
 		"license.md": "_file_certificate",
+		"license.md.rendered": "_file_certificate",
 		"license.txt": "_file_certificate",
 		"licence": "_file_certificate",
 		"licence.md": "_file_certificate",
+		"licence.md.rendered": "_file_certificate",
 		"licence.txt": "_file_certificate",
 		".babelrc": "_file_babel",
 		".buildignore": "_file_settings",
@@ -402,7 +410,11 @@
 		".gitconfig": "_file_git",
 		".gitattributes": "_file_git",
 		".gitkeep": "_file_git",
-		"yarn.lock": "_file_yarn"
+		"yarn.lock": "_file_yarn",
+		"contributing.md": "_file_contributing",
+		"contributing.md.rendered": "_file_contributing",
+		"readme.md": "_file_readme",
+		"readme.md.rendered": "_file_readme"	
 	},
 	"folderNames": {
 		// folder names here
