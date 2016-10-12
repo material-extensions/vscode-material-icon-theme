@@ -185,6 +185,7 @@
 		"html": "_file_html",
 		"jade": "_file_jade",
 		"md": "_file_markdown",
+		"md.rendered": "_file_markdown",
 		"css": "_file_css",
 		"scss": "_file_css",
 		"sass": "_file_css",
