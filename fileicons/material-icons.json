@@ -397,7 +397,8 @@
 		"composer.lock": "_file_json",
 		".gitignore": "_file_git",
 		".gitconfig": "_file_git",
-		".gitattributes": "_file_git"
+		".gitattributes": "_file_git",
+		".gitkeep": "_file_git"
 	},
 	"folderNames": {
 		// folder names here
