@@ -163,6 +163,9 @@
 		"_file_dark": {
 			"iconPath": "./icons/file.svg"
 		},
+		"_file_yarn": {
+			"iconPath": "./icons/yarn.svg"
+		},
 		// Folders
 		"_folder_dark": {
 			"iconPath": "./icons/folder.svg"
@@ -398,7 +401,8 @@
 		".gitignore": "_file_git",
 		".gitconfig": "_file_git",
 		".gitattributes": "_file_git",
-		".gitkeep": "_file_git"
+		".gitkeep": "_file_git",
+		"yarn.lock": "_file_yarn"
 	},
 	"folderNames": {
 		// folder names here
