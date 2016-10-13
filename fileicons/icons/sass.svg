@@ -13,7 +13,7 @@
    viewBox="0 0 24 24"
    id="svg2"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="language-css3.svg">
+   sodipodi:docname="sass.svg">
   <metadata
      id="metadata10">
     <rdf:RDF>
@@ -36,19 +36,19 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="729"
+     inkscape:window-width="833"
      inkscape:window-height="480"
      id="namedview6"
      showgrid="false"
-     inkscape:zoom="9.8333333"
+     inkscape:zoom="9.7571059"
      inkscape:cx="12"
-     inkscape:cy="11.898305"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:cy="11.79661"
+     inkscape:window-x="433"
+     inkscape:window-y="104"
      inkscape:window-maximized="0"
      inkscape:current-layer="svg2" />
   <path
      d="M5,3L4.35,6.34H17.94L17.5,8.5H3.92L3.26,11.83H16.85L16.09,15.64L10.61,17.45L5.86,15.64L6.19,14H2.85L2.06,18L9.91,21L18.96,18L20.16,11.97L20.4,10.76L21.94,3H5Z"
      id="path4"
-     style="fill:#CF649A;fill-opacity:1" />
+     style="fill:#ec407a;fill-opacity:1" />
 </svg>
