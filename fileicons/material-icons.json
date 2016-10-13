@@ -144,10 +144,7 @@
 		},
 		"_file_music": {
 			"iconPath": "./icons/music.svg"
-		},
-		"_file_babel": {
-			"iconPath": "./icons/babel.svg"
-		},
+		},		
 		"_file_coffee": {
 			"iconPath": "./icons/coffee.svg"
 		},
@@ -402,7 +399,7 @@
 		"licence.md": "_file_certificate",
 		"licence.md.rendered": "_file_certificate",
 		"licence.txt": "_file_certificate",
-		".babelrc": "_file_babel",
+		".babelrc": "_file_json",
 		".buildignore": "_file_settings",
 		".htaccess": "_file_xml",
 		"composer.lock": "_file_json",
