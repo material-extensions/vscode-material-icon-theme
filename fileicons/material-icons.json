@@ -175,6 +175,9 @@
 		"_file_readme": {
 			"iconPath": "./icons/readme.svg"
 		},
+		"_file_rust": {
+			"iconPath": "./icons/rust.svg"
+		},
 		// Folders
 		"_folder_dark": {
 			"iconPath": "./icons/folder.svg"
@@ -374,7 +377,9 @@
 		"txt": "_file_document",
 		"sqlite": "_file_database",
 		"graphql": "_file_json",
-		"props": "_file_settings"
+		"props": "_file_settings",
+		"toml": "_file_settings",
+		"rs": "_file_rust"		
 	},
 	"fileNames": {
 		"webpack.js": "_file_webpack",
@@ -421,7 +426,9 @@
 		"contributing.md": "_file_contributing",
 		"contributing.md.rendered": "_file_contributing",
 		"readme.md": "_file_readme",
-		"readme.md.rendered": "_file_readme"	
+		"readme.md.rendered": "_file_readme",
+		".mailmap": "_file_email",
+		"makefile": "_file_settings"	
 	},
 	"folderNames": {
 		// folder names here
