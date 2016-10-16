@@ -8,6 +8,7 @@
 |<img src="./../fileicons/icons/cpp.svg" width="20px">|C++|
 |<img src="./../fileicons/icons/csharp.svg" width="20px">|C#|
 |<img src="./../fileicons/icons/certificate.svg" width="20px">|Certificate|
+|<img src="./../fileicons/icons/contributing.svg" width="20px">|Contributing|
 |<img src="./../fileicons/icons/css.svg" width="20px">|CSS|
 |<img src="./../fileicons/icons/docker.svg" width="20px">|Docker|
 |<img src="./../fileicons/icons/exe.svg" width="20px">|Executable|
@@ -20,6 +21,7 @@
 |<img src="./../fileicons/icons/gulp.svg" width="20px">|Gulp|
 |<img src="./../fileicons/icons/html.svg" width="20px">|HTML|
 |<img src="./../fileicons/icons/image.svg" width="20px">|Image|
+|<img src="./../fileicons/icons/ionic.svg" width="20px">|Ionic|
 |<img src="./../fileicons/icons/jade.svg" width="20px">|Jade|
 |<img src="./../fileicons/icons/java.svg" width="20px">|Java|
 |<img src="./../fileicons/icons/javascript.svg" width="20px">|JavaScript|
@@ -37,15 +39,20 @@
 |<img src="./../fileicons/icons/powerpoint.svg" width="20px">|PowerPoint|
 |<img src="./../fileicons/icons/settings.svg" width="20px">|Properties|
 |<img src="./../fileicons/icons/python.svg" width="20px">|Python|
+|<img src="./../fileicons/icons/readme.svg" width="20px">|Readme|
 |<img src="./../fileicons/icons/ruby.svg" width="20px">|Ruby|
+|<img src="./../fileicons/icons/rust.svg" width="20px">|Rust|
 |<img src="./../fileicons/icons/console.svg" width="20px">|Script|
 |<img src="./../fileicons/icons/database.svg" width="20px">|SQL|
 |<img src="./../fileicons/icons/swift.svg" width="20px">|Swift|
 |<img src="./../fileicons/icons/table.svg" width="20px">|Table|
 |<img src="./../fileicons/icons/tex.svg" width="20px">|TeX|
 |<img src="./../fileicons/icons/typescript.svg" width="20px">|TypeScript|
+|<img src="./../fileicons/icons/typescript-def.svg" width="20px">|TS-Typings|
 |<img src="./../fileicons/icons/virtual.svg" width="20px">|Virtual Box|
 |<img src="./../fileicons/icons/visualstudio.svg" width="20px">|Visual Studio|
 |<img src="./../fileicons/icons/webpack.svg" width="20px">|Webpack|
 |<img src="./../fileicons/icons/word.svg" width="20px">|Word|
 |<img src="./../fileicons/icons/xml.svg" width="20px">|XML|
+|<img src="./../fileicons/icons/yaml.svg" width="20px">|Yaml|
+|<img src="./../fileicons/icons/yarn.svg" width="20px">|Yarn|
