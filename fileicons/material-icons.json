@@ -178,6 +178,9 @@
 		"_file_rust": {
 			"iconPath": "./icons/rust.svg"
 		},
+		"_file_changelog": {
+			"iconPath": "./icons/changelog.svg"
+		},
 		// Folders
 		"_folder_dark": {
 			"iconPath": "./icons/folder.svg"
@@ -428,7 +431,10 @@
 		"readme.md": "_file_readme",
 		"readme.md.rendered": "_file_readme",
 		".mailmap": "_file_email",
-		"makefile": "_file_settings"	
+		"makefile": "_file_settings",
+		"changelog": "_file_changelog",
+		"changelog.md": "_file_changelog",
+		"changelog.md.rendered": "_file_changelog"
 	},
 	"folderNames": {
 		// folder names here
