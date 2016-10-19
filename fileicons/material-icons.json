@@ -82,10 +82,10 @@
 		"_file_pdf": {
 			"iconPath": "./icons/pdf.svg"
 		},
-        "_file_settings": {
+		"_file_settings": {
 			"iconPath": "./icons/settings.svg"
 		},
-        "_file_tune": {
+		"_file_tune": {
 			"iconPath": "./icons/tune.svg"
 		},
 		"_file_url": {
@@ -150,7 +150,7 @@
 		},
 		"_file_music": {
 			"iconPath": "./icons/music.svg"
-		},		
+		},
 		"_file_coffee": {
 			"iconPath": "./icons/coffee.svg"
 		},
@@ -181,6 +181,9 @@
 		"_file_changelog": {
 			"iconPath": "./icons/changelog.svg"
 		},
+		"_file_raml": {
+			"iconPath": "./icons/raml.svg"
+		},
 		// Folders
 		"_folder_dark": {
 			"iconPath": "./icons/folder.svg"
@@ -207,7 +210,7 @@
 		"css": "_file_css",
 		"scss": "_file_sass",
 		"sass": "_file_sass",
-		"less": "_file_css",		
+		"less": "_file_css",
 		"json": "_file_json",
 		"yaml": "_file_yaml",
 		"yml": "_file_yaml",
@@ -382,7 +385,8 @@
 		"graphql": "_file_json",
 		"props": "_file_settings",
 		"toml": "_file_settings",
-		"rs": "_file_rust"		
+		"rs": "_file_rust",
+		"raml": "_file_raml"
 	},
 	"fileNames": {
 		"webpack.js": "_file_webpack",
