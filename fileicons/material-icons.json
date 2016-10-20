@@ -184,6 +184,9 @@
 		"_file_raml": {
 			"iconPath": "./icons/raml.svg"
 		},
+		"_file_xaml": {
+			"iconPath": "./icons/xaml.svg"
+		},
 		// Folders
 		"_folder_dark": {
 			"iconPath": "./icons/folder.svg"
@@ -390,7 +393,8 @@
 		"props": "_file_settings",
 		"toml": "_file_settings",
 		"rs": "_file_rust",
-		"raml": "_file_raml"
+		"raml": "_file_raml",
+		"xaml": "_file_raml"
 	},
 	"fileNames": {
 		"webpack.js": "_file_webpack",
