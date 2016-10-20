@@ -187,6 +187,9 @@
 		"_file_xaml": {
 			"iconPath": "./icons/xaml.svg"
 		},
+		"_file_credits": {
+			"iconPath": "./icons/credits.svg"
+		},
 		// Folders
 		"_folder_dark": {
 			"iconPath": "./icons/folder.svg"
@@ -394,7 +397,7 @@
 		"toml": "_file_settings",
 		"rs": "_file_rust",
 		"raml": "_file_raml",
-		"xaml": "_file_raml"
+		"xaml": "_file_xaml"
 	},
 	"fileNames": {
 		"webpack.js": "_file_webpack",
@@ -447,7 +450,11 @@
 		"makefile": "_file_settings",
 		"changelog": "_file_changelog",
 		"changelog.md": "_file_changelog",
-		"changelog.md.rendered": "_file_changelog"
+		"changelog.md.rendered": "_file_changelog",
+		"CREDITS": "_file_credits",
+		"credits.txt": "_file_credits",
+		"credits.md": "_file_credits",
+		"credits.md.rendered": "_file_credits"
 	},
 	"folderNames": {
 		// folder names here
