@@ -190,6 +190,9 @@
 		"_file_credits": {
 			"iconPath": "./icons/credits.svg"
 		},
+		"_file_jsx": {
+			"iconPath": "./icons/jsx.svg"
+		},
 		// Folders
 		"_folder_dark": {
 			"iconPath": "./icons/folder.svg"
@@ -261,7 +264,7 @@
 		"php": "_file_php",
 		"js": "_file_js",
 		"ejs": "_file_js",
-		"jsx": "_file_js",
+		"jsx": "_file_jsx",
 		"ini": "_file_settings",
 		"dlc": "_file_settings",
 		"dll": "_file_settings",
@@ -269,7 +272,7 @@
 		"conf": "_file_settings",
 		"esx": "_file_js",
 		"ts": "_file_ts",
-		"tsx": "_file_ts",
+		"tsx": "_file_jsx",
 		"d.ts": "_file_ts_def",
 		"pdf": "_file_pdf",
 		"xlsx": "_file_table",
