@@ -401,7 +401,8 @@
 		"toml": "_file_settings",
 		"rs": "_file_rust",
 		"raml": "_file_raml",
-		"xaml": "_file_xaml"
+		"xaml": "_file_xaml",
+		"prefs": "_file_settings"
 	},
 	"fileNames": {
 		"webpack.js": "_file_webpack",
