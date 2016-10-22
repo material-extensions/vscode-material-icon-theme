@@ -121,8 +121,8 @@
 		"_file_lib": {
 			"iconPath": "./icons/lib.svg"
 		},
-		"_file_jade": {
-			"iconPath": "./icons/jade.svg"
+		"_file_pug": {
+			"iconPath": "./icons/pug.svg"
 		},
 		"_file_ruby": {
 			"iconPath": "./icons/ruby.svg"
@@ -213,7 +213,8 @@
 	"fileExtensions": {
 		// icons by file extension
 		"html": "_file_html",
-		"jade": "_file_jade",
+		"jade": "_file_pug",
+		"pug": "_file_pug",
 		"md": "_file_markdown",
 		"md.rendered": "_file_markdown",
 		"css": "_file_css",
