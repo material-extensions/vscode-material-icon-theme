@@ -193,6 +193,9 @@
 		"_file_jsx": {
 			"iconPath": "./icons/jsx.svg"
 		},
+		"_file_haskell": {
+			"iconPath": "./icons/haskell.svg"
+		},
 		// Folders
 		"_folder_dark": {
 			"iconPath": "./icons/folder.svg"
@@ -402,7 +405,8 @@
 		"rs": "_file_rust",
 		"raml": "_file_raml",
 		"xaml": "_file_xaml",
-		"prefs": "_file_settings"
+		"prefs": "_file_settings",
+		"hs": "_file_haskell"
 	},
 	"fileNames": {
 		"webpack.js": "_file_webpack",
