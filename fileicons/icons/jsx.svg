@@ -36,7 +36,7 @@
    id="namedview12"
    showgrid="false"
    inkscape:zoom="0.75704084"
-   inkscape:cx="5.3739437"
+   inkscape:cx="-217.20322"
    inkscape:cy="219.01598"
    inkscape:window-x="-8"
    inkscape:window-y="-8"
@@ -47,31 +47,31 @@
         
         
     <ellipse
-   style="fill:none;fill-opacity:1;stroke:#42a5f5;stroke-width:25.54158974;stroke-miterlimit:1.41420996;stroke-dasharray:none;stroke-opacity:1"
+   style="fill:none;fill-opacity:1;stroke:#00bcd4;stroke-width:24.00382233;stroke-miterlimit:1.41420996;stroke-dasharray:none;stroke-opacity:1"
    id="ellipse4147"
-   cx="-250.46028"
-   cy="-249.92853"
-   rx="234.02881"
-   ry="80.380707"
+   cx="-252.10986"
+   cy="-247.28665"
+   rx="219.93878"
+   ry="75.541275"
    transform="scale(-1,-1)" /><ellipse
    transform="matrix(-0.5,-0.8660254,0.8660254,-0.5,0,0)"
-   ry="80.380707"
-   rx="234.02881"
-   cy="91.940681"
-   cx="-341.67459"
+   ry="75.541275"
+   rx="219.93878"
+   cy="94.690201"
+   cx="-340.21146"
    id="ellipse4151"
-   style="fill:none;fill-opacity:1;stroke:#42a5f5;stroke-width:25.54158974;stroke-miterlimit:1.41420996;stroke-dasharray:none;stroke-opacity:1" /><ellipse
-   style="fill:none;fill-opacity:1;stroke:#42a5f5;stroke-width:25.54158974;stroke-miterlimit:1.41420996;stroke-dasharray:none;stroke-opacity:1"
+   style="fill:none;fill-opacity:1;stroke:#00bcd4;stroke-width:24.00382233;stroke-miterlimit:1.41420996;stroke-dasharray:none;stroke-opacity:1" /><ellipse
+   style="fill:none;fill-opacity:1;stroke:#00bcd4;stroke-width:24.00382233;stroke-miterlimit:1.41420996;stroke-dasharray:none;stroke-opacity:1"
    id="ellipse4153"
-   cx="-91.214325"
-   cy="341.86923"
-   rx="234.02881"
-   ry="80.380707"
+   cx="-88.101608"
+   cy="341.9769"
+   rx="219.93878"
+   ry="75.541275"
    transform="matrix(0.5,-0.8660254,0.8660254,0.5,0,0)" /><ellipse
-   style="fill:#42a5f5;fill-opacity:1;stroke:none;stroke-width:16.70000076;stroke-miterlimit:1.41420996;stroke-dasharray:none;stroke-opacity:1"
+   style="fill:#00bcd4;fill-opacity:1;stroke:none;stroke-width:16.70000076;stroke-miterlimit:1.41420996;stroke-dasharray:none;stroke-opacity:1"
    id="path4155"
-   cx="249.58145"
-   cy="248.75121"
-   rx="44.797218"
-   ry="47.154964" /></g>
+   cx="251.28397"
+   cy="246.18021"
+   rx="42.10014"
+   ry="44.315933" /></g>
 </svg>
