@@ -166,9 +166,6 @@
 		"_file_dark": {
 			"iconPath": "./icons/file.svg"
 		},
-<<<<<<< HEAD
-
-=======
 		"_file_yarn": {
 			"iconPath": "./icons/yarn.svg"
 		},
@@ -199,7 +196,6 @@
 		"_file_haskell": {
 			"iconPath": "./icons/haskell.svg"
 		},
->>>>>>> PKief/master
 		// Folders
 		"_folder_dark": {
 			"iconPath": "./icons/folder.svg"
@@ -263,11 +259,7 @@
 		"css": "_file_css",
 		"scss": "_file_sass",
 		"sass": "_file_sass",
-<<<<<<< HEAD
-		"less": "_file_css",		
-=======
 		"less": "_file_css",
->>>>>>> PKief/master
 		"json": "_file_json",
 		"yaml": "_file_yaml",
 		"yml": "_file_yaml",
