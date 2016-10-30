@@ -103,6 +103,9 @@
 		"_file_android": {
 			"iconPath": "./icons/android.svg"
 		},
+		"_file_arduino": {
+			"iconPath": "./icons/arduino.svg"
+		},
 		"_file_database": {
 			"iconPath": "./icons/database.svg"
 		},
@@ -351,6 +354,7 @@
 		"fsproj": "_file_fsharp",
 		"manifest": "_file_xml",
 		"swift": "_file_swift",
+		"ino": "_file_arduino",
 		"dockerignore": "_file_docker",
 		"tex": "_file_tex",
 		"bib": "_file_lib",
