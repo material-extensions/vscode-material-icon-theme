@@ -13,7 +13,7 @@
    viewBox="0 0 24 24"
    id="svg2"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="webpack.svg">
+   sodipodi:docname="credits.svg">
   <metadata
      id="metadata10">
     <rdf:RDF>
@@ -22,7 +22,6 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -38,25 +37,18 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:window-width="733"
-     inkscape:window-height="696"
+     inkscape:window-height="480"
      id="namedview6"
      showgrid="false"
-     showguides="true"
-     inkscape:guide-bbox="true"
      inkscape:zoom="9.8333333"
-     inkscape:cx="11.285434"
-     inkscape:cy="8.36354"
-     inkscape:window-x="-7"
+     inkscape:cx="12"
+     inkscape:cy="12"
+     inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
      inkscape:current-layer="svg2" />
   <path
-     d="M21,16.5C21,16.88 20.79,17.21 20.47,17.38L12.57,21.82C12.41,21.94 12.21,22 12,22C11.79,22 11.59,21.94 11.43,21.82L3.53,17.38C3.21,17.21 3,16.88 3,16.5V7.5C3,7.12 3.21,6.79 3.53,6.62L11.43,2.18C11.59,2.06 11.79,2 12,2C12.21,2 12.41,2.06 12.57,2.18L20.47,6.62C20.79,6.79 21,7.12 21,7.5V16.5Z"
+     d="M3,3H21V5H3V3M7,7H17V9H7V7M3,11H21V13H3V11M7,15H17V17H7V15M3,19H21V21H3V19Z"
      id="path4"
-     style="fill:#90caf9;fill-opacity:1" />
-  <path
-     inkscape:connector-curvature="0"
-     d="m 15.803389,13.977684 c 0,0.160802 -0.08887,0.300446 -0.224276,0.372384 l -3.342995,1.878848 c -0.0677,0.05078 -0.152339,0.07617 -0.241203,0.07617 -0.08886,0 -0.173497,-0.02539 -0.241204,-0.07617 L 8.4107175,14.350068 C 8.2753048,14.278132 8.1864408,14.138486 8.1864408,13.977684 l 0,-3.808474 c 0,-0.160802 0.088864,-0.3004472 0.2242767,-0.3723842 L 11.753711,7.9179777 c 0.0677,-0.05078 0.152339,-0.076169 0.241204,-0.076169 0.08886,0 0.173497,0.025389 0.241203,0.076169 l 3.342995,1.8788481 c 0.135411,0.07194 0.224276,0.2115822 0.224276,0.3723842 l 0,3.808474 z"
-     id="path4-7"
-     style="fill:#42a5f5;fill-opacity:1" />
+     style="fill:#9ccc65;fill-opacity:1" />
 </svg>

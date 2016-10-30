@@ -82,10 +82,10 @@
 		"_file_pdf": {
 			"iconPath": "./icons/pdf.svg"
 		},
-        "_file_settings": {
+		"_file_settings": {
 			"iconPath": "./icons/settings.svg"
 		},
-        "_file_tune": {
+		"_file_tune": {
 			"iconPath": "./icons/tune.svg"
 		},
 		"_file_url": {
@@ -121,8 +121,8 @@
 		"_file_lib": {
 			"iconPath": "./icons/lib.svg"
 		},
-		"_file_jade": {
-			"iconPath": "./icons/jade.svg"
+		"_file_pug": {
+			"iconPath": "./icons/pug.svg"
 		},
 		"_file_ruby": {
 			"iconPath": "./icons/ruby.svg"
@@ -151,9 +151,6 @@
 		"_file_music": {
 			"iconPath": "./icons/music.svg"
 		},
-		"_file_babel": {
-			"iconPath": "./icons/babel.svg"
-		},
 		"_file_coffee": {
 			"iconPath": "./icons/coffee.svg"
 		},
@@ -169,7 +166,40 @@
 		"_file_dark": {
 			"iconPath": "./icons/file.svg"
 		},
+<<<<<<< HEAD
 
+=======
+		"_file_yarn": {
+			"iconPath": "./icons/yarn.svg"
+		},
+		"_file_contributing": {
+			"iconPath": "./icons/contributing.svg"
+		},
+		"_file_readme": {
+			"iconPath": "./icons/readme.svg"
+		},
+		"_file_rust": {
+			"iconPath": "./icons/rust.svg"
+		},
+		"_file_changelog": {
+			"iconPath": "./icons/changelog.svg"
+		},
+		"_file_raml": {
+			"iconPath": "./icons/raml.svg"
+		},
+		"_file_xaml": {
+			"iconPath": "./icons/xaml.svg"
+		},
+		"_file_credits": {
+			"iconPath": "./icons/credits.svg"
+		},
+		"_file_jsx": {
+			"iconPath": "./icons/jsx.svg"
+		},
+		"_file_haskell": {
+			"iconPath": "./icons/haskell.svg"
+		},
+>>>>>>> PKief/master
 		// Folders
 		"_folder_dark": {
 			"iconPath": "./icons/folder.svg"
@@ -226,12 +256,18 @@
 	"fileExtensions": {
 		// icons by file extension
 		"html": "_file_html",
-		"jade": "_file_jade",
+		"jade": "_file_pug",
+		"pug": "_file_pug",
 		"md": "_file_markdown",
+		"md.rendered": "_file_markdown",
 		"css": "_file_css",
 		"scss": "_file_sass",
 		"sass": "_file_sass",
+<<<<<<< HEAD
 		"less": "_file_css",		
+=======
+		"less": "_file_css",
+>>>>>>> PKief/master
 		"json": "_file_json",
 		"yaml": "_file_yaml",
 		"yml": "_file_yaml",
@@ -276,7 +312,7 @@
 		"php": "_file_php",
 		"js": "_file_js",
 		"ejs": "_file_js",
-		"jsx": "_file_js",
+		"jsx": "_file_jsx",
 		"ini": "_file_settings",
 		"dlc": "_file_settings",
 		"dll": "_file_settings",
@@ -284,7 +320,7 @@
 		"conf": "_file_settings",
 		"esx": "_file_js",
 		"ts": "_file_ts",
-		"tsx": "_file_ts",
+		"tsx": "_file_jsx",
 		"d.ts": "_file_ts_def",
 		"pdf": "_file_pdf",
 		"xlsx": "_file_table",
@@ -310,9 +346,13 @@
 		"jar": "_file_java",
 		"jsp": "_file_java",
 		"cc": "_file_c",
-		"py": "_file_python",
+		"c": "_file_c",
+		"h": "_file_c",
+		"m": "_file_c",
 		"cpp": "_file_c++",
+		"mm": "_file_c++",
 		"go": "_file_go",
+		"py": "_file_python",
 		"url": "_file_url",
 		"sh": "_file_console",
 		"bat": "_file_console",
@@ -404,7 +444,13 @@
 		"txt": "_file_document",
 		"sqlite": "_file_database",
 		"graphql": "_file_json",
-		"props": "_file_settings"
+		"props": "_file_settings",
+		"toml": "_file_settings",
+		"rs": "_file_rust",
+		"raml": "_file_raml",
+		"xaml": "_file_xaml",
+		"prefs": "_file_settings",
+		"hs": "_file_haskell"
 	},
 	"fileNames": {
 		"webpack.js": "_file_webpack",
@@ -432,17 +478,36 @@
 		"dockerfile": "_file_docker",
 		"license": "_file_certificate",
 		"license.md": "_file_certificate",
+		"license.md.rendered": "_file_certificate",
 		"license.txt": "_file_certificate",
 		"licence": "_file_certificate",
 		"licence.md": "_file_certificate",
+		"licence.md.rendered": "_file_certificate",
 		"licence.txt": "_file_certificate",
-		".babelrc": "_file_babel",
+		".babelrc": "_file_json",
 		".buildignore": "_file_settings",
 		".htaccess": "_file_xml",
 		"composer.lock": "_file_json",
 		".gitignore": "_file_git",
 		".gitconfig": "_file_git",
-		".gitattributes": "_file_git"
+		".gitattributes": "_file_git",
+		".gitmodules": "_file_git",
+		".gitkeep": "_file_git",
+		"yarn.lock": "_file_yarn",
+		".yarnclean": "_file_yarn",
+		"contributing.md": "_file_contributing",
+		"contributing.md.rendered": "_file_contributing",
+		"readme.md": "_file_readme",
+		"readme.md.rendered": "_file_readme",
+		".mailmap": "_file_email",
+		"makefile": "_file_settings",
+		"changelog": "_file_changelog",
+		"changelog.md": "_file_changelog",
+		"changelog.md.rendered": "_file_changelog",
+		"CREDITS": "_file_credits",
+		"credits.txt": "_file_credits",
+		"credits.md": "_file_credits",
+		"credits.md.rendered": "_file_credits"
 	},
 	"languageIds": {
 		// icons by language id

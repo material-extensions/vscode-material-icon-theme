@@ -13,11 +13,7 @@
    viewBox="0 0 24 24"
    id="svg2"
    inkscape:version="0.91 r13725"
-<<<<<<< HEAD
-   sodipodi:docname="language-css3.svg">
-=======
-   sodipodi:docname="sass.svg">
->>>>>>> PKief/master
+   sodipodi:docname="history.svg">
   <metadata
      id="metadata10">
     <rdf:RDF>
@@ -40,35 +36,19 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-<<<<<<< HEAD
-     inkscape:window-width="729"
-     inkscape:window-height="480"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
      id="namedview6"
      showgrid="false"
      inkscape:zoom="9.8333333"
-     inkscape:cx="12"
-     inkscape:cy="11.898305"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
-=======
-     inkscape:window-width="833"
-     inkscape:window-height="480"
-     id="namedview6"
-     showgrid="false"
-     inkscape:zoom="9.7571059"
-     inkscape:cx="12"
-     inkscape:cy="11.79661"
-     inkscape:window-x="433"
-     inkscape:window-y="104"
->>>>>>> PKief/master
-     inkscape:window-maximized="0"
+     inkscape:cx="-5.1355932"
+     inkscape:cy="12"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
      inkscape:current-layer="svg2" />
   <path
-     d="M5,3L4.35,6.34H17.94L17.5,8.5H3.92L3.26,11.83H16.85L16.09,15.64L10.61,17.45L5.86,15.64L6.19,14H2.85L2.06,18L9.91,21L18.96,18L20.16,11.97L20.4,10.76L21.94,3H5Z"
+     d="M11,7V12.11L15.71,14.9L16.5,13.62L12.5,11.25V7M12.5,2C8.97,2 5.91,3.92 4.27,6.77L2,4.5V11H8.5L5.75,8.25C6.96,5.73 9.5,4 12.5,4A7.5,7.5 0 0,1 20,11.5A7.5,7.5 0 0,1 12.5,19C9.23,19 6.47,16.91 5.44,14H3.34C4.44,18.03 8.11,21 12.5,21C17.74,21 22,16.75 22,11.5A9.5,9.5 0 0,0 12.5,2Z"
      id="path4"
-<<<<<<< HEAD
-     style="fill:#CF649A;fill-opacity:1" />
-=======
-     style="fill:#ec407a;fill-opacity:1" />
->>>>>>> PKief/master
+     style="fill:#8bc34a;fill-opacity:1" />
 </svg>
