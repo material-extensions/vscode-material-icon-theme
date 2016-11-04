@@ -468,7 +468,8 @@
 		"CREDITS": "_file_credits",
 		"credits.txt": "_file_credits",
 		"credits.md": "_file_credits",
-		"credits.md.rendered": "_file_credits"
+		"credits.md.rendered": "_file_credits",
+		".jsbeautifyrc": "_file_json"
 	},
 	"folderNames": {
 		// folder names here
