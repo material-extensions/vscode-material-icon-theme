@@ -234,6 +234,7 @@
 		"xsd": "_file_xml",
 		"dtd": "_file_xml",
 		"xsl": "_file_xml",
+		"xslt": "_file_xml",
 		"resx": "_file_xml",
 		"iml": "_file_xml",
 		"xquery": "_file_xml",
