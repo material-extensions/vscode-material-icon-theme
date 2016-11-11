@@ -474,7 +474,10 @@
 		"credits.txt": "_file_credits",
 		"credits.md": "_file_credits",
 		"credits.md.rendered": "_file_credits",
+<<<<<<< HEAD
 		".flowconfig": "_file_flow",
+=======
+>>>>>>> 25b3b38735a62f10b4a00b8a901f5af06ffaeda4
 		".jsbeautifyrc": "_file_json"
 	},
 	"folderNames": {
