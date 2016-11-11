@@ -199,6 +199,9 @@
 		"_file_haskell": {
 			"iconPath": "./icons/haskell.svg"
 		},
+		"_file_flow": {
+			"iconPath": "./icons/flow.svg"
+		},
 		// Folders
 		"_folder_dark": {
 			"iconPath": "./icons/folder.svg"
@@ -301,6 +304,7 @@
 		"rar": "_file_zip",
 		"tgz": "_file_zip",
 		"exe": "_file_exe",
+		"msi": "_file_exe",
 		"java": "_file_java",
 		"jar": "_file_java",
 		"jsp": "_file_java",
@@ -468,7 +472,8 @@
 		"CREDITS": "_file_credits",
 		"credits.txt": "_file_credits",
 		"credits.md": "_file_credits",
-		"credits.md.rendered": "_file_credits"
+		"credits.md.rendered": "_file_credits",
+		".flowconfig": "_file_flow"
 	},
 	"folderNames": {
 		// folder names here
