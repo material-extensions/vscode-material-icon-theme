@@ -237,6 +237,7 @@
 		"xsd": "_file_xml",
 		"dtd": "_file_xml",
 		"xsl": "_file_xml",
+		"xslt": "_file_xml",
 		"resx": "_file_xml",
 		"iml": "_file_xml",
 		"xquery": "_file_xml",
@@ -473,7 +474,8 @@
 		"credits.txt": "_file_credits",
 		"credits.md": "_file_credits",
 		"credits.md.rendered": "_file_credits",
-		".flowconfig": "_file_flow"
+		".flowconfig": "_file_flow",
+		".jsbeautifyrc": "_file_json"
 	},
 	"folderNames": {
 		// folder names here
