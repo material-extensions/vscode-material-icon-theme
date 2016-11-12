@@ -460,6 +460,7 @@
 		".gitkeep": "_file_git",
 		"yarn.lock": "_file_yarn",
 		".yarnclean": "_file_yarn",
+		".yarn-integrity": "_file_yarn",
 		"yarn-error.log": "_file_yarn",
 		"contributing.md": "_file_contributing",
 		"contributing.md.rendered": "_file_contributing",
