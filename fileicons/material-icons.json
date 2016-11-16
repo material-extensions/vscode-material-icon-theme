@@ -226,6 +226,8 @@
 		"pug": "_file_pug",
 		"md": "_file_markdown",
 		"md.rendered": "_file_markdown",
+		"markdown": "_file_markdown",
+		"markdown.rendered": "_file_markdown",
 		"css": "_file_css",
 		"scss": "_file_sass",
 		"sass": "_file_sass",
