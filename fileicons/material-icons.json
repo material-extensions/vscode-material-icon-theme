@@ -229,6 +229,8 @@
 		"pug": "_file_pug",
 		"md": "_file_markdown",
 		"md.rendered": "_file_markdown",
+		"markdown": "_file_markdown",
+		"markdown.rendered": "_file_markdown",
 		"css": "_file_css",
 		"scss": "_file_sass",
 		"sass": "_file_sass",
@@ -419,7 +421,8 @@
 		"xaml": "_file_xaml",
 		"prefs": "_file_settings",
 		"hs": "_file_haskell",
-		"kt": "_file_kotline"
+		"kt": "_file_kotline",
+		"project": "_file_xml"
 	},
 	"fileNames": {
 		"webpack.js": "_file_webpack",
@@ -464,6 +467,7 @@
 		".gitkeep": "_file_git",
 		"yarn.lock": "_file_yarn",
 		".yarnclean": "_file_yarn",
+		".yarn-integrity": "_file_yarn",
 		"yarn-error.log": "_file_yarn",
 		"contributing.md": "_file_contributing",
 		"contributing.md.rendered": "_file_contributing",
