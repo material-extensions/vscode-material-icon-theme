@@ -417,7 +417,8 @@
 		"raml": "_file_raml",
 		"xaml": "_file_xaml",
 		"prefs": "_file_settings",
-		"hs": "_file_haskell"
+		"hs": "_file_haskell",
+		"project": "_file_xml"
 	},
 	"fileNames": {
 		"webpack.js": "_file_webpack",
