@@ -202,6 +202,9 @@
 		"_file_flow": {
 			"iconPath": "./icons/flow.svg"
 		},
+		"_file_kotlin": {
+			"iconPath": "./icons/kotlin.svg"
+		},
 		// Folders
 		"_folder_dark": {
 			"iconPath": "./icons/folder.svg"
@@ -415,7 +418,8 @@
 		"raml": "_file_raml",
 		"xaml": "_file_xaml",
 		"prefs": "_file_settings",
-		"hs": "_file_haskell"
+		"hs": "_file_haskell",
+		"kt": "_file_kotline"
 	},
 	"fileNames": {
 		"webpack.js": "_file_webpack",
