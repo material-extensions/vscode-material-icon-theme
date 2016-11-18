@@ -421,7 +421,7 @@
 		"xaml": "_file_xaml",
 		"prefs": "_file_settings",
 		"hs": "_file_haskell",
-		"kt": "_file_kotline",
+		"kt": "_file_kotlin",
 		"project": "_file_xml"
 	},
 	"fileNames": {
