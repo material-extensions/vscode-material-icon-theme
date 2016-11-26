@@ -211,6 +211,9 @@
 		"_file_clojure": {
 			"iconPath": "./icons/clojure.svg"
 		},
+		"_file_groovy": {
+			"iconPath": "./icons/groovy.svg"
+		},
 		// Folders
 		"_folder_dark": {
 			"iconPath": "./icons/folder.svg"
@@ -435,7 +438,8 @@
 		"dockerfile": "_file_docker",
 		"vb": "_file_vs",
 		"lua": "_file_lua",
-		"clj": "_file_clojure"			
+		"clj": "_file_clojure",
+		"groovy": "_file_groovy"			
 	},
 	"fileNames": {
 		"webpack.js": "_file_webpack",
