@@ -361,6 +361,8 @@
 		"lib": "_file_lib",
 		"rb": "_file_ruby",
 		"fs": "_file_fsharp",
+		"fsx": "_file_fsharp",
+		"fsi": "_file_fsharp",
 		"fsproj": "_file_fsharp",
 		"manifest": "_file_xml",
 		"swift": "_file_swift",
