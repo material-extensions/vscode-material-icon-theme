@@ -422,7 +422,8 @@
 		"prefs": "_file_settings",
 		"hs": "_file_haskell",
 		"kt": "_file_kotlin",
-		"project": "_file_xml"
+		"project": "_file_xml",
+		"patch": "_file_git"
 	},
 	"fileNames": {
 		"webpack.js": "_file_webpack",
