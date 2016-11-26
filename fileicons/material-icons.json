@@ -205,6 +205,12 @@
 		"_file_kotlin": {
 			"iconPath": "./icons/kotlin.svg"
 		},
+		"_file_lua": {
+			"iconPath": "./icons/lua.svg"
+		},
+		"_file_clojure": {
+			"iconPath": "./icons/clojure.svg"
+		},
 		// Folders
 		"_folder_dark": {
 			"iconPath": "./icons/folder.svg"
@@ -425,7 +431,11 @@
 		"hs": "_file_haskell",
 		"kt": "_file_kotlin",
 		"project": "_file_xml",
-		"patch": "_file_git"
+		"patch": "_file_git",
+		"dockerfile": "_file_docker",
+		"vb": "_file_vs",
+		"lua": "_file_lua",
+		"clj": "_file_clojure"			
 	},
 	"fileNames": {
 		"webpack.js": "_file_webpack",
@@ -493,5 +503,6 @@
 	},
 	"languageIds": {
 		// icons by language id
+		"git": "_file_git"
 	}
 }
