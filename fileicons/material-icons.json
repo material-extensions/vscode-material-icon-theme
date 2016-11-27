@@ -214,6 +214,9 @@
 		"_file_groovy": {
 			"iconPath": "./icons/groovy.svg"
 		},
+		"_file_r": {
+			"iconPath": "./icons/r.svg"
+		},
 		// Folders
 		"_folder_dark": {
 			"iconPath": "./icons/folder.svg"
@@ -439,7 +442,8 @@
 		"vb": "_file_vs",
 		"lua": "_file_lua",
 		"clj": "_file_clojure",
-		"groovy": "_file_groovy"			
+		"groovy": "_file_groovy",
+		"r": "_file_r"
 	},
 	"fileNames": {
 		"webpack.js": "_file_webpack",
