@@ -3,6 +3,7 @@
 # 1.1.4
 Added icons for 
 - Groovy
+- R
 - Clojure
 - Lua
 - Git Patch files 
