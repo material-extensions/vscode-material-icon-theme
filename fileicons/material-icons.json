@@ -443,7 +443,8 @@
 		"lua": "_file_lua",
 		"clj": "_file_clojure",
 		"groovy": "_file_groovy",
-		"r": "_file_r"
+		"r": "_file_r",
+		"rst": "_file_markdown"
 	},
 	"fileNames": {
 		"webpack.js": "_file_webpack",
