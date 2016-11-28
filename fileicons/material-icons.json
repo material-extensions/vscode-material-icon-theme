@@ -321,6 +321,7 @@
 		"gz": "_file_zip",
 		"xz": "_file_zip",
 		"bzip2": "_file_zip",
+		"gzip": "_file_zip",
 		"7z": "_file_zip",
 		"rar": "_file_zip",
 		"tgz": "_file_zip",
