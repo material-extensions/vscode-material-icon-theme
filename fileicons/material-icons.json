@@ -217,6 +217,9 @@
 		"_file_r": {
 			"iconPath": "./icons/r.svg"
 		},
+		"_file_dart": {
+			"iconPath": "./icons/dart.svg"
+		},
 		// Folders
 		"_folder_dark": {
 			"iconPath": "./icons/folder.svg"
@@ -443,7 +446,8 @@
 		"lua": "_file_lua",
 		"clj": "_file_clojure",
 		"groovy": "_file_groovy",
-		"r": "_file_r"
+		"r": "_file_r",
+		"dart": "_file_dart"
 	},
 	"fileNames": {
 		"webpack.js": "_file_webpack",
