@@ -14,6 +14,8 @@
    id="svg2"
    inkscape:version="0.91 r13725"
    sodipodi:docname="dart.svg">
+  <title
+     id="title4136">Dart</title>
   <metadata
      id="metadata10">
     <rdf:RDF>
@@ -22,7 +24,18 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title>Dart</dc:title>
+        <dc:date></dc:date>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Philipp Kief</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:publisher>
+          <cc:Agent>
+            <dc:title></dc:title>
+          </cc:Agent>
+        </dc:publisher>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -43,31 +56,31 @@
      showgrid="false"
      showguides="false"
      inkscape:guide-bbox="true"
-     inkscape:zoom="12.186337"
-     inkscape:cx="-5.3445372"
-     inkscape:cy="11.402678"
+     inkscape:zoom="17.234083"
+     inkscape:cx="2.1453363"
+     inkscape:cy="9.8397594"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg2" />
   <path
-     style="opacity:0.85399996;fill:#00a7e1;fill-opacity:1;stroke:none;stroke-opacity:1"
-     d="m 2.7347623,3.3198898 6.5072009,6.514019 0.00935,7.2e-6 7.4895987,7.497443 2.850727,-0.543786 0.0043,-8.4343118 -3.010356,-2.9503046 C 15.926405,4.7567016 14.913128,4.3402246 13.895,4.2033325 l 0.0024,-0.032764 L 2.7347899,3.3198884 Z"
+     style="opacity:1;fill:#00ca94;fill-opacity:1;stroke:none;stroke-opacity:1"
+     d="m 12.486361,1.384761 c -0.245735,0 -0.492113,0.095798 -0.682164,0.2813048 -0.0029,0.00283 -0.0065,0.00415 -0.0094,0.00703 l -6.3879804,3.6921244 6.3715544,6.3715524 0,0.0047 7.658522,7.658523 1.460441,-2.6302 L 15.632286,4.1298269 13.175558,1.6730985 C 12.984385,1.4819262 12.735851,1.384761 12.486361,1.384761 Z"
+     id="rect4187"
+     inkscape:connector-curvature="0" />
+  <path
+     style="opacity:1;fill:#1565c0;fill-opacity:1;stroke:none;stroke-opacity:1"
+     d="M 5.421704,5.3504147 1.7310405,11.732818 c -0.00288,0.0029 -0.00415,0.0065 -0.00703,0.0094 -0.1855375,0.190016 -0.281859,0.438529 -0.2819018,0.684264 -4.34e-5,0.24949 0.0966,0.495898 0.2877378,0.687104 l 3.0588629,3.061854 11.9630666,4.705891 2.704185,-1.502619 -0.0726,-0.07271 -0.01876,0.0024 -7.49959,-7.512691 -0.0094,-1.3e-5 -6.4339128,-6.4451528 z"
+     id="path4245"
+     inkscape:connector-curvature="0" />
+  <path
+     style="opacity:1;fill:#1565c0;fill-opacity:1;stroke:none;stroke-opacity:1"
+     d="m 5.4049545,5.353474 6.5181635,6.524994 0.0094,7e-6 7.502217,7.510074 2.855529,-0.544702 0.0043,-8.448522 -3.015428,-2.9552747 C 18.618822,6.7927065 17.603838,6.3755278 16.583994,6.2384051 l 0.0024,-0.032819 L 5.4049821,5.3534726 Z"
      id="rect4247"
      inkscape:connector-curvature="0" />
   <path
      id="path4289"
-     d="m 2.7403901,3.3052174 6.5128795,6.5083349 4.8e-6,0.00935 7.4961356,7.4909076 -0.544285,2.850633 -8.4343063,0.0029 -2.9497792,-3.010888 C 4.1748992,16.497107 3.7585995,15.483759 3.6218851,14.465607 l -0.032759,0.0024 L 2.7403942,3.3052498 Z"
-     style="opacity:1;fill:#007965;fill-opacity:1;stroke:none;stroke-opacity:1"
-     inkscape:connector-curvature="0" />
-  <path
-     inkscape:connector-curvature="0"
-     style="opacity:1;fill:#42a5f5;fill-opacity:1;stroke:none;stroke-opacity:1"
-     d="m 2.7128488,3.283628 7.4375002,7.430809 0.0013,0.0096 8.560351,8.552622 -0.11588,2.856721 -8.375753,-0.98513 -3.3779806,-3.430235 C 6.1024723,16.966829 5.5380963,15.879877 5.2506648,14.820764 L 5.218494,14.819206 2.7128626,3.2834891 Z"
-     id="path4297" />
-  <path
-     id="path4299"
-     d="m 2.6781517,3.2835622 7.4308083,7.4375018 0.0096,0.0013 8.552622,8.56035 2.856721,-0.115879 -0.98513,-8.375754 -3.430235,-3.3779806 C 16.361352,6.6731859 15.2744,6.1088096 14.215287,5.8213781 L 14.213729,5.7892061 2.6780127,3.2835742 Z"
-     style="opacity:1;fill:#00796b;fill-opacity:1;stroke:none;stroke-opacity:1"
+     d="m 5.4135398,5.3609508 6.5215762,6.5215762 0,0.0094 7.506148,7.506149 -0.5462,2.855243 -8.448517,0 -2.9536959,-3.016993 C 6.8458531,18.575566 6.4292063,17.560366 6.2926173,16.54045 L 6.2598033,16.54285 5.4135446,5.3609928 Z"
+     style="opacity:1;fill:#00ee94;fill-opacity:1;stroke:none;stroke-opacity:1"
      inkscape:connector-curvature="0" />
 </svg>
