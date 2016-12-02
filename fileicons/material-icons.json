@@ -486,6 +486,7 @@
 		"licence.md.rendered": "_file_certificate",
 		"licence.txt": "_file_certificate",
 		".babelrc": "_file_json",
+		".eslintrc": "_file_json",
 		".buildignore": "_file_settings",
 		".htaccess": "_file_xml",
 		"composer.lock": "_file_json",
