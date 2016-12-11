@@ -1,4 +1,9 @@
 # Change Log
+# 1.1.5
+Added icons for
+- Dart
+- ActionScript
+- mxml
 
 # 1.1.4
 Added icons for 
