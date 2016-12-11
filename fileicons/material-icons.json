@@ -455,7 +455,8 @@
 		"r": "_file_r",
 		"rst": "_file_markdown",
 		"dart": "_file_dart",
-		"as": "_file_actionscript"
+		"as": "_file_actionscript",
+		"mxml": "_file_xml"
 	},
 	"fileNames": {
 		"webpack.js": "_file_webpack",
