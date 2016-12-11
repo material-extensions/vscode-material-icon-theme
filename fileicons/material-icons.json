@@ -220,6 +220,9 @@
 		"_file_dart": {
 			"iconPath": "./icons/dart.svg"
 		},
+		"_file_actionscript": {
+			"iconPath": "./icons/actionscript.svg"
+		},
 		// Folders
 		"_folder_dark": {
 			"iconPath": "./icons/folder.svg"
@@ -451,7 +454,8 @@
 		"groovy": "_file_groovy",
 		"r": "_file_r",
 		"rst": "_file_markdown",
-		"dart": "_file_dart"
+		"dart": "_file_dart",
+		"as": "_file_actionscript"
 	},
 	"fileNames": {
 		"webpack.js": "_file_webpack",
