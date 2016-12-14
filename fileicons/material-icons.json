@@ -518,7 +518,8 @@
 		"credits.md": "_file_credits",
 		"credits.md.rendered": "_file_credits",
 		".flowconfig": "_file_flow",
-		".jsbeautifyrc": "_file_json"
+		".jsbeautifyrc": "_file_json",
+		"git-history": "_file_git"
 	},
 	"folderNames": {
 		// folder names here
