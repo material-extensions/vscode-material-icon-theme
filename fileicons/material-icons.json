@@ -220,9 +220,12 @@
 		"_file_dart": {
 			"iconPath": "./icons/dart.svg"
 		},
+		"_file_flash": {
+			"iconPath": "./icons/flash.svg"
+		},
 		"_file_actionscript": {
 			"iconPath": "./icons/actionscript.svg"
-		},
+		},		
 		"_file_autohotkey": {
 			"iconPath": "./icons/autohotkey.svg"
 		},
@@ -460,7 +463,8 @@
 		"dart": "_file_dart",
 		"as": "_file_actionscript",
 		"mxml": "_file_xml",
-		"ahk": "_file_autohotkey"
+		"ahk": "_file_autohotkey",
+		"swf": "_file_flash"
 	},
 	"fileNames": {
 		"webpack.js": "_file_webpack",
