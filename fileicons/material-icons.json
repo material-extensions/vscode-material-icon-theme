@@ -223,6 +223,9 @@
 		"_file_flash": {
 			"iconPath": "./icons/flash.svg"
 		},
+		"_file_swc": {
+			"iconPath": "./icons/swc.svg"
+		},
 		"_file_actionscript": {
 			"iconPath": "./icons/actionscript.svg"
 		},		
@@ -468,7 +471,7 @@
 		"mxml": "_file_mxml",
 		"ahk": "_file_autohotkey",
 		"swf": "_file_flash",
-		"swc": "_file_flash"
+		"swc": "_file_swc"
 	},
 	"fileNames": {
 		"webpack.js": "_file_webpack",
