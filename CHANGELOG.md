@@ -1,9 +1,12 @@
 # Change Log
 # 1.1.5
 Added icons for
+- ActionScript (.as)
+- Autohotkey (.ahk)
 - Dart
-- ActionScript
 - mxml
+- swc
+- swf
 
 # 1.1.4
 Added icons for 
