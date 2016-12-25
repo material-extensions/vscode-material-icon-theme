@@ -235,6 +235,9 @@
 		"_file_mxml": {
 			"iconPath": "./icons/mxml.svg"
 		},
+		"_file_cmake": {
+			"iconPath": "./icons/cmake.svg"
+		},
 		// Folders
 		"_folder_dark": {
 			"iconPath": "./icons/folder.svg"
@@ -471,7 +474,8 @@
 		"mxml": "_file_mxml",
 		"ahk": "_file_autohotkey",
 		"swf": "_file_flash",
-		"swc": "_file_swc"
+		"swc": "_file_swc",
+		"cmake": "_file_cmake"
 	},
 	"fileNames": {
 		"webpack.js": "_file_webpack",
