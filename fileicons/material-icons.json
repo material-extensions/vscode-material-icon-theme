@@ -280,6 +280,7 @@
 		"resx": "_file_xml",
 		"iml": "_file_xml",
 		"xquery": "_file_xml",
+		"tmLanguage": "_file_xml",
 		"png": "_file_image",
 		"jpeg": "_file_image",
 		"jpg": "_file_image",
