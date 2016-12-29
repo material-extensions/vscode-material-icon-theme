@@ -270,6 +270,7 @@
 		"less": "_file_css",
 		"json": "_file_json",
 		"yaml": "_file_yaml",
+		"YAML-tmLanguage": "_file_yaml",
 		"yml": "_file_yaml",
 		"xml": "_file_xml",
 		"xsd": "_file_xml",
