@@ -12,7 +12,7 @@
    height="24"
    viewBox="0 0 24 24"
    id="svg2"
-   inkscape:version="0.91 r13725"
+   inkscape:version="0.91 r"
    sodipodi:docname="rust.svg">
   <metadata
      id="metadata10">
@@ -37,16 +37,16 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1366"
-     inkscape:window-height="705"
+     inkscape:window-width="1089"
+     inkscape:window-height="794"
      id="namedview6"
      showgrid="false"
      inkscape:zoom="15.799442"
      inkscape:cx="20.514777"
      inkscape:cy="13.544247"
-     inkscape:window-x="1272"
-     inkscape:window-y="85"
-     inkscape:window-maximized="1"
+     inkscape:window-x="241"
+     inkscape:window-y="463"
+     inkscape:window-maximized="0"
      inkscape:current-layer="layer2" />
   <g
      inkscape:groupmode="layer"
@@ -60,17 +60,17 @@
        inkscape:connector-curvature="0" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:91.87889862px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ff7043;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
-       x="2.9020128"
-       y="27.908957"
+       style="font-style:normal;font-weight:normal;font-size:81.93756866px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ff7043;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="3.1318095"
+       y="22.26828"
        id="text4143"
        sodipodi:linespacing="125%"
-       transform="scale(1.7065153,0.58598948)"><tspan
+       transform="scale(1.2547765,0.79695468)"><tspan
          sodipodi:role="line"
          id="tspan4145"
-         x="2.9020128"
-         y="27.908957"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:ultra-condensed;font-size:22.96972466px;font-family:Playbill;-inkscape-font-specification:'Playbill Ultra-Condensed';fill:#ff7043;fill-opacity:1;">R</tspan></text>
+         x="3.1318095"
+         y="22.26828"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:ultra-condensed;font-size:20.48439217px;font-family:Playbill;-inkscape-font-specification:'Playbill Ultra-Condensed';fill:#ff7043;fill-opacity:1">R</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
