@@ -228,7 +228,7 @@
 		},
 		"_file_actionscript": {
 			"iconPath": "./icons/actionscript.svg"
-		},		
+		},
 		"_file_autohotkey": {
 			"iconPath": "./icons/autohotkey.svg"
 		},
@@ -483,6 +483,7 @@
 		"webpack.dev.js": "_file_webpack",
 		"webpack.prod.js": "_file_webpack",
 		"webpack.common.js": "_file_webpack",
+		"webpackfile.js": "_file_webpack",
 		"ionic.config.json": "_file_ionic",
 		".io-config.json": "_file_ionic",
 		"gulpfile.js": "_file_gulp",
