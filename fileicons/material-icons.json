@@ -238,6 +238,9 @@
 		"_file_cmake": {
 			"iconPath": "./icons/cmake.svg"
 		},
+		"_file_assembly": {
+			"iconPath": "./icons/assembly.svg"
+		},
 		// Folders
 		"_folder_dark": {
 			"iconPath": "./icons/folder.svg"
@@ -475,7 +478,14 @@
 		"ahk": "_file_autohotkey",
 		"swf": "_file_flash",
 		"swc": "_file_swc",
-		"cmake": "_file_cmake"
+		"cmake": "_file_cmake",
+		"asm": "_file_assembly",
+		"a51": "_file_assembly",
+		"inc": "_file_assembly",
+		"nasm": "_file_assembly",
+		"s": "_file_assembly",
+		"ms": "_file_assembly",
+		"agc": "_file_assembly"
 	},
 	"fileNames": {
 		"webpack.js": "_file_webpack",
