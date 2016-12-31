@@ -241,6 +241,9 @@
 		"_file_assembly": {
 			"iconPath": "./icons/assembly.svg"
 		},
+		"_file_angular": {
+			"iconPath": "./icons/angular.svg"
+		},
 		// Folders
 		"_folder_dark": {
 			"iconPath": "./icons/folder.svg"
@@ -551,7 +554,8 @@
 		"credits.md.rendered": "_file_credits",
 		".flowconfig": "_file_flow",
 		".jsbeautifyrc": "_file_json",
-		"git-history": "_file_git"
+		"git-history": "_file_git",
+		"angular-cli.json": "_file_angular"
 	},
 	"folderNames": {
 		// folder names here
