@@ -555,7 +555,8 @@
 		".flowconfig": "_file_flow",
 		".jsbeautifyrc": "_file_json",
 		"git-history": "_file_git",
-		"angular-cli.json": "_file_angular"
+		"angular-cli.json": "_file_angular",
+		"app.module.ts": "_file_angular"
 	},
 	"folderNames": {
 		// folder names here
