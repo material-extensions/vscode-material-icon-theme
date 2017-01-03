@@ -34,7 +34,7 @@
     "bugs": {
         "url": "https://github.com/PKief/vscode-extension-material-icon-theme/issues"
     },
-    "icon": "images/material-icon-theme_icon.png",
+    "icon": "src/material-icon-theme_icon.png",
     "galleryBanner": {
         "color": "#e0e0e0",
         "theme": "light"
