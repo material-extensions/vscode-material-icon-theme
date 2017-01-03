@@ -1,6 +1,6 @@
 # Change Log
-## 1.1.6
-Add icons for
+## 1.2.0
+Added icons:
 - Angular
 - CMake
 - Vue
