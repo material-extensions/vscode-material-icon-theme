@@ -9,7 +9,8 @@ Add icons for
 - tmLanguage
 - webpackfile.js
 
-and minor improvements
+Other changes:
+- minimized all icons
 
 ## 1.1.5
 Added icons for

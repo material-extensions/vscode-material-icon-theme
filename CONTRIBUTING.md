@@ -7,14 +7,14 @@ You need an icon for a specific file ending? No problem, just follow these guide
 
 ## Add new icons
 Please follow these steps if you want to add new icons to the theme:
-- check if an existing icon can be used for the file ending 
-- icon size should be under 10 kB (otherwise the theme becomes too big)
+- check if an existing icon can be used for the file ending (search for icons in the `src/icons`-folder)
 - pick the [material design colors](https://material.google.com/style/color.html#color-color-palette)
 - all icons must be SVGs 
+- minimize icons from `src/icons` with `npm install` and `npm run minimize` (output folder for minimized icons: `fileicons/icons`)
 - follow the name conventions in the `icons/material-icons.json`-file:
 
 ```json
-"iconDefinitions": {    
+"iconDefinitions": {
     "_file_xml": {
         "iconPath": "./icons/xml.svg"
     },
@@ -55,4 +55,4 @@ Example from the [docs](https://code.visualstudio.com/Docs/customization/themes#
 ### Use icons from here
 - [Material Design Icons](https://materialdesignicons.com/)
     - download them as SVG and edit the icons e.g. with Inkscape
-- you can use any other source **as long as the icons are free to use!**. This icon theme is absolutely non-commercial, but you should check the license of your sources! 
+- you can use any other source **as long as the icons are free to use!**. This icon theme is absolutely non-commercial, but you should always check the license of your sources! 
