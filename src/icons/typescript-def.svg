@@ -15,7 +15,7 @@
    style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;"
    id="svg2"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="jsx.svg"
+   sodipodi:docname="typescript-def.svg"
    inkscape:export-filename="C:\Users\phili\Desktop\typescript-def.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90"><metadata
@@ -35,43 +35,31 @@
    inkscape:window-height="705"
    id="namedview12"
    showgrid="false"
-   inkscape:zoom="0.75704084"
-   inkscape:cx="-217.20322"
-   inkscape:cy="219.01598"
+   inkscape:zoom="0.37852042"
+   inkscape:cx="-101.49287"
+   inkscape:cy="32.169456"
    inkscape:window-x="-8"
    inkscape:window-y="-8"
    inkscape:window-maximized="1"
    inkscape:current-layer="g4" />
     <g
    id="g4">
-        
-        
-    <ellipse
-   style="fill:none;fill-opacity:1;stroke:#00bcd4;stroke-width:24.00382233;stroke-miterlimit:1.41420996;stroke-dasharray:none;stroke-opacity:1"
-   id="ellipse4147"
-   cx="-252.10986"
-   cy="-247.28665"
-   rx="219.93878"
-   ry="75.541275"
-   transform="scale(-1,-1)" /><ellipse
-   transform="matrix(-0.5,-0.8660254,0.8660254,-0.5,0,0)"
-   ry="75.541275"
-   rx="219.93878"
-   cy="94.690201"
-   cx="-340.21146"
-   id="ellipse4151"
-   style="fill:none;fill-opacity:1;stroke:#00bcd4;stroke-width:24.00382233;stroke-miterlimit:1.41420996;stroke-dasharray:none;stroke-opacity:1" /><ellipse
-   style="fill:none;fill-opacity:1;stroke:#00bcd4;stroke-width:24.00382233;stroke-miterlimit:1.41420996;stroke-dasharray:none;stroke-opacity:1"
-   id="ellipse4153"
-   cx="-88.101608"
-   cy="341.9769"
-   rx="219.93878"
-   ry="75.541275"
-   transform="matrix(0.5,-0.8660254,0.8660254,0.5,0,0)" /><ellipse
-   style="fill:#00bcd4;fill-opacity:1;stroke:none;stroke-width:16.70000076;stroke-miterlimit:1.41420996;stroke-dasharray:none;stroke-opacity:1"
-   id="path4155"
-   cx="251.28397"
-   cy="246.18021"
-   rx="42.10014"
-   ry="44.315933" /></g>
+        <path
+   d="M457,459L49,459L49,51L457,51L457,459ZM69,71L69,439L437,439L437,71L69,71Z"
+   style="fill:rgb(66,165,245);"
+   id="path6" />
+        <g
+   transform="matrix(18.1514,0,0,18.1514,-6058.94,-5838)"
+   id="g8">
+            <text
+   x="342.219px"
+   y="344.544px"
+   style="font-family:'ArialMT';font-size:12px;fill:rgb(66,165,245);"
+   id="text10"><tspan
+     style="-inkscape-font-specification:sans-serif;font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal"
+     id="tspan4156">TS</tspan></text>
+
+
+        </g>
+    </g>
 </svg>

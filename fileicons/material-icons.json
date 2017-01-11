@@ -193,11 +193,59 @@
 		"_file_credits": {
 			"iconPath": "./icons/credits.svg"
 		},
-		"_file_jsx": {
-			"iconPath": "./icons/jsx.svg"
+		"_file_react": {
+			"iconPath": "./icons/react.svg"
 		},
 		"_file_haskell": {
 			"iconPath": "./icons/haskell.svg"
+		},
+		"_file_flow": {
+			"iconPath": "./icons/flow.svg"
+		},
+		"_file_kotlin": {
+			"iconPath": "./icons/kotlin.svg"
+		},
+		"_file_lua": {
+			"iconPath": "./icons/lua.svg"
+		},
+		"_file_clojure": {
+			"iconPath": "./icons/clojure.svg"
+		},
+		"_file_groovy": {
+			"iconPath": "./icons/groovy.svg"
+		},
+		"_file_r": {
+			"iconPath": "./icons/r.svg"
+		},
+		"_file_dart": {
+			"iconPath": "./icons/dart.svg"
+		},
+		"_file_flash": {
+			"iconPath": "./icons/flash.svg"
+		},
+		"_file_swc": {
+			"iconPath": "./icons/swc.svg"
+		},
+		"_file_actionscript": {
+			"iconPath": "./icons/actionscript.svg"
+		},
+		"_file_autohotkey": {
+			"iconPath": "./icons/autohotkey.svg"
+		},
+		"_file_mxml": {
+			"iconPath": "./icons/mxml.svg"
+		},
+		"_file_cmake": {
+			"iconPath": "./icons/cmake.svg"
+		},
+		"_file_assembly": {
+			"iconPath": "./icons/assembly.svg"
+		},
+		"_file_angular": {
+			"iconPath": "./icons/angular.svg"
+		},
+		"_file_vue": {
+			"iconPath": "./icons/vue.svg"
 		},
 		// Folders
 		"_folder_dark": {
@@ -259,20 +307,25 @@
 		"pug": "_file_pug",
 		"md": "_file_markdown",
 		"md.rendered": "_file_markdown",
+		"markdown": "_file_markdown",
+		"markdown.rendered": "_file_markdown",
 		"css": "_file_css",
 		"scss": "_file_sass",
 		"sass": "_file_sass",
 		"less": "_file_css",
 		"json": "_file_json",
 		"yaml": "_file_yaml",
+		"YAML-tmLanguage": "_file_yaml",
 		"yml": "_file_yaml",
 		"xml": "_file_xml",
 		"xsd": "_file_xml",
 		"dtd": "_file_xml",
 		"xsl": "_file_xml",
+		"xslt": "_file_xml",
 		"resx": "_file_xml",
 		"iml": "_file_xml",
 		"xquery": "_file_xml",
+		"tmLanguage": "_file_xml",
 		"png": "_file_image",
 		"jpeg": "_file_image",
 		"jpg": "_file_image",
@@ -307,7 +360,7 @@
 		"php": "_file_php",
 		"js": "_file_js",
 		"ejs": "_file_js",
-		"jsx": "_file_jsx",
+		"jsx": "_file_react",
 		"ini": "_file_settings",
 		"dlc": "_file_settings",
 		"dll": "_file_settings",
@@ -315,7 +368,7 @@
 		"conf": "_file_settings",
 		"esx": "_file_js",
 		"ts": "_file_ts",
-		"tsx": "_file_jsx",
+		"tsx": "_file_react",
 		"d.ts": "_file_ts_def",
 		"pdf": "_file_pdf",
 		"xlsx": "_file_table",
@@ -333,19 +386,23 @@
 		"gz": "_file_zip",
 		"xz": "_file_zip",
 		"bzip2": "_file_zip",
+		"gzip": "_file_zip",
 		"7z": "_file_zip",
 		"rar": "_file_zip",
 		"tgz": "_file_zip",
 		"exe": "_file_exe",
+		"msi": "_file_exe",
 		"java": "_file_java",
 		"jar": "_file_java",
 		"jsp": "_file_java",
-		"cc": "_file_c",
 		"c": "_file_c",
 		"h": "_file_c",
 		"m": "_file_c",
+		"cc": "_file_c++",
 		"cpp": "_file_c++",
+		"hpp": "_file_c++",
 		"mm": "_file_c++",
+		"cxx": "_file_c++",
 		"go": "_file_go",
 		"py": "_file_python",
 		"url": "_file_url",
@@ -387,6 +444,8 @@
 		"lib": "_file_lib",
 		"rb": "_file_ruby",
 		"fs": "_file_fsharp",
+		"fsx": "_file_fsharp",
+		"fsi": "_file_fsharp",
 		"fsproj": "_file_fsharp",
 		"manifest": "_file_xml",
 		"swift": "_file_swift",
@@ -446,7 +505,32 @@
 		"raml": "_file_raml",
 		"xaml": "_file_xaml",
 		"prefs": "_file_settings",
-		"hs": "_file_haskell"
+		"hs": "_file_haskell",
+		"kt": "_file_kotlin",
+		"project": "_file_xml",
+		"patch": "_file_git",
+		"dockerfile": "_file_docker",
+		"vb": "_file_vs",
+		"lua": "_file_lua",
+		"clj": "_file_clojure",
+		"groovy": "_file_groovy",
+		"r": "_file_r",
+		"rst": "_file_markdown",
+		"dart": "_file_dart",
+		"as": "_file_actionscript",
+		"mxml": "_file_mxml",
+		"ahk": "_file_autohotkey",
+		"swf": "_file_flash",
+		"swc": "_file_swc",
+		"cmake": "_file_cmake",
+		"asm": "_file_assembly",
+		"a51": "_file_assembly",
+		"inc": "_file_assembly",
+		"nasm": "_file_assembly",
+		"s": "_file_assembly",
+		"ms": "_file_assembly",
+		"agc": "_file_assembly",
+		"vue": "_file_vue"
 	},
 	"fileNames": {
 		"webpack.js": "_file_webpack",
@@ -454,6 +538,7 @@
 		"webpack.dev.js": "_file_webpack",
 		"webpack.prod.js": "_file_webpack",
 		"webpack.common.js": "_file_webpack",
+		"webpackfile.js": "_file_webpack",
 		"ionic.config.json": "_file_ionic",
 		".io-config.json": "_file_ionic",
 		"gulpfile.js": "_file_gulp",
@@ -481,6 +566,7 @@
 		"licence.md.rendered": "_file_certificate",
 		"licence.txt": "_file_certificate",
 		".babelrc": "_file_json",
+		".eslintrc": "_file_json",
 		".buildignore": "_file_settings",
 		".htaccess": "_file_xml",
 		"composer.lock": "_file_json",
@@ -491,6 +577,8 @@
 		".gitkeep": "_file_git",
 		"yarn.lock": "_file_yarn",
 		".yarnclean": "_file_yarn",
+		".yarn-integrity": "_file_yarn",
+		"yarn-error.log": "_file_yarn",
 		"contributing.md": "_file_contributing",
 		"contributing.md.rendered": "_file_contributing",
 		"readme.md": "_file_readme",
@@ -503,9 +591,15 @@
 		"CREDITS": "_file_credits",
 		"credits.txt": "_file_credits",
 		"credits.md": "_file_credits",
-		"credits.md.rendered": "_file_credits"
+		"credits.md.rendered": "_file_credits",
+		".flowconfig": "_file_flow",
+		".jsbeautifyrc": "_file_json",
+		"git-history": "_file_git",
+		"angular-cli.json": "_file_angular",
+		"app.module.ts": "_file_angular"
 	},
 	"languageIds": {
 		// icons by language id
+		"git": "_file_git"
 	}
 }
