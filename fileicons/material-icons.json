@@ -282,6 +282,7 @@
 		"YAML-tmLanguage": "_file_yaml",
 		"yml": "_file_yaml",
 		"xml": "_file_xml",
+		"plist": "_file_xml",
 		"xsd": "_file_xml",
 		"dtd": "_file_xml",
 		"xsl": "_file_xml",
