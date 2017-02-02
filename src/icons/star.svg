@@ -7,17 +7,15 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   viewBox="0 0 500 500"
-   fill-rule="evenodd"
-   clip-rule="evenodd"
-   stroke-linejoin="round"
-   stroke-miterlimit="1.414"
-   id="svg2"
    version="1.1"
+   width="24"
+   height="24"
+   viewBox="0 0 24 24"
+   id="svg2"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="typescript-def.svg">
+   sodipodi:docname="star.svg">
   <metadata
-     id="metadata14">
+     id="metadata10">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
@@ -28,7 +26,7 @@
     </rdf:RDF>
   </metadata>
   <defs
-     id="defs12" />
+     id="defs8" />
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -40,33 +38,17 @@
      inkscape:pageshadow="2"
      inkscape:window-width="1366"
      inkscape:window-height="705"
-     id="namedview10"
+     id="namedview6"
      showgrid="false"
-     inkscape:zoom="0.472"
-     inkscape:cx="-106.99153"
-     inkscape:cy="250"
+     inkscape:zoom="9.8333333"
+     inkscape:cx="12"
+     inkscape:cy="11.898305"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg2" />
   <path
-     d="M457 459H49V51h408v408zM69 71v368h368V71H69z"
-     fill="#42a5f5"
+     d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
      id="path4"
-     style="fill:#0085c1;fill-opacity:1" />
-  <text
-     x="342.219"
-     y="344.544"
-     font-family="ArialMT"
-     font-size="12"
-     fill="#42a5f5"
-     transform="translate(-6058.94 -5838) scale(18.1514)"
-     id="text6"
-     style="fill:#0085c1;fill-opacity:1;">
-    <tspan
-       style="-inkscape-font-specification:sans-serif;fill:#0085c1;fill-opacity:1;"
-       font-family="sans-serif"
-       font-weight="400"
-       id="tspan8">TS</tspan>
-  </text>
+     style="fill:#ffd54f;fill-opacity:1" />
 </svg>

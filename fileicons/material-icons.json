@@ -250,6 +250,12 @@
 		"_file_ocaml": {
 			"iconPath": "./icons/ocaml.svg"
 		},
+		"_file_favicon": {
+			"iconPath": "./icons/favicon.svg"
+		},
+		"_file_jsmap": {
+			"iconPath": "./icons/javascript-map.svg"
+		},
 		// Folders
 		"_folder_dark": {
 			"iconPath": "./icons/folder.svg"
@@ -502,7 +508,8 @@
 		"vue": "_file_vue",
 		"ml": "_file_ocaml",
 		"mli": "_file_ocaml",
-		"cmx": "_file_ocaml"
+		"cmx": "_file_ocaml",
+		"js.map": "_file_jsmap"
 	},
 	"fileNames": {
 		"webpack.js": "_file_webpack",
@@ -568,7 +575,8 @@
 		".jsbeautifyrc": "_file_json",
 		"git-history": "_file_git",
 		"angular-cli.json": "_file_angular",
-		"app.module.ts": "_file_angular"
+		"app.module.ts": "_file_angular",
+		"favicon.ico": "_file_favicon"
 	},
 	"folderNames": {
 		// folder names here
