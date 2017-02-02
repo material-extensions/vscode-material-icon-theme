@@ -256,6 +256,9 @@
 		"_file_jsmap": {
 			"iconPath": "./icons/javascript-map.svg"
 		},
+		"_file_cssmap": {
+			"iconPath": "./icons/css-map.svg"
+		},
 		// Folders
 		"_folder_dark": {
 			"iconPath": "./icons/folder.svg"
@@ -509,7 +512,8 @@
 		"ml": "_file_ocaml",
 		"mli": "_file_ocaml",
 		"cmx": "_file_ocaml",
-		"js.map": "_file_jsmap"
+		"js.map": "_file_jsmap",
+		"css.map": "_file_cssmap"
 	},
 	"fileNames": {
 		"webpack.js": "_file_webpack",
