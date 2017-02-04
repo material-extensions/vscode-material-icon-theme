@@ -1,4 +1,23 @@
 # Change Log
+
+## 1.3.0
+Added icons:
+- Ocaml
+- Favicon Icon
+- js.map
+- css.map
+- plist
+- erb
+
+Updated:
+- Webpack icon
+- folder icons
+- new Go Icon (Gopher)
+- tslint and tsconfig with default json icon
+
+Other changes:
+- new Logo
+
 ## 1.2.0
 Added icons:
 - Angular
