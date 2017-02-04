@@ -512,6 +512,7 @@
 		"aea": "_file_assembly",
 		"argus": "_file_assembly",
 		"mitigus": "_file_assembly",
+		"binsource": "_file_assembly",
 		"vue": "_file_vue",
 		"ml": "_file_ocaml",
 		"mli": "_file_ocaml",
