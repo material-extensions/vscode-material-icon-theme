@@ -36,8 +36,8 @@
     },
     "icon": "logo.svg",
     "galleryBanner": {
-        "color": "#e0e0e0",
-        "theme": "light"
+        "color": "#2d2d2d",
+        "theme": "dark"
     },
     "devDependencies": {
         "svgo": "^0.7.1"
