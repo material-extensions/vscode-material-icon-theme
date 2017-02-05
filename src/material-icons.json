@@ -1,6 +1,5 @@
 {
-	"iconDefinitions": {
-		// File types
+	"iconDefinitions": {		
 		"_file_json": {
 			"iconPath": "./icons/json.svg"
 		},
@@ -258,8 +257,7 @@
 		},
 		"_file_cssmap": {
 			"iconPath": "./icons/css-map.svg"
-		},
-		// Folders
+		},		
 		"_folder_dark": {
 			"iconPath": "./icons/folder.svg"
 		},
@@ -276,8 +274,7 @@
 	"folderExpanded": "_folder_open_dark",
 	"folder": "_folder_dark",
 	"file": "_file_dark",
-	"fileExtensions": {
-		// icons by file extension
+	"fileExtensions": {		
 		"html": "_file_html",
 		"jade": "_file_pug",
 		"pug": "_file_pug",
@@ -587,11 +584,9 @@
 		"app.module.ts": "_file_angular",
 		"favicon.ico": "_file_favicon"
 	},
-	"folderNames": {
-		// folder names here
+	"folderNames": {		
 	},
-	"languageIds": {
-		// icons by language id
+	"languageIds": {		
 		"git": "_file_git"
 	}
 }
