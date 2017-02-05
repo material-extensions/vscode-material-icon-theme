@@ -9,12 +9,15 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
-   width="24"
-   height="24"
+   width="500"
+   height="500"
    viewBox="0 0 24 24"
    id="svg3336"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="logo.svg">
+   sodipodi:docname="logo.svg"
+   inkscape:export-filename="C:\Users\phili\Documents\Projekte\JavaScript\VS Code Extensions\vscode-extension-material-icon-theme\logo.png"
+   inkscape:export-xdpi="1491.9216"
+   inkscape:export-ydpi="1491.9216">
   <metadata
      id="metadata3344">
     <rdf:RDF>
@@ -107,8 +110,8 @@
      id="namedview3340"
      showgrid="false"
      inkscape:zoom="16"
-     inkscape:cx="2.236831"
-     inkscape:cy="13.175902"
+     inkscape:cx="6.7171608"
+     inkscape:cy="7.2770291"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
