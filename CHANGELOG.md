@@ -14,6 +14,7 @@ Updated:
 - folder icons
 - new Go Icon (Gopher)
 - tslint and tsconfig with default json icon
+- Apollo Assembly Icons
 
 Other changes:
 - new Logo
