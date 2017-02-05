@@ -1,5 +1,8 @@
 # Change Log
 
+## 1.3.1
+- fixed logo size
+
 ## 1.3.0
 Added icons:
 - Ocaml
