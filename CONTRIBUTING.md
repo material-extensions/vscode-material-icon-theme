@@ -11,21 +11,7 @@ Please follow these steps if you want to add new icons to the theme:
 - pick the [material design colors](https://material.google.com/style/color.html#color-color-palette)
 - all icons must be SVGs
 - add the icons to the `src/icons`-folder
-
-### Minimize icons
-The icons are minimized and copied to the `min`-folder.
-
-Install the node dependencies:
-
-```
-npm install
-```
-
-Run `npm start` to minimize the icons:
-
-```
-npm start
-```
+- `npm install` and `npm start` does the rest
 
 ### Folder icons
 - The theme does not support different folder icons by now ([look at my explanation here](https://github.com/PKief/vscode-extension-material-icon-theme/pull/4)). But you can make any suggestions you'd like to have and they'll be checked.
