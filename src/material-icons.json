@@ -273,6 +273,9 @@
 		"_file_razor": {
 			"iconPath": "./icons/razor.svg"
 		},
+		"_file_scala": {
+            "iconPath": "./icons/scala.svg"
+        },
 		"_folder_dark": {
 			"iconPath": "./icons/folder.svg"
 		},
@@ -634,6 +637,7 @@
 		"razor": "_file_razor",
 		"python": "_file_python",
 		"javascript": "_file_js",
-		"typescript": "_file_ts"
+		"typescript": "_file_ts",
+		"scala": "_file_scala"
 	}
 }

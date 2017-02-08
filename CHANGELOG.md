@@ -1,5 +1,18 @@
 # Change Log
 
+## 1.3.2
+Added icons:
+- Matlab
+- Diff
+- Razor
+- Shaderlab
+- Scala
+
+Updated:
+- default file icon
+- language ids
+- webpack file extensions
+
 ## 1.3.1
 - fixed logo size
 
@@ -7,10 +20,10 @@
 Added icons:
 - Ocaml
 - Favicon Icon
-- js.map
-- css.map
-- plist
-- erb
+- .js.map
+- .css.map
+- .plist
+- .erb
 
 Updated:
 - Webpack icon
@@ -40,9 +53,9 @@ Added icons for
 - ActionScript (.as)
 - Autohotkey (.ahk)
 - Dart
-- mxml
-- swc
-- swf
+- .mxml
+- .swc
+- .swf
 
 ## 1.1.4
 Added icons for 
@@ -62,7 +75,7 @@ Added icons for
 
 ## 1.1.3
 Added icons for
-- mm, m, c, h
+- .mm, .m, .c, .h
 - raml
 - jsx, tsx
 - and other
