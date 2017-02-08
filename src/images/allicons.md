@@ -19,6 +19,7 @@
 |<img src="./../icons/css.svg" width="20px">|CSS|
 |<img src="./../icons/dart.svg" width="20px">|Dart|
 |<img src="./../icons/docker.svg" width="20px">|Docker|
+|<img src="./../icons/diff.svg" width="20px">|Diff|
 |<img src="./../icons/exe.svg" width="20px">|Executable|
 |<img src="./../icons/fsharp.svg" width="20px">|F#|
 |<img src="./../icons/file.svg" width="20px">|File|
@@ -44,6 +45,7 @@
 |<img src="./../icons/lua.svg" width="20px">|Lua|
 |<img src="./../icons/email.svg" width="20px">|Mail|
 |<img src="./../icons/markdown.svg" width="20px">|Markdown|
+|<img src="./../icons/matlab.svg" width="20px">|Matlab|
 |<img src="./../icons/movie.svg" width="20px">|Movie|
 |<img src="./../icons/music.svg" width="20px">|Music|
 |<img src="./../icons/mxml.svg" width="20px">|MXML|
@@ -56,11 +58,13 @@
 |<img src="./../icons/python.svg" width="20px">|Python|
 |<img src="./../icons/r.svg" width="20px">|R|
 |<img src="./../icons/raml.svg" width="20px">|Raml|
+|<img src="./../icons/razor.svg" width="20px">|Razor|
 |<img src="./../icons/react.svg" width="20px">|React|
 |<img src="./../icons/readme.svg" width="20px">|Readme|
 |<img src="./../icons/ruby.svg" width="20px">|Ruby|
 |<img src="./../icons/rust.svg" width="20px">|Rust|
 |<img src="./../icons/console.svg" width="20px">|Script|
+|<img src="./../icons/unity.svg" width="20px">|ShaderLab|
 |<img src="./../icons/database.svg" width="20px">|SQL|
 |<img src="./../icons/swc.svg" width="20px">|SWC|
 |<img src="./../icons/flash.svg" width="20px">|SWF|
