@@ -276,6 +276,9 @@
 		"_file_scala": {
             "iconPath": "./icons/scala.svg"
         },
+		"_file_handlebars": {
+            "iconPath": "./icons/handlebars.svg"
+        },
 		"_folder_dark": {
 			"iconPath": "./icons/folder.svg"
 		},
@@ -534,7 +537,8 @@
 		"cmx": "_file_ocaml",
 		"js.map": "_file_jsmap",
 		"css.map": "_file_cssmap",
-		"lock": "_file_lock"
+		"lock": "_file_lock",
+		"hbs": "_file_handlebars"
 	},
 	"fileNames": {
 		"webpack.js": "_file_webpack",
@@ -638,6 +642,7 @@
 		"python": "_file_python",
 		"javascript": "_file_js",
 		"typescript": "_file_ts",
-		"scala": "_file_scala"
+		"scala": "_file_scala",
+		"handlebars": "_file_handlebars"
 	}
 }
