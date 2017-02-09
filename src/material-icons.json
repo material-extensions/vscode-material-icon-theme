@@ -542,6 +542,7 @@
 	},
 	"fileNames": {
 		"webpack.js": "_file_webpack",
+		"webpack.base.js": "_file_webpack",
 		"webpack.config.js": "_file_webpack",
 		"webpack.common.js": "_file_webpack",
 		"webpack.config.common.js": "_file_webpack",
