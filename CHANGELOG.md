@@ -1,6 +1,15 @@
 # Change Log
 
-## 1.3.2
+## 1.3.3 (February 14, 2017)
+Added icons:
+- Handlebars
+
+Updated:
+- Assembly icon
+- fixed ActionScript icon
+- webpack file extensions
+
+## 1.3.2 (February 8, 2017)
 Added icons:
 - Matlab
 - Diff
@@ -13,10 +22,10 @@ Updated:
 - language ids
 - webpack file extensions
 
-## 1.3.1
+## 1.3.1 (February 5, 2017)
 - fixed logo size
 
-## 1.3.0
+## 1.3.0 (February 5, 2017)
 Added icons:
 - Ocaml
 - Favicon Icon
@@ -35,7 +44,7 @@ Updated:
 Other changes:
 - new Logo
 
-## 1.2.0
+## 1.2.0 (January 3, 2017)
 Added icons:
 - Angular
 - CMake
@@ -48,7 +57,7 @@ Added icons:
 Other changes:
 - minimized all icons
 
-## 1.1.5
+## 1.1.5 (December 18, 2016)
 Added icons for
 - ActionScript (.as)
 - Autohotkey (.ahk)
@@ -57,7 +66,7 @@ Added icons for
 - .swc
 - .swf
 
-## 1.1.4
+## 1.1.4 (November 27, 2016)
 Added icons for 
 - Groovy
 - R
@@ -73,7 +82,7 @@ Added icons for
 - Arduino
 - and other
 
-## 1.1.3
+## 1.1.3 (October 25, 2016)
 Added icons for
 - .mm, .m, .c, .h
 - raml
