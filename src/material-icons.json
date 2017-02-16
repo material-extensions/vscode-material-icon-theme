@@ -282,6 +282,9 @@
 		"_file_onion": {
 			"iconPath": "./icons/onion.svg"
 		},
+		"_file_haxe": {
+			"iconPath": "./icons/haxe.svg"
+		},
 		"_folder_dark": {
 			"iconPath": "./icons/folder.svg"
 		},
@@ -543,7 +546,8 @@
 		"lock": "_file_lock",
 		"hbs": "_file_handlebars",
 		"pl": "_file_onion",
-		"pm": "_file_onion"
+		"pm": "_file_onion",
+		"hx": "_file_haxe"
 	},
 	"fileNames": {
 		"webpack.js": "_file_webpack",
@@ -651,6 +655,8 @@
 		"scala": "_file_scala",
 		"handlebars": "_file_handlebars",
 		"perl": "_file_onion",
-		"perl6": "_file_onion"
+		"perl6": "_file_onion",
+		"haxe": "_file_haxe",
+		"hxml": "_file_haxe"		
 	}
 }
