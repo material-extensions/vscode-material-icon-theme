@@ -9,11 +9,11 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
-   width="500"
-   height="500"
+   width="533.33331"
+   height="533.33331"
    viewBox="0 0 24 24"
    id="svg3336"
-   inkscape:version="0.91 r13725"
+   inkscape:version="0.92.0 r15299"
    sodipodi:docname="logo.svg"
    inkscape:export-filename="C:\Users\phili\Documents\Projekte\JavaScript\VS Code Extensions\vscode-extension-material-icon-theme\logo.png"
    inkscape:export-xdpi="1491.9216"
@@ -34,44 +34,47 @@
     <marker
        inkscape:stockid="Arrow1Mstart"
        orient="auto"
-       refY="0.0"
-       refX="0.0"
+       refY="0"
+       refX="0"
        id="marker4526"
        style="overflow:visible"
        inkscape:isstock="true">
       <path
          id="path4528"
-         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
-         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt"
-         transform="scale(0.4) translate(10,0)" />
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt"
+         transform="matrix(0.4,0,0,0.4,4,0)"
+         inkscape:connector-curvature="0" />
     </marker>
     <marker
        inkscape:stockid="Arrow1Mstart"
        orient="auto"
-       refY="0.0"
-       refX="0.0"
+       refY="0"
+       refX="0"
        id="Arrow1Mstart"
        style="overflow:visible"
        inkscape:isstock="true">
       <path
          id="path4254"
-         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
-         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt"
-         transform="scale(0.4) translate(10,0)" />
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt"
+         transform="matrix(0.4,0,0,0.4,4,0)"
+         inkscape:connector-curvature="0" />
     </marker>
     <marker
        inkscape:stockid="Arrow1Lstart"
        orient="auto"
-       refY="0.0"
-       refX="0.0"
+       refY="0"
+       refX="0"
        id="Arrow1Lstart"
        style="overflow:visible"
        inkscape:isstock="true">
       <path
          id="path4248"
-         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
-         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt"
-         transform="scale(0.8) translate(12.5,0)" />
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt"
+         transform="matrix(0.8,0,0,0.8,10,0)"
+         inkscape:connector-curvature="0" />
     </marker>
     <linearGradient
        inkscape:collect="always"
@@ -94,7 +97,7 @@
        x2="17.700392"
        y2="22.786837"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(0.2716981,0)" />
+       gradientTransform="translate(0.24533771,0.09)" />
   </defs>
   <sodipodi:namedview
      pagecolor="#ffffff"
@@ -109,9 +112,9 @@
      inkscape:window-height="705"
      id="namedview3340"
      showgrid="false"
-     inkscape:zoom="16"
-     inkscape:cx="6.7171608"
-     inkscape:cy="7.2770291"
+     inkscape:zoom="11.313709"
+     inkscape:cx="480.77425"
+     inkscape:cy="122.13521"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -121,18 +124,18 @@
      id="rect4150"
      width="22.221832"
      height="22.221832"
-     x="0.97613657"
-     y="0.81757057"
+     x="0.94977623"
+     y="0.90757054"
      ry="3.625" />
   <path
      style="opacity:1;fill:url(#linearGradient4221);fill-opacity:1;stroke:none;stroke-width:0.40000001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.20000005, 0.40000001;stroke-dashoffset:0;stroke-opacity:1"
-     d="M 18.287323,8.8613282 6.1427919,15.873047 10.18442,22.74755 c 0.61623,0.105174 3.308146,-0.240316 3.9535,-0.192564 4.896302,0.362264 7.358553,0.165742 8.977447,-3.96177 z"
+     d="M 18.260963,8.9513282 6.1164315,15.963047 10.225677,22.913122 c 0.61623,0.105174 3.240529,-0.315888 3.885883,-0.268136 4.896302,0.362264 7.246053,0.120742 8.864947,-4.00677 z"
      id="rect4181"
      inkscape:connector-curvature="0"
      sodipodi:nodetypes="cccscc" />
   <path
-     d="m 10.951591,6.7782589 -3.6945663,5e-7 c -0.6834936,-3e-7 -1.2315205,0.5480268 -1.2315206,1.2315213 l 1e-7,7.3891323 a 1.2315217,1.2315217 0 0 0 1.231521,1.231522 l 9.8521738,0 a 1.2315217,1.2315217 0 0 0 1.231521,-1.231522 l 0,-6.1576111 c 0,-0.6834939 -0.554183,-1.2315211 -1.231521,-1.231521 l -4.926088,0 -1.23152,-1.231522 z"
+     d="m 10.925231,6.8682589 -3.6945667,5e-7 c -0.6834936,-3e-7 -1.2315205,0.5480268 -1.2315206,1.2315213 l 10e-8,7.3891323 a 1.2315217,1.2315217 0 0 0 1.231521,1.231522 H 17.082839 A 1.2315217,1.2315217 0 0 0 18.31436,15.488913 V 9.3313019 c 0,-0.6834939 -0.554183,-1.2315211 -1.231521,-1.231521 h -4.926088 z"
      id="path3338-7"
-     style="fill:#fffcff;fill-opacity:1;stroke:none;stroke-width:0.40000001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.20000005, 0.40000001000000002;stroke-dashoffset:0;stroke-opacity:0.7849829"
+     style="fill:#fffcff;fill-opacity:1;stroke:none;stroke-width:0.40000001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.20000005, 0.40000001;stroke-dashoffset:0;stroke-opacity:0.7849829"
      inkscape:connector-curvature="0" />
 </svg>
