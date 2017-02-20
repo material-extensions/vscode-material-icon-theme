@@ -515,6 +515,7 @@
 		"vb": "_file_vs",
 		"lua": "_file_lua",
 		"clj": "_file_clojure",
+		"cljs": "_file_clojure",
 		"groovy": "_file_groovy",
 		"r": "_file_r",
 		"rst": "_file_markdown",
