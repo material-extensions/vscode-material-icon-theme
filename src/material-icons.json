@@ -285,6 +285,9 @@
 		"_file_haxe": {
 			"iconPath": "./icons/haxe.svg"
 		},
+		"_file_karma": {
+			"iconPath": "./icons/karma.svg"
+		},
 		"_folder_dark": {
 			"iconPath": "./icons/folder.svg"
 		},
@@ -632,7 +635,11 @@
 		"git-history": "_file_git",
 		"angular-cli.json": "_file_angular",
 		"app.module.ts": "_file_angular",
-		"favicon.ico": "_file_favicon"
+		"favicon.ico": "_file_favicon",
+		"karma.conf.js": "_file_karma",
+		"karma.conf.coffee": "_file_karma",
+		"karma.config.js": "_file_karma",
+		"karma-main.js": "_file_karma"
 	},
 	"folderNames": {},
 	"languageIds": {
@@ -658,6 +665,6 @@
 		"perl": "_file_onion",
 		"perl6": "_file_onion",
 		"haxe": "_file_haxe",
-		"hxml": "_file_haxe"		
+		"hxml": "_file_haxe"
 	}
 }
