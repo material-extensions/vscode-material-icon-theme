@@ -1,5 +1,13 @@
 # Change Log
 
+## 1.3.4 (February 23, 2017)
+Added icons:
+- Karma
+- cljs
+- Haxe
+- Perl
+- Mustache
+
 ## 1.3.3 (February 14, 2017)
 Added icons:
 - Handlebars
