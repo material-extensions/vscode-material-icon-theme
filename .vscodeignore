@@ -6,4 +6,5 @@ src/**
 .gitignore
 tsconfig.json
 tslint.json
+images/**
 vsc-extension-quickstart.md
