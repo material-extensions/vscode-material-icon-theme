@@ -1,6 +1,17 @@
 # Change Log
 
-## 1.3.4 (February 23, 2017)
+## 2.0.0 (2017-03-10)
+Basic:
+- API Support
+- Information Messages
+- Enable/Disable Angular Icons
+
+Added icons:
+- Puppet
+- Angular Icons (Modules, Component, Service, Routing, Pipe, Guard)
+- Test icon (spec.ts, test.ts, spec.js, test.js)
+
+## 1.3.4 (2017-02-23)
 Added icons:
 - Karma
 - cljs
@@ -8,7 +19,7 @@ Added icons:
 - Perl
 - Mustache
 
-## 1.3.3 (February 14, 2017)
+## 1.3.3 (2017-02-14)
 Added icons:
 - Handlebars
 
@@ -17,7 +28,7 @@ Updated:
 - fixed ActionScript icon
 - webpack file extensions
 
-## 1.3.2 (February 8, 2017)
+## 1.3.2 (2017-02-08)
 Added icons:
 - Matlab
 - Diff
@@ -30,10 +41,10 @@ Updated:
 - language ids
 - webpack file extensions
 
-## 1.3.1 (February 5, 2017)
+## 1.3.1 (2017-02-05)
 - fixed logo size
 
-## 1.3.0 (February 5, 2017)
+## 1.3.0 (2017-02-05)
 Added icons:
 - Ocaml
 - Favicon Icon
@@ -52,7 +63,7 @@ Updated:
 Other changes:
 - new Logo
 
-## 1.2.0 (January 3, 2017)
+## 1.2.0 (2017-01-03)
 Added icons:
 - Angular
 - CMake
@@ -65,7 +76,7 @@ Added icons:
 Other changes:
 - minimized all icons
 
-## 1.1.5 (December 18, 2016)
+## 1.1.5 (2016-12-18)
 Added icons for
 - ActionScript (.as)
 - Autohotkey (.ahk)
@@ -74,7 +85,7 @@ Added icons for
 - .swc
 - .swf
 
-## 1.1.4 (November 27, 2016)
+## 1.1.4 (2016-11-27)
 Added icons for 
 - Groovy
 - R
@@ -90,7 +101,7 @@ Added icons for
 - Arduino
 - and other
 
-## 1.1.3 (October 25, 2016)
+## 1.1.3 (2016-10-25)
 Added icons for
 - .mm, .m, .c, .h
 - raml
