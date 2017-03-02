@@ -7,25 +7,6 @@
   "engines": {
     "vscode": "^1.5.0"
   },
-  "categories": [
-    "Themes"
-  ],
-  "contributes": {
-    "iconThemes": [
-      {
-        "id": "material-icon-theme",
-        "label": "Material Icon Theme",
-        "path": "./min/material-icons.json"
-      }
-    ]
-  },
-  "keywords": [
-    "icons",
-    "theme",
-    "material",
-    "icon-theme",
-    "customization"
-  ],
   "homepage": "https://github.com/PKief/vscode-extension-material-icon-theme/blob/master/README.md",
   "repository": {
     "type": "git",
@@ -39,15 +20,83 @@
     "color": "#2d2d2d",
     "theme": "dark"
   },
-  "devDependencies": {    
-    "json-minify": "^1.0.0",
-    "rimraf": "^2.5.4",
-    "svgo": "^0.7.1"
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "icons",
+    "theme",
+    "material",
+    "icon-theme",
+    "customization"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./out/src/extension",
+  "contributes": {
+    "iconThemes": [
+      {
+        "id": "material-icon-theme",
+        "label": "Material Icon Theme",
+        "path": "./out/src/material-icons.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "extension.activateIcons",
+        "title": "Material Icon Theme: Activate Icon Theme"
+      },
+      {
+        "command": "extension.enableAngularIcons",
+        "title": "Material Icon Theme: Enable Angular Icons"
+      },
+      {
+        "command": "extension.disableAngularIcons",
+        "title": "Material Icon Theme: Disable Angular Icons"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Show welcome message",
+      "properties": {
+        "material-icon-theme.showWelcomeMessage": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show the welcome message after first installation."
+        },
+        "material-icon-theme.showUpdateMessage": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show the update message after each update."
+        },
+        "material-icon-theme.angular-icons.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show icons for Angular files."
+        }
+      }
+    }
   },
   "scripts": {
-    "start": "npm run remove-min && npm run minimize-icons && npm run minimize-json",
-    "minimize-icons": "svgo -f src/icons -o min/icons",
-    "minimize-json": "json-minify src/material-icons.json > min/material-icons.json",
-    "remove-min": "rimraf min"
+    "vscode:prepublish": "tsc -p ./ && npm run copy:json",
+    "compile": "tsc -watch -p ./ && npm run copy:json",
+    "copy:json": "cpx \"src/**/*.json\" out/src/",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "tslint": "tslint -c tslint.json ./src/**/*.ts",
+    "test": "node ./node_modules/vscode/bin/test"
+  },
+  "dependencies": {
+    "opn": "^4.0.2",
+    "semver-compare": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/mocha": "^2.2.32",
+    "@types/node": "^6.0.40",
+    "cpx": "^1.5.0",
+    "mocha": "^2.3.3",
+    "tslint": "^4.5.0",
+    "typescript": "^2.0.3",
+    "vscode": "^1.0.0"
   }
 }

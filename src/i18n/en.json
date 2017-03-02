@@ -1,0 +1,15 @@
+{
+    "themeInstalled": "Material Icon Theme has been installed.",
+    "howToActivate": "How to activate",
+    "activate": "Activate",
+    "activated": "Material Icon Theme is active.",
+    "neverShowAgain": "Never show again",
+    "themeUpdated": "Material Icon Theme has been updated.",
+    "readChangelog": "Read changelog",
+    "angular": {
+        "alreadyEnabled": "Angular icons are already enabled.",
+        "alreadyDisabled": "Angular icons are already disabled."
+    },
+    "confirmReload": "You have to restart VS Code to activate the changes.",
+    "reload": "Reload"
+}
