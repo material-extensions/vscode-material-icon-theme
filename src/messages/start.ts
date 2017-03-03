@@ -14,8 +14,16 @@ export const showStartMessages = () => {
             updateVersionInUserDataSettings();
         }
     }).catch(() => {
-        // if the theme has never been used before
-        showWelcomeMessage();
+        // no config but old version was already installed
+        if (helpers.isThemeActivated()) {
+            showUpdateMessage();
+        }
+        // no config and the theme has never been used before
+        else {
+            showWelcomeMessage();
+        }
+
+        // create a config file in the user data folder
         initUserDataSettings();
     });
 };
