@@ -33,6 +33,7 @@ const showQuickPickItems = result => {
 
 /** Handle the actions from the QuickPick. */
 const handleQuickPickActions = value => {
+    if (!value || !value.description) return;
     switch (value.description) {
         case i18n.translate('toggleSwitch.on'): {
             checkAngularIconsStatus().then(result => {
