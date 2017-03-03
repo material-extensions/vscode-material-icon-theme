@@ -11,9 +11,9 @@
    width="24"
    height="24"
    viewBox="0 0 24 24"
-   id="svg2"
-   inkscape:version="0.91 r13725"
-   sodipodi:docname="folder-outline.svg">
+   id="svg4"
+   sodipodi:docname="folder-open.svg"
+   inkscape:version="0.92.1 r15371">
   <metadata
      id="metadata10">
     <rdf:RDF>
@@ -42,13 +42,13 @@
      showgrid="false"
      inkscape:zoom="9.8333333"
      inkscape:cx="12"
-     inkscape:cy="11.79661"
+     inkscape:cy="12"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg2" />
+     inkscape:current-layer="svg4" />
   <path
-     d="M20,18H4V8H20M20,6H12L10,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V8C22,6.89 21.1,6 20,6Z"
-     id="path4"
+     d="M19,20H4C2.89,20 2,19.1 2,18V6C2,4.89 2.89,4 4,4H10L12,6H19A2,2 0 0,1 21,8H21L4,8V18L6.14,10H23.21L20.93,18.5C20.7,19.37 19.92,20 19,20Z"
+     id="path2"
      style="fill:#90a4ae;fill-opacity:1" />
 </svg>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   width="24"
+   height="24"
+   viewBox="0 0 24 24"
+   id="svg3336"
+   inkscape:version="0.92.1 r15371"
+   sodipodi:docname="folder-node.svg">
+  <metadata
+     id="metadata3344">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs3342" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     id="namedview3340"
+     showgrid="false"
+     inkscape:zoom="22.083333"
+     inkscape:cx="17.883956"
+     inkscape:cy="11.7477"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3336" />
+  <path
+     style="fill:#90a4ae;fill-opacity:1"
+     d="M 4 4 C 2.89 4 2 4.89 2 6 L 2 18 A 2 2 0 0 0 4 20 L 20 20 A 2 2 0 0 0 22 18 L 22 8 C 22 6.89 21.1 6 20 6 L 12 6 L 10 4 L 4 4 z M 11.910156 7.7695312 L 16.591797 10.472656 L 16.591797 15.880859 L 11.910156 18.585938 L 7.2265625 15.880859 L 7.2265625 10.472656 L 11.910156 7.7695312 z "
+     id="path3338" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:37.77893448px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#90a4ae;fill-opacity:1;stroke:none;stroke-width:0.94447345;"
+     x="8.1013317"
+     y="15.721355"
+     id="text856"><tspan
+       sodipodi:role="line"
+       id="tspan854"
+       x="8.1013317"
+       y="15.721355"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.55578756px;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI Bold';stroke-width:0.94447345;fill:#90a4ae;fill-opacity:1;">JS</tspan></text>
+</svg>
