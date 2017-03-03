@@ -45,15 +45,19 @@
     "commands": [
       {
         "command": "extension.activateIcons",
-        "title": "Material Icon Theme: Activate Icon Theme"
+        "title": "Material Icons: Activate Icon Theme"
       },
       {
         "command": "extension.enableAngularIcons",
-        "title": "Material Icon Theme: Enable Angular Icons"
+        "title": "Material Icons: Angular Icons [ON]"
       },
       {
         "command": "extension.disableAngularIcons",
-        "title": "Material Icon Theme: Disable Angular Icons"
+        "title": "Material Icons: Angular Icons [OFF]"
+      },
+      {
+        "command": "extension.toggleFolderIcons",
+        "title": "Material Icons: Toggle Folder Icons"
       }
     ],
     "configuration": {
@@ -69,18 +73,13 @@
           "type": "boolean",
           "default": true,
           "description": "Show the update message after each update."
-        },
-        "material-icon-theme.angular-icons.enabled": {
-          "type": "boolean",
-          "default": true,
-          "description": "Show icons for Angular files."
         }
       }
     }
   },
   "scripts": {
     "vscode:prepublish": "tsc -p ./ && npm run copy:json",
-    "compile": "tsc -watch -p ./ && npm run copy:json",
+    "compile": "tsc -watch -p ./ && npm run copy:json -- --watch",
     "copy:json": "cpx \"src/**/*.json\" out/src/",
     "postinstall": "node ./node_modules/vscode/bin/install",
     "tslint": "tslint -c tslint.json ./src/**/*.ts",

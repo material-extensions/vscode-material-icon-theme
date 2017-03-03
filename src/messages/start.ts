@@ -2,6 +2,7 @@ import * as helpers from './../helpers';
 import * as cmp from 'semver-compare';
 import { showUpdateMessage } from "./update";
 import { showWelcomeMessage } from "./welcome";
+import { updateVersionInUserDataSettings, initUserDataSettings } from "../helpers/config";
 
 /** Initialization of the icons every time the theme get activated */
 export const showStartMessages = () => {
@@ -10,22 +11,11 @@ export const showStartMessages = () => {
         // if the theme has been updated show update message
         if (cmp(settings.version, helpers.getCurrentExtensionVersion()) === -1) {
             showUpdateMessage();
-
-            // store the latest version number in the user data settings
-            const setting = {
-                version: helpers.getCurrentExtensionVersion(),
-            };
-            helpers.updateUserDataSettings(setting);
+            updateVersionInUserDataSettings();
         }
     }).catch(() => {
         // if the theme has never been used before
         showWelcomeMessage();
-
-        // store the latest version number in the user data settings
-        const setting = {
-            name: 'material-icon-theme',
-            version: helpers.getCurrentExtensionVersion(),
-        };
-        helpers.updateUserDataSettings(setting);
+        initUserDataSettings();
     });
 };

@@ -165,9 +165,6 @@
     "_file_light": {
       "iconPath": "./../../icons/file.svg"
     },
-    "_file_dark": {
-      "iconPath": "./../../icons/file.svg"
-    },
     "_file_yarn": {
       "iconPath": "./../../icons/yarn.svg"
     },
@@ -309,22 +306,22 @@
     "_file_test_js": {
       "iconPath": "./../../icons/test-js.svg"
     },
-    "_folder_dark": {
+    "_file_elixir": {
+      "iconPath": "./../../icons/elixir.svg"
+    },
+    "_file": {
+      "iconPath": "./../../icons/file.svg"
+    },
+    "_folder": {
       "iconPath": "./../../icons/folder.svg"
     },
-    "_folder_open_dark": {
-      "iconPath": "./../../icons/folder-outline.svg"
-    },
-    "_folder_light": {
-      "iconPath": "./../../icons/folder.svg"
-    },
-    "_folder_open_light": {
+    "_folder_open": {
       "iconPath": "./../../icons/folder-outline.svg"
     }
   },
-  "folderExpanded": "_folder_open_dark",
-  "folder": "_folder_dark",
-  "file": "_file_dark",
+  "folderExpanded": "_folder_open",
+  "folder": "_folder",
+  "file": "_file",
   "fileExtensions": {
     "html": "_file_html",
     "jade": "_file_pug",
@@ -585,7 +582,9 @@
     "guard.ts": "_file_angular_guard",
     "service.ts": "_file_angular_service",
     "pipe.ts": "_file_angular_pipe",
-    "pp": "_file_puppet"
+    "pp": "_file_puppet",
+    "ex": "_file_elixir",
+    "exs": "_file_elixir"
   },
   "fileNames": {
     "webpack.js": "_file_webpack",
@@ -700,6 +699,7 @@
     "perl6": "_file_perl",
     "haxe": "_file_haxe",
     "hxml": "_file_haxe",
-    "puppet": "_file_puppet"
+    "puppet": "_file_puppet",
+    "elixir": "_file_elixir"
   }
 }

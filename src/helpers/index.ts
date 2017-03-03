@@ -7,15 +7,18 @@ import * as i18n from "./../i18n";
 import { AdvancedWorkspaceConfiguration } from "../models/AdvancedWorkspaceConfiguration.interface";
 import { IconConfiguration } from "../models/IconConfiguration.interface";
 
-/** Get configuration of vs code */
+/** Get configuration of vs code. */
 export const getConfig = (section?: string) =>
     vscode.workspace.getConfiguration(section) as AdvancedWorkspaceConfiguration;
 
-/** returns the value of a workspace config property */
+/** Returns the value of a workspace config property. */
 export const getThemeConfig = (config: string): any =>
     getConfig('material-icon-theme').get(config);
 
-/** set the config of the theme */
+export const getGlobalThemeConfig = (config: string) =>
+    getConfig('material-icon-theme').inspect(config);
+
+/** Set the config of the theme. */
 export const setThemeConfig = (section: string, value: any, global?: boolean) => {
     getConfig('material-icon-theme').update(section, value, global);
 };

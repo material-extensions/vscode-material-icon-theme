@@ -6,8 +6,9 @@ import * as outdatedMessage from './../messages/outdated';
 
 /** Activate the icon theme by changing the settings for the iconTheme. */
 export const activateIconTheme = () => {
-    if (helpers.isNotSupportedVersion()) {
+    if (!helpers.isNotSupportedVersion()) {
         outdatedMessage.showOutdatedMessage();
+        return;
     }
     setIconTheme();
 };

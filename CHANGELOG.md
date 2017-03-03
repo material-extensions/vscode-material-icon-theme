@@ -8,6 +8,7 @@ Basic:
 
 Added icons:
 - Puppet
+- Elixir
 - Angular Icons (Modules, Component, Service, Routing, Pipe, Guard)
 - Test icon (spec.ts, test.ts, spec.js, test.js)
 

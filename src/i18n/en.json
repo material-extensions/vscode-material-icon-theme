@@ -1,6 +1,6 @@
 {
     "themeInstalled": "Material Icon Theme has been installed.",
-    "howToActivate": "How to activate",
+    "howToActivate": "How to activate icons",
     "activate": "Activate",
     "activated": "Material Icon Theme is active.",
     "neverShowAgain": "Never show again",
@@ -10,6 +10,19 @@
         "alreadyEnabled": "Angular icons are already enabled.",
         "alreadyDisabled": "Angular icons are already disabled."
     },
+    "folders": {
+        "alreadyEnabled": "Folder icons are already enabled.",
+        "alreadyDisabled": "Folder icons are already disabled.",
+        "enableIcons": "Enable folder icons",
+        "disableIcons": "Disable folder icons",
+        "toggleIcons": "Toggle folder icons"
+    },
+    "toggleSwitch": {
+        "on": "ON",
+        "off": "OFF"
+    },
     "confirmReload": "You have to restart VS Code to activate the changes.",
-    "reload": "Reload"
+    "reload": "Reload",
+    "outdatedVersion": "You have to update VS Code to use this command.",
+    "updateVSCode": "Update VS Code"
 }

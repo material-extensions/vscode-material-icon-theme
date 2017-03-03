@@ -6,11 +6,10 @@ import * as i18n from './../i18n';
 import * as reload from './../messages/reload';
 
 /** Enable icons for angular files */
-export const enableAngularIcons = () => {
+export const enableAngularIcons = (global: boolean = false) => {
     angularIconsEnabled().then(result => {
         if (!result) {
             addAngularFileExtensions().then(() => {
-                helpers.setThemeConfig('angular-icons.enabled', true);
                 reload.showConfirmToReloadMessage().then(result => {
                     if (result) helpers.reload();
                 });
@@ -22,11 +21,10 @@ export const enableAngularIcons = () => {
 };
 
 /** Disable icons for angular files */
-export const disableAngularIcons = () => {
+export const disableAngularIcons = (global: boolean = false) => {
     angularIconsEnabled().then(result => {
         if (result) {
             deleteAngularFileExtensions().then(() => {
-                helpers.setThemeConfig('angular-icons.enabled', false);
                 reload.showConfirmToReloadMessage().then(result => {
                     if (result) helpers.reload();
                 });
@@ -38,7 +36,7 @@ export const disableAngularIcons = () => {
 };
 
 /** Are the angular icons enabled? */
-const angularIconsEnabled = (): Promise<boolean> => {
+export const angularIconsEnabled = (): Promise<boolean> => {
     return helpers.getIconConfiguration().then((config) => {
         if (config.fileExtensions['module.ts']) {
             return true;
