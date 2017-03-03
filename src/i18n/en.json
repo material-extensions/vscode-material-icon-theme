@@ -8,7 +8,10 @@
     "readChangelog": "Read changelog",
     "angular": {
         "alreadyEnabled": "Angular icons are already enabled.",
-        "alreadyDisabled": "Angular icons are already disabled."
+        "alreadyDisabled": "Angular icons are already disabled.",
+        "enableIcons": "Enable Angular icons",
+        "disableIcons": "Disable Angular icons",
+        "toggleIcons": "Toggle Angular icons"
     },
     "folders": {
         "alreadyEnabled": "Folder icons are already enabled.",

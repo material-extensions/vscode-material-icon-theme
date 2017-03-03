@@ -48,12 +48,8 @@
         "title": "Material Icons: Activate Icon Theme"
       },
       {
-        "command": "extension.enableAngularIcons",
-        "title": "Material Icons: Angular Icons [ON]"
-      },
-      {
-        "command": "extension.disableAngularIcons",
-        "title": "Material Icons: Angular Icons [OFF]"
+        "command": "extension.toggleAngularIcons",
+        "title": "Material Icons: Toggle Angular Icons"
       },
       {
         "command": "extension.toggleFolderIcons",

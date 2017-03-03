@@ -1,8 +1,8 @@
 import * as helpers from './../helpers';
 import * as vscode from 'vscode';
 import { activateIconTheme } from "./activate";
-import { enableAngularIcons, disableAngularIcons } from "./angular";
-import { enableFolderIcons, disableFolderIcons, toggleFolderIcons } from "./folders";
+import { toggleAngularIcons } from "./angular";
+import { toggleFolderIcons } from "./folders";
 
 // Activate theme
 const activateThemeCommand = vscode.commands.registerCommand('extension.activateIcons', () => {
@@ -10,11 +10,8 @@ const activateThemeCommand = vscode.commands.registerCommand('extension.activate
 });
 
 // Angular
-const enableAngularIconsCommand = vscode.commands.registerCommand('extension.enableAngularIcons', () => {
-    enableAngularIcons();
-});
-const disableAngularIconsCommand = vscode.commands.registerCommand('extension.disableAngularIcons', () => {
-    disableAngularIcons();
+const toggleAngularIconsCommand = vscode.commands.registerCommand('extension.toggleAngularIcons', () => {
+    toggleAngularIcons();
 });
 
 // Folders
@@ -24,7 +21,6 @@ const toggleFolderIconsCommand = vscode.commands.registerCommand('extension.togg
 
 export const commands = [
     activateThemeCommand,
-    enableAngularIconsCommand,
-    disableAngularIconsCommand,
+    toggleAngularIconsCommand,
     toggleFolderIconsCommand
 ];

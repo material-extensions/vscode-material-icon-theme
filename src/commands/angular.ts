@@ -5,38 +5,72 @@ import * as fs from 'fs';
 import * as i18n from './../i18n';
 import * as reload from './../messages/reload';
 
+/** Command to toggle the Angular icons. */
+export const toggleAngularIcons = () => {
+    checkAngularIconsStatus()
+        .then(showQuickPickItems)
+        .then(handleQuickPickActions);
+};
+
+/** Show QuickPick items to select prefered configuration for the folder icons. */
+const showQuickPickItems = result => {
+    const on: vscode.QuickPickItem = {
+        description: i18n.translate('toggleSwitch.on'),
+        detail: i18n.translate('angular.enableIcons'),
+        label: result ? "\u2611" : "\u2610"
+    };
+    const off: vscode.QuickPickItem = {
+        description: i18n.translate('toggleSwitch.off'),
+        detail: i18n.translate('angular.disableIcons'),
+        label: !result ? "\u2611" : "\u2610"
+    };
+    return vscode.window.showQuickPick(
+        [on, off], {
+            placeHolder: i18n.translate('angular.toggleIcons'),
+            ignoreFocusOut: true
+        });
+};
+
+/** Handle the actions from the QuickPick. */
+const handleQuickPickActions = value => {
+    switch (value.description) {
+        case i18n.translate('toggleSwitch.on'): {
+            checkAngularIconsStatus().then(result => {
+                if (!result) enableAngularIcons();
+            });
+            break;
+        }
+        case i18n.translate('toggleSwitch.off'): {
+            checkAngularIconsStatus().then(result => {
+                if (result) disableAngularIcons();
+            });
+            break;
+        }
+        default:
+            break;
+    }
+}
+
 /** Enable icons for angular files */
 export const enableAngularIcons = (global: boolean = false) => {
-    angularIconsEnabled().then(result => {
-        if (!result) {
-            addAngularFileExtensions().then(() => {
-                reload.showConfirmToReloadMessage().then(result => {
-                    if (result) helpers.reload();
-                });
-            });
-        } else {
-            vscode.window.showInformationMessage(i18n.translate('angular.alreadyEnabled'));
-        }
+    addAngularFileExtensions().then(() => {
+        reload.showConfirmToReloadMessage().then(result => {
+            if (result) helpers.reload();
+        });
     });
 };
 
 /** Disable icons for angular files */
 export const disableAngularIcons = (global: boolean = false) => {
-    angularIconsEnabled().then(result => {
-        if (result) {
-            deleteAngularFileExtensions().then(() => {
-                reload.showConfirmToReloadMessage().then(result => {
-                    if (result) helpers.reload();
-                });
-            });
-        } else {
-            vscode.window.showInformationMessage(i18n.translate('angular.alreadyDisabled'));
-        }
+    deleteAngularFileExtensions().then(() => {
+        reload.showConfirmToReloadMessage().then(result => {
+            if (result) helpers.reload();
+        });
     });
 };
 
 /** Are the angular icons enabled? */
-export const angularIconsEnabled = (): Promise<boolean> => {
+export const checkAngularIconsStatus = (): Promise<boolean> => {
     return helpers.getIconConfiguration().then((config) => {
         if (config.fileExtensions['module.ts']) {
             return true;
