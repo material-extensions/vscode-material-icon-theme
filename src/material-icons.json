@@ -333,28 +333,6 @@
   },
   "folderExpanded": "_folder_open",
   "folder": "_folder",
-  "folderNames": {
-    "image": "_folder_image",
-    "images": "_folder_image",
-    "img": "_folder_image",
-    "imgs": "_folder_image",
-    "icon": "_folder_image",
-    "icons": "_folder_image",
-    "src": "_folder_src",
-    "source": "_folder_src",
-    "sources": "_folder_src"
-  },
-  "folderNamesExpanded": {
-    "image": "_folder_image_open",
-    "images": "_folder_image_open",
-    "img": "_folder_image_open",
-    "imgs": "_folder_image_open",
-    "icon": "_folder_image_open",
-    "icons": "_folder_image_open",
-    "src": "_folder_src_open",
-    "source": "_folder_src_open",
-    "sources": "_folder_src_open"
-  },
   "file": "_file",
   "fileExtensions": {
     "html": "_file_html",
