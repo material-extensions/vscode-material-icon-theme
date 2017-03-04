@@ -309,6 +309,9 @@
     "_file_elixir": {
       "iconPath": "./../../icons/elixir.svg"
     },
+	"_file_livescript": {
+      "iconPath": "./../../icons/livescript.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -596,7 +599,8 @@
     "pipe.ts": "_file_angular_pipe",
     "pp": "_file_puppet",
     "ex": "_file_elixir",
-    "exs": "_file_elixir"
+    "exs": "_file_elixir",
+	"ls": "_file_livescript"
   },
   "fileNames": {
     "webpack.js": "_file_webpack",
@@ -711,6 +715,7 @@
     "haxe": "_file_haxe",
     "hxml": "_file_haxe",
     "puppet": "_file_puppet",
-    "elixir": "_file_elixir"
+    "elixir": "_file_elixir",
+	"livescript": "_file_livescript"
   }
 }
