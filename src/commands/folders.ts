@@ -13,21 +13,21 @@ export const toggleFolderIcons = () => {
 };
 
 /** Show QuickPick items to select prefered configuration for the folder icons. */
-const showQuickPickItems = result => {
+const showQuickPickItems = isEnabled => {
     const on: vscode.QuickPickItem = {
         description: i18n.translate('toggleSwitch.on'),
         detail: i18n.translate('folders.enableIcons'),
-        label: result ? "\u2611" : "\u2610"
+        label: isEnabled ? "\u2714" : "\u25FB"
     };
     const off: vscode.QuickPickItem = {
         description: i18n.translate('toggleSwitch.off'),
         detail: i18n.translate('folders.disableIcons'),
-        label: !result ? "\u2611" : "\u2610"
+        label: !isEnabled ? "\u2714" : "\u25FB"
     };
     return vscode.window.showQuickPick(
         [on, off], {
             placeHolder: i18n.translate('folders.toggleIcons'),
-            ignoreFocusOut: true
+            ignoreFocusOut: false
         });
 };
 
