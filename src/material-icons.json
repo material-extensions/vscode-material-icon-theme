@@ -309,7 +309,7 @@
     "_file_elixir": {
       "iconPath": "./../../icons/elixir.svg"
     },
-	"_file_livescript": {
+    "_file_livescript": {
       "iconPath": "./../../icons/livescript.svg"
     },
     "_file": {
@@ -320,18 +320,6 @@
     },
     "_folder_open": {
       "iconPath": "./../../icons/folder-open.svg"
-    },
-    "_folder_image": {
-      "iconPath": "./../../icons/folder-image.svg"
-    },
-    "_folder_image_open": {
-      "iconPath": "./../../icons/folder-image-open.svg"
-    },
-    "_folder_src": {
-      "iconPath": "./../../icons/folder-src.svg"
-    },
-    "_folder_src_open": {
-      "iconPath": "./../../icons/folder-src-open.svg"
     }
   },
   "folderExpanded": "_folder_open",
@@ -600,7 +588,7 @@
     "pp": "_file_puppet",
     "ex": "_file_elixir",
     "exs": "_file_elixir",
-	"ls": "_file_livescript"
+    "ls": "_file_livescript"
   },
   "fileNames": {
     "webpack.js": "_file_webpack",
@@ -716,6 +704,6 @@
     "hxml": "_file_haxe",
     "puppet": "_file_puppet",
     "elixir": "_file_elixir",
-	"livescript": "_file_livescript"
+    "livescript": "_file_livescript"
   }
 }
