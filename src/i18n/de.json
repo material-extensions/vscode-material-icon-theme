@@ -24,8 +24,8 @@
         "on": "EIN",
         "off": "AUS"
     },
-    "confirmReload": "VS Code muss neu gestartet werden, um die Änderungen zu aktivieren.",
+    "confirmReload": "VS Code muss neu gestartet werden, um die Änderungen an den Icons zu aktivieren.",
     "reload": "Neu starten",
-    "outdatedVersion": "VS Code muss aktualisiert werden, um den Befehl auszuführen.",
+    "outdatedVersion": "VS Code muss aktualisiert werden, um diesen Befehl auszuführen.",
     "updateVSCode": "VS Code aktualisieren"
 }

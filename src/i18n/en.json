@@ -24,7 +24,7 @@
         "on": "ON",
         "off": "OFF"
     },
-    "confirmReload": "You have to restart VS Code to activate the changes.",
+    "confirmReload": "You have to restart VS Code to activate the changes to the icons.",
     "reload": "Reload",
     "outdatedVersion": "You have to update VS Code to use this command.",
     "updateVSCode": "Update VS Code"
