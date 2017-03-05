@@ -15,11 +15,11 @@ export const activateIconTheme = () => {
 
 /** Set the icon theme in the config. */
 const setIconTheme = () => {
-    // global user config
+    // local workspace config
     helpers.getConfig().update('workbench.iconTheme', 'material-icon-theme')
         .then(() => {
-            // global workspace config
-            // helpers.getConfig().update('workbench.iconTheme', 'material-icon-theme', true);
+            // global user config
+            helpers.getConfig().update('workbench.iconTheme', 'material-icon-theme', true);
             vscode.window.showInformationMessage(i18n.translate('activated'));
         });
 };

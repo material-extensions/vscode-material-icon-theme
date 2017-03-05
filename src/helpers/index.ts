@@ -43,7 +43,7 @@ export const isInsiderVersion = (): boolean =>
 
 /** is not supported version */
 export const isNotSupportedVersion = (): boolean =>
-    cmp(vscode.version, '1.10.0-insider') === -1; // 2nd is bigger than the 1st one == -1
+    cmp(vscode.version, '1.10.0') === -1; // 2nd is bigger than the 1st one == -1
 
 /** user data */
 export const getSettingsFilePath = (): string => {

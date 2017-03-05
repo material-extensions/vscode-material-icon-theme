@@ -12,8 +12,8 @@
    height="24"
    viewBox="0 0 24 24"
    id="svg4"
-   sodipodi:docname="routes.svg"
-   inkscape:version="0.92.0 r15299">
+   sodipodi:docname="angular-routes.svg"
+   inkscape:version="0.92.1 r15371">
   <metadata
      id="metadata10">
     <rdf:RDF>
@@ -41,7 +41,7 @@
      id="namedview6"
      showgrid="false"
      inkscape:zoom="9.8333333"
-     inkscape:cx="-5.3389831"
+     inkscape:cx="-22.627119"
      inkscape:cy="12"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
@@ -50,5 +50,5 @@
   <path
      d="M11,10H5L3,8L5,6H11V3L12,2L13,3V4H19L21,6L19,8H13V10H19L21,12L19,14H13V20A2,2 0 0,1 15,22H9A2,2 0 0,1 11,20V10Z"
      id="path2"
-     style="fill:#e53935;fill-opacity:1" />
+     style="fill:#43a047;fill-opacity:1" />
 </svg>
