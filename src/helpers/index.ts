@@ -68,9 +68,9 @@ export const getUserDataSettings = (): Promise<any> => {
 /** Update the settings in the userdata. */
 export const updateUserDataSettings = (setting: any): Promise<any> => {
     return getUserDataSettings().then((data) => {
-        fs.writeFile(getSettingsFilePath(), JSON.stringify({ ...data, ...setting }));
+        fs.writeFile(getSettingsFilePath(), JSON.stringify({ ...data, ...setting }, null, 2));
     }).catch(() => {
-        fs.writeFile(getSettingsFilePath(), JSON.stringify({ ...setting }));
+        fs.writeFile(getSettingsFilePath(), JSON.stringify({ ...setting }, null, 2));
     });
 };
 
@@ -78,7 +78,7 @@ export const updateUserDataSettings = (setting: any): Promise<any> => {
 export const getExtensionPath = () => path.join(__dirname, '/../../../');
 
 /** Get the configuration of the icons as JSON Object */
-export const getIconConfiguration = (): Promise<IconConfiguration> => {
+export const getMaterialIconsJSON = (): Promise<IconConfiguration> => {
     return new Promise((resolve, reject) => {
         const iconJSONPath = path.join(getExtensionPath(), 'out', 'src', 'material-icons.json');
         fs.readFile(iconJSONPath, 'utf8', (err, data) => {

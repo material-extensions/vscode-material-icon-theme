@@ -54,6 +54,10 @@
       {
         "command": "extension.toggleFolderIcons",
         "title": "Material Icons: Toggle Folder Icons"
+      },
+      {
+        "command": "extension.restoreDefaultConfig",
+        "title": "Material Icons: Restore Default Configuration"
       }
     ],
     "configuration": {

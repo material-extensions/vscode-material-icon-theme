@@ -1,7 +1,7 @@
 import * as helpers from './index';
 import * as vscode from 'vscode';
 import { checkAngularIconsStatus, enableAngularIcons, disableAngularIcons } from "../commands/angular";
-import { enableFolderIcons, disableFolderIcons } from "../commands/folders";
+import { enableFolderIcons, disableFolderIcons, checkFolderIconsStatus } from "../commands/folders";
 
 /** Store the latest version number in the user data settings. */
 export const updateVersionInUserDataSettings = () => {
@@ -25,9 +25,8 @@ export const initUserDataSettings = () => {
  * with the current setup of the icons.
 */
 export const configChangeDetection = () => {
-    compareAngularConfigs();
-    compareFolderConfigs();
-};
+    return /*compareAngularConfigs().then(() => */compareFolderConfigs();
+}
 
 /** Watch for changes in the configurations to update the icons theme. */
 export const watchForConfigChanges = () => {
@@ -37,33 +36,33 @@ export const watchForConfigChanges = () => {
 const compareAngularConfigs = () => {
     const angularIconsConfig = helpers.getThemeConfig('angular.iconsEnabled');
 
-    if (angularIconsConfig.workspaceValue === true || angularIconsConfig.globalValue === true) {
-        checkAngularIconsStatus().then(result => {
-            if (!result) enableAngularIcons();
-        });
-    } else if (
-        (angularIconsConfig.workspaceValue === false && angularIconsConfig.globalValue === false) ||
-        (angularIconsConfig.workspaceValue === undefined && angularIconsConfig.globalValue === false) ||
-        (angularIconsConfig.workspaceValue === false && angularIconsConfig.globalValue === undefined)) {
-        checkAngularIconsStatus().then(result => {
-            if (result) disableAngularIcons();
-        });
-    }
+    return checkAngularIconsStatus().then(result => {
+        if (angularIconsConfig.workspaceValue === true || angularIconsConfig.globalValue === true) {
+            if (!result) { enableAngularIcons(); }
+        }
+        else if (
+            (angularIconsConfig.workspaceValue === false && angularIconsConfig.globalValue === false) ||
+            (angularIconsConfig.workspaceValue === undefined && angularIconsConfig.globalValue === false) ||
+            (angularIconsConfig.workspaceValue === false && angularIconsConfig.globalValue === undefined)) {
+
+            if (result) { return disableAngularIcons(); }
+        };
+    });
 };
 
 const compareFolderConfigs = () => {
     const folderIconsConfig = helpers.getThemeConfig('folders.iconsEnabled');
 
-    if (folderIconsConfig.workspaceValue === true || folderIconsConfig.globalValue === true) {
-        checkAngularIconsStatus().then(result => {
-            if (!result) enableFolderIcons();
-        });
-    } else if (
-        (folderIconsConfig.workspaceValue === false && folderIconsConfig.globalValue === false) ||
-        (folderIconsConfig.workspaceValue === undefined && folderIconsConfig.globalValue === false) ||
-        (folderIconsConfig.workspaceValue === false && folderIconsConfig.globalValue === undefined)) {
-        checkAngularIconsStatus().then(result => {
-            if (result) disableFolderIcons();
-        });
-    }
+    return checkFolderIconsStatus().then(result => {
+        if (folderIconsConfig.workspaceValue === true || folderIconsConfig.globalValue === true) {
+            if (!result) { enableFolderIcons(); }
+        }
+        else if (
+            (folderIconsConfig.workspaceValue === false && folderIconsConfig.globalValue === false) ||
+            (folderIconsConfig.workspaceValue === undefined && folderIconsConfig.globalValue === false) ||
+            (folderIconsConfig.workspaceValue === false && folderIconsConfig.globalValue === undefined)) {
+
+            if (result) { disableFolderIcons(); }
+        };
+    });
 };

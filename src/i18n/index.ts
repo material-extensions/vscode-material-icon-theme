@@ -55,6 +55,12 @@ const getValue = (o, s) => {
     s = s.replace(/\[(\w+)\]/g, '.$1'); // convert indexes to properties
     s = s.replace(/^\./, '');           // strip a leading dot
     let a = s.split('.');
+    
+    /** Avoid errors in the getValue function. */
+    const isObject = (object) => {
+        return object === Object(object);
+    };
+
     for (let i = 0, n = a.length; i < n; ++i) {
         let k = a[i];
         if (isObject(o) && k in o) {
@@ -64,9 +70,4 @@ const getValue = (o, s) => {
         }
     }
     return o;
-};
-
-/** Avoid errors in the getValue function. */
-const isObject = (object) => {
-    return object === Object(object);
 };

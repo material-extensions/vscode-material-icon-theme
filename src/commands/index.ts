@@ -3,6 +3,7 @@ import * as vscode from 'vscode';
 import { activateIconTheme } from "./activate";
 import { toggleAngularIcons } from "./angular";
 import { toggleFolderIcons } from "./folders";
+import { restoreDefaultConfig } from "./config";
 
 // Activate theme
 const activateThemeCommand = vscode.commands.registerCommand('extension.activateIcons', () => {
@@ -19,8 +20,14 @@ const toggleFolderIconsCommand = vscode.commands.registerCommand('extension.togg
     toggleFolderIcons();
 });
 
+// Config
+const restoreDefaultConfigCommand = vscode.commands.registerCommand('extension.restoreDefaultConfig', () => {
+    restoreDefaultConfig();
+});
+
 export const commands = [
     activateThemeCommand,
     toggleAngularIconsCommand,
-    toggleFolderIconsCommand
+    toggleFolderIconsCommand,
+    restoreDefaultConfigCommand
 ];

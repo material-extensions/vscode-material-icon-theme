@@ -7,7 +7,7 @@ import * as reload from './../messages/reload';
 
 /** Command to toggle the folder icons. */
 export const toggleFolderIcons = () => {
-    checkFolderIconsStatus()
+    return checkFolderIconsStatus()
         .then(showQuickPickItems)
         .then(handleQuickPickActions);
 };
@@ -39,7 +39,7 @@ const handleQuickPickActions = value => {
             checkFolderIconsStatus().then(result => {
                 if (!result) {
                     enableFolderIcons();
-                    helpers.setThemeConfig('folder.iconsEnabled', true);
+                    helpers.setThemeConfig('folders.iconsEnabled', true);
                 }
             });
             break;
@@ -48,7 +48,7 @@ const handleQuickPickActions = value => {
             checkFolderIconsStatus().then(result => {
                 if (result) {
                     disableFolderIcons();
-                    helpers.setThemeConfig('folder.iconsEnabled', true);
+                    helpers.setThemeConfig('folders.iconsEnabled', false);
                 }
             });
             break;
@@ -60,7 +60,7 @@ const handleQuickPickActions = value => {
 
 /** Are the folder icons enabled? */
 export const checkFolderIconsStatus = (): Promise<boolean> => {
-    return helpers.getIconConfiguration().then((config) => {
+    return helpers.getMaterialIconsJSON().then((config) => {
         if (config.folder === '' && config.folderExpanded === '') {
             return false;
         } else {
@@ -72,7 +72,7 @@ export const checkFolderIconsStatus = (): Promise<boolean> => {
 
 /** Enable folder icons */
 export const enableFolderIcons = () => {
-    insertFolderIcons().then(() => {
+    return insertFolderIcons().then(() => {
         reload.showConfirmToReloadMessage().then(result => {
             if (result) helpers.reload();
         });
@@ -81,7 +81,7 @@ export const enableFolderIcons = () => {
 
 /** Disable folder icons */
 export const disableFolderIcons = () => {
-    deleteFolderIcons().then(() => {
+    return deleteFolderIcons().then(() => {
         reload.showConfirmToReloadMessage().then(result => {
             if (result) helpers.reload();
         });
@@ -91,23 +91,23 @@ export const disableFolderIcons = () => {
 /** Add folder icons */
 const insertFolderIcons = (): Promise<void> => {
     const iconJSONPath = path.join(helpers.getExtensionPath(), 'out', 'src', 'material-icons.json');
-    return helpers.getIconConfiguration().then(config => {
+    return helpers.getMaterialIconsJSON().then(config => {
         fs.writeFile(iconJSONPath, JSON.stringify({
             ...config,
             folder: "_folder",
             folderExpanded: "_folder_open"
-        }));
+        }, null, 2));
     });
 };
 
 /** Delete folder icons */
 const deleteFolderIcons = (): Promise<void> => {
     const iconJSONPath = path.join(helpers.getExtensionPath(), 'out', 'src', 'material-icons.json');
-    return helpers.getIconConfiguration().then(config => {
+    return helpers.getMaterialIconsJSON().then(config => {
         fs.writeFile(iconJSONPath, JSON.stringify({
             ...config,
             folder: "",
             folderExpanded: ""
-        }));
+        }, null, 2));
     });
 };

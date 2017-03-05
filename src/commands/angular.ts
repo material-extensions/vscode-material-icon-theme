@@ -7,7 +7,7 @@ import * as reload from './../messages/reload';
 
 /** Command to toggle the Angular icons. */
 export const toggleAngularIcons = () => {
-    checkAngularIconsStatus()
+    return checkAngularIconsStatus()
         .then(showQuickPickItems)
         .then(handleQuickPickActions);
 };
@@ -58,7 +58,7 @@ const handleQuickPickActions = value => {
 
 /** Enable icons for angular files */
 export const enableAngularIcons = (global: boolean = false) => {
-    addAngularFileExtensions().then(() => {
+    return addAngularFileExtensions().then(() => {
         reload.showConfirmToReloadMessage().then(result => {
             if (result) helpers.reload();
         });
@@ -67,7 +67,7 @@ export const enableAngularIcons = (global: boolean = false) => {
 
 /** Disable icons for angular files */
 export const disableAngularIcons = (global: boolean = false) => {
-    deleteAngularFileExtensions().then(() => {
+    return deleteAngularFileExtensions().then(() => {
         reload.showConfirmToReloadMessage().then(result => {
             if (result) helpers.reload();
         });
@@ -76,7 +76,7 @@ export const disableAngularIcons = (global: boolean = false) => {
 
 /** Are the angular icons enabled? */
 export const checkAngularIconsStatus = (): Promise<boolean> => {
-    return helpers.getIconConfiguration().then((config) => {
+    return helpers.getMaterialIconsJSON().then((config) => {
         if (config.fileExtensions['module.ts']) {
             return true;
         } else {
@@ -88,7 +88,7 @@ export const checkAngularIconsStatus = (): Promise<boolean> => {
 /** Add file extensions for angular files */
 const addAngularFileExtensions = (): Promise<void> => {
     const iconJSONPath = path.join(helpers.getExtensionPath(), 'out', 'src', 'material-icons.json');
-    return helpers.getIconConfiguration().then(config => {
+    return helpers.getMaterialIconsJSON().then(config => {
         fs.writeFile(iconJSONPath, JSON.stringify({
             ...config,
             "fileExtensions": {
@@ -107,7 +107,7 @@ const addAngularFileExtensions = (): Promise<void> => {
 /** Remove file extensions for angular files */
 const deleteAngularFileExtensions = (): Promise<void> => {
     const iconJSONPath = path.join(helpers.getExtensionPath(), 'out', 'src', 'material-icons.json');
-    return helpers.getIconConfiguration().then(config => {
+    return helpers.getMaterialIconsJSON().then(config => {
         fs.writeFile(iconJSONPath, JSON.stringify({ ...helpers.removeIconExtensions(config, 'angular') }, null, 2));
     });
 };
