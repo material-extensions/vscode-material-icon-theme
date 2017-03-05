@@ -5,7 +5,7 @@ import { showWelcomeMessage } from "./welcome";
 import { updateVersionInUserDataSettings, initUserDataSettings } from "../helpers/config";
 
 /** Initialization of the icons every time the theme get activated */
-export const showStartMessages = () => {
+export const showStartMessages = () => {    
     // if the theme has been used before
     helpers.getUserDataSettings().then((settings: any) => {
         // if the theme has been updated show update message
@@ -15,7 +15,7 @@ export const showStartMessages = () => {
         }
     }).catch(() => {
         // no config but old version was already installed
-        if (helpers.isThemeActivated()) {
+        if (helpers.isThemeActivated() || helpers.isThemeActivated(true)) {
             showUpdateMessage();
         }
         // no config and the theme has never been used before

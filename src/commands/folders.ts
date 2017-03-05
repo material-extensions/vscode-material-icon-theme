@@ -37,13 +37,19 @@ const handleQuickPickActions = value => {
     switch (value.description) {
         case i18n.translate('toggleSwitch.on'): {
             checkFolderIconsStatus().then(result => {
-                if (!result) enableFolderIcons();
+                if (!result) {
+                    enableFolderIcons();
+                    helpers.setThemeConfig('folder.iconsEnabled', true);
+                }
             });
             break;
         }
         case i18n.translate('toggleSwitch.off'): {
             checkFolderIconsStatus().then(result => {
-                if (result) disableFolderIcons();
+                if (result) {
+                    disableFolderIcons();
+                    helpers.setThemeConfig('folder.iconsEnabled', true);
+                }
             });
             break;
         }

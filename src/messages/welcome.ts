@@ -7,7 +7,7 @@ import { activateIconTheme } from "../commands/activate";
 /** Show the welcome message if the icon theme has been installed the first time. */
 export const showWelcomeMessage = () => {
     // if the user does not want to see the welcome message
-    if (!helpers.getThemeConfig('showWelcomeMessage')) return;
+    if (helpers.getThemeConfig('showWelcomeMessage').globalValue === false) return;
 
     vscode.window.showInformationMessage(
         i18n.translate('themeInstalled'),

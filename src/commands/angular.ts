@@ -37,20 +37,24 @@ const handleQuickPickActions = value => {
     switch (value.description) {
         case i18n.translate('toggleSwitch.on'): {
             checkAngularIconsStatus().then(result => {
-                if (!result) enableAngularIcons();
+                if (!result) {
+                    enableAngularIcons();
+                    helpers.setThemeConfig('angular.iconsEnabled', true);
+                }
             });
             break;
         }
         case i18n.translate('toggleSwitch.off'): {
             checkAngularIconsStatus().then(result => {
                 if (result) disableAngularIcons();
+                helpers.setThemeConfig('angular.iconsEnabled', false);
             });
             break;
         }
         default:
             break;
     }
-}
+};
 
 /** Enable icons for angular files */
 export const enableAngularIcons = (global: boolean = false) => {
@@ -90,7 +94,7 @@ const addAngularFileExtensions = (): Promise<void> => {
             "fileExtensions": {
                 ...config.fileExtensions,
                 "module.ts": "_file_angular",
-                "routing.ts": "_file_routes",
+                "routing.ts": "_file_angular_routes",
                 "component.ts": "_file_angular_component",
                 "guard.ts": "_file_angular_guard",
                 "service.ts": "_file_angular_service",

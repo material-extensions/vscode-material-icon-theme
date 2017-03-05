@@ -69,6 +69,16 @@
           "type": "boolean",
           "default": true,
           "description": "Show the update message after each update."
+        },
+        "material-icon-theme.angular.iconsEnabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable the icons for Angular files."
+        },
+        "material-icon-theme.folders.iconsEnabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable folder icons."
         }
       }
     }

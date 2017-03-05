@@ -12,20 +12,26 @@ export const getConfig = (section?: string) =>
     vscode.workspace.getConfiguration(section) as AdvancedWorkspaceConfiguration;
 
 /** Returns the value of a workspace config property. */
-export const getThemeConfig = (config: string): any =>
-    getConfig('material-icon-theme').get(config);
+// export const getThemeConfig = (config: string): any =>
+//     getConfig('material-icon-theme').get(config);
 
-export const getGlobalThemeConfig = (config: string) =>
-    getConfig('material-icon-theme').inspect(config);
+export const getThemeConfig = (section: string) => {
+    return getConfig('material-icon-theme').inspect(section);
+}
 
 /** Set the config of the theme. */
-export const setThemeConfig = (section: string, value: any, global?: boolean) => {
+export const setThemeConfig = (section: string, value: any, global: boolean = false) => {
     getConfig('material-icon-theme').update(section, value, global);
 };
 
-/** Is the theme already activated in the settings? */
-export const isThemeActivated = (): boolean =>
-    getConfig().get('workbench.iconTheme') === 'material-icon-theme';
+/** 
+ * Is the theme already activated in the editor configuration? 
+ * @param{boolean} global false by default
+ */
+export const isThemeActivated = (global: boolean = false): boolean => {
+    return global ? getConfig().inspect('workbench.iconTheme').globalValue === 'material-icon-theme'
+        : getConfig().inspect('workbench.iconTheme').workspaceValue === 'material-icon-theme';
+}
 
 /** returns the current version of the icon theme */
 export const getCurrentExtensionVersion = (): string =>
