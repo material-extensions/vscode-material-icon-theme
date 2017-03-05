@@ -3,6 +3,7 @@ export interface IconConfiguration {
     folder: any;
     folderExpanded: any;
     folderNames: any;
+    folderNamesExpanded: any;
     fileExtensions: any;
     fileNames: any;
     languageIds: any;
