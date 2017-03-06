@@ -94,7 +94,7 @@ const addAngularFileExtensions = (): Promise<void> => {
             "fileExtensions": {
                 ...config.fileExtensions,
                 "module.ts": "_file_angular",
-                "routing.ts": "_file_angular_routes",
+                "routing.ts": "_file_angular_routing",
                 "component.ts": "_file_angular_component",
                 "guard.ts": "_file_angular_guard",
                 "service.ts": "_file_angular_service",

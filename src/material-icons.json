@@ -252,8 +252,8 @@
     "_file_angular_pipe": {
       "iconPath": "./../../icons/angular-pipe.svg"
     },
-    "_file_angular_routes": {
-      "iconPath": "./../../icons/angular-routes.svg"
+    "_file_angular_routing": {
+      "iconPath": "./../../icons/angular-routing.svg"
     },
     "_file_vue": {
       "iconPath": "./../../icons/vue.svg"
@@ -579,7 +579,7 @@
     "test.ts": "_file_test_ts",
     "spec.js": "_file_test_js",
     "test.js": "_file_test_js",
-    "routing.ts": "_file_angular_routes",
+    "routing.ts": "_file_angular_routing",
     "module.ts": "_file_angular",
     "component.ts": "_file_angular_component",
     "guard.ts": "_file_angular_guard",
