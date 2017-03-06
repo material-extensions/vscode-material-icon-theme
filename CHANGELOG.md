@@ -1,16 +1,34 @@
 # Change Log
 
 ## 2.0.0 (2017-03-10)
-Basic:
-- API Support
-- Information Messages
-- Enable/Disable Angular Icons
+<!--Major updates:-->
+**VS Code API support**
+- Theme activation
+- welcome/update messages
+- i18n-Support
+- enable/disable Angular icons
+- enable/disable folder icons
+- Restore default settings
 
 Added icons:
 - Puppet
 - Elixir
-- Angular Icons (Modules, Component, Service, Routing, Pipe, Guard)
-- Test icon (spec.ts, test.ts, spec.js, test.js)
+- LiveScript
+- Angular icons
+    - module.ts
+    - component.ts
+    - service.ts
+    - routing.ts
+    - pipe.ts
+    - guard.ts
+- Test icons
+    - spec.ts 
+    - test.ts 
+    - spec.js 
+    - test.js
+
+Updated icons:
+- icon for opened folders
 
 ## 1.3.4 (2017-02-23)
 Added icons:
