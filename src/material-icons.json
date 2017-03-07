@@ -312,6 +312,9 @@
     "_file_livescript": {
       "iconPath": "./../../icons/livescript.svg"
     },
+    "_file_erlang": {
+      "iconPath": "./../../icons/erlang.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -588,7 +591,8 @@
     "pp": "_file_puppet",
     "ex": "_file_elixir",
     "exs": "_file_elixir",
-    "ls": "_file_livescript"
+    "ls": "_file_livescript",
+    "erl": "_file_erlang"
   },
   "fileNames": {
     "webpack.js": "_file_webpack",
@@ -704,6 +708,7 @@
     "hxml": "_file_haxe",
     "puppet": "_file_puppet",
     "elixir": "_file_elixir",
-    "livescript": "_file_livescript"
+    "livescript": "_file_livescript",
+    "erlang": "_file_erlang"
   }
 }
