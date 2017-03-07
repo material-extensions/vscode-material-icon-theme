@@ -13,6 +13,7 @@
 Added icons:
 - Puppet
 - Elixir
+- Erlang
 - LiveScript
 - Angular icons
     - module.ts
