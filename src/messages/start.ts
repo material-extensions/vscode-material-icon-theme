@@ -5,13 +5,15 @@ import { showWelcomeMessage } from "./welcome";
 import { updateVersionInUserDataSettings, initUserDataSettings } from "../helpers/config";
 
 /** Initialization of the icons every time the theme get activated */
-export const showStartMessages = () => {    
+export const showStartMessages = () => {
     // if the theme has been used before
     helpers.getUserDataSettings().then((settings: any) => {
         // if the theme has been updated show update message
         if (cmp(settings.version, helpers.getCurrentExtensionVersion()) === -1) {
             showUpdateMessage();
-            updateVersionInUserDataSettings();
+            updateVersionInUserDataSettings().catch((err) => {
+                console.log(err);
+            });
         }
     }).catch(() => {
         // no config but old version was already installed
@@ -24,6 +26,6 @@ export const showStartMessages = () => {
         }
 
         // create a config file in the user data folder
-        initUserDataSettings();
+        initUserDataSettings().catch((err) => console.log(err));
     });
 };

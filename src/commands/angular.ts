@@ -90,7 +90,7 @@ export const checkAngularIconsStatus = (): Promise<boolean> => {
 const addAngularFileExtensions = (): Promise<void> => {
     const iconJSONPath = path.join(helpers.getExtensionPath(), 'out', 'src', 'material-icons.json');
     return helpers.getMaterialIconsJSON().then(config => {
-        fs.writeFile(iconJSONPath, JSON.stringify(createConfigWithAngular(config), null, 2));
+        fs.writeFileSync(iconJSONPath, JSON.stringify(createConfigWithAngular(config), null, 2));
     });
 };
 
@@ -113,6 +113,6 @@ const createConfigWithAngular = (config: IconConfiguration) => {
 const deleteAngularFileExtensions = (): Promise<void> => {
     const iconJSONPath = path.join(helpers.getExtensionPath(), 'out', 'src', 'material-icons.json');
     return helpers.getMaterialIconsJSON().then(config => {
-        fs.writeFile(iconJSONPath, JSON.stringify({ ...helpers.removeIconExtensions(config, 'angular') }, null, 2));
+        fs.writeFileSync(iconJSONPath, JSON.stringify({ ...helpers.removeIconExtensions(config, 'angular') }, null, 2));
     });
 };

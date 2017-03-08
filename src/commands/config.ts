@@ -4,7 +4,7 @@ import * as helpers from './../helpers';
 import { enableFolderIcons } from "./folders";
 
 export const restoreDefaultConfig = () => {
-    restore().then(() => {
+    return restore().then(() => {
         reload.showConfirmToReloadMessage().then(result => {
             if (result) helpers.reload();
         });

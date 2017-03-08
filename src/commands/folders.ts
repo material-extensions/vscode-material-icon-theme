@@ -55,7 +55,7 @@ const handleQuickPickActions = value => {
         default:
             break;
     }
-}
+};
 
 /** Are the folder icons enabled? */
 export const checkFolderIconsStatus = (): Promise<boolean> => {
@@ -71,7 +71,6 @@ export const checkFolderIconsStatus = (): Promise<boolean> => {
 
 /** Enable folder icons */
 export const enableFolderIcons = () => {
-    console.log("disable folder icons");
     return insertFolderIcons().then(() => {
         reload.showConfirmToReloadMessage().then(result => {
             if (result) helpers.reload();
@@ -81,7 +80,6 @@ export const enableFolderIcons = () => {
 
 /** Disable folder icons */
 export const disableFolderIcons = () => {
-    console.log("disable folder icons");
     return deleteFolderIcons().then(() => {
         reload.showConfirmToReloadMessage().then(result => {
             if (result) helpers.reload();
@@ -93,7 +91,7 @@ export const disableFolderIcons = () => {
 const insertFolderIcons = (): Promise<void> => {
     const iconJSONPath = path.join(helpers.getExtensionPath(), 'out', 'src', 'material-icons.json');
     return helpers.getMaterialIconsJSON().then(config => {
-        fs.writeFile(iconJSONPath, JSON.stringify(createConfigWithFolders(config), null, 2));
+        fs.writeFileSync(iconJSONPath, JSON.stringify(createConfigWithFolders(config), null, 2));
     });
 };
 
@@ -109,7 +107,7 @@ export const createConfigWithFolders = (config: IconConfiguration) => {
 const deleteFolderIcons = (): Promise<void> => {
     const iconJSONPath = path.join(helpers.getExtensionPath(), 'out', 'src', 'material-icons.json');
     return helpers.getMaterialIconsJSON().then(config => {
-        fs.writeFile(iconJSONPath, JSON.stringify(createConfigWithoutFolders(config), null, 2));
+        fs.writeFileSync(iconJSONPath, JSON.stringify(createConfigWithoutFolders(config), null, 2));
     });
 };
 
@@ -118,5 +116,5 @@ export const createConfigWithoutFolders = (config: IconConfiguration) => {
         ...config,
         folder: "",
         folderExpanded: ""
-    }
+    };
 };

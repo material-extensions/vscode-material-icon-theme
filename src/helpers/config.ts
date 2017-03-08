@@ -8,7 +8,7 @@ export const updateVersionInUserDataSettings = () => {
     const setting = {
         version: helpers.getCurrentExtensionVersion(),
     };
-    helpers.updateUserDataSettings(setting);
+    return helpers.writeUserDataSettings(setting);
 };
 
 /** Initialize the user data settings. */
@@ -17,7 +17,7 @@ export const initUserDataSettings = () => {
         name: 'material-icon-theme',
         version: helpers.getCurrentExtensionVersion()
     };
-    helpers.updateUserDataSettings(setting);
+    return helpers.writeUserDataSettings(setting);
 };
 
 /** Watch for changes in the configurations to update the icons theme. */
@@ -25,7 +25,7 @@ export const watchForConfigChanges = () => {
     vscode.workspace.onDidChangeConfiguration(configChangeDetection);
 };
 
-/** 
+/**
  * Compare the workspace and the user configurations
  * with the current setup of the icons.
 */

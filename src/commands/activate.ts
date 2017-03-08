@@ -8,7 +8,7 @@ import * as outdatedMessage from './../messages/outdated';
 export const activateIconTheme = () => {
     if (helpers.isNotSupportedVersion()) {
         outdatedMessage.showOutdatedMessage();
-        return;
+        return Promise.reject('Outdated version of vscode!');
     }
     return setIconTheme();
 };
@@ -18,7 +18,7 @@ const setIconTheme = () => {
     // global user config
     return helpers.getConfig().update('workbench.iconTheme', 'material-icon-theme', true)
         .then(() => {
-            // local workspace config            
+            // local workspace config
             helpers.getConfig().update('workbench.iconTheme', 'material-icon-theme');
             vscode.window.showInformationMessage(i18n.translate('activated'));
         });

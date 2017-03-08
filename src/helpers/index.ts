@@ -3,6 +3,7 @@ import * as path from 'path';
 import * as fs from 'fs';
 import * as cmp from 'semver-compare';
 import * as opn from 'opn';
+import * as os from 'os';
 import * as i18n from "./../i18n";
 import { AdvancedWorkspaceConfiguration } from "../models/AdvancedWorkspaceConfiguration.interface";
 import { IconConfiguration } from "../models/IconConfiguration.interface";
@@ -17,26 +18,26 @@ export const getConfig = (section?: string) =>
 
 export const getThemeConfig = (section: string) => {
     return getConfig('material-icon-theme').inspect(section);
-}
+};
 
 /** Is a folder opened? */
 export const hasWorkspace = (): boolean => {
-    return !!vscode.workspace.rootPath;
-}
+    return vscode.workspace.rootPath !== undefined;
+};
 
 /** Set the config of the theme. */
 export const setThemeConfig = (section: string, value: any, global: boolean = false) => {
     getConfig('material-icon-theme').update(section, value, global);
 };
 
-/** 
- * Is the theme already activated in the editor configuration? 
+/**
+ * Is the theme already activated in the editor configuration?
  * @param{boolean} global false by default
  */
 export const isThemeActivated = (global: boolean = false): boolean => {
     return global ? getConfig().inspect('workbench.iconTheme').globalValue === 'material-icon-theme'
         : getConfig().inspect('workbench.iconTheme').workspaceValue === 'material-icon-theme';
-}
+};
 
 /** returns the current version of the icon theme */
 export const getCurrentExtensionVersion = (): string =>
@@ -52,45 +53,60 @@ export const isNotSupportedVersion = (): boolean =>
 
 /** user data */
 export const getSettingsFilePath = (): string => {
-    const appDataPath = (process.env.APPDATA || (process.platform === 'darwin' ? process.env.HOME + 'Library/Preferences' : '/var/local'));
-    const codeUserDataPath = path.join(appDataPath, isInsiderVersion() ? 'Code - Insiders' : 'Code', 'User');
+    const codeUserDataPath = path.join(getOSspecifigAppDirPath(), isInsiderVersion() ? 'Code - Insiders' : 'Code', 'User');
     return path.join(codeUserDataPath, 'material-icon-theme.json');
+};
+
+const getOSspecifigAppDirPath = () => {
+    switch (process.platform) {
+        case 'win32':
+            return process.env.APPDATA;
+
+        case 'darwin':
+            return `${process.env.HOME}/Library/Application Support`;
+
+        case 'linux':
+            return `${os.homedir()}/.config`;
+
+        default:
+            return '/var/local/';
+    }
 };
 
 /** Return the settings from the userdata */
 export const getUserDataSettings = (): Promise<any> => {
     return new Promise((resolve, reject) => {
         fs.readFile(getSettingsFilePath(), 'utf8', (err, data) => {
-            if (err) {
-                reject(err);
-            } else {
+            if (data) {
                 resolve(JSON.parse(data));
+            } else {
+                reject(err);
             }
         });
     });
 };
 
 /** Update the settings in the userdata. */
-export const updateUserDataSettings = (setting: any): Promise<any> => {
+export const writeUserDataSettings = (setting: any): Promise<any> => {
     return getUserDataSettings().then((data) => {
-        fs.writeFile(getSettingsFilePath(), JSON.stringify({ ...data, ...setting }, null, 2));
+        fs.writeFileSync(getSettingsFilePath(), JSON.stringify({ ...data, ...setting }, null, 2));
     }).catch(() => {
-        fs.writeFile(getSettingsFilePath(), JSON.stringify({ ...setting }, null, 2));
+        fs.writeFileSync(getSettingsFilePath(), JSON.stringify({ ...setting }, null, 2));
     });
 };
 
 /** Return the path of the extension in the file system. */
-export const getExtensionPath = () => path.join(__dirname, '/../../../');
+export const getExtensionPath = () => path.join(__dirname, '..', '..', '..');
 
 /** Get the configuration of the icons as JSON Object */
 export const getMaterialIconsJSON = (): Promise<IconConfiguration> => {
     return new Promise((resolve, reject) => {
         const iconJSONPath = path.join(getExtensionPath(), 'out', 'src', 'material-icons.json');
         fs.readFile(iconJSONPath, 'utf8', (err, data) => {
-            if (err) {
-                reject(err);
-            } else {
+            if (data) {
                 resolve(JSON.parse(data));
+            } else {
+                reject(err);
             }
         });
     });
