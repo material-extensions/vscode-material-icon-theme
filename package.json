@@ -94,7 +94,7 @@
     "postinstall": "node ./node_modules/vscode/bin/install",
     "tslint": "tslint -c tslint.json ./src/**/*.ts",
     "pretest": "npm run vscode:prepublish",
-    "test": "mocha ./out/test",
+    "test": "node ./node_modules/vscode/bin/test",
     "test:watch": "npm test -- --watch",
     "test:vscode": "node ./node_modules/vscode/bin/test"
   },
