@@ -20,18 +20,19 @@ export const initUserDataSettings = () => {
     helpers.updateUserDataSettings(setting);
 };
 
+/** Watch for changes in the configurations to update the icons theme. */
+export const watchForConfigChanges = () => {
+    vscode.workspace.onDidChangeConfiguration(configChangeDetection);
+};
+
 /** 
  * Compare the workspace and the user configurations
  * with the current setup of the icons.
 */
 export const configChangeDetection = () => {
-    return /*compareAngularConfigs().then(() => */compareFolderConfigs();
-}
-
-/** Watch for changes in the configurations to update the icons theme. */
-export const watchForConfigChanges = () => {
-    vscode.workspace.onDidChangeConfiguration(configChangeDetection);
-}
+    return compareAngularConfigs()
+        .then(() => compareFolderConfigs());
+};
 
 const compareAngularConfigs = () => {
     const angularIconsConfig = helpers.getThemeConfig('angular.iconsEnabled');
@@ -45,7 +46,7 @@ const compareAngularConfigs = () => {
             (angularIconsConfig.workspaceValue === undefined && angularIconsConfig.globalValue === false) ||
             (angularIconsConfig.workspaceValue === false && angularIconsConfig.globalValue === undefined)) {
 
-            if (result) { return disableAngularIcons(); }
+            if (result) { disableAngularIcons(); }
         };
     });
 };
