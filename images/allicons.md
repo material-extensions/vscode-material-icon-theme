@@ -1,20 +1,21 @@
 |Icon|Type|
 |---|---|
 |<img src="./../icons/folder.svg" width="20px">|Folder|
-|<img src="./../icons/folder-open.svg" width="20px">|Folder outline|
+|<img src="./../icons/folder-open.svg" width="20px">|Folder open|
 |<img src="./../icons/actionscript.svg" width="20px">|ActionScript|
 |<img src="./../icons/android.svg" width="20px">|Android|
-|<img src="./../icons/angular.svg" width="20px">|Angular module|
 |<img src="./../icons/angular-component.svg" width="20px">|Angular component|
+|<img src="./../icons/angular.svg" width="20px">|Angular module|
+|<img src="./../icons/angular-pipe.svg" width="20px">|Angular pipe|
 |<img src="./../icons/angular-routing.svg" width="20px">|Angular routing|
 |<img src="./../icons/angular-service.svg" width="20px">|Angular service|
-|<img src="./../icons/angular-pipe.svg" width="20px">|Angular pipe|
 |<img src="./../icons/zip.svg" width="20px">|Archive|
 |<img src="./../icons/arduino.svg" width="20px">|Arduino|
+|<img src="./../icons/assembly.svg" width="20px">|Assembly|
 |<img src="./../icons/autohotkey.svg" width="20px">|Autohotkey|
 |<img src="./../icons/c-lang.svg" width="20px">|C|
-|<img src="./../icons/cpp.svg" width="20px">|C++|
 |<img src="./../icons/csharp.svg" width="20px">|C#|
+|<img src="./../icons/cpp.svg" width="20px">|C++|
 |<img src="./../icons/certificate.svg" width="20px">|Certificate|
 |<img src="./../icons/changelog.svg" width="20px">|Changelog|
 |<img src="./../icons/clojure.svg" width="20px">|Clojure|
@@ -29,6 +30,7 @@
 |<img src="./../icons/docker.svg" width="20px">|Docker|
 |<img src="./../icons/document.svg" width="20px">|Document|
 |<img src="./../icons/elixir.svg" width="20px">|Elixir|
+|<img src="./../icons/erlang.svg" width="20px">|Erlang|
 |<img src="./../icons/exe.svg" width="20px">|Executable|
 |<img src="./../icons/fsharp.svg" width="20px">|F#|
 |<img src="./../icons/favicon.svg" width="20px">|Favicon|
@@ -46,7 +48,6 @@
 |<img src="./../icons/html.svg" width="20px">|HTML|
 |<img src="./../icons/image.svg" width="20px">|Image|
 |<img src="./../icons/ionic.svg" width="20px">|Ionic|
-|<img src="./../icons/pug.svg" width="20px">|Jade / Pug|
 |<img src="./../icons/java.svg" width="20px">|Java|
 |<img src="./../icons/javascript.svg" width="20px">|JavaScript|
 |<img src="./../icons/javascript-map.svg" width="20px">|JavaScript Map|
@@ -55,8 +56,8 @@
 |<img src="./../icons/key.svg" width="20px">|Key|
 |<img src="./../icons/kotlin.svg" width="20px">|Kotlin|
 |<img src="./../icons/lib.svg" width="20px">|Lib|
-|<img src="./../icons/livescript.svg" width="20px">|LiveScript|
 |<img src="./../icons/url.svg" width="20px">|Link|
+|<img src="./../icons/livescript.svg" width="20px">|LiveScript|
 |<img src="./../icons/lock.svg" width="20px">|Lock|
 |<img src="./../icons/lua.svg" width="20px">|Lua|
 |<img src="./../icons/email.svg" width="20px">|Mail|
@@ -68,9 +69,11 @@
 |<img src="./../icons/nodejs.svg" width="20px">|NodeJS|
 |<img src="./../icons/ocaml.svg" width="20px">|Ocaml|
 |<img src="./../icons/pdf.svg" width="20px">|PDF|
+|<img src="./../icons/perl.svg" width="20px">|Perl|
 |<img src="./../icons/php.svg" width="20px">|PHP|
 |<img src="./../icons/powerpoint.svg" width="20px">|PowerPoint|
 |<img src="./../icons/settings.svg" width="20px">|Properties|
+|<img src="./../icons/pug.svg" width="20px">|Pug|
 |<img src="./../icons/puppet.svg" width="20px">|Puppet|
 |<img src="./../icons/python.svg" width="20px">|Python|
 |<img src="./../icons/r.svg" width="20px">|R|
