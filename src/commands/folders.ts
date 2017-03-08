@@ -4,6 +4,7 @@ import * as path from 'path';
 import * as fs from 'fs';
 import * as i18n from './../i18n';
 import * as reload from './../messages/reload';
+import { IconConfiguration } from "../models/IconConfiguration.interface";
 
 /** Command to toggle the folder icons. */
 export const toggleFolderIcons = () => {
@@ -38,8 +39,7 @@ const handleQuickPickActions = value => {
         case i18n.translate('toggleSwitch.on'): {
             checkFolderIconsStatus().then(result => {
                 if (!result) {
-                    enableFolderIcons();
-                    helpers.setThemeConfig('folders.iconsEnabled', true);
+                    helpers.setThemeConfig('folders.iconsEnabled', true, true);
                 }
             });
             break;
@@ -47,8 +47,7 @@ const handleQuickPickActions = value => {
         case i18n.translate('toggleSwitch.off'): {
             checkFolderIconsStatus().then(result => {
                 if (result) {
-                    disableFolderIcons();
-                    helpers.setThemeConfig('folders.iconsEnabled', false);
+                    helpers.setThemeConfig('folders.iconsEnabled', false, true);
                 }
             });
             break;
@@ -72,6 +71,7 @@ export const checkFolderIconsStatus = (): Promise<boolean> => {
 
 /** Enable folder icons */
 export const enableFolderIcons = () => {
+    console.log("disable folder icons");
     return insertFolderIcons().then(() => {
         reload.showConfirmToReloadMessage().then(result => {
             if (result) helpers.reload();
@@ -81,6 +81,7 @@ export const enableFolderIcons = () => {
 
 /** Disable folder icons */
 export const disableFolderIcons = () => {
+    console.log("disable folder icons");
     return deleteFolderIcons().then(() => {
         reload.showConfirmToReloadMessage().then(result => {
             if (result) helpers.reload();
@@ -92,22 +93,30 @@ export const disableFolderIcons = () => {
 const insertFolderIcons = (): Promise<void> => {
     const iconJSONPath = path.join(helpers.getExtensionPath(), 'out', 'src', 'material-icons.json');
     return helpers.getMaterialIconsJSON().then(config => {
-        fs.writeFile(iconJSONPath, JSON.stringify({
-            ...config,
-            folder: "_folder",
-            folderExpanded: "_folder_open"
-        }, null, 2));
+        fs.writeFile(iconJSONPath, JSON.stringify(createConfigWithFolders(config), null, 2));
     });
+};
+
+export const createConfigWithFolders = (config: IconConfiguration) => {
+    return {
+        ...config,
+        folder: "_folder",
+        folderExpanded: "_folder_open"
+    };
 };
 
 /** Delete folder icons */
 const deleteFolderIcons = (): Promise<void> => {
     const iconJSONPath = path.join(helpers.getExtensionPath(), 'out', 'src', 'material-icons.json');
     return helpers.getMaterialIconsJSON().then(config => {
-        fs.writeFile(iconJSONPath, JSON.stringify({
-            ...config,
-            folder: "",
-            folderExpanded: ""
-        }, null, 2));
+        fs.writeFile(iconJSONPath, JSON.stringify(createConfigWithoutFolders(config), null, 2));
     });
+};
+
+export const createConfigWithoutFolders = (config: IconConfiguration) => {
+    return {
+        ...config,
+        folder: "",
+        folderExpanded: ""
+    }
 };

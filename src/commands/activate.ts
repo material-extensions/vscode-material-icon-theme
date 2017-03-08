@@ -10,16 +10,16 @@ export const activateIconTheme = () => {
         outdatedMessage.showOutdatedMessage();
         return;
     }
-    setIconTheme();
+    return setIconTheme();
 };
 
 /** Set the icon theme in the config. */
 const setIconTheme = () => {
-    // local workspace config
-    helpers.getConfig().update('workbench.iconTheme', 'material-icon-theme')
+    // global user config
+    return helpers.getConfig().update('workbench.iconTheme', 'material-icon-theme', true)
         .then(() => {
-            // global user config
-            helpers.getConfig().update('workbench.iconTheme', 'material-icon-theme', true);
+            // local workspace config            
+            helpers.getConfig().update('workbench.iconTheme', 'material-icon-theme');
             vscode.window.showInformationMessage(i18n.translate('activated'));
         });
 };

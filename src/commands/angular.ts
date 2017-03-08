@@ -4,6 +4,7 @@ import * as path from 'path';
 import * as fs from 'fs';
 import * as i18n from './../i18n';
 import * as reload from './../messages/reload';
+import { IconConfiguration } from "../models/IconConfiguration.interface";
 
 /** Command to toggle the Angular icons. */
 export const toggleAngularIcons = () => {
@@ -38,16 +39,16 @@ const handleQuickPickActions = value => {
         case i18n.translate('toggleSwitch.on'): {
             checkAngularIconsStatus().then(result => {
                 if (!result) {
-                    enableAngularIcons();
-                    helpers.setThemeConfig('angular.iconsEnabled', true);
+                    helpers.setThemeConfig('angular.iconsEnabled', true, true);
                 }
             });
             break;
         }
         case i18n.translate('toggleSwitch.off'): {
             checkAngularIconsStatus().then(result => {
-                if (result) disableAngularIcons();
-                helpers.setThemeConfig('angular.iconsEnabled', false);
+                if (result) {
+                    helpers.setThemeConfig('angular.iconsEnabled', false, true);
+                }
             });
             break;
         }
@@ -57,7 +58,7 @@ const handleQuickPickActions = value => {
 };
 
 /** Enable icons for angular files */
-export const enableAngularIcons = (global: boolean = false) => {
+export const enableAngularIcons = () => {
     return addAngularFileExtensions().then(() => {
         reload.showConfirmToReloadMessage().then(result => {
             if (result) helpers.reload();
@@ -66,7 +67,7 @@ export const enableAngularIcons = (global: boolean = false) => {
 };
 
 /** Disable icons for angular files */
-export const disableAngularIcons = (global: boolean = false) => {
+export const disableAngularIcons = () => {
     return deleteAngularFileExtensions().then(() => {
         reload.showConfirmToReloadMessage().then(result => {
             if (result) helpers.reload();
@@ -89,19 +90,23 @@ export const checkAngularIconsStatus = (): Promise<boolean> => {
 const addAngularFileExtensions = (): Promise<void> => {
     const iconJSONPath = path.join(helpers.getExtensionPath(), 'out', 'src', 'material-icons.json');
     return helpers.getMaterialIconsJSON().then(config => {
-        fs.writeFile(iconJSONPath, JSON.stringify({
-            ...config,
-            "fileExtensions": {
-                ...config.fileExtensions,
-                "module.ts": "_file_angular",
-                "routing.ts": "_file_angular_routing",
-                "component.ts": "_file_angular_component",
-                "guard.ts": "_file_angular_guard",
-                "service.ts": "_file_angular_service",
-                "pipe.ts": "_file_angular_pipe",
-            }
-        }, null, 2));
+        fs.writeFile(iconJSONPath, JSON.stringify(createConfigWithAngular(config), null, 2));
     });
+};
+
+const createConfigWithAngular = (config: IconConfiguration) => {
+    return {
+        ...config,
+        "fileExtensions": {
+            ...config.fileExtensions,
+            "module.ts": "_file_angular",
+            "routing.ts": "_file_angular_routing",
+            "component.ts": "_file_angular_component",
+            "guard.ts": "_file_angular_guard",
+            "service.ts": "_file_angular_service",
+            "pipe.ts": "_file_angular_pipe",
+        }
+    };
 };
 
 /** Remove file extensions for angular files */
