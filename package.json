@@ -89,7 +89,7 @@
   },
   "scripts": {
     "vscode:prepublish": "tsc -p ./ && npm run copy:json",
-    "compile": "tsc -watch -p ./ && npm run copy:json -- --watch",
+    "compile": "tsc -watch -p ./ && npm run copy:json",
     "copy:json": "cpx \"src/**/*.json\" out/src/",
     "postinstall": "node ./node_modules/vscode/bin/install",
     "tslint": "tslint -c tslint.json ./src/**/*.ts",
