@@ -94,9 +94,8 @@
     "postinstall": "node ./node_modules/vscode/bin/install",
     "tslint": "tslint -c tslint.json ./src/**/*.ts",
     "pretest": "npm run vscode:prepublish",
-    "test": "node ./node_modules/vscode/bin/test",
-    "test:watch": "npm test -- --watch",
-    "test:vscode": "node ./node_modules/vscode/bin/test"
+    "test": "node ./node_modules/vscode/bin/test",    
+    "check": "bithound check git@github.com:PKief/vscode-extension-material-icon-theme.git"
   },
   "dependencies": {
     "opn": "^4.0.2",
@@ -105,6 +104,7 @@
   "devDependencies": {
     "@types/mocha": "^2.2.39",
     "@types/node": "^7.0.5",
+    "bithound": "^1.7.0",
     "cpx": "^1.5.0",
     "mocha": "^3.2.0",
     "tslint": "^4.5.1",

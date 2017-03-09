@@ -5,6 +5,9 @@ test/**
 src/**
 **/*.map
 .gitignore
+.travis.yml
+appveyor.yml
+.bithoundrc
 tsconfig.json
 tslint.json
 images/**
