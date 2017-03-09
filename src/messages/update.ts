@@ -14,8 +14,8 @@ export const showUpdateMessage = () => {
 
         // show 'Activate' button if icon theme is not active
         (
-            !helpers.hasWorkspace() && !helpers.isThemeActivated(true) // no workspace and not global
-            || helpers.hasWorkspace() && !helpers.isThemeActivated() // not local
+            (!helpers.hasWorkspace() && !helpers.isThemeActivated(true)) // no workspace and not global
+            || (helpers.hasWorkspace() && !helpers.isThemeActivated(false)) // not local
         ) ? i18n.translate('activate') : undefined,
 
         i18n.translate('readChangelog'),

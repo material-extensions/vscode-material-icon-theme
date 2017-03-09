@@ -9,12 +9,14 @@ import { AdvancedWorkspaceConfiguration } from "../models/AdvancedWorkspaceConfi
 import { IconConfiguration } from "../models/IconConfiguration.interface";
 
 /** Get configuration of vs code. */
-export const getConfig = (section?: string) =>
-    vscode.workspace.getConfiguration(section) as AdvancedWorkspaceConfiguration;
+export const getConfig = (section?: string) => {
+    return vscode.workspace.getConfiguration(section) as AdvancedWorkspaceConfiguration;
+}
 
-/** Returns the value of a workspace config property. */
-// export const getThemeConfig = (config: string): any =>
-//     getConfig('material-icon-theme').get(config);
+/** Update configuration of vs code. */
+export const setConfig = (section: string, value: any, global: boolean = false) => {
+    return getConfig().update(section, value, global);
+};
 
 export const getThemeConfig = (section: string) => {
     return getConfig('material-icon-theme').inspect(section);
@@ -27,7 +29,7 @@ export const hasWorkspace = (): boolean => {
 
 /** Set the config of the theme. */
 export const setThemeConfig = (section: string, value: any, global: boolean = false) => {
-    getConfig('material-icon-theme').update(section, value, global);
+    return getConfig('material-icon-theme').update(section, value, global);
 };
 
 /**
@@ -40,16 +42,19 @@ export const isThemeActivated = (global: boolean = false): boolean => {
 };
 
 /** returns the current version of the icon theme */
-export const getCurrentExtensionVersion = (): string =>
-    vscode.extensions.getExtension('PKief.material-icon-theme').packageJSON.version;
+export const getCurrentExtensionVersion = (): string => {
+    return vscode.extensions.getExtension('PKief.material-icon-theme').packageJSON.version;
+}
 
 /** is insider version or not */
-export const isInsiderVersion = (): boolean =>
-    vscode.env.appName.includes('Insiders');
+export const isInsiderVersion = (): boolean => {
+    return vscode.env.appName.includes('Insiders');
+}
 
 /** is not supported version */
-export const isNotSupportedVersion = (): boolean =>
-    cmp(vscode.version, '1.10.0') === -1; // 2nd is bigger than the 1st one == -1
+export const isNotSupportedVersion = (): boolean => {
+    return cmp(vscode.version, '1.10.0') === -1; // 2nd is bigger than the 1st one == -1
+}
 
 /** user data */
 export const getSettingsFilePath = (): string => {
@@ -128,5 +133,5 @@ export const removeIconExtensions = (config: IconConfiguration, fileExtensionNam
 
 /** Reload vs code window */
 export const reload = () => {
-    vscode.commands.executeCommand('workbench.action.reloadWindow');
+    return vscode.commands.executeCommand('workbench.action.reloadWindow');
 };

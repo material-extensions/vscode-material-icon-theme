@@ -36,9 +36,9 @@ You can also configure the icon theme in the user or the workspace settings.
 
 ## How to contribute
 
-Read the [contribution guidelines](https://github.com/PKief/vscode-extension-material-icon-theme/blob/master/CONTRIBUTING.md).
+Read the [contribution guidelines](https://github.com/PKief/vscode-material-icon-theme/blob/master/CONTRIBUTING.md).
 
-If you have some questions or icon requests open a [new issue](https://github.com/PKief/vscode-extension-material-icon-theme/issues/new) on Github.
+If you have some questions or icon requests open a [new issue](https://github.com/PKief/vscode-material-icon-theme/issues/new) on Github.
 
 ## Follow me
 - [Twitter](https://twitter.com/PhilippKief)

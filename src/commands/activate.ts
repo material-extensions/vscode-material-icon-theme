@@ -18,8 +18,10 @@ const setIconTheme = () => {
     // global user config
     return helpers.getConfig().update('workbench.iconTheme', 'material-icon-theme', true)
         .then(() => {
-            // local workspace config
-            helpers.getConfig().update('workbench.iconTheme', 'material-icon-theme');
+            // local workspace config                    
+            if (helpers.getConfig().inspect('workbench.iconTheme').workspaceValue !== undefined) {
+                helpers.getConfig().update('workbench.iconTheme', 'material-icon-theme');
+            }
             vscode.window.showInformationMessage(i18n.translate('activated'));
         });
 };

@@ -2,7 +2,7 @@
 
 ## Create issues
 You need an icon for a specific file ending? No problem, just follow these guidelines:
-- [create an issue](https://github.com/PKief/vscode-extension-material-icon-theme/issues/new)
+- [create an issue](https://github.com/PKief/vscode-material-icon-theme/issues/new)
 - describe the file ending (e.g. '.xml') and the language (e.g. XML)
 
 ## Add new icons
