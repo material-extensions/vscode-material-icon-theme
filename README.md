@@ -1,12 +1,14 @@
 # Material Icon Theme
 
-![Icon set](https://raw.githubusercontent.com/PKief/vscode-extension-material-icon-theme/master/src/images/iconset.png)
+[![Build Status](https://travis-ci.org/PKief/vscode-extension-material-icon-theme.svg?branch=master)](https://travis-ci.org/PKief/vscode-extension-material-icon-theme)
 
-## Preview
-![Preview](https://raw.githubusercontent.com/PKief/vscode-extension-material-icon-theme/master/src/images/preview.png)
+The Material Icon Theme provides icons for Visual Studio Code based on Material Design. You can customize the icon theme by using the commands or configurations of this icon set.
 
-## Enable icons
-![Installation](https://raw.githubusercontent.com/PKief/vscode-extension-material-icon-theme/master/src/images/installation.gif)
+<!--[![Version](http://vsmarketplacebadge.apphb.com/version/PKief.material-icon-theme.svg)](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
+[![Rating](https://vsmarketplacebadge.apphb.com/rating/PKief.material-icon-theme.svg)](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
+[![Installs](https://vsmarketplacebadge.apphb.com/installs/PKief.material-icon-theme.svg)](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)-->
+
+![Icon set](images/iconset.png)
 
 ## Icon sources
 * [https://design.google.com/icons/](https://design.google.com/icons/)

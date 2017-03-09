@@ -680,7 +680,8 @@
     "karma.conf.js": "_file_karma",
     "karma.conf.coffee": "_file_karma",
     "karma.config.js": "_file_karma",
-    "karma-main.js": "_file_karma"
+    "karma-main.js": "_file_karma",
+    ".bithoundrc": "_file_json"
   },
   "languageIds": {
     "git": "_file_git",
