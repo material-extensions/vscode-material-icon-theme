@@ -39,14 +39,14 @@ suite("commands", () => {
         });
     });
 
-    // test("restore default configuration", () => {
-    //     return config.restoreDefaultConfig().then(() => {
-    //         return angular.checkAngularIconsStatus().then(result => {
-    //             assert.equal(result, true);
-    //             folders.checkFolderIconsStatus().then(result => {
-    //                 assert.equal(result, true);
-    //             });
-    //         })
-    //     });
-    // });
+    test("restore default configuration", () => {
+        return config.restoreDefaultConfig().then(() => {
+            return angular.checkAngularIconsStatus().then(result => {
+                assert.equal(result, true);
+                folders.checkFolderIconsStatus().then(result => {
+                    assert.equal(result, true);
+                });
+            });
+        });
+    });
 });
