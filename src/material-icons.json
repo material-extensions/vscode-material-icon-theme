@@ -315,6 +315,12 @@
     "_file_erlang": {
       "iconPath": "./../../icons/erlang.svg"
     },
+    "_file_appveyor": {
+      "iconPath": "./../../icons/appveyor.svg"
+    },
+    "_file_bithound": {
+      "iconPath": "./../../icons/bithound.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -592,7 +598,8 @@
     "ex": "_file_elixir",
     "exs": "_file_elixir",
     "ls": "_file_livescript",
-    "erl": "_file_erlang"
+    "erl": "_file_erlang",
+    "vsix": "_file_vs"
   },
   "fileNames": {
     "webpack.js": "_file_webpack",
@@ -681,7 +688,8 @@
     "karma.conf.coffee": "_file_karma",
     "karma.config.js": "_file_karma",
     "karma-main.js": "_file_karma",
-    ".bithoundrc": "_file_json"
+    ".bithoundrc": "_file_bithound",
+    "appveyor.yml": "_file_appveyor"    
   },
   "languageIds": {
     "git": "_file_git",
