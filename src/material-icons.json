@@ -321,6 +321,9 @@
     "_file_bithound": {
       "iconPath": "./../../icons/bithound.svg"
     },
+    "_file_travis": {
+      "iconPath": "./../../icons/travis.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -689,7 +692,8 @@
     "karma.config.js": "_file_karma",
     "karma-main.js": "_file_karma",
     ".bithoundrc": "_file_bithound",
-    "appveyor.yml": "_file_appveyor"    
+    "appveyor.yml": "_file_appveyor",
+    ".travis.yml": "_file_travis"
   },
   "languageIds": {
     "git": "_file_git",
