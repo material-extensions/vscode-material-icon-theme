@@ -7,13 +7,13 @@
   "engines": {
     "vscode": "^1.5.0"
   },
-  "homepage": "https://github.com/PKief/vscode-extension-material-icon-theme/blob/master/README.md",
+  "homepage": "https://github.com/PKief/vscode-material-icon-theme/blob/master/README.md",
   "repository": {
     "type": "git",
-    "url": "https://github.com/PKief/vscode-extension-material-icon-theme.git"
+    "url": "https://github.com/PKief/vscode-material-icon-theme.git"
   },
   "bugs": {
-    "url": "https://github.com/PKief/vscode-extension-material-icon-theme/issues"
+    "url": "https://github.com/PKief/vscode-material-icon-theme/issues"
   },
   "icon": "logo.svg",
   "galleryBanner": {
@@ -94,8 +94,8 @@
     "postinstall": "node ./node_modules/vscode/bin/install",
     "tslint": "tslint -c tslint.json ./src/**/*.ts",
     "pretest": "npm run vscode:prepublish",
-    "test": "node ./node_modules/vscode/bin/test",    
-    "check": "bithound check git@github.com:PKief/vscode-extension-material-icon-theme.git"
+    "test": "node ./node_modules/vscode/bin/test",
+    "check": "bithound check git@github.com:PKief/vscode-material-icon-theme.git"
   },
   "dependencies": {
     "opn": "^4.0.2",
