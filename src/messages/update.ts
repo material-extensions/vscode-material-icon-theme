@@ -9,13 +9,15 @@ export const showUpdateMessage = () => {
     // if the user does not want to see the update message
     if (helpers.getThemeConfig('showUpdateMessage').globalValue === false) return;
 
+    const config = helpers.getConfig().inspect('workbench.iconTheme');
+
     vscode.window.showInformationMessage(
         i18n.translate('themeUpdated'),
 
         // show 'Activate' button if icon theme is not active
         (
-            (!helpers.hasWorkspace() && !helpers.isThemeActivated(true)) // no workspace and not global
-            || (helpers.hasWorkspace() && !helpers.isThemeActivated(false)) // not local
+            (!helpers.isThemeActivated(true) && config.workspaceValue === undefined) || // no workspace and not global
+            (!helpers.isThemeActivated() && config.workspaceValue !== undefined) // not local
         ) ? i18n.translate('activate') : undefined,
 
         i18n.translate('readChangelog'),
