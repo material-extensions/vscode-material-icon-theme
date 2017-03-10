@@ -11,7 +11,7 @@ import { IconConfiguration } from "../models/IconConfiguration.interface";
 /** Get configuration of vs code. */
 export const getConfig = (section?: string) => {
     return vscode.workspace.getConfiguration(section) as AdvancedWorkspaceConfiguration;
-}
+};
 
 /** Update configuration of vs code. */
 export const setConfig = (section: string, value: any, global: boolean = false) => {
@@ -36,25 +36,32 @@ export const setThemeConfig = (section: string, value: any, global: boolean = fa
  * Is the theme already activated in the editor configuration?
  * @param{boolean} global false by default
  */
-export const isThemeActivated = (global: boolean = false): boolean => {
+export const isThemeConfigured = (global: boolean = false): boolean => {
     return global ? getConfig().inspect('workbench.iconTheme').globalValue === 'material-icon-theme'
         : getConfig().inspect('workbench.iconTheme').workspaceValue === 'material-icon-theme';
+};
+
+/** Is the theme not visible for the user? */
+export const isThemeNotVisible = (): boolean => {
+    const config = getConfig().inspect('workbench.iconTheme');
+    return (!isThemeConfigured(true) && config.workspaceValue === undefined) || // no workspace and not global
+        (!isThemeConfigured() && config.workspaceValue !== undefined);
 };
 
 /** returns the current version of the icon theme */
 export const getCurrentExtensionVersion = (): string => {
     return vscode.extensions.getExtension('PKief.material-icon-theme').packageJSON.version;
-}
+};
 
 /** is insider version or not */
 export const isInsiderVersion = (): boolean => {
     return vscode.env.appName.includes('Insiders');
-}
+};
 
 /** is not supported version */
 export const isNotSupportedVersion = (): boolean => {
     return cmp(vscode.version, '1.10.0') === -1; // 2nd is bigger than the 1st one == -1
-}
+};
 
 /** user data */
 export const getSettingsFilePath = (): string => {
@@ -83,7 +90,11 @@ export const getUserDataSettings = (): Promise<any> => {
     return new Promise((resolve, reject) => {
         fs.readFile(getSettingsFilePath(), 'utf8', (err, data) => {
             if (data) {
-                resolve(JSON.parse(data));
+                try {
+                    resolve(JSON.parse(data));
+                } catch (e) {
+                    reject(e);
+                }
             } else {
                 reject(err);
             }

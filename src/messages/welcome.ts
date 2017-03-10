@@ -11,7 +11,11 @@ export const showWelcomeMessage = () => {
 
     vscode.window.showInformationMessage(
         i18n.translate('themeInstalled'),
-        helpers.isNotSupportedVersion() ? i18n.translate('howToActivate') : i18n.translate('activate'),
+
+        // show 'Activate' button if icon theme is not active
+        (!helpers.isNotSupportedVersion() && helpers.isThemeNotVisible())
+            ? i18n.translate('activate') : i18n.translate('howToActivate'),
+
         i18n.translate('neverShowAgain')
     ).then(handleWelcomeMessageActions);
 };

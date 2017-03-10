@@ -17,7 +17,7 @@ export const showStartMessages = () => {
         }
     }).catch(() => {
         // no config but old version was already installed
-        if (helpers.isThemeActivated() || helpers.isThemeActivated(true)) {
+        if (helpers.isThemeConfigured() || helpers.isThemeConfigured(true)) {
             showUpdateMessage();
         }
         // no config and the theme has never been used before
