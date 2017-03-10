@@ -15,6 +15,9 @@ Added icons:
 - Elixir
 - Erlang
 - LiveScript
+- Travis
+- AppVeyor
+- Bithound
 - Angular icons
     - module.ts
     - component.ts
