@@ -1,7 +1,7 @@
 # Change Log
 
-## 2.0.0 (2017-03-10)
-<!--Major updates:-->
+## 2.0.0 (2017-03-11)
+
 **VS Code API support**
 - Theme activation
 - welcome/update messages
@@ -33,6 +33,7 @@ Added icons:
 
 Updated icons:
 - icon for opened folders
+- Ocaml
 
 ## 1.3.4 (2017-02-23)
 Added icons:
