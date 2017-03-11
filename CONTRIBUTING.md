@@ -35,4 +35,4 @@ Please check the created icon with your VSCode. Copy your source files of the th
 - edit the existing translation files
 - `npm run copy:json` after editing to copy the edited jsons to the `out`-folder
 
-It'd be great if you can improve the project!
+It'd be great if you could improve the project!
