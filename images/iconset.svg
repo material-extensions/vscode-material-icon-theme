@@ -30,10 +30,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="2.8"
-     inkscape:cx="70.67833"
-     inkscape:cy="759.67806"
+     inkscape:cx="567.2459"
+     inkscape:cy="617.10063"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer2"
+     inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1366"
      inkscape:window-height="705"
@@ -112,7 +112,10 @@
        style="display:inline;image-rendering:optimizeSpeed"
        preserveAspectRatio="none"
        height="206.63959"
-       width="50.799999" />
+       width="50.799999"
+       inkscape:export-filename="C:\Users\phili\Desktop\image4674.png"
+       inkscape:export-xdpi="99"
+       inkscape:export-ydpi="99" />
     <image
        y="8.8504467"
        x="204.09462"
@@ -131,6 +134,27 @@
        preserveAspectRatio="none"
        height="1.4803897"
        width="51.179188" />
+    <image
+       y="49.747463"
+       x="154.9678"
+       id="image4518"
+       xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAbCAIAAADganh7AAAAA3NCSVQICAjb4U/gAAACTklEQVRI
+ie2VvU8UQRjGn3dn7+C4WyR8mTvlEq7gxNiYi7HShNLEQIcJWlmJjXba2xj+DbFRTI5YmNhYmFAY
+iYmKcmhlDhAPgbvl9oudeS2WoLvuhSuwIHGKJ89MMr887zszu5TP53HUQzty4r+C6pG50aFG+r02
+N69sJk03JlYIaiTVk6n1oR7FzER0qC7XEjefnjS9KDc0HytYQwazJFJaO3qmTxYHYsoKJT1lSOUT
+ERSjTQXHtCWUlBWRos8bCVLEkkybqtsi8K0UTIdAwajuiMm5wYevuyHpzou+ybnBukWQxJIgqW5R
+w9r3gcYmDZ++opmFbgCPlzINV3v7vQPA7IfM9PkmEVYb2uR8v+lpRlJdP9u8XWpyHDGadP5L6tW3
+VOCff+0KzOzH9FpdsE+VnwnT0zIJdbVg59KKfYKiWG4o6Xozem0B7O5pV54NlAa9yrYOYLxg37vQ
+BAOKwIjtaQwldiz+SAIY6dmbPmexT0Tg1qcfhd6/vJPukOWl9OJaJ4DigFepJbNdcnzYyaXVWM41
+dILaR7VoaRha7PWmRi0AEwV3eVO/+7J37lqt/ClVfp+5NeoQwCBIMBBEpBbg8Is67cLR2RFw9Efv
+Mg8u1dkWE8OeZCZJLOlvPfyesq8pW2NHKFurbCVKJ5SyhbLExezemw0dkpSkiMaWH4I2bI1dwY5Y
+3dJvFFx2dLYEO/pU3lvYSBy8+vVdceBjy6fIlz+jq6IhTZ9WTD3wwXrVoqbUdv3fIbKdMpdSFVP8
+uRgPPZJxfH4n/6HHBPoLvKRY6FEhKGgAAAAASUVORK5CYII=
+"
+       style="image-rendering:optimizeSpeed"
+       preserveAspectRatio="none"
+       height="7.1437502"
+       width="7.4083333" />
   </g>
   <g
      inkscape:groupmode="layer"
@@ -194,9 +218,7 @@
          height="1.6441965"
          preserveAspectRatio="none"
          style="display:inline;image-rendering:optimizeSpeed"
-         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAXCAIAAADhkgqLAAAAA3NCSVQICAjb4U/gAAAAJ0lEQVRI
-iWOUk5NjoD1gooMdo9aMWjNqzag1o9aMWjNqzag19LEGAB56AIhonZ3TAAAAAElFTkSuQmCC
-"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAXCAIAAADhkgqLAAAAA3NCSVQICAjb4U/gAAAAJ0lEQVRI iWOUk5NjoD1gooMdo9aMWjNqzag1o9aMWjNqzag19LEGAB56AIhonZ3TAAAAAElFTkSuQmCC "
          id="image4505"
          x="0.016459892"
          y="0.0065542818" />
