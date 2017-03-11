@@ -8,29 +8,30 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/hfs29gk8t7wqa5i8?svg=true)](https://ci.appveyor.com/project/PKief/vscode-material-icon-theme)
 
 
-The Material Icon Theme provides lots of icons for Visual Studio Code based on Material Design.
+The Material Icon Theme provides lots of icons based on Material Design for Visual Studio Code.
 
 ![Icon set](https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/master/images/iconset.png)
 
 ## One-click activation
+After installation or update you can click on the 'Activate'-button to activate the icon theme, if you haven't already. The icons will be visible immediately.
+
 ![activation](https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/master/images/oneclickactivation.png)
 
-## Commands
-You can configure the icons either with the command palette or the editor settings.
 
+## Commands
 Press `Ctrl-Shift-P` to open the command palette and type `Material Icons`.
 
 ![commands](https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/master/images/commandPalette.png)
 
-- **Activate Icon Theme**: Activate this theme as icon theme of your workspace.
+- **Activate Icon Theme**: Activate the icon theme.
 
-- **Restore Default Configuration**: Reset the default configurations of the icons theme.
+- **Restore Default Configuration**: Reset the default configurations of the icon theme.
 
 - **Toggle Angular Icons**: Show the Angular files either with specific icons or default language icons.
 
-- **Toggle Folder Icons**: Hide or show the folder icons.
+- **Toggle Folder Icons**: Hide or show folder icons.
 
-You can also configure the icon theme in the user or the workspace settings.
+You can also configure the icon theme in the user or workspace settings.
 
 ## Icon sources
 * [https://design.google.com/icons/](https://design.google.com/icons/)
