@@ -1,23 +1,24 @@
 # Material Icon Theme
 
-[![Build Status](https://travis-ci.org/PKief/vscode-material-icon-theme.svg?branch=master)](https://travis-ci.org/PKief/vscode-material-icon-theme)
 [![Version](http://vsmarketplacebadge.apphb.com/version/PKief.material-icon-theme.svg)](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
 [![Rating](https://vsmarketplacebadge.apphb.com/rating/PKief.material-icon-theme.svg)](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
 [![Installs](https://vsmarketplacebadge.apphb.com/installs/PKief.material-icon-theme.svg)](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
 
+[![Build Status](https://travis-ci.org/PKief/vscode-material-icon-theme.svg?branch=master)](https://travis-ci.org/PKief/vscode-material-icon-theme)
+
 The Material Icon Theme provides lots of icons for Visual Studio Code based on Material Design.
 
-![Icon set](images/iconset.png)
+![Icon set](https://raw.githubusercontent.com/PKief/vscode-extension-material-icon-theme/master/images/iconset.png)
 
 ## One-click activation
-![activation](images/oneclickactivation.png)
+![activation](https://raw.githubusercontent.com/PKief/vscode-extension-material-icon-theme/master/images/oneclickactivation.png)
 
 ## Commands
 You can configure the icons either with the command palette or the editor settings.
 
 Press `Ctrl-Shift-P` to open the command palette and type `Material Icons`.
 
-![commands](images/commands.png)
+![commands](https://raw.githubusercontent.com/PKief/vscode-extension-material-icon-theme/master/images/commands.png)
 
 - **Activate Icon Theme**: Activate this theme as icon theme of your workspace.
 
