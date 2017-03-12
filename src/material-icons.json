@@ -324,6 +324,9 @@
     "_file_travis": {
       "iconPath": "./../../icons/travis.svg"
     },
+    "_file_protractor": {
+      "iconPath": "./../../icons/protractor.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -693,7 +696,12 @@
     "karma-main.js": "_file_karma",
     ".bithoundrc": "_file_bithound",
     "appveyor.yml": "_file_appveyor",
-    ".travis.yml": "_file_travis"
+    ".travis.yml": "_file_travis",
+    "protractor.conf.js": "_file_protractor",
+    "protractor.conf.ts": "_file_protractor",
+    "protractor.conf.coffee": "_file_protractor",
+    "protractor.config.js": "_file_protractor",
+    "protractor.config.ts": "_file_protractor"
   },
   "languageIds": {
     "git": "_file_git",
