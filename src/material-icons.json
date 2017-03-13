@@ -336,6 +336,9 @@
     "_file_elm": {
       "iconPath": "./../../icons/elm.svg"
     },
+    "_file_purescript": {
+      "iconPath": "./../../icons/purescript.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -618,7 +621,8 @@
     "vsix": "_file_vs",
     "twig": "_file_twig",
     "jl": "_file_julia",
-    "elm": "_file_elm"
+    "elm": "_file_elm",
+    "pure": "_file_purescript"
   },
   "fileNames": {
     "webpack.js": "_file_webpack",
@@ -772,6 +776,7 @@
     "erlang": "_file_erlang",
     "twig": "_file_twig",
     "julia": "_file_julia",
-    "elm": "_file_elm"
+    "elm": "_file_elm",
+    "purescript": "_file_purescript"
   }
 }
