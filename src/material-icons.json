@@ -330,6 +330,9 @@
     "_file_twig": {
       "iconPath": "./../../icons/twig.svg"
     },
+    "_file_julia": {
+      "iconPath": "./../../icons/julia.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -345,6 +348,7 @@
   "file": "_file",
   "fileExtensions": {
     "html": "_file_html",
+    "asp": "_file_html",
     "jade": "_file_pug",
     "pug": "_file_pug",
     "md": "_file_markdown",
@@ -609,7 +613,8 @@
     "ls": "_file_livescript",
     "erl": "_file_erlang",
     "vsix": "_file_vs",
-    "twig": "_file_twig"
+    "twig": "_file_twig",
+    "jl": "_file_julia"
   },
   "fileNames": {
     "webpack.js": "_file_webpack",
@@ -761,6 +766,7 @@
     "elixir": "_file_elixir",
     "livescript": "_file_livescript",
     "erlang": "_file_erlang",
-    "twig": "_file_twig"
+    "twig": "_file_twig",
+    "julia": "_file_julia"
   }
 }
