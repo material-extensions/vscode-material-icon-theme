@@ -333,6 +333,9 @@
     "_file_julia": {
       "iconPath": "./../../icons/julia.svg"
     },
+    "_file_elm": {
+      "iconPath": "./../../icons/elm.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -614,7 +617,8 @@
     "erl": "_file_erlang",
     "vsix": "_file_vs",
     "twig": "_file_twig",
-    "jl": "_file_julia"
+    "jl": "_file_julia",
+    "elm": "_file_elm"
   },
   "fileNames": {
     "webpack.js": "_file_webpack",
@@ -767,6 +771,7 @@
     "livescript": "_file_livescript",
     "erlang": "_file_erlang",
     "twig": "_file_twig",
-    "julia": "_file_julia"
+    "julia": "_file_julia",
+    "elm": "_file_elm"
   }
 }
