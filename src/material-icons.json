@@ -327,6 +327,9 @@
     "_file_protractor": {
       "iconPath": "./../../icons/protractor.svg"
     },
+    "_file_twig": {
+      "iconPath": "./../../icons/twig.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -605,7 +608,8 @@
     "exs": "_file_elixir",
     "ls": "_file_livescript",
     "erl": "_file_erlang",
-    "vsix": "_file_vs"
+    "vsix": "_file_vs",
+    "twig": "_file_twig"
   },
   "fileNames": {
     "webpack.js": "_file_webpack",
@@ -719,7 +723,7 @@
     "karma.config.js": "_file_karma",
     "karma.config.ts": "_file_karma",
     "karma-main.js": "_file_karma",
-    "karma-main.ts": "_file_karma",    
+    "karma-main.ts": "_file_karma",
     ".bithoundrc": "_file_bithound",
     "appveyor.yml": "_file_appveyor",
     ".travis.yml": "_file_travis",
@@ -756,6 +760,7 @@
     "puppet": "_file_puppet",
     "elixir": "_file_elixir",
     "livescript": "_file_livescript",
-    "erlang": "_file_erlang"
+    "erlang": "_file_erlang",
+    "twig": "_file_twig"
   }
 }
