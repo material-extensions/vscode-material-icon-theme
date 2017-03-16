@@ -339,6 +339,9 @@
     "_file_purescript": {
       "iconPath": "./../../icons/purescript.svg"
     },
+    "_file_puppet": {
+      "iconPath": "./../../icons/puppet.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
