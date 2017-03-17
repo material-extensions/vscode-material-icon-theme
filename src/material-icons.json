@@ -350,6 +350,9 @@
     },
     "_folder_open": {
       "iconPath": "./../../icons/folder-open.svg"
+    },
+    "_file_smarty": {
+      "iconPath": "./../../icons/smarty.svg"
     }
   },
   "folderExpanded": "_folder_open",
@@ -625,7 +628,8 @@
     "twig": "_file_twig",
     "jl": "_file_julia",
     "elm": "_file_elm",
-    "pure": "_file_purescript"
+    "pure": "_file_purescript",
+    "tpl": "_file_smarty"
   },
   "fileNames": {
     "webpack.js": "_file_webpack",
