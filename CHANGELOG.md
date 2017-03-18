@@ -1,5 +1,20 @@
 # Change Log
 
+## 2.0.1 (2017-03-18)
+Added icons:
+- Smarty (.tpl)
+- Elm (.elm)
+- Julia (.jl)
+- Twig (.twig)
+- PureScript (.pure)
+- Protractor
+
+Updated icons:
+- Docker
+- Gradle
+- FSharp
+- Yarn
+
 ## 2.0.0 (2017-03-11)
 
 **VS Code API support**
