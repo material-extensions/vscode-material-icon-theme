@@ -342,6 +342,9 @@
     "_file_puppet": {
       "iconPath": "./../../icons/puppet.svg"
     },
+    "_file_stylus": {
+      "iconPath": "./../../icons/stylus.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -629,7 +632,8 @@
     "jl": "_file_julia",
     "elm": "_file_elm",
     "pure": "_file_purescript",
-    "tpl": "_file_smarty"
+    "tpl": "_file_smarty",
+    "styl": "_file_stylus"
   },
   "fileNames": {
     "webpack.js": "_file_webpack",
@@ -784,6 +788,7 @@
     "twig": "_file_twig",
     "julia": "_file_julia",
     "elm": "_file_elm",
-    "purescript": "_file_purescript"
+    "purescript": "_file_purescript",
+    "stylus": "_file_stylus"
   }
 }
