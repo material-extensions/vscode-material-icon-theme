@@ -351,6 +351,9 @@
     "_file_reason": {
       "iconPath": "./../../icons/reason.svg"
     },
+    "_file_bucklescript": {
+      "iconPath": "./../../icons/bucklescript.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -359,7 +362,7 @@
     },
     "_folder_open": {
       "iconPath": "./../../icons/folder-open.svg"
-    }    
+    }
   },
   "folderExpanded": "_folder_open",
   "folder": "_folder",
@@ -638,7 +641,8 @@
     "tpl": "_file_smarty",
     "styl": "_file_stylus",
     "re": "_file_reason",
-    "rei": "_file_reason"
+    "rei": "_file_reason",
+    "cmj": "_file_bucklescript"
   },
   "fileNames": {
     "webpack.js": "_file_webpack",
