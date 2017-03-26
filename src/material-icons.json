@@ -345,6 +345,12 @@
     "_file_stylus": {
       "iconPath": "./../../icons/stylus.svg"
     },
+    "_file_smarty": {
+      "iconPath": "./../../icons/smarty.svg"
+    },
+    "_file_reason": {
+      "iconPath": "./../../icons/reason.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -353,10 +359,7 @@
     },
     "_folder_open": {
       "iconPath": "./../../icons/folder-open.svg"
-    },
-    "_file_smarty": {
-      "iconPath": "./../../icons/smarty.svg"
-    }
+    }    
   },
   "folderExpanded": "_folder_open",
   "folder": "_folder",
@@ -633,7 +636,9 @@
     "elm": "_file_elm",
     "pure": "_file_purescript",
     "tpl": "_file_smarty",
-    "styl": "_file_stylus"
+    "styl": "_file_stylus",
+    "re": "_file_reason",
+    "rei": "_file_reason"
   },
   "fileNames": {
     "webpack.js": "_file_webpack",
