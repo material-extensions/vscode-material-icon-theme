@@ -354,6 +354,9 @@
     "_file_bucklescript": {
       "iconPath": "./../../icons/bucklescript.svg"
     },
+    "_file_merlin": {
+      "iconPath": "./../../icons/merlin.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -642,7 +645,8 @@
     "styl": "_file_stylus",
     "re": "_file_reason",
     "rei": "_file_reason",
-    "cmj": "_file_bucklescript"
+    "cmj": "_file_bucklescript",
+    "merlin": "_file_merlin"
   },
   "fileNames": {
     "webpack.js": "_file_webpack",
