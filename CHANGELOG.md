@@ -1,5 +1,18 @@
 # Change Log
 
+## 2.0.2 (2017-04-02)
+Added icons:
+- Verilog (.v, .vhd)
+- Mathematica (.nb)
+- Wolframlang (.wl, .wls)
+- Nunjucks (.njk, .nunjucks)
+- Merlin (.merlin)
+- BuckleScript (.cmj)
+- Reason (.re, .rei)
+- Stylus (.styl)
+- .option
+- .tsv
+
 ## 2.0.1 (2017-03-18)
 Added icons:
 - Smarty (.tpl)
