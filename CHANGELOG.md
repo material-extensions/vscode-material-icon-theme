@@ -1,5 +1,8 @@
 # Change Log
 
+## 2.0.3 (2017-04-02)
+- Update pug (jade) icon
+
 ## 2.0.2 (2017-04-02)
 Added icons:
 - Verilog (.v, .vhd)
