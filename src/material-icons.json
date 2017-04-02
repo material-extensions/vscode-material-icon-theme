@@ -351,6 +351,9 @@
     "_file_mathematica": {
       "iconPath": "./../../icons/mathematica.svg"
     },
+    "_file_wolframlang": {
+      "iconPath": "./../../icons/wolframlanguage.svg"
+    },
     "_file_reason": {
       "iconPath": "./../../icons/reason.svg"
     },
@@ -655,8 +658,8 @@
     "cmj": "_file_bucklescript",
     "merlin": "_file_merlin",
     "nb": "_file_mathematica",
-    "wl": "_file_mathematica",
-    "wls": "_file_mathematica"
+    "wl": "_file_wolframlang",
+    "wls": "_file_wolframlang"
   },
   "fileNames": {
     "webpack.js": "_file_webpack",
