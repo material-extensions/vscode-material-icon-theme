@@ -372,6 +372,9 @@
     "_file_robot": {
       "iconPath": "./../../icons/robot.svg"
     },
+    "_file_markojs": {
+      "iconPath": "./../../icons/markojs.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -456,6 +459,7 @@
     "ts": "_file_ts",
     "tsx": "_file_react",
     "d.ts": "_file_ts_def",
+    "marko": "_file_markojs",
     "pdf": "_file_pdf",
     "xlsx": "_file_table",
     "xls": "_file_table",
