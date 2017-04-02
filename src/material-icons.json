@@ -348,6 +348,9 @@
     "_file_smarty": {
       "iconPath": "./../../icons/smarty.svg"
     },
+    "_file_mathematica": {
+      "iconPath": "./../../icons/mathematica.svg"
+    },
     "_file_reason": {
       "iconPath": "./../../icons/reason.svg"
     },
@@ -527,6 +530,8 @@
     "ino": "_file_arduino",
     "dockerignore": "_file_docker",
     "tex": "_file_tex",
+    "cls": "_file_tex",
+    "sty": "_file_tex",
     "bib": "_file_lib",
     "pptx": "_file_powerpoint",
     "ppt": "_file_powerpoint",
@@ -648,7 +653,10 @@
     "re": "_file_reason",
     "rei": "_file_reason",
     "cmj": "_file_bucklescript",
-    "merlin": "_file_merlin"
+    "merlin": "_file_merlin",
+    "nb": "_file_mathematica",
+    "wl": "_file_mathematica",
+    "wls": "_file_mathematica"
   },
   "fileNames": {
     "webpack.js": "_file_webpack",
