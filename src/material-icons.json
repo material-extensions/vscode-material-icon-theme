@@ -366,6 +366,9 @@
     "_file_verilog": {
       "iconPath": "./../../icons/verilog.svg"
     },
+    "_file_nunjucks": {
+      "iconPath": "./../../icons/nunjucks.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -664,7 +667,9 @@
     "vhd": "_file_verilog",
     "nb": "_file_mathematica",
     "wl": "_file_wolframlang",
-    "wls": "_file_wolframlang"
+    "wls": "_file_wolframlang",
+    "njk": "_file_nunjucks",
+    "nunjucks": "_file_nunjucks"
   },
   "fileNames": {
     "webpack.js": "_file_webpack",
@@ -820,6 +825,7 @@
     "julia": "_file_julia",
     "elm": "_file_elm",
     "purescript": "_file_purescript",
-    "stylus": "_file_stylus"
+    "stylus": "_file_stylus",
+    "nunjucks": "_file_nunjucks"
   }
 }
