@@ -96,7 +96,8 @@
     "tslint": "tslint -c tslint.json ./src/**/*.ts",
     "pretest": "npm run vscode:prepublish",
     "test": "node ./node_modules/vscode/bin/test",
-    "check": "bithound check git@github.com:PKief/vscode-material-icon-theme.git"
+    "check": "bithound check git@github.com:PKief/vscode-material-icon-theme.git",
+    "iconSet": "node ./images/iconsetScript.js"
   },
   "dependencies": {
     "opn": "^4.0.2",
