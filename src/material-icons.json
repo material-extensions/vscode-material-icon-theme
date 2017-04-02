@@ -348,6 +348,12 @@
     "_file_smarty": {
       "iconPath": "./../../icons/smarty.svg"
     },
+    "_file_mathematica": {
+      "iconPath": "./../../icons/mathematica.svg"
+    },
+    "_file_wolframlang": {
+      "iconPath": "./../../icons/wolframlanguage.svg"
+    },
     "_file_reason": {
       "iconPath": "./../../icons/reason.svg"
     },
@@ -359,7 +365,7 @@
     },
     "_file_verilog": {
       "iconPath": "./../../icons/verilog.svg"
-    },    
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -530,6 +536,8 @@
     "ino": "_file_arduino",
     "dockerignore": "_file_docker",
     "tex": "_file_tex",
+    "cls": "_file_tex",
+    "sty": "_file_tex",
     "bib": "_file_lib",
     "pptx": "_file_powerpoint",
     "ppt": "_file_powerpoint",
@@ -653,7 +661,10 @@
     "cmj": "_file_bucklescript",
     "merlin": "_file_merlin",
     "v": "_file_verilog",
-    "vhd": "_file_verilog"
+    "vhd": "_file_verilog",
+    "nb": "_file_mathematica",
+    "wl": "_file_wolframlang",
+    "wls": "_file_wolframlang"
   },
   "fileNames": {
     "webpack.js": "_file_webpack",

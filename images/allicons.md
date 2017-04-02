@@ -62,6 +62,7 @@
 |<img src="./../icons/lua.svg" width="20px">|Lua|
 |<img src="./../icons/email.svg" width="20px">|Mail|
 |<img src="./../icons/markdown.svg" width="20px">|Markdown|
+|<img src="./../icons/mathematica.svg" width="20px">|Mathematica|
 |<img src="./../icons/matlab.svg" width="20px">|Matlab|
 |<img src="./../icons/movie.svg" width="20px">|Movie|
 |<img src="./../icons/music.svg" width="20px">|Music|
