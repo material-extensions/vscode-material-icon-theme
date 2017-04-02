@@ -369,6 +369,9 @@
     "_file_nunjucks": {
       "iconPath": "./../../icons/nunjucks.svg"
     },
+    "_file_robot": {
+      "iconPath": "./../../icons/robot.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -669,7 +672,8 @@
     "wl": "_file_wolframlang",
     "wls": "_file_wolframlang",
     "njk": "_file_nunjucks",
-    "nunjucks": "_file_nunjucks"
+    "nunjucks": "_file_nunjucks",
+    "robot": "_file_robot"
   },
   "fileNames": {
     "webpack.js": "_file_webpack",
@@ -827,6 +831,7 @@
     "purescript": "_file_purescript",
     "stylus": "_file_stylus",
     "nunjucks": "_file_nunjucks",
-    "pug": "_file_pug"
+    "pug": "_file_pug",
+    "robotframework": "_file_robot"
   }
 }
