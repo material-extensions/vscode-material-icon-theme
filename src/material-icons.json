@@ -357,6 +357,9 @@
     "_file_merlin": {
       "iconPath": "./../../icons/merlin.svg"
     },
+    "_file_verilog": {
+      "iconPath": "./../../icons/verilog.svg"
+    },    
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -648,7 +651,9 @@
     "re": "_file_reason",
     "rei": "_file_reason",
     "cmj": "_file_bucklescript",
-    "merlin": "_file_merlin"
+    "merlin": "_file_merlin",
+    "v": "_file_verilog",
+    "vhd": "_file_verilog"
   },
   "fileNames": {
     "webpack.js": "_file_webpack",
