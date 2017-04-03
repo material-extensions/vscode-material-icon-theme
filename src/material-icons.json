@@ -375,6 +375,9 @@
     "_file_markojs": {
       "iconPath": "./../../icons/markojs.svg"
     },
+    "_file_less": {
+      "iconPath": "./../../icons/less.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -400,7 +403,7 @@
     "css": "_file_css",
     "scss": "_file_sass",
     "sass": "_file_sass",
-    "less": "_file_css",
+    "less": "_file_less",
     "json": "_file_json",
     "yaml": "_file_yaml",
     "YAML-tmLanguage": "_file_yaml",
@@ -836,6 +839,9 @@
     "stylus": "_file_stylus",
     "nunjucks": "_file_nunjucks",
     "pug": "_file_pug",
-    "robotframework": "_file_robot"
+    "robotframework": "_file_robot",
+    "sass": "_file_sass",
+    "less": "_file_less",
+    "css": "_file_css"
   }
 }
