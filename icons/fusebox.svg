@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 152.99 160.01"
+   version="1.1"
+   id="svg23"
+   sodipodi:docname="fusebox.svg"
+   inkscape:version="0.92.1 r15371">
+  <metadata
+     id="metadata27">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     id="namedview25"
+     showgrid="false"
+     inkscape:zoom="1.4749079"
+     inkscape:cx="-71.649842"
+     inkscape:cy="80.004999"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg23" />
+  <defs
+     id="defs4">
+    <style
+       id="style2">.cls-1{fill:#fff;}.cls-2{fill:#515151;}.cls-3{fill:#1d79bf;}.cls-4{fill:#383838;}</style>
+  </defs>
+  <title
+     id="title6">Asset 3</title>
+  <g
+     id="Layer_2"
+     data-name="Layer 2"
+     transform="matrix(0.87284572,0,0,0.87284572,10.170127,10.174558)">
+    <g
+       id="Fuse_Box"
+       data-name="Fuse Box">
+      <g
+         id="LOGO">
+        <polygon
+           class="cls-1"
+           points="76.56,2.19 150.78,27.12 143.08,114.89 77.67,157.55 7.88,113.62 2.18,27.49 "
+           id="polygon8"
+           style="fill:#ffffff" />
+        <path
+           class="cls-2"
+           d="M 77.69,160 5.87,114.81 0,26 76.55,0 153,25.67 l -7.94,90.4 z M 9.88,112.43 77.65,155.09 141.1,113.7 148.57,28.57 76.57,4.39 4.36,28.95 Z"
+           id="path10"
+           inkscape:connector-curvature="0"
+           style="fill:#515151" />
+        <polygon
+           class="cls-3"
+           points="76.4,148.8 76.4,61.68 143.33,31.86 137.34,110.63 "
+           id="polygon12"
+           style="fill:#1d79bf" />
+        <polygon
+           id="F"
+           class="cls-4"
+           points="76.4,148.8 16.05,111.41 9.63,31.8 76.4,61.68 "
+           style="fill:#383838" />
+        <path
+           class="cls-1"
+           d="m 25.58,52.73 0.54,15.93 37.35,18.18 0.12,14.69 -37,-18.21 1.64,37.1 -14.56,-9 -5.05,-80.55 67.79,30.82 v 15.46 z"
+           id="path15"
+           inkscape:connector-curvature="0"
+           style="fill:#ffffff" />
+        <path
+           class="cls-1"
+           d="m 135.91,90.77 c -0.08,13.12 -6.33,26.59 -16.77,33.12 l -42.8,27.93 V 61.71 l 42.27,-18.84 c 5.16,-2.41 9.51,-1.43 12.4,3.11 1.9,3 2.89,7.23 2.86,12.21 A 35.69,35.69 0 0 1 129.34,76 c 4.29,2 6.66,6.55 6.57,14.77 z M 123,63.76 c 0,-4.64 -2,-6.93 -4.92,-5.45 L 89.08,72.79 89,90 118.44,74.41 C 120.94,73.09 123,68.5 123,63.76 Z M 125.15,96 c 0,-5.71 -2.42,-8.24 -6.55,-5.93 L 89,106.64 v 19.58 l 29.34,-17.46 c 4.43,-2.64 6.79,-7.27 6.81,-12.76 z"
+           id="path17"
+           inkscape:connector-curvature="0"
+           style="fill:#ffffff" />
+        <polygon
+           id="TOP"
+           class="cls-4"
+           points="76.4,8.82 9.71,31.77 119.48,34.15 35.46,43.36 76.4,61.68 97.16,52.43 69.43,51.06 119.21,42.6 143.33,31.86 "
+           style="fill:#383838" />
+      </g>
+    </g>
+  </g>
+</svg>

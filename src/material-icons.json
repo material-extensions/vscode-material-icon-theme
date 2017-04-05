@@ -378,6 +378,9 @@
     "_file_less": {
       "iconPath": "./../../icons/less.svg"
     },
+    "_file_fusebox": {
+      "iconPath": "./../../icons/fusebox.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -802,7 +805,8 @@
     "protractor.conf.ts": "_file_protractor",
     "protractor.conf.coffee": "_file_protractor",
     "protractor.config.js": "_file_protractor",
-    "protractor.config.ts": "_file_protractor"
+    "protractor.config.ts": "_file_protractor",
+    "fuse.js": "_file_fusebox"    
   },
   "languageIds": {
     "git": "_file_git",
