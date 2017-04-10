@@ -807,7 +807,7 @@
     "protractor.conf.coffee": "_file_protractor",
     "protractor.config.js": "_file_protractor",
     "protractor.config.ts": "_file_protractor",
-    "fuse.js": "_file_fusebox"    
+    "fuse.js": "_file_fusebox"
   },
   "languageIds": {
     "git": "_file_git",
@@ -847,6 +847,8 @@
     "robotframework": "_file_robot",
     "sass": "_file_sass",
     "less": "_file_less",
-    "css": "_file_css"
+    "css": "_file_css",
+    "testOutput": "_file_vs",
+    "ng-template": "_file_angular"
   }
 }
