@@ -790,6 +790,7 @@
     ".jsbeautifyrc": "_file_json",
     "git-history": "_file_git",
     "angular-cli.json": "_file_angular",
+    ".angular-cli.json": "_file_angular",
     "favicon.ico": "_file_favicon",
     "karma.conf.js": "_file_karma",
     "karma.conf.ts": "_file_karma",
