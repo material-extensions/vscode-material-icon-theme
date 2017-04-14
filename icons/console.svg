@@ -8,11 +8,11 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
-   width="24"
-   height="24"
+   width="25.6"
+   height="25.6"
    viewBox="0 0 24 24"
    id="svg2"
-   inkscape:version="0.91 r13725"
+   inkscape:version="0.92.1 r15371"
    sodipodi:docname="console.svg">
   <metadata
      id="metadata10">
@@ -36,19 +36,20 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="729"
-     inkscape:window-height="480"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
      id="namedview6"
      showgrid="false"
      inkscape:zoom="9.8333333"
      inkscape:cx="12"
      inkscape:cy="11.898305"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
-     inkscape:window-maximized="0"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
      inkscape:current-layer="svg2" />
   <path
-     d="M20,19V7H4V19H20M20,3A2,2 0 0,1 22,5V19A2,2 0 0,1 20,21H4A2,2 0 0,1 2,19V5C2,3.89 2.9,3 4,3H20M13,17V15H18V17H13M9.58,13L5.57,9H8.4L11.7,12.3C12.09,12.69 12.09,13.33 11.7,13.72L8.42,17H5.59L9.58,13Z"
+     d="M 20,19 V 7 H 4 V 19 H 20 M 20,3 a 2,2 0 0 1 2,2 v 14 a 2,2 0 0 1 -2,2 H 4 A 2,2 0 0 1 2,19 V 5 C 2,3.89 2.9,3 4,3 h 16 m -7,14 v -2 h 5 v 2 H 13 M 9.58,13 5.57,9 H 8.4 l 3.3,3.3 c 0.39,0.39 0.39,1.03 0,1.42 L 8.42,17 H 5.59 Z"
      id="path4"
-     style="fill:#42a5f5;fill-opacity:1" />
+     style="fill:#ff7043;fill-opacity:1"
+     inkscape:connector-curvature="0" />
 </svg>

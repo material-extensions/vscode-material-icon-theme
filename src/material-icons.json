@@ -384,6 +384,9 @@
     "_file_graphql": {
       "iconPath": "./../../icons/graphql.svg"
     },
+    "_file_powershell": {
+      "iconPath": "./../../icons/powershell.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -508,7 +511,7 @@
     "url": "_file_url",
     "sh": "_file_console",
     "bat": "_file_console",
-    "ps1": "_file_console",
+    "ps1": "_file_powershell",
     "gradle": "_file_gradle",
     "doc": "_file_word",
     "docx": "_file_word",
