@@ -37,7 +37,7 @@ You can also configure the icon theme in the user or workspace settings.
 ## Icon sources
 * [https://design.google.com/icons/](https://design.google.com/icons/)
 * [https://materialdesignicons.com/](https://materialdesignicons.com/)
-* self made
+* official icons
 
 ## How to contribute
 

@@ -47,7 +47,7 @@ const compareAngularConfigs = () => {
             (angularIconsConfig.workspaceValue === false && angularIconsConfig.globalValue === undefined)) {
 
             if (result) { disableAngularIcons(); }
-        };
+        }
     });
 };
 
@@ -64,6 +64,6 @@ const compareFolderConfigs = () => {
             (folderIconsConfig.workspaceValue === false && folderIconsConfig.globalValue === undefined)) {
 
             if (result) { disableFolderIcons(); }
-        };
+        }
     });
 };

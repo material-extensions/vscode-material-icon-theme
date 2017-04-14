@@ -1,5 +1,17 @@
 # Change Log
 
+## 2.0.4 (2017-04-14)
+Added icons:
+- Robotframework (.robot)
+- MarkoJS (.marko)
+- Fuse-box (fuse.js)
+- GraphQL
+
+Updated icons:
+- Sass
+- Less
+- PowerShell
+
 ## 2.0.3 (2017-04-02)
 - Update pug (jade) icon
 
