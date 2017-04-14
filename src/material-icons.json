@@ -381,6 +381,9 @@
     "_file_fusebox": {
       "iconPath": "./../../icons/fusebox.svg"
     },
+    "_file_graphql": {
+      "iconPath": "./../../icons/graphql.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -849,6 +852,7 @@
     "less": "_file_less",
     "css": "_file_css",
     "testOutput": "_file_vs",
-    "ng-template": "_file_angular"
+    "ng-template": "_file_angular",
+    "graphql": "_file_graphql"
   }
 }
