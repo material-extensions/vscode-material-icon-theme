@@ -387,6 +387,9 @@
     "_file_powershell": {
       "iconPath": "./../../icons/powershell.svg"
     },
+    "_file_solidity": {
+      "iconPath": "./../../icons/solidity.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -689,7 +692,8 @@
     "wls": "_file_wolframlang",
     "njk": "_file_nunjucks",
     "nunjucks": "_file_nunjucks",
-    "robot": "_file_robot"
+    "robot": "_file_robot",
+    "sol": "_file_solidity"
   },
   "fileNames": {
     "webpack.js": "_file_webpack",
@@ -856,6 +860,7 @@
     "css": "_file_css",
     "testOutput": "_file_vs",
     "ng-template": "_file_angular",
-    "graphql": "_file_graphql"
+    "graphql": "_file_graphql",
+    "solidity": "_file_solidity"
   }
 }
