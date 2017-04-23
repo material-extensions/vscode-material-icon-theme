@@ -514,6 +514,7 @@
     "url": "_file_url",
     "sh": "_file_console",
     "bat": "_file_console",
+    "cmd": "_file_console",
     "ps1": "_file_powershell",
     "gradle": "_file_gradle",
     "doc": "_file_word",
