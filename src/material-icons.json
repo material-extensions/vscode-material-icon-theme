@@ -393,6 +393,9 @@
     "_file_autoit": {
       "iconPath": "./../../icons/autoit.svg"
     },
+    "_file_haml": {
+      "iconPath": "./../../icons/haml.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -703,7 +706,8 @@
     "nunjucks": "_file_nunjucks",
     "robot": "_file_robot",
     "sol": "_file_solidity",
-    "au3": "_file_autoit"
+    "au3": "_file_autoit",
+    "haml": "_file_haml"
   },
   "fileNames": {
     "webpack.js": "_file_webpack",
@@ -872,6 +876,7 @@
     "ng-template": "_file_angular",
     "graphql": "_file_graphql",
     "solidity": "_file_solidity",
-    "autoit": "_file_autoit"
+    "autoit": "_file_autoit",
+    "haml": "_file_haml"
   }
 }
