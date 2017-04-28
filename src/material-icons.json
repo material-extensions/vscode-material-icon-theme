@@ -396,6 +396,9 @@
     "_file_haml": {
       "iconPath": "./../../icons/haml.svg"
     },
+    "_file_yang": {
+      "iconPath": "./../../icons/yang.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -707,7 +710,8 @@
     "robot": "_file_robot",
     "sol": "_file_solidity",
     "au3": "_file_autoit",
-    "haml": "_file_haml"
+    "haml": "_file_haml",
+    "yang": "_file_yang"
   },
   "fileNames": {
     "webpack.js": "_file_webpack",
@@ -877,6 +881,7 @@
     "graphql": "_file_graphql",
     "solidity": "_file_solidity",
     "autoit": "_file_autoit",
-    "haml": "_file_haml"
+    "haml": "_file_haml",
+    "yang": "_file_yang"
   }
 }
