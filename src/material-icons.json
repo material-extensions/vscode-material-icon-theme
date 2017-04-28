@@ -390,6 +390,9 @@
     "_file_solidity": {
       "iconPath": "./../../icons/solidity.svg"
     },
+    "_file_autoit": {
+      "iconPath": "./../../icons/autoit.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -699,7 +702,8 @@
     "njk": "_file_nunjucks",
     "nunjucks": "_file_nunjucks",
     "robot": "_file_robot",
-    "sol": "_file_solidity"
+    "sol": "_file_solidity",
+    "au3": "_file_autoit"
   },
   "fileNames": {
     "webpack.js": "_file_webpack",
@@ -867,6 +871,7 @@
     "testOutput": "_file_vs",
     "ng-template": "_file_angular",
     "graphql": "_file_graphql",
-    "solidity": "_file_solidity"
+    "solidity": "_file_solidity",
+    "autoit": "_file_autoit"
   }
 }
