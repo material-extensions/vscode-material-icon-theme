@@ -7,7 +7,7 @@ Added icons:
 - haml (.haml)
 - yang (.yang)
 
-Added Powershell extensions (thanks to Happycoil):
+Added Powershell extensions ([@Happycoil](https://github.com/Happycoil) in [#64](https://github.com/PKief/vscode-material-icon-theme/pull/64)):
 - psd1 - PowerShell data file
 - psm1 - PowerShell module file
 - ps1xml - PowerShell format and type definitions
