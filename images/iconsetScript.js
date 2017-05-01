@@ -65,7 +65,7 @@ fs.readdir(folder, (err, files) => {
     // write the image tags for the icons
     for (let i = 0; i < items_per_column; i++) {
         for (let c = 0; c < columns_list.length; c++) {
-            fs.appendFileSync(path.join('images', generatedFileName), '|<img src="./../icons/' + columns_list[c][i].fileName + '" width="25px">|'+ columns_list[c][i].iconName);
+            fs.appendFileSync(path.join('images', generatedFileName), '|<img src="./../icons/' + columns_list[c][i].fileName + '" width="24px">|'+ columns_list[c][i].iconName);
         }
         fs.appendFileSync(path.join('images', generatedFileName), "|\n");
     }
