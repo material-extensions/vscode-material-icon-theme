@@ -1,5 +1,19 @@
 # Change Log
 
+## 2.0.5 (2017-05-01)
+Added icons:
+- Solidity (.sol)
+- Autoit (.au3)
+- haml (.haml)
+- yang (.yang)
+
+Added Powershell extensions (thanks to Happycoil):
+- psd1 - PowerShell data file
+- psm1 - PowerShell module file
+- ps1xml - PowerShell format and type definitions
+- psc1 - PowerShell console file
+- pssc - PowerShell session configuration file
+
 ## 2.0.4 (2017-04-14)
 Added icons:
 - Robotframework (.robot)
