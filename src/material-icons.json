@@ -399,6 +399,12 @@
     "_file_yang": {
       "iconPath": "./../../icons/yang.svg"
     },
+    "_file_heroku": {
+      "iconPath": "./../../icons/heroku.svg"
+    },
+    "_file_editorconfig": {
+      "iconPath": "./../../icons/editorconfig.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -775,8 +781,6 @@
     "tslint.json": "_file_json",
     "androidmanifest.xml": "_file_android",
     "gradle-wrapper.properties": "_file_gradle",
-    ".editorconfig": "_file_settings",
-    "procfile": "_file_settings",
     ".env": "_file_tune",
     "dockerfile": "_file_docker",
     "license": "_file_certificate",
@@ -835,7 +839,9 @@
     "protractor.conf.coffee": "_file_protractor",
     "protractor.config.js": "_file_protractor",
     "protractor.config.ts": "_file_protractor",
-    "fuse.js": "_file_fusebox"
+    "fuse.js": "_file_fusebox",
+    "procfile": "_file_heroku",
+    ".editorconfig": "_file_editorconfig"
   },
   "languageIds": {
     "git": "_file_git",
