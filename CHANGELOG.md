@@ -1,5 +1,10 @@
 # Change Log
 
+## 2.0.6 (2017-05-15)
+Added icons:
+- Heroku (Procfile)
+- EditorConfig (.editorconfig)
+
 ## 2.0.5 (2017-05-01)
 Added icons:
 - Solidity (.sol)
