@@ -405,6 +405,9 @@
     "_file_editorconfig": {
       "iconPath": "./../../icons/editorconfig.svg"
     },
+    "_file_terraform": {
+      "iconPath": "./../../icons/terraform.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -717,7 +720,11 @@
     "sol": "_file_solidity",
     "au3": "_file_autoit",
     "haml": "_file_haml",
-    "yang": "_file_yang"
+    "yang": "_file_yang",
+    "tf": "_file_terraform",
+    "tf.json": "_file_terraform",
+    "tfvars": "_file_terraform",
+    "tfstate": "_file_terraform"
   },
   "fileNames": {
     "webpack.js": "_file_webpack",
@@ -888,6 +895,7 @@
     "solidity": "_file_solidity",
     "autoit": "_file_autoit",
     "haml": "_file_haml",
-    "yang": "_file_yang"
+    "yang": "_file_yang",
+    "terraform": "_file_terraform"
   }
 }
