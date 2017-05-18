@@ -408,6 +408,9 @@
     "_file_terraform": {
       "iconPath": "./../../icons/terraform.svg"
     },
+    "_file_laravel": {
+      "iconPath": "./../../icons/laravel.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -724,7 +727,8 @@
     "tf": "_file_terraform",
     "tf.json": "_file_terraform",
     "tfvars": "_file_terraform",
-    "tfstate": "_file_terraform"
+    "tfstate": "_file_terraform",
+    "blade.php": "_file_laravel"
   },
   "fileNames": {
     "webpack.js": "_file_webpack",
