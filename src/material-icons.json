@@ -411,6 +411,9 @@
     "_file_laravel": {
       "iconPath": "./../../icons/laravel.svg"
     },
+    "_file_applescript": {
+      "iconPath": "./../../icons/applescript.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -728,7 +731,8 @@
     "tf.json": "_file_terraform",
     "tfvars": "_file_terraform",
     "tfstate": "_file_terraform",
-    "blade.php": "_file_laravel"
+    "blade.php": "_file_laravel",
+    "applescript": "_file_applescript"
   },
   "fileNames": {
     "webpack.js": "_file_webpack",
@@ -900,6 +904,7 @@
     "autoit": "_file_autoit",
     "haml": "_file_haml",
     "yang": "_file_yang",
-    "terraform": "_file_terraform"
+    "terraform": "_file_terraform",
+    "applescript": "_file_applescript"
   }
 }
