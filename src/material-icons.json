@@ -420,6 +420,9 @@
     "_file_cake": {
       "iconPath": "./../../icons/cake.svg"
     },
+    "_file_cucumber": {
+      "iconPath": "./../../icons/cucumber.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -739,7 +742,8 @@
     "tfstate": "_file_terraform",
     "blade.php": "_file_laravel",
     "applescript": "_file_applescript",
-    "cake": "_file_cake"
+    "cake": "_file_cake",
+    "feature": "_file_cucumber"
   },
   "fileNames": {
     "webpack.js": "_file_webpack",
@@ -914,6 +918,7 @@
     "yang": "_file_yang",
     "terraform": "_file_terraform",
     "applescript": "_file_applescript",
-    "cake": "_file_cake"
+    "cake": "_file_cake",
+    "cucumber": "_file_cucumber"
   }
 }
