@@ -414,6 +414,9 @@
     "_file_applescript": {
       "iconPath": "./../../icons/applescript.svg"
     },
+    "_file_gitlab": {
+      "iconPath": "./../../icons/gitlab.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -856,7 +859,8 @@
     "protractor.config.ts": "_file_protractor",
     "fuse.js": "_file_fusebox",
     "procfile": "_file_heroku",
-    ".editorconfig": "_file_editorconfig"
+    ".editorconfig": "_file_editorconfig",
+    ".gitlab-ci.yml": "_file_gitlab"
   },
   "languageIds": {
     "git": "_file_git",
