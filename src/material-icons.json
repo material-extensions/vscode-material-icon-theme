@@ -423,6 +423,9 @@
     "_file_cucumber": {
       "iconPath": "./../../icons/cucumber.svg"
     },
+    "_file_nim": {
+      "iconPath": "./../../icons/nim.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -743,7 +746,9 @@
     "blade.php": "_file_laravel",
     "applescript": "_file_applescript",
     "cake": "_file_cake",
-    "feature": "_file_cucumber"
+    "feature": "_file_cucumber",
+    "nim": "_file_nim",
+    "nimble": "_file_nim"
   },
   "fileNames": {
     "webpack.js": "_file_webpack",
@@ -919,6 +924,8 @@
     "terraform": "_file_terraform",
     "applescript": "_file_applescript",
     "cake": "_file_cake",
-    "cucumber": "_file_cucumber"
+    "cucumber": "_file_cucumber",
+    "nim": "_file_nim",
+    "nimble": "_file_nim"
   }
 }
