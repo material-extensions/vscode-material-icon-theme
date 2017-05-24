@@ -1,1 +1,14 @@
-<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" version="1.1"><path d="m12.1 7.6 7.9 4v8l-7.9-4m17.6-8-8 4v8l7.9-4M2.6 2.8l7.9 4v8l-7.9-4m9.6 6.4 7.9 4v8l-7.9-4" style="fill:#5c6bc0;stroke-width:1.2"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32" height="32" version="1.1" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+    <dc:source>https://github.com/jesseweed/seti-ui</dc:source>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <path d="m12.1 7.6 7.9 4v8l-7.9-4m17.6-8-8 4v8l7.9-4M2.6 2.8l7.9 4v8l-7.9-4m9.6 6.4 7.9 4v8l-7.9-4" fill="#5c6bc0" stroke-width="1.2"/>
+</svg>
