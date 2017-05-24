@@ -426,6 +426,9 @@
     "_file_nim": {
       "iconPath": "./../../icons/nim.svg"
     },
+    "_file_babel": {
+      "iconPath": "./../../icons/babel.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -823,7 +826,7 @@
     "licence.md": "_file_certificate",
     "licence.md.rendered": "_file_certificate",
     "licence.txt": "_file_certificate",
-    ".babelrc": "_file_json",
+    ".babelrc": "_file_babel",
     ".eslintrc": "_file_json",
     ".buildignore": "_file_settings",
     ".htaccess": "_file_xml",
