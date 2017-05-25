@@ -105,6 +105,7 @@ const createConfigWithAngular = (config: IconConfiguration) => {
             "guard.ts": "_file_angular_guard",
             "service.ts": "_file_angular_service",
             "pipe.ts": "_file_angular_pipe",
+            "directive.ts": "_file_angular_directive",
         }
     };
 };

@@ -255,6 +255,9 @@
     "_file_angular_routing": {
       "iconPath": "./../../icons/angular-routing.svg"
     },
+    "_file_angular_directive": {
+      "iconPath": "./../../icons/angular-directive.svg"
+    },
     "_file_vue": {
       "iconPath": "./../../icons/vue.svg"
     },
@@ -714,6 +717,7 @@
     "guard.ts": "_file_angular_guard",
     "service.ts": "_file_angular_service",
     "pipe.ts": "_file_angular_pipe",
+    "directive.ts": "_file_angular_directive",
     "pp": "_file_puppet",
     "ex": "_file_elixir",
     "exs": "_file_elixir",
