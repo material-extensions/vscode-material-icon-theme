@@ -1,5 +1,21 @@
 # Change Log
 
+## 2.0.7 (2017-05-25)
+Added icons:
+- Terraform (.tf) [[@tothandras](https://github.com/tothandras) in [#66](https://github.com/PKief/vscode-material-icon-theme/pull/66)]
+- Laravel (.blade.php)
+- AppleScript (.applescript)
+- Gitlab (.gitlab-ci.yml)
+- Cake (.cake)
+- Cucumber (.feature)
+- Nim (.nim)
+- Babel (.babelrc)
+- Angular directive
+- .Rhistory
+
+Updated icons:
+- PHP
+
 ## 2.0.6 (2017-05-15)
 Added icons:
 - Heroku (Procfile)
