@@ -18,7 +18,19 @@
         "alreadyDisabled": "Folder icons are already disabled.",
         "enableIcons": "Enable folder icons",
         "disableIcons": "Disable folder icons",
-        "toggleIcons": "Toggle folder icons"
+        "toggleIcons": "Toggle folder icons",
+        "default": {
+            "name": "Default",
+            "description": "Different folder icons"
+        },
+        "classic": {
+            "name": "Klassisch",
+            "description": "Folder icons are consistent"
+        },
+        "none": {
+            "name": "Keine",
+            "description": "No folder icons"
+        }
     },
     "toggleSwitch": {
         "on": "ON",

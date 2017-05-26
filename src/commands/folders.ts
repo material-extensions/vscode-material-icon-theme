@@ -6,6 +6,12 @@ import * as i18n from './../i18n';
 import * as reload from './../messages/reload';
 import { IconConfiguration } from "../models/IconConfiguration.interface";
 
+export enum FolderType {
+    Default,
+    Classic,
+    None,
+}
+
 /** Command to toggle the folder icons. */
 export const toggleFolderIcons = () => {
     return checkFolderIconsStatus()
@@ -14,19 +20,24 @@ export const toggleFolderIcons = () => {
 };
 
 /** Show QuickPick items to select prefered configuration for the folder icons. */
-const showQuickPickItems = isEnabled => {
-    const on: vscode.QuickPickItem = {
-        description: i18n.translate('toggleSwitch.on'),
-        detail: i18n.translate('folders.enableIcons'),
-        label: isEnabled ? "\u2714" : "\u25FB"
+const showQuickPickItems = folderType => {
+    const optionDefault: vscode.QuickPickItem = {
+        description: i18n.translate('folders.default.name'),
+        detail: i18n.translate('folders.default.description'),
+        label: folderType === FolderType.Default ? "\u2714" : "\u25FB"
     };
-    const off: vscode.QuickPickItem = {
-        description: i18n.translate('toggleSwitch.off'),
-        detail: i18n.translate('folders.disableIcons'),
-        label: !isEnabled ? "\u2714" : "\u25FB"
+    const optionClassic: vscode.QuickPickItem = {
+        description: i18n.translate('folders.classic.name'),
+        detail: i18n.translate('folders.classic.description'),
+        label: folderType === FolderType.Classic ? "\u2714" : "\u25FB"
+    };
+    const optionNone: vscode.QuickPickItem = {
+        description: i18n.translate('folders.none.name'),
+        detail: i18n.translate('folders.none.description'),
+        label: folderType === FolderType.None ? "\u2714" : "\u25FB"
     };
     return vscode.window.showQuickPick(
-        [on, off], {
+        [optionDefault, optionClassic, optionNone], {
             placeHolder: i18n.translate('folders.toggleIcons'),
             ignoreFocusOut: false
         });
@@ -36,19 +47,21 @@ const showQuickPickItems = isEnabled => {
 const handleQuickPickActions = value => {
     if (!value || !value.description) return;
     switch (value.description) {
-        case i18n.translate('toggleSwitch.on'): {
+        case i18n.translate('folders.default.name'): {
             checkFolderIconsStatus().then(result => {
-                if (!result) {
-                    helpers.setThemeConfig('folders.iconsEnabled', true, true);
-                }
+                helpers.setThemeConfig('folders.icons', "default", true);
             });
             break;
         }
-        case i18n.translate('toggleSwitch.off'): {
+        case i18n.translate('folders.classic.name'): {
             checkFolderIconsStatus().then(result => {
-                if (result) {
-                    helpers.setThemeConfig('folders.iconsEnabled', false, true);
-                }
+                helpers.setThemeConfig('folders.icons', "classic", true);
+            });
+            break;
+        }
+        case i18n.translate('folders.none.name'): {
+            checkFolderIconsStatus().then(result => {
+                helpers.setThemeConfig('folders.icons', "none", true);
             });
             break;
         }
@@ -58,12 +71,14 @@ const handleQuickPickActions = value => {
 };
 
 /** Are the folder icons enabled? */
-export const checkFolderIconsStatus = (): Promise<boolean> => {
+export const checkFolderIconsStatus = (): Promise<FolderType> => {
     return helpers.getMaterialIconsJSON().then((config) => {
         if (config.folder === '' && config.folderExpanded === '') {
-            return false;
+            return FolderType.None;
+        } else if (Object.keys(config.folderNames).length > 0) {
+            return FolderType.Default;
         } else {
-            return true;
+            return FolderType.Classic;
         }
     });
 };
@@ -72,6 +87,14 @@ export const checkFolderIconsStatus = (): Promise<boolean> => {
 /** Enable folder icons */
 export const enableFolderIcons = () => {
     return insertFolderIcons().then(() => {
+        reload.showConfirmToReloadMessage().then(result => {
+            if (result) helpers.reload();
+        });
+    });
+};
+
+export const enableClassicFolderIcons = () => {
+    return insertClassicFolderIcons().then(() => {
         reload.showConfirmToReloadMessage().then(result => {
             if (result) helpers.reload();
         });
@@ -175,6 +198,23 @@ export const createConfigWithFolders = (config: IconConfiguration) => {
             "views": "_folder_views_open"
         }
     };
+};
+
+const insertClassicFolderIcons = (): Promise<void> => {
+    const iconJSONPath = path.join(helpers.getExtensionPath(), 'out', 'src', 'material-icons.json');
+    return helpers.getMaterialIconsJSON().then(config => {
+        fs.writeFileSync(iconJSONPath, JSON.stringify(createConfigWithClassicFoldersIcons(config), null, 2));
+    });
+};
+
+export const createConfigWithClassicFoldersIcons = (config: IconConfiguration) => {
+    return {
+        ...config,
+        folder: "_folder",
+        folderExpanded: "_folder_open",
+        folderNames: {},
+        folderNamesExpanded: {}
+    }
 };
 
 /** Delete folder icons */

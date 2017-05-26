@@ -79,11 +79,16 @@
           "default": true,
           "description": "Enable the icons for Angular files."
         },
-        "material-icon-theme.folders.iconsEnabled": {
-          "type": "boolean",
-          "default": true,
-          "description": "Enable folder icons."
-        }
+        "material-icon-theme.folders.icons": {
+					"type": "string",
+					"default": "default",
+					"description": "Set the type for the folder icons.",
+					"enum": [
+						"default",
+						"classic",
+						"none"						
+					]
+				}        
       }
     }
   },
