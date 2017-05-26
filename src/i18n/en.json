@@ -24,11 +24,11 @@
             "description": "Different folder icons"
         },
         "classic": {
-            "name": "Klassisch",
+            "name": "Classic",
             "description": "Folder icons are consistent"
         },
         "none": {
-            "name": "Keine",
+            "name": "None",
             "description": "No folder icons"
         }
     },
