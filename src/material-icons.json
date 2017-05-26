@@ -432,6 +432,9 @@
     "_file_babel": {
       "iconPath": "./../../icons/babel.svg"
     },
+    "_file_apiblueprint": {
+      "iconPath": "./../../icons/apiblueprint.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -756,7 +759,9 @@
     "feature": "_file_cucumber",
     "nim": "_file_nim",
     "nimble": "_file_nim",
-    "rmd": "_file_r"
+    "rmd": "_file_r",
+    "apib": "_file_apiblueprint",
+    "apiblueprint": "_file_apiblueprint"
   },
   "fileNames": {
     "webpack.js": "_file_webpack",
@@ -935,6 +940,7 @@
     "cake": "_file_cake",
     "cucumber": "_file_cucumber",
     "nim": "_file_nim",
-    "nimble": "_file_nim"
+    "nimble": "_file_nim",
+    "apiblueprint": "_file_apiblueprint"
   }
 }
