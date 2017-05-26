@@ -908,7 +908,8 @@
     "feature": "_file_cucumber",
     "nim": "_file_nim",
     "nimble": "_file_nim",
-    "rmd": "_file_r"
+    "rmd": "_file_r",
+    "ng-template": "_file_angular"
   },
   "fileNames": {
     "webpack.js": "_file_webpack",
