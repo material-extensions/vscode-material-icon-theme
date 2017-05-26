@@ -22,10 +22,7 @@ const restore = () => {
     }).then(() => {
         // Folders
         return enableFolderIcons().then(() => {
-            if (helpers.getThemeConfig('folders.iconsEnabled').workspaceValue === false)
-                helpers.setThemeConfig('folders.iconsEnabled', true);
-            else if (helpers.getThemeConfig('folders.iconsEnabled').globalValue === false)
-                helpers.setThemeConfig('folders.iconsEnabled', true, true);
+            helpers.setThemeConfig('folders.icons', 'Default');
         });
     });
 };
