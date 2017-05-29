@@ -339,6 +339,12 @@
     "_file_elm": {
       "iconPath": "./../../icons/elm.svg"
     },
+    "_file_vfl": {
+      "iconPath": "./../../icons/vfl.svg"
+    },
+    "_file_kl": {
+      "iconPath": "./../../icons/kl.svg"
+    },
     "_file_purescript": {
       "iconPath": "./../../icons/purescript.svg"
     },
@@ -918,7 +924,10 @@
     "ng-template": "_file_angular",
     "apib": "_file_apiblueprint",
     "apiblueprint": "_file_apiblueprint",
+    "vfl": "_file_vfl",
+    "kl": "_file_kl",
     "tag": "_file_riot"
+
   },
   "fileNames": {
     "webpack.js": "_file_webpack",
@@ -1044,7 +1053,9 @@
     "procfile": "_file_heroku",
     ".editorconfig": "_file_editorconfig",
     ".gitlab-ci.yml": "_file_gitlab",
-    ".Rhistory": "_file_r"
+    ".Rhistory": "_file_r",
+    ".vfl": "_file_vfl",
+    ".kl": "_file_kl"
   },
   "languageIds": {
     "git": "_file_git",
