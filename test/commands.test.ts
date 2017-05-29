@@ -26,7 +26,15 @@ suite("commands", () => {
     test("enable folder icons", () => {
         return folders.enableFolderIcons().then(() => {
             return folders.checkFolderIconsStatus().then(result => {
-                assert.equal(result, true);
+                assert.equal(result, folders.FolderType.Default);
+            });
+        });
+    });
+
+    test("enable classic folder icons", () => {
+        return folders.enableClassicFolderIcons().then(() => {
+            return folders.checkFolderIconsStatus().then(result => {
+                assert.equal(result, folders.FolderType.Classic);
             });
         });
     });
@@ -34,7 +42,7 @@ suite("commands", () => {
     test("disable folder icons", () => {
         return folders.disableFolderIcons().then(() => {
             return folders.checkFolderIconsStatus().then(result => {
-                assert.equal(result, false);
+                assert.equal(result, folders.FolderType.None);
             });
         });
     });
@@ -44,7 +52,7 @@ suite("commands", () => {
             return angular.checkAngularIconsStatus().then(result => {
                 assert.equal(result, true);
                 folders.checkFolderIconsStatus().then(result => {
-                    assert.equal(result, true);
+                    assert.equal(result, folders.FolderType.Default);
                 });
             });
         });

@@ -1,7 +1,7 @@
 import * as helpers from './index';
 import * as vscode from 'vscode';
 import { checkAngularIconsStatus, enableAngularIcons, disableAngularIcons } from "../commands/angular";
-import { enableFolderIcons, disableFolderIcons, checkFolderIconsStatus } from "../commands/folders";
+import { enableFolderIcons, enableClassicFolderIcons, disableFolderIcons, checkFolderIconsStatus, FolderType } from "../commands/folders";
 
 /** Store the latest version number in the user data settings. */
 export const updateVersionInUserDataSettings = () => {
@@ -52,18 +52,36 @@ const compareAngularConfigs = () => {
 };
 
 const compareFolderConfigs = () => {
-    const folderIconsConfig = helpers.getThemeConfig('folders.iconsEnabled');
+    const folderIconsConfig = helpers.getThemeConfig('folders.icons');
 
     return checkFolderIconsStatus().then(result => {
-        if (folderIconsConfig.workspaceValue === true || folderIconsConfig.globalValue === true) {
-            if (!result) { enableFolderIcons(); }
-        }
-        else if (
-            (folderIconsConfig.workspaceValue === false && folderIconsConfig.globalValue === false) ||
-            (folderIconsConfig.workspaceValue === undefined && folderIconsConfig.globalValue === false) ||
-            (folderIconsConfig.workspaceValue === false && folderIconsConfig.globalValue === undefined)) {
+        switch (result) {
+            case FolderType.None:
+                if (folderIconsConfig.globalValue === "default") {
+                    enableFolderIcons();
+                } else if (folderIconsConfig.globalValue === "classic") {
+                    enableClassicFolderIcons();
+                }
+                break;
 
-            if (result) { disableFolderIcons(); }
+            case FolderType.Default:
+                if (folderIconsConfig.globalValue === "none") {
+                    disableFolderIcons();
+                } else if (folderIconsConfig.globalValue === "classic") {
+                    enableClassicFolderIcons();
+                }
+                break;
+
+            case FolderType.Classic:
+                if (folderIconsConfig.globalValue === "none") {
+                    disableFolderIcons();
+                } else if (folderIconsConfig.globalValue === "default") {
+                    enableFolderIcons();
+                }
+                break;
+
+            default:
+                break;
         }
     });
 };

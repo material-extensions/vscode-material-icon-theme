@@ -18,7 +18,19 @@
         "alreadyDisabled": "Ordner Icons sind schon deaktiviert.",
         "enableIcons": "Ordner Icons aktivieren",
         "disableIcons": "Ordner Icons deaktivieren",
-        "toggleIcons": "Ordner Icons umschalten"
+        "toggleIcons": "Ordner Icons umschalten",
+        "default": {
+            "name": "Default",
+            "description": "Verschiedene Ordner Icons"
+        },
+        "classic": {
+            "name": "Klassisch",
+            "description": "Ordner Icons sind gleich"
+        },
+        "none": {
+            "name": "Keine",
+            "description": "Keine Ordner Icons"
+        }
     },
     "toggleSwitch": {
         "on": "EIN",
