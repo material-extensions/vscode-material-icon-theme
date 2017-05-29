@@ -214,7 +214,7 @@ export const createConfigWithClassicFoldersIcons = (config: IconConfiguration) =
         folderExpanded: "_folder_open",
         folderNames: {},
         folderNamesExpanded: {}
-    }
+    };
 };
 
 /** Delete folder icons */
