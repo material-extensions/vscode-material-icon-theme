@@ -444,6 +444,9 @@
     "_file_riot": {
       "iconPath": "./../../icons/riot.svg"
     },
+    "_file_bower": {
+      "iconPath": "./../../icons/bower.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -546,10 +549,10 @@
     "sass": "_folder_sass",
     "scss": "_folder_sass",
     "images": "_folder_images",
-    "image": "_folder_images", 
-    "img": "_folder_images", 
-    "icons": "_folder_images", 
-    "icon": "_folder_images", 
+    "image": "_folder_images",
+    "img": "_folder_images",
+    "icons": "_folder_images",
+    "icon": "_folder_images",
     "ico": "_folder_images",
     "script": "_folder_scripts",
     "scripts": "_folder_scripts",
@@ -583,10 +586,10 @@
     "sass": "_folder_sass_open",
     "scss": "_folder_sass_open",
     "images": "_folder_images_open",
-    "image": "_folder_images_open", 
-    "img": "_folder_images_open", 
-    "icons": "_folder_images_open", 
-    "icon": "_folder_images_open", 
+    "image": "_folder_images_open",
+    "img": "_folder_images_open",
+    "icons": "_folder_images_open",
+    "icon": "_folder_images_open",
     "ico": "_folder_images_open",
     "script": "_folder_scripts_open",
     "scripts": "_folder_scripts_open",
@@ -1054,7 +1057,9 @@
     ".gitlab-ci.yml": "_file_gitlab",
     ".Rhistory": "_file_r",
     ".vfl": "_file_vfl",
-    ".kl": "_file_kl"
+    ".kl": "_file_kl",
+    ".bowerrc": "_file_bower",
+    "bower.json": "_file_bower"
   },
   "languageIds": {
     "git": "_file_git",
