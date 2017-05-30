@@ -11,7 +11,6 @@ const icons = [];
 const folders = [];
 const iconsMarkdown = 'icons.md';
 const foldersMarkdown = 'folders.md';
-const columns = 5;
 
 fs.readdir(folder, (err, files) => {
     if (err) {
