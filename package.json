@@ -102,7 +102,7 @@
     "pretest": "npm run vscode:prepublish",
     "test": "node ./node_modules/vscode/bin/test",
     "check": "bithound check git@github.com:PKief/vscode-material-icon-theme.git",
-    "iconSet": "node ./images/iconsetScript.js"
+    "preview": "node generatePreview.js"
   },
   "dependencies": {
     "opn": "^5.0.0",

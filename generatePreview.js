@@ -1,6 +1,6 @@
 // With this script you can generate a markdown table for all icons.
 // The table is used as an overview about all icons in the readme file.
-// Just run `npm run iconSet` from the root folder.
+// Just run `npm run preview` from the root folder.
 // It will create a markdown file in the 'images' folder.
 
 const fs = require('fs');
@@ -9,8 +9,8 @@ const path = require('path');
 const folder = path.join('icons');
 const icons = [];
 const folders = [];
-const iconsMarkdown = 'icons.md';
-const foldersMarkdown = 'folders.md';
+const iconsMarkdown = 'lang-icons.md';
+const foldersMarkdown = 'folder-icons.md';
 
 fs.readdir(folder, (err, files) => {
     if (err) {
