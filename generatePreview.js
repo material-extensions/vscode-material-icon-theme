@@ -14,7 +14,7 @@ const foldersMarkdown = 'folder-icons.md';
 
 fs.readdir(folder, (err, files) => {
     if (err) {
-        console.log(err)
+        console.log(err);
         return;
     }
 
@@ -95,4 +95,4 @@ function createMarkdownFile(iconList, pathname, amountOfColumns, excludeIconWith
  */
 String.prototype.capitalizeFirstLetter = function () {
     return this.charAt(0).toUpperCase() + this.slice(1);
-}
+};
