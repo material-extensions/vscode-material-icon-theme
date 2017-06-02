@@ -1,7 +1,7 @@
 import * as helpers from './index';
 import * as vscode from 'vscode';
 import { checkAngularIconsStatus, enableAngularIcons, disableAngularIcons } from "../commands/angular";
-import { enableFolderIcons, enableClassicFolderIcons, disableFolderIcons, checkFolderIconsStatus, FolderType } from "../commands/folders";
+import { enableFolderIcons, enableClassicFolderIcons, enableBlueFolderIcons, disableFolderIcons, checkFolderIconsStatus, FolderType } from "../commands/folders";
 
 /** Store the latest version number in the user data settings. */
 export const updateVersionInUserDataSettings = () => {
@@ -61,6 +61,8 @@ const compareFolderConfigs = () => {
                     enableFolderIcons();
                 } else if (folderIconsConfig.globalValue === "classic") {
                     enableClassicFolderIcons();
+                } else if (folderIconsConfig.globalValue === "blue") {
+                    enableBlueFolderIcons();
                 }
                 break;
 
@@ -69,6 +71,8 @@ const compareFolderConfigs = () => {
                     disableFolderIcons();
                 } else if (folderIconsConfig.globalValue === "classic") {
                     enableClassicFolderIcons();
+                } else if (folderIconsConfig.globalValue === "blue") {
+                    enableBlueFolderIcons();
                 }
                 break;
 
@@ -77,6 +81,18 @@ const compareFolderConfigs = () => {
                     disableFolderIcons();
                 } else if (folderIconsConfig.globalValue === "default") {
                     enableFolderIcons();
+                } else if (folderIconsConfig.globalValue === "blue") {
+                    enableBlueFolderIcons();
+                }
+                break;
+
+            case FolderType.Blue:
+                if (folderIconsConfig.globalValue === "none") {
+                    disableFolderIcons();
+                } else if (folderIconsConfig.globalValue === "default") {
+                    enableFolderIcons();
+                } else if (folderIconsConfig.globalValue === "classic") {
+                    enableClassicFolderIcons();
                 }
                 break;
 

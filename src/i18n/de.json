@@ -25,7 +25,11 @@
         },
         "classic": {
             "name": "Klassisch",
-            "description": "Ordner Icons sind gleich"
+            "description": "Graue Ordner Icons"
+        },
+        "blue": {
+            "name": "Blau",
+            "description": "Blaue Ordner Icons"
         },
         "none": {
             "name": "Keine",

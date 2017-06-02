@@ -25,7 +25,11 @@
         },
         "classic": {
             "name": "Classic",
-            "description": "Folder icons are consistent"
+            "description": "Gray folder icons"
+        },
+        "blue": {
+            "name": "Blue",
+            "description": "Blue folder icons"
         },
         "none": {
             "name": "None",

@@ -533,6 +533,12 @@
     },
     "_folder_views_open": {
       "iconPath": "./../../icons/folder-views-open.svg"
+    },
+    "_folder_blue": {
+      "iconPath": "./../../icons/folder-blue.svg"
+    },
+    "_folder_blue_open": {
+      "iconPath": "./../../icons/folder-blue-open.svg"
     }
   },
   "folderExpanded": "_folder_open",

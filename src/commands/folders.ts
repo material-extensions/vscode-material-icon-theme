@@ -9,6 +9,7 @@ import { IconConfiguration } from "../models/IconConfiguration.interface";
 export enum FolderType {
     Default,
     Classic,
+    Blue,
     None,
 }
 
@@ -31,13 +32,18 @@ const showQuickPickItems = folderType => {
         detail: i18n.translate('folders.classic.description'),
         label: folderType === FolderType.Classic ? "\u2714" : "\u25FB"
     };
+    const optionBlue: vscode.QuickPickItem = {
+        description: i18n.translate('folders.blue.name'),
+        detail: i18n.translate('folders.blue.description'),
+        label: folderType === FolderType.Blue ? "\u2714" : "\u25FB"
+    };
     const optionNone: vscode.QuickPickItem = {
         description: i18n.translate('folders.none.name'),
         detail: i18n.translate('folders.none.description'),
         label: folderType === FolderType.None ? "\u2714" : "\u25FB"
     };
     return vscode.window.showQuickPick(
-        [optionDefault, optionClassic, optionNone], {
+        [optionDefault, optionClassic, optionBlue, optionNone], {
             placeHolder: i18n.translate('folders.toggleIcons'),
             ignoreFocusOut: false
         });
@@ -59,6 +65,12 @@ const handleQuickPickActions = value => {
             });
             break;
         }
+        case i18n.translate('folders.blue.name'): {
+            checkFolderIconsStatus().then(result => {
+                helpers.setThemeConfig('folders.icons', "blue", true);
+            });
+            break;
+        }
         case i18n.translate('folders.none.name'): {
             checkFolderIconsStatus().then(result => {
                 helpers.setThemeConfig('folders.icons', "none", true);
@@ -77,6 +89,8 @@ export const checkFolderIconsStatus = (): Promise<FolderType> => {
             return FolderType.None;
         } else if (Object.keys(config.folderNames).length > 0) {
             return FolderType.Default;
+        } else if (config.folder === '_folder_blue') {
+            return FolderType.Blue;
         } else {
             return FolderType.Classic;
         }
@@ -95,6 +109,14 @@ export const enableFolderIcons = () => {
 
 export const enableClassicFolderIcons = () => {
     return insertClassicFolderIcons().then(() => {
+        reload.showConfirmToReloadMessage().then(result => {
+            if (result) helpers.reload();
+        });
+    });
+};
+
+export const enableBlueFolderIcons = () => {
+    return insertBlueFolderIcons().then(() => {
         reload.showConfirmToReloadMessage().then(result => {
             if (result) helpers.reload();
         });
@@ -212,6 +234,23 @@ export const createConfigWithClassicFoldersIcons = (config: IconConfiguration) =
         ...config,
         folder: "_folder",
         folderExpanded: "_folder_open",
+        folderNames: {},
+        folderNamesExpanded: {}
+    };
+};
+
+const insertBlueFolderIcons = (): Promise<void> => {
+    const iconJSONPath = path.join(helpers.getExtensionPath(), 'out', 'src', 'material-icons.json');
+    return helpers.getMaterialIconsJSON().then(config => {
+        fs.writeFileSync(iconJSONPath, JSON.stringify(createConfigWithBlueFoldersIcons(config), null, 2));
+    });
+};
+
+export const createConfigWithBlueFoldersIcons = (config: IconConfiguration) => {
+    return {
+        ...config,
+        folder: "_folder_blue",
+        folderExpanded: "_folder_blue_open",
         folderNames: {},
         folderNamesExpanded: {}
     };
