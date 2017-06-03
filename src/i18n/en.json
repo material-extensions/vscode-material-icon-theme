@@ -19,8 +19,8 @@
         "enableIcons": "Enable folder icons",
         "disableIcons": "Disable folder icons",
         "toggleIcons": "Toggle folder icons",
-        "default": {
-            "name": "Default",
+        "specific": {
+            "name": "Specific",
             "description": "Specific folder icons"
         },
         "classic": {

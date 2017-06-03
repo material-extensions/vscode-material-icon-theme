@@ -7,7 +7,7 @@ import * as reload from './../messages/reload';
 import { IconConfiguration } from "../models/IconConfiguration.interface";
 
 export enum FolderType {
-    Default,
+    Specific,
     Classic,
     Blue,
     None,
@@ -23,9 +23,9 @@ export const toggleFolderIcons = () => {
 /** Show QuickPick items to select prefered configuration for the folder icons. */
 const showQuickPickItems = folderType => {
     const optionDefault: vscode.QuickPickItem = {
-        description: i18n.translate('folders.default.name'),
-        detail: i18n.translate('folders.default.description'),
-        label: folderType === FolderType.Default ? "\u2714" : "\u25FB"
+        description: i18n.translate('folders.specific.name'),
+        detail: i18n.translate('folders.specific.description'),
+        label: folderType === FolderType.Specific ? "\u2714" : "\u25FB"
     };
     const optionClassic: vscode.QuickPickItem = {
         description: i18n.translate('folders.classic.name'),
@@ -53,9 +53,9 @@ const showQuickPickItems = folderType => {
 const handleQuickPickActions = value => {
     if (!value || !value.description) return;
     switch (value.description) {
-        case i18n.translate('folders.default.name'): {
+        case i18n.translate('folders.specific.name'): {
             checkFolderIconsStatus().then(result => {
-                helpers.setThemeConfig('folders.icons', "default", true);
+                helpers.setThemeConfig('folders.icons', "specific", true);
             });
             break;
         }
@@ -87,8 +87,8 @@ export const checkFolderIconsStatus = (): Promise<FolderType> => {
     return helpers.getMaterialIconsJSON().then((config) => {
         if (config.folder === '' && config.folderExpanded === '') {
             return FolderType.None;
-        } else if (Object.keys(config.folderNames).length > 0) {
-            return FolderType.Default;
+        } else if (config.folderNames && Object.keys(config.folderNames).length > 0) {
+            return FolderType.Specific;
         } else if (config.folder === '_folder_blue') {
             return FolderType.Blue;
         } else {
@@ -99,8 +99,8 @@ export const checkFolderIconsStatus = (): Promise<FolderType> => {
 
 
 /** Enable folder icons */
-export const enableFolderIcons = () => {
-    return insertFolderIcons().then(() => {
+export const enableSpecificFolderIcons = () => {
+    return insertSpecificFolderIcons().then(() => {
         reload.showConfirmToReloadMessage().then(result => {
             if (result) helpers.reload();
         });
@@ -133,14 +133,14 @@ export const disableFolderIcons = () => {
 };
 
 /** Add folder icons */
-const insertFolderIcons = (): Promise<void> => {
+const insertSpecificFolderIcons = (): Promise<void> => {
     const iconJSONPath = path.join(helpers.getExtensionPath(), 'out', 'src', 'material-icons.json');
     return helpers.getMaterialIconsJSON().then(config => {
-        fs.writeFileSync(iconJSONPath, JSON.stringify(createConfigWithFolders(config), null, 2));
+        fs.writeFileSync(iconJSONPath, JSON.stringify(createConfigWithSpecificFolders(config), null, 2));
     });
 };
 
-export const createConfigWithFolders = (config: IconConfiguration) => {
+export const createConfigWithSpecificFolders = (config: IconConfiguration) => {
     return {
         ...config,
         folder: "_folder",

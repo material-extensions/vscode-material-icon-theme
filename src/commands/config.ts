@@ -1,7 +1,7 @@
 import { enableAngularIcons } from "./angular";
 import * as reload from './../messages/reload';
 import * as helpers from './../helpers';
-import { enableFolderIcons } from "./folders";
+import { enableSpecificFolderIcons } from "./folders";
 
 export const restoreDefaultConfig = () => {
     return restore().then(() => {
@@ -21,8 +21,8 @@ const restore = () => {
             helpers.setThemeConfig('angular.iconsEnabled', true, true);
     }).then(() => {
         // Folders
-        return enableFolderIcons().then(() => {
-            helpers.setThemeConfig('folders.icons', 'default', true);
+        return enableSpecificFolderIcons().then(() => {
+            helpers.setThemeConfig('folders.icons', 'specific', true);
         });
     });
 };

@@ -24,9 +24,9 @@ suite("commands", () => {
     });
 
     test("enable folder icons", () => {
-        return folders.enableFolderIcons().then(() => {
+        return folders.enableSpecificFolderIcons().then(() => {
             return folders.checkFolderIconsStatus().then(result => {
-                assert.equal(result, folders.FolderType.Default);
+                assert.equal(result, folders.FolderType.Specific);
             });
         });
     });
@@ -52,7 +52,7 @@ suite("commands", () => {
             return angular.checkAngularIconsStatus().then(result => {
                 assert.equal(result, true);
                 folders.checkFolderIconsStatus().then(result => {
-                    assert.equal(result, folders.FolderType.Default);
+                    assert.equal(result, folders.FolderType.Specific);
                 });
             });
         });

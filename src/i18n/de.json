@@ -19,8 +19,8 @@
         "enableIcons": "Ordner Icons aktivieren",
         "disableIcons": "Ordner Icons deaktivieren",
         "toggleIcons": "Ordner Icons umschalten",
-        "default": {
-            "name": "Default",
+        "specific": {
+            "name": "Spezifisch",
             "description": "Spezielle Ordner Icons"
         },
         "classic": {

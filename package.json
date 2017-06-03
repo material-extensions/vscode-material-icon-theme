@@ -81,10 +81,10 @@
         },
         "material-icon-theme.folders.icons": {
           "type": "string",
-          "default": "default",
+          "default": "specific",
           "description": "Set the type for the folder icons.",
           "enum": [
-            "default",
+            "specific",
             "classic",
             "blue",
             "none"

@@ -19,7 +19,9 @@ The Material Icon Theme provides lots of icons based on Material Design for Visu
 
 ![Folder icons](https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/master/images/folder-icons.png)
 
-You have the possibility to change the folder icons:
+#### Customize folder icons
+
+You can change the design of the folder icons:
 
 ![Folder icons](https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/master/images/set-folder-icons.gif)
 
@@ -42,7 +44,7 @@ Press `Ctrl-Shift-P` to open the command palette and type `Material Icons`.
 
 - **Toggle Angular Icons**: Show the Angular files either with specific icons or default language icons.
 
-- **Toggle Folder Icons**: Toggle folder icons.
+- **Toggle Folder Icons**: Change the design of the folder icons.
 
 ## Icon sources
 * [Material Design Icons](https://materialdesignicons.com/)

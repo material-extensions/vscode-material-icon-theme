@@ -1,7 +1,7 @@
 import * as helpers from './index';
 import * as vscode from 'vscode';
 import { checkAngularIconsStatus, enableAngularIcons, disableAngularIcons } from "../commands/angular";
-import { enableFolderIcons, enableClassicFolderIcons, enableBlueFolderIcons, disableFolderIcons, checkFolderIconsStatus, FolderType } from "../commands/folders";
+import { enableSpecificFolderIcons, enableClassicFolderIcons, enableBlueFolderIcons, disableFolderIcons, checkFolderIconsStatus, FolderType } from "../commands/folders";
 
 /** Store the latest version number in the user data settings. */
 export const updateVersionInUserDataSettings = () => {
@@ -57,8 +57,8 @@ const compareFolderConfigs = () => {
     return checkFolderIconsStatus().then(result => {
         switch (result) {
             case FolderType.None:
-                if (folderIconsConfig.globalValue === "default") {
-                    enableFolderIcons();
+                if (folderIconsConfig.globalValue === "specific") {
+                    enableSpecificFolderIcons();
                 } else if (folderIconsConfig.globalValue === "classic") {
                     enableClassicFolderIcons();
                 } else if (folderIconsConfig.globalValue === "blue") {
@@ -66,7 +66,7 @@ const compareFolderConfigs = () => {
                 }
                 break;
 
-            case FolderType.Default:
+            case FolderType.Specific:
                 if (folderIconsConfig.globalValue === "none") {
                     disableFolderIcons();
                 } else if (folderIconsConfig.globalValue === "classic") {
@@ -79,8 +79,8 @@ const compareFolderConfigs = () => {
             case FolderType.Classic:
                 if (folderIconsConfig.globalValue === "none") {
                     disableFolderIcons();
-                } else if (folderIconsConfig.globalValue === "default") {
-                    enableFolderIcons();
+                } else if (folderIconsConfig.globalValue === "specific") {
+                    enableSpecificFolderIcons();
                 } else if (folderIconsConfig.globalValue === "blue") {
                     enableBlueFolderIcons();
                 }
@@ -89,8 +89,8 @@ const compareFolderConfigs = () => {
             case FolderType.Blue:
                 if (folderIconsConfig.globalValue === "none") {
                     disableFolderIcons();
-                } else if (folderIconsConfig.globalValue === "default") {
-                    enableFolderIcons();
+                } else if (folderIconsConfig.globalValue === "specific") {
+                    enableSpecificFolderIcons();
                 } else if (folderIconsConfig.globalValue === "classic") {
                     enableClassicFolderIcons();
                 }
