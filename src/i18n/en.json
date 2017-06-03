@@ -21,7 +21,7 @@
         "toggleIcons": "Toggle folder icons",
         "default": {
             "name": "Default",
-            "description": "Different folder icons"
+            "description": "Specific folder icons"
         },
         "classic": {
             "name": "Classic",

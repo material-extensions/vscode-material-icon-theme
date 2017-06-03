@@ -21,7 +21,7 @@
         "toggleIcons": "Ordner Icons umschalten",
         "default": {
             "name": "Default",
-            "description": "Verschiedene Ordner Icons"
+            "description": "Spezielle Ordner Icons"
         },
         "classic": {
             "name": "Klassisch",
