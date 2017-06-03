@@ -1,5 +1,14 @@
 # Change Log
 
+## 2.0.8 (2017-06-03)
+Added icons:
+- Folder icons [[@ThomasGeek](https://github.com/ThomasGeek) in [#70](https://github.com/PKief/vscode-material-icon-theme/pull/70)]
+- Blue folder icons
+- vfl and kl support [[@melMass](https://github.com/melMass) in [#72](https://github.com/PKief/vscode-material-icon-theme/pull/72)]
+- support for Riot.js tag files [[@iFaxity](https://github.com/iFaxity) in [#73](https://github.com/PKief/vscode-material-icon-theme/pull/73)]
+- bower icon (.bowerrc, bower.json)
+- API Blueprint (.apib, .apiblueprint)
+
 ## 2.0.7 (2017-05-25)
 Added icons:
 - Terraform (.tf) [[@tothandras](https://github.com/tothandras) in [#66](https://github.com/PKief/vscode-material-icon-theme/pull/66)]
@@ -12,9 +21,6 @@ Added icons:
 - Babel (.babelrc)
 - Angular directive
 - .Rhistory
-
-Updated icons:
-- PHP
 
 ## 2.0.6 (2017-05-15)
 Added icons:
