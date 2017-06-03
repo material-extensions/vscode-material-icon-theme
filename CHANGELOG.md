@@ -6,7 +6,7 @@ Added icons:
 - Blue folder icons
 - vfl and kl support [[@melMass](https://github.com/melMass) in [#72](https://github.com/PKief/vscode-material-icon-theme/pull/72)]
 - support for Riot.js tag files [[@iFaxity](https://github.com/iFaxity) in [#73](https://github.com/PKief/vscode-material-icon-theme/pull/73)]
-- bower icon (.bowerrc, bower.json)
+- bower (.bowerrc, bower.json)
 - API Blueprint (.apib, .apiblueprint)
 
 ## 2.0.7 (2017-05-25)
