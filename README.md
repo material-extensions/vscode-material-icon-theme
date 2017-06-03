@@ -11,7 +11,19 @@
 
 The Material Icon Theme provides lots of icons based on Material Design for Visual Studio Code.
 
-![Icon set](https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/master/images/iconset.png)
+### Language icons
+
+![Folder icons](https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/master/images/lang-icons.png)
+
+### Folder icons
+
+![Folder icons](https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/master/images/folder-icons.png)
+
+You have the possibility to change the folder icons:
+
+![Folder icons](https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/master/images/set-folder-icons.gif)
+
+
 
 ## One-click activation
 After installation or update you can click on the 'Activate'-button to activate the icon theme, if you haven't already. The icons will be visible immediately.
@@ -30,14 +42,10 @@ Press `Ctrl-Shift-P` to open the command palette and type `Material Icons`.
 
 - **Toggle Angular Icons**: Show the Angular files either with specific icons or default language icons.
 
-- **Toggle Folder Icons**: Hide or show folder icons.
-
-You can also configure the icon theme in the user or workspace settings.
+- **Toggle Folder Icons**: Toggle folder icons.
 
 ## Icon sources
-* [https://design.google.com/icons/](https://design.google.com/icons/)
-* [https://materialdesignicons.com/](https://materialdesignicons.com/)
-* [https://github.com/jesseweed/seti-ui](https://github.com/jesseweed/seti-ui)
+* [Material Design Icons](https://materialdesignicons.com/)
 * official icons
 
 ## How to contribute
