@@ -447,6 +447,9 @@
     "_file_bower": {
       "iconPath": "./../../icons/bower.svg"
     },
+    "_file_eslint": {
+      "iconPath": "./../../icons/eslint.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -1010,8 +1013,7 @@
     "licence.md": "_file_certificate",
     "licence.md.rendered": "_file_certificate",
     "licence.txt": "_file_certificate",
-    ".babelrc": "_file_babel",
-    ".eslintrc": "_file_json",
+    ".babelrc": "_file_babel",    
     ".buildignore": "_file_settings",
     ".htaccess": "_file_xml",
     "composer.lock": "_file_json",
@@ -1066,7 +1068,9 @@
     ".vfl": "_file_vfl",
     ".kl": "_file_kl",
     ".bowerrc": "_file_bower",
-    "bower.json": "_file_bower"
+    "bower.json": "_file_bower",
+    ".eslintrc": "_file_eslint",
+    ".eslintignore": "_file_eslint"    
   },
   "languageIds": {
     "git": "_file_git",
@@ -1121,6 +1125,6 @@
     "nim": "_file_nim",
     "nimble": "_file_nim",
     "apiblueprint": "_file_apiblueprint",
-    "riot": "_file_riot"
+    "riot": "_file_riot"    
   }
 }
