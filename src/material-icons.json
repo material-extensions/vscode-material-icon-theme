@@ -620,6 +620,7 @@
   },
   "fileExtensions": {
     "html": "_file_html",
+    "html_vm": "_file_html",
     "asp": "_file_html",
     "jade": "_file_pug",
     "pug": "_file_pug",
