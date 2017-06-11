@@ -1069,6 +1069,10 @@
     ".kl": "_file_kl",
     ".bowerrc": "_file_bower",
     "bower.json": "_file_bower",
+    ".eslintrc.js": "_file_eslint",
+    ".eslintrc.yaml": "_file_eslint",
+    ".eslintrc.yml": "_file_eslint",
+    ".eslintrc.json": "_file_eslint",
     ".eslintrc": "_file_eslint",
     ".eslintignore": "_file_eslint",
     ".esformatter": "_file_json"
