@@ -1,5 +1,10 @@
 # Change Log
 
+## 2.0.9 (2017-06-12)
+Added icons:
+- eslint
+- .esformatter
+
 ## 2.0.8 (2017-06-03)
 Added icons:
 - Folder icons [[@ThomasGeek](https://github.com/ThomasGeek) in [#70](https://github.com/PKief/vscode-material-icon-theme/pull/70)]
