@@ -450,6 +450,9 @@
     "_file_eslint": {
       "iconPath": "./../../icons/eslint.svg"
     },
+    "_file_conduct": {
+      "iconPath": "./../../icons/conduct.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -1075,7 +1078,9 @@
     ".eslintrc.json": "_file_eslint",
     ".eslintrc": "_file_eslint",
     ".eslintignore": "_file_eslint",
-    ".esformatter": "_file_json"
+    ".esformatter": "_file_json",
+    "code_of_conduct.md": "_file_conduct",
+    "code_of_conduct.md.rendered": "_file_conduct"
   },
   "languageIds": {
     "git": "_file_git",
