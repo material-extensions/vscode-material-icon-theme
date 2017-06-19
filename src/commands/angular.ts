@@ -99,13 +99,19 @@ const createConfigWithAngular = (config: IconConfiguration) => {
         ...config,
         "fileExtensions": {
             ...config.fileExtensions,
-            "module.ts": "_file_angular",
             "routing.ts": "_file_angular_routing",
+            "module.ts": "_file_angular",
+            "module.js": "_file_angular",
             "component.ts": "_file_angular_component",
+            "component.js": "_file_angular_component",
             "guard.ts": "_file_angular_guard",
+            "guard.js": "_file_angular_guard",
             "service.ts": "_file_angular_service",
+            "service.js": "_file_angular_service",
             "pipe.ts": "_file_angular_pipe",
+            "pipe.js": "_file_angular_pipe",
             "directive.ts": "_file_angular_directive",
+            "directive.js": "_file_angular_directive",
         }
     };
 };
