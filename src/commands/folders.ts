@@ -147,6 +147,8 @@ export const createConfigWithSpecificFolders = (config: IconConfiguration) => {
         folderExpanded: "_folder_open",
         folderNames: {
             "src": "_folder_src",
+            "dist": "_folder_dist",
+            "out": "_folder_dist",
             "source": "_folder_src",
             "sources": "_folder_src",
             "css": "_folder_css",
@@ -180,10 +182,16 @@ export const createConfigWithSpecificFolders = (config: IconConfiguration) => {
             ".submodules": "_folder_git",
             ".vscode": "_folder_vscode",
             "view": "_folder_views",
-            "views": "_folder_views"
+            "views": "_folder_views",
+            "vue": "_folder_vue",
+            ".expo": "_folder_expo",
+            "config": "_folder_config",
+            "settings": "_folder_config"
         },
         folderNamesExpanded: {
             "src": "_folder_src_open",
+            "dist": "_folder_dist_open",
+            "out": "_folder_dist_open",
             "source": "_folder_src_open",
             "sources": "_folder_src_open",
             "css": "_folder_css_open",
@@ -217,7 +225,11 @@ export const createConfigWithSpecificFolders = (config: IconConfiguration) => {
             ".submodules": "_folder_git_open",
             ".vscode": "_folder_vscode_open",
             "view": "_folder_views_open",
-            "views": "_folder_views_open"
+            "views": "_folder_views_open",
+            "vue": "_folder_vue_open",
+            ".expo": "_folder_expo_open",
+            "config": "_folder_config_open",
+            "settings": "_folder_config_open"
         }
     };
 };

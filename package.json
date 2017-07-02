@@ -2,7 +2,7 @@
   "name": "material-icon-theme",
   "displayName": "Material Icon Theme",
   "description": "Material Design Icons for Visual Studio Code",
-  "version": "2.0.9",
+  "version": "2.0.10",
   "publisher": "PKief",
   "engines": {
     "vscode": "^1.5.0"
@@ -15,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/PKief/vscode-material-icon-theme/issues"
   },
-  "icon": "logo.svg",
+  "icon": "logo.png",
   "galleryBanner": {
     "color": "#2d2d2d",
     "theme": "dark"

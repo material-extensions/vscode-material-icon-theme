@@ -1,5 +1,18 @@
 # Change Log
 
+## 2.0.10 (2017-07-02)
+Added icons:
+- vue folder [[@TheDutchCoder](https://github.com/TheDutchCoder) in [#82](https://github.com/PKief/vscode-material-icon-theme/pull/82)]
+- dist folder [[issue #76](https://github.com/PKief/vscode-material-icon-theme/issues/76)]
+- .expo folder [[issue #84](https://github.com/PKief/vscode-material-icon-theme/issues/84)]
+- config folder
+- watchman (.watchmanconfig) [[issue #83](https://github.com/PKief/vscode-material-icon-theme/issues/83)]
+- Angular 1 support [[@mscosti](https://github.com/mscosti) in [#81](https://github.com/PKief/vscode-material-icon-theme/pull/81)]
+
+Updated icons:
+- src folder
+- js folder
+
 ## 2.0.9 (2017-06-12)
 Added icons:
 - eslint
