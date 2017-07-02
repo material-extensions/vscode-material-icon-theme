@@ -560,6 +560,12 @@
     },
     "_folder_vue_open": {
       "iconPath": "./../../icons/folder-vue-open.svg"
+    },
+    "_folder_expo": {
+      "iconPath": "./../../icons/folder-expo.svg"
+    },
+    "_folder_expo_open": {
+      "iconPath": "./../../icons/folder-expo-open.svg"
     }
   },
   "folderExpanded": "_folder_open",
@@ -603,7 +609,8 @@
     ".vscode": "_folder_vscode",
     "view": "_folder_views",
     "views": "_folder_views",
-    "vue": "_folder_vue"
+    "vue": "_folder_vue",
+    ".expo": "_folder_expo"
   },
   "folderNamesExpanded": {
     "src": "_folder_src_open",
@@ -643,7 +650,8 @@
     ".vscode": "_folder_vscode_open",
     "view": "_folder_views_open",
     "views": "_folder_views_open",
-    "vue": "_folder_vue_open"
+    "vue": "_folder_vue_open",
+    ".expo": "_folder_expo_open"
   },
   "fileExtensions": {
     "html": "_file_html",
