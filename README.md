@@ -1,6 +1,6 @@
 # Material Icon Theme
 
-[![Version](http://vsmarketplacebadge.apphb.com/version/PKief.material-icon-theme.svg)](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
+[![Version](https://vsmarketplacebadge.apphb.com/version/PKief.material-icon-theme.svg)](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
 [![Rating](https://vsmarketplacebadge.apphb.com/rating/PKief.material-icon-theme.svg)](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
 [![Installs](https://vsmarketplacebadge.apphb.com/installs/PKief.material-icon-theme.svg)](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
 
