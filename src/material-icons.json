@@ -471,6 +471,12 @@
     "_folder_src_open": {
       "iconPath": "./../../icons/folder-src-open.svg"
     },
+    "_folder_dist": {
+      "iconPath": "./../../icons/folder-dist.svg"
+    },
+    "_folder_dist_open": {
+      "iconPath": "./../../icons/folder-dist-open.svg"
+    },
     "_folder_js": {
       "iconPath": "./../../icons/folder-js.svg"
     },
@@ -555,6 +561,8 @@
   "file": "_file",
   "folderNames": {
     "src": "_folder_src",
+    "dist": "_folder_dist",
+    "out": "_folder_dist",
     "source": "_folder_src",
     "sources": "_folder_src",
     "css": "_folder_css",
@@ -592,6 +600,8 @@
   },
   "folderNamesExpanded": {
     "src": "_folder_src_open",
+    "dist": "_folder_dist_open",
+    "out": "_folder_dist_open",
     "source": "_folder_src_open",
     "sources": "_folder_src_open",
     "css": "_folder_css_open",
