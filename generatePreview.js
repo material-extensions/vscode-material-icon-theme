@@ -31,7 +31,7 @@ fs.readdir(folder, (err, files) => {
     });
 
     createMarkdownFile(icons, iconsMarkdown, 5);
-    createMarkdownFile(folders, foldersMarkdown, 2, '-open', 'Folder-');
+    createMarkdownFile(folders, foldersMarkdown, 3, '-open', 'Folder-');
 });
 
 function createMarkdownFile(iconList, pathname, amountOfColumns, excludeIconWithString, cutStringFromIconName) {
