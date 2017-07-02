@@ -309,6 +309,9 @@
     "_file_test_js": {
       "iconPath": "./../../icons/test-js.svg"
     },
+    "_file_test_jsx": {
+      "iconPath": "./../../icons/test-jsx.svg"
+    },
     "_file_elixir": {
       "iconPath": "./../../icons/elixir.svg"
     },
@@ -891,6 +894,10 @@
     "test.ts": "_file_test_ts",
     "spec.js": "_file_test_js",
     "test.js": "_file_test_js",
+    "spec.jsx": "_file_test_jsx",
+    "test.jsx": "_file_test_jsx",
+    "spec.tsx": "_file_test_jsx",
+    "test.tsx": "_file_test_jsx",
     "routing.ts": "_file_angular_routing",
     "module.ts": "_file_angular",
     "module.js": "_file_angular",
