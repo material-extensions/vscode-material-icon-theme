@@ -456,6 +456,9 @@
     "_file_conduct": {
       "iconPath": "./../../icons/conduct.svg"
     },
+    "_file_watchman": {
+      "iconPath": "./../../icons/watchman.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -1129,7 +1132,8 @@
     ".eslintignore": "_file_eslint",
     ".esformatter": "_file_json",
     "code_of_conduct.md": "_file_conduct",
-    "code_of_conduct.md.rendered": "_file_conduct"
+    "code_of_conduct.md.rendered": "_file_conduct",
+    ".watchmanconfig": "_file_watchman"
   },
   "languageIds": {
     "git": "_file_git",
