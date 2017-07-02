@@ -566,6 +566,12 @@
     },
     "_folder_expo_open": {
       "iconPath": "./../../icons/folder-expo-open.svg"
+    },
+    "_folder_config": {
+      "iconPath": "./../../icons/folder-config.svg"
+    },
+    "_folder_config_open": {
+      "iconPath": "./../../icons/folder-config-open.svg"
     }
   },
   "folderExpanded": "_folder_open",
@@ -610,7 +616,9 @@
     "view": "_folder_views",
     "views": "_folder_views",
     "vue": "_folder_vue",
-    ".expo": "_folder_expo"
+    ".expo": "_folder_expo",
+    "config": "_folder_config",
+    "settings": "_folder_config"
   },
   "folderNamesExpanded": {
     "src": "_folder_src_open",
@@ -651,7 +659,9 @@
     "view": "_folder_views_open",
     "views": "_folder_views_open",
     "vue": "_folder_vue_open",
-    ".expo": "_folder_expo_open"
+    ".expo": "_folder_expo_open",
+    "config":"_folder_config_open",
+    "settings":"_folder_config_open"
   },
   "fileExtensions": {
     "html": "_file_html",
