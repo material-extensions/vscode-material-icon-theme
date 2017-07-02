@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="23" height="18" viewBox="0 0 23 18">
+  <g id="Page-1" fill="none" fill-rule="evenodd">
+    <g id="folder-vue-open">
+      <path id="path2" fill="#009688" fill-rule="nonzero" d="M17,16 L2,16 C0.89,16 0,15.1 0,14 L0,2 C0,0.89 0.89,0 2,0 L8,0 L10,2 L17,2 C18.097,2 19,2.903 19,4 L2,4 L2,14 L4.14,6 L21.21,6 L18.93,14.5 C18.7,15.37 17.92,16 17,16 Z"/>
+      <g id="vue-logo" transform="translate(7 5)">
+        <polygon id="Path-2" fill="#42B883" points=".006 .007 5.817 .007 7.564 3.02 9.312 .008 15.124 .008 7.563 12.994"/>
+        <polygon id="Path-2" fill="#35495E" points="3.034 .003 5.817 .007 7.564 3.02 9.312 .008 12.089 .008 7.559 7.805"/>
+      </g>
+    </g>
+  </g>
+</svg>
