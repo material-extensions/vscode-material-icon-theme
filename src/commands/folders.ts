@@ -188,7 +188,7 @@ export const createConfigWithSpecificFolders = (config: IconConfiguration) => {
             "vue": "_folder_vue",
             ".expo": "_folder_expo",
             "config": "_folder_config",
-            "settings": "_folder_config"
+            "i18n": "_folder_i18n"
         },
         folderNamesExpanded: {
             "src": "_folder_src_open",
@@ -233,7 +233,7 @@ export const createConfigWithSpecificFolders = (config: IconConfiguration) => {
             "vue": "_folder_vue_open",
             ".expo": "_folder_expo_open",
             "config": "_folder_config_open",
-            "settings": "_folder_config_open"
+            "i18n": "_folder_i18n_open"
         }
     };
 };
