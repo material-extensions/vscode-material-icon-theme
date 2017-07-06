@@ -1068,6 +1068,7 @@
     "androidmanifest.xml": "_file_android",
     "gradle-wrapper.properties": "_file_gradle",
     ".env": "_file_tune",
+    ".env.example": "_file_tune",
     "dockerfile": "_file_docker",
     "license": "_file_certificate",
     "license.md": "_file_certificate",
