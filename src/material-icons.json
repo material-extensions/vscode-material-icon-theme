@@ -459,6 +459,9 @@
     "_file_watchman": {
       "iconPath": "./../../icons/watchman.svg"
     },
+    "_file_postcss": {
+      "iconPath": "./../../icons/postcss.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -1012,7 +1015,8 @@
     "apiblueprint": "_file_apiblueprint",
     "tag": "_file_riot",
     "vfl": "_file_vfl",
-    "kl": "_file_kl"
+    "kl": "_file_kl",
+    "pcss": "_file_postcss"
   },
   "fileNames": {
     "webpack.js": "_file_webpack",
@@ -1152,7 +1156,9 @@
     ".esformatter": "_file_json",
     "code_of_conduct.md": "_file_conduct",
     "code_of_conduct.md.rendered": "_file_conduct",
-    ".watchmanconfig": "_file_watchman"
+    ".watchmanconfig": "_file_watchman",
+    "postcss.config.js": "_file_postcss",
+    ".postcssrc.js": "_file_postcss"
   },
   "languageIds": {
     "git": "_file_git",
@@ -1207,6 +1213,7 @@
     "nim": "_file_nim",
     "nimble": "_file_nim",
     "apiblueprint": "_file_apiblueprint",
-    "riot": "_file_riot"
+    "riot": "_file_riot",
+    "postcss": "_file_postcss"
   }
 }
