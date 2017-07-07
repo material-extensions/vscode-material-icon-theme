@@ -190,7 +190,8 @@ export const createConfigWithSpecificFolders = (config: IconConfiguration) => {
             "config": "_folder_config",
             "i18n": "_folder_i18n",
             "locale": "_folder_i18n",
-            "locales": "_folder_i18n"
+            "locales": "_folder_i18n",
+            "components": "_folder_components"
         },
         folderNamesExpanded: {
             "src": "_folder_src_open",
@@ -237,7 +238,8 @@ export const createConfigWithSpecificFolders = (config: IconConfiguration) => {
             "config": "_folder_config_open",
             "i18n": "_folder_i18n_open",
             "locale": "_folder_i18n_open",
-            "locales": "_folder_i18n_open"
+            "locales": "_folder_i18n_open",
+            "components": "_folder_components_open"
         }
     };
 };
