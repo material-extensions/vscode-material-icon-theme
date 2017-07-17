@@ -821,6 +821,8 @@
     "settings": "_file_settings",
     "option": "_file_settings",
     "sql": "_file_database",
+    "pks": "_file_database",
+    "pkb": "_file_database",
     "accdb": "_file_database",
     "mdb": "_file_database",
     "cer": "_file_certificate",
