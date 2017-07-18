@@ -1,5 +1,20 @@
 # Change Log
 
+## 2.0.11 (2017-07-18)
+Added icons:
+- React test/spec [[issue #85](https://github.com/PKief/vscode-material-icon-theme/issues/85)]
+- gulpfile.babel.js [[@niksudan](https://github.com/niksudan) in [#87](https://github.com/PKief/vscode-material-icon-theme/pull/87)]
+- .env.example [[@niksudan](https://github.com/niksudan) in [#89](https://github.com/PKief/vscode-material-icon-theme/pull/89)]
+- PostCSS [[issue #91](https://github.com/PKief/vscode-material-icon-theme/issues/91)]
+- .pks and .pkb [[@commi235](https://github.com/commi235) in [#93](https://github.com/PKief/vscode-material-icon-theme/pull/93)]
+- i18n folder
+- components folder
+
+Updated icons:
+- folders
+- R
+- image
+
 ## 2.0.10 (2017-07-02)
 Added icons:
 - vue folder [[@TheDutchCoder](https://github.com/TheDutchCoder) in [#82](https://github.com/PKief/vscode-material-icon-theme/pull/82)]
