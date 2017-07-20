@@ -33,10 +33,6 @@ export const en: Translation = {
             "name": "Blue",
             "description": "Blue folder icons"
         },
-        "custom": {
-            "name": "Custom",
-            "description": "Choose your own folder color"
-        },
         "none": {
             "name": "None",
             "description": "No folder icons"

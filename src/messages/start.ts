@@ -2,7 +2,7 @@ import * as helpers from './../helpers';
 import * as cmp from 'semver-compare';
 import { showUpdateMessage } from "./update";
 import { showWelcomeMessage } from "./welcome";
-import { updateVersionInUserDataSettings, initUserDataSettings } from "../helpers/config";
+import { updateVersionInUserDataSettings, initUserDataSettings } from "../helpers/versioning";
 
 /** Initialization of the icons every time the theme get activated */
 export const showStartMessages = () => {

@@ -4,7 +4,7 @@ import * as vscode from 'vscode';
 import * as i18n from "./i18n";
 import * as commands from './commands';
 import { showStartMessages } from "./messages/start";
-import { configChangeDetection, watchForConfigChanges } from "./helpers/config";
+import { configChangeDetection, watchForConfigChanges } from "./helpers/change-detection";
 
 /** If the icons theme gets activated by starting the editor this function will be executed. */
 export const activate = (context: vscode.ExtensionContext) => {

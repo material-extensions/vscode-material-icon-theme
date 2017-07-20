@@ -5,6 +5,10 @@ import * as folders from '../src/commands/folders';
 import * as activate from '../src/commands/activate';
 import * as config from '../src/commands/config';
 import * as helpers from '../src/helpers';
+import { FolderType } from "../src/models/FolderType.enum";
+import { enableSpecificFolderIcons } from "../src/commands/folders/folders-specific";
+import { enableClassicFolderIcons } from "../src/commands/folders/folders-classic";
+import { disableFolderIcons } from "../src/commands/folders/folders-none";
 
 suite("commands", () => {
     test("enable angular icons", () => {
@@ -24,25 +28,25 @@ suite("commands", () => {
     });
 
     test("enable folder icons", () => {
-        return folders.enableSpecificFolderIcons().then(() => {
+        return enableSpecificFolderIcons().then(() => {
             return folders.checkFolderIconsStatus().then(result => {
-                assert.equal(result, folders.FolderType.Specific);
+                assert.equal(result, FolderType.Specific);
             });
         });
     });
 
     test("enable classic folder icons", () => {
-        return folders.enableClassicFolderIcons().then(() => {
+        return enableClassicFolderIcons().then(() => {
             return folders.checkFolderIconsStatus().then(result => {
-                assert.equal(result, folders.FolderType.Classic);
+                assert.equal(result, FolderType.Classic);
             });
         });
     });
 
     test("disable folder icons", () => {
-        return folders.disableFolderIcons().then(() => {
+        return disableFolderIcons().then(() => {
             return folders.checkFolderIconsStatus().then(result => {
-                assert.equal(result, folders.FolderType.None);
+                assert.equal(result, FolderType.None);
             });
         });
     });
@@ -52,7 +56,7 @@ suite("commands", () => {
             return angular.checkAngularIconsStatus().then(result => {
                 assert.equal(result, true);
                 folders.checkFolderIconsStatus().then(result => {
-                    assert.equal(result, folders.FolderType.Specific);
+                    assert.equal(result, FolderType.Specific);
                 });
             });
         });

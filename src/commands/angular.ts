@@ -37,19 +37,11 @@ const handleQuickPickActions = value => {
     if (!value || !value.description) return;
     switch (value.description) {
         case i18n.translate('toggleSwitch.on'): {
-            checkAngularIconsStatus().then(result => {
-                if (!result) {
-                    helpers.setThemeConfig('angular.iconsEnabled', true, true);
-                }
-            });
+            helpers.setThemeConfig('angular.iconsEnabled', true, true);
             break;
         }
         case i18n.translate('toggleSwitch.off'): {
-            checkAngularIconsStatus().then(result => {
-                if (result) {
-                    helpers.setThemeConfig('angular.iconsEnabled', false, true);
-                }
-            });
+            helpers.setThemeConfig('angular.iconsEnabled', false, true);
             break;
         }
         default:
@@ -59,20 +51,12 @@ const handleQuickPickActions = value => {
 
 /** Enable icons for angular files */
 export const enableAngularIcons = () => {
-    return addAngularFileExtensions().then(() => {
-        reload.showConfirmToReloadMessage().then(result => {
-            if (result) helpers.reload();
-        });
-    });
+    return addAngularFileExtensions().then(helpers.promptToReload);
 };
 
 /** Disable icons for angular files */
 export const disableAngularIcons = () => {
-    return deleteAngularFileExtensions().then(() => {
-        reload.showConfirmToReloadMessage().then(result => {
-            if (result) helpers.reload();
-        });
-    });
+    return deleteAngularFileExtensions().then(helpers.promptToReload);
 };
 
 /** Are the angular icons enabled? */

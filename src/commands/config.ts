@@ -1,13 +1,11 @@
 import { enableAngularIcons } from "./angular";
 import * as reload from './../messages/reload';
 import * as helpers from './../helpers';
-import { enableSpecificFolderIcons } from "./folders";
+import { enableSpecificFolderIcons } from "./folders/folders-specific";
 
 export const restoreDefaultConfig = () => {
     return restore().then(() => {
-        reload.showConfirmToReloadMessage().then(result => {
-            if (result) helpers.reload();
-        });
+        reload.showConfirmToReloadMessage().then(helpers.promptToReload);
     });
 };
 

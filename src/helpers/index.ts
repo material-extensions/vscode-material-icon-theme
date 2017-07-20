@@ -5,6 +5,7 @@ import * as cmp from 'semver-compare';
 import * as opn from 'opn';
 import * as os from 'os';
 import * as i18n from "./../i18n";
+import * as reloadMessages from './../messages/reload';
 import { AdvancedWorkspaceConfiguration } from "../models/AdvancedWorkspaceConfiguration.interface";
 import { IconConfiguration } from "../models/IconConfiguration.interface";
 
@@ -143,6 +144,12 @@ export const removeIconExtensions = (config: IconConfiguration, fileExtensionNam
 };
 
 /** Reload vs code window */
-export const reload = () => {
+export const promptToReload = () => {
+    reloadMessages.showConfirmToReloadMessage().then(result => {
+        if (result) reloadWindow();
+    });
+};
+
+const reloadWindow = () => {
     return vscode.commands.executeCommand('workbench.action.reloadWindow');
 };
