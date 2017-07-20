@@ -193,7 +193,8 @@ export const createConfigWithSpecificFolders = (config: IconConfiguration) => {
             "i18n": "_folder_i18n",
             "locale": "_folder_i18n",
             "locales": "_folder_i18n",
-            "components": "_folder_components"
+            "components": "_folder_components",
+            "aurelia_project": "_folder_aurelia"
         },
         folderNamesExpanded: {
             "src": "_folder_src_open",
@@ -243,7 +244,8 @@ export const createConfigWithSpecificFolders = (config: IconConfiguration) => {
             "i18n": "_folder_i18n_open",
             "locale": "_folder_i18n_open",
             "locales": "_folder_i18n_open",
-            "components": "_folder_components_open"
+            "components": "_folder_components_open",
+            "aurelia_project": "_folder_aurelia_open"
         }
     };
 };

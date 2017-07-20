@@ -462,6 +462,9 @@
     "_file_postcss": {
       "iconPath": "./../../icons/postcss.svg"
     },
+    "_file_aurelia": {
+      "iconPath": "./../../icons/aurelia.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -590,6 +593,12 @@
     },
     "_folder_components_open": {
       "iconPath": "./../../icons/folder-components-open.svg"
+    },
+    "_folder_aurelia": {
+      "iconPath": "./../../icons/folder-aurelia.svg"
+    },
+    "_folder_aurelia_open": {
+      "iconPath": "./../../icons/folder-aurelia-open.svg"
     }
   },
   "folderExpanded": "_folder_open",
@@ -643,7 +652,8 @@
     "i18n": "_folder_i18n",
     "locale": "_folder_i18n",
     "locales": "_folder_i18n",
-    "components": "_folder_components"
+    "components": "_folder_components",
+    "aurelia_project": "_folder_aurelia"
   },
   "folderNamesExpanded": {
     "src": "_folder_src_open",
@@ -693,7 +703,8 @@
     "i18n": "_folder_i18n_open",
     "locale": "_folder_i18n_open",
     "locales": "_folder_i18n_open",
-    "components": "_folder_components_open"
+    "components": "_folder_components_open",
+    "aurelia_project": "_folder_aurelia_open"
   },
   "fileExtensions": {
     "html": "_file_html",
@@ -1173,7 +1184,8 @@
     "code_of_conduct.md.rendered": "_file_conduct",
     ".watchmanconfig": "_file_watchman",
     "postcss.config.js": "_file_postcss",
-    ".postcssrc.js": "_file_postcss"
+    ".postcssrc.js": "_file_postcss",
+    "aurelia.json": "_file_aurelia"
   },
   "languageIds": {
     "git": "_file_git",
