@@ -1093,6 +1093,7 @@
     "gulpfile.ts": "_file_gulp",
     "gulpfile.babel.js": "_file_gulp",
     "package.json": "_file_nodejs",
+    "package-lock.json": "_file_nodejs",
     "gradle.properties": "_file_gradle",
     "gradlew": "_file_gradle",
     ".jscsrc": "_file_json",
