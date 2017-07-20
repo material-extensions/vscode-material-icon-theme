@@ -1,4 +1,4 @@
-{
+export const uk = {
     "themeInstalled": "Material Icon Theme був встановлений.",
     "howToActivate": "Як активувати значки",
     "activate": "Активувати",
@@ -28,4 +28,4 @@
     "reload": "Перезавантажити",
     "outdatedVersion": "Ви повинні оновити VS Code, щоб використовувати цю команду.",
     "updateVSCode": "Оновити VS Code"
-}
+};

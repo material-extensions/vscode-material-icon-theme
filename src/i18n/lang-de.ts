@@ -1,4 +1,4 @@
-{
+export const de = {
     "themeInstalled": "Material Icon Theme wurde installiert.",
     "howToActivate": "Wie Icons aktivieren?",
     "activate": "Aktivieren",
@@ -44,4 +44,4 @@
     "reload": "Neu starten",
     "outdatedVersion": "VS Code muss aktualisiert werden, um diesen Befehl auszuführen.",
     "updateVSCode": "VS Code aktualisieren"
-}
+};

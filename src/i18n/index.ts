@@ -8,40 +8,40 @@ export const getCurrentLanguage = (): string =>
 let currentTranslation;
 let fallbackTranslation; // default: en
 
-let init = false;
-
 /** Initialize the translations */
-export const initTranslations = () => {
-    return loadTranslation(getCurrentLanguage()).then(translation => {
-        currentTranslation = translation;
-
-        // load fallback translation
-        loadTranslation('en').then(fallbackTranslation => {
-            fallbackTranslation = fallbackTranslation;
-        });
-    });
+export const initTranslations = async () => {
+    try {
+        currentTranslation = await loadTranslation(getCurrentLanguage());
+        fallbackTranslation = await loadTranslation('en');
+    }
+    catch (error) {
+        console.log(error);
+    }
 };
 
 /** Load the required translation */
 const loadTranslation = (language: string): Promise<any> => {
-    return readTranslationFile(language)
-        .catch(() => readTranslationFile('en'));
+    return getTranslationObject(language)
+        .catch(() => getTranslationObject('en'));
 };
 
-/** Read the translation file from the file system */
-const readTranslationFile = (filename: string) => {
-    return new Promise((resolve, reject) => {
-        fs.readFile(`${__dirname}/${filename}.json`, 'utf8', (err, data) => {
-            if (err) {
-                reject(err);
-            } else {
-                resolve(JSON.parse(data));
-            }
-        });
-    });
+/** Get the translation object of the separated translation files */
+const getTranslationObject = async (language: string): Promise<any> => {
+    try {
+        const lang = await import('./lang-' + language);
+        return lang[language];
+    }
+    catch (error) {
+        console.log(error);
+    }
 };
 
-/** Translate the keys */
+/**
+ * We look up the matching translation in the translation files.
+ * If we cannot find a matching key in the file we use the fallback.
+ * With optional parameters you can configure both the translations
+ * and the fallback (required for testing purposes).
+ * */
 export const translate = (key: string, translations = currentTranslation, fallback = fallbackTranslation) => {
     return getValue(translations, key) ?
         getValue(translations, key) :

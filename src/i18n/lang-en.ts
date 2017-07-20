@@ -1,4 +1,4 @@
-{
+export const en = {
     "themeInstalled": "Material Icon Theme has been installed.",
     "howToActivate": "How to activate icons",
     "activate": "Activate",
@@ -31,6 +31,10 @@
             "name": "Blue",
             "description": "Blue folder icons"
         },
+        "custom": {
+            "name": "Custom",
+            "description": "Choose your own folder color"
+        },
         "none": {
             "name": "None",
             "description": "No folder icons"
@@ -44,4 +48,4 @@
     "reload": "Restart",
     "outdatedVersion": "You have to update VS Code to use this command.",
     "updateVSCode": "Update VS Code"
-}
+};
