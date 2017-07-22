@@ -31,8 +31,7 @@ Please check the created icon with your VSCode. Copy your source files of the th
 4. Run tests with `Launch Tests`
 
 ### Add translations
-- create a new JSON-file in the `src/i18n` directory with the translations according to the existing translation
-- edit the existing translation files
-- `npm run copy:json` after editing to copy the edited jsons to the `out`-folder
+- Create a new translation file in the `src/i18n` directory with the new translations.
+- Or edit the existing translation files
 
 It'd be great if you could improve the project!
