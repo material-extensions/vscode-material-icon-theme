@@ -1187,7 +1187,9 @@
     ".watchmanconfig": "_file_watchman",
     "postcss.config.js": "_file_postcss",
     ".postcssrc.js": "_file_postcss",
-    "aurelia.json": "_file_aurelia"
+    "aurelia.json": "_file_aurelia",
+    "cmakelists.txt": "_file_cmake",
+    "cmakecache.txt": "_file_cmake"
   },
   "languageIds": {
     "git": "_file_git",
