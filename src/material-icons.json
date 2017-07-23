@@ -1041,7 +1041,8 @@
     "tag": "_file_riot",
     "vfl": "_file_vfl",
     "kl": "_file_kl",
-    "pcss": "_file_postcss"
+    "pcss": "_file_postcss",
+    "sss": "_file_postcss"
   },
   "fileNames": {
     "webpack.js": "_file_webpack",
