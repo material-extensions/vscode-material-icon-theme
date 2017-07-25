@@ -54,6 +54,7 @@ export const createConfigWithSpecificFolders = (config: IconConfiguration) => {
             "__test__": "_folder_test",
             "spec": "_folder_test",
             "specs": "_folder_test",
+            "doc": "_folder_docs",
             "docs": "_folder_docs",
             ".github": "_folder_git",
             ".git": "_folder_git",
@@ -72,7 +73,15 @@ export const createConfigWithSpecificFolders = (config: IconConfiguration) => {
             "locale": "_folder_i18n",
             "locales": "_folder_i18n",
             "components": "_folder_components",
-            "aurelia_project": "_folder_aurelia"
+            "aurelia_project": "_folder_aurelia",
+            "resource": "_folder_resource",
+            "resources": "_folder_resource",
+            "res": "_folder_resource",
+            "asset": "_folder_resource",
+            "assets": "_folder_resource",
+            "static": "_folder_resource",
+            "lib": "_folder_lib",
+            "tools": "_folder_tools"
         },
         folderNamesExpanded: {
             "src": "_folder_src_open",
@@ -107,6 +116,7 @@ export const createConfigWithSpecificFolders = (config: IconConfiguration) => {
             "__test__": "_folder_test_open",
             "spec": "_folder_test_open",
             "specs": "_folder_test_open",
+            "doc": "_folder_docs_open",
             "docs": "_folder_docs_open",
             ".github": "_folder_git_open",
             ".git": "_folder_git_open",
@@ -125,7 +135,15 @@ export const createConfigWithSpecificFolders = (config: IconConfiguration) => {
             "locale": "_folder_i18n_open",
             "locales": "_folder_i18n_open",
             "components": "_folder_components_open",
-            "aurelia_project": "_folder_aurelia_open"
+            "aurelia_project": "_folder_aurelia_open",
+            "resource": "_folder_resource_open",
+            "resources": "_folder_resource_open",
+            "res": "_folder_resource_open",
+            "asset": "_folder_resource_open",
+            "assets": "_folder_resource_open",
+            "static": "_folder_resource_open",
+            "lib": "_folder_lib_open",
+            "tools": "_folder_tools_open"
         }
     };
 };
