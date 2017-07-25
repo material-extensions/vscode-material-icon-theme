@@ -465,6 +465,9 @@
     "_file_aurelia": {
       "iconPath": "./../../icons/aurelia.svg"
     },
+    "_file_todo": {
+      "iconPath": "./../../icons/todo.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -1082,7 +1085,8 @@
     "vfl": "_file_vfl",
     "kl": "_file_kl",
     "pcss": "_file_postcss",
-    "sss": "_file_postcss"
+    "sss": "_file_postcss",
+    "todo": "_file_todo"
   },
   "fileNames": {
     "webpack.js": "_file_webpack",
