@@ -623,6 +623,12 @@
     },
     "_folder_tools_open": {
       "iconPath": "./../../icons/folder-tools-open.svg"
+    },
+    "_folder_webpack": {
+      "iconPath": "./../../icons/folder-webpack.svg"
+    },
+    "_folder_webpack_open": {
+      "iconPath": "./../../icons/folder-webpack-open.svg"
     }
   },
   "folderExpanded": "_folder_open",
@@ -688,7 +694,8 @@
     "assets": "_folder_resource",
     "static": "_folder_resource",
     "lib": "_folder_lib",
-    "tools": "_folder_tools"
+    "tools": "_folder_tools",
+    "webpack": "_folder_webpack"
   },
   "folderNamesExpanded": {
     "src": "_folder_src_open",
@@ -750,7 +757,8 @@
     "assets": "_folder_resource_open",
     "static": "_folder_resource_open",
     "lib": "_folder_lib_open",
-    "tools": "_folder_tools_open"
+    "tools": "_folder_tools_open",
+    "webpack": "_folder_webpack_open"
   },
   "fileExtensions": {
     "html": "_file_html",
