@@ -468,6 +468,9 @@
     "_file_todo": {
       "iconPath": "./../../icons/todo.svg"
     },
+    "_file_mocha": {
+      "iconPath": "./../../icons/mocha.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -1233,7 +1236,8 @@
     ".postcssrc.js": "_file_postcss",
     "aurelia.json": "_file_aurelia",
     "cmakelists.txt": "_file_cmake",
-    "cmakecache.txt": "_file_cmake"
+    "cmakecache.txt": "_file_cmake",
+    "mocha.opts": "_file_mocha"
   },
   "languageIds": {
     "git": "_file_git",
