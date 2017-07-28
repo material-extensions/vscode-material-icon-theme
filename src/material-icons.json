@@ -1146,6 +1146,8 @@
     "webpack.config.test.ts": "_file_webpack",
     "webpack.test.js": "_file_webpack",
     "webpack.test.ts": "_file_webpack",
+    "webpack.dist.js": "_file_webpack",
+    "webpack.dist.ts": "_file_webpack",
     "webpackfile.js": "_file_webpack",
     "webpackfile.ts": "_file_webpack",
     "ionic.config.json": "_file_ionic",
