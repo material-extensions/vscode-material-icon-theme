@@ -96,6 +96,8 @@ const createConfigWithAngular = (config: IconConfiguration) => {
             "pipe.js": "_file_angular_pipe",
             "directive.ts": "_file_angular_directive",
             "directive.js": "_file_angular_directive",
+            "resolver.ts": "_file_angular_resolver",
+            "resolver.js": "_file_angular_resolver",
         }
     };
 };

@@ -258,6 +258,9 @@
     "_file_angular_directive": {
       "iconPath": "./../../icons/angular-directive.svg"
     },
+    "_file_angular_resolver": {
+      "iconPath": "./../../icons/angular-resolver.svg"
+    },
     "_file_vue": {
       "iconPath": "./../../icons/vue.svg"
     },
@@ -1055,6 +1058,8 @@
     "pipe.js": "_file_angular_pipe",
     "directive.ts": "_file_angular_directive",
     "directive.js": "_file_angular_directive",
+    "resolver.ts": "_file_angular_resolver",
+    "resolver.js": "_file_angular_resolver",
     "pp": "_file_puppet",
     "ex": "_file_elixir",
     "exs": "_file_elixir",
