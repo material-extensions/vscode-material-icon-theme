@@ -474,6 +474,9 @@
     "_file_mocha": {
       "iconPath": "./../../icons/mocha.svg"
     },
+    "_file_coldfusion": {
+      "iconPath": "./../../icons/coldfusion.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -1107,7 +1110,10 @@
     "kl": "_file_kl",
     "pcss": "_file_postcss",
     "sss": "_file_postcss",
-    "todo": "_file_todo"
+    "todo": "_file_todo",
+    "cfml": "_file_coldfusion",
+    "cfc": "_file_coldfusion",
+    "lucee": "_file_coldfusion"
   },
   "fileNames": {
     "webpack.js": "_file_webpack",
@@ -1313,6 +1319,7 @@
     "nimble": "_file_nim",
     "apiblueprint": "_file_apiblueprint",
     "riot": "_file_riot",
-    "postcss": "_file_postcss"
+    "postcss": "_file_postcss",
+    "lang-cfml": "_file_coldfusion"
   }
 }
