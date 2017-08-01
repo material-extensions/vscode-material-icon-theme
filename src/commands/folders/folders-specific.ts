@@ -82,7 +82,10 @@ export const createConfigWithSpecificFolders = (config: IconConfiguration) => {
             "static": "_folder_resource",
             "lib": "_folder_lib",
             "tools": "_folder_tools",
-            "webpack": "_folder_webpack"
+            "webpack": "_folder_webpack",
+            "global": "_folder_global",
+            "public": "_folder_public",
+            "include": "_folder_include"
         },
         folderNamesExpanded: {
             "src": "_folder_src_open",
@@ -145,7 +148,10 @@ export const createConfigWithSpecificFolders = (config: IconConfiguration) => {
             "static": "_folder_resource_open",
             "lib": "_folder_lib_open",
             "tools": "_folder_tools_open",
-            "webpack": "_folder_webpack_open"
+            "webpack": "_folder_webpack_open",
+            "global": "_folder_global_open",
+            "public": "_folder_public_open",
+            "include": "_folder_include_open"
         }
     };
 };
