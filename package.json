@@ -99,11 +99,11 @@
     "compile": "tsc -p ./ && npm run copy:json",
     "copy:json": "cpx \"src/**/*.json\" out/src/",
     "postinstall": "node ./node_modules/vscode/bin/install",
-    "tslint": "tslint -c tslint.json ./src/**/*.ts",
+    "tslint": "tslint -c tslint.json ./src/**/*.ts ./scripts/**/*ts",
     "pretest": "npm run vscode:prepublish",
     "test": "node ./node_modules/vscode/bin/test",
     "check": "bithound check git@github.com:PKief/vscode-material-icon-theme.git",
-    "preview": "node generatePreview.js"
+    "preview": "ts-node ./scripts/preview"
   },
   "dependencies": {
     "opn": "^5.0.0",
@@ -116,6 +116,7 @@
     "cpx": "^1.5.0",
     "mocha": "^3.4.2",
     "rimraf": "^2.6.1",
+    "ts-node": "^3.3.0",
     "tslint": "^5.5.0",
     "typescript": "^2.4.1",
     "vscode": "^1.1.4"

@@ -1,0 +1,61 @@
+/**
+ * With this script you are able to generate a markdown table for all icons.
+ * The table is used as an overview about all icons in the readme file.
+ * Just run `npm run preview` from the root folder.
+ * It will create a markdown file in the 'images' folder.
+ */
+import * as fs from 'fs';
+import * as path from 'path';
+import { Icon, MarkdownConfig } from './interfaces';
+import { generateMarkdown } from "./createMatrix";
+import { toUpperCase } from "./helpers";
+
+// Define the folder icon of all icons
+const folderPath = path.join('icons');
+
+/** Define the parameters here */
+const init = () => {
+    // generate markdown for the language icons
+    generateMarkdown({
+        iconList: languageIcons,
+        markdownName: 'lang-icons.md',
+        columns: 4,
+        outputPath: path.join('images')
+    });
+
+    // generate markdown for the folder icons
+    generateMarkdown({
+        iconList: folderIcons,
+        markdownName: 'folder-icons.md',
+        columns: 4,
+        exclude: ['-open'],
+        filterName: 'Folder-',
+        outputPath: path.join('images')
+    });
+};
+
+const languageIcons: Icon[] = [];
+const folderIcons: Icon[] = [];
+
+/** Read all icon files and sort by folder and language icons. */
+const fsReadAllIconFiles = (err: Error, files: string[]) => {
+    if (err) {
+        throw Error(err.message);
+    }
+
+    // get each icon file from the icons folder
+    files.forEach(file => {
+        let fileName = file;
+        let iconName = toUpperCase(file.slice(0, -4));
+
+        if (String(iconName).toLowerCase().includes('folder')) {
+            folderIcons.push({ fileName: fileName, iconName: iconName });
+        } else {
+            languageIcons.push({ fileName: fileName, iconName: iconName });
+        }
+    });
+
+    init();
+};
+
+fs.readdir(folderPath, fsReadAllIconFiles);
