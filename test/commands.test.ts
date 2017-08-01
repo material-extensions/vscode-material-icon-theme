@@ -9,6 +9,7 @@ import { FolderType } from "../src/models/FolderType.enum";
 import { enableSpecificFolderIcons } from "../src/commands/folders/folders-specific";
 import { enableClassicFolderIcons } from "../src/commands/folders/folders-classic";
 import { disableFolderIcons } from "../src/commands/folders/folders-none";
+import { enableBlueFolderIcons } from "../src/commands/folders/folders-blue";
 
 suite("commands", () => {
     test("enable angular icons", () => {
@@ -27,7 +28,18 @@ suite("commands", () => {
         });
     });
 
-    test("enable folder icons", () => {
+    test("restore default configuration", () => {
+        return config.restoreDefaultConfig().then(() => {
+            return angular.checkAngularIconsStatus().then(result => {
+                assert.equal(result, true);
+                folders.checkFolderIconsStatus().then(result => {
+                    assert.equal(result, FolderType.Specific);
+                });
+            });
+        });
+    });
+
+    test("enable specific folder icons", () => {
         return enableSpecificFolderIcons().then(() => {
             return folders.checkFolderIconsStatus().then(result => {
                 assert.equal(result, FolderType.Specific);
@@ -43,21 +55,18 @@ suite("commands", () => {
         });
     });
 
-    test("disable folder icons", () => {
-        return disableFolderIcons().then(() => {
+    test("enable blue folder icons", () => {
+        return enableBlueFolderIcons().then(() => {
             return folders.checkFolderIconsStatus().then(result => {
-                assert.equal(result, FolderType.None);
+                assert.equal(result, FolderType.Blue);
             });
         });
     });
 
-    test("restore default configuration", () => {
-        return config.restoreDefaultConfig().then(() => {
-            return angular.checkAngularIconsStatus().then(result => {
-                assert.equal(result, true);
-                folders.checkFolderIconsStatus().then(result => {
-                    assert.equal(result, FolderType.Specific);
-                });
+    test("disable folder icons", () => {
+        return disableFolderIcons().then(() => {
+            return folders.checkFolderIconsStatus().then(result => {
+                assert.equal(result, FolderType.None);
             });
         });
     });
