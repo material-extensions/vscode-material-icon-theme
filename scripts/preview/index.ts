@@ -15,11 +15,12 @@ const folderPath = path.join('icons');
 
 /** Define the parameters here */
 const init = () => {
-    // generate markdown for the language icons
+    // generate markdown for the file icons
     generateMarkdown({
-        iconList: languageIcons,
-        markdownName: 'lang-icons.md',
-        columns: 4,
+        iconList: fileIcons,
+        markdownName: 'file-icons.md',
+        columns: 5,
+        exclude: ['Todo', 'PowerPoint', 'Virtual'],
         outputPath: path.join('images')
     });
 
@@ -34,10 +35,10 @@ const init = () => {
     });
 };
 
-const languageIcons: Icon[] = [];
+const fileIcons: Icon[] = [];
 const folderIcons: Icon[] = [];
 
-/** Read all icon files and sort by folder and language icons. */
+/** Read all icon files and sort by folder and file icons. */
 const fsReadAllIconFiles = (err: Error, files: string[]) => {
     if (err) {
         throw Error(err.message);
@@ -51,7 +52,7 @@ const fsReadAllIconFiles = (err: Error, files: string[]) => {
         if (String(iconName).toLowerCase().includes('folder')) {
             folderIcons.push({ fileName: fileName, iconName: iconName });
         } else {
-            languageIcons.push({ fileName: fileName, iconName: iconName });
+            fileIcons.push({ fileName: fileName, iconName: iconName });
         }
     });
 
