@@ -2,7 +2,7 @@
   "name": "material-icon-theme",
   "displayName": "Material Icon Theme",
   "description": "Material Design Icons for Visual Studio Code",
-  "version": "2.0.11",
+  "version": "2.1.0",
   "publisher": "PKief",
   "engines": {
     "vscode": "^1.5.0"
@@ -17,7 +17,7 @@
   },
   "icon": "logo.png",
   "galleryBanner": {
-    "color": "#2d2d2d",
+    "color": "#263238",
     "theme": "dark"
   },
   "categories": [
@@ -106,19 +106,19 @@
     "preview": "ts-node ./scripts/preview"
   },
   "dependencies": {
-    "opn": "^5.0.0",
+    "opn": "^5.1.0",
     "semver-compare": "^1.0.0"
   },
   "devDependencies": {
     "@types/mocha": "^2.2.41",
-    "@types/node": "^8.0.14",
+    "@types/node": "^8.0.19",
     "bithound": "^1.7.0",
     "cpx": "^1.5.0",
-    "mocha": "^3.4.2",
+    "mocha": "^3.5.0",
     "rimraf": "^2.6.1",
     "ts-node": "^3.3.0",
     "tslint": "^5.5.0",
-    "typescript": "^2.4.1",
+    "typescript": "^2.4.2",
     "vscode": "^1.1.4"
   }
 }

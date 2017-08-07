@@ -1,5 +1,31 @@
 # Change Log
 
+## 2.1.0 (2017-08-07)
+Added folder icons:
+- Aurelia folder
+- screens folder [[@kkemple](https://github.com/kkemple) in [#99](https://github.com/PKief/vscode-material-icon-theme/pull/99)]
+- lib folder [[issue #96](https://github.com/PKief/vscode-material-icon-theme/issues/96)]
+- resource folder [[issue #100](https://github.com/PKief/vscode-material-icon-theme/issues/100)]
+- tools folder [[issue #95](https://github.com/PKief/vscode-material-icon-theme/issues/95)]
+- include folder [[issue #95](https://github.com/PKief/vscode-material-icon-theme/issues/95)]
+- doc folder [[issue #95](https://github.com/PKief/vscode-material-icon-theme/issues/95)]
+
+Added file icons:
+- CMake [[issue #95](https://github.com/PKief/vscode-material-icon-theme/issues/95)]
+- SugarSS [[issue #98](https://github.com/PKief/vscode-material-icon-theme/issues/98)]
+- ColdFusion [[issue #97](https://github.com/PKief/vscode-material-icon-theme/issues/97)]
+- .todo [[issue #97](https://github.com/PKief/vscode-material-icon-theme/issues/97)]
+- Mocha (mocha.opts)
+- Scripting (.ksh, .csh, .tcsh, .zsh, .bash) [[issue #102](https://github.com/PKief/vscode-material-icon-theme/issues/102)]
+- Angular Resolver [[issue #94](https://github.com/PKief/vscode-material-icon-theme/issues/94)]
+- webpack file extension [[issue #103](https://github.com/PKief/vscode-material-icon-theme/issues/103)]
+- package-lock.json
+- Aurelia (aurelia.json)
+
+Updated extension:
+- improved maintainability
+- new logo
+
 ## 2.0.11 (2017-07-18)
 Added icons:
 - React test/spec [[issue #85](https://github.com/PKief/vscode-material-icon-theme/issues/85)]
