@@ -195,6 +195,9 @@
     "_file_haskell": {
       "iconPath": "./../../icons/haskell.svg"
     },
+    "_file_haskell_alt": {
+      "iconPath": "./../../icons/haskell-alt.svg"
+    },
     "_file_flow": {
       "iconPath": "./../../icons/flow.svg"
     },
@@ -1137,7 +1140,8 @@
     "todo": "_file_todo",
     "cfml": "_file_coldfusion",
     "cfc": "_file_coldfusion",
-    "lucee": "_file_coldfusion"
+    "lucee": "_file_coldfusion",
+    "cabal": "_file_haskell_alt"
   },
   "fileNames": {
     "webpack.js": "_file_webpack",
@@ -1287,7 +1291,8 @@
     "aurelia.json": "_file_aurelia",
     "cmakelists.txt": "_file_cmake",
     "cmakecache.txt": "_file_cmake",
-    "mocha.opts": "_file_mocha"
+    "mocha.opts": "_file_mocha",
+    "stack.yaml": "_file_haskell_alt"
   },
   "languageIds": {
     "git": "_file_git",
@@ -1344,6 +1349,7 @@
     "apiblueprint": "_file_apiblueprint",
     "riot": "_file_riot",
     "postcss": "_file_postcss",
-    "lang-cfml": "_file_coldfusion"
+    "lang-cfml": "_file_coldfusion",
+    "haskell": "_file_haskell"
   }
 }
