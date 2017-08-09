@@ -729,6 +729,8 @@
     "controllers": "_folder_src_open",
     "helpers": "_folder_src_open",
     "models": "_folder_src_open",
+    "presenters": "_folder_src_open",
+    "decorators": "_folder_src_open",
     "dist": "_folder_dist_open",
     "out": "_folder_dist_open",
     "build": "_folder_dist_open",
