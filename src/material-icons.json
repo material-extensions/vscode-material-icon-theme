@@ -660,11 +660,6 @@
   "file": "_file",
   "folderNames": {
     "src": "_folder_src",
-    "controllers": "_folder_src",
-    "helpers": "_folder_src",
-    "models": "_folder_src",
-    "presenters": "_folder_src",
-    "decorators": "_folder_src",
     "dist": "_folder_dist",
     "out": "_folder_dist",
     "build": "_folder_dist",
@@ -733,11 +728,6 @@
   },
   "folderNamesExpanded": {
     "src": "_folder_src_open",
-    "controllers": "_folder_src_open",
-    "helpers": "_folder_src_open",
-    "models": "_folder_src_open",
-    "presenters": "_folder_src_open",
-    "decorators": "_folder_src_open",
     "dist": "_folder_dist_open",
     "out": "_folder_dist_open",
     "build": "_folder_dist_open",
