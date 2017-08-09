@@ -477,6 +477,9 @@
     "_file_coldfusion": {
       "iconPath": "./../../icons/coldfusion.svg"
     },
+    "_file_jenkins": {
+      "iconPath": "./../../icons/jenkins.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -1299,7 +1302,8 @@
     "aurelia.json": "_file_aurelia",
     "cmakelists.txt": "_file_cmake",
     "cmakecache.txt": "_file_cmake",
-    "mocha.opts": "_file_mocha"
+    "mocha.opts": "_file_mocha",
+    "jenkinsfile": "_file_jenkins"
   },
   "languageIds": {
     "git": "_file_git",
