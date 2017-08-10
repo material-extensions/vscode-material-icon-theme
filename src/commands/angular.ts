@@ -10,7 +10,8 @@ import { IconConfiguration } from "../models/IconConfiguration.interface";
 export const toggleAngularIcons = () => {
     return checkAngularIconsStatus()
         .then(showQuickPickItems)
-        .then(handleQuickPickActions);
+        .then(handleQuickPickActions)
+        .catch(err => console.log(err));
 };
 
 /** Show QuickPick items to select prefered configuration for the folder icons. */
