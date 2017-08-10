@@ -749,9 +749,9 @@
     "webpack": "_folder_webpack",
     "global": "_folder_global",
     "public": "_folder_public",
+    "include": "_folder_include",
     "gulp_tasks": "_folder_gulp",
-    "bower_components": "_folder_bower",
-    "include": "_folder_include"
+    "bower_components": "_folder_bower"
   },
   "folderNamesExpanded": {
     "src": "_folder_src_open",
@@ -817,9 +817,9 @@
     "webpack": "_folder_webpack_open",
     "global": "_folder_global_open",
     "public": "_folder_public_open",
+    "include": "_folder_include_open",
     "bower_components": "_folder_bower_open",
-    "gulp_tasks": "_folder_gulp_open",
-    "include": "_folder_include_open"
+    "gulp_tasks": "_folder_gulp_open"
   },
   "fileExtensions": {
     "html": "_file_html",
@@ -1104,6 +1104,7 @@
     "test.jsx": "_file_test_jsx",
     "jsx.snap": "_file_test_jsx",
     "routing.ts": "_file_angular_routing",
+    "routes.js": "_file_angular_routing",
     "module.ts": "_file_angular",
     "module.js": "_file_angular",
     "component.ts": "_file_angular_component",
@@ -1119,8 +1120,9 @@
     "resolver.ts": "_file_angular_resolver",
     "resolver.js": "_file_angular_resolver",
     "factory.js": "_file_angular_factory",
-    "run.js": "_file_angular_factory",
-    "config.js": "_file_angular_factory",
+    "filters.js": "_file_angular_filters",
+    "run.js": "_file_angular_config",
+    "config.js": "_file_angular_config",
     "value.js": "_file_angular_value",
     "constant.js": "_file_angular_value",
     "pp": "_file_puppet",
