@@ -9,18 +9,18 @@ export const en: Translation = {
     "themeUpdated": "Material Icon Theme se ha actualizado.",
     "readChangelog": "Leer changelog",
     "angular": {
-        "alreadyEnabled": "Iconos de Angular estan activados.",
+        "alreadyEnabled": "Iconos de Angular están activados.",
         "alreadyDisabled": "Iconos de Angular están desactivados.",
         "enableIcons": "Activar iconos de Angular",
         "disableIcons": "Desactivar iconos de Angular",
-        "toggleIcons": "Cambiar activaciós de iconos de Angular"
+        "toggleIcons": "Cambiar activación de iconos de Angular"
     },
     "folders": {
-        "alreadyEnabled": "Iconos de Carpetas estan activados.",
+        "alreadyEnabled": "Iconos de Carpetas están activados.",
         "alreadyDisabled": "Iconos de Carpetas están desactivados.",
         "enableIcons": "Activar iconos de Carpetas",
         "disableIcons": "Desactivar iconos de Carpetas",
-        "toggleIcons": "Cambiar activaciós de iconos de Carpetas",
+        "toggleIcons": "Cambiar activación de iconos de Carpetas",
         "specific": {
             "name": "Específico",
             "description": "Iconos de carpeta específicos"
@@ -35,7 +35,7 @@ export const en: Translation = {
         },
         "none": {
             "name": "Ninguno",
-            "description": "Si iconos de carpeta"
+            "description": "Sin iconos de carpeta"
         }
     },
     "toggleSwitch": {
