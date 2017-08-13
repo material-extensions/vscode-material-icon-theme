@@ -12,18 +12,18 @@ export const en: Translation = {
         "alreadyEnabled": "Les icônes Angular sont déjà actifs.",
         "alreadyDisabled": "Les icônes Angular sont déjà inactifs.",
         "enableIcons": "Activer les icônes Angular",
-        "disableIcons": "Désactifer les icônes Angular",
+        "disableIcons": "Désactiver les icônes Angular",
         "toggleIcons": "Basculer les icônes Angular"
     },
     "folders": {
         "alreadyEnabled": "Les icônes de dossiers sont déjà actifs.",
-        "alreadyDisabled": "Les icônes de dossiers sont déjà inatifs.",
+        "alreadyDisabled": "Les icônes de dossiers sont déjà inactifs.",
         "enableIcons": "Activer les icônes de dossiers",
-        "disableIcons": "Déactiver les icônes de dossiers",
+        "disableIcons": "Désactiver les icônes de dossiers",
         "toggleIcons": "Basculer les icônes de dossiers",
         "specific": {
-            "name": "Specifique",
-            "description": "Icônes de dossiers spéciviques"
+            "name": "Spécifique",
+            "description": "Icônes de dossiers spécifiques"
         },
         "classic": {
             "name": "Classique",
@@ -42,8 +42,8 @@ export const en: Translation = {
         "on": "ON",
         "off": "OFF"
     },
-    "confirmReload": "Veullez redémarrer VS Code pour activer les icônes",
-    "reload": "Redémarer",
-    "outdatedVersion": "Vous devez mettre VS Code à jour pour utilisr cette commande.",
+    "confirmReload": "Veuillez redémarrer VS Code pour activer les icônes",
+    "reload": "Redémarrer",
+    "outdatedVersion": "Vous devez mettre VS Code à jour pour utiliser cette commande.",
     "updateVSCode": "Mettre VS Code à jour."
 };
