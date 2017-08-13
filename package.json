@@ -107,7 +107,7 @@
   },
   "dependencies": {
     "opn": "^5.1.0",
-    "semver-compare": "^1.0.0"
+    "semver": "^5.4.1"
   },
   "devDependencies": {
     "@types/mocha": "^2.2.41",

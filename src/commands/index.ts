@@ -1,4 +1,3 @@
-import * as helpers from './../helpers';
 import * as vscode from 'vscode';
 import { activateIconTheme } from "./activate";
 import { toggleAngularIcons } from "./angular";

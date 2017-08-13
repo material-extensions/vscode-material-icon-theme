@@ -1,4 +1,5 @@
 import * as helpers from './../helpers';
+import * as versioning from './../helpers/versioning';
 import * as vscode from 'vscode';
 import * as opn from 'opn';
 import * as i18n from './../i18n';
@@ -13,7 +14,7 @@ export const showWelcomeMessage = () => {
         i18n.translate('themeInstalled'),
 
         // show 'Activate' button if icon theme is not active
-        (!helpers.isNotSupportedVersion() && helpers.isThemeNotVisible())
+        (!versioning.isNotSupportedVersion() && helpers.isThemeNotVisible())
             ? i18n.translate('activate') : i18n.translate('howToActivate'),
 
         i18n.translate('neverShowAgain')
