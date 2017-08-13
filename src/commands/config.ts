@@ -6,7 +6,7 @@ import { enableSpecificFolderIcons } from "./folders/folders-specific";
 export const restoreDefaultConfig = () => {
     return restore().then(() => {
         reload.showConfirmToReloadMessage().then(helpers.promptToReload);
-    });
+    }).catch(err => console.log(err));
 };
 
 /** Restore all configurations to default. */
