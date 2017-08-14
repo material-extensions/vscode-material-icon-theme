@@ -28,6 +28,7 @@ const loadTranslation = (language: string): Promise<any> => {
 /** Get the translation object of the separated translation files */
 const getTranslationObject = async (language: string): Promise<any> => {
     try {
+        // tslint:disable-next-line:semicolon
         const lang = await import('./lang-' + language);
         return lang[language];
     }

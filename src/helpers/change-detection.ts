@@ -41,7 +41,7 @@ const compareFolderConfigs = () => {
 
     return checkFolderIconsStatus().then(result => {
         // if the settings are different to the current material-icons.json file
-        if (folderIconsConfig.globalValue !== result) {
+        if (folderIconsConfig.globalValue !== undefined && folderIconsConfig.globalValue !== result) {
             if (folderIconsConfig.globalValue === "none") {
                 disableFolderIcons();
             } else if (folderIconsConfig.globalValue === "classic") {

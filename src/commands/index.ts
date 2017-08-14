@@ -6,22 +6,22 @@ import { toggleFolderIcons } from "./folders";
 import { restoreDefaultConfig } from "./config";
 
 // Activate theme
-const activateThemeCommand = vscode.commands.registerCommand('extension.activateIcons', () => {
+const activateThemeCommand = vscode.commands.registerCommand('material-icon-theme.activateIcons', () => {
     activateIconTheme();
 });
 
 // Angular
-const toggleAngularIconsCommand = vscode.commands.registerCommand('extension.toggleAngularIcons', () => {
+const toggleAngularIconsCommand = vscode.commands.registerCommand('material-icon-theme.toggleAngularIcons', () => {
     toggleAngularIcons();
 });
 
 // Folders
-const toggleFolderIconsCommand = vscode.commands.registerCommand('extension.toggleFolderIcons', () => {
+const toggleFolderIconsCommand = vscode.commands.registerCommand('material-icon-theme.toggleFolderIcons', () => {
     toggleFolderIcons();
 });
 
 // Config
-const restoreDefaultConfigCommand = vscode.commands.registerCommand('extension.restoreDefaultConfig', () => {
+const restoreDefaultConfigCommand = vscode.commands.registerCommand('material-icon-theme.restoreDefaultConfig', () => {
     restoreDefaultConfig();
 });
 

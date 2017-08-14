@@ -11,7 +11,8 @@ import { FolderType } from "./../../models/FolderType.enum";
 export const toggleFolderIcons = () => {
     return checkFolderIconsStatus()
         .then(showQuickPickItems)
-        .then(handleQuickPickActions);
+        .then(handleQuickPickActions)
+        .catch(err => console.log(err));
 };
 
 /** Show QuickPick items to select prefered configuration for the folder icons. */

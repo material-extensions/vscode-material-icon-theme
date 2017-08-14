@@ -477,6 +477,9 @@
     "_file_coldfusion": {
       "iconPath": "./../../icons/coldfusion.svg"
     },
+    "_file_jenkins": {
+      "iconPath": "./../../icons/jenkins.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -792,6 +795,7 @@
   },
   "fileExtensions": {
     "html": "_file_html",
+    "htm": "_file_html",
     "html_vm": "_file_html",
     "asp": "_file_html",
     "jade": "_file_pug",
@@ -1161,6 +1165,14 @@
     "webpack.config.dev.babel.ts": "_file_webpack",
     "webpack.prod.js": "_file_webpack",
     "webpack.prod.ts": "_file_webpack",
+    "webpack.server.js": "_file_webpack",
+    "webpack.server.ts": "_file_webpack",
+    "webpack.client.js": "_file_webpack",
+    "webpack.client.ts": "_file_webpack",
+    "webpack.config.server.js": "_file_webpack",
+    "webpack.config.server.ts": "_file_webpack",
+    "webpack.config.client.js": "_file_webpack",
+    "webpack.config.client.ts": "_file_webpack",
     "webpack.config.production.babel.js": "_file_webpack",
     "webpack.config.production.babel.ts": "_file_webpack",
     "webpack.config.prod.babel.js": "_file_webpack",
@@ -1180,6 +1192,10 @@
     "webpack.config.coffee": "_file_webpack",
     "webpack.config.test.js": "_file_webpack",
     "webpack.config.test.ts": "_file_webpack",
+    "webpack.config.vendor.js": "_file_webpack",
+    "webpack.config.vendor.ts": "_file_webpack",
+    "webpack.config.vendor.production.js": "_file_webpack",
+    "webpack.config.vendor.production.ts": "_file_webpack",
     "webpack.test.js": "_file_webpack",
     "webpack.test.ts": "_file_webpack",
     "webpack.dist.js": "_file_webpack",
@@ -1290,6 +1306,7 @@
     "cmakecache.txt": "_file_cmake",
     "mocha.opts": "_file_mocha",
     "stack.yaml": "_file_haskell"
+    "jenkinsfile": "_file_jenkins"
   },
   "languageIds": {
     "git": "_file_git",
