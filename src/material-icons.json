@@ -1305,7 +1305,7 @@
     "cmakelists.txt": "_file_cmake",
     "cmakecache.txt": "_file_cmake",
     "mocha.opts": "_file_mocha",
-    "stack.yaml": "_file_haskell"
+    "stack.yaml": "_file_haskell",
     "jenkinsfile": "_file_jenkins"
   },
   "languageIds": {
