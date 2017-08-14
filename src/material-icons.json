@@ -483,6 +483,9 @@
     "_file_cabal": {
       "iconPath": "./../../icons/cabal.svg"
     },
+    "_file_nix": {
+      "iconPath": "./../../icons/nix.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -1149,7 +1152,8 @@
     "cfml": "_file_coldfusion",
     "cfc": "_file_coldfusion",
     "lucee": "_file_coldfusion",
-    "cabal": "_file_cabal"
+    "cabal": "_file_cabal",
+    "nix": "_file_nix"
   },
   "fileNames": {
     "webpack.js": "_file_webpack",
@@ -1371,6 +1375,7 @@
     "postcss": "_file_postcss",
     "lang-cfml": "_file_coldfusion",
     "haskell": "_file_haskell",
-    "cabal": "_file_cabal"
+    "cabal": "_file_cabal",
+    "nix": "_file_nix"
   }
 }
