@@ -480,6 +480,9 @@
     "_file_jenkins": {
       "iconPath": "./../../icons/jenkins.svg"
     },
+    "_file_cabal": {
+      "iconPath": "./../../icons/cabal.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -1146,7 +1149,7 @@
     "cfml": "_file_coldfusion",
     "cfc": "_file_coldfusion",
     "lucee": "_file_coldfusion",
-    "cabal": "_file_haskell"
+    "cabal": "_file_cabal"
   },
   "fileNames": {
     "webpack.js": "_file_webpack",
@@ -1309,7 +1312,6 @@
     "cmakelists.txt": "_file_cmake",
     "cmakecache.txt": "_file_cmake",
     "mocha.opts": "_file_mocha",
-    "stack.yaml": "_file_haskell",
     "jenkinsfile": "_file_jenkins"
   },
   "languageIds": {
@@ -1368,6 +1370,7 @@
     "riot": "_file_riot",
     "postcss": "_file_postcss",
     "lang-cfml": "_file_coldfusion",
-    "haskell": "_file_haskell"
+    "haskell": "_file_haskell",
+    "cabal": "_file_cabal"
   }
 }
