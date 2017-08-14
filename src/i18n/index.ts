@@ -30,7 +30,7 @@ const getTranslationObject = async (language: string): Promise<any> => {
     try {
         // tslint:disable-next-line:semicolon
         const lang = await import('./lang-' + language);
-        return lang[language];
+        return lang.translation;
     }
     catch (error) {
         console.log(error);
