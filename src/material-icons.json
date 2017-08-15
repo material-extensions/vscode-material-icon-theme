@@ -480,6 +480,12 @@
     "_file_jenkins": {
       "iconPath": "./../../icons/jenkins.svg"
     },
+    "_file_cabal": {
+      "iconPath": "./../../icons/cabal.svg"
+    },
+    "_file_nix": {
+      "iconPath": "./../../icons/nix.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -670,6 +676,7 @@
     "sources": "_folder_src",
     "css": "_folder_css",
     "stylesheet": "_folder_css",
+    "stylesheets": "_folder_css",
     "style": "_folder_css",
     "styles": "_folder_css",
     "sass": "_folder_sass",
@@ -684,6 +691,7 @@
     "scripts": "_folder_scripts",
     "node_modules": "_folder_node",
     "js": "_folder_js",
+    "javascripts": "_folder_js",
     "font": "_folder_font",
     "fonts": "_folder_font",
     "test": "_folder_test",
@@ -736,6 +744,7 @@
     "sources": "_folder_src_open",
     "css": "_folder_css_open",
     "stylesheet": "_folder_css_open",
+    "stylesheets": "_folder_css_open",
     "style": "_folder_css_open",
     "styles": "_folder_css_open",
     "sass": "_folder_sass_open",
@@ -750,6 +759,7 @@
     "scripts": "_folder_scripts_open",
     "node_modules": "_folder_node_open",
     "js": "_folder_js_open",
+    "javascripts": "_folder_js_open",
     "font": "_folder_font_open",
     "fonts": "_folder_font_open",
     "test": "_folder_test_open",
@@ -1141,7 +1151,9 @@
     "todo": "_file_todo",
     "cfml": "_file_coldfusion",
     "cfc": "_file_coldfusion",
-    "lucee": "_file_coldfusion"
+    "lucee": "_file_coldfusion",
+    "cabal": "_file_cabal",
+    "nix": "_file_nix"
   },
   "fileNames": {
     "webpack.js": "_file_webpack",
@@ -1361,6 +1373,9 @@
     "apiblueprint": "_file_apiblueprint",
     "riot": "_file_riot",
     "postcss": "_file_postcss",
-    "lang-cfml": "_file_coldfusion"
+    "lang-cfml": "_file_coldfusion",
+    "haskell": "_file_haskell",
+    "cabal": "_file_cabal",
+    "nix": "_file_nix"
   }
 }
