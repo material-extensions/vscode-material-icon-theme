@@ -11,16 +11,16 @@ export enum ThemeStatus {
 /** Check the current status of the theme */
 export const checkThemeStatus = async (state: vscode.Memento) => {
     try {
-        // get the version from the storage
+        // get the version from the state
         const stateVersion = await state.get('material-icon-theme.version');
         const packageVersion = getCurrentExtensionVersion();
 
         // check if the theme was used before
-        if (stateVersion === undefined && !themeIsAlreadyConfigured()) {
+        if (stateVersion === undefined) {
             await updateExtensionVersionInMemento(state);
-            return ThemeStatus.neverUsedBefore;
+            return themeIsAlreadyActivated() ? ThemeStatus.updated : ThemeStatus.neverUsedBefore;
         }
-        // compare the version in the storage with the package version
+        // compare the version in the state with the package version
         else if (semver.lt(stateVersion, packageVersion)) {
             await updateExtensionVersionInMemento(state);
             return ThemeStatus.updated;
@@ -35,8 +35,8 @@ export const checkThemeStatus = async (state: vscode.Memento) => {
 };
 
 /** Check if the theme was used before */
-const themeIsAlreadyConfigured = () => {
-    return helpers.isThemeConfigured() || helpers.isThemeConfigured(true);
+const themeIsAlreadyActivated = () => {
+    return helpers.isThemeActivated() || helpers.isThemeActivated(true);
 };
 
 /** Update the version number to the current version in the memento. */

@@ -33,7 +33,7 @@ export const setThemeConfig = (section: string, value: any, global: boolean = fa
  * Is the theme already activated in the editor configuration?
  * @param{boolean} global false by default
  */
-export const isThemeConfigured = (global: boolean = false): boolean => {
+export const isThemeActivated = (global: boolean = false): boolean => {
     return global ? getConfig().inspect('workbench.iconTheme').globalValue === 'material-icon-theme'
         : getConfig().inspect('workbench.iconTheme').workspaceValue === 'material-icon-theme';
 };
@@ -41,8 +41,8 @@ export const isThemeConfigured = (global: boolean = false): boolean => {
 /** Is the theme not visible for the user? */
 export const isThemeNotVisible = (): boolean => {
     const config = getConfig().inspect('workbench.iconTheme');
-    return (!isThemeConfigured(true) && config.workspaceValue === undefined) || // no workspace and not global
-        (!isThemeConfigured() && config.workspaceValue !== undefined);
+    return (!isThemeActivated(true) && config.workspaceValue === undefined) || // no workspace and not global
+        (!isThemeActivated() && config.workspaceValue !== undefined);
 };
 
 /** Return the path of the extension in the file system. */
