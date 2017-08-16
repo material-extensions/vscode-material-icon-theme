@@ -85,6 +85,7 @@ const createConfigWithAngular = (config: IconConfiguration) => {
         "fileExtensions": {
             ...config.fileExtensions,
             "routing.ts": "_file_angular_routing",
+            "routes.js": "_file_angular_routing",
             "module.ts": "_file_angular",
             "module.js": "_file_angular",
             "component.ts": "_file_angular_component",
@@ -99,6 +100,12 @@ const createConfigWithAngular = (config: IconConfiguration) => {
             "directive.js": "_file_angular_directive",
             "resolver.ts": "_file_angular_resolver",
             "resolver.js": "_file_angular_resolver",
+            "factory.js": "_file_angular_factory",
+            "filters.js": "_file_angular_filters",
+            "run.js": "_file_angular_config",
+            "config.js": "_file_angular_config",
+            "value.js": "_file_angular_value",
+            "constant.js": "_file_angular_value",
         }
     };
 };

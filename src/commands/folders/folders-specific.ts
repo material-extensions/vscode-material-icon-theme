@@ -87,7 +87,9 @@ export const createConfigWithSpecificFolders = (config: IconConfiguration) => {
             "webpack": "_folder_webpack",
             "global": "_folder_global",
             "public": "_folder_public",
-            "include": "_folder_include"
+            "include": "_folder_include",
+            "gulp_tasks": "_folder_gulp",
+            "bower_components": "_folder_bower"
         },
         folderNamesExpanded: {
             "src": "_folder_src_open",
@@ -155,7 +157,9 @@ export const createConfigWithSpecificFolders = (config: IconConfiguration) => {
             "webpack": "_folder_webpack_open",
             "global": "_folder_global_open",
             "public": "_folder_public_open",
-            "include": "_folder_include_open"
+            "include": "_folder_include_open",
+            "bower_components": "_folder_bower_open",
+            "gulp_tasks": "_folder_gulp_open"
         }
     };
 };
