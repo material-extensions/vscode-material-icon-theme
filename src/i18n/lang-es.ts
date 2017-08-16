@@ -1,6 +1,6 @@
 import { Translation } from "../models/Translation.interface";
 
-export const en: Translation = {
+export const translation: Translation = {
     "themeInstalled": "Material Icon Theme se ha instalado.",
     "howToActivate": "Cómo activar los iconos",
     "activate": "Activar",
