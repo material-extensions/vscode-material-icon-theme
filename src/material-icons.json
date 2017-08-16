@@ -486,6 +486,9 @@
     "_file_nix": {
       "iconPath": "./../../icons/nix.svg"
     },
+    "_file_npm": {
+      "iconPath": "./../../icons/npm.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -1225,9 +1228,9 @@
     ".jscsrc": "_file_json",
     ".jshintrc": "_file_json",
     ".jshintignore": "_file_settings",
-    ".npmignore": "_file_nodejs",
+    ".npmignore": "_file_npm",
     ".nvmrc": "_file_nodejs",
-    ".npmrc": "_file_nodejs",
+    ".npmrc": "_file_npm",
     ".yarnrc": "_file_yarn",
     "tsconfig.json": "_file_json",
     "tslint.json": "_file_json",
