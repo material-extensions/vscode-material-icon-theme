@@ -1,0 +1,11 @@
+{    
+    "command.activateIcons": "Material Icons: Activate Icon Theme",
+    "command.toggleAngularIcons": "Material Icons: Toggle Angular Icons",
+    "command.toggleFolderIcons": "Material Icons: Toggle Folder Icons",
+    "command.restoreDefaultConfig": "Material Icons: Restore Default Configuration",
+    "configuration.title": "Material Icons configuration",
+    "configuration.showWelcomeMessage": "Show the welcome message after first installation.",
+    "configuration.showUpdateMessage": "Show the update message after each update.",
+    "configuration.angular.iconsEnabled": "Enable the icons for Angular files.",
+    "configuration.folders.icons": "Set the type for the folder icons."
+}

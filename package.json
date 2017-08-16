@@ -45,44 +45,44 @@
     "commands": [
       {
         "command": "material-icon-theme.activateIcons",
-        "title": "Material Icons: Activate Icon Theme"
+        "title": "%command.activateIcons%"
       },
       {
         "command": "material-icon-theme.toggleAngularIcons",
-        "title": "Material Icons: Toggle Angular Icons"
+        "title": "%command.toggleAngularIcons%"
       },
       {
         "command": "material-icon-theme.toggleFolderIcons",
-        "title": "Material Icons: Toggle Folder Icons"
+        "title": "%command.toggleFolderIcons%"
       },
       {
         "command": "material-icon-theme.restoreDefaultConfig",
-        "title": "Material Icons: Restore Default Configuration"
+        "title": "%command.restoreDefaultConfig%"
       }
     ],
     "configuration": {
       "type": "object",
-      "title": "Show welcome message",
+      "title": "%configuration.title%",
       "properties": {
         "material-icon-theme.showWelcomeMessage": {
           "type": "boolean",
           "default": true,
-          "description": "Show the welcome message after first installation."
+          "description": "%configuration.showWelcomeMessage%"
         },
         "material-icon-theme.showUpdateMessage": {
           "type": "boolean",
           "default": true,
-          "description": "Show the update message after each update."
+          "description": "%configuration.showUpdateMessage%"
         },
         "material-icon-theme.angular.iconsEnabled": {
           "type": "boolean",
           "default": true,
-          "description": "Enable the icons for Angular files."
+          "description": "%configuration.angular.iconsEnabled%"
         },
         "material-icon-theme.folders.icons": {
           "type": "string",
           "default": "specific",
-          "description": "Set the type for the folder icons.",
+          "description": "%configuration.folders.icons%",
           "enum": [
             "specific",
             "classic",
