@@ -489,6 +489,9 @@
     "_file_npm": {
       "iconPath": "./../../icons/npm.svg"
     },
+    "_file_firebase": {
+      "iconPath": "./../../icons/firebase.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -1319,7 +1322,9 @@
     "cmakelists.txt": "_file_cmake",
     "cmakecache.txt": "_file_cmake",
     "mocha.opts": "_file_mocha",
-    "jenkinsfile": "_file_jenkins"
+    "jenkinsfile": "_file_jenkins",
+    "firebase.json": "_file_firebase",
+    ".firebaserc": "_file_firebase"
   },
   "languageIds": {
     "git": "_file_git",
