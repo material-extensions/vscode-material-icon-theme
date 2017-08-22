@@ -492,6 +492,9 @@
     "_file_firebase": {
       "iconPath": "./../../icons/firebase.svg"
     },
+    "_file_rollup": {
+      "iconPath": "./../../icons/rollup.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -1324,7 +1327,17 @@
     "mocha.opts": "_file_mocha",
     "jenkinsfile": "_file_jenkins",
     "firebase.json": "_file_firebase",
-    ".firebaserc": "_file_firebase"
+    ".firebaserc": "_file_firebase",
+    "rollup.config.js": "_file_rollup",
+    "rollup.config.ts": "_file_rollup",
+    "rollup-config.js": "_file_rollup",
+    "rollup-config.ts": "_file_rollup",
+    "rollup.config.prod.js": "_file_rollup",
+    "rollup.config.prod.ts": "_file_rollup",
+    "rollup.config.dev.js": "_file_rollup",
+    "rollup.config.dev.ts": "_file_rollup",
+    "rollup.config.prod.vendor.js": "_file_rollup",
+    "rollup.config.prod.vendor.ts": "_file_rollup"
   },
   "languageIds": {
     "git": "_file_git",
