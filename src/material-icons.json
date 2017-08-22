@@ -495,6 +495,9 @@
     "_file_rollup": {
       "iconPath": "./../../icons/rollup.svg"
     },
+    "_file_h": {
+      "iconPath": "./../../icons/h.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -913,7 +916,7 @@
     "jar": "_file_java",
     "jsp": "_file_java",
     "c": "_file_c",
-    "h": "_file_c",
+    "h": "_file_h",
     "m": "_file_c",
     "cc": "_file_c++",
     "cpp": "_file_c++",
