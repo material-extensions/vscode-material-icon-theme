@@ -1,5 +1,25 @@
 # Change Log
 
+## 2.2.0 (2017-08-22)
+Added icons:
+- Jenkins [[issue #104](https://github.com/PKief/vscode-material-icon-theme/issues/104)]
+- webpack file extensions [[@MeirionHughes](https://github.com/MeirionHughes) in [#106](https://github.com/PKief/vscode-material-icon-theme/pull/106)]
+- Folders for javascripts and stylesheets [[@ycrepeau](https://github.com/ycrepeau) in [#107](https://github.com/PKief/vscode-material-icon-theme/pull/107)]
+- Icon for *.cabal [[@jBugman](https://github.com/jBugman) in [#111](https://github.com/PKief/vscode-material-icon-theme/pull/111)]
+- htm [[issue #115](https://github.com/PKief/vscode-material-icon-theme/issues/115)]
+- h [[issue #121](https://github.com/PKief/vscode-material-icon-theme/issues/121)]
+- Nix
+- npm
+- Firebase
+- Rollup
+
+Added translations:
+- French [[@ycrepeau](https://github.com/ycrepeau) in [#107](https://github.com/PKief/vscode-material-icon-theme/pull/107)]
+- Spanish [[@baraalex](https://github.com/baraalex) in [#113](https://github.com/PKief/vscode-material-icon-theme/pull/113)]
+
+Other improvements:
+- extension now supports portable versions of VS Code [[issue #120](https://github.com/PKief/vscode-material-icon-theme/issues/120)]
+
 ## 2.1.0 (2017-08-07)
 Added folder icons:
 - Aurelia folder

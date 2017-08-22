@@ -20,7 +20,7 @@ const init = () => {
         iconList: fileIcons,
         markdownName: 'file-icons.md',
         columns: 5,
-        exclude: ['Todo', 'PowerPoint', 'Virtual'],
+        exclude: ['Todo'],
         outputPath: path.join('images')
     });
 
