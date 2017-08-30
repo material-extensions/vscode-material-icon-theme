@@ -1045,6 +1045,7 @@
     "prefs": "_file_settings",
     "hs": "_file_haskell",
     "kt": "_file_kotlin",
+    "kts": "_file_kotlin",
     "project": "_file_xml",
     "patch": "_file_git",
     "dockerfile": "_file_docker",
