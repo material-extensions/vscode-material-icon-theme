@@ -498,6 +498,9 @@
     "_file_h": {
       "iconPath": "./../../icons/h.svg"
     },
+    "_file_slim": {
+      "iconPath": "./../../icons/slim.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -1166,7 +1169,8 @@
     "cfc": "_file_coldfusion",
     "lucee": "_file_coldfusion",
     "cabal": "_file_cabal",
-    "nix": "_file_nix"
+    "nix": "_file_nix",
+    "slim": "_file_slim"
   },
   "fileNames": {
     "webpack.js": "_file_webpack",
@@ -1341,7 +1345,9 @@
     "rollup.config.dev.js": "_file_rollup",
     "rollup.config.dev.ts": "_file_rollup",
     "rollup.config.prod.vendor.js": "_file_rollup",
-    "rollup.config.prod.vendor.ts": "_file_rollup"
+    "rollup.config.prod.vendor.ts": "_file_rollup",
+    ".mrconfig": "_file_settings",
+    ".yardopts": "_file_settings"
   },
   "languageIds": {
     "git": "_file_git",
@@ -1401,6 +1407,8 @@
     "lang-cfml": "_file_coldfusion",
     "haskell": "_file_haskell",
     "cabal": "_file_cabal",
-    "nix": "_file_nix"
+    "nix": "_file_nix",
+    "ruby": "_file_ruby",
+    "slim": "_file_slim"
   }
 }
