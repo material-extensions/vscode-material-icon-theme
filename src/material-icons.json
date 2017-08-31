@@ -501,6 +501,9 @@
     "_file_slim": {
       "iconPath": "./../../icons/slim.svg"
     },
+    "_file_http": {
+      "iconPath": "./../../icons/http.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -1170,7 +1173,9 @@
     "lucee": "_file_coldfusion",
     "cabal": "_file_cabal",
     "nix": "_file_nix",
-    "slim": "_file_slim"
+    "slim": "_file_slim",
+    "http": "_file_http",
+    "rest": "_file_http"    
   },
   "fileNames": {
     "webpack.js": "_file_webpack",
