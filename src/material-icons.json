@@ -75,6 +75,9 @@
     "_file_c++": {
       "iconPath": "./../../icons/cpp.svg"
     },
+    "_file_h++": {
+      "iconPath": "./../../icons/hpp.svg"
+    },
     "_file_go": {
       "iconPath": "./../../icons/gopher.svg"
     },
@@ -929,7 +932,7 @@
     "m": "_file_c",
     "cc": "_file_c++",
     "cpp": "_file_c++",
-    "hpp": "_file_c++",
+    "hpp": "_file_h++",
     "mm": "_file_c++",
     "cxx": "_file_c++",
     "go": "_file_go",
