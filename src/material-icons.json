@@ -504,6 +504,9 @@
     "_file_http": {
       "iconPath": "./../../icons/http.svg"
     },
+    "_file_restql": {
+      "iconPath": "./../../icons/restql.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -1175,7 +1178,9 @@
     "nix": "_file_nix",
     "slim": "_file_slim",
     "http": "_file_http",
-    "rest": "_file_http"    
+    "rest": "_file_http",
+    "rql": "_file_restql",
+    "restql": "_file_restql"
   },
   "fileNames": {
     "webpack.js": "_file_webpack",
