@@ -1,5 +1,17 @@
 # Change Log
 
+## 2.2.1 (2017-09-11)
+Added icons:
+- Kotlin Scripts (.kts) [[issue #124](https://github.com/PKief/vscode-material-icon-theme/issues/124)]
+- HTTP, REST [[issue #122](https://github.com/PKief/vscode-material-icon-theme/issues/122)]
+- H++ [[issue #121](https://github.com/PKief/vscode-material-icon-theme/issues/121)]
+- RestQL
+- Slim
+
+Updated icons:
+- Improved Ruby support
+- Flow [[issue #126](https://github.com/PKief/vscode-material-icon-theme/issues/126)]
+
 ## 2.2.0 (2017-08-22)
 Added icons:
 - Jenkins [[issue #104](https://github.com/PKief/vscode-material-icon-theme/issues/104)]
