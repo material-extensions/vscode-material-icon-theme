@@ -1228,6 +1228,8 @@
     "webpack.config.babel.ts": "_file_webpack",
     "webpack.config.base.babel.js": "_file_webpack",
     "webpack.config.base.babel.ts": "_file_webpack",
+    "webpack.config.base.js": "_file_webpack",
+    "webpack.config.base.ts": "_file_webpack",
     "webpack.config.staging.babel.js": "_file_webpack",
     "webpack.config.staging.babel.ts": "_file_webpack",
     "webpack.config.coffee": "_file_webpack",
