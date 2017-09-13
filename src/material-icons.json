@@ -510,6 +510,9 @@
     "_file_restql": {
       "iconPath": "./../../icons/restql.svg"
     },
+    "_file_kivy": {
+      "iconPath": "./../../icons/kivy.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -1183,7 +1186,8 @@
     "http": "_file_http",
     "rest": "_file_http",
     "rql": "_file_restql",
-    "restql": "_file_restql"
+    "restql": "_file_restql",
+    "kv": "_file_kivy"
   },
   "fileNames": {
     "webpack.js": "_file_webpack",
