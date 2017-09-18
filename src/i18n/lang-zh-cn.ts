@@ -1,4 +1,4 @@
-import { Translation } from "../models/Translation.interface";
+import { Translation } from "../models";
 
 export const translation: Translation = {
     "themeInstalled": "Material主题图标已安装",

@@ -1,4 +1,4 @@
-import { Translation } from "../models/Translation.interface";
+import { Translation } from "../models";
 
 export const translation: Translation = {
     "themeInstalled": "Material Icon Theme a été installé.",
