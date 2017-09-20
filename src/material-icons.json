@@ -513,6 +513,9 @@
     "_file_kivy": {
       "iconPath": "./../../icons/kivy.svg"
     },
+    "_file_hack": {
+      "iconPath": "./../../icons/hack.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -890,7 +893,6 @@
     "pic": "_file_image",
     "raw": "_file_image",
     "webp": "_file_image",
-    "php": "_file_php",
     "js": "_file_js",
     "ejs": "_file_js",
     "jsx": "_file_react",
@@ -1274,6 +1276,7 @@
     ".env": "_file_tune",
     ".env.example": "_file_tune",
     "dockerfile": "_file_docker",
+    "docker-compose.yml": "_file_docker",
     "license": "_file_certificate",
     "license.md": "_file_certificate",
     "license.md.rendered": "_file_certificate",
@@ -1368,7 +1371,8 @@
     "rollup.config.prod.vendor.js": "_file_rollup",
     "rollup.config.prod.vendor.ts": "_file_rollup",
     ".mrconfig": "_file_settings",
-    ".yardopts": "_file_settings"
+    ".yardopts": "_file_settings",
+    ".hhconfig": "_file_hack"
   },
   "languageIds": {
     "git": "_file_git",
@@ -1430,6 +1434,8 @@
     "cabal": "_file_cabal",
     "nix": "_file_nix",
     "ruby": "_file_ruby",
-    "slim": "_file_slim"
+    "slim": "_file_slim",
+    "php": "_file_php",
+    "hack": "_file_hack"
   }
 }
