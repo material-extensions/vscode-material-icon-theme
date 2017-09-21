@@ -1,5 +1,8 @@
 import { FileTypes } from "../models/index";
 
+/**
+ * Defines file icons
+ */
 export const files: FileTypes = {
     default: { icon: 'file.svg' },
     types: [

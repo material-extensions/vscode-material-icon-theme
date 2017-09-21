@@ -1,5 +1,8 @@
 import { FolderIcon, FolderTypes } from "../models/index";
 
+/**
+ * Defines folder icons
+ */
 export const folders: FolderTypes = {
     default: { icon: 'folder.svg' },
     types: [
