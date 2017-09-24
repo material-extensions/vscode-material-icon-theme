@@ -1,4 +1,4 @@
-export interface LanuageIcon {
+export interface LanguageIcon {
     /**
      * Name of the icon, e.g. 'javascript.svg'
      */
