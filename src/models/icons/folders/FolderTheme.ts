@@ -17,7 +17,7 @@ export interface FolderTheme {
     types?: FolderIcon[];
 
     /**
-     * Defines if the theme is disabled or not. It is disabled by default.
+     * Defines if the theme is enabled or not. It is disabled by default.
      */
-    disabled?: boolean;
+    enabled?: boolean;
 }

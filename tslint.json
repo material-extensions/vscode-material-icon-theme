@@ -64,8 +64,8 @@
             "check-whitespace"
         ],
         "quotemark": [
-            false,
-            "double"
+            true,
+            "single"
         ],
         "semicolon": [
             true,
@@ -96,6 +96,7 @@
             "check-operator",
             "check-separator",
             "check-type"
-        ]
+        ],
+        "eofline": true
     }
 }
