@@ -11,6 +11,6 @@ export const folders: FolderTypes = {
         { icon: 'folder-aurelia.svg', folderNames: [''] }
     ],
     themes: [
-        { name: 'Blue', default: 'folder-blue.svg', enabled: true }
+        { name: 'Blue', default: 'folder-blue.svg' }
     ]
 };

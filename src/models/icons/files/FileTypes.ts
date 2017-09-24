@@ -9,5 +9,5 @@ export class FileTypes {
     /**
      * Defines all folder icons.
      */
-    types: FileIcon[];
+    types?: FileIcon[];
 }
