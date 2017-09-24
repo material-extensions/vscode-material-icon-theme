@@ -9,7 +9,7 @@ export interface FolderTheme {
     /**
      * Define the default icon for folders in a theme.
      */
-    defaultIcon: string;
+    default: string;
 
     /**
      * Defines folder icons for specific folder names.

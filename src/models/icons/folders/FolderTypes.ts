@@ -4,7 +4,12 @@ export interface FolderTypes {
     /**
      * Define the default icon for folders.
      */
-    defaultIcon: string;
+    default: string;
+
+    /**
+     * Defines the icon for root folders.
+     */
+    rootFolder?: string;
 
     /**
      * Defines folder icons for specific folder names.
