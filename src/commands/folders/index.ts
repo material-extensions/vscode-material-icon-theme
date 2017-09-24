@@ -4,8 +4,8 @@ import * as path from 'path';
 import * as fs from 'fs';
 import * as i18n from './../../i18n';
 import * as reload from './../../messages/reload';
-import { IconConfiguration } from "../../models/IconConfiguration.interface";
-import { FolderType } from "./../../models/FolderType.enum";
+import { IconConfiguration } from '../../models/IconConfiguration.interface';
+import { FolderType } from './../../models/FolderType.enum';
 
 /** Command to toggle the folder icons. */
 export const toggleFolderIcons = () => {
@@ -20,22 +20,22 @@ const showQuickPickItems = folderType => {
     const optionDefault: vscode.QuickPickItem = {
         description: i18n.translate('folders.specific.name'),
         detail: i18n.translate('folders.specific.description'),
-        label: folderType === FolderType.Specific ? "\u2714" : "\u25FB"
+        label: folderType === FolderType.Specific ? '\u2714' : '\u25FB'
     };
     const optionClassic: vscode.QuickPickItem = {
         description: i18n.translate('folders.classic.name'),
         detail: i18n.translate('folders.classic.description'),
-        label: folderType === FolderType.Classic ? "\u2714" : "\u25FB"
+        label: folderType === FolderType.Classic ? '\u2714' : '\u25FB'
     };
     const optionBlue: vscode.QuickPickItem = {
         description: i18n.translate('folders.blue.name'),
         detail: i18n.translate('folders.blue.description'),
-        label: folderType === FolderType.Blue ? "\u2714" : "\u25FB"
+        label: folderType === FolderType.Blue ? '\u2714' : '\u25FB'
     };
     const optionNone: vscode.QuickPickItem = {
         description: i18n.translate('folders.none.name'),
         detail: i18n.translate('folders.none.description'),
-        label: folderType === FolderType.None ? "\u2714" : "\u25FB"
+        label: folderType === FolderType.None ? '\u2714' : '\u25FB'
     };
     return vscode.window.showQuickPick(
         [optionDefault, optionClassic, optionBlue, optionNone], {

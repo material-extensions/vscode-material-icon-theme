@@ -1,10 +1,10 @@
-import { FileIcon } from "./FileIcon";
+import { FileIcon } from './FileIcon';
 
-export interface FileTypes {
+export class FileTypes {
     /**
      * Define the default icon for folders.
      */
-    default: { icon: string; };
+    default: string;
 
     /**
      * Defines all folder icons.

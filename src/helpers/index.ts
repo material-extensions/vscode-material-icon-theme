@@ -2,8 +2,8 @@ import * as vscode from 'vscode';
 import * as path from 'path';
 import * as fs from 'fs';
 import * as reloadMessages from './../messages/reload';
-import { AdvancedWorkspaceConfiguration } from "../models/AdvancedWorkspaceConfiguration.interface";
-import { IconConfiguration } from "../models/IconConfiguration.interface";
+import { AdvancedWorkspaceConfiguration } from '../models/AdvancedWorkspaceConfiguration.interface';
+import { IconConfiguration } from '../models/IconConfiguration.interface';
 
 /** Get configuration of vs code. */
 export const getConfig = (section?: string) => {

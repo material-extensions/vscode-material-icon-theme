@@ -1,4 +1,4 @@
-import { IconGroup } from "../index";
+import { IconGroup } from '../index';
 
 export interface FileIcon {
     /**

@@ -6,9 +6,9 @@
  */
 import * as fs from 'fs';
 import * as path from 'path';
-import { Icon, MarkdownConfig } from './interfaces';
-import { generateMarkdown } from "./createMatrix";
-import { toUpperCase } from "./helpers";
+import { Icon, MarkdownConfig } from './models';
+import { generateMarkdown } from './createMatrix';
+import { toUpperCase } from './helpers';
 
 // Define the folder icon of all icons
 const folderPath = path.join('icons');

@@ -1,4 +1,4 @@
-import { FolderIcon, FolderTypes } from "../models/index";
+import { FolderIcon, FolderTypes } from '../models/index';
 
 /**
  * Defines folder icons

@@ -1,7 +1,7 @@
 import * as helpers from './../../helpers';
 import * as path from 'path';
 import * as fs from 'fs';
-import { IconConfiguration } from "../../models/IconConfiguration.interface";
+import { IconConfiguration } from '../../models/IconConfiguration.interface';
 
 export const disableFolderIcons = () => {
     return deleteFolderIcons().then(helpers.promptToReload);
@@ -19,8 +19,8 @@ const deleteFolderIcons = (): Promise<void> => {
 export const createConfigWithoutFolders = (config: IconConfiguration) => {
     return {
         ...config,
-        folder: "",
-        folderExpanded: "",
+        folder: '',
+        folderExpanded: '',
         folderNames: {},
         folderNamesExpanded: {}
     };

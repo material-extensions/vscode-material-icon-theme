@@ -3,7 +3,7 @@ import * as versioning from './../helpers/versioning';
 import * as vscode from 'vscode';
 import * as opn from 'opn';
 import * as i18n from './../i18n';
-import { activateIconTheme } from "../commands/activate";
+import { activateIconTheme } from '../commands/activate';
 
 /** Show the update message if the icon theme has been updated. */
 export const showUpdateMessage = () => {

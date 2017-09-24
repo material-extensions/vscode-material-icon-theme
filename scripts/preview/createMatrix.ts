@@ -1,6 +1,6 @@
 /** Create the markdown file with a table that shows all icons */
-import { MarkdownConfig, Icon } from "./interfaces";
-import { writeMarkdown } from "./writeMarkdown";
+import { MarkdownConfig, Icon } from './models';
+import { writeMarkdown } from './writeMarkdown';
 
 export const generateMarkdown = (config: MarkdownConfig) => {
     // delete icons that should be excluded

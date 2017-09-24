@@ -1,4 +1,4 @@
-import { FolderIcon, FolderTheme } from "./index";
+import { FolderIcon, FolderTheme } from './index';
 
 export interface FolderTypes {
     /**

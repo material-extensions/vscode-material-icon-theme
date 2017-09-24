@@ -1,7 +1,7 @@
-import { enableAngularIcons } from "./angular";
+import { enableAngularIcons } from './angular';
 import * as reload from './../messages/reload';
 import * as helpers from './../helpers';
-import { enableSpecificFolderIcons } from "./folders/folders-specific";
+import { enableSpecificFolderIcons } from './folders/folders-specific';
 
 export const restoreDefaultConfig = () => {
     return restore().then(() => {

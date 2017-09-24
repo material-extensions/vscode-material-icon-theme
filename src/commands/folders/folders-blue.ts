@@ -1,7 +1,7 @@
 import * as helpers from './../../helpers';
 import * as path from 'path';
 import * as fs from 'fs';
-import { IconConfiguration } from "../../models/IconConfiguration.interface";
+import { IconConfiguration } from '../../models/IconConfiguration.interface';
 
 export const enableBlueFolderIcons = () => {
     return insertBlueFolderIcons().then(helpers.promptToReload);
@@ -19,8 +19,8 @@ const insertBlueFolderIcons = (): Promise<void> => {
 export const createConfigWithBlueFoldersIcons = (config: IconConfiguration) => {
     return {
         ...config,
-        folder: "_folder_blue",
-        folderExpanded: "_folder_blue_open",
+        folder: '_folder_blue',
+        folderExpanded: '_folder_blue_open',
         folderNames: {},
         folderNamesExpanded: {}
     };

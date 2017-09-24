@@ -1,8 +1,8 @@
 import * as vscode from 'vscode';
-import { activateIconTheme } from "./activate";
-import { toggleAngularIcons } from "./angular";
-import { toggleFolderIcons } from "./folders";
-import { restoreDefaultConfig } from "./config";
+import { activateIconTheme } from './activate';
+import { toggleAngularIcons } from './angular';
+import { toggleFolderIcons } from './folders';
+import { restoreDefaultConfig } from './config';
 
 // Activate theme
 const activateThemeCommand = vscode.commands.registerCommand('material-icon-theme.activateIcons', () => {

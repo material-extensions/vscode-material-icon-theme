@@ -1,4 +1,4 @@
-import { LanguageIcon } from "./LanguageIcon";
+import { LanguageIcon } from './LanguageIcon';
 
 export interface LanguageTypes {
     /**

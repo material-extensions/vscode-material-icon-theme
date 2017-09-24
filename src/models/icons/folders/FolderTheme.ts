@@ -1,4 +1,4 @@
-import { FolderIcon } from "./index";
+import { FolderIcon } from './index';
 
 export interface FolderTheme {
     /**

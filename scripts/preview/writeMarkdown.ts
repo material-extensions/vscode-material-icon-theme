@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { MarkdownConfig, Icon } from "./interfaces";
-import { toUpperCase } from "./helpers";
+import { MarkdownConfig, Icon } from './models';
+import { toUpperCase } from './helpers';
 
 /** Write the markdown file into the output folder */
 export const writeMarkdown = (config: MarkdownConfig, itemsPerColumn: number, matrix: Icon[][]) => {
@@ -26,7 +26,7 @@ export const writeMarkdown = (config: MarkdownConfig, itemsPerColumn: number, ma
             output += img;
 
         }
-        output += "|\n";
+        output += '|\n';
     }
 
     // create an empty markdown file
@@ -34,6 +34,6 @@ export const writeMarkdown = (config: MarkdownConfig, itemsPerColumn: number, ma
         if (err) {
             return console.log(err);
         }
-        console.log("The " + config.markdownName + "-file has been successfully created!");
+        console.log(`The ${config.markdownName}-file has been successfully created!`);
     });
 };

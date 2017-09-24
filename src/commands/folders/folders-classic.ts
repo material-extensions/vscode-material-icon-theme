@@ -1,7 +1,7 @@
 import * as helpers from './../../helpers';
 import * as path from 'path';
 import * as fs from 'fs';
-import { IconConfiguration } from "../../models/IconConfiguration.interface";
+import { IconConfiguration } from '../../models/IconConfiguration.interface';
 
 export const enableClassicFolderIcons = () => {
     return insertClassicFolderIcons().then(helpers.promptToReload);
@@ -19,8 +19,8 @@ const insertClassicFolderIcons = (): Promise<void> => {
 export const createConfigWithClassicFoldersIcons = (config: IconConfiguration) => {
     return {
         ...config,
-        folder: "_folder",
-        folderExpanded: "_folder_open",
+        folder: '_folder',
+        folderExpanded: '_folder_open',
         folderNames: {},
         folderNamesExpanded: {}
     };

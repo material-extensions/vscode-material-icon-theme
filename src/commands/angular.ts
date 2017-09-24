@@ -4,7 +4,7 @@ import * as path from 'path';
 import * as fs from 'fs';
 import * as i18n from './../i18n';
 import * as reload from './../messages/reload';
-import { IconConfiguration } from "../models/IconConfiguration.interface";
+import { IconConfiguration } from '../models/IconConfiguration.interface';
 
 /** Command to toggle the Angular icons. */
 export const toggleAngularIcons = () => {
@@ -19,12 +19,12 @@ const showQuickPickItems = isEnabled => {
     const on: vscode.QuickPickItem = {
         description: i18n.translate('toggleSwitch.on'),
         detail: i18n.translate('angular.enableIcons'),
-        label: isEnabled ? "\u2714" : "\u25FB"
+        label: isEnabled ? '\u2714' : '\u25FB'
     };
     const off: vscode.QuickPickItem = {
         description: i18n.translate('toggleSwitch.off'),
         detail: i18n.translate('angular.disableIcons'),
-        label: !isEnabled ? "\u2714" : "\u25FB"
+        label: !isEnabled ? '\u2714' : '\u25FB'
     };
     return vscode.window.showQuickPick(
         [on, off], {
@@ -82,25 +82,25 @@ const addAngularFileExtensions = (): Promise<void> => {
 const createConfigWithAngular = (config: IconConfiguration) => {
     return {
         ...config,
-        "fileExtensions": {
+        'fileExtensions': {
             ...config.fileExtensions,
-            "routing.ts": "_file_angular_routing",
-            "routing.js": "_file_angular_routing",
-            "module.ts": "_file_angular",
-            "module.js": "_file_angular",
-            "component.ts": "_file_angular_component",
-            "component.js": "_file_angular_component",
-            "guard.ts": "_file_angular_guard",
-            "guard.js": "_file_angular_guard",
-            "service.ts": "_file_angular_service",
-            "service.js": "_file_angular_service",
-            "pipe.ts": "_file_angular_pipe",
-            "pipe.js": "_file_angular_pipe",
-            "filter.js": "_file_angular_pipe",
-            "directive.ts": "_file_angular_directive",
-            "directive.js": "_file_angular_directive",
-            "resolver.ts": "_file_angular_resolver",
-            "resolver.js": "_file_angular_resolver",
+            'routing.ts': '_file_angular_routing',
+            'routing.js': '_file_angular_routing',
+            'module.ts': '_file_angular',
+            'module.js': '_file_angular',
+            'component.ts': '_file_angular_component',
+            'component.js': '_file_angular_component',
+            'guard.ts': '_file_angular_guard',
+            'guard.js': '_file_angular_guard',
+            'service.ts': '_file_angular_service',
+            'service.js': '_file_angular_service',
+            'pipe.ts': '_file_angular_pipe',
+            'pipe.js': '_file_angular_pipe',
+            'filter.js': '_file_angular_pipe',
+            'directive.ts': '_file_angular_directive',
+            'directive.js': '_file_angular_directive',
+            'resolver.ts': '_file_angular_resolver',
+            'resolver.js': '_file_angular_resolver',
         }
     };
 };
