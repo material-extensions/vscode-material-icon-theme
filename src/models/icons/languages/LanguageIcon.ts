@@ -1,6 +1,6 @@
 export interface LanguageIcon {
     /**
-     * Name of the icon, e.g. 'javascript.svg'
+     * Name of the icon, e.g. 'javascript'
      */
     icon: string;
 

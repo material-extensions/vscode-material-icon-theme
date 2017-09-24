@@ -2,7 +2,7 @@ import { IconGroup } from '../index';
 
 export interface FileIcon {
     /**
-     * Name of the icon, e.g. 'javascript.svg'
+     * Name of the icon, e.g. 'javascript'
      */
     icon: string;
 

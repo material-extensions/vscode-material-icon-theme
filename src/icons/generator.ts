@@ -7,26 +7,52 @@ export const iconGenerator = () => {
     };
 };
 
+/**
+ * Generate the icon definitions object
+ */
 const getIconDefinitions = () => {
     const defs = {};
     const allIcons: string[] = [
-        files.default,
-        ...files.types.map(type => type.icon),
-        folders.default,
-        folders.rootFolder ? folders.rootFolder : folders.default,
-        ...folders.types.map(type => type.icon),
-        ...languages.types.map(type => type.icon)
+        ...getAllFileIcons(),
+        ...getAllFolderIcons(),
+        ...getAllLanguageIcons(),
     ];
 
+    // generate object and iconPath
     allIcons.forEach(icon => {
-        defs[`_file_${path.parse(icon).name}`] = {
-            iconPath: `./../../icons/${icon}`
+        defs[`${path.parse(icon).name}`] = {
+            iconPath: `./../../icons/${icon}.svg`
         };
     });
 
     return defs;
 };
 
-const getIconName = (fileName: string) => {
-    return fileName.split('.')[0];
-};
+/**
+ * Get all file icons that can be used in this theme.
+ */
+const getAllFileIcons = (): string[] => [
+    files.default,
+    ...files.types.map(type => type.icon),
+];
+
+/**
+ * Get all folder icons that can be used in this theme.
+ * For each folder icon exists an icon that shows the opened folder.
+ */
+const getAllFolderIcons = (): string[] => [
+    folders.default,
+    folders.rootFolder ? folders.rootFolder : folders.default,
+    ...folders.types.map(type => type.icon),
+    ...folders.themes.map(theme => theme.default)
+].reduce((all, icon) => {
+    // add expanded folder icons
+    return all.concat([icon, icon + '-open']);
+}, []);
+
+/**
+ * Get all language icons that can be used in this theme.
+ */
+const getAllLanguageIcons = (): string[] => [
+    ...languages.types.map(type => type.icon)
+];

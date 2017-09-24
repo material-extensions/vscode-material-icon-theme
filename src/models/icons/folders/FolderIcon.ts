@@ -1,6 +1,6 @@
 export interface FolderIcon {
     /**
-     * Name of the icon, e.g. 'src.svg'
+     * Name of the icon, e.g. 'src'
      */
     icon: string;
 

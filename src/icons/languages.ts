@@ -5,8 +5,8 @@ import { LanguageTypes } from '../models';
  */
 export const languages: LanguageTypes = {
     types: [
-        { icon: 'php.svg', languageId: 'php' },
-        { icon: 'javascript.svg', languageId: 'javascript' },
+        { icon: 'php', languageId: 'php' },
+        { icon: 'javascript', languageId: 'javascript' },
         { icon: 'hack', languageId: 'hack' }
     ],
 };

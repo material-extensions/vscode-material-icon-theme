@@ -14,7 +14,7 @@ export interface FolderTheme {
     /**
      * Defines folder icons for specific folder names.
      */
-    types?: FolderIcon[];
+    // types?: FolderIcon[];
 
     /**
      * Defines if the theme is enabled or not. It is disabled by default.
