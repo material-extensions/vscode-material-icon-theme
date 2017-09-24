@@ -4,10 +4,13 @@ import { FolderIcon, FolderTypes } from "../models/index";
  * Defines folder icons
  */
 export const folders: FolderTypes = {
-    default: { icon: 'folder.svg' },
+    defaultIcon: 'folder.svg',
     types: [
-        { icon: 'src.svg', folderNames: ['src', 'source'] },
-        { icon: 'dist.svg', folderNames: ['dist', 'build'] },
-        { icon: 'aurelia.svg', folderNames: [''] }
+        { icon: 'folder-src.svg', folderNames: ['src', 'source'] },
+        { icon: 'folder-dist.svg', folderNames: ['dist', 'build'] },
+        { icon: 'folder-aurelia.svg', folderNames: [''] }
     ],
+    themes: [
+        { name: 'Blue', defaultIcon: 'folder-blue.svg' }
+    ]
 };

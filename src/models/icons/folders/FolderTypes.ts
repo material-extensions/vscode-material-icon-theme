@@ -1,13 +1,18 @@
-import { FolderIcon } from "./FolderIcon";
+import { FolderIcon, FolderTheme } from "./index";
 
 export interface FolderTypes {
     /**
      * Define the default icon for folders.
      */
-    default: { icon: string; };
+    defaultIcon: string;
 
     /**
-     * Defines all folder icons.
+     * Defines folder icons for specific folder names.
      */
-    types: FolderIcon[];
+    types?: FolderIcon[];
+
+    /**
+     * Defines the folder themes.
+     */
+    themes?: FolderTheme[];
 }

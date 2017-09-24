@@ -1,3 +1,5 @@
+import { IconGroup } from "../index";
+
 export interface FileIcon {
     /**
      * Name of the icon, e.g. 'javascript.svg'
@@ -30,4 +32,9 @@ export interface FileIcon {
      * Define if the icon should be disabled.
      */
     disabled?: boolean;
+
+    /**
+     * Defines a group to which this icon belongs. A group can be toggled and all icons inside this group can be enabled or disabled together.
+     */
+    group?: IconGroup;
 }
