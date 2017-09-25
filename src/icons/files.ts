@@ -1,9 +1,9 @@
-import { FileTypes, IconGroup } from '../models/index';
+import { FileIcons, IconGroup } from '../models/index';
 
 /**
  * Defines file icons
  */
-export const files: FileTypes = {
+export const fileIcons: FileIcons = {
     default: 'file',
     types: [
         { icon: 'angular', fileNames: ['.angular-cli.json', 'angular-cli.json'] },
@@ -12,3 +12,11 @@ export const files: FileTypes = {
         { icon: 'angular.routing', extensions: ['routing.ts', 'routing.js'], group: IconGroup.Angular }
     ]
 };
+
+/**
+ * Get all file icons that can be used in this theme.
+ */
+export const getFileIconDefinitions = (): string[] => [
+    fileIcons.default,
+    ...fileIcons.types.map(type => type.icon),
+];

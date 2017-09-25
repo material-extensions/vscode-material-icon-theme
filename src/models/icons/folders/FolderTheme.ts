@@ -17,6 +17,11 @@ export interface FolderTheme {
     // types?: FolderIcon[];
 
     /**
+     * Icon for root folders.
+     */
+    rootFolder?: string;
+
+    /**
      * Defines if the theme is enabled or not. It is disabled by default.
      */
     enabled?: boolean;

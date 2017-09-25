@@ -1,6 +1,6 @@
 import { FileIcon } from './FileIcon';
 
-export class FileTypes {
+export class FileIcons {
     /**
      * Define the default icon for folders.
      */

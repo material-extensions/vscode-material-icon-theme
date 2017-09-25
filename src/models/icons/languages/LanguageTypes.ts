@@ -1,6 +1,6 @@
 import { LanguageIcon } from './LanguageIcon';
 
-export interface LanguageTypes {
+export interface LanguageIcons {
     /**
      * Defines all folder icons.
      */

@@ -1,6 +1,6 @@
 import { FolderIcon, FolderTheme } from './index';
 
-export interface FolderTypes {
+export interface FolderIcons {
     /**
      * Define the default icon for folders.
      */
