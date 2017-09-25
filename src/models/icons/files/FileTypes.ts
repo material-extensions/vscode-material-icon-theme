@@ -4,10 +4,10 @@ export class FileIcons {
     /**
      * Define the default icon for folders.
      */
-    default: string;
+    defaultIcon: string;
 
     /**
      * Defines all folder icons.
      */
-    types?: FileIcon[];
+    icons?: FileIcon[];
 }

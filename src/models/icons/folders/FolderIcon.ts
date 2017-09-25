@@ -2,7 +2,7 @@ export interface FolderIcon {
     /**
      * Name of the icon, e.g. 'src'
      */
-    icon: string;
+    name: string;
 
     /**
      * Define the folder names that should apply the icon.

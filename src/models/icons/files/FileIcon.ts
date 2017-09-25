@@ -4,7 +4,7 @@ export interface FileIcon {
     /**
      * Name of the icon, e.g. 'javascript'
      */
-    icon: string;
+    name: string;
 
     /**
      * Define the file extensions that should use this icon.

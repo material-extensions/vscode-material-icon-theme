@@ -1,19 +1,32 @@
 import { LanguageIcons } from '../models';
+import { iconFolderPath } from './index';
 
 /**
  * Defines icons for language ids
  */
 export const languageIcons: LanguageIcons = {
-    types: [
-        { icon: 'php', languageId: 'php' },
-        { icon: 'javascript', languageId: 'javascript' },
-        { icon: 'hack', languageId: 'hack' }
+    languages: [
+        { id: 'php', icon: 'php' },
+        { id: 'javascript', icon: 'javascript' },
+        { id: 'hack', icon: 'hack' }
     ],
 };
 
 /**
- * Get all language icons that can be used in this theme.
+ * Get all file icons that can be used in this theme.
  */
-export const getLanguageIconDefinitions = (): string[] => [
-    ...languageIcons.types.map(type => type.icon)
-];
+export const getLanguageIconDefinitions = () => {
+    let definitions = {
+        iconDefinitions: {},
+        languageIds: {},
+    };
+    languageIcons.languages.forEach(language => {
+        if (language.disabled) return;
+        definitions.iconDefinitions[language.icon] = {
+            iconPath: `${iconFolderPath}${language.icon}.svg`
+        };
+        definitions.languageIds[language.id] = language.icon;
+    });
+
+    return definitions;
+};

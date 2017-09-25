@@ -2,7 +2,7 @@ export interface LanguageIcon {
     /**
      * Name of the icon, e.g. 'javascript'
      */
-    icon: string;
+    id: string;
 
     /**
      * Language ID, e.g. 'javascript'
@@ -10,7 +10,7 @@ export interface LanguageIcon {
      * According to official VS Code documentation:
      * https://code.visualstudio.com/docs/languages/identifiers
      */
-    languageId: string;
+    icon: string;
 
     /**
      * Define if the icon should be disabled.
