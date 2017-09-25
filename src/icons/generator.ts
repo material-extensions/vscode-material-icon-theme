@@ -12,6 +12,8 @@ export const iconGenerator = () => ({
     ...getFileIconDefinitions(),
     ...getFolderIconDefinitions(),
     ...getLanguageIconDefinitions(),
+
+    // merge icon definitions
     iconDefinitions: {
         ...getFileIconDefinitions().iconDefinitions,
         ...getFolderIconDefinitions().iconDefinitions,
