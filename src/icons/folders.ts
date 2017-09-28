@@ -1,4 +1,4 @@
-import { FolderIcons } from '../models/index';
+import { FolderIcons, IconConfiguration } from '../models/index';
 import { iconFolderPath } from './index';
 
 /**
@@ -16,7 +16,7 @@ export const folderIcons: FolderIcons = {
     ]
 };
 
-export const getFolderIconDefinitions = () => {
+export const getFolderIconDefinitions = (): IconConfiguration => {
     let definitions = {
         iconDefinitions: {},
         folder: {},

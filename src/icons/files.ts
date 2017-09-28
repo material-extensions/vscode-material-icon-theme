@@ -17,7 +17,7 @@ export const fileIcons: FileIcons = {
 /**
  * Get all file icons that can be used in this theme.
  */
-export const getFileIconDefinitions = () => {
+export const getFileIconDefinitions = (): IconConfiguration => {
     let definitions = {
         iconDefinitions: {},
         fileExtensions: {},

@@ -1,4 +1,4 @@
-import { LanguageIcons } from '../models';
+import { LanguageIcons, IconConfiguration } from '../models';
 import { iconFolderPath } from './index';
 
 /**
@@ -15,7 +15,7 @@ export const languageIcons: LanguageIcons = {
 /**
  * Get all file icons that can be used in this theme.
  */
-export const getLanguageIconDefinitions = () => {
+export const getLanguageIconDefinitions = (): IconConfiguration => {
     let definitions = {
         iconDefinitions: {},
         languageIds: {},
