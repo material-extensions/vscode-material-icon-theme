@@ -516,6 +516,12 @@
     "_file_hack": {
       "iconPath": "./../../icons/hack.svg"
     },
+    "_file_stylelint": {
+      "iconPath": "./../../icons/stylelint.svg"
+    },
+    "_file_stylelint_light": {
+      "iconPath": "./../../icons/stylelint_light.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -1191,7 +1197,9 @@
     "rest": "_file_http",
     "rql": "_file_restql",
     "restql": "_file_restql",
-    "kv": "_file_kivy"
+    "kv": "_file_kivy",
+    "sln.dotsettings": "_file_settings",
+    "sln.dotsettings.user": "_file_settings"
   },
   "fileNames": {
     "webpack.js": "_file_webpack",
@@ -1372,7 +1380,25 @@
     "rollup.config.prod.vendor.ts": "_file_rollup",
     ".mrconfig": "_file_settings",
     ".yardopts": "_file_settings",
-    ".hhconfig": "_file_hack"
+    ".hhconfig": "_file_hack",
+    ".stylelintrc": "_file_stylelint",
+    "stylelint.config.js": "_file_stylelint",
+    ".stylelintrc.json": "_file_stylelint",
+    ".stylelintrc.yaml": "_file_stylelint",
+    ".stylelintrc.yml": "_file_stylelint",
+    ".stylelintrc.js": "_file_stylelint",
+    ".stylelintignore": "_file_stylelint"
+  },
+  "light": {
+    "fileNames": {
+      ".stylelintrc": "_file_stylelint_light",
+      "stylelint.config.js": "_file_stylelint_light",
+      ".stylelintrc.json": "_file_stylelint_light",
+      ".stylelintrc.yaml": "_file_stylelint_light",
+      ".stylelintrc.yml": "_file_stylelint_light",
+      ".stylelintrc.js": "_file_stylelint_light",
+      ".stylelintignore": "_file_stylelint_light"
+    }
   },
   "languageIds": {
     "git": "_file_git",
