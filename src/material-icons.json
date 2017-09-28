@@ -522,6 +522,12 @@
     "_file_stylelint_light": {
       "iconPath": "./../../icons/stylelint_light.svg"
     },
+    "_file_code_climate": {
+      "iconPath": "./../../icons/code-climate.svg"
+    },
+    "_file_code_climate_light": {
+      "iconPath": "./../../icons/code-climate_light.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -1387,7 +1393,8 @@
     ".stylelintrc.yaml": "_file_stylelint",
     ".stylelintrc.yml": "_file_stylelint",
     ".stylelintrc.js": "_file_stylelint",
-    ".stylelintignore": "_file_stylelint"
+    ".stylelintignore": "_file_stylelint",
+    ".codeclimate.yml": "_file_code_climate"
   },
   "light": {
     "fileNames": {
@@ -1397,7 +1404,8 @@
       ".stylelintrc.yaml": "_file_stylelint_light",
       ".stylelintrc.yml": "_file_stylelint_light",
       ".stylelintrc.js": "_file_stylelint_light",
-      ".stylelintignore": "_file_stylelint_light"
+      ".stylelintignore": "_file_stylelint_light",
+      ".codeclimate.yml": "_file_code_climate_light"
     }
   },
   "languageIds": {
