@@ -513,6 +513,21 @@
     "_file_kivy": {
       "iconPath": "./../../icons/kivy.svg"
     },
+    "_file_hack": {
+      "iconPath": "./../../icons/hack.svg"
+    },
+    "_file_stylelint": {
+      "iconPath": "./../../icons/stylelint.svg"
+    },
+    "_file_stylelint_light": {
+      "iconPath": "./../../icons/stylelint_light.svg"
+    },
+    "_file_code_climate": {
+      "iconPath": "./../../icons/code-climate.svg"
+    },
+    "_file_code_climate_light": {
+      "iconPath": "./../../icons/code-climate_light.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -890,7 +905,6 @@
     "pic": "_file_image",
     "raw": "_file_image",
     "webp": "_file_image",
-    "php": "_file_php",
     "js": "_file_js",
     "ejs": "_file_js",
     "jsx": "_file_react",
@@ -1189,7 +1203,9 @@
     "rest": "_file_http",
     "rql": "_file_restql",
     "restql": "_file_restql",
-    "kv": "_file_kivy"
+    "kv": "_file_kivy",
+    "sln.dotsettings": "_file_settings",
+    "sln.dotsettings.user": "_file_settings"
   },
   "fileNames": {
     "webpack.js": "_file_webpack",
@@ -1274,6 +1290,7 @@
     ".env": "_file_tune",
     ".env.example": "_file_tune",
     "dockerfile": "_file_docker",
+    "docker-compose.yml": "_file_docker",
     "license": "_file_certificate",
     "license.md": "_file_certificate",
     "license.md.rendered": "_file_certificate",
@@ -1368,7 +1385,28 @@
     "rollup.config.prod.vendor.js": "_file_rollup",
     "rollup.config.prod.vendor.ts": "_file_rollup",
     ".mrconfig": "_file_settings",
-    ".yardopts": "_file_settings"
+    ".yardopts": "_file_settings",
+    ".hhconfig": "_file_hack",
+    ".stylelintrc": "_file_stylelint",
+    "stylelint.config.js": "_file_stylelint",
+    ".stylelintrc.json": "_file_stylelint",
+    ".stylelintrc.yaml": "_file_stylelint",
+    ".stylelintrc.yml": "_file_stylelint",
+    ".stylelintrc.js": "_file_stylelint",
+    ".stylelintignore": "_file_stylelint",
+    ".codeclimate.yml": "_file_code_climate"
+  },
+  "light": {
+    "fileNames": {
+      ".stylelintrc": "_file_stylelint_light",
+      "stylelint.config.js": "_file_stylelint_light",
+      ".stylelintrc.json": "_file_stylelint_light",
+      ".stylelintrc.yaml": "_file_stylelint_light",
+      ".stylelintrc.yml": "_file_stylelint_light",
+      ".stylelintrc.js": "_file_stylelint_light",
+      ".stylelintignore": "_file_stylelint_light",
+      ".codeclimate.yml": "_file_code_climate_light"
+    }
   },
   "languageIds": {
     "git": "_file_git",
@@ -1430,6 +1468,8 @@
     "cabal": "_file_cabal",
     "nix": "_file_nix",
     "ruby": "_file_ruby",
-    "slim": "_file_slim"
+    "slim": "_file_slim",
+    "php": "_file_php",
+    "hack": "_file_hack"
   }
 }
