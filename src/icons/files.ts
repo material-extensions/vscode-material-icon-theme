@@ -6,7 +6,7 @@ import { FileIcons, IconGroup } from '../models/index';
 export const fileIcons: FileIcons = {
     defaultIcon: { name: 'file' },
     icons: [
-        { name: 'angular', fileNames: ['.angular-cli.json', 'angular-cli.json'], light: true },
+        { name: 'angular', fileNames: ['.angular-cli.json', 'angular-cli.json'] },
         { name: 'javascript', fileExtensions: ['js'] },
         { name: 'angular.component', fileExtensions: ['component.ts', 'component.js'], group: IconGroup.Angular },
         { name: 'angular.routing', fileExtensions: ['routing.ts', 'routing.js'], group: IconGroup.Angular },

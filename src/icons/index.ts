@@ -3,8 +3,8 @@ import { IconConfiguration, FileIcons, FolderIcons, LanguageIcons } from '../mod
 import { fileIcons } from './files';
 import { folderIcons } from './folders';
 import { languageIcons } from './languages';
-import { iconFolderPath } from './generator/constants';
 import {
+    iconFolderPath,
     getFileIconDefinitions,
     getFolderIconDefinitions,
     getLanguageIconDefinitions
