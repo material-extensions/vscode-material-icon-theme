@@ -19,10 +19,10 @@ export const folderIcons: FolderIcons = {
 export const getFolderIconDefinitions = (): IconConfiguration => {
     let definitions = {
         iconDefinitions: {},
-        folder: {},
-        folderExpanded: {},
-        rootFolder: {},
-        rootFolderExpanded: {},
+        folder: '',
+        folderExpanded: '',
+        rootFolder: '',
+        rootFolderExpanded: '',
         folderNames: {},
         folderNamesExpanded: {}
     };
