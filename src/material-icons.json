@@ -528,6 +528,9 @@
     "_file_code_climate_light": {
       "iconPath": "./../../icons/code-climate_light.svg"
     },
+    "_file_graphcool": {
+      "iconPath": "./../../icons/graphcool.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -1205,7 +1208,8 @@
     "restql": "_file_restql",
     "kv": "_file_kivy",
     "sln.dotsettings": "_file_settings",
-    "sln.dotsettings.user": "_file_settings"
+    "sln.dotsettings.user": "_file_settings",
+    "graphcool": "_file_graphcool"
   },
   "fileNames": {
     "webpack.js": "_file_webpack",
@@ -1394,7 +1398,8 @@
     ".stylelintrc.yml": "_file_stylelint",
     ".stylelintrc.js": "_file_stylelint",
     ".stylelintignore": "_file_stylelint",
-    ".codeclimate.yml": "_file_code_climate"
+    ".codeclimate.yml": "_file_code_climate",
+    "project.graphcool": "_file_graphcool"
   },
   "light": {
     "fileNames": {
