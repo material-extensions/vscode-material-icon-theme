@@ -1,4 +1,4 @@
-export interface IconConfiguration {
+export class IconConfiguration {
     file?: string;
     folder?: string;
     folderExpanded?: string;
@@ -8,9 +8,25 @@ export interface IconConfiguration {
     fileExtensions?: { [s: string]: string; };
     fileNames?: { [s: string]: string; };
     languageIds?: { [s: string]: string; };
-    iconDefinitions?: { [s: string]: IconDefinition; };
+    iconDefinitions?: { [s: string]: any; };
     light?: IconConfiguration;
     highContrast?: IconConfiguration;
+
+    constructor() {
+        this.iconDefinitions = {};
+        this.folderNames = {};
+        this.fileExtensions = {};
+        this.fileNames = {};
+        this.languageIds = {};
+        this.light = {
+            fileExtensions: {},
+            fileNames: {}
+        };
+        this.highContrast = {
+            fileExtensions: {},
+            fileNames: {}
+        };
+    }
 }
 
 interface IconDefinition {

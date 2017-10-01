@@ -10,7 +10,7 @@ export interface FileIcon {
      * Define the file extensions that should use this icon.
      * E.g. ['js']
      */
-    extensions?: string[];
+    fileExtensions?: string[];
 
     /**
      * Define if there are some static file names that should apply this icon.
