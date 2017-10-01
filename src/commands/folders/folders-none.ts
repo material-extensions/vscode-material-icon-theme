@@ -1,7 +1,7 @@
 import * as helpers from './../../helpers';
 import * as path from 'path';
 import * as fs from 'fs';
-import { IconConfiguration } from '../../models/IconConfiguration.interface';
+import { IconConfiguration } from '../../models/index';
 
 export const disableFolderIcons = () => {
     return deleteFolderIcons().then(helpers.promptToReload);

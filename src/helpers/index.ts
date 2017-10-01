@@ -3,7 +3,7 @@ import * as path from 'path';
 import * as fs from 'fs';
 import * as reloadMessages from './../messages/reload';
 import { AdvancedWorkspaceConfiguration } from '../models/AdvancedWorkspaceConfiguration.interface';
-import { IconConfiguration } from '../models/IconConfiguration.interface';
+import { IconConfiguration } from '../models/index';
 
 /** Get configuration of vs code. */
 export const getConfig = (section?: string) => {

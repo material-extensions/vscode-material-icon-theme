@@ -6,7 +6,7 @@ import * as commands from './commands';
 import { showStartMessages } from './messages/start';
 import { configChangeDetection, watchForConfigChanges } from './helpers/change-detection';
 import { checkThemeStatus } from './helpers/versioning';
-import { iconGenerator } from './icons/generator';
+import { iconGenerator } from './icons/index';
 
 /** If the icons theme gets activated by starting the editor this function will be executed. */
 export const activate = (context: vscode.ExtensionContext) => {

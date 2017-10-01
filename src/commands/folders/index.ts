@@ -4,7 +4,7 @@ import * as path from 'path';
 import * as fs from 'fs';
 import * as i18n from './../../i18n';
 import * as reload from './../../messages/reload';
-import { IconConfiguration } from '../../models/IconConfiguration.interface';
+import { IconConfiguration } from '../../models/index';
 import { FolderType } from './../../models/FolderType.enum';
 
 /** Command to toggle the folder icons. */

@@ -3,6 +3,7 @@ export class IconConfiguration {
     folder?: string;
     folderExpanded?: string;
     folderNames?: { [s: string]: string; };
+    folderNamesExpanded?: { [s: string]: string; };
     rootFolder?: string;
     rootFolderExpanded?: string;
     fileExtensions?: { [s: string]: string; };
@@ -15,6 +16,7 @@ export class IconConfiguration {
     constructor() {
         this.iconDefinitions = {};
         this.folderNames = {};
+        this.folderNamesExpanded = {};
         this.fileExtensions = {};
         this.fileNames = {};
         this.languageIds = {};
