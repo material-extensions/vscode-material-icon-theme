@@ -13,5 +13,5 @@ export const getLanguageIconDefinitions = (languageIcons: LanguageIcons, config:
         config.languageIds[language.id] = language.icon;
     });
 
-    return config;
+    return { ...config };
 };

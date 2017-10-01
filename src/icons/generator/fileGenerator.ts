@@ -44,5 +44,5 @@ export const getFileIconDefinitions = (fileIcons: FileIcons, config: IconConfigu
         }
     });
 
-    return config;
+    return { ...config };
 };

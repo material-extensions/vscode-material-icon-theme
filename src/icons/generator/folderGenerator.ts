@@ -29,5 +29,5 @@ export const getFolderIconDefinitions = (folderIcons: FolderIcons, config: IconC
     config.rootFolder = folderIcons.rootFolder ? folderIcons.rootFolder : folderIcons.defaultIcon;
     config.rootFolderExpanded = folderIcons.rootFolder ? `${folderIcons.rootFolder}-open` : `${folderIcons.defaultIcon}-open`;
 
-    return config;
+    return { ...config };
 };
