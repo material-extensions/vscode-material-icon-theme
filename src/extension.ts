@@ -6,7 +6,7 @@ import * as commands from './commands';
 import { showStartMessages } from './messages/start';
 import { configChangeDetection, watchForConfigChanges } from './helpers/change-detection';
 import { checkThemeStatus } from './helpers/versioning';
-import { generateIconManifest } from './icons/index';
+import { createIconFile } from './icons/index';
 
 /** If the icons theme gets activated by starting the editor this function will be executed. */
 export const activate = (context: vscode.ExtensionContext) => {
@@ -23,7 +23,7 @@ export const activate = (context: vscode.ExtensionContext) => {
     configChangeDetection();
     watchForConfigChanges();
 
-    console.log(generateIconManifest());
+    console.log(createIconFile());
 };
 
 /** This method is called when your extension is deactivated */

@@ -1,3 +1,3 @@
 export enum IconGroup {
-    Angular
+    Angular = 'angular'
 }

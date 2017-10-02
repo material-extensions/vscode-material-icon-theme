@@ -1,10 +1,11 @@
 import { FolderIcon } from './index';
+import { FolderType } from '../../FolderType.enum';
 
 export interface FolderTheme {
     /**
      * Name of the theme
      */
-    name: string;
+    name: FolderType;
 
     /**
      * Define the default icon for folders in a theme.
@@ -20,11 +21,6 @@ export interface FolderTheme {
      * Icon for root folders.
      */
     rootFolder?: string;
-
-    /**
-     * Defines if the theme is enabled or not. It is disabled by default.
-     */
-    enabled?: boolean;
 
     /**
      * Decide if the default folder icons for the folder names should be used.

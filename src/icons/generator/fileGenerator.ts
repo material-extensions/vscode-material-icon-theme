@@ -1,11 +1,12 @@
 import { FileIcons, IconConfiguration, FileIcon } from '../../models/index';
 import { iconFolderPath } from './constants';
 import * as merge from 'lodash.merge';
+import { ManifestOptions } from './manifestGenerator';
 
 /**
  * Get all file icons that can be used in this theme.
  */
-export const getFileIconDefinitions = (fileIcons: FileIcons, config: IconConfiguration): IconConfiguration => {
+export const getFileIconDefinitions = (fileIcons: FileIcons, config: IconConfiguration, options: ManifestOptions): IconConfiguration => {
     fileIcons.icons.forEach(icon => {
         if (icon.disabled) return;
         config.iconDefinitions[icon.name] = {

@@ -1,9 +1,11 @@
 import { iconFolderPath } from './constants';
 import { FolderIcons, IconConfiguration, FolderTheme, FolderIcon } from '../../models/index';
+import { ManifestOptions } from './manifestGenerator';
+import { FolderType } from '../../models/FolderType.enum';
 
-export const getFolderIconDefinitions = (folderIcons: FolderIcons, config: IconConfiguration): IconConfiguration => {
+export const getFolderIconDefinitions = (folderIcons: FolderIcons, config: IconConfiguration, options: ManifestOptions): IconConfiguration => {
     let icons: FolderIcon[];
-    const theme = getEnabledFolderTheme(folderIcons);
+    const theme = getEnabledFolderTheme(folderIcons, options.folderTheme);
     icons = theme ? theme.icons || theme.useDefaultIcons ? folderIcons.icons : [] : folderIcons.icons;
 
     icons.forEach(icon => {
@@ -33,19 +35,22 @@ export const getFolderIconDefinitions = (folderIcons: FolderIcons, config: IconC
 
 const setDefaultFolderIcons = (icons: FolderTheme | FolderIcons): IconConfiguration => {
     const config = new IconConfiguration();
-    config.iconDefinitions['folder'] = {
-        iconPath: `${iconFolderPath}${icons.defaultIcon}.svg`
-    };
-    config.iconDefinitions['folder-open'] = {
-        iconPath: `${iconFolderPath}${icons.defaultIcon}_open.svg`
-    };
-    config.folder = icons.defaultIcon;
-    config.folderExpanded = `${icons.defaultIcon}-open`;
-    config.rootFolder = icons.rootFolder ? icons.rootFolder : icons.defaultIcon;
-    config.rootFolderExpanded = icons.rootFolder ? `${icons.rootFolder}-open` : `${icons.defaultIcon}-open`;
+    const hasFolderIcons = icons.defaultIcon && icons.defaultIcon.length > 0;
+    if (hasFolderIcons) {
+        config.iconDefinitions[icons.defaultIcon] = {
+            iconPath: `${iconFolderPath}${icons.defaultIcon}.svg`
+        };
+        config.iconDefinitions[`${icons.defaultIcon}-open`] = {
+            iconPath: `${iconFolderPath}${icons.defaultIcon}_open.svg`
+        };
+    }
+    config.folder = hasFolderIcons ? icons.defaultIcon : '';
+    config.folderExpanded = hasFolderIcons ? `${icons.defaultIcon}-open` : '';
+    config.rootFolder = icons.rootFolder ? icons.rootFolder : hasFolderIcons ? icons.defaultIcon : '';
+    config.rootFolderExpanded = icons.rootFolder ? `${icons.rootFolder}-open` : hasFolderIcons ? `${icons.defaultIcon}-open` : '';
     return { ...config };
 };
 
-const getEnabledFolderTheme = (folderIcons: FolderIcons): FolderTheme => {
-    return folderIcons.themes.filter(theme => theme.enabled)[0] || undefined;
+const getEnabledFolderTheme = (folderIcons: FolderIcons, enabledTheme: FolderType): FolderTheme => {
+    return folderIcons.themes.filter(theme => theme.name === enabledTheme)[0];
 };

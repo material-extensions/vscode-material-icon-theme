@@ -1,4 +1,5 @@
 import { FolderIcons } from '../models/index';
+import { FolderType } from '../models/FolderType.enum';
 
 /**
  * Defines folder icons
@@ -12,6 +13,8 @@ export const folderIcons: FolderIcons = {
         { name: 'folder-test', folderNames: ['test'] }
     ],
     themes: [
-        { name: 'blue', defaultIcon: 'folder-blue' }
+        { name: FolderType.Classic, defaultIcon: 'folder' },
+        { name: FolderType.Blue, defaultIcon: 'folder-blue' },
+        { name: FolderType.None, defaultIcon: '' },
     ]
 };
