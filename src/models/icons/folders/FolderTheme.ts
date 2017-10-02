@@ -29,6 +29,8 @@ export interface FolderTheme {
     /**
      * Decide if the default folder icons for the folder names should be used.
      * Now the theme only defines the defaultIcon and the rootFolder icon.
+     *
+     * Default value: `false`
      */
-    useDefaultIcons: boolean;
+    useDefaultIcons?: boolean;
 }
