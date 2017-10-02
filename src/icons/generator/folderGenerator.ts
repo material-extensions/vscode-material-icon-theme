@@ -23,15 +23,16 @@ export const getFolderIconDefinitions = (folderIcons: FolderIcons, config: IconC
     });
 
     if (theme) {
-        setDefaultFolderIcons(config, theme);
+        config = { ...config, ...setDefaultFolderIcons(theme) };
     } else {
-        setDefaultFolderIcons(config, folderIcons);
+        config = { ...config, ...setDefaultFolderIcons(folderIcons) };
     }
 
-    return { ...config };
+    return config;
 };
 
-const setDefaultFolderIcons = (config: IconConfiguration, icons: FolderTheme | FolderIcons) => {
+const setDefaultFolderIcons = (icons: FolderTheme | FolderIcons): IconConfiguration => {
+    const config = new IconConfiguration();
     config.iconDefinitions['folder'] = {
         iconPath: `${iconFolderPath}${icons.defaultIcon}.svg`
     };

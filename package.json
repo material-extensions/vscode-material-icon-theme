@@ -107,6 +107,7 @@
     "preview": "ts-node ./scripts/preview"
   },
   "dependencies": {
+    "lodash.merge": "^4.6.0",
     "opn": "^5.1.0",
     "semver": "^5.4.1"
   },

@@ -7,6 +7,7 @@ import {
 import { fileIcons } from '../fileIcons';
 import { folderIcons } from '../folderIcons';
 import { languageIcons } from '../languageIcons';
+import * as merge from 'lodash.merge';
 
 /**
  * Generate the complete icon JSON file that will be used to show the icons in the editor.
@@ -17,16 +18,5 @@ export const generateIconManifest = () => {
     const folderIconDefinitions = getFolderIconDefinitions(folderIcons, config);
     const languageIconDefinitions = getLanguageIconDefinitions(languageIcons, config);
 
-    return {
-        ...fileIconDefinitions,
-        ...folderIconDefinitions,
-        ...languageIconDefinitions,
-
-        // merge icon definitions
-        iconDefinitions: {
-            ...fileIconDefinitions.iconDefinitions,
-            ...folderIconDefinitions.iconDefinitions,
-            ...languageIconDefinitions.iconDefinitions,
-        }
-    };
+    return merge({}, fileIconDefinitions, folderIconDefinitions, languageIconDefinitions);
 };
