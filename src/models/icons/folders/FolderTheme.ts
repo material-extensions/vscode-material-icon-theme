@@ -25,4 +25,10 @@ export interface FolderTheme {
      * Defines if the theme is enabled or not. It is disabled by default.
      */
     enabled?: boolean;
+
+    /**
+     * Decide if the default folder icons for the folder names should be used.
+     * Now the theme only defines the defaultIcon and the rootFolder icon.
+     */
+    useDefaultIcons: boolean;
 }

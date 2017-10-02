@@ -4,7 +4,7 @@ import { FolderIcons, IconConfiguration, FolderTheme, FolderIcon } from '../../m
 export const getFolderIconDefinitions = (folderIcons: FolderIcons, config: IconConfiguration): IconConfiguration => {
     let icons: FolderIcon[];
     const theme = getEnabledFolderTheme(folderIcons);
-    icons = theme ? theme.icons || [] : folderIcons.icons;
+    icons = theme ? theme.icons || theme.useDefaultIcons ? folderIcons.icons : [] : folderIcons.icons;
 
     icons.forEach(icon => {
         if (icon.disabled) return;

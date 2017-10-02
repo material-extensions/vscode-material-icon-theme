@@ -12,6 +12,6 @@ export const folderIcons: FolderIcons = {
         { name: 'folder-test', folderNames: ['test'] }
     ],
     themes: [
-        { name: 'blue', defaultIcon: 'folder-blue', enabled: false }
+        { name: 'blue', defaultIcon: 'folder-blue', enabled: true, useDefaultIcons: true }
     ]
 };
