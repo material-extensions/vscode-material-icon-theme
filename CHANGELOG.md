@@ -1,5 +1,21 @@
 # Change Log
 
+## 2.2.2 (2017-10-02)
+Added icons:
+- webpack file extension [[issue #103](https://github.com/PKief/vscode-material-icon-theme/issues/103)]
+- add routing and filter to AngularJS [[@oodavid](https://github.com/oodavid) in [#131](https://github.com/PKief/vscode-material-icon-theme/pull/131)]
+- Graphcool [[@jthegedus](https://github.com/jthegedus) in [#137](https://github.com/PKief/vscode-material-icon-theme/pull/137)]
+- docker-compose.yml
+- .codeclimate.yml
+- hack
+- stylelint
+
+Updated icons:
+- haskell [[issue #134](https://github.com/PKief/vscode-material-icon-theme/issues/134)]
+
+Added translations:
+- Simplified Chinese [[@LeoEatle](https://github.com/LeoEatle) in [#133](https://github.com/PKief/vscode-material-icon-theme/pull/133)]
+
 ## 2.2.1 (2017-09-11)
 Added icons:
 - Kotlin Scripts (.kts) [[issue #124](https://github.com/PKief/vscode-material-icon-theme/issues/124)]
