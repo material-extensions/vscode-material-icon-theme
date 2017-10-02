@@ -531,6 +531,12 @@
     "_file_graphcool": {
       "iconPath": "./../../icons/graphcool.svg"
     },
+    "_file_prettier": {
+        "iconPath": "./../../icons/prettier.svg"
+    },
+    "_file_prettier_light": {
+        "iconPath": "./../../icons/prettier_light.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -1399,7 +1405,9 @@
     ".stylelintrc.js": "_file_stylelint",
     ".stylelintignore": "_file_stylelint",
     ".codeclimate.yml": "_file_code_climate",
-    "project.graphcool": "_file_graphcool"
+    "project.graphcool": "_file_graphcool",
+    ".prettierrc": "_file_prettier",
+    "prettier.config.js": "_file_prettier"
   },
   "light": {
     "fileNames": {
@@ -1410,7 +1418,9 @@
       ".stylelintrc.yml": "_file_stylelint_light",
       ".stylelintrc.js": "_file_stylelint_light",
       ".stylelintignore": "_file_stylelint_light",
-      ".codeclimate.yml": "_file_code_climate_light"
+      ".codeclimate.yml": "_file_code_climate_light",
+      ".prettierrc": "_file_prettier_light",
+      "prettier.config.js": "_file_prettier_light"
     }
   },
   "languageIds": {
