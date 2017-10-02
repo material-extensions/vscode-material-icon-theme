@@ -27,7 +27,7 @@ export const generateIconManifest = (options: ManifestOptions) => {
 };
 
 export const createIconFile = () => {
-    const iconJSONPath = path.join(helpers.getExtensionPath(), 'out', 'src', 'material-icons_v2.3.json');
+    const iconJSONPath = path.join(helpers.getExtensionPath(), 'out', 'src', 'material-icons.json');
     const options: ManifestOptions = {
         folderTheme: FolderType.Specific,
         activatedGroups: {
@@ -35,8 +35,9 @@ export const createIconFile = () => {
         }
     };
     const json = generateIconManifest(options);
-    return json;
-    // fs.writeFileSync(iconJSONPath, JSON.stringify());
+    // return json;
+    console.log('write file to ' + iconJSONPath);
+    fs.writeFileSync(iconJSONPath, JSON.stringify(json, null, 2));
 };
 
 export interface ManifestOptions {

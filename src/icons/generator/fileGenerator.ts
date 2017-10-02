@@ -30,6 +30,12 @@ export const getFileIconDefinitions = (fileIcons: FileIcons, config: IconConfigu
         }
     });
 
+    // set default file icon
+    config.iconDefinitions[fileIcons.defaultIcon.name] = {
+        iconPath: `${iconFolderPath}${fileIcons.defaultIcon.name}.svg`
+    };
+    config.file = fileIcons.defaultIcon.name;
+
     return { ...config };
 };
 

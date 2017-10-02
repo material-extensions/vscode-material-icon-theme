@@ -20,7 +20,7 @@ export const getFolderIconDefinitions = (folderIcons: FolderIcons, config: IconC
             config.folderNames[fn] = icon.name;
         });
         icon.folderNames.forEach(fn => {
-            config.folderNamesExpanded[fn] = `${icon.name}-open.svg`;
+            config.folderNamesExpanded[fn] = `${icon.name}-open`;
         });
     });
 
@@ -41,7 +41,7 @@ const setDefaultFolderIcons = (icons: FolderTheme | FolderIcons): IconConfigurat
             iconPath: `${iconFolderPath}${icons.defaultIcon}.svg`
         };
         config.iconDefinitions[`${icons.defaultIcon}-open`] = {
-            iconPath: `${iconFolderPath}${icons.defaultIcon}_open.svg`
+            iconPath: `${iconFolderPath}${icons.defaultIcon}-open.svg`
         };
     }
     config.folder = hasFolderIcons ? icons.defaultIcon : '';

@@ -23,7 +23,7 @@ export const activate = (context: vscode.ExtensionContext) => {
     configChangeDetection();
     watchForConfigChanges();
 
-    console.log(createIconFile());
+    createIconFile();
 };
 
 /** This method is called when your extension is deactivated */
