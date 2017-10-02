@@ -7,7 +7,7 @@ import { ManifestOptions } from './manifestGenerator';
  * Get all file icons that can be used in this theme.
  */
 export const getFileIconDefinitions = (fileIcons: FileIcons, config: IconConfiguration, options: ManifestOptions): IconConfiguration => {
-    fileIcons.icons.forEach(icon => {
+    disableIconsByGroup(fileIcons, options.activatedGroups).forEach(icon => {
         if (icon.disabled) return;
         config.iconDefinitions[icon.name] = {
             iconPath: `${iconFolderPath}${icon.name}.svg`
@@ -45,6 +45,15 @@ const mapSpecificFileIcons = (icon: FileIcon, mappingType: FileMappingType) => {
         }
     });
     return config;
+};
+
+/**
+ * Disable all file icons that are in a group which is disabled.
+ */
+const disableIconsByGroup = (fileIcons: FileIcons, activatedIconGroups): FileIcon[] => {
+    return fileIcons.icons.filter(icon => {
+        return !icon.group ? true : activatedIconGroups[icon.group] || false;
+    });
 };
 
 const enum FileMappingType {
