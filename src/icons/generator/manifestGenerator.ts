@@ -4,14 +4,14 @@ import {
     getFolderIconDefinitions,
     getLanguageIconDefinitions
 } from './index';
-import { fileIcons } from '../files';
-import { folderIcons } from '../folders';
-import { languageIcons } from '../languages';
+import { fileIcons } from '../fileIcons';
+import { folderIcons } from '../folderIcons';
+import { languageIcons } from '../languageIcons';
 
 /**
  * Generate the complete icon JSON file that will be used to show the icons in the editor.
  */
-export const iconGenerator = () => {
+export const generateIconManifest = () => {
     const config = new IconConfiguration();
     const fileIconDefinitions = getFileIconDefinitions(fileIcons, config);
     const folderIconDefinitions = getFolderIconDefinitions(folderIcons, config);
