@@ -10,7 +10,6 @@ import { languageIcons } from '../languageIcons';
 import * as merge from 'lodash.merge';
 import * as path from 'path';
 import * as fs from 'fs';
-import * as helpers from './../../helpers';
 
 /**
  * Generate the complete icon JSON file that will be used to show the icons in the editor.
@@ -27,30 +26,21 @@ export const generateIconManifest = (options: ManifestOptions) => {
 /**
  * Create the JSON file that is responsible for the icons in the editor.
  */
-export const createIconFile = (options: ManifestOptions = getIconOptions()) => {
-    const iconJSONPath = path.join(helpers.getExtensionPath(), 'out', 'src', 'material-icons.json');
+export const createIconFile = (options: ManifestOptions = getDefaultIconOptions()) => {
+    const iconJSONPath = path.join(__dirname, '../../../', 'src', 'material-icons.json');
     const json = generateIconManifest(options);
     fs.writeFileSync(iconJSONPath, JSON.stringify(json, null, 2));
-    helpers.promptToReload();
 };
 
 /**
  * The options control the generator and decide which icons are disabled or not.
  */
-export const getIconOptions = (): ManifestOptions => {
+export const getDefaultIconOptions = (): ManifestOptions => {
     const options: ManifestOptions = {
-        folderTheme: getCurrentFolderTheme(),
+        folderTheme: FolderType.Specific,
         activatedGroups: {
-            [IconGroup.Angular]: getAngularIconsEnabled()
+            [IconGroup.Angular]: true
         }
     };
     return options;
-};
-
-export const getCurrentFolderTheme = (): FolderType => {
-    return <FolderType>helpers.getThemeConfig('folders.icons').globalValue;
-};
-
-export const getAngularIconsEnabled = (): boolean => {
-    return <boolean>helpers.getThemeConfig('angular.iconsEnabled').globalValue;
 };

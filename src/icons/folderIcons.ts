@@ -9,7 +9,7 @@ export const folderIcons: FolderIcons = {
     icons: [
         { name: 'folder-src', folderNames: ['src', 'source'] },
         { name: 'folder-dist', folderNames: ['dist', 'build'] },
-        { name: 'folder-test', folderNames: ['test'] }
+        { name: 'folder-test', folderNames: ['test', 'tests'] }
     ],
     themes: [
         { name: FolderType.Classic, defaultIcon: 'folder' },

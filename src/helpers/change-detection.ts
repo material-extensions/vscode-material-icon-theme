@@ -3,6 +3,7 @@ import * as vscode from 'vscode';
 import { createIconFile } from '../icons/index';
 import { checkAngularIconsStatus } from '../commands/angular';
 import { checkFolderIconsStatus } from '../commands/folders';
+import { FolderType, IconGroup, ManifestOptions } from '../models/index';
 
 /** Watch for changes in the configurations to update the icons theme. */
 export const watchForConfigChanges = () => {
@@ -24,7 +25,7 @@ const compareAngularConfigs = () => {
 
     return checkAngularIconsStatus().then(result => {
         if (angularIconsConfig.globalValue !== result) {
-            createIconFile();
+            updateIconManifest();
         }
     });
 };
@@ -34,7 +35,26 @@ const compareFolderConfigs = () => {
 
     return checkFolderIconsStatus().then(result => {
         if (folderIconsConfig.globalValue !== undefined && folderIconsConfig.globalValue !== result) {
-            createIconFile();
+            updateIconManifest();
         }
     });
+};
+
+const updateIconManifest = () => {
+    const options: ManifestOptions = {
+        folderTheme: getCurrentFolderTheme(),
+        activatedGroups: {
+            [IconGroup.Angular]: getAngularIconsEnabled()
+        }
+    };
+    createIconFile(options);
+    helpers.promptToReload();
+};
+
+export const getCurrentFolderTheme = (): FolderType => {
+    return <FolderType>helpers.getThemeConfig('folders.icons').globalValue;
+};
+
+export const getAngularIconsEnabled = (): boolean => {
+    return <boolean>helpers.getThemeConfig('angular.iconsEnabled').globalValue;
 };
