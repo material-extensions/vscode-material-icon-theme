@@ -75,7 +75,7 @@ export const checkFolderIconsStatus = (): Promise<FolderType> => {
             return FolderType.None;
         } else if (config.folderNames && Object.keys(config.folderNames).length > 0) {
             return FolderType.Specific;
-        } else if (config.folder === 'folder_blue') {
+        } else if (config.folder === 'folder-blue') {
             return FolderType.Blue;
         } else {
             return FolderType.Classic;
