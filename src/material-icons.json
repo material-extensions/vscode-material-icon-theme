@@ -165,9 +165,6 @@
     "_file_nodejs": {
       "iconPath": "./../../icons/nodejs.svg"
     },
-    "_file_light": {
-      "iconPath": "./../../icons/file.svg"
-    },
     "_file_yarn": {
       "iconPath": "./../../icons/yarn.svg"
     },
@@ -530,6 +527,9 @@
     },
     "_file_graphcool": {
       "iconPath": "./../../icons/graphcool.svg"
+    },
+    "_file_nodemon": {
+      "iconPath": "./../../icons/nodemon.svg"
     },
     "_file": {
       "iconPath": "./../../icons/file.svg"
@@ -1399,7 +1399,8 @@
     ".stylelintrc.js": "_file_stylelint",
     ".stylelintignore": "_file_stylelint",
     ".codeclimate.yml": "_file_code_climate",
-    "project.graphcool": "_file_graphcool"
+    "project.graphcool": "_file_graphcool",
+    "nodemon.json": "_file_nodemon"
   },
   "light": {
     "fileNames": {
