@@ -1,7 +1,6 @@
-import { FileIcons, IconConfiguration, FileIcon } from '../../models/index';
+import { FileIcons, IconConfiguration, FileIcon, ManifestOptions } from '../../models/index';
 import { iconFolderPath } from './constants';
 import * as merge from 'lodash.merge';
-import { ManifestOptions } from './manifestGenerator';
 
 /**
  * Get all file icons that can be used in this theme.
@@ -66,4 +65,3 @@ const enum FileMappingType {
     FileExtensions = 'fileExtensions',
     FileNames = 'fileNames'
 }
-

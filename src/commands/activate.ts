@@ -1,7 +1,6 @@
 import * as vscode from 'vscode';
 import * as helpers from './../helpers';
 import * as versioning from './../helpers/versioning';
-import * as opn from 'opn';
 import * as i18n from './../i18n';
 import * as outdatedMessage from './../messages/outdated';
 

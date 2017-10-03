@@ -1,5 +1,4 @@
-import { FolderIcons } from '../models/index';
-import { FolderType } from '../models/FolderType.enum';
+import { FolderIcons, FolderType } from '../models/index';
 
 /**
  * Defines folder icons

@@ -78,7 +78,7 @@ export const removeIconExtensions = (config: IconConfiguration, fileExtensionNam
 
 /** Reload vs code window */
 export const promptToReload = () => {
-    reloadMessages.showConfirmToReloadMessage().then(result => {
+    return reloadMessages.showConfirmToReloadMessage().then(result => {
         if (result) reloadWindow();
     });
 };

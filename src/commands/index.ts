@@ -19,7 +19,7 @@ const toggleFolderIconsCommand = vscode.commands.registerCommand('material-icon-
     toggleFolderIcons();
 });
 
-// Config
+// Reset config
 const restoreDefaultConfigCommand = vscode.commands.registerCommand('material-icon-theme.restoreDefaultConfig', () => {
     restoreDefaultConfig();
 });

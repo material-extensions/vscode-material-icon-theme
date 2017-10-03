@@ -1,7 +1,5 @@
 import { iconFolderPath } from './constants';
-import { FolderIcons, IconConfiguration, FolderTheme, FolderIcon } from '../../models/index';
-import { ManifestOptions } from './manifestGenerator';
-import { FolderType } from '../../models/FolderType.enum';
+import { FolderIcons, IconConfiguration, FolderTheme, FolderIcon, ManifestOptions, FolderType } from '../../models/index';
 
 export const getFolderIconDefinitions = (folderIcons: FolderIcons, config: IconConfiguration, options: ManifestOptions): IconConfiguration => {
     let icons: FolderIcon[];

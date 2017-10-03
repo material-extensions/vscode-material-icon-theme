@@ -1,5 +1,4 @@
-import { FolderIcon } from './index';
-import { FolderType } from '../../FolderType.enum';
+import { FolderIcon, FolderType } from '../index';
 
 export interface FolderTheme {
     /**

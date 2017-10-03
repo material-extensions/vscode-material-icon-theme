@@ -50,65 +50,13 @@ const handleQuickPickActions = value => {
     }
 };
 
-/** Enable icons for angular files */
-export const enableAngularIcons = () => {
-    return addAngularFileExtensions().then(helpers.promptToReload);
-};
-
-/** Disable icons for angular files */
-export const disableAngularIcons = () => {
-    return deleteAngularFileExtensions().then(helpers.promptToReload);
-};
-
 /** Are the angular icons enabled? */
 export const checkAngularIconsStatus = (): Promise<boolean> => {
     return helpers.getMaterialIconsJSON().then((config) => {
-        if (config.fileExtensions['module.ts']) {
+        if (config.fileExtensions['component.ts']) {
             return true;
         } else {
             return false;
         }
-    });
-};
-
-/** Add file extensions for angular files */
-const addAngularFileExtensions = (): Promise<void> => {
-    const iconJSONPath = path.join(helpers.getExtensionPath(), 'out', 'src', 'material-icons.json');
-    return helpers.getMaterialIconsJSON().then(config => {
-        fs.writeFileSync(iconJSONPath, JSON.stringify(createConfigWithAngular(config), null, 2));
-    });
-};
-
-const createConfigWithAngular = (config: IconConfiguration) => {
-    return {
-        ...config,
-        'fileExtensions': {
-            ...config.fileExtensions,
-            'routing.ts': '_file_angular_routing',
-            'routing.js': '_file_angular_routing',
-            'module.ts': '_file_angular',
-            'module.js': '_file_angular',
-            'component.ts': '_file_angular_component',
-            'component.js': '_file_angular_component',
-            'guard.ts': '_file_angular_guard',
-            'guard.js': '_file_angular_guard',
-            'service.ts': '_file_angular_service',
-            'service.js': '_file_angular_service',
-            'pipe.ts': '_file_angular_pipe',
-            'pipe.js': '_file_angular_pipe',
-            'filter.js': '_file_angular_pipe',
-            'directive.ts': '_file_angular_directive',
-            'directive.js': '_file_angular_directive',
-            'resolver.ts': '_file_angular_resolver',
-            'resolver.js': '_file_angular_resolver',
-        }
-    };
-};
-
-/** Remove file extensions for angular files */
-const deleteAngularFileExtensions = (): Promise<void> => {
-    const iconJSONPath = path.join(helpers.getExtensionPath(), 'out', 'src', 'material-icons.json');
-    return helpers.getMaterialIconsJSON().then(config => {
-        fs.writeFileSync(iconJSONPath, JSON.stringify({ ...helpers.removeIconExtensions(config, 'angular') }, null, 2));
     });
 };

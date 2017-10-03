@@ -1,11 +1,10 @@
 import * as vscode from 'vscode';
-import * as helpers from './../../helpers';
+import * as helpers from './../helpers';
 import * as path from 'path';
 import * as fs from 'fs';
-import * as i18n from './../../i18n';
-import * as reload from './../../messages/reload';
-import { IconConfiguration } from '../../models/index';
-import { FolderType } from './../../models/FolderType.enum';
+import * as i18n from './../i18n';
+import * as reload from './../messages/reload';
+import { IconConfiguration, FolderType } from '../models/index';
 
 /** Command to toggle the folder icons. */
 export const toggleFolderIcons = () => {
@@ -70,7 +69,7 @@ const handleQuickPickActions = value => {
 };
 
 /** Are the folder icons enabled? */
-export const checkFolderIconsStatus = (): Promise<string> => {
+export const checkFolderIconsStatus = (): Promise<FolderType> => {
     return helpers.getMaterialIconsJSON().then((config) => {
         if (config.folder === '' && config.folderExpanded === '') {
             return FolderType.None;
