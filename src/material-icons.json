@@ -532,10 +532,10 @@
       "iconPath": "./../../icons/graphcool.svg"
     },
     "_file_prettier": {
-        "iconPath": "./../../icons/prettier.svg"
+        "iconPath": "./../../icons/prettier_light.svg"
     },
     "_file_prettier_light": {
-        "iconPath": "./../../icons/prettier_light.svg"
+        "iconPath": "./../../icons/prettier.svg"
     },
     "_file": {
       "iconPath": "./../../icons/file.svg"
