@@ -534,6 +534,9 @@
     "_file_sbt": {
       "iconPath": "./../../icons/sbt.svg"
     },
+    "_file_vscode": {
+      "iconPath": "./../../icons/vscode.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -710,6 +713,12 @@
     },
     "_folder_include_open": {
       "iconPath": "./../../icons/folder-include-open.svg"
+    },
+    "_folder_docker": {
+      "iconPath": "./../../icons/folder-docker.svg"
+    },
+    "_folder_docker_open": {
+      "iconPath": "./../../icons/folder-docker-open.svg"
     }
   },
   "folderExpanded": "_folder_open",
@@ -781,7 +790,9 @@
     "webpack": "_folder_webpack",
     "global": "_folder_global",
     "public": "_folder_public",
-    "include": "_folder_include"
+    "include": "_folder_include",
+    "docker": "_folder_docker",
+    ".docker": "_folder_docker"
   },
   "folderNamesExpanded": {
     "src": "_folder_src_open",
@@ -849,7 +860,9 @@
     "webpack": "_folder_webpack_open",
     "global": "_folder_global_open",
     "public": "_folder_public_open",
-    "include": "_folder_include_open"
+    "include": "_folder_include_open",
+    "docker": "_folder_docker_open",
+    ".docker": "_folder_docker_open"
   },
   "fileExtensions": {
     "html": "_file_html",
@@ -929,8 +942,8 @@
     "xls": "_file_table",
     "csv": "_file_table",
     "tsv": "_file_table",
-    "vscodeignore": "_file_vs",
-    "vsixmanifest": "_file_vs",
+    "vscodeignore": "_file_vscode",
+    "vsixmanifest": "_file_vscode",
     "suo": "_file_vs",
     "sln": "_file_vs",
     "pdb": "_file_database",
@@ -1156,7 +1169,7 @@
     "exs": "_file_elixir",
     "ls": "_file_livescript",
     "erl": "_file_erlang",
-    "vsix": "_file_vs",
+    "vsix": "_file_vscode",
     "twig": "_file_twig",
     "jl": "_file_julia",
     "elm": "_file_elm",
