@@ -7,7 +7,7 @@
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="prettier-icon-dark">
             <g id="Icon-(Dark)">
-                <g id="Group">
+                <g id="Group" transform="translate(10.5, 10.5) scale(.9)">
                     <rect id="Rectangle" fill="#56B3B4" x="165" y="40" width="20" height="10" rx="5"></rect>
                     <rect id="Rectangle" fill="#EA5E5E" x="15" y="200" width="60" height="10" rx="5"></rect>
                     <rect id="Rectangle" fill="#BF85BF" x="135" y="120" width="40" height="10" rx="5"></rect>
