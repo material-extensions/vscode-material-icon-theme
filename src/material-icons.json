@@ -534,9 +534,6 @@
     "_file_prettier": {
         "iconPath": "./../../icons/prettier.svg"
     },
-    "_file_prettier_light": {
-        "iconPath": "./../../icons/prettier_light.svg"
-    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -1418,9 +1415,7 @@
       ".stylelintrc.yml": "_file_stylelint_light",
       ".stylelintrc.js": "_file_stylelint_light",
       ".stylelintignore": "_file_stylelint_light",
-      ".codeclimate.yml": "_file_code_climate_light",
-      ".prettierrc": "_file_prettier_light",
-      "prettier.config.js": "_file_prettier_light"
+      ".codeclimate.yml": "_file_code_climate_light"
     }
   },
   "languageIds": {
