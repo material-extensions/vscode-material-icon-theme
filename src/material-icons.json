@@ -531,6 +531,9 @@
     "_file_nodemon": {
       "iconPath": "./../../icons/nodemon.svg"
     },
+    "_file_sbt": {
+      "iconPath": "./../../icons/sbt.svg"
+    },
     "_file": {
       "iconPath": "./../../icons/file.svg"
     },
@@ -1209,7 +1212,8 @@
     "kv": "_file_kivy",
     "sln.dotsettings": "_file_settings",
     "sln.dotsettings.user": "_file_settings",
-    "graphcool": "_file_graphcool"
+    "graphcool": "_file_graphcool",
+    "sbt": "_file_sbt"
   },
   "fileNames": {
     "webpack.js": "_file_webpack",
