@@ -6,8 +6,7 @@ import * as cpx from 'cpx';
 import * as path from 'path';
 import * as fs from 'fs';
 
-createIconFile().then(() => {
-    const fileName = 'material-icons.json';
+createIconFile().then((fileName) => {
     const filePath = path.resolve('src', fileName);
     const out = path.resolve('out', 'src', fileName);
     fs.rename(filePath, out, (err) => {

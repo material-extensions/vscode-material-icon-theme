@@ -1,12 +1,9 @@
 import { IconConfiguration, IconGroup, IconJsonOptions, FolderType } from '../../models/index';
-import {
-    getFileIconDefinitions,
-    getFolderIconDefinitions,
-    getLanguageIconDefinitions
-} from './index';
+import { getFileIconDefinitions, getFolderIconDefinitions, getLanguageIconDefinitions } from './index';
 import { fileIcons } from '../fileIcons';
 import { folderIcons } from '../folderIcons';
 import { languageIcons } from '../languageIcons';
+import { iconJsonName } from './constants';
 import * as merge from 'lodash.merge';
 import * as path from 'path';
 import * as fs from 'fs';
@@ -27,14 +24,15 @@ export const generateIconJson = (options: IconJsonOptions) => {
  * Create the JSON file that is responsible for the icons in the editor.
  */
 export const createIconFile = (options: IconJsonOptions = getDefaultIconOptions()) => {
-    const iconJSONPath = path.join(__dirname, '../../../', 'src', 'material-icons.json');
+    const fileName = iconJsonName;
+    const iconJSONPath = path.join(__dirname, '../../../', 'src', fileName);
     const json = generateIconJson(options);
     return new Promise((resolve, reject) => {
         fs.writeFile(iconJSONPath, JSON.stringify(json, null, 2), (err) => {
             if (err) {
                 reject(err);
             }
-            resolve(iconJSONPath);
+            resolve(fileName);
         });
     });
 };
