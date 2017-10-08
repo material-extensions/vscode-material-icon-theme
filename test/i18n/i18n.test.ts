@@ -1,6 +1,6 @@
 import * as assert from 'assert';
 import * as vscode from 'vscode';
-import * as i18n from '../src/i18n';
+import * as i18n from '../../src/i18n';
 
 suite('i18n', () => {
     test('translations can be initialized', () => {
