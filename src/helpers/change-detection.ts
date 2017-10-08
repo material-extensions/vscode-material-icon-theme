@@ -3,7 +3,7 @@ import * as vscode from 'vscode';
 import { createIconFile } from '../icons/index';
 import { checkAngularIconsStatus } from '../commands/angular';
 import { checkFolderIconsStatus } from '../commands/folders';
-import { FolderType, IconGroup, ManifestOptions } from '../models/index';
+import { FolderType, IconGroup, IconJsonOptions } from '../models/index';
 
 /** Watch for changes in the configurations to update the icons theme. */
 export const watchForConfigChanges = () => {
@@ -25,7 +25,7 @@ const compareAngularConfigs = () => {
 
     return checkAngularIconsStatus().then(result => {
         if (angularIconsConfig.globalValue !== result) {
-            updateIconManifest();
+            updateIconJson();
         }
     });
 };
@@ -35,20 +35,23 @@ const compareFolderConfigs = () => {
 
     return checkFolderIconsStatus().then(result => {
         if (folderIconsConfig.globalValue !== undefined && folderIconsConfig.globalValue !== result) {
-            updateIconManifest();
+            updateIconJson();
         }
     });
 };
 
-const updateIconManifest = () => {
-    const options: ManifestOptions = {
+const updateIconJson = () => {
+    const options: IconJsonOptions = {
         folderTheme: getCurrentFolderTheme(),
         activatedGroups: {
             [IconGroup.Angular]: getAngularIconsEnabled()
         }
     };
-    createIconFile(options);
-    helpers.promptToReload();
+    return createIconFile(options).then(() => {
+        helpers.promptToReload();
+    }).catch(err => {
+        console.error(err);
+    });
 };
 
 export const getCurrentFolderTheme = (): FolderType => {

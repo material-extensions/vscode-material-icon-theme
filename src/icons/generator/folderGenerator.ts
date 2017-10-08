@@ -1,7 +1,7 @@
 import { iconFolderPath } from './constants';
-import { FolderIcons, IconConfiguration, FolderTheme, FolderIcon, ManifestOptions, FolderType } from '../../models/index';
+import { FolderIcons, IconConfiguration, FolderTheme, FolderIcon, IconJsonOptions, FolderType } from '../../models/index';
 
-export const getFolderIconDefinitions = (folderIcons: FolderIcons, config: IconConfiguration, options: ManifestOptions): IconConfiguration => {
+export const getFolderIconDefinitions = (folderIcons: FolderIcons, config: IconConfiguration, options: IconJsonOptions): IconConfiguration => {
     let icons: FolderIcon[];
     const theme = getEnabledFolderTheme(folderIcons, options.folderTheme);
     icons = theme ? theme.icons || theme.useDefaultIcons ? folderIcons.icons : [] : folderIcons.icons;

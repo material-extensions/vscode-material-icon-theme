@@ -98,7 +98,7 @@
     "clean": "rimraf ./out",
     "compile": "tsc -p ./ && npm run compile:json",
     "compile:watch": "tsc -watch -p ./",
-    "compile:json": "node ./out/src/icons/generator/generateScript.js",
+    "compile:json": "ts-node ./scripts/icons/generateJson.ts",
     "postinstall": "node ./node_modules/vscode/bin/install",
     "tslint": "tslint -c tslint.json ./src/**/*.ts ./scripts/**/*ts",
     "pretest": "npm run vscode:prepublish",
