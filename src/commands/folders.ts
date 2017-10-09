@@ -71,7 +71,7 @@ const handleQuickPickActions = value => {
 /** Are the folder icons enabled? */
 export const checkFolderIconsStatus = (): Promise<FolderType> => {
     return helpers.getMaterialIconsJSON().then((config) => {
-        if (config.folder === '' && config.folderExpanded === '') {
+        if (!config.folder || config.folder === '') {
             return FolderType.None;
         } else if (config.folderNames && Object.keys(config.folderNames).length > 0) {
             return FolderType.Specific;

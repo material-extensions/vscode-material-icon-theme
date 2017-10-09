@@ -6,6 +6,7 @@ import * as merge from 'lodash.merge';
  * Get all file icons that can be used in this theme.
  */
 export const getFileIconDefinitions = (fileIcons: FileIcons, config: IconConfiguration, options: IconJsonOptions): IconConfiguration => {
+    config = merge({}, config);
     disableIconsByGroup(fileIcons, options.activatedGroups).forEach(icon => {
         if (icon.disabled) return;
         config.iconDefinitions[icon.name] = {
@@ -35,9 +36,12 @@ export const getFileIconDefinitions = (fileIcons: FileIcons, config: IconConfigu
     };
     config.file = fileIcons.defaultIcon.name;
 
-    return { ...config };
+    return config;
 };
 
+/**
+ * Map the file extensions and the filenames to the related icons.
+ */
 const mapSpecificFileIcons = (icon: FileIcon, mappingType: FileMappingType) => {
     const config = new IconConfiguration();
     icon[mappingType].forEach(ext => {
