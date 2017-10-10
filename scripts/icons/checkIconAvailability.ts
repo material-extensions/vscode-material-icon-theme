@@ -2,6 +2,7 @@ import * as path from 'path';
 import * as fs from 'fs';
 import { fileIcons, folderIcons, languageIcons } from './../../src/icons';
 import { similarity } from './similarity';
+import { FileIcon } from '../../src/models/index';
 
 /**
  * Defines the folder where all icon files are located.
@@ -28,7 +29,7 @@ const fsReadAllIconFiles = (err: Error, files: string[]) => {
 
     files.forEach(file => {
         const fileName = file;
-        const iconName = file.slice(0, -4);
+        const iconName = path.parse(file).name;
         availableIcons[iconName] = fileName;
     });
 
@@ -52,7 +53,33 @@ const checkFileIcons = () => {
         if (!availableIcons[icon.name]) {
             wrongIconNames.fileIcons.push(icon.name);
         }
+        checkLightVersion(icon);
+        checkHighContrastVersion(icon);
     });
+};
+
+/**
+ * Check if the icon has a light version.
+ */
+const checkLightVersion = (icon: FileIcon) => {
+    if (icon.light === true) {
+        const lightVersion = `${icon.name}_light`;
+        if (!availableIcons[lightVersion]) {
+            wrongIconNames.fileIcons.push(lightVersion);
+        }
+    }
+};
+
+/**
+ * Check if the icon has a high contrasts version.
+ */
+const checkHighContrastVersion = (icon: FileIcon) => {
+    if (icon.highContrast === true) {
+        const highContrastVersion = `${icon.name}_highContrast`;
+        if (!availableIcons[highContrastVersion]) {
+            wrongIconNames.fileIcons.push(highContrastVersion);
+        }
+    }
 };
 
 /**
@@ -108,6 +135,11 @@ const logIconInformation = (wrongIcons: string[], title: string) => {
         const suggestion = Object.keys(availableIcons).find((i) => {
             return similarity(icon, i) > 0.75;
         });
-        console.log(`\x1b[31m Icon not found: ${icon}\x1b[0m - Did you mean ${suggestion ? '\x1b[32m' + `${suggestion}\x1b[0m` : ''}?`);
+        const suggestionString = suggestion ? '- Did you mean \x1b[32m' + `${suggestion}\x1b[0m?` : '';
+        const isWrongLightVersion = icon.endsWith('_light');
+        const isWrongLightVersionString = isWrongLightVersion ? '- There is no light icon for \x1b[32m' + `${icon.slice(0, -6)}\x1b[0m! Set the light option to false!` : '';
+        const isWrongHighContrastVersion = icon.endsWith('_highContrast');
+        const isWrongHighContrastVersionString = isWrongHighContrastVersion ? '- There is no high contrast icon for \x1b[32m' + `${icon.slice(0, -13)}\x1b[0m! Set the highContrast option to false!` : '';
+        console.log(`\x1b[31m Icon not found: ${icon}\x1b[0m ${suggestionString}${isWrongLightVersionString}${isWrongHighContrastVersionString}`);
     });
 };
