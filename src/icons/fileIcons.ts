@@ -118,7 +118,7 @@ export const fileIcons: FileIcons = {
             ]
         },
         { name: 'typescript', fileExtensions: ['ts'] },
-        { name: 'typescript_def', fileExtensions: ['d.ts'] },
+        { name: 'typescript-def', fileExtensions: ['d.ts'] },
         { name: 'markojs', fileExtensions: ['marko'] },
         { name: 'pdf', fileExtensions: ['pdf'] },
         { name: 'table', fileExtensions: ['xlsx', 'xls', 'csv', 'tsv'] },
@@ -315,15 +315,15 @@ export const fileIcons: FileIcons = {
         },
         { name: 'vue', fileExtensions: ['vue'] },
         { name: 'ocaml', fileExtensions: ['ml', 'mli', 'cmx'] },
-        { name: 'jsmap', fileExtensions: ['js.map'] },
-        { name: 'cssmap', fileExtensions: ['css.map'] },
+        { name: 'javascript-map', fileExtensions: ['js.map'] },
+        { name: 'css-map', fileExtensions: ['css.map'] },
         { name: 'lock', fileExtensions: ['lock'] },
         { name: 'handlebars', fileExtensions: ['hbs', 'mustache'] },
         { name: 'perl', fileExtensions: ['pl', 'pm'] },
         { name: 'haxe', fileExtensions: ['hx'] },
-        { name: 'test_ts', fileExtensions: ['spec.ts', 'test.ts', 'ts.snap'] },
+        { name: 'test-ts', fileExtensions: ['spec.ts', 'test.ts', 'ts.snap'] },
         {
-            name: 'test_jsx',
+            name: 'test-jsx',
             fileExtensions: [
                 'spec.tsx',
                 'test.tsx',
@@ -333,29 +333,29 @@ export const fileIcons: FileIcons = {
                 'jsx.snap'
             ]
         },
-        { name: 'test_js', fileExtensions: ['spec.js', 'test.js', 'js.snap'] },
-        { name: 'angular_routing', fileExtensions: ['routing.ts', 'routing.js'] },
+        { name: 'test-js', fileExtensions: ['spec.js', 'test.js', 'js.snap'] },
+        { name: 'angular-routing', fileExtensions: ['routing.ts', 'routing.js'] },
         {
             name: 'angular',
             fileExtensions: ['module.ts', 'module.js', 'ng-template'],
             fileNames: ['angular-cli.json', '.angular-cli.json']
         },
         {
-            name: 'angular_component',
+            name: 'angular-component',
             fileExtensions: ['component.ts', 'component.js']
         },
-        { name: 'angular_guard', fileExtensions: ['guard.ts', 'guard.js'] },
-        { name: 'angular_service', fileExtensions: ['service.ts', 'service.js'] },
+        { name: 'angular-guard', fileExtensions: ['guard.ts', 'guard.js'] },
+        { name: 'angular-service', fileExtensions: ['service.ts', 'service.js'] },
         {
-            name: 'angular_pipe',
+            name: 'angular-pipe',
             fileExtensions: ['pipe.ts', 'pipe.js', 'filter.js']
         },
         {
-            name: 'angular_directive',
+            name: 'angular-directive',
             fileExtensions: ['directive.ts', 'directive.js']
         },
         {
-            name: 'angular_resolver',
+            name: 'angular-resolver',
             fileExtensions: ['resolver.ts', 'resolver.js']
         },
         { name: 'puppet', fileExtensions: ['pp'] },
@@ -373,7 +373,7 @@ export const fileIcons: FileIcons = {
         { name: 'merlin', fileExtensions: ['merlin'] },
         { name: 'verilog', fileExtensions: ['v', 'vhd'] },
         { name: 'mathematica', fileExtensions: ['nb'] },
-        { name: 'wolframlang', fileExtensions: ['wl', 'wls'] },
+        { name: 'wolframlanguage', fileExtensions: ['wl', 'wls'] },
         { name: 'nunjucks', fileExtensions: ['njk', 'nunjucks'] },
         { name: 'robot', fileExtensions: ['robot'] },
         { name: 'solidity', fileExtensions: ['sol'] },

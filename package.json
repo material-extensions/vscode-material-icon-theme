@@ -94,14 +94,17 @@
     }
   },
   "scripts": {
-    "vscode:prepublish": "npm run clean && npm run compile",
+    "vscode:prepublish": "npm run build",
+    "prebuild": "npm run clean",
+    "build": "npm run compile && npm run check && npm run generateJson",
     "clean": "rimraf ./out",
-    "compile": "tsc -p ./ && npm run compile:json",
+    "compile": "tsc -p ./",
     "compile:watch": "tsc -watch -p ./",
-    "compile:json": "ts-node ./scripts/icons/generateJson.ts",
+    "generateJson": "ts-node ./scripts/icons/generateJson.ts",
+    "check": "ts-node scripts/icons/checkIconAvailability.ts",
     "postinstall": "node ./node_modules/vscode/bin/install",
     "tslint": "tslint -c tslint.json ./src/**/*.ts ./scripts/**/*ts",
-    "pretest": "npm run vscode:prepublish",
+    "pretest": "npm run build",
     "test": "node ./node_modules/vscode/bin/test",
     "bithound": "bithound check git@github.com:PKief/vscode-material-icon-theme.git",
     "preview": "ts-node ./scripts/preview"
