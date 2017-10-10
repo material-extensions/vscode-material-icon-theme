@@ -1,7 +1,8 @@
 import * as path from 'path';
 import * as fs from 'fs';
 import { fileIcons, folderIcons, languageIcons } from './../../src/icons';
-import { similarity } from './similarity';
+import { similarity } from '../helpers/similarity';
+import * as painter from '../helpers/painter';
 import { FileIcon } from '../../src/models/index';
 
 /**
@@ -115,9 +116,9 @@ const checkLanguageIcons = () => {
 const printErrors = () => {
     const amountOfErrors = wrongIconNames.fileIcons.length + wrongIconNames.folderIcons.length + wrongIconNames.languageIcons.length;
     if (amountOfErrors > 0) {
-        console.log('> Material Icon Theme:', `\x1b[31m Found ${amountOfErrors} error(s) in the icon configuration!\x1b[0m`);
+        console.log('> Material Icon Theme:', painter.red(`Found ${amountOfErrors} error(s) in the icon configuration!`));
     } else {
-        console.log('> Material Icon Theme:', `\x1b[32m Passed all icon configuration checks!\x1b[0m`);
+        console.log('> Material Icon Theme:', painter.green(`Passed all icon configuration checks!`));
     }
     logIconInformation(wrongIconNames.fileIcons, 'File icons');
     logIconInformation(wrongIconNames.folderIcons, 'Folder icons');
@@ -135,11 +136,11 @@ const logIconInformation = (wrongIcons: string[], title: string) => {
         const suggestion = Object.keys(availableIcons).find((i) => {
             return similarity(icon, i) > 0.75;
         });
-        const suggestionString = suggestion ? '- Did you mean \x1b[32m' + `${suggestion}\x1b[0m?` : '';
+        const suggestionString = suggestion ? `- Did you mean ${painter.green(suggestion)}` : '';
         const isWrongLightVersion = icon.endsWith('_light');
-        const isWrongLightVersionString = isWrongLightVersion ? '- There is no light icon for \x1b[32m' + `${icon.slice(0, -6)}\x1b[0m! Set the light option to false!` : '';
+        const isWrongLightVersionString = isWrongLightVersion ? `- There is no light icon for ${painter.green(icon.slice(0, -6))}! Set the light option to false!` : '';
         const isWrongHighContrastVersion = icon.endsWith('_highContrast');
-        const isWrongHighContrastVersionString = isWrongHighContrastVersion ? '- There is no high contrast icon for \x1b[32m' + `${icon.slice(0, -13)}\x1b[0m! Set the highContrast option to false!` : '';
-        console.log(`\x1b[31m Icon not found: ${icon}\x1b[0m ${suggestionString}${isWrongLightVersionString}${isWrongHighContrastVersionString}`);
+        const isWrongHighContrastVersionString = isWrongHighContrastVersion ? `- There is no high contrast icon for ${painter.green(icon.slice(0, -13))}! Set the highContrast option to false!` : '';
+        console.log(painter.red(`Icon not found: ${icon}`) + `${suggestionString}${isWrongLightVersionString}${isWrongHighContrastVersionString}`);
     });
 };
