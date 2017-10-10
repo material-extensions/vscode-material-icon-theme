@@ -101,7 +101,7 @@
     "compile": "tsc -p ./",
     "compile:watch": "tsc -watch -p ./",
     "generateJson": "ts-node ./scripts/icons/generateJson.ts",
-    "check": "ts-node scripts/icons/checkIconAvailability.ts",
+    "check": "ts-node scripts/icons/checks",
     "postinstall": "node ./node_modules/vscode/bin/install",
     "tslint": "tslint -c tslint.json ./src/**/*.ts ./scripts/**/*ts",
     "pretest": "npm run build",

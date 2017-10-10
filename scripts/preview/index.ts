@@ -9,6 +9,7 @@ import * as path from 'path';
 import { Icon, MarkdownConfig } from './models';
 import { generateMarkdown } from './createMatrix';
 import { toUpperCase } from './helpers';
+import { openedFolder } from '../../src/icons/index';
 
 // Define the folder icon of all icons
 const folderPath = path.join('icons');
@@ -29,7 +30,7 @@ const init = () => {
         iconList: folderIcons,
         markdownName: 'folder-icons.md',
         columns: 4,
-        exclude: ['-open'],
+        exclude: [openedFolder],
         filterName: 'Folder-',
         outputPath: path.join('images')
     });
@@ -47,7 +48,7 @@ const fsReadAllIconFiles = (err: Error, files: string[]) => {
     // get each icon file from the icons folder
     files.forEach(file => {
         let fileName = file;
-        let iconName = toUpperCase(file.slice(0, -4));
+        let iconName = toUpperCase(path.parse(file).name);
 
         if (String(iconName).toLowerCase().includes('folder')) {
             folderIcons.push({ fileName: fileName, iconName: iconName });

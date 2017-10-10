@@ -1,9 +1,9 @@
 import * as path from 'path';
 import * as fs from 'fs';
-import { fileIcons, folderIcons, languageIcons } from './../../src/icons';
-import { similarity } from '../helpers/similarity';
-import * as painter from '../helpers/painter';
-import { FileIcon } from '../../src/models/index';
+import { fileIcons, folderIcons, languageIcons, lightVersion, highContrastVersion } from './../../../src/icons';
+import { similarity } from '../../helpers/similarity';
+import * as painter from '../../helpers/painter';
+import { FileIcon } from '../../../src/models/index';
 
 /**
  * Defines the folder where all icon files are located.
@@ -44,7 +44,7 @@ const fsReadAllIconFiles = (err: Error, files: string[]) => {
 };
 
 // read from the file system
-fs.readdir(folderPath, fsReadAllIconFiles);
+export const check = () => fs.readdir(folderPath, fsReadAllIconFiles);
 
 /**
  * Check if the file icons from the configuration are available on the file system.
@@ -64,9 +64,9 @@ const checkFileIcons = () => {
  */
 const checkLightVersion = (icon: FileIcon) => {
     if (icon.light === true) {
-        const lightVersion = `${icon.name}_light`;
-        if (!availableIcons[lightVersion]) {
-            wrongIconNames.fileIcons.push(lightVersion);
+        const lightIcon = `${icon.name}${lightVersion}`;
+        if (!availableIcons[lightIcon]) {
+            wrongIconNames.fileIcons.push(lightIcon);
         }
     }
 };
@@ -76,9 +76,9 @@ const checkLightVersion = (icon: FileIcon) => {
  */
 const checkHighContrastVersion = (icon: FileIcon) => {
     if (icon.highContrast === true) {
-        const highContrastVersion = `${icon.name}_highContrast`;
-        if (!availableIcons[highContrastVersion]) {
-            wrongIconNames.fileIcons.push(highContrastVersion);
+        const highContrastIcon = `${icon.name}${highContrastVersion}`;
+        if (!availableIcons[highContrastIcon]) {
+            wrongIconNames.fileIcons.push(highContrastIcon);
         }
     }
 };
@@ -91,7 +91,8 @@ const checkFolderIcons = () => {
         folderIcons.defaultIcon,
         folderIcons.rootFolder,
         ...folderIcons.icons.map(icon => icon.name),
-        ...folderIcons.themes.map(theme => theme.defaultIcon)
+        ...folderIcons.themes.map(theme => theme.defaultIcon),
+        ...folderIcons.themes.map(theme => theme.rootFolder)
     ].forEach(icon => {
         if (!availableIcons[icon] && icon) {
             wrongIconNames.folderIcons.push(icon);
@@ -118,7 +119,7 @@ const printErrors = () => {
     if (amountOfErrors > 0) {
         console.log('> Material Icon Theme:', painter.red(`Found ${amountOfErrors} error(s) in the icon configuration!`));
     } else {
-        console.log('> Material Icon Theme:', painter.green(`Passed all icon configuration checks!`));
+        console.log('> Material Icon Theme:', painter.green(`Passed icon availability checks!`));
     }
     logIconInformation(wrongIconNames.fileIcons, 'File icons');
     logIconInformation(wrongIconNames.folderIcons, 'Folder icons');
@@ -137,9 +138,9 @@ const logIconInformation = (wrongIcons: string[], title: string) => {
             return similarity(icon, i) > 0.75;
         });
         const suggestionString = suggestion ? `- Did you mean ${painter.green(suggestion)}` : '';
-        const isWrongLightVersion = icon.endsWith('_light');
+        const isWrongLightVersion = icon.endsWith(lightVersion);
         const isWrongLightVersionString = isWrongLightVersion ? `- There is no light icon for ${painter.green(icon.slice(0, -6))}! Set the light option to false!` : '';
-        const isWrongHighContrastVersion = icon.endsWith('_highContrast');
+        const isWrongHighContrastVersion = icon.endsWith(highContrastVersion);
         const isWrongHighContrastVersionString = isWrongHighContrastVersion ? `- There is no high contrast icon for ${painter.green(icon.slice(0, -13))}! Set the highContrast option to false!` : '';
         console.log(painter.red(`Icon not found: ${icon}`) + `${suggestionString}${isWrongLightVersionString}${isWrongHighContrastVersionString}`);
     });

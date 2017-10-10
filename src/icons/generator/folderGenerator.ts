@@ -1,4 +1,4 @@
-import { iconFolderPath } from './constants';
+import { iconFolderPath, openedFolder } from './constants';
 import { FolderIcons, IconConfiguration, FolderTheme, FolderIcon, IconJsonOptions, FolderType } from '../../models/index';
 import * as merge from 'lodash.merge';
 
@@ -18,14 +18,14 @@ export const getFolderIconDefinitions = (folderIcons: FolderIcons, config: IconC
             config.iconDefinitions[icon.name] = {
                 iconPath: `${iconFolderPath}${icon.name}.svg`
             };
-            config.iconDefinitions[`${icon.name}-open`] = {
-                iconPath: `${iconFolderPath}${icon.name}-open.svg`
+            config.iconDefinitions[`${icon.name}${openedFolder}`] = {
+                iconPath: `${iconFolderPath}${icon.name}${openedFolder}.svg`
             };
             icon.folderNames.forEach(fn => {
                 config.folderNames[fn] = icon.name;
             });
             icon.folderNames.forEach(fn => {
-                config.folderNamesExpanded[fn] = `${icon.name}-open`;
+                config.folderNamesExpanded[fn] = `${icon.name}${openedFolder}`;
             });
         });
 
@@ -50,14 +50,14 @@ const setDefaultFolderIcons = (icons: FolderTheme | FolderIcons): IconConfigurat
         config.iconDefinitions[icons.defaultIcon] = {
             iconPath: `${iconFolderPath}${icons.defaultIcon}.svg`
         };
-        config.iconDefinitions[`${icons.defaultIcon}-open`] = {
-            iconPath: `${iconFolderPath}${icons.defaultIcon}-open.svg`
+        config.iconDefinitions[`${icons.defaultIcon}${openedFolder}`] = {
+            iconPath: `${iconFolderPath}${icons.defaultIcon}${openedFolder}.svg`
         };
     }
     config.folder = hasFolderIcons ? icons.defaultIcon : '';
-    config.folderExpanded = hasFolderIcons ? `${icons.defaultIcon}-open` : '';
+    config.folderExpanded = hasFolderIcons ? `${icons.defaultIcon}${openedFolder}` : '';
     config.rootFolder = icons.rootFolder ? icons.rootFolder : hasFolderIcons ? icons.defaultIcon : '';
-    config.rootFolderExpanded = icons.rootFolder ? `${icons.rootFolder}-open` : hasFolderIcons ? `${icons.defaultIcon}-open` : '';
+    config.rootFolderExpanded = icons.rootFolder ? `${icons.rootFolder}${openedFolder}` : hasFolderIcons ? `${icons.defaultIcon}${openedFolder}` : '';
     return config;
 };
 

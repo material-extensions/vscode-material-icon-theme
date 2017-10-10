@@ -1,5 +1,5 @@
 import { FileIcons, IconConfiguration, FileIcon, IconJsonOptions } from '../../models/index';
-import { iconFolderPath } from './constants';
+import { iconFolderPath, lightVersion, highContrastVersion } from './constants';
 import * as merge from 'lodash.merge';
 
 /**
@@ -13,13 +13,13 @@ export const getFileIconDefinitions = (fileIcons: FileIcons, config: IconConfigu
             iconPath: `${iconFolderPath}${icon.name}.svg`
         };
         if (icon.light) {
-            config.iconDefinitions[`${icon.name}_light`] = {
-                iconPath: `${iconFolderPath}${icon.name}_light.svg`
+            config.iconDefinitions[`${icon.name}${lightVersion}`] = {
+                iconPath: `${iconFolderPath}${icon.name}${lightVersion}.svg`
             };
         }
         if (icon.highContrast) {
-            config.iconDefinitions[`${icon.name}_highContrast`] = {
-                iconPath: `${iconFolderPath}${icon.name}_highContrast.svg`
+            config.iconDefinitions[`${icon.name}${highContrastVersion}`] = {
+                iconPath: `${iconFolderPath}${icon.name}${highContrastVersion}.svg`
             };
         }
         if (icon.fileExtensions) {
@@ -47,10 +47,10 @@ const mapSpecificFileIcons = (icon: FileIcon, mappingType: FileMappingType) => {
     icon[mappingType].forEach(ext => {
         config[mappingType][ext] = icon.name;
         if (icon.light) {
-            config.light[mappingType][ext] = `${icon.name}_light`;
+            config.light[mappingType][ext] = `${icon.name}${lightVersion}`;
         }
         if (icon.highContrast) {
-            config.highContrast[mappingType][ext] = `${icon.name}_highContrast`;
+            config.highContrast[mappingType][ext] = `${icon.name}${highContrastVersion}`;
         }
     });
     return config;
