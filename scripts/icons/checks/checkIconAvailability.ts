@@ -1,9 +1,9 @@
 import * as path from 'path';
 import * as fs from 'fs';
-import { fileIcons, folderIcons, languageIcons, lightVersion, highContrastVersion } from './../../../src/icons';
+import { fileIcons, folderIcons, languageIcons, lightVersion, highContrastVersion, openedFolder } from './../../../src/icons';
 import { similarity } from '../../helpers/similarity';
 import * as painter from '../../helpers/painter';
-import { FileIcon } from '../../../src/models/index';
+import { FileIcon, FolderType } from '../../../src/models/index';
 
 /**
  * Defines the folder where all icon files are located.
@@ -88,17 +88,31 @@ const checkHighContrastVersion = (icon: FileIcon) => {
  */
 const checkFolderIcons = () => {
     [
-        folderIcons.defaultIcon,
-        folderIcons.rootFolder,
-        ...folderIcons.icons.map(icon => icon.name),
-        ...folderIcons.themes.map(theme => theme.defaultIcon),
-        ...folderIcons.themes.map(theme => theme.rootFolder)
+        ...getAllFolderIcons(folderIcons),
+        ...folderIcons.themes.map(theme =>
+            theme.name === FolderType.None ? undefined :
+                getAllFolderIcons(theme)).reduce((a, b) => a.concat(b))
     ].forEach(icon => {
         if (!availableIcons[icon] && icon) {
             wrongIconNames.folderIcons.push(icon);
         }
     });
 };
+
+const getAllFolderIcons = (f_icons) => {
+    const specificIcons = f_icons.icons ? [
+        ...f_icons.icons.map(icon => icon.name),
+        ...f_icons.icons.map(icon => icon.name + openedFolder)
+    ] : [];
+    return [
+        f_icons.defaultIcon,
+        f_icons.rootFolder ? f_icons.rootFolder : f_icons.defaultIcon,
+        f_icons.defaultIcon + openedFolder,
+        f_icons.rootFolder ? f_icons.rootFolder + openedFolder : f_icons.defaultIcon + openedFolder,
+        ...specificIcons
+    ];
+};
+
 
 /**
  * Check if the language icons from the configuration are available on the file system.
@@ -137,7 +151,7 @@ const logIconInformation = (wrongIcons: string[], title: string) => {
         const suggestion = Object.keys(availableIcons).find((i) => {
             return similarity(icon, i) > 0.75;
         });
-        const suggestionString = suggestion ? `- Did you mean ${painter.green(suggestion)}` : '';
+        const suggestionString = suggestion ? `- Did you mean ${painter.green(suggestion)}?` : '';
         const isWrongLightVersion = icon.endsWith(lightVersion);
         const isWrongLightVersionString = isWrongLightVersion ? `- There is no light icon for ${painter.green(icon.slice(0, -6))}! Set the light option to false!` : '';
         const isWrongHighContrastVersion = icon.endsWith(highContrastVersion);
