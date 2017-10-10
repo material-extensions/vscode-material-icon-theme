@@ -103,7 +103,7 @@
     "tslint": "tslint -c tslint.json ./src/**/*.ts ./scripts/**/*ts",
     "pretest": "npm run vscode:prepublish",
     "test": "node ./node_modules/vscode/bin/test",
-    "check": "bithound check git@github.com:PKief/vscode-material-icon-theme.git",
+    "bithound": "bithound check git@github.com:PKief/vscode-material-icon-theme.git",
     "preview": "ts-node ./scripts/preview"
   },
   "dependencies": {
