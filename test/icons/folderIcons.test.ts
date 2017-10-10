@@ -63,7 +63,7 @@ suite('folder icons', () => {
         assert.deepEqual(def, value);
     });
 
-    test('deactivate folder icons', () => {
+    test('should deactivate folder icons', () => {
         const options = getDefaultIconOptions();
         options.folderTheme = FolderType.None;
         const def = getFolderIconDefinitions(folderIcons, iconConfig, options);
@@ -76,7 +76,7 @@ suite('folder icons', () => {
         assert.deepEqual(def, value);
     });
 
-    test('enable folder theme', () => {
+    test('should enable folder theme', () => {
         const options = getDefaultIconOptions();
         options.folderTheme = FolderType.Blue;
         const def = getFolderIconDefinitions(folderIcons, iconConfig, options);
@@ -98,7 +98,7 @@ suite('folder icons', () => {
         assert.deepEqual(def, value);
     });
 
-    test('enable folder theme and use default icons', () => {
+    test('should enable folder theme and use default icons', () => {
         const options = getDefaultIconOptions();
         options.folderTheme = FolderType.Blue;
         const folderIconsUpdated = merge({}, folderIcons);
