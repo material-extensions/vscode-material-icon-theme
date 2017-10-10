@@ -1,5 +1,5 @@
 import * as assert from 'assert';
-import { IconConfiguration, FolderIcons, FolderType, IconJsonOptions } from '../../src/models/index';
+import { IconConfiguration, FolderIcons, FolderType, IconJsonOptions, IconGroup } from '../../src/models/index';
 import { getFolderIconDefinitions, getDefaultIconOptions } from '../../src/icons/index';
 import * as merge from 'lodash.merge';
 
@@ -9,7 +9,7 @@ suite('folder icons', () => {
         rootFolder: 'folder',
         icons: [
             { name: 'folder-src', folderNames: ['src', 'source'] },
-            { name: 'folder-dist', folderNames: ['dist', 'build'] }
+            { name: 'folder-angular', folderNames: ['angular', 'ng'], group: IconGroup.Angular }
         ],
         themes: [
             { name: FolderType.Blue, defaultIcon: 'folder-blue' },
@@ -36,11 +36,11 @@ suite('folder icons', () => {
             'folder-src-open': {
                 'iconPath': './../../icons/folder-src-open.svg'
             },
-            'folder-dist': {
-                'iconPath': './../../icons/folder-dist.svg'
+            'folder-angular': {
+                'iconPath': './../../icons/folder-angular.svg'
             },
-            'folder-dist-open': {
-                'iconPath': './../../icons/folder-dist-open.svg'
+            'folder-angular-open': {
+                'iconPath': './../../icons/folder-angular-open.svg'
             }
         };
         value.folder = 'folder';
@@ -50,14 +50,14 @@ suite('folder icons', () => {
         value.folderNames = {
             'src': 'folder-src',
             'source': 'folder-src',
-            'dist': 'folder-dist',
-            'build': 'folder-dist'
+            'angular': 'folder-angular',
+            'ng': 'folder-angular'
         };
         value.folderNamesExpanded = {
             'src': 'folder-src-open',
             'source': 'folder-src-open',
-            'dist': 'folder-dist-open',
-            'build': 'folder-dist-open'
+            'angular': 'folder-angular-open',
+            'ng': 'folder-angular-open'
         };
 
         assert.deepEqual(def, value);
@@ -120,11 +120,11 @@ suite('folder icons', () => {
             'folder-src-open': {
                 'iconPath': './../../icons/folder-src-open.svg'
             },
-            'folder-dist': {
-                'iconPath': './../../icons/folder-dist.svg'
+            'folder-angular': {
+                'iconPath': './../../icons/folder-angular.svg'
             },
-            'folder-dist-open': {
-                'iconPath': './../../icons/folder-dist-open.svg'
+            'folder-angular-open': {
+                'iconPath': './../../icons/folder-angular-open.svg'
             }
         };
         value.folder = 'folder-blue';
@@ -135,14 +135,49 @@ suite('folder icons', () => {
         value.folderNames = {
             'src': 'folder-src',
             'source': 'folder-src',
-            'dist': 'folder-dist',
-            'build': 'folder-dist'
+            'angular': 'folder-angular',
+            'ng': 'folder-angular'
         };
         value.folderNamesExpanded = {
             'src': 'folder-src-open',
             'source': 'folder-src-open',
-            'dist': 'folder-dist-open',
-            'build': 'folder-dist-open'
+            'angular': 'folder-angular-open',
+            'ng': 'folder-angular-open'
+        };
+
+        assert.deepEqual(def, value);
+    });
+
+    test('should disable icon group', () => {
+        const options = getDefaultIconOptions();
+        options.activatedGroups[IconGroup.Angular] = false;
+        const def = getFolderIconDefinitions(folderIcons, iconConfig, options);
+        const value = new IconConfiguration();
+        value.iconDefinitions = {
+            'folder': {
+                'iconPath': './../../icons/folder.svg'
+            },
+            'folder-open': {
+                'iconPath': './../../icons/folder-open.svg'
+            },
+            'folder-src': {
+                'iconPath': './../../icons/folder-src.svg'
+            },
+            'folder-src-open': {
+                'iconPath': './../../icons/folder-src-open.svg'
+            }
+        };
+        value.folder = 'folder';
+        value.folderExpanded = 'folder-open';
+        value.rootFolder = 'folder';
+        value.rootFolderExpanded = 'folder-open';
+        value.folderNames = {
+            'src': 'folder-src',
+            'source': 'folder-src'
+        };
+        value.folderNamesExpanded = {
+            'src': 'folder-src-open',
+            'source': 'folder-src-open'
         };
 
         assert.deepEqual(def, value);

@@ -13,7 +13,7 @@ export const getFolderIconDefinitions = (folderIcons: FolderIcons, config: IconC
     const disabledFolderIcons = options.folderTheme === FolderType.None;
 
     if (!disabledFolderIcons) {
-        icons.forEach(icon => {
+        disableIconsByGroup(icons, options.activatedGroups).forEach(icon => {
             if (icon.disabled) return;
             config.iconDefinitions[icon.name] = {
                 iconPath: `${iconFolderPath}${icon.name}.svg`
@@ -68,4 +68,13 @@ const setDefaultFolderIcons = (icons: FolderTheme | FolderIcons): IconConfigurat
  */
 const getEnabledFolderTheme = (folderIcons: FolderIcons, enabledTheme: FolderType): FolderTheme => {
     return folderIcons.themes.filter(theme => theme.name === enabledTheme)[0];
+};
+
+/**
+ * Disable all file icons that are in a group which is disabled.
+ */
+const disableIconsByGroup = (folderIcons: FolderIcon[], activatedIconGroups): FolderIcon[] => {
+    return folderIcons.filter(icon => {
+        return !icon.group ? true : activatedIconGroups[icon.group] || false;
+    });
 };

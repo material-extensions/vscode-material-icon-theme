@@ -9,9 +9,9 @@ import * as path from 'path';
 import * as fs from 'fs';
 
 /**
- * Generate the complete icon JSON file that will be used to show the icons in the editor.
+ * Generate the complete icon configuration object that can be written as JSON file.
  */
-export const generateIconJson = (options: IconJsonOptions) => {
+export const generateIconConfigurationObject = (options: IconJsonOptions): IconConfiguration => {
     const iconConfig = new IconConfiguration();
     const languageIconDefinitions = getLanguageIconDefinitions(languageIcons, iconConfig);
     const fileIconDefinitions = getFileIconDefinitions(fileIcons, iconConfig, options);
@@ -26,7 +26,7 @@ export const generateIconJson = (options: IconJsonOptions) => {
 export const createIconFile = (options: IconJsonOptions = getDefaultIconOptions()) => {
     const fileName = iconJsonName;
     const iconJSONPath = path.join(__dirname, '../../../', 'src', fileName);
-    const json = generateIconJson(options);
+    const json = generateIconConfigurationObject(options);
     return new Promise((resolve, reject) => {
         fs.writeFile(iconJSONPath, JSON.stringify(json, null, 2), (err) => {
             if (err) {

@@ -1,3 +1,5 @@
+import { IconGroup } from '../index';
+
 export interface FolderIcon {
     /**
      * Name of the icon, e.g. 'src'
@@ -24,4 +26,9 @@ export interface FolderIcon {
      * Define if the icon should be disabled.
      */
     disabled?: boolean;
+
+    /**
+     * Defines a group to which this icon belongs. A group can be toggled and all icons inside this group can be enabled or disabled together.
+     */
+    group?: IconGroup;
 }

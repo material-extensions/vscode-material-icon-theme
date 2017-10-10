@@ -1,4 +1,4 @@
-import { FolderIcons, FolderType } from '../models/index';
+import { FolderIcons, FolderType, IconGroup } from '../models/index';
 
 /**
  * Defines folder icons
@@ -7,7 +7,7 @@ export const folderIcons: FolderIcons = {
     defaultIcon: 'folder',
     rootFolder: 'folder',
     icons: [
-        { name: 'folder-src', folderNames: ['src', 'source'] },
+        { name: 'folder-src', folderNames: ['src', 'source'], group: IconGroup.Angular },
         { name: 'folder-dist', folderNames: ['dist', 'build'] },
         { name: 'folder-test', folderNames: ['test', 'tests'] }
     ],
