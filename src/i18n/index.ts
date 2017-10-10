@@ -53,7 +53,7 @@ export const translate = (key: string, translations = currentTranslation, fallba
 /** Get the nested keys of an object (http://stackoverflow.com/a/6491621/6942210)
  *
  * *This solution is lighter than the lodash get-version and works fine for the translations.* */
-const getValue = (obj: any, key: string): string => {
+export const getValue = (obj: any, key: string): string => {
     // convert indexes to properties
     key = key.replace(/\[(\w+)\]/g, '.$1');
 
