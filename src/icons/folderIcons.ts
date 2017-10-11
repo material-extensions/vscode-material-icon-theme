@@ -4,8 +4,8 @@ import { FolderIcons, FolderType, IconGroup } from '../models/index';
  * Defines folder icons
  */
 export const folderIcons: FolderIcons = {
-    defaultIcon: 'folder',
-    rootFolder: 'folder',
+    defaultIcon: { name: 'folder' },
+    rootFolder: { name: 'folder' },
     icons: [
         { name: 'folder-src', folderNames: ['src', 'source', 'sources'] },
         { name: 'folder-dist', folderNames: ['dist', 'out', 'build'] },
@@ -64,8 +64,8 @@ export const folderIcons: FolderIcons = {
         { name: 'folder-docker', folderNames: ['docker', '.docker'] }
     ],
     themes: [
-        { name: FolderType.Classic, defaultIcon: 'folder' },
-        { name: FolderType.Blue, defaultIcon: 'folder-blue' },
-        { name: FolderType.None, defaultIcon: '' },
+        { name: FolderType.Classic, defaultIcon: { name: 'folder' } },
+        { name: FolderType.Blue, defaultIcon: { name: 'folder-blue' } },
+        { name: FolderType.None, defaultIcon: { name: '' } },
     ]
 };

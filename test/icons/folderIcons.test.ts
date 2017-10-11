@@ -5,16 +5,16 @@ import * as merge from 'lodash.merge';
 
 suite('folder icons', () => {
     const folderIcons: FolderIcons = {
-        defaultIcon: 'folder',
-        rootFolder: 'folder',
+        defaultIcon: { name: 'folder' },
+        rootFolder: { name: 'folder' },
         icons: [
             { name: 'folder-src', folderNames: ['src', 'source'] },
             { name: 'folder-angular', folderNames: ['angular', 'ng'], group: IconGroup.Angular }
         ],
         themes: [
-            { name: FolderType.Blue, defaultIcon: 'folder-blue' },
-            { name: FolderType.Classic, defaultIcon: 'folder' },
-            { name: FolderType.None, defaultIcon: '' },
+            { name: FolderType.Blue, defaultIcon: { name: 'folder-blue' } },
+            { name: FolderType.Classic, defaultIcon: { name: 'folder' } },
+            { name: FolderType.None, defaultIcon: { name: '' } },
         ]
     };
     const iconConfig = new IconConfiguration();
@@ -80,13 +80,13 @@ suite('folder icons', () => {
         const folderIconsWithFolderThemeIcons: FolderIcons = merge({}, folderIcons);
         folderIconsWithFolderThemeIcons.themes = [
             {
-                name: FolderType.Blue, defaultIcon: 'folder-blue',
+                name: FolderType.Blue, defaultIcon: { name: 'folder-blue' },
                 icons: [
                     { name: 'folder-blue-src', folderNames: ['src', 'source'] },
                 ]
             },
-            { name: FolderType.Classic, defaultIcon: 'folder' },
-            { name: FolderType.None, defaultIcon: '' },
+            { name: FolderType.Classic, defaultIcon: { name: 'folder' } },
+            { name: FolderType.None, defaultIcon: { name: '' } },
         ];
         const options = getDefaultIconOptions();
         options.folderTheme = FolderType.Blue;

@@ -2,7 +2,7 @@ import * as path from 'path';
 import * as fs from 'fs';
 import { fileIcons, folderIcons, languageIcons, openedFolder, lightVersion, highContrastVersion } from './../../../src/icons';
 import * as painter from './../../helpers/painter';
-import { FolderType } from '../../../src/models/index';
+import { FolderType, FolderIcons } from '../../../src/models/index';
 
 /**
  * Defines the folder where all icon files are located.
@@ -71,17 +71,16 @@ const getAllUsedIcons = (): string[] => {
     return test;
 };
 
-const getAllFolderIcons = (f_icons) => {
+const getAllFolderIcons = (f_icons: FolderIcons) => {
     const specificIcons = f_icons.icons ? [
         ...f_icons.icons.map(icon => icon.name),
         ...f_icons.icons.map(icon => icon.name + openedFolder)
     ] : [];
     return [
-        f_icons.defaultIcon,
-        f_icons.rootFolder ? f_icons.rootFolder : f_icons.defaultIcon,
-        f_icons.defaultIcon + openedFolder,
-        f_icons.rootFolder ? f_icons.rootFolder + openedFolder : f_icons.defaultIcon + openedFolder,
+        f_icons.defaultIcon.name,
+        f_icons.rootFolder ? f_icons.rootFolder.name : f_icons.defaultIcon.name,
+        f_icons.defaultIcon.name + openedFolder,
+        f_icons.rootFolder ? f_icons.rootFolder.name + openedFolder : f_icons.defaultIcon.name + openedFolder,
         ...specificIcons
     ];
 };
-

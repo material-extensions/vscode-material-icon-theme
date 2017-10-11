@@ -1,4 +1,4 @@
-import { FolderIcon, FolderType } from '../index';
+import { FolderIcon, FolderType, DefaultIcon } from '../index';
 
 export interface FolderTheme {
     /**
@@ -9,7 +9,7 @@ export interface FolderTheme {
     /**
      * Define the default icon for folders in a theme.
      */
-    defaultIcon: string;
+    defaultIcon: DefaultIcon;
 
     /**
      * Defines folder icons for specific folder names.
@@ -19,7 +19,7 @@ export interface FolderTheme {
     /**
      * Icon for root folders.
      */
-    rootFolder?: string;
+    rootFolder?: DefaultIcon;
 
     /**
      * Decide if the default folder icons for the folder names should be used.

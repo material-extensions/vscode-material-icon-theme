@@ -1,5 +1,5 @@
 import { iconFolderPath, openedFolder } from './constants';
-import { FolderIcons, IconConfiguration, FolderTheme, FolderIcon, IconJsonOptions, FolderType } from '../../models/index';
+import { FolderIcons, IconConfiguration, FolderTheme, FolderIcon, IconJsonOptions, FolderType, DefaultIcon } from '../../models/index';
 import * as merge from 'lodash.merge';
 
 /**
@@ -15,25 +15,14 @@ export const getFolderIconDefinitions = (folderIcons: FolderIcons, config: IconC
     if (!disabledFolderIcons) {
         disableIconsByGroup(icons, options.activatedGroups).forEach(icon => {
             if (icon.disabled) return;
-            config.iconDefinitions[icon.name] = {
-                iconPath: `${iconFolderPath}${icon.name}.svg`
-            };
-            config.iconDefinitions[`${icon.name}${openedFolder}`] = {
-                iconPath: `${iconFolderPath}${icon.name}${openedFolder}.svg`
-            };
+            config = setIconDefinitions(config, icon);
             icon.folderNames.forEach(fn => {
                 config.folderNames[fn] = icon.name;
-            });
-            icon.folderNames.forEach(fn => {
                 config.folderNamesExpanded[fn] = `${icon.name}${openedFolder}`;
             });
         });
 
-        if (theme) {
-            config = merge({}, config, setDefaultFolderIcons(theme));
-        } else {
-            config = merge({}, config, setDefaultFolderIcons(folderIcons));
-        }
+        config = merge({}, config, setDefaultFolderIcons(theme || folderIcons));
     }
 
     return config;
@@ -44,20 +33,16 @@ export const getFolderIconDefinitions = (folderIcons: FolderIcons, config: IconC
  * @param icons Folder icons configuration
  */
 const setDefaultFolderIcons = (icons: FolderTheme | FolderIcons): IconConfiguration => {
-    const config = new IconConfiguration();
-    const hasFolderIcons = icons.defaultIcon && icons.defaultIcon.length > 0;
+    let config = new IconConfiguration();
+    const hasFolderIcons = icons.defaultIcon.name && icons.defaultIcon.name.length > 0;
     if (hasFolderIcons) {
-        config.iconDefinitions[icons.defaultIcon] = {
-            iconPath: `${iconFolderPath}${icons.defaultIcon}.svg`
-        };
-        config.iconDefinitions[`${icons.defaultIcon}${openedFolder}`] = {
-            iconPath: `${iconFolderPath}${icons.defaultIcon}${openedFolder}.svg`
-        };
+        config = setIconDefinitions(config, icons.defaultIcon);
     }
-    config.folder = hasFolderIcons ? icons.defaultIcon : '';
-    config.folderExpanded = hasFolderIcons ? `${icons.defaultIcon}${openedFolder}` : '';
-    config.rootFolder = icons.rootFolder ? icons.rootFolder : hasFolderIcons ? icons.defaultIcon : '';
-    config.rootFolderExpanded = icons.rootFolder ? `${icons.rootFolder}${openedFolder}` : hasFolderIcons ? `${icons.defaultIcon}${openedFolder}` : '';
+    config.folder = hasFolderIcons ? icons.defaultIcon.name : '';
+    config.folderExpanded = hasFolderIcons ? `${icons.defaultIcon.name}${openedFolder}` : '';
+    config.rootFolder = icons.rootFolder ? icons.rootFolder.name : hasFolderIcons ? icons.defaultIcon.name : '';
+    config.rootFolderExpanded = icons.rootFolder ? `${icons.rootFolder.name}${openedFolder}` : hasFolderIcons ? `${icons.defaultIcon.name}${openedFolder}` : '';
+
     return config;
 };
 
@@ -92,4 +77,14 @@ const getFolderIcons = (theme: FolderTheme, folderIcons: FolderIcons): FolderIco
     } else {
         return folderIcons.icons;
     }
+};
+
+const setIconDefinitions = (config: IconConfiguration, icon: FolderIcon | DefaultIcon) => {
+    config.iconDefinitions[icon.name] = {
+        iconPath: `${iconFolderPath}${icon.name}.svg`
+    };
+    config.iconDefinitions[`${icon.name}${openedFolder}`] = {
+        iconPath: `${iconFolderPath}${icon.name}${openedFolder}.svg`
+    };
+    return merge({}, config);
 };
