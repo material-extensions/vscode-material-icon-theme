@@ -9,7 +9,7 @@ export const getFolderIconDefinitions = (folderIcons: FolderIcons, config: IconC
     let icons: FolderIcon[];
     config = merge({}, config);
     const theme = getEnabledFolderTheme(folderIcons, options.folderTheme);
-    icons = theme ? theme.icons || theme.useDefaultIcons ? folderIcons.icons : [] : folderIcons.icons;
+    icons = getFolderIcons(theme, folderIcons);
     const disabledFolderIcons = options.folderTheme === FolderType.None;
 
     if (!disabledFolderIcons) {
@@ -77,4 +77,19 @@ const disableIconsByGroup = (folderIcons: FolderIcon[], activatedIconGroups): Fo
     return folderIcons.filter(icon => {
         return !icon.group ? true : activatedIconGroups[icon.group] || false;
     });
+};
+
+/**
+ * Decide which folder icons should be used.
+ */
+const getFolderIcons = (theme: FolderTheme, folderIcons: FolderIcons): FolderIcon[] => {
+    if (theme) {
+        if (theme.icons && theme.icons.length > 0) {
+            return theme.icons;
+        } else {
+            return theme.useDefaultIcons ? folderIcons.icons : [];
+        }
+    } else {
+        return folderIcons.icons;
+    }
 };

@@ -151,7 +151,7 @@ const logIconInformation = (wrongIcons: string[], title: string) => {
         const suggestion = Object.keys(availableIcons).find((i) => {
             return similarity(icon, i) > 0.75;
         });
-        const suggestionString = suggestion ? `- Did you mean ${painter.green(suggestion)}?` : '';
+        const suggestionString = suggestion ? ` (Did you mean ${painter.green(suggestion)}?)` : '';
         const isWrongLightVersion = icon.endsWith(lightVersion);
         const isWrongLightVersionString = isWrongLightVersion ? `- There is no light icon for ${painter.green(icon.slice(0, -6))}! Set the light option to false!` : '';
         const isWrongHighContrastVersion = icon.endsWith(highContrastVersion);

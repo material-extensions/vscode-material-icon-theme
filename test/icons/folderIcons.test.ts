@@ -77,9 +77,20 @@ suite('folder icons', () => {
     });
 
     test('should enable folder theme', () => {
+        const folderIconsWithFolderThemeIcons: FolderIcons = merge({}, folderIcons);
+        folderIconsWithFolderThemeIcons.themes = [
+            {
+                name: FolderType.Blue, defaultIcon: 'folder-blue',
+                icons: [
+                    { name: 'folder-blue-src', folderNames: ['src', 'source'] },
+                ]
+            },
+            { name: FolderType.Classic, defaultIcon: 'folder' },
+            { name: FolderType.None, defaultIcon: '' },
+        ];
         const options = getDefaultIconOptions();
         options.folderTheme = FolderType.Blue;
-        const def = getFolderIconDefinitions(folderIcons, iconConfig, options);
+        const def = getFolderIconDefinitions(folderIconsWithFolderThemeIcons, iconConfig, options);
         const value = new IconConfiguration();
 
         value.iconDefinitions = {
@@ -88,12 +99,27 @@ suite('folder icons', () => {
             },
             'folder-blue-open': {
                 'iconPath': './../../icons/folder-blue-open.svg'
+            },
+            'folder-blue-src': {
+                'iconPath': './../../icons/folder-blue-src.svg'
+            },
+            'folder-blue-src-open': {
+                'iconPath': './../../icons/folder-blue-src-open.svg'
             }
         };
         value.folder = 'folder-blue';
         value.folderExpanded = 'folder-blue-open';
         value.rootFolder = 'folder-blue';
         value.rootFolderExpanded = 'folder-blue-open';
+
+        value.folderNames = {
+            'src': 'folder-blue-src',
+            'source': 'folder-blue-src'
+        };
+        value.folderNamesExpanded = {
+            'src': 'folder-blue-src-open',
+            'source': 'folder-blue-src-open'
+        };
 
         assert.deepEqual(def, value);
     });
