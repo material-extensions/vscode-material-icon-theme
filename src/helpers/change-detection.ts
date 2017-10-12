@@ -26,7 +26,7 @@ const compareAngularConfigs = () => {
 
     return checkAngularIconsStatus().then(result => {
         // if the settings are different to the current material-icons.json file
-        if (angularIconsConfig.globalValue !== result) {
+        if (angularIconsConfig.globalValue !== undefined && angularIconsConfig.globalValue !== result) {
             if (angularIconsConfig.globalValue === true) {
                 enableAngularIcons();
             } else if (angularIconsConfig.globalValue === false) {
