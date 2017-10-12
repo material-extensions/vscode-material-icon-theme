@@ -371,7 +371,7 @@ export const fileIcons: FileIcons = {
         { name: 'reason', fileExtensions: ['re', 'rei'] },
         { name: 'bucklescript', fileExtensions: ['cmj'] },
         { name: 'merlin', fileExtensions: ['merlin'] },
-        { name: 'verilog', fileExtensions: ['v', 'vhd'] },
+        { name: 'verilog', fileExtensions: ['v', 'vhd', 'sv', 'svh'] },
         { name: 'mathematica', fileExtensions: ['nb'] },
         { name: 'wolframlanguage', fileExtensions: ['wl', 'wls'] },
         { name: 'nunjucks', fileExtensions: ['njk', 'nunjucks'] },
