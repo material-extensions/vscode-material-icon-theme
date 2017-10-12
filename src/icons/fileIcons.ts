@@ -334,29 +334,34 @@ export const fileIcons: FileIcons = {
             ]
         },
         { name: 'test-js', fileExtensions: ['spec.js', 'test.js', 'js.snap'] },
-        { name: 'angular-routing', fileExtensions: ['routing.ts', 'routing.js'] },
+        { name: 'angular-routing', fileExtensions: ['routing.ts', 'routing.js'], group: IconGroup.Angular },
         {
             name: 'angular',
             fileExtensions: ['module.ts', 'module.js', 'ng-template'],
-            fileNames: ['angular-cli.json', '.angular-cli.json']
+            fileNames: ['angular-cli.json', '.angular-cli.json'],
+            group: IconGroup.Angular
         },
         {
             name: 'angular-component',
-            fileExtensions: ['component.ts', 'component.js']
+            fileExtensions: ['component.ts', 'component.js'],
+            group: IconGroup.Angular
         },
-        { name: 'angular-guard', fileExtensions: ['guard.ts', 'guard.js'] },
-        { name: 'angular-service', fileExtensions: ['service.ts', 'service.js'] },
+        { name: 'angular-guard', fileExtensions: ['guard.ts', 'guard.js'], group: IconGroup.Angular },
+        { name: 'angular-service', fileExtensions: ['service.ts', 'service.js'], group: IconGroup.Angular },
         {
             name: 'angular-pipe',
-            fileExtensions: ['pipe.ts', 'pipe.js', 'filter.js']
+            fileExtensions: ['pipe.ts', 'pipe.js', 'filter.js'],
+            group: IconGroup.Angular
         },
         {
             name: 'angular-directive',
-            fileExtensions: ['directive.ts', 'directive.js']
+            fileExtensions: ['directive.ts', 'directive.js'],
+            group: IconGroup.Angular
         },
         {
             name: 'angular-resolver',
-            fileExtensions: ['resolver.ts', 'resolver.js']
+            fileExtensions: ['resolver.ts', 'resolver.js'],
+            group: IconGroup.Angular
         },
         { name: 'puppet', fileExtensions: ['pp'] },
         { name: 'elixir', fileExtensions: ['ex', 'exs'] },
