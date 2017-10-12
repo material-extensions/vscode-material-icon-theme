@@ -24,7 +24,7 @@ const compareAngularConfigs = () => {
     const angularIconsConfig = helpers.getThemeConfig('angular.iconsEnabled');
 
     return checkAngularIconsStatus().then(result => {
-        if (angularIconsConfig.globalValue !== result) {
+        if (angularIconsConfig.globalValue !== undefined && angularIconsConfig.globalValue !== result) {
             updateIconJson();
         }
     });
