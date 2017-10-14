@@ -16,11 +16,11 @@ export const activate = (context: vscode.ExtensionContext) => {
         ...commands.commands
     );
 
-    detectConfigChanges(context.globalState).catch(e => {
+    detectConfigChanges().catch(e => {
         console.error(e);
     });
 
-    watchForConfigChanges(context.globalState);
+    watchForConfigChanges();
 };
 
 export const deactivate = () => {

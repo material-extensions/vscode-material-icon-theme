@@ -7,14 +7,14 @@ import { IconGroup, IconJsonOptions } from '../models/index';
 
 /** Watch for changes in the configurations to update the icons theme. */
 export const watchForConfigChanges = () => {
-    vscode.workspace.onDidChangeConfiguration(configChangeDetection);
+    vscode.workspace.onDidChangeConfiguration(detectConfigChanges);
 };
 
 /**
  * Compare the workspace and the user configurations
  * with the current setup of the icons.
 */
-export const configChangeDetection = () => {
+export const detectConfigChanges = () => {
     return Promise.resolve()
         .then(() => compareAngularConfigs())
         .then(() => compareFolderConfigs());

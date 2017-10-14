@@ -1,3 +1,5 @@
+import { IconJsonOptions } from './index';
+
 export class IconConfiguration {
     file?: string;
     folder?: string;
@@ -12,6 +14,7 @@ export class IconConfiguration {
     iconDefinitions?: { [s: string]: any; };
     light?: IconConfiguration;
     highContrast?: IconConfiguration;
+    options?: IconJsonOptions;
 
     constructor() {
         this.iconDefinitions = {};
@@ -28,6 +31,7 @@ export class IconConfiguration {
             fileExtensions: {},
             fileNames: {}
         };
+        this.options = {};
     }
 }
 

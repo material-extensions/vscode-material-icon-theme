@@ -12,7 +12,7 @@ import * as fs from 'fs';
  * Generate the complete icon configuration object that can be written as JSON file.
  */
 export const generateIconConfigurationObject = (options: IconJsonOptions): IconConfiguration => {
-    const iconConfig = new IconConfiguration();
+    const iconConfig = merge({}, new IconConfiguration(), { options });
     const languageIconDefinitions = getLanguageIconDefinitions(languageIcons, iconConfig);
     const fileIconDefinitions = getFileIconDefinitions(fileIcons, iconConfig, options);
     const folderIconDefinitions = getFolderIconDefinitions(folderIcons, iconConfig, options);
