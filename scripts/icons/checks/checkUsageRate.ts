@@ -2,7 +2,7 @@ import * as path from 'path';
 import * as fs from 'fs';
 import { fileIcons, folderIcons, languageIcons, openedFolder, lightVersion, highContrastVersion } from './../../../src/icons';
 import * as painter from './../../helpers/painter';
-import { FolderType, FolderIcons } from '../../../src/models/index';
+import { FolderTheme } from '../../../src/models/index';
 
 /**
  * Defines the folder where all icon files are located.
@@ -63,24 +63,23 @@ const getAllUsedIcons = (): string[] => {
         ...fileIcons.icons.filter(icon => icon.light).map(icon => icon.name + lightVersion),
         ...fileIcons.icons.filter(icon => icon.highContrast).map(icon => icon.name + highContrastVersion),
         ...languageIcons.languages.map(lang => lang.icon),
-        ...getAllFolderIcons(folderIcons),
-        ...folderIcons.themes.map(theme =>
-            theme.name === FolderType.None ? undefined :
-                getAllFolderIcons(theme)).reduce((a, b) => a.concat(b))
+        ...folderIcons.map(
+            theme => theme.name === 'none' ? undefined : getAllFolderIcons(theme)
+        ).reduce((a, b) => a.concat(b))
     ];
     return test;
 };
 
-const getAllFolderIcons = (f_icons: FolderIcons) => {
-    const specificIcons = f_icons.icons ? [
-        ...f_icons.icons.map(icon => icon.name),
-        ...f_icons.icons.map(icon => icon.name + openedFolder)
+const getAllFolderIcons = (theme: FolderTheme) => {
+    const icons = theme.icons ? [
+        ...theme.icons.map(icon => icon.name),
+        ...theme.icons.map(icon => icon.name + openedFolder)
     ] : [];
     return [
-        f_icons.defaultIcon.name,
-        f_icons.rootFolder ? f_icons.rootFolder.name : f_icons.defaultIcon.name,
-        f_icons.defaultIcon.name + openedFolder,
-        f_icons.rootFolder ? f_icons.rootFolder.name + openedFolder : f_icons.defaultIcon.name + openedFolder,
-        ...specificIcons
+        theme.defaultIcon.name,
+        theme.rootFolder ? theme.rootFolder.name : theme.defaultIcon.name,
+        theme.defaultIcon.name + openedFolder,
+        theme.rootFolder ? theme.rootFolder.name + openedFolder : theme.defaultIcon.name + openedFolder,
+        ...icons
     ];
 };

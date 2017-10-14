@@ -3,7 +3,7 @@ import * as vscode from 'vscode';
 import { createIconFile } from '../icons/index';
 import { checkAngularIconsStatus } from '../commands/angular';
 import { checkFolderIconsStatus } from '../commands/folders';
-import { FolderType, IconGroup, IconJsonOptions } from '../models/index';
+import { IconGroup, IconJsonOptions } from '../models/index';
 
 /** Watch for changes in the configurations to update the icons theme. */
 export const watchForConfigChanges = () => {
@@ -54,8 +54,8 @@ const updateIconJson = () => {
     });
 };
 
-export const getCurrentFolderTheme = (): FolderType => {
-    return <FolderType>helpers.getThemeConfig('folders.icons').globalValue;
+export const getCurrentFolderTheme = (): string => {
+    return <string>helpers.getThemeConfig('folders.icons').globalValue;
 };
 
 export const getAngularIconsEnabled = (): boolean => {

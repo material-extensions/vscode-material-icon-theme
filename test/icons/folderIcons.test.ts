@@ -1,22 +1,23 @@
 import * as assert from 'assert';
-import { IconConfiguration, FolderIcons, FolderType, IconJsonOptions, IconGroup } from '../../src/models/index';
+import { IconConfiguration, IconJsonOptions, IconGroup, FolderTheme } from '../../src/models/index';
 import { getFolderIconDefinitions, getDefaultIconOptions } from '../../src/icons/index';
 import * as merge from 'lodash.merge';
 
 suite('folder icons', () => {
-    const folderIcons: FolderIcons = {
-        defaultIcon: { name: 'folder' },
-        rootFolder: { name: 'folder' },
-        icons: [
-            { name: 'folder-src', folderNames: ['src', 'source'] },
-            { name: 'folder-angular', folderNames: ['angular', 'ng'], group: IconGroup.Angular }
-        ],
-        themes: [
-            { name: FolderType.Blue, defaultIcon: { name: 'folder-blue' } },
-            { name: FolderType.Classic, defaultIcon: { name: 'folder' } },
-            { name: FolderType.None, defaultIcon: { name: '' } },
-        ]
-    };
+    const folderIcons: FolderTheme[] = [
+        {
+            name: 'specific',
+            defaultIcon: { name: 'folder' },
+            rootFolder: { name: 'folder' },
+            icons: [
+                { name: 'folder-src', folderNames: ['src', 'source'] },
+                { name: 'folder-angular', folderNames: ['angular', 'ng'], group: IconGroup.Angular }
+            ]
+        },
+        { name: 'blue', defaultIcon: { name: 'folder-blue' } },
+        { name: 'classic', defaultIcon: { name: 'folder' } },
+        { name: 'none', defaultIcon: { name: '' } },
+    ];
     const iconConfig = new IconConfiguration();
 
     test('should configure icon definitions', () => {
@@ -65,7 +66,7 @@ suite('folder icons', () => {
 
     test('should deactivate folder icons', () => {
         const options = getDefaultIconOptions();
-        options.folderTheme = FolderType.None;
+        options.folderTheme = 'none';
         const def = getFolderIconDefinitions(folderIcons, iconConfig, options);
         const value = new IconConfiguration();
 
@@ -77,20 +78,9 @@ suite('folder icons', () => {
     });
 
     test('should enable folder theme', () => {
-        const folderIconsWithFolderThemeIcons: FolderIcons = merge({}, folderIcons);
-        folderIconsWithFolderThemeIcons.themes = [
-            {
-                name: FolderType.Blue, defaultIcon: { name: 'folder-blue' },
-                icons: [
-                    { name: 'folder-blue-src', folderNames: ['src', 'source'] },
-                ]
-            },
-            { name: FolderType.Classic, defaultIcon: { name: 'folder' } },
-            { name: FolderType.None, defaultIcon: { name: '' } },
-        ];
         const options = getDefaultIconOptions();
-        options.folderTheme = FolderType.Blue;
-        const def = getFolderIconDefinitions(folderIconsWithFolderThemeIcons, iconConfig, options);
+        options.folderTheme = 'blue';
+        const def = getFolderIconDefinitions(folderIcons, iconConfig, options);
         const value = new IconConfiguration();
 
         value.iconDefinitions = {
@@ -100,79 +90,79 @@ suite('folder icons', () => {
             'folder-blue-open': {
                 'iconPath': './../../icons/folder-blue-open.svg'
             },
-            'folder-blue-src': {
-                'iconPath': './../../icons/folder-blue-src.svg'
-            },
-            'folder-blue-src-open': {
-                'iconPath': './../../icons/folder-blue-src-open.svg'
-            }
+            // 'folder-blue-src': {
+            //     'iconPath': './../../icons/folder-blue-src.svg'
+            // },
+            // 'folder-blue-src-open': {
+            //     'iconPath': './../../icons/folder-blue-src-open.svg'
+            // }
         };
         value.folder = 'folder-blue';
         value.folderExpanded = 'folder-blue-open';
         value.rootFolder = 'folder-blue';
         value.rootFolderExpanded = 'folder-blue-open';
 
-        value.folderNames = {
-            'src': 'folder-blue-src',
-            'source': 'folder-blue-src'
-        };
-        value.folderNamesExpanded = {
-            'src': 'folder-blue-src-open',
-            'source': 'folder-blue-src-open'
-        };
+        // value.folderNames = {
+        //     'src': 'folder-blue-src',
+        //     'source': 'folder-blue-src'
+        // };
+        // value.folderNamesExpanded = {
+        //     'src': 'folder-blue-src-open',
+        //     'source': 'folder-blue-src-open'
+        // };
 
         assert.deepEqual(def, value);
     });
 
-    test('should enable folder theme and use default icons', () => {
-        const options = getDefaultIconOptions();
-        options.folderTheme = FolderType.Blue;
-        const folderIconsUpdated = merge({}, folderIcons);
-        const theme = folderIconsUpdated.themes.find(theme => theme.name === FolderType.Blue);
-        theme.useDefaultIcons = true;
-        const def = getFolderIconDefinitions(folderIconsUpdated, iconConfig, options);
-        const value = new IconConfiguration();
+    // test('should enable folder theme and use default icons', () => {
+    //     const options = getDefaultIconOptions();
+    //     options.folderTheme = FolderType.Blue;
+    //     const folderIconsUpdated = merge({}, folderIcons);
+    //     const theme = folderIconsUpdated.themes.find(theme => theme.name === FolderType.Blue);
+    //     theme.useDefaultIcons = true;
+    //     const def = getFolderIconDefinitions(folderIconsUpdated, iconConfig, options);
+    //     const value = new IconConfiguration();
 
-        value.iconDefinitions = {
-            'folder-blue': {
-                'iconPath': './../../icons/folder-blue.svg'
-            },
-            'folder-blue-open': {
-                'iconPath': './../../icons/folder-blue-open.svg'
-            },
-            'folder-src': {
-                'iconPath': './../../icons/folder-src.svg'
-            },
-            'folder-src-open': {
-                'iconPath': './../../icons/folder-src-open.svg'
-            },
-            'folder-angular': {
-                'iconPath': './../../icons/folder-angular.svg'
-            },
-            'folder-angular-open': {
-                'iconPath': './../../icons/folder-angular-open.svg'
-            }
-        };
-        value.folder = 'folder-blue';
-        value.folderExpanded = 'folder-blue-open';
-        value.rootFolder = 'folder-blue';
-        value.rootFolderExpanded = 'folder-blue-open';
+    //     value.iconDefinitions = {
+    //         'folder-blue': {
+    //             'iconPath': './../../icons/folder-blue.svg'
+    //         },
+    //         'folder-blue-open': {
+    //             'iconPath': './../../icons/folder-blue-open.svg'
+    //         },
+    //         'folder-src': {
+    //             'iconPath': './../../icons/folder-src.svg'
+    //         },
+    //         'folder-src-open': {
+    //             'iconPath': './../../icons/folder-src-open.svg'
+    //         },
+    //         'folder-angular': {
+    //             'iconPath': './../../icons/folder-angular.svg'
+    //         },
+    //         'folder-angular-open': {
+    //             'iconPath': './../../icons/folder-angular-open.svg'
+    //         }
+    //     };
+    //     value.folder = 'folder-blue';
+    //     value.folderExpanded = 'folder-blue-open';
+    //     value.rootFolder = 'folder-blue';
+    //     value.rootFolderExpanded = 'folder-blue-open';
 
-        value.folderNames = {
-            'src': 'folder-src',
-            'source': 'folder-src',
-            'angular': 'folder-angular',
-            'ng': 'folder-angular'
-        };
-        value.folderNamesExpanded = {
-            'src': 'folder-src-open',
-            'source': 'folder-src-open',
-            'angular': 'folder-angular-open',
-            'ng': 'folder-angular-open'
-        };
+    //     value.folderNames = {
+    //         'src': 'folder-src',
+    //         'source': 'folder-src',
+    //         'angular': 'folder-angular',
+    //         'ng': 'folder-angular'
+    //     };
+    //     value.folderNamesExpanded = {
+    //         'src': 'folder-src-open',
+    //         'source': 'folder-src-open',
+    //         'angular': 'folder-angular-open',
+    //         'ng': 'folder-angular-open'
+    //     };
 
-        assert.deepEqual(def, value);
-    });
+    //     assert.deepEqual(def, value);
+    // });
 
     test('should disable icon group', () => {
         const options = getDefaultIconOptions();

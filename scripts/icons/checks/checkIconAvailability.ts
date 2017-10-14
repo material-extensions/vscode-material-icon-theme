@@ -3,7 +3,7 @@ import * as fs from 'fs';
 import { fileIcons, folderIcons, languageIcons, lightVersion, highContrastVersion, openedFolder } from './../../../src/icons';
 import { similarity } from '../../helpers/similarity';
 import * as painter from '../../helpers/painter';
-import { FileIcon, FolderType, FolderIcons } from '../../../src/models/index';
+import { FileIcon, FolderTheme } from '../../../src/models/index';
 
 /**
  * Defines the folder where all icon files are located.
@@ -87,29 +87,28 @@ const checkHighContrastVersion = (icon: FileIcon) => {
  * Check if the folder icons from the configuration are available on the file system.
  */
 const checkFolderIcons = () => {
-    [
-        ...getAllFolderIcons(folderIcons),
-        ...folderIcons.themes.map(theme =>
-            theme.name === FolderType.None ? undefined :
-                getAllFolderIcons(theme)).reduce((a, b) => a.concat(b))
-    ].forEach(icon => {
-        if (!availableIcons[icon] && icon) {
-            wrongIconNames.folderIcons.push(icon);
-        }
-    });
+    folderIcons.map(
+        theme => theme.name === 'none' ? undefined : getAllFolderIcons(theme)
+    )
+        .reduce((a, b) => a.concat(b))
+        .forEach(icon => {
+            if (!availableIcons[icon] && icon) {
+                wrongIconNames.folderIcons.push(icon);
+            }
+        });
 };
 
-const getAllFolderIcons = (f_icons: FolderIcons) => {
-    const specificIcons = f_icons.icons ? [
-        ...f_icons.icons.map(icon => icon.name),
-        ...f_icons.icons.map(icon => icon.name + openedFolder)
+const getAllFolderIcons = (theme: FolderTheme) => {
+    const icons = theme.icons ? [
+        ...theme.icons.map(icon => icon.name),
+        ...theme.icons.map(icon => icon.name + openedFolder)
     ] : [];
     return [
-        f_icons.defaultIcon.name,
-        f_icons.rootFolder ? f_icons.rootFolder.name : f_icons.defaultIcon.name,
-        f_icons.defaultIcon.name + openedFolder,
-        f_icons.rootFolder ? f_icons.rootFolder.name + openedFolder : f_icons.defaultIcon.name + openedFolder,
-        ...specificIcons
+        theme.defaultIcon.name,
+        theme.rootFolder ? theme.rootFolder.name : theme.defaultIcon.name,
+        theme.defaultIcon.name + openedFolder,
+        theme.rootFolder ? theme.rootFolder.name + openedFolder : theme.defaultIcon.name + openedFolder,
+        ...icons
     ];
 };
 

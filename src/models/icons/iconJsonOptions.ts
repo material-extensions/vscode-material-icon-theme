@@ -1,7 +1,5 @@
-import { FolderType } from './index';
-
 export interface IconJsonOptions {
-    folderTheme?: FolderType;
+    folderTheme?: string;
     activatedGroups?: {
         [name: string]: boolean;
     };
