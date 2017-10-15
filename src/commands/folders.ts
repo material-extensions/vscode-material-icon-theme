@@ -21,7 +21,8 @@ const showQuickPickItems = (activeTheme: string) => {
 
     return vscode.window.showQuickPick(options, {
         placeHolder: i18n.instant('folders.toggleIcons'),
-        ignoreFocusOut: false
+        ignoreFocusOut: false,
+        matchOnDescription: true
     });
 };
 

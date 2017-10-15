@@ -37,7 +37,8 @@ const showQuickPickItems = (activeGroups: string[]) => {
 
     return vscode.window.showQuickPick(options, {
         placeHolder: i18n.instant('iconGroups.selectGroup'),
-        ignoreFocusOut: false
+        ignoreFocusOut: false,
+        matchOnDescription: true
     });
 };
 
@@ -64,7 +65,8 @@ export const showSpecificQuickPickItems = (group: string, activeGroups: string[]
     return vscode.window.showQuickPick(
         [on, off], {
             placeHolder: i18n.instant('iconGroups.selectGroup'),
-            ignoreFocusOut: false
+            ignoreFocusOut: false,
+            matchOnDescription: true
         });
 };
 
