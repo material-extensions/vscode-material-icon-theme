@@ -15,7 +15,7 @@ export const toggleFolderIcons = () => {
 const showQuickPickItems = (activeTheme: string) => {
     const options = folderIcons.map((theme): vscode.QuickPickItem => ({
         description: helpers.capitalizeFirstLetter(theme.name),
-        detail: i18n.instant('folders.theme.description', helpers.capitalizeFirstLetter(theme.name)),
+        detail: theme.name === 'none' ? i18n.instant('folders.disabled') : i18n.instant('folders.theme.description', helpers.capitalizeFirstLetter(theme.name)),
         label: theme.name === activeTheme ? '\u2714' : '\u25FB'
     }));
 

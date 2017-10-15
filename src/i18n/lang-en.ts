@@ -18,8 +18,9 @@ export const translation: Translation = {
         'enableIcons': 'Enable folder icons',
         'disableIcons': 'Disable folder icons',
         'toggleIcons': 'Pick a folder theme',
+        'disabled': 'No folder icons',
         'theme': {
-            'description': 'Select the \'%0\' folder theme.'
+            'description': 'Select the \'%0\' folder theme'
         }
     },
     'toggleSwitch': {

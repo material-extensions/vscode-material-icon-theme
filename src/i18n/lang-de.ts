@@ -10,17 +10,18 @@ export const translation: Translation = {
     'readChangelog': 'Änderungsprotokoll lesen',
     'iconGroups': {
         'selectGroup': 'Konfigurieren der Icon Packs',
-        'enableIcons': '%1 Icons aktivieren',
-        'disableIcons': '%1 Icons deaktivieren',
-        'toggleIcons': '%1 Icons umschalten'
+        'enableIcons': '%0 Icons aktivieren',
+        'disableIcons': '%0 Icons deaktivieren',
+        'toggleIcons': '%0 Icons umschalten'
     },
     'folders': {
         'enableIcons': 'Ordner Icons aktivieren',
         'disableIcons': 'Ordner Icons deaktivieren',
         'toggleIcons': 'Wähle ein Ordner Design',
+        'disabled': 'Keine Ordner Icons',
         'theme': {
             'description': 'Wähle das \'%0\' Design'
-        }
+        },
     },
     'toggleSwitch': {
         'on': 'EIN',

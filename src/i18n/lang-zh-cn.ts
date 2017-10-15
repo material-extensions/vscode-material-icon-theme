@@ -18,6 +18,7 @@ export const translation: Translation = {
         'enableIcons': '启用文件夹图标',
         'disableIcons': '禁用文件夹图标',
         'toggleIcons': '切换文件夹图标的显示',
+        'disabled': '不显示文件夹图标',
         'theme': {
             'description': '\'%0\'主题的文件夹图标'
         }

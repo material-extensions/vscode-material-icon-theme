@@ -10,14 +10,15 @@ export const translation: Translation = {
     'readChangelog': 'Lire la liste des changements',
     'iconGroups': {
         'selectGroup': 'Configuration des paquets d\'icônes',
-        'enableIcons': 'Activer les icônes %1',
-        'disableIcons': 'Désactiver les icônes %1',
-        'toggleIcons': 'Basculer les icônes %1'
+        'enableIcons': 'Activer les icônes %0',
+        'disableIcons': 'Désactiver les icônes %0',
+        'toggleIcons': 'Basculer les icônes %0'
     },
     'folders': {
         'enableIcons': 'Activer les icônes de dossiers',
         'disableIcons': 'Désactiver les icônes de dossiers',
         'toggleIcons': 'Basculer les icônes de dossiers',
+        'disabled': 'Aucune icônes de dossiers',
         'theme': {
             'description': 'Icônes de dossiers \'%0\''
         }

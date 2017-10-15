@@ -16,6 +16,7 @@ export interface Translation {
         enableIcons?: string;
         disableIcons?: string;
         toggleIcons?: string;
+        disabled?: string;
         theme?: {
             description?: string;
         };

@@ -10,14 +10,15 @@ export const translation: Translation = {
     'readChangelog': 'Leer changelog',
     'iconGroups': {
         'selectGroup': 'Configuración de los paquetes de iconos',
-        'enableIcons': 'Activar iconos de %1',
-        'disableIcons': 'Desactivar iconos de %1',
-        'toggleIcons': 'Cambiar activación de iconos de %1'
+        'enableIcons': 'Activar iconos de %0',
+        'disableIcons': 'Desactivar iconos de %0',
+        'toggleIcons': 'Cambiar activación de iconos de %0'
     },
     'folders': {
         'enableIcons': 'Activar iconos de Carpetas',
         'disableIcons': 'Desactivar iconos de Carpetas',
         'toggleIcons': 'Cambiar activación de iconos de Carpetas',
+        'disabled': 'Sin iconos de carpeta',
         'theme': {
             'description': 'Iconos de carpeta \'%0\''
         }
