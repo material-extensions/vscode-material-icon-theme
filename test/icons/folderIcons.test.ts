@@ -120,9 +120,9 @@ suite('folder icons', () => {
         assert.deepEqual(def, value);
     });
 
-    test('should disable icon group', () => {
+    test('should disable icon groups', () => {
         const options = getDefaultIconOptions();
-        options.activatedGroups[IconGroup.Angular] = false;
+        options.activatedGroups = [];
         const def = getFolderIconDefinitions(folderIcons, iconConfig, options);
         const value = new IconConfiguration();
         value.iconDefinitions = {

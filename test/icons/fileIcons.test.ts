@@ -64,9 +64,9 @@ suite('file icons', () => {
         assert.deepEqual(def, value);
     });
 
-    test('should disable icon group', () => {
+    test('should disable icon groups', () => {
         const options = getDefaultIconOptions();
-        options.activatedGroups[IconGroup.Angular] = false;
+        options.activatedGroups = [];
         const def = getFileIconDefinitions(fileIcons, iconConfig, options);
         const value = new IconConfiguration();
 

@@ -59,7 +59,7 @@ const disableIconsByGroup = (folderIcons: FolderTheme, activatedIconGroups): Fol
         return [];
     }
     return folderIcons.icons.filter(icon => {
-        return !icon.group ? true : activatedIconGroups[icon.group] || false;
+        return !icon.group ? true : activatedIconGroups.some(group => group === icon.group);
     });
 };
 
