@@ -9,7 +9,7 @@ export const translation: Translation = {
     'themeUpdated': 'Material Icon Theme has been updated.',
     'readChangelog': 'Read changelog',
     'iconGroups': {
-        'selectGroup': 'Toggle icon groups',
+        'selectGroup': 'Configure icon packs',
         'enableIcons': 'Activate %0 icons',
         'disableIcons': 'Deactivate %0 icons',
         'toggleIcons': 'Toggle %0 icons'

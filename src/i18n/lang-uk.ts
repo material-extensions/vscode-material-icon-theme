@@ -8,11 +8,6 @@ export const translation: Translation = {
     'neverShowAgain': 'Ніколи не показувати знову',
     'themeUpdated': 'Material Icon Theme був оновлений.',
     'readChangelog': 'Прочитати зміни',
-    // 'angular': {
-    //     'enableIcons': 'Включити Angular значки',
-    //     'disableIcons': 'Відключити Angular значки',
-    //     'toggleIcons': 'Переключити Angular значки'
-    // },
     'folders': {
         'enableIcons': 'Включити теку icons',
         'disableIcons': 'Відключити теку icons',
