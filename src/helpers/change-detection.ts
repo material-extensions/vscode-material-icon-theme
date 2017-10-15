@@ -55,9 +55,11 @@ const updateIconJson = () => {
 };
 
 export const getCurrentFolderTheme = (): string => {
-    return <string>helpers.getThemeConfig('folders.icons').globalValue;
+    const result = <string>helpers.getThemeConfig('folders.icons').globalValue;
+    return result !== undefined ? result : 'specific';
 };
 
 export const getAngularIconsEnabled = (): boolean => {
-    return <boolean>helpers.getThemeConfig('angular.iconsEnabled').globalValue;
+    const result = <boolean>helpers.getThemeConfig('angular.iconsEnabled').globalValue;
+    return result !== undefined ? result : true;
 };
