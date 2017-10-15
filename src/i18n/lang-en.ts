@@ -17,22 +17,9 @@ export const translation: Translation = {
     'folders': {
         'enableIcons': 'Enable folder icons',
         'disableIcons': 'Disable folder icons',
-        'toggleIcons': 'Toggle folder icons',
-        'specific': {
-            'name': 'Specific',
-            'description': 'Specific folder icons'
-        },
-        'classic': {
-            'name': 'Classic',
-            'description': 'Gray folder icons'
-        },
-        'blue': {
-            'name': 'Blue',
-            'description': 'Blue folder icons'
-        },
-        'none': {
-            'name': 'None',
-            'description': 'No folder icons'
+        'toggleIcons': 'Pick a folder theme',
+        'theme': {
+            'description': 'Select the \'%0\' folder theme.'
         }
     },
     'toggleSwitch': {

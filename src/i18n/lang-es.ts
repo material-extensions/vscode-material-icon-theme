@@ -18,21 +18,8 @@ export const translation: Translation = {
         'enableIcons': 'Activar iconos de Carpetas',
         'disableIcons': 'Desactivar iconos de Carpetas',
         'toggleIcons': 'Cambiar activación de iconos de Carpetas',
-        'specific': {
-            'name': 'Específico',
-            'description': 'Iconos de carpeta específicos'
-        },
-        'classic': {
-            'name': 'Clásico',
-            'description': 'Iconos de carpeta clásicos'
-        },
-        'blue': {
-            'name': 'Azul',
-            'description': 'Iconos de carpeta Azul'
-        },
-        'none': {
-            'name': 'Ninguno',
-            'description': 'Sin iconos de carpeta'
+        'theme': {
+            'description': 'Iconos de carpeta \'%0\''
         }
     },
     'toggleSwitch': {

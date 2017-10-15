@@ -1,7 +1,7 @@
 {
     "command.activateIcons": "Material Icons: Activer les icônes",
     "command.toggleIconGroups": "Material Icons: Configurer les Packs d'icônes",
-    "command.toggleFolderIcons": "Material Icons: Basculer les icônes de dossiers",
+    "command.toggleFolderIcons": "Material Icons: Personnaliser les icônes de dossier",
     "command.restoreDefaultConfig": "Material Icons: Restaurer le paramètre par défaut",
     "configuration.title": "Material Icons configuration",
     "configuration.showWelcomeMessage": "Afficher le message de bienvenue après l'installation initiale",

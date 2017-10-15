@@ -18,21 +18,8 @@ export const translation: Translation = {
         'enableIcons': 'Activer les icônes de dossiers',
         'disableIcons': 'Désactiver les icônes de dossiers',
         'toggleIcons': 'Basculer les icônes de dossiers',
-        'specific': {
-            'name': 'Spécifique',
-            'description': 'Icônes de dossiers spécifiques'
-        },
-        'classic': {
-            'name': 'Classique',
-            'description': 'Icônes de dossiers grises'
-        },
-        'blue': {
-            'name': 'Bleu',
-            'description': 'Icônes de dossiers bleues'
-        },
-        'none': {
-            'name': 'Aucun',
-            'description': 'Aucune icônes de dossiers'
+        'theme': {
+            'description': 'Icônes de dossiers \'%0\''
         }
     },
     'toggleSwitch': {

@@ -18,21 +18,8 @@ export const translation: Translation = {
         'enableIcons': '启用文件夹图标',
         'disableIcons': '禁用文件夹图标',
         'toggleIcons': '切换文件夹图标的显示',
-        'specific': {
-            'name': '多彩',
-            'description': '多彩的文件夹图标'
-        },
-        'classic': {
-            'name': '经典',
-            'description': '灰色主题的文件夹图标'
-        },
-        'blue': {
-            'name': '蓝色',
-            'description': '蓝色主题的文件夹图标'
-        },
-        'none': {
-            'name': '无',
-            'description': '不显示文件夹图标'
+        'theme': {
+            'description': '\'%0\'主题的文件夹图标'
         }
     },
     'toggleSwitch': {

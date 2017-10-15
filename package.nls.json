@@ -1,7 +1,7 @@
 {
     "command.activateIcons": "Material Icons: Activate Icon Theme",
     "command.toggleIconGroups": "Material Icons: Configure Icon Groups",
-    "command.toggleFolderIcons": "Material Icons: Toggle Folder Icons",
+    "command.toggleFolderIcons": "Material Icons: Change Folder Icons",
     "command.restoreDefaultConfig": "Material Icons: Restore Default Configuration",
     "configuration.title": "Material Icons configuration",
     "configuration.showWelcomeMessage": "Show the welcome message after first installation.",

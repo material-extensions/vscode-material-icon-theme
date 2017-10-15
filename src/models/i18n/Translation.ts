@@ -16,22 +16,9 @@ export interface Translation {
         enableIcons?: string;
         disableIcons?: string;
         toggleIcons?: string;
-        specific?: {
-            name?: string;
+        theme?: {
             description?: string;
         };
-        classic?: {
-            name?: string;
-            description?: string;
-        };
-        blue?: {
-            name?: string;
-            description?: string;
-        };
-        none?: {
-            name?: string;
-            description?: string;
-        }
     };
     toggleSwitch?: {
         on?: string;

@@ -17,22 +17,9 @@ export const translation: Translation = {
     'folders': {
         'enableIcons': 'Ordner Icons aktivieren',
         'disableIcons': 'Ordner Icons deaktivieren',
-        'toggleIcons': 'Ordner Icons umschalten',
-        'specific': {
-            'name': 'Spezifisch',
-            'description': 'Spezielle Ordner Icons'
-        },
-        'classic': {
-            'name': 'Klassisch',
-            'description': 'Graue Ordner Icons'
-        },
-        'blue': {
-            'name': 'Blau',
-            'description': 'Blaue Ordner Icons'
-        },
-        'none': {
-            'name': 'Keine',
-            'description': 'Keine Ordner Icons'
+        'toggleIcons': 'Wähle ein Ordner Design',
+        'theme': {
+            'description': 'Wähle das \'%0\' Design'
         }
     },
     'toggleSwitch': {
