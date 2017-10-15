@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 import { activateIconTheme } from './activate';
-import { toggleIconGroups } from './groups';
+import { toggleIconGroups } from './iconGroups';
 import { toggleFolderIcons } from './folders';
 import { restoreDefaultConfig } from './restoreConfig';
 
