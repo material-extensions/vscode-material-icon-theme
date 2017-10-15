@@ -1,4 +1,4 @@
-import { IconConfiguration, IconGroup, IconJsonOptions } from '../../models/index';
+import { IconConfiguration, IconPack, IconJsonOptions } from '../../models/index';
 import { getFileIconDefinitions, getFolderIconDefinitions, getLanguageIconDefinitions } from './index';
 import { fileIcons } from '../fileIcons';
 import { folderIcons } from '../folderIcons';
@@ -43,7 +43,7 @@ export const createIconFile = (options: IconJsonOptions = getDefaultIconOptions(
 export const getDefaultIconOptions = (): IconJsonOptions => {
     const options: IconJsonOptions = {
         folderTheme: 'specific',
-        activatedGroups: [
+        activatedPacks: [
             'angular'
         ]
     };

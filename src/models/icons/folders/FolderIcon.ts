@@ -1,4 +1,4 @@
-import { IconGroup } from '../index';
+import { IconPack } from '../index';
 
 export interface FolderIcon {
     /**
@@ -28,7 +28,7 @@ export interface FolderIcon {
     disabled?: boolean;
 
     /**
-     * Defines a group to which this icon belongs. A group can be toggled and all icons inside this group can be enabled or disabled together.
+     * Defines a pack to which this icon belongs. A pack can be toggled and all icons inside this pack can be enabled or disabled together.
      */
-    group?: IconGroup;
+    pack?: IconPack;
 }

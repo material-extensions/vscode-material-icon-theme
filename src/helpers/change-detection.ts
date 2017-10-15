@@ -2,7 +2,7 @@ import * as helpers from './index';
 import * as vscode from 'vscode';
 import { createIconFile } from '../icons/index';
 import { checkFolderIconsStatus } from '../commands/folders';
-import { IconGroup, IconJsonOptions } from '../models/index';
+import { IconPack, IconJsonOptions } from '../models/index';
 
 /** Watch for changes in the configurations to update the icons theme. */
 export const watchForConfigChanges = () => {
@@ -15,15 +15,15 @@ export const watchForConfigChanges = () => {
 */
 export const detectConfigChanges = () => {
     return Promise.resolve()
-        .then(() => compareIconGroupConfigs())
+        .then(() => compareIconPackConfigs())
         .then(() => compareFolderConfigs());
 };
 
-const compareIconGroupConfigs = () => {
-    const activeIconGroups = <string[]>helpers.getThemeConfig('activeIconGroups').globalValue;
+const compareIconPackConfigs = () => {
+    const activeIconPacks = <string[]>helpers.getThemeConfig('activeIconPacks').globalValue;
 
     return helpers.getMaterialIconsJSON().then(result => {
-        if (activeIconGroups !== undefined && JSON.stringify(activeIconGroups) !== JSON.stringify(result.options.activatedGroups)) {
+        if (activeIconPacks !== undefined && JSON.stringify(activeIconPacks) !== JSON.stringify(result.options.activatedPacks)) {
             updateIconJson();
         }
     });
@@ -42,7 +42,7 @@ const compareFolderConfigs = () => {
 const updateIconJson = () => {
     const options: IconJsonOptions = {
         folderTheme: getCurrentFolderTheme(),
-        activatedGroups: getEnabledIconGroups()
+        activatedPacks: getEnabledIconPacks()
     };
     return createIconFile(options).then(() => {
         helpers.promptToReload();
@@ -56,7 +56,7 @@ export const getCurrentFolderTheme = (): string => {
     return result !== undefined ? result : 'specific';
 };
 
-export const getEnabledIconGroups = (): string[] => {
-    const result = <string[]>helpers.getThemeConfig('activeIconGroups').globalValue;
+export const getEnabledIconPacks = (): string[] => {
+    const result = <string[]>helpers.getThemeConfig('activeIconPacks').globalValue;
     return result !== undefined ? result : ['angular'];
 };

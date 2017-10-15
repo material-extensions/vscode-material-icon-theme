@@ -1,4 +1,4 @@
-import { FileIcons, IconGroup } from '../models/index';
+import { FileIcons, IconPack } from '../models/index';
 
 /**
  * Defines file icons
@@ -334,34 +334,34 @@ export const fileIcons: FileIcons = {
             ]
         },
         { name: 'test-js', fileExtensions: ['spec.js', 'test.js', 'js.snap'] },
-        { name: 'angular-routing', fileExtensions: ['routing.ts', 'routing.js'], group: IconGroup.Angular },
+        { name: 'angular-routing', fileExtensions: ['routing.ts', 'routing.js'], pack: IconPack.Angular },
         {
             name: 'angular',
             fileExtensions: ['module.ts', 'module.js', 'ng-template'],
             fileNames: ['angular-cli.json', '.angular-cli.json'],
-            group: IconGroup.Angular
+            pack: IconPack.Angular
         },
         {
             name: 'angular-component',
             fileExtensions: ['component.ts', 'component.js'],
-            group: IconGroup.Angular
+            pack: IconPack.Angular
         },
-        { name: 'angular-guard', fileExtensions: ['guard.ts', 'guard.js'], group: IconGroup.Angular },
-        { name: 'angular-service', fileExtensions: ['service.ts', 'service.js'], group: IconGroup.Angular },
+        { name: 'angular-guard', fileExtensions: ['guard.ts', 'guard.js'], pack: IconPack.Angular },
+        { name: 'angular-service', fileExtensions: ['service.ts', 'service.js'], pack: IconPack.Angular },
         {
             name: 'angular-pipe',
             fileExtensions: ['pipe.ts', 'pipe.js', 'filter.js'],
-            group: IconGroup.Angular
+            pack: IconPack.Angular
         },
         {
             name: 'angular-directive',
             fileExtensions: ['directive.ts', 'directive.js'],
-            group: IconGroup.Angular
+            pack: IconPack.Angular
         },
         {
             name: 'angular-resolver',
             fileExtensions: ['resolver.ts', 'resolver.js'],
-            group: IconGroup.Angular
+            pack: IconPack.Angular
         },
         { name: 'puppet', fileExtensions: ['pp'] },
         { name: 'elixir', fileExtensions: ['ex', 'exs'] },

@@ -1,5 +1,5 @@
 import * as assert from 'assert';
-import { IconConfiguration, IconJsonOptions, FileIcons, IconGroup } from '../../src/models/index';
+import { IconConfiguration, IconJsonOptions, FileIcons, IconPack } from '../../src/models/index';
 import { getDefaultIconOptions, getFileIconDefinitions } from '../../src/icons/index';
 import * as merge from 'lodash.merge';
 
@@ -7,7 +7,7 @@ suite('file icons', () => {
     const fileIcons: FileIcons = {
         defaultIcon: { name: 'file' },
         icons: [
-            { name: 'angular', fileNames: ['.angular-cli.json', 'angular-cli.json'], group: IconGroup.Angular },
+            { name: 'angular', fileNames: ['.angular-cli.json', 'angular-cli.json'], pack: IconPack.Angular },
             { name: 'javascript', fileNames: ['filename.js'], fileExtensions: ['js'], light: true, highContrast: true }
         ]
     };
@@ -64,9 +64,9 @@ suite('file icons', () => {
         assert.deepEqual(def, value);
     });
 
-    test('should disable icon groups', () => {
+    test('should disable icon packs', () => {
         const options = getDefaultIconOptions();
-        options.activatedGroups = [];
+        options.activatedPacks = [];
         const def = getFileIconDefinitions(fileIcons, iconConfig, options);
         const value = new IconConfiguration();
 

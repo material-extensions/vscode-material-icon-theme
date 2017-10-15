@@ -8,8 +8,8 @@ export const translation: Translation = {
     'neverShowAgain': '不再显示',
     'themeUpdated': 'Material主题图标已更新',
     'readChangelog': '阅读更新日志',
-    'iconGroups': {
-        'selectGroup': '配置图标包',
+    'iconPacks': {
+        'selectPack': '配置图标包',
         'enableIcons': '启用%0图标',
         'disableIcons': '禁用%0图标',
         'toggleIcons': '切换%0图标的显示'

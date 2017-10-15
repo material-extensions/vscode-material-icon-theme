@@ -6,8 +6,8 @@ export interface Translation {
     neverShowAgain?: string;
     themeUpdated?: string;
     readChangelog?: string;
-    iconGroups?: {
-        selectGroup?: string;
+    iconPacks?: {
+        selectPack?: string;
         enableIcons?: string;
         disableIcons?: string;
         toggleIcons?: string;

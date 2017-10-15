@@ -48,8 +48,8 @@
         "title": "%command.activateIcons%"
       },
       {
-        "command": "material-icon-theme.toggleIconGroups",
-        "title": "%command.toggleIconGroups%"
+        "command": "material-icon-theme.toggleIconPacks",
+        "title": "%command.toggleIconPacks%"
       },
       {
         "command": "material-icon-theme.toggleFolderIcons",
@@ -74,12 +74,12 @@
           "default": true,
           "description": "%configuration.showUpdateMessage%"
         },
-        "material-icon-theme.activeIconGroups": {
+        "material-icon-theme.activeIconPacks": {
           "type": "array",
           "default": [
             "angular"
           ],
-          "description": "%configuration.activeIconGroups%"
+          "description": "%configuration.activeIconPacks%"
         },
         "material-icon-theme.folders.icons": {
           "type": "string",

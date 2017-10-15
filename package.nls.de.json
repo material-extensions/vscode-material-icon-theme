@@ -1,11 +1,11 @@
 {
     "command.activateIcons": "Material Icons: Icon Theme aktivieren",
-    "command.toggleIconGroups": "Material Icons: Icon Packs konfigurieren",
+    "command.toggleIconPacks": "Material Icons: Icon Packs konfigurieren",
     "command.toggleFolderIcons": "Material Icons: Ordner Icons anpassen",
     "command.restoreDefaultConfig": "Material Icons: Standard Einstellungen wiederherstellen",
     "configuration.title": "Material Icons Konfiguration",
     "configuration.showWelcomeMessage": "Willkommensnachricht nach der ersten Installation anzeigen.",
     "configuration.showUpdateMessage": "Nachricht bei Aktualisierungen anzeigen.",
-    "configuration.activeIconGroups": "Icon Pakete auswählen, die bestimme Icons aktivieren.",
+    "configuration.activeIconPacks": "Icon Pakete auswählen, die bestimme Icons aktivieren.",
     "configuration.folders.icons": "Art der Ordner Icons auswählen."
 }

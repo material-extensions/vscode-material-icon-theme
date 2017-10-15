@@ -1,5 +1,5 @@
 import * as assert from 'assert';
-import { IconConfiguration, IconJsonOptions, IconGroup, FolderTheme } from '../../src/models/index';
+import { IconConfiguration, IconJsonOptions, IconPack, FolderTheme } from '../../src/models/index';
 import { getFolderIconDefinitions, getDefaultIconOptions } from '../../src/icons/index';
 import * as merge from 'lodash.merge';
 
@@ -11,7 +11,7 @@ suite('folder icons', () => {
             rootFolder: { name: 'folder' },
             icons: [
                 { name: 'folder-src', folderNames: ['src', 'source'] },
-                { name: 'folder-angular', folderNames: ['angular', 'ng'], group: IconGroup.Angular }
+                { name: 'folder-angular', folderNames: ['angular', 'ng'], pack: IconPack.Angular }
             ]
         },
         {
@@ -120,9 +120,9 @@ suite('folder icons', () => {
         assert.deepEqual(def, value);
     });
 
-    test('should disable icon groups', () => {
+    test('should disable icon packs', () => {
         const options = getDefaultIconOptions();
-        options.activatedGroups = [];
+        options.activatedPacks = [];
         const def = getFolderIconDefinitions(folderIcons, iconConfig, options);
         const value = new IconConfiguration();
         value.iconDefinitions = {

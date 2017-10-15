@@ -8,7 +8,7 @@ import * as merge from 'lodash.merge';
 export const getFolderIconDefinitions = (folderThemes: FolderTheme[], config: IconConfiguration, options: IconJsonOptions): IconConfiguration => {
     config = merge({}, config);
     const activeTheme = getEnabledFolderTheme(folderThemes, options.folderTheme);
-    const enabledIcons = disableIconsByGroup(activeTheme, options.activatedGroups);
+    const enabledIcons = disableIconsByPack(activeTheme, options.activatedPacks);
 
     if (options.folderTheme === 'none') {
         return config;
@@ -52,14 +52,14 @@ const getEnabledFolderTheme = (themes: FolderTheme[], enabledTheme: string): Fol
 };
 
 /**
- * Disable all file icons that are in a group which is disabled.
+ * Disable all file icons that are in a pack which is disabled.
  */
-const disableIconsByGroup = (folderIcons: FolderTheme, activatedIconGroups): FolderIcon[] => {
+const disableIconsByPack = (folderIcons: FolderTheme, activatedIconPacks): FolderIcon[] => {
     if (!folderIcons.icons || folderIcons.icons.length === 0) {
         return [];
     }
     return folderIcons.icons.filter(icon => {
-        return !icon.group ? true : activatedIconGroups.some(group => group === icon.group);
+        return !icon.pack ? true : activatedIconPacks.some(pack => pack === icon.pack);
     });
 };
 

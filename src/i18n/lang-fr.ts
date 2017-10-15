@@ -8,8 +8,8 @@ export const translation: Translation = {
     'neverShowAgain': 'Ne plus afficher',
     'themeUpdated': 'Material Icon Theme a été mis à jour.',
     'readChangelog': 'Lire la liste des changements',
-    'iconGroups': {
-        'selectGroup': 'Configuration des paquets d\'icônes',
+    'iconPacks': {
+        'selectPack': 'Configuration des paquets d\'icônes',
         'enableIcons': 'Activer les icônes %0',
         'disableIcons': 'Désactiver les icônes %0',
         'toggleIcons': 'Basculer les icônes %0'

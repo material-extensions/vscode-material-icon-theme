@@ -7,7 +7,7 @@ import * as merge from 'lodash.merge';
  */
 export const getFileIconDefinitions = (fileIcons: FileIcons, config: IconConfiguration, options: IconJsonOptions): IconConfiguration => {
     config = merge({}, config);
-    disableIconsByGroup(fileIcons, options.activatedGroups).forEach(icon => {
+    disableIconsByPack(fileIcons, options.activatedPacks).forEach(icon => {
         if (icon.disabled) return;
         config.iconDefinitions[icon.name] = {
             iconPath: `${iconFolderPath}${icon.name}.svg`
@@ -57,11 +57,11 @@ const mapSpecificFileIcons = (icon: FileIcon, mappingType: FileMappingType) => {
 };
 
 /**
- * Disable all file icons that are in a group which is disabled.
+ * Disable all file icons that are in a pack which is disabled.
  */
-const disableIconsByGroup = (fileIcons: FileIcons, activatedIconGroups: string[]): FileIcon[] => {
+const disableIconsByPack = (fileIcons: FileIcons, activatedIconPacks: string[]): FileIcon[] => {
     return fileIcons.icons.filter(icon => {
-        return !icon.group ? true : activatedIconGroups.some(group => group === icon.group);
+        return !icon.pack ? true : activatedIconPacks.some(pack => pack === icon.pack);
     });
 };
 
