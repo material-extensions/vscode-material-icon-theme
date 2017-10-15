@@ -9,15 +9,11 @@ export const translation: Translation = {
     'themeUpdated': 'Material Icon Theme se ha actualizado.',
     'readChangelog': 'Leer changelog',
     'angular': {
-        'alreadyEnabled': 'Iconos de Angular están activados.',
-        'alreadyDisabled': 'Iconos de Angular están desactivados.',
         'enableIcons': 'Activar iconos de Angular',
         'disableIcons': 'Desactivar iconos de Angular',
         'toggleIcons': 'Cambiar activación de iconos de Angular'
     },
     'folders': {
-        'alreadyEnabled': 'Iconos de Carpetas están activados.',
-        'alreadyDisabled': 'Iconos de Carpetas están desactivados.',
         'enableIcons': 'Activar iconos de Carpetas',
         'disableIcons': 'Desactivar iconos de Carpetas',
         'toggleIcons': 'Cambiar activación de iconos de Carpetas',

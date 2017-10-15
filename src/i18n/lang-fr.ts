@@ -9,15 +9,11 @@ export const translation: Translation = {
     'themeUpdated': 'Material Icon Theme a été mis à jour.',
     'readChangelog': 'Lire la liste des changements',
     'angular': {
-        'alreadyEnabled': 'Les icônes Angular sont déjà actifs.',
-        'alreadyDisabled': 'Les icônes Angular sont déjà inactifs.',
         'enableIcons': 'Activer les icônes Angular',
         'disableIcons': 'Désactiver les icônes Angular',
         'toggleIcons': 'Basculer les icônes Angular'
     },
     'folders': {
-        'alreadyEnabled': 'Les icônes de dossiers sont déjà actifs.',
-        'alreadyDisabled': 'Les icônes de dossiers sont déjà inactifs.',
         'enableIcons': 'Activer les icônes de dossiers',
         'disableIcons': 'Désactiver les icônes de dossiers',
         'toggleIcons': 'Basculer les icônes de dossiers',

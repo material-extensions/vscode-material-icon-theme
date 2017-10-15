@@ -9,15 +9,11 @@ export const translation: Translation = {
     'themeUpdated': 'Material主题图标已更新',
     'readChangelog': '阅读更新日志',
     'angular': {
-        'alreadyEnabled': '已启用Angular图标',
-        'alreadyDisabled': '已禁用Angular图标',
         'enableIcons': '启用Angular图标',
         'disableIcons': '禁用Angular图标',
         'toggleIcons': '切换Angular图标的显示'
     },
     'folders': {
-        'alreadyEnabled': '文件夹图标已启用',
-        'alreadyDisabled': '文件夹图标已禁用',
         'enableIcons': '启用文件夹图标',
         'disableIcons': '禁用文件夹图标',
         'toggleIcons': '切换文件夹图标的显示',

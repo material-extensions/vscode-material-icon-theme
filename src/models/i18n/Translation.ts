@@ -7,15 +7,11 @@ export interface Translation {
     themeUpdated?: string;
     readChangelog?: string;
     angular?: {
-        alreadyEnabled?: string;
-        alreadyDisabled?: string;
         enableIcons?: string;
         disableIcons?: string;
         toggleIcons?: string;
     };
     folders?: {
-        alreadyEnabled?: string;
-        alreadyDisabled?: string;
         enableIcons?: string;
         disableIcons?: string;
         toggleIcons?: string;
