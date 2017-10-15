@@ -1,11 +1,9 @@
 {    
     "command.activateIcons": "Material Icons: 激活Material Icons文件图标主题",
-    "command.toggleAngularIcons": "Material Icons: 切换Angular图标",
     "command.toggleFolderIcons": "Material Icons: 切换文件夹图标",
     "command.restoreDefaultConfig": "Material Icons: 恢复默认设置",
     "configuration.title": "Material Icons设置",
     "configuration.showWelcomeMessage": "首次安装后显示欢迎信息。",
     "configuration.showUpdateMessage": "更新后显示升级信息。",
-    "configuration.angular.iconsEnabled": "启用Angular文件图标。",
     "configuration.folders.icons": "设置文件夹图标类型。\n接受的值为 \"specific\", \"classic\", \"blue\"和\"none\"。"
 }

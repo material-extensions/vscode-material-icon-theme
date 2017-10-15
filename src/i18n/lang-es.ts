@@ -8,11 +8,11 @@ export const translation: Translation = {
     'neverShowAgain': 'No mostrar más',
     'themeUpdated': 'Material Icon Theme se ha actualizado.',
     'readChangelog': 'Leer changelog',
-    'angular': {
-        'enableIcons': 'Activar iconos de Angular',
-        'disableIcons': 'Desactivar iconos de Angular',
-        'toggleIcons': 'Cambiar activación de iconos de Angular'
-    },
+    // 'angular': {
+    //     'enableIcons': 'Activar iconos de Angular',
+    //     'disableIcons': 'Desactivar iconos de Angular',
+    //     'toggleIcons': 'Cambiar activación de iconos de Angular'
+    // },
     'folders': {
         'enableIcons': 'Activar iconos de Carpetas',
         'disableIcons': 'Desactivar iconos de Carpetas',

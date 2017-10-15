@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { MarkdownConfig, Icon } from './models';
-import { toUpperCase } from './helpers';
+import { capitalizeFirstLetter } from '../../src/helpers';
 
 /** Write the markdown file into the output folder */
 export const writeMarkdown = (config: MarkdownConfig, itemsPerColumn: number, matrix: Icon[][]) => {
@@ -22,7 +22,7 @@ export const writeMarkdown = (config: MarkdownConfig, itemsPerColumn: number, ma
     // write the image tags for the icons
     for (let i = 0; i < itemsPerColumn; i++) {
         for (let c = 0; c < matrix.length; c++) {
-            let img = '|<img src="./../icons/' + matrix[c][i].fileName + '" width="24px">|' + (config.filterName ? toUpperCase(matrix[c][i].iconName.replace(config.filterName, '')) : matrix[c][i].iconName);
+            let img = '|<img src="./../icons/' + matrix[c][i].fileName + '" width="24px">|' + (config.filterName ? capitalizeFirstLetter(matrix[c][i].iconName.replace(config.filterName, '')) : matrix[c][i].iconName);
             output += img;
 
         }

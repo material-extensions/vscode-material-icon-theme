@@ -6,7 +6,8 @@ export interface Translation {
     neverShowAgain?: string;
     themeUpdated?: string;
     readChangelog?: string;
-    angular?: {
+    iconGroups?: {
+        selectGroup?: string;
         enableIcons?: string;
         disableIcons?: string;
         toggleIcons?: string;

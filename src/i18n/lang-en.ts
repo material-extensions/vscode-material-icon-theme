@@ -8,10 +8,11 @@ export const translation: Translation = {
     'neverShowAgain': 'Never show again',
     'themeUpdated': 'Material Icon Theme has been updated.',
     'readChangelog': 'Read changelog',
-    'angular': {
-        'enableIcons': 'Enable Angular icons',
-        'disableIcons': 'Disable Angular icons',
-        'toggleIcons': 'Toggle Angular icons'
+    'iconGroups': {
+        'selectGroup': 'Toggle icon groups',
+        'enableIcons': 'Activate %0 icons',
+        'disableIcons': 'Deactivate %0 icons',
+        'toggleIcons': 'Toggle %0 icons'
     },
     'folders': {
         'enableIcons': 'Enable folder icons',

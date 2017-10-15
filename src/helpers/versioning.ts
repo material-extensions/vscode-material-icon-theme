@@ -1,7 +1,6 @@
 import * as vscode from 'vscode';
 import * as helpers from './index';
 import * as semver from 'semver';
-import { IconJsonOptions } from '../models/index';
 
 export enum ThemeStatus {
     neverUsedBefore,

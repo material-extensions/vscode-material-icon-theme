@@ -5,10 +5,10 @@ import * as i18n from './../i18n';
 export const showConfirmToReloadMessage = (): Promise<boolean> => {
     return new Promise((resolve, reject) => {
         vscode.window.showInformationMessage(
-            i18n.translate('confirmReload'),
-            i18n.translate('reload')
+            i18n.instant('confirmReload'),
+            i18n.instant('reload')
         ).then(value => {
-            if (value === i18n.translate('reload')) resolve(true);
+            if (value === i18n.instant('reload')) resolve(true);
             else resolve(false);
         });
     });

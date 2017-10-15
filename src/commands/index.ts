@@ -1,17 +1,17 @@
 import * as vscode from 'vscode';
 import { activateIconTheme } from './activate';
-import { toggleAngularIcons } from './angular';
+import { toggleIconGroups } from './groups';
 import { toggleFolderIcons } from './folders';
-import { restoreDefaultConfig } from './config';
+import { restoreDefaultConfig } from './restoreConfig';
 
 // Activate theme
 const activateThemeCommand = vscode.commands.registerCommand('material-icon-theme.activateIcons', () => {
     activateIconTheme();
 });
 
-// Angular
-const toggleAngularIconsCommand = vscode.commands.registerCommand('material-icon-theme.toggleAngularIcons', () => {
-    toggleAngularIcons();
+// Icon groups
+const toggleIconGroupsCommand = vscode.commands.registerCommand('material-icon-theme.toggleIconGroups', () => {
+    toggleIconGroups();
 });
 
 // Folders
@@ -26,7 +26,7 @@ const restoreDefaultConfigCommand = vscode.commands.registerCommand('material-ic
 
 export const commands = [
     activateThemeCommand,
-    toggleAngularIconsCommand,
+    toggleIconGroupsCommand,
     toggleFolderIconsCommand,
     restoreDefaultConfigCommand
 ];

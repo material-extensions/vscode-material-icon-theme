@@ -43,9 +43,9 @@ export const createIconFile = (options: IconJsonOptions = getDefaultIconOptions(
 export const getDefaultIconOptions = (): IconJsonOptions => {
     const options: IconJsonOptions = {
         folderTheme: 'specific',
-        activatedGroups: {
-            [IconGroup.Angular]: true
-        }
+        activatedGroups: [
+            'angular'
+        ]
     };
     return options;
 };

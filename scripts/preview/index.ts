@@ -8,8 +8,8 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { Icon, MarkdownConfig } from './models';
 import { generateMarkdown } from './createMatrix';
-import { toUpperCase } from './helpers';
 import { openedFolder } from '../../src/icons/index';
+import { capitalizeFirstLetter } from '../../src/helpers';
 
 // Define the folder icon of all icons
 const folderPath = path.join('icons');
@@ -48,7 +48,7 @@ const fsReadAllIconFiles = (err: Error, files: string[]) => {
     // get each icon file from the icons folder
     files.forEach(file => {
         let fileName = file;
-        let iconName = toUpperCase(path.parse(file).name);
+        let iconName = capitalizeFirstLetter(path.parse(file).name);
 
         if (String(iconName).toLowerCase().includes('folder')) {
             folderIcons.push({ fileName: fileName, iconName: iconName });

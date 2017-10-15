@@ -59,9 +59,9 @@ const mapSpecificFileIcons = (icon: FileIcon, mappingType: FileMappingType) => {
 /**
  * Disable all file icons that are in a group which is disabled.
  */
-const disableIconsByGroup = (fileIcons: FileIcons, activatedIconGroups): FileIcon[] => {
+const disableIconsByGroup = (fileIcons: FileIcons, activatedIconGroups: string[]): FileIcon[] => {
     return fileIcons.icons.filter(icon => {
-        return !icon.group ? true : activatedIconGroups[icon.group] || false;
+        return !icon.group ? true : activatedIconGroups.some(group => group === icon.group);
     });
 };
 

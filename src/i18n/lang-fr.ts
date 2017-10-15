@@ -8,11 +8,11 @@ export const translation: Translation = {
     'neverShowAgain': 'Ne plus afficher',
     'themeUpdated': 'Material Icon Theme a été mis à jour.',
     'readChangelog': 'Lire la liste des changements',
-    'angular': {
-        'enableIcons': 'Activer les icônes Angular',
-        'disableIcons': 'Désactiver les icônes Angular',
-        'toggleIcons': 'Basculer les icônes Angular'
-    },
+    // 'angular': {
+    //     'enableIcons': 'Activer les icônes Angular',
+    //     'disableIcons': 'Désactiver les icônes Angular',
+    //     'toggleIcons': 'Basculer les icônes Angular'
+    // },
     'folders': {
         'enableIcons': 'Activer les icônes de dossiers',
         'disableIcons': 'Désactiver les icônes de dossiers',

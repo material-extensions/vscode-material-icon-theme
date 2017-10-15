@@ -8,11 +8,11 @@ export const translation: Translation = {
     'neverShowAgain': '不再显示',
     'themeUpdated': 'Material主题图标已更新',
     'readChangelog': '阅读更新日志',
-    'angular': {
-        'enableIcons': '启用Angular图标',
-        'disableIcons': '禁用Angular图标',
-        'toggleIcons': '切换Angular图标的显示'
-    },
+    // 'angular': {
+    //     'enableIcons': '启用Angular图标',
+    //     'disableIcons': '禁用Angular图标',
+    //     'toggleIcons': '切换Angular图标的显示'
+    // },
     'folders': {
         'enableIcons': '启用文件夹图标',
         'disableIcons': '禁用文件夹图标',

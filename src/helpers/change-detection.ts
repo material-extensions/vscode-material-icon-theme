@@ -1,7 +1,6 @@
 import * as helpers from './index';
 import * as vscode from 'vscode';
 import { createIconFile } from '../icons/index';
-import { checkAngularIconsStatus } from '../commands/angular';
 import { checkFolderIconsStatus } from '../commands/folders';
 import { IconGroup, IconJsonOptions } from '../models/index';
 
@@ -16,25 +15,25 @@ export const watchForConfigChanges = () => {
 */
 export const detectConfigChanges = () => {
     return Promise.resolve()
-        .then(() => compareAngularConfigs())
+        .then(() => compareIconGroupConfigs())
         .then(() => compareFolderConfigs());
 };
 
-const compareAngularConfigs = () => {
-    const angularIconsConfig = helpers.getThemeConfig('angular.iconsEnabled');
+const compareIconGroupConfigs = () => {
+    const activeIconGroups = <string[]>helpers.getThemeConfig('activeIconGroups').globalValue;
 
-    return checkAngularIconsStatus().then(result => {
-        if (angularIconsConfig.globalValue !== undefined && angularIconsConfig.globalValue !== result) {
+    return helpers.getMaterialIconsJSON().then(result => {
+        if (activeIconGroups !== undefined && JSON.stringify(activeIconGroups) !== JSON.stringify(result.options.activatedGroups)) {
             updateIconJson();
         }
     });
 };
 
 const compareFolderConfigs = () => {
-    const folderIconsConfig = helpers.getThemeConfig('folders.icons');
+    const folderIconsConfig = helpers.getThemeConfig('folders.icons').globalValue;
 
-    return checkFolderIconsStatus().then(result => {
-        if (folderIconsConfig.globalValue !== undefined && folderIconsConfig.globalValue !== result) {
+    return helpers.getMaterialIconsJSON().then(result => {
+        if (folderIconsConfig !== undefined && folderIconsConfig !== result.options.folderTheme) {
             updateIconJson();
         }
     });
@@ -43,9 +42,7 @@ const compareFolderConfigs = () => {
 const updateIconJson = () => {
     const options: IconJsonOptions = {
         folderTheme: getCurrentFolderTheme(),
-        activatedGroups: {
-            [IconGroup.Angular]: getAngularIconsEnabled()
-        }
+        activatedGroups: getEnabledIconGroups()
     };
     return createIconFile(options).then(() => {
         helpers.promptToReload();
@@ -59,7 +56,7 @@ export const getCurrentFolderTheme = (): string => {
     return result !== undefined ? result : 'specific';
 };
 
-export const getAngularIconsEnabled = (): boolean => {
-    const result = <boolean>helpers.getThemeConfig('angular.iconsEnabled').globalValue;
-    return result !== undefined ? result : true;
+export const getEnabledIconGroups = (): string[] => {
+    const result = <string[]>helpers.getThemeConfig('activeIconGroups').globalValue;
+    return result !== undefined ? result : ['angular'];
 };

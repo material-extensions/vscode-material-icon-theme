@@ -1,11 +1,11 @@
 {
     "command.activateIcons": "Material Icons: Icon Theme aktivieren",
-    "command.toggleAngularIcons": "Material Icons: Angular Icons umschalten",
+    "command.toggleIconGroups": "Material Icons: Icon Packs konfigurieren",
     "command.toggleFolderIcons": "Material Icons: Ordner Icons umschalten",
     "command.restoreDefaultConfig": "Material Icons: Standard Einstellungen wiederherstellen",
     "configuration.title": "Material Icons Konfiguration",
     "configuration.showWelcomeMessage": "Willkommensnachricht nach der ersten Installation anzeigen.",
     "configuration.showUpdateMessage": "Nachricht bei Aktualisierungen anzeigen.",
-    "configuration.angular.iconsEnabled": "Icons für Angular Dateien aktivieren.",
+    "configuration.activeIconGroups": "Icon Pakete auswählen, die bestimme Icons aktivieren.",
     "configuration.folders.icons": "Art der Ordner Icons auswählen."
 }

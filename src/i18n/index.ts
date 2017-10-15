@@ -7,6 +7,7 @@ export const getCurrentLanguage = (): string =>
 
 let currentTranslation;
 let fallbackTranslation; // default: en
+const PLACEHOLDER = '%';
 
 /** Initialize the translations */
 export const initTranslations = async () => {
@@ -48,6 +49,33 @@ export const translate = (key: string, translations = currentTranslation, fallba
         getValue(translations, key) :
         getValue(fallback, key) ?
             getValue(fallback, key) : undefined;
+};
+
+/**
+ * The instant method is required for the translate pipe.
+ * It helps to translate a word instantly.
+ */
+export const instant = (key: string, words?: string | string[]) => {
+    const translation: string = translate(key);
+
+    if (!words) return translation;
+    return replace(translation, words);
+};
+
+/**
+ * The replace function will replace the current placeholder with the
+ * data parameter from the translation. You can give it one or more optional
+ * parameters ('words').
+ */
+const replace = (word: string = '', words: string | string[]) => {
+    let translation: string = word;
+
+    const values: string[] = [].concat(words);
+    values.forEach((e, i) => {
+        translation = translation.replace(PLACEHOLDER.concat(<any>i), e);
+    });
+
+    return translation;
 };
 
 /** Get the nested keys of an object (http://stackoverflow.com/a/6491621/6942210)
