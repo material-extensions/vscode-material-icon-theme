@@ -66,6 +66,8 @@ export const check = () => fs.readdir(folderPath, fsReadAllIconFiles);
 const getAllUsedFileIcons = (): string[] => {
     const icons = [
         fileIcons.defaultIcon.name,
+        fileIcons.defaultIcon.light ? fileIcons.defaultIcon.name + lightVersion : undefined,
+        fileIcons.defaultIcon.highContrast ? fileIcons.defaultIcon.name + highContrastVersion : undefined,
         ...fileIcons.icons.map(icon => icon.name),
         ...fileIcons.icons.filter(icon => icon.light).map(icon => icon.name + lightVersion),
         ...fileIcons.icons.filter(icon => icon.highContrast).map(icon => icon.name + highContrastVersion)

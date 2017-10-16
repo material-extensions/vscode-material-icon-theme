@@ -134,7 +134,7 @@ const logIconInformation = (wrongIcons: string[], title: string) => {
         const isWrongLightVersionString = isWrongLightVersion ? ` (There is no light icon for ${painter.green(icon.slice(0, -6))}! Set the light option to false!)` : '';
         const isWrongHighContrastVersion = icon.endsWith(highContrastVersion);
         const isWrongHighContrastVersionString = isWrongHighContrastVersion ? ` (There is no high contrast icon for ${painter.green(icon.slice(0, -13))}! Set the highContrast option to false!)` : '';
-        console.log(painter.red(`Icon not found: ${icon}`) + `${suggestionString}${isWrongLightVersionString}${isWrongHighContrastVersionString}`);
+        console.log(painter.red(`Icon not found: ${icon}.svg`) + `${suggestionString}${isWrongLightVersionString}${isWrongHighContrastVersionString}`);
     });
 };
 
