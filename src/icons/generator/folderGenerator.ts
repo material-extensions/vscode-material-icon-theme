@@ -1,4 +1,4 @@
-import { iconFolderPath, openedFolder } from './constants';
+import { iconFolderPath, openedFolder, lightVersion, highContrastVersion } from './constants';
 import { IconConfiguration, FolderTheme, FolderIcon, IconJsonOptions, DefaultIcon } from '../../models/index';
 import * as merge from 'lodash.merge';
 
@@ -17,29 +17,33 @@ export const getFolderIconDefinitions = (folderThemes: FolderTheme[], config: Ic
     enabledIcons.forEach(icon => {
         if (icon.disabled) return;
         config = setIconDefinitions(config, icon);
-        icon.folderNames.forEach(fn => {
-            config.folderNames[fn] = icon.name;
-            config.folderNamesExpanded[fn] = `${icon.name}${openedFolder}`;
-        });
+        config = merge({}, config, setFolderNames(icon.name, icon.folderNames));
+        config.light = icon.light ? setFolderNames(icon.name + lightVersion, icon.folderNames) : config.light;
+        config.highContrast = icon.highContrast ? setFolderNames(icon.name + highContrastVersion, icon.folderNames) : config.highContrast;
     });
 
-    config = merge({}, config, setDefaultFolderIcons(activeTheme));
+    config = setDefaultFolderIcons(activeTheme, config);
     return config;
 };
 
 /**
  * Set the default folder icons for the theme.
  */
-const setDefaultFolderIcons = (theme: FolderTheme): IconConfiguration => {
-    let config = new IconConfiguration();
+const setDefaultFolderIcons = (theme: FolderTheme, config: IconConfiguration): IconConfiguration => {
+    config = merge({}, config);
     const hasFolderIcons = theme.defaultIcon.name && theme.defaultIcon.name.length > 0;
     if (hasFolderIcons) {
         config = setIconDefinitions(config, theme.defaultIcon);
     }
-    config.folder = hasFolderIcons ? theme.defaultIcon.name : '';
-    config.folderExpanded = hasFolderIcons ? `${theme.defaultIcon.name}${openedFolder}` : '';
-    config.rootFolder = theme.rootFolder ? theme.rootFolder.name : hasFolderIcons ? theme.defaultIcon.name : '';
-    config.rootFolderExpanded = theme.rootFolder ? `${theme.rootFolder.name}${openedFolder}` : hasFolderIcons ? `${theme.defaultIcon.name}${openedFolder}` : '';
+    config = merge({}, config, createDefaultIconConfigObject(hasFolderIcons, theme, ''));
+    config.light = theme.defaultIcon.light ? merge({}, config.light, createDefaultIconConfigObject(hasFolderIcons, theme, lightVersion)) : config.light;
+    config.highContrast = theme.defaultIcon.highContrast ? merge({}, config.highContrast, createDefaultIconConfigObject(hasFolderIcons, theme, highContrastVersion)) : config.highContrast;
+
+    config = merge({}, config, createRootIconConfigObject(hasFolderIcons, theme, ''));
+    if (theme.rootFolder) {
+        config.light = theme.rootFolder.light ? merge({}, config.light, createRootIconConfigObject(hasFolderIcons, theme, lightVersion)) : config.light;
+        config.highContrast = theme.rootFolder.highContrast ? merge({}, config.highContrast, createRootIconConfigObject(hasFolderIcons, theme, highContrastVersion)) : config.highContrast;
+    }
 
     return config;
 };
@@ -64,11 +68,49 @@ const disableIconsByPack = (folderIcons: FolderTheme, activatedIconPacks): Folde
 };
 
 const setIconDefinitions = (config: IconConfiguration, icon: FolderIcon | DefaultIcon) => {
-    config.iconDefinitions[icon.name] = {
-        iconPath: `${iconFolderPath}${icon.name}.svg`
+    config = merge({}, config);
+    config = createIconDefinitions(config, icon.name);
+    config = merge({}, config, icon.light ? createIconDefinitions(config, icon.name + lightVersion) : config.light);
+    config = merge({}, config, icon.highContrast ? createIconDefinitions(config, icon.name + highContrastVersion) : config.highContrast);
+    return config;
+};
+
+const createIconDefinitions = (config: IconConfiguration, iconName: string) => {
+    config = merge({}, config);
+    config.iconDefinitions[iconName] = {
+        iconPath: `${iconFolderPath}${iconName}.svg`
     };
-    config.iconDefinitions[`${icon.name}${openedFolder}`] = {
-        iconPath: `${iconFolderPath}${icon.name}${openedFolder}.svg`
+    config.iconDefinitions[`${iconName}${openedFolder}`] = {
+        iconPath: `${iconFolderPath}${iconName}${openedFolder}.svg`
     };
-    return merge({}, config);
+    return config;
+};
+
+const setFolderNames = (iconName: string, folderNames: string[]) => {
+    const obj = { folderNames: {}, folderNamesExpanded: {} };
+    folderNames.forEach(fn => {
+        obj.folderNames[fn] = iconName;
+        obj.folderNamesExpanded[fn] = `${iconName}${openedFolder}`;
+    });
+    return obj;
+};
+
+const createDefaultIconConfigObject = (hasFolderIcons: boolean, theme: FolderTheme, appendix: string = '') => {
+    const obj = {
+        folder: '',
+        folderExpanded: ''
+    };
+    obj.folder = hasFolderIcons ? theme.defaultIcon.name + appendix : '';
+    obj.folderExpanded = hasFolderIcons ? `${theme.defaultIcon.name}${appendix}${openedFolder}` : '';
+    return obj;
+};
+
+const createRootIconConfigObject = (hasFolderIcons: boolean, theme: FolderTheme, appendix: string = '') => {
+    const obj = {
+        rootFolder: '',
+        rootFolderExpanded: ''
+    };
+    obj.rootFolder = theme.rootFolder ? theme.rootFolder.name + appendix : hasFolderIcons ? theme.defaultIcon.name + appendix : '';
+    obj.rootFolderExpanded = theme.rootFolder ? `${theme.rootFolder.name}${appendix}${openedFolder}` : hasFolderIcons ? `${theme.defaultIcon.name}${appendix}${openedFolder}` : '';
+    return obj;
 };
