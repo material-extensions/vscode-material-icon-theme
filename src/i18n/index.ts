@@ -44,7 +44,7 @@ const getTranslationObject = async (language: string): Promise<any> => {
  * With optional parameters you can configure both the translations
  * and the fallback (required for testing purposes).
  * */
-export const translate = (key: string, translations = currentTranslation, fallback = fallbackTranslation) => {
+export const getTranslationValue = (key: string, translations = currentTranslation, fallback = fallbackTranslation) => {
     return getValue(translations, key) ?
         getValue(translations, key) :
         getValue(fallback, key) ?
@@ -55,8 +55,8 @@ export const translate = (key: string, translations = currentTranslation, fallba
  * The instant method is required for the translate pipe.
  * It helps to translate a word instantly.
  */
-export const instant = (key: string, words?: string | string[]) => {
-    const translation: string = translate(key);
+export const translate = (key: string, words?: string | string[]) => {
+    const translation: string = getTranslationValue(key);
 
     if (!words) return translation;
     return replace(translation, words);
@@ -67,8 +67,8 @@ export const instant = (key: string, words?: string | string[]) => {
  * data parameter from the translation. You can give it one or more optional
  * parameters ('words').
  */
-const replace = (word: string = '', words: string | string[]) => {
-    let translation: string = word;
+export const replace = (value: string = '', words: string | string[]) => {
+    let translation: string = value;
 
     const values: string[] = [].concat(words);
     values.forEach((e, i) => {

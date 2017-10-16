@@ -30,13 +30,13 @@ const showQuickPickItems = (activePacks: string[]) => {
     const options = packs.map((pack): vscode.QuickPickItem => {
         return {
             description: helpers.capitalizeFirstLetter(pack),
-            detail: i18n.instant(`iconPacks.toggleIcons`, helpers.capitalizeFirstLetter(pack)),
+            detail: i18n.translate(`iconPacks.toggleIcons`, helpers.capitalizeFirstLetter(pack)),
             label: isPackActive(activePacks, pack) ? '\u2714' : '\u25FB'
         };
     });
 
     return vscode.window.showQuickPick(options, {
-        placeHolder: i18n.instant('iconPacks.selectPack'),
+        placeHolder: i18n.translate('iconPacks.selectPack'),
         ignoreFocusOut: false,
         matchOnDescription: true
     });
@@ -53,18 +53,18 @@ const handleQuickPickActions = (value: vscode.QuickPickItem, activePacks: string
 /** Show quick pick to choose if the pack should be enabled or disabled. */
 export const showSpecificQuickPickItems = (pack: string, activePacks: string[]) => {
     const on: vscode.QuickPickItem = {
-        description: i18n.instant('toggleSwitch.on'),
-        detail: i18n.instant(`iconPacks.enableIcons`, helpers.capitalizeFirstLetter(pack)),
+        description: i18n.translate('toggleSwitch.on'),
+        detail: i18n.translate(`iconPacks.enableIcons`, helpers.capitalizeFirstLetter(pack)),
         label: isPackActive(activePacks, pack) ? '\u2714' : '\u25FB'
     };
     const off: vscode.QuickPickItem = {
-        description: i18n.instant('toggleSwitch.off'),
-        detail: i18n.instant(`iconPacks.disableIcons`, helpers.capitalizeFirstLetter(pack)),
+        description: i18n.translate('toggleSwitch.off'),
+        detail: i18n.translate(`iconPacks.disableIcons`, helpers.capitalizeFirstLetter(pack)),
         label: !isPackActive(activePacks, pack) ? '\u2714' : '\u25FB'
     };
     return vscode.window.showQuickPick(
         [on, off], {
-            placeHolder: i18n.instant('iconPacks.selectPack'),
+            placeHolder: i18n.translate('iconPacks.selectPack'),
             ignoreFocusOut: false,
             matchOnDescription: true
         });
@@ -74,13 +74,13 @@ export const showSpecificQuickPickItems = (pack: string, activePacks: string[]) 
 const handleSpecificQuickPickActions = (value: vscode.QuickPickItem, pack: string) => {
     if (!value || !value.description) return;
     switch (value.description) {
-        case i18n.instant('toggleSwitch.on'): {
+        case i18n.translate('toggleSwitch.on'): {
             let activatedPacks = <string[]>helpers.getThemeConfig('activeIconPacks').globalValue || [];
             activatedPacks = [...activatedPacks, pack.toLowerCase()];
             helpers.setThemeConfig('activeIconPacks', activatedPacks, true);
             break;
         }
-        case i18n.instant('toggleSwitch.off'): {
+        case i18n.translate('toggleSwitch.off'): {
             let activatedPacks = <string[]>helpers.getThemeConfig('activeIconPacks').globalValue || [];
             activatedPacks = activatedPacks.filter(g => g.toLowerCase() !== pack.toLowerCase());
             helpers.setThemeConfig('activeIconPacks', activatedPacks, true);

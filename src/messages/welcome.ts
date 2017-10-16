@@ -11,28 +11,28 @@ export const showWelcomeMessage = () => {
     if (helpers.getThemeConfig('showWelcomeMessage').globalValue === false) return;
 
     vscode.window.showInformationMessage(
-        i18n.instant('themeInstalled'),
+        i18n.translate('themeInstalled'),
 
         // show 'Activate' button if icon theme is not active
         (!versioning.isNotSupportedVersion() && helpers.isThemeNotVisible())
-            ? i18n.instant('activate') : i18n.instant('howToActivate'),
+            ? i18n.translate('activate') : i18n.translate('howToActivate'),
 
-        i18n.instant('neverShowAgain')
+        i18n.translate('neverShowAgain')
     ).then(handleWelcomeMessageActions);
 };
 
 /** Handle the actions of the welcome message. */
 const handleWelcomeMessageActions = (value) => {
     switch (value) {
-        case i18n.instant('activate'):
+        case i18n.translate('activate'):
             activateIconTheme();
             break;
 
-        case i18n.instant('howToActivate'):
+        case i18n.translate('howToActivate'):
             opn('https://code.visualstudio.com/blogs/2016/09/08/icon-themes#_file-icon-themes');
             break;
 
-        case i18n.instant('neverShowAgain'):
+        case i18n.translate('neverShowAgain'):
             disableWelcomeMessage();
             break;
 
