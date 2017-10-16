@@ -73,7 +73,6 @@ const checkFolderIcons = () => {
     )
         .reduce((a, b) => a.concat(b))
         .forEach(icon => {
-            console.log(icon);
             isIconAvailable(icon, IconType.folderIcons, IconColor.default);
             isIconAvailable(icon, IconType.folderIcons, IconColor.default, true);
             isIconAvailable(icon, IconType.folderIcons, IconColor.light);

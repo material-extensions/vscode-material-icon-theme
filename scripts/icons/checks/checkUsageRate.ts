@@ -2,7 +2,7 @@ import * as path from 'path';
 import * as fs from 'fs';
 import { fileIcons, folderIcons, languageIcons, openedFolder, lightVersion, highContrastVersion } from './../../../src/icons';
 import * as painter from './../../helpers/painter';
-import { FolderTheme } from '../../../src/models/index';
+import { FolderTheme, FolderIcon, DefaultIcon } from '../../../src/models/index';
 
 /**
  * Defines the folder where all icon files are located.
@@ -35,8 +35,15 @@ const fsReadAllIconFiles = (err: Error, files: string[]) => {
 };
 
 const checkUsageOfAllIcons = () => {
-    const usedIcons: string[] = getAllUsedIcons();
-    usedIcons.forEach(icon => {
+    const usedFileIcons: string[] = getAllUsedFileIcons();
+    const usedFolderIcons: string[] = getAllUsedFolderIcons();
+    const usedLanguageIcons: string[] = getAllUsedLanguageIcons();
+
+    [].concat(
+        usedFileIcons,
+        usedFolderIcons,
+        usedLanguageIcons
+    ).forEach(icon => {
         delete availableIcons[icon];
     });
 };
@@ -56,30 +63,45 @@ const showWarningMessage = () => {
 // read from the file system
 export const check = () => fs.readdir(folderPath, fsReadAllIconFiles);
 
-const getAllUsedIcons = (): string[] => {
-    const test = [
+const getAllUsedFileIcons = (): string[] => {
+    const icons = [
         fileIcons.defaultIcon.name,
         ...fileIcons.icons.map(icon => icon.name),
         ...fileIcons.icons.filter(icon => icon.light).map(icon => icon.name + lightVersion),
-        ...fileIcons.icons.filter(icon => icon.highContrast).map(icon => icon.name + highContrastVersion),
-        ...languageIcons.languages.map(lang => lang.icon),
-        ...folderIcons.map(
-            theme => theme.name === 'none' ? undefined : getAllFolderIcons(theme)
-        ).reduce((a, b) => a.concat(b))
+        ...fileIcons.icons.filter(icon => icon.highContrast).map(icon => icon.name + highContrastVersion)
     ];
-    return test;
+    return icons;
 };
 
-const getAllFolderIcons = (theme: FolderTheme) => {
-    const icons = theme.icons ? [
-        ...theme.icons.map(icon => icon.name),
-        ...theme.icons.map(icon => icon.name + openedFolder)
-    ] : [];
+const getAllUsedFolderIcons = (): string[] => {
+    const icons = folderIcons.map(
+        theme => theme.name === 'none' ? [] : getAllFolderIcons(theme)
+    ).reduce((a, b) => a.concat(b));
+    return icons.map(icon => {
+        return [
+            icon.name,
+            icon.name + openedFolder,
+            icon.light ? icon.name + lightVersion : undefined,
+            icon.light ? icon.name + openedFolder + lightVersion : undefined,
+            icon.highContrast ? icon.name + highContrastVersion : undefined,
+            icon.highContrast ? icon.name + openedFolder + highContrastVersion : undefined
+        ];
+    }).filter(icon => icon !== undefined)
+        .reduce((a, b) => a.concat(b));
+};
+
+const getAllFolderIcons = (theme: FolderTheme): (FolderIcon | DefaultIcon)[] => {
+    const icons = theme.icons ? theme.icons : [];
     return [
-        theme.defaultIcon.name,
-        theme.rootFolder ? theme.rootFolder.name : theme.defaultIcon.name,
-        theme.defaultIcon.name + openedFolder,
-        theme.rootFolder ? theme.rootFolder.name + openedFolder : theme.defaultIcon.name + openedFolder,
+        theme.defaultIcon,
+        theme.rootFolder,
         ...icons
+    ].filter(icon => icon !== undefined); // filter undefined root folder icons
+};
+
+const getAllUsedLanguageIcons = (): string[] => {
+    const icons = [
+        ...languageIcons.languages.map(lang => lang.icon)
     ];
+    return icons;
 };

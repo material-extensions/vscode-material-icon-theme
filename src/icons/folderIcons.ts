@@ -6,7 +6,7 @@ import { FolderTheme } from '../models/index';
 export const folderIcons: FolderTheme[] = [
     {
         name: 'specific',
-        defaultIcon: { name: 'folder', light: true },
+        defaultIcon: { name: 'folder' },
         rootFolder: { name: 'folder' },
         icons: [
             { name: 'folder-src', folderNames: ['src', 'source', 'sources'] },
