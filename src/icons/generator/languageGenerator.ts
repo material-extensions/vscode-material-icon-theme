@@ -1,19 +1,53 @@
-import { iconFolderPath } from './constants';
-import { LanguageIcons, IconConfiguration } from '../../models/index';
+import { iconFolderPath, lightVersion, highContrastVersion } from './constants';
+import { IconConfiguration, LanguageIdentifier, IconJsonOptions, DefaultIcon } from '../../models/index';
 import * as merge from 'lodash.merge';
 
 /**
  * Get all file icons that can be used in this theme.
  */
-export const getLanguageIconDefinitions = (languageIcons: LanguageIcons, config: IconConfiguration): IconConfiguration => {
+export const getLanguageIconDefinitions = (languages: LanguageIdentifier[], config: IconConfiguration, options: IconJsonOptions): IconConfiguration => {
     config = merge({}, config);
-    languageIcons.languages.forEach(language => {
-        if (language.disabled) return;
-        config.iconDefinitions[language.icon] = {
-            iconPath: `${iconFolderPath}${language.icon}.svg`
-        };
-        config.languageIds[language.id] = language.icon;
+    const enabledLanguages = disableLanguagesByPack(languages, options.activatedPacks);
+    enabledLanguages.forEach(lang => {
+        if (lang.disabled) return;
+        setIconDefinitions(config, lang.icon);
+        config = merge({}, config, setLanguageIdentifiers(lang.icon.name, lang.id));
+        config.light = merge({}, config.light, lang.icon.light ? setLanguageIdentifiers(lang.icon.name + lightVersion, lang.id) : config.light);
+        config.highContrast = merge({}, lang.icon.highContrast ? setLanguageIdentifiers(lang.icon.name + highContrastVersion, lang.id) : config.highContrast);
     });
 
     return config;
+};
+
+const setIconDefinitions = (config: IconConfiguration, icon: DefaultIcon) => {
+    config = merge({}, config);
+    config = createIconDefinitions(config, icon.name);
+    config = merge({}, config, icon.light ? createIconDefinitions(config, icon.name + lightVersion) : config.light);
+    config = merge({}, config, icon.highContrast ? createIconDefinitions(config, icon.name + highContrastVersion) : config.highContrast);
+    return config;
+};
+
+const createIconDefinitions = (config: IconConfiguration, iconName: string) => {
+    config = merge({}, config);
+    config.iconDefinitions[iconName] = {
+        iconPath: `${iconFolderPath}${iconName}.svg`
+    };
+    return config;
+};
+
+const setLanguageIdentifiers = (iconName: string, languageId: string) => {
+    return {
+        languageIds: {
+            [languageId]: iconName
+        }
+    };
+};
+
+/**
+ * Disable all file icons that are in a pack which is disabled.
+ */
+const disableLanguagesByPack = (languageIcons: LanguageIdentifier[], activatedIconPacks: string[]) => {
+    return languageIcons.filter(language => {
+        return !language.pack ? true : activatedIconPacks.some(pack => pack === language.pack);
+    });
 };

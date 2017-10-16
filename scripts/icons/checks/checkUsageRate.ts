@@ -101,7 +101,9 @@ const getAllFolderIcons = (theme: FolderTheme): (FolderIcon | DefaultIcon)[] => 
 
 const getAllUsedLanguageIcons = (): string[] => {
     const icons = [
-        ...languageIcons.languages.map(lang => lang.icon)
+        ...languageIcons.map(lang => lang.icon.name),
+        ...languageIcons.filter(lang => lang.icon.light).map(lang => lang.icon.name + lightVersion),
+        ...languageIcons.filter(lang => lang.icon.highContrast).map(lang => lang.icon.name + highContrastVersion),
     ];
     return icons;
 };

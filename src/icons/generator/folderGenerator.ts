@@ -18,8 +18,8 @@ export const getFolderIconDefinitions = (folderThemes: FolderTheme[], config: Ic
         if (icon.disabled) return;
         config = setIconDefinitions(config, icon);
         config = merge({}, config, setFolderNames(icon.name, icon.folderNames));
-        config.light = icon.light ? setFolderNames(icon.name + lightVersion, icon.folderNames) : config.light;
-        config.highContrast = icon.highContrast ? setFolderNames(icon.name + highContrastVersion, icon.folderNames) : config.highContrast;
+        config.light = icon.light ? merge({}, config.light, setFolderNames(icon.name + lightVersion, icon.folderNames)) : config.light;
+        config.highContrast = icon.highContrast ? merge({}, setFolderNames(icon.name + highContrastVersion, icon.folderNames)) : config.highContrast;
     });
 
     config = setDefaultFolderIcons(activeTheme, config);

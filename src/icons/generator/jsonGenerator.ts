@@ -13,7 +13,7 @@ import * as fs from 'fs';
  */
 export const generateIconConfigurationObject = (options: IconJsonOptions): IconConfiguration => {
     const iconConfig = merge({}, new IconConfiguration(), { options });
-    const languageIconDefinitions = getLanguageIconDefinitions(languageIcons, iconConfig);
+    const languageIconDefinitions = getLanguageIconDefinitions(languageIcons, iconConfig, options);
     const fileIconDefinitions = getFileIconDefinitions(fileIcons, iconConfig, options);
     const folderIconDefinitions = getFolderIconDefinitions(folderIcons, iconConfig, options);
 

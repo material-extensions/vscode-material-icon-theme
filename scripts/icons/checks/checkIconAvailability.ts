@@ -95,10 +95,11 @@ const getAllFolderIcons = (theme: FolderTheme) => {
  * Check if the language icons from the configuration are available on the file system.
  */
 const checkLanguageIcons = () => {
-    languageIcons.languages.map(lang => lang.icon).forEach(icon => {
-        if (!availableIcons[icon] && icon) {
-            wrongIconNames.languageIcons.push(icon);
-        }
+    languageIcons.forEach(lang => {
+        const icon = lang.icon;
+        isIconAvailable(icon, IconType.languageIcons, IconColor.default);
+        isIconAvailable(icon, IconType.languageIcons, IconColor.light);
+        isIconAvailable(icon, IconType.languageIcons, IconColor.highContrast);
     });
 };
 

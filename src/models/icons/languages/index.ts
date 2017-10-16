@@ -1,2 +1,1 @@
-export * from './LanguageIcon';
-export * from './LanguageTypes';
+export * from './languageIdentifier';

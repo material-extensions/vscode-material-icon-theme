@@ -165,7 +165,8 @@ suite('folder icons', () => {
                 defaultIcon: { name: 'folder', light: true, highContrast: true },
                 rootFolder: { name: 'folder-root', light: true, highContrast: true },
                 icons: [
-                    { name: 'folder-src', folderNames: ['src', 'source'], light: true, highContrast: true }
+                    { name: 'folder-src', folderNames: ['src', 'source'], light: true, highContrast: true },
+                    { name: 'folder-test', folderNames: ['test'], light: true, highContrast: true }
                 ]
             }
         ];
@@ -218,6 +219,18 @@ suite('folder icons', () => {
             },
             'folder-src-open_light': {
                 'iconPath': './../../icons/folder-src-open_light.svg'
+            },
+            'folder-test': {
+                'iconPath': './../../icons/folder-test.svg'
+            },
+            'folder-test-open': {
+                'iconPath': './../../icons/folder-test-open.svg'
+            },
+            'folder-test_light': {
+                'iconPath': './../../icons/folder-test_light.svg'
+            },
+            'folder-test-open_light': {
+                'iconPath': './../../icons/folder-test-open_light.svg'
             }
         };
         value.folder = 'folder';
@@ -226,11 +239,13 @@ suite('folder icons', () => {
         value.rootFolderExpanded = 'folder-root-open';
         value.folderNames = {
             'src': 'folder-src',
-            'source': 'folder-src'
+            'source': 'folder-src',
+            'test': 'folder-test'
         };
         value.folderNamesExpanded = {
             'src': 'folder-src-open',
-            'source': 'folder-src-open'
+            'source': 'folder-src-open',
+            'test': 'folder-test-open'
         };
         value.light = {
             folder: 'folder_light',
@@ -239,11 +254,13 @@ suite('folder icons', () => {
             rootFolderExpanded: 'folder-root-open_light',
             folderNames: {
                 'src': 'folder-src_light',
-                'source': 'folder-src_light'
+                'source': 'folder-src_light',
+                'test': 'folder-test_light'
             },
             folderNamesExpanded: {
                 'src': 'folder-src-open_light',
-                'source': 'folder-src-open_light'
+                'source': 'folder-src-open_light',
+                'test': 'folder-test-open_light'
             }
         };
         value.highContrast = {
@@ -253,11 +270,13 @@ suite('folder icons', () => {
             rootFolderExpanded: 'folder-root-open_highContrast',
             folderNames: {
                 'src': 'folder-src_highContrast',
-                'source': 'folder-src_highContrast'
+                'source': 'folder-src_highContrast',
+                'test': 'folder-test_highContrast'
             },
             folderNamesExpanded: {
                 'src': 'folder-src-open_highContrast',
-                'source': 'folder-src-open_highContrast'
+                'source': 'folder-src-open_highContrast',
+                'test': 'folder-test-open_highContrast'
             }
         };
     });
