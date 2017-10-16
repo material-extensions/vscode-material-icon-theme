@@ -10,10 +10,10 @@ export const getLanguageIconDefinitions = (languages: LanguageIdentifier[], conf
     const enabledLanguages = disableLanguagesByPack(languages, options.activatedPacks);
     enabledLanguages.forEach(lang => {
         if (lang.disabled) return;
-        setIconDefinitions(config, lang.icon);
+        config = setIconDefinitions(config, lang.icon);
         config = merge({}, config, setLanguageIdentifiers(lang.icon.name, lang.id));
-        config.light = merge({}, config.light, lang.icon.light ? setLanguageIdentifiers(lang.icon.name + lightVersion, lang.id) : config.light);
-        config.highContrast = merge({}, lang.icon.highContrast ? setLanguageIdentifiers(lang.icon.name + highContrastVersion, lang.id) : config.highContrast);
+        config.light = lang.icon.light ? merge({}, config.light, setLanguageIdentifiers(lang.icon.name + lightVersion, lang.id)) : config.light;
+        config.highContrast = lang.icon.highContrast ? merge({}, config.highContrast, setLanguageIdentifiers(lang.icon.name + highContrastVersion, lang.id)) : config.highContrast;
     });
 
     return config;
