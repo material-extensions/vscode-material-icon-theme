@@ -2,7 +2,7 @@ import * as vscode from 'vscode';
 import * as path from 'path';
 import * as fs from 'fs';
 import * as reloadMessages from './../messages/reload';
-import { AdvancedWorkspaceConfiguration } from '../models/AdvancedWorkspaceConfiguration.interface';
+import { AdvancedWorkspaceConfiguration } from '../models';
 import { IconConfiguration } from '../models/index';
 import { iconJsonName } from '../icons/index';
 
