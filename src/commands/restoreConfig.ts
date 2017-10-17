@@ -1,7 +1,10 @@
 import * as helpers from './../helpers';
+import { getDefaultIconOptions } from '../icons/index';
 
 /** Restore all configurations to default. */
 export const restoreDefaultConfig = () => {
-    helpers.setThemeConfig('activeIconPacks', ['angular'], true);
-    helpers.setThemeConfig('folders.icons', 'specific', true);
+    const defaultOptions = getDefaultIconOptions();
+    helpers.setThemeConfig('activeIconPacks', defaultOptions.activatedPacks, true);
+    helpers.setThemeConfig('folders.icons', defaultOptions.folderTheme, true);
+    helpers.setThemeConfig('hidesExplorerArrows', defaultOptions.hidesExplorerArrows, true);
 };
