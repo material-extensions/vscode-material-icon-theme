@@ -8,7 +8,7 @@ suite('folder icons', () => {
         {
             name: 'specific',
             defaultIcon: { name: 'folder' },
-            rootFolder: { name: 'folder' },
+            rootFolder: { name: 'folder-root' },
             icons: [
                 { name: 'folder-src', folderNames: ['src', 'source'] },
                 { name: 'folder-angular', folderNames: ['angular', 'ng'], pack: IconPack.Angular }
@@ -37,6 +37,12 @@ suite('folder icons', () => {
             'folder-open': {
                 'iconPath': './../../icons/folder-open.svg'
             },
+            'folder-root': {
+                'iconPath': './../../icons/folder-root.svg'
+            },
+            'folder-root-open': {
+                'iconPath': './../../icons/folder-root-open.svg'
+            },
             'folder-src': {
                 'iconPath': './../../icons/folder-src.svg'
             },
@@ -52,8 +58,8 @@ suite('folder icons', () => {
         };
         value.folder = 'folder';
         value.folderExpanded = 'folder-open';
-        value.rootFolder = 'folder';
-        value.rootFolderExpanded = 'folder-open';
+        value.rootFolder = 'folder-root';
+        value.rootFolderExpanded = 'folder-root-open';
         value.folderNames = {
             'src': 'folder-src',
             'source': 'folder-src',
@@ -66,6 +72,7 @@ suite('folder icons', () => {
             'angular': 'folder-angular-open',
             'ng': 'folder-angular-open'
         };
+        value.hidesExplorerArrows = false;
 
         assert.deepEqual(def, value);
     });
@@ -79,6 +86,7 @@ suite('folder icons', () => {
         value.iconDefinitions = {};
         value.folderNames = {};
         value.folderNamesExpanded = {};
+        value.hidesExplorerArrows = false;
 
         assert.deepEqual(def, value);
     });
@@ -116,6 +124,7 @@ suite('folder icons', () => {
             'src': 'folder-blue-src-open',
             'source': 'folder-blue-src-open'
         };
+        value.hidesExplorerArrows = false;
 
         assert.deepEqual(def, value);
     });
@@ -132,6 +141,12 @@ suite('folder icons', () => {
             'folder-open': {
                 'iconPath': './../../icons/folder-open.svg'
             },
+            'folder-root': {
+                'iconPath': './../../icons/folder-root.svg'
+            },
+            'folder-root-open': {
+                'iconPath': './../../icons/folder-root-open.svg'
+            },
             'folder-src': {
                 'iconPath': './../../icons/folder-src.svg'
             },
@@ -141,8 +156,8 @@ suite('folder icons', () => {
         };
         value.folder = 'folder';
         value.folderExpanded = 'folder-open';
-        value.rootFolder = 'folder';
-        value.rootFolderExpanded = 'folder-open';
+        value.rootFolder = 'folder-root';
+        value.rootFolderExpanded = 'folder-root-open';
         value.folderNames = {
             'src': 'folder-src',
             'source': 'folder-src'
@@ -151,14 +166,13 @@ suite('folder icons', () => {
             'src': 'folder-src-open',
             'source': 'folder-src-open'
         };
+        value.hidesExplorerArrows = false;
 
         assert.deepEqual(def, value);
     });
 
     test('should configure folder icons for light and high contrast', () => {
         const options = getDefaultIconOptions();
-        const def = getFolderIconDefinitions(folderIcons, iconConfig, options);
-        const value = new IconConfiguration();
         const lightHighContrastFolderIcons: FolderTheme[] = [
             {
                 name: 'specific',
@@ -166,10 +180,11 @@ suite('folder icons', () => {
                 rootFolder: { name: 'folder-root', light: true, highContrast: true },
                 icons: [
                     { name: 'folder-src', folderNames: ['src', 'source'], light: true, highContrast: true },
-                    { name: 'folder-test', folderNames: ['test'], light: true, highContrast: true }
                 ]
             }
         ];
+        const def = getFolderIconDefinitions(lightHighContrastFolderIcons, iconConfig, options);
+        const value = new IconConfiguration();
 
         value.iconDefinitions = {
             'folder': {
@@ -220,17 +235,11 @@ suite('folder icons', () => {
             'folder-src-open_light': {
                 'iconPath': './../../icons/folder-src-open_light.svg'
             },
-            'folder-test': {
-                'iconPath': './../../icons/folder-test.svg'
+            'folder-src_highContrast': {
+                'iconPath': './../../icons/folder-src_highContrast.svg'
             },
-            'folder-test-open': {
-                'iconPath': './../../icons/folder-test-open.svg'
-            },
-            'folder-test_light': {
-                'iconPath': './../../icons/folder-test_light.svg'
-            },
-            'folder-test-open_light': {
-                'iconPath': './../../icons/folder-test-open_light.svg'
+            'folder-src-open_highContrast': {
+                'iconPath': './../../icons/folder-src-open_highContrast.svg'
             }
         };
         value.folder = 'folder';
@@ -239,45 +248,54 @@ suite('folder icons', () => {
         value.rootFolderExpanded = 'folder-root-open';
         value.folderNames = {
             'src': 'folder-src',
-            'source': 'folder-src',
-            'test': 'folder-test'
+            'source': 'folder-src'
         };
         value.folderNamesExpanded = {
             'src': 'folder-src-open',
-            'source': 'folder-src-open',
-            'test': 'folder-test-open'
+            'source': 'folder-src-open'
         };
         value.light = {
+            fileExtensions: {},
+            fileNames: {},
             folder: 'folder_light',
             folderExpanded: 'folder-open_light',
             rootFolder: 'folder-root_light',
             rootFolderExpanded: 'folder-root-open_light',
             folderNames: {
                 'src': 'folder-src_light',
-                'source': 'folder-src_light',
-                'test': 'folder-test_light'
+                'source': 'folder-src_light'
             },
             folderNamesExpanded: {
                 'src': 'folder-src-open_light',
-                'source': 'folder-src-open_light',
-                'test': 'folder-test-open_light'
-            }
+                'source': 'folder-src-open_light'
+            },
         };
         value.highContrast = {
+            fileExtensions: {},
+            fileNames: {},
             folder: 'folder_highContrast',
             folderExpanded: 'folder-open_highContrast',
             rootFolder: 'folder-root_highContrast',
             rootFolderExpanded: 'folder-root-open_highContrast',
             folderNames: {
                 'src': 'folder-src_highContrast',
-                'source': 'folder-src_highContrast',
-                'test': 'folder-test_highContrast'
+                'source': 'folder-src_highContrast'
             },
             folderNamesExpanded: {
                 'src': 'folder-src-open_highContrast',
-                'source': 'folder-src-open_highContrast',
-                'test': 'folder-test-open_highContrast'
+                'source': 'folder-src-open_highContrast'
             }
         };
+        value.hidesExplorerArrows = false;
+
+        assert.deepEqual(def, value);
+    });
+
+    test('should hide explorer arrows', () => {
+        const options = getDefaultIconOptions();
+        options.hidesExplorerArrows = true;
+        const def = getFolderIconDefinitions(folderIcons, iconConfig, options);
+
+        assert.deepEqual(def.hidesExplorerArrows, true);
     });
 });

@@ -7,6 +7,7 @@ import * as merge from 'lodash.merge';
  */
 export const getFolderIconDefinitions = (folderThemes: FolderTheme[], config: IconConfiguration, options: IconJsonOptions): IconConfiguration => {
     config = merge({}, config);
+    config.hidesExplorerArrows = options.hidesExplorerArrows;
     const activeTheme = getEnabledFolderTheme(folderThemes, options.folderTheme);
     const enabledIcons = disableIconsByPack(activeTheme, options.activatedPacks);
 
@@ -18,12 +19,11 @@ export const getFolderIconDefinitions = (folderThemes: FolderTheme[], config: Ic
         if (icon.disabled) return;
         config = setIconDefinitions(config, icon);
         config = merge({}, config, setFolderNames(icon.name, icon.folderNames));
-        config.light = icon.light ? merge({}, config.light, setFolderNames(icon.name + lightVersion, icon.folderNames)) : config.light;
-        config.highContrast = icon.highContrast ? merge({}, setFolderNames(icon.name + highContrastVersion, icon.folderNames)) : config.highContrast;
+        config.light = icon.light ? merge({}, config.light, setFolderNames(icon.name, icon.folderNames, lightVersion)) : config.light;
+        config.highContrast = icon.highContrast ? merge({}, config.highContrast, setFolderNames(icon.name, icon.folderNames, highContrastVersion)) : config.highContrast;
     });
 
     config = setDefaultFolderIcons(activeTheme, config);
-    config.hidesExplorerArrows = options.hidesExplorerArrows;
     return config;
 };
 
@@ -42,6 +42,7 @@ const setDefaultFolderIcons = (theme: FolderTheme, config: IconConfiguration): I
 
     config = merge({}, config, createRootIconConfigObject(hasFolderIcons, theme, ''));
     if (theme.rootFolder) {
+        config = setIconDefinitions(config, theme.rootFolder);
         config.light = theme.rootFolder.light ? merge({}, config.light, createRootIconConfigObject(hasFolderIcons, theme, lightVersion)) : config.light;
         config.highContrast = theme.rootFolder.highContrast ? merge({}, config.highContrast, createRootIconConfigObject(hasFolderIcons, theme, highContrastVersion)) : config.highContrast;
     }
@@ -71,27 +72,27 @@ const disableIconsByPack = (folderIcons: FolderTheme, activatedIconPacks): Folde
 const setIconDefinitions = (config: IconConfiguration, icon: FolderIcon | DefaultIcon) => {
     config = merge({}, config);
     config = createIconDefinitions(config, icon.name);
-    config = merge({}, config, icon.light ? createIconDefinitions(config, icon.name + lightVersion) : config.light);
-    config = merge({}, config, icon.highContrast ? createIconDefinitions(config, icon.name + highContrastVersion) : config.highContrast);
+    config = merge({}, config, icon.light ? createIconDefinitions(config, icon.name, lightVersion) : config.light);
+    config = merge({}, config, icon.highContrast ? createIconDefinitions(config, icon.name, highContrastVersion) : config.highContrast);
     return config;
 };
 
-const createIconDefinitions = (config: IconConfiguration, iconName: string) => {
+const createIconDefinitions = (config: IconConfiguration, iconName: string, appendix: string = '') => {
     config = merge({}, config);
-    config.iconDefinitions[iconName] = {
-        iconPath: `${iconFolderPath}${iconName}.svg`
+    config.iconDefinitions[iconName + appendix] = {
+        iconPath: `${iconFolderPath}${iconName}${appendix}.svg`
     };
-    config.iconDefinitions[`${iconName}${openedFolder}`] = {
-        iconPath: `${iconFolderPath}${iconName}${openedFolder}.svg`
+    config.iconDefinitions[`${iconName}${openedFolder}${appendix}`] = {
+        iconPath: `${iconFolderPath}${iconName}${openedFolder}${appendix}.svg`
     };
     return config;
 };
 
-const setFolderNames = (iconName: string, folderNames: string[]) => {
+const setFolderNames = (iconName: string, folderNames: string[], appendix: string = '') => {
     const obj = { folderNames: {}, folderNamesExpanded: {} };
     folderNames.forEach(fn => {
-        obj.folderNames[fn] = iconName;
-        obj.folderNamesExpanded[fn] = `${iconName}${openedFolder}`;
+        obj.folderNames[fn] = iconName + appendix;
+        obj.folderNamesExpanded[fn] = `${iconName}${openedFolder}${appendix}`;
     });
     return obj;
 };
@@ -102,7 +103,7 @@ const createDefaultIconConfigObject = (hasFolderIcons: boolean, theme: FolderThe
         folderExpanded: ''
     };
     obj.folder = hasFolderIcons ? theme.defaultIcon.name + appendix : '';
-    obj.folderExpanded = hasFolderIcons ? `${theme.defaultIcon.name}${appendix}${openedFolder}` : '';
+    obj.folderExpanded = hasFolderIcons ? `${theme.defaultIcon.name}${openedFolder}${appendix}` : '';
     return obj;
 };
 
@@ -111,7 +112,7 @@ const createRootIconConfigObject = (hasFolderIcons: boolean, theme: FolderTheme,
         rootFolder: '',
         rootFolderExpanded: ''
     };
-    obj.rootFolder = theme.rootFolder ? theme.rootFolder.name + appendix : hasFolderIcons ? theme.defaultIcon.name + appendix : '';
-    obj.rootFolderExpanded = theme.rootFolder ? `${theme.rootFolder.name}${appendix}${openedFolder}` : hasFolderIcons ? `${theme.defaultIcon.name}${appendix}${openedFolder}` : '';
+    obj.rootFolder = hasFolderIcons ? theme.rootFolder ? theme.rootFolder.name + appendix : theme.defaultIcon.name + appendix : '';
+    obj.rootFolderExpanded = hasFolderIcons ? theme.rootFolder ? `${theme.rootFolder.name}${openedFolder}${appendix}` : `${theme.defaultIcon.name}${openedFolder}${appendix}` : '';
     return obj;
 };
