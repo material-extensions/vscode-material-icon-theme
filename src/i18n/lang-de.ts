@@ -27,6 +27,11 @@ export const translation: Translation = {
         'on': 'EIN',
         'off': 'AUS'
     },
+    'hidesExplorerArrows': {
+        'toggleArrows': 'Pfeile im Explorer anpassen',
+        'enableArrows': 'Explorer Pfeile anzeigen',
+        'disableArrows': 'Explorer Pfeile ausblenden'
+    },
     'confirmReload': 'VS Code muss neu gestartet werden, um die Änderungen an den Icons zu aktivieren.',
     'reload': 'Neu starten',
     'outdatedVersion': 'VS Code muss aktualisiert werden, um diesen Befehl auszuführen.',

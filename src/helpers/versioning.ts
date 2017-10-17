@@ -51,9 +51,8 @@ const getCurrentExtensionVersion = (): string => {
 
 /**
  * Check if the current version of VS Code
- * supports theme activation in the settings.
- * This was implemented in VS Code 1.10.0.
+ * supports new features.
 */
-export const isNotSupportedVersion = (): boolean => {
-    return semver.lt(vscode.version, '1.10.0');
+export const checkVersionSupport = (supportedVersion: string): boolean => {
+    return !semver.lt(vscode.version, supportedVersion);
 };

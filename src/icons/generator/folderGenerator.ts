@@ -23,6 +23,7 @@ export const getFolderIconDefinitions = (folderThemes: FolderTheme[], config: Ic
     });
 
     config = setDefaultFolderIcons(activeTheme, config);
+    config.hidesExplorerArrows = options.hidesExplorerArrows;
     return config;
 };
 

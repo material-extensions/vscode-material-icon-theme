@@ -25,6 +25,11 @@ export interface Translation {
         on?: string;
         off?: string;
     };
+    hidesExplorerArrows?: {
+        toggleArrows?: string;
+        enableArrows?: string;
+        disableArrows?: string;
+    };
     confirmReload?: string;
     reload?: string;
     outdatedVersion?: string;

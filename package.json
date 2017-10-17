@@ -58,6 +58,10 @@
       {
         "command": "material-icon-theme.restoreDefaultConfig",
         "title": "%command.restoreDefaultConfig%"
+      },
+      {
+        "command": "material-icon-theme.hidesExplorerArrows",
+        "title": "%command.hidesExplorerArrows%"
       }
     ],
     "configuration": {
@@ -91,6 +95,11 @@
             "blue",
             "none"
           ]
+        },
+        "material-icon-theme.hidesExplorerArrows": {
+          "type": "boolean",
+          "default": false,
+          "description": "%configuration.hidesExplorerArrows%"
         }
       }
     }

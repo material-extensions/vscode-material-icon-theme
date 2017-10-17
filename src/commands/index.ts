@@ -3,6 +3,7 @@ import { activateIconTheme } from './activate';
 import { toggleIconPacks } from './iconPacks';
 import { toggleFolderIcons } from './folders';
 import { restoreDefaultConfig } from './restoreConfig';
+import { toggleFolderArrows } from './folderArrows';
 
 // Activate theme
 const activateThemeCommand = vscode.commands.registerCommand('material-icon-theme.activateIcons', () => {
@@ -24,9 +25,15 @@ const restoreDefaultConfigCommand = vscode.commands.registerCommand('material-ic
     restoreDefaultConfig();
 });
 
+// Toggle the arrows near the folder icons
+const hidesExplorerArrowsCommand = vscode.commands.registerCommand('material-icon-theme.hidesExplorerArrows', () => {
+    toggleFolderArrows();
+});
+
 export const commands = [
     activateThemeCommand,
     toggleIconPacksCommand,
     toggleFolderIconsCommand,
-    restoreDefaultConfigCommand
+    restoreDefaultConfigCommand,
+    hidesExplorerArrowsCommand
 ];

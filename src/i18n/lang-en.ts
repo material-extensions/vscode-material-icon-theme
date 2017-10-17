@@ -27,6 +27,11 @@ export const translation: Translation = {
         'on': 'ON',
         'off': 'OFF'
     },
+    'hidesExplorerArrows': {
+        'toggleArrows': 'Toggle explorer arrows',
+        'enableArrows': 'Show explorer arrows',
+        'disableArrows': 'Hide explorer arrows'
+    },
     'confirmReload': 'You have to restart VS Code to activate the changes to the icons.',
     'reload': 'Restart',
     'outdatedVersion': 'You have to update VS Code to use this command.',

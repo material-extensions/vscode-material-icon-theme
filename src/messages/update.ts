@@ -16,7 +16,7 @@ export const showUpdateMessage = () => {
         i18n.translate('themeUpdated'),
 
         // show 'Activate' button if icon theme is not active
-        (!versioning.isNotSupportedVersion() && helpers.isThemeNotVisible())
+        (versioning.checkVersionSupport('1.10.0') && helpers.isThemeNotVisible())
             ? i18n.translate('activate') : undefined,
 
         i18n.translate('readChangelog'),

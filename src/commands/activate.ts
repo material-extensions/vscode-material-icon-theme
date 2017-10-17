@@ -6,7 +6,7 @@ import * as outdatedMessage from './../messages/outdated';
 
 /** Activate the icon theme by changing the settings for the iconTheme. */
 export const activateIconTheme = () => {
-    if (versioning.isNotSupportedVersion()) {
+    if (!versioning.checkVersionSupport('1.10.0')) {
         outdatedMessage.showOutdatedMessage();
         return Promise.reject('Outdated version of vscode!');
     }

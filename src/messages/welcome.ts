@@ -14,7 +14,7 @@ export const showWelcomeMessage = () => {
         i18n.translate('themeInstalled'),
 
         // show 'Activate' button if icon theme is not active
-        (!versioning.isNotSupportedVersion() && helpers.isThemeNotVisible())
+        (versioning.checkVersionSupport('1.10.0') && helpers.isThemeNotVisible())
             ? i18n.translate('activate') : i18n.translate('howToActivate'),
 
         i18n.translate('neverShowAgain')

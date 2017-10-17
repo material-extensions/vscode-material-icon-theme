@@ -4,7 +4,7 @@ import * as opn from 'opn';
 
 /** Show message that the editor version is outdated. */
 export const showOutdatedMessage = () => {
-    vscode.window.showWarningMessage(i18n.translate('outdatedVersion'), i18n.translate('howToActivate'), i18n.translate('updateVSCode')).then(handleActivateActions);
+    vscode.window.showWarningMessage(i18n.translate('outdatedVersion'), i18n.translate('updateVSCode'), i18n.translate('howToActivate')).then(handleActivateActions);
 };
 
 /** Handle the actions from the outdatedMessage command message */
