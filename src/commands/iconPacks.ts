@@ -26,7 +26,7 @@ export const getAllIconPacks = () => {
 
 /** Show QuickPick items to select prefered configuration for the folder icons. */
 const showQuickPickItems = (activePacks: string[]) => {
-    const packs = getAllIconPacks();
+    const packs = getAllIconPacks().sort();
     const options = packs.map((pack): vscode.QuickPickItem => {
         return {
             description: helpers.capitalizeFirstLetter(pack),

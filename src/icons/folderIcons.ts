@@ -1,4 +1,4 @@
-import { FolderTheme } from '../models/index';
+import { FolderTheme, IconPack } from '../models/index';
 
 /**
  * Defines folder icons
@@ -63,7 +63,11 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-global', folderNames: ['global'] },
             { name: 'folder-public', folderNames: ['public'] },
             { name: 'folder-include', folderNames: ['include'] },
-            { name: 'folder-docker', folderNames: ['docker', '.docker'] }
+            { name: 'folder-docker', folderNames: ['docker', '.docker'] },
+            { name: 'folder-ngrx-effects', folderNames: ['effects'], pack: IconPack.Ngrx },
+            { name: 'folder-ngrx-state', folderNames: ['states', 'state'], pack: IconPack.Ngrx },
+            { name: 'folder-ngrx-reducer', folderNames: ['reducers', 'reducer'], pack: IconPack.Ngrx },
+            { name: 'folder-ngrx-actions', folderNames: ['actions'], pack: IconPack.Ngrx }
         ]
     },
     { name: 'classic', defaultIcon: { name: 'folder' } },
