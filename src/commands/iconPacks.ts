@@ -76,7 +76,7 @@ const handleSpecificQuickPickActions = (value: vscode.QuickPickItem, pack: strin
     switch (value.description) {
         case i18n.translate('toggleSwitch.on'): {
             let activatedPacks = <string[]>helpers.getThemeConfig('activeIconPacks').globalValue || [];
-            activatedPacks = [...activatedPacks, pack.toLowerCase()];
+            activatedPacks = [...new Set([...activatedPacks.map(a => a.toLowerCase()), pack.toLowerCase()])];
             helpers.setThemeConfig('activeIconPacks', activatedPacks, true);
             break;
         }
