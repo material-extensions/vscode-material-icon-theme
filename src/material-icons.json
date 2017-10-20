@@ -33,9 +33,6 @@
     "_file_js": {
       "iconPath": "./../../icons/javascript.svg"
     },
-    "_file_jsreact": {
-      "iconPath": "./../../icons/react.svg"
-    },
     "_file_ts": {
       "iconPath": "./../../icons/typescript.svg"
     },
@@ -1456,7 +1453,7 @@
     "razor": "_file_razor",
     "python": "_file_python",
     "javascript": "_file_js",
-    "javascriptreact": "_file_jsreact",
+    "javascriptreact": "_file_react",
     "typescript": "_file_ts",
     "scala": "_file_scala",
     "handlebars": "_file_handlebars",
