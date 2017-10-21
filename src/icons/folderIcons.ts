@@ -7,7 +7,7 @@ export const folderIcons: FolderTheme[] = [
     {
         name: 'specific',
         defaultIcon: { name: 'folder' },
-        rootFolder: { name: 'folder' },
+        rootFolder: { name: 'folder-root' },
         icons: [
             { name: 'folder-src', folderNames: ['src', 'source', 'sources'] },
             { name: 'folder-dist', folderNames: ['dist', 'out', 'build'] },
@@ -70,7 +70,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-ngrx-actions', folderNames: ['actions'], pack: IconPack.Ngrx }
         ]
     },
-    { name: 'classic', defaultIcon: { name: 'folder' } },
-    { name: 'blue', defaultIcon: { name: 'folder-blue' } },
+    { name: 'classic', defaultIcon: { name: 'folder' }, rootFolder: { name: 'folder-root' } },
+    { name: 'blue', defaultIcon: { name: 'folder-blue' }, rootFolder: { name: 'folder-root-blue' } },
     { name: 'none', defaultIcon: { name: '' } },
 ];
