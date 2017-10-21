@@ -124,7 +124,7 @@ export const fileIcons: FileIcons = {
         { name: 'table', fileExtensions: ['xlsx', 'xls', 'csv', 'tsv'] },
         {
             name: 'vscode',
-            fileExtensions: ['vscodeignore', 'vsixmanifest', 'vsix']
+            fileExtensions: ['vscodeignore', 'vsixmanifest', 'vsix', 'code-workplace']
         },
         { name: 'visualstudio', fileExtensions: ['suo', 'sln', 'csproj', 'vb'] },
         {
@@ -604,6 +604,6 @@ export const fileIcons: FileIcons = {
         { name: 'ngrx-reducer', fileExtensions: ['reducer.ts', 'rootReducer.ts'], pack: IconPack.Ngrx },
         { name: 'ngrx-state', fileExtensions: ['state.ts'], pack: IconPack.Ngrx },
         { name: 'ngrx-actions', fileExtensions: ['actions.ts'], pack: IconPack.Ngrx },
-        { name: 'ngrx-effects', fileExtensions: ['effects.ts'], pack: IconPack.Ngrx },
+        { name: 'ngrx-effects', fileExtensions: ['effects.ts'], pack: IconPack.Ngrx }
     ]
 };
