@@ -1,9 +1,9 @@
+import { fileIcons, folderIcons, languageIcons, lightVersion, highContrastVersion, openedFolder } from './../../../src/icons';
+import { FileIcon, FolderTheme, FolderIcon, DefaultIcon } from '../../../src/models/index';
+import { similarity } from '../../helpers/similarity';
 import * as path from 'path';
 import * as fs from 'fs';
-import { fileIcons, folderIcons, languageIcons, lightVersion, highContrastVersion, openedFolder } from './../../../src/icons';
-import { similarity } from '../../helpers/similarity';
 import * as painter from '../../helpers/painter';
-import { FileIcon, FolderTheme, FolderIcon, DefaultIcon } from '../../../src/models/index';
 
 /**
  * Defines the folder where all icon files are located.
@@ -40,7 +40,7 @@ const fsReadAllIconFiles = (err: Error, files: string[]) => {
     checkLanguageIcons();
 
     // show error messages
-    printErrors();
+    handleErrors();
 };
 
 // read from the file system
@@ -106,7 +106,7 @@ const checkLanguageIcons = () => {
 /**
  * Show error messages in the terminal.
  */
-const printErrors = () => {
+const handleErrors = () => {
     const amountOfErrors = wrongIconNames.fileIcons.length + wrongIconNames.folderIcons.length + wrongIconNames.languageIcons.length;
     if (amountOfErrors > 0) {
         console.log('> Material Icon Theme:', painter.red(`Found ${amountOfErrors} error(s) in the icon configuration!`));

@@ -1,8 +1,8 @@
+import { fileIcons, folderIcons, languageIcons, openedFolder, lightVersion, highContrastVersion } from './../../../src/icons';
+import { FolderTheme, FolderIcon, DefaultIcon } from '../../../src/models/index';
+import * as painter from './../../helpers/painter';
 import * as path from 'path';
 import * as fs from 'fs';
-import { fileIcons, folderIcons, languageIcons, openedFolder, lightVersion, highContrastVersion } from './../../../src/icons';
-import * as painter from './../../helpers/painter';
-import { FolderTheme, FolderIcon, DefaultIcon } from '../../../src/models/index';
 
 /**
  * Defines the folder where all icon files are located.
@@ -31,7 +31,7 @@ const fsReadAllIconFiles = (err: Error, files: string[]) => {
     });
 
     checkUsageOfAllIcons();
-    showWarningMessage();
+    handleErrors();
 };
 
 const checkUsageOfAllIcons = () => {
@@ -48,15 +48,16 @@ const checkUsageOfAllIcons = () => {
     });
 };
 
-const showWarningMessage = () => {
+const handleErrors = () => {
     const amountOfUnusedIcons = Object.keys(availableIcons).length;
     if (amountOfUnusedIcons === 0) {
-        console.log('> Material Icon Theme:', painter.green(`Passed icon usage rate checks!`));
+        console.log('> Material Icon Theme:', painter.green(`Passed icon usage checks!`));
     } else {
-        console.log(`> Material Icon Theme: ` + painter.yellow(`${amountOfUnusedIcons} unused icon(s):`));
+        console.log(`> Material Icon Theme: ` + painter.red(`${amountOfUnusedIcons} unused icon(s):`));
         Object.keys(availableIcons).forEach(icon => {
-            console.log(painter.yellow(`- ${availableIcons[icon]}`));
+            console.log(painter.red(`- ${availableIcons[icon]}`));
         });
+        throw new Error('Found unused icon files!');
     }
 };
 
