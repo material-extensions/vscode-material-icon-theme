@@ -5,7 +5,6 @@
 - [Create issues](#create-issues)
 - [Add new icons](#add-new-icons)
     - [Icon color](#icon-color)
-    - [Check icon](#check-icon)
     - [Free software to create/edit SVG icons](#free-software-to-createedit-svg-icons)
     - [Use icons from here](#use-icons-from-here)
 - [Add translations](#add-translations)
@@ -15,19 +14,19 @@
 
 ## Create issues
 You need an icon for a specific file ending? No problem, just follow these guidelines:
-- [create an issue](https://github.com/PKief/vscode-material-icon-theme/issues/new)
 - describe the file ending (e.g. '.xml') and the language (e.g. XML)
+- show an example image of the icon or link to official website
 
 ## Add new icons
 1. Create icon as SVG
 2. Copy icon to `icons`-folder
-3. Edit `src/material-icons.json`
+3. Edit the icon configuration files under `src/icons` folder:
+    - fileIcons.ts
+    - folderIcons.ts
+    - languageIcons.ts
 
 ### Icon color
 Choose your icon colors from the [material design colors](https://material.google.com/style/color.html#color-color-palette).
-
-### Check icon
-Please check the created icon with your VSCode. Copy your source files of the theme into your extension folder (e.g. `/Users/\<username>/.vscode/extensions/PKief.material-icon-theme-x.x.x`). Restart your VSCode and create some example files.
 
 ### Free software to create/edit SVG icons
 - [Inkscape](https://inkscape.org/en/)
