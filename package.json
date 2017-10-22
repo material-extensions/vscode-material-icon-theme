@@ -127,14 +127,14 @@
   },
   "devDependencies": {
     "@types/mocha": "^2.2.43",
-    "@types/node": "^8.0.31",
+    "@types/node": "^8.0.46",
     "bithound": "^1.7.0",
     "cpx": "^1.5.0",
-    "mocha": "^3.5.3",
+    "mocha": "^4.0.1",
     "rimraf": "^2.6.2",
     "ts-node": "^3.3.0",
-    "tslint": "^5.7.0",
+    "tslint": "^5.8.0",
     "typescript": "^2.5.3",
-    "vscode": "^1.1.5"
+    "vscode": "^1.1.6"
   }
 }
