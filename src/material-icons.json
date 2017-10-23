@@ -1467,6 +1467,7 @@
     "razor": "_file_razor",
     "python": "_file_python",
     "javascript": "_file_js",
+    "javascriptreact": "_file_react",
     "typescript": "_file_ts",
     "scala": "_file_scala",
     "handlebars": "_file_handlebars",
