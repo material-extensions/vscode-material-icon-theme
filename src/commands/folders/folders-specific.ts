@@ -21,6 +21,8 @@ export const createConfigWithSpecificFolders = (config: IconConfiguration) => {
         ...config,
         folder: "_folder",
         folderExpanded: "_folder_open",
+        rootFolder: "_folder_root",
+        rootFolderExpanded: "_folder_root_open",
         folderNames: {
             "src": "_folder_src",
             "dist": "_folder_dist",

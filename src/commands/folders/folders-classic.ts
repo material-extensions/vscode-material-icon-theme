@@ -21,6 +21,8 @@ export const createConfigWithClassicFoldersIcons = (config: IconConfiguration) =
         ...config,
         folder: "_folder",
         folderExpanded: "_folder_open",
+        rootFolder: "_folder_root",
+        rootFolderExpanded: "_folder_root_open",
         folderNames: {},
         folderNamesExpanded: {}
     };

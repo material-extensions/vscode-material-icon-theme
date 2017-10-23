@@ -21,6 +21,8 @@ export const createConfigWithoutFolders = (config: IconConfiguration) => {
         ...config,
         folder: "",
         folderExpanded: "",
+        rootFolder: "",
+        rootFolderExpanded: "",
         folderNames: {},
         folderNamesExpanded: {}
     };

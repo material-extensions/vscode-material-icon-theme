@@ -21,6 +21,8 @@ export const createConfigWithBlueFoldersIcons = (config: IconConfiguration) => {
         ...config,
         folder: "_folder_blue",
         folderExpanded: "_folder_blue_open",
+        rootFolder: "_folder_root_blue",
+        rootFolderExpanded: "_folder_root_blue_open",
         folderNames: {},
         folderNamesExpanded: {}
     };

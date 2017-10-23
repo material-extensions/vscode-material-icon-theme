@@ -529,7 +529,7 @@
       "iconPath": "./../../icons/graphcool.svg"
     },
     "_file_prettier": {
-        "iconPath": "./../../icons/prettier.svg"
+      "iconPath": "./../../icons/prettier.svg"
     },
     "_file_nodemon": {
       "iconPath": "./../../icons/nodemon.svg"
@@ -722,11 +722,25 @@
     },
     "_folder_docker_open": {
       "iconPath": "./../../icons/folder-docker-open.svg"
+    },
+    "_folder_root": {
+      "iconPath": "./../../icons/folder-root.svg"
+    },
+    "_folder_root_open": {
+      "iconPath": "./../../icons/folder-root-open.svg"
+    },
+    "_folder_root_blue": {
+      "iconPath": "./../../icons/folder-root-blue.svg"
+    },
+    "_folder_root_blue_open": {
+      "iconPath": "./../../icons/folder-root-blue-open.svg"
     }
   },
   "folderExpanded": "_folder_open",
   "folder": "_folder",
   "file": "_file",
+  "rootFolder": "_folder_root",
+  "rootFolderExpanded": "_folder_root_open",
   "folderNames": {
     "src": "_folder_src",
     "dist": "_folder_dist",
