@@ -1,18 +1,18 @@
 import { DefaultIcon, IconPack } from '../index';
 
-export interface LanguageIdentifier {
+export interface LanguageIcon {
+    /**
+     * Icon for the language identifier
+     */
+    icon: DefaultIcon;
+
     /**
      * Language ID, e.g. 'javascript'
      *
      * According to official VS Code documentation:
      * https://code.visualstudio.com/docs/languages/identifiers
      */
-    id: string;
-
-    /**
-     * Icon for the language identifier
-     */
-    icon: DefaultIcon;
+    ids: string[];
 
     /**
      * Define if the icon should be disabled.

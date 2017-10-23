@@ -1,5 +1,5 @@
 import * as assert from 'assert';
-import { LanguageIdentifier, IconConfiguration } from '../../src/models/index';
+import { LanguageIcon, IconConfiguration } from '../../src/models/index';
 import { getLanguageIconDefinitions, getDefaultIconOptions } from '../../src/icons/index';
 
 suite('language icons', () => {
@@ -7,10 +7,10 @@ suite('language icons', () => {
     const options = getDefaultIconOptions();
 
     test('should configure icon definitions', () => {
-        const languageIcons: LanguageIdentifier[] = [
-            { id: 'a', icon: { name: 'a' } },
-            { id: 'b', icon: { name: 'b' } },
-            { id: 'c', icon: { name: 'c' } }
+        const languageIcons: LanguageIcon[] = [
+            { icon: { name: 'a' }, ids: ['a'] },
+            { icon: { name: 'b' }, ids: ['b'] },
+            { icon: { name: 'c' }, ids: ['c', 'd'], },
         ];
         const def = getLanguageIconDefinitions(languageIcons, iconConfig, options);
         const value = new IconConfiguration();
@@ -28,15 +28,16 @@ suite('language icons', () => {
         value.languageIds = {
             'a': 'a',
             'b': 'b',
-            'c': 'c'
+            'c': 'c',
+            'd': 'c'
         };
         assert.deepEqual(def, value);
     });
 
     test('should disable icon definitions', () => {
-        const languageIcons: LanguageIdentifier[] = [
-            { id: 'a', icon: { name: 'a' } },
-            { id: 'b', icon: { name: 'b' }, disabled: true }
+        const languageIcons: LanguageIcon[] = [
+            { icon: { name: 'a' }, ids: ['a'] },
+            { icon: { name: 'c' }, ids: ['c', 'd'], disabled: true },
         ];
         const def = getLanguageIconDefinitions(languageIcons, iconConfig, options);
         const value = new IconConfiguration();
@@ -52,9 +53,9 @@ suite('language icons', () => {
     });
 
     test('should configure language icons for light and high contrast', () => {
-        const languageIcons: LanguageIdentifier[] = [
-            { id: 'a', icon: { name: 'a', light: true, highContrast: true } },
-            { id: 'b', icon: { name: 'b', light: true, highContrast: true } }
+        const languageIcons: LanguageIcon[] = [
+            { icon: { name: 'a', light: true, highContrast: true }, ids: ['a'] },
+            { icon: { name: 'b', light: true, highContrast: true }, ids: ['b'] },
         ];
         const def = getLanguageIconDefinitions(languageIcons, iconConfig, options);
         const value = new IconConfiguration();
