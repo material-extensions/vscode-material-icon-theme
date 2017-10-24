@@ -1,0 +1,11 @@
+{    
+    "command.activateIcons": "Material Icons: Активировать иконки темы",
+    "command.toggleAngularIcons": "Material Icons: Переключить угловые иконы",
+    "command.toggleFolderIcons": "Material Icons: Переключить иконки папок",
+    "command.restoreDefaultConfig": "Material Icons: Восстановить настройки по умолчанию",
+    "configuration.title": "Настройки Material Icons",
+    "configuration.showWelcomeMessage": "Показывать приветственное сообщение после первой установки.",
+    "configuration.showUpdateMessage": "Показывать сообщение об обновлении после каждого обновления.",
+    "configuration.angular.iconsEnabled": "Включить угловые иконки для файлов.",
+    "configuration.folders.icons": "Установить тип иконок для папок."
+}
