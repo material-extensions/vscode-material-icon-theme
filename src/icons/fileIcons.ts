@@ -31,7 +31,8 @@ export const fileIcons: FileIcons = {
                 'tslint.json',
                 'composer.lock',
                 '.jsbeautifyrc',
-                '.esformatter'
+                '.esformatter',
+                'cdp.pid'
             ]
         },
         { name: 'yaml', fileExtensions: ['yaml', 'YAML-tmLanguage', 'yml'] },
@@ -604,6 +605,7 @@ export const fileIcons: FileIcons = {
         { name: 'ngrx-reducer', fileExtensions: ['reducer.ts', 'rootReducer.ts'], pack: IconPack.Ngrx },
         { name: 'ngrx-state', fileExtensions: ['state.ts'], pack: IconPack.Ngrx },
         { name: 'ngrx-actions', fileExtensions: ['actions.ts'], pack: IconPack.Ngrx },
-        { name: 'ngrx-effects', fileExtensions: ['effects.ts'], pack: IconPack.Ngrx }
+        { name: 'ngrx-effects', fileExtensions: ['effects.ts'], pack: IconPack.Ngrx },
+        { name: 'sonar', fileNames: ['.sonarrc'] }
     ]
 };
