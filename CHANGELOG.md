@@ -1,5 +1,13 @@
 # Change Log
 
+## 2.2.4 (2017-10-27)
+Updated icons:
+- Rust [[issue #149](https://github.com/PKief/vscode-material-icon-theme/issues/149)]
+- SystemVerilog [[issue #142](https://github.com/PKief/vscode-material-icon-theme/issues/142)]
+
+Added translation:
+- Added Russian language [[@vanja-san](https://github.com/vanja-san) in [#148](https://github.com/PKief/vscode-material-icon-theme/issues/148)]
+
 ## 2.2.3 (2017-10-23)
 Added icons:
 - Root folders [[issue #114](https://github.com/PKief/vscode-material-icon-theme/issues/114)]
