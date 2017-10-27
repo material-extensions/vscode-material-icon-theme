@@ -1199,6 +1199,8 @@
     "merlin": "_file_merlin",
     "v": "_file_verilog",
     "vhd": "_file_verilog",
+    "sv": "_file_verilog",
+    "svh": "_file_verilog",
     "nb": "_file_mathematica",
     "wl": "_file_wolframlang",
     "wls": "_file_wolframlang",
