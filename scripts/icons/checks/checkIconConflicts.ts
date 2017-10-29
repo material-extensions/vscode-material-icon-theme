@@ -33,7 +33,7 @@ const checkForConflictsInFileIcons = (fileIconDefinitionType: string) => {
     fileIcons.icons.forEach(icon => {
         if (!icon[fileIconDefinitionType]) return {};
         icon[fileIconDefinitionType].forEach(ext => {
-            if (!icons[ext]) {
+            if (!icons[ext] || icon.enabledFor && icon.enabledFor.length > 0) {
                 icons[ext] = icon.name;
             }
             else {
@@ -53,7 +53,7 @@ const checkFolderIcons = () => {
         const icons = {};
         theme.icons.forEach(icon => {
             icon.folderNames.forEach(folderName => {
-                if (!icons[folderName]) {
+                if (!icons[folderName] || icon.enabledFor && icon.enabledFor.length > 0) {
                     icons[folderName] = icon.name;
                 }
                 else {
