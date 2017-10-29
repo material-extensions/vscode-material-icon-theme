@@ -78,7 +78,7 @@ suite('file icons', () => {
         const fileIcons: FileIcons = {
             defaultIcon: { name: 'file', light: true, highContrast: true },
             icons: [
-                { name: 'angular', fileNames: ['.angular-cli.json', 'angular-cli.json'], enabledFor: [IconPack.Ngrx] },
+                { name: 'angular', fileNames: ['.angular-cli.json', 'angular-cli.json'], enabledFor: [IconPack.Angular, IconPack.Ngrx] },
                 { name: 'javascript', fileNames: ['filename.js'], fileExtensions: ['js'], light: true, highContrast: true }
             ]
         };

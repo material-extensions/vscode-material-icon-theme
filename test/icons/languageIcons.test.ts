@@ -1,5 +1,5 @@
 import * as assert from 'assert';
-import { LanguageIcon, IconConfiguration } from '../../src/models/index';
+import { LanguageIcon, IconConfiguration, IconPack } from '../../src/models/index';
 import { getLanguageIconDefinitions, getDefaultIconOptions } from '../../src/icons/index';
 
 suite('language icons', () => {
@@ -49,6 +49,18 @@ suite('language icons', () => {
         value.languageIds = {
             'a': 'a'
         };
+        assert.deepEqual(def, value);
+    });
+
+    test('should disable icon packs', () => {
+        const languageIcons: LanguageIcon[] = [
+            { icon: { name: 'a' }, ids: ['a'], enabledFor: [IconPack.Angular] },
+            { icon: { name: 'c' }, ids: ['c', 'd'], disabled: true },
+        ];
+        const def = getLanguageIconDefinitions(languageIcons, iconConfig, { ...options, activatedPack: '' });
+        const value = new IconConfiguration();
+        value.iconDefinitions = {};
+        value.languageIds = {};
         assert.deepEqual(def, value);
     });
 
