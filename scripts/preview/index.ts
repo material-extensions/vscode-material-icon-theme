@@ -9,7 +9,6 @@ import * as path from 'path';
 import { Icon, MarkdownConfig } from './models';
 import { generateMarkdown } from './createMatrix';
 import { openedFolder } from '../../src/icons/index';
-import { capitalizeFirstLetter } from '../../src/helpers';
 
 // Define the folder icon of all icons
 const folderPath = path.join('icons');
@@ -61,3 +60,6 @@ const fsReadAllIconFiles = (err: Error, files: string[]) => {
 };
 
 fs.readdir(folderPath, fsReadAllIconFiles);
+
+/** Capitalize the first letter of a string */
+export const capitalizeFirstLetter = (name: string): string => name.charAt(0).toUpperCase() + name.slice(1);

@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { MarkdownConfig, Icon } from './models';
-import { capitalizeFirstLetter } from '../../src/helpers';
+import { capitalizeFirstLetter } from './index';
 
 /** Write the markdown file into the output folder */
 export const writeMarkdown = (config: MarkdownConfig, itemsPerColumn: number, matrix: Icon[][]) => {
