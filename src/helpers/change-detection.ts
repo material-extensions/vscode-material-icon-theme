@@ -21,10 +21,10 @@ export const detectConfigChanges = () => {
 };
 
 const compareIconPackConfigs = () => {
-    const activeIconPacks = <string[]>helpers.getThemeConfig('activeIconPacks').globalValue;
+    const activeIconPack = <string[]>helpers.getThemeConfig('activeIconPack').globalValue;
 
     return helpers.getMaterialIconsJSON().then(result => {
-        if (activeIconPacks !== undefined && JSON.stringify(activeIconPacks) !== JSON.stringify(result.options.activatedPacks)) {
+        if (activeIconPack !== undefined && JSON.stringify(activeIconPack) !== JSON.stringify(result.options.activatedPack)) {
             updateIconJson();
         }
     });
@@ -53,7 +53,7 @@ const compareExplorerArrowConfigs = () => {
 const updateIconJson = () => {
     const options: IconJsonOptions = {
         folderTheme: getCurrentFolderTheme(),
-        activatedPacks: getEnabledIconPacks(),
+        activatedPack: getEnabledIconPacks(),
         hidesExplorerArrows: getCurrentExplorerArrowConfig()
     };
     return createIconFile(options).then(() => {
@@ -73,7 +73,7 @@ export const getCurrentExplorerArrowConfig = (): boolean => {
     return result !== undefined ? result : false;
 };
 
-export const getEnabledIconPacks = (): string[] => {
-    const result = <string[]>helpers.getThemeConfig('activeIconPacks').globalValue;
-    return result !== undefined ? result : ['angular'];
+export const getEnabledIconPacks = (): string => {
+    const result = <string>helpers.getThemeConfig('activeIconPack').globalValue;
+    return result !== undefined ? result : 'angular';
 };

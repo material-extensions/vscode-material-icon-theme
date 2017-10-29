@@ -7,7 +7,7 @@ import * as merge from 'lodash.merge';
  */
 export const getLanguageIconDefinitions = (languages: LanguageIcon[], config: IconConfiguration, options: IconJsonOptions): IconConfiguration => {
     config = merge({}, config);
-    const enabledLanguages = disableLanguagesByPack(languages, options.activatedPacks);
+    const enabledLanguages = disableLanguagesByPack(languages, options.activatedPack);
     enabledLanguages.forEach(lang => {
         if (lang.disabled) return;
         config = setIconDefinitions(config, lang.icon);
@@ -46,8 +46,8 @@ const setLanguageIdentifiers = (iconName: string, languageIds: string[]) => {
 /**
  * Disable all file icons that are in a pack which is disabled.
  */
-const disableLanguagesByPack = (languageIcons: LanguageIcon[], activatedIconPacks: string[]) => {
+const disableLanguagesByPack = (languageIcons: LanguageIcon[], activatedIconPack: string) => {
     return languageIcons.filter(language => {
-        return !language.pack ? true : activatedIconPacks.some(pack => pack === language.pack);
+        return !language.pack ? true : activatedIconPack === language.pack;
     });
 };

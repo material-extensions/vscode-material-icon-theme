@@ -131,7 +131,7 @@ suite('folder icons', () => {
 
     test('should disable icon packs', () => {
         const options = getDefaultIconOptions();
-        options.activatedPacks = [];
+        options.activatedPack = '';
         const def = getFolderIconDefinitions(folderIcons, iconConfig, options);
         const value = new IconConfiguration();
         value.iconDefinitions = {

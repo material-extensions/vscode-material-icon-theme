@@ -51,7 +51,7 @@ suite('file icons', () => {
         };
         const iconConfig = new IconConfiguration();
         const options = getDefaultIconOptions();
-        options.activatedPacks = [];
+        options.activatedPack = '';
         const def = getFileIconDefinitions(fileIcons, iconConfig, options);
         const value = new IconConfiguration();
 

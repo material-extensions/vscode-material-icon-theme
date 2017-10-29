@@ -78,12 +78,10 @@
           "default": true,
           "description": "%configuration.showUpdateMessage%"
         },
-        "material-icon-theme.activeIconPacks": {
-          "type": "array",
-          "default": [
-            "angular"
-          ],
-          "description": "%configuration.activeIconPacks%"
+        "material-icon-theme.activeIconPack": {
+          "type": "string",
+          "default": "angular",
+          "description": "%configuration.activeIconPack%"
         },
         "material-icon-theme.folders.icons": {
           "type": "string",
@@ -107,7 +105,7 @@
   "scripts": {
     "vscode:prepublish": "npm run build",
     "prebuild": "npm run clean",
-    "build": "npm run compile && npm run check && npm run generateJson",
+    "build": "npm run compile && npm run generateJson",
     "clean": "rimraf ./out",
     "compile": "tsc -p ./",
     "compile:watch": "tsc -watch -p ./",

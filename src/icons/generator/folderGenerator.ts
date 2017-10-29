@@ -9,7 +9,7 @@ export const getFolderIconDefinitions = (folderThemes: FolderTheme[], config: Ic
     config = merge({}, config);
     config.hidesExplorerArrows = options.hidesExplorerArrows;
     const activeTheme = getEnabledFolderTheme(folderThemes, options.folderTheme);
-    const enabledIcons = disableIconsByPack(activeTheme, options.activatedPacks);
+    const enabledIcons = disableIconsByPack(activeTheme, options.activatedPack);
 
     if (options.folderTheme === 'none') {
         return config;
@@ -60,12 +60,12 @@ const getEnabledFolderTheme = (themes: FolderTheme[], enabledTheme: string): Fol
 /**
  * Disable all file icons that are in a pack which is disabled.
  */
-const disableIconsByPack = (folderIcons: FolderTheme, activatedIconPacks): FolderIcon[] => {
+const disableIconsByPack = (folderIcons: FolderTheme, activatedIconPack: string): FolderIcon[] => {
     if (!folderIcons.icons || folderIcons.icons.length === 0) {
         return [];
     }
     return folderIcons.icons.filter(icon => {
-        return !icon.pack ? true : activatedIconPacks.some(pack => pack === icon.pack);
+        return !icon.pack ? true : activatedIconPack === icon.pack;
     });
 };
 

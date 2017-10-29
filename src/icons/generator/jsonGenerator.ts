@@ -43,9 +43,7 @@ export const createIconFile = (options: IconJsonOptions = getDefaultIconOptions(
 export const getDefaultIconOptions = (): IconJsonOptions => {
     const options: IconJsonOptions = {
         folderTheme: 'specific',
-        activatedPacks: [
-            'angular'
-        ],
+        activatedPack: 'angular',
         hidesExplorerArrows: false
     };
     return options;

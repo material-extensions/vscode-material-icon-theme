@@ -6,6 +6,6 @@
     "configuration.title": "Material Icons configuration",
     "configuration.showWelcomeMessage": "Afficher le message de bienvenue après l'installation initiale",
     "configuration.showUpdateMessage": "Afficher le message de mise à jour.",
-    "configuration.activeIconPacks": "Sélectionnez les paquets d'icônes qui activent des icônes spécifiques.",
+    "configuration.activeIconPack": "Sélectionnez les paquets d'icônes qui activent des icônes spécifiques.",
     "configuration.folders.icons": "Sélectionner le type d'icônes de dossier."
 }

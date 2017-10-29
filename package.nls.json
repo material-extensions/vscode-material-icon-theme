@@ -7,7 +7,7 @@
     "configuration.title": "Material Icons configuration",
     "configuration.showWelcomeMessage": "Show the welcome message after first installation.",
     "configuration.showUpdateMessage": "Show the update message after each update.",
-    "configuration.activeIconPacks": "Select icon packs that enable specific icons.",
+    "configuration.activeIconPack": "Select icon packs that enable specific icons.",
     "configuration.folders.icons": "Set the type for the folder icons.",
     "configuration.hidesExplorerArrows": "Hide explorer arrows before folder."
 }
