@@ -65,7 +65,7 @@ const disableIconsByPack = (folderIcons: FolderTheme, activatedIconPack: string)
         return [];
     }
     return folderIcons.icons.filter(icon => {
-        return !icon.pack ? true : activatedIconPack === icon.pack;
+        return !icon.enabledFor ? true : icon.enabledFor.some(p => p === activatedIconPack);
     });
 };
 

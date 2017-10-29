@@ -66,7 +66,7 @@ const mapSpecificFileIcons = (icon: FileIcon, mappingType: FileMappingType) => {
  */
 const disableIconsByPack = (fileIcons: FileIcons, activatedIconPack: string): FileIcon[] => {
     return fileIcons.icons.filter(icon => {
-        return !icon.pack ? true : activatedIconPack === icon.pack;
+        return !icon.enabledFor ? true : icon.enabledFor.some(p => p === activatedIconPack);
     });
 };
 

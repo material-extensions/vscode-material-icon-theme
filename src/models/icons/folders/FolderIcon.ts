@@ -30,5 +30,5 @@ export interface FolderIcon {
     /**
      * Defines a pack to which this icon belongs. A pack can be toggled and all icons inside this pack can be enabled or disabled together.
      */
-    pack?: IconPack;
+    enabledFor?: IconPack[];
 }

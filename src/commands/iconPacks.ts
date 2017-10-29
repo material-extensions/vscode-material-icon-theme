@@ -18,7 +18,7 @@ export const getAllIconPacks = () => {
     const packs: string[] = [];
     for (let item in IconPack) {
         if (isNaN(Number(item))) {
-            packs.push(item.toLowerCase());
+            packs.push(IconPack[item].toLowerCase());
         }
     }
     return packs;
@@ -28,9 +28,10 @@ export const getAllIconPacks = () => {
 const showQuickPickItems = (activePack: string) => {
     const packs = getAllIconPacks().sort();
     const options = packs.map((pack): vscode.QuickPickItem => {
+        const packLabel = helpers.toTitleCase(pack.replace('_', ' + '));
         return {
-            description: helpers.capitalizeFirstLetter(pack),
-            detail: i18n.translate(`iconPacks.toggleIcons`, helpers.capitalizeFirstLetter(pack)),
+            description: packLabel,
+            detail: i18n.translate(`iconPacks.toggleIcons`, packLabel),
             label: isPackActive(activePack, pack) ? '\u2714' : '\u25FB'
         };
     });
@@ -45,52 +46,8 @@ const showQuickPickItems = (activePack: string) => {
 /** Handle the actions from the QuickPick. */
 const handleQuickPickActions = (value: vscode.QuickPickItem, activePack: string) => {
     if (!value || !value.description) return;
-    helpers.setThemeConfig('activeIconPack', value.description.toLowerCase(), true);
-    // return showSpecificQuickPickItems(value.description, activePacks).then((decision: vscode.QuickPickItem) => {
-    //     handleSpecificQuickPickActions(decision, value.description);
-    // });
+    helpers.setThemeConfig('activeIconPack', value.description.replace(' + ', '_').toLowerCase(), true);
 };
-
-/** Show quick pick to choose if the pack should be enabled or disabled. */
-// export const showSpecificQuickPickItems = (pack: string, activePacks: string[]) => {
-//     const on: vscode.QuickPickItem = {
-//         description: i18n.translate('toggleSwitch.on'),
-//         detail: i18n.translate(`iconPacks.enableIcons`, helpers.capitalizeFirstLetter(pack)),
-//         label: isPackActive(activePacks, pack) ? '\u2714' : '\u25FB'
-//     };
-//     const off: vscode.QuickPickItem = {
-//         description: i18n.translate('toggleSwitch.off'),
-//         detail: i18n.translate(`iconPacks.disableIcons`, helpers.capitalizeFirstLetter(pack)),
-//         label: !isPackActive(activePacks, pack) ? '\u2714' : '\u25FB'
-//     };
-//     return vscode.window.showQuickPick(
-//         [on, off], {
-//             placeHolder: i18n.translate('iconPacks.selectPack'),
-//             ignoreFocusOut: false,
-//             matchOnDescription: true
-//         });
-// };
-
-/** Handle the actions from the QuickPick. */
-// const handleSpecificQuickPickActions = (value: vscode.QuickPickItem, pack: string) => {
-//     if (!value || !value.description) return;
-//     switch (value.description) {
-//         case i18n.translate('toggleSwitch.on'): {
-//             let activatedPacks = <string[]>helpers.getThemeConfig('activeIconPacks').globalValue || [];
-//             activatedPacks = [...new Set([...activatedPacks.map(a => a.toLowerCase()), pack.toLowerCase()])];
-//             helpers.setThemeConfig('activeIconPacks', activatedPacks, true);
-//             break;
-//         }
-//         case i18n.translate('toggleSwitch.off'): {
-//             let activatedPacks = <string[]>helpers.getThemeConfig('activeIconPacks').globalValue || [];
-//             activatedPacks = activatedPacks.filter(g => g.toLowerCase() !== pack.toLowerCase());
-//             helpers.setThemeConfig('activeIconPacks', activatedPacks, true);
-//             break;
-//         }
-//         default:
-//             break;
-//     }
-// };
 
 const getActiveIconPack = (): Promise<string> => {
     return helpers.getMaterialIconsJSON().then((config) => config.options.activatedPack);

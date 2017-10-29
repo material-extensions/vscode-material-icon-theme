@@ -48,6 +48,6 @@ const setLanguageIdentifiers = (iconName: string, languageIds: string[]) => {
  */
 const disableLanguagesByPack = (languageIcons: LanguageIcon[], activatedIconPack: string) => {
     return languageIcons.filter(language => {
-        return !language.pack ? true : activatedIconPack === language.pack;
+        return !language.enabledFor ? true : language.enabledFor.some(p => p === activatedIconPack);
     });
 };

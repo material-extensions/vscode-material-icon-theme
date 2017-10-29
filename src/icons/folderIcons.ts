@@ -64,10 +64,10 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-public', folderNames: ['public'] },
             { name: 'folder-include', folderNames: ['include'] },
             { name: 'folder-docker', folderNames: ['docker', '.docker'] },
-            { name: 'folder-ngrx-effects', folderNames: ['effects'], pack: IconPack.Ngrx },
-            { name: 'folder-ngrx-state', folderNames: ['states', 'state'], pack: IconPack.Ngrx },
-            { name: 'folder-ngrx-reducer', folderNames: ['reducers', 'reducer'], pack: IconPack.Ngrx },
-            { name: 'folder-ngrx-actions', folderNames: ['actions'], pack: IconPack.Ngrx }
+            { name: 'folder-ngrx-effects', folderNames: ['effects'], enabledFor: [IconPack.Ngrx] },
+            { name: 'folder-ngrx-state', folderNames: ['states', 'state'], enabledFor: [IconPack.Ngrx] },
+            { name: 'folder-ngrx-reducer', folderNames: ['reducers', 'reducer'], enabledFor: [IconPack.Ngrx] },
+            { name: 'folder-ngrx-actions', folderNames: ['actions'], enabledFor: [IconPack.Ngrx] }
         ]
     },
     { name: 'classic', defaultIcon: { name: 'folder' }, rootFolder: { name: 'folder-root' } },

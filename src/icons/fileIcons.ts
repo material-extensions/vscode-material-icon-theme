@@ -335,34 +335,34 @@ export const fileIcons: FileIcons = {
             ]
         },
         { name: 'test-js', fileExtensions: ['spec.js', 'test.js', 'js.snap'] },
-        { name: 'angular-routing', fileExtensions: ['routing.ts', 'routing.js'], pack: IconPack.Angular },
+        { name: 'angular-routing', fileExtensions: ['routing.ts', 'routing.js'], enabledFor: [IconPack.Angular, IconPack.Ngrx] },
         {
             name: 'angular',
             fileExtensions: ['module.ts', 'module.js', 'ng-template'],
             fileNames: ['angular-cli.json', '.angular-cli.json'],
-            pack: IconPack.Angular
+            enabledFor: [IconPack.Angular, IconPack.Ngrx]
         },
         {
             name: 'angular-component',
             fileExtensions: ['component.ts', 'component.js'],
-            pack: IconPack.Angular
+            enabledFor: [IconPack.Angular, IconPack.Ngrx]
         },
-        { name: 'angular-guard', fileExtensions: ['guard.ts', 'guard.js'], pack: IconPack.Angular },
-        { name: 'angular-service', fileExtensions: ['service.ts', 'service.js'], pack: IconPack.Angular },
+        { name: 'angular-guard', fileExtensions: ['guard.ts', 'guard.js'], enabledFor: [IconPack.Angular, IconPack.Ngrx] },
+        { name: 'angular-service', fileExtensions: ['service.ts', 'service.js'], enabledFor: [IconPack.Angular, IconPack.Ngrx] },
         {
             name: 'angular-pipe',
             fileExtensions: ['pipe.ts', 'pipe.js', 'filter.js'],
-            pack: IconPack.Angular
+            enabledFor: [IconPack.Angular, IconPack.Ngrx]
         },
         {
             name: 'angular-directive',
             fileExtensions: ['directive.ts', 'directive.js'],
-            pack: IconPack.Angular
+            enabledFor: [IconPack.Angular, IconPack.Ngrx]
         },
         {
             name: 'angular-resolver',
             fileExtensions: ['resolver.ts', 'resolver.js'],
-            pack: IconPack.Angular
+            enabledFor: [IconPack.Angular, IconPack.Ngrx]
         },
         { name: 'puppet', fileExtensions: ['pp'] },
         { name: 'elixir', fileExtensions: ['ex', 'exs'] },
@@ -602,10 +602,10 @@ export const fileIcons: FileIcons = {
         { name: 'code-climate', fileNames: ['.codeclimate.yml'], light: true },
         { name: 'prettier', fileNames: ['.prettierrc', 'prettier.config.js'] },
         { name: 'nodemon', fileNames: ['nodemon.json'] },
-        { name: 'ngrx-reducer', fileExtensions: ['reducer.ts', 'rootReducer.ts'], pack: IconPack.Ngrx },
-        { name: 'ngrx-state', fileExtensions: ['state.ts'], pack: IconPack.Ngrx },
-        { name: 'ngrx-actions', fileExtensions: ['actions.ts'], pack: IconPack.Ngrx },
-        { name: 'ngrx-effects', fileExtensions: ['effects.ts'], pack: IconPack.Ngrx },
+        { name: 'ngrx-reducer', fileExtensions: ['reducer.ts', 'rootReducer.ts'], enabledFor: [IconPack.Ngrx] },
+        { name: 'ngrx-state', fileExtensions: ['state.ts'], enabledFor: [IconPack.Ngrx] },
+        { name: 'ngrx-actions', fileExtensions: ['actions.ts'], enabledFor: [IconPack.Ngrx] },
+        { name: 'ngrx-effects', fileExtensions: ['effects.ts'], enabledFor: [IconPack.Ngrx] },
         { name: 'sonar', fileNames: ['.sonarrc'] },
         { name: 'browserlist', fileNames: ['browserslist', '.browserslistrc'], light: true }
     ]

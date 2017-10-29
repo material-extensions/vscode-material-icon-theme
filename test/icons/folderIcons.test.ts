@@ -11,7 +11,7 @@ suite('folder icons', () => {
             rootFolder: { name: 'folder-root' },
             icons: [
                 { name: 'folder-src', folderNames: ['src', 'source'] },
-                { name: 'folder-angular', folderNames: ['angular', 'ng'], pack: IconPack.Angular }
+                { name: 'folder-angular', folderNames: ['angular', 'ng'], enabledFor: [IconPack.Angular, IconPack.Ngrx] }
             ]
         },
         {
