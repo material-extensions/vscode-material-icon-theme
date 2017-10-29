@@ -8,13 +8,10 @@ export interface Translation {
     readChangelog?: string;
     iconPacks?: {
         selectPack?: string;
-        enableIcons?: string;
-        disableIcons?: string;
-        toggleIcons?: string;
+        description?: string;
+        disabled?: string;
     };
     folders?: {
-        enableIcons?: string;
-        disableIcons?: string;
         toggleIcons?: string;
         disabled?: string;
         theme?: {

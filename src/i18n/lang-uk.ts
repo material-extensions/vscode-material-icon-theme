@@ -9,8 +9,6 @@ export const translation: Translation = {
     'themeUpdated': 'Material Icon Theme був оновлений.',
     'readChangelog': 'Прочитати зміни',
     'folders': {
-        'enableIcons': 'Включити теку icons',
-        'disableIcons': 'Відключити теку icons',
         'toggleIcons': 'Переключити теку icons'
     },
     'toggleSwitch': {

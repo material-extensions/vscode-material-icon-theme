@@ -9,14 +9,11 @@ export const translation: Translation = {
     'themeUpdated': 'Das Material Icon Theme wurde aktualisiert.',
     'readChangelog': 'Änderungsprotokoll lesen',
     'iconPacks': {
-        'selectPack': 'Konfigurieren der Icon Packs',
-        'enableIcons': '%0 Icons aktivieren',
-        'disableIcons': '%0 Icons deaktivieren',
-        'toggleIcons': '%0 Icons umschalten'
+        'selectPack': 'Icon Pack auswählen',
+        'description': 'Das \'%0\' Icon Pack auswählen',
+        'disabled': 'Icon Packs deaktivieren',
     },
     'folders': {
-        'enableIcons': 'Ordner Icons aktivieren',
-        'disableIcons': 'Ordner Icons deaktivieren',
         'toggleIcons': 'Wähle ein Ordner Design',
         'disabled': 'Keine Ordner Icons',
         'theme': {

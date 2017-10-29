@@ -9,14 +9,11 @@ export const translation: Translation = {
     'themeUpdated': 'Material主题图标已更新',
     'readChangelog': '阅读更新日志',
     'iconPacks': {
-        'selectPack': '配置图标包',
-        'enableIcons': '启用%0图标',
-        'disableIcons': '禁用%0图标',
-        'toggleIcons': '切换%0图标的显示'
+        'selectPack': '选择图标包',
+        'description': '选择％0符号',
+        'disabled': '禁用图标包',
     },
     'folders': {
-        'enableIcons': '启用文件夹图标',
-        'disableIcons': '禁用文件夹图标',
         'toggleIcons': '切换文件夹图标的显示',
         'disabled': '不显示文件夹图标',
         'theme': {

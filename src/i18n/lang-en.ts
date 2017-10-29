@@ -9,14 +9,11 @@ export const translation: Translation = {
     'themeUpdated': 'Material Icon Theme has been updated.',
     'readChangelog': 'Read changelog',
     'iconPacks': {
-        'selectPack': 'Configure icon packs',
-        'enableIcons': 'Activate %0 icons',
-        'disableIcons': 'Deactivate %0 icons',
-        'toggleIcons': 'Toggle %0 icons'
+        'selectPack': 'Select an icon pack',
+        'description': 'Select the \'%0\' icon pack',
+        'disabled': 'Disable icon packs',
     },
     'folders': {
-        'enableIcons': 'Enable folder icons',
-        'disableIcons': 'Disable folder icons',
         'toggleIcons': 'Pick a folder theme',
         'disabled': 'No folder icons',
         'theme': {

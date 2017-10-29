@@ -9,14 +9,11 @@ export const translation: Translation = {
     'themeUpdated': 'Material Icon Theme a été mis à jour.',
     'readChangelog': 'Lire la liste des changements',
     'iconPacks': {
-        'selectPack': 'Configuration des paquets d\'icônes',
-        'enableIcons': 'Activer les icônes %0',
-        'disableIcons': 'Désactiver les icônes %0',
-        'toggleIcons': 'Basculer les icônes %0'
+        'selectPack': 'Sélectionnez un pack d\'icônes',
+        'description': 'Sélectionner le pack d\'icônes \'%0\'',
+        'disabled': 'Désactiver les paquets d\'icônes',
     },
     'folders': {
-        'enableIcons': 'Activer les icônes de dossiers',
-        'disableIcons': 'Désactiver les icônes de dossiers',
         'toggleIcons': 'Basculer les icônes de dossiers',
         'disabled': 'Aucune icônes de dossiers',
         'theme': {

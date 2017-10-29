@@ -6,7 +6,7 @@ import * as i18n from './../i18n';
 import * as reload from './../messages/reload';
 import { IconConfiguration, IconPack } from '../models/index';
 
-/** Command to toggle the Angular icons. */
+/** Command to toggle the icons packs */
 export const toggleIconPacks = () => {
     return getActiveIconPack()
         .then((pack) => showQuickPickItems(pack)
@@ -24,29 +24,35 @@ export const getAllIconPacks = () => {
     return packs;
 };
 
-/** Show QuickPick items to select prefered configuration for the folder icons. */
+/** Show QuickPick items to select prefered configuration for the icon packs. */
 const showQuickPickItems = (activePack: string) => {
-    const packs = getAllIconPacks().sort();
+    const packs = [...getAllIconPacks().sort(), 'none'];
     const options = packs.map((pack): vscode.QuickPickItem => {
         const packLabel = helpers.toTitleCase(pack.replace('_', ' + '));
+        const active = isPackActive(activePack, pack);
+        const iconPacksDeactivated = pack === 'none' && activePack === '';
+
         return {
             description: packLabel,
-            detail: i18n.translate(`iconPacks.toggleIcons`, packLabel),
-            label: isPackActive(activePack, pack) ? '\u2714' : '\u25FB'
+            detail: i18n.translate(`iconPacks.${pack === 'none' ? 'disabled' : 'description'}`, packLabel),
+            label: iconPacksDeactivated ? '\u2714' : isPackActive(activePack, pack) ? '\u2714' : '\u25FB'
         };
     });
 
     return vscode.window.showQuickPick(options, {
         placeHolder: i18n.translate('iconPacks.selectPack'),
         ignoreFocusOut: false,
-        matchOnDescription: true
+        matchOnDescription: true,
+        matchOnDetail: true
     });
 };
 
 /** Handle the actions from the QuickPick. */
 const handleQuickPickActions = (value: vscode.QuickPickItem, activePack: string) => {
     if (!value || !value.description) return;
-    helpers.setThemeConfig('activeIconPack', value.description.replace(' + ', '_').toLowerCase(), true);
+    const decision = value.description.replace(' + ', '_').toLowerCase();
+
+    helpers.setThemeConfig('activeIconPack', decision === 'none' ? '' : decision, true);
 };
 
 const getActiveIconPack = (): Promise<string> => {
