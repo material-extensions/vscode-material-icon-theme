@@ -606,6 +606,7 @@ export const fileIcons: FileIcons = {
         { name: 'ngrx-state', fileExtensions: ['state.ts'], pack: IconPack.Ngrx },
         { name: 'ngrx-actions', fileExtensions: ['actions.ts'], pack: IconPack.Ngrx },
         { name: 'ngrx-effects', fileExtensions: ['effects.ts'], pack: IconPack.Ngrx },
-        { name: 'sonar', fileNames: ['.sonarrc'] }
+        { name: 'sonar', fileNames: ['.sonarrc'] },
+        { name: 'browserlist', fileNames: ['browserslist', '.browserslistrc'], light: true }
     ]
 };
