@@ -67,7 +67,11 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-ngrx-effects', folderNames: ['effects'], enabledFor: [IconPack.Ngrx] },
             { name: 'folder-ngrx-state', folderNames: ['states', 'state'], enabledFor: [IconPack.Ngrx] },
             { name: 'folder-ngrx-reducer', folderNames: ['reducers', 'reducer'], enabledFor: [IconPack.Ngrx] },
-            { name: 'folder-ngrx-actions', folderNames: ['actions'], enabledFor: [IconPack.Ngrx] }
+            { name: 'folder-ngrx-actions', folderNames: ['actions'], enabledFor: [IconPack.Ngrx] },
+            { name: 'folder-redux-reducer', folderNames: ['reducers', 'reducer'], enabledFor: [IconPack.Redux] },
+            { name: 'folder-redux-actions', folderNames: ['actions'], enabledFor: [IconPack.Redux] },
+            { name: 'folder-redux-store', folderNames: ['store'], enabledFor: [IconPack.Redux] },
+            { name: 'folder-react-components', folderNames: ['components'], enabledFor: [IconPack.React, IconPack.Redux] }
         ]
     },
     { name: 'classic', defaultIcon: { name: 'folder' }, rootFolder: { name: 'folder-root' } },
