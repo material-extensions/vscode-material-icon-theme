@@ -390,7 +390,7 @@ export const fileIcons: FileIcons = {
             name: 'terraform',
             fileExtensions: ['tf', 'tf.json', 'tfvars', 'tfstate']
         },
-        { name: 'laravel', fileExtensions: ['blade.php'] },
+        { name: 'laravel', fileExtensions: ['blade.php', 'inky.php'] },
         { name: 'applescript', fileExtensions: ['applescript'] },
         { name: 'cake', fileExtensions: ['cake'] },
         { name: 'cucumber', fileExtensions: ['feature'] },
