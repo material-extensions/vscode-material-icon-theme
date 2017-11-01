@@ -607,6 +607,7 @@ export const fileIcons: FileIcons = {
         { name: 'ngrx-actions', fileExtensions: ['actions.ts'], enabledFor: [IconPack.Ngrx] },
         { name: 'ngrx-effects', fileExtensions: ['effects.ts'], enabledFor: [IconPack.Ngrx] },
         { name: 'sonar', fileNames: ['.sonarrc'] },
-        { name: 'browserlist', fileNames: ['browserslist', '.browserslistrc'], light: true }
+        { name: 'browserlist', fileNames: ['browserslist', '.browserslistrc'], light: true },
+        { name: 'crystal', fileExtensions: ['cr'], light: true }
     ]
 };
