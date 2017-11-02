@@ -1,0 +1,13 @@
+{
+    "command.activateIcons": "Material Icons: Ativar tema de ícones",
+    "command.toggleIconPacks": "Material Icons: Configurar pacote de ícones",
+    "command.toggleFolderIcons": "Material Icons: Alterar ícones de pasta",
+    "command.restoreDefaultConfig": "Material Icons: Restaurar configuração padrão",
+    "command.hidesExplorerArrows": "Material Icons: Ocultar as setas ao lado dos ícones de pasta",
+    "configuration.title": "Configurações do Material Icons",
+    "configuration.showWelcomeMessage": "Mostrar mensagem de bem-vindo após a primeira instalação.",
+    "configuration.showUpdateMessage": "Mostrar mensagem de atualização após cada atualização.",
+    "configuration.activeIconPack": "Selecione um pacote de ícones que habilitam ícones específicos.",
+    "configuration.folders.icons": "Selecionar o tipo de ícones de pasta.",
+    "configuration.hidesExplorerArrows": "Ocultar as setas ao lado das pastas no explorador de arquivos."
+}
