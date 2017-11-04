@@ -23,7 +23,7 @@ th {
 }
 
 tr:last-child {
-    border-bottom: 1rem solid rgb(30, 30, 30);
+    border-bottom: .5rem solid rgb(30, 30, 30);
 }
 
 .icon {
@@ -36,6 +36,6 @@ tr:last-child {
 }
 
 img {
-    width: 24px;
+    width: 30px;
     height: auto;
 }

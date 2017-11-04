@@ -25,5 +25,5 @@ const folderThemes = filterDuplicates(folderIcons.map(theme => {
 }).reduce((a, b) => a.concat(b)));
 
 generatePreview('fileIcons', basicFileIcons, 5, ['word', 'movie', 'virtual', 'music']);
-generatePreview('folderIcons', folderThemes, 4, ['folder-git', 'folder-expo']);
+generatePreview('folderIcons', folderThemes, 5, ['folder-git', 'folder-expo', 'folder-font']);
 
