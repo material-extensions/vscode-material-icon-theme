@@ -105,7 +105,7 @@
   "scripts": {
     "vscode:prepublish": "npm run build",
     "prebuild": "npm run clean",
-    "build": "npm run compile && npm run generateJson",
+    "build": "npm run compile && npm run check && npm run generateJson",
     "clean": "rimraf ./out",
     "compile": "tsc -p ./",
     "compile:watch": "tsc -watch -p ./",

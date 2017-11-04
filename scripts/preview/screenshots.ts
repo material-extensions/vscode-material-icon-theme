@@ -1,15 +1,16 @@
 import * as puppeteer from 'puppeteer';
 import * as path from 'path';
 
-export const createScreenshots = async () => {
-    const filePath = path.join(__dirname, '..', '..', 'out', 'previews', 'fileIcons.html');
+export const createScreenshots = async (filePath: string, fileName: string) => {
+    const htmlFilePath = path.join(__dirname, '..', '..', filePath);
 
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
-    await page.goto(filePath);
+    await page.goto(htmlFilePath);
     await page.screenshot({
-        path: 'images/example.png',
-        omitBackground: true
+        path: `images/${fileName}.png`,
+        omitBackground: true,
+        fullPage: true
     });
 
     await browser.close();

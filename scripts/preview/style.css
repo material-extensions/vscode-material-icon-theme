@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    color: rgb(115, 134, 148);
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.icon {
+    width: 2rem;
+    text-align: center;
+}
+
+.type {
+    min-width: 9rem;
+}
+
+img {
+    width: 24px;
+    height: auto;
+}

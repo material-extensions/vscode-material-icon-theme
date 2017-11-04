@@ -1,14 +1,30 @@
 import { createScreenshots } from './screenshots';
-import { createPreview } from './preview';
+import { generatePreview } from './preview';
+import { fileIcons } from './../../src/icons/fileIcons';
+import { folderIcons } from './../../src/icons/folderIcons';
 import * as painter from './../helpers/painter';
 import * as fs from 'fs';
+import * as path from 'path';
 
-createScreenshots().then(() => {
-    console.log(painter.green('Successfully created preview images!'));
-}).catch(e => {
-    throw Error(painter.red('Error while creating preview images'));
-});
+const filterDuplicates = (icons: string[]) => {
+    return [...new Set(icons)];
+};
 
-fs.writeFileSync('out/previews/demo.html', createPreview());
+const basicFileIcons = fileIcons.icons
+    .filter(i => !i.enabledFor) // no icon packs
+    .map(i => i.name);
 
-// console.log(createPreview());
+const folderThemes = filterDuplicates(folderIcons.map(theme => {
+    const folders = [];
+    if (theme.defaultIcon.name !== '') {
+        folders.push(theme.defaultIcon.name);
+    }
+    if (theme.icons && theme.icons.length > 0) {
+        folders.push(...theme.icons.map(i => i.name));
+    }
+    return [].concat(...folders);
+}).reduce((a, b) => a.concat(b)));
+
+generatePreview('fileIcons', basicFileIcons, 5, ['word']);
+generatePreview('folderIcons', folderThemes, 4, ['folder-git', 'folder-expo']);
+
