@@ -6,10 +6,15 @@ export const createScreenshots = async (filePath: string, fileName: string) => {
 
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
+    page.setViewport({
+        height: 100,
+        width: 100
+    });
+
     await page.goto(htmlFilePath);
     await page.screenshot({
         path: `images/${fileName}.png`,
-        omitBackground: true,
+        omitBackground: false,
         fullPage: true
     });
 

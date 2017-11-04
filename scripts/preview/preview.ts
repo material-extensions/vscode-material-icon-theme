@@ -4,6 +4,7 @@ import * as painter from './../helpers/painter';
 import { toTitleCase } from './../helpers/titleCase';
 import { createScreenshots } from './screenshots';
 
+const htmlDoctype = `<!DOCTYPE html>`;
 const cssFilePath = path.join('..', '..', 'scripts', 'preview', 'style.css');
 const styling = `<link rel="stylesheet" href="${cssFilePath}">`;
 
@@ -47,7 +48,7 @@ const createTable = (headRow, bodyRows) => `
 `;
 
 const createPreviewTable = (icons: string[][], size: number) => {
-    const table = styling + createTable(
+    const table = htmlDoctype + styling + createTable(
         createHeadRow(size),
         createBodyRows(icons)
     );

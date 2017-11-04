@@ -7,13 +7,23 @@ table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
-    color: rgb(115, 134, 148);
+    background: rgb(30, 30, 30);
+    color: rgb(250, 250, 250);
+    font-size: .875rem;
 }
 
 td, th {
-    border: 1px solid #dddddd;
+    border: 0px solid #dddddd;
     text-align: left;
     padding: 8px;
+}
+
+th {
+    padding: 1rem;
+}
+
+tr:last-child {
+    border-bottom: 1rem solid rgb(30, 30, 30);
 }
 
 .icon {

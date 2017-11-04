@@ -9,35 +9,37 @@ The Material Icon Theme provides lots of icons based on Material Design for Visu
 
 ### File icons
 
-![File icons](https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/master/images/file-icons.png)
+<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/dev/images/fileIcons.png" alt="file icons" width="100%">
 
 ### Folder icons
 
-![Folder icons](https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/master/images/folder-icons.png)
+<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/dev/images/folderIcons.png" alt="folder icons" width="100%">
 
 #### Customize folder icons
 
 You can change the design of the folder icons:
 
-![Folder icons](https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/master/images/set-folder-icons.gif)
+<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/dev/images/set-folder-icons.gif" alt="activation" width="80%">
 
 ## One-click activation
 After installation or update you can click on the 'Activate'-button to activate the icon theme, if you haven't already. The icons will be visible immediately.
 
-![activation](https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/master/images/oneclickactivation.png)
+<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/dev/images/oneclickactivation.png" alt="activation" width="80%">
 
 ## Commands
 Press `Ctrl-Shift-P` to open the command palette and type `Material Icons`.
 
-![commands](https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/master/images/commandPalette.png)
+<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/dev/images/commandPalette.png" alt="commands" width="80%">
 
-- **Activate Icon Theme**: Activate the icon theme.
+- **Change Folder Icons**: Change the design of the folder icons.
+
+- **Configure Icon Packs**: Select an icon pack that enables additional icons.
+
+- **Hide the arrows before the folder icons**: Hides the arrows on the left of the folder icons.
 
 - **Restore Default Configuration**: Reset the default configurations of the icon theme.
 
-- **Toggle Angular Icons**: Show the Angular files either with specific icons or default language icons.
-
-- **Toggle Folder Icons**: Change the design of the folder icons.
+- **Activate Icon Theme**: Activate the icon theme.
 
 ## Icon sources
 * [Material Design Icons](https://materialdesignicons.com/)
@@ -47,7 +49,7 @@ Press `Ctrl-Shift-P` to open the command palette and type `Material Icons`.
 
 Read the [contribution guidelines](https://github.com/PKief/vscode-material-icon-theme/blob/master/CONTRIBUTING.md).
 
-If you have some questions or icon requests open a [new issue](https://github.com/PKief/vscode-material-icon-theme/issues/new) on Github.
+If you have some questions or icon requests open a [new issue](https://github.com/PKief/vscode-material-icon-theme/issues) on Github.
 
 ## Follow me
 - [Twitter](https://twitter.com/PhilippKief)
