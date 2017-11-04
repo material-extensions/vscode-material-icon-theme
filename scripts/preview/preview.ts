@@ -28,7 +28,7 @@ const createBodyRows = (items: string[][]) => {
             <td class="icon">
                 <img src="./../../icons/${icon}.svg" alt="${icon}">
             </td>
-            <td class="type">${toTitleCase(icon)}</td>
+            <td class="type">${toTitleCase(icon.replace('folder-', ''))}</td>
         `).join('');
         const tableRow = `
             <tr>

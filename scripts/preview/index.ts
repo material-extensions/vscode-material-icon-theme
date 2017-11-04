@@ -11,7 +11,6 @@ const filterDuplicates = (icons: string[]) => {
 };
 
 const basicFileIcons = fileIcons.icons
-    .filter(i => !i.enabledFor) // no icon packs
     .map(i => i.name);
 
 const folderThemes = filterDuplicates(folderIcons.map(theme => {
@@ -25,6 +24,6 @@ const folderThemes = filterDuplicates(folderIcons.map(theme => {
     return [].concat(...folders);
 }).reduce((a, b) => a.concat(b)));
 
-generatePreview('fileIcons', basicFileIcons, 5, ['word']);
+generatePreview('fileIcons', basicFileIcons, 5, ['word', 'movie', 'virtual', 'music']);
 generatePreview('folderIcons', folderThemes, 4, ['folder-git', 'folder-expo']);
 
