@@ -5,13 +5,14 @@ import { folderIcons } from './../../src/icons/folderIcons';
 import * as painter from './../helpers/painter';
 import * as fs from 'fs';
 import * as path from 'path';
+import { toTitleCase } from '../helpers/titleCase';
 
 const filterDuplicates = (icons: string[]) => {
     return [...new Set(icons)];
 };
 
 const basicFileIcons = fileIcons.icons
-    .map(i => i.name);
+    .map(i => ({ iconName: i.name, label: i.name }));
 
 const folderThemes = filterDuplicates(folderIcons.map(theme => {
     const folders = [];
@@ -22,7 +23,7 @@ const folderThemes = filterDuplicates(folderIcons.map(theme => {
         folders.push(...theme.icons.map(i => i.name));
     }
     return [].concat(...folders);
-}).reduce((a, b) => a.concat(b)));
+}).reduce((a, b) => a.concat(b))).map(i => ({ iconName: i, label: toTitleCase(i.replace('folder-', '')) }));
 
 generatePreview('fileIcons', basicFileIcons, 5, ['word', 'movie', 'virtual', 'music']);
 generatePreview('folderIcons', folderThemes, 5, ['folder-git', 'folder-expo', 'folder-font']);

@@ -8,7 +8,7 @@ const htmlDoctype = `<!DOCTYPE html>`;
 const cssFilePath = path.join('..', '..', 'scripts', 'preview', 'style.css');
 const styling = `<link rel="stylesheet" href="${cssFilePath}">`;
 
-const createHeadRow = (amount: number) => {
+const createHTMLTableHeadRow = (amount: number) => {
     const pair = `
         <th class="icon">Icon</th>
         <th class="type">Type</th>
@@ -21,14 +21,14 @@ const createHeadRow = (amount: number) => {
     `;
 };
 
-const createBodyRows = (items: string[][]) => {
+const createHTMLTableBodyRows = (items: IconDefinition[][]) => {
     let rows = '';
     items.forEach((row, i) => {
         const columns = row.map(icon => `
             <td class="icon">
-                <img src="./../../icons/${icon}.svg" alt="${icon}">
+                <img src="./../../icons/${icon.iconName}.svg" alt="${icon.label}">
             </td>
-            <td class="type">${toTitleCase(icon.replace('folder-', ''))}</td>
+            <td class="type">${icon.label}</td>
         `).join('');
         const tableRow = `
             <tr>
@@ -40,27 +40,32 @@ const createBodyRows = (items: string[][]) => {
     return rows;
 };
 
-const createTable = (headRow, bodyRows) => `
+const createHTMLTable = (headRow, bodyRows) => `
     <table>
         ${headRow}
         ${bodyRows}
     </table>
 `;
 
-const createPreviewTable = (icons: string[][], size: number) => {
-    const table = htmlDoctype + styling + createTable(
-        createHeadRow(size),
-        createBodyRows(icons)
+const createPreviewTable = (icons: IconDefinition[][], size: number) => {
+    const table = htmlDoctype + styling + createHTMLTable(
+        createHTMLTableHeadRow(size),
+        createHTMLTableBodyRows(icons)
     );
     return table;
 };
 
-const savePreview = (fileName: string, size: number, icons: string[][]) => {
+const savePreview = (fileName: string, size: number, icons: IconDefinition[][]) => {
     const previewFolderPath = path.join('out', 'previews');
     const filePath = path.join(previewFolderPath, fileName + '.html');
+
+    // create the out folder if it does not exist
     fs.existsSync(previewFolderPath) || fs.mkdirSync(previewFolderPath);
+
+    // write the html file with the icon table
     fs.writeFileSync(filePath, createPreviewTable(icons, size));
 
+    // create the images
     createScreenshots(filePath, fileName).then(() => {
         console.log(painter.green(`Successfully created ${fileName} preview images!`));
     }).catch(e => {
@@ -68,13 +73,13 @@ const savePreview = (fileName: string, size: number, icons: string[][]) => {
     });
 };
 
-const getIconDefinitionsMatrix = (icons: string[], size: number, excluded: string[] = []): string[][] => {
+const getIconDefinitionsMatrix = (icons: IconDefinition[], size: number, excluded: string[] = []): IconDefinition[][] => {
     const iconList = icons
-        .sort((a, b) => a.localeCompare(b))
-        .filter(i => excluded.indexOf(i) === -1);
+        .sort((a, b) => a.label.localeCompare(b.label))
+        .filter(i => excluded.indexOf(i.iconName) === -1);
 
     // list for the columns with the icons
-    const matrix: string[][] = [];
+    const matrix: IconDefinition[][] = [];
 
     // calculate the amount of icons per column
     const itemsPerColumn = Math.floor(iconList.length / size);
@@ -94,6 +99,18 @@ const getIconDefinitionsMatrix = (icons: string[], size: number, excluded: strin
     return matrix;
 };
 
-export const generatePreview = (name: string, icons: string[], size: number, excluded: string[] = []) => {
+/**
+ * Function that generates the preview image for specific icons.
+ * @param name name of the preview
+ * @param icons icons for the preview
+ * @param size amount of table columns
+ * @param excluded which icons shall be excluded
+ */
+export const generatePreview = (name: string, icons: IconDefinition[], size: number, excluded: string[] = []) => {
     savePreview(name, size, getIconDefinitionsMatrix(icons, size, excluded));
 };
+
+interface IconDefinition {
+    iconName: string;
+    label: string;
+}
