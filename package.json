@@ -83,6 +83,16 @@
           "default": "angular",
           "description": "%configuration.activeIconPack%"
         },
+        "material-icon-theme.files.associations": {
+          "type": "object",
+          "default": {},
+          "description": "%configuration.files.associations%"
+        },
+        "material-icon-theme.folders.associations": {
+          "type": "object",
+          "default": {},
+          "description": "%configuration.folders.associations%"
+        },
         "material-icon-theme.folders.icons": {
           "type": "string",
           "default": "specific",

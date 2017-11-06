@@ -2,7 +2,7 @@ import * as helpers from './index';
 import * as vscode from 'vscode';
 import { createIconFile } from '../icons/index';
 import { checkFolderIconsStatus } from '../commands/folders';
-import { IconPack, IconJsonOptions } from '../models/index';
+import { IconPack, IconJsonOptions, IconAssociations } from '../models/index';
 
 /** Watch for changes in the configurations to update the icons theme. */
 export const watchForConfigChanges = () => {
@@ -17,14 +17,16 @@ export const detectConfigChanges = () => {
     return Promise.resolve()
         .then(() => compareIconPackConfigs())
         .then(() => compareFolderConfigs())
-        .then(() => compareExplorerArrowConfigs());
+        .then(() => compareExplorerArrowConfigs())
+        .then(() => compareFileAssociationsConfigs())
+        .then(() => compareFolderAssociationsConfigs());
 };
 
 const compareIconPackConfigs = () => {
-    const activeIconPack = <string[]>helpers.getThemeConfig('activeIconPack').globalValue;
+    const activeIconPack = <string>helpers.getThemeConfig('activeIconPack').globalValue;
 
     return helpers.getMaterialIconsJSON().then(result => {
-        if (activeIconPack !== undefined && JSON.stringify(activeIconPack) !== JSON.stringify(result.options.activatedPack)) {
+        if (activeIconPack !== undefined && activeIconPack !== result.options.activatedPack) {
             updateIconJson();
         }
     });
@@ -50,11 +52,33 @@ const compareExplorerArrowConfigs = () => {
     });
 };
 
+const compareFileAssociationsConfigs = () => {
+    const filesAssociationsConfig = helpers.getThemeConfig('files.associations').globalValue;
+
+    return helpers.getMaterialIconsJSON().then(result => {
+        if (filesAssociationsConfig !== undefined && JSON.stringify(filesAssociationsConfig) !== JSON.stringify(result.options.fileAssociations)) {
+            updateIconJson();
+        }
+    });
+};
+
+const compareFolderAssociationsConfigs = () => {
+    const foldersAssociationsConfig = helpers.getThemeConfig('folders.associations').globalValue;
+
+    return helpers.getMaterialIconsJSON().then(result => {
+        if (foldersAssociationsConfig !== undefined && JSON.stringify(foldersAssociationsConfig) !== JSON.stringify(result.options.folderAssociations)) {
+            updateIconJson();
+        }
+    });
+};
+
 const updateIconJson = () => {
     const options: IconJsonOptions = {
         folderTheme: getCurrentFolderTheme(),
         activatedPack: getEnabledIconPacks(),
-        hidesExplorerArrows: getCurrentExplorerArrowConfig()
+        hidesExplorerArrows: getCurrentExplorerArrowConfig(),
+        fileAssociations: getCurrentFileAssociations(),
+        folderAssociations: getCurrentFolderAssociations(),
     };
     return createIconFile(options).then(() => {
         helpers.promptToReload();
@@ -76,4 +100,14 @@ export const getCurrentExplorerArrowConfig = (): boolean => {
 export const getEnabledIconPacks = (): string => {
     const result = <string>helpers.getThemeConfig('activeIconPack').globalValue;
     return result !== undefined ? result : 'angular';
+};
+
+export const getCurrentFileAssociations = (): IconAssociations => {
+    const result = <IconAssociations>helpers.getThemeConfig('files.associations').globalValue;
+    return result !== undefined ? result : {};
+};
+
+export const getCurrentFolderAssociations = (): IconAssociations => {
+    const result = <IconAssociations>helpers.getThemeConfig('folders.associations').globalValue;
+    return result !== undefined ? result : {};
 };

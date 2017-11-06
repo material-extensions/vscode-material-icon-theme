@@ -129,6 +129,62 @@ suite('folder icons', () => {
         assert.deepEqual(def, value);
     });
 
+    test('should configure custom icon associations', () => {
+        const options = getDefaultIconOptions();
+        options.folderAssociations = {
+            'sample': 'src'
+        };
+        const def = getFolderIconDefinitions(folderIcons, iconConfig, options);
+        const value = new IconConfiguration();
+        value.iconDefinitions = {
+            'folder': {
+                'iconPath': './../../icons/folder.svg'
+            },
+            'folder-open': {
+                'iconPath': './../../icons/folder-open.svg'
+            },
+            'folder-root': {
+                'iconPath': './../../icons/folder-root.svg'
+            },
+            'folder-root-open': {
+                'iconPath': './../../icons/folder-root-open.svg'
+            },
+            'folder-src': {
+                'iconPath': './../../icons/folder-src.svg'
+            },
+            'folder-src-open': {
+                'iconPath': './../../icons/folder-src-open.svg'
+            },
+            'folder-angular': {
+                'iconPath': './../../icons/folder-angular.svg'
+            },
+            'folder-angular-open': {
+                'iconPath': './../../icons/folder-angular-open.svg'
+            }
+        };
+        value.folder = 'folder';
+        value.folderExpanded = 'folder-open';
+        value.rootFolder = 'folder-root';
+        value.rootFolderExpanded = 'folder-root-open';
+        value.folderNames = {
+            'src': 'folder-src',
+            'source': 'folder-src',
+            'angular': 'folder-angular',
+            'ng': 'folder-angular',
+            'sample': 'folder-src'
+        };
+        value.folderNamesExpanded = {
+            'src': 'folder-src-open',
+            'source': 'folder-src-open',
+            'angular': 'folder-angular-open',
+            'ng': 'folder-angular-open',
+            'sample': 'folder-src-open'
+        };
+        value.hidesExplorerArrows = false;
+
+        assert.deepEqual(def, value);
+    });
+
     test('should disable icon packs', () => {
         const options = getDefaultIconOptions();
         options.activatedPack = '';

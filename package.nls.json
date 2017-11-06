@@ -5,6 +5,8 @@
     "command.restoreDefaultConfig": "Material Icons: Restore Default Configuration",
     "command.hidesExplorerArrows": "Material Icons: Hide the arrows before the folder icons",
     "configuration.title": "Material Icons configuration",
+    "configuration.files.associations": "Set custom file icon associations.",
+    "configuration.folders.associations": "Set custom folder icon associations.",
     "configuration.showWelcomeMessage": "Show the welcome message after first installation.",
     "configuration.showUpdateMessage": "Show the update message after each update.",
     "configuration.activeIconPack": "Select an icon pack that enables specific icons.",

@@ -1,5 +1,5 @@
 import { iconFolderPath, openedFolder, lightVersion, highContrastVersion } from './constants';
-import { IconConfiguration, FolderTheme, FolderIcon, IconJsonOptions, DefaultIcon } from '../../models/index';
+import { IconConfiguration, FolderTheme, FolderIcon, IconJsonOptions, DefaultIcon, IconAssociations } from '../../models/index';
 import * as merge from 'lodash.merge';
 
 /**
@@ -10,12 +10,14 @@ export const getFolderIconDefinitions = (folderThemes: FolderTheme[], config: Ic
     config.hidesExplorerArrows = options.hidesExplorerArrows;
     const activeTheme = getEnabledFolderTheme(folderThemes, options.folderTheme);
     const enabledIcons = disableIconsByPack(activeTheme, options.activatedPack);
+    const customIcons = getCustomIcons(options.folderAssociations);
+    const allIcons = [...enabledIcons, ...customIcons];
 
     if (options.folderTheme === 'none') {
         return config;
     }
 
-    enabledIcons.forEach(icon => {
+    allIcons.forEach(icon => {
         if (icon.disabled) return;
         config = setIconDefinitions(config, icon);
         config = merge({}, config, setFolderNames(icon.name, icon.folderNames));
@@ -115,4 +117,15 @@ const createRootIconConfigObject = (hasFolderIcons: boolean, theme: FolderTheme,
     obj.rootFolder = hasFolderIcons ? theme.rootFolder ? theme.rootFolder.name + appendix : theme.defaultIcon.name + appendix : '';
     obj.rootFolderExpanded = hasFolderIcons ? theme.rootFolder ? `${theme.rootFolder.name}${openedFolder}${appendix}` : `${theme.defaultIcon.name}${openedFolder}${appendix}` : '';
     return obj;
+};
+
+const getCustomIcons = (folderAssociations: IconAssociations) => {
+    if (!folderAssociations) return [];
+
+    const icons: FolderIcon[] = Object.keys(folderAssociations).map(fa => ({
+        name: 'folder-' + folderAssociations[fa],
+        folderNames: [fa]
+    }));
+
+    return icons;
 };

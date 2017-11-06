@@ -44,7 +44,9 @@ export const getDefaultIconOptions = (): IconJsonOptions => {
     const options: IconJsonOptions = {
         folderTheme: 'specific',
         activatedPack: 'angular',
-        hidesExplorerArrows: false
+        hidesExplorerArrows: false,
+        fileAssociations: {},
+        folderAssociations: {}
     };
     return options;
 };

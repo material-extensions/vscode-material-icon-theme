@@ -74,6 +74,49 @@ suite('file icons', () => {
         assert.deepEqual(def, value);
     });
 
+    test('should configure custom icon associations', () => {
+        const fileIcons: FileIcons = {
+            defaultIcon: { name: 'file' },
+            icons: [
+                { name: 'angular', fileNames: ['.angular-cli.json', 'angular-cli.json'] },
+                { name: 'javascript', fileNames: ['filename.js'], fileExtensions: ['js'] }
+            ]
+        };
+        const iconConfig = new IconConfiguration();
+        const options = getDefaultIconOptions();
+        options.fileAssociations = {
+            '*.sample.ts': 'angular',
+            'sample.js': 'javascript'
+        };
+        const def = getFileIconDefinitions(fileIcons, iconConfig, options);
+        const value = new IconConfiguration();
+
+        value.iconDefinitions = {
+            'file': {
+                'iconPath': './../../icons/file.svg'
+            },
+            'javascript': {
+                'iconPath': './../../icons/javascript.svg'
+            },
+            'angular': {
+                'iconPath': './../../icons/angular.svg'
+            }
+        };
+        value.file = 'file';
+        value.fileExtensions = {
+            'js': 'javascript',
+            'sample.ts': 'angular'
+        };
+        value.fileNames = {
+            '.angular-cli.json': 'angular',
+            'angular-cli.json': 'angular',
+            'sample.js': 'javascript',
+            'filename.js': 'javascript'
+        };
+
+        assert.deepEqual(def, value);
+    });
+
     test('should configure language icons for light and high contrast', () => {
         const fileIcons: FileIcons = {
             defaultIcon: { name: 'file', light: true, highContrast: true },

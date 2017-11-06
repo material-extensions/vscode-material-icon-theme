@@ -21,6 +21,36 @@ You can change the design of the folder icons:
 
 <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/dev/images/set-folder-icons.gif" alt="activation" width="80%">
 
+## Custom icon associations
+
+You can customize the icon associations directly in the user settings.
+
+### File associations
+
+`*.[extension]` associations set the file extension mapping. E.g. every file that ends with `.ts` will have a custom icon. If there's no `*` before the association it will configured as filename.
+
+```json
+"material-icon-theme.files.associations": {
+    "*.ts": "typescript",
+    "fileName.ts": "angular"
+}
+```
+
+### Folder associations
+
+The following configuration can customize the folder icons. It is also possible to overwrite existing associations and create nice combinations with other folder icon colors.
+
+```json
+"material-icon-theme.folders.associations": {
+    "source": "src",
+    "out": "dist"
+}
+```
+
+#### Possible combinations
+
+<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/dev/images/folder-theme-combination.png" alt="folder theme combination" width="30%">
+
 ## One-click activation
 After installation or update you can click on the 'Activate'-button to activate the icon theme, if you haven't already. The icons will be visible immediately.
 
