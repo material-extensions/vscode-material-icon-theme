@@ -4,6 +4,7 @@ import { toggleIconPacks } from './iconPacks';
 import { toggleFolderIcons } from './folders';
 import { restoreDefaultConfig } from './restoreConfig';
 import { toggleFolderArrows } from './folderArrows';
+import { changeFolderColor } from './folderColor';
 
 // Activate theme
 const activateThemeCommand = vscode.commands.registerCommand('material-icon-theme.activateIcons', () => {
@@ -15,9 +16,14 @@ const toggleIconPacksCommand = vscode.commands.registerCommand('material-icon-th
     toggleIconPacks();
 });
 
-// Folders
+// Folder themes
 const toggleFolderIconsCommand = vscode.commands.registerCommand('material-icon-theme.toggleFolderIcons', () => {
     toggleFolderIcons();
+});
+
+// Folder color
+const toggleFolderColorCommand = vscode.commands.registerCommand('material-icon-theme.changeFolderColor', () => {
+    changeFolderColor();
 });
 
 // Reset config

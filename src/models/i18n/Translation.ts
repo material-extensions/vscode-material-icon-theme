@@ -13,6 +13,9 @@ export interface Translation {
     };
     folders?: {
         toggleIcons?: string;
+        color?: string;
+        hexCode?: string;
+        wrongHexCode?: string;
         disabled?: string;
         theme?: {
             description?: string;

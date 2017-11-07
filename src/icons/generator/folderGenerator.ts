@@ -132,9 +132,8 @@ const getCustomIcons = (folderAssociations: IconAssociations) => {
     return icons;
 };
 
-export const generateFolderIcons = async (color: string) => {
-    const hexCode = new RegExp(/#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/).exec(color);
-    if (!hexCode) {
+export const generateFolderIcons = (color: string) => {
+    if (!validateHEXColorCode(color)) {
         return Promise.reject('Invalid color code for folder icons');
     }
 
@@ -143,10 +142,10 @@ export const generateFolderIcons = async (color: string) => {
     const rootFolderIcon = `M12 20a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 5a5 5 0 0 0-5 5 5 5 0 0 0 5 5 5 5 0 0 0 5-5 5 5 0 0 0-5-5z`;
     const rootFolderIconOpen = `M12 20a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2z`;
 
-    return writeSVGFiles('folder', getSVG(getPath(folderIcon, hexCode[0])))
-        .then(() => writeSVGFiles('folder-open', getSVG(getPath(folderIconOpen, hexCode[0]))))
-        .then(() => writeSVGFiles('folder-root', getSVG(getPath(rootFolderIcon, hexCode[0]))))
-        .then(() => writeSVGFiles('folder-root-open', getSVG(getPath(rootFolderIconOpen, hexCode[0]))))
+    return writeSVGFiles('folder', getSVG(getPath(folderIcon, color)))
+        .then(() => writeSVGFiles('folder-open', getSVG(getPath(folderIconOpen, color))))
+        .then(() => writeSVGFiles('folder-root', getSVG(getPath(rootFolderIcon, color))))
+        .then(() => writeSVGFiles('folder-root-open', getSVG(getPath(rootFolderIconOpen, color))))
         .catch(e => console.log(e));
 };
 
@@ -170,4 +169,12 @@ const writeSVGFiles = (iconName: string, svg: string) => {
         }
         resolve();
     });
+};
+
+/**
+ * Validate the HEX color code
+ * @param color HEX code
+ */
+export const validateHEXColorCode = (color: string) => {
+    return new RegExp(/#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/).exec(color) !== null;
 };
