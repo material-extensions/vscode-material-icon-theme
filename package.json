@@ -100,10 +100,14 @@
           "enum": [
             "specific",
             "classic",
-            "blue",
             "none"
           ]
         },
+        "material-icon-theme.folders.color": {
+          "type": "string",
+          "default": "#90a4ae",
+          "description": "%configuration.folders.color%"
+        },        
         "material-icon-theme.hidesExplorerArrows": {
           "type": "boolean",
           "default": false,
@@ -115,7 +119,7 @@
   "scripts": {
     "vscode:prepublish": "npm run build",
     "prebuild": "npm run clean",
-    "build": "npm run compile && npm run check && npm run generateJson",
+    "build": "npm run compile && npm run generateJson",
     "clean": "rimraf ./out",
     "compile": "tsc -p ./",
     "compile:watch": "tsc -watch -p ./",

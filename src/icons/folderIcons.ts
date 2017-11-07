@@ -75,6 +75,5 @@ export const folderIcons: FolderTheme[] = [
         ]
     },
     { name: 'classic', defaultIcon: { name: 'folder' }, rootFolder: { name: 'folder-root' } },
-    { name: 'blue', defaultIcon: { name: 'folder-blue' }, rootFolder: { name: 'folder-root-blue' } },
     { name: 'none', defaultIcon: { name: '' } },
 ];

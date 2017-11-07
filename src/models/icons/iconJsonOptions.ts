@@ -1,5 +1,6 @@
 export interface IconJsonOptions {
     folderTheme?: string;
+    folderColor?: string;
     activatedPack?: string;
     hidesExplorerArrows?: boolean;
     fileAssociations?: IconAssociations;
