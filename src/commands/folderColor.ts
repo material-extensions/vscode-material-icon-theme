@@ -9,17 +9,14 @@ interface FolderColor {
 }
 
 const iconPalette: FolderColor[] = [
-    { label: 'Blue', hex: '#42a5f5' },
-    { label: 'Dark Blue', hex: '#01579b' },
-    { label: 'Green', hex: '#8bc34a' },
     { label: 'Grey (Default)', hex: '#90a4ae' },
-    { label: 'Lime', hex: '#cDDc39' },
-    { label: 'Orange', hex: '#ff9800' },
-    { label: 'Pink', hex: '#e91e63' },
-    { label: 'Purple', hex: '#9c27b0' },
-    { label: 'Red', hex: '#e53935' },
-    { label: 'Teal', hex: '#009688' },
-    { label: 'Custom', hex: 'Custom HEX Code' },
+    { label: 'Blue', hex: '#42a5f5' },
+    { label: 'Green', hex: '#7CB342' },
+    { label: 'Teal', hex: '#26A69A' },
+    { label: 'Red', hex: '#EF5350' },
+    { label: 'Orange', hex: '#FF7043' },
+    { label: 'Yellow', hex: '#FDD835' },
+    { label: 'Custom Color', hex: 'Custom HEX Code' },
 ];
 
 /** Command to toggle the folder icons. */
@@ -34,7 +31,6 @@ export const changeFolderColor = () => {
 const showQuickPickItems = (currentColor: string) => {
     const options = iconPalette.map((color): vscode.QuickPickItem => ({
         description: color.label,
-        detail: color.hex.toLowerCase(),
         label: isColorActive(color, currentColor) ? '\u2714' : '\u25FB'
     }));
 
@@ -48,14 +44,15 @@ const showQuickPickItems = (currentColor: string) => {
 /** Handle the actions from the QuickPick. */
 const handleQuickPickActions = (value: vscode.QuickPickItem) => {
     if (!value || !value.description) return;
-    if (value.description === 'Custom') {
+    if (value.description === 'Custom Color') {
         vscode.window.showInputBox({
             placeHolder: i18n.translate('folders.hexCode'),
             ignoreFocusOut: true,
             validateInput: validateColorInput
         }).then(value => setColorConfig(value));
     } else {
-        return setColorConfig(value.detail);
+        const hexCode = iconPalette.find(c => c.label === value.description).hex;
+        return setColorConfig(hexCode);
     }
 };
 
@@ -79,7 +76,7 @@ const setColorConfig = (value: string) => {
 };
 
 const isColorActive = (color: FolderColor, currentColor: string): boolean => {
-    if (color.label === 'Custom') {
+    if (color.label === 'Custom Color') {
         return !iconPalette.some(c => c.hex.toLowerCase() === currentColor.toLowerCase());
     }
     return color.hex.toLowerCase() === currentColor.toLowerCase();

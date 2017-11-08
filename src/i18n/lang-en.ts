@@ -17,7 +17,7 @@ export const translation: Translation = {
         'toggleIcons': 'Pick a folder theme',
         'color': 'Choose a folder color',
         'hexCode': 'Insert a HEX color code',
-        'wrongHexCode': 'Wrong HEX code',
+        'wrongHexCode': 'Wrong HEX color code',
         'disabled': 'No folder icons',
         'theme': {
             'description': 'Select the \'%0\' folder theme'

@@ -17,7 +17,7 @@ export const translation: Translation = {
         'toggleIcons': 'Wähle ein Ordner Design',
         'color': 'Wähle eine Ordner Farbe',
         'hexCode': 'Gebe einen HEX Farbcode ein',
-        'wrongHexCode': 'Falscher HEX Code',
+        'wrongHexCode': 'Ungültiger HEX Farbcode',
         'disabled': 'Keine Ordner Icons',
         'theme': {
             'description': 'Wähle das \'%0\' Design'
