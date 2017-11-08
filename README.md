@@ -15,28 +15,28 @@ The Material Icon Theme provides lots of icons based on Material Design for Visu
 
 <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/dev/images/folderIcons.png" alt="folder icons" width="100%">
 
-#### Customize folder icons
-
-You can change the design of the folder icons:
-
-<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/dev/images/set-folder-icons.gif" alt="activation" width="80%">
-
-or via user settings:
-
-```json
-"material-icon-theme.folders.theme": "specific"
-```
-
 #### Customize folder color
 
 You can change the color of the folder icons:
 
-<img src="images/set-folder-color.gif" alt="activation" width="80%">
+<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/dev/images/set-folder-color.gif" alt="activation" width="80%">
 
 or via user settings:
 
 ```json
 "material-icon-theme.folders.color": "#ef5350",
+```
+
+#### Folder themes
+
+You can change the design of the folder icons:
+
+<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/dev/images/set-folder-theme.gif" alt="activation" width="80%">
+
+or via user settings:
+
+```json
+"material-icon-theme.folders.theme": "specific"
 ```
 
 ## Custom icon associations
@@ -64,10 +64,6 @@ The following configuration can customize the folder icons. It is also possible 
     "out": "dist"
 }
 ```
-
-#### Possible combinations
-
-<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/dev/images/folder-theme-combination.png" alt="folder theme combination" width="30%">
 
 ## One-click activation
 After installation or update you can click on the 'Activate'-button to activate the icon theme, if you haven't already. The icons will be visible immediately.
