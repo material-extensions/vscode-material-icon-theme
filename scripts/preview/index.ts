@@ -23,7 +23,7 @@ const folderThemes = filterDuplicates(folderIcons.map(theme => {
         folders.push(...theme.icons.map(i => i.name));
     }
     return [].concat(...folders);
-}).reduce((a, b) => a.concat(b))).map(i => ({ iconName: i, label: toTitleCase(i.replace('folder-', '')) }));
+}).reduce((a, b) => a.concat(b))).map(i => ({ iconName: i, label: i.replace('folder-', '') }));
 
 generatePreview('fileIcons', basicFileIcons, 5, ['word', 'movie', 'virtual', 'music']);
-generatePreview('folderIcons', folderThemes, 5, ['folder-git', 'folder-expo', 'folder-font']);
+generatePreview('folderIcons', folderThemes, 5, ['folder-expo', 'folder-font']);
