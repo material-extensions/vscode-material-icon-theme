@@ -17,9 +17,9 @@ The Material Icon Theme provides lots of icons based on Material Design for Visu
 
 #### Customize folder color
 
-You can change the color of the folder icons:
+You can change the color of the default folder icon using the command palette:
 
-<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/dev/images/set-folder-color.gif" alt="activation" width="80%">
+<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/dev/images/set-folder-color.gif" alt="custom folder colors" width="80%">
 
 or via user settings:
 
@@ -29,9 +29,9 @@ or via user settings:
 
 #### Folder themes
 
-You can change the design of the folder icons:
+You can change the design of the folder icons using the command palette:
 
-<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/dev/images/set-folder-theme.gif" alt="activation" width="80%">
+<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/dev/images/set-folder-theme.gif" alt="folder themes" width="80%">
 
 or via user settings:
 
