@@ -52,7 +52,7 @@ const handleQuickPickActions = (value: vscode.QuickPickItem) => {
         }).then(value => setColorConfig(value));
     } else {
         const hexCode = iconPalette.find(c => c.label === value.description).hex;
-        return setColorConfig(hexCode);
+        setColorConfig(hexCode);
     }
 };
 
@@ -72,7 +72,9 @@ export const checkFolderColorStatus = (): Promise<string> => {
 };
 
 const setColorConfig = (value: string) => {
-    return helpers.setThemeConfig('folders.color', value.toLowerCase(), true);
+    if (value) {
+        helpers.setThemeConfig('folders.color', value.toLowerCase(), true);
+    }
 };
 
 const isColorActive = (color: FolderColor, currentColor: string): boolean => {

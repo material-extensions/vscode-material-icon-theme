@@ -21,6 +21,24 @@ You can change the design of the folder icons:
 
 <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/dev/images/set-folder-icons.gif" alt="activation" width="80%">
 
+or via user settings:
+
+```json
+"material-icon-theme.folders.theme": "specific"
+```
+
+#### Customize folder color
+
+You can change the color of the folder icons:
+
+<img src="images/set-folder-color.gif" alt="activation" width="80%">
+
+or via user settings:
+
+```json
+"material-icon-theme.folders.color": "#ef5350",
+```
+
 ## Custom icon associations
 
 You can customize the icon associations directly in the user settings.

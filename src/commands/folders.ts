@@ -4,7 +4,7 @@ import * as i18n from './../i18n';
 import { folderIcons } from '../icons';
 
 /** Command to toggle the folder icons. */
-export const toggleFolderIcons = () => {
+export const changeFolderTheme = () => {
     return checkFolderIconsStatus()
         .then(showQuickPickItems)
         .then(handleQuickPickActions)
@@ -29,7 +29,7 @@ const showQuickPickItems = (activeTheme: string) => {
 /** Handle the actions from the QuickPick. */
 const handleQuickPickActions = (value: vscode.QuickPickItem) => {
     if (!value || !value.description) return;
-    return helpers.setThemeConfig('folders.icons', value.description.toLowerCase(), true);
+    return helpers.setThemeConfig('folders.theme', value.description.toLowerCase(), true);
 };
 
 /** Are the folder icons enabled? */

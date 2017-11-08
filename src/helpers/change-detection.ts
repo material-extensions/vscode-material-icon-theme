@@ -18,7 +18,7 @@ export const detectConfigChanges = () => {
     return helpers.getMaterialIconsJSON()
         .then((json) => {
             compareConfig<string>('activeIconPack', json.options.activatedPack);
-            compareConfig<string>('folders.icons', json.options.folderTheme);
+            compareConfig<string>('folders.theme', json.options.folderTheme);
             compareConfig<string>('folders.color', json.options.folderColor);
             compareConfig<boolean>('hidesExplorerArrows', json.options.hidesExplorerArrows);
             compareConfig<IconAssociations>('files.associations', json.options.fileAssociations);
@@ -39,7 +39,7 @@ const compareConfig = <T>(config: string, currentState: T): Promise<void> => {
 const updateIconJson = () => {
     const defaultOptions = getDefaultIconOptions();
     const options: IconJsonOptions = {
-        folderTheme: getCurrentConfig<string>('folders.icons', defaultOptions.folderTheme),
+        folderTheme: getCurrentConfig<string>('folders.theme', defaultOptions.folderTheme),
         folderColor: getCurrentConfig<string>('folders.color', defaultOptions.folderColor),
         activatedPack: getCurrentConfig<string>('activeIconPack', defaultOptions.activatedPack),
         hidesExplorerArrows: getCurrentConfig<boolean>('hidesExplorerArrows', defaultOptions.hidesExplorerArrows),

@@ -52,8 +52,8 @@
         "title": "%command.toggleIconPacks%"
       },
       {
-        "command": "material-icon-theme.toggleFolderIcons",
-        "title": "%command.toggleFolderIcons%"
+        "command": "material-icon-theme.changeFolderTheme",
+        "title": "%command.changeFolderTheme%"
       },
       {
         "command": "material-icon-theme.changeFolderColor",
@@ -97,10 +97,10 @@
           "default": {},
           "description": "%configuration.folders.associations%"
         },
-        "material-icon-theme.folders.icons": {
+        "material-icon-theme.folders.theme": {
           "type": "string",
           "default": "specific",
-          "description": "%configuration.folders.icons%",
+          "description": "%configuration.folders.theme%",
           "enum": [
             "specific",
             "classic",

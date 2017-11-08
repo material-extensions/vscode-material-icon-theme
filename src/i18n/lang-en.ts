@@ -17,7 +17,7 @@ export const translation: Translation = {
         'toggleIcons': 'Pick a folder theme',
         'color': 'Choose a folder color',
         'hexCode': 'Insert a HEX color code',
-        'wrongHexCode': 'Wrong HEX color code',
+        'wrongHexCode': 'Invalid HEX color code!',
         'disabled': 'No folder icons',
         'theme': {
             'description': 'Select the \'%0\' folder theme'
@@ -28,9 +28,9 @@ export const translation: Translation = {
         'off': 'OFF'
     },
     'hidesExplorerArrows': {
-        'toggleArrows': 'Toggle explorer arrows',
-        'enableArrows': 'Show explorer arrows',
-        'disableArrows': 'Hide explorer arrows'
+        'toggleArrows': 'Toggle folder arrows',
+        'enableArrows': 'Show folder arrows',
+        'disableArrows': 'Hide folder arrows'
     },
     'confirmReload': 'You have to restart VS Code to activate the changes to the icons.',
     'reload': 'Restart',
