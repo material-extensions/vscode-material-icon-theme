@@ -123,7 +123,7 @@
   "scripts": {
     "vscode:prepublish": "npm run build",
     "prebuild": "npm run clean",
-    "build": "npm run compile && npm run generateJson",
+    "build": "npm run compile && npm run generateJson && npm run check",
     "clean": "rimraf ./out",
     "compile": "tsc -p ./",
     "compile:watch": "tsc -watch -p ./",
