@@ -734,6 +734,12 @@
     },
     "_folder_root_blue_open": {
       "iconPath": "./../../icons/folder-root-blue-open.svg"
+    },
+    "_file_drone": {
+      "iconPath": "./../../icons/drone.svg"
+    },
+    "_file_drone_light": {
+      "iconPath": "./../../icons/drone_light.svg"
     }
   },
   "folderExpanded": "_folder_open",
@@ -1438,7 +1444,8 @@
     "project.graphcool": "_file_graphcool",
     ".prettierrc": "_file_prettier",
     "prettier.config.js": "_file_prettier",
-    "nodemon.json": "_file_nodemon"
+    "nodemon.json": "_file_nodemon",
+    ".drone.yml": "_file_drone"
   },
   "light": {
     "fileNames": {
@@ -1449,7 +1456,8 @@
       ".stylelintrc.yml": "_file_stylelint_light",
       ".stylelintrc.js": "_file_stylelint_light",
       ".stylelintignore": "_file_stylelint_light",
-      ".codeclimate.yml": "_file_code_climate_light"
+      ".codeclimate.yml": "_file_code_climate_light",
+      ".drone.yml": "_file_drone_light"
     }
   },
   "languageIds": {
