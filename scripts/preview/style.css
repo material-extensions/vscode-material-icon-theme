@@ -18,20 +18,22 @@ td, th {
     padding: 8px;
 }
 
-th {
-    padding: 1rem;
+tr:last-child {
+    border-bottom: .5rem solid rgb(30, 30, 30);
 }
 
-tr:last-child {
+tr:first-child {
+    border-top: .5rem solid rgb(30, 30, 30);
     border-bottom: .5rem solid rgb(30, 30, 30);
 }
 
 .icon {
     width: 2rem;
     text-align: center;
+    padding: .5rem 1rem .5rem 1rem;
 }
 
-.type {
+.iconName {
     min-width: 9rem;
 }
 

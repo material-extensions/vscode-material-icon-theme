@@ -45,7 +45,7 @@ You can customize the icon associations directly in the user settings.
 
 ### File associations
 
-`*.[extension]` associations set the file extension mapping. E.g. every file that ends with `.ts` will have a custom icon. If there's no `*` before the association it will configured as filename.
+With the `*.[extension]` pattern you can define custom file icon associations. For example you could define an icon for `*.sample` and every file that ends with `.sample` will have the defined icon. If there's no leading `*` it will be automatically configured as filename and not as file extension.
 
 ```json
 "material-icon-theme.files.associations": {
@@ -56,7 +56,7 @@ You can customize the icon associations directly in the user settings.
 
 ### Folder associations
 
-The following configuration can customize the folder icons. It is also possible to overwrite existing associations and create nice combinations with other folder icon colors.
+The following configuration can customize the folder icons. It is also possible to overwrite existing associations and create nice combinations. For example you could change the folder theme to "classic" and define icons only for the folder names you like.
 
 ```json
 "material-icon-theme.folders.associations": {
@@ -66,11 +66,13 @@ The following configuration can customize the folder icons. It is also possible 
 ```
 
 ## One-click activation
+
 After installation or update you can click on the 'Activate'-button to activate the icon theme, if you haven't already. The icons will be visible immediately.
 
 <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/dev/images/oneclickactivation.png" alt="activation" width="80%">
 
 ## Commands
+
 Press `Ctrl-Shift-P` to open the command palette and type `Material Icons`.
 
 <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/dev/images/commandPalette.png" alt="commands" width="80%">
@@ -88,6 +90,7 @@ Press `Ctrl-Shift-P` to open the command palette and type `Material Icons`.
 - **Activate Icon Theme**: Activate the icon theme.
 
 ## Icon sources
+
 * [Material Design Icons](https://materialdesignicons.com/)
 * official icons
 
@@ -98,5 +101,6 @@ Read the [contribution guidelines](https://github.com/PKief/vscode-material-icon
 If you have some questions or icon requests open a [new issue](https://github.com/PKief/vscode-material-icon-theme/issues) on Github.
 
 ## Follow me
+
 - [Twitter](https://twitter.com/PhilippKief)
 - [Github](https://github.com/PKief)

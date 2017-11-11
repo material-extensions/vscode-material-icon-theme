@@ -11,7 +11,7 @@ const styling = `<link rel="stylesheet" href="${cssFilePath}">`;
 const createHTMLTableHeadRow = (amount: number) => {
     const pair = `
         <th class="icon">Icon</th>
-        <th class="type">Type</th>
+        <th class="iconName">Name</th>
     `;
     const columns = [...Array(amount)].map(item => item = pair).join('');
     return `
@@ -28,7 +28,7 @@ const createHTMLTableBodyRows = (items: IconDefinition[][]) => {
             <td class="icon">
                 <img src="./../../icons/${icon.iconName}.svg" alt="${icon.label}">
             </td>
-            <td class="type">${toTitleCase(icon.label)}</td>
+            <td class="iconName">${toTitleCase(icon.label)}</td>
         `).join('');
         const tableRow = `
             <tr>

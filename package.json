@@ -123,7 +123,8 @@
   "scripts": {
     "vscode:prepublish": "npm run build",
     "prebuild": "npm run clean",
-    "build": "npm run compile && npm run generateJson && npm run check",
+    "build": "npm run compile && npm run generateJson",
+    "postbuild": "npm run check",
     "clean": "rimraf ./out",
     "compile": "tsc -p ./",
     "compile:watch": "tsc -watch -p ./",
@@ -134,7 +135,7 @@
     "pretest": "npm run build",
     "test": "node ./node_modules/vscode/bin/test",
     "bithound": "bithound check git@github.com:PKief/vscode-material-icon-theme.git",
-    "preview": "ts-node ./scripts/preview"
+    "preview": "npm run build && ts-node ./scripts/preview"
   },
   "dependencies": {
     "lodash.merge": "^4.6.0",
