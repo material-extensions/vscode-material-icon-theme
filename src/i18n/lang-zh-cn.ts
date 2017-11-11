@@ -15,6 +15,9 @@ export const translation: Translation = {
     },
     'folders': {
         'toggleIcons': '切换文件夹图标的显示',
+        'color': '选择一个文件夹颜色',
+        'hexCode': '插入HEX颜色代码',
+        'wrongHexCode': '无效的HEX颜色代码！',
         'disabled': '不显示文件夹图标',
         'theme': {
             'description': '\'%0\'主题的文件夹图标'
@@ -23,6 +26,11 @@ export const translation: Translation = {
     'toggleSwitch': {
         'on': 'ON',
         'off': 'OFF'
+    },
+    'hidesExplorerArrows': {
+        'toggleArrows': '切换文件夹箭头',
+        'enableArrows': '显示文件夹箭头',
+        'disableArrows': '隐藏文件夹箭头'
     },
     'confirmReload': '你必须重启VS Code来应用对图标的更改',
     'reload': '重启',

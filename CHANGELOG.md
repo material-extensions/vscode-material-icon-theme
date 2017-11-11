@@ -1,5 +1,31 @@
 # Change Log
 
+## 2.2.4 (2017-10-27)
+Updated icons:
+- Rust [[issue #149](https://github.com/PKief/vscode-material-icon-theme/issues/149)]
+- SystemVerilog [[issue #142](https://github.com/PKief/vscode-material-icon-theme/issues/142)]
+
+Added translation:
+- Added Russian language [[@vanja-san](https://github.com/vanja-san) in [#148](https://github.com/PKief/vscode-material-icon-theme/issues/148)]
+
+## 2.2.3 (2017-10-23)
+Added icons:
+- Root folders [[issue #114](https://github.com/PKief/vscode-material-icon-theme/issues/114)]
+- Docker folder
+- Nodemon
+- Prettier [[@jthegedus](https://github.com/jthegedus) in [#138](https://github.com/PKief/vscode-material-icon-theme/pull/138)]
+- javascriptreact language mode [[@madiodio](https://github.com/madiodio) in [#145](https://github.com/PKief/vscode-material-icon-theme/pull/145)]
+- sbt (Simple Build Tool)
+
+Updated icons:
+- VS Code (related to new logo)
+- scripts folder
+- npm
+
+Updated translations:
+- Added I18N Simplified Chinese for the entries in the command palette [[@RunningCoderLee](https://github.com/RunningCoderLee) in [#140](https://github.com/PKief/vscode-material-icon-theme/pull/140)]
+- Added Spanish translations
+
 ## 2.2.2 (2017-10-02)
 Added icons:
 - webpack file extension [[issue #103](https://github.com/PKief/vscode-material-icon-theme/issues/103)]

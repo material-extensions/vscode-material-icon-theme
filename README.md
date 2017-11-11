@@ -75,13 +75,15 @@ Press `Ctrl-Shift-P` to open the command palette and type `Material Icons`.
 
 <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/dev/images/commandPalette.png" alt="commands" width="80%">
 
-- **Change Folder Icons**: Change the design of the folder icons.
-
-- **Configure Icon Packs**: Select an icon pack that enables additional icons.
-
-- **Hide the arrows before the folder icons**: Hides the arrows on the left of the folder icons.
+- **Change Folder Theme**: Change the design of the folder icons.
 
 - **Restore Default Configuration**: Reset the default configurations of the icon theme.
+
+- **Change Folder Color**: Change the color of the folder icons.
+
+- **Hide Folder Arrows**: Hides the arrows next to the folder icons.
+
+- **Configure Icon Packs**: Select an icon pack that enables additional icons (e.g. for Angular, React, Ngrx)
 
 - **Activate Icon Theme**: Activate the icon theme.
 
