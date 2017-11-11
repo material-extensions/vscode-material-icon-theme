@@ -609,6 +609,7 @@ export const fileIcons: FileIcons = {
         { name: 'sonar', fileNames: ['.sonarrc'] },
         { name: 'browserlist', fileNames: ['browserslist', '.browserslistrc'], light: true },
         { name: 'crystal', fileExtensions: ['cr'], light: true },
-        { name: 'snyk', fileNames: ['.snyk'] }
+        { name: 'snyk', fileNames: ['.snyk'] },
+        { name: 'drone', fileExtensions: ['drone.yml'], fileNames: ['.drone.yml'], light: true }
     ]
 };
