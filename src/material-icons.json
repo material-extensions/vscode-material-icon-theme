@@ -1443,6 +1443,10 @@
     ".codeclimate.yml": "_file_code_climate",
     "project.graphcool": "_file_graphcool",
     ".prettierrc": "_file_prettier",
+    ".prettierrc.js": "_file_prettier",
+    ".prettierrc.json": "_file_prettier",
+    ".prettierrc.yaml": "_file_prettier",
+    ".prettierrc.yml": "_file_prettier",
     "prettier.config.js": "_file_prettier",
     "nodemon.json": "_file_nodemon",
     ".drone.yml": "_file_drone"
