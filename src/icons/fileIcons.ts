@@ -610,6 +610,7 @@ export const fileIcons: FileIcons = {
         { name: 'browserlist', fileNames: ['browserslist', '.browserslistrc'], light: true },
         { name: 'crystal', fileExtensions: ['cr'], light: true },
         { name: 'snyk', fileNames: ['.snyk'] },
-        { name: 'drone', fileExtensions: ['drone.yml'], fileNames: ['.drone.yml'], light: true }
+        { name: 'drone', fileExtensions: ['drone.yml'], fileNames: ['.drone.yml'], light: true },
+        { name: 'cuda', fileExtensions: ['cu', 'cuh'] }
     ]
 };
