@@ -15,9 +15,12 @@ export const translation: Translation = {
     },
     'folders': {
         'toggleIcons': 'Escolha um tema para as pastas',
+        'color': 'Escolha uma cor para as pastas',
+        'hexCode': 'Insira um código de cor hexadecimal',
+        'wrongHexCode': 'Código de cor hexadecimal inválido!',
         'disabled': 'Nenhum ícone de pasta',
         'theme': {
-            'description': 'Ícones de pasta \'%0\''
+            'description': 'Selecionar o tema para pastas \'%0\''
         }
     },
     'toggleSwitch': {
