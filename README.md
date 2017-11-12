@@ -54,16 +54,20 @@ With the `*.[extension]` pattern you can define custom file icon associations. F
 }
 ```
 
+You can see the available file icon names (e.g. 'angular') in the overview above.
+
 ### Folder associations
 
 The following configuration can customize the folder icons. It is also possible to overwrite existing associations and create nice combinations. For example you could change the folder theme to "classic" and define icons only for the folder names you like.
 
 ```json
 "material-icon-theme.folders.associations": {
-    "source": "src",
-    "out": "dist"
+    "customFolderName": "src",
+    "sample": "dist"
 }
 ```
+
+You can see the available folder icon names (e.g. 'src') in the overview above.
 
 ## One-click activation
 
@@ -85,7 +89,7 @@ Press `Ctrl-Shift-P` to open the command palette and type `Material Icons`.
 
 - **Hide Folder Arrows**: Hides the arrows next to the folder icons.
 
-- **Configure Icon Packs**: Select an icon pack that enables additional icons (e.g. for Angular, React, Ngrx)
+- **Configure Icon Packs**: Select an icon pack that enables additional icons (e.g. for Angular, React, Ngrx).
 
 - **Activate Icon Theme**: Activate the icon theme.
 
