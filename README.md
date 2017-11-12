@@ -9,17 +9,17 @@ The Material Icon Theme provides lots of icons based on Material Design for Visu
 
 ### File icons
 
-<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/dev/images/fileIcons.png" alt="file icons" width="100%">
+<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/master/images/fileIcons.png" alt="file icons" width="100%">
 
 ### Folder icons
 
-<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/dev/images/folderIcons.png" alt="folder icons" width="100%">
+<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/master/images/folderIcons.png" alt="folder icons" width="100%">
 
 #### Customize folder color
 
 You can change the color of the default folder icon using the command palette:
 
-<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/dev/images/set-folder-color.gif" alt="custom folder colors" width="80%">
+<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/master/images/set-folder-color.gif" alt="custom folder colors" width="80%">
 
 or via user settings:
 
@@ -31,7 +31,7 @@ or via user settings:
 
 You can change the design of the folder icons using the command palette:
 
-<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/dev/images/set-folder-theme.gif" alt="folder themes" width="80%">
+<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/master/images/set-folder-theme.gif" alt="folder themes" width="80%">
 
 or via user settings:
 
@@ -73,13 +73,13 @@ You can see the available folder icon names (e.g. 'src') in the overview above.
 
 After installation or update you can click on the 'Activate'-button to activate the icon theme, if you haven't already. The icons will be visible immediately.
 
-<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/dev/images/oneclickactivation.png" alt="activation" width="80%">
+<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/master/images/oneclickactivation.png" alt="activation" width="80%">
 
 ## Commands
 
 Press `Ctrl-Shift-P` to open the command palette and type `Material Icons`.
 
-<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/dev/images/commandPalette.png" alt="commands" width="80%">
+<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/master/images/commandPalette.png" alt="commands" width="80%">
 
 - **Change Folder Theme**: Change the design of the folder icons.
 
