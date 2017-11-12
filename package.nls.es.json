@@ -1,13 +1,17 @@
 {
     "command.activateIcons": "Material Icon Theme: Activar los iconos",
     "command.toggleIconPacks": "Material Icons: Configurar paquetes de iconos",
-    "command.toggleFolderIcons": "Material Icons: Personalizar iconos de carpetas",
+    "command.changeFolderTheme": "Material Icons: Personalizar iconos de carpetas",
+    "command.changeFolderColor": "Material Icons: Cambiar color de carpeta",
     "command.restoreDefaultConfig": "Material Icons: Restaurar la configuración predeterminada",
     "command.hidesExplorerArrows": "Material Icons: Deshabilitar flechas delante de carpetas",
     "configuration.title": "Material Icons Configuración",
+    "configuration.files.associations": "Configurar asociaciones personalizadas de iconos de archivos.",
+    "configuration.folders.associations": "Configurar asociaciones personalizadas de iconos de carpetas.",
     "configuration.showWelcomeMessage": "Mostrar mensaje de bienvenida después de la primera instalación.",
     "configuration.showUpdateMessage": "Mostrar mensaje al actualizar.",
     "configuration.activeIconPack": "Seleccione un paquete de iconos que permita iconos específicos.",
-    "configuration.folders.icons": "Seleccione el tipo de iconos de carpeta.",
+    "configuration.folders.theme": "Seleccione el tipo de iconos de carpeta.",
+    "configuration.folders.color": "Cambia el color de las carpetas.",
     "configuration.hidesExplorerArrows": "Deshabilitar flechas delante de carpetas."
 }

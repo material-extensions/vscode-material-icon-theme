@@ -1,9 +1,10 @@
 import * as vscode from 'vscode';
 import { activateIconTheme } from './activate';
 import { toggleIconPacks } from './iconPacks';
-import { toggleFolderIcons } from './folders';
+import { changeFolderTheme } from './folders';
 import { restoreDefaultConfig } from './restoreConfig';
 import { toggleFolderArrows } from './folderArrows';
+import { changeFolderColor } from './folderColor';
 
 // Activate theme
 const activateThemeCommand = vscode.commands.registerCommand('material-icon-theme.activateIcons', () => {
@@ -15,9 +16,14 @@ const toggleIconPacksCommand = vscode.commands.registerCommand('material-icon-th
     toggleIconPacks();
 });
 
-// Folders
-const toggleFolderIconsCommand = vscode.commands.registerCommand('material-icon-theme.toggleFolderIcons', () => {
-    toggleFolderIcons();
+// Folder themes
+const changeFolderThemeCommand = vscode.commands.registerCommand('material-icon-theme.changeFolderTheme', () => {
+    changeFolderTheme();
+});
+
+// Folder color
+const toggleFolderColorCommand = vscode.commands.registerCommand('material-icon-theme.changeFolderColor', () => {
+    changeFolderColor();
 });
 
 // Reset config
@@ -33,7 +39,7 @@ const hidesExplorerArrowsCommand = vscode.commands.registerCommand('material-ico
 export const commands = [
     activateThemeCommand,
     toggleIconPacksCommand,
-    toggleFolderIconsCommand,
+    changeFolderThemeCommand,
     restoreDefaultConfigCommand,
     hidesExplorerArrowsCommand
 ];

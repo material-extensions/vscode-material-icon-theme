@@ -1,8 +1,9 @@
 import * as helpers from './index';
 import * as vscode from 'vscode';
-import { createIconFile } from '../icons/index';
+import * as i18n from './../i18n';
+import { createIconFile, getDefaultIconOptions } from '../icons/index';
 import { checkFolderIconsStatus } from '../commands/folders';
-import { IconPack, IconJsonOptions } from '../models/index';
+import { IconPack, IconJsonOptions, IconAssociations } from '../models/index';
 
 /** Watch for changes in the configurations to update the icons theme. */
 export const watchForConfigChanges = () => {
@@ -14,47 +15,36 @@ export const watchForConfigChanges = () => {
  * with the current setup of the icons.
 */
 export const detectConfigChanges = () => {
-    return Promise.resolve()
-        .then(() => compareIconPackConfigs())
-        .then(() => compareFolderConfigs())
-        .then(() => compareExplorerArrowConfigs());
+    return helpers.getMaterialIconsJSON()
+        .then((json) => {
+            compareConfig<string>('activeIconPack', json.options.activatedPack);
+            compareConfig<string>('folders.theme', json.options.folderTheme);
+            compareConfig<string>('folders.color', json.options.folderColor);
+            compareConfig<boolean>('hidesExplorerArrows', json.options.hidesExplorerArrows);
+            compareConfig<IconAssociations>('files.associations', json.options.fileAssociations);
+            compareConfig<IconAssociations>('folders.associations', json.options.folderAssociations);
+        });
 };
 
-const compareIconPackConfigs = () => {
-    const activeIconPack = <string[]>helpers.getThemeConfig('activeIconPack').globalValue;
+const compareConfig = <T>(config: string, currentState: T): Promise<void> => {
+    const configValue = <T>helpers.getThemeConfig(config).globalValue;
 
     return helpers.getMaterialIconsJSON().then(result => {
-        if (activeIconPack !== undefined && JSON.stringify(activeIconPack) !== JSON.stringify(result.options.activatedPack)) {
-            updateIconJson();
-        }
-    });
-};
-
-const compareFolderConfigs = () => {
-    const folderIconsConfig = helpers.getThemeConfig('folders.icons').globalValue;
-
-    return helpers.getMaterialIconsJSON().then(result => {
-        if (folderIconsConfig !== undefined && folderIconsConfig !== result.options.folderTheme) {
-            updateIconJson();
-        }
-    });
-};
-
-const compareExplorerArrowConfigs = () => {
-    const arrowConfig = helpers.getThemeConfig('hidesExplorerArrows').globalValue;
-
-    return helpers.getMaterialIconsJSON().then(result => {
-        if (arrowConfig !== undefined && arrowConfig !== result.hidesExplorerArrows) {
+        if (configValue !== undefined && JSON.stringify(configValue) !== JSON.stringify(currentState)) {
             updateIconJson();
         }
     });
 };
 
 const updateIconJson = () => {
+    const defaultOptions = getDefaultIconOptions();
     const options: IconJsonOptions = {
-        folderTheme: getCurrentFolderTheme(),
-        activatedPack: getEnabledIconPacks(),
-        hidesExplorerArrows: getCurrentExplorerArrowConfig()
+        folderTheme: getCurrentConfig<string>('folders.theme', defaultOptions.folderTheme),
+        folderColor: getCurrentConfig<string>('folders.color', defaultOptions.folderColor),
+        activatedPack: getCurrentConfig<string>('activeIconPack', defaultOptions.activatedPack),
+        hidesExplorerArrows: getCurrentConfig<boolean>('hidesExplorerArrows', defaultOptions.hidesExplorerArrows),
+        fileAssociations: getCurrentConfig<IconAssociations>('files.associations', defaultOptions.fileAssociations),
+        folderAssociations: getCurrentConfig<IconAssociations>('folders.associations', defaultOptions.folderAssociations),
     };
     return createIconFile(options).then(() => {
         helpers.promptToReload();
@@ -63,17 +53,7 @@ const updateIconJson = () => {
     });
 };
 
-export const getCurrentFolderTheme = (): string => {
-    const result = <string>helpers.getThemeConfig('folders.icons').globalValue;
-    return result !== undefined ? result : 'specific';
-};
-
-export const getCurrentExplorerArrowConfig = (): boolean => {
-    const result = <boolean>helpers.getThemeConfig('hidesExplorerArrows').globalValue;
-    return result !== undefined ? result : false;
-};
-
-export const getEnabledIconPacks = (): string => {
-    const result = <string>helpers.getThemeConfig('activeIconPack').globalValue;
-    return result !== undefined ? result : 'angular';
+const getCurrentConfig = <T>(config: string, defaultValue: T): T => {
+    const result = <T>helpers.getThemeConfig(config).globalValue;
+    return result !== undefined ? result : defaultValue;
 };

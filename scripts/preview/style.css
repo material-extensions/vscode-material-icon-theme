@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    background: rgb(30, 30, 30);
+    color: rgb(250, 250, 250);
+    font-size: 1rem;
+}
+
+td, th {
+    border: 0px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:last-child {
+    border-bottom: .5rem solid rgb(30, 30, 30);
+}
+
+tr:first-child {
+    border-top: .5rem solid rgb(30, 30, 30);
+    border-bottom: .5rem solid rgb(30, 30, 30);
+}
+
+.icon {
+    width: 2rem;
+    text-align: center;
+    padding: .5rem 1rem .5rem 1rem;
+}
+
+.iconName {
+    min-width: 9rem;
+}
+
+img {
+    width: 30px;
+    height: auto;
+}

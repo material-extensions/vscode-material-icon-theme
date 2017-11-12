@@ -600,7 +600,7 @@ export const fileIcons: FileIcons = {
             light: true
         },
         { name: 'code-climate', fileNames: ['.codeclimate.yml'], light: true },
-        { name: 'prettier', fileNames: ['.prettierrc', 'prettier.config.js'] },
+        { name: 'prettier', fileNames: ['.prettierrc', 'prettier.config.js', '.prettierrc.js', '.prettierrc.json', '.prettierrc.yaml', '.prettierrc.yml'] },
         { name: 'nodemon', fileNames: ['nodemon.json'] },
         { name: 'ngrx-reducer', fileExtensions: ['reducer.ts', 'rootReducer.ts'], enabledFor: [IconPack.Ngrx] },
         { name: 'ngrx-state', fileExtensions: ['state.ts'], enabledFor: [IconPack.Ngrx] },
@@ -608,6 +608,8 @@ export const fileIcons: FileIcons = {
         { name: 'ngrx-effects', fileExtensions: ['effects.ts'], enabledFor: [IconPack.Ngrx] },
         { name: 'sonar', fileNames: ['.sonarrc'] },
         { name: 'browserlist', fileNames: ['browserslist', '.browserslistrc'], light: true },
-        { name: 'crystal', fileExtensions: ['cr'], light: true }
+        { name: 'crystal', fileExtensions: ['cr'], light: true },
+        { name: 'snyk', fileNames: ['.snyk'] },
+        { name: 'drone', fileExtensions: ['drone.yml'], fileNames: ['.drone.yml'], light: true }
     ]
 };

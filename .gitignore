@@ -1,3 +1,7 @@
 out
 node_modules
 .vscode-test/**
+icons/folder.svg
+icons/folder-open.svg
+icons/folder-root.svg
+icons/folder-root-open.svg

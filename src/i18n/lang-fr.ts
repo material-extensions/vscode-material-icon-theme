@@ -15,6 +15,9 @@ export const translation: Translation = {
     },
     'folders': {
         'toggleIcons': 'Basculer les icônes de dossiers',
+        'color': 'Choisissez une couleur de dossier',
+        'hexCode': 'Insérer un code couleur HEX',
+        'wrongHexCode': 'Code couleur HEX non valide!',
         'disabled': 'Aucune icônes de dossiers',
         'theme': {
             'description': 'Icônes de dossiers \'%0\''
@@ -23,6 +26,11 @@ export const translation: Translation = {
     'toggleSwitch': {
         'on': 'ON',
         'off': 'OFF'
+    },
+    'hidesExplorerArrows': {
+        'toggleArrows': 'Basculer les flèches du dossier',
+        'enableArrows': 'Afficher les flèches du dossier',
+        'disableArrows': 'Cacher les flèches de dossier'
     },
     'confirmReload': 'Veuillez redémarrer VS Code pour activer les icônes',
     'reload': 'Redémarrer',

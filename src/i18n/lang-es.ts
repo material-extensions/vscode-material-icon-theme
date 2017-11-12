@@ -14,7 +14,10 @@ export const translation: Translation = {
         'disabled': 'Desactivar paquetes de iconos',
     },
     'folders': {
-        'toggleIcons': 'Cambiar activación de iconos de Carpetas',
+        'toggleIcons': 'Cambiar activación de iconos de carpetas',
+        'color': 'Elija un color de carpeta',
+        'hexCode': 'Insertar un código de color HEX',
+        'wrongHexCode': 'Código de color HEX inválido!',
         'disabled': 'Sin iconos de carpeta',
         'theme': {
             'description': 'Iconos de carpeta \'%0\''
@@ -23,6 +26,11 @@ export const translation: Translation = {
     'toggleSwitch': {
         'on': 'ON',
         'off': 'OFF'
+    },
+    'hidesExplorerArrows': {
+        'toggleArrows': 'Conmutar las flechas de carpetas',
+        'enableArrows': 'Mostrar flechas de carpeta',
+        'disableArrows': 'Ocultar las flechas de carpetas'
     },
     'confirmReload': 'Debe reiniciar VS Code para activar los cambios en los iconos.',
     'reload': 'Reiniciar',

@@ -22,7 +22,7 @@ export const folderIcons: FolderTheme[] = [
             },
             { name: 'folder-scripts', folderNames: ['script', 'scripts'] },
             { name: 'folder-node', folderNames: ['node_modules'] },
-            { name: 'folder-js', folderNames: ['js', 'javascripts'] },
+            { name: 'folder-javascript', folderNames: ['js', 'javascripts'] },
             { name: 'folder-font', folderNames: ['font', 'fonts'] },
             {
                 name: 'folder-test',
@@ -75,6 +75,5 @@ export const folderIcons: FolderTheme[] = [
         ]
     },
     { name: 'classic', defaultIcon: { name: 'folder' }, rootFolder: { name: 'folder-root' } },
-    { name: 'blue', defaultIcon: { name: 'folder-blue' }, rootFolder: { name: 'folder-root-blue' } },
     { name: 'none', defaultIcon: { name: '' } },
 ];

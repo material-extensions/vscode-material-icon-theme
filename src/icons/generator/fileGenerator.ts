@@ -1,4 +1,4 @@
-import { FileIcons, IconConfiguration, FileIcon, IconJsonOptions } from '../../models/index';
+import { FileIcons, IconConfiguration, FileIcon, IconJsonOptions, IconAssociations } from '../../models/index';
 import { iconFolderPath, lightVersion, highContrastVersion } from './constants';
 import * as merge from 'lodash.merge';
 
@@ -8,7 +8,9 @@ import * as merge from 'lodash.merge';
 export const getFileIconDefinitions = (fileIcons: FileIcons, config: IconConfiguration, options: IconJsonOptions): IconConfiguration => {
     config = merge({}, config);
     const enabledIcons = disableIconsByPack(fileIcons, options.activatedPack);
-    enabledIcons.forEach(icon => {
+    const customIcons = getCustomIcons(options.fileAssociations);
+    const allFileIcons = [...enabledIcons, ...customIcons];
+    allFileIcons.forEach(icon => {
         if (icon.disabled) return;
         config = merge({}, config, setIconDefinition(icon.name));
 
@@ -76,6 +78,24 @@ const setIconDefinition = (iconName: string, appendix: string = '') => {
         iconPath: `${iconFolderPath}${iconName}${appendix}.svg`
     };
     return obj;
+};
+
+const getCustomIcons = (fileAssociations: IconAssociations) => {
+    if (!fileAssociations) return [];
+
+    const icons: FileIcon[] = Object.keys(fileAssociations).map(fa => {
+        if (fa.charAt(0) === '*') {
+            return {
+                name: fileAssociations[fa],
+                fileExtensions: [fa.replace('*.', '')]
+            };
+        }
+        return {
+            name: fileAssociations[fa],
+            fileNames: [fa]
+        };
+    });
+    return icons;
 };
 
 const enum FileMappingType {

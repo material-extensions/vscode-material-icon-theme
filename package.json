@@ -52,8 +52,12 @@
         "title": "%command.toggleIconPacks%"
       },
       {
-        "command": "material-icon-theme.toggleFolderIcons",
-        "title": "%command.toggleFolderIcons%"
+        "command": "material-icon-theme.changeFolderTheme",
+        "title": "%command.changeFolderTheme%"
+      },
+      {
+        "command": "material-icon-theme.changeFolderColor",
+        "title": "%command.changeFolderColor%"
       },
       {
         "command": "material-icon-theme.restoreDefaultConfig",
@@ -83,16 +87,30 @@
           "default": "angular",
           "description": "%configuration.activeIconPack%"
         },
-        "material-icon-theme.folders.icons": {
+        "material-icon-theme.files.associations": {
+          "type": "object",
+          "default": {},
+          "description": "%configuration.files.associations%"
+        },
+        "material-icon-theme.folders.associations": {
+          "type": "object",
+          "default": {},
+          "description": "%configuration.folders.associations%"
+        },
+        "material-icon-theme.folders.theme": {
           "type": "string",
           "default": "specific",
-          "description": "%configuration.folders.icons%",
+          "description": "%configuration.folders.theme%",
           "enum": [
             "specific",
             "classic",
-            "blue",
             "none"
           ]
+        },
+        "material-icon-theme.folders.color": {
+          "type": "string",
+          "default": "#90a4ae",
+          "description": "%configuration.folders.color%"
         },
         "material-icon-theme.hidesExplorerArrows": {
           "type": "boolean",
@@ -106,6 +124,7 @@
     "vscode:prepublish": "npm run build",
     "prebuild": "npm run clean",
     "build": "npm run compile && npm run generateJson",
+    "postbuild": "npm run check",
     "clean": "rimraf ./out",
     "compile": "tsc -p ./",
     "compile:watch": "tsc -watch -p ./",
@@ -116,7 +135,7 @@
     "pretest": "npm run build",
     "test": "node ./node_modules/vscode/bin/test",
     "bithound": "bithound check git@github.com:PKief/vscode-material-icon-theme.git",
-    "preview": "ts-node ./scripts/preview"
+    "preview": "npm run build && ts-node ./scripts/preview"
   },
   "dependencies": {
     "lodash.merge": "^4.6.0",
@@ -124,15 +143,16 @@
     "semver": "^5.4.1"
   },
   "devDependencies": {
-    "@types/mocha": "^2.2.43",
-    "@types/node": "^8.0.46",
+    "@types/mocha": "^2.2.44",
+    "@types/node": "^8.0.51",
+    "@types/puppeteer": "^0.12.2",
     "bithound": "^1.7.0",
-    "cpx": "^1.5.0",
     "mocha": "^4.0.1",
+    "puppeteer": "^0.12.0",
     "rimraf": "^2.6.2",
     "ts-node": "^3.3.0",
     "tslint": "^5.8.0",
-    "typescript": "^2.5.3",
+    "typescript": "^2.6.1",
     "vscode": "^1.1.6"
   }
 }

@@ -1,6 +1,8 @@
 import { iconFolderPath, openedFolder, lightVersion, highContrastVersion } from './constants';
-import { IconConfiguration, FolderTheme, FolderIcon, IconJsonOptions, DefaultIcon } from '../../models/index';
+import { IconConfiguration, FolderTheme, FolderIcon, IconJsonOptions, DefaultIcon, IconAssociations } from '../../models/index';
 import * as merge from 'lodash.merge';
+import * as fs from 'fs';
+import * as path from 'path';
 
 /**
  * Get the folder icon definitions as object.
@@ -10,12 +12,14 @@ export const getFolderIconDefinitions = (folderThemes: FolderTheme[], config: Ic
     config.hidesExplorerArrows = options.hidesExplorerArrows;
     const activeTheme = getEnabledFolderTheme(folderThemes, options.folderTheme);
     const enabledIcons = disableIconsByPack(activeTheme, options.activatedPack);
+    const customIcons = getCustomIcons(options.folderAssociations);
+    const allIcons = [...enabledIcons, ...customIcons];
 
     if (options.folderTheme === 'none') {
         return config;
     }
 
-    enabledIcons.forEach(icon => {
+    allIcons.forEach(icon => {
         if (icon.disabled) return;
         config = setIconDefinitions(config, icon);
         config = merge({}, config, setFolderNames(icon.name, icon.folderNames));
@@ -115,4 +119,62 @@ const createRootIconConfigObject = (hasFolderIcons: boolean, theme: FolderTheme,
     obj.rootFolder = hasFolderIcons ? theme.rootFolder ? theme.rootFolder.name + appendix : theme.defaultIcon.name + appendix : '';
     obj.rootFolderExpanded = hasFolderIcons ? theme.rootFolder ? `${theme.rootFolder.name}${openedFolder}${appendix}` : `${theme.defaultIcon.name}${openedFolder}${appendix}` : '';
     return obj;
+};
+
+const getCustomIcons = (folderAssociations: IconAssociations) => {
+    if (!folderAssociations) return [];
+
+    const icons: FolderIcon[] = Object.keys(folderAssociations).map(fa => ({
+        name: 'folder-' + folderAssociations[fa],
+        folderNames: [fa]
+    }));
+
+    return icons;
+};
+
+export const generateFolderIcons = (color: string) => {
+    if (!validateHEXColorCode(color)) {
+        return Promise.reject('Invalid color code for folder icons');
+    }
+
+    const folderIcon = `M10 4H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8c0-1.11-.9-2-2-2h-8l-2-2z`;
+    const folderIconOpen = `M19 20H4c-1.11 0-2-.9-2-2V6c0-1.11.89-2 2-2h6l2 2h7a2 2 0 0 1 2 2H4v10l2.14-8h17.07l-2.28 8.5c-.23.87-1.01 1.5-1.93 1.5z`;
+    const rootFolderIcon = `M12 20a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 5a5 5 0 0 0-5 5 5 5 0 0 0 5 5 5 5 0 0 0 5-5 5 5 0 0 0-5-5z`;
+    const rootFolderIconOpen = `M12 20a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2z`;
+
+    return writeSVGFiles('folder', getSVG(getPath(folderIcon, color)))
+        .then(() => writeSVGFiles('folder-open', getSVG(getPath(folderIconOpen, color))))
+        .then(() => writeSVGFiles('folder-root', getSVG(getPath(rootFolderIcon, color))))
+        .then(() => writeSVGFiles('folder-root-open', getSVG(getPath(rootFolderIconOpen, color))))
+        .catch(e => console.log(e));
+};
+
+const getPath = (d: string, color: string) => `<path d="${d}" fill="${color}" />`;
+const getSVG = (path: string) => `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">${path}</svg>`;
+
+const writeSVGFiles = (iconName: string, svg: string) => {
+    return new Promise((resolve, reject) => {
+        let iconPath = path.join(__dirname, '..', '..', '..');
+        const parentFolder = iconPath.split(path.sep).pop();
+        if (parentFolder === 'out') {
+            iconPath = path.join(iconPath, '..');
+        }
+        const iconsFolderPath = path.join(iconPath, 'icons', `${iconName}.svg`);
+        try {
+            fs.writeFileSync(iconsFolderPath, svg);
+            resolve();
+        } catch (e) {
+            console.log(e);
+            reject(e);
+        }
+        resolve();
+    });
+};
+
+/**
+ * Validate the HEX color code
+ * @param color HEX code
+ */
+export const validateHEXColorCode = (color: string) => {
+    return new RegExp(/#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/).exec(color) !== null;
 };
