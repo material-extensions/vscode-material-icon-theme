@@ -18,6 +18,7 @@ export const fileIcons: FileIcons = {
                 'rst'
             ]
         },
+        { name: 'blink', fileExtensions: ['blink'], light: true },
         { name: 'css', fileExtensions: ['css'] },
         { name: 'sass', fileExtensions: ['scss', 'sass'] },
         { name: 'less', fileExtensions: ['less'] },

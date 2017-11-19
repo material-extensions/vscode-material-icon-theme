@@ -12,6 +12,7 @@ export const languageIcons: LanguageIcon[] = [
     { icon: { name: 'settings' }, ids: ['makefile'] },
     { icon: { name: 'shaderlab' }, ids: ['shaderlab'] },
     { icon: { name: 'diff' }, ids: ['diff'] },
+    { icon: { name: 'blink' }, ids: ['blink'] },
     { icon: { name: 'java' }, ids: ['java'] },
     { icon: { name: 'razor' }, ids: ['razor'] },
     { icon: { name: 'python' }, ids: ['python'] },
