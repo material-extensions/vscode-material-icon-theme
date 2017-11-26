@@ -1,12 +1,28 @@
 # Change Log
 
+## 3.1.0 (2017-11-26)
+### New features
+- Customizable language icon associations
+
+### New icons
+- PHP Elephant [[issue #67](https://github.com/PKief/vscode-material-icon-theme/issues/67)]
+- Blink [[@melMass](https://github.com/melMass) in [#166](https://github.com/PKief/vscode-material-icon-theme/pull/166)]
+- Cuda [[issue #159](https://github.com/PKief/vscode-material-icon-theme/issues/159)]
+- temp folder
+- log folder
+- log file icon
+- database folder
+
+### Added translations
+- Added Brazilian Portuguese translation [[@alefesouza](https://github.com/alefesouza) in [#158](https://github.com/PKief/vscode-material-icon-theme/pull/158)]
+
 ## 3.0.0 (2017-11-12)
 ### New features
 - Change color of default folder icons
 - Icon Packs that enable additional icons
 - Hide or show the arrows next to folder icons
-- Customize file icon associations
-- Customize folder icon associations
+- Customizable file icon associations
+- Customizable folder icon associations
 
 ### Introduction of icon packs
 An icon pack allows you to add additional icons with additional file associations to the icon theme. The feature was added because some icons are very specific and not relevant for all developers.

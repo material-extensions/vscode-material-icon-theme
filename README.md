@@ -54,8 +54,6 @@ With the `*.[extension]` pattern you can define custom file icon associations. F
 }
 ```
 
-You can see the available file icon names (e.g. 'angular') in the overview above.
-
 ### Folder associations
 
 The following configuration can customize the folder icons. It is also possible to overwrite existing associations and create nice combinations. For example you could change the folder theme to "classic" and define icons only for the folder names you like.
@@ -67,7 +65,22 @@ The following configuration can customize the folder icons. It is also possible 
 }
 ```
 
-You can see the available folder icon names (e.g. 'src') in the overview above.
+### Language associations
+
+With the following configuration you can customize the language icons. It is also possible to overwrite existing associations.
+
+```json
+"material-icon-theme.languages.associations": {
+    "languageId": "iconName",
+    "json": "json"
+}
+```
+
+Available language ids: 
+
+https://code.visualstudio.com/docs/languages/identifiers#_known-language-identifiers
+
+You can see the available icon names in the overview above.
 
 ## One-click activation
 
