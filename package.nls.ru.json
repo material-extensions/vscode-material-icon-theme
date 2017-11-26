@@ -8,6 +8,7 @@
     "configuration.title": "Настройки Material Icons",
     "configuration.files.associations": "Set custom file icon associations.",
     "configuration.folders.associations": "Set custom folder icon associations.",
+    "configuration.languages.associations": "Set custom language icon associations.",
     "configuration.showWelcomeMessage": "Показывать приветственное сообщение после первой установки.",
     "configuration.showUpdateMessage": "Показывать сообщение об обновлении после каждого обновления.",
     "configuration.activeIconPack": "Select an icon pack that enables specific icons.",

@@ -5,6 +5,7 @@ export interface IconJsonOptions {
     hidesExplorerArrows?: boolean;
     fileAssociations?: IconAssociations;
     folderAssociations?: IconAssociations;
+    languageAssociations?: IconAssociations;
 }
 
 export interface IconAssociations {

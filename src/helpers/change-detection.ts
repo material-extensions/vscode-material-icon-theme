@@ -23,6 +23,7 @@ export const detectConfigChanges = () => {
             compareConfig<boolean>('hidesExplorerArrows', json.options.hidesExplorerArrows);
             compareConfig<IconAssociations>('files.associations', json.options.fileAssociations);
             compareConfig<IconAssociations>('folders.associations', json.options.folderAssociations);
+            compareConfig<IconAssociations>('languages.associations', json.options.languageAssociations);
         });
 };
 
@@ -38,6 +39,8 @@ const compareConfig = <T>(config: string, currentState: T): Promise<void> => {
 
 const updateIconJson = () => {
     const defaultOptions = getDefaultIconOptions();
+
+    // adjust options
     const options: IconJsonOptions = {
         folderTheme: getCurrentConfig<string>('folders.theme', defaultOptions.folderTheme),
         folderColor: getCurrentConfig<string>('folders.color', defaultOptions.folderColor),
@@ -45,7 +48,10 @@ const updateIconJson = () => {
         hidesExplorerArrows: getCurrentConfig<boolean>('hidesExplorerArrows', defaultOptions.hidesExplorerArrows),
         fileAssociations: getCurrentConfig<IconAssociations>('files.associations', defaultOptions.fileAssociations),
         folderAssociations: getCurrentConfig<IconAssociations>('folders.associations', defaultOptions.folderAssociations),
+        languageAssociations: getCurrentConfig<IconAssociations>('languages.associations', defaultOptions.languageAssociations),
     };
+
+    // update icon json file with new options
     return createIconFile(options).then(() => {
         helpers.promptToReload();
     }).catch(err => {

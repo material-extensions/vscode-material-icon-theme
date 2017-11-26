@@ -113,4 +113,26 @@ suite('language icons', () => {
         };
         assert.deepEqual(def, value);
     });
+
+    test('should configure custom icon associations', () => {
+        const languageIcons: LanguageIcon[] = [
+            { icon: { name: 'json' }, ids: ['a'] }
+        ];
+        const options = getDefaultIconOptions();
+        options.languageAssociations = {
+            'xml': 'json'
+        };
+        const def = getLanguageIconDefinitions(languageIcons, iconConfig, options);
+        const value = new IconConfiguration();
+        value.iconDefinitions = {
+            'json': {
+                'iconPath': './../../icons/json.svg'
+            }
+        };
+        value.languageIds = {
+            'a': 'json',
+            'xml': 'json'
+        };
+        assert.deepEqual(def, value);
+    });
 });

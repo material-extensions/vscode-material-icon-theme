@@ -8,6 +8,7 @@
     "configuration.title": "Material Icons Configuración",
     "configuration.files.associations": "Configurar asociaciones personalizadas de iconos de archivos.",
     "configuration.folders.associations": "Configurar asociaciones personalizadas de iconos de carpetas.",
+    "configuration.languages.associations": "Configurar asociaciones personalizadas de iconos de idioma.",
     "configuration.showWelcomeMessage": "Mostrar mensaje de bienvenida después de la primera instalación.",
     "configuration.showUpdateMessage": "Mostrar mensaje al actualizar.",
     "configuration.activeIconPack": "Seleccione un paquete de iconos que permita iconos específicos.",

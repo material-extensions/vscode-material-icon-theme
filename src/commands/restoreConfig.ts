@@ -10,4 +10,5 @@ export const restoreDefaultConfig = () => {
     helpers.setThemeConfig('hidesExplorerArrows', defaultOptions.hidesExplorerArrows, true);
     helpers.setThemeConfig('files.associations', defaultOptions.fileAssociations, true);
     helpers.setThemeConfig('folders.associations', defaultOptions.folderAssociations, true);
+    helpers.setThemeConfig('languages.associations', defaultOptions.languageAssociations, true);
 };

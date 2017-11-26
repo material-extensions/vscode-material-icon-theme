@@ -10,6 +10,7 @@ export const getFileIconDefinitions = (fileIcons: FileIcons, config: IconConfigu
     const enabledIcons = disableIconsByPack(fileIcons, options.activatedPack);
     const customIcons = getCustomIcons(options.fileAssociations);
     const allFileIcons = [...enabledIcons, ...customIcons];
+
     allFileIcons.forEach(icon => {
         if (icon.disabled) return;
         config = merge({}, config, setIconDefinition(icon.name));

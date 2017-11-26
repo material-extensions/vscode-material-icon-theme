@@ -97,6 +97,11 @@
           "default": {},
           "description": "%configuration.folders.associations%"
         },
+        "material-icon-theme.languages.associations": {
+          "type": "object",
+          "default": {},
+          "description": "%configuration.languages.associations%"
+        },
         "material-icon-theme.folders.theme": {
           "type": "string",
           "default": "specific",
