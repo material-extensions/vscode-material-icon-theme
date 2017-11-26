@@ -85,7 +85,7 @@ const getCustomIcons = (fileAssociations: IconAssociations) => {
     if (!fileAssociations) return [];
 
     const icons: FileIcon[] = Object.keys(fileAssociations).map(fa => {
-        const icon: FileIcon = { name: fileAssociations[fa].length > 0 ? fileAssociations[fa].toLowerCase() : 'file' };
+        const icon: FileIcon = { name: fileAssociations[fa].toLowerCase() };
         if (fa.charAt(0) === '*') {
             icon.fileExtensions = [fa.toLowerCase().replace('*.', '')];
         } else {

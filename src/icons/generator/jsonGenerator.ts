@@ -51,7 +51,8 @@ export const getDefaultIconOptions = (): IconJsonOptions => {
         activatedPack: 'angular',
         hidesExplorerArrows: false,
         fileAssociations: {},
-        folderAssociations: {}
+        folderAssociations: {},
+        languageAssociations: {}
     };
     return options;
 };
