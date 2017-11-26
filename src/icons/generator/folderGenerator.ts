@@ -125,8 +125,9 @@ const getCustomIcons = (folderAssociations: IconAssociations) => {
     if (!folderAssociations) return [];
 
     const icons: FolderIcon[] = Object.keys(folderAssociations).map(fa => ({
-        name: 'folder-' + folderAssociations[fa],
-        folderNames: [fa]
+        // use default folder if icon name is empty
+        name: folderAssociations[fa].length > 0 ? 'folder-' + folderAssociations[fa].toLowerCase() : 'folder',
+        folderNames: [fa.toLowerCase()]
     }));
 
     return icons;

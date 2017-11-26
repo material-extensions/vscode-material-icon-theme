@@ -51,8 +51,8 @@ const getCustomIcons = (languageAssocitations: IconAssociations) => {
     if (!languageAssocitations) return [];
 
     const icons: LanguageIcon[] = Object.keys(languageAssocitations).map(fa => ({
-        icon: { name: languageAssocitations[fa] },
-        ids: [fa]
+        icon: { name: languageAssocitations[fa].toLowerCase() },
+        ids: [fa.toLowerCase()]
     }));
 
     return icons;
