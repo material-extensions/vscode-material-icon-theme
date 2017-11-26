@@ -612,6 +612,7 @@ export const fileIcons: FileIcons = {
         { name: 'crystal', fileExtensions: ['cr'], light: true },
         { name: 'snyk', fileNames: ['.snyk'] },
         { name: 'drone', fileExtensions: ['drone.yml'], fileNames: ['.drone.yml'], light: true },
-        { name: 'cuda', fileExtensions: ['cu', 'cuh'] }
+        { name: 'cuda', fileExtensions: ['cu', 'cuh'] },
+        { name: 'log', fileExtensions: ['log'] },
     ]
 };
