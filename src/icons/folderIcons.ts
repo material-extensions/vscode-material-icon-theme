@@ -10,7 +10,7 @@ export const folderIcons: FolderTheme[] = [
         rootFolder: { name: 'folder-root' },
         icons: [
             { name: 'folder-src', folderNames: ['src', 'source', 'sources'] },
-            { name: 'folder-dist', folderNames: ['dist', 'out', 'build'] },
+            { name: 'folder-dist', folderNames: ['dist', 'out', 'build', 'release'] },
             {
                 name: 'folder-css',
                 folderNames: ['css', 'stylesheet', 'stylesheets', 'style', 'styles']
@@ -18,7 +18,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-sass', folderNames: ['sass', 'scss'] },
             {
                 name: 'folder-images',
-                folderNames: ['images', 'image', 'img', 'icons', 'icon', 'ico']
+                folderNames: ['images', 'image', 'img', 'icons', 'icon', 'ico', 'screenshot', 'screenshots']
             },
             { name: 'folder-scripts', folderNames: ['script', 'scripts'] },
             { name: 'folder-node', folderNames: ['node_modules'] },
@@ -71,7 +71,10 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-redux-reducer', folderNames: ['reducers', 'reducer'], enabledFor: [IconPack.Redux] },
             { name: 'folder-redux-actions', folderNames: ['actions'], enabledFor: [IconPack.Redux] },
             { name: 'folder-redux-store', folderNames: ['store'], enabledFor: [IconPack.Redux] },
-            { name: 'folder-react-components', folderNames: ['components'], enabledFor: [IconPack.React, IconPack.Redux] }
+            { name: 'folder-react-components', folderNames: ['components'], enabledFor: [IconPack.React, IconPack.Redux] },
+            { name: 'folder-database', folderNames: ['db', 'database', 'sql'] },
+            { name: 'folder-log', folderNames: ['log', 'logs'] },
+            { name: 'folder-temp', folderNames: ['temp', '.temp', 'tmp', '.tmp', 'cached', 'cache'] },
         ]
     },
     { name: 'classic', defaultIcon: { name: 'folder' }, rootFolder: { name: 'folder-root' } },
