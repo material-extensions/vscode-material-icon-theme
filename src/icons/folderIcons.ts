@@ -37,6 +37,27 @@ export const folderIcons: FolderTheme[] = [
                     'specs'
                 ]
             },
+            {
+                name: 'jinja',
+                folderNames: [
+                    'jinja',
+                    'jinja2',
+                    'j2'
+                ]
+            },
+            {
+                name: 'markdown',
+                folderNames: [
+                    'markdown',
+                    'md'
+                ]
+            },
+            {
+                name: 'phpmailer',
+                folderNames: [
+                    'phpmailer'
+                ]
+            },
             { name: 'folder-docs', folderNames: ['doc', 'docs'] },
             {
                 name: 'folder-git',
