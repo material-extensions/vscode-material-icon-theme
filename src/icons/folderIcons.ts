@@ -38,7 +38,7 @@ export const folderIcons: FolderTheme[] = [
                 ]
             },
             {
-                name: 'jinja',
+                name: 'folder-jinja',
                 folderNames: [
                     'jinja',
                     'jinja2',
@@ -46,14 +46,14 @@ export const folderIcons: FolderTheme[] = [
                 ]
             },
             {
-                name: 'markdown',
+                name: 'folder-markdown',
                 folderNames: [
                     'markdown',
                     'md'
                 ]
             },
             {
-                name: 'phpmailer',
+                name: 'folder-phpmailer',
                 folderNames: [
                     'phpmailer'
                 ]
