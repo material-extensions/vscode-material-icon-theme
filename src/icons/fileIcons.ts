@@ -38,8 +38,7 @@ export const fileIcons: FileIcons = {
         },
         {
             name: 'jinja',
-            fileExtensions: ['jinja'],
-            fileNames: [
+            fileExtensions: [
                 'jinja',
                 'jinja2',
                 'j2'
