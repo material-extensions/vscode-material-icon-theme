@@ -4,7 +4,7 @@ exports.translation = {
     'themeInstalled': 'O Material Icon Theme foi instalado.',
     'howToActivate': 'Como habilitar os ícones',
     'activate': 'Habilitar',
-    'activated': 'O Material Icon Theme está activo.',
+    'activated': 'O Material Icon Theme está habilitado.',
     'neverShowAgain': 'Não mostrar novamente',
     'themeUpdated': 'O Material Icon Theme foi atualizado.',
     'readChangelog': 'Ler registos',
@@ -16,7 +16,7 @@ exports.translation = {
     'folders': {
         'toggleIcons': 'Escolhe um tema para os directórios',
         'color': 'Escolhe uma cor para os directórios',
-        'hexCode': 'Insire um código de cor hexadecimal',
+        'hexCode': 'Insira um código de cor hexadecimal',
         'wrongHexCode': 'Código de cor hexadecimal inválido!',
         'disabled': 'Nenhum ícone do directório',
         'theme': {
