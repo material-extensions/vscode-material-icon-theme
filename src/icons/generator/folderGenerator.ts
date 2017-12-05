@@ -76,8 +76,12 @@ const disableIconsByPack = (folderIcons: FolderTheme, activatedIconPack: string)
 const setIconDefinitions = (config: IconConfiguration, icon: FolderIcon | DefaultIcon) => {
     config = merge({}, config);
     config = createIconDefinitions(config, icon.name);
-    config = merge({}, config, icon.light ? createIconDefinitions(config, icon.name, lightVersion) : config.light);
-    config = merge({}, config, icon.highContrast ? createIconDefinitions(config, icon.name, highContrastVersion) : config.highContrast);
+    if (icon.light) {
+        config = merge({}, config, createIconDefinitions(config, icon.name, lightVersion));
+    }
+    if (icon.highContrast) {
+        config = merge({}, config, createIconDefinitions(config, icon.name, highContrastVersion));
+    }
     return config;
 };
 
