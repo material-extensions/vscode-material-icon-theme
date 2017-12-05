@@ -36,6 +36,23 @@ export const fileIcons: FileIcons = {
                 'cdp.pid'
             ]
         },
+        {
+            name: 'jinja',
+            fileExtensions: ['jinja'],
+            fileNames: [
+                'jinja',
+                'jinja2',
+                'j2'
+            ]
+        },
+        {
+            name: 'sublime',
+            fileExtensions: ['sublime'],
+            fileNames: [
+                'sublime-project',
+                'sublime-workspace'
+            ]
+        },
         { name: 'yaml', fileExtensions: ['yaml', 'YAML-tmLanguage', 'yml'] },
         {
             name: 'xml',
