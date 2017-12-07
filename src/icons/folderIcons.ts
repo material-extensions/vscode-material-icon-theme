@@ -64,6 +64,12 @@ export const folderIcons: FolderTheme[] = [
                     'sublime'
                 ]
             },
+            {
+                name: 'folder-bower',
+                folderNames: [
+                    '.bower_components'
+                ]
+            },
             { name: 'folder-docs', folderNames: ['doc', 'docs'] },
             {
                 name: 'folder-git',
