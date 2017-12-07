@@ -43,33 +43,12 @@ export const folderIcons: FolderTheme[] = [
                     'jinja',
                     'jinja2',
                     'j2'
-                ]
+                ],
+                light: true
             },
-            {
-                name: 'folder-markdown',
-                folderNames: [
-                    'markdown',
-                    'md'
-                ]
-            },
-            {
-                name: 'folder-phpmailer',
-                folderNames: [
-                    'phpmailer'
-                ]
-            },
-            {
-                name: 'folder-sublime',
-                folderNames: [
-                    'sublime'
-                ]
-            },
-            {
-                name: 'folder-bower',
-                folderNames: [
-                    '.bower_components'
-                ]
-            },
+            { name: 'folder-markdown', folderNames: ['markdown', 'md'] },
+            { name: 'folder-phpmailer', folderNames: ['phpmailer'] },
+            { name: 'folder-sublime', folderNames: ['sublime'] },
             { name: 'folder-docs', folderNames: ['doc', 'docs'] },
             {
                 name: 'folder-git',

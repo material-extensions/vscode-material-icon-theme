@@ -1,11 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.4142" version="1.1" viewBox="0 0 24 24" xml:space="preserve" 
-    xmlns="http://www.w3.org/2000/svg">
-    <path d=" M 10 4 L 4 4 C 2.89 4 2 4.89 2 6 L 2 18 C 2 19.097 2.903 20 4 20 L 20 20 C 21.097 20 22 19.097 22 18 L 22 8 C 22 6.89 21.1 6 20 6 L 12 6 L 10 4 Z " fill="#E0E0E0" fill-rule="nonzero"/>
-    <path d=" M 9.875 11.625 Q 13.703 12.097 16.438 12.094 Q 19.128 12.091 22.875 11.625 L 22.875 13.344 Q 19.128 13.81 16.438 13.813 Q 13.703 13.815 9.875 13.344 L 9.875 11.625 Z " fill="#424242"/>
-    <path d=" M 12.844 13.008 L 11.969 21.516 L 13.875 21.508 L 14.156 13.508 L 12.844 13.008 Z " fill="#424242"/>
-    <path d=" M 19.688 13 L 20.539 21.5 L 18.656 21.5 L 18.375 13.5 L 19.688 13 Z " fill="#424242"/>
-    <rect x="9.797" y="15.172" width="13" height="1" transform="matrix(1,0,0,1,0,0)" fill="#424242"/>
-    <rect x="15.797" y="13" width="1" height="2.375" transform="matrix(1,0,0,1,0,0)" fill="#424242"/>
-</svg>
-
+<svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.4142" version="1.1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><path d="m10 4h-6c-1.11 0-2 0.89-2 2v12c0 1.097 0.903 2 2 2h16c1.097 0 2-0.903 2-2v-10c0-1.11-0.9-2-2-2h-8l-2-2z" fill="#E0E0E0" fill-rule="nonzero"/><g fill="#424242"><path d="m9.875 11.625q3.828 0.472 6.563 0.469 2.69-3e-3 6.437-0.469v1.719q-3.747 0.466-6.437 0.469-2.735 2e-3 -6.563-0.469v-1.719z"/><path d="m12.844 13.008l-0.875 8.508 1.906-8e-3 0.281-8-1.312-0.5z"/><path d="m19.688 13l0.851 8.5h-1.883l-0.281-8 1.313-0.5z"/><rect x="9.797" y="15.172" width="13" height="1"/><rect x="15.797" y="13" width="1" height="2.375"/></g></svg>
