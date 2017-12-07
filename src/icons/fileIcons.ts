@@ -53,6 +53,36 @@ export const fileIcons: FileIcons = {
                 'sublime-workspace'
             ]
         },
+         {
+            name: 'bootstrap',
+            fileExtensions: ['bootstrap'],
+            fileNames: [
+                'bootstrap.css',
+                'bootstrap-grid.css',
+                'bootstrap-reboot.css',
+                'bootstrap.min.css',
+                'bootstrap-grid.min.css',
+                'bootstrap-reboot.min.css',
+                'bootstrap.js',
+                'bootstrap.min.js',
+                'bootstrap-bundle.js',
+                'bootstrap-bundle.min.js'
+            ]
+        },
+        {
+            name: 'materialize',
+            fileExtensions: ['materialize'],
+            fileNames: [
+                'materialize.css',
+                'materializecss.css',
+                'materialize.min.css',
+                'materializecss.min.css',
+                'materialize.js',
+                'materializecss.js',
+                'materialize.min.js',
+                'materializecss.min.js'
+            ]
+        },
         { name: 'yaml', fileExtensions: ['yaml', 'YAML-tmLanguage', 'yml'] },
         {
             name: 'xml',
