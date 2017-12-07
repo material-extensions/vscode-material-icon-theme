@@ -65,9 +65,9 @@ export const fileIcons: FileIcons = {
                 'bootstrap-grid.min.css',
                 'bootstrap-reboot.min.css',
                 'bootstrap.js',
-                'bootstrap-bundle.js,
+                'bootstrap-bundle.js',
                 'bootstrap.min.js',
-                'bootstrap-bundle.min.js
+                'bootstrap-bundle.min.js'
             ]
         },
         {
