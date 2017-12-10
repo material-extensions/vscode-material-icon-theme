@@ -38,23 +38,14 @@ export const fileIcons: FileIcons = {
         },
         {
             name: 'jinja',
-            fileExtensions: ['jinja'],
-            fileNames: [
-                'jinja',
-                'jinja2',
-                'j2'
-            ],
+            fileExtensions: ['jinja', 'jinja2', 'j2'],
             light: true
-        },
-        {
-            name: 'sublime',
-            fileExtensions: ['sublime'],
-            fileNames: [
-                'sublime-project',
-                'sublime-workspace'
-            ]
-        },
-        {
+         },
+         {
+             name: 'sublime',
+             fileExtensions: ['sublime-project', 'sublime-workspace']
+         },
+         {
             name: 'bootstrap',
             fileExtensions: ['bootstrap'],
             fileNames: [
