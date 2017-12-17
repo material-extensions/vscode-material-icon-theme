@@ -499,7 +499,7 @@ export const fileIcons: FileIcons = {
         },
         {
             name: 'nodejs',
-            fileNames: ['package.json', 'package-lock.json', '.nvmrc']
+            fileNames: ['package.json', 'package-lock.json', '.nvmrc', '.esmrc']
         },
         { name: 'npm', fileNames: ['.npmignore', '.npmrc'] },
         {
