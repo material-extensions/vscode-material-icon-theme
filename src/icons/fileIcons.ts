@@ -91,7 +91,7 @@ export const fileIcons: FileIcons = {
                 'webp'
             ]
         },
-        { name: 'javascript', fileExtensions: ['js', 'ejs', 'esx'] },
+        { name: 'javascript', fileExtensions: ['js', 'ejs', 'esx', 'mjs'] },
         { name: 'react', fileExtensions: ['jsx', 'tsx'] },
         {
             name: 'settings',
@@ -317,7 +317,7 @@ export const fileIcons: FileIcons = {
         },
         { name: 'vue', fileExtensions: ['vue'] },
         { name: 'ocaml', fileExtensions: ['ml', 'mli', 'cmx'] },
-        { name: 'javascript-map', fileExtensions: ['js.map'] },
+        { name: 'javascript-map', fileExtensions: ['js.map', 'mjs.map'] },
         { name: 'css-map', fileExtensions: ['css.map'] },
         { name: 'lock', fileExtensions: ['lock'] },
         { name: 'handlebars', fileExtensions: ['hbs', 'mustache'] },
