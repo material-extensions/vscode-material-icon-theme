@@ -1,5 +1,27 @@
 # Change Log
 
+## 3.2.0 (2017-12-18)
+### New icons
+- jinja [[@gusbemacbe](https://github.com/gusbemacbe) in [#169](https://github.com/PKief/vscode-material-icon-theme/pull/169), [issue #168](https://github.com/PKief/vscode-material-icon-theme/issues/168)]
+- .prettierignore [[issue #172](https://github.com/PKief/vscode-material-icon-theme/issues/172)]
+- sublime-workspace [[@gusbemacbe](https://github.com/gusbemacbe) in [#169](https://github.com/PKief/vscode-material-icon-theme/pull/169)]
+- sublime-project [[@gusbemacbe](https://github.com/gusbemacbe) in [#169](https://github.com/PKief/vscode-material-icon-theme/pull/169)]
+- sublime folder [[@gusbemacbe](https://github.com/gusbemacbe) in [#169](https://github.com/PKief/vscode-material-icon-theme/pull/169)]
+- markdown folder [[@gusbemacbe](https://github.com/gusbemacbe) in [#169](https://github.com/PKief/vscode-material-icon-theme/pull/169)]
+- php folder
+- PHPMailer folder [[@gusbemacbe](https://github.com/gusbemacbe) in [#169](https://github.com/PKief/vscode-material-icon-theme/pull/169)]
+- lang folder [[@wopian](https://github.com/wopian) in [#174](https://github.com/PKief/vscode-material-icon-theme/pull/174)]
+- github folder [[issue #150](https://github.com/PKief/vscode-material-icon-theme/issues/150)]
+- gitlab folder
+- .esmrc [[issue #176](https://github.com/PKief/vscode-material-icon-theme/issues/167)]
+- mjs [[@wopian](https://github.com/wopian) in [#175](https://github.com/PKief/vscode-material-icon-theme/pull/175)]
+
+### Other improvements
+- optimized icon sizes to reduce the size of the extension
+
+### Added translations
+- Added Brazilian Portuguese translation [[@gusbemacbe](https://github.com/gusbemacbe) in [#169](https://github.com/PKief/vscode-material-icon-theme/pull/169)]
+
 ## 3.1.0 (2017-11-26)
 ### New features
 - Customizable language icon associations

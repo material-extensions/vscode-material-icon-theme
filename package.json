@@ -2,7 +2,7 @@
   "name": "material-icon-theme",
   "displayName": "Material Icon Theme",
   "description": "Material Design Icons for Visual Studio Code",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "publisher": "PKief",
   "engines": {
     "vscode": "^1.5.0"
@@ -133,14 +133,14 @@
     "clean": "rimraf ./out",
     "compile": "tsc -p ./",
     "compile:watch": "tsc -watch -p ./",
-    "generateJson": "ts-node ./scripts/icons/generateJson.ts",
-    "check": "ts-node scripts/icons/checks",
+    "generateJson": "node -r ts-node/register ./scripts/icons/generateJson.ts",
+    "check": "node -r ts-node/register scripts/icons/checks",
     "postinstall": "node ./node_modules/vscode/bin/install",
     "tslint": "tslint -c tslint.json ./src/**/*.ts ./scripts/**/*ts",
     "pretest": "npm run build",
     "test": "node ./node_modules/vscode/bin/test",
     "bithound": "bithound check git@github.com:PKief/vscode-material-icon-theme.git",
-    "preview": "npm run build && ts-node ./scripts/preview"
+    "preview": "npm run build && node -r ts-node/register ./scripts/preview"
   },
   "dependencies": {
     "lodash.merge": "^4.6.0",
@@ -149,15 +149,15 @@
   },
   "devDependencies": {
     "@types/mocha": "^2.2.44",
-    "@types/node": "^8.0.51",
-    "@types/puppeteer": "^0.12.2",
+    "@types/node": "^8.5.1",
+    "@types/puppeteer": "^0.13.8",
     "bithound": "^1.7.0",
     "mocha": "^4.0.1",
-    "puppeteer": "^0.12.0",
+    "puppeteer": "^0.13.0",
     "rimraf": "^2.6.2",
-    "ts-node": "^3.3.0",
+    "ts-node": "^4.0.2",
     "tslint": "^5.8.0",
-    "typescript": "^2.6.1",
-    "vscode": "^1.1.6"
+    "typescript": "^2.6.2",
+    "vscode": "^1.1.10"
   }
 }
