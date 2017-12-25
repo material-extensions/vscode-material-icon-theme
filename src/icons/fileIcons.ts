@@ -100,7 +100,7 @@ export const fileIcons: FileIcons = {
                 'webp'
             ]
         },
-        { name: 'javascript', fileExtensions: ['js', 'ejs', 'esx', 'mjs'] },
+        { name: 'javascript', fileExtensions: ['js', 'esx', 'mjs'] },
         { name: 'react', fileExtensions: ['jsx', 'tsx'] },
         {
             name: 'settings',
@@ -624,5 +624,6 @@ export const fileIcons: FileIcons = {
         { name: 'cuda', fileExtensions: ['cu', 'cuh'] },
         { name: 'log', fileExtensions: ['log'] },
         { name: 'dotjs', fileExtensions: ['def', 'dot', 'jst'] },
+        { name: 'ejs', fileExtensions: ['ejs'] },
     ]
 };
