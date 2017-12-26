@@ -375,7 +375,7 @@ export const fileIcons: FileIcons = {
             enabledFor: [IconPack.Angular, IconPack.Ngrx]
         },
         { name: 'puppet', fileExtensions: ['pp'] },
-        { name: 'elixir', fileExtensions: ['ex', 'exs'] },
+        { name: 'elixir', fileExtensions: ['ex', 'exs', 'eex'] },
         { name: 'livescript', fileExtensions: ['ls'] },
         { name: 'erlang', fileExtensions: ['erl'] },
         { name: 'twig', fileExtensions: ['twig'] },
