@@ -1,17 +1,22 @@
 environment:
   ELECTRON_RUN_AS_NODE: 1
   VSCODE_BUILD_VERBOSE: true
+  NODE_VERSION: "9"
 
 cache:
+  - node_modules
   - '%APPDATA%\npm-cache'
 
-install:
-  - ps: Install-Product node 7.9.0 x64
-  - npm install -g npm@4 --silent
-  - npm install -g gulp mocha --silent
+branches:
+  only:
+    - master
+    - dev
 
-build_script:
+install:
+  - ps: Install-Product node $env:NODE_VERSION x64
   - npm install
+
+build: off
 
 test_script:
   - node --version

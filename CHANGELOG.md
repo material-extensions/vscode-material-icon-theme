@@ -1,5 +1,15 @@
 # Change Log
 
+## 3.2.1 (2017-01-04)
+### New icons
+- ejs templates [[issue #176](https://github.com/PKief/vscode-material-icon-theme/issues/176)]
+- doT.js [[issue #177](https://github.com/PKief/vscode-material-icon-theme/issues/177)]
+- .eex [[issue #178](https://github.com/PKief/vscode-material-icon-theme/issues/178)]
+- .babelrc.js [[@bernardop](https://github.com/bernardop) in [#179](https://github.com/PKief/vscode-material-icon-theme/pull/179)]
+- rollup base config filename [[@leohxj](https://github.com/leohxj) in [#181](https://github.com/PKief/vscode-material-icon-theme/pull/181)]
+- wwwroot folder
+- includes folder
+
 ## 3.2.0 (2017-12-18)
 ### New icons
 - jinja [[@gusbemacbe](https://github.com/gusbemacbe) in [#169](https://github.com/PKief/vscode-material-icon-theme/pull/169), [issue #168](https://github.com/PKief/vscode-material-icon-theme/issues/168)]
