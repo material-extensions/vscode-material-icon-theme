@@ -1,6 +1,6 @@
 # Change Log
 
-## 3.2.1 (2017-01-04)
+## 3.2.1 (2018-01-04)
 ### New icons
 - ejs templates [[issue #176](https://github.com/PKief/vscode-material-icon-theme/issues/176)]
 - doT.js [[issue #177](https://github.com/PKief/vscode-material-icon-theme/issues/177)]
