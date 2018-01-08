@@ -30,7 +30,7 @@
 - optimized icon sizes to reduce the size of the extension
 
 ### Added translations
-- Added Brazilian Portuguese translation [[@gusbemacbe](https://github.com/gusbemacbe) in [#169](https://github.com/PKief/vscode-material-icon-theme/pull/169)]
+- Added European Portuguese translation [[@gusbemacbe](https://github.com/gusbemacbe) in [#169](https://github.com/PKief/vscode-material-icon-theme/pull/169)]
 
 ## 3.1.0 (2017-11-26)
 ### New features
