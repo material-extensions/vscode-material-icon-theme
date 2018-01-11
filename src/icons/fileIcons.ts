@@ -629,5 +629,6 @@ export const fileIcons: FileIcons = {
         { name: 'log', fileExtensions: ['log'] },
         { name: 'dotjs', fileExtensions: ['def', 'dot', 'jst'] },
         { name: 'ejs', fileExtensions: ['ejs'] },
+        { name: 'sequelize', fileNames: ['.sequelizerc'] },
     ]
 };
