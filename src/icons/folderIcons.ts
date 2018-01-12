@@ -92,6 +92,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-log', folderNames: ['log', 'logs'] },
             { name: 'folder-temp', folderNames: ['temp', '.temp', 'tmp', '.tmp', 'cached', 'cache'] },
             { name: 'folder-aws', folderNames: ['aws', '.aws'] },
+            { name: 'folder-audio', folderNames: ['audio', 'music'] },
         ]
     },
     { name: 'classic', defaultIcon: { name: 'folder' }, rootFolder: { name: 'folder-root' } },
