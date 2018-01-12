@@ -243,7 +243,7 @@ export const fileIcons: FileIcons = {
             ]
         },
         {
-            name: 'movie',
+            name: 'video',
             fileExtensions: [
                 'webm',
                 'mkv',
