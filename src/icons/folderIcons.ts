@@ -96,6 +96,8 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-audio', folderNames: ['audio', 'audios', 'music'] },
             { name: 'folder-video', folderNames: ['video', 'videos', 'movie', 'movies'] },
             { name: 'folder-kubernetes', folderNames: ['kubernetes', 'k8s'] },
+            { name: 'folder-import', folderNames: ['import', 'imports', 'imported'] },
+            { name: 'folder-export', folderNames: ['export', 'exports', 'exported'] },
         ]
     },
     { name: 'classic', defaultIcon: { name: 'folder' }, rootFolder: { name: 'folder-root' } },
