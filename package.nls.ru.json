@@ -1,18 +1,18 @@
 {
     "command.activateIcons": "Material Icons: Активировать иконки темы",
-    "command.toggleIconPacks": "Material Icons: Configure Icon Packs",
-    "command.changeFolderTheme": "Material Icons: Change Folder Theme",
-    "command.changeFolderColor": "Material Icons: Change Folder Color",
+    "command.toggleIconPacks": "Material Icons: Настроить набор иконок",
+    "command.changeFolderTheme": "Material Icons: Изменить тему папки",
+    "command.changeFolderColor": "Material Icons: Изменить цвет папки",
     "command.restoreDefaultConfig": "Material Icons: Восстановить настройки по умолчанию",
-    "command.hidesExplorerArrows": "Material Icons: Hide Folder Arrows",
+    "command.hidesExplorerArrows": "Material Icons: Скрыть стрелки проводника перед папкой",
     "configuration.title": "Настройки Material Icons",
-    "configuration.files.associations": "Set custom file icon associations.",
-    "configuration.folders.associations": "Set custom folder icon associations.",
-    "configuration.languages.associations": "Set custom language icon associations.",
+    "configuration.files.associations": "Настройка пользовательских ассоциаций значков файлов.",
+    "configuration.folders.associations": "Настройка пользовательских ассоциаций значков папок.",
+    "configuration.languages.associations": "Настройка ассоциаций значков пользовательского языка.",
     "configuration.showWelcomeMessage": "Показывать приветственное сообщение после первой установки.",
     "configuration.showUpdateMessage": "Показывать сообщение об обновлении после каждого обновления.",
-    "configuration.activeIconPack": "Select an icon pack that enables specific icons.",
+    "configuration.activeIconPack": "Выберите набор значков, которые включают определенные значки.",
     "configuration.folders.theme": "Установить тип иконок для папок.",
-    "configuration.folders.color": "Change the color of the folder icons.",
-    "configuration.hidesExplorerArrows": "Hide explorer arrows before folder."
+    "configuration.folders.color": "Изменение цвета иконок папок.",
+    "configuration.hidesExplorerArrows": "Скрыть стрелки проводника перед папкой."
 }
