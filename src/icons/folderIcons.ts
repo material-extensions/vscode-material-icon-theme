@@ -98,6 +98,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-kubernetes', folderNames: ['kubernetes', 'k8s'] },
             { name: 'folder-import', folderNames: ['import', 'imports', 'imported'] },
             { name: 'folder-export', folderNames: ['export', 'exports', 'exported'] },
+            { name: 'folder-wakatime', folderNames: ['wakatime'] },
         ]
     },
     { name: 'classic', defaultIcon: { name: 'folder' }, rootFolder: { name: 'folder-root' } },
