@@ -99,6 +99,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-import', folderNames: ['import', 'imports', 'imported'] },
             { name: 'folder-export', folderNames: ['export', 'exports', 'exported'] },
             { name: 'folder-wakatime', folderNames: ['wakatime'] },
+            { name: 'folder-circleci', folderNames: ['.circleci'] },
         ]
     },
     { name: 'classic', defaultIcon: { name: 'folder' }, rootFolder: { name: 'folder-root' } },
