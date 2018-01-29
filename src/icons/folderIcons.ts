@@ -100,7 +100,8 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-export', folderNames: ['export', 'exports', 'exported'] },
             { name: 'folder-wakatime', folderNames: ['wakatime'] },
             { name: 'folder-circleci', folderNames: ['.circleci'] },
-            { name: 'folder-wordpress', folderNames: ['wp-content']},
+            { name: 'folder-wordpress', folderNames: ['wp-content'] },
+            { name: 'folder-gradle', folderNames: ['gradle', '.gradle'] },
         ]
     },
     { name: 'classic', defaultIcon: { name: 'folder' }, rootFolder: { name: 'folder-root' } },
