@@ -102,6 +102,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-circleci', folderNames: ['.circleci'] },
             { name: 'folder-wordpress', folderNames: ['wp-content'] },
             { name: 'folder-gradle', folderNames: ['gradle', '.gradle'] },
+            { name: 'folder-coverage', folderNames: ['coverage'] },
         ]
     },
     { name: 'classic', defaultIcon: { name: 'folder' }, rootFolder: { name: 'folder-root' } },
