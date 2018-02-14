@@ -140,7 +140,7 @@ export const fileIcons: FileIcons = {
         { name: 'visualstudio', fileExtensions: ['suo', 'sln', 'csproj', 'vb'] },
         {
             name: 'database',
-            fileExtensions: ['pdb', 'sql', 'pks', 'pkb', 'accdb', 'mdb', 'sqlite']
+            fileExtensions: ['pdb', 'sql', 'pks', 'pkb', 'accdb', 'mdb', 'sqlite', 'pgsql', 'postgres', 'psql']
         },
         { name: 'csharp', fileExtensions: ['cs'] },
         {
