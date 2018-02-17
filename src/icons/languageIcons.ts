@@ -62,5 +62,6 @@ export const languageIcons: LanguageIcon[] = [
     { icon: { name: 'php' }, ids: ['php'] },
     { icon: { name: 'php_elephant' }, ids: [] },
     { icon: { name: 'hack' }, ids: ['hack'] },
-    { icon: { name: 'react' }, ids: ['javascriptreact'] }
+    { icon: { name: 'react' }, ids: ['javascriptreact'] },
+    { icon: { name: 'mjml' }, ids: ['mjml'] }
 ];

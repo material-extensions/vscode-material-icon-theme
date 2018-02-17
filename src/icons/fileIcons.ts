@@ -396,6 +396,7 @@ export const fileIcons: FileIcons = {
         { name: 'autoit', fileExtensions: ['au3'] },
         { name: 'haml', fileExtensions: ['haml'] },
         { name: 'yang', fileExtensions: ['yang'] },
+        { name: 'mjml', fileExtensions: ['mjml'] },
         {
             name: 'terraform',
             fileExtensions: ['tf', 'tf.json', 'tfvars', 'tfstate']
