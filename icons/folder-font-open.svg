@@ -1,8 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="100%" height="100%" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
-    <path id="path2" d="M19,20L4,20C2.89,20 2,19.1 2,18L2,6C2,4.89 2.89,4 4,4L10,4L12,6L19,6C20.097,6 21,6.903 21,8L4,8L4,18L6.14,10L23.21,10L20.93,18.5C20.7,19.37 19.92,20 19,20Z" style="fill:rgb(239,154,154);fill-rule:nonzero;"/>
-    <g id="path4" transform="matrix(1,0,0,1,5,5.40278)">
-        <path d="M9.62,12L12,5.67L14.37,12M11,3L5.5,17L7.75,17L8.87,14L15.12,14L16.25,17L18.5,17L13,3L11,3Z" style="fill:rgb(244,67,54);fill-rule:nonzero;"/>
-    </g>
-</svg>
+<svg clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.4142" version="1.1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><path d="m19 20h-15c-1.11 0-2-.9-2-2v-12c0-1.11.89-2 2-2h6l2 2h7c1.097 0 2 .903 2 2h-17v10l2.14-8h17.07l-2.28 8.5c-.23.87-1.01 1.5-1.93 1.5z" fill="#e57373" style="fill:#ff5252"/><path d="m15.32 16.342 2.064-5.4897 2.0554 5.4897m-2.9226-7.8052-4.7698 12.141h1.9513l.97131-2.6017h5.4203l.97999 2.6017h1.9513l-4.7698-12.141z" style="fill:#ffcdd2;stroke-width:.86724"/></svg>

@@ -61,7 +61,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-vscode', folderNames: ['.vscode', '.vscode-test'] },
             {
                 name: 'folder-views',
-                folderNames: ['view', 'views', 'screen', 'screens', 'page', 'pages']
+                folderNames: ['view', 'views', 'screen', 'screens', 'page', 'pages', 'html']
             },
             { name: 'folder-vue', folderNames: ['vue'] },
             { name: 'folder-expo', folderNames: ['.expo'] },
