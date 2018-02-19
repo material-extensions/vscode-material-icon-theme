@@ -22,7 +22,7 @@ export const folderIcons: FolderTheme[] = [
             },
             { name: 'folder-scripts', folderNames: ['script', 'scripts'] },
             { name: 'folder-node', folderNames: ['node_modules'] },
-            { name: 'folder-javascript', folderNames: ['js', 'javascripts'] },
+            { name: 'folder-javascript', folderNames: ['js', 'javascript', 'javascripts'] },
             { name: 'folder-font', folderNames: ['font', 'fonts'] },
             { name: 'folder-bower', folderNames: ['bower_components'] },
             {
@@ -104,6 +104,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-gradle', folderNames: ['gradle', '.gradle'] },
             { name: 'folder-coverage', folderNames: ['coverage'] },
             { name: 'folder-other', folderNames: ['other', 'others', 'misc', 'miscellaneous'] },
+            { name: 'folder-typescript', folderNames: ['typescript', 'ts'] },
         ]
     },
     { name: 'classic', defaultIcon: { name: 'folder' }, rootFolder: { name: 'folder-root' } },
