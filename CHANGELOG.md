@@ -1,4 +1,21 @@
-# Change Log
+# Changelog
+## 3.2.3 (2018-02-20)
+### New icons
+- WordPress folder ([@frederick036](https://github.com/frederick036) in [#194](https://github.com/PKief/vscode-material-icon-theme/pull/194))
+- Gradle folder ([issue #112](https://github.com/PKief/vscode-material-icon-theme/issues/112))
+- coverage folder ([issue #192](https://github.com/PKief/vscode-material-icon-theme/issues/192))
+- other folder ([issue #187](https://github.com/PKief/vscode-material-icon-theme/issues/187))
+- mjml ([@LukasPolak](https://github.com/LukasPolak) in [#200](https://github.com/PKief/vscode-material-icon-theme/pull/200))
+- PostgreSQL icon mappings ([issue #197](https://github.com/PKief/vscode-material-icon-theme/issues/197))
+- .postcssrc ([@Faultless](https://github.com/Faultless) in [#202](https://github.com/PKief/vscode-material-icon-theme/pull/202))
+- TypeScript folder ([issue #199](https://github.com/PKief/vscode-material-icon-theme/issues/199))
+
+### Updated icons
+- Font folder
+- Git folder
+- Sass folder
+- Views folder
+- TypeScript
 
 ## 3.2.2 (2018-01-28)
 ### New icons
