@@ -23,7 +23,10 @@ export const generateIconConfigurationObject = (options: IconJsonOptions): IconC
 /**
  * Create the JSON file that is responsible for the icons in the editor.
  */
-export const createIconFile = (options: IconJsonOptions = getDefaultIconOptions()) => {
+export const createIconFile = (jsonOptions?: IconJsonOptions): Promise<string> => {
+    // override the default options with the new options
+    const options = merge({}, getDefaultIconOptions(), jsonOptions);
+
     const iconJSONPath = path.join(__dirname, '../../../', 'src', iconJsonName);
     const json = generateIconConfigurationObject(options);
 
@@ -32,8 +35,8 @@ export const createIconFile = (options: IconJsonOptions = getDefaultIconOptions(
             if (err) {
                 reject(err);
             }
-            if (options.folderColor) {
-                generateFolderIcons(options.folderColor).catch(e => reject(e)).then(() => {
+            if (options.folders.color) {
+                generateFolderIcons(options.folders.color).catch(e => reject(e)).then(() => {
                     resolve(iconJsonName);
                 });
             }
@@ -44,15 +47,14 @@ export const createIconFile = (options: IconJsonOptions = getDefaultIconOptions(
 /**
  * The options control the generator and decide which icons are disabled or not.
  */
-export const getDefaultIconOptions = (): IconJsonOptions => {
-    const options: IconJsonOptions = {
-        folderTheme: 'specific',
-        folderColor: '#90a4ae',
-        activatedPack: 'angular',
-        hidesExplorerArrows: false,
-        fileAssociations: {},
-        folderAssociations: {},
-        languageAssociations: {}
-    };
-    return options;
-};
+export const getDefaultIconOptions = (): IconJsonOptions => ({
+    folders: {
+        theme: 'specific',
+        color: '#90a4ae',
+        associations: {},
+    },
+    activeIconPack: 'angular',
+    hidesExplorerArrows: false,
+    files: { associations: {} },
+    languages: { associations: {} },
+});

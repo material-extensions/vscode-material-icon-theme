@@ -1,11 +1,19 @@
 export interface IconJsonOptions {
-    folderTheme?: string;
-    folderColor?: string;
-    activatedPack?: string;
+    activeIconPack?: string;
     hidesExplorerArrows?: boolean;
-    fileAssociations?: IconAssociations;
-    folderAssociations?: IconAssociations;
-    languageAssociations?: IconAssociations;
+    folders?: {
+        theme?: string;
+        color?: string;
+        associations?: IconAssociations;
+    };
+    files?: {
+        associations?: IconAssociations;
+    };
+    languages?: {
+        associations?: IconAssociations;
+    };
+    showWelcomeMessage?: boolean;
+    showUpdateMessage?: boolean;
 }
 
 export interface IconAssociations {

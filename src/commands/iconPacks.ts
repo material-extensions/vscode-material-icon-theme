@@ -56,7 +56,7 @@ const handleQuickPickActions = (value: vscode.QuickPickItem, activePack: string)
 };
 
 const getActiveIconPack = (): Promise<string> => {
-    return helpers.getMaterialIconsJSON().then((config) => config.options.activatedPack);
+    return helpers.getMaterialIconsJSON().then((config) => config.options.activeIconPack);
 };
 
 const isPackActive = (activePack: string, pack: string) => {

@@ -6,7 +6,7 @@ import * as path from 'path';
 import * as fs from 'fs';
 import * as painter from '../helpers/painter';
 
-createIconFile().then((fileName) => {
+createIconFile().then((fileName: string) => {
     const filePath = path.resolve('src', fileName);
     const out = path.resolve('out', 'src', fileName);
     fs.rename(filePath, out, (err) => {

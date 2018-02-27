@@ -1,5 +1,6 @@
 import * as vscode from 'vscode';
 import * as fs from 'fs';
+import { getObjectPropertyValue } from '../helpers/objects';
 
 // Get current language of the vs code workspace
 export const getCurrentLanguage = (): string =>
@@ -45,10 +46,10 @@ const getTranslationObject = async (language: string): Promise<any> => {
  * and the fallback (required for testing purposes).
  * */
 export const getTranslationValue = (key: string, translations = currentTranslation, fallback = fallbackTranslation) => {
-    return getValue(translations, key) ?
-        getValue(translations, key) :
-        getValue(fallback, key) ?
-            getValue(fallback, key) : undefined;
+    return getObjectPropertyValue(translations, key) ?
+        getObjectPropertyValue(translations, key) :
+        getObjectPropertyValue(fallback, key) ?
+            getObjectPropertyValue(fallback, key) : undefined;
 };
 
 /**
@@ -56,7 +57,7 @@ export const getTranslationValue = (key: string, translations = currentTranslati
  * It helps to translate a word instantly.
  */
 export const translate = (key: string, words?: string | string[]) => {
-    const translation: string = getTranslationValue(key);
+    const translation = <string>getTranslationValue(key);
 
     if (!words) return translation;
     return replace(translation, words);
@@ -76,33 +77,4 @@ export const replace = (value: string = '', words: string | string[]) => {
     });
 
     return translation;
-};
-
-/** Get the nested keys of an object (http://stackoverflow.com/a/6491621/6942210)
- *
- * *This solution is lighter than the lodash get-version and works fine for the translations.* */
-export const getValue = (obj: any, key: string): string => {
-    // convert indexes to properties
-    key = key.replace(/\[(\w+)\]/g, '.$1');
-
-    // strip a leading dot
-    key = key.replace(/^\./, '');
-
-    // separate keys in array
-    let keyArray = key.split('.');
-
-    /** Avoid errors in the getValue function. */
-    const isObject = (object) => {
-        return object === Object(object);
-    };
-
-    for (let i = 0; i < keyArray.length; ++i) {
-        let k = keyArray[i];
-        if (isObject(obj) && k in obj) {
-            obj = obj[k];
-        } else {
-            return;
-        }
-    }
-    return obj;
 };

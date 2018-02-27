@@ -1,65 +1,56 @@
-import * as helpers from './index';
 import * as vscode from 'vscode';
-import * as i18n from './../i18n';
-import { createIconFile, getDefaultIconOptions } from '../icons/index';
-import { checkFolderIconsStatus } from '../commands/folders';
-import { IconPack, IconJsonOptions, IconAssociations } from '../models/index';
+import * as merge from 'lodash.merge';
+import { createIconFile } from '../icons/index';
+import { getObjectPropertyValue, setObjectPropertyValue } from './objects';
+import { getExtensionConfiguration, promptToReload, getMaterialIconsJSON, getThemeConfig } from '.';
 
 /** Watch for changes in the configurations to update the icons theme. */
 export const watchForConfigChanges = () => {
     vscode.workspace.onDidChangeConfiguration(detectConfigChanges);
 };
 
-/**
- * Compare the workspace and the user configurations
- * with the current setup of the icons.
-*/
+/** Compare the workspace and the user configurations with the current setup of the icons. */
 export const detectConfigChanges = () => {
-    return helpers.getMaterialIconsJSON()
-        .then((json) => {
-            compareConfig<string>('activeIconPack', json.options.activatedPack);
-            compareConfig<string>('folders.theme', json.options.folderTheme);
-            compareConfig<string>('folders.color', json.options.folderColor);
-            compareConfig<boolean>('hidesExplorerArrows', json.options.hidesExplorerArrows);
-            compareConfig<IconAssociations>('files.associations', json.options.fileAssociations);
-            compareConfig<IconAssociations>('folders.associations', json.options.folderAssociations);
-            compareConfig<IconAssociations>('languages.associations', json.options.languageAssociations);
+    const configs = Object.keys(getExtensionConfiguration())
+        .map(c => c.split('.').slice(1).join('.'));
+
+    return compareConfigs(configs).then(changes => {
+        // if there's nothing to update
+        if (Object.keys(changes).length === 0) return;
+
+        // update icon json file with new options
+        return createIconFile(changes).then(() => {
+            promptToReload();
+        }).catch(err => {
+            console.error(err);
         });
+    });
 };
 
-const compareConfig = <T>(config: string, currentState: T): Promise<void> => {
-    const configValue = <T>helpers.getThemeConfig(config).globalValue;
+/**
+ * Compares a specific configuration in the settings with a current configuration state.
+ * The current configuration state is read from the icons json file.
+ * @param configs List of configuration names
+ * @returns List of configurations that needs to be updated.
+ */
+const compareConfigs = (configs: string[]): Promise<{ [name: string]: any }> => {
+    // object with the config properties that must be updated
+    const updateRequired: { [name: string]: any } = {};
 
-    return helpers.getMaterialIconsJSON().then(result => {
-        if (configValue !== undefined && JSON.stringify(configValue) !== JSON.stringify(currentState)) {
-            updateIconJson();
+    return getMaterialIconsJSON().then((json) => {
+        configs.forEach(configName => {
+            const configValue = getThemeConfig(configName).globalValue;
+            const currentState = getObjectPropertyValue(json.options, configName);
+
+            if (configValue !== undefined && JSON.stringify(configValue) !== JSON.stringify(currentState)) {
+                setObjectPropertyValue(updateRequired, configName, configValue);
+            }
+        });
+
+        if (Object.keys(updateRequired).length > 0) {
+            return merge({}, json.options, updateRequired);
+        } else {
+            return {};
         }
     });
-};
-
-const updateIconJson = () => {
-    const defaultOptions = getDefaultIconOptions();
-
-    // adjust options
-    const options: IconJsonOptions = {
-        folderTheme: getCurrentConfig<string>('folders.theme', defaultOptions.folderTheme),
-        folderColor: getCurrentConfig<string>('folders.color', defaultOptions.folderColor),
-        activatedPack: getCurrentConfig<string>('activeIconPack', defaultOptions.activatedPack),
-        hidesExplorerArrows: getCurrentConfig<boolean>('hidesExplorerArrows', defaultOptions.hidesExplorerArrows),
-        fileAssociations: getCurrentConfig<IconAssociations>('files.associations', defaultOptions.fileAssociations),
-        folderAssociations: getCurrentConfig<IconAssociations>('folders.associations', defaultOptions.folderAssociations),
-        languageAssociations: getCurrentConfig<IconAssociations>('languages.associations', defaultOptions.languageAssociations),
-    };
-
-    // update icon json file with new options
-    return createIconFile(options).then(() => {
-        helpers.promptToReload();
-    }).catch(err => {
-        console.error(err);
-    });
-};
-
-const getCurrentConfig = <T>(config: string, defaultValue: T): T => {
-    const result = <T>helpers.getThemeConfig(config).globalValue;
-    return result !== undefined ? result : defaultValue;
 };

@@ -1,6 +1,7 @@
 import * as assert from 'assert';
 import * as vscode from 'vscode';
 import * as i18n from '../../src/i18n';
+import { getObjectPropertyValue } from '../../src/helpers/objects';
 
 suite('i18n', () => {
     test('shoud initialize translations', () => {
@@ -27,7 +28,7 @@ suite('i18n', () => {
                 }
             }
         };
-        assert.equal(i18n.getValue(translation, 'a.b.c'), 'c');
+        assert.equal(getObjectPropertyValue(translation, 'a.b.c'), 'c');
     });
 
     test('should use placeholder in translation', () => {

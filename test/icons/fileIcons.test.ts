@@ -51,7 +51,7 @@ suite('file icons', () => {
         };
         const iconConfig = new IconConfiguration();
         const options = getDefaultIconOptions();
-        options.activatedPack = '';
+        options.activeIconPack = '';
         const def = getFileIconDefinitions(fileIcons, iconConfig, options);
         const value = new IconConfiguration();
 
@@ -84,7 +84,7 @@ suite('file icons', () => {
         };
         const iconConfig = new IconConfiguration();
         const options = getDefaultIconOptions();
-        options.fileAssociations = {
+        options.files.associations = {
             '*.sample.ts': 'angular',
             'sample.js': 'javascript'
         };

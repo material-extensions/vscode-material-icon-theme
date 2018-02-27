@@ -10,12 +10,12 @@ import * as path from 'path';
 export const getFolderIconDefinitions = (folderThemes: FolderTheme[], config: IconConfiguration, options: IconJsonOptions): IconConfiguration => {
     config = merge({}, config);
     config.hidesExplorerArrows = options.hidesExplorerArrows;
-    const activeTheme = getEnabledFolderTheme(folderThemes, options.folderTheme);
-    const enabledIcons = disableIconsByPack(activeTheme, options.activatedPack);
-    const customIcons = getCustomIcons(options.folderAssociations);
+    const activeTheme = getEnabledFolderTheme(folderThemes, options.folders.theme);
+    const enabledIcons = disableIconsByPack(activeTheme, options.activeIconPack);
+    const customIcons = getCustomIcons(options.folders.associations);
     const allIcons = [...enabledIcons, ...customIcons];
 
-    if (options.folderTheme === 'none') {
+    if (options.folders.theme === 'none') {
         return config;
     }
 

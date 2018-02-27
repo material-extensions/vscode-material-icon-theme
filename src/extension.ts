@@ -12,9 +12,7 @@ export const activate = (context: vscode.ExtensionContext) => {
         showStartMessages(checkThemeStatus(context.globalState));
     }).catch(err => console.error(err));
 
-    context.subscriptions.push(
-        ...commands.commands
-    );
+    context.subscriptions.push(...commands.commands);
 
     detectConfigChanges().catch(e => {
         console.error(e);

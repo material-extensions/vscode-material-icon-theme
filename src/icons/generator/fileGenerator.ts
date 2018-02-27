@@ -7,8 +7,8 @@ import * as merge from 'lodash.merge';
  */
 export const getFileIconDefinitions = (fileIcons: FileIcons, config: IconConfiguration, options: IconJsonOptions): IconConfiguration => {
     config = merge({}, config);
-    const enabledIcons = disableIconsByPack(fileIcons, options.activatedPack);
-    const customIcons = getCustomIcons(options.fileAssociations);
+    const enabledIcons = disableIconsByPack(fileIcons, options.activeIconPack);
+    const customIcons = getCustomIcons(options.files.associations);
     const allFileIcons = [...enabledIcons, ...customIcons];
 
     allFileIcons.forEach(icon => {

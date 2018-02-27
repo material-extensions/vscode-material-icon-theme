@@ -11,6 +11,11 @@ export const getConfig = (section?: string) => {
     return vscode.workspace.getConfiguration(section) as AdvancedWorkspaceConfiguration;
 };
 
+/** Get list of configuration entries of package.json */
+export const getExtensionConfiguration = (): { [config: string]: any } => {
+    return vscode.extensions.getExtension('PKief.material-icon-theme').packageJSON.contributes.configuration.properties;
+};
+
 /** Update configuration of vs code. */
 export const setConfig = (section: string, value: any, global: boolean = false) => {
     return getConfig().update(section, value, global);
@@ -81,4 +86,3 @@ export const capitalizeFirstLetter = (name: string): string => name.charAt(0).to
 export const toTitleCase = (str) => {
     return str.replace(/\w\S*/g, (txt) => { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
 };
-

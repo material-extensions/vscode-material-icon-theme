@@ -79,7 +79,7 @@ suite('folder icons', () => {
 
     test('should deactivate folder icons', () => {
         const options = getDefaultIconOptions();
-        options.folderTheme = 'none';
+        options.folders.theme = 'none';
         const def = getFolderIconDefinitions(folderIcons, iconConfig, options);
         const value = new IconConfiguration();
 
@@ -93,7 +93,7 @@ suite('folder icons', () => {
 
     test('should enable folder theme', () => {
         const options = getDefaultIconOptions();
-        options.folderTheme = 'blue';
+        options.folders.theme = 'blue';
         const def = getFolderIconDefinitions(folderIcons, iconConfig, options);
         const value = new IconConfiguration();
 
@@ -131,7 +131,7 @@ suite('folder icons', () => {
 
     test('should configure custom icon associations', () => {
         const options = getDefaultIconOptions();
-        options.folderAssociations = {
+        options.folders.associations = {
             'sample': 'src'
         };
         const def = getFolderIconDefinitions(folderIcons, iconConfig, options);
@@ -187,7 +187,7 @@ suite('folder icons', () => {
 
     test('should disable icon packs', () => {
         const options = getDefaultIconOptions();
-        options.activatedPack = '';
+        options.activeIconPack = '';
         const def = getFolderIconDefinitions(folderIcons, iconConfig, options);
         const value = new IconConfiguration();
         value.iconDefinitions = {

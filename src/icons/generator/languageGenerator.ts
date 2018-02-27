@@ -8,8 +8,8 @@ import { LanguageConfiguration } from 'vscode';
  */
 export const getLanguageIconDefinitions = (languages: LanguageIcon[], config: IconConfiguration, options: IconJsonOptions): IconConfiguration => {
     config = merge({}, config);
-    const enabledLanguages = disableLanguagesByPack(languages, options.activatedPack);
-    const customIcons = getCustomIcons(options.languageAssociations);
+    const enabledLanguages = disableLanguagesByPack(languages, options.activeIconPack);
+    const customIcons = getCustomIcons(options.languages.associations);
     const allLanguageIcons = [...enabledLanguages, ...customIcons];
 
     allLanguageIcons.forEach(lang => {

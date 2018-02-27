@@ -57,7 +57,7 @@ suite('language icons', () => {
             { icon: { name: 'a' }, ids: ['a'], enabledFor: [IconPack.Angular] },
             { icon: { name: 'c' }, ids: ['c', 'd'], disabled: true },
         ];
-        const def = getLanguageIconDefinitions(languageIcons, iconConfig, { ...options, activatedPack: '' });
+        const def = getLanguageIconDefinitions(languageIcons, iconConfig, { ...options, activeIconPack: '' });
         const value = new IconConfiguration();
         value.iconDefinitions = {};
         value.languageIds = {};
@@ -119,7 +119,7 @@ suite('language icons', () => {
             { icon: { name: 'json' }, ids: ['a'] }
         ];
         const options = getDefaultIconOptions();
-        options.languageAssociations = {
+        options.languages.associations = {
             'xml': 'json'
         };
         const def = getLanguageIconDefinitions(languageIcons, iconConfig, options);

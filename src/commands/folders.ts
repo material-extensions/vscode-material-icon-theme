@@ -34,5 +34,5 @@ const handleQuickPickActions = (value: vscode.QuickPickItem) => {
 
 /** Are the folder icons enabled? */
 export const checkFolderIconsStatus = (): Promise<string> => {
-    return helpers.getMaterialIconsJSON().then((config) => config.options.folderTheme);
+    return helpers.getMaterialIconsJSON().then((config) => config.options.folders.theme);
 };
