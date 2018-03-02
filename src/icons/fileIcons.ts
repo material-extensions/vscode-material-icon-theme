@@ -635,5 +635,6 @@ export const fileIcons: FileIcons = {
         { name: 'gatsby', fileNames: ['gatsby.config.js'] },
         { name: 'wakatime', fileNames: ['.wakatime-project'], fileExtensions: ['.wakatime-project'], light: true },
         { name: 'circleci', fileNames: ['circle.yml'], light: true },
+        { name: 'cloudfoundry', fileNames: ['.cfignore'] },
     ]
 };
