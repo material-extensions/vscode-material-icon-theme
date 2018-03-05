@@ -30,6 +30,7 @@ export const folderIcons: FolderTheme[] = [
                 folderNames: [
                     'test',
                     'tests',
+                    'testing',
                     '__tests__',
                     '__snapshots__',
                     '__mocks__',
@@ -51,7 +52,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-php', folderNames: ['php'] },
             { name: 'folder-phpmailer', folderNames: ['phpmailer'] },
             { name: 'folder-sublime', folderNames: ['sublime'] },
-            { name: 'folder-docs', folderNames: ['doc', 'docs'] },
+            { name: 'folder-docs', folderNames: ['doc', 'docs', 'documents', 'documentation'] },
             {
                 name: 'folder-git',
                 folderNames: ['.git', 'submodules', '.submodules']
@@ -65,7 +66,7 @@ export const folderIcons: FolderTheme[] = [
             },
             { name: 'folder-vue', folderNames: ['vue'] },
             { name: 'folder-expo', folderNames: ['.expo'] },
-            { name: 'folder-config', folderNames: ['config'] },
+            { name: 'folder-config', folderNames: ['config', 'configs', 'configuration', 'configurations', 'settings'] },
             {
                 name: 'folder-i18n',
                 folderNames: ['i18n', 'internationalization', 'lang', 'language', 'languages', 'locale', 'locales', 'localization', 'translation', 'translations']
@@ -76,7 +77,7 @@ export const folderIcons: FolderTheme[] = [
                 name: 'folder-resource',
                 folderNames: ['resource', 'resources', 'res', 'asset', 'assets', 'static']
             },
-            { name: 'folder-lib', folderNames: ['lib'] },
+            { name: 'folder-lib', folderNames: ['lib', 'libs', 'library', 'libraries'] },
             { name: 'folder-tools', folderNames: ['tools'] },
             { name: 'folder-webpack', folderNames: ['webpack'] },
             { name: 'folder-global', folderNames: ['global'] },
