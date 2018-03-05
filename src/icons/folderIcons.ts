@@ -109,6 +109,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-class', folderNames: ['class', 'classes', 'model', 'models'] },
             { name: 'folder-other', folderNames: ['other', 'others', 'misc', 'miscellaneous'] },
             { name: 'folder-typescript', folderNames: ['typescript', 'ts'] },
+            { name: 'folder-routes', folderNames: ['routes'] },
         ]
     },
     { name: 'classic', defaultIcon: { name: 'folder' }, rootFolder: { name: 'folder-root' } },
