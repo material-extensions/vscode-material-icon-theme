@@ -103,6 +103,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-wordpress', folderNames: ['wp-content'] },
             { name: 'folder-gradle', folderNames: ['gradle', '.gradle'] },
             { name: 'folder-coverage', folderNames: ['coverage'] },
+            { name: 'folder-class', folderNames: ['class', 'classes', 'model', 'models'] },
             { name: 'folder-other', folderNames: ['other', 'others', 'misc', 'miscellaneous'] },
             { name: 'folder-typescript', folderNames: ['typescript', 'ts'] },
         ]
