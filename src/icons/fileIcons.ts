@@ -636,5 +636,6 @@ export const fileIcons: FileIcons = {
         { name: 'wakatime', fileNames: ['.wakatime-project'], fileExtensions: ['.wakatime-project'], light: true },
         { name: 'circleci', fileNames: ['circle.yml'], light: true },
         { name: 'cloudfoundry', fileNames: ['.cfignore'] },
+        { name: 'grunt', fileNames: ['Gruntfile.js', 'Gruntfile.coffee'] },
     ]
 };
