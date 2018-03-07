@@ -118,7 +118,8 @@ export const fileIcons: FileIcons = {
                 'toml',
                 'prefs',
                 'sln.dotsettings',
-                'sln.dotsettings.user'
+                'sln.dotsettings.user',
+                'cfg'
             ],
             fileNames: [
                 '.jshintignore',
