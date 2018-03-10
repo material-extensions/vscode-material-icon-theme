@@ -1,4 +1,18 @@
 # Changelog
+## 3.2.4 (2018-03-10)
+### New icons
+- .cfignore (Cloud Foundry) ([issue #210](https://github.com/PKief/vscode-material-icon-theme/issues/210))
+- translation folder mappings ([issue #206](https://github.com/PKief/vscode-material-icon-theme/issues/206))
+- class folder ([issue #112](https://github.com/PKief/vscode-material-icon-theme/issues/112))
+- routes folder ([issue #112](https://github.com/PKief/vscode-material-icon-theme/issues/112))
+- Grunt ([@iDaN5x](https://github.com/iDaN5x) in [#213](https://github.com/PKief/vscode-material-icon-theme/pull/213))
+- cfg ([@iDaN5x](https://github.com/iDaN5x) in [#214](https://github.com/PKief/vscode-material-icon-theme/pull/214))
+- ci folder ([issue #209](https://github.com/PKief/vscode-material-icon-theme/issues/209))
+
+### Other improvements
+- Improved settings change detection (in [30e9b3b](https://github.com/PKief/vscode-material-icon-theme/commit/30e9b3bf22415e4033043df53d5b042e4e6dd094))
+- Optimized icons to reduce extension size (in [58476c5](https://github.com/PKief/vscode-material-icon-theme/commit/58476c527a5690867844e73dfbcc269a60db635f))
+
 ## 3.2.3 (2018-02-20)
 ### New icons
 - WordPress folder ([@frederick036](https://github.com/frederick036) in [#194](https://github.com/PKief/vscode-material-icon-theme/pull/194))
