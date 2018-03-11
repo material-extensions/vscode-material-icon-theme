@@ -1,4 +1,7 @@
 # Changelog
+## 3.2.5 (2018-03-11)
+- Fixed broken color of docker icon
+
 ## 3.2.4 (2018-03-10)
 ### New icons
 - .cfignore (Cloud Foundry) ([issue #210](https://github.com/PKief/vscode-material-icon-theme/issues/210))
