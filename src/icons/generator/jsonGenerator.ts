@@ -31,7 +31,7 @@ export const createIconFile = (jsonOptions?: IconJsonOptions): Promise<string> =
     const json = generateIconConfigurationObject(options);
 
     return new Promise((resolve, reject) => {
-        fs.writeFile(iconJSONPath, JSON.stringify(json, null, 2), (err) => {
+        fs.writeFile(iconJSONPath, JSON.stringify(json, undefined, 2), (err) => {
             if (err) {
                 reject(err);
             }

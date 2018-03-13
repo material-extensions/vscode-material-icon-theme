@@ -60,7 +60,7 @@ const validateColorInput = (colorInput: string) => {
     if (!validateHEXColorCode(colorInput)) {
         return i18n.translate('folders.wrongHexCode');
     }
-    return null;
+    return undefined;
 };
 
 /** Check status of the folder color */

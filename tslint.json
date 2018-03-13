@@ -30,6 +30,7 @@
             true,
             "allow-null-check"
         ],
+        "no-null-keyword": true,
         "variable-name": [
             true,
             "ban-keywords"
@@ -75,6 +76,7 @@
             true,
             "allow-null-check"
         ],
+        "no-null-keyword": true,
         "typedef-whitespace": [
             true,
             {
