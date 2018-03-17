@@ -1,4 +1,16 @@
 # Changelog
+## 3.2.6 (2018-03-17)
+### New icons
+- messages folder
+- benchmark folder
+- docker-compose.override.yml ([@melkarm](https://github.com/melkarm) in [#219](https://github.com/PKief/vscode-material-icon-theme/pull/219))
+- .nyc-output folder ([issue #192](https://github.com/PKief/vscode-material-icon-theme/issues/192))
+- Jest ([issue #192](https://github.com/PKief/vscode-material-icon-theme/issues/192))
+- .vbs
+
+### Other improvements
+- Fixed issue with settings change detection ([issue #221](https://github.com/PKief/vscode-material-icon-theme/issues/221))
+
 ## 3.2.5 (2018-03-11)
 - Fixed broken color of docker icon
 
