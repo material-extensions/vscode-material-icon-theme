@@ -8,12 +8,12 @@ export const detectConfigChanges = () => {
     const configs = Object.keys(getExtensionConfiguration())
         .map(c => c.split('.').slice(1).join('.'));
 
-    return compareConfigs(configs).then(changes => {
+    return compareConfigs(configs).then(updatedOptions => {
         // if there's nothing to update
-        if (!changes) return;
+        if (!updatedOptions) return;
 
         // update icon json file with new options
-        return createIconFile(changes).then(() => {
+        return createIconFile(updatedOptions).then(() => {
             promptToReload();
         }).catch(err => {
             console.error(err);
@@ -32,6 +32,9 @@ const compareConfigs = (configs: string[]): Promise<{ [name: string]: any }> => 
 
     return getMaterialIconsJSON().then(json => {
         configs.forEach(configName => {
+            // no further actions (e.g. reload) required
+            if (/show(Welcome|Update)Message/g.test(configName)) return;
+
             const configValue = getThemeConfig(configName).globalValue;
             const currentState = getObjectPropertyValue(json.options, configName);
 
