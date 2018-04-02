@@ -114,6 +114,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-ci', folderNames: ['.ci', 'ci'] },
             { name: 'folder-benchmark', folderNames: ['benchmark', 'benchmarks', 'performance', 'measure', 'measures', 'measurement'] },
             { name: 'folder-messages', folderNames: ['messages', 'forum', 'chat', 'chats', 'conversation', 'conversations'] },
+            { name: 'folder-less', folderNames: ['less'] },
         ]
     },
     { name: 'classic', defaultIcon: { name: 'folder' }, rootFolder: { name: 'folder-root' } },
