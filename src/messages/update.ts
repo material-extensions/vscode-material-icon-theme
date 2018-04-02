@@ -8,7 +8,7 @@ import { activateIconTheme } from '../commands/activate';
 /** Show the update message if the icon theme has been updated. */
 export const showUpdateMessage = () => {
     // if the user does not want to see the update message
-    if (helpers.getThemeConfig('showUpdateMessage').globalValue === false) return;
+    if (helpers.getThemeConfig('showUpdateMessage').globalValue !== true) return;
 
     const config = helpers.getConfig().inspect('workbench.iconTheme');
 

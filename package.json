@@ -79,7 +79,7 @@
         },
         "material-icon-theme.showUpdateMessage": {
           "type": "boolean",
-          "default": true,
+          "default": false,
           "description": "%configuration.showUpdateMessage%"
         },
         "material-icon-theme.activeIconPack": {
