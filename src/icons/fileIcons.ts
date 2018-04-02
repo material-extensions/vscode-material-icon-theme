@@ -648,7 +648,7 @@ export const fileIcons: FileIcons = {
                 'gruntfile.babel.coffee'
             ],
         },
-        { name: 'jest', fileNames: ['jest.config.js', 'jest.config.ts', 'jest.config.json', 'jest.setup.js', 'jest.setup.ts', 'jest.json', '.jestrc'] },
+        { name: 'jest', fileNames: ['jest.config.js', 'jest.config.ts', 'jest.config.json', 'jest.setup.js', 'jest.setup.ts', 'jest.json', '.jestrc', 'jest.teardown.js'] },
         { name: 'processing', fileExtensions: ['pde'], light: true },
         { name: 'storybook', fileExtensions: ['stories.js', 'stories.jsx', 'story.js', 'story.jsx'] },
     ]
