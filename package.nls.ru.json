@@ -11,6 +11,7 @@
     "configuration.languages.associations": "Настройка ассоциаций значков пользовательского языка.",
     "configuration.showWelcomeMessage": "Показывать приветственное сообщение после первой установки.",
     "configuration.showUpdateMessage": "Показывать сообщение об обновлении после каждого обновления.",
+    "configuration.showReloadMessage": "Показывать сообщение перезагрузки.",
     "configuration.activeIconPack": "Выберите набор значков, которые включают определенные значки.",
     "configuration.folders.theme": "Установить тип иконок для папок.",
     "configuration.folders.color": "Изменение цвета иконок папок.",

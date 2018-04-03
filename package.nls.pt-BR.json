@@ -10,6 +10,7 @@
     "configuration.languages.associations": "Definir ícones para associações de idiomas customizadas.",
     "configuration.showWelcomeMessage": "Mostrar mensagem de bem-vindo após a primeira instalação.",
     "configuration.showUpdateMessage": "Mostrar mensagem de atualização após cada atualização.",
+    "configuration.showReloadMessage": "Mostrar mensagem da reinicialização.",
     "configuration.activeIconPack": "Selecione um pacote de ícones que habilitam ícones específicos.",
     "configuration.folders.icons": "Definir o tipo de ícones de pasta.",
     "configuration.folders.theme": "Definir o tipo dos ícones das pastas.",

@@ -11,6 +11,7 @@
     "configuration.languages.associations": "Set custom language icon associations.",
     "configuration.showWelcomeMessage": "Show the welcome message after first installation.",
     "configuration.showUpdateMessage": "Show the update message after each update.",
+    "configuration.showReloadMessage": "Show restart notification.",
     "configuration.activeIconPack": "Select an icon pack that enables specific icons.",
     "configuration.folders.theme": "Set the type for the folder icons.",
     "configuration.folders.color": "Change the color of the folder icons.",

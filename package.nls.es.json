@@ -11,6 +11,7 @@
     "configuration.languages.associations": "Configurar asociaciones personalizadas de iconos de idioma.",
     "configuration.showWelcomeMessage": "Mostrar mensaje de bienvenida después de la primera instalación.",
     "configuration.showUpdateMessage": "Mostrar mensaje al actualizar.",
+    "configuration.showReloadMessage": "Mostrar mensaje de reinicio.",
     "configuration.activeIconPack": "Seleccione un paquete de iconos que permita iconos específicos.",
     "configuration.folders.theme": "Seleccione el tipo de iconos de carpeta.",
     "configuration.folders.color": "Cambia el color de las carpetas.",

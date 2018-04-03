@@ -82,6 +82,11 @@
           "default": false,
           "description": "%configuration.showUpdateMessage%"
         },
+        "material-icon-theme.showReloadMessage": {
+          "type": "boolean",
+          "default": true,
+          "description": "%configuration.showReloadMessage%"
+        },
         "material-icon-theme.activeIconPack": {
           "type": "string",
           "default": "angular",

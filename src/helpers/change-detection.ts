@@ -33,7 +33,7 @@ const compareConfigs = (configs: string[]): Promise<{ [name: string]: any }> => 
     return getMaterialIconsJSON().then(json => {
         configs.forEach(configName => {
             // no further actions (e.g. reload) required
-            if (/show(Welcome|Update)Message/g.test(configName)) return;
+            if (/show(Welcome|Update|Reload)Message/g.test(configName)) return;
 
             const configValue = getThemeConfig(configName).globalValue;
             const currentState = getObjectPropertyValue(json.options, configName);
