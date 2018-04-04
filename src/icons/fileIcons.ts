@@ -126,7 +126,8 @@ export const fileIcons: FileIcons = {
                 '.buildignore',
                 'makefile',
                 '.mrconfig',
-                '.yardopts'
+                '.yardopts',
+                'manifest.mf'
             ]
         },
         { name: 'typescript', fileExtensions: ['ts'] },
