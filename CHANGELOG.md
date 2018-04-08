@@ -1,4 +1,25 @@
 # Changelog
+## 3.3.0 (2018-04-08)
+### New icons
+- Processing (*.pde) ([@JotaroS](https://github.com/JotaroS) in [#229](https://github.com/PKief/vscode-material-icon-theme/pull/229))
+- Storybook ([issue #235](https://github.com/PKief/vscode-material-icon-theme/issues/235))
+- jest.teardown.js ([issue #230](https://github.com/PKief/vscode-material-icon-theme/issues/230))
+- less folder ([issue #207](https://github.com/PKief/vscode-material-icon-theme/issues/207))
+- wepy ([issue #226](https://github.com/PKief/vscode-material-icon-theme/issues/226))
+- META-INF folder
+- python folder
+- manifest.mf
+- xhtml
+
+### Updated icons
+- Vue.js
+- less
+
+### Other improvements
+- Fixed issue with settings change detection ([issue #225](https://github.com/PKief/vscode-material-icon-theme/issues/225))
+- Disabled update notification by default ([issue #225](https://github.com/PKief/vscode-material-icon-theme/issues/225))
+- Added option to disable restart notification ([issue #225](https://github.com/PKief/vscode-material-icon-theme/issues/225))
+
 ## 3.2.6 (2018-03-17)
 ### New icons
 - messages folder
