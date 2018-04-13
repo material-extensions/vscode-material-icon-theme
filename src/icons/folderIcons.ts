@@ -95,7 +95,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-react-components', folderNames: ['components'], enabledFor: [IconPack.React, IconPack.Redux] },
             { name: 'folder-database', folderNames: ['db', 'database', 'sql'] },
             { name: 'folder-log', folderNames: ['log', 'logs'] },
-            { name: 'folder-temp', folderNames: ['temp', '.temp', 'tmp', '.tmp', 'cached', 'cache'] },
+            { name: 'folder-temp', folderNames: ['temp', '.temp', 'tmp', '.tmp', 'cached', 'cache', '.cache'] },
             { name: 'folder-aws', folderNames: ['aws', '.aws'] },
             { name: 'folder-audio', folderNames: ['audio', 'audios', 'music'] },
             { name: 'folder-video', folderNames: ['video', 'videos', 'movie', 'movies'] },
