@@ -116,6 +116,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-messages', folderNames: ['messages', 'forum', 'chat', 'chats', 'conversation', 'conversations'] },
             { name: 'folder-less', folderNames: ['less'] },
             { name: 'folder-python', folderNames: ['python', '__pycache__'] },
+            { name: 'folder-debug', folderNames: ['debug', 'debugging'] },
         ]
     },
     { name: 'classic', defaultIcon: { name: 'folder' }, rootFolder: { name: 'folder-root' } },
