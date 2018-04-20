@@ -1,0 +1,19 @@
+{
+    "command.activateIcons": "Material Icons: Habilitar tema de ícones",
+    "command.toggleIconPacks": "Material Icons: Configurar pacote de ícones",
+    "command.changeFolderTheme": "Material Icons: Alterar tema dos directórios",
+    "command.changeFolderColor": "Material Icons: Alterar cor dos directórios",
+    "command.restoreDefaultConfig": "Material Icons: Restaurar configuração padrão",
+    "command.hidesExplorerArrows": "Material Icons: Esconder as setas ao lado dos directórios",
+    "configuration.files.associations": "Definir ícones para associações de ficheiros peronslizados.",
+    "configuration.folders.associations": "Definir ícones para associações de directórios personalizados.",
+    "configuration.languages.associations": "Definir ícones para associações de idiomas personalizados.",
+    "configuration.showWelcomeMessage": "Exibir mensagem de boas-vindas após a primeira instalação.",
+    "configuration.showUpdateMessage": "Exibir mensagem de actualização após cada actualização.",
+    "configuration.showReloadMessage": "Exibir mensagem da reinicialização.",
+    "configuration.activeIconPack": "Selecciona um pacote de ícones que habilitam ícones específicos.",
+    "configuration.folders.icons": "Definir o formato de ícones de directórios.",
+    "configuration.folders.theme": "Definir o formato dos ícones dos directórios.",
+    "configuration.folders.color": "Alterar a cor dos ícones dos directórios.",
+    "configuration.hidesExplorerArrows": "Esconder as setas ao lado dos directórios no explorador de ficheiros."
+}

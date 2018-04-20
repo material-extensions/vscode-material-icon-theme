@@ -1,0 +1,19 @@
+{    
+    "command.activateIcons": "Material Icons: 激活Material Icons文件图标主题",
+    "command.toggleIconPacks": "Material Icons: 选择一个图标包",
+    "command.changeFolderTheme": "Material Icons: 切换文件夹图标",
+    "command.changeFolderColor": "Material Icons: 更改文件夹颜色",
+    "command.restoreDefaultConfig": "Material Icons: 恢复默认设置",
+    "command.hidesExplorerArrows": "Material Icons: 隐藏文件夹箭头",
+    "configuration.title": "Material Icons设置",
+    "configuration.files.associations": "设置自定义文件图标关联。",
+    "configuration.folders.associations": "设置自定义文件夹图标关联。",
+    "configuration.languages.associations": "定义自定义语言映射的图标。",
+    "configuration.showWelcomeMessage": "首次安装后显示欢迎信息。",
+    "configuration.showUpdateMessage": "更新后显示升级信息。",
+    "configuration.showReloadMessage": "显示重启消息。",
+    "configuration.activeIconPack": "选择一个图标包。",
+    "configuration.folders.theme": "设置文件夹图标类型。\n接受的值为 \"specific\", \"classic\"和\"none\"。",
+    "configuration.folders.color": "更改文件夹图标的颜色。",
+    "configuration.hidesExplorerArrows": "隐藏该文件夹旁边的箭头。"    
+}

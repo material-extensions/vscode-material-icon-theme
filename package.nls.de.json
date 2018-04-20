@@ -1,0 +1,19 @@
+{
+    "command.activateIcons": "Material Icons: Icon Theme aktivieren",
+    "command.toggleIconPacks": "Material Icons: Icon Packs konfigurieren",
+    "command.changeFolderTheme": "Material Icons: Ordner Thema auswählen",
+    "command.changeFolderColor": "Material Icons: Ordner Farbe ändern",
+    "command.restoreDefaultConfig": "Material Icons: Standard Einstellungen wiederherstellen",
+    "command.hidesExplorerArrows": "Material Icons: Ordner Pfeile umschalten",
+    "configuration.title": "Material Icons Konfiguration",
+    "configuration.files.associations": "Benutzerdefinierte Datei Icons konfigurieren.",
+    "configuration.folders.associations": "Benutzerdefinierte Ordner Icons konfigurieren.",
+    "configuration.languages.associations": "Benutzerdefinierte Language Icons konfigurieren.",
+    "configuration.showWelcomeMessage": "Willkommensnachricht nach der ersten Installation anzeigen.",
+    "configuration.showUpdateMessage": "Nachricht bei Aktualisierungen anzeigen.",
+    "configuration.showReloadMessage": "Nachricht zum Neustarten anzeigen.",
+    "configuration.activeIconPack": "Icon Paket auswählen, die bestimme Icons aktivieren.",
+    "configuration.folders.theme": "Art der Ordner Icons auswählen.",
+    "configuration.folders.color": "Farbe der Ordner Icons verändern.",
+    "configuration.hidesExplorerArrows": "Pfeile vor den Ordnern deaktivieren."
+}

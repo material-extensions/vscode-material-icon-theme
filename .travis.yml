@@ -1,0 +1,20 @@
+language: node_js
+
+os:
+  - osx
+
+node_js:
+  - node
+
+install:
+  - npm install
+
+cache:
+  directories:
+    - "node_modules"
+
+script:
+  - npm test
+
+notifications:
+  email: false

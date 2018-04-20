@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100mm" height="100mm" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="linearGradient4883" x1="180.56" x2="274.83" y1="143.22" y2="300.62" gradientUnits="userSpaceOnUse">
+   <stop stop-opacity=".20435" offset="0"/>
+   <stop stop-color="#36343d" stop-opacity=".019565" offset="1"/>
+  </linearGradient>
+ </defs>
+ <g transform="translate(0,-197)">
+  <circle cx="50" cy="247" r="50" fill="#01579b"/>
+  <path d="m45.656 228.29h-14.045c-2.5983 0-4.6817 2.0834-4.6817 4.6817v28.09a4.6817 4.6817 0 0 0 4.6817 4.6817h37.454a4.6817 4.6817 0 0 0 4.6817 -4.6817v-23.409c0-2.5984-2.1068-4.6817-4.6817-4.6817h-18.727z" fill="#fafafa" stroke-width="2.3409"/>
+  <path transform="matrix(.26458 0 0 .26458 0 197)" d="m274.7 142.42c2.511 3.0496 4.0254 6.9574 4.0254 11.236v88.473a17.695 17.695 0 0 1 -17.695 17.695h-141.56a17.695 17.695 0 0 1 -11.936 -4.6562l-0.01172 0.01171 118.84 118.84a188.98 188.98 0 0 0 144.69 -135.24l-96.354-96.355z" fill="url(#linearGradient4883)"/>
+  <g fill="#42a5f5">
+   <circle cx="50" cy="247" r="0"/>
+   <circle cx="50" cy="247" r="0"/>
+   <circle cx="50" cy="247" r="0"/>
+   <circle cx="50" cy="247" r="0"/>
+   <circle cx="50" cy="247" r="0"/>
+  </g>
+ </g>
+</svg>

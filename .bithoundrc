@@ -1,0 +1,17 @@
+{
+    "test": [
+        "**/test/**"
+    ],
+    "critics": {
+        "lint": {
+            "engine": "tslint"
+        }
+    },
+    "ignore": [
+        "**/.vscode/**",
+        "**/.vscode-test/**",
+        "**/out/**",
+        "**/images/**",
+        "**/node_modules/**"
+    ]
+}

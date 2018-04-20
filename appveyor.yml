@@ -1,0 +1,24 @@
+environment:
+  ELECTRON_RUN_AS_NODE: 1
+  VSCODE_BUILD_VERBOSE: true
+  NODE_VERSION: "9"
+
+cache:
+  - node_modules
+  - '%APPDATA%\npm-cache'
+
+branches:
+  only:
+    - master
+    - dev
+
+install:
+  - ps: Install-Product node $env:NODE_VERSION x64
+  - npm install
+
+build: off
+
+test_script:
+  - node --version
+  - npm --version
+  - npm test
