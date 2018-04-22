@@ -1,7 +1,6 @@
-import { iconFolderPath, lightVersion, highContrastVersion } from './constants';
-import { IconConfiguration, LanguageIcon, IconJsonOptions, DefaultIcon, IconAssociations } from '../../models/index';
 import * as merge from 'lodash.merge';
-import { LanguageConfiguration } from 'vscode';
+import { DefaultIcon, IconAssociations, IconConfiguration, IconJsonOptions, LanguageIcon } from '../../models/index';
+import { highContrastVersion, iconFolderPath, lightVersion } from './constants';
 
 /**
  * Get all file icons that can be used in this theme.

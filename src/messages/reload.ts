@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
-import * as i18n from './../i18n';
 import * as helpers from './../helpers';
+import * as i18n from './../i18n';
 
 /** User has to confirm if he wants to reload the editor */
 export const showConfirmToReloadMessage = (): Promise<boolean> => {

@@ -1,11 +1,6 @@
-import { createScreenshots } from './screenshots';
-import { generatePreview } from './preview';
 import { fileIcons } from './../../src/icons/fileIcons';
 import { folderIcons } from './../../src/icons/folderIcons';
-import * as painter from './../helpers/painter';
-import * as fs from 'fs';
-import * as path from 'path';
-import { toTitleCase } from '../helpers/titleCase';
+import { generatePreview } from './preview';
 
 const filterDuplicates = (icons: string[]) => {
     return [...new Set(icons)];

@@ -1,7 +1,6 @@
 import * as assert from 'assert';
-import { IconConfiguration, IconJsonOptions, IconPack, FolderTheme } from '../../src/models/index';
-import { getFolderIconDefinitions, getDefaultIconOptions } from '../../src/icons/index';
-import * as merge from 'lodash.merge';
+import { getDefaultIconOptions, getFolderIconDefinitions } from '../../src/icons/index';
+import { FolderTheme, IconConfiguration, IconPack } from '../../src/models/index';
 
 suite('folder icons', () => {
     const folderIcons: FolderTheme[] = [

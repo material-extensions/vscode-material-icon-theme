@@ -1,5 +1,4 @@
 import * as vscode from 'vscode';
-import * as fs from 'fs';
 import { getObjectPropertyValue } from '../helpers/objects';
 
 // Get current language of the vs code workspace

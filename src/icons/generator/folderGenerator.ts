@@ -1,8 +1,8 @@
-import { iconFolderPath, openedFolder, lightVersion, highContrastVersion } from './constants';
-import { IconConfiguration, FolderTheme, FolderIcon, IconJsonOptions, DefaultIcon, IconAssociations } from '../../models/index';
-import * as merge from 'lodash.merge';
 import * as fs from 'fs';
+import * as merge from 'lodash.merge';
 import * as path from 'path';
+import { DefaultIcon, FolderIcon, FolderTheme, IconAssociations, IconConfiguration, IconJsonOptions } from '../../models/index';
+import { highContrastVersion, iconFolderPath, lightVersion, openedFolder } from './constants';
 
 /**
  * Get the folder icon definitions as object.

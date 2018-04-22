@@ -1,7 +1,7 @@
 import * as vscode from 'vscode';
+import { folderIcons } from '../icons';
 import * as helpers from './../helpers';
 import * as i18n from './../i18n';
-import { folderIcons } from '../icons';
 
 /** Command to toggle the folder icons. */
 export const changeFolderTheme = () => {

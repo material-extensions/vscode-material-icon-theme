@@ -1,7 +1,6 @@
 import * as assert from 'assert';
-import * as vscode from 'vscode';
-import * as i18n from '../../src/i18n';
 import { getObjectPropertyValue } from '../../src/helpers/objects';
+import * as i18n from '../../src/i18n';
 
 suite('i18n', () => {
     test('shoud initialize translations', () => {

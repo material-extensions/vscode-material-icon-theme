@@ -1,6 +1,6 @@
-import { FileIcons, IconConfiguration, FileIcon, IconJsonOptions, IconAssociations } from '../../models/index';
-import { iconFolderPath, lightVersion, highContrastVersion } from './constants';
 import * as merge from 'lodash.merge';
+import { FileIcon, FileIcons, IconAssociations, IconConfiguration, IconJsonOptions } from '../../models/index';
+import { highContrastVersion, iconFolderPath, lightVersion } from './constants';
 
 /**
  * Get all file icons that can be used in this theme.

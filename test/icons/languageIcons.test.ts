@@ -1,6 +1,6 @@
 import * as assert from 'assert';
-import { LanguageIcon, IconConfiguration, IconPack } from '../../src/models/index';
-import { getLanguageIconDefinitions, getDefaultIconOptions } from '../../src/icons/index';
+import { getDefaultIconOptions, getLanguageIconDefinitions } from '../../src/icons/index';
+import { IconConfiguration, IconPack, LanguageIcon } from '../../src/models/index';
 
 suite('language icons', () => {
     const iconConfig = new IconConfiguration();

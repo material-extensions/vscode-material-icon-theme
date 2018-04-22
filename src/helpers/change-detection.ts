@@ -1,7 +1,6 @@
-import * as vscode from 'vscode';
+import { getExtensionConfiguration, getMaterialIconsJSON, getThemeConfig, promptToReload } from '.';
 import { createIconFile } from '../icons/index';
 import { getObjectPropertyValue, setObjectPropertyValue } from './objects';
-import { getExtensionConfiguration, promptToReload, getMaterialIconsJSON, getThemeConfig } from '.';
 
 /** Compare the workspace and the user configurations with the current setup of the icons. */
 export const detectConfigChanges = () => {

@@ -1,5 +1,5 @@
-import * as helpers from './../helpers';
 import { getDefaultIconOptions } from '../icons/index';
+import * as helpers from './../helpers';
 
 /** Restore all configurations to default. */
 export const restoreDefaultConfig = () => {

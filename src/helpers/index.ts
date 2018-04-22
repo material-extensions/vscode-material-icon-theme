@@ -1,10 +1,10 @@
-import * as vscode from 'vscode';
-import * as path from 'path';
 import * as fs from 'fs';
-import * as reloadMessages from './../messages/reload';
+import * as path from 'path';
+import * as vscode from 'vscode';
+import { iconJsonName } from '../icons/index';
 import { AdvancedWorkspaceConfiguration } from '../models';
 import { IconConfiguration } from '../models/index';
-import { iconJsonName } from '../icons/index';
+import * as reloadMessages from './../messages/reload';
 
 /** Get configuration of vs code. */
 export const getConfig = (section?: string) => {

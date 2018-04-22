@@ -1,10 +1,10 @@
 import * as vscode from 'vscode';
 import { activateIconTheme } from './activate';
-import { toggleIconPacks } from './iconPacks';
-import { changeFolderTheme } from './folders';
-import { restoreDefaultConfig } from './restoreConfig';
 import { toggleFolderArrows } from './folderArrows';
 import { changeFolderColor } from './folderColor';
+import { changeFolderTheme } from './folders';
+import { toggleIconPacks } from './iconPacks';
+import { restoreDefaultConfig } from './restoreConfig';
 
 // Activate theme
 const activateThemeCommand = vscode.commands.registerCommand('material-icon-theme.activateIcons', () => {
