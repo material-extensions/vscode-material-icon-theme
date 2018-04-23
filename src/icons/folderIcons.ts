@@ -117,6 +117,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-less', folderNames: ['less'] },
             { name: 'folder-python', folderNames: ['python', '__pycache__'] },
             { name: 'folder-debug', folderNames: ['debug', 'debugging'] },
+            { name: 'folder-fastlane', folderNames: ['fastlane'] },
         ]
     },
     { name: 'classic', defaultIcon: { name: 'folder' }, rootFolder: { name: 'folder-root' } },

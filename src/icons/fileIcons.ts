@@ -653,5 +653,6 @@ export const fileIcons: FileIcons = {
         { name: 'processing', fileExtensions: ['pde'], light: true },
         { name: 'storybook', fileExtensions: ['stories.js', 'stories.jsx', 'story.js', 'story.jsx'] },
         { name: 'wepy', fileExtensions: ['wpy'] },
+        { name: 'fastlane', fileNames: ['Fastfile', 'Appfile'] },
     ]
 };
