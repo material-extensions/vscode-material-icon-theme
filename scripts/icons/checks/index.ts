@@ -1,6 +1,6 @@
 import * as checkAvailability from './checkIconAvailability';
-import * as checkIconUsage from './checkIconUsage';
 import * as checkIconConflicts from './checkIconConflicts';
+import * as checkIconUsage from './checkIconUsage';
 
 checkAvailability.check();
 checkIconUsage.check();

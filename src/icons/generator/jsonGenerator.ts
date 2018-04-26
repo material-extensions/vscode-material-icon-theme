@@ -1,12 +1,12 @@
-import { IconConfiguration, IconPack, IconJsonOptions } from '../../models/index';
-import { getFileIconDefinitions, getFolderIconDefinitions, getLanguageIconDefinitions, generateFolderIcons } from './index';
+import * as fs from 'fs';
+import * as merge from 'lodash.merge';
+import * as path from 'path';
+import { IconConfiguration, IconJsonOptions } from '../../models/index';
 import { fileIcons } from '../fileIcons';
 import { folderIcons } from '../folderIcons';
 import { languageIcons } from '../languageIcons';
 import { iconJsonName } from './constants';
-import * as merge from 'lodash.merge';
-import * as path from 'path';
-import * as fs from 'fs';
+import { generateFolderIcons, getFileIconDefinitions, getFolderIconDefinitions, getLanguageIconDefinitions } from './index';
 
 /**
  * Generate the complete icon configuration object that can be written as JSON file.

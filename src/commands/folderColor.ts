@@ -1,7 +1,7 @@
 import * as vscode from 'vscode';
+import { getDefaultIconOptions, validateHEXColorCode } from '../icons';
 import * as helpers from './../helpers';
 import * as i18n from './../i18n';
-import { getDefaultIconOptions, validateHEXColorCode } from '../icons';
 
 interface FolderColor {
     label: string;

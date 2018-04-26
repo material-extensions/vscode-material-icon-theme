@@ -1,10 +1,7 @@
 import * as vscode from 'vscode';
+import { IconPack } from '../models/index';
 import * as helpers from './../helpers';
-import * as path from 'path';
-import * as fs from 'fs';
 import * as i18n from './../i18n';
-import * as reload from './../messages/reload';
-import { IconConfiguration, IconPack } from '../models/index';
 
 /** Command to toggle the icons packs */
 export const toggleIconPacks = () => {

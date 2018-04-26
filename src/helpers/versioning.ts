@@ -1,6 +1,6 @@
+import * as semver from 'semver';
 import * as vscode from 'vscode';
 import * as helpers from './index';
-import * as semver from 'semver';
 
 export enum ThemeStatus {
     neverUsedBefore,

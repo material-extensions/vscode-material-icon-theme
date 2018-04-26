@@ -1,11 +1,11 @@
 'use strict';
 
 import * as vscode from 'vscode';
-import * as i18n from './i18n';
 import * as commands from './commands';
-import { showStartMessages } from './messages/start';
 import { detectConfigChanges } from './helpers/change-detection';
 import { checkThemeStatus } from './helpers/versioning';
+import * as i18n from './i18n';
+import { showStartMessages } from './messages/start';
 
 /**
  * This method is called when the extension is activated.

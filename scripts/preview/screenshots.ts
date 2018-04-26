@@ -1,5 +1,5 @@
-import * as puppeteer from 'puppeteer';
 import * as path from 'path';
+import * as puppeteer from 'puppeteer';
 
 export const createScreenshots = async (filePath: string, fileName: string) => {
     const htmlFilePath = path.join(__dirname, '..', '..', filePath);

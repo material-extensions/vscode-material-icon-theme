@@ -1,9 +1,9 @@
-import { fileIcons, folderIcons, languageIcons, lightVersion, highContrastVersion, openedFolder } from './../../../src/icons';
-import { FileIcon, FolderTheme, FolderIcon, DefaultIcon } from '../../../src/models/index';
-import { similarity } from '../../helpers/similarity';
-import * as path from 'path';
 import * as fs from 'fs';
+import * as path from 'path';
+import { DefaultIcon, FileIcon, FolderIcon, FolderTheme } from '../../../src/models/index';
 import * as painter from '../../helpers/painter';
+import { similarity } from '../../helpers/similarity';
+import { fileIcons, folderIcons, highContrastVersion, languageIcons, lightVersion, openedFolder } from './../../../src/icons';
 
 /**
  * Defines the folder where all icon files are located.

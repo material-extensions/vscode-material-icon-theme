@@ -1,9 +1,8 @@
 import * as vscode from 'vscode';
 import * as helpers from './../helpers';
-import * as i18n from './../i18n';
 import * as versioning from './../helpers/versioning';
+import * as i18n from './../i18n';
 import * as outdatedMessage from './../messages/outdated';
-import { folderIcons } from '../icons';
 
 /** Command to toggle the folder icons. */
 export const toggleFolderArrows = () => {

@@ -1,5 +1,5 @@
-import { FileIcon } from './index';
 import { DefaultIcon } from '../defaultIcon';
+import { FileIcon } from './index';
 
 export class FileIcons {
     /**

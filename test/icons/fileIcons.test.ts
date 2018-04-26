@@ -1,7 +1,6 @@
 import * as assert from 'assert';
-import { IconConfiguration, IconJsonOptions, FileIcons, IconPack } from '../../src/models/index';
 import { getDefaultIconOptions, getFileIconDefinitions } from '../../src/icons/index';
-import * as merge from 'lodash.merge';
+import { FileIcons, IconConfiguration, IconPack } from '../../src/models/index';
 
 suite('file icons', () => {
     test('should configure icon definitions', () => {
