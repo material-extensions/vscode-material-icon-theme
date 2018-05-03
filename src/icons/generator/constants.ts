@@ -22,3 +22,8 @@ export const lightVersion: string = '_light';
  * File ending for high contrast icons.
  */
 export const highContrastVersion: string = '_highContrast';
+
+/**
+ * Pattern to match wildcards for custom file icon mappings.
+ */
+export const wildcardPattern = new RegExp(/^\*{1,2}\./);

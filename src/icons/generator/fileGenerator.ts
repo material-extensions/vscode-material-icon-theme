@@ -1,6 +1,6 @@
 import * as merge from 'lodash.merge';
 import { FileIcon, FileIcons, IconAssociations, IconConfiguration, IconJsonOptions } from '../../models/index';
-import { highContrastVersion, iconFolderPath, lightVersion } from './constants';
+import { highContrastVersion, iconFolderPath, lightVersion, wildcardPattern } from './constants';
 
 /**
  * Get all file icons that can be used in this theme.
@@ -26,7 +26,7 @@ export const getFileIconDefinitions = (fileIcons: FileIcons, config: IconConfigu
             config = merge({}, config, mapSpecificFileIcons(icon, FileMappingType.FileExtensions));
         }
         if (icon.fileNames) {
-            config = merge({}, config, mapSpecificFileIcons(icon, FileMappingType.FileNames));
+            config = merge({}, config, mapSpecificFileIcons(icon, FileMappingType.FileNames, options.files.associations));
         }
     });
 
@@ -50,15 +50,29 @@ export const getFileIconDefinitions = (fileIcons: FileIcons, config: IconConfigu
 /**
  * Map the file extensions and the filenames to the related icons.
  */
-const mapSpecificFileIcons = (icon: FileIcon, mappingType: FileMappingType) => {
+const mapSpecificFileIcons = (icon: FileIcon, mappingType: FileMappingType, customFileAssociation: IconAssociations = {}) => {
     const config = new IconConfiguration();
-    icon[mappingType].forEach(ext => {
-        config[mappingType][ext] = icon.name;
+    icon[mappingType].forEach(name => {
+        // if the custom file extension should also overwrite the file names
+        const shouldOverwriteFileNames = Object.keys(customFileAssociation).some(key => {
+            // overwrite is enabled if there are two asterisks in the wildcard
+            if (!/^\*{2}\./.test(key)) return false;
+            const fileExtension = key.replace(wildcardPattern, '.');
+
+            // check if the file name contains the particular file extension
+            // (e.g. extension ".md" in "Readme.md" -> then overwrite it with the *.md icon)
+            return name.toLowerCase().indexOf(fileExtension.toLowerCase()) !== -1;
+        });
+
+        // if overwrite is enabled then do not continue to set the icons for file names containing the file extension
+        if (shouldOverwriteFileNames) return;
+
+        config[mappingType][name] = icon.name;
         if (icon.light) {
-            config.light[mappingType][ext] = `${icon.name}${lightVersion}`;
+            config.light[mappingType][name] = `${icon.name}${lightVersion}`;
         }
         if (icon.highContrast) {
-            config.highContrast[mappingType][ext] = `${icon.name}${highContrastVersion}`;
+            config.highContrast[mappingType][name] = `${icon.name}${highContrastVersion}`;
         }
     });
     return config;
@@ -86,8 +100,8 @@ const getCustomIcons = (fileAssociations: IconAssociations) => {
 
     const icons: FileIcon[] = Object.keys(fileAssociations).map(fa => {
         const icon: FileIcon = { name: fileAssociations[fa].toLowerCase() };
-        if (fa.charAt(0) === '*') {
-            icon.fileExtensions = [fa.toLowerCase().replace('*.', '')];
+        if (wildcardPattern.test(fa)) {
+            icon.fileExtensions = [fa.toLowerCase().replace(wildcardPattern, '')];
         } else {
             icon.fileNames = [fa.toLowerCase()];
         }
