@@ -45,7 +45,9 @@ You can customize the icon associations directly in the user settings.
 
 ### File associations
 
-With the `*.[extension]` pattern you can define custom file icon associations. For example you could define an icon for `*.sample` and every file that ends with `.sample` will have the defined icon. If there's no leading `*` it will be automatically configured as filename and not as file extension.
+With the `*.[extension]` pattern you can define custom file icon associations. For example you could define an icon for `*.sample` and every file that ends with `.sample` will have the defined icon.  Use `**.[extension]` with two asterisks to apply the file association also for the filenames ending with that file extension. 
+
+If there's no leading `*` it will be automatically configured as filename and not as file extension.
 
 ```json
 "material-icon-theme.files.associations": {

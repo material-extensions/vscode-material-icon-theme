@@ -1,4 +1,17 @@
 # Changelog
+## 3.4.0 (2018-05-06)
+### New icons
+- debug folder ([@Bond-009](https://github.com/Bond-009) in [#236](https://github.com/PKief/vscode-material-icon-theme/pull/236))
+- Fastlane ([@dudeofawesome](https://github.com/dudeofawesome) in [#237](https://github.com/PKief/vscode-material-icon-theme/pull/237))
+- Gemfile ([@dudeofawesome](https://github.com/dudeofawesome) in [#240](https://github.com/PKief/vscode-material-icon-theme/pull/240))
+- plugin folder
+- .cache folder
+- awk
+- cfm
+
+### Other improvements
+- Force wildcards to override file names if necessary ([issue #241](https://github.com/PKief/vscode-material-icon-theme/issues/241))
+
 ## 3.3.0 (2018-04-08)
 ### New icons
 - Processing (*.pde) ([@JotaroS](https://github.com/JotaroS) in [#229](https://github.com/PKief/vscode-material-icon-theme/pull/229))
