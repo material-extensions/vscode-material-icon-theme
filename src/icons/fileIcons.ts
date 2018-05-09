@@ -352,7 +352,7 @@ export const fileIcons: FileIcons = {
         {
             name: 'angular',
             fileExtensions: ['module.ts', 'module.js', 'ng-template'],
-            fileNames: ['angular-cli.json', '.angular-cli.json'],
+            fileNames: ['angular-cli.json', '.angular-cli.json', 'angular.json'],
             enabledFor: [IconPack.Angular, IconPack.Ngrx]
         },
         {
