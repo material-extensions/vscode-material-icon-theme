@@ -170,7 +170,18 @@ export const fileIcons: FileIcons = {
         { name: 'url', fileExtensions: ['url'] },
         {
             name: 'console',
-            fileExtensions: ['sh', 'ksh', 'csh', 'tcsh', 'zsh', 'bash', 'bat', 'cmd', 'awk']
+            fileExtensions: [
+                'sh',
+                'ksh',
+                'csh',
+                'tcsh',
+                'zsh',
+                'bash',
+                'bat',
+                'cmd',
+                'awk',
+                'fish'
+            ]
         },
         {
             name: 'powershell',
