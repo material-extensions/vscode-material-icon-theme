@@ -2,7 +2,7 @@
 
 import * as vscode from 'vscode';
 import * as commands from './commands';
-import { detectConfigChanges } from './helpers/change-detection';
+import { detectConfigChanges } from './helpers/changeDetection';
 import { checkThemeStatus } from './helpers/versioning';
 import * as i18n from './i18n';
 import { showStartMessages } from './messages/start';

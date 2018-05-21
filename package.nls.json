@@ -15,5 +15,6 @@
     "configuration.activeIconPack": "Select an icon pack that enables specific icons.",
     "configuration.folders.theme": "Set the type for the folder icons.",
     "configuration.folders.color": "Change the color of the folder icons.",
-    "configuration.hidesExplorerArrows": "Hide explorer arrows before folder."
+    "configuration.hidesExplorerArrows": "Hide explorer arrows before folder.",
+    "configuration.opacity": "Change the opacity of all icons."
 }

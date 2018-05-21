@@ -6,6 +6,7 @@ import { fileIcons } from '../fileIcons';
 import { folderIcons } from '../folderIcons';
 import { languageIcons } from '../languageIcons';
 import { iconJsonName } from './constants';
+import { setIconOpacity } from './iconOpacity';
 import { generateFolderIcons, getFileIconDefinitions, getFolderIconDefinitions, getLanguageIconDefinitions } from './index';
 
 /**
@@ -35,11 +36,16 @@ export const createIconFile = (jsonOptions?: IconJsonOptions): Promise<string> =
             if (err) {
                 reject(err);
             }
+            const promises = [];
             if (options.folders.color) {
-                generateFolderIcons(options.folders.color).catch(e => reject(e)).then(() => {
-                    resolve(iconJsonName);
-                });
+                promises.push(generateFolderIcons(options.folders.color));
             }
+            if (options.opacity) {
+                promises.push(setIconOpacity(options.opacity));
+            }
+            Promise.all(promises).catch(e => reject(e)).then(() => {
+                resolve(iconJsonName);
+            });
         });
     });
 };
@@ -55,6 +61,7 @@ export const getDefaultIconOptions = (): IconJsonOptions => ({
     },
     activeIconPack: 'angular',
     hidesExplorerArrows: false,
+    opacity: '1.0',
     files: { associations: {} },
     languages: { associations: {} },
 });

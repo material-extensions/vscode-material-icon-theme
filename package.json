@@ -122,6 +122,11 @@
           "default": "#90a4ae",
           "description": "%configuration.folders.color%"
         },
+        "material-icon-theme.opacity": {
+          "type": "string",
+          "default": "1.0",
+          "description": "%configuration.opacity%"
+        },
         "material-icon-theme.hidesExplorerArrows": {
           "type": "boolean",
           "default": false,

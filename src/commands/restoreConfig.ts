@@ -8,6 +8,7 @@ export const restoreDefaultConfig = () => {
     helpers.setThemeConfig('folders.theme', defaultOptions.folders.theme, true);
     helpers.setThemeConfig('folders.color', defaultOptions.folders.color, true);
     helpers.setThemeConfig('hidesExplorerArrows', defaultOptions.hidesExplorerArrows, true);
+    helpers.setThemeConfig('opacity', defaultOptions.opacity, true);
     helpers.setThemeConfig('files.associations', defaultOptions.files.associations, true);
     helpers.setThemeConfig('folders.associations', defaultOptions.folders.associations, true);
     helpers.setThemeConfig('languages.associations', defaultOptions.languages.associations, true);
