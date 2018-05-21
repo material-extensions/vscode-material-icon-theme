@@ -196,7 +196,11 @@ export const fileIcons: FileIcons = {
                 'licence.txt'
             ]
         },
-        { name: 'key', fileExtensions: ['pub', 'key', 'pem', 'asc', 'gpg'] },
+        {
+            name: 'key',
+            fileExtensions: ['pub', 'key', 'pem', 'asc', 'gpg'],
+            fileNames: ['.htpasswd']
+        },
         {
             name: 'font',
             fileExtensions: [
