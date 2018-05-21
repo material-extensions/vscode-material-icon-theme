@@ -24,30 +24,29 @@ export const generateIconConfigurationObject = (options: IconJsonOptions): IconC
 /**
  * Create the JSON file that is responsible for the icons in the editor.
  */
-export const createIconFile = (jsonOptions?: IconJsonOptions): Promise<string> => {
+export const createIconFile = async (jsonOptions?: IconJsonOptions) => {
     // override the default options with the new options
     const options = merge({}, getDefaultIconOptions(), jsonOptions);
 
     const iconJSONPath = path.join(__dirname, '../../../', 'src', iconJsonName);
     const json = generateIconConfigurationObject(options);
 
-    return new Promise((resolve, reject) => {
-        fs.writeFile(iconJSONPath, JSON.stringify(json, undefined, 2), (err) => {
+    try {
+        fs.writeFile(iconJSONPath, JSON.stringify(json, undefined, 2), async (err) => {
             if (err) {
-                reject(err);
+                throw Error(err.message);
             }
-            const promises = [];
             if (options.folders.color) {
-                promises.push(generateFolderIcons(options.folders.color));
+                await generateFolderIcons(options.folders.color);
             }
             if (options.opacity) {
-                promises.push(setIconOpacity(options.opacity));
+                await setIconOpacity(options.opacity);
             }
-            Promise.all(promises).catch(e => reject(e)).then(() => {
-                resolve(iconJsonName);
-            });
         });
-    });
+    } catch (error) {
+        throw Error(error);
+    }
+    return iconJsonName;
 };
 
 /**

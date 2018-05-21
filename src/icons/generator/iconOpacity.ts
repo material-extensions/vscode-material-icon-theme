@@ -73,10 +73,10 @@ const getSVGRootElement = (svg: string) => {
  * @param opacity Opacity value.
  */
 const addOpacityAttribute = (svgRoot: string, opacity: string) => {
-    const pattern = new RegExp(/opacity="[\d.]+"/);
+    const pattern = new RegExp(/\sopacity="[\d.]+"/);
     // if the opacity attribute already exists
     if (pattern.test(svgRoot)) {
-        return svgRoot.replace(pattern, `opacity="${opacity}"`);
+        return svgRoot.replace(pattern, ` opacity="${opacity}"`);
     } else {
         return svgRoot.replace(/^<svg/, `<svg opacity="${opacity}"`);
     }
