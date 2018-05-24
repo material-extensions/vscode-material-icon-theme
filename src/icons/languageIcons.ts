@@ -66,4 +66,6 @@ export const languageIcons: LanguageIcon[] = [
     { icon: { name: 'mjml' }, ids: ['mjml'] },
     { icon: { name: 'processing' }, ids: ['processing'] },
     { icon: { name: 'hcl' }, ids: ['hcl'] },
+    { icon: { name: 'go' }, ids: ['go'] },
+    { icon: { name: 'go_gopher' }, ids: [] },
 ];
