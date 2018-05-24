@@ -50,7 +50,7 @@ export const setIconOpacity = (opacity: string) => {
  * @param opacity Opacity value
  */
 export const validateOpacityValue = (opacity: string) => {
-    const pattern = new RegExp(/^([0]?\.\d+)|(1.0)$/);
+    const pattern = new RegExp(/^([0]?\.\d+)|(1(.0)?)$/);
     return pattern.test(opacity);
 };
 

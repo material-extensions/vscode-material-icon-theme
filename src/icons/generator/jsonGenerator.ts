@@ -60,7 +60,7 @@ export const getDefaultIconOptions = (): IconJsonOptions => ({
     },
     activeIconPack: 'angular',
     hidesExplorerArrows: false,
-    opacity: '1.0',
+    opacity: '1',
     files: { associations: {} },
     languages: { associations: {} },
 });

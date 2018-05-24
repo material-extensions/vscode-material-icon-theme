@@ -124,7 +124,7 @@
         },
         "material-icon-theme.opacity": {
           "type": "string",
-          "default": "1.0",
+          "default": "1",
           "description": "%configuration.opacity%"
         },
         "material-icon-theme.hidesExplorerArrows": {
