@@ -15,5 +15,6 @@
     "configuration.activeIconPack": "Выберите набор значков, которые включают определенные значки.",
     "configuration.folders.theme": "Установить тип иконок для папок.",
     "configuration.folders.color": "Изменение цвета иконок папок.",
-    "configuration.hidesExplorerArrows": "Скрыть стрелки проводника перед папкой."
+    "configuration.hidesExplorerArrows": "Скрыть стрелки проводника перед папкой.",
+    "configuration.opacity": "Измените прозрачность значков."
 }

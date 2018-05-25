@@ -1,4 +1,4 @@
-{    
+{
     "command.activateIcons": "Material Icons: 激活Material Icons文件图标主题",
     "command.toggleIconPacks": "Material Icons: 选择一个图标包",
     "command.changeFolderTheme": "Material Icons: 切换文件夹图标",
@@ -15,5 +15,6 @@
     "configuration.activeIconPack": "选择一个图标包。",
     "configuration.folders.theme": "设置文件夹图标类型。\n接受的值为 \"specific\", \"classic\"和\"none\"。",
     "configuration.folders.color": "更改文件夹图标的颜色。",
-    "configuration.hidesExplorerArrows": "隐藏该文件夹旁边的箭头。"    
+    "configuration.hidesExplorerArrows": "隐藏该文件夹旁边的箭头。",
+    "configuration.opacity": "更改图标的透明度。"
 }

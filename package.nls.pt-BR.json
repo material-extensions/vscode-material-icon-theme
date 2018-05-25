@@ -15,5 +15,6 @@
     "configuration.folders.icons": "Definir o tipo de ícones de pasta.",
     "configuration.folders.theme": "Definir o tipo dos ícones das pastas.",
     "configuration.folders.color": "Alterar a cor dos ícones das pastas.",
-    "configuration.hidesExplorerArrows": "Ocultar as setas ao lado das pastas no explorador de arquivos."
+    "configuration.hidesExplorerArrows": "Ocultar as setas ao lado das pastas no explorador de arquivos.",
+    "configuration.opacity": "Alterar a opacidade dos ícones."
 }

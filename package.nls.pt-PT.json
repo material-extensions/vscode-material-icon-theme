@@ -15,5 +15,6 @@
     "configuration.folders.icons": "Definir o formato de ícones de directórios.",
     "configuration.folders.theme": "Definir o formato dos ícones dos directórios.",
     "configuration.folders.color": "Alterar a cor dos ícones dos directórios.",
-    "configuration.hidesExplorerArrows": "Esconder as setas ao lado dos directórios no explorador de ficheiros."
+    "configuration.hidesExplorerArrows": "Esconder as setas ao lado dos directórios no explorador de ficheiros.",
+    "configuration.opacity": "Alterar a opacidade dos ícones."
 }

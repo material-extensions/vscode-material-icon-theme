@@ -16,5 +16,5 @@
     "configuration.folders.theme": "Art der Ordner Icons auswählen.",
     "configuration.folders.color": "Farbe der Ordner Icons verändern.",
     "configuration.hidesExplorerArrows": "Pfeile vor den Ordnern deaktivieren.",
-    "configuration.opacity": "Deckkraft aller Icons verändern."
+    "configuration.opacity": "Deckkraft der Icons anpassen."
 }

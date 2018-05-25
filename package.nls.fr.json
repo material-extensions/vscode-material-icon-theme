@@ -15,5 +15,6 @@
     "configuration.activeIconPack": "Sélectionner un pack d'icônes qui active des icônes spécifiques.",
     "configuration.folders.theme": "Sélectionner le type d'icônes de dossier.",
     "configuration.folders.color": "Changer la couleur des icônes du dossier.",
-    "configuration.hidesExplorerArrows": "Désactiver les flèches devant les dossiers."
+    "configuration.hidesExplorerArrows": "Désactiver les flèches devant les dossiers.",
+    "configuration.opacity": "Ajuster l'opacité des icônes."
 }
