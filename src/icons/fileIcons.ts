@@ -103,6 +103,24 @@ export const fileIcons: FileIcons = {
         { name: 'javascript', fileExtensions: ['js', 'esx', 'mjs'] },
         { name: 'react', fileExtensions: ['jsx', 'tsx'] },
         {
+            name: 'redux-action',
+            fileExtensions: ['action.js', 'actions.js', 'action.ts', 'actions.ts'],
+            fileNames: ['action.js', 'actions.js', 'action.ts', 'actions.ts'],
+            enabledFor: [IconPack.Redux]
+        },
+        {
+            name: 'redux-reducer',
+            fileExtensions: ['reducer.js', 'reducers.js', 'reducer.ts', 'reducers.ts'],
+            fileNames: ['reducer.js', 'reducers.js', 'reducer.ts', 'reducers.ts'],
+            enabledFor: [IconPack.Redux]
+        },
+        {
+            name: 'redux-store',
+            fileExtensions: ['store.js', 'store.ts'],
+            fileNames: ['store.js', 'store.ts'],
+            enabledFor: [IconPack.Redux]
+        },
+        {
             name: 'settings',
             fileExtensions: [
                 'ini',
