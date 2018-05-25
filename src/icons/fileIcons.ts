@@ -672,7 +672,7 @@ export const fileIcons: FileIcons = {
         },
         { name: 'jest', fileNames: ['jest.config.js', 'jest.config.ts', 'jest.config.json', 'jest.setup.js', 'jest.setup.ts', 'jest.json', '.jestrc', 'jest.teardown.js'] },
         { name: 'processing', fileExtensions: ['pde'], light: true },
-        { name: 'storybook', fileExtensions: ['stories.js', 'stories.jsx', 'story.js', 'story.jsx'] },
+        { name: 'storybook', fileExtensions: ['stories.js', 'stories.jsx', 'story.js', 'story.jsx', 'stories.ts', 'stories.tsx', 'story.ts', 'story.tsx'] },
         { name: 'wepy', fileExtensions: ['wpy'] },
         { name: 'fastlane', fileNames: ['fastfile', 'appfile'] },
         { name: 'hcl', fileExtensions: ['hcl'], light: true },
