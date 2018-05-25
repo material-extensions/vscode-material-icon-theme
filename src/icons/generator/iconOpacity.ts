@@ -30,7 +30,13 @@ export const setIconOpacity = (opacity: string) => {
                 const svgRootElement = getSVGRootElement(svg);
                 if (!svgRootElement) return;
 
-                const updatedRootElement = addOpacityAttribute(svgRootElement, opacity);
+                let updatedRootElement: string;
+                if (+opacity !== 1) {
+                    updatedRootElement = addOpacityAttribute(svgRootElement, opacity);
+                } else {
+                    // if the opacity equals 1 then remove the attribute
+                    updatedRootElement = removeOpacityAttribute(svgRootElement);
+                }
                 const updatedSVG = svg.replace(/<svg[^>]*>/, updatedRootElement);
 
                 fs.writeFileSync(svgFilePath, updatedSVG);
@@ -50,8 +56,7 @@ export const setIconOpacity = (opacity: string) => {
  * @param opacity Opacity value
  */
 export const validateOpacityValue = (opacity: string) => {
-    const pattern = new RegExp(/^([0]?\.\d+)|(1(.0)?)$/);
-    return pattern.test(opacity);
+    return +opacity >= 0 && +opacity <= 1;
 };
 
 /**
@@ -80,4 +85,17 @@ const addOpacityAttribute = (svgRoot: string, opacity: string) => {
     } else {
         return svgRoot.replace(/^<svg/, `<svg opacity="${opacity}"`);
     }
+};
+
+/**
+ * Remove the opacity attribute of the SVG icon.
+ * @param svgRoot Root element of the SVG icon.
+ */
+const removeOpacityAttribute = (svgRoot: string) => {
+    const pattern = new RegExp(/\sopacity="[\d.]+"/);
+    // check if the opacity attribute exists
+    if (pattern.test(svgRoot)) {
+        return svgRoot.replace(pattern, '');
+    }
+    return svgRoot;
 };

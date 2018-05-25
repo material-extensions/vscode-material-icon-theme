@@ -6,8 +6,7 @@ import { fileIcons } from '../fileIcons';
 import { folderIcons } from '../folderIcons';
 import { languageIcons } from '../languageIcons';
 import { iconJsonName } from './constants';
-import { setIconOpacity } from './iconOpacity';
-import { generateFolderIcons, getFileIconDefinitions, getFolderIconDefinitions, getLanguageIconDefinitions } from './index';
+import { generateFolderIcons, getFileIconDefinitions, getFolderIconDefinitions, getLanguageIconDefinitions, setIconOpacity } from './index';
 
 /**
  * Generate the complete icon configuration object that can be written as JSON file.
