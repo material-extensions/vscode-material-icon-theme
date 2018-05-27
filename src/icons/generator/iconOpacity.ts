@@ -5,9 +5,9 @@ import * as path from 'path';
  * Changes the opacity of all icons in the set.
  * @param opacity Opacity value
  */
-export const setIconOpacity = (opacity: string) => {
+export const setIconOpacity = (opacity: number) => {
     if (!validateOpacityValue(opacity)) {
-        return Promise.reject('Invalid opacity value! Opacity must be a decimal number between 0 and 1!');
+        return console.error('Invalid opacity value! Opacity must be a decimal number between 0 and 1!');
     }
 
     return new Promise((resolve, reject) => {
@@ -55,8 +55,8 @@ export const setIconOpacity = (opacity: string) => {
  * Validate the opacity value.
  * @param opacity Opacity value
  */
-export const validateOpacityValue = (opacity: string) => {
-    return +opacity >= 0 && +opacity <= 1;
+export const validateOpacityValue = (opacity: number) => {
+    return opacity <= 1 && opacity >= 0;
 };
 
 /**
@@ -77,7 +77,7 @@ const getSVGRootElement = (svg: string) => {
  * @param svgRoot Root element of the SVG icon.
  * @param opacity Opacity value.
  */
-const addOpacityAttribute = (svgRoot: string, opacity: string) => {
+const addOpacityAttribute = (svgRoot: string, opacity: number) => {
     const pattern = new RegExp(/\sopacity="[\d.]+"/);
     // if the opacity attribute already exists
     if (pattern.test(svgRoot)) {

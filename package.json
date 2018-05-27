@@ -123,8 +123,10 @@
           "description": "%configuration.folders.color%"
         },
         "material-icon-theme.opacity": {
-          "type": "string",
-          "default": "1",
+          "type": "number",
+          "default": 1,
+          "minimum": 0,
+          "maximum": 1,
           "description": "%configuration.opacity%"
         },
         "material-icon-theme.hidesExplorerArrows": {

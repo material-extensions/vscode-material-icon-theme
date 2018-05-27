@@ -25,7 +25,7 @@ export const generateIconConfigurationObject = (options: IconJsonOptions): IconC
  */
 export const createIconFile = async (jsonOptions?: IconJsonOptions) => {
     // override the default options with the new options
-    const options = merge({}, getDefaultIconOptions(), jsonOptions);
+    const options: IconJsonOptions = merge({}, getDefaultIconOptions(), jsonOptions);
 
     const iconJSONPath = path.join(__dirname, '../../../', 'src', iconJsonName);
     const json = generateIconConfigurationObject(options);
@@ -59,7 +59,7 @@ export const getDefaultIconOptions = (): IconJsonOptions => ({
     },
     activeIconPack: 'angular',
     hidesExplorerArrows: false,
-    opacity: '1',
+    opacity: 1,
     files: { associations: {} },
     languages: { associations: {} },
 });
