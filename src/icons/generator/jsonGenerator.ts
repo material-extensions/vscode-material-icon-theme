@@ -22,23 +22,28 @@ export const generateIconConfigurationObject = (options: IconJsonOptions): IconC
 
 /**
  * Create the JSON file that is responsible for the icons in the editor.
+ * @param updatedConfigs Options that have been changed.
+ * @param updatedJSONConfig New JSON options that already include the updatedConfigs.
  */
-export const createIconFile = async (jsonOptions?: IconJsonOptions) => {
+export const createIconFile = async (updatedConfigs?: IconJsonOptions, updatedJSONConfig: IconJsonOptions = {}) => {
     // override the default options with the new options
-    const options: IconJsonOptions = merge({}, getDefaultIconOptions(), jsonOptions);
+    const options: IconJsonOptions = merge({}, getDefaultIconOptions(), updatedJSONConfig);
 
     const iconJSONPath = path.join(__dirname, '../../../', 'src', iconJsonName);
     const json = generateIconConfigurationObject(options);
 
     try {
-        fs.writeFile(iconJSONPath, JSON.stringify(json, undefined, 2), async (err) => {
+        await fs.writeFile(iconJSONPath, JSON.stringify(json, undefined, 2), async (err) => {
             if (err) {
                 throw Error(err.message);
             }
-            if (options.folders.color) {
+            // if updatedConfigs do not exist (because of initial setup)
+            // or new config value was detected by the change detection
+            if (!updatedConfigs || (updatedConfigs.folders || {}).color) {
                 await generateFolderIcons(options.folders.color);
+                await setIconOpacity(options.opacity, ['folder.svg', 'folder-open.svg', 'folder-root.svg', 'folder-root-open.svg']);
             }
-            if (options.opacity) {
+            if (!updatedConfigs || updatedConfigs.opacity !== undefined) {
                 await setIconOpacity(options.opacity);
             }
         });

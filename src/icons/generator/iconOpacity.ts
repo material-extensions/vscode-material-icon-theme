@@ -4,8 +4,9 @@ import * as path from 'path';
 /**
  * Changes the opacity of all icons in the set.
  * @param opacity Opacity value
+ * @param fileNames Only change the opacity of certain file names.
  */
-export const setIconOpacity = (opacity: number) => {
+export const setIconOpacity = (opacity: number, fileNames?: string[]) => {
     if (!validateOpacityValue(opacity)) {
         return console.error('Invalid opacity value! Opacity must be a decimal number between 0 and 1!');
     }
@@ -20,7 +21,7 @@ export const setIconOpacity = (opacity: number) => {
 
         // read all icon files from the icons folder
         try {
-            fs.readdirSync(iconsPath).forEach(iconFileName => {
+            (fileNames || fs.readdirSync(iconsPath)).forEach(iconFileName => {
                 const svgFilePath = path.join(iconsPath, iconFileName);
 
                 // Read SVG file
