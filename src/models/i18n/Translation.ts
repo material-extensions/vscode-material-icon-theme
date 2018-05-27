@@ -21,6 +21,10 @@ export interface Translation {
             description?: string;
         };
     };
+    opacity?: {
+        inputPlaceholder?: string;
+        wrongValue?: string;
+    };
     toggleSwitch?: {
         on?: string;
         off?: string;

@@ -5,6 +5,7 @@
     "command.changeFolderColor": "Material Icons: Alterar cor dos directórios",
     "command.restoreDefaultConfig": "Material Icons: Restaurar configuração padrão",
     "command.hidesExplorerArrows": "Material Icons: Esconder as setas ao lado dos directórios",
+    "command.opacity": "Material Icons: Alterar a opacidade",
     "configuration.files.associations": "Definir ícones para associações de ficheiros peronslizados.",
     "configuration.folders.associations": "Definir ícones para associações de directórios personalizados.",
     "configuration.languages.associations": "Definir ícones para associações de idiomas personalizados.",

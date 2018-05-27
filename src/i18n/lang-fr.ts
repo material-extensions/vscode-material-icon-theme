@@ -23,6 +23,10 @@ export const translation: Translation = {
             'description': 'Icônes de dossiers \'%0\''
         }
     },
+    'opacity': {
+        'inputPlaceholder': 'Valeur d\'opacité (entre 0 et 1)',
+        'wrongValue': 'La valeur doit être comprise entre 0 et 1!',
+    },
     'toggleSwitch': {
         'on': 'ON',
         'off': 'OFF'

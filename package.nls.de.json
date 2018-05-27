@@ -5,6 +5,7 @@
     "command.changeFolderColor": "Material Icons: Ordner Farbe ändern",
     "command.restoreDefaultConfig": "Material Icons: Standard Einstellungen wiederherstellen",
     "command.hidesExplorerArrows": "Material Icons: Ordner Pfeile umschalten",
+    "command.opacity": "Material Icons: Deckkraft verändern",
     "configuration.title": "Material Icons Konfiguration",
     "configuration.files.associations": "Benutzerdefinierte Datei Icons konfigurieren.",
     "configuration.folders.associations": "Benutzerdefinierte Ordner Icons konfigurieren.",

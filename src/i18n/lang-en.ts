@@ -23,6 +23,10 @@ export const translation: Translation = {
             'description': 'Select the \'%0\' folder theme'
         }
     },
+    'opacity': {
+        'inputPlaceholder': 'Opacity value (between 0 and 1)',
+        'wrongValue': 'The value must be between 0 and 1!',
+    },
     'toggleSwitch': {
         'on': 'ON',
         'off': 'OFF'

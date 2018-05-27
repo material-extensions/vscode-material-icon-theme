@@ -4,6 +4,7 @@ import { toggleFolderArrows } from './folderArrows';
 import { changeFolderColor } from './folderColor';
 import { changeFolderTheme } from './folders';
 import { toggleIconPacks } from './iconPacks';
+import { changeOpacity } from './opacity';
 import { restoreDefaultConfig } from './restoreConfig';
 
 // Activate theme
@@ -36,10 +37,16 @@ const hidesExplorerArrowsCommand = vscode.commands.registerCommand('material-ico
     toggleFolderArrows();
 });
 
+// Change the opacity of the icons
+const changeOpacityCommand = vscode.commands.registerCommand('material-icon-theme.opacity', () => {
+    changeOpacity();
+});
+
 export const commands = [
     activateThemeCommand,
     toggleIconPacksCommand,
     changeFolderThemeCommand,
     restoreDefaultConfigCommand,
-    hidesExplorerArrowsCommand
+    hidesExplorerArrowsCommand,
+    changeOpacityCommand
 ];

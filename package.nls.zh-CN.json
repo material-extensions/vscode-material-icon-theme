@@ -5,6 +5,7 @@
     "command.changeFolderColor": "Material Icons: 更改文件夹颜色",
     "command.restoreDefaultConfig": "Material Icons: 恢复默认设置",
     "command.hidesExplorerArrows": "Material Icons: 隐藏文件夹箭头",
+    "command.opacity": "Material Icons: 改变不透明度",
     "configuration.title": "Material Icons设置",
     "configuration.files.associations": "设置自定义文件图标关联。",
     "configuration.folders.associations": "设置自定义文件夹图标关联。",

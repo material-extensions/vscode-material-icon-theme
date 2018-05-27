@@ -23,6 +23,10 @@ export const translation: Translation = {
             'description': 'Selecionar o tema para pastas \'%0\''
         }
     },
+    'opacity': {
+        'inputPlaceholder': 'Valor de opacidade (entre 0 e 1)',
+        'wrongValue': 'O valor deve estar entre 0 e 1!',
+    },
     'toggleSwitch': {
         'on': 'ON',
         'off': 'OFF'

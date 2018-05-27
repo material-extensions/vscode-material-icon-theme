@@ -23,6 +23,10 @@ export const translation: Translation = {
             'description': 'Wähle das \'%0\' Design'
         },
     },
+    'opacity': {
+        'inputPlaceholder': 'Wert der Deckkraft (zwischen 0 und 1)',
+        'wrongValue': 'Der Wert muss zwischen 0 und 1 liegen!',
+    },
     'toggleSwitch': {
         'on': 'EIN',
         'off': 'AUS'

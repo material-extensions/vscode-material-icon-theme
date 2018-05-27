@@ -66,6 +66,10 @@
       {
         "command": "material-icon-theme.hidesExplorerArrows",
         "title": "%command.hidesExplorerArrows%"
+      },
+      {
+        "command": "material-icon-theme.opacity",
+        "title": "%command.opacity%"
       }
     ],
     "configuration": {

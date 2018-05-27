@@ -5,6 +5,7 @@
     "command.restoreDefaultConfig": "Material Icons: Restaurer le paramètre par défaut",
     "command.hidesExplorerArrows": "Material Icons: Désactiver les flèches devant les dossiers",
     "command.changeFolderColor": "Material Icons: Changer la couleur du dossier",
+    "command.opacity": "Material Icons: Changer l'opacité",
     "configuration.title": "Material Icons configuration",
     "configuration.files.associations": "Configurer des associations d'icônes de fichiers personnalisés.",
     "configuration.folders.associations": "Configurer des associations d'icônes de dossier personnalisées.",

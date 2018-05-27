@@ -23,6 +23,10 @@ export const translation: Translation = {
             'description': 'Выбрать \'%0\' тему папки'
         }
     },
+    'opacity': {
+        'inputPlaceholder': 'Значение непрозрачности (от 0 до 1)',
+        'wrongValue': 'Значение должно быть от 0 до 1!',
+    },
     'toggleSwitch': {
         'on': 'Включить',
         'off': 'Выключить'

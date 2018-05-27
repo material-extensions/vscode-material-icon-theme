@@ -23,6 +23,10 @@ export const translation: Translation = {
             'description': '\'%0\'主题的文件夹图标'
         }
     },
+    'opacity': {
+        'inputPlaceholder': '不透明度值（0和1之间）',
+        'wrongValue': '该值必须介于0和1之间！',
+    },
     'toggleSwitch': {
         'on': 'ON',
         'off': 'OFF'
