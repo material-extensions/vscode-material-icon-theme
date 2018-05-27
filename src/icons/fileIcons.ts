@@ -694,5 +694,6 @@ export const fileIcons: FileIcons = {
         { name: 'wepy', fileExtensions: ['wpy'] },
         { name: 'fastlane', fileNames: ['fastfile', 'appfile'] },
         { name: 'hcl', fileExtensions: ['hcl'], light: true },
+        { name: 'helm', fileNames: ['.helmignore'] },
     ]
 };
