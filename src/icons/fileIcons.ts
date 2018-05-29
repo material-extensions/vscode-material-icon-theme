@@ -103,6 +103,12 @@ export const fileIcons: FileIcons = {
         { name: 'javascript', fileExtensions: ['js', 'esx', 'mjs'] },
         { name: 'react', fileExtensions: ['jsx', 'tsx'] },
         {
+            name: 'routing',
+            fileExtensions: ['routing.ts', 'routing.js', 'routes.ts', 'routes.js'],
+            fileNames: ['router.js', 'router.ts', 'routes.js', 'routes.ts'],
+            enabledFor: [IconPack.Angular, IconPack.Ngrx, IconPack.React, IconPack.Redux]
+        },
+        {
             name: 'redux-action',
             fileExtensions: ['action.js', 'actions.js', 'action.ts', 'actions.ts'],
             fileNames: ['action.js', 'actions.js', 'action.ts', 'actions.ts'],
@@ -386,7 +392,6 @@ export const fileIcons: FileIcons = {
             ]
         },
         { name: 'test-js', fileExtensions: ['spec.js', 'test.js', 'js.snap'] },
-        { name: 'angular-routing', fileExtensions: ['routing.ts', 'routing.js'], enabledFor: [IconPack.Angular, IconPack.Ngrx] },
         {
             name: 'angular',
             fileExtensions: ['module.ts', 'module.js', 'ng-template'],
