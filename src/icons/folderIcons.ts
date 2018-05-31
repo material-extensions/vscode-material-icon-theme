@@ -119,6 +119,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-debug', folderNames: ['debug', 'debugging'] },
             { name: 'folder-fastlane', folderNames: ['fastlane'] },
             { name: 'folder-plugin', folderNames: ['plugin', 'plugins', 'extension', 'extensions', 'addon', 'addons'] },
+            { name: 'folder-controller', folderNames: ['controller', 'controllers', 'service', 'services'] },
         ]
     },
     { name: 'classic', defaultIcon: { name: 'folder' }, rootFolder: { name: 'folder-root' } },
