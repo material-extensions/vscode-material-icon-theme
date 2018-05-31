@@ -139,7 +139,7 @@ const getCustomIcons = (folderAssociations: IconAssociations) => {
 
 export const generateFolderIcons = (color: string) => {
     if (!validateHEXColorCode(color)) {
-        return Promise.reject('Invalid color code for folder icons');
+        return console.error('Invalid color code for folder icons');
     }
 
     const folderIcon = `M10 4H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8c0-1.11-.9-2-2-2h-8l-2-2z`;
@@ -181,5 +181,6 @@ const writeSVGFiles = (iconName: string, svg: string) => {
  * @param color HEX code
  */
 export const validateHEXColorCode = (color: string) => {
-    return new RegExp(/#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/).exec(color) !== undefined;
+    const hexPattern = new RegExp(/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/);
+    return hexPattern.test(color);
 };
