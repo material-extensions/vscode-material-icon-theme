@@ -39,6 +39,14 @@ or via user settings:
 "material-icon-theme.folders.theme": "specific"
 ```
 
+## Custom icon opacity
+
+You can set a custom opacity for the icons:
+
+```json
+"material-icon-theme.opacity": 0.5
+```
+
 ## Custom icon associations
 
 You can customize the icon associations directly in the user settings.
@@ -96,17 +104,19 @@ Press `Ctrl-Shift-P` to open the command palette and type `Material Icons`.
 
 <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/master/images/commandPalette.png" alt="commands" width="80%">
 
-- **Change Folder Theme**: Change the design of the folder icons.
-
-- **Restore Default Configuration**: Reset the default configurations of the icon theme.
+- **Activate Icon Theme**: Activate the icon theme.
 
 - **Change Folder Color**: Change the color of the folder icons.
 
-- **Hide Folder Arrows**: Hides the arrows next to the folder icons.
+- **Change Folder Theme**: Change the design of the folder icons.
+
+- **Change Opacity**: Change the opacity of the icons.
 
 - **Configure Icon Packs**: Select an icon pack that enables additional icons (e.g. for Angular, React, Ngrx).
 
-- **Activate Icon Theme**: Activate the icon theme.
+- **Hide Folder Arrows**: Hides the arrows next to the folder icons.
+
+- **Restore Default Configuration**: Reset the default configurations of the icon theme.
 
 ## Icon sources
 

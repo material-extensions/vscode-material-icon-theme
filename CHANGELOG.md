@@ -1,4 +1,33 @@
 # Changelog
+## 3.5.0 (2018-05-31)
+### New features
+- Customizable icon opacity ([issue #222](https://github.com/PKief/vscode-material-icon-theme/issues/222))
+
+### New icons
+- HashiCorp ([@KristophUK](https://github.com/KristophUK) in [#253](https://github.com/PKief/vscode-material-icon-theme/pull/253))
+- Ansible folder ([@KristophUK](https://github.com/KristophUK) in [#254](https://github.com/PKief/vscode-material-icon-theme/pull/254))
+- Helm ([issue #250](https://github.com/PKief/vscode-material-icon-theme/issues/250))
+- fish ([@erikphansen](https://github.com/erikphansen) in [#252](https://github.com/PKief/vscode-material-icon-theme/pull/252))
+- .htpasswd ([issue #251](https://github.com/PKief/vscode-material-icon-theme/issues/251))
+- docker-compose.yaml ([@thaffenden](https://github.com/thaffenden) in [#245](https://github.com/PKief/vscode-material-icon-theme/pull/245))
+- angular.json ([issue #243](https://github.com/PKief/vscode-material-icon-theme/issues/243))
+- Storybook: associate typescript stories ([issue #258](https://github.com/PKief/vscode-material-icon-theme/issues/258))
+- Controller folder ([issue #227](https://github.com/PKief/vscode-material-icon-theme/issues/227))
+- More React and Redux Ecosystem File Icons ([issue #255](https://github.com/PKief/vscode-material-icon-theme/issues/255)):
+    - Redux actions
+    - Redux reducer
+    - Redux store
+    - React router
+
+### Updated icons
+- go ([issue #257](https://github.com/PKief/vscode-material-icon-theme/issues/257))
+- todo ([issue #247](https://github.com/PKief/vscode-material-icon-theme/issues/247))
+- export folder
+- import folder
+
+### Other improvements
+- Improved folder color validation
+
 ## 3.4.0 (2018-05-06)
 ### New icons
 - debug folder ([@Bond-009](https://github.com/Bond-009) in [#236](https://github.com/PKief/vscode-material-icon-theme/pull/236))
