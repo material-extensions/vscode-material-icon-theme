@@ -700,5 +700,6 @@ export const fileIcons: FileIcons = {
         { name: 'fastlane', fileNames: ['fastfile', 'appfile'] },
         { name: 'hcl', fileExtensions: ['hcl'], light: true },
         { name: 'helm', fileNames: ['.helmignore'] },
+        { name: 'san', fileExtensions: ['san'] },
     ]
 };
