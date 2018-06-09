@@ -560,7 +560,17 @@ export const fileIcons: FileIcons = {
             ]
         },
         { name: 'android', fileNames: ['androidmanifest.xml'] },
-        { name: 'tune', fileNames: ['.env', '.env.example'] },
+        {
+            name: 'tune',
+            fileNames: [
+                '.env',
+                '.env.example',
+                '.env.local',
+                '.env.dev',
+                '.env.staging',
+                '.env.prod',
+            ]
+        },
         { name: 'babel', fileNames: ['.babelrc', '.babelrc.js'] },
         {
             name: 'contributing',
