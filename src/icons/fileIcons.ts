@@ -711,5 +711,6 @@ export const fileIcons: FileIcons = {
         { name: 'hcl', fileExtensions: ['hcl'], light: true },
         { name: 'helm', fileNames: ['.helmignore'] },
         { name: 'san', fileExtensions: ['san'] },
+        { name: 'stencil', fileNames: ['stencil.config.js'] },
     ]
 };
