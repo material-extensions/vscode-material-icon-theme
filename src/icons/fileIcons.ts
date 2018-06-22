@@ -712,6 +712,7 @@ export const fileIcons: FileIcons = {
         { name: 'helm', fileNames: ['.helmignore'] },
         { name: 'san', fileExtensions: ['san'] },
         { name: 'wallaby', fileNames: ['wallaby.js', 'wallaby.conf.js'] },
-        { name: 'django', fileExtensions: ['djt'] }
+        { name: 'django', fileExtensions: ['djt'] },
+        { name: 'stencil', fileNames: ['stencil.config.js'], light: true },
     ]
 };
