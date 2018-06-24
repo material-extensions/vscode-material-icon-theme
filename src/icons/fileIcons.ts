@@ -715,5 +715,6 @@ export const fileIcons: FileIcons = {
         { name: 'django', fileExtensions: ['djt'] },
         { name: 'stencil', fileNames: ['stencil.config.js'], light: true },
         { name: 'red', fileExtensions: ['red'] },
+        { name: 'foxpro', fileExtensions: ['fxp', 'prg'] },
     ]
 };
