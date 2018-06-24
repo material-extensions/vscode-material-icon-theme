@@ -714,5 +714,6 @@ export const fileIcons: FileIcons = {
         { name: 'wallaby', fileNames: ['wallaby.js', 'wallaby.conf.js'] },
         { name: 'django', fileExtensions: ['djt'] },
         { name: 'stencil', fileNames: ['stencil.config.js'], light: true },
+        { name: 'red', fileExtensions: ['red'] },
     ]
 };
