@@ -458,9 +458,10 @@ export const fileIcons: FileIcons = {
         { name: 'kl', fileExtensions: ['kl'], fileNames: ['.kl'] },
         {
             name: 'postcss',
-            fileExtensions: ['pcss', 'sss'],
+            fileExtensions: ['pcss'],
             fileNames: ['postcss.config.js', '.postcssrc.js', '.postcssrc']
         },
+        { name: 'sugarss', fileExtensions: ['sss'] },
         { name: 'todo', fileExtensions: ['todo'] },
         { name: 'coldfusion', fileExtensions: ['cfml', 'cfc', 'lucee', 'cfm'] },
         { name: 'cabal', fileExtensions: ['cabal'] },

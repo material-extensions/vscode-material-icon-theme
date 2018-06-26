@@ -53,6 +53,7 @@ export const languageIcons: LanguageIcon[] = [
     { icon: { name: 'apiblueprint' }, ids: ['apiblueprint'] },
     { icon: { name: 'riot' }, ids: ['riot'] },
     { icon: { name: 'postcss' }, ids: ['postcss'] },
+    { icon: { name: 'sugarss' }, ids: ['sugarss'] },
     { icon: { name: 'coldfusion' }, ids: ['lang-cfml'] },
     { icon: { name: 'haskell' }, ids: ['haskell'] },
     { icon: { name: 'cabal' }, ids: ['cabal'] },
