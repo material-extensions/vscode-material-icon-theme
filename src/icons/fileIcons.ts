@@ -97,7 +97,8 @@ export const fileIcons: FileIcons = {
                 'pgf',
                 'pic',
                 'raw',
-                'webp'
+                'webp',
+                'eps'
             ]
         },
         { name: 'javascript', fileExtensions: ['js', 'esx', 'mjs'] },
@@ -148,7 +149,6 @@ export const fileIcons: FileIcons = {
             fileNames: [
                 '.jshintignore',
                 '.buildignore',
-                'makefile',
                 '.mrconfig',
                 '.yardopts',
                 'manifest.mf'
@@ -715,6 +715,7 @@ export const fileIcons: FileIcons = {
         { name: 'django', fileExtensions: ['djt'] },
         { name: 'stencil', fileNames: ['stencil.config.js'], light: true },
         { name: 'red', fileExtensions: ['red'] },
+        { name: 'makefile', fileNames: ['makefile'] },
         { name: 'foxpro', fileExtensions: ['fxp', 'prg'] },
     ]
 };
