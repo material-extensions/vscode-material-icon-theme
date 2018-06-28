@@ -1,4 +1,18 @@
 # Changelog
+## 3.5.1 (2018-06-28)
+### New icons
+- San ([issue #260](https://github.com/PKief/vscode-material-icon-theme/issues/260))
+- .env ([issue #261](https://github.com/PKief/vscode-material-icon-theme/issues/261))
+- Wallaby ([issue #270](https://github.com/PKief/vscode-material-icon-theme/issues/270))
+- Django ([issue #267](https://github.com/PKief/vscode-material-icon-theme/issues/267))
+- Stencil ([issue #268](https://github.com/PKief/vscode-material-icon-theme/issues/268))
+- Red ([issue #265](https://github.com/PKief/vscode-material-icon-theme/issues/265))
+- FoxPro ([issue #239](https://github.com/PKief/vscode-material-icon-theme/issues/239))
+- Makefile ([issue #269](https://github.com/PKief/vscode-material-icon-theme/issues/269))
+
+### Updated icons
+- Dart ([@timsneath](https://github.com/timsneath) in [#259](https://github.com/PKief/vscode-material-icon-theme/pull/259))
+
 ## 3.5.0 (2018-05-31)
 ### New features
 - Customizable icon opacity ([issue #222](https://github.com/PKief/vscode-material-icon-theme/issues/222))
