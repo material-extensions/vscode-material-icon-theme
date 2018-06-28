@@ -636,7 +636,7 @@ export const fileIcons: FileIcons = {
         { name: 'aurelia', fileNames: ['aurelia.json'] },
         { name: 'mocha', fileNames: ['mocha.opts'] },
         { name: 'jenkins', fileNames: ['jenkinsfile'] },
-        { name: 'firebase', fileNames: ['firebase.json', '.firebaserc'] },
+        { name: 'firebase', fileNames: ['firebase.json', 'firebase.js', '.firebaserc'] },
         {
             name: 'rollup',
             fileNames: [
