@@ -6,7 +6,7 @@
     "command.restoreDefaultConfig": "Material Icons: Restore Default Configuration",
     "command.hidesExplorerArrows": "Material Icons: Hide Folder Arrows",
     "command.opacity": "Material Icons: Change Opacity",
-    "configuration.title": "Material Icons configuration",
+    "configuration.title": "Material Icons",
     "configuration.files.associations": "Set custom file icon associations.",
     "configuration.folders.associations": "Set custom folder icon associations.",
     "configuration.languages.associations": "Set custom language icon associations.",

@@ -6,7 +6,7 @@
     "command.restoreDefaultConfig": "Material Icons: Restaurar la configuración predeterminada",
     "command.hidesExplorerArrows": "Material Icons: Deshabilitar flechas delante de carpetas",
     "command.opacity": "Material Icons: Cambiar la opacidad",
-    "configuration.title": "Material Icons Configuración",
+    "configuration.title": "Material Icons",
     "configuration.files.associations": "Configurar asociaciones personalizadas de iconos de archivos.",
     "configuration.folders.associations": "Configurar asociaciones personalizadas de iconos de carpetas.",
     "configuration.languages.associations": "Configurar asociaciones personalizadas de iconos de idioma.",

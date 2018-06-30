@@ -6,7 +6,7 @@
     "command.restoreDefaultConfig": "Material Icons: Восстановить настройки по умолчанию",
     "command.hidesExplorerArrows": "Material Icons: Скрыть стрелки проводника перед папкой",
     "command.opacity": "Material Icons: Изменение непрозрачности",
-    "configuration.title": "Настройки Material Icons",
+    "configuration.title": "Material Icons",
     "configuration.files.associations": "Настройка пользовательских ассоциаций значков файлов.",
     "configuration.folders.associations": "Настройка пользовательских ассоциаций значков папок.",
     "configuration.languages.associations": "Настройка ассоциаций значков пользовательского языка.",
