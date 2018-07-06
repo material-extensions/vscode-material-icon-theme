@@ -717,5 +717,6 @@ export const fileIcons: FileIcons = {
         { name: 'red', fileExtensions: ['red'] },
         { name: 'makefile', fileNames: ['makefile'] },
         { name: 'foxpro', fileExtensions: ['fxp', 'prg'] },
+        { name: 'ava', fileExtensions: ['ava.config.js'] },
     ]
 };
