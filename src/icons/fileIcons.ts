@@ -717,5 +717,6 @@ export const fileIcons: FileIcons = {
         { name: 'makefile', fileNames: ['makefile'] },
         { name: 'foxpro', fileExtensions: ['fxp', 'prg'] },
         { name: 'i18n', fileExtensions: ['pot', 'po', 'mo'] },
+        { name: 'webassembly', fileExtensions: ['wat', 'wasm'] },
     ]
 };
