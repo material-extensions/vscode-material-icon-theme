@@ -280,7 +280,6 @@ export const fileIcons: FileIcons = {
                 'ppt',
                 'pptm',
                 'potx',
-                'pot',
                 'potm',
                 'ppsx',
                 'ppsm',
@@ -717,5 +716,6 @@ export const fileIcons: FileIcons = {
         { name: 'red', fileExtensions: ['red'] },
         { name: 'makefile', fileNames: ['makefile'] },
         { name: 'foxpro', fileExtensions: ['fxp', 'prg'] },
+        { name: 'i18n', fileExtensions: ['pot', 'po', 'mo'] },
     ]
 };
