@@ -338,7 +338,7 @@ export const fileIcons: FileIcons = {
                 'git-history'
             ]
         },
-        { name: 'lua', fileExtensions: ['lua'] },
+        { name: 'lua', fileExtensions: ['lua'], fileNames: ['.luacheckrc'] },
         { name: 'clojure', fileExtensions: ['clj', 'cljs'] },
         { name: 'groovy', fileExtensions: ['groovy'] },
         { name: 'r', fileExtensions: ['r', 'rmd'], fileNames: ['.Rhistory'] },
