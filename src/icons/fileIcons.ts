@@ -718,5 +718,6 @@ export const fileIcons: FileIcons = {
         { name: 'foxpro', fileExtensions: ['fxp', 'prg'] },
         { name: 'i18n', fileExtensions: ['pot', 'po', 'mo'] },
         { name: 'webassembly', fileExtensions: ['wat', 'wasm'] },
+        { name: 'semantic-release', light: true, fileNames: ['.releaserc', 'release.config.js'] },
     ]
 };
