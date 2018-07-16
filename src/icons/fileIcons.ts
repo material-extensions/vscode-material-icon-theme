@@ -570,7 +570,7 @@ export const fileIcons: FileIcons = {
                 '.env.prod',
             ]
         },
-        { name: 'babel', fileNames: ['.babelrc', '.babelrc.js'] },
+        { name: 'babel', fileNames: ['.babelrc', '.babelrc.js', 'babel.config.js'] },
         {
             name: 'contributing',
             fileNames: ['contributing.md', 'contributing.md.rendered']
