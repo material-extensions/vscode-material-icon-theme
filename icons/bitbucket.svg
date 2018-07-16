@@ -1,11 +1,1 @@
-<svg width="512" height="512" xmlns="http://www.w3.org/2000/svg" class="svg-inline--fa fa-bitbucket fa-w-16">
-
- <g>
-  <title>background</title>
-  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
- </g>
- <g>
-  <title>Layer 1</title>
-  <path id="svg_1" d="m23.1,32c-8.9,-0.1 -16.1,6.9 -16.2,15.8c0,0.9 0.1,1.8 0.2,2.8l67.8,411.4c1.7,10.4 10.7,18 21.2,18.1l325.1,0c7.9,0.1 14.7,-5.6 16,-13.4l67.8,-416c1.4,-8.7 -4.5,-16.9 -13.2,-18.3c-0.9,-0.1 -1.8,-0.2 -2.8,-0.2l-465.9,-0.2zm285.3,297.3l-103.8,0l-28.1,-146.8l157,0l-25.1,146.8z" fill="#1565c0"/>
- </g>
-</svg>
+<svg class="header__svg-logo header__svg-logo" width="300" height="300" preserveAspectRatio="xMinYMin meet" version="1.1" viewBox="0 0 681.57088 842.22857" xmlns="http://www.w3.org/2000/svg"><defs><style>.logo__text__fill{fill:#253858;} .header__svg-logo__icon--path--3{fill:#2684ff;} .header__svg-logo__icon--path--4{fill:url(#logo-gradient);}</style><linearGradient id="logo-gradient" x1="64.01" x2="32.99" y1="65.26" y2="89.48" gradientUnits="userSpaceOnUse"><stop stop-color="#0052cc" style="stop-color:#1565c0" offset=".18"/><stop stop-color="#2684ff" style="stop-color:#1e88e5" offset="1"/></linearGradient></defs><title>Bitbucket logo</title><g class="header__svg-logo__icon" transform="matrix(11.235 0 0 11.235 70.626 -357.72)"><g transform="matrix(.96468 0 0 .96468 1.1019 2.4485)"><path class="header__svg-logo__icon--path--3" d="m2 41.25a2 2 0 0 0 -2 2.32l8.49 51.54a2.72 2.72 0 0 0 2.66 2.27h40.73a2 2 0 0 0 2 -1.68l8.51-52.11a2 2 0 0 0 -2 -2.32zm35.75 37.25h-13l-3.52-18.38h19.67z" style="fill:#1e88e5"/><path class="header__svg-logo__icon--path--4" d="m59.67 60.12h-18.77l-3.15 18.38h-13l-15.35 18.23a2.71 2.71 0 0 0 1.75 .66h40.74a2 2 0 0 0 2 -1.68z" style="fill:url(#logo-gradient)"/></g></g></svg>
