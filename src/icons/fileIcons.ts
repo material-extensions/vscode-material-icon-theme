@@ -402,8 +402,16 @@ export const fileIcons: FileIcons = {
             fileExtensions: ['component.ts', 'component.js'],
             enabledFor: [IconPack.Angular, IconPack.Ngrx]
         },
-        { name: 'angular-guard', fileExtensions: ['guard.ts', 'guard.js'], enabledFor: [IconPack.Angular, IconPack.Ngrx] },
-        { name: 'angular-service', fileExtensions: ['service.ts', 'service.js'], enabledFor: [IconPack.Angular, IconPack.Ngrx] },
+        {
+            name: 'angular-guard',
+            fileExtensions: ['guard.ts', 'guard.js'],
+            enabledFor: [IconPack.Angular, IconPack.Ngrx]
+        },
+        {
+            name: 'angular-service',
+            fileExtensions: ['service.ts', 'service.js'],
+            enabledFor: [IconPack.Angular, IconPack.Ngrx]
+        },
         {
             name: 'angular-pipe',
             fileExtensions: ['pipe.ts', 'pipe.js', 'filter.js'],
@@ -417,6 +425,31 @@ export const fileIcons: FileIcons = {
         {
             name: 'angular-resolver',
             fileExtensions: ['resolver.ts', 'resolver.js'],
+            enabledFor: [IconPack.Angular, IconPack.Ngrx]
+        },
+        {
+            name: 'angular-model',
+            fileExtensions: ['model.ts', 'model.js'],
+            enabledFor: [IconPack.Angular, IconPack.Ngrx]
+        },
+        {
+            name: 'angular-helper',
+            fileExtensions: ['helper.ts', 'helper.js'],
+            enabledFor: [IconPack.Angular, IconPack.Ngrx]
+        },
+        {
+            name: 'angular-validator',
+            fileExtensions: ['validator.ts', 'validator.js'],
+            enabledFor: [IconPack.Angular, IconPack.Ngrx]
+        },
+        {
+            name: 'angular-abstract',
+            fileExtensions: ['abstract.ts', 'abstract.js'],
+            enabledFor: [IconPack.Angular, IconPack.Ngrx]
+        },
+        {
+            name: 'angular-const',
+            fileExtensions: ['const.ts', 'const.js'],
             enabledFor: [IconPack.Angular, IconPack.Ngrx]
         },
         { name: 'puppet', fileExtensions: ['pp'] },
