@@ -320,7 +320,7 @@ export const fileIcons: FileIcons = {
         { name: 'audio', fileExtensions: ['mp3', 'flac', 'm4a', 'wma', 'aiff'] },
         { name: 'coffee', fileExtensions: ['coffee'] },
         { name: 'document', fileExtensions: ['txt'] },
-        { name: 'graphql', fileExtensions: ['graphql'] },
+        { name: 'graphql', fileExtensions: ['graphql', 'gql'] },
         { name: 'rust', fileExtensions: ['rs'] },
         { name: 'raml', fileExtensions: ['raml'] },
         { name: 'xaml', fileExtensions: ['xaml'] },
