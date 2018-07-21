@@ -15,7 +15,7 @@ export const folderIcons: FolderTheme[] = [
                 name: 'folder-css',
                 folderNames: ['css', 'stylesheet', 'stylesheets', 'style', 'styles']
             },
-            { name: 'folder-sass', folderNames: ['sass', 'scss'] },
+            { name: 'folder-sass', folderNames: ['sass', '_sass', 'scss', '_scss'] },
             {
                 name: 'folder-images',
                 folderNames: ['images', 'image', 'img', 'icons', 'icon', 'ico', 'screenshot', 'screenshots']
@@ -82,7 +82,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-webpack', folderNames: ['webpack'] },
             { name: 'folder-global', folderNames: ['global'] },
             { name: 'folder-public', folderNames: ['public', 'wwwroot'] },
-            { name: 'folder-include', folderNames: ['include', 'includes'] },
+            { name: 'folder-include', folderNames: ['include', 'includes', '_includes'] },
             { name: 'folder-docker', folderNames: ['docker', '.docker'] },
             { name: 'folder-ngrx-effects', folderNames: ['effects'], enabledFor: [IconPack.Ngrx] },
             { name: 'folder-ngrx-state', folderNames: ['states', 'state'], enabledFor: [IconPack.Ngrx] },
@@ -93,7 +93,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-redux-actions', folderNames: ['actions'], enabledFor: [IconPack.Redux] },
             { name: 'folder-redux-store', folderNames: ['store'], enabledFor: [IconPack.Redux] },
             { name: 'folder-react-components', folderNames: ['components'], enabledFor: [IconPack.React, IconPack.Redux] },
-            { name: 'folder-database', folderNames: ['db', 'database', 'sql'] },
+            { name: 'folder-database', folderNames: ['db', 'database', 'sql', 'data', '_data'] },
             { name: 'folder-log', folderNames: ['log', 'logs'] },
             { name: 'folder-temp', folderNames: ['temp', '.temp', 'tmp', '.tmp', 'cached', 'cache', '.cache'] },
             { name: 'folder-aws', folderNames: ['aws', '.aws'] },
@@ -118,7 +118,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-python', folderNames: ['python', '__pycache__'] },
             { name: 'folder-debug', folderNames: ['debug', 'debugging'] },
             { name: 'folder-fastlane', folderNames: ['fastlane'] },
-            { name: 'folder-plugin', folderNames: ['plugin', 'plugins', 'extension', 'extensions', 'addon', 'addons'] },
+            { name: 'folder-plugin', folderNames: ['plugin', 'plugins', '_plugins', 'extension', 'extensions', 'addon', 'addons'] },
             { name: 'folder-controller', folderNames: ['controller', 'controllers', 'service', 'services'] },
             { name: 'folder-ansible', folderNames: ['ansible'] },
         ]
