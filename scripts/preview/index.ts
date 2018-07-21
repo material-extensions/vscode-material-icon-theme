@@ -20,5 +20,5 @@ const folderThemes = filterDuplicates(folderIcons.map(theme => {
     return [].concat(...folders);
 }).reduce((a, b) => a.concat(b))).map(i => ({ iconName: i, label: i.replace('folder-', '') }));
 
-generatePreview('fileIcons', basicFileIcons, 5, ['virtual']);
-generatePreview('folderIcons', folderThemes, 5, ['folder', 'folder-expo']);
+generatePreview('fileIcons', basicFileIcons, 5, ['virtual', 'video', 'powerpoint']);
+generatePreview('folderIcons', folderThemes, 5, ['folder', 'folder-ansible', 'folder-expo']);

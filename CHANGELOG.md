@@ -1,4 +1,24 @@
 # Changelog
+## 3.5.2 (2018-07-21)
+### New icons
+- Webassembly (in [8b40758](https://github.com/PKief/vscode-material-icon-theme/commit/8b4075858d6d5df2b7f810aa6c817a70e5aca937))
+- gettext / i18n ([issue #276](https://github.com/PKief/vscode-material-icon-theme/issues/276))
+- .luacheckrc ([issue #277](https://github.com/PKief/vscode-material-icon-theme/issues/277))
+- Semantic Release ([issue #279](https://github.com/PKief/vscode-material-icon-theme/issues/279))
+- Bitbucket ([@haydenbr](https://github.com/haydenbr) in [#283](https://github.com/PKief/vscode-material-icon-theme/pull/283))
+- node.js (alternative version) ([issue #262](https://github.com/PKief/vscode-material-icon-theme/issues/262))
+- babel.config.js ([@titouancreach](https://github.com/titouancreach) in [#286](https://github.com/PKief/vscode-material-icon-theme/pull/286))
+- Jupyter ([issue #285](https://github.com/PKief/vscode-material-icon-theme/issues/285))
+- .gql ([@dabrowski-adam](https://github.com/dabrowski-adam) in [#287](https://github.com/PKief/vscode-material-icon-theme/pull/287))
+- Jekyll folder ([issue #290](https://github.com/PKief/vscode-material-icon-theme/issues/290))
+
+### Updated icons
+- node_modules folder (in [36cf5c7](https://github.com/PKief/vscode-material-icon-theme/commit/36cf5c79c112bcc0ad9907c02062ad6e43c3778d))
+- test folder (in [36cf5c7](https://github.com/PKief/vscode-material-icon-theme/commit/36cf5c79c112bcc0ad9907c02062ad6e43c3778d))
+
+### Other improvements
+- Updated translations (in [7f7f716](https://github.com/PKief/vscode-material-icon-theme/commit/7f7f716ddf0ffea66b3fef0a507ff0dd781b7b9d))
+
 ## 3.5.1 (2018-06-28)
 ### New icons
 - San ([issue #260](https://github.com/PKief/vscode-material-icon-theme/issues/260))
