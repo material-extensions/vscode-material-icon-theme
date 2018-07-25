@@ -721,5 +721,6 @@ export const fileIcons: FileIcons = {
         { name: 'semantic-release', light: true, fileNames: ['.releaserc', 'release.config.js'] },
         { name: 'bitbucket', fileNames: ['bitbucket-pipelines.yaml', 'bitbucket-pipelines.yml'] },
         { name: 'jupyter', fileExtensions: ['ipynb'] },
+        { name: 'd', fileExtensions: ['d'] },
     ]
 };
