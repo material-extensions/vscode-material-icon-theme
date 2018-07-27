@@ -270,7 +270,7 @@ export const fileIcons: FileIcons = {
                 'docker-compose.yml',
                 'docker-compose.yaml',
                 'docker-compose.override.yml',
-		'docker-compose.prod.yml'
+                'docker-compose.prod.yml'
             ]
         },
         { name: 'tex', fileExtensions: ['tex', 'cls', 'sty'] },
