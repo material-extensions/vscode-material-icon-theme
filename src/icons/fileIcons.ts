@@ -713,7 +713,7 @@ export const fileIcons: FileIcons = {
         { name: 'san', fileExtensions: ['san'] },
         { name: 'wallaby', fileNames: ['wallaby.js', 'wallaby.conf.js'] },
         { name: 'django', fileExtensions: ['djt'] },
-        { name: 'stencil', fileNames: ['stencil.config.js'], light: true },
+        { name: 'stencil', fileNames: ['stencil.config.js', 'stencil.config.ts'], light: true },
         { name: 'red', fileExtensions: ['red'] },
         { name: 'makefile', fileNames: ['makefile'] },
         { name: 'foxpro', fileExtensions: ['fxp', 'prg'] },
