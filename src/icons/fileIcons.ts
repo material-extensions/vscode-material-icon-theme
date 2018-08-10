@@ -723,5 +723,6 @@ export const fileIcons: FileIcons = {
         { name: 'bitbucket', fileNames: ['bitbucket-pipelines.yaml', 'bitbucket-pipelines.yml'] },
         { name: 'jupyter', fileExtensions: ['ipynb'] },
         { name: 'd', fileExtensions: ['d'] },
+        { name: 'mdx', fileExtensions: ['mdx'] },
     ]
 };
