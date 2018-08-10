@@ -164,15 +164,14 @@
   },
   "devDependencies": {
     "@types/mocha": "^5.2.5",
-    "@types/node": "^10.5.2",
-    "@types/puppeteer": "^1.5.1",
-    "bithound": "^1.7.0",
+    "@types/node": "^10.5.7",
+    "@types/puppeteer": "^1.6.0",
     "mocha": "^5.2.0",
-    "puppeteer": "^1.6.0",
+    "puppeteer": "^1.7.0",
     "rimraf": "^2.6.2",
     "ts-node": "^7.0.0",
     "tslint": "^5.11.0",
-    "typescript": "^2.9.2",
+    "typescript": "^3.0.1",
     "vscode": "^1.1.18"
   }
 }
