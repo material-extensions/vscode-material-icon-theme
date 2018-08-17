@@ -724,5 +724,6 @@ export const fileIcons: FileIcons = {
         { name: 'jupyter', fileExtensions: ['ipynb'] },
         { name: 'd', fileExtensions: ['d'] },
         { name: 'mdx', fileExtensions: ['mdx'] },
+        { name: 'ballerina', fileExtensions: ['bal', 'balx'] },
     ]
 };
