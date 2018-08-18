@@ -725,5 +725,6 @@ export const fileIcons: FileIcons = {
         { name: 'd', fileExtensions: ['d'] },
         { name: 'mdx', fileExtensions: ['mdx'] },
         { name: 'ballerina', fileExtensions: ['bal', 'balx'] },
+        { name: 'racket', fileExtensions: ['rkt'] },
     ]
 };
