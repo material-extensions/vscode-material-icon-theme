@@ -1,4 +1,16 @@
 # Changelog
+## 3.5.3 (2018-08-19)
+### New icons
+- D ([issue #291](https://github.com/PKief/vscode-material-icon-theme/issues/291))
+- Ballerina ([issue #304](https://github.com/PKief/vscode-material-icon-theme/issues/304))
+- .mdx ([issue #295](https://github.com/PKief/vscode-material-icon-theme/issues/295))
+- Racket ([issue #299](https://github.com/PKief/vscode-material-icon-theme/issues/299))
+- docker-compose.prod.yml ([@diego3g](https://github.com/diego3g) in [#294](https://github.com/PKief/vscode-material-icon-theme/pull/294))
+- stencil.config.ts ([@natemoo-re](https://github.com/natemoo-re) in [#297](https://github.com/PKief/vscode-material-icon-theme/pull/297))
+
+### Updated icons
+- Clojure
+
 ## 3.5.2 (2018-07-21)
 ### New icons
 - Webassembly (in [8b40758](https://github.com/PKief/vscode-material-icon-theme/commit/8b4075858d6d5df2b7f810aa6c817a70e5aca937))
