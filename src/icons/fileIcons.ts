@@ -583,7 +583,7 @@ export const fileIcons: FileIcons = {
         },
         {
             name: 'credits',
-            fileNames: ['CREDITS', 'credits.txt', 'credits.md', 'credits.md.rendered']
+            fileNames: ['authors', 'authors.md', 'authors.txt', 'credits', 'credits.txt', 'credits.md', 'credits.md.rendered']
         },
         { name: 'flow', fileNames: ['.flowconfig'] },
         { name: 'favicon', fileNames: ['favicon.ico'] },
