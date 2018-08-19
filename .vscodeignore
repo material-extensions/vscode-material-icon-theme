@@ -9,7 +9,6 @@ scripts/**
 .gitignore
 .travis.yml
 appveyor.yml
-.bithoundrc
 tsconfig.json
 tslint.json
 images/**
