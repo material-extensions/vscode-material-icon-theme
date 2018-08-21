@@ -12,9 +12,7 @@ export const fileIcons: FileIcons = {
             name: 'markdown',
             fileExtensions: [
                 'md',
-                'md.rendered',
                 'markdown',
-                'markdown.rendered',
                 'rst'
             ]
         },
@@ -223,11 +221,9 @@ export const fileIcons: FileIcons = {
             fileNames: [
                 'license',
                 'license.md',
-                'license.md.rendered',
                 'license.txt',
                 'licence',
                 'licence.md',
-                'licence.md.rendered',
                 'licence.txt'
             ]
         },
@@ -574,16 +570,20 @@ export const fileIcons: FileIcons = {
         { name: 'babel', fileNames: ['.babelrc', '.babelrc.js', 'babel.config.js'] },
         {
             name: 'contributing',
-            fileNames: ['contributing.md', 'contributing.md.rendered']
+            fileNames: ['contributing.md']
         },
-        { name: 'readme', fileNames: ['readme.md', 'readme.md.rendered'] },
+        { name: 'readme', fileNames: ['readme.md', 'readme.txt', 'readme'] },
         {
             name: 'changelog',
-            fileNames: ['changelog', 'changelog.md', 'changelog.md.rendered']
+            fileNames: ['changelog', 'changelog.md', 'changelog.txt']
         },
         {
             name: 'credits',
-            fileNames: ['authors', 'authors.md', 'authors.txt', 'credits', 'credits.txt', 'credits.md', 'credits.md.rendered']
+            fileNames: ['credits', 'credits.txt', 'credits.md']
+        },
+        {
+            name: 'authors',
+            fileNames: ['authors', 'authors.md', 'authors.txt']
         },
         { name: 'flow', fileNames: ['.flowconfig'] },
         { name: 'favicon', fileNames: ['favicon.ico'] },
@@ -630,7 +630,7 @@ export const fileIcons: FileIcons = {
         },
         {
             name: 'conduct',
-            fileNames: ['code_of_conduct.md', 'code_of_conduct.md.rendered']
+            fileNames: ['code_of_conduct.md', 'code_of_conduct.txt']
         },
         { name: 'watchman', fileNames: ['.watchmanconfig'] },
         { name: 'aurelia', fileNames: ['aurelia.json'] },
