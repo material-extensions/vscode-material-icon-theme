@@ -149,7 +149,8 @@ export const fileIcons: FileIcons = {
                 '.buildignore',
                 '.mrconfig',
                 '.yardopts',
-                'manifest.mf'
+                'manifest.mf',
+                '.clang-format',
             ]
         },
         { name: 'typescript', fileExtensions: ['ts'] },
@@ -726,5 +727,6 @@ export const fileIcons: FileIcons = {
         { name: 'mdx', fileExtensions: ['mdx'] },
         { name: 'ballerina', fileExtensions: ['bal', 'balx'] },
         { name: 'racket', fileExtensions: ['rkt'] },
+        { name: 'bazel', fileExtensions: ['bzl', 'bazel'] },
     ]
 };
