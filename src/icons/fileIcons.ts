@@ -730,5 +730,7 @@ export const fileIcons: FileIcons = {
         { name: 'bazel', fileExtensions: ['bzl', 'bazel'] },
         { name: 'mint', fileExtensions: ['mint'] },
         { name: 'velocity', fileExtensions: ['vm', 'fhtml', 'vtl'] },
+        { name: 'godot', fileExtensions: ['gd'] },
+        { name: 'godot-assets', fileExtensions: ['godot', 'tres', 'tscn'] },
     ]
 };
