@@ -22,7 +22,6 @@ export const check = () => {
 };
 
 const checkFileIcons = () => {
-    const icons = {};
     checkForConflictsInFileIcons('fileExtensions');
     checkForConflictsInFileIcons('fileNames');
 };

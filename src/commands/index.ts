@@ -46,6 +46,7 @@ export const commands = [
     activateThemeCommand,
     toggleIconPacksCommand,
     changeFolderThemeCommand,
+    toggleFolderColorCommand,
     restoreDefaultConfigCommand,
     hidesExplorerArrowsCommand,
     changeOpacityCommand

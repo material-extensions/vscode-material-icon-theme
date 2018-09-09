@@ -4,7 +4,7 @@ import * as i18n from './../i18n';
 
 /** User has to confirm if he wants to reload the editor */
 export const showConfirmToReloadMessage = (): Promise<boolean> => {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
         // if the user does not want to see the reload message
         if (helpers.getThemeConfig('showReloadMessage').globalValue === false) return;
 

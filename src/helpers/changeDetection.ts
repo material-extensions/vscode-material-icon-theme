@@ -29,7 +29,7 @@ export const detectConfigChanges = () => {
  */
 const compareConfigs = (configs: string[]): Promise<{ updatedConfigs: IconJsonOptions, updatedJSONConfig: IconJsonOptions }> => {
     return getMaterialIconsJSON().then(json => {
-        return configs.reduce((result, configName, i) => {
+        return configs.reduce((result, configName) => {
             // no further actions (e.g. reload) required
             if (/show(Welcome|Update|Reload)Message/g.test(configName)) return result;
 

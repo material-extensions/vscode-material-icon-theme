@@ -14,8 +14,6 @@ const folderPath = path.join('icons');
  */
 const availableIcons: { [s: string]: string } = {};
 
-const unusedIcons = [];
-
 /**
  * Get all icon file names from the file system.
  */

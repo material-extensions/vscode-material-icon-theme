@@ -35,9 +35,3 @@ export class IconConfiguration {
         this.options = {};
     }
 }
-
-interface IconDefinition {
-    [definition: string]: {
-        iconPath: string;
-    };
-}

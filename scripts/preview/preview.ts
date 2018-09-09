@@ -23,7 +23,7 @@ const createHTMLTableHeadRow = (amount: number) => {
 
 const createHTMLTableBodyRows = (items: IconDefinition[][]) => {
     let rows = '';
-    items.forEach((row, i) => {
+    items.forEach(row => {
         const columns = row.map(icon => `
             <td class="icon">
                 <img src="./../../icons/${icon.iconName}.svg" alt="${icon.label}">
@@ -68,7 +68,7 @@ const savePreview = (fileName: string, size: number, icons: IconDefinition[][]) 
     // create the images
     createScreenshots(filePath, fileName).then(() => {
         console.log(painter.green(`Successfully created ${fileName} preview images!`));
-    }).catch(e => {
+    }).catch(() => {
         throw Error(painter.red(`Error while creating ${fileName} preview images`));
     });
 };

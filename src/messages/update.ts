@@ -10,8 +10,6 @@ export const showUpdateMessage = () => {
     // if the user does not want to see the update message
     if (helpers.getThemeConfig('showUpdateMessage').globalValue !== true) return;
 
-    const config = helpers.getConfig().inspect('workbench.iconTheme');
-
     vscode.window.showInformationMessage(
         i18n.translate('themeUpdated'),
 
