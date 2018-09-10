@@ -6,7 +6,7 @@ import { fileIcons } from '../fileIcons';
 import { folderIcons } from '../folderIcons';
 import { languageIcons } from '../languageIcons';
 import { iconJsonName } from './constants';
-import { generateFolderIcons, getFileIconDefinitions, getFolderIconDefinitions, getLanguageIconDefinitions, setIconOpacity } from './index';
+import { generateFolderIcons, getFileIconDefinitions, getFolderIconDefinitions, getLanguageIconDefinitions, setIconOpacity, validateHEXColorCode, validateOpacityValue } from './index';
 
 /**
  * Generate the complete icon configuration object that can be written as JSON file.
@@ -32,11 +32,22 @@ export const createIconFile = async (updatedConfigs?: IconJsonOptions, updatedJS
     const iconJSONPath = path.join(__dirname, '../../../', 'src', iconJsonName);
     const json = generateIconConfigurationObject(options);
 
+    // make sure that the opacity value must be entered correctly to trigger a reload.
+    if (updatedConfigs && updatedConfigs.opacity && !validateOpacityValue(updatedConfigs.opacity)) {
+        return Promise.reject('Material Icons: Invalid opacity value!');
+    }
+
+    // make sure that the value for the folder color is entered correctly to trigger a reload.
+    if (updatedConfigs && updatedConfigs.folders && updatedConfigs.folders.color && !validateHEXColorCode(updatedConfigs.folders.color)) {
+        return Promise.reject('Material Icons: Invalid folder color value!');
+    }
+
     try {
         await fs.writeFile(iconJSONPath, JSON.stringify(json, undefined, 2), async (err) => {
             if (err) {
                 throw Error(err.message);
             }
+
             // if updatedConfigs do not exist (because of initial setup)
             // or new config value was detected by the change detection
             if (!updatedConfigs || (updatedConfigs.folders || {}).color) {

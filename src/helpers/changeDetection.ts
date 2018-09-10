@@ -33,10 +33,10 @@ const compareConfigs = (configs: string[]): Promise<{ updatedConfigs: IconJsonOp
             // no further actions (e.g. reload) required
             if (/show(Welcome|Update|Reload)Message/g.test(configName)) return result;
 
-            const configValue = getThemeConfig(configName).globalValue;
+            const configValue = getThemeConfig(configName).globalValue || getThemeConfig(configName).defaultValue;
             const currentState = getObjectPropertyValue(json.options, configName);
 
-            if (configValue !== undefined && JSON.stringify(configValue) !== JSON.stringify(currentState)) {
+            if (JSON.stringify(configValue) !== JSON.stringify(currentState)) {
                 setObjectPropertyValue(json.options, configName, configValue);
                 setObjectPropertyValue(result.updatedConfigs, configName, configValue);
             }

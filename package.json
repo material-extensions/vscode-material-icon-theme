@@ -94,7 +94,21 @@
         "material-icon-theme.activeIconPack": {
           "type": "string",
           "default": "angular",
-          "description": "%configuration.activeIconPack%"
+          "description": "%configuration.activeIconPack%",
+          "enumDescriptions": [
+            "%configuration.activeIconPack.angular%",
+            "%configuration.activeIconPack.angular_ngrx%",
+            "%configuration.activeIconPack.react%",
+            "%configuration.activeIconPack.react_redux%",
+            "%configuration.activeIconPack.none%"
+          ],
+          "enum": [
+            "angular",
+            "angular_ngrx",
+            "react",
+            "react_redux",
+            "none"
+          ]
         },
         "material-icon-theme.files.associations": {
           "type": "object",
@@ -115,6 +129,11 @@
           "type": "string",
           "default": "specific",
           "description": "%configuration.folders.theme%",
+          "enumDescriptions": [
+            "%configuration.folders.theme.specific%",
+            "%configuration.folders.theme.classic%",
+            "%configuration.folders.theme.none%"
+          ],
           "enum": [
             "specific",
             "classic",
@@ -124,6 +143,7 @@
         "material-icon-theme.folders.color": {
           "type": "string",
           "default": "#90a4ae",
+          "pattern": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
           "description": "%configuration.folders.color%"
         },
         "material-icon-theme.opacity": {
@@ -164,14 +184,14 @@
   },
   "devDependencies": {
     "@types/mocha": "^5.2.5",
-    "@types/node": "^10.7.1",
-    "@types/puppeteer": "^1.6.0",
+    "@types/node": "^10.9.4",
+    "@types/puppeteer": "^1.6.3",
     "mocha": "^5.2.0",
-    "puppeteer": "^1.7.0",
+    "puppeteer": "^1.8.0",
     "rimraf": "^2.6.2",
     "ts-node": "^7.0.1",
     "tslint": "^5.11.0",
-    "typescript": "^3.0.1",
+    "typescript": "^3.0.3",
     "vscode": "^1.1.21"
   }
 }
