@@ -33,13 +33,17 @@ export const createIconFile = async (updatedConfigs?: IconJsonOptions, updatedJS
     const json = generateIconConfigurationObject(options);
 
     // make sure that the opacity value must be entered correctly to trigger a reload.
-    if (updatedConfigs && updatedConfigs.opacity && !validateOpacityValue(updatedConfigs.opacity)) {
+    if (updatedConfigs && updatedConfigs.opacity !== undefined && !validateOpacityValue(updatedConfigs.opacity)) {
         return Promise.reject('Material Icons: Invalid opacity value!');
     }
 
     // make sure that the value for the folder color is entered correctly to trigger a reload.
-    if (updatedConfigs && updatedConfigs.folders && updatedConfigs.folders.color && !validateHEXColorCode(updatedConfigs.folders.color)) {
-        return Promise.reject('Material Icons: Invalid folder color value!');
+    if (updatedConfigs && updatedConfigs.folders) {
+        if (typeof updatedConfigs.folders.color !== 'undefined') {
+            if (!validateHEXColorCode(updatedConfigs.folders.color)) {
+                return Promise.reject('Material Icons: Invalid folder color value!');
+            }
+        }
     }
 
     try {

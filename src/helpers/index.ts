@@ -12,7 +12,7 @@ export const getConfig = (section?: string) => {
 };
 
 /** Get list of configuration entries of package.json */
-export const getExtensionConfiguration = (): { [config: string]: any } => {
+export const getListOfConfigs = (): { [config: string]: any } => {
     return vscode.extensions.getExtension('PKief.material-icon-theme').packageJSON.contributes.configuration.properties;
 };
 

@@ -37,7 +37,7 @@ export const getCurrentOpacityValue = (): Promise<number> => {
 };
 
 const setOpacityConfig = (opacity: number) => {
-    if (opacity) {
+    if (opacity !== undefined) {
         helpers.setThemeConfig('opacity', opacity, true);
     }
 };

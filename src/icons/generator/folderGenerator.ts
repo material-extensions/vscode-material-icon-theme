@@ -182,5 +182,5 @@ const writeSVGFiles = (iconName: string, svg: string) => {
  */
 export const validateHEXColorCode = (color: string) => {
     const hexPattern = new RegExp(/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/);
-    return hexPattern.test(color);
+    return color.length > 0 && hexPattern.test(color);
 };

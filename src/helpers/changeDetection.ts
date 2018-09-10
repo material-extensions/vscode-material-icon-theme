@@ -1,11 +1,11 @@
-import { getExtensionConfiguration, getMaterialIconsJSON, getThemeConfig, promptToReload } from '.';
+import { getListOfConfigs, getMaterialIconsJSON, getThemeConfig, promptToReload } from '.';
 import { createIconFile } from '../icons/index';
 import { IconJsonOptions } from '../models';
 import { getObjectPropertyValue, setObjectPropertyValue } from './objects';
 
 /** Compare the workspace and the user configurations with the current setup of the icons. */
 export const detectConfigChanges = () => {
-    const configs = Object.keys(getExtensionConfiguration())
+    const configs = Object.keys(getListOfConfigs())
         .map(c => c.split('.').slice(1).join('.'));
 
     return compareConfigs(configs).then(changes => {
@@ -33,7 +33,8 @@ const compareConfigs = (configs: string[]): Promise<{ updatedConfigs: IconJsonOp
             // no further actions (e.g. reload) required
             if (/show(Welcome|Update|Reload)Message/g.test(configName)) return result;
 
-            const configValue = getThemeConfig(configName).globalValue || getThemeConfig(configName).defaultValue;
+            const themeConfig = getThemeConfig(configName);
+            const configValue = themeConfig.globalValue !== undefined ? themeConfig.globalValue : themeConfig.defaultValue;
             const currentState = getObjectPropertyValue(json.options, configName);
 
             if (JSON.stringify(configValue) !== JSON.stringify(currentState)) {

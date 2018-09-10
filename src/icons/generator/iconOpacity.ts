@@ -7,6 +7,10 @@ import * as path from 'path';
  * @param fileNames Only change the opacity of certain file names.
  */
 export const setIconOpacity = (opacity: number, fileNames?: string[]) => {
+    if (!validateOpacityValue(opacity)) {
+        return console.error('Invalid opacity value! Opacity must be a decimal number between 0 and 1!');
+    }
+
     return new Promise((resolve, reject) => {
         let iconsPath = path.join(__dirname, '..', '..', '..');
         const parentFolder = iconsPath.split(path.sep).pop();
