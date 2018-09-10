@@ -1,15 +1,13 @@
-import { getDefaultIconOptions } from '../icons/index';
 import * as helpers from './../helpers';
 
 /** Restore all configurations to default. */
 export const restoreDefaultConfig = () => {
-    const defaultOptions = getDefaultIconOptions();
-    helpers.setThemeConfig('activeIconPack', defaultOptions.activeIconPack, true);
-    helpers.setThemeConfig('folders.theme', defaultOptions.folders.theme, true);
-    helpers.setThemeConfig('folders.color', defaultOptions.folders.color, true);
-    helpers.setThemeConfig('hidesExplorerArrows', defaultOptions.hidesExplorerArrows, true);
-    helpers.setThemeConfig('opacity', defaultOptions.opacity, true);
-    helpers.setThemeConfig('files.associations', defaultOptions.files.associations, true);
-    helpers.setThemeConfig('folders.associations', defaultOptions.folders.associations, true);
-    helpers.setThemeConfig('languages.associations', defaultOptions.languages.associations, true);
+    helpers.setThemeConfig('activeIconPack', undefined, true);
+    helpers.setThemeConfig('folders.theme', undefined, true);
+    helpers.setThemeConfig('folders.color', undefined, true);
+    helpers.setThemeConfig('hidesExplorerArrows', undefined, true);
+    helpers.setThemeConfig('opacity', undefined, true);
+    helpers.setThemeConfig('files.associations', undefined, true);
+    helpers.setThemeConfig('folders.associations', undefined, true);
+    helpers.setThemeConfig('languages.associations', undefined, true);
 };
