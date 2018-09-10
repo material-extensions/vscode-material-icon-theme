@@ -1,4 +1,29 @@
 # Changelog
+## 3.6.0 (2018-09-10)
+### New icons
+- authors ([@danielbankhead](https://github.com/danielbankhead) in [#306](https://github.com/PKief/vscode-material-icon-theme/pull/306))
+- Godot ([@chrsmutti](https://github.com/chrsmutti) in [#316](https://github.com/PKief/vscode-material-icon-theme/pull/316))
+- Bazel
+- Mint ([issue #308](https://github.com/PKief/vscode-material-icon-theme/issues/308))
+- Velocity ([issue #311](https://github.com/PKief/vscode-material-icon-theme/issues/311))
+- ScriptCS (.csx) ([@arpadbarta](https://github.com/arpadbarta) in [#313](https://github.com/PKief/vscode-material-icon-theme/pull/313))
+- .clang-format
+- android, iOS folder ([issue #312](https://github.com/PKief/vscode-material-icon-theme/issues/312))
+- client, server folder ([issue #296](https://github.com/PKief/vscode-material-icon-theme/issues/296))
+- upload, download folder ([issue #218](https://github.com/PKief/vscode-material-icon-theme/issues/218))
+- helpers folder
+- tasks folder ([issue #218](https://github.com/PKief/vscode-material-icon-theme/issues/218))
+- themes folder
+
+### Updated icons
+- Babel ([issue #315](https://github.com/PKief/vscode-material-icon-theme/issues/315))
+- tools folder
+- android
+
+### Other improvements
+- Adapted the extension to the new settings GUI
+- Improved code quality
+
 ## 3.5.3 (2018-08-19)
 ### New icons
 - D ([issue #291](https://github.com/PKief/vscode-material-icon-theme/issues/291))
