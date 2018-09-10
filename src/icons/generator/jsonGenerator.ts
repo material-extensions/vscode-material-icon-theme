@@ -6,7 +6,7 @@ import { fileIcons } from '../fileIcons';
 import { folderIcons } from '../folderIcons';
 import { languageIcons } from '../languageIcons';
 import { iconJsonName } from './constants';
-import { generateFolderIcons, getFileIconDefinitions, getFolderIconDefinitions, getLanguageIconDefinitions, setIconOpacity, validateOpacityValue } from './index';
+import { generateFolderIcons, getFileIconDefinitions, getFolderIconDefinitions, getLanguageIconDefinitions, setIconOpacity, validateHEXColorCode, validateOpacityValue } from './index';
 
 /**
  * Generate the complete icon configuration object that can be written as JSON file.
@@ -35,6 +35,11 @@ export const createIconFile = async (updatedConfigs?: IconJsonOptions, updatedJS
     // make sure that the opacity value must be entered correctly to trigger a reload.
     if (updatedConfigs && updatedConfigs.opacity && !validateOpacityValue(updatedConfigs.opacity)) {
         return Promise.reject('Material Icons: Invalid opacity value!');
+    }
+
+    // make sure that the value for the folder color is entered correctly to trigger a reload.
+    if (updatedConfigs && updatedConfigs.folders && updatedConfigs.folders.color && !validateHEXColorCode(updatedConfigs.folders.color)) {
+        return Promise.reject('Material Icons: Invalid folder color value!');
     }
 
     try {

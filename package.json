@@ -143,6 +143,7 @@
         "material-icon-theme.folders.color": {
           "type": "string",
           "default": "#90a4ae",
+          "pattern": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
           "description": "%configuration.folders.color%"
         },
         "material-icon-theme.opacity": {
