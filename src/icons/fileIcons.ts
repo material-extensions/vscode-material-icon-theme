@@ -735,5 +735,6 @@ export const fileIcons: FileIcons = {
         { name: 'godot-assets', fileExtensions: ['godot', 'tres', 'tscn'] },
         { name: 'azure-pipelines', fileNames: ['azure-pipelines.yml'] },
         { name: 'azure', fileExtensions: ['azcli'] },
+        { name: 'vagrant', fileNames: ['vagrantfile'], fileExtensions: ['vagrantfile'] },
     ]
 };
