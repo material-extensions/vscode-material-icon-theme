@@ -119,6 +119,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-debug', folderNames: ['debug', 'debugging'] },
             { name: 'folder-fastlane', folderNames: ['fastlane'] },
             { name: 'folder-plugin', folderNames: ['plugin', 'plugins', '_plugins', 'extension', 'extensions', 'addon', 'addons'] },
+            { name: 'folder-middleware', folderNames: ['middleware', 'middlewares'] },
             { name: 'folder-controller', folderNames: ['controller', 'controllers', 'service', 'services'] },
             { name: 'folder-ansible', folderNames: ['ansible'] },
             { name: 'folder-server', folderNames: ['server', 'servers', 'backend'] },
