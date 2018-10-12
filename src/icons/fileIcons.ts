@@ -100,7 +100,8 @@ export const fileIcons: FileIcons = {
             ]
         },
         { name: 'javascript', fileExtensions: ['js', 'esx', 'mjs'] },
-        { name: 'react', fileExtensions: ['jsx', 'tsx'] },
+        { name: 'react', fileExtensions: ['jsx'] },
+        { name: 'react_ts', fileExtensions: ['tsx'] },
         {
             name: 'routing',
             fileExtensions: ['routing.ts', 'routing.js', 'routes.ts', 'routes.js'],
