@@ -1,2 +1,2 @@
-export * from './fileIcon';
-export * from './fileTypes';
+export * from './FileIcon';
+export * from './FileTypes';
