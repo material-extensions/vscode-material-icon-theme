@@ -268,6 +268,7 @@ export const fileIcons: FileIcons = {
                 'docker-compose.yml',
                 'docker-compose.yaml',
                 'docker-compose.override.yml',
+                'docker-compose.staging.yml',
                 'docker-compose.prod.yml'
             ]
         },
