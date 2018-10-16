@@ -109,7 +109,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-coverage', folderNames: ['coverage', '.nyc-output'] },
             { name: 'folder-class', folderNames: ['class', 'classes', 'model', 'models'] },
             { name: 'folder-other', folderNames: ['other', 'others', 'misc', 'miscellaneous'] },
-            { name: 'folder-typescript', folderNames: ['typescript', 'ts'] },
+            { name: 'folder-typescript', folderNames: ['typescript', 'ts', 'typings'] },
             { name: 'folder-routes', folderNames: ['routes'] },
             { name: 'folder-ci', folderNames: ['.ci', 'ci'] },
             { name: 'folder-benchmark', folderNames: ['benchmark', 'benchmarks', 'performance', 'measure', 'measures', 'measurement'] },
