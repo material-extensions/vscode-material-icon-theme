@@ -1,2 +1,2 @@
-export * from './FolderIcon';
-export * from './FolderTheme';
+export * from './folderIcon';
+export * from './folderTheme';
