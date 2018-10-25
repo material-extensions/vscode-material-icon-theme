@@ -737,5 +737,6 @@ export const fileIcons: FileIcons = {
         { name: 'azure-pipelines', fileNames: ['azure-pipelines.yml'] },
         { name: 'azure', fileExtensions: ['azcli'] },
         { name: 'vagrant', fileNames: ['vagrantfile'], fileExtensions: ['vagrantfile'] },
+        { name: 'prisma', fileNames: ['prisma.yml'], fileExtensions: ['prisma'] },
     ]
 };
