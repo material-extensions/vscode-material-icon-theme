@@ -10,7 +10,7 @@ export const folderIcons: FolderTheme[] = [
         rootFolder: { name: 'folder-root' },
         icons: [
             { name: 'folder-src', folderNames: ['src', 'source', 'sources'] },
-            { name: 'folder-dist', folderNames: ['dist', 'out', 'build', 'release'] },
+            { name: 'folder-dist', folderNames: ['dist', 'out', 'build', 'release', 'bin'] },
             {
                 name: 'folder-css',
                 folderNames: ['css', 'stylesheet', 'stylesheets', 'style', 'styles']
@@ -52,7 +52,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-php', folderNames: ['php'] },
             { name: 'folder-phpmailer', folderNames: ['phpmailer'] },
             { name: 'folder-sublime', folderNames: ['sublime'] },
-            { name: 'folder-docs', folderNames: ['doc', 'docs', 'documents', 'documentation'] },
+            { name: 'folder-docs', folderNames: ['doc', 'docs', 'documents', 'documentation', 'post', 'posts'] },
             {
                 name: 'folder-git',
                 folderNames: ['.git', 'submodules', '.submodules']
@@ -69,7 +69,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-config', folderNames: ['config', 'configs', 'configuration', 'configurations', 'settings', 'META-INF'] },
             {
                 name: 'folder-i18n',
-                folderNames: ['i18n', 'internationalization', 'lang', 'language', 'languages', 'locale', 'locales', 'localization', 'translation', 'translations']
+                folderNames: ['i18n', 'internationalization', 'lang', 'language', 'languages', 'locale', 'locales', 'localization', 'translation', 'translations', '.tx']
             },
             { name: 'folder-components', folderNames: ['components'] },
             { name: 'folder-aurelia', folderNames: ['aurelia_project'] },
@@ -77,13 +77,13 @@ export const folderIcons: FolderTheme[] = [
                 name: 'folder-resource',
                 folderNames: ['resource', 'resources', 'res', 'asset', 'assets', 'static']
             },
-            { name: 'folder-lib', folderNames: ['lib', 'libs', 'library', 'libraries'] },
+            { name: 'folder-lib', folderNames: ['lib', 'libs', 'library', 'libraries', 'vendor', 'vendors'] },
             { name: 'folder-theme', folderNames: ['themes', 'theme', 'color', 'colors', 'design', 'designs'] },
             { name: 'folder-webpack', folderNames: ['webpack'] },
             { name: 'folder-global', folderNames: ['global'] },
             { name: 'folder-public', folderNames: ['public', 'wwwroot'] },
             { name: 'folder-include', folderNames: ['include', 'includes', '_includes'] },
-            { name: 'folder-docker', folderNames: ['docker', '.docker'] },
+            { name: 'folder-docker', folderNames: ['docker', 'dockerfiles', '.docker'] },
             { name: 'folder-ngrx-effects', folderNames: ['effects'], enabledFor: [IconPack.Ngrx] },
             { name: 'folder-ngrx-state', folderNames: ['states', 'state'], enabledFor: [IconPack.Ngrx] },
             { name: 'folder-ngrx-reducer', folderNames: ['reducers', 'reducer'], enabledFor: [IconPack.Ngrx] },
@@ -106,9 +106,9 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-circleci', folderNames: ['.circleci'] },
             { name: 'folder-wordpress', folderNames: ['wp-content'] },
             { name: 'folder-gradle', folderNames: ['gradle', '.gradle'] },
-            { name: 'folder-coverage', folderNames: ['coverage', '.nyc-output'] },
+            { name: 'folder-coverage', folderNames: ['coverage', '.nyc-output', '.nyc_output'] },
             { name: 'folder-class', folderNames: ['class', 'classes', 'model', 'models'] },
-            { name: 'folder-other', folderNames: ['other', 'others', 'misc', 'miscellaneous'] },
+            { name: 'folder-other', folderNames: ['other', 'others', 'misc', 'miscellaneous', 'extra', 'extras'] },
             { name: 'folder-typescript', folderNames: ['typescript', 'ts', 'typings', '@types'] },
             { name: 'folder-routes', folderNames: ['routes'] },
             { name: 'folder-ci', folderNames: ['.ci', 'ci'] },
@@ -157,7 +157,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-packages', folderNames: ['package', 'packages']},
             { name: 'folder-shared', folderNames: ['shared']},
             { name: 'folder-stack', folderNames: ['stack', 'stacks']},
-            { name: 'folder-template', folderNames: ['template', 'teplates']},
+            { name: 'folder-template', folderNames: ['template', 'templates']},
             { name: 'folder-utils', folderNames: ['util', 'utils']},
         ]
     },
