@@ -131,6 +131,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-download', folderNames: ['downloads', 'download'] },
             { name: 'folder-tools', folderNames: ['tools'] },
             { name: 'folder-helper', folderNames: ['helpers', 'helper'] },
+            { name: 'folder-serverless', folderNames: ['.serverless', 'serverless']}
         ]
     },
     { name: 'classic', defaultIcon: { name: 'folder' }, rootFolder: { name: 'folder-root' } },
