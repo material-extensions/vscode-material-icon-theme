@@ -14,7 +14,7 @@
    viewBox="0 0 24 24"
    xml:space="preserve"
    id="svg10"
-   sodipodi:docname="folder-job-open.svg"
+   sodipodi:docname="folder-serverless-open.svg"
    inkscape:version="0.92.2 5c3e80d, 2017-08-06"><metadata
      id="metadata16"><rdf:RDF><cc:Work
          rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
@@ -28,8 +28,8 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="640"
-     inkscape:window-height="480"
+     inkscape:window-width="929"
+     inkscape:window-height="613"
      id="namedview12"
      showgrid="false"
      inkscape:zoom="19.666667"
@@ -44,13 +44,11 @@
      id="path2" /><path
      d="M0 0h24v24H0z"
      fill="none"
-     id="path7" />
-     <path
+     id="path7" /><path
      fill="none"
      d="M-74 29h48v48h-48V29zM0 0h24v24H0V0zm0 0h24v24H0V0z"
      id="path6" /><path
-     d="m 13.610169,10.305085 v 6.6 h 2.1 v 5.4 l 4.9,-7.2 h -2.8 l 2.8,-4.8 z"
-     id="path7"
+     d="m 13.610169,10.805085 v 6.325 h 2.1 v 5.175 l 4.9,-6.9 h -2.8 l 2.8,-4.6 z"
+     id="path8"
      inkscape:connector-curvature="0"
-     style="stroke-width:0.64807409" />
-     </svg>
+     style="stroke-width:0.63442892" /></svg>
