@@ -191,6 +191,11 @@ export const fileIcons: FileIcons = {
         { name: 'hpp', fileExtensions: ['hpp'] },
         { name: 'go', fileExtensions: ['go'] },
         { name: 'python', fileExtensions: ['py'] },
+        {
+            name: 'python-file',
+            fileExtensions: ['pyc', 'whl'],
+            fileNames: ['requirements.txt', 'pipfile', '.python-version', 'manifest.in']
+        },
         { name: 'url', fileExtensions: ['url'] },
         {
             name: 'console',
