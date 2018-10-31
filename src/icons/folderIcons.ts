@@ -144,6 +144,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-core', folderNames: ['core']},
             { name: 'folder-delta', folderNames: ['delta', 'deltas', 'changes']},
             { name: 'folder-dump', folderNames: ['dump', 'dumps']},
+            { name: 'folder-examples', folderNames: ['example', 'examples', 'sample', 'samples', 'exemples', 'exemple']},
             { name: 'folder-environment', folderNames: ['.env', '.environment', 'environment']},
             { name: 'folder-functions', folderNames: ['function', 'functions', 'lambda', 'lambdas']},
             { name: 'folder-generated', folderNames: ['generated', 'cfn-gen', 'gen', 'auto']},
