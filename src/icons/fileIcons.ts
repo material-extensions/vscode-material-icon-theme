@@ -376,6 +376,7 @@ export const fileIcons: FileIcons = {
             ]
         },
         { name: 'vue', fileExtensions: ['vue'] },
+        { name: 'vue-config', fileNames: ['vue.config.js'] },
         { name: 'ocaml', fileExtensions: ['ml', 'mli', 'cmx'] },
         { name: 'javascript-map', fileExtensions: ['js.map', 'mjs.map'] },
         { name: 'css-map', fileExtensions: ['css.map'] },
