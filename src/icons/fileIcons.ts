@@ -376,10 +376,10 @@ export const fileIcons: FileIcons = {
             ]
         },
         { name: 'vue', fileExtensions: ['vue'] },
-        { name: 'vue-config', fileNames: ['vue.config.js'] },
+        { name: 'vue-file', fileNames: ['vue.config.js', 'vue.config.ts'] },
         { name: 'ocaml', fileExtensions: ['ml', 'mli', 'cmx'] },
-        { name: 'javascript-map', fileExtensions: ['js.map', 'mjs.map'] },
-        { name: 'css-map', fileExtensions: ['css.map'] },
+        { name: 'javascript-file', fileExtensions: ['js.map', 'mjs.map'] },
+        { name: 'css-file', fileExtensions: ['css.map'] },
         { name: 'lock', fileExtensions: ['lock'] },
         { name: 'handlebars', fileExtensions: ['hbs', 'mustache'] },
         { name: 'perl', fileExtensions: ['pl', 'pm'] },
