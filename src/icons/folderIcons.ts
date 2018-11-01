@@ -147,7 +147,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-examples', folderNames: ['example', 'examples', 'sample', 'samples'] },
             { name: 'folder-environment', folderNames: ['.env', '.environment', 'environment'] },
             { name: 'folder-functions', folderNames: ['function', 'functions', 'lambda', 'lambdas'] },
-            { name: 'folder-generated', folderNames: ['generated', 'cfn-gen', 'gen', 'gens', 'generator', 'generators', 'auto'] },
+            { name: 'folder-generator', folderNames: ['generator', 'generators', 'generated', 'cfn-gen', 'gen', 'gens', 'auto'] },
             { name: 'folder-hook', folderNames: ['hook', 'hooks', 'trigger', 'triggers'] },
             { name: 'folder-job', folderNames: ['job', 'jobs'] },
             { name: 'folder-keys', folderNames: ['keys', 'key', 'token', 'tokens'] },
