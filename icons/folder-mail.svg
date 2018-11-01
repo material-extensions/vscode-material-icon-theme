@@ -1,4 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414" viewBox="0 0 24 24">
-  <path fill="#B71C1C"  d="M10 4H4c-1.11 0-2 .89-2 2v12c0 1.097.903 2 2 2h16c1.097 0 2-.903 2-2V8a2 2 0 0 0-2-2h-8l-2-2z" fill-rule="nonzero"/>
-  <path fill="#FFEBEE" d="M21.604 11.614h-9.2c-.632 0-1.144.517-1.144 1.15l-.006 6.9c0 .632.518 1.15 1.15 1.15h9.2c.633 0 1.15-.518 1.15-1.15v-6.9c0-.633-.517-1.15-1.15-1.15zm0 2.3l-4.6 2.875-4.6-2.875v-1.15l4.6 2.875 4.6-2.875z"/>
-</svg>
+<svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414" version="1.1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 4H4c-1.11 0-2 .89-2 2v12c0 1.097.903 2 2 2h16c1.097 0 2-.903 2-2V8a2 2 0 0 0-2-2h-8l-2-2z" fill="#B71C1C" fill-rule="nonzero" style="fill:#e53935"/><path d="m21.604 11.614h-9.2c-.632 0-1.144.517-1.144 1.15l-.006 6.9c0 .632.518 1.15 1.15 1.15h9.2c.633 0 1.15-.518 1.15-1.15v-6.9c0-.633-.517-1.15-1.15-1.15zm0 2.3l-4.6 2.875-4.6-2.875v-1.15l4.6 2.875 4.6-2.875z" fill="#FFEBEE" style="fill:#ffcdd2"/></svg>
