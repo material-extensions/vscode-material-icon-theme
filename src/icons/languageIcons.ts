@@ -15,7 +15,7 @@ export const languageIcons: LanguageIcon[] = [
     { icon: { name: 'json' }, ids: ['json', 'jsonc'] },
     { icon: { name: 'blink' }, ids: ['blink'] },
     { icon: { name: 'java' }, ids: ['java'] },
-    { icon: { name: 'razor' }, ids: ['razor'] },
+    { icon: { name: 'razor' }, ids: ['razor', 'aspnetcorerazor'] },
     { icon: { name: 'python' }, ids: ['python'] },
     { icon: { name: 'javascript' }, ids: ['javascript'] },
     { icon: { name: 'typescript' }, ids: ['typescript'] },
