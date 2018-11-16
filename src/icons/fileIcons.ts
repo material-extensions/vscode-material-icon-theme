@@ -207,7 +207,7 @@ export const fileIcons: FileIcons = {
         { name: 'go', fileExtensions: ['go'] },
         { name: 'python', fileExtensions: ['py'] },
         {
-            name: 'python-file',
+            name: 'python-misc',
             fileExtensions: ['pyc', 'whl'],
             fileNames: ['requirements.txt', 'pipfile', '.python-version', 'manifest.in']
         },
@@ -395,10 +395,10 @@ export const fileIcons: FileIcons = {
             ]
         },
         { name: 'vue', fileExtensions: ['vue'] },
-        { name: 'vue-file', fileNames: ['vue.config.js', 'vue.config.ts'] },
+        { name: 'vue-config', fileNames: ['vue.config.js', 'vue.config.ts'] },
         { name: 'ocaml', fileExtensions: ['ml', 'mli', 'cmx'] },
-        { name: 'javascript-file', fileExtensions: ['js.map', 'mjs.map'] },
-        { name: 'css-file', fileExtensions: ['css.map'] },
+        { name: 'javascript-map', fileExtensions: ['js.map', 'mjs.map'] },
+        { name: 'css-map', fileExtensions: ['css.map'] },
         { name: 'lock', fileExtensions: ['lock'] },
         { name: 'handlebars', fileExtensions: ['hbs', 'mustache'] },
         { name: 'perl', fileExtensions: ['pl', 'pm'] },
