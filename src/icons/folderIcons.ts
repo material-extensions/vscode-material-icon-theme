@@ -161,6 +161,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-utils', folderNames: ['util', 'utils'] },
             { name: 'folder-e2e', folderNames: ['e2e', 'it', 'integration-test', 'integration-tests'] },
             { name: 'folder-custom', folderNames: ['custom', 'customs'] },
+            { name: 'folder-grunt', folderNames: ['grunt', '.grunt'] },
         ]
     },
     { name: 'classic', defaultIcon: { name: 'folder' }, rootFolder: { name: 'folder-root' } },
