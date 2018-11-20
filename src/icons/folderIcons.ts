@@ -169,6 +169,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-vm', folderNames: ['vm', 'vms'] },
             { name: 'folder-storybook', folderNames: ['storybook', '.storybook'] },
             { name: 'folder-stylus', folderNames: ['stylus'] },
+            { name: 'folder-flow', folderNames: ['flow-typed'] },
         ]
     },
     { name: 'classic', defaultIcon: { name: 'folder' }, rootFolder: { name: 'folder-root' } },
