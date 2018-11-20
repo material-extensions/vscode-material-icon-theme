@@ -163,7 +163,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-custom', folderNames: ['custom', 'customs'] },
             { name: 'folder-grunt', folderNames: ['grunt', '.grunt'] },
             { name: 'folder-mock', folderNames: ['mock', 'mocks', 'fixture', 'fixtures'] },
-            { name: 'folder-syntax', folderNames: ['syntax', 'syntaxe', 'syntaxes'] },
+            { name: 'folder-syntax', folderNames: ['syntax', 'syntaxe', 'syntaxes', 'definition', 'definitions'] },
             { name: 'folder-styleguide', folderNames: ['styleguide'] },
             { name: 'folder-scenario', folderNames: ['scenario', 'scenarios'] },
             { name: 'folder-vm', folderNames: ['vm', 'vms'] },
