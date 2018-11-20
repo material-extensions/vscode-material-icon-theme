@@ -174,7 +174,7 @@ export const fileIcons: FileIcons = {
                 'vb',
                 'vbs',
                 'vcxitems',
-                'vcxitems.filters'
+                'vcxitems.filters',
                 'vcxproj',
                 'vcxproj.filters'
             ]
