@@ -167,6 +167,8 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-styleguide', folderNames: ['style', 'styleguide'] },
             { name: 'folder-scenario', folderNames: ['scenario', 'scenarios'] },
             { name: 'folder-vm', folderNames: ['vm', 'vms'] },
+            { name: 'folder-storybook', folderNames: ['storybook', '.storybook'] },
+            { name: 'folder-stylus', folderNames: ['stylus'] },
         ]
     },
     { name: 'classic', defaultIcon: { name: 'folder' }, rootFolder: { name: 'folder-root' } },
