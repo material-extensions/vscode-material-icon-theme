@@ -152,6 +152,7 @@ export const fileIcons: FileIcons = {
                 '.yardopts',
                 'manifest.mf',
                 '.clang-format',
+                '.clang-tidy'
             ]
         },
         { name: 'typescript', fileExtensions: ['ts'] },
@@ -163,7 +164,21 @@ export const fileIcons: FileIcons = {
             name: 'vscode',
             fileExtensions: ['vscodeignore', 'vsixmanifest', 'vsix', 'code-workplace']
         },
-        { name: 'visualstudio', fileExtensions: ['suo', 'sln', 'csproj', 'vb', 'vbs'] },
+        {
+            name: 'visualstudio',
+            fileExtensions: [
+                'csproj',
+                'ruleset',
+                'sln',
+                'suo',
+                'vb',
+                'vbs',
+                'vcxitems',
+                'vcxitems.filters'
+                'vcxproj',
+                'vcxproj.filters'
+            ]
+        },
         {
             name: 'database',
             fileExtensions: ['pdb', 'sql', 'pks', 'pkb', 'accdb', 'mdb', 'sqlite', 'pgsql', 'postgres', 'psql']
