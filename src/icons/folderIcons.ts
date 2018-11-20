@@ -162,6 +162,11 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-e2e', folderNames: ['e2e', 'it', 'integration-test', 'integration-tests'] },
             { name: 'folder-custom', folderNames: ['custom', 'customs'] },
             { name: 'folder-grunt', folderNames: ['grunt', '.grunt'] },
+            { name: 'folder-mock', folderNames: ['mock', 'mocks', 'fixture', 'fixtures'] },
+            { name: 'folder-syntax', folderNames: ['syntax', 'syntaxe', 'syntaxes'] },
+            { name: 'folder-styleguide', folderNames: ['style', 'styleguide'] },
+            { name: 'folder-scenario', folderNames: ['scenario', 'scenarios'] },
+            { name: 'folder-vm', folderNames: ['vm', 'vms'] },
         ]
     },
     { name: 'classic', defaultIcon: { name: 'folder' }, rootFolder: { name: 'folder-root' } },
