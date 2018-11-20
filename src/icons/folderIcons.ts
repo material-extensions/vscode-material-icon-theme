@@ -20,7 +20,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-icon', folderNames: ['icons', 'icon', 'ico'] },
             { name: 'folder-screenshot', folderNames: ['screenshot', 'screenshots'] },
             { name: 'folder-scripts', folderNames: ['script', 'scripts'] },
-            { name: 'folder-node', folderNames: ['node_modules'] },
+            { name: 'folder-node', folderNames: ['node_modules', 'npm'] },
             { name: 'folder-javascript', folderNames: ['js', 'javascript', 'javascripts'] },
             { name: 'folder-font', folderNames: ['font', 'fonts'] },
             { name: 'folder-bower', folderNames: ['bower_components'] },
@@ -68,7 +68,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-config', folderNames: ['config', 'configs', 'configuration', 'configurations', 'settings', 'META-INF'] },
             {
                 name: 'folder-i18n',
-                folderNames: ['i18n', 'internationalization', 'lang', 'language', 'languages', 'locale', 'locales', 'localization', 'translation', 'translations', '.tx']
+                folderNames: ['i18n', 'internationalization', 'lang', 'language', 'languages', 'locale', 'locales', 'localization', 'translation', 'translate', 'translations', '.tx']
             },
             { name: 'folder-components', folderNames: ['components'] },
             { name: 'folder-aurelia', folderNames: ['aurelia_project'] },
@@ -76,7 +76,7 @@ export const folderIcons: FolderTheme[] = [
                 name: 'folder-resource',
                 folderNames: ['resource', 'resources', 'res', 'asset', 'assets', 'static']
             },
-            { name: 'folder-lib', folderNames: ['lib', 'libs', 'library', 'libraries', 'vendor', 'vendors'] },
+            { name: 'folder-lib', folderNames: ['lib', 'libs', 'library', 'libraries', 'vendor', 'vendors', 'third-party'] },
             { name: 'folder-theme', folderNames: ['themes', 'theme', 'color', 'colors', 'design', 'designs'] },
             { name: 'folder-webpack', folderNames: ['webpack'] },
             { name: 'folder-global', folderNames: ['global'] },
@@ -143,7 +143,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-core', folderNames: ['core'] },
             { name: 'folder-delta', folderNames: ['delta', 'deltas', 'changes'] },
             { name: 'folder-dump', folderNames: ['dump', 'dumps'] },
-            { name: 'folder-examples', folderNames: ['example', 'examples', 'sample', 'samples'] },
+            { name: 'folder-examples', folderNames: ['example', 'examples', 'sample', 'samples', 'demo', 'demos'] },
             { name: 'folder-environment', folderNames: ['.env', '.environment', 'environment'] },
             { name: 'folder-functions', folderNames: ['function', 'functions', 'lambda', 'lambdas'] },
             { name: 'folder-generator', folderNames: ['generator', 'generators', 'generated', 'cfn-gen', 'gen', 'gens', 'auto'] },
@@ -164,7 +164,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-grunt', folderNames: ['grunt', '.grunt'] },
             { name: 'folder-mock', folderNames: ['mock', 'mocks', 'fixture', 'fixtures'] },
             { name: 'folder-syntax', folderNames: ['syntax', 'syntaxe', 'syntaxes'] },
-            { name: 'folder-styleguide', folderNames: ['style', 'styleguide'] },
+            { name: 'folder-styleguide', folderNames: ['styleguide'] },
             { name: 'folder-scenario', folderNames: ['scenario', 'scenarios'] },
             { name: 'folder-vm', folderNames: ['vm', 'vms'] },
             { name: 'folder-storybook', folderNames: ['storybook', '.storybook'] },
