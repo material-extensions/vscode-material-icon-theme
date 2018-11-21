@@ -1,4 +1,27 @@
 # Changelog
+## 3.6.1 (2018-11-21)
+### New file icons
+- .env ([issue #261](https://github.com/PKief/vscode-material-icon-theme/issues/261))
+- azure-pipelines.yml ([issue #321](https://github.com/PKief/vscode-material-icon-theme/issues/321))
+- docker compose aliases ([@AdrieanKhisbe](https://github.com/AdrieanKhisbe) in [#343](https://github.com/PKief/vscode-material-icon-theme/pull/343))
+- docker-compose.staging.yml ([@mintapp](https://github.com/mintapp) in [#333](https://github.com/PKief/vscode-material-icon-theme/pull/333))
+- Prisma ([@diego3g](https://github.com/diego3g) in [#320](https://github.com/PKief/vscode-material-icon-theme/pull/320))
+- Procfile.windows ([@aashutoshrathi](https://github.com/aashutoshrathi) in [#326](https://github.com/PKief/vscode-material-icon-theme/pull/326))
+- python-file ([@AdrieanKhisbe](https://github.com/AdrieanKhisbe) in [#340](https://github.com/PKief/vscode-material-icon-theme/pull/340))
+- tsx ([@felipe-fg](https://github.com/felipe-fg) in [#332](https://github.com/PKief/vscode-material-icon-theme/pull/332))
+- Vagrantfile ([@khrystuk](https://github.com/khrystuk) in [#327](https://github.com/PKief/vscode-material-icon-theme/pull/327))
+- Visual Studio C++ configuration files & .clang-tidy ([@Farwaykorse](https://github.com/Farwaykorse) in [#347](https://github.com/PKief/vscode-material-icon-theme/pull/347))
+- vue.config.js ([@schoening](https://github.com/schoening) in [#335](https://github.com/PKief/vscode-material-icon-theme/pull/335))
+
+### New folder icons
+- @types, typings ([@eyal0803](https://github.com/eyal0803) in [#337](https://github.com/PKief/vscode-material-icon-theme/pull/337))
+- middleware ([@felipe-fg](https://github.com/felipe-fg) in [#331](https://github.com/PKief/vscode-material-icon-theme/pull/331))
+- api, app, archive, batch, cluster, command, constant, container, content, core, delta, dump, environment, examples, functions, generated, hook, job, keys, layout, mail, mappings, meta, packages, serverless, shared, stack, template, utils ([@AdrieanKhisbe](https://github.com/AdrieanKhisbe) in [#339](https://github.com/PKief/vscode-material-icon-theme/pull/339))
+
+### Updated icons
+- PowerShell
+- Razor
+
 ## 3.6.0 (2018-09-10)
 ### New icons
 - authors ([@danielbankhead](https://github.com/danielbankhead) in [#306](https://github.com/PKief/vscode-material-icon-theme/pull/306))
