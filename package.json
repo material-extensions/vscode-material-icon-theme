@@ -2,7 +2,7 @@
   "name": "material-icon-theme",
   "displayName": "Material Icon Theme",
   "description": "Material Design Icons for Visual Studio Code",
-  "version": "3.6.0",
+  "version": "3.6.1",
   "publisher": "PKief",
   "engines": {
     "vscode": "^1.5.0"
@@ -184,7 +184,7 @@
   },
   "devDependencies": {
     "@types/mocha": "^5.2.5",
-    "@types/node": "^10.12.8",
+    "@types/node": "^10.12.10",
     "@types/puppeteer": "^1.10.0",
     "mocha": "^5.2.0",
     "puppeteer": "^1.10.0",

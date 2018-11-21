@@ -13,7 +13,7 @@ const createHTMLTableHeadRow = (amount: number) => {
         <th class="icon">Icon</th>
         <th class="iconName">Name</th>
     `;
-    const columns = [...Array(amount)].map(item => item = pair).join('');
+    const columns = [...Array(amount)].map(() => pair).join('');
     return `
         <tr>
             ${columns}
