@@ -10,7 +10,7 @@ export const folderIcons: FolderTheme[] = [
         rootFolder: { name: 'folder-root' },
         icons: [
             { name: 'folder-src', folderNames: ['src', 'source', 'sources'] },
-            { name: 'folder-dist', folderNames: ['dist', 'out', 'build', 'release', 'bin'] },
+            { name: 'folder-dist', folderNames: ['dist', 'out', 'build', 'release', 'bin', 'ltximg', 'latex.out'] },
             {
                 name: 'folder-css',
                 folderNames: ['css', 'stylesheet', 'stylesheets', 'style', 'styles']
@@ -114,7 +114,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-benchmark', folderNames: ['benchmark', 'benchmarks', 'performance', 'measure', 'measures', 'measurement'] },
             { name: 'folder-messages', folderNames: ['messages', 'forum', 'chat', 'chats', 'conversation', 'conversations'] },
             { name: 'folder-less', folderNames: ['less'] },
-            { name: 'folder-python', folderNames: ['python', '__pycache__'] },
+            { name: 'folder-python', folderNames: ['python', '__pycache__', '.pytest_cache'] },
             { name: 'folder-debug', folderNames: ['debug', 'debugging'] },
             { name: 'folder-fastlane', folderNames: ['fastlane'] },
             { name: 'folder-plugin', folderNames: ['plugin', 'plugins', '_plugins', 'extension', 'extensions', 'addon', 'addons'] },
@@ -134,7 +134,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-api', folderNames: ['api', 'apis'] },
             { name: 'folder-app', folderNames: ['app', 'apps'] },
             { name: 'folder-archive', folderNames: ['archive', 'archives', 'archival', 'backup', 'backups', 'back-up', 'back-ups'] },
-            { name: 'folder-batch', folderNames: ['batch', 'batches'] },
+            { name: 'folder-batch', folderNames: ['batch', 'batchs', 'batches'] },
             { name: 'folder-cluster', folderNames: ['cluster', 'clusters'] },
             { name: 'folder-command', folderNames: ['command', 'commands', 'cli', 'clis'] },
             { name: 'folder-constant', folderNames: ['constant', 'constants'] },
