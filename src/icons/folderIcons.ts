@@ -84,6 +84,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-include', folderNames: ['include', 'includes', '_includes'] },
             { name: 'folder-docker', folderNames: ['docker', 'dockerfiles', '.docker'] },
             { name: 'folder-ngrx-effects', folderNames: ['effects'], enabledFor: [IconPack.Ngrx] },
+            { name: 'folder-ngrx-store', folderNames: ['store'], enabledFor: [IconPack.Ngrx] },
             { name: 'folder-ngrx-state', folderNames: ['states', 'state'], enabledFor: [IconPack.Ngrx] },
             { name: 'folder-ngrx-reducer', folderNames: ['reducers', 'reducer'], enabledFor: [IconPack.Ngrx] },
             { name: 'folder-ngrx-actions', folderNames: ['actions'], enabledFor: [IconPack.Ngrx] },
@@ -171,6 +172,8 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-stylus', folderNames: ['stylus'] },
             { name: 'folder-flow', folderNames: ['flow-typed'] },
             { name: 'folder-idea', folderNames: ['.idea'] },
+            { name: 'folder-private', folderNames: ['private', '.private'] },
+            { name: 'folder-secure', folderNames: ['auth', 'authentication', 'secure', 'security', 'cert', 'certificate', 'certificates', 'ssl'] },
         ]
     },
     { name: 'classic', defaultIcon: { name: 'folder' }, rootFolder: { name: 'folder-root' } },

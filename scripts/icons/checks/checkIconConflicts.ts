@@ -91,7 +91,7 @@ const handleErrors = () => {
         ...Object.keys(allConflicts.folderIcons),
         ...Object.keys(allConflicts.languageIcons)].length > 0
     ) {
-        console.log(painter.red('> Material Icon Theme: Icon conflicts:'));
+        console.log('> Material Icon Theme:', painter.red('Icon conflicts:'));
         console.log(painter.red('--------------------------------------'));
 
         printErrorMessage(allConflicts.fileIcons.fileExtensions, 'fileExtension');
