@@ -161,6 +161,8 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-stack', folderNames: ['stack', 'stacks'] },
             { name: 'folder-template', folderNames: ['template', 'templates'] },
             { name: 'folder-utils', folderNames: ['util', 'utils'] },
+            { name: 'folder-private', folderNames: ['private', '.private'] },
+            { name: 'folder-secure', folderNames: ['auth', 'authentication', 'secure', 'security', 'cert', 'certificate', 'certificates', 'ssl'] },
         ]
     },
     { name: 'classic', defaultIcon: { name: 'folder' }, rootFolder: { name: 'folder-root' } },
