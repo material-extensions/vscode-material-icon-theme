@@ -10,7 +10,7 @@ export const folderIcons: FolderTheme[] = [
         rootFolder: { name: 'folder-root' },
         icons: [
             { name: 'folder-src', folderNames: ['src', 'source', 'sources'] },
-            { name: 'folder-dist', folderNames: ['dist', 'out', 'build', 'release', 'bin', 'ltximg', 'latex.out'] },
+            { name: 'folder-dist', folderNames: ['dist', 'out', 'build', 'release', 'bin'] },
             {
                 name: 'folder-css',
                 folderNames: ['css', 'stylesheet', 'stylesheets', 'style', 'styles']
@@ -20,7 +20,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-icon', folderNames: ['icons', 'icon', 'ico'] },
             { name: 'folder-screenshot', folderNames: ['screenshot', 'screenshots'] },
             { name: 'folder-scripts', folderNames: ['script', 'scripts'] },
-            { name: 'folder-node', folderNames: ['node_modules', 'npm'] },
+            { name: 'folder-node', folderNames: ['node_modules'] },
             { name: 'folder-javascript', folderNames: ['js', 'javascript', 'javascripts'] },
             { name: 'folder-font', folderNames: ['font', 'fonts'] },
             { name: 'folder-bower', folderNames: ['bower_components'] },
