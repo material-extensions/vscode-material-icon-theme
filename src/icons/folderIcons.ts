@@ -63,7 +63,7 @@ export const folderIcons: FolderTheme[] = [
             },
             { name: 'folder-vue', folderNames: ['vue'] },
             { name: 'folder-expo', folderNames: ['.expo'] },
-            { name: 'folder-config', folderNames: ['config', 'configs', 'configuration', 'configurations', 'settings', 'META-INF'] },
+            { name: 'folder-config', folderNames: ['config', 'configs', 'configuration', 'configurations', 'settings', '.settings', 'META-INF'] },
             {
                 name: 'folder-i18n',
                 folderNames: ['i18n', 'internationalization', 'lang', 'language', 'languages', 'locale', 'locales', 'localization', 'translation', 'translate', 'translations', '.tx']
@@ -118,7 +118,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-fastlane', folderNames: ['fastlane'] },
             { name: 'folder-plugin', folderNames: ['plugin', 'plugins', '_plugins', 'extension', 'extensions', 'addon', 'addons'] },
             { name: 'folder-middleware', folderNames: ['middleware', 'middlewares'] },
-            { name: 'folder-controller', folderNames: ['controller', 'controllers', 'service', 'services'] },
+            { name: 'folder-controller', folderNames: ['controller', 'controllers', 'service', 'services', 'provider', 'providers'] },
             { name: 'folder-ansible', folderNames: ['ansible'] },
             { name: 'folder-server', folderNames: ['server', 'servers', 'backend'] },
             { name: 'folder-client', folderNames: ['client', 'clients', 'frontend'] },
@@ -166,9 +166,10 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-vm', folderNames: ['vm', 'vms'] },
             { name: 'folder-stylus', folderNames: ['stylus'] },
             { name: 'folder-flow', folderNames: ['flow-typed'] },
-            { name: 'folder-rules', folderNames: ['rule', 'rules'] },
+            { name: 'folder-rules', folderNames: ['rule', 'rules', 'validator', 'validators'] },
             { name: 'folder-review', folderNames: ['review', 'reviews', 'revisal', 'revisals', 'reviewed'] },
-            { name: 'folder-animation', folderNames: ['animation', 'animations', 'animated'] }
+            { name: 'folder-animation', folderNames: ['animation', 'animations', 'animated'] },
+            { name: 'folder-guard', folderNames: ['guard', 'guards'] },
         ]
     },
     { name: 'classic', defaultIcon: { name: 'folder' }, rootFolder: { name: 'folder-root' } },
