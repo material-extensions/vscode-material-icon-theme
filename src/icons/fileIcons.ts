@@ -769,5 +769,6 @@ export const fileIcons: FileIcons = {
         { name: 'prisma', fileNames: ['prisma.yml'], fileExtensions: ['prisma'] },
         { name: 'razor', fileExtensions: ['cshtml', 'vbhtml'] },
         { name: 'asciidoc', fileExtensions: ['ad', 'adoc', 'asciidoc'] },
+        { name: 'buildkite', fileNames: ['buildkite.yml', 'buildkite.yaml'] }
     ]
 };
