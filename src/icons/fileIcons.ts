@@ -770,5 +770,6 @@ export const fileIcons: FileIcons = {
         { name: 'razor', fileExtensions: ['cshtml', 'vbhtml'] },
         { name: 'asciidoc', fileExtensions: ['ad', 'adoc', 'asciidoc'] },
         { name: 'istanbul', fileNames: ['.nycrc', '.nycrc.json'] },
+        { name: 'edge', fileExtensions: ['edge'] },
     ]
 };
