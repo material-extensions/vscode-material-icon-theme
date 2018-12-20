@@ -1,4 +1,24 @@
 # Changelog
+## 3.6.2 (2018-12-20)
+### New file icons
+- asciidoc ([issue #352](https://github.com/PKief/vscode-material-icon-theme/issues/352))
+- istanbul ([issue #192](https://github.com/PKief/vscode-material-icon-theme/issues/192))
+- edge ([issue #359](https://github.com/PKief/vscode-material-icon-theme/issues/359))
+
+### New folder icons
+- .webpack, animations, custom, e2e, flow-typed, mock, review, rules, stylus, syntax, vm ([@AdrieanKhisbe](https://github.com/AdrieanKhisbe) in [#346](https://github.com/PKief/vscode-material-icon-theme/pull/346))
+- guards, providers, validators ([issue #350](https://github.com/PKief/vscode-material-icon-theme/issues/350))
+- ngrx-store ([@LiadIdan](https://github.com/LiadIdan) in [#349](https://github.com/PKief/vscode-material-icon-theme/pull/349))
+- private
+- secure
+
+### Updated icons
+- virtual
+- stylus
+- ngrx-state folder
+- app folder
+- expo folder
+
 ## 3.6.1 (2018-11-21)
 ### New file icons
 - .env ([issue #261](https://github.com/PKief/vscode-material-icon-theme/issues/261))
