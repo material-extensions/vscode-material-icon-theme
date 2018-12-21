@@ -771,12 +771,12 @@ export const fileIcons: FileIcons = {
         { name: 'asciidoc', fileExtensions: ['ad', 'adoc', 'asciidoc'] },
         { name: 'istanbul', fileNames: ['.nycrc', '.nycrc.json'] },
         { name: 'edge', fileExtensions: ['edge'] },
-        { 
-            name: 'obj', 
+        {
+            name: 'obj',
             fileExtensions: [
                 'stl',
                 'obj'
-            ] 
+            ]
         },
     ]
 };
