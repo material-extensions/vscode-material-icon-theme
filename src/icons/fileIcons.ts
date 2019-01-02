@@ -452,7 +452,7 @@ export const fileIcons: FileIcons = {
         { name: 'twig', fileExtensions: ['twig'] },
         { name: 'julia', fileExtensions: ['jl'] },
         { name: 'elm', fileExtensions: ['elm'] },
-        { name: 'purescript', fileExtensions: ['pure'] },
+        { name: 'purescript', fileExtensions: ['pure', 'purs'] },
         { name: 'smarty', fileExtensions: ['tpl'] },
         { name: 'stylus', fileExtensions: ['styl'] },
         { name: 'reason', fileExtensions: ['re', 'rei'] },
