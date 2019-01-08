@@ -632,7 +632,7 @@ export const fileIcons: FileIcons = {
             ]
         },
         { name: 'bithound', fileNames: ['.bithoundrc'] },
-        { name: 'appveyor', fileNames: ['appveyor.yml'] },
+        { name: 'appveyor', fileNames: ['.appveyor.yml', 'appveyor.yml'] },
         { name: 'travis', fileNames: ['.travis.yml'] },
         {
             name: 'protractor',
