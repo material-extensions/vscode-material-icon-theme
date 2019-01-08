@@ -166,7 +166,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-vm', folderNames: ['vm', 'vms'] },
             { name: 'folder-stylus', folderNames: ['stylus'] },
             { name: 'folder-flow', folderNames: ['flow-typed'] },
-            { name: 'folder-rules', folderNames: ['rule', 'rules', 'validator', 'validators'] },
+            { name: 'folder-rules', folderNames: ['rule', 'rules', 'validation', 'validations', 'validator', 'validators'] },
             { name: 'folder-review', folderNames: ['review', 'reviews', 'revisal', 'revisals', 'reviewed'] },
             { name: 'folder-animation', folderNames: ['animation', 'animations', 'animated'] },
             { name: 'folder-guard', folderNames: ['guard', 'guards'] },
