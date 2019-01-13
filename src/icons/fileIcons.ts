@@ -771,6 +771,7 @@ export const fileIcons: FileIcons = {
         { name: 'asciidoc', fileExtensions: ['ad', 'adoc', 'asciidoc'] },
         { name: 'istanbul', fileNames: ['.nycrc', '.nycrc.json'] },
         { name: 'edge', fileExtensions: ['edge'] },
-        { name: 'scheme', fileExtensions: ['ss', 'scm'] }
+        { name: 'scheme', fileExtensions: ['ss', 'scm'] },
+        { name: 'tailwindcss', fileNames: ['tailwind.js', 'tailwind.config.js'] },
     ]
 };
