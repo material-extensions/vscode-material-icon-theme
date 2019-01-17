@@ -712,7 +712,7 @@ export const fileIcons: FileIcons = {
         { name: 'ngrx-entity', fileNames: ['.entity'], enabledFor: [IconPack.Ngrx] },
         { name: 'webhint', fileNames: ['.hintrc'] },
         { name: 'browserlist', fileNames: ['browserslist', '.browserslistrc'], light: true },
-        { name: 'crystal', fileExtensions: ['cr'], light: true },
+        { name: 'crystal', fileExtensions: ['cr', 'ecr'], light: true },
         { name: 'snyk', fileNames: ['.snyk'] },
         { name: 'drone', fileExtensions: ['drone.yml'], fileNames: ['.drone.yml'], light: true },
         { name: 'cuda', fileExtensions: ['cu', 'cuh'] },
