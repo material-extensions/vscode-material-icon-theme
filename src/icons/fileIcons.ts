@@ -774,5 +774,6 @@ export const fileIcons: FileIcons = {
         { name: 'scheme', fileExtensions: ['ss', 'scm'] },
         { name: 'tailwindcss', fileNames: ['tailwind.js', 'tailwind.config.js'] },
         { name: '3d', fileExtensions: ['stl', 'obj'] },
+        { name: 'buildkite', fileNames: ['buildkite.yml', 'buildkite.yaml'] }
     ]
 };
