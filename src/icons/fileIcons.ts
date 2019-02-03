@@ -720,7 +720,7 @@ export const fileIcons: FileIcons = {
         { name: 'dotjs', fileExtensions: ['def', 'dot', 'jst'] },
         { name: 'ejs', fileExtensions: ['ejs'] },
         { name: 'sequelize', fileNames: ['.sequelizerc'] },
-        { name: 'gatsby', fileNames: ['gatsby.config.js'] },
+        { name: 'gatsby', fileNames: ['gatsby.config.js', 'gatsby-config.js', 'gatsby-node.js'] },
         { name: 'wakatime', fileNames: ['.wakatime-project'], fileExtensions: ['.wakatime-project'], light: true },
         { name: 'circleci', fileNames: ['circle.yml'], light: true },
         { name: 'cloudfoundry', fileNames: ['.cfignore'] },
