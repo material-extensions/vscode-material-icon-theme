@@ -171,6 +171,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-review', folderNames: ['review', 'reviews', 'revisal', 'revisals', 'reviewed'] },
             { name: 'folder-animation', folderNames: ['animation', 'animations', 'animated'] },
             { name: 'folder-guard', folderNames: ['guard', 'guards'] },
+            { name: 'folder-prisma', folderNames: ['prisma'] },
         ]
     },
     { name: 'classic', defaultIcon: { name: 'folder' }, rootFolder: { name: 'folder-root' } },
