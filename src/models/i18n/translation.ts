@@ -38,4 +38,9 @@ export interface Translation {
     reload?: string;
     outdatedVersion?: string;
     updateVSCode?: string;
+    grayscale?: {
+        toggleGrayscale?: string;
+        enableGrayscale?: string;
+        disableGrayscale?: string;
+    };
 }

@@ -39,5 +39,10 @@ export const translation: Translation = {
     'confirmReload': 'You have to restart VS Code to activate the changes to the icons.',
     'reload': 'Restart',
     'outdatedVersion': 'You have to update VS Code to use this command.',
-    'updateVSCode': 'Update VS Code'
+    'updateVSCode': 'Update VS Code',
+    'grayscale': {
+        'toggleGrayscale': 'Toggle grayscale icons',
+        'enableGrayscale': 'Enable grayscale icons',
+        'disableGrayscale': 'Disable grayscale icons'
+    }
 };

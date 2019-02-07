@@ -6,6 +6,7 @@
     "command.restoreDefaultConfig": "Material Icons: Restore Default Configuration",
     "command.hidesExplorerArrows": "Material Icons: Hide Folder Arrows",
     "command.opacity": "Material Icons: Change Opacity",
+    "command.grayscale": "Material Icons: Toggle Grayscale",
     "configuration.title": "Material Icons",
     "configuration.files.associations": "Set custom file icon associations.",
     "configuration.folders.associations": "Set custom folder icon associations.",
@@ -25,5 +26,6 @@
     "configuration.folders.theme.none": "No folder icons.",
     "configuration.folders.color": "Change the color of the folder icons.",
     "configuration.hidesExplorerArrows": "Hide explorer arrows before folder.",
-    "configuration.opacity": "Change the opacity of the icons."
+    "configuration.opacity": "Change the opacity of the icons.",
+    "configuration.grayscale": "Enable grayscale icons."
 }

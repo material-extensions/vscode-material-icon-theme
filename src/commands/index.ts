@@ -6,6 +6,7 @@ import { changeFolderTheme } from './folders';
 import { toggleIconPacks } from './iconPacks';
 import { changeOpacity } from './opacity';
 import { restoreDefaultConfig } from './restoreConfig';
+import { toggleGrayscale } from './grayscale';
 
 // Activate theme
 const activateThemeCommand = vscode.commands.registerCommand('material-icon-theme.activateIcons', () => {
@@ -42,6 +43,11 @@ const changeOpacityCommand = vscode.commands.registerCommand('material-icon-them
     changeOpacity();
 });
 
+// Toggle grayscale icons
+const grayscaleCommand = vscode.commands.registerCommand('material-icon-theme.grayscale', () => {
+    toggleGrayscale();
+});
+
 export const commands = [
     activateThemeCommand,
     toggleIconPacksCommand,
@@ -49,5 +55,6 @@ export const commands = [
     toggleFolderColorCommand,
     restoreDefaultConfigCommand,
     hidesExplorerArrowsCommand,
-    changeOpacityCommand
+    changeOpacityCommand,
+    grayscaleCommand
 ];

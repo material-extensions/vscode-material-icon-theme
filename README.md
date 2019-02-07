@@ -98,6 +98,14 @@ After installation or update you can click on the 'Activate'-button to activate 
 
 <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/master/images/oneclickactivation.png" alt="activation" width="60%">
 
+## Grayscale icons
+
+If colors do not make you happy you can change icons to grayscale:
+
+```json
+"material-icon-theme.grayscale": true
+```
+
 ## Commands
 
 Press `Ctrl-Shift-P` to open the command palette and type `Material Icons`.
@@ -117,6 +125,8 @@ Press `Ctrl-Shift-P` to open the command palette and type `Material Icons`.
 - **Hide Folder Arrows**: Hides the arrows next to the folder icons.
 
 - **Restore Default Configuration**: Reset the default configurations of the icon theme.
+
+- **Toggle Grayscale**: Change icons to grayscale.
 
 ## Icon sources
 

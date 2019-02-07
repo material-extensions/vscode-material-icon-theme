@@ -6,7 +6,7 @@ import { fileIcons } from '../fileIcons';
 import { folderIcons } from '../folderIcons';
 import { languageIcons } from '../languageIcons';
 import { iconJsonName } from './constants';
-import { generateFolderIcons, getFileIconDefinitions, getFolderIconDefinitions, getLanguageIconDefinitions, setIconOpacity, validateHEXColorCode, validateOpacityValue } from './index';
+import { generateFolderIcons, getFileIconDefinitions, getFolderIconDefinitions, getLanguageIconDefinitions, setIconOpacity, setIconGrayscale, validateHEXColorCode, validateOpacityValue } from './index';
 
 /**
  * Generate the complete icon configuration object that can be written as JSON file.
@@ -60,6 +60,9 @@ export const createIconFile = async (updatedConfigs?: IconJsonOptions, updatedJS
             }
             if (!updatedConfigs || updatedConfigs.opacity !== undefined) {
                 await setIconOpacity(options.opacity);
+            }
+            if (!updatedConfigs || updatedConfigs.grayscale !== undefined) {
+                await setIconGrayscale(options.grayscale);
             }
         });
     } catch (error) {
