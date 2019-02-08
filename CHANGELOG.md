@@ -1,4 +1,21 @@
 # Changelog
+## 3.6.3 (2019-02-08)
+### New file icons
+- 3d (.obj, .stl) ([@Mrgove10](https://github.com/Mrgove10) in [#363](https://github.com/PKief/vscode-material-icon-theme/pull/363))
+- Tailwind CSS ([@bradlc](https://github.com/bradlc) in [#369](https://github.com/PKief/vscode-material-icon-theme/pull/369))
+- PureScript (.purs) ([issue #365](https://github.com/PKief/vscode-material-icon-theme/issues/365))
+- .appveyor.yml ([@justalemon](https://github.com/justalemon) in [#371](https://github.com/PKief/vscode-material-icon-theme/pull/371))
+- Embedded Crystal ([@blubMe](https://github.com/blubMe) in [#377](https://github.com/PKief/vscode-material-icon-theme/pull/377))
+- Scheme ([issue #364](https://github.com/PKief/vscode-material-icon-theme/issues/364))
+- Buildkite ([@rhysforyou](https://github.com/rhysforyou) in [#354](https://github.com/PKief/vscode-material-icon-theme/pull/354))
+- Gatsby ([@jediyozh](https://github.com/jediyozh) in [#382](https://github.com/PKief/vscode-material-icon-theme/pull/382))
+
+### New folder icons
+- validation ([issue #375](https://github.com/PKief/vscode-material-icon-theme/issues/375))
+- GraphQL ([@felipe-fg](https://github.com/felipe-fg) in [#380](https://github.com/PKief/vscode-material-icon-theme/pull/380))
+- Prisma ([@epitaphmike](https://github.com/epitaphmike) in [#383](https://github.com/PKief/vscode-material-icon-theme/pull/383))
+- web ([@kukiric](https://github.com/kukiric) in [#384](https://github.com/PKief/vscode-material-icon-theme/pull/384))
+
 ## 3.6.2 (2018-12-20)
 ### New file icons
 - asciidoc ([issue #352](https://github.com/PKief/vscode-material-icon-theme/issues/352))
