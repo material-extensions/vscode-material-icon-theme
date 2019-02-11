@@ -35,11 +35,11 @@ const handleQuickPickActions = (value: vscode.QuickPickItem) => {
     if (!value || !value.description) return;
     switch (value.description) {
         case i18n.translate('toggleSwitch.on'): {
-            helpers.setThemeConfig('grayscale', true, true);
+            helpers.setThemeConfig('saturation', 0, true);
             break;
         }
         case i18n.translate('toggleSwitch.off'): {
-            helpers.setThemeConfig('grayscale', false, true);
+            helpers.setThemeConfig('saturation', 1, true);
             break;
         }
         default:
@@ -49,5 +49,5 @@ const handleQuickPickActions = (value: vscode.QuickPickItem) => {
 
 /** Is grayscale icons enabled? */
 export const checkGrayscaleStatus = (): Promise<boolean> => {
-    return helpers.getMaterialIconsJSON().then((config) => config.options.grayscale);
+    return helpers.getMaterialIconsJSON().then((config) => config.options.saturation === 0);
 };

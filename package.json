@@ -74,6 +74,10 @@
       {
         "command": "material-icon-theme.grayscale",
         "title": "%command.grayscale%"
+      },
+      {
+        "command": "material-icon-theme.saturation",
+        "title": "%command.saturation%"
       }
     ],
     "configuration": {
@@ -162,10 +166,12 @@
           "default": false,
           "description": "%configuration.hidesExplorerArrows%"
         },
-        "material-icon-theme.grayscale": {
-          "type": "boolean",
-          "default": false,
-          "description": "%configuration.grayscale%"
+        "material-icon-theme.saturation": {
+          "type": "number",
+          "default": 1,
+          "minimum": 0,
+          "maximum": 1,
+          "description": "%configuration.saturation%"
         }
       }
     }

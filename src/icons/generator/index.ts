@@ -4,4 +4,4 @@ export * from './languageGenerator';
 export * from './constants';
 export * from './jsonGenerator';
 export * from './iconOpacity';
-export * from './iconGrayscale';
+export * from './iconSaturation';

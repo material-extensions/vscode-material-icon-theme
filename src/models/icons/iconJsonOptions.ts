@@ -2,7 +2,7 @@ export interface IconJsonOptions {
     activeIconPack?: string;
     hidesExplorerArrows?: boolean;
     opacity?: number;
-    grayscale?: boolean;
+    saturation?: number;
     folders?: {
         theme?: string;
         color?: string;

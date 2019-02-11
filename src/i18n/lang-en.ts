@@ -44,5 +44,9 @@ export const translation: Translation = {
         'toggleGrayscale': 'Toggle grayscale icons',
         'enableGrayscale': 'Enable grayscale icons',
         'disableGrayscale': 'Disable grayscale icons'
+    },
+    'saturation': {
+        'inputPlaceholder': 'Saturation value (between 0 and 1)',
+        'wrongValue': 'The value must be between 0 and 1!',
     }
 };

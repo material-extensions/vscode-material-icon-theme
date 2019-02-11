@@ -6,7 +6,7 @@ import { fileIcons } from '../fileIcons';
 import { folderIcons } from '../folderIcons';
 import { languageIcons } from '../languageIcons';
 import { iconJsonName } from './constants';
-import { generateFolderIcons, getFileIconDefinitions, getFolderIconDefinitions, getLanguageIconDefinitions, setIconOpacity, setIconGrayscale, validateHEXColorCode, validateOpacityValue } from './index';
+import { generateFolderIcons, getFileIconDefinitions, getFolderIconDefinitions, getLanguageIconDefinitions, setIconOpacity, setIconSaturation, validateHEXColorCode, validateOpacityValue, validateSaturationValue } from './index';
 
 /**
  * Generate the complete icon configuration object that can be written as JSON file.
@@ -32,9 +32,14 @@ export const createIconFile = async (updatedConfigs?: IconJsonOptions, updatedJS
     const iconJSONPath = path.join(__dirname, '../../../', 'src', iconJsonName);
     const json = generateIconConfigurationObject(options);
 
-    // make sure that the opacity value must be entered correctly to trigger a reload.
-    if (updatedConfigs && updatedConfigs.opacity !== undefined && !validateOpacityValue(updatedConfigs.opacity)) {
-        return Promise.reject('Material Icons: Invalid opacity value!');
+    // make sure that the opacity and saturation values must be entered correctly to trigger a reload.
+    if (updatedConfigs) {
+        if (updatedConfigs.opacity !== undefined && !validateOpacityValue(updatedConfigs.opacity)) {
+            return Promise.reject('Material Icons: Invalid opacity value!');
+        }
+        if (updatedConfigs.saturation !== undefined && !validateSaturationValue(updatedConfigs.saturation)) {
+            return Promise.reject('Material Icons: Invalid saturation value!');
+        }
     }
 
     // make sure that the value for the folder color is entered correctly to trigger a reload.
@@ -61,8 +66,8 @@ export const createIconFile = async (updatedConfigs?: IconJsonOptions, updatedJS
             if (!updatedConfigs || updatedConfigs.opacity !== undefined) {
                 await setIconOpacity(options.opacity);
             }
-            if (!updatedConfigs || updatedConfigs.grayscale !== undefined) {
-                await setIconGrayscale(options.grayscale);
+            if (!updatedConfigs || updatedConfigs.saturation !== undefined) {
+                await setIconSaturation(options.saturation);
             }
         });
     } catch (error) {
@@ -83,6 +88,7 @@ export const getDefaultIconOptions = (): IconJsonOptions => ({
     activeIconPack: 'angular',
     hidesExplorerArrows: false,
     opacity: 1,
+    saturation: 1,
     files: { associations: {} },
     languages: { associations: {} },
 });

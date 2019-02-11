@@ -43,4 +43,8 @@ export interface Translation {
         enableGrayscale?: string;
         disableGrayscale?: string;
     };
+    saturation?: {
+        inputPlaceholder?: string;
+        wrongValue?: string;
+    };
 }

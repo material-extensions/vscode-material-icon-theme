@@ -7,6 +7,7 @@ import { toggleIconPacks } from './iconPacks';
 import { changeOpacity } from './opacity';
 import { restoreDefaultConfig } from './restoreConfig';
 import { toggleGrayscale } from './grayscale';
+import { changeSaturation } from './saturation';
 
 // Activate theme
 const activateThemeCommand = vscode.commands.registerCommand('material-icon-theme.activateIcons', () => {
@@ -48,6 +49,11 @@ const grayscaleCommand = vscode.commands.registerCommand('material-icon-theme.gr
     toggleGrayscale();
 });
 
+// Change the saturation of the icons
+const changeSaturationCommand = vscode.commands.registerCommand('material-icon-theme.saturation', () => {
+    changeSaturation();
+});
+
 export const commands = [
     activateThemeCommand,
     toggleIconPacksCommand,
@@ -56,5 +62,6 @@ export const commands = [
     restoreDefaultConfigCommand,
     hidesExplorerArrowsCommand,
     changeOpacityCommand,
-    grayscaleCommand
+    grayscaleCommand,
+    changeSaturationCommand
 ];
