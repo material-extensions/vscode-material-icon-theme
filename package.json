@@ -70,6 +70,14 @@
       {
         "command": "material-icon-theme.opacity",
         "title": "%command.opacity%"
+      },
+      {
+        "command": "material-icon-theme.grayscale",
+        "title": "%command.grayscale%"
+      },
+      {
+        "command": "material-icon-theme.saturation",
+        "title": "%command.saturation%"
       }
     ],
     "configuration": {
@@ -157,6 +165,13 @@
           "type": "boolean",
           "default": false,
           "description": "%configuration.hidesExplorerArrows%"
+        },
+        "material-icon-theme.saturation": {
+          "type": "number",
+          "default": 1,
+          "minimum": 0,
+          "maximum": 1,
+          "description": "%configuration.saturation%"
         }
       }
     }
@@ -195,3 +210,4 @@
     "vscode": "^1.1.29"
   }
 }
+
