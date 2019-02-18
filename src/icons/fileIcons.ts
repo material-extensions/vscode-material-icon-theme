@@ -774,6 +774,12 @@ export const fileIcons: FileIcons = {
         { name: 'scheme', fileExtensions: ['ss', 'scm'] },
         { name: 'tailwindcss', fileNames: ['tailwind.js', 'tailwind.config.js'] },
         { name: '3d', fileExtensions: ['stl', 'obj'] },
-        { name: 'buildkite', fileNames: ['buildkite.yml', 'buildkite.yaml'] }
+        { name: 'buildkite', fileNames: ['buildkite.yml', 'buildkite.yaml'] },
+        {
+            name: 'uml',
+            // https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml#user-content-supported-formats
+            fileExtensions: ['iuml', 'pu', 'puml', 'plantuml', 'wsd'],
+            light: true
+        }
     ]
 };
