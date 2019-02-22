@@ -364,7 +364,7 @@ export const fileIcons: FileIcons = {
             ]
         },
         { name: 'lua', fileExtensions: ['lua'], fileNames: ['.luacheckrc'] },
-        { name: 'clojure', fileExtensions: ['clj', 'cljs'] },
+        { name: 'clojure', fileExtensions: ['clj', 'cljs', 'cljc'] },
         { name: 'groovy', fileExtensions: ['groovy'] },
         { name: 'r', fileExtensions: ['r', 'rmd'], fileNames: ['.Rhistory'] },
         { name: 'dart', fileExtensions: ['dart'] },
