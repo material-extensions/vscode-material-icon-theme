@@ -172,6 +172,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-animation', folderNames: ['animation', 'animations', 'animated'] },
             { name: 'folder-guard', folderNames: ['guard', 'guards'] },
             { name: 'folder-prisma', folderNames: ['prisma'] },
+            { name: 'folder-pipe', folderNames: ['pipe', 'pipes'] },
         ]
     },
     { name: 'classic', defaultIcon: { name: 'folder' }, rootFolder: { name: 'folder-root' } },
