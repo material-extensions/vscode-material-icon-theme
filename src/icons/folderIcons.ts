@@ -91,7 +91,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-redux-actions', folderNames: ['actions'], enabledFor: [IconPack.Redux] },
             { name: 'folder-redux-store', folderNames: ['store'], enabledFor: [IconPack.Redux] },
             { name: 'folder-react-components', folderNames: ['components'], enabledFor: [IconPack.React, IconPack.Redux] },
-            { name: 'folder-database', folderNames: ['db', 'database', 'sql', 'data', '_data'] },
+            { name: 'folder-database', folderNames: ['db', 'database', 'sql', 'data', '_data', 'store'] },
             { name: 'folder-log', folderNames: ['log', 'logs'] },
             { name: 'folder-temp', folderNames: ['temp', '.temp', 'tmp', '.tmp', 'cached', 'cache', '.cache'] },
             { name: 'folder-aws', folderNames: ['aws', '.aws'] },
