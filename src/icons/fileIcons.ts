@@ -656,9 +656,14 @@ export const fileIcons: FileIcons = {
                 '.eslintrc.yaml',
                 '.eslintrc.yml',
                 '.eslintrc.json',
-                '.eslintrc',
-                '.eslintignore'
+                '.eslintrc'
             ]
+        },
+        {
+            name : 'eslintignore',
+            fileNames : [
+                '.eslitingore'
+                ]
         },
         {
             name: 'conduct',
