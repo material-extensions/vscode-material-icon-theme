@@ -4,14 +4,17 @@ import * as helpers from './../helpers';
 import * as i18n from './../i18n';
 
 /** Command to toggle the folder icons. */
-export const changeFolderTheme = () => {
-    return checkFolderIconsStatus()
-        .then(showQuickPickItems)
-        .then(handleQuickPickActions)
-        .catch(err => console.log(err));
+export const changeFolderTheme = async () => {
+    try {
+        const status = checkFolderIconsStatus();
+        const response = await showQuickPickItems(status);
+        handleQuickPickActions(response);
+    } catch (error) {
+        console.error(error);
+    }
 };
 
-/** Show QuickPick items to select prefered configuration for the folder icons. */
+/** Show QuickPick items to select preferred configuration for the folder icons. */
 const showQuickPickItems = (activeTheme: string) => {
     const options = folderIcons.map((theme): vscode.QuickPickItem => ({
         description: helpers.capitalizeFirstLetter(theme.name),
@@ -33,6 +36,6 @@ const handleQuickPickActions = (value: vscode.QuickPickItem) => {
 };
 
 /** Are the folder icons enabled? */
-export const checkFolderIconsStatus = (): Promise<string> => {
-    return helpers.getMaterialIconsJSON().then((config) => config.options.folders.theme);
+export const checkFolderIconsStatus = (): string => {
+    return helpers.getMaterialIconsJSON().options.folders.theme;
 };

@@ -25,7 +25,7 @@ export const generateIconConfigurationObject = (options: IconJsonOptions): IconC
  * @param updatedConfigs Options that have been changed.
  * @param updatedJSONConfig New JSON options that already include the updatedConfigs.
  */
-export const createIconFile = async (updatedConfigs?: IconJsonOptions, updatedJSONConfig: IconJsonOptions = {}) => {
+export const createIconFile = (updatedConfigs?: IconJsonOptions, updatedJSONConfig: IconJsonOptions = {}) => {
     // override the default options with the new options
     const options: IconJsonOptions = merge({}, getDefaultIconOptions(), updatedJSONConfig);
 
@@ -35,44 +35,45 @@ export const createIconFile = async (updatedConfigs?: IconJsonOptions, updatedJS
     // make sure that the opacity and saturation values must be entered correctly to trigger a reload.
     if (updatedConfigs) {
         if (updatedConfigs.opacity !== undefined && !validateOpacityValue(updatedConfigs.opacity)) {
-            return Promise.reject('Material Icons: Invalid opacity value!');
+            throw Error('Material Icons: Invalid opacity value!');
         }
         if (updatedConfigs.saturation !== undefined && !validateSaturationValue(updatedConfigs.saturation)) {
-            return Promise.reject('Material Icons: Invalid saturation value!');
+            throw Error('Material Icons: Invalid saturation value!');
         }
     }
 
-    // make sure that the value for the folder color is entered correctly to trigger a reload.
+    // make sure that the value of the folder color is entered correctly to trigger a reload.
     if (updatedConfigs && updatedConfigs.folders) {
         if (typeof updatedConfigs.folders.color !== 'undefined') {
             if (!validateHEXColorCode(updatedConfigs.folders.color)) {
-                return Promise.reject('Material Icons: Invalid folder color value!');
+                throw Error('Material Icons: Invalid folder color value!');
             }
         }
     }
 
     try {
-        await fs.writeFile(iconJSONPath, JSON.stringify(json, undefined, 2), async (err) => {
-            if (err) {
-                throw Error(err.message);
-            }
-
-            // if updatedConfigs do not exist (because of initial setup)
-            // or new config value was detected by the change detection
-            if (!updatedConfigs || (updatedConfigs.folders || {}).color) {
-                await generateFolderIcons(options.folders.color);
-                await setIconOpacity(options.opacity, ['folder.svg', 'folder-open.svg', 'folder-root.svg', 'folder-root-open.svg']);
-            }
-            if (!updatedConfigs || updatedConfigs.opacity !== undefined) {
-                await setIconOpacity(options.opacity);
-            }
-            if (!updatedConfigs || updatedConfigs.saturation !== undefined) {
-                await setIconSaturation(options.saturation);
-            }
-        });
+        fs.writeFileSync(iconJSONPath, JSON.stringify(json, undefined, 2));
     } catch (error) {
         throw Error(error);
     }
+
+    try {
+        if (!updatedConfigs || (updatedConfigs.folders || {}).color) {
+            // if updatedConfigs do not exist (because of initial setup)
+            // or new config value was detected by the change detection
+            generateFolderIcons(options.folders.color);
+            setIconOpacity(options.opacity, ['folder.svg', 'folder-open.svg', 'folder-root.svg', 'folder-root-open.svg']);
+        }
+        if (!updatedConfigs || updatedConfigs.opacity !== undefined) {
+            setIconOpacity(options.opacity);
+        }
+        if (!updatedConfigs || updatedConfigs.saturation !== undefined) {
+            setIconSaturation(options.saturation);
+        }
+    } catch (error) {
+        throw Error(error);
+    }
+
     return iconJsonName;
 };
 

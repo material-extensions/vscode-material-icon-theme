@@ -12,7 +12,7 @@ export const getConfig = (section?: string) => {
 };
 
 /** Get list of configuration entries of package.json */
-export const getListOfConfigs = (): { [config: string]: any } => {
+export const getConfigProperties = (): { [config: string]: any } => {
     return vscode.extensions.getExtension('PKief.material-icon-theme').packageJSON.contributes.configuration.properties;
 };
 
@@ -55,17 +55,15 @@ export const isThemeNotVisible = (): boolean => {
 export const getExtensionPath = () => path.join(__dirname, '..', '..', '..');
 
 /** Get the configuration of the icons as JSON Object */
-export const getMaterialIconsJSON = (): Promise<IconConfiguration> => {
-    return new Promise((resolve, reject) => {
-        const iconJSONPath = path.join(getExtensionPath(), 'out', 'src', iconJsonName);
-        fs.readFile(iconJSONPath, 'utf8', (err, data) => {
-            if (data) {
-                resolve(JSON.parse(data));
-            } else {
-                reject(err);
-            }
-        });
-    });
+export const getMaterialIconsJSON = (): IconConfiguration => {
+    const iconJSONPath = path.join(getExtensionPath(), 'out', 'src', iconJsonName);
+    try {
+        const data = fs.readFileSync(iconJSONPath, 'utf8');
+        return JSON.parse(data);
+    } catch (error) {
+        console.error(error);
+        return undefined;
+    }
 };
 
 /** Reload vs code window */

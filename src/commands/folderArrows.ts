@@ -5,18 +5,21 @@ import * as i18n from './../i18n';
 import * as outdatedMessage from './../messages/outdated';
 
 /** Command to toggle the folder icons. */
-export const toggleFolderArrows = () => {
+export const toggleFolderArrows = async () => {
     if (!versioning.checkVersionSupport('1.18.0-insider')) {
         outdatedMessage.showOutdatedMessage();
         return Promise.reject('Outdated version of vscode!');
     }
-    return checkArrowStatus()
-        .then(showQuickPickItems)
-        .then(handleQuickPickActions)
-        .catch(err => console.log(err));
+    try {
+        const status = checkArrowStatus();
+        const response = await showQuickPickItems(status);
+        return handleQuickPickActions(response);
+    } catch (error) {
+        console.error(error);
+    }
 };
 
-/** Show QuickPick items to select prefered configuration for the folder icons. */
+/** Show QuickPick items to select preferred configuration for the folder icons. */
 const showQuickPickItems = (status: boolean) => {
     const on: vscode.QuickPickItem = {
         description: i18n.translate('toggleSwitch.on'),
@@ -41,19 +44,17 @@ const handleQuickPickActions = (value: vscode.QuickPickItem) => {
     if (!value || !value.description) return;
     switch (value.description) {
         case i18n.translate('toggleSwitch.on'): {
-            helpers.setThemeConfig('hidesExplorerArrows', false, true);
-            break;
+            return helpers.setThemeConfig('hidesExplorerArrows', false, true);
         }
         case i18n.translate('toggleSwitch.off'): {
-            helpers.setThemeConfig('hidesExplorerArrows', true, true);
-            break;
+            return helpers.setThemeConfig('hidesExplorerArrows', true, true);
         }
         default:
-            break;
+            return;
     }
 };
 
 /** Are the arrows enabled? */
-export const checkArrowStatus = (): Promise<boolean> => {
-    return helpers.getMaterialIconsJSON().then((config) => config.hidesExplorerArrows);
+export const checkArrowStatus = (): boolean => {
+    return helpers.getMaterialIconsJSON().hidesExplorerArrows;
 };

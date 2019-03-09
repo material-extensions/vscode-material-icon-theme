@@ -20,14 +20,17 @@ const iconPalette: FolderColor[] = [
 ];
 
 /** Command to toggle the folder icons. */
-export const changeFolderColor = () => {
-    return checkFolderColorStatus()
-        .then(showQuickPickItems)
-        .then(handleQuickPickActions)
-        .catch(err => console.log(err));
+export const changeFolderColor = async () => {
+    try {
+        const status = checkFolderColorStatus();
+        const response = await showQuickPickItems(status);
+        handleQuickPickActions(response);
+    } catch (error) {
+        console.error(error);
+    }
 };
 
-/** Show QuickPick items to select prefered color for the folder icons. */
+/** Show QuickPick items to select preferred color for the folder icons. */
 const showQuickPickItems = (currentColor: string) => {
     const options = iconPalette.map((color): vscode.QuickPickItem => ({
         description: color.label,
@@ -64,11 +67,11 @@ const validateColorInput = (colorInput: string) => {
 };
 
 /** Check status of the folder color */
-export const checkFolderColorStatus = (): Promise<string> => {
+export const checkFolderColorStatus = (): string => {
     const defaultOptions = getDefaultIconOptions();
-    return helpers.getMaterialIconsJSON().then((config) =>
-        config.options.folders.color === undefined ?
-            defaultOptions.folders.color : config.options.folders.color);
+    const config = helpers.getMaterialIconsJSON();
+    return config.options.folders.color === undefined ?
+        defaultOptions.folders.color : config.options.folders.color;
 };
 
 const setColorConfig = (value: string) => {

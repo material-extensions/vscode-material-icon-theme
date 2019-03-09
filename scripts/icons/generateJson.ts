@@ -6,16 +6,18 @@ import * as path from 'path';
 import * as painter from '../helpers/painter';
 import { createIconFile } from './../../src/icons/index';
 
-createIconFile().then((fileName: string) => {
+try {
+    const fileName = createIconFile();
     const filePath = path.resolve('src', fileName);
     const out = path.resolve('out', 'src', fileName);
-    fs.rename(filePath, out, (err) => {
-        if (err) {
-            console.error(painter.red(err.stack));
+
+    fs.rename(filePath, out, (error) => {
+        if (error) {
+            throw Error(error.stack);
         } else {
             console.log('> Material Icon Theme:', painter.green(`Successfully generated icon JSON file!`));
         }
     });
-}).catch(err => {
-    console.error(painter.red(err));
-});
+} catch (error) {
+    throw Error(error);
+}

@@ -4,20 +4,24 @@ import * as helpers from './../helpers';
 import * as i18n from './../i18n';
 
 /** Command to toggle the folder icons. */
-export const changeSaturation = () => {
-    return getCurrentSaturationValue()
-        .then(showInput)
-        .catch(err => console.log(err));
+export const changeSaturation = async () => {
+    try {
+        const currentSaturationValue = getCurrentSaturationValue();
+        const response = Number(await showInput(currentSaturationValue));
+        setSaturationConfig(response);
+    } catch (error) {
+        console.error(error);
+    }
 };
 
 /** Show input to enter the saturation value. */
 const showInput = (saturation: number) => {
-    vscode.window.showInputBox({
+    return vscode.window.showInputBox({
         placeHolder: i18n.translate('saturation.inputPlaceholder'),
         ignoreFocusOut: true,
         value: String(saturation),
         validateInput: validateSaturationInput
-    }).then(value => setSaturationConfig(+value));
+    });
 };
 
 /** Validate the saturation value which was inserted by the user. */
@@ -29,15 +33,15 @@ const validateSaturationInput = (saturationInput: string) => {
 };
 
 /** Get the current value of the saturation of the icons. */
-export const getCurrentSaturationValue = (): Promise<number> => {
+export const getCurrentSaturationValue = (): number => {
     const defaultOptions = getDefaultIconOptions();
-    return helpers.getMaterialIconsJSON().then((config) =>
-        config.options.saturation === undefined ?
-            defaultOptions.saturation : config.options.saturation);
+    const config = helpers.getMaterialIconsJSON();
+    return config.options.saturation === undefined ?
+        defaultOptions.saturation : config.options.saturation;
 };
 
 const setSaturationConfig = (saturation: number) => {
     if (saturation !== undefined) {
-        helpers.setThemeConfig('saturation', saturation, true);
+        return helpers.setThemeConfig('saturation', saturation, true);
     }
 };
