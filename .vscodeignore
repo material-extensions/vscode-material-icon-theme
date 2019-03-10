@@ -1,7 +1,6 @@
 .vscode/**
 .vscode-test/**
-out/test/**
-out/previews/**
+out/**
 test/**
 src/**
 scripts/**
@@ -16,3 +15,4 @@ vsc-extension-quickstart.md
 logo.svg
 package-lock.json
 yarn.lock
+webpack.config.js

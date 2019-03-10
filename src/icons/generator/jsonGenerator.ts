@@ -1,6 +1,6 @@
-import * as fs from 'fs';
 import * as merge from 'lodash.merge';
 import * as path from 'path';
+import * as fs from 'fs';
 import { IconConfiguration, IconJsonOptions } from '../../models/index';
 import { fileIcons } from '../fileIcons';
 import { folderIcons } from '../folderIcons';
@@ -28,8 +28,6 @@ export const generateIconConfigurationObject = (options: IconJsonOptions): IconC
 export const createIconFile = (updatedConfigs?: IconJsonOptions, updatedJSONConfig: IconJsonOptions = {}) => {
     // override the default options with the new options
     const options: IconJsonOptions = merge({}, getDefaultIconOptions(), updatedJSONConfig);
-
-    const iconJSONPath = path.join(__dirname, '../../../', 'src', iconJsonName);
     const json = generateIconConfigurationObject(options);
 
     // make sure that the opacity and saturation values must be entered correctly to trigger a reload.
@@ -52,7 +50,12 @@ export const createIconFile = (updatedConfigs?: IconJsonOptions, updatedJSONConf
     }
 
     try {
-        fs.writeFileSync(iconJSONPath, JSON.stringify(json, undefined, 2));
+        let iconsPath = __dirname;
+        if (path.basename(__dirname) !== 'dist') {
+            // executed via script
+            iconsPath = path.join(__dirname, '..', '..', '..', 'dist');
+        }
+        fs.writeFileSync(path.join(iconsPath, iconJsonName), JSON.stringify(json, undefined, 2), 'utf-8');
     } catch (error) {
         throw Error(error);
     }

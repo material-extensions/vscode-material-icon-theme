@@ -11,12 +11,13 @@ export const setIconOpacity = (opacity: number, fileNames?: string[]) => {
         return console.error('Invalid opacity value! Opacity must be a decimal number between 0 and 1!');
     }
 
-    let iconsPath = path.join(__dirname, '..', '..', '..');
-    const parentFolder = iconsPath.split(path.sep).pop();
-    if (parentFolder === 'out') {
-        iconsPath = path.join(iconsPath, '..');
+    let iconsPath;
+    if (path.basename(__dirname) === 'dist') {
+        iconsPath = path.join(__dirname, '..', 'icons');
+    } else {
+        // executed via script
+        iconsPath = path.join(__dirname, '..', '..', '..', 'icons');
     }
-    iconsPath = path.join(iconsPath, 'icons');
 
     try {
         // read all icon files from the icons folder

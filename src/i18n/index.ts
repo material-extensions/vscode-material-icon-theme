@@ -33,8 +33,7 @@ const loadTranslation = async (language: string) => {
 /** Get the translation object of the separated translation files */
 const getTranslationObject = async (language: string) => {
     try {
-        // tslint:disable-next-line:semicolon
-        const lang = await import('./lang-' + language);
+        const lang = await import(/* webpackMode: "eager" */ `./lang-${language}`);
         return lang.translation;
     }
     catch (error) {

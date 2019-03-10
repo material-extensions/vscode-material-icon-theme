@@ -157,12 +157,14 @@ const getPath = (d: string, color: string) => `<path d="${d}" fill="${color}" />
 const getSVG = (path: string) => `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">${path}</svg>`;
 
 const writeSVGFiles = (iconName: string, svg: string) => {
-    let iconPath = path.join(__dirname, '..', '..', '..');
-    const parentFolder = iconPath.split(path.sep).pop();
-    if (parentFolder === 'out') {
-        iconPath = path.join(iconPath, '..');
+    let iconsPath;
+    if (path.basename(__dirname) === 'dist') {
+        iconsPath = path.join(__dirname, '..', 'icons');
+    } else {
+        // executed via script
+        iconsPath = path.join(__dirname, '..', '..', '..', 'icons');
     }
-    const iconsFolderPath = path.join(iconPath, 'icons', `${iconName}.svg`);
+    const iconsFolderPath = path.join(iconsPath, `${iconName}.svg`);
     try {
         fs.writeFileSync(iconsFolderPath, svg);
     } catch (error) {

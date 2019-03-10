@@ -52,11 +52,12 @@ export const isThemeNotVisible = (): boolean => {
 };
 
 /** Return the path of the extension in the file system. */
-export const getExtensionPath = () => path.join(__dirname, '..', '..', '..');
+export const getExtensionPath = () => vscode.extensions.getExtension('PKief.material-icon-theme').extensionPath;
 
 /** Get the configuration of the icons as JSON Object */
 export const getMaterialIconsJSON = (): IconConfiguration => {
-    const iconJSONPath = path.join(getExtensionPath(), 'out', 'src', iconJsonName);
+    const iconJSONPath = path.join(getExtensionPath(), 'dist', iconJsonName);
+
     try {
         const data = fs.readFileSync(iconJSONPath, 'utf8');
         return JSON.parse(data);
