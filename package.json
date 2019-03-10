@@ -182,7 +182,7 @@
     "build": "npm run compile && npm run generateJson",
     "postbuild": "npm run check",
     "clean": "rimraf ./out",
-    "compile": "webpack --mode none",
+    "compile": "webpack --mode production",
     "compile:watch": "webpack --mode none --watch",
     "test-compile": "tsc -p ./",
     "generateJson": "ts-node ./src/scripts/icons/generateJson.ts",
