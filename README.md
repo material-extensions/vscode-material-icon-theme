@@ -4,7 +4,7 @@
 [![Rating](https://vsmarketplacebadge.apphb.com/rating-short/pkief.material-icon-theme.svg)](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
 [![Installs](https://vsmarketplacebadge.apphb.com/installs-short/PKief.material-icon-theme.svg)](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
 [![Downloads](https://vsmarketplacebadge.apphb.com/downloads-short/PKief.material-icon-theme.svg)](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
-[![Build Status](https://travis-ci.org/PKief/vscode-material-icon-theme.svg?branch=master)](https://travis-ci.org/PKief/vscode-material-icon-theme)
+[![Build Status](https://travis-ci.com/PKief/vscode-material-icon-theme.svg?branch=master)](https://travis-ci.com/PKief/vscode-material-icon-theme)
 
 The Material Icon Theme provides lots of icons based on Material Design for Visual Studio Code.
 
