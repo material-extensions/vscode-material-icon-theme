@@ -90,6 +90,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-redux-reducer', folderNames: ['reducers', 'reducer'], enabledFor: [IconPack.Redux] },
             { name: 'folder-redux-actions', folderNames: ['actions'], enabledFor: [IconPack.Redux] },
             { name: 'folder-redux-store', folderNames: ['store'], enabledFor: [IconPack.Redux] },
+            { name: 'folder-relay', folderNames: ['relay'] },
             { name: 'folder-react-components', folderNames: ['components'], enabledFor: [IconPack.React, IconPack.Redux] },
             { name: 'folder-database', folderNames: ['db', 'database', 'sql', 'data', '_data'] },
             { name: 'folder-log', folderNames: ['log', 'logs'] },
