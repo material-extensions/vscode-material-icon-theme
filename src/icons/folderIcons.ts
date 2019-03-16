@@ -172,6 +172,8 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-animation', folderNames: ['animation', 'animations', 'animated'] },
             { name: 'folder-guard', folderNames: ['guard', 'guards'] },
             { name: 'folder-prisma', folderNames: ['prisma'] },
+            { name: 'folder-pipe', folderNames: ['pipe', 'pipes'] },
+            { name: 'folder-svg', folderNames: ['svg', 'svgs'] }, 
             { name: 'folder-vuex-store', folderNames: ['store'], enabledFor: [IconPack.Vuex] },
             { name: 'folder-vue', folderNames: ['components'], enabledFor: [IconPack.Vuex , IconPack.Vue] },
         ]
