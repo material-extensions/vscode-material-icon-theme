@@ -69,7 +69,6 @@ export const fileIcons: FileIcons = {
                 'jpeg',
                 'jpg',
                 'gif',
-                'svg',
                 'ico',
                 'tif',
                 'tiff',
@@ -364,7 +363,7 @@ export const fileIcons: FileIcons = {
             ]
         },
         { name: 'lua', fileExtensions: ['lua'], fileNames: ['.luacheckrc'] },
-        { name: 'clojure', fileExtensions: ['clj', 'cljs'] },
+        { name: 'clojure', fileExtensions: ['clj', 'cljs', 'cljc'] },
         { name: 'groovy', fileExtensions: ['groovy'] },
         { name: 'r', fileExtensions: ['r', 'rmd'], fileNames: ['.Rhistory'] },
         { name: 'dart', fileExtensions: ['dart'] },
@@ -776,5 +775,6 @@ export const fileIcons: FileIcons = {
         { name: '3d', fileExtensions: ['stl', 'obj'] },
         { name: 'buildkite', fileNames: ['buildkite.yml', 'buildkite.yaml'] },
         { name: 'netlify', fileNames: ['netlify.toml'], light: true },
+        { name: 'svg', fileExtensions: ['svg'] },
     ]
 };
