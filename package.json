@@ -39,7 +39,8 @@
       {
         "id": "material-icon-theme",
         "label": "Material Icon Theme",
-        "path": "./dist/material-icons.json"
+        "path": "./dist/material-icons.json",
+        "_watch": true
       }
     ],
     "commands": [
