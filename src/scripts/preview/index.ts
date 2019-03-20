@@ -1,5 +1,5 @@
-import { fileIcons } from './../../src/icons/fileIcons';
-import { folderIcons } from './../../src/icons/folderIcons';
+import { fileIcons } from './../../icons/fileIcons';
+import { folderIcons } from './../../icons/folderIcons';
 import { generatePreview } from './preview';
 
 const filterDuplicates = (icons: string[]) => {

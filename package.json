@@ -33,13 +33,13 @@
   "activationEvents": [
     "*"
   ],
-  "main": "./out/src/extension",
+  "main": "./dist/extension",
   "contributes": {
     "iconThemes": [
       {
         "id": "material-icon-theme",
         "label": "Material Icon Theme",
-        "path": "./out/src/material-icons.json"
+        "path": "./dist/material-icons.json"
       }
     ],
     "commands": [
@@ -177,20 +177,20 @@
     }
   },
   "scripts": {
-    "vscode:prepublish": "npm run build",
-    "prebuild": "npm run lint && npm run clean",
-    "build": "npm run compile && npm run generateJson",
-    "postbuild": "npm run check",
-    "clean": "rimraf ./out",
-    "compile": "tsc -p ./",
-    "compile:watch": "tsc -watch -p ./",
-    "generateJson": "ts-node ./scripts/icons/generateJson.ts",
-    "check": "ts-node scripts/icons/checks",
+    "build": "npm run compile:dev && npm run post-compile",
+    "check": "ts-node ./src/scripts/icons/checks",
+    "compile": "webpack --mode production",
+    "compile:dev": "webpack --mode none",
+    "compile:watch": "webpack --mode none --watch",
+    "generateJson": "ts-node ./src/scripts/icons/generateJson.ts",
+    "lint": "tslint -c tslint.json ./src/**/*.ts",
+    "post-compile": "npm run generateJson && npm run check",
     "postinstall": "node ./node_modules/vscode/bin/install",
-    "lint": "tslint -c tslint.json ./src/**/*.ts ./scripts/**/*ts",
-    "pretest": "npm run build",
+    "pretest": "npm run build && npm run test-compile",
+    "preview": "ts-node ./src/scripts/preview",
     "test": "node ./node_modules/vscode/bin/test",
-    "preview": "npm run build && ts-node ./scripts/preview"
+    "test-compile": "tsc -p ./",
+    "vscode:prepublish": "npm run lint && npm run compile && npm run post-compile"
   },
   "dependencies": {
     "lodash.merge": "^4.6.1",
@@ -201,13 +201,16 @@
     "@types/mocha": "^5.2.5",
     "@types/node": "^10.12.23",
     "@types/puppeteer": "^1.12.1",
+    "clean-webpack-plugin": "^2.0.0",
     "mocha": "^5.2.0",
     "puppeteer": "^1.12.2",
     "rimraf": "^2.6.3",
+    "ts-loader": "^5.3.3",
     "ts-node": "^8.0.2",
     "tslint": "^5.12.1",
     "typescript": "^3.3.3",
-    "vscode": "^1.1.29"
+    "vscode": "^1.1.29",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3"
   }
 }
-

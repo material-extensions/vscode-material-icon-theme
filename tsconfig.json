@@ -8,13 +8,13 @@
             "dom"
         ],
         "sourceMap": true,
-        "rootDir": ".",
+        "rootDir": "src",
         "noUnusedLocals": true,
         "noUnusedParameters": true
     },
-    "exclude": [
-        "node_modules",
-        ".vscode-test",
-        "scripts"
+    "include": [
+        "src/**/*.ts",
+        "./node_modules/vscode/vscode.d.ts",
+        "./node_modules/vscode/lib/*",
     ]
 }

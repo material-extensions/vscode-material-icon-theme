@@ -11,45 +11,40 @@ export const setIconOpacity = (opacity: number, fileNames?: string[]) => {
         return console.error('Invalid opacity value! Opacity must be a decimal number between 0 and 1!');
     }
 
-    return new Promise((resolve, reject) => {
-        let iconsPath = path.join(__dirname, '..', '..', '..');
-        const parentFolder = iconsPath.split(path.sep).pop();
-        if (parentFolder === 'out') {
-            iconsPath = path.join(iconsPath, '..');
-        }
-        iconsPath = path.join(iconsPath, 'icons');
+    let iconsPath;
+    if (path.basename(__dirname) === 'dist') {
+        iconsPath = path.join(__dirname, '..', 'icons');
+    } else {
+        // executed via script
+        iconsPath = path.join(__dirname, '..', '..', '..', 'icons');
+    }
 
+    try {
         // read all icon files from the icons folder
-        try {
-            (fileNames || fs.readdirSync(iconsPath)).forEach(iconFileName => {
-                const svgFilePath = path.join(iconsPath, iconFileName);
+        (fileNames || fs.readdirSync(iconsPath)).forEach(iconFileName => {
+            const svgFilePath = path.join(iconsPath, iconFileName);
 
-                // Read SVG file
-                const svg = fs.readFileSync(svgFilePath, 'utf-8');
+            // Read SVG file
+            const svg = fs.readFileSync(svgFilePath, 'utf-8');
 
-                // Get the root element of the SVG file
-                const svgRootElement = getSVGRootElement(svg);
-                if (!svgRootElement) return;
+            // Get the root element of the SVG file
+            const svgRootElement = getSVGRootElement(svg);
+            if (!svgRootElement) return;
 
-                let updatedRootElement: string;
-                if (+opacity !== 1) {
-                    updatedRootElement = addOpacityAttribute(svgRootElement, opacity);
-                } else {
-                    // if the opacity equals 1 then remove the attribute
-                    updatedRootElement = removeOpacityAttribute(svgRootElement);
-                }
-                const updatedSVG = svg.replace(/<svg[^>]*>/, updatedRootElement);
+            let updatedRootElement: string;
 
-                fs.writeFileSync(svgFilePath, updatedSVG);
-                resolve();
-            });
-        }
-        catch (e) {
-            console.log(e);
-            reject(e);
-        }
-        resolve();
-    });
+            if (opacity < 1) {
+                updatedRootElement = addOpacityAttribute(svgRootElement, opacity);
+            } else {
+                updatedRootElement = removeOpacityAttribute(svgRootElement);
+            }
+            const updatedSVG = svg.replace(/<svg[^>]*>/, updatedRootElement);
+
+            fs.writeFileSync(svgFilePath, updatedSVG);
+        });
+    } catch (error) {
+        console.error(error);
+    }
 };
 
 /**
@@ -66,11 +61,7 @@ export const validateOpacityValue = (opacity: number) => {
  */
 const getSVGRootElement = (svg: string) => {
     const result = new RegExp(/<svg[^>]*>/).exec(svg);
-    if (result.length > 0) {
-        return result[0];
-    } else {
-        return undefined;
-    }
+    return result.length > 0 ? result[0] : undefined;
 };
 
 /**
@@ -94,9 +85,5 @@ const addOpacityAttribute = (svgRoot: string, opacity: number) => {
  */
 const removeOpacityAttribute = (svgRoot: string) => {
     const pattern = new RegExp(/\sopacity="[\d.]+"/);
-    // check if the opacity attribute exists
-    if (pattern.test(svgRoot)) {
-        return svgRoot.replace(pattern, '');
-    }
-    return svgRoot;
+    return svgRoot.replace(pattern, '');
 };

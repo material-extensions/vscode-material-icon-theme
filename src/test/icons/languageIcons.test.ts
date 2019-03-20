@@ -1,6 +1,6 @@
 import * as assert from 'assert';
-import { getDefaultIconOptions, getLanguageIconDefinitions } from '../../src/icons/index';
-import { IconConfiguration, IconPack, LanguageIcon } from '../../src/models/index';
+import { getDefaultIconOptions, getLanguageIconDefinitions } from '../../icons/index';
+import { IconConfiguration, IconPack, LanguageIcon } from '../../models/index';
 
 suite('language icons', () => {
     const iconConfig = new IconConfiguration();
@@ -16,13 +16,13 @@ suite('language icons', () => {
         const value = new IconConfiguration();
         value.iconDefinitions = {
             'a': {
-                'iconPath': './../../icons/a.svg'
+                'iconPath': './../icons/a.svg'
             },
             'b': {
-                'iconPath': './../../icons/b.svg'
+                'iconPath': './../icons/b.svg'
             },
             'c': {
-                'iconPath': './../../icons/c.svg'
+                'iconPath': './../icons/c.svg'
             }
         };
         value.languageIds = {
@@ -43,7 +43,7 @@ suite('language icons', () => {
         const value = new IconConfiguration();
         value.iconDefinitions = {
             'a': {
-                'iconPath': './../../icons/a.svg'
+                'iconPath': './../icons/a.svg'
             }
         };
         value.languageIds = {
@@ -73,22 +73,22 @@ suite('language icons', () => {
         const value = new IconConfiguration();
         value.iconDefinitions = {
             'a': {
-                'iconPath': './../../icons/a.svg'
+                'iconPath': './../icons/a.svg'
             },
             'a_light': {
-                'iconPath': './../../icons/a_light.svg'
+                'iconPath': './../icons/a_light.svg'
             },
             'a_highContrast': {
-                'iconPath': './../../icons/a_highContrast.svg'
+                'iconPath': './../icons/a_highContrast.svg'
             },
             'b': {
-                'iconPath': './../../icons/b.svg'
+                'iconPath': './../icons/b.svg'
             },
             'b_light': {
-                'iconPath': './../../icons/b_light.svg'
+                'iconPath': './../icons/b_light.svg'
             },
             'b_highContrast': {
-                'iconPath': './../../icons/b_highContrast.svg'
+                'iconPath': './../icons/b_highContrast.svg'
             }
         };
         value.languageIds = {
@@ -126,7 +126,7 @@ suite('language icons', () => {
         const value = new IconConfiguration();
         value.iconDefinitions = {
             'json': {
-                'iconPath': './../../icons/json.svg'
+                'iconPath': './../icons/json.svg'
             }
         };
         value.languageIds = {

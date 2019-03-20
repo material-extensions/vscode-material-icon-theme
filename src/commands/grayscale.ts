@@ -3,11 +3,14 @@ import * as helpers from './../helpers';
 import * as i18n from './../i18n';
 
 /** Command to toggle grayscale. */
-export const toggleGrayscale = () => {
-    return checkGrayscaleStatus()
-        .then(showQuickPickItems)
-        .then(handleQuickPickActions)
-        .catch(err => console.log(err));
+export const toggleGrayscale = async () => {
+    try {
+        const status = checkGrayscaleStatus();
+        const response = await showQuickPickItems(status);
+        handleQuickPickActions(response);
+    } catch (error) {
+        console.error(error);
+    }
 };
 
 /** Show QuickPick items to select preferred configuration for grayscale icons. */
@@ -35,19 +38,17 @@ const handleQuickPickActions = (value: vscode.QuickPickItem) => {
     if (!value || !value.description) return;
     switch (value.description) {
         case i18n.translate('toggleSwitch.on'): {
-            helpers.setThemeConfig('saturation', 0, true);
-            break;
+            return helpers.setThemeConfig('saturation', 0, true);
         }
         case i18n.translate('toggleSwitch.off'): {
-            helpers.setThemeConfig('saturation', 1, true);
-            break;
+            return helpers.setThemeConfig('saturation', 1, true);
         }
         default:
-            break;
+            return;
     }
 };
 
 /** Is grayscale icons enabled? */
-export const checkGrayscaleStatus = (): Promise<boolean> => {
-    return helpers.getMaterialIconsJSON().then((config) => config.options.saturation === 0);
+export const checkGrayscaleStatus = (): boolean => {
+    return helpers.getMaterialIconsJSON().options.saturation === 0;
 };

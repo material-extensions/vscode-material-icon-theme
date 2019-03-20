@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { DefaultIcon, FolderIcon, FolderTheme } from '../../../src/models/index';
-import { fileIcons, folderIcons, highContrastVersion, languageIcons, lightVersion, openedFolder } from './../../../src/icons';
+import { DefaultIcon, FolderIcon, FolderTheme } from '../../../models/index';
+import { fileIcons, folderIcons, highContrastVersion, languageIcons, lightVersion, openedFolder } from './../../../icons';
 import * as painter from './../../helpers/painter';
 
 /**

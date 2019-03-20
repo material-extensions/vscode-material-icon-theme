@@ -1,6 +1,6 @@
 import * as assert from 'assert';
-import { getDefaultIconOptions, getFolderIconDefinitions } from '../../src/icons/index';
-import { FolderTheme, IconConfiguration, IconPack } from '../../src/models/index';
+import { getDefaultIconOptions, getFolderIconDefinitions } from '../../icons/index';
+import { FolderTheme, IconConfiguration, IconPack } from '../../models/index';
 
 suite('folder icons', () => {
     const folderIcons: FolderTheme[] = [
@@ -31,28 +31,28 @@ suite('folder icons', () => {
         const value = new IconConfiguration();
         value.iconDefinitions = {
             'folder': {
-                'iconPath': './../../icons/folder.svg'
+                'iconPath': './../icons/folder.svg'
             },
             'folder-open': {
-                'iconPath': './../../icons/folder-open.svg'
+                'iconPath': './../icons/folder-open.svg'
             },
             'folder-root': {
-                'iconPath': './../../icons/folder-root.svg'
+                'iconPath': './../icons/folder-root.svg'
             },
             'folder-root-open': {
-                'iconPath': './../../icons/folder-root-open.svg'
+                'iconPath': './../icons/folder-root-open.svg'
             },
             'folder-src': {
-                'iconPath': './../../icons/folder-src.svg'
+                'iconPath': './../icons/folder-src.svg'
             },
             'folder-src-open': {
-                'iconPath': './../../icons/folder-src-open.svg'
+                'iconPath': './../icons/folder-src-open.svg'
             },
             'folder-angular': {
-                'iconPath': './../../icons/folder-angular.svg'
+                'iconPath': './../icons/folder-angular.svg'
             },
             'folder-angular-open': {
-                'iconPath': './../../icons/folder-angular-open.svg'
+                'iconPath': './../icons/folder-angular-open.svg'
             }
         };
         value.folder = 'folder';
@@ -98,16 +98,16 @@ suite('folder icons', () => {
 
         value.iconDefinitions = {
             'folder-blue': {
-                'iconPath': './../../icons/folder-blue.svg'
+                'iconPath': './../icons/folder-blue.svg'
             },
             'folder-blue-open': {
-                'iconPath': './../../icons/folder-blue-open.svg'
+                'iconPath': './../icons/folder-blue-open.svg'
             },
             'folder-blue-src': {
-                'iconPath': './../../icons/folder-blue-src.svg'
+                'iconPath': './../icons/folder-blue-src.svg'
             },
             'folder-blue-src-open': {
-                'iconPath': './../../icons/folder-blue-src-open.svg'
+                'iconPath': './../icons/folder-blue-src-open.svg'
             }
         };
         value.folder = 'folder-blue';
@@ -137,28 +137,28 @@ suite('folder icons', () => {
         const value = new IconConfiguration();
         value.iconDefinitions = {
             'folder': {
-                'iconPath': './../../icons/folder.svg'
+                'iconPath': './../icons/folder.svg'
             },
             'folder-open': {
-                'iconPath': './../../icons/folder-open.svg'
+                'iconPath': './../icons/folder-open.svg'
             },
             'folder-root': {
-                'iconPath': './../../icons/folder-root.svg'
+                'iconPath': './../icons/folder-root.svg'
             },
             'folder-root-open': {
-                'iconPath': './../../icons/folder-root-open.svg'
+                'iconPath': './../icons/folder-root-open.svg'
             },
             'folder-src': {
-                'iconPath': './../../icons/folder-src.svg'
+                'iconPath': './../icons/folder-src.svg'
             },
             'folder-src-open': {
-                'iconPath': './../../icons/folder-src-open.svg'
+                'iconPath': './../icons/folder-src-open.svg'
             },
             'folder-angular': {
-                'iconPath': './../../icons/folder-angular.svg'
+                'iconPath': './../icons/folder-angular.svg'
             },
             'folder-angular-open': {
-                'iconPath': './../../icons/folder-angular-open.svg'
+                'iconPath': './../icons/folder-angular-open.svg'
             }
         };
         value.folder = 'folder';
@@ -191,22 +191,22 @@ suite('folder icons', () => {
         const value = new IconConfiguration();
         value.iconDefinitions = {
             'folder': {
-                'iconPath': './../../icons/folder.svg'
+                'iconPath': './../icons/folder.svg'
             },
             'folder-open': {
-                'iconPath': './../../icons/folder-open.svg'
+                'iconPath': './../icons/folder-open.svg'
             },
             'folder-root': {
-                'iconPath': './../../icons/folder-root.svg'
+                'iconPath': './../icons/folder-root.svg'
             },
             'folder-root-open': {
-                'iconPath': './../../icons/folder-root-open.svg'
+                'iconPath': './../icons/folder-root-open.svg'
             },
             'folder-src': {
-                'iconPath': './../../icons/folder-src.svg'
+                'iconPath': './../icons/folder-src.svg'
             },
             'folder-src-open': {
-                'iconPath': './../../icons/folder-src-open.svg'
+                'iconPath': './../icons/folder-src-open.svg'
             }
         };
         value.folder = 'folder';
@@ -243,58 +243,58 @@ suite('folder icons', () => {
 
         value.iconDefinitions = {
             'folder': {
-                'iconPath': './../../icons/folder.svg'
+                'iconPath': './../icons/folder.svg'
             },
             'folder-open': {
-                'iconPath': './../../icons/folder-open.svg'
+                'iconPath': './../icons/folder-open.svg'
             },
             'folder_light': {
-                'iconPath': './../../icons/folder_light.svg'
+                'iconPath': './../icons/folder_light.svg'
             },
             'folder-open_light': {
-                'iconPath': './../../icons/folder-open_light.svg'
+                'iconPath': './../icons/folder-open_light.svg'
             },
             'folder_highContrast': {
-                'iconPath': './../../icons/folder_highContrast.svg'
+                'iconPath': './../icons/folder_highContrast.svg'
             },
             'folder-open_highContrast': {
-                'iconPath': './../../icons/folder-open_highContrast.svg'
+                'iconPath': './../icons/folder-open_highContrast.svg'
             },
             'folder-root': {
-                'iconPath': './../../icons/folder-root.svg'
+                'iconPath': './../icons/folder-root.svg'
             },
             'folder-root-open': {
-                'iconPath': './../../icons/folder-root-open.svg'
+                'iconPath': './../icons/folder-root-open.svg'
             },
             'folder-root_light': {
-                'iconPath': './../../icons/folder-root_light.svg'
+                'iconPath': './../icons/folder-root_light.svg'
             },
             'folder-root-open_light': {
-                'iconPath': './../../icons/folder-root-open_light.svg'
+                'iconPath': './../icons/folder-root-open_light.svg'
             },
             'folder-root_highContrast': {
-                'iconPath': './../../icons/folder-root_highContrast.svg'
+                'iconPath': './../icons/folder-root_highContrast.svg'
             },
             'folder-root-open_highContrast': {
-                'iconPath': './../../icons/folder-root-open_highContrast.svg'
+                'iconPath': './../icons/folder-root-open_highContrast.svg'
             },
             'folder-src': {
-                'iconPath': './../../icons/folder-src.svg'
+                'iconPath': './../icons/folder-src.svg'
             },
             'folder-src-open': {
-                'iconPath': './../../icons/folder-src-open.svg'
+                'iconPath': './../icons/folder-src-open.svg'
             },
             'folder-src_light': {
-                'iconPath': './../../icons/folder-src_light.svg'
+                'iconPath': './../icons/folder-src_light.svg'
             },
             'folder-src-open_light': {
-                'iconPath': './../../icons/folder-src-open_light.svg'
+                'iconPath': './../icons/folder-src-open_light.svg'
             },
             'folder-src_highContrast': {
-                'iconPath': './../../icons/folder-src_highContrast.svg'
+                'iconPath': './../icons/folder-src_highContrast.svg'
             },
             'folder-src-open_highContrast': {
-                'iconPath': './../../icons/folder-src-open_highContrast.svg'
+                'iconPath': './../icons/folder-src-open_highContrast.svg'
             }
         };
         value.folder = 'folder';
