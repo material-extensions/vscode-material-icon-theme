@@ -342,7 +342,7 @@ export const fileIcons: FileIcons = {
         { name: 'virtual', fileExtensions: ['vdi', 'vbox', 'vbox-prev'] },
         { name: 'email', fileExtensions: ['ics'], fileNames: ['.mailmap'] },
         { name: 'audio', fileExtensions: ['mp3', 'flac', 'm4a', 'wma', 'aiff'] },
-        { name: 'coffee', fileExtensions: ['coffee'] },
+        { name: 'coffee', fileExtensions: ['coffee', 'cson', 'iced'] },
         { name: 'document', fileExtensions: ['txt'] },
         { name: 'graphql', fileExtensions: ['graphql', 'gql'], fileNames: ['.graphqlconfig'] },
         { name: 'rust', fileExtensions: ['rs'] },
