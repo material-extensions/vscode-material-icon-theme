@@ -34,7 +34,7 @@ Choose your icon colors from the [material design colors](https://material.googl
 ### Use icons from here
 - [Material Design Icons](https://materialdesignicons.com/)
     - download them as SVG and edit the icons e.g. with Inkscape
-- you can use any other source **as long as the icons are free to use!** This icon theme is absolutely non-commercial, but you should always check the license of your sources! 
+- you can use any other source **as long as the icons are free to use!** This icon theme is absolutely non-commercial, but you should always check the license of your sources!
 
 ## Add translations
 - Create or edit the translations in the `src/i18n` directory.
