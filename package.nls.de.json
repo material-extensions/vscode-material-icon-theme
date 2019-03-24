@@ -6,6 +6,8 @@
     "command.restoreDefaultConfig": "Material Icons: Standard Einstellungen wiederherstellen",
     "command.hidesExplorerArrows": "Material Icons: Ordner Pfeile umschalten",
     "command.opacity": "Material Icons: Deckkraft verändern",
+    "command.grayscale": "Material Icons: Graustufen umschalten",
+    "command.saturation": "Material Icons: Sättigung verändern",
     "configuration.title": "Material Icons",
     "configuration.files.associations": "Benutzerdefinierte Datei Icons konfigurieren.",
     "configuration.folders.associations": "Benutzerdefinierte Ordner Icons konfigurieren.",
@@ -25,5 +27,6 @@
     "configuration.folders.theme.none": "Keine Ordner Icons.",
     "configuration.folders.color": "Farbe der Ordner Icons verändern.",
     "configuration.hidesExplorerArrows": "Pfeile vor den Ordnern deaktivieren.",
-    "configuration.opacity": "Deckkraft der Icons anpassen."
+    "configuration.opacity": "Deckkraft der Icons anpassen.",
+    "configuration.saturation": "Sättigung der Icons anpassen."
 }
