@@ -39,7 +39,8 @@
       {
         "id": "material-icon-theme",
         "label": "Material Icon Theme",
-        "path": "./dist/material-icons.json"
+        "path": "./dist/material-icons.json",
+        "_watch": true
       }
     ],
     "commands": [
@@ -177,20 +178,20 @@
     }
   },
   "scripts": {
-    "build": "npm run compile:dev && npm run post-compile",
+    "build": "npm run compile:dev && npm run postcompile",
     "check": "ts-node ./src/scripts/icons/checks",
     "compile": "webpack --mode production",
     "compile:dev": "webpack --mode none",
     "compile:watch": "webpack --mode none --watch",
     "generateJson": "ts-node ./src/scripts/icons/generateJson.ts",
     "lint": "tslint -c tslint.json ./src/**/*.ts",
-    "post-compile": "npm run generateJson && npm run check",
+    "postcompile": "npm run generateJson && npm run check",
     "postinstall": "node ./node_modules/vscode/bin/install",
     "pretest": "npm run build && npm run test-compile",
     "preview": "ts-node ./src/scripts/preview",
     "test": "node ./node_modules/vscode/bin/test",
     "test-compile": "tsc -p ./",
-    "vscode:prepublish": "npm run lint && npm run compile && npm run post-compile"
+    "vscode:prepublish": "npm run lint && npm run compile"
   },
   "dependencies": {
     "lodash.merge": "^4.6.1",
