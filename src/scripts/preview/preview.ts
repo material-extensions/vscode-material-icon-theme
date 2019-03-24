@@ -63,9 +63,9 @@ const savePreview = (fileName: string, size: number, icons: IconDefinition[][]) 
 
     // create the images
     createScreenshots(filePath, fileName).then(() => {
-        console.log('> Material Icon Theme:', painter.green(`Successfully created ${fileName} preview images!`));
+        console.log('> Material Icon Theme:', painter.green(`Successfully created ${fileName} preview image!`));
     }).catch(() => {
-        throw Error(painter.red(`Error while creating ${fileName} preview images`));
+        throw Error(painter.red(`Error while creating ${fileName} preview image`));
     });
 };
 
