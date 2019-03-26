@@ -123,7 +123,7 @@ export const fileIcons: FileIcons = {
             name: 'redux-store',
             fileExtensions: ['store.js', 'store.ts'],
             fileNames: ['store.js', 'store.ts'],
-            enabledFor: [IconPack.Redux]
+            enabledFor: [IconPack.Angular, IconPack.Redux]
         },
         {
             name: 'settings',
@@ -705,7 +705,8 @@ export const fileIcons: FileIcons = {
         { name: 'prettier', fileNames: ['.prettierrc', 'prettier.config.js', '.prettierrc.js', '.prettierrc.json', '.prettierrc.yaml', '.prettierrc.yml', '.prettierignore'] },
         { name: 'nodemon', fileNames: ['nodemon.json'] },
         { name: 'ngrx-reducer', fileExtensions: ['reducer.ts', 'rootReducer.ts'], enabledFor: [IconPack.Ngrx] },
-        { name: 'ngrx-state', fileExtensions: ['state.ts'], enabledFor: [IconPack.Ngrx] },
+        { name: 'ngrx-state', fileExtensions: ['state.ts'], enabledFor: [IconPack.Angular, IconPack.Ngrx] },
+        { name: 'ngrx-state', fileExtensions: ['query.ts'], enabledFor: [IconPack.Angular] },
         { name: 'ngrx-actions', fileExtensions: ['actions.ts'], enabledFor: [IconPack.Ngrx] },
         { name: 'ngrx-effects', fileExtensions: ['effects.ts'], enabledFor: [IconPack.Ngrx] },
         { name: 'ngrx-entity', fileNames: ['.entity'], enabledFor: [IconPack.Ngrx] },
