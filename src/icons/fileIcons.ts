@@ -596,6 +596,10 @@ export const fileIcons: FileIcons = {
                 '.env.production',
                 '.env.staging',
                 '.env.preview',
+                '.env.test',
+                '.env.development.local',
+                '.env.production.local',
+                '.env.test.local',
             ]
         },
         { name: 'babel', fileNames: ['.babelrc', '.babelrc.js', 'babel.config.js'] },
