@@ -6,4 +6,6 @@ export enum IconPack {
     Ngrx = 'angular_ngrx',
     React = 'react',
     Redux = 'react_redux',
+    Vue = 'vue',
+    Vuex = 'vue_vuex'
 }
