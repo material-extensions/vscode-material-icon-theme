@@ -157,6 +157,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-packages', folderNames: ['package', 'packages'] },
             { name: 'folder-shared', folderNames: ['shared'] },
             { name: 'folder-stack', folderNames: ['stack', 'stacks'] },
+            { name: 'folder-storybook', folderNames: ['storybook', '.storybook', 'stories']},
             { name: 'folder-template', folderNames: ['template', 'templates'] },
             { name: 'folder-utils', folderNames: ['util', 'utils'] },
             { name: 'folder-private', folderNames: ['private', '.private'] },
