@@ -174,6 +174,8 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-prisma', folderNames: ['prisma'] },
             { name: 'folder-pipe', folderNames: ['pipe', 'pipes'] },
             { name: 'folder-svg', folderNames: ['svg', 'svgs'] },
+            { name: 'folder-vuex-store', folderNames: ['store'], enabledFor: [IconPack.Vuex] },
+            { name: 'folder-vue', folderNames: ['components'], enabledFor: [IconPack.Vuex , IconPack.Vue] },
         ]
     },
     { name: 'classic', defaultIcon: { name: 'folder' }, rootFolder: { name: 'folder-root' } },
