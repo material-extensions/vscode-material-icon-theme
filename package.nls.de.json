@@ -20,6 +20,8 @@
     "configuration.activeIconPack.angular_ngrx": "Icons für Angular und Ngrx",
     "configuration.activeIconPack.react": "Icons für React",
     "configuration.activeIconPack.react_redux": "Icons für React und Redux",
+    "configuration.activeIconPack.vue": "Icons für Vue.",
+    "configuration.activeIconPack.vue_vuex": "Icons für Vue und Vuex.",
     "configuration.activeIconPack.none": "Kein Icon-Pack aktiviert.",
     "configuration.folders.theme": "Art der Ordner Icons auswählen.",
     "configuration.folders.theme.specific": "Spezifische Ordner Icons auswählen.",
