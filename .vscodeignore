@@ -1,7 +1,6 @@
 .vscode/**
 .vscode-test/**
-out/test/**
-out/previews/**
+out/**
 test/**
 src/**
 scripts/**
@@ -14,5 +13,7 @@ tslint.json
 images/**
 vsc-extension-quickstart.md
 logo.svg
+node_modules
 package-lock.json
 yarn.lock
+webpack.config.js

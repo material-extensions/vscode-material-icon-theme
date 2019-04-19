@@ -4,7 +4,8 @@
 [![Rating](https://vsmarketplacebadge.apphb.com/rating-short/pkief.material-icon-theme.svg)](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
 [![Installs](https://vsmarketplacebadge.apphb.com/installs-short/PKief.material-icon-theme.svg)](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
 [![Downloads](https://vsmarketplacebadge.apphb.com/downloads-short/PKief.material-icon-theme.svg)](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
-[![Build Status](https://travis-ci.org/PKief/vscode-material-icon-theme.svg?branch=master)](https://travis-ci.org/PKief/vscode-material-icon-theme)
+[![Build Status](https://travis-ci.com/PKief/vscode-material-icon-theme.svg?branch=master)](https://travis-ci.com/PKief/vscode-material-icon-theme)
+[![Build Status](https://ci.appveyor.com/api/projects/status/8itpdlwl3qmixm0c/branch/master?svg=true)](https://ci.appveyor.com/project/PKief/vscode-material-icon-theme)
 
 The Material Icon Theme provides lots of icons based on Material Design for Visual Studio Code.
 
@@ -46,6 +47,14 @@ You can set a custom opacity for the icons:
 
 ```json
 "material-icon-theme.opacity": 0.5
+```
+
+## Custom icon saturation
+
+If colors do not make you happy you can change the icons to have less saturation making them look grayish or completely grayscale by setting saturation to 0:
+
+```json
+"material-icon-theme.saturation": 0.5
 ```
 
 ## Custom icon associations
@@ -99,14 +108,6 @@ After installation or update you can click on the 'Activate'-button to activate 
 
 <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/master/images/oneclickactivation.png" alt="activation" width="60%">
 
-## Custom icon saturation
-
-If colors do not make you happy you can change icons to have less saturation making them look grayish or completely grayscale by setting saturation to 0:
-
-```json
-"material-icon-theme.saturation": 0.5
-```
-
 ## Commands
 
 Press `Ctrl-Shift-P` to open the command palette and type `Material Icons`.
@@ -121,6 +122,8 @@ Press `Ctrl-Shift-P` to open the command palette and type `Material Icons`.
 
 - **Change Opacity**: Change the opacity of the icons.
 
+- **Change Saturation**: Change the saturation value of the icons.
+
 - **Configure Icon Packs**: Select an icon pack that enables additional icons (e.g. for Angular, React, Ngrx).
 
 - **Hide Folder Arrows**: Hides the arrows next to the folder icons.
@@ -128,8 +131,6 @@ Press `Ctrl-Shift-P` to open the command palette and type `Material Icons`.
 - **Restore Default Configuration**: Reset the default configurations of the icon theme.
 
 - **Toggle Grayscale**: Change icons to saturation to 0 making them look grayscale.
-
-- **Change Saturation**: Change the saturation value of the icons.
 
 ## Icon sources
 

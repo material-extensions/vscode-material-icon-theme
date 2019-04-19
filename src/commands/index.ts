@@ -3,10 +3,10 @@ import { activateIconTheme } from './activate';
 import { toggleFolderArrows } from './folderArrows';
 import { changeFolderColor } from './folderColor';
 import { changeFolderTheme } from './folders';
+import { toggleGrayscale } from './grayscale';
 import { toggleIconPacks } from './iconPacks';
 import { changeOpacity } from './opacity';
 import { restoreDefaultConfig } from './restoreConfig';
-import { toggleGrayscale } from './grayscale';
 import { changeSaturation } from './saturation';
 
 // Activate theme

@@ -3,11 +3,11 @@ import * as puppeteer from 'puppeteer';
 
 export const createScreenshots = async (filePath: string, fileName: string) => {
     try {
-        const htmlFilePath = path.join('file:', __dirname, '..', '..', filePath);
-
+        const htmlFilePath = path.join('file:', filePath);
         const browser = await puppeteer.launch();
         const page = await browser.newPage();
-        page.setViewport({
+
+        await page.setViewport({
             height: 100,
             width: 100
         });
@@ -22,7 +22,7 @@ export const createScreenshots = async (filePath: string, fileName: string) => {
 
         await browser.close();
     } catch (error) {
-        console.log(error);
+        console.error(error);
         throw Error(error);
     }
 };

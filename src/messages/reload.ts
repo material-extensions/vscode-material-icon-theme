@@ -3,32 +3,27 @@ import * as helpers from './../helpers';
 import * as i18n from './../i18n';
 
 /** User has to confirm if he wants to reload the editor */
-export const showConfirmToReloadMessage = (): Promise<boolean> => {
-    return new Promise((resolve) => {
-        // if the user does not want to see the reload message
-        if (helpers.getThemeConfig('showReloadMessage').globalValue === false) return;
+export const showConfirmToReloadMessage = async (): Promise<boolean> => {
+    // if the user does not want to see the reload message
+    if (helpers.getThemeConfig('showReloadMessage').globalValue === false) return;
 
-        vscode.window.showInformationMessage(
-            i18n.translate('confirmReload'),
-            i18n.translate('reload'),
-            i18n.translate('neverShowAgain')
-        ).then(value => {
-            switch (value) {
-                case i18n.translate('reload'):
-                    resolve(true);
-                    break;
+    const response = await vscode.window.showInformationMessage(
+        i18n.translate('confirmReload'),
+        i18n.translate('reload'),
+        i18n.translate('neverShowAgain')
+    );
 
-                case i18n.translate('neverShowAgain'):
-                    disableReloadMessage();
-                    resolve(false);
-                    break;
+    switch (response) {
+        case i18n.translate('reload'):
+            return true;
 
-                default:
-                    resolve(false);
-                    break;
-            }
-        });
-    });
+        case i18n.translate('neverShowAgain'):
+            disableReloadMessage();
+            return false;
+
+        default:
+            return false;
+    }
 };
 
 /** Disable the reload message in the global settings */

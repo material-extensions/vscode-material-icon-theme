@@ -1,5 +1,5 @@
 import * as painter from '../../helpers/painter';
-import { fileIcons, folderIcons, languageIcons } from './../../../src/icons';
+import { fileIcons, folderIcons, languageIcons } from './../../../icons';
 
 /**
  * Store all icons that are wrong configured

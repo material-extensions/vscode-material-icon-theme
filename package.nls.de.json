@@ -6,6 +6,8 @@
     "command.restoreDefaultConfig": "Material Icons: Standard Einstellungen wiederherstellen",
     "command.hidesExplorerArrows": "Material Icons: Ordner Pfeile umschalten",
     "command.opacity": "Material Icons: Deckkraft verändern",
+    "command.grayscale": "Material Icons: Graustufen umschalten",
+    "command.saturation": "Material Icons: Sättigung verändern",
     "configuration.title": "Material Icons",
     "configuration.files.associations": "Benutzerdefinierte Datei Icons konfigurieren.",
     "configuration.folders.associations": "Benutzerdefinierte Ordner Icons konfigurieren.",
@@ -18,6 +20,8 @@
     "configuration.activeIconPack.angular_ngrx": "Icons für Angular und Ngrx",
     "configuration.activeIconPack.react": "Icons für React",
     "configuration.activeIconPack.react_redux": "Icons für React und Redux",
+    "configuration.activeIconPack.vue": "Icons für Vue.",
+    "configuration.activeIconPack.vue_vuex": "Icons für Vue und Vuex.",
     "configuration.activeIconPack.none": "Kein Icon-Pack aktiviert.",
     "configuration.folders.theme": "Art der Ordner Icons auswählen.",
     "configuration.folders.theme.specific": "Spezifische Ordner Icons auswählen.",
@@ -25,5 +29,6 @@
     "configuration.folders.theme.none": "Keine Ordner Icons.",
     "configuration.folders.color": "Farbe der Ordner Icons verändern.",
     "configuration.hidesExplorerArrows": "Pfeile vor den Ordnern deaktivieren.",
-    "configuration.opacity": "Deckkraft der Icons anpassen."
+    "configuration.opacity": "Deckkraft der Icons anpassen.",
+    "configuration.saturation": "Sättigung der Icons anpassen."
 }

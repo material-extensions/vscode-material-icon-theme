@@ -5,7 +5,7 @@ import { toTitleCase } from './../helpers/titleCase';
 import { createScreenshots } from './screenshots';
 
 const htmlDoctype = `<!DOCTYPE html>`;
-const cssFilePath = path.join('..', '..', 'scripts', 'preview', 'style.css');
+const cssFilePath = path.join('style.css');
 const styling = `<link rel="stylesheet" href="${cssFilePath}">`;
 
 const createHTMLTableHeadRow = (amount: number) => {
@@ -26,7 +26,7 @@ const createHTMLTableBodyRows = (items: IconDefinition[][]) => {
     items.forEach(row => {
         const columns = row.map(icon => `
             <td class="icon">
-                <img src="./../../icons/${icon.iconName}.svg" alt="${icon.label}">
+                <img src="./../../../icons/${icon.iconName}.svg" alt="${icon.label}">
             </td>
             <td class="iconName">${toTitleCase(icon.label)}</td>
         `).join('');
@@ -56,20 +56,16 @@ const createPreviewTable = (icons: IconDefinition[][], size: number) => {
 };
 
 const savePreview = (fileName: string, size: number, icons: IconDefinition[][]) => {
-    const previewFolderPath = path.join('out', 'previews');
-    const filePath = path.join(previewFolderPath, fileName + '.html');
-
-    // create the out folder if it does not exist
-    fs.existsSync(previewFolderPath) || fs.mkdirSync(previewFolderPath);
+    const filePath = path.join(__dirname, fileName + '.html');
 
     // write the html file with the icon table
     fs.writeFileSync(filePath, createPreviewTable(icons, size));
 
     // create the images
     createScreenshots(filePath, fileName).then(() => {
-        console.log('> Material Icon Theme:', painter.green(`Successfully created ${fileName} preview images!`));
+        console.log('> Material Icon Theme:', painter.green(`Successfully created ${fileName} preview image!`));
     }).catch(() => {
-        throw Error(painter.red(`Error while creating ${fileName} preview images`));
+        throw Error(painter.red(`Error while creating ${fileName} preview image`));
     });
 };
 
