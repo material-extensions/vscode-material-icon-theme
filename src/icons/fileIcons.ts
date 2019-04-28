@@ -104,7 +104,14 @@ export const fileIcons: FileIcons = {
         {
             name: 'routing',
             fileExtensions: ['routing.ts', 'routing.js', 'routes.ts', 'routes.js'],
-            fileNames: ['router.js', 'router.ts', 'routes.js', 'routes.ts'],
+            fileNames: [
+                'router.js',
+                'router.ts',
+                'routes.js',
+                'routes.ts',
+                'app-routing.module.ts',
+                'app-routing.module.tns.ts'
+            ],
             enabledFor: [IconPack.Angular, IconPack.Ngrx, IconPack.React, IconPack.Redux, IconPack.Vue, IconPack.Vuex]
         },
         {
