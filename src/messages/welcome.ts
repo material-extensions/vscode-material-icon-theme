@@ -1,6 +1,6 @@
 import * as opn from 'opn';
 import * as vscode from 'vscode';
-import { activateIconTheme } from '../commands/activate';
+import { activateIcons } from '../commands/activate';
 import * as helpers from './../helpers';
 import * as versioning from './../helpers/versioning';
 import * as i18n from './../i18n';
@@ -25,7 +25,7 @@ export const showWelcomeMessage = () => {
 const handleWelcomeMessageActions = (value) => {
     switch (value) {
         case i18n.translate('activate'):
-            activateIconTheme();
+            activateIcons();
             break;
 
         case i18n.translate('howToActivate'):
