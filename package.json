@@ -30,6 +30,7 @@
     "icon-theme",
     "customization"
   ],
+  "extensionKind": "ui",
   "activationEvents": [
     "*"
   ],
