@@ -676,6 +676,7 @@ export const fileIcons: FileIcons = {
                 'mocha.opts', 
                 '.mocharc.yml', 
                 '.mocharc.yaml', 
+                '.mocharc.js',
                 '.mocharc.json', 
                 '.mocharc.jsonc' 
             ] 
