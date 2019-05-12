@@ -11,22 +11,23 @@ import { showStartMessages } from './messages/start';
  * This method is called when the extension is activated.
  * It initializes the core functionality of the extension.
  */
-export const activate = (context: vscode.ExtensionContext) => {
-    // Load the translations
-    i18n.initTranslations().then(() => {
-        showStartMessages(checkThemeStatus(context.globalState));
-    }).catch(err => console.error(err));
+export const activate = async (context: vscode.ExtensionContext) => {
+    try {
+        await i18n.initTranslations();
+        const status = await checkThemeStatus(context.globalState);
+        showStartMessages(status);
 
-    // Add commands to the editor
-    context.subscriptions.push(...commands.commands);
+        // Subscribe to the extension commands
+        context.subscriptions.push(...commands.registered);
 
-    // Initially trigger the config change detection
-    detectConfigChanges().catch(e => {
-        console.error(e);
-    });
+        // Initially trigger the config change detection
+        detectConfigChanges();
 
-    // Observe changes in the config
-    vscode.workspace.onDidChangeConfiguration(detectConfigChanges);
+        // Observe changes in the config
+        vscode.workspace.onDidChangeConfiguration(detectConfigChanges);
+    } catch (error) {
+        console.error(error);
+    }
 };
 
 /** This method is called when the extension is deactivated */

@@ -22,7 +22,7 @@ export const fileIcons: FileIcons = {
         { name: 'less', fileExtensions: ['less'] },
         {
             name: 'json',
-            fileExtensions: ['json'],
+            fileExtensions: ['json', 'tsbuildinfo'],
             fileNames: [
                 '.jscsrc',
                 '.jshintrc',
@@ -69,7 +69,6 @@ export const fileIcons: FileIcons = {
                 'jpeg',
                 'jpg',
                 'gif',
-                'svg',
                 'ico',
                 'tif',
                 'tiff',
@@ -106,7 +105,7 @@ export const fileIcons: FileIcons = {
             name: 'routing',
             fileExtensions: ['routing.ts', 'routing.js', 'routes.ts', 'routes.js'],
             fileNames: ['router.js', 'router.ts', 'routes.js', 'routes.ts'],
-            enabledFor: [IconPack.Angular, IconPack.Ngrx, IconPack.React, IconPack.Redux]
+            enabledFor: [IconPack.Angular, IconPack.Ngrx, IconPack.React, IconPack.Redux, IconPack.Vue, IconPack.Vuex]
         },
         {
             name: 'redux-action',
@@ -343,9 +342,9 @@ export const fileIcons: FileIcons = {
         { name: 'virtual', fileExtensions: ['vdi', 'vbox', 'vbox-prev'] },
         { name: 'email', fileExtensions: ['ics'], fileNames: ['.mailmap'] },
         { name: 'audio', fileExtensions: ['mp3', 'flac', 'm4a', 'wma', 'aiff'] },
-        { name: 'coffee', fileExtensions: ['coffee'] },
+        { name: 'coffee', fileExtensions: ['coffee', 'cson', 'iced'] },
         { name: 'document', fileExtensions: ['txt'] },
-        { name: 'graphql', fileExtensions: ['graphql', 'gql'] },
+        { name: 'graphql', fileExtensions: ['graphql', 'gql'], fileNames: ['.graphqlconfig'] },
         { name: 'rust', fileExtensions: ['rs'] },
         { name: 'raml', fileExtensions: ['raml'] },
         { name: 'xaml', fileExtensions: ['xaml'] },
@@ -364,7 +363,7 @@ export const fileIcons: FileIcons = {
             ]
         },
         { name: 'lua', fileExtensions: ['lua'], fileNames: ['.luacheckrc'] },
-        { name: 'clojure', fileExtensions: ['clj', 'cljs'] },
+        { name: 'clojure', fileExtensions: ['clj', 'cljs', 'cljc'] },
         { name: 'groovy', fileExtensions: ['groovy'] },
         { name: 'r', fileExtensions: ['r', 'rmd'], fileNames: ['.Rhistory'] },
         { name: 'dart', fileExtensions: ['dart'] },
@@ -397,6 +396,7 @@ export const fileIcons: FileIcons = {
         },
         { name: 'vue', fileExtensions: ['vue'] },
         { name: 'vue-config', fileNames: ['vue.config.js', 'vue.config.ts'] },
+        { name: 'vuex-store', fileExtensions: ['store.js', 'store.ts'], fileNames: ['store.js', 'store.ts'], enabledFor: [IconPack.Vuex] },
         { name: 'ocaml', fileExtensions: ['ml', 'mli', 'cmx'] },
         { name: 'javascript-map', fileExtensions: ['js.map', 'mjs.map'] },
         { name: 'css-map', fileExtensions: ['css.map'] },
@@ -446,13 +446,13 @@ export const fileIcons: FileIcons = {
             enabledFor: [IconPack.Angular, IconPack.Ngrx]
         },
         { name: 'puppet', fileExtensions: ['pp'] },
-        { name: 'elixir', fileExtensions: ['ex', 'exs', 'eex'] },
+        { name: 'elixir', fileExtensions: ['ex', 'exs', 'eex', 'leex'] },
         { name: 'livescript', fileExtensions: ['ls'] },
         { name: 'erlang', fileExtensions: ['erl'] },
         { name: 'twig', fileExtensions: ['twig'] },
         { name: 'julia', fileExtensions: ['jl'] },
         { name: 'elm', fileExtensions: ['elm'] },
-        { name: 'purescript', fileExtensions: ['pure'] },
+        { name: 'purescript', fileExtensions: ['pure', 'purs'] },
         { name: 'smarty', fileExtensions: ['tpl'] },
         { name: 'stylus', fileExtensions: ['styl'] },
         { name: 'reason', fileExtensions: ['re', 'rei'] },
@@ -597,6 +597,10 @@ export const fileIcons: FileIcons = {
                 '.env.production',
                 '.env.staging',
                 '.env.preview',
+                '.env.test',
+                '.env.development.local',
+                '.env.production.local',
+                '.env.test.local',
             ]
         },
         { name: 'babel', fileNames: ['.babelrc', '.babelrc.js', 'babel.config.js'] },
@@ -632,7 +636,7 @@ export const fileIcons: FileIcons = {
             ]
         },
         { name: 'bithound', fileNames: ['.bithoundrc'] },
-        { name: 'appveyor', fileNames: ['appveyor.yml'] },
+        { name: 'appveyor', fileNames: ['.appveyor.yml', 'appveyor.yml'] },
         { name: 'travis', fileNames: ['.travis.yml'] },
         {
             name: 'protractor',
@@ -666,7 +670,17 @@ export const fileIcons: FileIcons = {
         },
         { name: 'watchman', fileNames: ['.watchmanconfig'] },
         { name: 'aurelia', fileNames: ['aurelia.json'] },
-        { name: 'mocha', fileNames: ['mocha.opts'] },
+        { 
+            name: 'mocha', 
+            fileNames: [
+                'mocha.opts', 
+                '.mocharc.yml', 
+                '.mocharc.yaml', 
+                '.mocharc.js',
+                '.mocharc.json', 
+                '.mocharc.jsonc' 
+            ] 
+        },
         { name: 'jenkins', fileNames: ['jenkinsfile'] },
         { name: 'firebase', fileNames: ['firebase.json', '.firebaserc'] },
         {
@@ -712,7 +726,7 @@ export const fileIcons: FileIcons = {
         { name: 'ngrx-entity', fileNames: ['.entity'], enabledFor: [IconPack.Ngrx] },
         { name: 'webhint', fileNames: ['.hintrc'] },
         { name: 'browserlist', fileNames: ['browserslist', '.browserslistrc'], light: true },
-        { name: 'crystal', fileExtensions: ['cr'], light: true },
+        { name: 'crystal', fileExtensions: ['cr', 'ecr'], light: true },
         { name: 'snyk', fileNames: ['.snyk'] },
         { name: 'drone', fileExtensions: ['drone.yml'], fileNames: ['.drone.yml'], light: true },
         { name: 'cuda', fileExtensions: ['cu', 'cuh'] },
@@ -720,7 +734,7 @@ export const fileIcons: FileIcons = {
         { name: 'dotjs', fileExtensions: ['def', 'dot', 'jst'] },
         { name: 'ejs', fileExtensions: ['ejs'] },
         { name: 'sequelize', fileNames: ['.sequelizerc'] },
-        { name: 'gatsby', fileNames: ['gatsby.config.js'] },
+        { name: 'gatsby', fileNames: ['gatsby.config.js', 'gatsby-config.js', 'gatsby-node.js', 'gatsby-browser.js', 'gatsby-ssr.js'] },
         { name: 'wakatime', fileNames: ['.wakatime-project'], fileExtensions: ['.wakatime-project'], light: true },
         { name: 'circleci', fileNames: ['circle.yml'], light: true },
         { name: 'cloudfoundry', fileNames: ['.cfignore'] },
@@ -771,12 +785,11 @@ export const fileIcons: FileIcons = {
         { name: 'asciidoc', fileExtensions: ['ad', 'adoc', 'asciidoc'] },
         { name: 'istanbul', fileNames: ['.nycrc', '.nycrc.json'] },
         { name: 'edge', fileExtensions: ['edge'] },
-        {
-            name: 'obj',
-            fileExtensions: [
-                'stl',
-                'obj'
-            ]
-        },
+        { name: 'scheme', fileExtensions: ['ss', 'scm'] },
+        { name: 'tailwindcss', fileNames: ['tailwind.js', 'tailwind.config.js'] },
+        { name: '3d', fileExtensions: ['stl', 'obj'] },
+        { name: 'buildkite', fileNames: ['buildkite.yml', 'buildkite.yaml'] },
+        { name: 'svg', fileExtensions: ['svg'] },
+        { name: 'svelte', fileExtensions: ['svelte'] },
     ]
 };

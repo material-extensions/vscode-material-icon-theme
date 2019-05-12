@@ -4,21 +4,14 @@ import * as helpers from './../helpers';
 import * as i18n from './../i18n';
 
 /** Command to toggle the icons packs */
-export const toggleIconPacks = () => {
-    return getActiveIconPack()
-        .then((pack) => showQuickPickItems(pack)
-            .then((value) => handleQuickPickActions(value)));
-};
-
-/** Get all packs that can be used in this icon theme. */
-export const getAllIconPacks = () => {
-    const packs: string[] = [];
-    for (let item in IconPack) {
-        if (isNaN(Number(item))) {
-            packs.push(IconPack[item].toLowerCase());
-        }
+export const toggleIconPacks = async () => {
+    try {
+        const activeIconPack = getActiveIconPack();
+        const response = await showQuickPickItems(activeIconPack);
+        handleQuickPickActions(response);
+    } catch (error) {
+        console.error(error);
     }
-    return packs;
 };
 
 /** Show QuickPick items to select preferred configuration for the icon packs. */
@@ -52,8 +45,19 @@ const handleQuickPickActions = (value: vscode.QuickPickItem) => {
     helpers.setThemeConfig('activeIconPack', decision === 'none' ? '' : decision, true);
 };
 
-const getActiveIconPack = (): Promise<string> => {
-    return helpers.getMaterialIconsJSON().then((config) => config.options.activeIconPack);
+const getActiveIconPack = (): string => {
+    return helpers.getMaterialIconsJSON().options.activeIconPack;
+};
+
+/** Get all packs that can be used in this icon theme. */
+export const getAllIconPacks = () => {
+    const packs: string[] = [];
+    for (let item in IconPack) {
+        if (isNaN(Number(item))) {
+            packs.push(IconPack[item].toLowerCase());
+        }
+    }
+    return packs;
 };
 
 const isPackActive = (activePack: string, pack: string) => {

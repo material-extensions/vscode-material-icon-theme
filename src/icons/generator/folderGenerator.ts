@@ -147,33 +147,29 @@ export const generateFolderIcons = (color: string) => {
     const rootFolderIcon = `M12 20a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 5a5 5 0 0 0-5 5 5 5 0 0 0 5 5 5 5 0 0 0 5-5 5 5 0 0 0-5-5z`;
     const rootFolderIconOpen = `M12 20a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2z`;
 
-    return writeSVGFiles('folder', getSVG(getPath(folderIcon, color)))
-        .then(() => writeSVGFiles('folder-open', getSVG(getPath(folderIconOpen, color))))
-        .then(() => writeSVGFiles('folder-root', getSVG(getPath(rootFolderIcon, color))))
-        .then(() => writeSVGFiles('folder-root-open', getSVG(getPath(rootFolderIconOpen, color))))
-        .catch(e => console.log(e));
+    writeSVGFiles('folder', getSVG(getPath(folderIcon, color)));
+    writeSVGFiles('folder-open', getSVG(getPath(folderIconOpen, color)));
+    writeSVGFiles('folder-root', getSVG(getPath(rootFolderIcon, color)));
+    writeSVGFiles('folder-root-open', getSVG(getPath(rootFolderIconOpen, color)));
 };
 
 const getPath = (d: string, color: string) => `<path d="${d}" fill="${color}" />`;
 const getSVG = (path: string) => `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">${path}</svg>`;
 
 const writeSVGFiles = (iconName: string, svg: string) => {
-    return new Promise((resolve, reject) => {
-        let iconPath = path.join(__dirname, '..', '..', '..');
-        const parentFolder = iconPath.split(path.sep).pop();
-        if (parentFolder === 'out') {
-            iconPath = path.join(iconPath, '..');
-        }
-        const iconsFolderPath = path.join(iconPath, 'icons', `${iconName}.svg`);
-        try {
-            fs.writeFileSync(iconsFolderPath, svg);
-            resolve();
-        } catch (e) {
-            console.log(e);
-            reject(e);
-        }
-        resolve();
-    });
+    let iconsPath;
+    if (path.basename(__dirname) === 'dist') {
+        iconsPath = path.join(__dirname, '..', 'icons');
+    } else {
+        // executed via script
+        iconsPath = path.join(__dirname, '..', '..', '..', 'icons');
+    }
+    const iconsFolderPath = path.join(iconsPath, `${iconName}.svg`);
+    try {
+        fs.writeFileSync(iconsFolderPath, svg);
+    } catch (error) {
+        console.error(error);
+    }
 };
 
 /**

@@ -1,24 +1,31 @@
-import { getListOfConfigs, getMaterialIconsJSON, getThemeConfig, promptToReload } from '.';
+import { getConfigProperties, getMaterialIconsJSON, getThemeConfig, promptToReload } from '.';
 import { createIconFile } from '../icons/index';
 import { IconJsonOptions } from '../models';
 import { getObjectPropertyValue, setObjectPropertyValue } from './objects';
 
 /** Compare the workspace and the user configurations with the current setup of the icons. */
 export const detectConfigChanges = () => {
-    const configs = Object.keys(getListOfConfigs())
+    const configs = Object.keys(getConfigProperties())
         .map(c => c.split('.').slice(1).join('.'));
 
-    return compareConfigs(configs).then(changes => {
-        // if there's nothing to update
-        if (Object.keys(changes.updatedConfigs).length === 0) return;
+    const changes = compareConfigs(configs);
 
+    // if there's nothing to update
+    if (Object.keys(changes.updatedConfigs).length === 0) return;
+
+    try {
         // update icon json file with new options
-        return createIconFile(changes.updatedConfigs, changes.updatedJSONConfig).then(() => {
+        createIconFile(changes.updatedConfigs, changes.updatedJSONConfig);
+
+        // check if a reload of the editor is required
+        const configRequiresReload = ['opacity', 'saturation', 'folders.color', 'hidesExplorerArrows'];
+        const reloadRequired = configRequiresReload.some(r => getObjectPropertyValue(changes.updatedConfigs, r) !== undefined);
+        if (reloadRequired) {
             promptToReload();
-        }).catch(err => {
-            console.error(err);
-        });
-    });
+        }
+    } catch (error) {
+        console.error(error);
+    }
 };
 
 /**
@@ -27,12 +34,13 @@ export const detectConfigChanges = () => {
  * @param configs List of configuration names
  * @returns List of configurations that needs to be updated.
  */
-const compareConfigs = (configs: string[]): Promise<{ updatedConfigs: IconJsonOptions, updatedJSONConfig: IconJsonOptions }> => {
-    return getMaterialIconsJSON().then(json => {
-        return configs.reduce((result, configName) => {
-            // no further actions (e.g. reload) required
-            if (/show(Welcome|Update|Reload)Message/g.test(configName)) return result;
+const compareConfigs = (configs: string[]): { updatedConfigs: IconJsonOptions, updatedJSONConfig: IconJsonOptions } => {
+    const json = getMaterialIconsJSON();
+    return configs.reduce((result, configName) => {
+        // no further actions (e.g. reload) required
+        if (/show(Welcome|Update|Reload)Message/g.test(configName)) return result;
 
+        try {
             const themeConfig = getThemeConfig(configName);
             const configValue = themeConfig.globalValue !== undefined ? themeConfig.globalValue : themeConfig.defaultValue;
             const currentState = getObjectPropertyValue(json.options, configName);
@@ -41,8 +49,10 @@ const compareConfigs = (configs: string[]): Promise<{ updatedConfigs: IconJsonOp
                 setObjectPropertyValue(json.options, configName, configValue);
                 setObjectPropertyValue(result.updatedConfigs, configName, configValue);
             }
+        } catch (error) {
+            console.error(error);
+        }
 
-            return result;
-        }, { updatedConfigs: {}, updatedJSONConfig: json.options });
-    });
+        return result;
+    }, { updatedConfigs: {}, updatedJSONConfig: json.options });
 };

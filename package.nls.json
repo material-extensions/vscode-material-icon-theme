@@ -6,6 +6,8 @@
     "command.restoreDefaultConfig": "Material Icons: Restore Default Configuration",
     "command.hidesExplorerArrows": "Material Icons: Hide Folder Arrows",
     "command.opacity": "Material Icons: Change Opacity",
+    "command.grayscale": "Material Icons: Toggle Grayscale",
+    "command.saturation": "Material Icons: Change Saturation",
     "configuration.title": "Material Icons",
     "configuration.files.associations": "Set custom file icon associations.",
     "configuration.folders.associations": "Set custom folder icon associations.",
@@ -18,6 +20,8 @@
     "configuration.activeIconPack.angular_ngrx": "Icons for Angular and ngrx.",
     "configuration.activeIconPack.react": "Icons for React.",
     "configuration.activeIconPack.react_redux": "Icons for React and Redux.",
+    "configuration.activeIconPack.vue": "Icons for Vue.",
+    "configuration.activeIconPack.vue_vuex": "Icons for Vue and Vuex.",
     "configuration.activeIconPack.none": "No icon pack enabled.",
     "configuration.folders.theme": "Set the type for the folder icons.",
     "configuration.folders.theme.specific": "Select specific folder icons.",
@@ -25,5 +29,6 @@
     "configuration.folders.theme.none": "No folder icons.",
     "configuration.folders.color": "Change the color of the folder icons.",
     "configuration.hidesExplorerArrows": "Hide explorer arrows before folder.",
-    "configuration.opacity": "Change the opacity of the icons."
+    "configuration.opacity": "Change the opacity of the icons.",
+    "configuration.saturation": "Change the saturation of the icons."
 }

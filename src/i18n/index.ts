@@ -16,25 +16,28 @@ export const initTranslations = async () => {
         fallbackTranslation = await loadTranslation('en');
     }
     catch (error) {
-        console.log(error);
+        console.error(error);
     }
 };
 
 /** Load the required translation */
-const loadTranslation = (language: string): Promise<any> => {
-    return getTranslationObject(language)
-        .catch(() => getTranslationObject('en'));
+const loadTranslation = async (language: string) => {
+    try {
+        return await getTranslationObject(language);
+    } catch (error) {
+        console.error(error);
+        return await getTranslationObject('en');
+    }
 };
 
 /** Get the translation object of the separated translation files */
-const getTranslationObject = async (language: string): Promise<any> => {
+const getTranslationObject = async (language: string) => {
     try {
-        // tslint:disable-next-line:semicolon
-        const lang = await import('./lang-' + language);
+        const lang = await import(/* webpackMode: "eager" */ `./lang-${language}`);
         return lang.translation;
     }
     catch (error) {
-        console.log(error);
+        console.error(error);
     }
 };
 

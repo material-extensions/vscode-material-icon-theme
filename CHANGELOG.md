@@ -1,4 +1,46 @@
 # Changelog
+## 3.7.0 (2019-03-24)
+### New features
+- Command for grayscale icons ([@cezarsa](https://github.com/cezarsa) in [#387](https://github.com/PKief/vscode-material-icon-theme/pull/387))
+- Config for icon saturation ([@cezarsa](https://github.com/cezarsa) in [#387](https://github.com/PKief/vscode-material-icon-theme/pull/387))
+- Hot reload for changed icon configurations ([@PKief](https://github.com/PKief) in [#413](https://github.com/PKief/vscode-material-icon-theme/pull/413))
+
+### New file icons
+- Gatsby ([@bcanseco](https://github.com/bcanseco) in [#389](https://github.com/PKief/vscode-material-icon-theme/pull/389))
+- Clojure (*.cljc) ([@jtiala](https://github.com/jtiala) in [#394](https://github.com/PKief/vscode-material-icon-theme/pull/394))
+- SVG ([issue #400](https://github.com/PKief/vscode-material-icon-theme/issues/400))
+- CoffeeScript (*.cson, *.iced) ([@ExE-Boss](https://github.com/ExE-Boss) in [#414](https://github.com/PKief/vscode-material-icon-theme/pull/414))
+- .graphqlconfig
+
+### New folder icons
+- certs ([@rfgamaral](https://github.com/rfgamaral) in [#391](https://github.com/PKief/vscode-material-icon-theme/pull/391))
+- pipe ([@rbalet](https://github.com/rbalet) in [#403](https://github.com/PKief/vscode-material-icon-theme/pull/403))
+- SVG ([issue #358](https://github.com/PKief/vscode-material-icon-theme/issues/358))
+
+### Other improvements
+- Bundle extension with webpack ([@PKief](https://github.com/PKief) in [#409](https://github.com/PKief/vscode-material-icon-theme/pull/409))
+  - Reduces extension size
+  - Faster extension startup activation
+- Code quality improvements
+- CI and build setup improvements
+
+## 3.6.3 (2019-02-08)
+### New file icons
+- 3d (.obj, .stl) ([@Mrgove10](https://github.com/Mrgove10) in [#363](https://github.com/PKief/vscode-material-icon-theme/pull/363))
+- Tailwind CSS ([@bradlc](https://github.com/bradlc) in [#369](https://github.com/PKief/vscode-material-icon-theme/pull/369))
+- PureScript (.purs) ([issue #365](https://github.com/PKief/vscode-material-icon-theme/issues/365))
+- .appveyor.yml ([@justalemon](https://github.com/justalemon) in [#371](https://github.com/PKief/vscode-material-icon-theme/pull/371))
+- Embedded Crystal ([@blubMe](https://github.com/blubMe) in [#377](https://github.com/PKief/vscode-material-icon-theme/pull/377))
+- Scheme ([issue #364](https://github.com/PKief/vscode-material-icon-theme/issues/364))
+- Buildkite ([@rhysforyou](https://github.com/rhysforyou) in [#354](https://github.com/PKief/vscode-material-icon-theme/pull/354))
+- Gatsby ([@jediyozh](https://github.com/jediyozh) in [#382](https://github.com/PKief/vscode-material-icon-theme/pull/382))
+
+### New folder icons
+- validation ([issue #375](https://github.com/PKief/vscode-material-icon-theme/issues/375))
+- GraphQL ([@felipe-fg](https://github.com/felipe-fg) in [#380](https://github.com/PKief/vscode-material-icon-theme/pull/380))
+- Prisma ([@epitaphmike](https://github.com/epitaphmike) in [#383](https://github.com/PKief/vscode-material-icon-theme/pull/383))
+- web ([@kukiric](https://github.com/kukiric) in [#384](https://github.com/PKief/vscode-material-icon-theme/pull/384))
+
 ## 3.6.2 (2018-12-20)
 ### New file icons
 - asciidoc ([issue #352](https://github.com/PKief/vscode-material-icon-theme/issues/352))

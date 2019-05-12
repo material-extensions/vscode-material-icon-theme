@@ -14,10 +14,9 @@
                 "--extensionDevelopmentPath=${workspaceFolder}"
             ],
             "outFiles": [
-                "${workspaceFolder}/out/**/*.js"
+                "${workspaceFolder}/dist/**/*.js"
             ],
             "smartStep": true,
-            "sourceMaps": true,
             "preLaunchTask": "npm: build"
         },
         {
@@ -29,11 +28,10 @@
                 "--extensionDevelopmentPath=${workspaceFolder}",
                 "--extensionTestsPath=${workspaceFolder}/out/test"
             ],
-            "sourceMaps": true,
             "outFiles": [
                 "${workspaceFolder}/out/test/**/*.js"
             ],
-            "preLaunchTask": "npm: build"
+            "preLaunchTask": "npm: test-compile"
         }
     ]
 }

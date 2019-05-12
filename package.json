@@ -2,7 +2,7 @@
   "name": "material-icon-theme",
   "displayName": "Material Icon Theme",
   "description": "Material Design Icons for Visual Studio Code",
-  "version": "3.6.2",
+  "version": "3.7.0",
   "publisher": "PKief",
   "engines": {
     "vscode": "^1.5.0"
@@ -30,16 +30,18 @@
     "icon-theme",
     "customization"
   ],
+  "extensionKind": "ui",
   "activationEvents": [
     "*"
   ],
-  "main": "./out/src/extension",
+  "main": "./dist/extension",
   "contributes": {
     "iconThemes": [
       {
         "id": "material-icon-theme",
         "label": "Material Icon Theme",
-        "path": "./out/src/material-icons.json"
+        "path": "./dist/material-icons.json",
+        "_watch": true
       }
     ],
     "commands": [
@@ -70,6 +72,14 @@
       {
         "command": "material-icon-theme.opacity",
         "title": "%command.opacity%"
+      },
+      {
+        "command": "material-icon-theme.grayscale",
+        "title": "%command.grayscale%"
+      },
+      {
+        "command": "material-icon-theme.saturation",
+        "title": "%command.saturation%"
       }
     ],
     "configuration": {
@@ -100,6 +110,8 @@
             "%configuration.activeIconPack.angular_ngrx%",
             "%configuration.activeIconPack.react%",
             "%configuration.activeIconPack.react_redux%",
+            "%configuration.activeIconPack.vue%",
+            "%configuration.activeIconPack.vue_vuex%",
             "%configuration.activeIconPack.none%"
           ],
           "enum": [
@@ -107,6 +119,8 @@
             "angular_ngrx",
             "react",
             "react_redux",
+            "vue",
+            "vue_vuex",
             "none"
           ]
         },
@@ -157,41 +171,52 @@
           "type": "boolean",
           "default": false,
           "description": "%configuration.hidesExplorerArrows%"
+        },
+        "material-icon-theme.saturation": {
+          "type": "number",
+          "default": 1,
+          "minimum": 0,
+          "maximum": 1,
+          "description": "%configuration.saturation%"
         }
       }
     }
   },
   "scripts": {
-    "vscode:prepublish": "npm run build",
-    "prebuild": "npm run lint && npm run clean",
-    "build": "npm run compile && npm run generateJson",
-    "postbuild": "npm run check",
-    "clean": "rimraf ./out",
-    "compile": "tsc -p ./",
-    "compile:watch": "tsc -watch -p ./",
-    "generateJson": "ts-node ./scripts/icons/generateJson.ts",
-    "check": "ts-node scripts/icons/checks",
+    "build": "npm run compile:dev && npm run postcompile",
+    "check": "ts-node ./src/scripts/icons/checks",
+    "compile": "webpack --mode production",
+    "compile:dev": "webpack --mode none",
+    "compile:watch": "webpack --mode none --watch",
+    "generateJson": "ts-node ./src/scripts/icons/generateJson.ts",
+    "lint": "tslint -c tslint.json ./src/**/*.ts",
+    "postcompile": "npm run generateJson && npm run check",
     "postinstall": "node ./node_modules/vscode/bin/install",
-    "lint": "tslint -c tslint.json ./src/**/*.ts ./scripts/**/*ts",
-    "pretest": "npm run build",
+    "pretest": "npm run build && npm run test-compile",
+    "preview": "ts-node ./src/scripts/preview",
     "test": "node ./node_modules/vscode/bin/test",
-    "preview": "npm run build && ts-node ./scripts/preview"
+    "test-compile": "tsc -p ./",
+    "vscode:prepublish": "npm run lint && npm run compile"
   },
   "dependencies": {
     "lodash.merge": "^4.6.1",
-    "opn": "^5.4.0",
+    "opn": "^5.5.0",
     "semver": "^5.6.0"
   },
   "devDependencies": {
-    "@types/mocha": "^5.2.5",
-    "@types/node": "^10.12.18",
-    "@types/puppeteer": "^1.11.1",
-    "mocha": "^5.2.0",
-    "puppeteer": "^1.11.0",
-    "rimraf": "^2.6.2",
-    "ts-node": "^7.0.1",
-    "tslint": "^5.12.0",
-    "typescript": "^3.2.2",
-    "vscode": "^1.1.26"
+    "@types/mocha": "^5.2.6",
+    "@types/node": "^11.11.6",
+    "@types/puppeteer": "^1.12.3",
+    "clean-webpack-plugin": "^2.0.1",
+    "mocha": "^6.0.2",
+    "puppeteer": "^1.13.0",
+    "rimraf": "^2.6.3",
+    "ts-loader": "^5.3.3",
+    "ts-node": "^8.0.3",
+    "tslint": "^5.14.0",
+    "typescript": "^3.3.4000",
+    "vscode": "^1.1.33",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
   }
 }

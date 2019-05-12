@@ -1,6 +1,6 @@
 import * as assert from 'assert';
-import { getDefaultIconOptions, getFileIconDefinitions } from '../../src/icons/index';
-import { FileIcons, IconConfiguration, IconPack } from '../../src/models/index';
+import { getDefaultIconOptions, getFileIconDefinitions } from '../../icons/index';
+import { FileIcons, IconConfiguration, IconPack } from '../../models/index';
 
 suite('file icons', () => {
     test('should configure icon definitions', () => {
@@ -18,13 +18,13 @@ suite('file icons', () => {
 
         value.iconDefinitions = {
             'file': {
-                'iconPath': './../../icons/file.svg'
+                'iconPath': './../icons/file.svg'
             },
             'javascript': {
-                'iconPath': './../../icons/javascript.svg'
+                'iconPath': './../icons/javascript.svg'
             },
             'angular': {
-                'iconPath': './../../icons/angular.svg'
+                'iconPath': './../icons/angular.svg'
             }
         };
         value.file = 'file';
@@ -56,10 +56,10 @@ suite('file icons', () => {
 
         value.iconDefinitions = {
             'file': {
-                'iconPath': './../../icons/file.svg'
+                'iconPath': './../icons/file.svg'
             },
             'javascript': {
-                'iconPath': './../../icons/javascript.svg'
+                'iconPath': './../icons/javascript.svg'
             }
         };
         value.file = 'file';
@@ -92,13 +92,13 @@ suite('file icons', () => {
 
         value.iconDefinitions = {
             'file': {
-                'iconPath': './../../icons/file.svg'
+                'iconPath': './../icons/file.svg'
             },
             'javascript': {
-                'iconPath': './../../icons/javascript.svg'
+                'iconPath': './../icons/javascript.svg'
             },
             'angular': {
-                'iconPath': './../../icons/angular.svg'
+                'iconPath': './../icons/angular.svg'
             }
         };
         value.file = 'file';
@@ -131,25 +131,25 @@ suite('file icons', () => {
 
         value.iconDefinitions = {
             'file': {
-                'iconPath': './../../icons/file.svg'
+                'iconPath': './../icons/file.svg'
             },
             'file_light': {
-                'iconPath': './../../icons/file_light.svg'
+                'iconPath': './../icons/file_light.svg'
             },
             'file_highContrast': {
-                'iconPath': './../../icons/file_highContrast.svg'
+                'iconPath': './../icons/file_highContrast.svg'
             },
             'javascript': {
-                'iconPath': './../../icons/javascript.svg'
+                'iconPath': './../icons/javascript.svg'
             },
             'javascript_light': {
-                'iconPath': './../../icons/javascript_light.svg'
+                'iconPath': './../icons/javascript_light.svg'
             },
             'javascript_highContrast': {
-                'iconPath': './../../icons/javascript_highContrast.svg'
+                'iconPath': './../icons/javascript_highContrast.svg'
             },
             'angular': {
-                'iconPath': './../../icons/angular.svg'
+                'iconPath': './../icons/angular.svg'
             }
         };
         value.file = 'file';
