@@ -791,6 +791,6 @@ export const fileIcons: FileIcons = {
         { name: 'buildkite', fileNames: ['buildkite.yml', 'buildkite.yaml'] },
         { name: 'svg', fileExtensions: ['svg'] },
         { name: 'svelte', fileExtensions: ['svelte'] },
-        
+        { name: 'unity3d', fileExtensions: ['unity'] }
     ]
 };
