@@ -22,7 +22,7 @@ export const fileIcons: FileIcons = {
         { name: 'less', fileExtensions: ['less'] },
         {
             name: 'json',
-            fileExtensions: ['json'],
+            fileExtensions: ['json', 'tsbuildinfo'],
             fileNames: [
                 '.jscsrc',
                 '.jshintrc',
@@ -105,7 +105,7 @@ export const fileIcons: FileIcons = {
             name: 'routing',
             fileExtensions: ['routing.ts', 'routing.js', 'routes.ts', 'routes.js'],
             fileNames: ['router.js', 'router.ts', 'routes.js', 'routes.ts'],
-            enabledFor: [IconPack.Angular, IconPack.Ngrx, IconPack.React, IconPack.Redux]
+            enabledFor: [IconPack.Angular, IconPack.Ngrx, IconPack.React, IconPack.Redux, IconPack.Vue, IconPack.Vuex]
         },
         {
             name: 'redux-action',
@@ -396,6 +396,7 @@ export const fileIcons: FileIcons = {
         },
         { name: 'vue', fileExtensions: ['vue'] },
         { name: 'vue-config', fileNames: ['vue.config.js', 'vue.config.ts'] },
+        { name: 'vuex-store', fileExtensions: ['store.js', 'store.ts'], fileNames: ['store.js', 'store.ts'], enabledFor: [IconPack.Vuex] },
         { name: 'ocaml', fileExtensions: ['ml', 'mli', 'cmx'] },
         { name: 'javascript-map', fileExtensions: ['js.map', 'mjs.map'] },
         { name: 'css-map', fileExtensions: ['css.map'] },
@@ -669,7 +670,17 @@ export const fileIcons: FileIcons = {
         },
         { name: 'watchman', fileNames: ['.watchmanconfig'] },
         { name: 'aurelia', fileNames: ['aurelia.json'] },
-        { name: 'mocha', fileNames: ['mocha.opts'] },
+        { 
+            name: 'mocha', 
+            fileNames: [
+                'mocha.opts', 
+                '.mocharc.yml', 
+                '.mocharc.yaml', 
+                '.mocharc.js',
+                '.mocharc.json', 
+                '.mocharc.jsonc' 
+            ] 
+        },
         { name: 'jenkins', fileNames: ['jenkinsfile'] },
         { name: 'firebase', fileNames: ['firebase.json', '.firebaserc'] },
         {
@@ -780,5 +791,6 @@ export const fileIcons: FileIcons = {
         { name: 'buildkite', fileNames: ['buildkite.yml', 'buildkite.yaml'] },
         { name: 'svg', fileExtensions: ['svg'] },
         { name: 'now', fileNames: ['now.json', '.nowignore'] },
+        { name: 'svelte', fileExtensions: ['svelte'] },
     ]
 };
