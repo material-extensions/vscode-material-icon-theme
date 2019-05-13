@@ -30,6 +30,7 @@
     "icon-theme",
     "customization"
   ],
+  "extensionKind": "ui",
   "activationEvents": [
     "*"
   ],
@@ -109,6 +110,8 @@
             "%configuration.activeIconPack.angular_ngrx%",
             "%configuration.activeIconPack.react%",
             "%configuration.activeIconPack.react_redux%",
+            "%configuration.activeIconPack.vue%",
+            "%configuration.activeIconPack.vue_vuex%",
             "%configuration.activeIconPack.none%"
           ],
           "enum": [
@@ -116,6 +119,8 @@
             "angular_ngrx",
             "react",
             "react_redux",
+            "vue",
+            "vue_vuex",
             "none"
           ]
         },

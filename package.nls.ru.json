@@ -18,6 +18,8 @@
     "configuration.activeIconPack.angular_ngrx": "Иконки для Angular и ngrx.",
     "configuration.activeIconPack.react": "Иконки для React.",
     "configuration.activeIconPack.react_redux": "Иконки для React и Redux.",
+    "configuration.activeIconPack.vue": "Иконки для Vue.",
+    "configuration.activeIconPack.vue_vuex": "Иконки для Vue и Vuex.",
     "configuration.activeIconPack.none": "Папка с иконками не включена.",
     "configuration.folders.theme": "Установить тип иконок для папок.",
     "configuration.folders.theme.specific": "Выберите конкретные значки папок.",

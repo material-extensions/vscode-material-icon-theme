@@ -17,8 +17,8 @@ export const activate = async (context: vscode.ExtensionContext) => {
         const status = await checkThemeStatus(context.globalState);
         showStartMessages(status);
 
-        // Register the extension commands
-        context.subscriptions.push(...commands.commands);
+        // Subscribe to the extension commands
+        context.subscriptions.push(...commands.registered);
 
         // Initially trigger the config change detection
         detectConfigChanges();
