@@ -671,16 +671,16 @@ export const fileIcons: FileIcons = {
         },
         { name: 'watchman', fileNames: ['.watchmanconfig'] },
         { name: 'aurelia', fileNames: ['aurelia.json'] },
-        { 
-            name: 'mocha', 
+        {
+            name: 'mocha',
             fileNames: [
-                'mocha.opts', 
-                '.mocharc.yml', 
-                '.mocharc.yaml', 
+                'mocha.opts',
+                '.mocharc.yml',
+                '.mocharc.yaml',
                 '.mocharc.js',
-                '.mocharc.json', 
-                '.mocharc.jsonc' 
-            ] 
+                '.mocharc.json',
+                '.mocharc.jsonc'
+            ]
         },
         { name: 'jenkins', fileNames: ['jenkinsfile'] },
         { name: 'firebase', fileNames: ['firebase.json', '.firebaserc'] },
