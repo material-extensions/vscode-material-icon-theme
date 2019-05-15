@@ -175,6 +175,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-pipe', folderNames: ['pipe', 'pipes'] },
             { name: 'folder-svg', folderNames: ['svg', 'svgs'] },
             { name: 'folder-vuex-store', folderNames: ['store'], enabledFor: [IconPack.Vuex] },
+            { name: 'folder-nuxt', folderNames: ['nuxt', '.nuxt'], enabledFor: [IconPack.Vuex, IconPack.Vue] },
             { name: 'folder-vue', folderNames: ['components'], enabledFor: [IconPack.Vuex , IconPack.Vue] },
         ]
     },
