@@ -1,13 +1,18 @@
 import { fileIcons } from './../../icons/fileIcons';
 import { folderIcons } from './../../icons/folderIcons';
+import { languageIcons } from './../../icons/languageIcons';
 import { generatePreview } from './preview';
 
 const filterDuplicates = (icons: string[]) => {
     return [...new Set(icons)];
 };
 
-const basicFileIcons = fileIcons.icons
-    .map(i => ({ iconName: i.name, label: i.name }));
+const basicFileIcons = filterDuplicates(
+    fileIcons.icons
+        .map(i => i.name)
+        // merge language icons
+        .concat(languageIcons.map(i => i.icon.name))
+).map(i => ({ iconName: i, label: i }));
 
 const folderThemes = filterDuplicates(folderIcons.map(theme => {
     const folders = [];

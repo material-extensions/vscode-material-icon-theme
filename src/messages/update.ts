@@ -1,6 +1,6 @@
-import * as opn from 'opn';
+import * as open from 'open';
 import * as vscode from 'vscode';
-import { activateIconTheme } from '../commands/activate';
+import { activateIcons } from '../commands/activate';
 import * as helpers from './../helpers';
 import * as versioning from './../helpers/versioning';
 import * as i18n from './../i18n';
@@ -26,11 +26,11 @@ export const showUpdateMessage = () => {
 const handleUpdateMessageActions = (value) => {
     switch (value) {
         case i18n.translate('activate'):
-            activateIconTheme();
+            activateIcons();
             break;
 
         case i18n.translate('readChangelog'):
-            opn('https://marketplace.visualstudio.com/items/PKief.material-icon-theme/changelog');
+            open('https://marketplace.visualstudio.com/items/PKief.material-icon-theme/changelog');
             break;
 
         case i18n.translate('neverShowAgain'):
