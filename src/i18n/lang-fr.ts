@@ -31,10 +31,10 @@ export const translation: Translation = {
         'on': 'ON',
         'off': 'OFF'
     },
-    'hidesExplorerArrows': {
-        'toggleArrows': 'Basculer les flèches du dossier',
-        'enableArrows': 'Afficher les flèches du dossier',
-        'disableArrows': 'Cacher les flèches de dossier'
+    'explorerArrows': {
+        'toggle': 'Basculer les flèches du dossier',
+        'enable': 'Afficher les flèches du dossier',
+        'disable': 'Cacher les flèches de dossier'
     },
     'confirmReload': 'Veuillez redémarrer VS Code pour activer les icônes',
     'reload': 'Redémarrer',

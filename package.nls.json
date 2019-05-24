@@ -4,7 +4,7 @@
     "command.changeFolderTheme": "Material Icons: Change Folder Theme",
     "command.changeFolderColor": "Material Icons: Change Folder Color",
     "command.restoreDefaultConfig": "Material Icons: Restore Default Configuration",
-    "command.toggleExplorerArrows": "Material Icons: Hide Folder Arrows",
+    "command.toggleExplorerArrows": "Material Icons: Toggle Explorer Arrows",
     "command.changeOpacity": "Material Icons: Change Opacity",
     "command.toggleGrayscale": "Material Icons: Toggle Grayscale",
     "command.changeSaturation": "Material Icons: Change Saturation",

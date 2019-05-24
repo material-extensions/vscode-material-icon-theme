@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 import { activateIcons } from './activate';
-import { toggleExplorerArrows } from './folderArrows';
+import { toggleExplorerArrows } from './explorerArrows';
 import { changeFolderColor } from './folderColor';
 import { changeFolderTheme } from './folders';
 import { toggleGrayscale } from './grayscale';
