@@ -4,8 +4,8 @@ import * as versioning from './../helpers/versioning';
 import * as i18n from './../i18n';
 import * as outdatedMessage from './../messages/outdated';
 
-/** Command to toggle the folder icons. */
-export const toggleFolderArrows = async () => {
+/** Command to toggle the explorer arrows. */
+export const toggleExplorerArrows = async () => {
     if (!versioning.checkVersionSupport('1.18.0-insider')) {
         outdatedMessage.showOutdatedMessage();
         return Promise.reject('Outdated version of vscode!');
@@ -19,7 +19,7 @@ export const toggleFolderArrows = async () => {
     }
 };
 
-/** Show QuickPick items to select preferred configuration for the folder icons. */
+/** Show QuickPick items to select preferred configuration for the explorer arrows. */
 const showQuickPickItems = (status: boolean) => {
     const on: vscode.QuickPickItem = {
         description: i18n.translate('toggleSwitch.on'),

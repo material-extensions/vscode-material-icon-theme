@@ -66,20 +66,20 @@
         "title": "%command.restoreDefaultConfig%"
       },
       {
-        "command": "material-icon-theme.hidesExplorerArrows",
-        "title": "%command.hidesExplorerArrows%"
+        "command": "material-icon-theme.toggleExplorerArrows",
+        "title": "%command.toggleExplorerArrows%"
       },
       {
-        "command": "material-icon-theme.opacity",
-        "title": "%command.opacity%"
+        "command": "material-icon-theme.changeOpacity",
+        "title": "%command.changeOpacity%"
       },
       {
-        "command": "material-icon-theme.grayscale",
-        "title": "%command.grayscale%"
+        "command": "material-icon-theme.toggleGrayscale",
+        "title": "%command.toggleGrayscale%"
       },
       {
-        "command": "material-icon-theme.saturation",
-        "title": "%command.saturation%"
+        "command": "material-icon-theme.changeSaturation",
+        "title": "%command.changeSaturation%"
       }
     ],
     "configuration": {
