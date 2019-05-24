@@ -1,6 +1,7 @@
 import { getConfigProperties, getMaterialIconsJSON, getThemeConfig, promptToReload } from '.';
 import { createIconFile } from '../icons/index';
 import { IconJsonOptions } from '../models';
+import * as versioning from './../helpers/versioning';
 import { getObjectPropertyValue, setObjectPropertyValue } from './objects';
 
 /** Compare the workspace and the user configurations with the current setup of the icons. */
@@ -20,7 +21,7 @@ export const detectConfigChanges = () => {
         // check if a reload of the editor is required
         const configRequiresReload = ['opacity', 'saturation', 'folders.color'];
         const reloadRequired = configRequiresReload.some(r => getObjectPropertyValue(changes.updatedConfigs, r) !== undefined);
-        if (reloadRequired) {
+        if (!versioning.checkVersionSupport('1.31.0') || reloadRequired) {
             promptToReload();
         }
     } catch (error) {
