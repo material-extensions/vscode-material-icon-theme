@@ -1,4 +1,31 @@
 # Changelog
+## 3.8.0 (2019-05-25)
+### New features
+- Vue.js and Vuex theme ([@Bakosa666](https://github.com/Bakosa666) in [#402](https://github.com/PKief/vscode-material-icon-theme/pull/402))
+- Hot reload for hidesExplorerArrows configuration (in [c65d9a6](https://github.com/PKief/vscode-material-icon-theme/commit/c65d9a6935eb6cc09a779fd5cf49af26948fd8df))
+
+### New file icons
+- Netlify ([@leggsimon](https://github.com/leggsimon) in [#396](https://github.com/PKief/vscode-material-icon-theme/pull/396))
+- .env ([@richardmillen94](https://github.com/richardmillen94) in [#423](https://github.com/PKief/vscode-material-icon-theme/pull/423))
+- .leex ([@suazithustra](https://github.com/suazithustra) in [#424](https://github.com/PKief/vscode-material-icon-theme/pull/424))
+- .tsbuildinfo (in [c408ac8](https://github.com/PKief/vscode-material-icon-theme/commit/c408ac8bb3274e69e3800b798227cee3777f6399))
+- Svelte ([@simlej](https://github.com/simlej) in [#439](https://github.com/PKief/vscode-material-icon-theme/pull/439))
+- .mocharc ([@yuric18](https://github.com/yuric18) in [#446](https://github.com/PKief/vscode-material-icon-theme/pull/446))
+- Nuxt.js ([@Bakosa666](https://github.com/Bakosa666) in [#450](https://github.com/PKief/vscode-material-icon-theme/pull/450))
+
+### New folder icons
+- nuxt ([@Bakosa666](https://github.com/Bakosa666) in [#450](https://github.com/PKief/vscode-material-icon-theme/pull/450))
+- Vue.js directives ([@Bakosa666](https://github.com/Bakosa666) in [#450](https://github.com/PKief/vscode-material-icon-theme/pull/450))
+
+### Added translations
+- Dutch translation ([@TheCloudSaver](https://github.com/TheCloudSaver) in [#444](https://github.com/PKief/vscode-material-icon-theme/pull/444))
+- Polish translation ([@JakubKoralewski](https://github.com/JakubKoralewski) in [#453](https://github.com/PKief/vscode-material-icon-theme/pull/453))
+
+### Other improvements
+- Support remote development ([@mjbvz](https://github.com/mjbvz) in [#442](https://github.com/PKief/vscode-material-icon-theme/pull/442))
+- Show language icons in preview (in [05bde2b](https://github.com/PKief/vscode-material-icon-theme/commit/05bde2bda649b289c14a93f57d5d1a8d0f6de754))
+- Improved compatibility for older versions of VS Code (in [3fedead](https://github.com/PKief/vscode-material-icon-theme/commit/3fedead66b4fae725708c104bfb8fd5f79b92cf5))
+
 ## 3.7.0 (2019-03-24)
 ### New features
 - Command for grayscale icons ([@cezarsa](https://github.com/cezarsa) in [#387](https://github.com/PKief/vscode-material-icon-theme/pull/387))
