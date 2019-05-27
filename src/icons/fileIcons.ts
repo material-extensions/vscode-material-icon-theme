@@ -719,7 +719,7 @@ export const fileIcons: FileIcons = {
         },
         { name: 'code-climate', fileNames: ['.codeclimate.yml'], light: true },
         { name: 'prettier', fileNames: ['.prettierrc', 'prettier.config.js', '.prettierrc.js', '.prettierrc.json', '.prettierrc.yaml', '.prettierrc.yml', '.prettierignore'] },
-        { name: 'nodemon', fileNames: ['nodemon.json'] },
+        { name: 'nodemon', fileNames: ['nodemon.json', 'nodemon-debug.json'] },
         { name: 'ngrx-reducer', fileExtensions: ['reducer.ts', 'rootReducer.ts'], enabledFor: [IconPack.Ngrx] },
         { name: 'ngrx-state', fileExtensions: ['state.ts'], enabledFor: [IconPack.Ngrx] },
         { name: 'ngrx-actions', fileExtensions: ['actions.ts'], enabledFor: [IconPack.Ngrx] },
