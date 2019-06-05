@@ -190,8 +190,10 @@ export const fileIcons: FileIcons = {
                 'tar',
                 'gz',
                 'xz',
+                'br',
                 'bzip2',
                 'gzip',
+                'brotli',
                 '7z',
                 'rar',
                 'tgz'
