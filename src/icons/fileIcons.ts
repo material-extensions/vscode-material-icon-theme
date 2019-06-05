@@ -795,6 +795,6 @@ export const fileIcons: FileIcons = {
         { name: 'netlify', fileNames: ['netlify.toml'] },
         { name: 'svg', fileExtensions: ['svg'] },
         { name: 'svelte', fileExtensions: ['svelte'] },
-        { name: 'vim', fileExtensions: ['.vimrc', '.gvimrc', '.exrc'] },
+        { name: 'vim', fileExtensions: ['vimrc', 'gvimrc', 'exrc'] },
     ]
 };
