@@ -654,7 +654,7 @@ export const fileIcons: FileIcons = {
         { name: 'fusebox', fileNames: ['fuse.js'] },
         { name: 'heroku', fileNames: ['procfile', 'procfile.windows'] },
         { name: 'editorconfig', fileNames: ['.editorconfig'] },
-        { name: 'gitlab', fileExtensions: ['.gitlab-ci.yml'] },
+        { name: 'gitlab', fileExtensions: ['gitlab-ci.yml'] },
         { name: 'bower', fileNames: ['.bowerrc', 'bower.json'] },
         {
             name: 'eslint',
