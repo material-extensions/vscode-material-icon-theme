@@ -199,6 +199,7 @@ export const fileIcons: FileIcons = {
                 'tgz'
             ]
         },
+        { name: 'vala', fileExtensions: ['vala']},
         { name: 'exe', fileExtensions: ['exe', 'msi'] },
         { name: 'java', fileExtensions: ['java', 'jar', 'jsp'] },
         { name: 'c', fileExtensions: ['c', 'm'] },
