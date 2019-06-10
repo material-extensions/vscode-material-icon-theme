@@ -71,4 +71,6 @@ export const languageIcons: LanguageIcon[] = [
     { icon: { name: 'nodejs_alt' }, ids: [] },
     { icon: { name: 'django' }, ids: ['django-html', 'django-txt'] },
     { icon: { name: 'godot' }, ids: ['gdscript'] },
+    { icon: { name: 'vim' }, ids: ['viml'] },
+    { icon: { name: 'silverstripe' }, ids: [] },
 ];

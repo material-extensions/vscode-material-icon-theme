@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 import { activateIcons } from './activate';
-import { toggleFolderArrows } from './folderArrows';
+import { toggleExplorerArrows } from './explorerArrows';
 import { changeFolderColor } from './folderColor';
 import { changeFolderTheme } from './folders';
 import { toggleGrayscale } from './grayscale';
@@ -15,10 +15,10 @@ const commands = {
     changeFolderTheme,
     changeFolderColor,
     restoreDefaultConfig,
-    toggleFolderArrows,
+    toggleExplorerArrows,
     changeOpacity,
     toggleGrayscale,
-    changeSaturation
+    changeSaturation,
 };
 
 export const registered = Object.keys(commands).map(commandName => {

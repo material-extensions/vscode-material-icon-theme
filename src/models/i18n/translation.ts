@@ -29,19 +29,19 @@ export interface Translation {
         on?: string;
         off?: string;
     };
-    hidesExplorerArrows?: {
-        toggleArrows?: string;
-        enableArrows?: string;
-        disableArrows?: string;
+    explorerArrows?: {
+        toggle?: string;
+        enable?: string;
+        disable?: string;
     };
     confirmReload?: string;
     reload?: string;
     outdatedVersion?: string;
     updateVSCode?: string;
     grayscale?: {
-        toggleGrayscale?: string;
-        enableGrayscale?: string;
-        disableGrayscale?: string;
+        toggle?: string;
+        enable?: string;
+        disable?: string;
     };
     saturation?: {
         inputPlaceholder?: string;

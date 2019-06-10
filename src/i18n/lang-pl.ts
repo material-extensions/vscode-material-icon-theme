@@ -31,19 +31,19 @@ export const translation: Translation = {
         'on': 'WŁĄCZONE',
         'off': 'WYŁĄCZONE'
     },
-    'hidesExplorerArrows': {
-        'toggleArrows': 'Przełącz strzałki przy folderach',
-        'enableArrows': 'Pokaż strzałki przy folderach',
-        'disableArrows': 'Schowaj strzałki przy folderach'
+    'explorerArrows': {
+        'toggle': 'Przełącz strzałki przy folderach',
+        'enable': 'Pokaż strzałki przy folderach',
+        'disable': 'Schowaj strzałki przy folderach'
     },
     'confirmReload': 'Musisz zrestartować VS Code, aby uaktywnić zmiany ikon.',
     'reload': 'Restartuj',
     'outdatedVersion': 'Musisz zaktualizować VS Code, aby użyć tej komendy.',
     'updateVSCode': 'Zaktualizuj VS Code',
     'grayscale': {
-        'toggleGrayscale': 'Przełącz czarno-białe ikony',
-        'enableGrayscale': 'Włącz czarno-białe ikony',
-        'disableGrayscale': 'Wyłącz czarno-białe ikony'
+        'toggle': 'Przełącz czarno-białe ikony',
+        'enable': 'Włącz czarno-białe ikony',
+        'disable': 'Wyłącz czarno-białe ikony'
     },
     'saturation': {
         'inputPlaceholder': 'Wartość nasycenia (pomiędzy 0 a 1)',
