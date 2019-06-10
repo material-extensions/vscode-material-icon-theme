@@ -139,7 +139,7 @@ Press `Ctrl-Shift-P` to open the command palette and type `Material Icons`.
 
 ## Contributors
 
-<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/master/images/contributors.png" alt="contributors" width="100%">
+<img src="https://github.com/PKief/vscode-material-icon-theme/blob/feature/contributors/images/contributors.png" alt="contributors" width="100%">
 
 **You also want to contribute?**
 
