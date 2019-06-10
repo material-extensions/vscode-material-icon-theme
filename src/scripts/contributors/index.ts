@@ -1,8 +1,9 @@
-import * as https from 'https';
 import * as fs from 'fs';
+import * as https from 'https';
 import * as path from 'path';
-import * as painter from '../helpers/painter';
 import { Contributor } from '../../models/scripts/contributors/contributor';
+import * as painter from '../helpers/painter';
+import { createScreenshot } from '../helpers/screenshots';
 
 /**
  * Parse link header
@@ -78,6 +79,7 @@ const createContributorsList = (contributors: Contributor[]) => {
 
     const outputPath = path.join(__dirname, 'contributors.html');
     fs.writeFileSync(outputPath, generatedHtml);
+    return outputPath;
 };
 
 const init = async () => {
@@ -97,7 +99,16 @@ const init = async () => {
         console.log('> Material Icon Theme:', painter.red(`Error: Could not fetch contributors from GitHub!`));
         throw Error();
     }
-    createContributorsList(contributorsList);
+    const outputPath = createContributorsList(contributorsList);
+
+    // create the image
+    console.log('> Material Icon Theme:', painter.yellow(`Creating image...`));
+    const fileName = 'contributors';
+    createScreenshot(outputPath, fileName).then(() => {
+        console.log('> Material Icon Theme:', painter.green(`Successfully created ${fileName} image!`));
+    }).catch(() => {
+        throw Error(painter.red(`Error while creating ${fileName} image`));
+    });
 };
 
 init();

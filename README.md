@@ -137,13 +137,10 @@ Press `Ctrl-Shift-P` to open the command palette and type `Material Icons`.
 * [Material Design Icons](https://materialdesignicons.com/)
 * official icons
 
-## How to contribute
+## Contributors
 
-Read the [contribution guidelines](https://github.com/PKief/vscode-material-icon-theme/blob/master/CONTRIBUTING.md).
+<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/master/images/contributors.png" alt="contributors" width="100%">
 
-If you have some questions or icon requests open a [new issue](https://github.com/PKief/vscode-material-icon-theme/issues) on Github.
+**You also want to contribute?**
 
-## Follow me
-
-- [Twitter](https://twitter.com/PhilippKief)
-- [Github](https://github.com/PKief)
+Take a look at the [contribution guidelines](https://github.com/PKief/vscode-material-icon-theme/blob/master/CONTRIBUTING.md) and open a [new issue](https://github.com/PKief/vscode-material-icon-theme/issues) or [pull request](https://github.com/PKief/vscode-material-icon-theme/pulls) on Github.
