@@ -487,7 +487,7 @@ export const fileIcons: FileIcons = {
         {
             name: 'postcss',
             fileExtensions: ['pcss', 'sss'],
-            fileNames: ['postcss.config.js', '.postcssrc.js', '.postcssrc']
+            fileNames: ['postcss.config.js', '.postcssrc.js', '.postcssrc', '.postcssrc.json', '.postcssrc.yml']
         },
         { name: 'todo', fileExtensions: ['todo'] },
         { name: 'coldfusion', fileExtensions: ['cfml', 'cfc', 'lucee', 'cfm'] },
