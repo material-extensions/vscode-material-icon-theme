@@ -79,7 +79,7 @@ const fetchContributors = (page: string, username: string, repo: string):
 const createLinkedImages = (contributors: Contributor[], imageSize: number = 40) => {
     const linkList = contributors.map(c => {
         return `<a href="${c.html_url}" title="${c.login}"><img src="${c.avatar_url}" width="${imageSize}px" height="${imageSize}px" alt="${c.login}"/></a>`;
-    }).join('');
+    }).join('&nbsp;');
 
     return linkList;
 };
