@@ -190,8 +190,10 @@ export const fileIcons: FileIcons = {
                 'tar',
                 'gz',
                 'xz',
+                'br',
                 'bzip2',
                 'gzip',
+                'brotli',
                 '7z',
                 'rar',
                 'tgz'
@@ -397,6 +399,7 @@ export const fileIcons: FileIcons = {
         { name: 'vue', fileExtensions: ['vue'] },
         { name: 'vue-config', fileNames: ['vue.config.js', 'vue.config.ts'] },
         { name: 'vuex-store', fileExtensions: ['store.js', 'store.ts'], fileNames: ['store.js', 'store.ts'], enabledFor: [IconPack.Vuex] },
+        { name: 'nuxt', fileNames: ['nuxt.config.js', 'nuxt.config.ts'], enabledFor: [IconPack.Vuex, IconPack.Vue] },
         { name: 'ocaml', fileExtensions: ['ml', 'mli', 'cmx'] },
         { name: 'javascript-map', fileExtensions: ['js.map', 'mjs.map'] },
         { name: 'css-map', fileExtensions: ['css.map'] },
@@ -484,7 +487,7 @@ export const fileIcons: FileIcons = {
         {
             name: 'postcss',
             fileExtensions: ['pcss', 'sss'],
-            fileNames: ['postcss.config.js', '.postcssrc.js', '.postcssrc']
+            fileNames: ['postcss.config.js', '.postcssrc.js', '.postcssrc', '.postcssrc.json', '.postcssrc.yml']
         },
         { name: 'todo', fileExtensions: ['todo'] },
         { name: 'coldfusion', fileExtensions: ['cfml', 'cfc', 'lucee', 'cfm'] },
@@ -651,7 +654,7 @@ export const fileIcons: FileIcons = {
         { name: 'fusebox', fileNames: ['fuse.js'] },
         { name: 'heroku', fileNames: ['procfile', 'procfile.windows'] },
         { name: 'editorconfig', fileNames: ['.editorconfig'] },
-        { name: 'gitlab', fileNames: ['.gitlab-ci.yml'] },
+        { name: 'gitlab', fileExtensions: ['gitlab-ci.yml'] },
         { name: 'bower', fileNames: ['.bowerrc', 'bower.json'] },
         {
             name: 'eslint',
@@ -670,16 +673,16 @@ export const fileIcons: FileIcons = {
         },
         { name: 'watchman', fileNames: ['.watchmanconfig'] },
         { name: 'aurelia', fileNames: ['aurelia.json'] },
-        { 
-            name: 'mocha', 
+        {
+            name: 'mocha',
             fileNames: [
-                'mocha.opts', 
-                '.mocharc.yml', 
-                '.mocharc.yaml', 
+                'mocha.opts',
+                '.mocharc.yml',
+                '.mocharc.yaml',
                 '.mocharc.js',
-                '.mocharc.json', 
-                '.mocharc.jsonc' 
-            ] 
+                '.mocharc.json',
+                '.mocharc.jsonc'
+            ]
         },
         { name: 'jenkins', fileNames: ['jenkinsfile'] },
         { name: 'firebase', fileNames: ['firebase.json', '.firebaserc'] },
@@ -718,7 +721,7 @@ export const fileIcons: FileIcons = {
         },
         { name: 'code-climate', fileNames: ['.codeclimate.yml'], light: true },
         { name: 'prettier', fileNames: ['.prettierrc', 'prettier.config.js', '.prettierrc.js', '.prettierrc.json', '.prettierrc.yaml', '.prettierrc.yml', '.prettierignore'] },
-        { name: 'nodemon', fileNames: ['nodemon.json'] },
+        { name: 'nodemon', fileNames: ['nodemon.json', 'nodemon-debug.json'] },
         { name: 'ngrx-reducer', fileExtensions: ['reducer.ts', 'rootReducer.ts'], enabledFor: [IconPack.Ngrx] },
         { name: 'ngrx-state', fileExtensions: ['state.ts'], enabledFor: [IconPack.Ngrx] },
         { name: 'ngrx-actions', fileExtensions: ['actions.ts'], enabledFor: [IconPack.Ngrx] },
@@ -789,8 +792,10 @@ export const fileIcons: FileIcons = {
         { name: 'tailwindcss', fileNames: ['tailwind.js', 'tailwind.config.js'] },
         { name: '3d', fileExtensions: ['stl', 'obj'] },
         { name: 'buildkite', fileNames: ['buildkite.yml', 'buildkite.yaml'] },
+        { name: 'netlify', fileNames: ['netlify.toml'] },
         { name: 'svg', fileExtensions: ['svg'] },
         { name: 'model', fileExtensions: ['model.ts']},
-        { name: 'svelte', fileExtensions: ['svelte'] }
+        { name: 'svelte', fileExtensions: ['svelte'] },
+        { name: 'vim', fileExtensions: ['vimrc', 'gvimrc', 'exrc'] },
     ]
 };

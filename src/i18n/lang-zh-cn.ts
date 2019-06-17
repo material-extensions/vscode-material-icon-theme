@@ -31,10 +31,10 @@ export const translation: Translation = {
         'on': 'ON',
         'off': 'OFF'
     },
-    'hidesExplorerArrows': {
-        'toggleArrows': '切换文件夹箭头',
-        'enableArrows': '显示文件夹箭头',
-        'disableArrows': '隐藏文件夹箭头'
+    'explorerArrows': {
+        'toggle': '切换文件夹箭头',
+        'enable': '显示文件夹箭头',
+        'disable': '隐藏文件夹箭头'
     },
     'confirmReload': '你必须重启VS Code来应用对图标的更改',
     'reload': '重启',

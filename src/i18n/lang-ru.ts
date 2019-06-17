@@ -31,10 +31,10 @@ export const translation: Translation = {
         'on': 'Включить',
         'off': 'Выключить'
     },
-    'hidesExplorerArrows': {
-        'toggleArrows': 'Показать/Скрыть стрелки у папок',
-        'enableArrows': 'Показать стрелки у папок',
-        'disableArrows': 'Скрыть стрелки у папок'
+    'explorerArrows': {
+        'toggle': 'Показать/Скрыть стрелки у папок',
+        'enable': 'Показать стрелки у папок',
+        'disable': 'Скрыть стрелки у папок'
     },
     'confirmReload': 'Нужно перезапустить VS Code для активации иконок.',
     'reload': 'Перезагрузить',

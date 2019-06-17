@@ -31,10 +31,10 @@ export const translation: Translation = {
         'on': 'ON',
         'off': 'OFF'
     },
-    'hidesExplorerArrows': {
-        'toggleArrows': 'Alternar setas do explorador de ficheiros',
-        'enableArrows': 'Exibir setas do explorador de ficheiros',
-        'disableArrows': 'Ocultar setas do explorador de ficheiros'
+    'explorerArrows': {
+        'toggle': 'Alternar setas do explorador de ficheiros',
+        'enable': 'Exibir setas do explorador de ficheiros',
+        'disable': 'Ocultar setas do explorador de ficheiros'
     },
     'confirmReload': 'Precisas reinicializar o VS Code para habilitar a alteração de ícones.',
     'reload': 'Reiniciar',
