@@ -67,6 +67,7 @@ export const languageIcons: LanguageIcon[] = [
     { icon: { name: 'processing' }, ids: ['processing'] },
     { icon: { name: 'hcl' }, ids: ['hcl'] },
     { icon: { name: 'go' }, ids: ['go'] },
+    { icon: { name: 'go-mod' }, ids: ['go.sum', 'go.mod'] },
     { icon: { name: 'go_gopher' }, ids: [] },
     { icon: { name: 'nodejs_alt' }, ids: [] },
     { icon: { name: 'django' }, ids: ['django-html', 'django-txt'] },
