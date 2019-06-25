@@ -130,7 +130,7 @@ Press `Ctrl-Shift-P` to open the command palette and type `Material Icons`.
 
 - **Restore Default Configuration**: Reset the default configurations of the icon theme.
 
-- **Toggle Grayscale**: Change icons to saturation to 0 making them look grayscale.
+- **Toggle Grayscale**: Sets the saturation of the icons to zero, so that they are grayscale.
 
 ## Icon sources
 
