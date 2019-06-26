@@ -12,3 +12,4 @@ icons/folder-root.svg
 icons/folder-root-open.svg
 
 src/scripts/preview/*.html
+src/scripts/contributors/*.html
