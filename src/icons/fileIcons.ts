@@ -206,6 +206,7 @@ export const fileIcons: FileIcons = {
         { name: 'cpp', fileExtensions: ['cc', 'cpp', 'mm', 'cxx'] },
         { name: 'hpp', fileExtensions: ['hpp'] },
         { name: 'go', fileExtensions: ['go'] },
+        { name: 'go-mod', fileNames: ['go.mod', 'go.sum'] },
         { name: 'python', fileExtensions: ['py'] },
         {
             name: 'python-misc',
@@ -247,7 +248,10 @@ export const fileIcons: FileIcons = {
                 'license.txt',
                 'licence',
                 'licence.md',
-                'licence.txt'
+                'licence.txt',
+                'unlicense',
+                'unlicense.md',
+                'unlicense.txt'
             ]
         },
         {
@@ -487,7 +491,7 @@ export const fileIcons: FileIcons = {
         {
             name: 'postcss',
             fileExtensions: ['pcss', 'sss'],
-            fileNames: ['postcss.config.js', '.postcssrc.js', '.postcssrc']
+            fileNames: ['postcss.config.js', '.postcssrc.js', '.postcssrc', '.postcssrc.json', '.postcssrc.yml']
         },
         { name: 'todo', fileExtensions: ['todo'] },
         { name: 'coldfusion', fileExtensions: ['cfml', 'cfc', 'lucee', 'cfm'] },
@@ -796,6 +800,7 @@ export const fileIcons: FileIcons = {
         { name: 'svg', fileExtensions: ['svg'] },
         { name: 'svelte', fileExtensions: ['svelte'] },
         { name: 'vim', fileExtensions: ['vimrc', 'gvimrc', 'exrc'] },
+        { name: 'nest', fileNames: ['nest-cli.json', '.nest-cli.json', 'nestconfig.json', '.nestconfig.json'] },
         {
             name: 'uml',
             // https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml#user-content-supported-formats
