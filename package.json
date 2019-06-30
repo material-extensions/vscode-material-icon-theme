@@ -188,6 +188,7 @@
     "compile": "webpack --mode production",
     "compile:dev": "webpack --mode none",
     "compile:watch": "webpack --mode none --watch",
+    "contributors": "ts-node ./src/scripts/contributors/index.ts",
     "generateJson": "ts-node ./src/scripts/icons/generateJson.ts",
     "lint": "tslint -c tslint.json ./src/**/*.ts",
     "postcompile": "npm run generateJson && npm run check",
