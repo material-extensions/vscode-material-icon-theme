@@ -103,8 +103,8 @@ export const fileIcons: FileIcons = {
         { name: 'react_ts', fileExtensions: ['tsx'] },
         {
             name: 'routing',
-            fileExtensions: ['routing.ts', 'routing.js', 'routes.ts', 'routes.js'],
-            fileNames: ['router.js', 'router.ts', 'routes.js', 'routes.ts'],
+            fileExtensions: ['routing.ts', 'routing.tsx', 'routing.js', 'routing.jsx', 'routes.ts', 'routes.tsx', 'routes.js', 'routes.jsx'],
+            fileNames: ['router.js', 'router.jsx', 'router.ts', 'router.tsx', 'routes.js', 'routes.jsx', 'routes.ts', 'routes.tsx'],
             enabledFor: [IconPack.Angular, IconPack.Ngrx, IconPack.React, IconPack.Redux, IconPack.Vue, IconPack.Vuex]
         },
         {
