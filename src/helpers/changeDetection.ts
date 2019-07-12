@@ -7,7 +7,9 @@ import { getObjectPropertyValue, setObjectPropertyValue } from './objects';
 /** Compare the workspace and the user configurations with the current setup of the icons. */
 export const detectConfigChanges = () => {
     const configs = Object.keys(getConfigProperties())
-        .map(c => c.split('.').slice(1).join('.'));
+        .map(c => c.split('.').slice(1).join('.'))
+        // remove configurable notification messages
+        .filter((c) => !/show(Welcome|Update|Reload)Message/g.test(c));
 
     const changes = compareConfigs(configs);
 
@@ -38,9 +40,6 @@ export const detectConfigChanges = () => {
 const compareConfigs = (configs: string[]): { updatedConfigs: IconJsonOptions, updatedJSONConfig: IconJsonOptions } => {
     const json = getMaterialIconsJSON();
     return configs.reduce((result, configName) => {
-        // no further actions (e.g. reload) required
-        if (/show(Welcome|Update|Reload)Message/g.test(configName)) return result;
-
         try {
             const themeConfig = getThemeConfig(configName);
             const configValue = themeConfig.globalValue !== undefined ? themeConfig.globalValue : themeConfig.defaultValue;
