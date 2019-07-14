@@ -804,9 +804,8 @@ export const fileIcons: FileIcons = {
         { name: 'moonscript', fileExtensions: ['moon'] },
         {
             name: 'uml',
-            // https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml#user-content-supported-formats
             fileExtensions: ['iuml', 'pu', 'puml', 'plantuml', 'wsd'],
-            light: true
+            light: true,
         },
     ]
 };
