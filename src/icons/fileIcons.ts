@@ -801,6 +801,28 @@ export const fileIcons: FileIcons = {
         { name: 'svelte', fileExtensions: ['svelte'] },
         { name: 'vim', fileExtensions: ['vimrc', 'gvimrc', 'exrc'] },
         { name: 'nest', fileNames: ['nest-cli.json', '.nest-cli.json', 'nestconfig.json', '.nestconfig.json'] },
+        {
+            name: 'nest-blue',
+            fileExtensions: [
+                'dto.ts',
+                'dto.js',
+                'interface.ts',
+                'interface.js',
+                'entity.ts',
+                'entity.js',
+                'model.ts',
+                'model.js',
+                'enum.ts',
+                'enum.js',
+                'repository.ts',
+                'repository.js'],
+            enabledFor: [IconPack.Nest],
+        },
+        { name: 'nest-green', fileExtensions: ['controller.ts', 'controller.js'], enabledFor: [IconPack.Nest] },
+        { name: 'nest-red', fileExtensions: ['module.ts', 'module.js'], enabledFor: [IconPack.Nest] },
+        { name: 'nest-yellow', fileExtensions: ['service.ts', 'service.js'], enabledFor: [IconPack.Nest] },
+        { name: 'nest-purple', fileExtensions: ['decorator.ts', 'decorator.js'], enabledFor: [IconPack.Nest] },
+        { name: 'nest-darkgreen', fileExtensions: ['pipe.ts', 'pipe.js'], enabledFor: [IconPack.Nest] },
         { name: 'moonscript', fileExtensions: ['moon'] },
     ]
 };

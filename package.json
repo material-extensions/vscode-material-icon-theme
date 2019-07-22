@@ -112,6 +112,7 @@
             "%configuration.activeIconPack.react_redux%",
             "%configuration.activeIconPack.vue%",
             "%configuration.activeIconPack.vue_vuex%",
+            "%configuration.activeIconPack.nest%",
             "%configuration.activeIconPack.none%"
           ],
           "enum": [
@@ -121,6 +122,7 @@
             "react_redux",
             "vue",
             "vue_vuex",
+            "nest",
             "none"
           ]
         },
