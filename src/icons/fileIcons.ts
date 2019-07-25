@@ -802,5 +802,6 @@ export const fileIcons: FileIcons = {
         { name: 'vim', fileExtensions: ['vimrc', 'gvimrc', 'exrc'] },
         { name: 'nest', fileNames: ['nest-cli.json', '.nest-cli.json', 'nestconfig.json', '.nestconfig.json'] },
         { name: 'moonscript', fileExtensions: ['moon'] },
+        { name: 'nowjson', fileNames: ['now.json'] },
     ]
 };
