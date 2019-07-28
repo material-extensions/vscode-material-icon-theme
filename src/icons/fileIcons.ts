@@ -689,7 +689,7 @@ export const fileIcons: FileIcons = {
                 '.mocharc.jsonc'
             ]
         },
-        { name: 'jenkins', fileNames: ['jenkinsfile'] },
+        { name: 'jenkins', fileNames: ['jenkinsfile'], fileExtensions: ['jenkinsfile', 'jenkins']},
         { name: 'firebase', fileNames: ['firebase.json', '.firebaserc'] },
         {
             name: 'rollup',
