@@ -1,6 +1,6 @@
 import * as assert from 'assert';
-import { getDefaultIconOptions, getFileIconDefinitions } from '../../icons/index';
-import { FileIcons, IconConfiguration, IconPack } from '../../models/index';
+import { getDefaultIconOptions, getFileIconDefinitions } from '../../../icons/index';
+import { FileIcons, IconConfiguration, IconPack } from '../../../models/index';
 
 suite('file icons', () => {
     test('should configure icon definitions', () => {

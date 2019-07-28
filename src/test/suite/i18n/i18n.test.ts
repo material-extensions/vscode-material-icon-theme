@@ -1,9 +1,9 @@
 import * as assert from 'assert';
-import { getObjectPropertyValue } from '../../helpers/objects';
-import * as i18n from '../../i18n';
+import { getObjectPropertyValue } from '../../../helpers/objects';
+import * as i18n from '../../../i18n';
 
 suite('i18n', () => {
-    test('shoud initialize translations', () => {
+    test('should initialize translations', () => {
         return i18n.initTranslations();
     });
 

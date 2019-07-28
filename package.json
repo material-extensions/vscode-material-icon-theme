@@ -193,10 +193,9 @@
     "lint": "tslint -c tslint.json ./src/**/*.ts",
     "postcompile": "npm run generateJson && npm run check",
     "postinstall": "node ./node_modules/vscode/bin/install",
-    "pretest": "npm run build && npm run test-compile",
+    "pretest": "npm run build && tsc -p ./",
     "preview": "ts-node ./src/scripts/preview",
-    "test": "node ./node_modules/vscode/bin/test",
-    "test-compile": "tsc -p ./",
+    "test": "node ./out/test/runTest.js",
     "vscode:prepublish": "npm run lint && npm run compile"
   },
   "dependencies": {
@@ -208,8 +207,10 @@
     "@types/mocha": "^5.2.7",
     "@types/node": "^12.6.2",
     "@types/puppeteer": "^1.12.4",
+    "@types/vscode": "^1.5.0",
     "clean-webpack-plugin": "^3.0.0",
-    "mocha": "^6.1.4",
+    "glob": "^7.1.4",
+    "mocha": "^6.2.0",
     "puppeteer": "^1.18.1",
     "rimraf": "^2.6.3",
     "ts-loader": "^6.0.4",
@@ -217,6 +218,7 @@
     "tslint": "^5.18.0",
     "typescript": "^3.5.3",
     "vscode": "^1.1.35",
+    "vscode-test": "^1.0.2",
     "webpack": "^4.35.3",
     "webpack-cli": "^3.3.5"
   }
