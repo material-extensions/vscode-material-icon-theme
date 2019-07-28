@@ -192,7 +192,6 @@
     "generateJson": "ts-node ./src/scripts/icons/generateJson.ts",
     "lint": "tslint -c tslint.json ./src/**/*.ts",
     "postcompile": "npm run generateJson && npm run check",
-    "postinstall": "node ./node_modules/vscode/bin/install",
     "pretest": "npm run build && tsc -p ./",
     "preview": "ts-node ./src/scripts/preview",
     "test": "node ./out/test/runTest.js",
@@ -217,7 +216,6 @@
     "ts-node": "^8.3.0",
     "tslint": "^5.18.0",
     "typescript": "^3.5.3",
-    "vscode": "^1.1.35",
     "vscode-test": "^1.0.2",
     "webpack": "^4.35.3",
     "webpack-cli": "^3.3.5"
