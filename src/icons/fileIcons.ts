@@ -204,7 +204,7 @@ export const fileIcons: FileIcons = {
         { name: 'c', fileExtensions: ['c', 'm', 'i', 'mi'] },
         { name: 'h', fileExtensions: ['h'] },
         { name: 'cpp', fileExtensions: ['cc', 'cpp', 'cxx', 'c++', 'cp', 'mm', 'mii', 'ii'] },
-        { name: 'hpp', fileExtensions: ['hh', 'hpp', 'hxx', 'h++', 'hp', 'tcc'] },
+        { name: 'hpp', fileExtensions: ['hh', 'hpp', 'hxx', 'h++', 'hp', 'tcc', 'inl'] },
         { name: 'go', fileExtensions: ['go'] },
         { name: 'go-mod', fileNames: ['go.mod', 'go.sum'] },
         { name: 'python', fileExtensions: ['py'] },
