@@ -200,24 +200,24 @@
   "dependencies": {
     "lodash.merge": "4.6.2",
     "open": "6.4.0",
-    "semver": "6.2.0"
+    "semver": "6.3.0"
   },
   "devDependencies": {
     "@types/mocha": "^5.2.7",
-    "@types/node": "^12.6.2",
-    "@types/puppeteer": "^1.12.4",
+    "@types/node": "^12.7.1",
+    "@types/puppeteer": "^1.19.0",
     "@types/vscode": "^1.5.0",
     "clean-webpack-plugin": "^3.0.0",
     "glob": "^7.1.4",
     "mocha": "^6.2.0",
-    "puppeteer": "^1.18.1",
+    "puppeteer": "^1.19.0",
     "rimraf": "^2.6.3",
     "ts-loader": "^6.0.4",
     "ts-node": "^8.3.0",
     "tslint": "^5.18.0",
     "typescript": "^3.5.3",
-    "vscode-test": "^1.0.2",
-    "webpack": "^4.35.3",
-    "webpack-cli": "^3.3.5"
+    "vscode-test": "^1.2.0",
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6"
   }
 }
