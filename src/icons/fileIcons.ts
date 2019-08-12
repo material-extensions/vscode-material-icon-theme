@@ -201,10 +201,10 @@ export const fileIcons: FileIcons = {
         },
         { name: 'exe', fileExtensions: ['exe', 'msi'] },
         { name: 'java', fileExtensions: ['java', 'jar', 'jsp'] },
-        { name: 'c', fileExtensions: ['c', 'm'] },
+        { name: 'c', fileExtensions: ['c', 'm', 'i', 'mi'] },
         { name: 'h', fileExtensions: ['h'] },
-        { name: 'cpp', fileExtensions: ['cc', 'cpp', 'mm', 'cxx'] },
-        { name: 'hpp', fileExtensions: ['hpp'] },
+        { name: 'cpp', fileExtensions: ['cc', 'cpp', 'cxx', 'c++', 'cp', 'mm', 'mii', 'ii'] },
+        { name: 'hpp', fileExtensions: ['hh', 'hpp', 'hxx', 'h++', 'hp', 'tcc', 'inl'] },
         { name: 'go', fileExtensions: ['go'] },
         { name: 'go-mod', fileNames: ['go.mod', 'go.sum'] },
         { name: 'python', fileExtensions: ['py'] },
@@ -475,6 +475,7 @@ export const fileIcons: FileIcons = {
         { name: 'haml', fileExtensions: ['haml'] },
         { name: 'yang', fileExtensions: ['yang'] },
         { name: 'mjml', fileExtensions: ['mjml'] },
+        { name: 'now', fileNames: ['now.json', '.nowignore'], light: true },
         {
             name: 'terraform',
             fileExtensions: ['tf', 'tf.json', 'tfvars', 'tfstate']
@@ -688,7 +689,7 @@ export const fileIcons: FileIcons = {
                 '.mocharc.jsonc'
             ]
         },
-        { name: 'jenkins', fileNames: ['jenkinsfile'] },
+        { name: 'jenkins', fileNames: ['jenkinsfile'], fileExtensions: ['jenkinsfile', 'jenkins']},
         { name: 'firebase', fileNames: ['firebase.json', '.firebaserc'] },
         {
             name: 'rollup',
@@ -802,10 +803,11 @@ export const fileIcons: FileIcons = {
         { name: 'vim', fileExtensions: ['vimrc', 'gvimrc', 'exrc'] },
         { name: 'nest', fileNames: ['nest-cli.json', '.nest-cli.json', 'nestconfig.json', '.nestconfig.json'] },
         { name: 'moonscript', fileExtensions: ['moon'] },
+        { name: 'percy', fileNames: ['.percy.yml'] },
         {
-            name: 'uml',
-            fileExtensions: ['iuml', 'pu', 'puml', 'plantuml', 'wsd'],
-            light: true,
+          name: 'uml',
+          fileExtensions: ['iuml', 'pu', 'puml', 'plantuml', 'wsd'],
+          light: true,
         },
     ]
 };

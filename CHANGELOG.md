@@ -1,4 +1,28 @@
 # Changelog
+## 3.8.1 (2019-07-17)
+### New file icons
+- MoonScript ([issue #485](https://github.com/PKief/vscode-material-icon-theme/issues/485))
+- Vim ([@dotiful](https://github.com/dotiful) in [#458](https://github.com/PKief/vscode-material-icon-theme/pull/458))
+- SilverStripe ([@purplespider](https://github.com/purplespider) in [#457](https://github.com/PKief/vscode-material-icon-theme/pull/457))
+- Brotli ([@richiksc](https://github.com/richiksc) in [#460](https://github.com/PKief/vscode-material-icon-theme/pull/460))
+- Unlicense ([@Logerfo](https://github.com/Logerfo) in [#474](https://github.com/PKief/vscode-material-icon-theme/pull/474))
+- *.gitlab-ci.yml ([@martin-sweeny](https://github.com/martin-sweeny) in [#465](https://github.com/PKief/vscode-material-icon-theme/pull/465))
+- go.mod, go.sum ([@chrsmutti](https://github.com/chrsmutti) in [#475](https://github.com/PKief/vscode-material-icon-theme/pull/475))
+- C/C++ icon cases ([@omento](https://github.com/omento) in [#488](https://github.com/PKief/vscode-material-icon-theme/pull/488))
+- .dtx, .ltx ([@AlexaraWu](https://github.com/AlexaraWu) in [#481](https://github.com/PKief/vscode-material-icon-theme/pull/481))
+- jsx / tsx router ([@lffg](https://github.com/lffg) in [#491](https://github.com/PKief/vscode-material-icon-theme/pull/491))
+- PostCSS ([issue #461](https://github.com/PKief/vscode-material-icon-theme/issues/461))
+- .env ([issue #484](https://github.com/PKief/vscode-material-icon-theme/issues/484))
+- nodemon-debug.json
+- Nest
+
+### New folder icons
+- error ([@lffg](https://github.com/lffg) in [#490](https://github.com/PKief/vscode-material-icon-theme/pull/490))
+- website
+
+### Other improvements
+- Add profile pictures of contributors to Readme.md ([issue #448](https://github.com/PKief/vscode-material-icon-theme/issues/448))
+
 ## 3.8.0 (2019-05-25)
 ### New features
 - Vue.js and Vuex theme ([@Bakosa666](https://github.com/Bakosa666) in [#402](https://github.com/PKief/vscode-material-icon-theme/pull/402))

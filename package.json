@@ -2,7 +2,7 @@
   "name": "material-icon-theme",
   "displayName": "Material Icon Theme",
   "description": "Material Design Icons for Visual Studio Code",
-  "version": "3.8.0",
+  "version": "3.8.1",
   "publisher": "PKief",
   "engines": {
     "vscode": "^1.5.0"
@@ -192,32 +192,32 @@
     "generateJson": "ts-node ./src/scripts/icons/generateJson.ts",
     "lint": "tslint -c tslint.json ./src/**/*.ts",
     "postcompile": "npm run generateJson && npm run check",
-    "postinstall": "node ./node_modules/vscode/bin/install",
-    "pretest": "npm run build && npm run test-compile",
+    "pretest": "npm run build && tsc -p ./",
     "preview": "ts-node ./src/scripts/preview",
-    "test": "node ./node_modules/vscode/bin/test",
-    "test-compile": "tsc -p ./",
+    "test": "node ./out/test/runTest.js",
     "vscode:prepublish": "npm run lint && npm run compile"
   },
   "dependencies": {
-    "lodash.merge": "4.6.1",
-    "open": "6.3.0",
-    "semver": "6.1.0"
+    "lodash.merge": "4.6.2",
+    "open": "6.4.0",
+    "semver": "6.3.0"
   },
   "devDependencies": {
-    "@types/mocha": "^5.2.6",
-    "@types/node": "^12.0.2",
-    "@types/puppeteer": "^1.12.4",
-    "clean-webpack-plugin": "^2.0.2",
-    "mocha": "^6.1.4",
-    "puppeteer": "^1.17.0",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.7.1",
+    "@types/puppeteer": "^1.19.0",
+    "@types/vscode": "^1.5.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "glob": "^7.1.4",
+    "mocha": "^6.2.0",
+    "puppeteer": "^1.19.0",
     "rimraf": "^2.6.3",
-    "ts-loader": "^6.0.1",
-    "ts-node": "^8.1.0",
-    "tslint": "^5.16.0",
-    "typescript": "^3.4.5",
-    "vscode": "^1.1.34",
-    "webpack": "^4.32.2",
-    "webpack-cli": "^3.3.2"
+    "ts-loader": "^6.0.4",
+    "ts-node": "^8.3.0",
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.3",
+    "vscode-test": "^1.2.0",
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6"
   }
 }
