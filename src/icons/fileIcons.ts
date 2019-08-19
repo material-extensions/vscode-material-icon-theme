@@ -486,7 +486,7 @@ export const fileIcons: FileIcons = {
         { name: 'cucumber', fileExtensions: ['feature'] },
         { name: 'nim', fileExtensions: ['nim', 'nimble'] },
         { name: 'apiblueprint', fileExtensions: ['apib', 'apiblueprint'] },
-        { name: 'riot', fileExtensions: ['tag'] },
+        { name: 'riot', fileExtensions: ['riot', 'tag'] },
         { name: 'vfl', fileExtensions: ['vfl'], fileNames: ['.vfl'] },
         { name: 'kl', fileExtensions: ['kl'], fileNames: ['.kl'] },
         {
@@ -689,7 +689,7 @@ export const fileIcons: FileIcons = {
                 '.mocharc.jsonc'
             ]
         },
-        { name: 'jenkins', fileNames: ['jenkinsfile'], fileExtensions: ['jenkinsfile', 'jenkins']},
+        { name: 'jenkins', fileNames: ['jenkinsfile'], fileExtensions: ['jenkinsfile', 'jenkins'] },
         { name: 'firebase', fileNames: ['firebase.json', '.firebaserc'] },
         {
             name: 'rollup',
