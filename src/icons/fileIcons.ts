@@ -804,5 +804,6 @@ export const fileIcons: FileIcons = {
         { name: 'nest', fileNames: ['nest-cli.json', '.nest-cli.json', 'nestconfig.json', '.nestconfig.json'] },
         { name: 'moonscript', fileExtensions: ['moon'] },
         { name: 'percy', fileNames: ['.percy.yml'] },
+        { name: 'gitpod', fileNames: ['.gitpod.yml'] },
     ]
 };
