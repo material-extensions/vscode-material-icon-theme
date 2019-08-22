@@ -78,7 +78,7 @@ const getIconDefinitionsMatrix = (icons: IconDefinition[], size: number, exclude
     const matrix: IconDefinition[][] = [];
 
     // calculate the amount of icons per column
-    const itemsPerColumn = Math.floor(iconList.length / size);
+    const itemsPerColumn = Math.ceil(iconList.length / size);
 
     // create the columns with the icons
     let counter = 0;
@@ -87,7 +87,7 @@ const getIconDefinitionsMatrix = (icons: IconDefinition[], size: number, exclude
     }
     for (let s = 0; s < size; s++) {
         for (let i = 0; i < itemsPerColumn; i++) {
-            matrix[i][s] = iconList[counter];
+            matrix[i][s] = iconList[counter] || { iconName: '', label: '' };
             counter++;
         }
     }
