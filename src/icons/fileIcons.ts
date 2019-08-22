@@ -805,6 +805,6 @@ export const fileIcons: FileIcons = {
         { name: 'moonscript', fileExtensions: ['moon'] },
         { name: 'percy', fileNames: ['.percy.yml'] },
         { name: 'gitpod', fileNames: ['.gitpod.yml'] },
-        { name: 'pnpm', fileNames: ['pnpm-lock.yaml', 'pnpm-workspace.yaml', 'pnpmfile.js'] },
+        { name: 'pnpm', fileNames: ['pnpm-lock.yaml', 'pnpm-workspace.yaml', 'pnpmfile.js', 'pnpm-debug.log'] },
     ]
 };
