@@ -795,7 +795,7 @@ export const fileIcons: FileIcons = {
         { name: 'edge', fileExtensions: ['edge'] },
         { name: 'scheme', fileExtensions: ['ss', 'scm'] },
         { name: 'tailwindcss', fileNames: ['tailwind.js', 'tailwind.config.js'] },
-        { name: '3d', fileExtensions: ['stl', 'obj'] },
+        { name: '3d', fileExtensions: ['stl', 'obj', 'ac'] },
         { name: 'buildkite', fileNames: ['buildkite.yml', 'buildkite.yaml'] },
         { name: 'netlify', fileNames: ['netlify.toml'] },
         { name: 'svg', fileExtensions: ['svg'] },
@@ -805,5 +805,6 @@ export const fileIcons: FileIcons = {
         { name: 'moonscript', fileExtensions: ['moon'] },
         { name: 'percy', fileNames: ['.percy.yml'] },
         { name: 'nasal', fileNames: ['nas'] },
+        { name: 'gitpod', fileNames: ['.gitpod.yml'] },
     ]
 };
