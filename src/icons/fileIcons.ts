@@ -780,7 +780,7 @@ export const fileIcons: FileIcons = {
         { name: 'mdx', fileExtensions: ['mdx'] },
         { name: 'ballerina', fileExtensions: ['bal', 'balx'] },
         { name: 'racket', fileExtensions: ['rkt'] },
-        { name: 'bazel', fileExtensions: ['bzl', 'bazel'] },
+        { name: 'bazel', fileExtensions: ['bzl', 'bazel'], fileNames: ['.bazelignore', '.bazelrc'] },
         { name: 'mint', fileExtensions: ['mint'] },
         { name: 'velocity', fileExtensions: ['vm', 'fhtml', 'vtl'] },
         { name: 'godot', fileExtensions: ['gd'] },
