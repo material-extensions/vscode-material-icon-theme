@@ -806,5 +806,6 @@ export const fileIcons: FileIcons = {
         { name: 'percy', fileNames: ['.percy.yml'] },
         { name: 'gitpod', fileNames: ['.gitpod.yml'] },
         { name: 'pnpm', fileNames: ['pnpm-lock.yaml', 'pnpm-workspace.yaml', 'pnpmfile.js', 'pnpm-debug.log'] },
+        { name: 'gridsome', fileNames: ['gridsome.config.js', 'gridsome.server.js'] },
     ]
 };
