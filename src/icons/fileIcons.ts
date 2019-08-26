@@ -411,7 +411,7 @@ export const fileIcons: FileIcons = {
         { name: 'handlebars', fileExtensions: ['hbs', 'mustache'] },
         { name: 'perl', fileExtensions: ['pl', 'pm'] },
         { name: 'haxe', fileExtensions: ['hx'] },
-        { name: 'test-ts', fileExtensions: ['spec.ts', 'test.ts', 'ts.snap'] },
+        { name: 'test-ts', fileExtensions: ['spec.ts', 'e2e-spec.ts', 'test.ts', 'ts.snap'] },
         {
             name: 'test-jsx',
             fileExtensions: [
@@ -423,7 +423,7 @@ export const fileIcons: FileIcons = {
                 'jsx.snap'
             ]
         },
-        { name: 'test-js', fileExtensions: ['spec.js', 'test.js', 'js.snap'] },
+        { name: 'test-js', fileExtensions: ['spec.js', 'e2e-spec.js', 'test.js', 'js.snap'] },
         {
             name: 'angular',
             fileExtensions: ['module.ts', 'module.js', 'ng-template'],
