@@ -111,6 +111,7 @@ const updateContributors = async ({ username, repo, imageSize }: ContributorOpti
     const getContributorsSectionPattern = new RegExp(/(\[\/\/\]:\s#contributors\s\(start\))([\s\S]*)(\[\/\/\]:\s#contributors\s\(end\))/);
     const updatedContent = readmeContent.replace(getContributorsSectionPattern, `$1\n${images}\n\n$3`);
     fs.writeFileSync(readmePath, updatedContent);
+    console.log('> Material Icon Theme:', painter.green(`Successfully updated README.md!`));
 };
 
 updateContributors({
