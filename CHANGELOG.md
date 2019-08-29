@@ -1,4 +1,31 @@
 # Changelog
+## 3.9.0 (2019-08-29)
+### New features
+- Nest.js icon pack ([@jerriclynsjohn](https://github.com/jerriclynsjohn) in [#501](https://github.com/PKief/vscode-material-icon-theme/pull/501))
+
+### New file icons
+- ZEIT Now ([@LukasPolak](https://github.com/LukasPolak) in [#470](https://github.com/PKief/vscode-material-icon-theme/pull/470))
+- Jenkins ([@sgwozdz](https://github.com/sgwozdz) in [#502](https://github.com/PKief/vscode-material-icon-theme/pull/502))
+- Percy ([@hacknug](https://github.com/hacknug) in [#508](https://github.com/PKief/vscode-material-icon-theme/pull/508))
+- AC3D (.ac) ([@RenanMsV](https://github.com/RenanMsV) in [#517](https://github.com/PKief/vscode-material-icon-theme/pull/517))
+- .bazelignore, .bazelrc
+- *.e2e-spec.ts, *.e2e-spec.js
+- .gitpod.yml
+- *.inl
+
+### New folder icons
+- event ([@lffg](https://github.com/lffg) in [#514](https://github.com/PKief/vscode-material-icon-theme/pull/514))
+- env ([@lffg](https://github.com/lffg) in [#515](https://github.com/PKief/vscode-material-icon-theme/pull/515))
+- .expo-shared ([@EtienneBourque](https://github.com/EtienneBourque) in [#512](https://github.com/PKief/vscode-material-icon-theme/pull/512))
+
+### Updated icons
+- Riot.js ([@nibushibu](https://github.com/nibushibu) in [#497](https://github.com/PKief/vscode-material-icon-theme/pull/497))
+
+### Other improvements
+- Adjust check scripts to be case insensitive ([issue #494](https://github.com/PKief/vscode-material-icon-theme/issues/494))
+- Remove deprecated code ([issue #520](https://github.com/PKief/vscode-material-icon-theme/issues/520))
+- Update test setup (in [2f1e5d1](https://github.com/PKief/vscode-material-icon-theme/commit/2f1e5d12a58e9e10d09ed9441aa4191c8ab9989b))
+
 ## 3.8.1 (2019-07-17)
 ### New file icons
 - MoonScript ([issue #485](https://github.com/PKief/vscode-material-icon-theme/issues/485))
@@ -25,7 +52,7 @@
 
 ## 3.8.0 (2019-05-25)
 ### New features
-- Vue.js and Vuex theme ([@Bakosa666](https://github.com/Bakosa666) in [#402](https://github.com/PKief/vscode-material-icon-theme/pull/402))
+- Vue.js and Vuex icon pack ([@Bakosa666](https://github.com/Bakosa666) in [#402](https://github.com/PKief/vscode-material-icon-theme/pull/402))
 - Hot reload for hidesExplorerArrows configuration (in [c65d9a6](https://github.com/PKief/vscode-material-icon-theme/commit/c65d9a6935eb6cc09a779fd5cf49af26948fd8df))
 
 ### New file icons
