@@ -1,4 +1,82 @@
 # Changelog
+## 3.9.0 (2019-08-29)
+### New features
+- Nest.js icon pack ([@jerriclynsjohn](https://github.com/jerriclynsjohn) in [#501](https://github.com/PKief/vscode-material-icon-theme/pull/501))
+
+### New file icons
+- ZEIT Now ([@LukasPolak](https://github.com/LukasPolak) in [#470](https://github.com/PKief/vscode-material-icon-theme/pull/470))
+- Jenkins ([@sgwozdz](https://github.com/sgwozdz) in [#502](https://github.com/PKief/vscode-material-icon-theme/pull/502))
+- Percy ([@hacknug](https://github.com/hacknug) in [#508](https://github.com/PKief/vscode-material-icon-theme/pull/508))
+- AC3D (.ac) ([@RenanMsV](https://github.com/RenanMsV) in [#517](https://github.com/PKief/vscode-material-icon-theme/pull/517))
+- .bazelignore, .bazelrc
+- *.e2e-spec.ts, *.e2e-spec.js
+- .gitpod.yml
+- *.inl
+
+### New folder icons
+- event ([@lffg](https://github.com/lffg) in [#514](https://github.com/PKief/vscode-material-icon-theme/pull/514))
+- env ([@lffg](https://github.com/lffg) in [#515](https://github.com/PKief/vscode-material-icon-theme/pull/515))
+- .expo-shared ([@EtienneBourque](https://github.com/EtienneBourque) in [#512](https://github.com/PKief/vscode-material-icon-theme/pull/512))
+
+### Updated icons
+- Riot.js ([@nibushibu](https://github.com/nibushibu) in [#497](https://github.com/PKief/vscode-material-icon-theme/pull/497))
+
+### Other improvements
+- Adjust check scripts to be case insensitive ([issue #494](https://github.com/PKief/vscode-material-icon-theme/issues/494))
+- Remove deprecated code ([issue #520](https://github.com/PKief/vscode-material-icon-theme/issues/520))
+- Update test setup (in [2f1e5d1](https://github.com/PKief/vscode-material-icon-theme/commit/2f1e5d12a58e9e10d09ed9441aa4191c8ab9989b))
+
+## 3.8.1 (2019-07-17)
+### New file icons
+- MoonScript ([issue #485](https://github.com/PKief/vscode-material-icon-theme/issues/485))
+- Vim ([@dotiful](https://github.com/dotiful) in [#458](https://github.com/PKief/vscode-material-icon-theme/pull/458))
+- SilverStripe ([@purplespider](https://github.com/purplespider) in [#457](https://github.com/PKief/vscode-material-icon-theme/pull/457))
+- Brotli ([@richiksc](https://github.com/richiksc) in [#460](https://github.com/PKief/vscode-material-icon-theme/pull/460))
+- Unlicense ([@Logerfo](https://github.com/Logerfo) in [#474](https://github.com/PKief/vscode-material-icon-theme/pull/474))
+- *.gitlab-ci.yml ([@martin-sweeny](https://github.com/martin-sweeny) in [#465](https://github.com/PKief/vscode-material-icon-theme/pull/465))
+- go.mod, go.sum ([@chrsmutti](https://github.com/chrsmutti) in [#475](https://github.com/PKief/vscode-material-icon-theme/pull/475))
+- C/C++ icon cases ([@omento](https://github.com/omento) in [#488](https://github.com/PKief/vscode-material-icon-theme/pull/488))
+- .dtx, .ltx ([@AlexaraWu](https://github.com/AlexaraWu) in [#481](https://github.com/PKief/vscode-material-icon-theme/pull/481))
+- jsx / tsx router ([@lffg](https://github.com/lffg) in [#491](https://github.com/PKief/vscode-material-icon-theme/pull/491))
+- PostCSS ([issue #461](https://github.com/PKief/vscode-material-icon-theme/issues/461))
+- .env ([issue #484](https://github.com/PKief/vscode-material-icon-theme/issues/484))
+- nodemon-debug.json
+- Nest
+
+### New folder icons
+- error ([@lffg](https://github.com/lffg) in [#490](https://github.com/PKief/vscode-material-icon-theme/pull/490))
+- website
+
+### Other improvements
+- Add profile pictures of contributors to Readme.md ([issue #448](https://github.com/PKief/vscode-material-icon-theme/issues/448))
+
+## 3.8.0 (2019-05-25)
+### New features
+- Vue.js and Vuex icon pack ([@Bakosa666](https://github.com/Bakosa666) in [#402](https://github.com/PKief/vscode-material-icon-theme/pull/402))
+- Hot reload for hidesExplorerArrows configuration (in [c65d9a6](https://github.com/PKief/vscode-material-icon-theme/commit/c65d9a6935eb6cc09a779fd5cf49af26948fd8df))
+
+### New file icons
+- Netlify ([@leggsimon](https://github.com/leggsimon) in [#396](https://github.com/PKief/vscode-material-icon-theme/pull/396))
+- .env ([@richardmillen94](https://github.com/richardmillen94) in [#423](https://github.com/PKief/vscode-material-icon-theme/pull/423))
+- .leex ([@suazithustra](https://github.com/suazithustra) in [#424](https://github.com/PKief/vscode-material-icon-theme/pull/424))
+- .tsbuildinfo (in [c408ac8](https://github.com/PKief/vscode-material-icon-theme/commit/c408ac8bb3274e69e3800b798227cee3777f6399))
+- Svelte ([@simlej](https://github.com/simlej) in [#439](https://github.com/PKief/vscode-material-icon-theme/pull/439))
+- .mocharc ([@yuric18](https://github.com/yuric18) in [#446](https://github.com/PKief/vscode-material-icon-theme/pull/446))
+- Nuxt.js ([@Bakosa666](https://github.com/Bakosa666) in [#450](https://github.com/PKief/vscode-material-icon-theme/pull/450))
+
+### New folder icons
+- nuxt ([@Bakosa666](https://github.com/Bakosa666) in [#450](https://github.com/PKief/vscode-material-icon-theme/pull/450))
+- Vue.js directives ([@Bakosa666](https://github.com/Bakosa666) in [#450](https://github.com/PKief/vscode-material-icon-theme/pull/450))
+
+### Added translations
+- Dutch translation ([@TheCloudSaver](https://github.com/TheCloudSaver) in [#444](https://github.com/PKief/vscode-material-icon-theme/pull/444))
+- Polish translation ([@JakubKoralewski](https://github.com/JakubKoralewski) in [#453](https://github.com/PKief/vscode-material-icon-theme/pull/453))
+
+### Other improvements
+- Support remote development ([@mjbvz](https://github.com/mjbvz) in [#442](https://github.com/PKief/vscode-material-icon-theme/pull/442))
+- Show language icons in preview (in [05bde2b](https://github.com/PKief/vscode-material-icon-theme/commit/05bde2bda649b289c14a93f57d5d1a8d0f6de754))
+- Improved compatibility for older versions of VS Code (in [3fedead](https://github.com/PKief/vscode-material-icon-theme/commit/3fedead66b4fae725708c104bfb8fd5f79b92cf5))
+
 ## 3.7.0 (2019-03-24)
 ### New features
 - Command for grayscale icons ([@cezarsa](https://github.com/cezarsa) in [#387](https://github.com/PKief/vscode-material-icon-theme/pull/387))

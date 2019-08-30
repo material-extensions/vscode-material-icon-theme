@@ -17,17 +17,17 @@ export const toggleGrayscale = async () => {
 const showQuickPickItems = (status: boolean) => {
     const on: vscode.QuickPickItem = {
         description: i18n.translate('toggleSwitch.on'),
-        detail: i18n.translate(`grayscale.enableGrayscale`),
+        detail: i18n.translate(`grayscale.enable`),
         label: status ? '\u2714' : '\u25FB'
     };
     const off: vscode.QuickPickItem = {
         description: i18n.translate('toggleSwitch.off'),
-        detail: i18n.translate(`grayscale.disableGrayscale`),
+        detail: i18n.translate(`grayscale.disable`),
         label: !status ? '\u2714' : '\u25FB'
     };
     return vscode.window.showQuickPick(
         [on, off], {
-            placeHolder: i18n.translate('grayscale.toggleGrayscale'),
+            placeHolder: i18n.translate('grayscale.toggle'),
             ignoreFocusOut: false,
             matchOnDescription: true
         });

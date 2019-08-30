@@ -31,19 +31,19 @@ export const translation: Translation = {
         'on': 'ON',
         'off': 'OFF'
     },
-    'hidesExplorerArrows': {
-        'toggleArrows': 'Toggle folder arrows',
-        'enableArrows': 'Show folder arrows',
-        'disableArrows': 'Hide folder arrows'
+    'explorerArrows': {
+        'toggle': 'Toggle folder arrows',
+        'enable': 'Show folder arrows',
+        'disable': 'Hide folder arrows'
     },
     'confirmReload': 'You have to restart VS Code to activate the changes to the icons.',
     'reload': 'Restart',
     'outdatedVersion': 'You have to update VS Code to use this command.',
     'updateVSCode': 'Update VS Code',
     'grayscale': {
-        'toggleGrayscale': 'Toggle grayscale icons',
-        'enableGrayscale': 'Enable grayscale icons',
-        'disableGrayscale': 'Disable grayscale icons'
+        'toggle': 'Toggle grayscale icons',
+        'enable': 'Enable grayscale icons',
+        'disable': 'Disable grayscale icons'
     },
     'saturation': {
         'inputPlaceholder': 'Saturation value (between 0 and 1)',

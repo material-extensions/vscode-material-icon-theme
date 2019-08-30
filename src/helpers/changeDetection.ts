@@ -1,12 +1,15 @@
 import { getConfigProperties, getMaterialIconsJSON, getThemeConfig, promptToReload } from '.';
 import { createIconFile } from '../icons/index';
 import { IconJsonOptions } from '../models';
+import * as versioning from './../helpers/versioning';
 import { getObjectPropertyValue, setObjectPropertyValue } from './objects';
 
 /** Compare the workspace and the user configurations with the current setup of the icons. */
 export const detectConfigChanges = () => {
     const configs = Object.keys(getConfigProperties())
-        .map(c => c.split('.').slice(1).join('.'));
+        .map(c => c.split('.').slice(1).join('.'))
+        // remove configurable notification messages
+        .filter((c) => !/show(Welcome|Update|Reload)Message/g.test(c));
 
     const changes = compareConfigs(configs);
 
@@ -18,9 +21,9 @@ export const detectConfigChanges = () => {
         createIconFile(changes.updatedConfigs, changes.updatedJSONConfig);
 
         // check if a reload of the editor is required
-        const configRequiresReload = ['opacity', 'saturation', 'folders.color', 'hidesExplorerArrows'];
+        const configRequiresReload = ['opacity', 'saturation', 'folders.color'];
         const reloadRequired = configRequiresReload.some(r => getObjectPropertyValue(changes.updatedConfigs, r) !== undefined);
-        if (reloadRequired) {
+        if (!versioning.checkVersionSupport('1.31.0') || reloadRequired) {
             promptToReload();
         }
     } catch (error) {
@@ -37,9 +40,6 @@ export const detectConfigChanges = () => {
 const compareConfigs = (configs: string[]): { updatedConfigs: IconJsonOptions, updatedJSONConfig: IconJsonOptions } => {
     const json = getMaterialIconsJSON();
     return configs.reduce((result, configName) => {
-        // no further actions (e.g. reload) required
-        if (/show(Welcome|Update|Reload)Message/g.test(configName)) return result;
-
         try {
             const themeConfig = getThemeConfig(configName);
             const configValue = themeConfig.globalValue !== undefined ? themeConfig.globalValue : themeConfig.defaultValue;

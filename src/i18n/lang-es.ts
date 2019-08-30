@@ -31,10 +31,10 @@ export const translation: Translation = {
         'on': 'ON',
         'off': 'OFF'
     },
-    'hidesExplorerArrows': {
-        'toggleArrows': 'Conmutar las flechas de carpetas',
-        'enableArrows': 'Mostrar flechas de carpeta',
-        'disableArrows': 'Ocultar las flechas de carpetas'
+    'explorerArrows': {
+        'toggle': 'Conmutar las flechas de carpetas',
+        'enable': 'Mostrar flechas de carpeta',
+        'disable': 'Ocultar las flechas de carpetas'
     },
     'confirmReload': 'Debe reiniciar VS Code para activar los cambios en los iconos.',
     'reload': 'Reiniciar',

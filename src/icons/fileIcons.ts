@@ -103,8 +103,8 @@ export const fileIcons: FileIcons = {
         { name: 'react_ts', fileExtensions: ['tsx'] },
         {
             name: 'routing',
-            fileExtensions: ['routing.ts', 'routing.js', 'routes.ts', 'routes.js'],
-            fileNames: ['router.js', 'router.ts', 'routes.js', 'routes.ts'],
+            fileExtensions: ['routing.ts', 'routing.tsx', 'routing.js', 'routing.jsx', 'routes.ts', 'routes.tsx', 'routes.js', 'routes.jsx'],
+            fileNames: ['router.js', 'router.jsx', 'router.ts', 'router.tsx', 'routes.js', 'routes.jsx', 'routes.ts', 'routes.tsx'],
             enabledFor: [IconPack.Angular, IconPack.Ngrx, IconPack.React, IconPack.Redux, IconPack.Vue, IconPack.Vuex]
         },
         {
@@ -190,8 +190,10 @@ export const fileIcons: FileIcons = {
                 'tar',
                 'gz',
                 'xz',
+                'br',
                 'bzip2',
                 'gzip',
+                'brotli',
                 '7z',
                 'rar',
                 'tgz'
@@ -199,11 +201,12 @@ export const fileIcons: FileIcons = {
         },
         { name: 'exe', fileExtensions: ['exe', 'msi'] },
         { name: 'java', fileExtensions: ['java', 'jar', 'jsp'] },
-        { name: 'c', fileExtensions: ['c', 'm'] },
+        { name: 'c', fileExtensions: ['c', 'm', 'i', 'mi'] },
         { name: 'h', fileExtensions: ['h'] },
-        { name: 'cpp', fileExtensions: ['cc', 'cpp', 'mm', 'cxx'] },
-        { name: 'hpp', fileExtensions: ['hpp'] },
+        { name: 'cpp', fileExtensions: ['cc', 'cpp', 'cxx', 'c++', 'cp', 'mm', 'mii', 'ii'] },
+        { name: 'hpp', fileExtensions: ['hh', 'hpp', 'hxx', 'h++', 'hp', 'tcc', 'inl'] },
         { name: 'go', fileExtensions: ['go'] },
+        { name: 'go-mod', fileNames: ['go.mod', 'go.sum'] },
         { name: 'python', fileExtensions: ['py'] },
         {
             name: 'python-misc',
@@ -245,7 +248,10 @@ export const fileIcons: FileIcons = {
                 'license.txt',
                 'licence',
                 'licence.md',
-                'licence.txt'
+                'licence.txt',
+                'unlicense',
+                'unlicense.md',
+                'unlicense.txt'
             ]
         },
         {
@@ -296,7 +302,7 @@ export const fileIcons: FileIcons = {
                 'docker-compose.test.yml'
             ]
         },
-        { name: 'tex', fileExtensions: ['tex', 'cls', 'sty'] },
+        { name: 'tex', fileExtensions: ['tex', 'cls', 'sty', 'dtx', 'ltx'] },
         {
             name: 'powerpoint',
             fileExtensions: [
@@ -397,6 +403,7 @@ export const fileIcons: FileIcons = {
         { name: 'vue', fileExtensions: ['vue'] },
         { name: 'vue-config', fileNames: ['vue.config.js', 'vue.config.ts'] },
         { name: 'vuex-store', fileExtensions: ['store.js', 'store.ts'], fileNames: ['store.js', 'store.ts'], enabledFor: [IconPack.Vuex] },
+        { name: 'nuxt', fileNames: ['nuxt.config.js', 'nuxt.config.ts'], enabledFor: [IconPack.Vuex, IconPack.Vue] },
         { name: 'ocaml', fileExtensions: ['ml', 'mli', 'cmx'] },
         { name: 'javascript-map', fileExtensions: ['js.map', 'mjs.map'] },
         { name: 'css-map', fileExtensions: ['css.map'] },
@@ -404,7 +411,7 @@ export const fileIcons: FileIcons = {
         { name: 'handlebars', fileExtensions: ['hbs', 'mustache'] },
         { name: 'perl', fileExtensions: ['pl', 'pm'] },
         { name: 'haxe', fileExtensions: ['hx'] },
-        { name: 'test-ts', fileExtensions: ['spec.ts', 'test.ts', 'ts.snap'] },
+        { name: 'test-ts', fileExtensions: ['spec.ts', 'e2e-spec.ts', 'test.ts', 'ts.snap'] },
         {
             name: 'test-jsx',
             fileExtensions: [
@@ -416,7 +423,7 @@ export const fileIcons: FileIcons = {
                 'jsx.snap'
             ]
         },
-        { name: 'test-js', fileExtensions: ['spec.js', 'test.js', 'js.snap'] },
+        { name: 'test-js', fileExtensions: ['spec.js', 'e2e-spec.js', 'test.js', 'js.snap'] },
         {
             name: 'angular',
             fileExtensions: ['module.ts', 'module.js', 'ng-template'],
@@ -468,6 +475,7 @@ export const fileIcons: FileIcons = {
         { name: 'haml', fileExtensions: ['haml'] },
         { name: 'yang', fileExtensions: ['yang'] },
         { name: 'mjml', fileExtensions: ['mjml'] },
+        { name: 'now', fileNames: ['now.json', '.nowignore'], light: true },
         {
             name: 'terraform',
             fileExtensions: ['tf', 'tf.json', 'tfvars', 'tfstate']
@@ -478,13 +486,13 @@ export const fileIcons: FileIcons = {
         { name: 'cucumber', fileExtensions: ['feature'] },
         { name: 'nim', fileExtensions: ['nim', 'nimble'] },
         { name: 'apiblueprint', fileExtensions: ['apib', 'apiblueprint'] },
-        { name: 'riot', fileExtensions: ['tag'] },
+        { name: 'riot', fileExtensions: ['riot', 'tag'] },
         { name: 'vfl', fileExtensions: ['vfl'], fileNames: ['.vfl'] },
         { name: 'kl', fileExtensions: ['kl'], fileNames: ['.kl'] },
         {
             name: 'postcss',
             fileExtensions: ['pcss', 'sss'],
-            fileNames: ['postcss.config.js', '.postcssrc.js', '.postcssrc']
+            fileNames: ['postcss.config.js', '.postcssrc.js', '.postcssrc', '.postcssrc.json', '.postcssrc.yml']
         },
         { name: 'todo', fileExtensions: ['todo'] },
         { name: 'coldfusion', fileExtensions: ['cfml', 'cfc', 'lucee', 'cfm'] },
@@ -587,8 +595,8 @@ export const fileIcons: FileIcons = {
         { name: 'android', fileNames: ['androidmanifest.xml'] },
         {
             name: 'tune',
+            fileExtensions: ['env'],
             fileNames: [
-                '.env',
                 '.env.example',
                 '.env.local',
                 '.env.dev',
@@ -651,7 +659,7 @@ export const fileIcons: FileIcons = {
         { name: 'fusebox', fileNames: ['fuse.js'] },
         { name: 'heroku', fileNames: ['procfile', 'procfile.windows'] },
         { name: 'editorconfig', fileNames: ['.editorconfig'] },
-        { name: 'gitlab', fileNames: ['.gitlab-ci.yml'] },
+        { name: 'gitlab', fileExtensions: ['gitlab-ci.yml'] },
         { name: 'bower', fileNames: ['.bowerrc', 'bower.json'] },
         {
             name: 'eslint',
@@ -670,18 +678,18 @@ export const fileIcons: FileIcons = {
         },
         { name: 'watchman', fileNames: ['.watchmanconfig'] },
         { name: 'aurelia', fileNames: ['aurelia.json'] },
-        { 
-            name: 'mocha', 
+        {
+            name: 'mocha',
             fileNames: [
-                'mocha.opts', 
-                '.mocharc.yml', 
-                '.mocharc.yaml', 
+                'mocha.opts',
+                '.mocharc.yml',
+                '.mocharc.yaml',
                 '.mocharc.js',
-                '.mocharc.json', 
-                '.mocharc.jsonc' 
-            ] 
+                '.mocharc.json',
+                '.mocharc.jsonc'
+            ]
         },
-        { name: 'jenkins', fileNames: ['jenkinsfile'] },
+        { name: 'jenkins', fileNames: ['jenkinsfile'], fileExtensions: ['jenkinsfile', 'jenkins'] },
         { name: 'firebase', fileNames: ['firebase.json', '.firebaserc'] },
         {
             name: 'rollup',
@@ -718,7 +726,7 @@ export const fileIcons: FileIcons = {
         },
         { name: 'code-climate', fileNames: ['.codeclimate.yml'], light: true },
         { name: 'prettier', fileNames: ['.prettierrc', 'prettier.config.js', '.prettierrc.js', '.prettierrc.json', '.prettierrc.yaml', '.prettierrc.yml', '.prettierignore'] },
-        { name: 'nodemon', fileNames: ['nodemon.json'] },
+        { name: 'nodemon', fileNames: ['nodemon.json', 'nodemon-debug.json'] },
         { name: 'ngrx-reducer', fileExtensions: ['reducer.ts', 'rootReducer.ts'], enabledFor: [IconPack.Ngrx] },
         { name: 'ngrx-state', fileExtensions: ['state.ts'], enabledFor: [IconPack.Ngrx] },
         { name: 'ngrx-actions', fileExtensions: ['actions.ts'], enabledFor: [IconPack.Ngrx] },
@@ -772,7 +780,7 @@ export const fileIcons: FileIcons = {
         { name: 'mdx', fileExtensions: ['mdx'] },
         { name: 'ballerina', fileExtensions: ['bal', 'balx'] },
         { name: 'racket', fileExtensions: ['rkt'] },
-        { name: 'bazel', fileExtensions: ['bzl', 'bazel'] },
+        { name: 'bazel', fileExtensions: ['bzl', 'bazel'], fileNames: ['.bazelignore', '.bazelrc'] },
         { name: 'mint', fileExtensions: ['mint'] },
         { name: 'velocity', fileExtensions: ['vm', 'fhtml', 'vtl'] },
         { name: 'godot', fileExtensions: ['gd'] },
@@ -787,10 +795,24 @@ export const fileIcons: FileIcons = {
         { name: 'edge', fileExtensions: ['edge'] },
         { name: 'scheme', fileExtensions: ['ss', 'scm'] },
         { name: 'tailwindcss', fileNames: ['tailwind.js', 'tailwind.config.js'] },
-        { name: '3d', fileExtensions: ['stl', 'obj', 'fbx'] },
+        { name: '3d', fileExtensions: ['stl', 'obj', 'ac'] },
         { name: 'buildkite', fileNames: ['buildkite.yml', 'buildkite.yaml'] },
+        { name: 'netlify', fileNames: ['netlify.toml'] },
         { name: 'svg', fileExtensions: ['svg'] },
         { name: 'svelte', fileExtensions: ['svelte'] },
-        { name: 'unity3d', fileExtensions: ['unity'] }
+        { name: 'vim', fileExtensions: ['vimrc', 'gvimrc', 'exrc'] },
+        { name: 'nest', fileNames: ['nest-cli.json', '.nest-cli.json', 'nestconfig.json', '.nestconfig.json'] },
+        { name: 'nest-controller', fileExtensions: ['controller.ts', 'controller.js'], enabledFor: [IconPack.Nest] },
+        { name: 'nest-middleware', fileExtensions: ['middleware.ts', 'middleware.js'], enabledFor: [IconPack.Nest] },
+        { name: 'nest-module', fileExtensions: ['module.ts', 'module.js'], enabledFor: [IconPack.Nest] },
+        { name: 'nest-service', fileExtensions: ['service.ts', 'service.js'], enabledFor: [IconPack.Nest] },
+        { name: 'nest-decorator', fileExtensions: ['decorator.ts', 'decorator.js'], enabledFor: [IconPack.Nest] },
+        { name: 'nest-pipe', fileExtensions: ['pipe.ts', 'pipe.js'], enabledFor: [IconPack.Nest] },
+        { name: 'nest-filter', fileExtensions: ['filter.ts', 'filter.js'], enabledFor: [IconPack.Nest] },
+        { name: 'nest-gateway', fileExtensions: ['gateway.ts', 'gateway.js'], enabledFor: [IconPack.Nest] },
+        { name: 'nest-guard', fileExtensions: ['guard.ts', 'guard.js'], enabledFor: [IconPack.Nest] },
+        { name: 'moonscript', fileExtensions: ['moon'] },
+        { name: 'percy', fileNames: ['.percy.yml'] },
+        { name: 'gitpod', fileNames: ['.gitpod.yml'] },
     ]
 };

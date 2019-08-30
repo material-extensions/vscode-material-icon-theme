@@ -1,6 +1,6 @@
 import * as assert from 'assert';
-import { getDefaultIconOptions, getFolderIconDefinitions } from '../../icons/index';
-import { FolderTheme, IconConfiguration, IconPack } from '../../models/index';
+import { getDefaultIconOptions, getFolderIconDefinitions } from '../../../icons/index';
+import { FolderTheme, IconConfiguration, IconPack } from '../../../models/index';
 
 suite('folder icons', () => {
     const folderIcons: FolderTheme[] = [

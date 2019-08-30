@@ -31,10 +31,19 @@ export const translation: Translation = {
         'on': 'EIN',
         'off': 'AUS'
     },
-    'hidesExplorerArrows': {
-        'toggleArrows': 'Pfeile im Explorer anpassen',
-        'enableArrows': 'Explorer Pfeile anzeigen',
-        'disableArrows': 'Explorer Pfeile ausblenden'
+    'explorerArrows': {
+        'toggle': 'Pfeile im Explorer anpassen',
+        'enable': 'Explorer Pfeile anzeigen',
+        'disable': 'Explorer Pfeile ausblenden'
+    },
+    'grayscale': {
+        'toggle': 'Schaltet graustufige Icons um',
+        'enable': 'Aktiviert graustufige Icons',
+        'disable': 'Deaktiviert graustufige Icons'
+    },
+    'saturation': {
+        'inputPlaceholder': 'Wert der Sättigung (zwischen 0 und 1)',
+        'wrongValue': 'Der Wert muss zwischen 0 und 1 liegen!',
     },
     'confirmReload': 'VS Code muss neu gestartet werden, um die Änderungen an den Icons zu aktivieren.',
     'reload': 'Neu starten',

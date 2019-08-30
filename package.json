@@ -2,7 +2,7 @@
   "name": "material-icon-theme",
   "displayName": "Material Icon Theme",
   "description": "Material Design Icons for Visual Studio Code",
-  "version": "3.7.0",
+  "version": "3.9.0",
   "publisher": "PKief",
   "engines": {
     "vscode": "^1.5.0"
@@ -66,20 +66,20 @@
         "title": "%command.restoreDefaultConfig%"
       },
       {
-        "command": "material-icon-theme.hidesExplorerArrows",
-        "title": "%command.hidesExplorerArrows%"
+        "command": "material-icon-theme.toggleExplorerArrows",
+        "title": "%command.toggleExplorerArrows%"
       },
       {
-        "command": "material-icon-theme.opacity",
-        "title": "%command.opacity%"
+        "command": "material-icon-theme.changeOpacity",
+        "title": "%command.changeOpacity%"
       },
       {
-        "command": "material-icon-theme.grayscale",
-        "title": "%command.grayscale%"
+        "command": "material-icon-theme.toggleGrayscale",
+        "title": "%command.toggleGrayscale%"
       },
       {
-        "command": "material-icon-theme.saturation",
-        "title": "%command.saturation%"
+        "command": "material-icon-theme.changeSaturation",
+        "title": "%command.changeSaturation%"
       }
     ],
     "configuration": {
@@ -112,6 +112,7 @@
             "%configuration.activeIconPack.react_redux%",
             "%configuration.activeIconPack.vue%",
             "%configuration.activeIconPack.vue_vuex%",
+            "%configuration.activeIconPack.nest%",
             "%configuration.activeIconPack.none%"
           ],
           "enum": [
@@ -121,6 +122,7 @@
             "react_redux",
             "vue",
             "vue_vuex",
+            "nest",
             "none"
           ]
         },
@@ -188,35 +190,36 @@
     "compile": "webpack --mode production",
     "compile:dev": "webpack --mode none",
     "compile:watch": "webpack --mode none --watch",
+    "contributors": "ts-node ./src/scripts/contributors/index.ts",
     "generateJson": "ts-node ./src/scripts/icons/generateJson.ts",
     "lint": "tslint -c tslint.json ./src/**/*.ts",
     "postcompile": "npm run generateJson && npm run check",
-    "postinstall": "node ./node_modules/vscode/bin/install",
-    "pretest": "npm run build && npm run test-compile",
+    "pretest": "npm run build && tsc -p ./",
     "preview": "ts-node ./src/scripts/preview",
-    "test": "node ./node_modules/vscode/bin/test",
-    "test-compile": "tsc -p ./",
+    "test": "node ./out/test/runTest.js",
     "vscode:prepublish": "npm run lint && npm run compile"
   },
   "dependencies": {
-    "lodash.merge": "^4.6.1",
-    "opn": "^5.5.0",
-    "semver": "^5.6.0"
+    "lodash.merge": "4.6.2",
+    "open": "6.4.0",
+    "semver": "6.3.0"
   },
   "devDependencies": {
-    "@types/mocha": "^5.2.6",
-    "@types/node": "^11.11.6",
-    "@types/puppeteer": "^1.12.3",
-    "clean-webpack-plugin": "^2.0.1",
-    "mocha": "^6.0.2",
-    "puppeteer": "^1.13.0",
-    "rimraf": "^2.6.3",
-    "ts-loader": "^5.3.3",
-    "ts-node": "^8.0.3",
-    "tslint": "^5.14.0",
-    "typescript": "^3.3.4000",
-    "vscode": "^1.1.33",
-    "webpack": "^4.29.6",
-    "webpack-cli": "^3.3.0"
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.7.2",
+    "@types/puppeteer": "^1.19.1",
+    "@types/vscode": "^1.5.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "glob": "^7.1.4",
+    "mocha": "^6.2.0",
+    "puppeteer": "^1.19.0",
+    "rimraf": "^3.0.0",
+    "ts-loader": "^6.0.4",
+    "ts-node": "^8.3.0",
+    "tslint": "^5.19.0",
+    "typescript": "^3.6.2",
+    "vscode-test": "^1.2.0",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.7"
   }
 }

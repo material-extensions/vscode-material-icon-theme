@@ -31,19 +31,19 @@ export const translation: Translation = {
         'on': 'AAN',
         'off': 'UIT'
     },
-    'hidesExplorerArrows': {
-        'toggleArrows': 'Zet folderpijlen aan of uit',
-        'enableArrows': 'Laat folderpijlen zien',
-        'disableArrows': 'Verberg folderpijlen'
+    'explorerArrows': {
+        'toggle': 'Zet folderpijlen aan of uit',
+        'enable': 'Laat folderpijlen zien',
+        'disable': 'Verberg folderpijlen'
     },
     'confirmReload': 'Je moet VS Code herstarten om de veranderingen in icons te activeren.',
     'reload': 'Herstart',
     'outdatedVersion': 'Je moet VS Code updaten om dit commando te kunnen gebruiken.',
     'updateVSCode': 'Update VS Code',
     'grayscale': {
-        'toggleGrayscale': 'Zet grijsgetinte icons aan of uit',
-        'enableGrayscale': 'Zet grijsgetinte icons aan',
-        'disableGrayscale': 'Zet grijsgetinte icons uit'
+        'toggle': 'Zet grijsgetinte icons aan of uit',
+        'enable': 'Zet grijsgetinte icons aan',
+        'disable': 'Zet grijsgetinte icons uit'
     },
     'saturation': {
         'inputPlaceholder': 'Saturatiewaarde (tussen 0 en 1)',
