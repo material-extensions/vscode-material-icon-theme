@@ -814,5 +814,6 @@ export const fileIcons: FileIcons = {
         { name: 'moonscript', fileExtensions: ['moon'] },
         { name: 'percy', fileNames: ['.percy.yml'] },
         { name: 'gitpod', fileNames: ['.gitpod.yml'] },
+        { name: 'ADVPL', fileExtensions: ['prw','prx','tl++','apw']}
     ]
 };
