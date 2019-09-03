@@ -15,6 +15,7 @@ export const folderIcons: FolderTheme[] = [
                 name: 'folder-css',
                 folderNames: ['css', 'stylesheet', 'stylesheets', 'style', 'styles']
             },
+            { name: 'folder-gatsby', folderNames: ['gatsby'] },
             { name: 'folder-sass', folderNames: ['sass', '_sass', 'scss', '_scss'] },
             { name: 'folder-images', folderNames: ['images', 'image', 'img', 'icons', 'icon', 'ico', 'screenshot', 'screenshots'] },
             { name: 'folder-scripts', folderNames: ['script', 'scripts'] },
