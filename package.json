@@ -205,6 +205,7 @@
     "semver": "6.3.0"
   },
   "devDependencies": {
+    "@types/glob": "^7.1.1",
     "@types/mocha": "^5.2.7",
     "@types/node": "^12.7.2",
     "@types/puppeteer": "^1.19.1",
