@@ -2,7 +2,7 @@ import * as fs from 'fs';
 import * as https from 'https';
 import * as path from 'path';
 import { Contributor } from '../../models/scripts/contributors/contributor';
-import { ContributorOptions } from '../../models/scripts/contributors/contributorOptions';
+import { ContributorsConfig } from '../../models/scripts/contributors/contributorsConfig';
 import * as painter from '../helpers/painter';
 
 /**
@@ -24,14 +24,17 @@ const parseLinkHeader = (linkHeader: string) => {
 
 /**
  * Get all contributors from GitHub API.
+ * @param page Results page
+ * @param owner Owner of the repository
+ * @param repo Name of the repository
  */
-const fetchContributors = (page: string, username: string, repo: string):
+const fetchContributors = (page: string, owner: string, repo: string):
     Promise<{ contributorsOfPage: Contributor[], nextPage: string }> => {
     return new Promise((resolve, reject) => {
         const requestOptions: https.RequestOptions = {
             method: 'GET',
             hostname: 'api.github.com',
-            path: `/repos/${username}/${repo}/contributors?page=${page}`,
+            path: `/repos/${owner}/${repo}/contributors?page=${page}`,
             port: 443,
             headers: {
                 'link': 'next',
@@ -84,13 +87,13 @@ const createLinkedImages = (contributors: Contributor[], imageSize: number = 40)
     return linkList;
 };
 
-const updateContributors = async ({ username, repo, imageSize }: ContributorOptions) => {
+const updateContributors = async (config: ContributorsConfig) => {
     const contributors: Contributor[] = [];
     let page = '1';
 
     // iterate over the pages of GitHub API
     while (page !== undefined) {
-        const result = await fetchContributors(page, username, repo);
+        const result = await fetchContributors(page, config.owner, config.repo);
         contributors.push(...result.contributorsOfPage);
         page = result.nextPage;
     }
@@ -101,7 +104,7 @@ const updateContributors = async ({ username, repo, imageSize }: ContributorOpti
         console.log('> Material Icon Theme:', painter.red(`Error: Could not fetch contributors from GitHub!`));
         throw Error();
     }
-    const images = createLinkedImages(contributors, imageSize);
+    const images = createLinkedImages(contributors, config.imageSize);
 
     // create the image
     console.log('> Material Icon Theme:', painter.yellow(`Updating README.md ...`));
@@ -111,10 +114,11 @@ const updateContributors = async ({ username, repo, imageSize }: ContributorOpti
     const getContributorsSectionPattern = new RegExp(/(\[\/\/\]:\s#contributors\s\(start\))([\s\S]*)(\[\/\/\]:\s#contributors\s\(end\))/);
     const updatedContent = readmeContent.replace(getContributorsSectionPattern, `$1\n${images}\n\n$3`);
     fs.writeFileSync(readmePath, updatedContent);
+    console.log('> Material Icon Theme:', painter.green(`Successfully updated README.md!`));
 };
 
 updateContributors({
-    username: 'pkief',
+    owner: 'pkief',
     repo: 'vscode-material-icon-theme',
     imageSize: 40,
 });

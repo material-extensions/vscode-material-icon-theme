@@ -411,7 +411,7 @@ export const fileIcons: FileIcons = {
         { name: 'handlebars', fileExtensions: ['hbs', 'mustache'] },
         { name: 'perl', fileExtensions: ['pl', 'pm'] },
         { name: 'haxe', fileExtensions: ['hx'] },
-        { name: 'test-ts', fileExtensions: ['spec.ts', 'test.ts', 'ts.snap'] },
+        { name: 'test-ts', fileExtensions: ['spec.ts', 'e2e-spec.ts', 'test.ts', 'ts.snap'] },
         {
             name: 'test-jsx',
             fileExtensions: [
@@ -423,7 +423,7 @@ export const fileIcons: FileIcons = {
                 'jsx.snap'
             ]
         },
-        { name: 'test-js', fileExtensions: ['spec.js', 'test.js', 'js.snap'] },
+        { name: 'test-js', fileExtensions: ['spec.js', 'e2e-spec.js', 'test.js', 'js.snap'] },
         {
             name: 'angular',
             fileExtensions: ['module.ts', 'module.js', 'ng-template'],
@@ -486,7 +486,7 @@ export const fileIcons: FileIcons = {
         { name: 'cucumber', fileExtensions: ['feature'] },
         { name: 'nim', fileExtensions: ['nim', 'nimble'] },
         { name: 'apiblueprint', fileExtensions: ['apib', 'apiblueprint'] },
-        { name: 'riot', fileExtensions: ['tag'] },
+        { name: 'riot', fileExtensions: ['riot', 'tag'] },
         { name: 'vfl', fileExtensions: ['vfl'], fileNames: ['.vfl'] },
         { name: 'kl', fileExtensions: ['kl'], fileNames: ['.kl'] },
         {
@@ -689,7 +689,7 @@ export const fileIcons: FileIcons = {
                 '.mocharc.jsonc'
             ]
         },
-        { name: 'jenkins', fileNames: ['jenkinsfile'], fileExtensions: ['jenkinsfile', 'jenkins']},
+        { name: 'jenkins', fileNames: ['jenkinsfile'], fileExtensions: ['jenkinsfile', 'jenkins'] },
         { name: 'firebase', fileNames: ['firebase.json', '.firebaserc'] },
         {
             name: 'rollup',
@@ -780,7 +780,7 @@ export const fileIcons: FileIcons = {
         { name: 'mdx', fileExtensions: ['mdx'] },
         { name: 'ballerina', fileExtensions: ['bal', 'balx'] },
         { name: 'racket', fileExtensions: ['rkt'] },
-        { name: 'bazel', fileExtensions: ['bzl', 'bazel'] },
+        { name: 'bazel', fileExtensions: ['bzl', 'bazel'], fileNames: ['.bazelignore', '.bazelrc'] },
         { name: 'mint', fileExtensions: ['mint'] },
         { name: 'velocity', fileExtensions: ['vm', 'fhtml', 'vtl'] },
         { name: 'godot', fileExtensions: ['gd'] },
@@ -795,15 +795,25 @@ export const fileIcons: FileIcons = {
         { name: 'edge', fileExtensions: ['edge'] },
         { name: 'scheme', fileExtensions: ['ss', 'scm'] },
         { name: 'tailwindcss', fileNames: ['tailwind.js', 'tailwind.config.js'] },
-        { name: '3d', fileExtensions: ['stl', 'obj'] },
+        { name: '3d', fileExtensions: ['stl', 'obj', 'ac'] },
         { name: 'buildkite', fileNames: ['buildkite.yml', 'buildkite.yaml'] },
         { name: 'netlify', fileNames: ['netlify.toml'] },
         { name: 'svg', fileExtensions: ['svg'] },
         { name: 'svelte', fileExtensions: ['svelte'] },
         { name: 'vim', fileExtensions: ['vimrc', 'gvimrc', 'exrc'] },
         { name: 'nest', fileNames: ['nest-cli.json', '.nest-cli.json', 'nestconfig.json', '.nestconfig.json'] },
+        { name: 'nest-controller', fileExtensions: ['controller.ts', 'controller.js'], enabledFor: [IconPack.Nest] },
+        { name: 'nest-middleware', fileExtensions: ['middleware.ts', 'middleware.js'], enabledFor: [IconPack.Nest] },
+        { name: 'nest-module', fileExtensions: ['module.ts', 'module.js'], enabledFor: [IconPack.Nest] },
+        { name: 'nest-service', fileExtensions: ['service.ts', 'service.js'], enabledFor: [IconPack.Nest] },
+        { name: 'nest-decorator', fileExtensions: ['decorator.ts', 'decorator.js'], enabledFor: [IconPack.Nest] },
+        { name: 'nest-pipe', fileExtensions: ['pipe.ts', 'pipe.js'], enabledFor: [IconPack.Nest] },
+        { name: 'nest-filter', fileExtensions: ['filter.ts', 'filter.js'], enabledFor: [IconPack.Nest] },
+        { name: 'nest-gateway', fileExtensions: ['gateway.ts', 'gateway.js'], enabledFor: [IconPack.Nest] },
+        { name: 'nest-guard', fileExtensions: ['guard.ts', 'guard.js'], enabledFor: [IconPack.Nest] },
         { name: 'moonscript', fileExtensions: ['moon'] },
         { name: 'percy', fileNames: ['.percy.yml'] },
+        { name: 'gitpod', fileNames: ['.gitpod.yml'] },
         {
           name: 'uml',
           fileExtensions: ['iuml', 'pu', 'puml', 'plantuml', 'wsd'],

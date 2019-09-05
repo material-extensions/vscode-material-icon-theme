@@ -25,11 +25,6 @@ export const getThemeConfig = (section: string) => {
     return getConfig('material-icon-theme').inspect(section);
 };
 
-/** Is a folder opened? */
-export const hasWorkspace = (): boolean => {
-    return vscode.workspace.rootPath !== undefined;
-};
-
 /** Set the config of the theme. */
 export const setThemeConfig = (section: string, value: any, global: boolean = false) => {
     return getConfig('material-icon-theme').update(section, value, global);

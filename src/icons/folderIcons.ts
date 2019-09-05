@@ -62,7 +62,7 @@ export const folderIcons: FolderTheme[] = [
                 folderNames: ['view', 'views', 'screen', 'screens', 'page', 'pages', 'html']
             },
             { name: 'folder-vue', folderNames: ['vue'] },
-            { name: 'folder-expo', folderNames: ['.expo'] },
+            { name: 'folder-expo', folderNames: ['.expo', '.expo-shared'] },
             { name: 'folder-config', folderNames: ['config', 'configs', 'configuration', 'configurations', 'settings', '.settings', 'META-INF'] },
             {
                 name: 'folder-i18n',
@@ -144,7 +144,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-delta', folderNames: ['delta', 'deltas', 'changes'] },
             { name: 'folder-dump', folderNames: ['dump', 'dumps'] },
             { name: 'folder-examples', folderNames: ['example', 'examples', 'sample', 'samples', 'demo', 'demos'] },
-            { name: 'folder-environment', folderNames: ['.env', '.environment', 'environment', 'environments'] },
+            { name: 'folder-environment', folderNames: ['.env', '.environment', 'env', 'environment', 'environments'] },
             { name: 'folder-functions', folderNames: ['function', 'functions', 'lambda', 'lambdas'] },
             { name: 'folder-generator', folderNames: ['generator', 'generators', 'generated', 'cfn-gen', 'gen', 'gens', 'auto'] },
             { name: 'folder-hook', folderNames: ['hook', 'hooks', 'trigger', 'triggers'] },
@@ -161,6 +161,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-utils', folderNames: ['util', 'utils'] },
             { name: 'folder-private', folderNames: ['private', '.private'] },
             { name: 'folder-error', folderNames: ['error', 'errors', 'err'] },
+            { name: 'folder-event', folderNames: ['event', 'events'] },
             { name: 'folder-secure', folderNames: ['auth', 'authentication', 'secure', 'security', 'cert', 'certs', 'certificate', 'certificates', 'ssl'] },
             { name: 'folder-custom', folderNames: ['custom', 'customs'] },
             { name: 'folder-mock', folderNames: ['mock', 'mocks', 'draft', 'drafts', 'concept', 'concepts', 'sketch', 'sketches'] },
@@ -178,7 +179,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-vuex-store', folderNames: ['store'], enabledFor: [IconPack.Vuex] },
             { name: 'folder-nuxt', folderNames: ['nuxt', '.nuxt'], enabledFor: [IconPack.Vuex, IconPack.Vue] },
             { name: 'folder-vue-directives', folderNames: ['directives'], enabledFor: [IconPack.Vuex, IconPack.Vue] },
-            { name: 'folder-vue', folderNames: ['components'], enabledFor: [IconPack.Vuex , IconPack.Vue] },
+            { name: 'folder-vue', folderNames: ['components'], enabledFor: [IconPack.Vuex, IconPack.Vue] },
         ]
     },
     { name: 'classic', defaultIcon: { name: 'folder' }, rootFolder: { name: 'folder-root' } },
