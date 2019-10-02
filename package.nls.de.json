@@ -23,6 +23,7 @@
     "configuration.activeIconPack.vue": "Icons für Vue.",
     "configuration.activeIconPack.vue_vuex": "Icons für Vue und Vuex.",
     "configuration.activeIconPack.nest": "Icons für NestJS.",
+    "configuration.activeIconPack.sapper": "Icons für Sapper.",
     "configuration.activeIconPack.none": "Kein Icon-Pack aktiviert.",
     "configuration.folders.theme": "Art der Ordner Icons auswählen.",
     "configuration.folders.theme.specific": "Spezifische Ordner Icons auswählen.",

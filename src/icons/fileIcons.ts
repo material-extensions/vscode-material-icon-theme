@@ -799,7 +799,6 @@ export const fileIcons: FileIcons = {
         { name: 'buildkite', fileNames: ['buildkite.yml', 'buildkite.yaml'] },
         { name: 'netlify', fileNames: ['netlify.toml'] },
         { name: 'svg', fileExtensions: ['svg'] },
-        { name: 'svelte', fileExtensions: ['svelte'] },
         { name: 'vim', fileExtensions: ['vimrc', 'gvimrc', 'exrc'] },
         { name: 'nest', fileNames: ['nest-cli.json', '.nest-cli.json', 'nestconfig.json', '.nestconfig.json'] },
         { name: 'nest-controller', fileExtensions: ['controller.ts', 'controller.js'], enabledFor: [IconPack.Nest] },
@@ -814,5 +813,20 @@ export const fileIcons: FileIcons = {
         { name: 'moonscript', fileExtensions: ['moon'] },
         { name: 'percy', fileNames: ['.percy.yml'] },
         { name: 'gitpod', fileNames: ['.gitpod.yml'] },
+        { name: 'svelte', fileNames: ['svelte.config.js', '.svelte.config.js'], fileExtensions: ['svelte'] },
+        { 
+            name: 'sapper', 
+            fileNames: [
+                'service-worker.js', 
+                'server.js', 
+                'client.js', 
+                'template.html',
+            ], 
+            enabledFor: [IconPack.Sapper]
+        },
+        { name: 'sapper-error', fileNames: ['_error.svelte'], enabledFor: [IconPack.Sapper] },
+        { name: 'sapper-layout', fileNames: ['_layout.svelte'], enabledFor: [IconPack.Sapper] },
+        { name: 'sapper-js', fileExtensions: ['json.js'], enabledFor: [IconPack.Sapper] },
+        { name: 'cypress', fileNames: ['cypress.json'] },
     ]
 };

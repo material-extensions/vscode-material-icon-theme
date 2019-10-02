@@ -21,6 +21,7 @@
     "configuration.activeIconPack.vue": "Иконки для Vue.",
     "configuration.activeIconPack.vue_vuex": "Иконки для Vue и Vuex.",
     "configuration.activeIconPack.nest": "Иконки для NestJS.",
+    "configuration.activeIconPack.sapper": "Иконки для Sapper.",
     "configuration.activeIconPack.none": "Папка с иконками не включена.",
     "configuration.folders.theme": "Установить тип иконок для папок.",
     "configuration.folders.theme.specific": "Выберите конкретные значки папок.",
