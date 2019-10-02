@@ -814,14 +814,14 @@ export const fileIcons: FileIcons = {
         { name: 'percy', fileNames: ['.percy.yml'] },
         { name: 'gitpod', fileNames: ['.gitpod.yml'] },
         { name: 'svelte', fileNames: ['svelte.config.js', '.svelte.config.js'], fileExtensions: ['svelte'] },
-        { 
-            name: 'sapper', 
+        {
+            name: 'sapper',
             fileNames: [
-                'service-worker.js', 
-                'server.js', 
-                'client.js', 
+                'service-worker.js',
+                'server.js',
+                'client.js',
                 'template.html',
-            ], 
+            ],
             enabledFor: [IconPack.Sapper]
         },
         { name: 'sapper-error', fileNames: ['_error.svelte'], enabledFor: [IconPack.Sapper] },
