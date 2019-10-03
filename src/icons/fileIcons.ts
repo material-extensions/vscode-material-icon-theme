@@ -824,6 +824,7 @@ export const fileIcons: FileIcons = {
             ],
             enabledFor: [IconPack.Sapper]
         },
+        { name: 'sapper-index', fileNames: ['index.svelte'], enabledFor: [IconPack.Sapper] },
         { name: 'sapper-error', fileNames: ['_error.svelte'], enabledFor: [IconPack.Sapper] },
         { name: 'sapper-layout', fileNames: ['_layout.svelte'], enabledFor: [IconPack.Sapper] },
         { name: 'sapper-js', fileExtensions: ['json.js'], enabledFor: [IconPack.Sapper] },
