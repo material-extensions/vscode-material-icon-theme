@@ -88,11 +88,11 @@ const createLinkedImages = (contributors: Contributor[], imageSize: number = 40)
     let breakAt: number = lineBreakEvery;
 
     while (breakAt < linkList.length - 1) {
-        linkList.splice(breakAt, 0, "<br>");
+        linkList.splice(breakAt, 0, '<br>');
         breakAt += lineBreakEvery + 1;
     }
 
-    return linkList.join('&nbsp;');
+    return `<br>&nbsp;${linkList.join('&nbsp;')}`;
 };
 
 const updateContributors = async (config: ContributorsConfig) => {
