@@ -646,7 +646,6 @@ export const fileIcons: FileIcons = {
         { name: 'bithound', fileNames: ['.bithoundrc'] },
         { name: 'appveyor', fileNames: ['.appveyor.yml', 'appveyor.yml'] },
         { name: 'travis', fileNames: ['.travis.yml'] },
-        { name: 'codecov', fileNames: ['.codecov.yml', 'codecov.yml'] },
         {
             name: 'protractor',
             fileNames: [
