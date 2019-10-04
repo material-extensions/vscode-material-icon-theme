@@ -82,9 +82,17 @@ const fetchContributors = (page: string, owner: string, repo: string):
 const createLinkedImages = (contributors: Contributor[], imageSize: number = 40) => {
     const linkList = contributors.map(c => {
         return `<a href="${c.html_url}" title="${c.login}"><img src="${c.avatar_url}" width="${imageSize}px" height="${imageSize}px" alt="${c.login}"/></a>`;
-    }).join('&nbsp;');
+    });
 
-    return linkList;
+    const lineBreakEvery: number = 16; // marketplace allows up to 16 images with size of 40
+    let breakAt: number = lineBreakEvery;
+
+    while (breakAt < linkList.length - 1) {
+        linkList.splice(breakAt, 0, "<br>");
+        breakAt += lineBreakEvery + 1;
+    }
+
+    return linkList.join('&nbsp;');
 };
 
 const updateContributors = async (config: ContributorsConfig) => {
