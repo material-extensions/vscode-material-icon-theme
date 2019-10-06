@@ -78,6 +78,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-lib', folderNames: ['lib', 'libs', 'library', 'libraries', 'vendor', 'vendors', 'third-party'] },
             { name: 'folder-theme', folderNames: ['themes', 'theme', 'color', 'colors', 'design', 'designs'] },
             { name: 'folder-webpack', folderNames: ['webpack', '.webpack'] },
+            { name: 'folder-gulp', folderNames: ['gulpfile.js', 'gulp'] },
             { name: 'folder-global', folderNames: ['global'] },
             { name: 'folder-public', folderNames: ['public', 'wwwroot', 'web', 'website'] },
             { name: 'folder-include', folderNames: ['include', 'includes', '_includes'] },
