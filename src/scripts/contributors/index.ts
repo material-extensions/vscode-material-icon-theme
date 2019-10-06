@@ -2,8 +2,8 @@ import * as fs from 'fs';
 import * as https from 'https';
 import * as path from 'path';
 import { Contributor } from '../../models/scripts/contributors/contributor';
-import { ContributorsConfig } from '../../models/scripts/contributors/contributorsConfig';
 import * as painter from '../helpers/painter';
+import { createScreenshot } from '../helpers/screenshots';
 
 /**
  * Parse link header
@@ -24,17 +24,13 @@ const parseLinkHeader = (linkHeader: string) => {
 
 /**
  * Get all contributors from GitHub API.
- * @param page Results page
- * @param owner Owner of the repository
- * @param repo Name of the repository
  */
-const fetchContributors = (page: string, owner: string, repo: string):
-    Promise<{ contributorsOfPage: Contributor[], nextPage: string }> => {
+const fetchContributors = (page: string): Promise<{ contributorsOfPage: Contributor[], nextPage: string }> => {
     return new Promise((resolve, reject) => {
         const requestOptions: https.RequestOptions = {
             method: 'GET',
             hostname: 'api.github.com',
-            path: `/repos/${owner}/${repo}/contributors?page=${page}`,
+            path: `/repos/pkief/vscode-material-icon-theme/contributors?page=${page}`,
             port: 443,
             headers: {
                 'link': 'next',
@@ -44,9 +40,7 @@ const fetchContributors = (page: string, owner: string, repo: string):
         };
 
         const req = https.request(requestOptions, (res) => {
-            const { nextPage, lastPage, prevPage } = res.headers.link ? parseLinkHeader(res.headers.link.toString()) : {
-                nextPage: undefined, lastPage: [undefined, 1], prevPage: undefined,
-            };
+            const { nextPage, lastPage, prevPage } = parseLinkHeader(res.headers.link.toString());
             console.log('> Material Icon Theme:', painter.yellow(`[${page}/${lastPage ? lastPage[1] : +prevPage[1] + 1}] Loading contributors from GitHub...`));
             const result = [];
             res.on('data', (data: Buffer) => {
@@ -74,51 +68,47 @@ const fetchContributors = (page: string, owner: string, repo: string):
     });
 };
 
-/**
- * Generates a list of linked images
- * @param contributors List of contributors
- * @param imageSize Size of the images in pixels
- */
-const createLinkedImages = (contributors: Contributor[], imageSize: number = 40) => {
-    const linkList = contributors.map(c => {
-        return `<a href="${c.html_url}" title="${c.login}"><img src="${c.avatar_url}" width="${imageSize}px" height="${imageSize}px" alt="${c.login}"/></a>`;
-    }).join('&nbsp;');
+const createContributorsList = (contributors: Contributor[]) => {
+    const list = contributors.map(c => {
+        return `<li title="${c.login}"><img src="${c.avatar_url}" alt="${c.login}"/></li>`;
+    }).join('\n');
 
-    return linkList;
+    const htmlDoctype = `<!DOCTYPE html>`;
+    const styling = `<link rel="stylesheet" href="contributors.css">`;
+    const generatedHtml = `${htmlDoctype}${styling}<ul>${list}</ul>`;
+
+    const outputPath = path.join(__dirname, 'contributors.html');
+    fs.writeFileSync(outputPath, generatedHtml);
+    return outputPath;
 };
 
-const updateContributors = async (config: ContributorsConfig) => {
-    const contributors: Contributor[] = [];
+const init = async () => {
+    const contributorsList: Contributor[] = [];
     let page = '1';
 
     // iterate over the pages of GitHub API
     while (page !== undefined) {
-        const result = await fetchContributors(page, config.owner, config.repo);
-        contributors.push(...result.contributorsOfPage);
+        const result = await fetchContributors(page);
+        contributorsList.push(...result.contributorsOfPage);
         page = result.nextPage;
     }
 
-    if (contributors.length > 0) {
+    if (contributorsList.length > 0) {
         console.log('> Material Icon Theme:', painter.green(`Successfully fetched all contributors from GitHub!`));
     } else {
         console.log('> Material Icon Theme:', painter.red(`Error: Could not fetch contributors from GitHub!`));
         throw Error();
     }
-    const images = createLinkedImages(contributors, config.imageSize);
+    const outputPath = createContributorsList(contributorsList);
 
     // create the image
-    console.log('> Material Icon Theme:', painter.yellow(`Updating README.md ...`));
-    const readmePath = path.join(process.cwd(), 'README.md');
-
-    const readmeContent = fs.readFileSync(readmePath, 'utf8');
-    const getContributorsSectionPattern = new RegExp(/(\[\/\/\]:\s#contributors\s\(start\))([\s\S]*)(\[\/\/\]:\s#contributors\s\(end\))/);
-    const updatedContent = readmeContent.replace(getContributorsSectionPattern, `$1\n${images}\n\n$3`);
-    fs.writeFileSync(readmePath, updatedContent);
-    console.log('> Material Icon Theme:', painter.green(`Successfully updated README.md!`));
+    console.log('> Material Icon Theme:', painter.yellow(`Creating image...`));
+    const fileName = 'contributors';
+    createScreenshot(outputPath, fileName).then(() => {
+        console.log('> Material Icon Theme:', painter.green(`Successfully created ${fileName} image!`));
+    }).catch(() => {
+        throw Error(painter.red(`Error while creating ${fileName} image`));
+    });
 };
 
-updateContributors({
-    owner: 'pkief',
-    repo: 'vscode-material-icon-theme',
-    imageSize: 40,
-});
+init();
