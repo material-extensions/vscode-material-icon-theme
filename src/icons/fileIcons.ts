@@ -233,6 +233,7 @@ export const fileIcons: FileIcons = {
         { name: 'hpp', fileExtensions: ['hh', 'hpp', 'hxx', 'h++', 'hp', 'tcc', 'inl'] },
         { name: 'go', fileExtensions: ['go'] },
         { name: 'go-mod', fileNames: ['go.mod', 'go.sum'] },
+        { name: 'v', fileExtensions: ['v', 'vh'] },
         { name: 'python', fileExtensions: ['py'] },
         {
             name: 'python-misc',
@@ -491,7 +492,7 @@ export const fileIcons: FileIcons = {
         { name: 'reason', fileExtensions: ['re', 'rei'] },
         { name: 'bucklescript', fileExtensions: ['cmj'] },
         { name: 'merlin', fileExtensions: ['merlin'] },
-        { name: 'verilog', fileExtensions: ['v', 'vhd', 'sv', 'svh'] },
+        { name: 'verilog', fileExtensions: ['vhd', 'sv', 'svh'] },
         { name: 'mathematica', fileExtensions: ['nb'] },
         { name: 'wolframlanguage', fileExtensions: ['wl', 'wls'] },
         { name: 'nunjucks', fileExtensions: ['njk', 'nunjucks'] },
