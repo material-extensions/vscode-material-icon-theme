@@ -20,6 +20,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-scripts', folderNames: ['script', 'scripts'] },
             { name: 'folder-node', folderNames: ['node_modules'] },
             { name: 'folder-javascript', folderNames: ['js', 'javascript', 'javascripts'] },
+            { name: 'folder-json', folderNames: ['json'] },
             { name: 'folder-font', folderNames: ['font', 'fonts'] },
             { name: 'folder-bower', folderNames: ['bower_components'] },
             {
