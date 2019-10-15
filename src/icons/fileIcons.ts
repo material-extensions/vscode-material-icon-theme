@@ -592,7 +592,7 @@ export const fileIcons: FileIcons = {
                 'yarn-error.log'
             ]
         },
-        { name: 'android', fileNames: ['androidmanifest.xml'] },
+        { name: 'android', fileNames: ['androidmanifest.xml'], fileExtensions: ['apk'] },
         {
             name: 'tune',
             fileExtensions: ['env'],
