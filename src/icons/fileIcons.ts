@@ -815,5 +815,6 @@ export const fileIcons: FileIcons = {
         { name: 'percy', fileNames: ['.percy.yml'] },
         { name: 'gitpod', fileNames: ['.gitpod.yml'] },
         { name: 'codeowners', fileNames: ['codeowners'] },
+        { name: 'gcp', fileNames: ['.gcloudignore'] },
     ]
 };
