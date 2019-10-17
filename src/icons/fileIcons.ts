@@ -592,7 +592,7 @@ export const fileIcons: FileIcons = {
                 'yarn-error.log'
             ]
         },
-        { name: 'android', fileNames: ['androidmanifest.xml'] },
+        { name: 'android', fileNames: ['androidmanifest.xml'], fileExtensions: ['apk'] },
         {
             name: 'tune',
             fileExtensions: ['env'],
@@ -757,7 +757,7 @@ export const fileIcons: FileIcons = {
                 'gruntfile.babel.coffee'
             ],
         },
-        { name: 'jest', fileNames: ['jest.config.js', 'jest.config.ts', 'jest.config.json', 'jest.setup.js', 'jest.setup.ts', 'jest.json', '.jestrc', 'jest.teardown.js'] },
+        { name: 'jest', fileNames: ['jest.config.js', 'jest.config.ts', 'jest.config.json', 'jest.setup.js', 'jest.setup.ts', 'jest.json', '.jestrc', '.jestrc.js', '.jestrc.json', 'jest.teardown.js'] },
         { name: 'processing', fileExtensions: ['pde'], light: true },
         { name: 'storybook', fileExtensions: ['stories.js', 'stories.jsx', 'story.js', 'story.jsx', 'stories.ts', 'stories.tsx', 'story.ts', 'story.tsx'] },
         { name: 'wepy', fileExtensions: ['wpy'] },
@@ -814,6 +814,8 @@ export const fileIcons: FileIcons = {
         { name: 'moonscript', fileExtensions: ['moon'] },
         { name: 'percy', fileNames: ['.percy.yml'] },
         { name: 'gitpod', fileNames: ['.gitpod.yml'] },
+        { name: 'codeowners', fileNames: ['codeowners'] },
+        { name: 'gcp', fileNames: ['.gcloudignore'] },
         {
           name: 'uml',
           fileExtensions: ['iuml', 'pu', 'puml', 'plantuml', 'wsd'],

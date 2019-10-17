@@ -1,4 +1,11 @@
 # Changelog
+## 3.9.1 (2019-10-07)
+### Minor improvements
+- Add "databases" to "database" folder names ([@noftaly](https://github.com/noftaly) in [#530](https://github.com/PKief/vscode-material-icon-theme/pull/530))
+- Add more jest extensions ([@9KwHCUDP](https://github.com/9KwHCUDP) in [#541](https://github.com/PKief/vscode-material-icon-theme/pull/541))
+- Fix [#547](https://github.com/PKief/vscode-material-icon-theme/issues/547) - Create image of contributors profile image list ([@PKief](https://github.com/PKief) in commit [088fc53](https://github.com/PKief/vscode-material-icon-theme/commit/088fc539470369b92b1f42d0fa4b84c0fa3da542))
+- Fix [#548](https://github.com/PKief/vscode-material-icon-theme/issues/548) - Exception thrown when using Japanese display language ([@PKief](https://github.com/PKief) in commit [1675790](https://github.com/PKief/vscode-material-icon-theme/commit/16757906b2bc91c7fe9ecb5fde5fe31f0107e640))
+
 ## 3.9.0 (2019-08-29)
 ### New features
 - Nest.js icon pack ([@jerriclynsjohn](https://github.com/jerriclynsjohn) in [#501](https://github.com/PKief/vscode-material-icon-theme/pull/501))
