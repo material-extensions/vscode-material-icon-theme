@@ -14,8 +14,7 @@ export const initTranslations = async () => {
     try {
         currentTranslation = await loadTranslation(getCurrentLanguage());
         fallbackTranslation = await loadTranslation('en');
-    }
-    catch (error) {
+    } catch (error) {
         console.error(error);
     }
 };
@@ -25,20 +24,14 @@ const loadTranslation = async (language: string) => {
     try {
         return await getTranslationObject(language);
     } catch (error) {
-        console.error(error);
         return await getTranslationObject('en');
     }
 };
 
 /** Get the translation object of the separated translation files */
 const getTranslationObject = async (language: string) => {
-    try {
-        const lang = await import(/* webpackMode: "eager" */ `./lang-${language}`);
-        return lang.translation;
-    }
-    catch (error) {
-        console.error(error);
-    }
+    const lang = await import(/* webpackMode: "eager" */ `./lang-${language}`);
+    return lang.translation;
 };
 
 /**
