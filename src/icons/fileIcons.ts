@@ -213,6 +213,7 @@ export const fileIcons: FileIcons = {
             fileExtensions: ['pyc', 'whl'],
             fileNames: ['requirements.txt', 'pipfile', '.python-version', 'manifest.in']
         },
+        { name: 'cython', fileExtensions: ['pyx', 'pxd'] },
         { name: 'url', fileExtensions: ['url'] },
         {
             name: 'console',
