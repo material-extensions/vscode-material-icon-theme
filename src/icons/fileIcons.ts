@@ -817,5 +817,6 @@ export const fileIcons: FileIcons = {
         { name: 'gitpod', fileNames: ['.gitpod.yml'] },
         { name: 'codeowners', fileNames: ['codeowners'] },
         { name: 'gcp', fileNames: ['.gcloudignore'] },
+        { name: 'disc', fileExtensions: ['iso'] },
     ]
 };
