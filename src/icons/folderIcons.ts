@@ -53,7 +53,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-docs', folderNames: ['doc', 'docs', 'documents', 'documentation', 'post', 'posts'] },
             {
                 name: 'folder-git',
-                folderNames: ['.git', 'submodules', '.submodules']
+                folderNames: ['.git', 'githooks', '.githooks', 'submodules', '.submodules']
             },
             { name: 'folder-github', folderNames: ['.github'] },
             { name: 'folder-gitlab', folderNames: ['.gitlab'] },
