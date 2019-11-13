@@ -53,7 +53,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-docs', folderNames: ['doc', 'docs', 'documents', 'documentation', 'post', 'posts'] },
             {
                 name: 'folder-git',
-                folderNames: ['.git', 'submodules', '.submodules']
+                folderNames: ['.git', 'githooks', '.githooks', 'submodules', '.submodules']
             },
             { name: 'folder-github', folderNames: ['.github'] },
             { name: 'folder-gitlab', folderNames: ['.gitlab'] },
@@ -110,7 +110,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-other', folderNames: ['other', 'others', 'misc', 'miscellaneous', 'extra', 'extras'] },
             { name: 'folder-typescript', folderNames: ['typescript', 'ts', 'typings', '@types'] },
             { name: 'folder-graphql', folderNames: ['graphql', 'gql'] },
-            { name: 'folder-routes', folderNames: ['routes'] },
+            { name: 'folder-routes', folderNames: ['routes', 'router'] },
             { name: 'folder-ci', folderNames: ['.ci', 'ci'] },
             { name: 'folder-benchmark', folderNames: ['benchmark', 'benchmarks', 'performance', 'measure', 'measures', 'measurement'] },
             { name: 'folder-messages', folderNames: ['messages', 'forum', 'chat', 'chats', 'conversation', 'conversations'] },

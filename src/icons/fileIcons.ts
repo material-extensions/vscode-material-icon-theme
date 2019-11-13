@@ -606,6 +606,7 @@ export const fileIcons: FileIcons = {
                 '.env.staging',
                 '.env.preview',
                 '.env.test',
+                '.env.testing',
                 '.env.development.local',
                 '.env.production.local',
                 '.env.test.local',
@@ -646,6 +647,7 @@ export const fileIcons: FileIcons = {
         { name: 'bithound', fileNames: ['.bithoundrc'] },
         { name: 'appveyor', fileNames: ['.appveyor.yml', 'appveyor.yml'] },
         { name: 'travis', fileNames: ['.travis.yml'] },
+        { name: 'codecov', fileNames: ['.codecov.yml', 'codecov.yml'] },
         {
             name: 'protractor',
             fileNames: [
@@ -819,6 +821,7 @@ export const fileIcons: FileIcons = {
         { name: 'advpl_tlpp', fileExtensions: ['tlpp'] },
         { name: 'advpl_include', fileExtensions: ['ch'] },
         { name: 'codeowners', fileNames: ['codeowners'] },
-        { name: 'gcp', fileNames: ['.gcloudignore'] }
+        { name: 'gcp', fileNames: ['.gcloudignore'] },
+        { name: 'disc', fileExtensions: ['iso'] },
     ]
 };
