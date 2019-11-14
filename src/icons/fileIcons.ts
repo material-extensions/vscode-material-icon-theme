@@ -214,7 +214,7 @@ export const fileIcons: FileIcons = {
                 'tgz'
             ]
         },
-        { name: 'exe', fileExtensions: ['exe', 'msi'] },
+        { name: 'exe', fileExtensions: ['exe', 'msi', 'msix'] },
         { name: 'java', fileExtensions: ['java', 'jar', 'jsp'] },
         { name: 'c', fileExtensions: ['c', 'm', 'i', 'mi'] },
         { name: 'h', fileExtensions: ['h'] },
