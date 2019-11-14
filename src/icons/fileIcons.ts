@@ -95,7 +95,22 @@ export const fileIcons: FileIcons = {
                 'pic',
                 'raw',
                 'webp',
-                'eps'
+                'eps',
+                'afphoto',
+                'ase',
+                'aseprite',
+                'clip',
+                'cpt',
+                'heif',
+                'heic',
+                'kra',
+                'mdp',
+                'ora',
+                'pdn',
+                'reb',
+                'sai',
+                'tga',
+                'xcf'
             ]
         },
         { name: 'javascript', fileExtensions: ['js', 'esx', 'mjs'] },
