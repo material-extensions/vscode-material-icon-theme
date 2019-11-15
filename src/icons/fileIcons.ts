@@ -95,7 +95,22 @@ export const fileIcons: FileIcons = {
                 'pic',
                 'raw',
                 'webp',
-                'eps'
+                'eps',
+                'afphoto',
+                'ase',
+                'aseprite',
+                'clip',
+                'cpt',
+                'heif',
+                'heic',
+                'kra',
+                'mdp',
+                'ora',
+                'pdn',
+                'reb',
+                'sai',
+                'tga',
+                'xcf'
             ]
         },
         { name: 'javascript', fileExtensions: ['js', 'esx', 'mjs'] },
@@ -797,7 +812,23 @@ export const fileIcons: FileIcons = {
         { name: 'edge', fileExtensions: ['edge'] },
         { name: 'scheme', fileExtensions: ['ss', 'scm'] },
         { name: 'tailwindcss', fileNames: ['tailwind.js', 'tailwind.config.js'] },
-        { name: '3d', fileExtensions: ['stl', 'obj', 'ac'] },
+        { 
+            name: '3d', 
+            fileExtensions: [
+                'stl',
+                'obj',
+                'ac',
+                'blend',
+                'mesh',
+                'mqo',
+                'pmd',
+                'pmx',
+                'skp',
+                'vac',
+                'vdp',
+                'vox'
+            ] 
+        },
         { name: 'buildkite', fileNames: ['buildkite.yml', 'buildkite.yaml'] },
         { name: 'netlify', fileNames: ['netlify.toml'] },
         { name: 'svg', fileExtensions: ['svg'] },
