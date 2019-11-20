@@ -819,5 +819,6 @@ export const fileIcons: FileIcons = {
         { name: 'codeowners', fileNames: ['codeowners'] },
         { name: 'gcp', fileNames: ['.gcloudignore'] },
         { name: 'disc', fileExtensions: ['iso'] },
+        { name: 'fortran', fileExtensions: ['f', 'f77', 'f90', 'f95', 'f03', 'f08'] },
     ]
 };
