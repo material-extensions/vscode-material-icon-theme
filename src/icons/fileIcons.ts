@@ -31,7 +31,8 @@ export const fileIcons: FileIcons = {
                 'composer.lock',
                 '.jsbeautifyrc',
                 '.esformatter',
-                'cdp.pid'
+                'cdp.pid',
+                '.mjmlconfig',
             ]
         },
         {
@@ -812,8 +813,8 @@ export const fileIcons: FileIcons = {
         { name: 'edge', fileExtensions: ['edge'] },
         { name: 'scheme', fileExtensions: ['ss', 'scm'] },
         { name: 'tailwindcss', fileNames: ['tailwind.js', 'tailwind.config.js'] },
-        { 
-            name: '3d', 
+        {
+            name: '3d',
             fileExtensions: [
                 'stl',
                 'obj',
@@ -827,7 +828,7 @@ export const fileIcons: FileIcons = {
                 'vac',
                 'vdp',
                 'vox'
-            ] 
+            ]
         },
         { name: 'buildkite', fileNames: ['buildkite.yml', 'buildkite.yaml'] },
         { name: 'netlify', fileNames: ['netlify.toml'] },
