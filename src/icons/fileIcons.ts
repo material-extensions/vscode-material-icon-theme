@@ -831,7 +831,7 @@ export const fileIcons: FileIcons = {
             ]
         },
         { name: 'buildkite', fileNames: ['buildkite.yml', 'buildkite.yaml'] },
-        { name: 'netlify', fileNames: ['netlify.toml', '_headers', '_redirects'] },
+        { name: 'netlify', fileNames: ['netlify.json', 'netlify.yml', 'netlify.yaml', 'netlify.toml', '_headers', '_redirects'] },
         { name: 'svg', fileExtensions: ['svg'] },
         { name: 'svelte', fileExtensions: ['svelte'] },
         { name: 'vim', fileExtensions: ['vimrc', 'gvimrc', 'exrc'] },
