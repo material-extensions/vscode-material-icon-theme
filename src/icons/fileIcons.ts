@@ -31,7 +31,8 @@ export const fileIcons: FileIcons = {
                 'composer.lock',
                 '.jsbeautifyrc',
                 '.esformatter',
-                'cdp.pid'
+                'cdp.pid',
+                '.mjmlconfig',
             ]
         },
         {
@@ -95,7 +96,22 @@ export const fileIcons: FileIcons = {
                 'pic',
                 'raw',
                 'webp',
-                'eps'
+                'eps',
+                'afphoto',
+                'ase',
+                'aseprite',
+                'clip',
+                'cpt',
+                'heif',
+                'heic',
+                'kra',
+                'mdp',
+                'ora',
+                'pdn',
+                'reb',
+                'sai',
+                'tga',
+                'xcf'
             ]
         },
         { name: 'javascript', fileExtensions: ['js', 'esx', 'mjs'] },
@@ -797,9 +813,25 @@ export const fileIcons: FileIcons = {
         { name: 'edge', fileExtensions: ['edge'] },
         { name: 'scheme', fileExtensions: ['ss', 'scm'] },
         { name: 'tailwindcss', fileNames: ['tailwind.js', 'tailwind.config.js'] },
-        { name: '3d', fileExtensions: ['stl', 'obj', 'ac'] },
+        {
+            name: '3d',
+            fileExtensions: [
+                'stl',
+                'obj',
+                'ac',
+                'blend',
+                'mesh',
+                'mqo',
+                'pmd',
+                'pmx',
+                'skp',
+                'vac',
+                'vdp',
+                'vox'
+            ]
+        },
         { name: 'buildkite', fileNames: ['buildkite.yml', 'buildkite.yaml'] },
-        { name: 'netlify', fileNames: ['netlify.toml'] },
+        { name: 'netlify', fileNames: ['netlify.json', 'netlify.yml', 'netlify.yaml', 'netlify.toml'] },
         { name: 'svg', fileExtensions: ['svg'] },
         { name: 'svelte', fileExtensions: ['svelte'] },
         { name: 'vim', fileExtensions: ['vimrc', 'gvimrc', 'exrc'] },
@@ -816,9 +848,14 @@ export const fileIcons: FileIcons = {
         { name: 'moonscript', fileExtensions: ['moon'] },
         { name: 'percy', fileNames: ['.percy.yml'] },
         { name: 'gitpod', fileNames: ['.gitpod.yml'] },
+        { name: 'advpl_prw', fileExtensions: ['prw', 'prx'] },
+        { name: 'advpl_ptm', fileExtensions: ['ptm'] },
+        { name: 'advpl_tlpp', fileExtensions: ['tlpp'] },
+        { name: 'advpl_include', fileExtensions: ['ch'] },
         { name: 'codeowners', fileNames: ['codeowners'] },
         { name: 'gcp', fileNames: ['.gcloudignore'] },
         { name: 'disc', fileExtensions: ['iso'] },
+        { name: 'fortran', fileExtensions: ['f', 'f77', 'f90', 'f95', 'f03', 'f08'] },
         {
           name: 'uml',
           fileExtensions: ['iuml', 'pu', 'puml', 'plantuml', 'wsd'],
