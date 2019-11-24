@@ -1,4 +1,23 @@
 # Changelog
+## 3.9.2 (2019-11-24)
+### New file icons
+- Fortran ([issue #368](https://github.com/PKief/vscode-material-icon-theme/issues/368))
+- .gcloudignore ([issue #556](https://github.com/PKief/vscode-material-icon-theme/issues/556))
+- .env.testing ([@MatheusKProt](https://github.com/MatheusKProt) in [#561](https://github.com/PKief/vscode-material-icon-theme/pull/561))
+- codecov ([@yardenshoham](https://github.com/yardenshoham) in [#537](https://github.com/PKief/vscode-material-icon-theme/pull/537))
+- image and 3D extensions ([@crse](https://github.com/crse) in [#573](https://github.com/PKief/vscode-material-icon-theme/pull/573))
+- Fix [#577](https://github.com/PKief/vscode-material-icon-theme/issues/577) - netlify ([@hacknug](https://github.com/hacknug) in [a6a04aa](https://github.com/PKief/vscode-material-icon-theme/commit/a6a04aa3550537803300284a55241cdc1ef7d6f7))
+- AdvPL ([@leotads](https://github.com/leotads) in [#534](https://github.com/PKief/vscode-material-icon-theme/pull/534))
+- .mjmlconfig
+- CODEOWNERS
+- *.apk
+- *.iso
+
+### New folder icons
+- json ([@rbalet](https://github.com/rbalet) in [#543](https://github.com/PKief/vscode-material-icon-theme/pull/543))
+- router ([issue #564](https://github.com/PKief/vscode-material-icon-theme/issues/564))
+- githooks
+
 ## 3.9.1 (2019-10-07)
 ### Minor improvements
 - Add "databases" to "database" folder names ([@noftaly](https://github.com/noftaly) in [#530](https://github.com/PKief/vscode-material-icon-theme/pull/530))
