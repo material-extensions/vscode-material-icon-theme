@@ -181,6 +181,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-nuxt', folderNames: ['nuxt', '.nuxt'], enabledFor: [IconPack.Vuex, IconPack.Vue] },
             { name: 'folder-vue-directives', folderNames: ['directives'], enabledFor: [IconPack.Vuex, IconPack.Vue] },
             { name: 'folder-vue', folderNames: ['components'], enabledFor: [IconPack.Vuex, IconPack.Vue] },
+            { name: 'folder-gulp', folderNames: ['gulpfile.js', 'gulpfile.ts', 'gulpfile.babel.js'] },
         ]
     },
     { name: 'classic', defaultIcon: { name: 'folder' }, rootFolder: { name: 'folder-root' } },
