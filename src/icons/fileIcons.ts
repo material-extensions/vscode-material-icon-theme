@@ -614,6 +614,7 @@ export const fileIcons: FileIcons = {
             fileExtensions: ['env'],
             fileNames: [
                 '.env.example',
+                '.env.sample',
                 '.env.local',
                 '.env.dev',
                 '.env.development',
