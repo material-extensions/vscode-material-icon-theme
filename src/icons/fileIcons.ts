@@ -22,7 +22,7 @@ export const fileIcons: FileIcons = {
         { name: 'less', fileExtensions: ['less'] },
         {
             name: 'json',
-            fileExtensions: ['json', 'tsbuildinfo'],
+            fileExtensions: ['json', 'tsbuildinfo', 'json5'],
             fileNames: [
                 '.jscsrc',
                 '.jshintrc',
