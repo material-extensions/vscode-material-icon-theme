@@ -198,6 +198,7 @@ export const fileIcons: FileIcons = {
             fileExtensions: ['pdb', 'sql', 'pks', 'pkb', 'accdb', 'mdb', 'sqlite', 'pgsql', 'postgres', 'psql']
         },
         { name: 'csharp', fileExtensions: ['cs', 'csx'] },
+        { name: 'qsharp', fileExtensions: ['qs'] },
         {
             name: 'zip',
             fileExtensions: [
