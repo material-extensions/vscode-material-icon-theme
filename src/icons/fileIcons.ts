@@ -197,6 +197,7 @@ export const fileIcons: FileIcons = {
             name: 'database',
             fileExtensions: ['pdb', 'sql', 'pks', 'pkb', 'accdb', 'mdb', 'sqlite', 'pgsql', 'postgres', 'psql']
         },
+        { name: 'mongodb', fileExtensions: ['schema.ts', 'schema.js']},
         { name: 'csharp', fileExtensions: ['cs', 'csx'] },
         {
             name: 'zip',
