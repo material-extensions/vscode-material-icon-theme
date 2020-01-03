@@ -216,6 +216,7 @@ export const fileIcons: FileIcons = {
             ]
         },
         { name: 'exe', fileExtensions: ['exe', 'msi'] },
+        { name: 'v', fileExtensions: ['v'] },
         { name: 'java', fileExtensions: ['java', 'jar', 'jsp'] },
         { name: 'c', fileExtensions: ['c', 'm', 'i', 'mi'] },
         { name: 'h', fileExtensions: ['h'] },
@@ -481,7 +482,7 @@ export const fileIcons: FileIcons = {
         { name: 'reason', fileExtensions: ['re', 'rei'] },
         { name: 'bucklescript', fileExtensions: ['cmj'] },
         { name: 'merlin', fileExtensions: ['merlin'] },
-        { name: 'verilog', fileExtensions: ['v', 'vhd', 'sv', 'svh'] },
+        { name: 'verilog', fileExtensions: ['vh', 'vhd', 'sv', 'svh'] },
         { name: 'mathematica', fileExtensions: ['nb'] },
         { name: 'wolframlanguage', fileExtensions: ['wl', 'wls'] },
         { name: 'nunjucks', fileExtensions: ['njk', 'nunjucks'] },
