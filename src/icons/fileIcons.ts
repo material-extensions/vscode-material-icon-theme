@@ -22,7 +22,7 @@ export const fileIcons: FileIcons = {
         { name: 'less', fileExtensions: ['less'] },
         {
             name: 'json',
-            fileExtensions: ['json', 'tsbuildinfo'],
+            fileExtensions: ['json', 'tsbuildinfo', 'json5'],
             fileNames: [
                 '.jscsrc',
                 '.jshintrc',
@@ -614,6 +614,7 @@ export const fileIcons: FileIcons = {
             fileExtensions: ['env'],
             fileNames: [
                 '.env.example',
+                '.env.sample',
                 '.env.local',
                 '.env.dev',
                 '.env.development',
@@ -803,7 +804,7 @@ export const fileIcons: FileIcons = {
         { name: 'velocity', fileExtensions: ['vm', 'fhtml', 'vtl'] },
         { name: 'godot', fileExtensions: ['gd'] },
         { name: 'godot-assets', fileExtensions: ['godot', 'tres', 'tscn'] },
-        { name: 'azure-pipelines', fileNames: ['azure-pipelines.yml'] },
+        { name: 'azure-pipelines', fileNames: ['azure-pipelines.yml', 'azure-pipelines.yaml'] },
         { name: 'azure', fileExtensions: ['azcli'] },
         { name: 'vagrant', fileNames: ['vagrantfile'], fileExtensions: ['vagrantfile'] },
         { name: 'prisma', fileNames: ['prisma.yml'], fileExtensions: ['prisma'] },
