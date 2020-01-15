@@ -857,6 +857,7 @@ export const fileIcons: FileIcons = {
         { name: 'gcp', fileNames: ['.gcloudignore'] },
         { name: 'disc', fileExtensions: ['iso'] },
         { name: 'fortran', fileExtensions: ['f', 'f77', 'f90', 'f95', 'f03', 'f08'] },
+        { name: 'liquid', fileExtensions: ['liquid'] },
         { name: 'cypress', fileExtensions: ['cypress.json'] },
     ]
 };
