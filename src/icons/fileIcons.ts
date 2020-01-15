@@ -858,5 +858,8 @@ export const fileIcons: FileIcons = {
         { name: 'disc', fileExtensions: ['iso'] },
         { name: 'fortran', fileExtensions: ['f', 'f77', 'f90', 'f95', 'f03', 'f08'] },
         { name: 'liquid', fileExtensions: ['liquid'] },
+        { name: 'shader-vert', fileExtensions: ['vert', 'vertexshader'] },
+        { name: 'shader-geom', fileExtensions: ['geom', 'geometryshader'] },
+        { name: 'shader-frag', fileExtensions: ['frag', 'fragmentshader'] },
     ]
 };
