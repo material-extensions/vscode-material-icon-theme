@@ -75,7 +75,7 @@ export const folderIcons: FolderTheme[] = [
                 name: 'folder-resource',
                 folderNames: ['resource', 'resources', 'res', 'asset', 'assets', 'static']
             },
-            { name: 'folder-lib', folderNames: ['lib', 'libs', 'library', 'libraries', 'vendor', 'vendors', 'third-party'] },
+            { name: 'folder-lib', folderNames: ['lib', 'libs', 'library', 'libraries', 'vendor', 'vendors', 'third-party', 'common'] },
             { name: 'folder-theme', folderNames: ['themes', 'theme', 'color', 'colors', 'design', 'designs'] },
             { name: 'folder-webpack', folderNames: ['webpack', '.webpack'] },
             { name: 'folder-global', folderNames: ['global'] },
