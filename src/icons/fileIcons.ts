@@ -21,6 +21,11 @@ export const fileIcons: FileIcons = {
         { name: 'sass', fileExtensions: ['scss', 'sass'] },
         { name: 'less', fileExtensions: ['less'] },
         {
+            name: 'json-schema',
+            fileExtensions: ['schema.json', 'definitions.json'],
+            light: true
+        },
+        {
             name: 'json',
             fileExtensions: ['json', 'tsbuildinfo', 'json5'],
             fileNames: [
