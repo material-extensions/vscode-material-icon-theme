@@ -605,7 +605,9 @@ export const fileIcons: FileIcons = {
                 'yarn.lock',
                 '.yarnclean',
                 '.yarn-integrity',
-                'yarn-error.log'
+                'yarn-error.log',
+                '.yarnrc.yml',
+                '.yarnrc.yaml',
             ]
         },
         { name: 'android', fileNames: ['androidmanifest.xml'], fileExtensions: ['apk'] },
