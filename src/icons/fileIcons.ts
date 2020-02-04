@@ -7,7 +7,15 @@ export const fileIcons: FileIcons = {
     defaultIcon: { name: 'file' },
     icons: [
         { name: 'html', fileExtensions: ['html', 'htm', 'xhtml', 'html_vm', 'asp'] },
-        { name: 'pug', fileExtensions: ['jade', 'pug'] },
+        {
+            name: 'pug',
+            fileExtensions: ['jade', 'pug'],
+            fileNames: [
+                '.pug-lintrc',
+                '.pug-lintrc.js',
+                '.pug-lintrc.json'
+            ]
+        },
         {
             name: 'markdown',
             fileExtensions: [
