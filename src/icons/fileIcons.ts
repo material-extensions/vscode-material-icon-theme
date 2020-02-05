@@ -639,6 +639,7 @@ export const fileIcons: FileIcons = {
                 '.env.development.local',
                 '.env.qa.local',
                 '.env.production.local',
+                '.env.staging.local',
                 '.env.test.local',
             ]
         },
