@@ -7,7 +7,15 @@ export const fileIcons: FileIcons = {
     defaultIcon: { name: 'file' },
     icons: [
         { name: 'html', fileExtensions: ['html', 'htm', 'xhtml', 'html_vm', 'asp'] },
-        { name: 'pug', fileExtensions: ['jade', 'pug'] },
+        {
+            name: 'pug',
+            fileExtensions: ['jade', 'pug'],
+            fileNames: [
+                '.pug-lintrc',
+                '.pug-lintrc.js',
+                '.pug-lintrc.json'
+            ]
+        },
         {
             name: 'markdown',
             fileExtensions: [
@@ -542,12 +550,16 @@ export const fileIcons: FileIcons = {
                 'webpack.config.common.babel.ts',
                 'webpack.dev.js',
                 'webpack.dev.ts',
+                'webpack.development.js',
+                'webpack.development.ts',
                 'webpack.config.dev.js',
                 'webpack.config.dev.ts',
                 'webpack.config.dev.babel.js',
                 'webpack.config.dev.babel.ts',
                 'webpack.prod.js',
                 'webpack.prod.ts',
+                'webpack.production.js',
+                'webpack.production.ts',
                 'webpack.server.js',
                 'webpack.server.ts',
                 'webpack.client.js',
@@ -621,6 +633,7 @@ export const fileIcons: FileIcons = {
                 '.env.local',
                 '.env.dev',
                 '.env.development',
+                '.env.qa',
                 '.env.prod',
                 '.env.production',
                 '.env.staging',
@@ -628,7 +641,9 @@ export const fileIcons: FileIcons = {
                 '.env.test',
                 '.env.testing',
                 '.env.development.local',
+                '.env.qa.local',
                 '.env.production.local',
+                '.env.staging.local',
                 '.env.test.local',
             ]
         },
