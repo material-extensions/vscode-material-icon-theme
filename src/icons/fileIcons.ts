@@ -426,7 +426,7 @@ export const fileIcons: FileIcons = {
         { name: 'css-map', fileExtensions: ['css.map'] },
         { name: 'lock', fileExtensions: ['lock'] },
         { name: 'handlebars', fileExtensions: ['hbs', 'mustache'] },
-        { name: 'perl', fileExtensions: ['pl', 'pm'] },
+        { name: 'perl', fileExtensions: ['pm'] },
         { name: 'haxe', fileExtensions: ['hx'] },
         { name: 'test-ts', fileExtensions: ['spec.ts', 'e2e-spec.ts', 'test.ts', 'ts.snap'] },
         {
@@ -861,5 +861,6 @@ export const fileIcons: FileIcons = {
         { name: 'disc', fileExtensions: ['iso'] },
         { name: 'fortran', fileExtensions: ['f', 'f77', 'f90', 'f95', 'f03', 'f08'] },
         { name: 'liquid', fileExtensions: ['liquid'] },
+        { name: 'prolog', fileExtensions: ['p', 'pro'] },
     ]
 };
