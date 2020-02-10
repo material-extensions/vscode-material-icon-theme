@@ -74,4 +74,5 @@ export const languageIcons: LanguageIcon[] = [
     { icon: { name: 'vim' }, ids: ['viml'] },
     { icon: { name: 'silverstripe' }, ids: [] },
     { icon: { name: 'prolog' }, ids: ['prolog'] },
+    { icon: { name: 'al' }, ids: ['al'] }
 ];
