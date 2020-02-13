@@ -30,7 +30,9 @@
     "icon-theme",
     "customization"
   ],
-  "extensionKind": ["ui"],
+  "extensionKind": [
+    "ui"
+  ],
   "activationEvents": [
     "*"
   ],
@@ -192,7 +194,7 @@
     "compile:watch": "webpack --mode none --watch",
     "contributors": "ts-node ./src/scripts/contributors/index.ts",
     "generateJson": "ts-node ./src/scripts/icons/generateJson.ts",
-    "lint": "tslint -c tslint.json ./src/**/*.ts",
+    "lint": "eslint -c .eslintrc.js --ext .ts ./src/**/*.ts",
     "postcompile": "npm run generateJson && npm run check",
     "pretest": "npm run build && tsc -p ./",
     "preview": "ts-node ./src/scripts/preview",
@@ -210,14 +212,16 @@
     "@types/node": "^13.7.0",
     "@types/puppeteer": "^2.0.0",
     "@types/vscode": "^1.5.0",
+    "@typescript-eslint/eslint-plugin": "^2.19.2",
+    "@typescript-eslint/parser": "^2.19.2",
     "clean-webpack-plugin": "^3.0.0",
+    "eslint": "^6.8.0",
     "glob": "^7.1.6",
     "mocha": "^7.0.1",
     "puppeteer": "^2.1.1",
     "rimraf": "^3.0.2",
     "ts-loader": "^6.2.1",
     "ts-node": "^8.6.2",
-    "tslint": "^6.0.0",
     "typescript": "^3.7.5",
     "vscode-test": "^1.3.0",
     "webpack": "^4.41.5",
