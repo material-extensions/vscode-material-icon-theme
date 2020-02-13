@@ -47,8 +47,8 @@ export const setObjectPropertyValue = (obj: Object, path, value) => {
             Object.prototype.toString.call(obj[e]) === '[object Object]'
                 ? obj[e]
                 : {},
-            path,
-            value);
+        path,
+        value);
     } else {
         obj[path[0]] = value;
     }

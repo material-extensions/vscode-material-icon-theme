@@ -106,7 +106,7 @@ const handleErrors = () => {
         console.log('\n' + painter.red('Please check the wrong icon configurations!\n'));
         process.exit(1);
     } else {
-        console.log('> Material Icon Theme:', painter.green(`Passed icon conflict checks!`));
+        console.log('> Material Icon Theme:', painter.green('Passed icon conflict checks!'));
     }
 };
 
