@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "name": "material-icon-theme",
   "displayName": "Material Icon Theme",
   "description": "Material Design Icons for Visual Studio Code",
@@ -31,7 +30,9 @@
     "icon-theme",
     "customization"
   ],
-  "extensionKind": ["ui"],
+  "extensionKind": [
+    "ui"
+  ],
   "activationEvents": [
     "*"
   ],
