@@ -62,5 +62,8 @@ module.exports = {
         "no-unsafe-finally": "error",
         "no-var": "error",
         "spaced-comment": "error",
+        "comma-spacing": "error",
+        "array-bracket-spacing": ["error", "never"],
+        "prefer-arrow-callback": "error"
     }
 };
