@@ -710,7 +710,7 @@ export const fileIcons: FileIcons = {
                 '.eslintignore'
             ]
         },
-        { name: 'commonlisp', fileExtensions: ['.lisp'] },
+        { name: 'commonlisp', fileExtensions: ['lisp'] },
         {
             name: 'conduct',
             fileNames: ['code_of_conduct.md', 'code_of_conduct.txt']
