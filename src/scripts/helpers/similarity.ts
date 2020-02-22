@@ -7,7 +7,7 @@ export const similarity = (s1, s2) => {
         longer = s2;
         shorter = s1;
     }
-    let longerLength = longer.length;
+    const longerLength = longer.length;
     if (longerLength === 0) {
         return 1.0;
     }
@@ -18,7 +18,7 @@ const editDistance = (s1, s2) => {
     s1 = s1.toLowerCase();
     s2 = s2.toLowerCase();
 
-    let costs = new Array();
+    const costs = new Array();
     for (let i = 0; i <= s1.length; i++) {
         let lastValue = i;
         for (let j = 0; j <= s2.length; j++) {
