@@ -23,12 +23,12 @@ export const toggleExplorerArrows = async () => {
 const showQuickPickItems = (status: boolean) => {
     const on: vscode.QuickPickItem = {
         description: i18n.translate('toggleSwitch.on'),
-        detail: i18n.translate(`explorerArrows.enable`),
+        detail: i18n.translate('explorerArrows.enable'),
         label: !status ? '\u2714' : '\u25FB'
     };
     const off: vscode.QuickPickItem = {
         description: i18n.translate('toggleSwitch.off'),
-        detail: i18n.translate(`explorerArrows.disable`),
+        detail: i18n.translate('explorerArrows.disable'),
         label: status ? '\u2714' : '\u25FB'
     };
     return vscode.window.showQuickPick(
