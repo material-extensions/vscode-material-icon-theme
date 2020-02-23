@@ -118,6 +118,12 @@ const renameIconFiles = (iconJsonPath: string, options: IconJsonOptions) => {
 
             // append file config to file name
             const newFilePath = path.join(iconJsonPath, '..', 'icons', f.replace(/(^[^\.~]+)(.*)\.svg/, `$1${fileConfig}.svg`));
-            fs.renameSync(filePath, newFilePath);
+
+            // if generated files are already in place, do not overwrite them
+            if (filePath !== newFilePath && fs.existsSync(newFilePath)) {
+                fs.unlinkSync(filePath);
+            } else {
+                fs.renameSync(filePath, newFilePath);
+            }
         });
 };
