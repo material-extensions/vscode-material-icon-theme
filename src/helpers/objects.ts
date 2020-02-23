@@ -14,15 +14,17 @@ export const getObjectPropertyValue = (obj: Object, path: string) => {
         return object === Object(object);
     };
 
+    let result = JSON.parse(JSON.stringify(obj));
+
     for (let i = 0; i < pathArray.length; ++i) {
         const k = pathArray[i];
-        if (isObject(obj) && k in obj) {
-            obj = obj[k];
+        if (isObject(result) && k in result) {
+            result = result[k];
         } else {
             return;
         }
     }
-    return obj;
+    return result;
 };
 
 /**
