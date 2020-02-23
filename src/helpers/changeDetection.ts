@@ -16,9 +16,7 @@ export const detectConfigChanges = () => {
         createIconFile(changes.updatedConfigs, changes.updatedJSONConfig);
 
         // check if a reload of the editor is required
-        const configRequiresReload = ['opacity', 'saturation', 'folders.color'];
-        const reloadRequired = configRequiresReload.some(r => getObjectPropertyValue(changes.updatedConfigs, r) !== undefined);
-        if (!versioning.checkVersionSupport('1.31.0') || reloadRequired) {
+        if (!versioning.checkVersionSupport('1.31.0')) {
             promptToReload();
         }
     } catch (error) {
