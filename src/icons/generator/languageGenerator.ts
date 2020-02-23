@@ -1,4 +1,5 @@
 import * as merge from 'lodash.merge';
+import { getFileConfigString } from '../../helpers/fileConfig';
 import { DefaultIcon, IconAssociations, IconConfiguration, IconJsonOptions, LanguageIcon } from '../../models/index';
 import { highContrastVersion, iconFolderPath, lightVersion } from './constants';
 
@@ -32,8 +33,9 @@ const setIconDefinitions = (config: IconConfiguration, icon: DefaultIcon) => {
 
 const createIconDefinitions = (config: IconConfiguration, iconName: string) => {
     config = merge({}, config);
+    const fileConfig = getFileConfigString(config.options);
     config.iconDefinitions[iconName] = {
-        iconPath: `${iconFolderPath}${iconName}.svg`
+        iconPath: `${iconFolderPath}${iconName}${fileConfig}.svg`
     };
     return config;
 };
@@ -46,11 +48,11 @@ const setLanguageIdentifiers = (iconName: string, languageIds: string[]) => {
     return obj;
 };
 
-const getCustomIcons = (languageAssocitations: IconAssociations) => {
-    if (!languageAssocitations) return [];
+const getCustomIcons = (languageAssociations: IconAssociations) => {
+    if (!languageAssociations) return [];
 
-    const icons: LanguageIcon[] = Object.keys(languageAssocitations).map(fa => ({
-        icon: { name: languageAssocitations[fa].toLowerCase() },
+    const icons: LanguageIcon[] = Object.keys(languageAssociations).map(fa => ({
+        icon: { name: languageAssociations[fa].toLowerCase() },
         ids: [fa.toLowerCase()]
     }));
 
