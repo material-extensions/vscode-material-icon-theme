@@ -823,7 +823,7 @@ export const fileIcons: FileIcons = {
         { name: 'velocity', fileExtensions: ['vm', 'fhtml', 'vtl'] },
         { name: 'godot', fileExtensions: ['gd'] },
         { name: 'godot-assets', fileExtensions: ['godot', 'tres', 'tscn'] },
-        { name: 'azure-pipelines', fileNames: ['azure-pipelines.yml', 'azure-pipelines.yaml'] },
+        { name: 'azure-pipelines', fileNames: ['azure-pipelines.yml', 'azure-pipelines.yaml'], fileExtensions: ['azure-pipelines.yml', 'azure-pipelines.yaml'] },
         { name: 'azure', fileExtensions: ['azcli'] },
         { name: 'vagrant', fileNames: ['vagrantfile'], fileExtensions: ['vagrantfile'] },
         { name: 'prisma', fileNames: ['prisma.yml'], fileExtensions: ['prisma'] },
@@ -878,7 +878,7 @@ export const fileIcons: FileIcons = {
         { name: 'fortran', fileExtensions: ['f', 'f77', 'f90', 'f95', 'f03', 'f08'] },
         { name: 'liquid', fileExtensions: ['liquid'] },
         { name: 'prolog', fileExtensions: ['p', 'pro'] },
-        { name: 'husky', fileNames: ['.huskyrc', 'husky.config.js', '.huskyrc.json', '.huskyrc.yaml', '.huskyrc.yml'] },
+        { name: 'husky', fileNames: ['.huskyrc', 'husky.config.js', '.huskyrc.json', '.huskyrc.js', '.huskyrc.yaml', '.huskyrc.yml'] },
         { name: 'coconut', fileExtensions: ['coco'] },
         { name: 'capacitor', fileNames: ['capacitor.config.json'] },
     ]

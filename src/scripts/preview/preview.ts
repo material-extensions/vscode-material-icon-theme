@@ -4,7 +4,7 @@ import * as painter from './../helpers/painter';
 import { toTitleCase } from './../helpers/titleCase';
 import { createScreenshot } from '../helpers/screenshots';
 
-const htmlDoctype = `<!DOCTYPE html>`;
+const htmlDoctype = '<!DOCTYPE html>';
 const cssFilePath = path.join('style.css');
 const styling = `<link rel="stylesheet" href="${cssFilePath}">`;
 

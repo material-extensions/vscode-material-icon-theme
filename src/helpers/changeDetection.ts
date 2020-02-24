@@ -37,7 +37,7 @@ export const detectConfigChanges = () => {
  * @param configs List of configuration names
  * @returns List of configurations that needs to be updated.
  */
-const compareConfigs = (configs: string[]): { updatedConfigs: IconJsonOptions, updatedJSONConfig: IconJsonOptions } => {
+const compareConfigs = (configs: string[]): { updatedConfigs: IconJsonOptions; updatedJSONConfig: IconJsonOptions } => {
     const json = getMaterialIconsJSON();
     return configs.reduce((result, configName) => {
         try {

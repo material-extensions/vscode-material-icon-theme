@@ -71,9 +71,9 @@ const addFilterAttribute = (svgRoot: string) => {
     const pattern = new RegExp(/\sfilter="[^"]+?"/);
     // if the filter attribute already exists
     if (pattern.test(svgRoot)) {
-        return svgRoot.replace(pattern, ` filter="url(#saturation)"`);
+        return svgRoot.replace(pattern, ' filter="url(#saturation)"');
     } else {
-        return svgRoot.replace(/^<svg/, `<svg filter="url(#saturation)"`);
+        return svgRoot.replace(/^<svg/, '<svg filter="url(#saturation)"');
     }
 };
 
@@ -106,7 +106,7 @@ const addFilterElement = (svg: string, value: number) => {
  */
 const removeFilterElement = (svg: string) => {
     const pattern = new RegExp(/<filter id="saturation".+<\/filter>(.*<\/svg>)/);
-    return svg.replace(pattern, `$1`);
+    return svg.replace(pattern, '$1');
 };
 
 /**
