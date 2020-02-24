@@ -1,3 +1,7 @@
+:root {
+    --main-bg-color: #1e1e1e;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -7,7 +11,7 @@ table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
-    background: rgb(30, 30, 30);
+    background: var(--main-bg-color);
     color: rgb(250, 250, 250);
     font-size: 1rem;
 }
@@ -19,12 +23,12 @@ td, th {
 }
 
 tr:last-child {
-    border-bottom: .5rem solid rgb(30, 30, 30);
+    border-bottom: .5rem solid var(--main-bg-color);
 }
 
 tr:first-child {
-    border-top: .5rem solid rgb(30, 30, 30);
-    border-bottom: .5rem solid rgb(30, 30, 30);
+    border-top: .5rem solid var(--main-bg-color);
+    border-bottom: .5rem solid var(--main-bg-color);
 }
 
 .icon {

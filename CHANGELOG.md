@@ -1,4 +1,26 @@
 # Changelog
+## 3.9.3 (2020-02-09)
+### New file icons
+- Liquid ([@fapolo](https://github.com/fapolo) in [#594](https://github.com/PKief/vscode-material-icon-theme/pull/594))
+- azure-pipelines.yaml ([@robinmanuelthiel](https://github.com/robinmanuelthiel) in [#595](https://github.com/PKief/vscode-material-icon-theme/pull/595))
+- .env.sample ([@noftaly](https://github.com/noftaly) in [#598](https://github.com/PKief/vscode-material-icon-theme/pull/598))
+- Json5 ([@yardenshoham](https://github.com/yardenshoham) in [#601](https://github.com/PKief/vscode-material-icon-theme/pull/601))
+- Q# ([@yardenshoham](https://github.com/yardenshoham) in [#602](https://github.com/PKief/vscode-material-icon-theme/pull/602))
+- Zig ([@yardenshoham](https://github.com/yardenshoham) in [#604](https://github.com/PKief/vscode-material-icon-theme/pull/604))
+- .env.qa ([@jefferson-vieira](https://github.com/jefferson-vieira) in [#627](https://github.com/PKief/vscode-material-icon-theme/pull/627))
+- Pug lint files ([@Logikgate](https://github.com/Logikgate) in [#624](https://github.com/PKief/vscode-material-icon-theme/pull/624))
+- .env.staging.local ([@matthewphiong](https://github.com/matthewphiong) in [#629](https://github.com/PKief/vscode-material-icon-theme/pull/629))
+- webpack.production and webpack.development ([@Logikgate](https://github.com/Logikgate) in [#621](https://github.com/PKief/vscode-material-icon-theme/pull/621))
+- Prolog ([issue #519](https://github.com/PKief/vscode-material-icon-theme/issues/519))
+- Husky ([issue #355](https://github.com/PKief/vscode-material-icon-theme/issues/355))
+- .yarnrc.yml
+
+### New folder icons
+- mobile ([issue #605](https://github.com/PKief/vscode-material-icon-theme/issues/605))
+
+### Updated icons
+- kl ([@PKief](https://github.com/PKief) in commit [a0f013f](https://github.com/PKief/vscode-material-icon-theme/commit/a0f013f947725bcf41148ab571e2507cf45e7cdd))
+
 ## 3.9.2 (2019-11-24)
 ### New file icons
 - Fortran ([issue #368](https://github.com/PKief/vscode-material-icon-theme/issues/368))

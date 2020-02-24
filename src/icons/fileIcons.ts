@@ -7,7 +7,15 @@ export const fileIcons: FileIcons = {
     defaultIcon: { name: 'file' },
     icons: [
         { name: 'html', fileExtensions: ['html', 'htm', 'xhtml', 'html_vm', 'asp'] },
-        { name: 'pug', fileExtensions: ['jade', 'pug'] },
+        {
+            name: 'pug',
+            fileExtensions: ['jade', 'pug'],
+            fileNames: [
+                '.pug-lintrc',
+                '.pug-lintrc.js',
+                '.pug-lintrc.json'
+            ]
+        },
         {
             name: 'markdown',
             fileExtensions: [
@@ -22,7 +30,7 @@ export const fileIcons: FileIcons = {
         { name: 'less', fileExtensions: ['less'] },
         {
             name: 'json',
-            fileExtensions: ['json', 'tsbuildinfo'],
+            fileExtensions: ['json', 'tsbuildinfo', 'json5'],
             fileNames: [
                 '.jscsrc',
                 '.jshintrc',
@@ -199,6 +207,7 @@ export const fileIcons: FileIcons = {
             fileExtensions: ['pdb', 'sql', 'pks', 'pkb', 'accdb', 'mdb', 'sqlite', 'pgsql', 'postgres', 'psql']
         },
         { name: 'csharp', fileExtensions: ['cs', 'csx'] },
+        { name: 'qsharp', fileExtensions: ['qs'] },
         {
             name: 'zip',
             fileExtensions: [
@@ -215,6 +224,7 @@ export const fileIcons: FileIcons = {
                 'tgz'
             ]
         },
+        { name: 'zig', fileExtensions: ['zig'] },
         { name: 'exe', fileExtensions: ['exe', 'msi'] },
         { name: 'java', fileExtensions: ['java', 'jar', 'jsp'] },
         { name: 'c', fileExtensions: ['c', 'm', 'i', 'mi'] },
@@ -425,7 +435,7 @@ export const fileIcons: FileIcons = {
         { name: 'css-map', fileExtensions: ['css.map'] },
         { name: 'lock', fileExtensions: ['lock'] },
         { name: 'handlebars', fileExtensions: ['hbs', 'mustache'] },
-        { name: 'perl', fileExtensions: ['pl', 'pm'] },
+        { name: 'perl', fileExtensions: ['pm'] },
         { name: 'haxe', fileExtensions: ['hx'] },
         { name: 'test-ts', fileExtensions: ['spec.ts', 'e2e-spec.ts', 'test.ts', 'ts.snap'] },
         {
@@ -541,12 +551,16 @@ export const fileIcons: FileIcons = {
                 'webpack.config.common.babel.ts',
                 'webpack.dev.js',
                 'webpack.dev.ts',
+                'webpack.development.js',
+                'webpack.development.ts',
                 'webpack.config.dev.js',
                 'webpack.config.dev.ts',
                 'webpack.config.dev.babel.js',
                 'webpack.config.dev.babel.ts',
                 'webpack.prod.js',
                 'webpack.prod.ts',
+                'webpack.production.js',
+                'webpack.production.ts',
                 'webpack.server.js',
                 'webpack.server.ts',
                 'webpack.client.js',
@@ -605,7 +619,9 @@ export const fileIcons: FileIcons = {
                 'yarn.lock',
                 '.yarnclean',
                 '.yarn-integrity',
-                'yarn-error.log'
+                'yarn-error.log',
+                '.yarnrc.yml',
+                '.yarnrc.yaml',
             ]
         },
         { name: 'android', fileNames: ['androidmanifest.xml'], fileExtensions: ['apk'] },
@@ -614,9 +630,11 @@ export const fileIcons: FileIcons = {
             fileExtensions: ['env'],
             fileNames: [
                 '.env.example',
+                '.env.sample',
                 '.env.local',
                 '.env.dev',
                 '.env.development',
+                '.env.qa',
                 '.env.prod',
                 '.env.production',
                 '.env.staging',
@@ -624,7 +642,9 @@ export const fileIcons: FileIcons = {
                 '.env.test',
                 '.env.testing',
                 '.env.development.local',
+                '.env.qa.local',
                 '.env.production.local',
+                '.env.staging.local',
                 '.env.test.local',
             ]
         },
@@ -803,7 +823,7 @@ export const fileIcons: FileIcons = {
         { name: 'velocity', fileExtensions: ['vm', 'fhtml', 'vtl'] },
         { name: 'godot', fileExtensions: ['gd'] },
         { name: 'godot-assets', fileExtensions: ['godot', 'tres', 'tscn'] },
-        { name: 'azure-pipelines', fileNames: ['azure-pipelines.yml'] },
+        { name: 'azure-pipelines', fileNames: ['azure-pipelines.yml', 'azure-pipelines.yaml'], fileExtensions: ['azure-pipelines.yml', 'azure-pipelines.yaml'] },
         { name: 'azure', fileExtensions: ['azcli'] },
         { name: 'vagrant', fileNames: ['vagrantfile'], fileExtensions: ['vagrantfile'] },
         { name: 'prisma', fileNames: ['prisma.yml'], fileExtensions: ['prisma'] },
@@ -856,6 +876,10 @@ export const fileIcons: FileIcons = {
         { name: 'gcp', fileNames: ['.gcloudignore'] },
         { name: 'disc', fileExtensions: ['iso'] },
         { name: 'fortran', fileExtensions: ['f', 'f77', 'f90', 'f95', 'f03', 'f08'] },
+        { name: 'liquid', fileExtensions: ['liquid'] },
+        { name: 'prolog', fileExtensions: ['p', 'pro'] },
+        { name: 'husky', fileNames: ['.huskyrc', 'husky.config.js', '.huskyrc.json', '.huskyrc.js', '.huskyrc.yaml', '.huskyrc.yml'] },
+        { name: 'coconut', fileExtensions: ['coco'] },
         {
           name: 'uml',
           fileExtensions: ['iuml', 'pu', 'puml', 'plantuml', 'wsd'],

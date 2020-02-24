@@ -1,12 +1,20 @@
-# Material Icon Theme
+<h1 align="center">
+  <br>
+    <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/master/logo.png" alt="logo" width="200">
+  <br><br>
+  Material Icon Theme
+  <br>
+  <br>
+</h1>
 
-[![Version](https://vsmarketplacebadge.apphb.com/version-short/pkief.material-icon-theme.svg)](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
-[![Rating](https://vsmarketplacebadge.apphb.com/rating-short/pkief.material-icon-theme.svg)](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
-[![Installs](https://vsmarketplacebadge.apphb.com/installs-short/PKief.material-icon-theme.svg)](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
-[![Downloads](https://vsmarketplacebadge.apphb.com/downloads-short/PKief.material-icon-theme.svg)](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
-[![Build Status](https://travis-ci.com/PKief/vscode-material-icon-theme.svg?branch=master)](https://travis-ci.com/PKief/vscode-material-icon-theme)
+<h4 align="center">Get the Material Design icons into your VS Code.</h4>
 
-The Material Icon Theme provides lots of icons based on Material Design for Visual Studio Code.
+<p align="center">
+    <a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"><img src="https://vsmarketplacebadge.apphb.com/version-short/pkief.material-icon-theme.svg?style=for-the-badge&colorA=252526&colorB=43A047&label=VERSION" alt="Version"></a>&nbsp;
+    <a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"><img src="https://vsmarketplacebadge.apphb.com/rating-short/pkief.material-icon-theme.svg?style=for-the-badge&colorA=252526&colorB=43A047&label=Rating" alt="Rating"></a>&nbsp;
+    <a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"><img src="https://vsmarketplacebadge.apphb.com/installs-short/PKief.material-icon-theme.svg?style=for-the-badge&colorA=252526&colorB=43A047&label=Installs" alt="Installs"></a>&nbsp;
+    <a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"><img src="https://vsmarketplacebadge.apphb.com/downloads-short/PKief.material-icon-theme.svg?style=for-the-badge&colorA=252526&colorB=43A047&label=Downloads" alt="Downloads"></a>
+</p>
 
 ### File icons
 
