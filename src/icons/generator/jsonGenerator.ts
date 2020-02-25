@@ -7,16 +7,16 @@ import { fileIcons } from '../fileIcons';
 import { folderIcons } from '../folderIcons';
 import { languageIcons } from '../languageIcons';
 import { iconJsonName } from './constants';
-import { generateFolderIcons, getFileIconDefinitions, getFolderIconDefinitions, getLanguageIconDefinitions, setIconOpacity, setIconSaturation, validateHEXColorCode, validateOpacityValue, validateSaturationValue } from './index';
+import { generateFolderIcons, loadFileIconDefinitions, loadFolderIconDefinitions, loadLanguageIconDefinitions, setIconOpacity, setIconSaturation, validateHEXColorCode, validateOpacityValue, validateSaturationValue } from './index';
 
 /**
  * Generate the complete icon configuration object that can be written as JSON file.
  */
 export const generateIconConfigurationObject = (options: IconJsonOptions): IconConfiguration => {
     const iconConfig = merge({}, new IconConfiguration(), { options });
-    const languageIconDefinitions = getLanguageIconDefinitions(languageIcons, iconConfig, options);
-    const fileIconDefinitions = getFileIconDefinitions(fileIcons, iconConfig, options);
-    const folderIconDefinitions = getFolderIconDefinitions(folderIcons, iconConfig, options);
+    const languageIconDefinitions = loadLanguageIconDefinitions(languageIcons, iconConfig, options);
+    const fileIconDefinitions = loadFileIconDefinitions(fileIcons, iconConfig, options);
+    const folderIconDefinitions = loadFolderIconDefinitions(folderIcons, iconConfig, options);
 
     return merge({}, languageIconDefinitions, fileIconDefinitions, folderIconDefinitions);
 };

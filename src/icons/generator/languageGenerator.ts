@@ -6,7 +6,7 @@ import { highContrastVersion, iconFolderPath, lightVersion } from './constants';
 /**
  * Get all file icons that can be used in this theme.
  */
-export const getLanguageIconDefinitions = (languages: LanguageIcon[], config: IconConfiguration, options: IconJsonOptions): IconConfiguration => {
+export const loadLanguageIconDefinitions = (languages: LanguageIcon[], config: IconConfiguration, options: IconJsonOptions): IconConfiguration => {
     config = merge({}, config);
     const enabledLanguages = disableLanguagesByPack(languages, options.activeIconPack);
     const customIcons = getCustomIcons(options.languages.associations);

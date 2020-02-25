@@ -8,7 +8,7 @@ import { highContrastVersion, iconFolderPath, lightVersion, openedFolder } from 
 /**
  * Get the folder icon definitions as object.
  */
-export const getFolderIconDefinitions = (folderThemes: FolderTheme[], config: IconConfiguration, options: IconJsonOptions): IconConfiguration => {
+export const loadFolderIconDefinitions = (folderThemes: FolderTheme[], config: IconConfiguration, options: IconJsonOptions): IconConfiguration => {
     config = merge({}, config);
     config.hidesExplorerArrows = options.hidesExplorerArrows;
     const activeTheme = getEnabledFolderTheme(folderThemes, options.folders.theme);

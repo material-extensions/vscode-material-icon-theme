@@ -6,7 +6,7 @@ import { highContrastVersion, iconFolderPath, lightVersion, wildcardPattern } fr
 /**
  * Get all file icons that can be used in this theme.
  */
-export const getFileIconDefinitions = (fileIcons: FileIcons, config: IconConfiguration, options: IconJsonOptions): IconConfiguration => {
+export const loadFileIconDefinitions = (fileIcons: FileIcons, config: IconConfiguration, options: IconJsonOptions): IconConfiguration => {
     config = merge({}, config);
     const enabledIcons = disableIconsByPack(fileIcons, options.activeIconPack);
     const customIcons = getCustomIcons(options.files.associations);
