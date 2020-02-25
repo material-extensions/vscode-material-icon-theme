@@ -1,5 +1,6 @@
 import * as assert from 'assert';
-import { getDefaultIconOptions, getFileIconDefinitions } from '../../../icons/index';
+import * as merge from 'lodash.merge';
+import { getDefaultIconOptions, loadFileIconDefinitions } from '../../../icons/index';
 import { FileIcons, IconConfiguration, IconPack } from '../../../models/index';
 
 suite('file icons', () => {
@@ -11,33 +12,33 @@ suite('file icons', () => {
                 { name: 'javascript', fileNames: ['filename.js'], fileExtensions: ['js'] }
             ]
         };
-        const iconConfig = new IconConfiguration();
         const options = getDefaultIconOptions();
-        const def = getFileIconDefinitions(fileIcons, iconConfig, options);
-        const value = new IconConfiguration();
+        const iconConfig = merge({}, new IconConfiguration(), { options });
+        const iconDefinitions = loadFileIconDefinitions(fileIcons, iconConfig, options);
+        const expectedConfig = merge({}, new IconConfiguration(), { options });
 
-        value.iconDefinitions = {
-            'file': {
-                'iconPath': './../icons/file.svg'
+        expectedConfig.iconDefinitions = {
+            'angular': {
+                'iconPath': './../icons/angular.svg'
             },
             'javascript': {
                 'iconPath': './../icons/javascript.svg'
             },
-            'angular': {
-                'iconPath': './../icons/angular.svg'
-            }
+            'file': {
+                'iconPath': './../icons/file.svg'
+            },
         };
-        value.file = 'file';
-        value.fileExtensions = {
+        expectedConfig.file = 'file';
+        expectedConfig.fileExtensions = {
             'js': 'javascript'
         };
-        value.fileNames = {
+        expectedConfig.fileNames = {
             '.angular-cli.json': 'angular',
             'angular-cli.json': 'angular',
             'filename.js': 'javascript'
         };
 
-        assert.deepEqual(def, value);
+        assert.equal(JSON.stringify(iconDefinitions), JSON.stringify(expectedConfig));
     });
 
     test('should disable icon packs', () => {
@@ -48,10 +49,10 @@ suite('file icons', () => {
                 { name: 'javascript', fileNames: ['filename.js'], fileExtensions: ['js'] }
             ]
         };
-        const iconConfig = new IconConfiguration();
         const options = getDefaultIconOptions();
         options.activeIconPack = '';
-        const def = getFileIconDefinitions(fileIcons, iconConfig, options);
+        const iconConfig = merge({}, new IconConfiguration(), { options });
+        const def = loadFileIconDefinitions(fileIcons, iconConfig, options);
         const value = new IconConfiguration();
 
         value.iconDefinitions = {
@@ -87,7 +88,7 @@ suite('file icons', () => {
             '*.sample.ts': 'angular',
             'sample.js': 'javascript'
         };
-        const def = getFileIconDefinitions(fileIcons, iconConfig, options);
+        const def = loadFileIconDefinitions(fileIcons, iconConfig, options);
         const value = new IconConfiguration();
 
         value.iconDefinitions = {
@@ -126,7 +127,7 @@ suite('file icons', () => {
         };
         const iconConfig = new IconConfiguration();
         const options = getDefaultIconOptions();
-        const def = getFileIconDefinitions(fileIcons, iconConfig, options);
+        const def = loadFileIconDefinitions(fileIcons, iconConfig, options);
         const value = new IconConfiguration();
 
         value.iconDefinitions = {

@@ -1,5 +1,5 @@
 import * as assert from 'assert';
-import { getDefaultIconOptions, getLanguageIconDefinitions } from '../../../icons/index';
+import { getDefaultIconOptions, loadLanguageIconDefinitions } from '../../../icons/index';
 import { IconConfiguration, IconPack, LanguageIcon } from '../../../models/index';
 
 suite('language icons', () => {
@@ -12,7 +12,7 @@ suite('language icons', () => {
             { icon: { name: 'b' }, ids: ['b'] },
             { icon: { name: 'c' }, ids: ['c', 'd'], },
         ];
-        const def = getLanguageIconDefinitions(languageIcons, iconConfig, options);
+        const def = loadLanguageIconDefinitions(languageIcons, iconConfig, options);
         const value = new IconConfiguration();
         value.iconDefinitions = {
             'a': {
@@ -39,7 +39,7 @@ suite('language icons', () => {
             { icon: { name: 'a' }, ids: ['a'] },
             { icon: { name: 'c' }, ids: ['c', 'd'], disabled: true },
         ];
-        const def = getLanguageIconDefinitions(languageIcons, iconConfig, options);
+        const def = loadLanguageIconDefinitions(languageIcons, iconConfig, options);
         const value = new IconConfiguration();
         value.iconDefinitions = {
             'a': {
@@ -57,7 +57,7 @@ suite('language icons', () => {
             { icon: { name: 'a' }, ids: ['a'], enabledFor: [IconPack.Angular] },
             { icon: { name: 'c' }, ids: ['c', 'd'], disabled: true },
         ];
-        const def = getLanguageIconDefinitions(languageIcons, iconConfig, { ...options, activeIconPack: '' });
+        const def = loadLanguageIconDefinitions(languageIcons, iconConfig, { ...options, activeIconPack: '' });
         const value = new IconConfiguration();
         value.iconDefinitions = {};
         value.languageIds = {};
@@ -69,7 +69,7 @@ suite('language icons', () => {
             { icon: { name: 'a', light: true, highContrast: true }, ids: ['a'] },
             { icon: { name: 'b', light: true, highContrast: true }, ids: ['b'] },
         ];
-        const def = getLanguageIconDefinitions(languageIcons, iconConfig, options);
+        const def = loadLanguageIconDefinitions(languageIcons, iconConfig, options);
         const value = new IconConfiguration();
         value.iconDefinitions = {
             'a': {
@@ -122,7 +122,7 @@ suite('language icons', () => {
         options.languages.associations = {
             'xml': 'json'
         };
-        const def = getLanguageIconDefinitions(languageIcons, iconConfig, options);
+        const def = loadLanguageIconDefinitions(languageIcons, iconConfig, options);
         const value = new IconConfiguration();
         value.iconDefinitions = {
             'json': {

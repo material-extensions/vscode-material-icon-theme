@@ -1,5 +1,5 @@
 import * as assert from 'assert';
-import { getDefaultIconOptions, getFolderIconDefinitions } from '../../../icons/index';
+import { getDefaultIconOptions, loadFolderIconDefinitions } from '../../../icons/index';
 import { FolderTheme, IconConfiguration, IconPack } from '../../../models/index';
 
 suite('folder icons', () => {
@@ -27,7 +27,7 @@ suite('folder icons', () => {
 
     test('should configure icon definitions', () => {
         const options = getDefaultIconOptions();
-        const def = getFolderIconDefinitions(folderIcons, iconConfig, options);
+        const def = loadFolderIconDefinitions(folderIcons, iconConfig, options);
         const value = new IconConfiguration();
         value.iconDefinitions = {
             'folder': {
@@ -79,7 +79,7 @@ suite('folder icons', () => {
     test('should deactivate folder icons', () => {
         const options = getDefaultIconOptions();
         options.folders.theme = 'none';
-        const def = getFolderIconDefinitions(folderIcons, iconConfig, options);
+        const def = loadFolderIconDefinitions(folderIcons, iconConfig, options);
         const value = new IconConfiguration();
 
         value.iconDefinitions = {};
@@ -93,7 +93,7 @@ suite('folder icons', () => {
     test('should enable folder theme', () => {
         const options = getDefaultIconOptions();
         options.folders.theme = 'blue';
-        const def = getFolderIconDefinitions(folderIcons, iconConfig, options);
+        const def = loadFolderIconDefinitions(folderIcons, iconConfig, options);
         const value = new IconConfiguration();
 
         value.iconDefinitions = {
@@ -133,7 +133,7 @@ suite('folder icons', () => {
         options.folders.associations = {
             'sample': 'src'
         };
-        const def = getFolderIconDefinitions(folderIcons, iconConfig, options);
+        const def = loadFolderIconDefinitions(folderIcons, iconConfig, options);
         const value = new IconConfiguration();
         value.iconDefinitions = {
             'folder': {
@@ -187,7 +187,7 @@ suite('folder icons', () => {
     test('should disable icon packs', () => {
         const options = getDefaultIconOptions();
         options.activeIconPack = '';
-        const def = getFolderIconDefinitions(folderIcons, iconConfig, options);
+        const def = loadFolderIconDefinitions(folderIcons, iconConfig, options);
         const value = new IconConfiguration();
         value.iconDefinitions = {
             'folder': {
@@ -238,7 +238,7 @@ suite('folder icons', () => {
                 ]
             }
         ];
-        const def = getFolderIconDefinitions(lightHighContrastFolderIcons, iconConfig, options);
+        const def = loadFolderIconDefinitions(lightHighContrastFolderIcons, iconConfig, options);
         const value = new IconConfiguration();
 
         value.iconDefinitions = {
@@ -349,7 +349,7 @@ suite('folder icons', () => {
     test('should hide explorer arrows', () => {
         const options = getDefaultIconOptions();
         options.hidesExplorerArrows = true;
-        const def = getFolderIconDefinitions(folderIcons, iconConfig, options);
+        const def = loadFolderIconDefinitions(folderIcons, iconConfig, options);
 
         assert.deepEqual(def.hidesExplorerArrows, true);
     });
