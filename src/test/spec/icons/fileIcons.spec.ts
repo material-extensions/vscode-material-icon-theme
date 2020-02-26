@@ -3,8 +3,15 @@ import * as merge from 'lodash.merge';
 import { getDefaultIconOptions, loadFileIconDefinitions } from '../../../icons/index';
 import { FileIcons, IconConfiguration, IconPack } from '../../../models/index';
 
-suite('file icons', () => {
-    test('should configure icon definitions', () => {
+describe('file icons', () => {
+
+    let expectedConfig: IconConfiguration;
+
+    beforeEach(() => {
+        expectedConfig = merge({}, new IconConfiguration(), { options: getDefaultIconOptions() });
+    });
+
+    it('should configure icon definitions', () => {
         const fileIcons: FileIcons = {
             defaultIcon: { name: 'file' },
             icons: [
@@ -15,7 +22,6 @@ suite('file icons', () => {
         const options = getDefaultIconOptions();
         const iconConfig = merge({}, new IconConfiguration(), { options });
         const iconDefinitions = loadFileIconDefinitions(fileIcons, iconConfig, options);
-        const expectedConfig = merge({}, new IconConfiguration(), { options });
 
         expectedConfig.iconDefinitions = {
             'angular': {
@@ -38,10 +44,10 @@ suite('file icons', () => {
             'filename.js': 'javascript'
         };
 
-        assert.equal(JSON.stringify(iconDefinitions), JSON.stringify(expectedConfig));
+        assert.deepStrictEqual(iconDefinitions, expectedConfig);
     });
 
-    test('should disable icon packs', () => {
+    it('should disable icon packs', () => {
         const fileIcons: FileIcons = {
             defaultIcon: { name: 'file' },
             icons: [
@@ -49,13 +55,13 @@ suite('file icons', () => {
                 { name: 'javascript', fileNames: ['filename.js'], fileExtensions: ['js'] }
             ]
         };
+
         const options = getDefaultIconOptions();
         options.activeIconPack = '';
         const iconConfig = merge({}, new IconConfiguration(), { options });
-        const def = loadFileIconDefinitions(fileIcons, iconConfig, options);
-        const value = new IconConfiguration();
+        const iconDefinitions = loadFileIconDefinitions(fileIcons, iconConfig, options);
 
-        value.iconDefinitions = {
+        expectedConfig.iconDefinitions = {
             'file': {
                 'iconPath': './../icons/file.svg'
             },
@@ -63,18 +69,21 @@ suite('file icons', () => {
                 'iconPath': './../icons/javascript.svg'
             }
         };
-        value.file = 'file';
-        value.fileExtensions = {
+        expectedConfig.file = 'file';
+        expectedConfig.fileExtensions = {
             'js': 'javascript'
         };
-        value.fileNames = {
+        expectedConfig.fileNames = {
             'filename.js': 'javascript'
         };
 
-        assert.deepEqual(def, value);
+        // disable default icon pack by using empty string
+        expectedConfig.options.activeIconPack = '';
+
+        assert.deepStrictEqual(iconDefinitions, expectedConfig);
     });
 
-    test('should configure custom icon associations', () => {
+    it('should configure custom icon associations', () => {
         const fileIcons: FileIcons = {
             defaultIcon: { name: 'file' },
             icons: [
@@ -82,16 +91,15 @@ suite('file icons', () => {
                 { name: 'javascript', fileNames: ['filename.js'], fileExtensions: ['js'] }
             ]
         };
-        const iconConfig = new IconConfiguration();
         const options = getDefaultIconOptions();
         options.files.associations = {
             '*.sample.ts': 'angular',
             'sample.js': 'javascript'
         };
-        const def = loadFileIconDefinitions(fileIcons, iconConfig, options);
-        const value = new IconConfiguration();
+        const iconConfig = merge({}, new IconConfiguration(), { options });
+        const iconDefinitions = loadFileIconDefinitions(fileIcons, iconConfig, options);
 
-        value.iconDefinitions = {
+        expectedConfig.iconDefinitions = {
             'file': {
                 'iconPath': './../icons/file.svg'
             },
@@ -102,22 +110,26 @@ suite('file icons', () => {
                 'iconPath': './../icons/angular.svg'
             }
         };
-        value.file = 'file';
-        value.fileExtensions = {
+        expectedConfig.file = 'file';
+        expectedConfig.fileExtensions = {
             'js': 'javascript',
             'sample.ts': 'angular'
         };
-        value.fileNames = {
+        expectedConfig.fileNames = {
             '.angular-cli.json': 'angular',
             'angular-cli.json': 'angular',
             'sample.js': 'javascript',
             'filename.js': 'javascript'
         };
+        expectedConfig.options.files.associations = {
+            '*.sample.ts': 'angular',
+            'sample.js': 'javascript'
+        };
 
-        assert.deepEqual(def, value);
+        assert.deepStrictEqual(iconDefinitions, expectedConfig);
     });
 
-    test('should configure language icons for light and high contrast', () => {
+    it('should configure language icons for light and high contrast', () => {
         const fileIcons: FileIcons = {
             defaultIcon: { name: 'file', light: true, highContrast: true },
             icons: [
@@ -125,12 +137,11 @@ suite('file icons', () => {
                 { name: 'javascript', fileNames: ['filename.js'], fileExtensions: ['js'], light: true, highContrast: true }
             ]
         };
-        const iconConfig = new IconConfiguration();
         const options = getDefaultIconOptions();
-        const def = loadFileIconDefinitions(fileIcons, iconConfig, options);
-        const value = new IconConfiguration();
+        const iconConfig = merge({}, new IconConfiguration(), { options });
+        const iconDefinitions = loadFileIconDefinitions(fileIcons, iconConfig, options);
 
-        value.iconDefinitions = {
+        expectedConfig.iconDefinitions = {
             'file': {
                 'iconPath': './../icons/file.svg'
             },
@@ -153,11 +164,11 @@ suite('file icons', () => {
                 'iconPath': './../icons/angular.svg'
             }
         };
-        value.file = 'file';
-        value.fileExtensions = {
+        expectedConfig.file = 'file';
+        expectedConfig.fileExtensions = {
             'js': 'javascript'
         };
-        value.light = {
+        expectedConfig.light = {
             'file': 'file_light',
             'fileExtensions': {
                 'js': 'javascript_light'
@@ -166,7 +177,7 @@ suite('file icons', () => {
                 'filename.js': 'javascript_light'
             }
         };
-        value.highContrast = {
+        expectedConfig.highContrast = {
             'file': 'file_highContrast',
             'fileExtensions': {
                 'js': 'javascript_highContrast'
@@ -175,12 +186,12 @@ suite('file icons', () => {
                 'filename.js': 'javascript_highContrast'
             }
         };
-        value.fileNames = {
+        expectedConfig.fileNames = {
             '.angular-cli.json': 'angular',
             'angular-cli.json': 'angular',
             'filename.js': 'javascript'
         };
 
-        assert.deepEqual(def, value);
+        assert.deepStrictEqual(iconDefinitions, expectedConfig);
     });
 });

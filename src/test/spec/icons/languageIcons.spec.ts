@@ -1,20 +1,26 @@
 import * as assert from 'assert';
+import * as merge from 'lodash.merge';
 import { getDefaultIconOptions, loadLanguageIconDefinitions } from '../../../icons/index';
 import { IconConfiguration, IconPack, LanguageIcon } from '../../../models/index';
 
-suite('language icons', () => {
-    const iconConfig = new IconConfiguration();
-    const options = getDefaultIconOptions();
+describe('language icons', () => {
+    let expectedConfig: IconConfiguration;
 
-    test('should configure icon definitions', () => {
+    beforeEach(() => {
+        expectedConfig = merge({}, new IconConfiguration(), { options: getDefaultIconOptions() });
+    });
+
+    it('should configure icon definitions', () => {
         const languageIcons: LanguageIcon[] = [
             { icon: { name: 'a' }, ids: ['a'] },
             { icon: { name: 'b' }, ids: ['b'] },
             { icon: { name: 'c' }, ids: ['c', 'd'], },
         ];
-        const def = loadLanguageIconDefinitions(languageIcons, iconConfig, options);
-        const value = new IconConfiguration();
-        value.iconDefinitions = {
+        const options = getDefaultIconOptions();
+        const iconConfig = merge({}, new IconConfiguration(), { options });
+        const iconDefinitions = loadLanguageIconDefinitions(languageIcons, iconConfig, options);
+
+        expectedConfig.iconDefinitions = {
             'a': {
                 'iconPath': './../icons/a.svg'
             },
@@ -25,53 +31,59 @@ suite('language icons', () => {
                 'iconPath': './../icons/c.svg'
             }
         };
-        value.languageIds = {
+        expectedConfig.languageIds = {
             'a': 'a',
             'b': 'b',
             'c': 'c',
             'd': 'c'
         };
-        assert.deepEqual(def, value);
+        assert.deepStrictEqual(iconDefinitions, expectedConfig);
     });
 
-    test('should disable icon definitions', () => {
+    it('should disable icon definitions', () => {
         const languageIcons: LanguageIcon[] = [
             { icon: { name: 'a' }, ids: ['a'] },
             { icon: { name: 'c' }, ids: ['c', 'd'], disabled: true },
         ];
-        const def = loadLanguageIconDefinitions(languageIcons, iconConfig, options);
-        const value = new IconConfiguration();
-        value.iconDefinitions = {
+        const options = getDefaultIconOptions();
+        const iconConfig = merge({}, new IconConfiguration(), { options });
+        const iconDefinitions = loadLanguageIconDefinitions(languageIcons, iconConfig, options);
+
+        expectedConfig.iconDefinitions = {
             'a': {
                 'iconPath': './../icons/a.svg'
             }
         };
-        value.languageIds = {
+        expectedConfig.languageIds = {
             'a': 'a'
         };
-        assert.deepEqual(def, value);
+        assert.deepStrictEqual(iconDefinitions, expectedConfig);
     });
 
-    test('should disable icon packs', () => {
+    it('should disable icon packs', () => {
         const languageIcons: LanguageIcon[] = [
             { icon: { name: 'a' }, ids: ['a'], enabledFor: [IconPack.Angular] },
             { icon: { name: 'c' }, ids: ['c', 'd'], disabled: true },
         ];
-        const def = loadLanguageIconDefinitions(languageIcons, iconConfig, { ...options, activeIconPack: '' });
-        const value = new IconConfiguration();
-        value.iconDefinitions = {};
-        value.languageIds = {};
-        assert.deepEqual(def, value);
+        const options = getDefaultIconOptions();
+        const iconConfig = merge({}, new IconConfiguration(), { options });
+        const iconDefinitions = loadLanguageIconDefinitions(languageIcons, iconConfig, { ...options, activeIconPack: '' });
+
+        expectedConfig.iconDefinitions = {};
+        expectedConfig.languageIds = {};
+        assert.deepStrictEqual(iconDefinitions, expectedConfig);
     });
 
-    test('should configure language icons for light and high contrast', () => {
+    it('should configure language icons for light and high contrast', () => {
         const languageIcons: LanguageIcon[] = [
             { icon: { name: 'a', light: true, highContrast: true }, ids: ['a'] },
             { icon: { name: 'b', light: true, highContrast: true }, ids: ['b'] },
         ];
-        const def = loadLanguageIconDefinitions(languageIcons, iconConfig, options);
-        const value = new IconConfiguration();
-        value.iconDefinitions = {
+        const options = getDefaultIconOptions();
+        const iconConfig = merge({}, new IconConfiguration(), { options });
+        const iconDefinitions = loadLanguageIconDefinitions(languageIcons, iconConfig, options);
+
+        expectedConfig.iconDefinitions = {
             'a': {
                 'iconPath': './../icons/a.svg'
             },
@@ -91,11 +103,11 @@ suite('language icons', () => {
                 'iconPath': './../icons/b_highContrast.svg'
             }
         };
-        value.languageIds = {
+        expectedConfig.languageIds = {
             'a': 'a',
             'b': 'b'
         };
-        value.light = {
+        expectedConfig.light = {
             fileExtensions: {},
             fileNames: {},
             languageIds: {
@@ -103,7 +115,7 @@ suite('language icons', () => {
                 'b': 'b_light'
             }
         };
-        value.highContrast = {
+        expectedConfig.highContrast = {
             fileExtensions: {},
             fileNames: {},
             languageIds: {
@@ -111,10 +123,10 @@ suite('language icons', () => {
                 'b': 'b_highContrast'
             }
         };
-        assert.deepEqual(def, value);
+        assert.deepStrictEqual(iconDefinitions, expectedConfig);
     });
 
-    test('should configure custom icon associations', () => {
+    it('should configure custom icon associations', () => {
         const languageIcons: LanguageIcon[] = [
             { icon: { name: 'json' }, ids: ['a'] }
         ];
@@ -122,17 +134,21 @@ suite('language icons', () => {
         options.languages.associations = {
             'xml': 'json'
         };
-        const def = loadLanguageIconDefinitions(languageIcons, iconConfig, options);
-        const value = new IconConfiguration();
-        value.iconDefinitions = {
+        const iconConfig = merge({}, new IconConfiguration(), { options });
+        const iconDefinitions = loadLanguageIconDefinitions(languageIcons, iconConfig, options);
+
+        expectedConfig.iconDefinitions = {
             'json': {
                 'iconPath': './../icons/json.svg'
             }
         };
-        value.languageIds = {
+        expectedConfig.languageIds = {
             'a': 'json',
             'xml': 'json'
         };
-        assert.deepEqual(def, value);
+        expectedConfig.options.languages.associations = {
+            'xml': 'json'
+        };
+        assert.deepStrictEqual(iconDefinitions, expectedConfig);
     });
 });
