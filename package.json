@@ -31,7 +31,8 @@
     "customization"
   ],
   "extensionKind": [
-    "ui"
+    "ui",
+    "workspace"
   ],
   "activationEvents": [
     "*"
