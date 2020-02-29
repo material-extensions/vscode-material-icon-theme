@@ -1,4 +1,3 @@
-import * as open from 'open';
 import * as vscode from 'vscode';
 import { activateIcons } from '../commands/activate';
 import * as helpers from './../helpers';
@@ -30,7 +29,7 @@ const handleUpdateMessageActions = (value) => {
             break;
 
         case i18n.translate('readChangelog'):
-            open('https://marketplace.visualstudio.com/items/PKief.material-icon-theme/changelog');
+            vscode.env.openExternal(vscode.Uri.parse('https://marketplace.visualstudio.com/items/PKief.material-icon-theme/changelog'));
             break;
 
         case i18n.translate('neverShowAgain'):

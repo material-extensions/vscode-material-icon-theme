@@ -1,4 +1,3 @@
-import * as open from 'open';
 import * as vscode from 'vscode';
 import * as i18n from './../i18n';
 
@@ -11,7 +10,7 @@ export const showOutdatedMessage = () => {
 const handleActivateActions = (value) => {
     switch (value) {
         case i18n.translate('howToActivate'):
-            open('https://code.visualstudio.com/blogs/2016/09/08/icon-themes#_file-icon-themes');
+            vscode.env.openExternal(vscode.Uri.parse('https://code.visualstudio.com/blogs/2016/09/08/icon-themes#_file-icon-themes'));
             break;
 
         case i18n.translate('updateVSCode'):
