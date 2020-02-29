@@ -14,11 +14,6 @@ export const detectConfigChanges = () => {
     try {
         // update icon json file with new options
         createIconFile(changes.updatedConfigs, changes.updatedJSONConfig);
-
-        // check if a reload of the editor is required
-        if (!versioning.checkVersionSupport('1.31.0')) {
-            promptToReload();
-        }
     } catch (error) {
         console.error(error);
     }
