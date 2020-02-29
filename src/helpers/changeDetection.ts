@@ -1,7 +1,6 @@
-import { getConfigProperties, getMaterialIconsJSON, getThemeConfig, promptToReload } from '.';
+import { getConfigProperties, getMaterialIconsJSON, getThemeConfig } from '.';
 import { createIconFile } from '../icons/index';
 import { IconJsonOptions } from '../models';
-import * as versioning from './../helpers/versioning';
 import { getObjectPropertyValue, setObjectPropertyValue } from './objects';
 
 /** Compare the workspace and the user configurations with the current setup of the icons. */
