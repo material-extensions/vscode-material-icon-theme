@@ -882,5 +882,6 @@ export const fileIcons: FileIcons = {
         { name: 'coconut', fileExtensions: ['coco'] },
         { name: 'capacitor', fileNames: ['capacitor.config.json'] },
         { name: 'mediawiki', fileExtensions: ['mediawiki', 'wiki'] },
+        { name: 'sketch', fileExtensions: ['sketch'] },
     ]
 };
