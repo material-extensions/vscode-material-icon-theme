@@ -1,4 +1,5 @@
 .vscode/**
+.github/**
 .vscode-test/**
 out/**
 test/**
@@ -17,3 +18,4 @@ node_modules
 package-lock.json
 yarn.lock
 webpack.config.js
+CHANGELOG.md
