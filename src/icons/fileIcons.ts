@@ -882,5 +882,8 @@ export const fileIcons: FileIcons = {
         { name: 'coconut', fileExtensions: ['coco'] },
         { name: 'capacitor', fileNames: ['capacitor.config.json'] },
         { name: 'sketch', fileExtensions: ['sketch'] },
+        
+        
+        { name: 'adonisjs', fileExtensions: ['.adonisrc.json'] }
     ]
 };
