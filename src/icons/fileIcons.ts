@@ -881,6 +881,7 @@ export const fileIcons: FileIcons = {
         { name: 'husky', fileNames: ['.huskyrc', 'husky.config.js', '.huskyrc.json', '.huskyrc.js', '.huskyrc.yaml', '.huskyrc.yml'] },
         { name: 'coconut', fileExtensions: ['coco'] },
         { name: 'capacitor', fileNames: ['capacitor.config.json'] },
+        { name: 'sketch', fileExtensions: ['sketch'] },
         {
           name: 'uml',
           fileExtensions: ['iuml', 'pu', 'puml', 'plantuml', 'wsd'],
