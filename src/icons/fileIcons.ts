@@ -648,7 +648,7 @@ export const fileIcons: FileIcons = {
                 '.env.test.local',
             ]
         },
-        { name: 'babel', fileNames: ['.babelrc', '.babelrc.js', 'babel.config.js'] },
+        { name: 'babel', fileNames: ['.babelrc', '.babelrc.js', '.babelrc.json', 'babel.config.json', 'babel.config.js'] },
         {
             name: 'contributing',
             fileNames: ['contributing.md']
