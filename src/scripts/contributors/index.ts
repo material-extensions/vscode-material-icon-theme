@@ -25,7 +25,7 @@ const parseLinkHeader = (linkHeader: string) => {
 /**
  * Get all contributors from GitHub API.
  */
-const fetchContributors = (page: string): Promise<{ contributorsOfPage: Contributor[], nextPage: string }> => {
+const fetchContributors = (page: string): Promise<{ contributorsOfPage: Contributor[]; nextPage: string }> => {
     return new Promise((resolve, reject) => {
         const requestOptions: https.RequestOptions = {
             method: 'GET',
@@ -73,8 +73,8 @@ const createContributorsList = (contributors: Contributor[]) => {
         return `<li title="${c.login}"><img src="${c.avatar_url}" alt="${c.login}"/></li>`;
     }).join('\n');
 
-    const htmlDoctype = `<!DOCTYPE html>`;
-    const styling = `<link rel="stylesheet" href="contributors.css">`;
+    const htmlDoctype = '<!DOCTYPE html>';
+    const styling = '<link rel="stylesheet" href="contributors.css">';
     const generatedHtml = `${htmlDoctype}${styling}<ul>${list}</ul>`;
 
     const outputPath = path.join(__dirname, 'contributors.html');
@@ -94,15 +94,15 @@ const init = async () => {
     }
 
     if (contributorsList.length > 0) {
-        console.log('> Material Icon Theme:', painter.green(`Successfully fetched all contributors from GitHub!`));
+        console.log('> Material Icon Theme:', painter.green('Successfully fetched all contributors from GitHub!'));
     } else {
-        console.log('> Material Icon Theme:', painter.red(`Error: Could not fetch contributors from GitHub!`));
+        console.log('> Material Icon Theme:', painter.red('Error: Could not fetch contributors from GitHub!'));
         throw Error();
     }
     const outputPath = createContributorsList(contributorsList);
 
     // create the image
-    console.log('> Material Icon Theme:', painter.yellow(`Creating image...`));
+    console.log('> Material Icon Theme:', painter.yellow('Creating image...'));
     const fileName = 'contributors';
     createScreenshot(outputPath, fileName).then(() => {
         console.log('> Material Icon Theme:', painter.green(`Successfully created ${fileName} image!`));

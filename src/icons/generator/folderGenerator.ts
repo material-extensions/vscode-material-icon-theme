@@ -1,13 +1,14 @@
 import * as fs from 'fs';
 import * as merge from 'lodash.merge';
 import * as path from 'path';
+import { getFileConfigString } from '../../helpers/fileConfig';
 import { DefaultIcon, FolderIcon, FolderTheme, IconAssociations, IconConfiguration, IconJsonOptions } from '../../models/index';
 import { highContrastVersion, iconFolderPath, lightVersion, openedFolder } from './constants';
 
 /**
  * Get the folder icon definitions as object.
  */
-export const getFolderIconDefinitions = (folderThemes: FolderTheme[], config: IconConfiguration, options: IconJsonOptions): IconConfiguration => {
+export const loadFolderIconDefinitions = (folderThemes: FolderTheme[], config: IconConfiguration, options: IconJsonOptions): IconConfiguration => {
     config = merge({}, config);
     config.hidesExplorerArrows = options.hidesExplorerArrows;
     const activeTheme = getEnabledFolderTheme(folderThemes, options.folders.theme);
@@ -87,11 +88,12 @@ const setIconDefinitions = (config: IconConfiguration, icon: FolderIcon | Defaul
 
 const createIconDefinitions = (config: IconConfiguration, iconName: string, appendix: string = '') => {
     config = merge({}, config);
+    const fileConfig = getFileConfigString(config.options);
     config.iconDefinitions[iconName + appendix] = {
-        iconPath: `${iconFolderPath}${iconName}${appendix}.svg`
+        iconPath: `${iconFolderPath}${iconName}${appendix}${fileConfig}.svg`
     };
     config.iconDefinitions[`${iconName}${openedFolder}${appendix}`] = {
-        iconPath: `${iconFolderPath}${iconName}${openedFolder}${appendix}.svg`
+        iconPath: `${iconFolderPath}${iconName}${openedFolder}${appendix}${fileConfig}.svg`
     };
     return config;
 };
@@ -142,10 +144,10 @@ export const generateFolderIcons = (color: string) => {
         return console.error('Invalid color code for folder icons');
     }
 
-    const folderIcon = `M10 4H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8c0-1.11-.9-2-2-2h-8l-2-2z`;
-    const folderIconOpen = `M19 20H4c-1.11 0-2-.9-2-2V6c0-1.11.89-2 2-2h6l2 2h7a2 2 0 0 1 2 2H4v10l2.14-8h17.07l-2.28 8.5c-.23.87-1.01 1.5-1.93 1.5z`;
-    const rootFolderIcon = `M12 20a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 5a5 5 0 0 0-5 5 5 5 0 0 0 5 5 5 5 0 0 0 5-5 5 5 0 0 0-5-5z`;
-    const rootFolderIconOpen = `M12 20a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2z`;
+    const folderIcon = 'M10 4H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8c0-1.11-.9-2-2-2h-8l-2-2z';
+    const folderIconOpen = 'M19 20H4c-1.11 0-2-.9-2-2V6c0-1.11.89-2 2-2h6l2 2h7a2 2 0 0 1 2 2H4v10l2.14-8h17.07l-2.28 8.5c-.23.87-1.01 1.5-1.93 1.5z';
+    const rootFolderIcon = 'M12 20a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 5a5 5 0 0 0-5 5 5 5 0 0 0 5 5 5 5 0 0 0 5-5 5 5 0 0 0-5-5z';
+    const rootFolderIconOpen = 'M12 20a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2z';
 
     writeSVGFiles('folder', getSVG(getPath(folderIcon, color)));
     writeSVGFiles('folder-open', getSVG(getPath(folderIconOpen, color)));

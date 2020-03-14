@@ -73,5 +73,6 @@ export const languageIcons: LanguageIcon[] = [
     { icon: { name: 'godot' }, ids: ['gdscript'] },
     { icon: { name: 'vim' }, ids: ['viml'] },
     { icon: { name: 'silverstripe' }, ids: [] },
+    { icon: { name: 'prolog' }, ids: ['prolog'] },
     { icon: { name: 'rivescript' }, ids: ['rivescript'] },
 ];

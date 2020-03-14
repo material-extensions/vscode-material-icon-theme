@@ -1,4 +1,69 @@
 # Changelog
+## 4.0.1 (2020-03-01)
+- Fix: Changelog is not shown on Marketplace ([@PKief](https://github.com/PKief) in commit [0a6fcf5](https://github.com/PKief/vscode-material-icon-theme/commit/0a6fcf55201c87fe7d32d56e4ef7201e8bc43214))
+
+## 4.0.0 (2020-03-01)
+
+Minimum supported version is now set to VS Code v1.31.
+
+### New file icons
+- Coconut ([issue #500](https://github.com/PKief/vscode-material-icon-theme/issues/500))
+- *.azure-pipelines.yaml ([@robinmanuelthiel](https://github.com/robinmanuelthiel) in [#636](https://github.com/PKief/vscode-material-icon-theme/pull/636))
+- .huskyrc.js ([@jinliming2](https://github.com/jinliming2) in [#642](https://github.com/PKief/vscode-material-icon-theme/pull/642))
+- Capacitor ([@PKief](https://github.com/PKief) in commit [a227490](https://github.com/PKief/vscode-material-icon-theme/commit/a2274907082f7fc46f5a462211cd26ddc2aaa011))
+- Sketch ([@PKief](https://github.com/PKief) in commit [32f3e1d](https://github.com/PKief/vscode-material-icon-theme/commit/32f3e1d978b3ffd2d08b76675bb393502bf41a4f))
+
+### Updated icons
+- Ruby ([@PKief](https://github.com/PKief) in commit [f533d23](https://github.com/PKief/vscode-material-icon-theme/commit/f533d23f99b78917943bbe37988b8f958055195a))
+
+### Improvements
+- Extension can now be used as workspace extension in VS Code Remote Container Development ([issue #643](https://github.com/PKief/vscode-material-icon-theme/issues/643))
+- Reload of the editor is not required anymore
+- Remove "open" dependency ([issue #386](https://github.com/PKief/vscode-material-icon-theme/issues/386))
+- Migration from TSLint to ESLint ([@PKief](https://github.com/PKief) in commit [cd9930f](https://github.com/PKief/vscode-material-icon-theme/commit/cd9930f5f24c068a8850c684e4c4609ddcbd8917))
+- Add VSCode extension recommendations ([@PKief](https://github.com/PKief) in commit [96fe5fe](https://github.com/PKief/vscode-material-icon-theme/commit/96fe5fecea31230657948f5c6e6bb9c1271384f1))
+
+## 3.9.3 (2020-02-09)
+### New file icons
+- Liquid ([@fapolo](https://github.com/fapolo) in [#594](https://github.com/PKief/vscode-material-icon-theme/pull/594))
+- azure-pipelines.yaml ([@robinmanuelthiel](https://github.com/robinmanuelthiel) in [#595](https://github.com/PKief/vscode-material-icon-theme/pull/595))
+- .env.sample ([@noftaly](https://github.com/noftaly) in [#598](https://github.com/PKief/vscode-material-icon-theme/pull/598))
+- Json5 ([@yardenshoham](https://github.com/yardenshoham) in [#601](https://github.com/PKief/vscode-material-icon-theme/pull/601))
+- Q# ([@yardenshoham](https://github.com/yardenshoham) in [#602](https://github.com/PKief/vscode-material-icon-theme/pull/602))
+- Zig ([@yardenshoham](https://github.com/yardenshoham) in [#604](https://github.com/PKief/vscode-material-icon-theme/pull/604))
+- .env.qa ([@jefferson-vieira](https://github.com/jefferson-vieira) in [#627](https://github.com/PKief/vscode-material-icon-theme/pull/627))
+- Pug lint files ([@Logikgate](https://github.com/Logikgate) in [#624](https://github.com/PKief/vscode-material-icon-theme/pull/624))
+- .env.staging.local ([@matthewphiong](https://github.com/matthewphiong) in [#629](https://github.com/PKief/vscode-material-icon-theme/pull/629))
+- webpack.production and webpack.development ([@Logikgate](https://github.com/Logikgate) in [#621](https://github.com/PKief/vscode-material-icon-theme/pull/621))
+- Prolog ([issue #519](https://github.com/PKief/vscode-material-icon-theme/issues/519))
+- Husky ([issue #355](https://github.com/PKief/vscode-material-icon-theme/issues/355))
+- .yarnrc.yml
+
+### New folder icons
+- mobile ([issue #605](https://github.com/PKief/vscode-material-icon-theme/issues/605))
+
+### Updated icons
+- kl ([@PKief](https://github.com/PKief) in commit [a0f013f](https://github.com/PKief/vscode-material-icon-theme/commit/a0f013f947725bcf41148ab571e2507cf45e7cdd))
+
+## 3.9.2 (2019-11-24)
+### New file icons
+- Fortran ([issue #368](https://github.com/PKief/vscode-material-icon-theme/issues/368))
+- .gcloudignore ([issue #556](https://github.com/PKief/vscode-material-icon-theme/issues/556))
+- .env.testing ([@MatheusKProt](https://github.com/MatheusKProt) in [#561](https://github.com/PKief/vscode-material-icon-theme/pull/561))
+- codecov ([@yardenshoham](https://github.com/yardenshoham) in [#537](https://github.com/PKief/vscode-material-icon-theme/pull/537))
+- image and 3D extensions ([@crse](https://github.com/crse) in [#573](https://github.com/PKief/vscode-material-icon-theme/pull/573))
+- Fix [#577](https://github.com/PKief/vscode-material-icon-theme/issues/577) - netlify ([@hacknug](https://github.com/hacknug) in [a6a04aa](https://github.com/PKief/vscode-material-icon-theme/commit/a6a04aa3550537803300284a55241cdc1ef7d6f7))
+- AdvPL ([@leotads](https://github.com/leotads) in [#534](https://github.com/PKief/vscode-material-icon-theme/pull/534))
+- .mjmlconfig
+- CODEOWNERS
+- *.apk
+- *.iso
+
+### New folder icons
+- json ([@rbalet](https://github.com/rbalet) in [#543](https://github.com/PKief/vscode-material-icon-theme/pull/543))
+- router ([issue #564](https://github.com/PKief/vscode-material-icon-theme/issues/564))
+- githooks
+
 ## 3.9.1 (2019-10-07)
 ### Minor improvements
 - Add "databases" to "database" folder names ([@noftaly](https://github.com/noftaly) in [#530](https://github.com/PKief/vscode-material-icon-theme/pull/530))
