@@ -34,8 +34,6 @@ export const fileIcons: FileIcons = {
             fileNames: [
                 '.jscsrc',
                 '.jshintrc',
-                'tsconfig.json',
-                'tslint.json',
                 'composer.lock',
                 '.jsbeautifyrc',
                 '.esformatter',
