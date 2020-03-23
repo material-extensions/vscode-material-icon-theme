@@ -139,7 +139,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-cluster', folderNames: ['cluster', 'clusters'] },
             { name: 'folder-command', folderNames: ['command', 'commands', 'cli', 'clis'] },
             { name: 'folder-constant', folderNames: ['constant', 'constants'] },
-            { name: 'folder-container', folderNames: ['container', 'containers'] },
+            { name: 'folder-container', folderNames: ['container', 'containers', '.devcontainer'] },
             { name: 'folder-content', folderNames: ['content', 'contents'] },
             { name: 'folder-core', folderNames: ['core'] },
             { name: 'folder-delta', folderNames: ['delta', 'deltas', 'changes'] },
