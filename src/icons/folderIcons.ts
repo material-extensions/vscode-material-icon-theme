@@ -183,6 +183,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-vue', folderNames: ['components'], enabledFor: [IconPack.Vuex, IconPack.Vue] },
             { name: 'folder-mobile', folderNames: ['mobile', 'mobiles', 'portable'] },
             { name: 'folder-stencil', folderNames: ['.stencil'] },
+            { name: 'folder-migrations', folderNames: ['migrations', 'migration'] },
         ]
     },
     { name: 'classic', defaultIcon: { name: 'folder' }, rootFolder: { name: 'folder-root' } },
