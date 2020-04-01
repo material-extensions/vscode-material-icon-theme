@@ -34,8 +34,6 @@ export const fileIcons: FileIcons = {
             fileNames: [
                 '.jscsrc',
                 '.jshintrc',
-                'tsconfig.json',
-                'tslint.json',
                 'composer.lock',
                 '.jsbeautifyrc',
                 '.esformatter',
@@ -648,7 +646,7 @@ export const fileIcons: FileIcons = {
                 '.env.test.local',
             ]
         },
-        { name: 'babel', fileNames: ['.babelrc', '.babelrc.js', 'babel.config.js'] },
+        { name: 'babel', fileNames: ['.babelrc', '.babelrc.js', '.babelrc.json', 'babel.config.json', 'babel.config.js'] },
         {
             name: 'contributing',
             fileNames: ['contributing.md']
@@ -805,7 +803,7 @@ export const fileIcons: FileIcons = {
         { name: 'san', fileExtensions: ['san'] },
         { name: 'wallaby', fileNames: ['wallaby.js', 'wallaby.conf.js'] },
         { name: 'django', fileExtensions: ['djt'] },
-        { name: 'stencil', fileNames: ['stencil.config.js', 'stencil.config.ts'], light: true },
+        { name: 'stencil', fileNames: ['stencil.config.js', 'stencil.config.ts'] },
         { name: 'red', fileExtensions: ['red'] },
         { name: 'makefile', fileNames: ['makefile'] },
         { name: 'foxpro', fileExtensions: ['fxp', 'prg'] },
@@ -882,6 +880,7 @@ export const fileIcons: FileIcons = {
         { name: 'coconut', fileExtensions: ['coco'] },
         { name: 'capacitor', fileNames: ['capacitor.config.json'] },
         { name: 'sketch', fileExtensions: ['sketch'] },
+        { name: 'adonis', fileNames: ['.adonisrc.json'] },
         {
           name: 'uml',
           fileExtensions: ['iuml', 'pu', 'puml', 'plantuml', 'wsd'],

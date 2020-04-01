@@ -60,7 +60,7 @@ export const setIconSaturation = (saturation: number, fileNames?: string[]) => {
  */
 const getSVGRootElement = (svg: string) => {
     const result = new RegExp(/<svg[^>]*>/).exec(svg);
-    return result.length > 0 ? result[0] : undefined;
+    return result?.[0];
 };
 
 /**
@@ -114,5 +114,5 @@ const removeFilterElement = (svg: string) => {
  * @param saturation Saturation value
  */
 export const validateSaturationValue = (saturation: number) => {
-    return saturation !== null && saturation <= 1 && saturation >= 0;
+    return saturation !== undefined && saturation <= 1 && saturation >= 0;
 };
