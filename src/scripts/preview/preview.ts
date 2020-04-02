@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { toTitleCase } from '../../helpers';
+import { toTitleCase } from './../helpers/titleCase';
 import { createScreenshot } from '../helpers/screenshots';
 import * as painter from './../helpers/painter';
 
