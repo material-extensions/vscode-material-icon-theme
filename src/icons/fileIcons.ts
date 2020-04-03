@@ -830,6 +830,7 @@ export const fileIcons: FileIcons = {
         { name: 'istanbul', fileNames: ['.nycrc', '.nycrc.json'] },
         { name: 'edge', fileExtensions: ['edge'] },
         { name: 'scheme', fileExtensions: ['ss', 'scm'] },
+        { name: 'lisp', fileExtensions: ['lisp', 'lsp', 'cl', 'fast'] },
         { name: 'tailwindcss', fileNames: ['tailwind.js', 'tailwind.config.js'] },
         {
             name: '3d',
@@ -881,5 +882,6 @@ export const fileIcons: FileIcons = {
         { name: 'capacitor', fileNames: ['capacitor.config.json'] },
         { name: 'sketch', fileExtensions: ['sketch'] },
         { name: 'adonis', fileNames: ['.adonisrc.json'] },
+        { name: 'forth', fileExtensions: ['4th', 'fth', 'frt'] },
     ]
 };
