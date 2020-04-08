@@ -67,7 +67,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-config', folderNames: ['config', 'configs', 'configuration', 'configurations', 'settings', '.settings', 'META-INF'] },
             {
                 name: 'folder-i18n',
-                folderNames: ['i18n', 'internationalization', 'lang', 'language', 'languages', 'locale', 'locales', 'localization', 'translation', 'translate', 'translations', '.tx']
+                folderNames: ['i18n', 'internationalization', 'lang', 'language', 'languages', 'locale', 'locales', 'l10n', 'localization', 'translation', 'translate', 'translations', '.tx']
             },
             { name: 'folder-components', folderNames: ['components'] },
             { name: 'folder-aurelia', folderNames: ['aurelia_project'] },
@@ -183,6 +183,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-vue', folderNames: ['components'], enabledFor: [IconPack.Vuex, IconPack.Vue] },
             { name: 'folder-mobile', folderNames: ['mobile', 'mobiles', 'portable'] },
             { name: 'folder-stencil', folderNames: ['.stencil'] },
+            { name: 'folder-firebase', folderNames: ['.firebase'] },
         ]
     },
     { name: 'classic', defaultIcon: { name: 'folder' }, rootFolder: { name: 'folder-root' } },
