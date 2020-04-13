@@ -152,7 +152,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-job', folderNames: ['job', 'jobs'] },
             { name: 'folder-keys', folderNames: ['keys', 'key', 'token', 'tokens'] },
             { name: 'folder-layout', folderNames: ['layout', 'layouts'] },
-            { name: 'folder-mail', folderNames: ['mail', 'mails', 'smtp'] },
+            { name: 'folder-mail', folderNames: ['mail', 'mails', 'email', 'emails', 'smtp'] },
             { name: 'folder-mappings', folderNames: ['mappings', 'mapping'] },
             { name: 'folder-meta', folderNames: ['meta'] },
             { name: 'folder-packages', folderNames: ['package', 'packages'] },
@@ -184,7 +184,6 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-mobile', folderNames: ['mobile', 'mobiles', 'portable'] },
             { name: 'folder-stencil', folderNames: ['.stencil'] },
             { name: 'folder-firebase', folderNames: ['.firebase'] },
-            { name: 'folder-emails', folderNames: ['email', 'emails'] },
         ]
     },
     { name: 'classic', defaultIcon: { name: 'folder' }, rootFolder: { name: 'folder-root' } },
