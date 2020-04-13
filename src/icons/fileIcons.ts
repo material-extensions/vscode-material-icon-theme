@@ -809,7 +809,7 @@ export const fileIcons: FileIcons = {
         { name: 'foxpro', fileExtensions: ['fxp', 'prg'] },
         { name: 'i18n', fileExtensions: ['pot', 'po', 'mo'] },
         { name: 'webassembly', fileExtensions: ['wat', 'wasm'] },
-        { name: 'semantic-release', light: true, fileNames: ['.releaserc', 'release.config.js'] },
+        { name: 'semantic-release', light: true, fileNames: ['.releaserc', '.releaserc.yaml', '.releaserc.yml', '.releaserc.json', '.releaserc.js', 'release.config.js'] },
         { name: 'bitbucket', fileNames: ['bitbucket-pipelines.yaml', 'bitbucket-pipelines.yml'] },
         { name: 'jupyter', fileExtensions: ['ipynb'] },
         { name: 'd', fileExtensions: ['d'] },
