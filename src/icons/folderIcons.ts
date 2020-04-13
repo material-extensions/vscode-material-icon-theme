@@ -14,7 +14,7 @@ export const folderIcons: FolderTheme[] = [
             {
                 name: 'folder-css',
                 folderNames: ['css', 'stylesheet', 'stylesheets', 'style', 'styles']
-            },
+            },  
             { name: 'folder-sass', folderNames: ['sass', '_sass', 'scss', '_scss'] },
             { name: 'folder-images', folderNames: ['images', 'image', 'img', 'icons', 'icon', 'ico', 'screenshot', 'screenshots'] },
             { name: 'folder-scripts', folderNames: ['script', 'scripts'] },
@@ -110,7 +110,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-other', folderNames: ['other', 'others', 'misc', 'miscellaneous', 'extra', 'extras'] },
             { name: 'folder-typescript', folderNames: ['typescript', 'ts', 'typings', '@types'] },
             { name: 'folder-graphql', folderNames: ['graphql', 'gql'] },
-            { name: 'folder-routes', folderNames: ['routes', 'router'] },
+            { name: 'folder-routes', folderNames: ['routes', 'router', 'routers'] },
             { name: 'folder-ci', folderNames: ['.ci', 'ci'] },
             { name: 'folder-benchmark', folderNames: ['benchmark', 'benchmarks', 'performance', 'measure', 'measures', 'measurement'] },
             { name: 'folder-messages', folderNames: ['messages', 'forum', 'chat', 'chats', 'conversation', 'conversations'] },
