@@ -152,7 +152,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-job', folderNames: ['job', 'jobs'] },
             { name: 'folder-keys', folderNames: ['keys', 'key', 'token', 'tokens'] },
             { name: 'folder-layout', folderNames: ['layout', 'layouts'] },
-            { name: 'folder-mail', folderNames: ['mail', 'mails', 'smtp'] },
+            { name: 'folder-mail', folderNames: ['mail', 'mails', 'email', 'emails', 'smtp'] },
             { name: 'folder-mappings', folderNames: ['mappings', 'mapping'] },
             { name: 'folder-meta', folderNames: ['meta'] },
             { name: 'folder-packages', folderNames: ['package', 'packages'] },
