@@ -882,5 +882,6 @@ export const fileIcons: FileIcons = {
         { name: 'sketch', fileExtensions: ['sketch'] },
         { name: 'adonis', fileNames: ['.adonisrc.json'] },
         { name: 'meson', fileNames: ['meson.build'] },
+        { name: 'buck', fileNames: ['.buckconfig'] },
     ]
 };
