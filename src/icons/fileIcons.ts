@@ -433,7 +433,7 @@ export const fileIcons: FileIcons = {
         { name: 'css-map', fileExtensions: ['css.map'] },
         { name: 'lock', fileExtensions: ['lock'] },
         { name: 'handlebars', fileExtensions: ['hbs', 'mustache'] },
-        { name: 'perl', fileExtensions: ['pm'] },
+        { name: 'perl', fileExtensions: ['pm', 'raku'] },
         { name: 'haxe', fileExtensions: ['hx'] },
         { name: 'test-ts', fileExtensions: ['spec.ts', 'e2e-spec.ts', 'test.ts', 'ts.snap'] },
         {
