@@ -505,7 +505,7 @@ export const fileIcons: FileIcons = {
             fileExtensions: ['tf', 'tf.json', 'tfvars', 'tfstate']
         },
         { name: 'laravel', fileExtensions: ['blade.php', 'inky.php'] },
-        { name: 'applescript', fileExtensions: ['applescript'] },
+        { name: 'applescript', fileExtensions: ['applescript', 'ipa'] },
         { name: 'cake', fileExtensions: ['cake'] },
         { name: 'cucumber', fileExtensions: ['feature'] },
         { name: 'nim', fileExtensions: ['nim', 'nimble'] },
