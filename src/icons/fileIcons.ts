@@ -888,6 +888,6 @@ export const fileIcons: FileIcons = {
         },
         { name: 'meson', fileNames: ['meson.build'] },
         { name: 'buck', fileNames: ['.buckconfig'] },
-        { name: 'ml', fileExtensions: ['ml', 'ML', 'mlton', 'sig', 'fun', 'cm', 'lex', 'grm'] },
+        { name: 'ml', fileExtensions: ['sml', 'ML', 'mlton', 'sig', 'fun', 'cm', 'lex', 'grm'] },
     ]
 };
