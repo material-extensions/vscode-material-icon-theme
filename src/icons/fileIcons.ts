@@ -872,7 +872,7 @@ export const fileIcons: FileIcons = {
         { name: 'advpl_include', fileExtensions: ['ch'] },
         { name: 'codeowners', fileNames: ['codeowners'] },
         { name: 'gcp', fileNames: ['.gcloudignore'] },
-        { name: 'disc', fileExtensions: ['iso'] },
+        { name: 'disc', fileExtensions: ['iso'] },m
         { name: 'fortran', fileExtensions: ['f', 'f77', 'f90', 'f95', 'f03', 'f08'] },
         { name: 'liquid', fileExtensions: ['liquid'] },
         { name: 'prolog', fileExtensions: ['p', 'pro'] },
@@ -888,6 +888,6 @@ export const fileIcons: FileIcons = {
         },
         { name: 'meson', fileNames: ['meson.build'] },
         { name: 'buck', fileNames: ['.buckconfig'] },
-        { name: 'ml', fileExtensions: ['sml', 'mlton', 'sig', 'fun', 'cm', 'lex', 'grm'] },
+        { name: 'ml', fileExtensions: ['sml', 'mlton' 'mlb', 'sig', 'fun', 'cm', 'lex', 'use', 'grm'] },
     ]
 };
