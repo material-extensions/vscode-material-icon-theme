@@ -428,7 +428,7 @@ export const fileIcons: FileIcons = {
         { name: 'vue-config', fileNames: ['vue.config.js', 'vue.config.ts'] },
         { name: 'vuex-store', fileExtensions: ['store.js', 'store.ts'], fileNames: ['store.js', 'store.ts'], enabledFor: [IconPack.Vuex] },
         { name: 'nuxt', fileNames: ['nuxt.config.js', 'nuxt.config.ts'], enabledFor: [IconPack.Vuex, IconPack.Vue] },
-        { name: 'ocaml', fileExtensions: ['ml', 'mli', 'cmx'] },
+        { name: 'ocaml', fileExtensions: ['ml', 'ML', 'mli', 'cmx'] },
         { name: 'javascript-map', fileExtensions: ['js.map', 'mjs.map'] },
         { name: 'css-map', fileExtensions: ['css.map'] },
         { name: 'lock', fileExtensions: ['lock'] },
@@ -888,6 +888,6 @@ export const fileIcons: FileIcons = {
         },
         { name: 'meson', fileNames: ['meson.build'] },
         { name: 'buck', fileNames: ['.buckconfig'] },
-        { name: 'ml', fileExtensions: ['sml', 'ML', 'mlton', 'sig', 'fun', 'cm', 'lex', 'grm'] },
+        { name: 'ml', fileExtensions: ['sml', 'mlton', 'sig', 'fun', 'cm', 'lex', 'grm'] },
     ]
 };
