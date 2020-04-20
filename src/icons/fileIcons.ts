@@ -882,9 +882,9 @@ export const fileIcons: FileIcons = {
         { name: 'sketch', fileExtensions: ['sketch'] },
         { name: 'adonis', fileNames: ['.adonisrc.json'] },
         {
-          name: 'uml',
-          fileExtensions: ['iuml', 'pu', 'puml', 'plantuml', 'wsd'],
-          light: true,
+            name: 'uml',
+            fileExtensions: ['iuml', 'pu', 'puml', 'plantuml', 'wsd'],
+            light: true,
         },
         { name: 'meson', fileNames: ['meson.build'] },
     ]
