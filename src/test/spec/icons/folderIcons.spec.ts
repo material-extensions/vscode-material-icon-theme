@@ -1,35 +1,45 @@
 import * as assert from 'assert';
-import { getDefaultIconOptions, getFolderIconDefinitions } from '../../../icons/index';
+import * as merge from 'lodash.merge';
+import { getDefaultIconOptions, loadFolderIconDefinitions } from '../../../icons/index';
 import { FolderTheme, IconConfiguration, IconPack } from '../../../models/index';
 
-suite('folder icons', () => {
-    const folderIcons: FolderTheme[] = [
-        {
-            name: 'specific',
-            defaultIcon: { name: 'folder' },
-            rootFolder: { name: 'folder-root' },
-            icons: [
-                { name: 'folder-src', folderNames: ['src', 'source'] },
-                { name: 'folder-angular', folderNames: ['angular', 'ng'], enabledFor: [IconPack.Angular, IconPack.Ngrx] }
-            ]
-        },
-        {
-            name: 'blue',
-            defaultIcon: { name: 'folder-blue' },
-            icons: [
-                { name: 'folder-blue-src', folderNames: ['src', 'source'] }
-            ]
-        },
-        { name: 'classic', defaultIcon: { name: 'folder' } },
-        { name: 'none', defaultIcon: { name: '' } },
-    ];
-    const iconConfig = new IconConfiguration();
+describe('folder icons', () => {
+    let folderIcons: FolderTheme[];
+    let expectedConfig: IconConfiguration;
 
-    test('should configure icon definitions', () => {
+    before(() => {
+        folderIcons = [
+            {
+                name: 'specific',
+                defaultIcon: { name: 'folder' },
+                rootFolder: { name: 'folder-root' },
+                icons: [
+                    { name: 'folder-src', folderNames: ['src', 'source'] },
+                    { name: 'folder-angular', folderNames: ['angular', 'ng'], enabledFor: [IconPack.Angular, IconPack.Ngrx] }
+                ]
+            },
+            {
+                name: 'blue',
+                defaultIcon: { name: 'folder-blue' },
+                icons: [
+                    { name: 'folder-blue-src', folderNames: ['src', 'source'] }
+                ]
+            },
+            { name: 'classic', defaultIcon: { name: 'folder' } },
+            { name: 'none', defaultIcon: { name: '' } },
+        ];
+    });
+
+    beforeEach(() => {
+        expectedConfig = merge({}, new IconConfiguration(), { options: getDefaultIconOptions() });
+    });
+
+    it('should configure icon definitions', () => {
         const options = getDefaultIconOptions();
-        const def = getFolderIconDefinitions(folderIcons, iconConfig, options);
-        const value = new IconConfiguration();
-        value.iconDefinitions = {
+        const iconConfig = merge({}, new IconConfiguration(), { options });
+        const iconDefinitions = loadFolderIconDefinitions(folderIcons, iconConfig, options);
+
+        expectedConfig.iconDefinitions = {
             'folder': {
                 'iconPath': './../icons/folder.svg'
             },
@@ -55,48 +65,49 @@ suite('folder icons', () => {
                 'iconPath': './../icons/folder-angular-open.svg'
             }
         };
-        value.folder = 'folder';
-        value.folderExpanded = 'folder-open';
-        value.rootFolder = 'folder-root';
-        value.rootFolderExpanded = 'folder-root-open';
-        value.folderNames = {
+        expectedConfig.folder = 'folder';
+        expectedConfig.folderExpanded = 'folder-open';
+        expectedConfig.rootFolder = 'folder-root';
+        expectedConfig.rootFolderExpanded = 'folder-root-open';
+        expectedConfig.folderNames = {
             'src': 'folder-src',
             'source': 'folder-src',
             'angular': 'folder-angular',
             'ng': 'folder-angular'
         };
-        value.folderNamesExpanded = {
+        expectedConfig.folderNamesExpanded = {
             'src': 'folder-src-open',
             'source': 'folder-src-open',
             'angular': 'folder-angular-open',
             'ng': 'folder-angular-open'
         };
-        value.hidesExplorerArrows = false;
+        expectedConfig.hidesExplorerArrows = false;
 
-        assert.deepEqual(def, value);
+        assert.deepStrictEqual(iconDefinitions, expectedConfig);
     });
 
-    test('should deactivate folder icons', () => {
+    it('should deactivate folder icons', () => {
         const options = getDefaultIconOptions();
         options.folders.theme = 'none';
-        const def = getFolderIconDefinitions(folderIcons, iconConfig, options);
-        const value = new IconConfiguration();
+        const iconConfig = merge({}, new IconConfiguration(), { options });
+        const iconDefinitions = loadFolderIconDefinitions(folderIcons, iconConfig, options);
 
-        value.iconDefinitions = {};
-        value.folderNames = {};
-        value.folderNamesExpanded = {};
-        value.hidesExplorerArrows = false;
+        expectedConfig.iconDefinitions = {};
+        expectedConfig.folderNames = {};
+        expectedConfig.folderNamesExpanded = {};
+        expectedConfig.hidesExplorerArrows = false;
+        expectedConfig.options.folders.theme = 'none';
 
-        assert.deepEqual(def, value);
+        assert.deepStrictEqual(iconDefinitions, expectedConfig);
     });
 
-    test('should enable folder theme', () => {
+    it('should enable folder theme', () => {
         const options = getDefaultIconOptions();
         options.folders.theme = 'blue';
-        const def = getFolderIconDefinitions(folderIcons, iconConfig, options);
-        const value = new IconConfiguration();
+        const iconConfig = merge({}, new IconConfiguration(), { options });
+        const iconDefinitions = loadFolderIconDefinitions(folderIcons, iconConfig, options);
 
-        value.iconDefinitions = {
+        expectedConfig.iconDefinitions = {
             'folder-blue': {
                 'iconPath': './../icons/folder-blue.svg'
             },
@@ -110,32 +121,32 @@ suite('folder icons', () => {
                 'iconPath': './../icons/folder-blue-src-open.svg'
             }
         };
-        value.folder = 'folder-blue';
-        value.folderExpanded = 'folder-blue-open';
-        value.rootFolder = 'folder-blue';
-        value.rootFolderExpanded = 'folder-blue-open';
-
-        value.folderNames = {
+        expectedConfig.folder = 'folder-blue';
+        expectedConfig.folderExpanded = 'folder-blue-open';
+        expectedConfig.rootFolder = 'folder-blue';
+        expectedConfig.rootFolderExpanded = 'folder-blue-open';
+        expectedConfig.folderNames = {
             'src': 'folder-blue-src',
             'source': 'folder-blue-src'
         };
-        value.folderNamesExpanded = {
+        expectedConfig.folderNamesExpanded = {
             'src': 'folder-blue-src-open',
             'source': 'folder-blue-src-open'
         };
-        value.hidesExplorerArrows = false;
+        expectedConfig.hidesExplorerArrows = false;
+        expectedConfig.options.folders.theme = 'blue';
 
-        assert.deepEqual(def, value);
+        assert.deepStrictEqual(iconDefinitions, expectedConfig);
     });
 
-    test('should configure custom icon associations', () => {
+    it('should configure custom icon associations', () => {
         const options = getDefaultIconOptions();
         options.folders.associations = {
             'sample': 'src'
         };
-        const def = getFolderIconDefinitions(folderIcons, iconConfig, options);
-        const value = new IconConfiguration();
-        value.iconDefinitions = {
+        const iconConfig = merge({}, new IconConfiguration(), { options });
+        const iconDefinitions = loadFolderIconDefinitions(folderIcons, iconConfig, options);
+        expectedConfig.iconDefinitions = {
             'folder': {
                 'iconPath': './../icons/folder.svg'
             },
@@ -161,35 +172,38 @@ suite('folder icons', () => {
                 'iconPath': './../icons/folder-angular-open.svg'
             }
         };
-        value.folder = 'folder';
-        value.folderExpanded = 'folder-open';
-        value.rootFolder = 'folder-root';
-        value.rootFolderExpanded = 'folder-root-open';
-        value.folderNames = {
+        expectedConfig.folder = 'folder';
+        expectedConfig.folderExpanded = 'folder-open';
+        expectedConfig.rootFolder = 'folder-root';
+        expectedConfig.rootFolderExpanded = 'folder-root-open';
+        expectedConfig.folderNames = {
             'src': 'folder-src',
             'source': 'folder-src',
             'angular': 'folder-angular',
             'ng': 'folder-angular',
             'sample': 'folder-src'
         };
-        value.folderNamesExpanded = {
+        expectedConfig.folderNamesExpanded = {
             'src': 'folder-src-open',
             'source': 'folder-src-open',
             'angular': 'folder-angular-open',
             'ng': 'folder-angular-open',
             'sample': 'folder-src-open'
         };
-        value.hidesExplorerArrows = false;
+        expectedConfig.hidesExplorerArrows = false;
+        expectedConfig.options.folders.associations = {
+            'sample': 'src'
+        };
 
-        assert.deepEqual(def, value);
+        assert.deepStrictEqual(iconDefinitions, expectedConfig);
     });
 
-    test('should disable icon packs', () => {
+    it('should disable icon packs', () => {
         const options = getDefaultIconOptions();
         options.activeIconPack = '';
-        const def = getFolderIconDefinitions(folderIcons, iconConfig, options);
-        const value = new IconConfiguration();
-        value.iconDefinitions = {
+        const iconConfig = merge({}, new IconConfiguration(), { options });
+        const iconDefinitions = loadFolderIconDefinitions(folderIcons, iconConfig, options);
+        expectedConfig.iconDefinitions = {
             'folder': {
                 'iconPath': './../icons/folder.svg'
             },
@@ -209,24 +223,27 @@ suite('folder icons', () => {
                 'iconPath': './../icons/folder-src-open.svg'
             }
         };
-        value.folder = 'folder';
-        value.folderExpanded = 'folder-open';
-        value.rootFolder = 'folder-root';
-        value.rootFolderExpanded = 'folder-root-open';
-        value.folderNames = {
+        expectedConfig.folder = 'folder';
+        expectedConfig.folderExpanded = 'folder-open';
+        expectedConfig.rootFolder = 'folder-root';
+        expectedConfig.rootFolderExpanded = 'folder-root-open';
+        expectedConfig.folderNames = {
             'src': 'folder-src',
             'source': 'folder-src'
         };
-        value.folderNamesExpanded = {
+        expectedConfig.folderNamesExpanded = {
             'src': 'folder-src-open',
             'source': 'folder-src-open'
         };
-        value.hidesExplorerArrows = false;
+        expectedConfig.hidesExplorerArrows = false;
 
-        assert.deepEqual(def, value);
+        // disable default icon pack by using empty string
+        expectedConfig.options.activeIconPack = '';
+
+        assert.deepStrictEqual(iconDefinitions, expectedConfig);
     });
 
-    test('should configure folder icons for light and high contrast', () => {
+    it('should configure folder icons for light and high contrast', () => {
         const options = getDefaultIconOptions();
         const lightHighContrastFolderIcons: FolderTheme[] = [
             {
@@ -238,10 +255,10 @@ suite('folder icons', () => {
                 ]
             }
         ];
-        const def = getFolderIconDefinitions(lightHighContrastFolderIcons, iconConfig, options);
-        const value = new IconConfiguration();
+        const iconConfig = merge({}, new IconConfiguration(), { options });
+        const iconDefinitions = loadFolderIconDefinitions(lightHighContrastFolderIcons, iconConfig, options);
 
-        value.iconDefinitions = {
+        expectedConfig.iconDefinitions = {
             'folder': {
                 'iconPath': './../icons/folder.svg'
             },
@@ -297,19 +314,19 @@ suite('folder icons', () => {
                 'iconPath': './../icons/folder-src-open_highContrast.svg'
             }
         };
-        value.folder = 'folder';
-        value.folderExpanded = 'folder-open';
-        value.rootFolder = 'folder-root';
-        value.rootFolderExpanded = 'folder-root-open';
-        value.folderNames = {
+        expectedConfig.folder = 'folder';
+        expectedConfig.folderExpanded = 'folder-open';
+        expectedConfig.rootFolder = 'folder-root';
+        expectedConfig.rootFolderExpanded = 'folder-root-open';
+        expectedConfig.folderNames = {
             'src': 'folder-src',
             'source': 'folder-src'
         };
-        value.folderNamesExpanded = {
+        expectedConfig.folderNamesExpanded = {
             'src': 'folder-src-open',
             'source': 'folder-src-open'
         };
-        value.light = {
+        expectedConfig.light = {
             fileExtensions: {},
             fileNames: {},
             folder: 'folder_light',
@@ -325,7 +342,7 @@ suite('folder icons', () => {
                 'source': 'folder-src-open_light'
             },
         };
-        value.highContrast = {
+        expectedConfig.highContrast = {
             fileExtensions: {},
             fileNames: {},
             folder: 'folder_highContrast',
@@ -341,16 +358,17 @@ suite('folder icons', () => {
                 'source': 'folder-src-open_highContrast'
             }
         };
-        value.hidesExplorerArrows = false;
+        expectedConfig.hidesExplorerArrows = false;
 
-        assert.deepEqual(def, value);
+        assert.deepStrictEqual(iconDefinitions, expectedConfig);
     });
 
-    test('should hide explorer arrows', () => {
+    it('should hide explorer arrows', () => {
         const options = getDefaultIconOptions();
         options.hidesExplorerArrows = true;
-        const def = getFolderIconDefinitions(folderIcons, iconConfig, options);
+        const iconConfig = merge({}, new IconConfiguration(), { options });
+        const iconDefinitions = loadFolderIconDefinitions(folderIcons, iconConfig, options);
 
-        assert.deepEqual(def.hidesExplorerArrows, true);
+        assert.deepStrictEqual(iconDefinitions.hidesExplorerArrows, true);
     });
 });
