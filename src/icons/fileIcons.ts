@@ -880,5 +880,7 @@ export const fileIcons: FileIcons = {
         { name: 'prolog', fileExtensions: ['p', 'pro'] },
         { name: 'husky', fileNames: ['.huskyrc', 'husky.config.js', '.huskyrc.json', '.huskyrc.js', '.huskyrc.yaml', '.huskyrc.yml'] },
         { name: 'coconut', fileExtensions: ['coco'] },
+        { name: 'openapi', fileNames: ['openapi.yaml', 'openapi.json', 'spectral.yaml', 'spectral.yml'] },
+        { name: 'spectral', fileNames: ['.spectral.yaml', '.spectral.yml'] },
     ]
 };
