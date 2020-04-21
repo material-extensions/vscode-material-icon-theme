@@ -881,6 +881,11 @@ export const fileIcons: FileIcons = {
         { name: 'capacitor', fileNames: ['capacitor.config.json'] },
         { name: 'sketch', fileExtensions: ['sketch'] },
         { name: 'adonis', fileNames: ['.adonisrc.json'] },
+        {
+            name: 'uml',
+            fileExtensions: ['iuml', 'pu', 'puml', 'plantuml', 'wsd'],
+            light: true,
+        },
         { name: 'meson', fileNames: ['meson.build'] },
         { name: 'commitlint', fileNames: ['.commitlintrc', '.commitlintrc.js', 'commitlint.config.js', '.commitlintrc.json', '.commitlint.yaml', '.commitlint.yml'] },
         { name: 'buck', fileNames: ['.buckconfig'] },
