@@ -41,10 +41,9 @@ const getTranslationObject = async (language: string) => {
  * and the fallback (required for testing purposes).
  * */
 export const getTranslationValue = (key: string, translations = currentTranslation, fallback = fallbackTranslation) => {
-    return getObjectPropertyValue(translations, key) ?
-        getObjectPropertyValue(translations, key) :
-        getObjectPropertyValue(fallback, key) ?
-            getObjectPropertyValue(fallback, key) : undefined;
+    return getObjectPropertyValue(translations, key)
+        || getObjectPropertyValue(fallback, key)
+        || undefined;
 };
 
 /**

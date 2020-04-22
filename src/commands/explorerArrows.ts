@@ -1,15 +1,9 @@
 import * as vscode from 'vscode';
 import * as helpers from '../helpers';
-import * as versioning from '../helpers/versioning';
 import * as i18n from '../i18n';
-import * as outdatedMessage from '../messages/outdated';
 
 /** Command to toggle the explorer arrows. */
 export const toggleExplorerArrows = async () => {
-    if (!versioning.checkVersionSupport('1.18.0-insider')) {
-        outdatedMessage.showOutdatedMessage();
-        return Promise.reject('Outdated version of vscode!');
-    }
     try {
         const status = checkArrowStatus();
         const response = await showQuickPickItems(status);
@@ -31,12 +25,11 @@ const showQuickPickItems = (status: boolean) => {
         detail: i18n.translate('explorerArrows.disable'),
         label: status ? '\u2714' : '\u25FB'
     };
-    return vscode.window.showQuickPick(
-        [on, off], {
-            placeHolder: i18n.translate('explorerArrows.toggle'),
-            ignoreFocusOut: false,
-            matchOnDescription: true
-        });
+    return vscode.window.showQuickPick([on, off], {
+        placeHolder: i18n.translate('explorerArrows.toggle'),
+        ignoreFocusOut: false,
+        matchOnDescription: true
+    });
 };
 
 /** Handle the actions from the QuickPick. */
