@@ -379,6 +379,7 @@ export const fileIcons: FileIcons = {
         { name: 'raml', fileExtensions: ['raml'] },
         { name: 'xaml', fileExtensions: ['xaml'] },
         { name: 'haskell', fileExtensions: ['hs'] },
+        { name: 'dhall', fileExtensions: ['dhall', 'dhallb'] },
         { name: 'kotlin', fileExtensions: ['kt', 'kts'] },
         {
             name: 'git',

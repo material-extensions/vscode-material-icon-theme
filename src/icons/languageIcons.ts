@@ -55,6 +55,7 @@ export const languageIcons: LanguageIcon[] = [
     { icon: { name: 'postcss' }, ids: ['postcss'] },
     { icon: { name: 'coldfusion' }, ids: ['lang-cfml'] },
     { icon: { name: 'haskell' }, ids: ['haskell'] },
+    { icon: { name: 'dhall' }, ids: ['dhall'] },
     { icon: { name: 'cabal' }, ids: ['cabal'] },
     { icon: { name: 'nix' }, ids: ['nix'] },
     { icon: { name: 'ruby' }, ids: ['ruby'] },
