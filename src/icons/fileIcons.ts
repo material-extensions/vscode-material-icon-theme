@@ -379,7 +379,6 @@ export const fileIcons: FileIcons = {
         { name: 'raml', fileExtensions: ['raml'] },
         { name: 'xaml', fileExtensions: ['xaml'] },
         { name: 'haskell', fileExtensions: ['hs'] },
-        { name: 'dhall', fileExtensions: ['dhall', 'dhallb'] },
         { name: 'kotlin', fileExtensions: ['kt', 'kts'] },
         {
             name: 'git',
@@ -890,6 +889,6 @@ export const fileIcons: FileIcons = {
         { name: 'meson', fileNames: ['meson.build'] },
         { name: 'commitlint', fileNames: ['.commitlintrc', '.commitlintrc.js', 'commitlint.config.js', '.commitlintrc.json', '.commitlint.yaml', '.commitlint.yml'] },
         { name: 'buck', fileNames: ['.buckconfig'] },
-        { name: 'dhall', fileExtensions: ['dhall'] },
+        { name: 'dhall', fileExtensions: ['dhall', 'dhallb'] },
     ]
 };
