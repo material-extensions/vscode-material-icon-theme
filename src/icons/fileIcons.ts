@@ -889,5 +889,6 @@ export const fileIcons: FileIcons = {
         { name: 'meson', fileNames: ['meson.build'] },
         { name: 'commitlint', fileNames: ['.commitlintrc', '.commitlintrc.js', 'commitlint.config.js', '.commitlintrc.json', '.commitlint.yaml', '.commitlint.yml'] },
         { name: 'buck', fileNames: ['.buckconfig'] },
+        { name: 'dhall', fileExtensions: ['dhall'] },
     ]
 };
