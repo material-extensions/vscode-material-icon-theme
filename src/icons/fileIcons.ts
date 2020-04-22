@@ -890,6 +890,6 @@ export const fileIcons: FileIcons = {
         { name: 'commitlint', fileNames: ['.commitlintrc', '.commitlintrc.js', 'commitlint.config.js', '.commitlintrc.json', '.commitlint.yaml', '.commitlint.yml'] },
         { name: 'buck', fileNames: ['.buckconfig'] },
         { name: 'dhall', fileExtensions: ['dhall', 'dhallb'] },
-        { name: 'typeorm', fileNames: ['ormconfig.json', 'ormconfig.js', 'ormconfig.ts'] },
+        { name: 'typeorm', fileNames: ['ormconfig.json', 'ormconfig.js', 'ormconfig.ts'], light: true },
     ]
 };
