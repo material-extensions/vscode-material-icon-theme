@@ -6,7 +6,7 @@ import { FileIcons, IconPack } from '../models/index';
 export const fileIcons: FileIcons = {
     defaultIcon: { name: 'file' },
     icons: [
-        { name: 'html', fileExtensions: ['html', 'htm', 'xhtml', 'html_vm', 'asp'] },
+        { name: 'html', fileExtensions: ['htm', 'xhtml', 'html_vm', 'asp'] },
         {
             name: 'pug',
             fileExtensions: ['jade', 'pug'],
@@ -434,7 +434,7 @@ export const fileIcons: FileIcons = {
         { name: 'css-map', fileExtensions: ['css.map'] },
         { name: 'lock', fileExtensions: ['lock'] },
         { name: 'handlebars', fileExtensions: ['hbs', 'mustache'] },
-        { name: 'perl', fileExtensions: ['pm'] },
+        { name: 'perl', fileExtensions: ['pm', 'raku'] },
         { name: 'haxe', fileExtensions: ['hx'] },
         { name: 'test-ts', fileExtensions: ['spec.ts', 'e2e-spec.ts', 'test.ts', 'ts.snap'] },
         {
@@ -506,7 +506,7 @@ export const fileIcons: FileIcons = {
             fileExtensions: ['tf', 'tf.json', 'tfvars', 'tfstate']
         },
         { name: 'laravel', fileExtensions: ['blade.php', 'inky.php'] },
-        { name: 'applescript', fileExtensions: ['applescript'] },
+        { name: 'applescript', fileExtensions: ['applescript', 'ipa'] },
         { name: 'cake', fileExtensions: ['cake'] },
         { name: 'cucumber', fileExtensions: ['feature'] },
         { name: 'nim', fileExtensions: ['nim', 'nimble'] },
@@ -882,6 +882,14 @@ export const fileIcons: FileIcons = {
         { name: 'capacitor', fileNames: ['capacitor.config.json'] },
         { name: 'sketch', fileExtensions: ['sketch'] },
         { name: 'adonis', fileNames: ['.adonisrc.json'] },
+        {
+            name: 'uml',
+            fileExtensions: ['iuml', 'pu', 'puml', 'plantuml', 'wsd'],
+            light: true,
+        },
         { name: 'meson', fileNames: ['meson.build'] },
+        { name: 'commitlint', fileNames: ['.commitlintrc', '.commitlintrc.js', 'commitlint.config.js', '.commitlintrc.json', '.commitlint.yaml', '.commitlint.yml'] },
+        { name: 'buck', fileNames: ['.buckconfig'] },
+        { name: 'dhall', fileExtensions: ['dhall'] },
     ]
 };
