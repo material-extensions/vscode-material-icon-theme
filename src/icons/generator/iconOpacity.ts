@@ -52,7 +52,7 @@ export const setIconOpacity = (opacity: number, fileNames?: string[]) => {
  * @param opacity Opacity value
  */
 export const validateOpacityValue = (opacity: number) => {
-    return opacity !== null && opacity <= 1 && opacity >= 0;
+    return opacity !== undefined && opacity <= 1 && opacity >= 0;
 };
 
 /**
@@ -61,7 +61,7 @@ export const validateOpacityValue = (opacity: number) => {
  */
 const getSVGRootElement = (svg: string) => {
     const result = new RegExp(/<svg[^>]*>/).exec(svg);
-    return result.length > 0 ? result[0] : undefined;
+    return result?.[0];
 };
 
 /**

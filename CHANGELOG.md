@@ -1,4 +1,7 @@
 # Changelog
+## 4.0.1 (2020-03-01)
+- Fix: Changelog is not shown on Marketplace ([@PKief](https://github.com/PKief) in commit [0a6fcf5](https://github.com/PKief/vscode-material-icon-theme/commit/0a6fcf55201c87fe7d32d56e4ef7201e8bc43214))
+
 ## 4.0.0 (2020-03-01)
 
 Minimum supported version is now set to VS Code v1.31.

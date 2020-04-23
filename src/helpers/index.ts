@@ -2,13 +2,12 @@ import * as fs from 'fs';
 import * as path from 'path';
 import * as vscode from 'vscode';
 import { iconJsonName } from '../icons/index';
-import { AdvancedWorkspaceConfiguration } from '../models';
 import { IconConfiguration } from '../models/index';
 import * as reloadMessages from './../messages/reload';
 
 /** Get configuration of vs code. */
 export const getConfig = (section?: string) => {
-    return vscode.workspace.getConfiguration(section) as AdvancedWorkspaceConfiguration;
+    return vscode.workspace.getConfiguration(section);
 };
 
 /** Get list of configuration entries of package.json */
@@ -78,5 +77,5 @@ export const capitalizeFirstLetter = (name: string): string => name.charAt(0).to
 
 /** TitleCase all words in a string */
 export const toTitleCase = (str) => {
-    return str.replace(/\w\S*/g, (txt) => { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
+    return str.replace(/\w\S*/g, (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
 };
