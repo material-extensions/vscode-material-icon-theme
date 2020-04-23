@@ -1,20 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="48px" height="48px" viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">  <image id="image0" width="48" height="48" x="0" y="0"
-    xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAABGdBTUEAALGPC/xhBQAAACBjSFJN
-AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAh1BMVEUAAADwyqbMzJnMmZnM
-mWb/zGaZZjP/zJn//8xmZjOZmWZmMzOGhoaZZmbd3d0zMwCysrLAwMAzMzOAgIApKSmWlpY5OTl3
-d3dfX19NTU2ZmZnMzMzq6urX19dVVVVmZmakoKBCQkKBgYEAMwAiIiIMDAwzZjMWFhYcHBwREREI
-CAjBwcH///9WKPCbAAAAAXRSTlMAQObYZgAAAAFiS0dELLrdcasAAAAHdElNRQfkAxQHKhpOnGr7
-AAABzklEQVRIx41V21bDMAxLGtddkpV0JWPAgBXGGJf//z8cp9vhgVNbz1It26lszH+wjXPWqGGh
-bQEAQcmHtrO2IwGijg/darXqmiLwCn5TBRYC8eNaUwA6suSgJ36MIv8GA4BzMPPTIAk2iH0gFD9x
-TEn0NGCFL3wS3IoVPIPc0Pdzzluxh1gxMj2njdi1ZzaZyaRId/JYN4mQ+es5JdERYZcrvajuFfyi
-qPa1fONzYltJ0wHBQfBj7SA/qBSPtGpPY0p3O50lY/bsadDSjXliwV4veObByku+YuA5aZY2Y8eW
-XvQCjEUwqvl7DL4oHrUCoL/U08uQf+iLIwqCvtRQ8h0VoJChPg46QeGTwEdlCQcXwagpYQGvFUrM
-SBK4oAZTTKMwKgr6lrOeJKUSeqGPQMFa0V6MCZ48QmMJXVfilQJH4N/ETLbnLOP/ehJ6CHGOgMx0
-8QkW41g1VZjG7XIBvicu0JpnQXpdEiBvrbF0t0LZtOTpuQp4oD3iLFloe1NOCb9V5vOqF2/KxMen
-J8w3iEssJOwbXlGvULkTS2EwHP1fOvFzej8tzXX4OKY/Ry6/n09nIZ6GQz4SPj/PX6fv7/PLZBT4
-mbbr9Xo7/ZuVv6NVIiA9OjyRAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDIwLTAzLTIwVDA3OjQyOjI2
-KzAzOjAwgelI0gAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyMC0wMy0yMFQwNzo0MjoyNiswMzowMPC0
-8G4AAAAASUVORK5CYII=" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" version="1.0">
+    <path d="M19,22H5V20H19V22M17.16,8.26C18.22,9.63 18.86,11.28 19,13C19,15.76 15.87,18 12,18C8.13,18 5,15.76 5,13C5,10.62 7.33,6.39 10.46,5.27C10.16,4.91 10,4.46 10,4A2,2 0 0,1 12,2A2,2 0 0,1 14,4C14,4.46 13.84,4.91 13.54,5.27C14.4,5.6 15.18,6.1 15.84,6.74L11.29,11.29L12.71,12.71L17.16,8.26Z" fill="#ffd54f" />
 </svg>
