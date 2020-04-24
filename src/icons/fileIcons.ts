@@ -890,6 +890,7 @@ export const fileIcons: FileIcons = {
         { name: 'commitlint', fileNames: ['.commitlintrc', '.commitlintrc.js', 'commitlint.config.js', '.commitlintrc.json', '.commitlint.yaml', '.commitlint.yml'] },
         { name: 'buck', fileNames: ['.buckconfig'] },
         { name: 'dhall', fileExtensions: ['dhall', 'dhallb'] },
+        { name: 'nrwl', fileNames: ['nx.json'] },
         { name: 'tsconfig', fileNames: ['tsconfig.json'] },
         { name: 'jsconfig', fileNames: ['jsconfig.json'] },
     ]
