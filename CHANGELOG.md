@@ -1,4 +1,28 @@
 # Changelog
+## 4.0.1 (2020-03-01)
+- Fix: Changelog is not shown on Marketplace ([@PKief](https://github.com/PKief) in commit [0a6fcf5](https://github.com/PKief/vscode-material-icon-theme/commit/0a6fcf55201c87fe7d32d56e4ef7201e8bc43214))
+
+## 4.0.0 (2020-03-01)
+
+Minimum supported version is now set to VS Code v1.31.
+
+### New file icons
+- Coconut ([issue #500](https://github.com/PKief/vscode-material-icon-theme/issues/500))
+- *.azure-pipelines.yaml ([@robinmanuelthiel](https://github.com/robinmanuelthiel) in [#636](https://github.com/PKief/vscode-material-icon-theme/pull/636))
+- .huskyrc.js ([@jinliming2](https://github.com/jinliming2) in [#642](https://github.com/PKief/vscode-material-icon-theme/pull/642))
+- Capacitor ([@PKief](https://github.com/PKief) in commit [a227490](https://github.com/PKief/vscode-material-icon-theme/commit/a2274907082f7fc46f5a462211cd26ddc2aaa011))
+- Sketch ([@PKief](https://github.com/PKief) in commit [32f3e1d](https://github.com/PKief/vscode-material-icon-theme/commit/32f3e1d978b3ffd2d08b76675bb393502bf41a4f))
+
+### Updated icons
+- Ruby ([@PKief](https://github.com/PKief) in commit [f533d23](https://github.com/PKief/vscode-material-icon-theme/commit/f533d23f99b78917943bbe37988b8f958055195a))
+
+### Improvements
+- Extension can now be used as workspace extension in VS Code Remote Container Development ([issue #643](https://github.com/PKief/vscode-material-icon-theme/issues/643))
+- Reload of the editor is not required anymore
+- Remove "open" dependency ([issue #386](https://github.com/PKief/vscode-material-icon-theme/issues/386))
+- Migration from TSLint to ESLint ([@PKief](https://github.com/PKief) in commit [cd9930f](https://github.com/PKief/vscode-material-icon-theme/commit/cd9930f5f24c068a8850c684e4c4609ddcbd8917))
+- Add VSCode extension recommendations ([@PKief](https://github.com/PKief) in commit [96fe5fe](https://github.com/PKief/vscode-material-icon-theme/commit/96fe5fecea31230657948f5c6e6bb9c1271384f1))
+
 ## 3.9.3 (2020-02-09)
 ### New file icons
 - Liquid ([@fapolo](https://github.com/fapolo) in [#594](https://github.com/PKief/vscode-material-icon-theme/pull/594))

@@ -1,8 +1,6 @@
-import * as open from 'open';
 import * as vscode from 'vscode';
 import { activateIcons } from '../commands/activate';
 import * as helpers from './../helpers';
-import * as versioning from './../helpers/versioning';
 import * as i18n from './../i18n';
 
 /** Show the update message if the icon theme has been updated. */
@@ -12,11 +10,7 @@ export const showUpdateMessage = () => {
 
     vscode.window.showInformationMessage(
         i18n.translate('themeUpdated'),
-
-        // show 'Activate' button if icon theme is not active
-        (versioning.checkVersionSupport('1.10.0') && helpers.isThemeNotVisible())
-            ? i18n.translate('activate') : undefined,
-
+        helpers.isThemeNotVisible() ? i18n.translate('activate') : undefined,
         i18n.translate('readChangelog'),
         i18n.translate('neverShowAgain')
     ).then(handleUpdateMessageActions);
@@ -30,7 +24,7 @@ const handleUpdateMessageActions = (value) => {
             break;
 
         case i18n.translate('readChangelog'):
-            open('https://marketplace.visualstudio.com/items/PKief.material-icon-theme/changelog');
+            vscode.env.openExternal(vscode.Uri.parse('https://marketplace.visualstudio.com/items/PKief.material-icon-theme/changelog'));
             break;
 
         case i18n.translate('neverShowAgain'):

@@ -52,7 +52,7 @@ const getActiveIconPack = (): string => {
 /** Get all packs that can be used in this icon theme. */
 export const getAllIconPacks = () => {
     const packs: string[] = [];
-    for (let item in IconPack) {
+    for (const item in IconPack) {
         if (isNaN(Number(item))) {
             packs.push(IconPack[item].toLowerCase());
         }

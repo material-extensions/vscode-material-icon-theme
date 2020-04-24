@@ -40,6 +40,7 @@ module.exports = {
         "@typescript-eslint/type-annotation-spacing": "error",
         "camelcase": "error",
         "eol-last": "error",
+        "prefer-const": "error",
         "eqeqeq": [
             "error",
             "smart"
