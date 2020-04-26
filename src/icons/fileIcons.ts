@@ -892,5 +892,7 @@ export const fileIcons: FileIcons = {
         { name: 'buck', fileNames: ['.buckconfig'] },
         { name: 'dhall', fileExtensions: ['dhall', 'dhallb'] },
         { name: 'nrwl', fileNames: ['nx.json'] },
+        { name: 'opam', fileExtensions: ['opam'] },
+        { name: 'dune', fileNames: ['dune', 'dune-project']}
     ]
 };
