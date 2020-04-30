@@ -880,7 +880,7 @@ export const fileIcons: FileIcons = {
         { name: 'coconut', fileExtensions: ['coco'] },
         { name: 'capacitor', fileNames: ['capacitor.config.json'] },
         { name: 'sketch', fileExtensions: ['sketch'] },
-        { name: 'pawn', fileExtensions: ['pwn', 'amx'], light: true },
+        { name: 'pawn', fileExtensions: ['pwn', 'amx'] },
         { name: 'adonis', fileNames: ['.adonisrc.json'] },
         {
             name: 'uml',
