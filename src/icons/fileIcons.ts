@@ -726,7 +726,17 @@ export const fileIcons: FileIcons = {
             ]
         },
         { name: 'jenkins', fileNames: ['jenkinsfile'], fileExtensions: ['jenkinsfile', 'jenkins'] },
-        { name: 'firebase', fileNames: ['firebase.json', '.firebaserc'] },
+        {
+            name: 'firebase',
+            fileNames: [
+                'firebase.json',
+                '.firebaserc',
+                'firestore.rules',
+                'firestore.indexes.json',
+                'database.rules.json',
+                'storage.rules'
+            ]
+        },
         {
             name: 'rollup',
             fileNames: [
