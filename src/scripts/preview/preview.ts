@@ -1,10 +1,10 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import * as painter from './../helpers/painter';
 import { toTitleCase } from './../helpers/titleCase';
-import { createScreenshots } from './screenshots';
+import { createScreenshot } from '../helpers/screenshots';
+import * as painter from './../helpers/painter';
 
-const htmlDoctype = `<!DOCTYPE html>`;
+const htmlDoctype = '<!DOCTYPE html>';
 const cssFilePath = path.join('style.css');
 const styling = `<link rel="stylesheet" href="${cssFilePath}">`;
 
@@ -61,8 +61,8 @@ const savePreview = (fileName: string, size: number, icons: IconDefinition[][]) 
     // write the html file with the icon table
     fs.writeFileSync(filePath, createPreviewTable(icons, size));
 
-    // create the images
-    createScreenshots(filePath, fileName).then(() => {
+    // create the image
+    createScreenshot(filePath, fileName).then(() => {
         console.log('> Material Icon Theme:', painter.green(`Successfully created ${fileName} preview image!`));
     }).catch(() => {
         throw Error(painter.red(`Error while creating ${fileName} preview image`));
