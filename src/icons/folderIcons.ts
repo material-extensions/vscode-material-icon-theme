@@ -182,6 +182,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-vue-directives', folderNames: ['directives'], enabledFor: [IconPack.Vuex, IconPack.Vue] },
             { name: 'folder-vue', folderNames: ['components'], enabledFor: [IconPack.Vuex, IconPack.Vue] },
             { name: 'folder-mobile', folderNames: ['mobile', 'mobiles', 'portable'] },
+            { name: 'folder-terraform', folderNames: ['Terraform', 'terraform'] }
         ]
     },
     { name: 'classic', defaultIcon: { name: 'folder' }, rootFolder: { name: 'folder-root' } },
