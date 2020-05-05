@@ -894,5 +894,6 @@ export const fileIcons: FileIcons = {
         { name: 'dhall', fileExtensions: ['dhall', 'dhallb'] },
         { name: 'nrwl', fileNames: ['nx.json'] },
         { name: 'imba', fileExtensions: ['imba'] },
+        { name: 'security', fileNames: ['security.md', 'security.txt', 'security']}
     ]
 };
