@@ -127,7 +127,7 @@ export const fileIcons: FileIcons = {
             name: 'routing',
             fileExtensions: ['routing.ts', 'routing.tsx', 'routing.js', 'routing.jsx', 'routes.ts', 'routes.tsx', 'routes.js', 'routes.jsx'],
             fileNames: ['router.js', 'router.jsx', 'router.ts', 'router.tsx', 'routes.js', 'routes.jsx', 'routes.ts', 'routes.tsx'],
-            enabledFor: [IconPack.Angular, IconPack.Ngrx, IconPack.React, IconPack.Redux, IconPack.Vue, IconPack.Vuex]
+            enabledFor: [IconPack.Angular, IconPack.Ngrx, IconPack.React, IconPack.Redux, IconPack.Vue, IconPack.Vuex, IconPack.Hybrid]
         },
         {
             name: 'redux-action',
@@ -457,7 +457,7 @@ export const fileIcons: FileIcons = {
         {
             name: 'angular-component',
             fileExtensions: ['component.ts', 'component.js'],
-            enabledFor: [IconPack.Angular, IconPack.Ngrx]
+            enabledFor: [IconPack.Angular, IconPack.Ngrx, IconPack.Hybrid]
         },
         { name: 'angular-guard', fileExtensions: ['guard.ts', 'guard.js'], enabledFor: [IconPack.Angular, IconPack.Ngrx] },
         { name: 'angular-service', fileExtensions: ['service.ts', 'service.js'], enabledFor: [IconPack.Angular, IconPack.Ngrx] },
@@ -469,7 +469,7 @@ export const fileIcons: FileIcons = {
         {
             name: 'angular-directive',
             fileExtensions: ['directive.ts', 'directive.js'],
-            enabledFor: [IconPack.Angular, IconPack.Ngrx]
+            enabledFor: [IconPack.Angular, IconPack.Ngrx, IconPack.Hybrid]
         },
         {
             name: 'angular-resolver',
@@ -856,14 +856,14 @@ export const fileIcons: FileIcons = {
         { name: 'svelte', fileExtensions: ['svelte'] },
         { name: 'vim', fileExtensions: ['vimrc', 'gvimrc', 'exrc'] },
         { name: 'nest', fileNames: ['nest-cli.json', '.nest-cli.json', 'nestconfig.json', '.nestconfig.json'] },
-        { name: 'nest-controller', fileExtensions: ['controller.ts', 'controller.js'], enabledFor: [IconPack.Nest] },
-        { name: 'nest-middleware', fileExtensions: ['middleware.ts', 'middleware.js'], enabledFor: [IconPack.Nest] },
+        { name: 'nest-controller', fileExtensions: ['controller.ts', 'controller.js'], enabledFor: [IconPack.Nest, IconPack.Hybrid] },
+        { name: 'nest-middleware', fileExtensions: ['middleware.ts', 'middleware.js'], enabledFor: [IconPack.Nest, IconPack.Hybrid] },
         { name: 'nest-module', fileExtensions: ['module.ts', 'module.js'], enabledFor: [IconPack.Nest] },
         { name: 'nest-service', fileExtensions: ['service.ts', 'service.js'], enabledFor: [IconPack.Nest] },
-        { name: 'nest-decorator', fileExtensions: ['decorator.ts', 'decorator.js'], enabledFor: [IconPack.Nest] },
+        { name: 'nest-decorator', fileExtensions: ['decorator.ts', 'decorator.js'], enabledFor: [IconPack.Nest, IconPack.Hybrid] },
         { name: 'nest-pipe', fileExtensions: ['pipe.ts', 'pipe.js'], enabledFor: [IconPack.Nest] },
-        { name: 'nest-filter', fileExtensions: ['filter.ts', 'filter.js'], enabledFor: [IconPack.Nest] },
-        { name: 'nest-gateway', fileExtensions: ['gateway.ts', 'gateway.js'], enabledFor: [IconPack.Nest] },
+        { name: 'nest-filter', fileExtensions: ['filter.ts', 'filter.js'], enabledFor: [IconPack.Nest, IconPack.Hybrid] },
+        { name: 'nest-gateway', fileExtensions: ['gateway.ts', 'gateway.js'], enabledFor: [IconPack.Nest, IconPack.Hybrid] },
         { name: 'nest-guard', fileExtensions: ['guard.ts', 'guard.js'], enabledFor: [IconPack.Nest] },
         { name: 'nest-resolver', fileExtensions: ['resolver.ts', 'resolver.js'], enabledFor: [IconPack.Nest] },
         { name: 'moonscript', fileExtensions: ['moon'] },
@@ -896,5 +896,20 @@ export const fileIcons: FileIcons = {
         { name: 'sml', fileExtensions: ['sml', 'mlton', 'mlb', 'sig', 'fun', 'cm', 'lex', 'use', 'grm'] },
         { name: 'nrwl', fileNames: ['nx.json'] },
         { name: 'imba', fileExtensions: ['imba'] },
+        {
+            name: 'angular',
+            fileExtensions: ['ng-template'],
+            fileNames: ['angular-cli.json', '.angular-cli.json', 'angular.json'],
+            enabledFor: [IconPack.Hybrid]
+        },
+        { name: 'typescript-module', fileExtensions: ['module.ts'], enabledFor: [IconPack.Hybrid] },
+        { name: 'typescript-pipe', fileExtensions: ['pipe.ts'], enabledFor: [IconPack.Hybrid] },
+        { name: 'typescript-guard', fileExtensions: ['guard.ts'], enabledFor: [IconPack.Hybrid] },
+        { name: 'typescript-service', fileExtensions: ['service.ts'], enabledFor: [IconPack.Hybrid] },
+        { name: 'typescript-resolver', fileExtensions: ['resolver.ts'], enabledFor: [IconPack.Hybrid] },
+        { name: 'javascript-module', fileExtensions: ['module.js'], enabledFor: [IconPack.Hybrid] },
+        { name: 'javascript-pipe', fileExtensions: ['pipe.js'], enabledFor: [IconPack.Hybrid] },
+        { name: 'javascript-guard', fileExtensions: ['guard.js'], enabledFor: [IconPack.Hybrid] },
+        { name: 'javascript-resolver', fileExtensions: ['resolver.js'], enabledFor: [IconPack.Hybrid] },
     ]
 };
