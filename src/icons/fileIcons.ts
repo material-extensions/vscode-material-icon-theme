@@ -896,5 +896,6 @@ export const fileIcons: FileIcons = {
         { name: 'sml', fileExtensions: ['sml', 'mlton', 'mlb', 'sig', 'fun', 'cm', 'lex', 'use', 'grm'] },
         { name: 'nrwl', fileNames: ['nx.json'] },
         { name: 'imba', fileExtensions: ['imba'] },
+        { name: 'qml', fileExtensions: ['qml']},
     ]
 };
