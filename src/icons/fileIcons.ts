@@ -881,6 +881,7 @@ export const fileIcons: FileIcons = {
         { name: 'prolog', fileExtensions: ['p', 'pro'] },
         { name: 'husky', fileNames: ['.huskyrc', 'husky.config.js', '.huskyrc.json', '.huskyrc.js', '.huskyrc.yaml', '.huskyrc.yml'] },
         { name: 'coconut', fileExtensions: ['coco'] },
+        { name: 'tiltfile', fileNames: ['Tiltfile'] },
         { name: 'capacitor', fileNames: ['capacitor.config.json'] },
         { name: 'sketch', fileExtensions: ['sketch'] },
         { name: 'adonis', fileNames: ['.adonisrc.json'] },
