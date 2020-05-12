@@ -141,7 +141,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-constant', folderNames: ['constant', 'constants'] },
             { name: 'folder-container', folderNames: ['container', 'containers'] },
             { name: 'folder-content', folderNames: ['content', 'contents'] },
-            { name: 'folder-core', folderNames: ['core'] },
+            { name: 'folder-core', folderNames: ['core', 'io', 'stdlib'] },
             { name: 'folder-delta', folderNames: ['delta', 'deltas', 'changes'] },
             { name: 'folder-dump', folderNames: ['dump', 'dumps'] },
             { name: 'folder-examples', folderNames: ['example', 'examples', 'sample', 'samples', 'demo', 'demos'] },
@@ -181,7 +181,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-nuxt', folderNames: ['nuxt', '.nuxt'], enabledFor: [IconPack.Vuex, IconPack.Vue] },
             { name: 'folder-vue-directives', folderNames: ['directives'], enabledFor: [IconPack.Vuex, IconPack.Vue] },
             { name: 'folder-vue', folderNames: ['components'], enabledFor: [IconPack.Vuex, IconPack.Vue] },
-            { name: 'folder-mobile', folderNames: ['mobile', 'mobiles', 'portable'] },
+            { name: 'folder-mobile', folderNames: ['mobile', 'mobiles', 'portable', 'portability'] },
         ]
     },
     { name: 'classic', defaultIcon: { name: 'folder' }, rootFolder: { name: 'folder-root' } },
