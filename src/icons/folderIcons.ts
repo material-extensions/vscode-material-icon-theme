@@ -69,7 +69,7 @@ export const folderIcons: FolderTheme[] = [
                 name: 'folder-i18n',
                 folderNames: ['i18n', 'internationalization', 'lang', 'language', 'languages', 'locale', 'locales', 'l10n', 'localization', 'translation', 'translate', 'translations', '.tx']
             },
-            { name: 'folder-components', folderNames: ['components'] },
+            { name: 'folder-components', folderNames: ['components', 'widget', 'widgets'] },
             { name: 'folder-aurelia', folderNames: ['aurelia_project'] },
             {
                 name: 'folder-resource',
