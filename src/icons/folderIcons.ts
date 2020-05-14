@@ -9,7 +9,7 @@ export const folderIcons: FolderTheme[] = [
         defaultIcon: { name: 'folder' },
         rootFolder: { name: 'folder-root' },
         icons: [
-            { name: 'folder-src', folderNames: ['src', 'source', 'sources'] },
+            { name: 'folder-src', folderNames: ['src', 'source', 'sources', 'code'] },
             { name: 'folder-dist', folderNames: ['dist', 'out', 'build', 'release', 'bin'] },
             {
                 name: 'folder-css',
@@ -96,7 +96,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-log', folderNames: ['log', 'logs'] },
             { name: 'folder-temp', folderNames: ['temp', '.temp', 'tmp', '.tmp', 'cached', 'cache', '.cache'] },
             { name: 'folder-aws', folderNames: ['aws', '.aws'] },
-            { name: 'folder-audio', folderNames: ['audio', 'audios', 'music'] },
+            { name: 'folder-audio', folderNames: ['audio', 'audios', 'music', 'sound', 'sounds'] },
             { name: 'folder-video', folderNames: ['video', 'videos', 'movie', 'movies'] },
             { name: 'folder-kubernetes', folderNames: ['kubernetes', 'k8s'] },
             { name: 'folder-import', folderNames: ['import', 'imports', 'imported'] },

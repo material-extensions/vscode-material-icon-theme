@@ -795,7 +795,7 @@ export const fileIcons: FileIcons = {
                 'gruntfile.babel.coffee'
             ],
         },
-        { name: 'jest', fileNames: ['jest.config.js', 'jest.config.ts', 'jest.config.json', 'jest.setup.js', 'jest.setup.ts', 'jest.json', '.jestrc', '.jestrc.js', '.jestrc.json', 'jest.teardown.js'] },
+        { name: 'jest', fileNames: ['jest.config.js', 'jest.config.ts', 'jest.config.cjs', 'jest.config.mjs', 'jest.config.json', 'jest.setup.js', 'jest.setup.ts', 'jest.json', '.jestrc', '.jestrc.js', '.jestrc.json', 'jest.teardown.js'] },
         { name: 'processing', fileExtensions: ['pde'], light: true },
         { name: 'storybook', fileExtensions: ['stories.js', 'stories.jsx', 'story.js', 'story.jsx', 'stories.ts', 'stories.tsx', 'story.ts', 'story.tsx'] },
         { name: 'wepy', fileExtensions: ['wpy'] },
@@ -865,6 +865,7 @@ export const fileIcons: FileIcons = {
         { name: 'nest-filter', fileExtensions: ['filter.ts', 'filter.js'], enabledFor: [IconPack.Nest] },
         { name: 'nest-gateway', fileExtensions: ['gateway.ts', 'gateway.js'], enabledFor: [IconPack.Nest] },
         { name: 'nest-guard', fileExtensions: ['guard.ts', 'guard.js'], enabledFor: [IconPack.Nest] },
+        { name: 'nest-resolver', fileExtensions: ['resolver.ts', 'resolver.js'], enabledFor: [IconPack.Nest] },
         { name: 'moonscript', fileExtensions: ['moon'] },
         { name: 'percy', fileNames: ['.percy.yml'] },
         { name: 'gitpod', fileNames: ['.gitpod.yml'] },
@@ -880,6 +881,7 @@ export const fileIcons: FileIcons = {
         { name: 'prolog', fileExtensions: ['p', 'pro'] },
         { name: 'husky', fileNames: ['.huskyrc', 'husky.config.js', '.huskyrc.json', '.huskyrc.js', '.huskyrc.yaml', '.huskyrc.yml'] },
         { name: 'coconut', fileExtensions: ['coco'] },
+        { name: 'tilt', fileNames: ['tiltfile'] },
         { name: 'capacitor', fileNames: ['capacitor.config.json'] },
         { name: 'sketch', fileExtensions: ['sketch'] },
         { name: 'adonis', fileNames: ['.adonisrc.json'] },
@@ -892,6 +894,7 @@ export const fileIcons: FileIcons = {
         { name: 'commitlint', fileNames: ['.commitlintrc', '.commitlintrc.js', 'commitlint.config.js', '.commitlintrc.json', '.commitlint.yaml', '.commitlint.yml'] },
         { name: 'buck', fileNames: ['.buckconfig'] },
         { name: 'dhall', fileExtensions: ['dhall', 'dhallb'] },
+        { name: 'sml', fileExtensions: ['sml', 'mlton', 'mlb', 'sig', 'fun', 'cm', 'lex', 'use', 'grm'] },
         { name: 'nrwl', fileNames: ['nx.json'] },
         { name: 'imba', fileExtensions: ['imba'] },
     ]
