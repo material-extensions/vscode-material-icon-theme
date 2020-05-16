@@ -14,7 +14,7 @@ export const iconJsonName: string = 'material-icons.json';
 export const openedFolder: string = '-open';
 
 /**
- * FIle ending for light icons.
+ * File ending for light icons.
  */
 export const lightVersion: string = '_light';
 
