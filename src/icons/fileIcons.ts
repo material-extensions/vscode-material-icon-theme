@@ -828,6 +828,7 @@ export const fileIcons: FileIcons = {
         { name: 'vagrant', fileNames: ['vagrantfile'], fileExtensions: ['vagrantfile'] },
         { name: 'prisma', fileNames: ['prisma.yml'], fileExtensions: ['prisma'] },
         { name: 'razor', fileExtensions: ['cshtml', 'vbhtml'] },
+        { name: 'abc', fileExtensions: ['abc'] },
         { name: 'asciidoc', fileExtensions: ['ad', 'adoc', 'asciidoc'] },
         { name: 'istanbul', fileNames: ['.nycrc', '.nycrc.json'] },
         { name: 'edge', fileExtensions: ['edge'] },
