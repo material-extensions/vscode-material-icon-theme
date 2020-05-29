@@ -6,7 +6,7 @@ import { FileIcons, IconPack } from '../models/index';
 export const fileIcons: FileIcons = {
     defaultIcon: { name: 'file' },
     icons: [
-        { name: 'html', fileExtensions: ['html', 'htm', 'xhtml', 'html_vm', 'asp'] },
+        { name: 'html', fileExtensions: ['htm', 'xhtml', 'html_vm', 'asp'] },
         {
             name: 'pug',
             fileExtensions: ['jade', 'pug'],
@@ -34,8 +34,6 @@ export const fileIcons: FileIcons = {
             fileNames: [
                 '.jscsrc',
                 '.jshintrc',
-                'tsconfig.json',
-                'tslint.json',
                 'composer.lock',
                 '.jsbeautifyrc',
                 '.esformatter',
@@ -435,7 +433,7 @@ export const fileIcons: FileIcons = {
         { name: 'css-map', fileExtensions: ['css.map'] },
         { name: 'lock', fileExtensions: ['lock'] },
         { name: 'handlebars', fileExtensions: ['hbs', 'mustache'] },
-        { name: 'perl', fileExtensions: ['pm'] },
+        { name: 'perl', fileExtensions: ['pm', 'raku'] },
         { name: 'haxe', fileExtensions: ['hx'] },
         { name: 'test-ts', fileExtensions: ['spec.ts', 'e2e-spec.ts', 'test.ts', 'ts.snap'] },
         {
@@ -501,13 +499,17 @@ export const fileIcons: FileIcons = {
         { name: 'haml', fileExtensions: ['haml'] },
         { name: 'yang', fileExtensions: ['yang'] },
         { name: 'mjml', fileExtensions: ['mjml'] },
-        { name: 'now', fileNames: ['now.json', '.nowignore'], light: true },
+        {
+            name: 'vercel',
+            fileNames: ['vercel.json', '.vercelignore', 'now.json', '.nowignore'],
+            light: true
+        },
         {
             name: 'terraform',
             fileExtensions: ['tf', 'tf.json', 'tfvars', 'tfstate']
         },
         { name: 'laravel', fileExtensions: ['blade.php', 'inky.php'] },
-        { name: 'applescript', fileExtensions: ['applescript'] },
+        { name: 'applescript', fileExtensions: ['applescript', 'ipa'] },
         { name: 'cake', fileExtensions: ['cake'] },
         { name: 'cucumber', fileExtensions: ['feature'] },
         { name: 'nim', fileExtensions: ['nim', 'nimble'] },
@@ -609,7 +611,7 @@ export const fileIcons: FileIcons = {
         },
         {
             name: 'nodejs',
-            fileNames: ['package.json', 'package-lock.json', '.nvmrc', '.esmrc']
+            fileNames: ['package.json', 'package-lock.json', '.nvmrc', '.esmrc', '.node-version']
         },
         { name: 'npm', fileNames: ['.npmignore', '.npmrc'] },
         {
@@ -648,7 +650,7 @@ export const fileIcons: FileIcons = {
                 '.env.test.local',
             ]
         },
-        { name: 'babel', fileNames: ['.babelrc', '.babelrc.js', 'babel.config.js'] },
+        { name: 'babel', fileNames: ['.babelrc', '.babelrc.js', '.babelrc.json', 'babel.config.json', 'babel.config.js'] },
         {
             name: 'contributing',
             fileNames: ['contributing.md']
@@ -707,7 +709,8 @@ export const fileIcons: FileIcons = {
                 '.eslintrc.yml',
                 '.eslintrc.json',
                 '.eslintrc',
-                '.eslintignore'
+                '.eslintignore',
+                '.eslintcache'
             ]
         },
         {
@@ -764,6 +767,7 @@ export const fileIcons: FileIcons = {
         },
         { name: 'code-climate', fileNames: ['.codeclimate.yml'], light: true },
         { name: 'prettier', fileNames: ['.prettierrc', 'prettier.config.js', '.prettierrc.js', '.prettierrc.json', '.prettierrc.yaml', '.prettierrc.yml', '.prettierignore'] },
+        { name: 'apollo', fileNames: ['apollo.config.js'] },
         { name: 'nodemon', fileNames: ['nodemon.json', 'nodemon-debug.json'] },
         { name: 'ngrx-reducer', fileExtensions: ['reducer.ts', 'rootReducer.ts'], enabledFor: [IconPack.Ngrx] },
         { name: 'ngrx-state', fileExtensions: ['state.ts'], enabledFor: [IconPack.Ngrx] },
@@ -795,7 +799,7 @@ export const fileIcons: FileIcons = {
                 'gruntfile.babel.coffee'
             ],
         },
-        { name: 'jest', fileNames: ['jest.config.js', 'jest.config.ts', 'jest.config.json', 'jest.setup.js', 'jest.setup.ts', 'jest.json', '.jestrc', '.jestrc.js', '.jestrc.json', 'jest.teardown.js'] },
+        { name: 'jest', fileNames: ['jest.config.js', 'jest.config.ts', 'jest.config.cjs', 'jest.config.mjs', 'jest.config.json', 'jest.setup.js', 'jest.setup.ts', 'jest.json', '.jestrc', '.jestrc.js', '.jestrc.json', 'jest.teardown.js'] },
         { name: 'processing', fileExtensions: ['pde'], light: true },
         { name: 'storybook', fileExtensions: ['stories.js', 'stories.jsx', 'story.js', 'story.jsx', 'stories.ts', 'stories.tsx', 'story.ts', 'story.tsx'] },
         { name: 'wepy', fileExtensions: ['wpy'] },
@@ -805,13 +809,13 @@ export const fileIcons: FileIcons = {
         { name: 'san', fileExtensions: ['san'] },
         { name: 'wallaby', fileNames: ['wallaby.js', 'wallaby.conf.js'] },
         { name: 'django', fileExtensions: ['djt'] },
-        { name: 'stencil', fileNames: ['stencil.config.js', 'stencil.config.ts'], light: true },
+        { name: 'stencil', fileNames: ['stencil.config.js', 'stencil.config.ts'] },
         { name: 'red', fileExtensions: ['red'] },
         { name: 'makefile', fileNames: ['makefile'] },
         { name: 'foxpro', fileExtensions: ['fxp', 'prg'] },
         { name: 'i18n', fileExtensions: ['pot', 'po', 'mo'] },
         { name: 'webassembly', fileExtensions: ['wat', 'wasm'] },
-        { name: 'semantic-release', light: true, fileNames: ['.releaserc', 'release.config.js'] },
+        { name: 'semantic-release', light: true, fileNames: ['.releaserc', '.releaserc.yaml', '.releaserc.yml', '.releaserc.json', '.releaserc.js', 'release.config.js'] },
         { name: 'bitbucket', fileNames: ['bitbucket-pipelines.yaml', 'bitbucket-pipelines.yml'] },
         { name: 'jupyter', fileExtensions: ['ipynb'] },
         { name: 'd', fileExtensions: ['d'] },
@@ -828,6 +832,7 @@ export const fileIcons: FileIcons = {
         { name: 'vagrant', fileNames: ['vagrantfile'], fileExtensions: ['vagrantfile'] },
         { name: 'prisma', fileNames: ['prisma.yml'], fileExtensions: ['prisma'] },
         { name: 'razor', fileExtensions: ['cshtml', 'vbhtml'] },
+        { name: 'abc', fileExtensions: ['abc'] },
         { name: 'asciidoc', fileExtensions: ['ad', 'adoc', 'asciidoc'] },
         { name: 'istanbul', fileNames: ['.nycrc', '.nycrc.json'] },
         { name: 'edge', fileExtensions: ['edge'] },
@@ -865,6 +870,7 @@ export const fileIcons: FileIcons = {
         { name: 'nest-filter', fileExtensions: ['filter.ts', 'filter.js'], enabledFor: [IconPack.Nest] },
         { name: 'nest-gateway', fileExtensions: ['gateway.ts', 'gateway.js'], enabledFor: [IconPack.Nest] },
         { name: 'nest-guard', fileExtensions: ['guard.ts', 'guard.js'], enabledFor: [IconPack.Nest] },
+        { name: 'nest-resolver', fileExtensions: ['resolver.ts', 'resolver.js'], enabledFor: [IconPack.Nest] },
         { name: 'moonscript', fileExtensions: ['moon'] },
         { name: 'percy', fileNames: ['.percy.yml'] },
         { name: 'gitpod', fileNames: ['.gitpod.yml'] },
@@ -880,5 +886,22 @@ export const fileIcons: FileIcons = {
         { name: 'prolog', fileExtensions: ['p', 'pro'] },
         { name: 'husky', fileNames: ['.huskyrc', 'husky.config.js', '.huskyrc.json', '.huskyrc.js', '.huskyrc.yaml', '.huskyrc.yml'] },
         { name: 'coconut', fileExtensions: ['coco'] },
+        { name: 'tilt', fileNames: ['tiltfile'] },
+        { name: 'capacitor', fileNames: ['capacitor.config.json'] },
+        { name: 'sketch', fileExtensions: ['sketch'] },
+        { name: 'adonis', fileNames: ['.adonisrc.json'] },
+        {
+            name: 'uml',
+            fileExtensions: ['iuml', 'pu', 'puml', 'plantuml', 'wsd'],
+            light: true,
+        },
+        { name: 'meson', fileNames: ['meson.build'] },
+        { name: 'commitlint', fileNames: ['.commitlintrc', '.commitlintrc.js', 'commitlint.config.js', '.commitlintrc.json', '.commitlint.yaml', '.commitlint.yml'] },
+        { name: 'buck', fileNames: ['.buckconfig'] },
+        { name: 'dhall', fileExtensions: ['dhall', 'dhallb'] },
+        { name: 'sml', fileExtensions: ['sml', 'mlton', 'mlb', 'sig', 'fun', 'cm', 'lex', 'use', 'grm'] },
+        { name: 'nrwl', fileNames: ['nx.json'] },
+        { name: 'imba', fileExtensions: ['imba'] },
+        { name: 'drawio', fileExtensions: ['drawio', 'dio'] },
     ]
 };
