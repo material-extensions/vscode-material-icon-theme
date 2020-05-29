@@ -901,6 +901,8 @@ export const fileIcons: FileIcons = {
         { name: 'dhall', fileExtensions: ['dhall', 'dhallb'] },
         { name: 'sml', fileExtensions: ['sml', 'mlton', 'mlb', 'sig', 'fun', 'cm', 'lex', 'use', 'grm'] },
         { name: 'nrwl', fileNames: ['nx.json'] },
+        { name: 'opam', fileExtensions: ['opam'] },
+        { name: 'dune', fileNames: ['dune', 'dune-project'] },
         { name: 'imba', fileExtensions: ['imba'] },
         { name: 'drawio', fileExtensions: ['drawio', 'dio'] },
     ]
