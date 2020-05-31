@@ -658,7 +658,7 @@ export const fileIcons: FileIcons = {
         { name: 'readme', fileNames: ['readme.md', 'readme.txt', 'readme'] },
         {
             name: 'changelog',
-            fileNames: ['changelog', 'changelog.md', 'changelog.txt']
+            fileNames: ['changelog', 'changelog.md', 'changelog.txt', 'changes', 'changes.md', 'changes.txt']
         },
         {
             name: 'credits',
