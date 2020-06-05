@@ -632,8 +632,10 @@ export const fileIcons: FileIcons = {
             name: 'tune',
             fileExtensions: ['env'],
             fileNames: [
+                '.env.defaults',
                 '.env.example',
                 '.env.sample',
+                '.env.schema',
                 '.env.local',
                 '.env.dev',
                 '.env.development',
