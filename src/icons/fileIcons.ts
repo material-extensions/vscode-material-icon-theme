@@ -906,5 +906,6 @@ export const fileIcons: FileIcons = {
         { name: 'dune', fileNames: ['dune', 'dune-project'] },
         { name: 'imba', fileExtensions: ['imba'] },
         { name: 'drawio', fileExtensions: ['drawio', 'dio'] },
+        { name: 'cname', fileNames: ['CNAME'] },
     ]
 };
