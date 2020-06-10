@@ -908,6 +908,7 @@ export const fileIcons: FileIcons = {
         { name: 'dune', fileNames: ['dune', 'dune-project'] },
         { name: 'imba', fileExtensions: ['imba'] },
         { name: 'drawio', fileExtensions: ['drawio', 'dio'] },
+        { name: 'pascal', fileExtensions: ['pas'] },
         { name: 'shaderlab', fileExtensions: ['unity'] },
     ]
 };
