@@ -77,4 +77,6 @@ export const languageIcons: LanguageIcon[] = [
     { icon: { name: 'silverstripe' }, ids: [] },
     { icon: { name: 'prolog' }, ids: ['prolog'] },
     { icon: { name: 'pawn' }, ids: ['pawn'] },
+    { icon: { name: 'reason' }, ids: ['reason', 'reason_lisp'] },
+    { icon: { name: 'sml' }, ids: ['sml'] },
 ];
