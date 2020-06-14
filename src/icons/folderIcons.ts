@@ -184,6 +184,8 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-mobile', folderNames: ['mobile', 'mobiles', 'portable', 'portability'] },
             { name: 'folder-stencil', folderNames: ['.stencil'] },
             { name: 'folder-firebase', folderNames: ['.firebase'] },
+            { name: 'folder-svelte', folderNames: ['svelte'] },
+            { name: 'folder-intellij', folderNames: ['.idea'], light: true },
         ]
     },
     { name: 'classic', defaultIcon: { name: 'folder' }, rootFolder: { name: 'folder-root' } },

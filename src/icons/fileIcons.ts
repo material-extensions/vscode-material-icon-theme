@@ -632,8 +632,10 @@ export const fileIcons: FileIcons = {
             name: 'tune',
             fileExtensions: ['env'],
             fileNames: [
+                '.env.defaults',
                 '.env.example',
                 '.env.sample',
+                '.env.schema',
                 '.env.local',
                 '.env.dev',
                 '.env.development',
@@ -659,7 +661,7 @@ export const fileIcons: FileIcons = {
         { name: 'readme', fileNames: ['readme.md', 'readme.txt', 'readme'] },
         {
             name: 'changelog',
-            fileNames: ['changelog', 'changelog.md', 'changelog.txt']
+            fileNames: ['changelog', 'changelog.md', 'changelog.txt', 'changes', 'changes.md', 'changes.txt']
         },
         {
             name: 'credits',
@@ -890,6 +892,7 @@ export const fileIcons: FileIcons = {
         { name: 'tilt', fileNames: ['tiltfile'] },
         { name: 'capacitor', fileNames: ['capacitor.config.json'] },
         { name: 'sketch', fileExtensions: ['sketch'] },
+        { name: 'pawn', fileExtensions: ['pwn', 'amx'] },
         { name: 'adonis', fileNames: ['.adonisrc.json'] },
         {
             name: 'uml',
@@ -907,5 +910,7 @@ export const fileIcons: FileIcons = {
         { name: 'imba', fileExtensions: ['imba'] },
         { name: 'drawio', fileExtensions: ['drawio', 'dio'] },
         { name: 'flutter', fileExtensions: ['.metadata', 'pubspec.lock', 'pubspec.yaml'] },
+        { name: 'pascal', fileExtensions: ['pas'] },
+        { name: 'shaderlab', fileExtensions: ['unity'] },
     ]
 };
