@@ -9,7 +9,7 @@ export const folderIcons: FolderTheme[] = [
         defaultIcon: { name: 'folder' },
         rootFolder: { name: 'folder-root' },
         icons: [
-            { name: 'folder-src', folderNames: ['src', 'source', 'sources'] },
+            { name: 'folder-src', folderNames: ['src', 'source', 'sources', 'code'] },
             { name: 'folder-dist', folderNames: ['dist', 'out', 'build', 'release', 'bin'] },
             {
                 name: 'folder-css',
@@ -67,9 +67,9 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-config', folderNames: ['config', 'configs', 'configuration', 'configurations', 'settings', '.settings', 'META-INF'] },
             {
                 name: 'folder-i18n',
-                folderNames: ['i18n', 'internationalization', 'lang', 'language', 'languages', 'locale', 'locales', 'localization', 'translation', 'translate', 'translations', '.tx']
+                folderNames: ['i18n', 'internationalization', 'lang', 'language', 'languages', 'locale', 'locales', 'l10n', 'localization', 'translation', 'translate', 'translations', '.tx']
             },
-            { name: 'folder-components', folderNames: ['components'] },
+            { name: 'folder-components', folderNames: ['components', 'widget', 'widgets'] },
             { name: 'folder-aurelia', folderNames: ['aurelia_project'] },
             {
                 name: 'folder-resource',
@@ -96,7 +96,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-log', folderNames: ['log', 'logs'] },
             { name: 'folder-temp', folderNames: ['temp', '.temp', 'tmp', '.tmp', 'cached', 'cache', '.cache'] },
             { name: 'folder-aws', folderNames: ['aws', '.aws'] },
-            { name: 'folder-audio', folderNames: ['audio', 'audios', 'music'] },
+            { name: 'folder-audio', folderNames: ['audio', 'audios', 'music', 'sound', 'sounds'] },
             { name: 'folder-video', folderNames: ['video', 'videos', 'movie', 'movies'] },
             { name: 'folder-kubernetes', folderNames: ['kubernetes', 'k8s'] },
             { name: 'folder-import', folderNames: ['import', 'imports', 'imported'] },
@@ -110,7 +110,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-other', folderNames: ['other', 'others', 'misc', 'miscellaneous', 'extra', 'extras'] },
             { name: 'folder-typescript', folderNames: ['typescript', 'ts', 'typings', '@types'] },
             { name: 'folder-graphql', folderNames: ['graphql', 'gql'] },
-            { name: 'folder-routes', folderNames: ['routes', 'router'] },
+            { name: 'folder-routes', folderNames: ['routes', 'router', 'routers'] },
             { name: 'folder-ci', folderNames: ['.ci', 'ci'] },
             { name: 'folder-benchmark', folderNames: ['benchmark', 'benchmarks', 'performance', 'measure', 'measures', 'measurement'] },
             { name: 'folder-messages', folderNames: ['messages', 'forum', 'chat', 'chats', 'conversation', 'conversations'] },
@@ -152,11 +152,11 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-job', folderNames: ['job', 'jobs'] },
             { name: 'folder-keys', folderNames: ['keys', 'key', 'token', 'tokens'] },
             { name: 'folder-layout', folderNames: ['layout', 'layouts'] },
-            { name: 'folder-mail', folderNames: ['mail', 'mails', 'smtp'] },
+            { name: 'folder-mail', folderNames: ['mail', 'mails', 'email', 'emails', 'smtp'] },
             { name: 'folder-mappings', folderNames: ['mappings', 'mapping'] },
             { name: 'folder-meta', folderNames: ['meta'] },
             { name: 'folder-packages', folderNames: ['package', 'packages'] },
-            { name: 'folder-shared', folderNames: ['shared'] },
+            { name: 'folder-shared', folderNames: ['shared', 'common'] },
             { name: 'folder-stack', folderNames: ['stack', 'stacks'] },
             { name: 'folder-template', folderNames: ['template', 'templates'] },
             { name: 'folder-utils', folderNames: ['util', 'utils'] },
@@ -181,9 +181,11 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-nuxt', folderNames: ['nuxt', '.nuxt'], enabledFor: [IconPack.Vuex, IconPack.Vue] },
             { name: 'folder-vue-directives', folderNames: ['directives'], enabledFor: [IconPack.Vuex, IconPack.Vue] },
             { name: 'folder-vue', folderNames: ['components'], enabledFor: [IconPack.Vuex, IconPack.Vue] },
-            { name: 'folder-mobile', folderNames: ['mobile', 'mobiles', 'portable'] },
+            { name: 'folder-mobile', folderNames: ['mobile', 'mobiles', 'portable', 'portability'] },
             { name: 'folder-stencil', folderNames: ['.stencil'] },
             { name: 'folder-firebase', folderNames: ['.firebase'] },
+            { name: 'folder-svelte', folderNames: ['svelte'] },
+            { name: 'folder-intellij', folderNames: ['.idea'], light: true },
         ]
     },
     { name: 'classic', defaultIcon: { name: 'folder' }, rootFolder: { name: 'folder-root' } },
