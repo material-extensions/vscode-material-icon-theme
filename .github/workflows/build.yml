@@ -7,7 +7,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [windows-latest, ubuntu-latest, macos-latest]
+        os: [windows-latest, ubuntu-latest]
         node-version: [12.x, 14.x]
 
     name: Test on ${{ matrix.os }} (Node.js ${{ matrix.node-version }})
