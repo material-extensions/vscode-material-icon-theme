@@ -10,7 +10,7 @@ jobs:
         os: [windows-latest, ubuntu-latest, macos-latest]
         node-version: [12.x, 14.x]
 
-    name: Test on ${{ matrix.os }}
+    name: Test on ${{ matrix.os }} (Node.js ${{ matrix.node-version }})
 
     steps:
       - uses: actions/checkout@v2
