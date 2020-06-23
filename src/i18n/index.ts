@@ -7,7 +7,7 @@ export const getCurrentLanguage = (): string =>
 
 let currentTranslation;
 let fallbackTranslation; // default: en
-const PLACEHOLDER = '%';
+const placeholder = '%';
 
 /** Initialize the translations */
 export const initTranslations = async () => {
@@ -67,7 +67,7 @@ export const replace = (value: string = '', words: string | string[]) => {
 
     const values: string[] = [].concat(words);
     values.forEach((e, i) => {
-        translation = translation.replace(PLACEHOLDER.concat(<any>i), e);
+        translation = translation.replace(placeholder.concat(<any>i), e);
     });
 
     return translation;

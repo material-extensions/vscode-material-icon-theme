@@ -222,6 +222,7 @@ export const fileIcons: FileIcons = {
                 'tgz'
             ]
         },
+        { name: 'vala', fileExtensions: ['vala'] },
         { name: 'zig', fileExtensions: ['zig'] },
         { name: 'exe', fileExtensions: ['exe', 'msi'] },
         { name: 'java', fileExtensions: ['java', 'jar', 'jsp'] },
@@ -631,8 +632,10 @@ export const fileIcons: FileIcons = {
             name: 'tune',
             fileExtensions: ['env'],
             fileNames: [
+                '.env.defaults',
                 '.env.example',
                 '.env.sample',
+                '.env.schema',
                 '.env.local',
                 '.env.dev',
                 '.env.development',
@@ -658,7 +661,7 @@ export const fileIcons: FileIcons = {
         { name: 'readme', fileNames: ['readme.md', 'readme.txt', 'readme'] },
         {
             name: 'changelog',
-            fileNames: ['changelog', 'changelog.md', 'changelog.txt']
+            fileNames: ['changelog', 'changelog.md', 'changelog.txt', 'changes', 'changes.md', 'changes.txt']
         },
         {
             name: 'credits',
@@ -837,6 +840,7 @@ export const fileIcons: FileIcons = {
         { name: 'istanbul', fileNames: ['.nycrc', '.nycrc.json'] },
         { name: 'edge', fileExtensions: ['edge'] },
         { name: 'scheme', fileExtensions: ['ss', 'scm'] },
+        { name: 'lisp', fileExtensions: ['lisp', 'lsp', 'cl', 'fast'] },
         { name: 'tailwindcss', fileNames: ['tailwind.js', 'tailwind.config.js'] },
         {
             name: '3d',
@@ -889,7 +893,9 @@ export const fileIcons: FileIcons = {
         { name: 'tilt', fileNames: ['tiltfile'] },
         { name: 'capacitor', fileNames: ['capacitor.config.json'] },
         { name: 'sketch', fileExtensions: ['sketch'] },
+        { name: 'pawn', fileExtensions: ['pwn', 'amx'] },
         { name: 'adonis', fileNames: ['.adonisrc.json'] },
+        { name: 'forth', fileExtensions: ['4th', 'fth', 'frt'] },
         {
             name: 'uml',
             fileExtensions: ['iuml', 'pu', 'puml', 'plantuml', 'wsd'],
@@ -901,8 +907,12 @@ export const fileIcons: FileIcons = {
         { name: 'dhall', fileExtensions: ['dhall', 'dhallb'] },
         { name: 'sml', fileExtensions: ['sml', 'mlton', 'mlb', 'sig', 'fun', 'cm', 'lex', 'use', 'grm'] },
         { name: 'nrwl', fileNames: ['nx.json'] },
+        { name: 'opam', fileExtensions: ['opam'] },
+        { name: 'dune', fileNames: ['dune', 'dune-project'] },
         { name: 'imba', fileExtensions: ['imba'] },
         { name: 'drawio', fileExtensions: ['drawio', 'dio'] },
+        { name: 'pascal', fileExtensions: ['pas'] },
+        { name: 'shaderlab', fileExtensions: ['unity'] },
         { name: 'flutter', fileNames: ['.flutter-plugins', '.metadata', 'pubspec.lock', 'pubspec.yaml', '.packages'] },
     ]
 };

@@ -1,4 +1,39 @@
 # Changelog
+## 4.2.0 (2020-06-17)
+### New file icons
+- Dune & Opam ([@EduardoAraujoB](https://github.com/EduardoAraujoB) in [#707](https://github.com/PKief/vscode-material-icon-theme/pull/707))
+- .eslintcache ([@lmn8](https://github.com/lmn8) in [#711](https://github.com/PKief/vscode-material-icon-theme/pull/711))
+- Standard ML ([@lmn8](https://github.com/lmn8) in [#700](https://github.com/PKief/vscode-material-icon-theme/pull/700))
+- Imba ([issue #715](https://github.com/PKief/vscode-material-icon-theme/issues/715))
+- jest.config.(m|c)js ([@eankeen](https://github.com/eankeen) in [#718](https://github.com/PKief/vscode-material-icon-theme/pull/718))
+- nest-resolver ([@thmsgbrt](https://github.com/thmsgbrt) in [#722](https://github.com/PKief/vscode-material-icon-theme/pull/722))
+- Tilt ([@Tchoupinax](https://github.com/Tchoupinax) in [#650](https://github.com/PKief/vscode-material-icon-theme/pull/650))
+- .node-version ([@noelforte](https://github.com/noelforte) in [#733](https://github.com/PKief/vscode-material-icon-theme/pull/733))
+- ABC ([@LoreVala](https://github.com/LoreVala) in [#741](https://github.com/PKief/vscode-material-icon-theme/pull/741))
+- Drawio ([@PKief](https://github.com/PKief) in commit [4cc0ec3](https://github.com/PKief/vscode-material-icon-theme/commit/4cc0ec3dfaedf1d28fb4a4f9922218badd8713e4))
+- changes ([@valtlai](https://github.com/valtlai) in [#747](https://github.com/PKief/vscode-material-icon-theme/pull/747))
+- Vala ([@drom98](https://github.com/drom98) in [#466](https://github.com/PKief/vscode-material-icon-theme/pull/466))
+- .env.schema and .env.defaults ([@bcanseco](https://github.com/bcanseco) in [#750](https://github.com/PKief/vscode-material-icon-theme/pull/750))
+- Unity ([@shubham-saudolla](https://github.com/shubham-saudolla) in [#758](https://github.com/PKief/vscode-material-icon-theme/pull/758))
+- Pascal ([issue #739](https://github.com/PKief/vscode-material-icon-theme/issues/739))
+- Pawn ([@Zorono](https://github.com/Zorono) in [#673](https://github.com/PKief/vscode-material-icon-theme/pull/673))
+- Forth & Lisp ([@georgjz](https://github.com/georgjz) in [#679](https://github.com/PKief/vscode-material-icon-theme/pull/679))
+
+### New folder icons
+- code ([@whiitehead](https://github.com/whiitehead) in [#720](https://github.com/PKief/vscode-material-icon-theme/pull/720))
+- sounds ([issue #727](https://github.com/PKief/vscode-material-icon-theme/issues/727))
+- widgets ([issue #660](https://github.com/PKief/vscode-material-icon-theme/issues/660))
+- portability ([@lmn8](https://github.com/lmn8) in [#731](https://github.com/PKief/vscode-material-icon-theme/pull/731))
+- Svelte ([issue #756](https://github.com/PKief/vscode-material-icon-theme/issues/756))
+- IntelliJ ([@PKief](https://github.com/PKief) in commit [19747e9](https://github.com/PKief/vscode-material-icon-theme/commit/19747e96858f843bce9b0173a570b56d40e19ee3))
+- update ([@PKief](https://github.com/PKief) in commit [084320c](https://github.com/PKief/vscode-material-icon-theme/commit/084320c387050ff0af0964276c3cbc3f1aac439b))
+
+### Updated icons
+- GraphQL ([@PKief](https://github.com/PKief) in commit [c6877f5](https://github.com/PKief/vscode-material-icon-theme/commit/c6877f53cf55bae2a93e965c11aa9450142fdcd9))
+- Ocaml ([@PKief](https://github.com/PKief) in commit [7c16525](https://github.com/PKief/vscode-material-icon-theme/commit/7c1652511f1bb2c873d0378368e5f959b27798af))
+- folder-animation ([@PKief](https://github.com/PKief) in commit [1d6c4d7](https://github.com/PKief/vscode-material-icon-theme/commit/1d6c4d7e6c3f8d8f800c09b8fff9775335b9d025))
+- Now -> Vercel ([issue #738](https://github.com/PKief/vscode-material-icon-theme/issues/738)) and ([@samsisle](https://github.com/samsisle) in [#759](https://github.com/PKief/vscode-material-icon-theme/pull/759))
+
 ## 4.1.0 (2020-04-26)
 ### New file icons
 - AdonisJs ([@devcass](https://github.com/devcass) in [#658](https://github.com/PKief/vscode-material-icon-theme/pull/658))
