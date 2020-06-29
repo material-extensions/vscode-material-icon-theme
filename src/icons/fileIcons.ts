@@ -903,5 +903,6 @@ export const fileIcons: FileIcons = {
         { name: 'nrwl', fileNames: ['nx.json'] },
         { name: 'imba', fileExtensions: ['imba'] },
         { name: 'drawio', fileExtensions: ['drawio', 'dio'] },
+        { name: 'hjson', fileExtensions: ['hjson']},
     ]
 };
