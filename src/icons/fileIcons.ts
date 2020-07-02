@@ -432,7 +432,7 @@ export const fileIcons: FileIcons = {
         { name: 'ocaml', fileExtensions: ['ml', 'mli', 'cmx'] },
         { name: 'javascript-map', fileExtensions: ['js.map', 'mjs.map'] },
         { name: 'css-map', fileExtensions: ['css.map'] },
-        { name: 'lock', fileExtensions: ['lock'] },
+        { name: 'lock', fileExtensions: ['lock'], fileNames: ['security.md', 'security.txt', 'security'] },
         { name: 'handlebars', fileExtensions: ['hbs', 'mustache'] },
         { name: 'perl', fileExtensions: ['pm', 'raku'] },
         { name: 'haxe', fileExtensions: ['hx'] },
