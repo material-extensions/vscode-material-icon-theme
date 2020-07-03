@@ -202,7 +202,8 @@ export const fileIcons: FileIcons = {
         },
         {
             name: 'database',
-            fileExtensions: ['pdb', 'sql', 'pks', 'pkb', 'accdb', 'mdb', 'sqlite', 'pgsql', 'postgres', 'psql']
+            fileExtensions: ['pdb', 'sql', 'pks', 'pkb', 'accdb', 'mdb', 'sqlite', 'pgsql', 'postgres', 'psql'],
+            fileNames: ['ormconfig.json']
         },
         { name: 'csharp', fileExtensions: ['cs', 'csx'] },
         { name: 'qsharp', fileExtensions: ['qs'] },
@@ -651,6 +652,7 @@ export const fileIcons: FileIcons = {
                 '.env.production.local',
                 '.env.staging.local',
                 '.env.test.local',
+                'tsconfig.json'
             ]
         },
         { name: 'babel', fileNames: ['.babelrc', '.babelrc.js', '.babelrc.json', 'babel.config.json', 'babel.config.js'] },
@@ -861,6 +863,7 @@ export const fileIcons: FileIcons = {
                 'mqo',
                 'pmd',
                 'pmx',
+                'proto',
                 'skp',
                 'vac',
                 'vdp',
