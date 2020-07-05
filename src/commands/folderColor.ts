@@ -70,8 +70,7 @@ const validateColorInput = (colorInput: string) => {
 export const checkFolderColorStatus = (): string => {
     const defaultOptions = getDefaultIconOptions();
     const config = helpers.getMaterialIconsJSON();
-    return config.options.folders.color === undefined ?
-        defaultOptions.folders.color : config.options.folders.color;
+    return config.options.folders.color ?? defaultOptions.folders.color;
 };
 
 const setColorConfig = (value: string) => {
