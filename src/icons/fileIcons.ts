@@ -894,6 +894,7 @@ export const fileIcons: FileIcons = {
         { name: 'gcp', fileNames: ['.gcloudignore'] },
         { name: 'disc', fileExtensions: ['iso'] },
         { name: 'fortran', fileExtensions: ['f', 'f77', 'f90', 'f95', 'f03', 'f08'] },
+        { name: 'tcl', fileExtensions: ['tcl'] },
         { name: 'liquid', fileExtensions: ['liquid'] },
         { name: 'prolog', fileExtensions: ['p', 'pro'] },
         { name: 'husky', fileNames: ['.huskyrc', 'husky.config.js', '.huskyrc.json', '.huskyrc.js', '.huskyrc.yaml', '.huskyrc.yml'] },
