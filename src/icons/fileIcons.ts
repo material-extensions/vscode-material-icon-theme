@@ -922,5 +922,6 @@ export const fileIcons: FileIcons = {
         { name: 'drawio', fileExtensions: ['drawio', 'dio'] },
         { name: 'pascal', fileExtensions: ['pas'] },
         { name: 'shaderlab', fileExtensions: ['unity'] },
+        { name: 'roadmap', fileNames: ['roadmap.md', 'roadmap.txt', 'timeline.md', 'timeline.txt', 'milestones.md', 'milestones.txt'] },
     ]
 };
