@@ -188,6 +188,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-update', folderNames: ['update', 'updates', 'upgrade', 'upgrades'] },
             { name: 'folder-intellij', folderNames: ['.idea'], light: true },
             { name: 'folder-azure-pipelines', folderNames: ['.azure-pipelines', '.azure-pipelines-ci'] },
+            { name: 'folder-electron', folderNames: ['electron', '.electron'] }
         ]
     },
     { name: 'classic', defaultIcon: { name: 'folder' }, rootFolder: { name: 'folder-root' } },
