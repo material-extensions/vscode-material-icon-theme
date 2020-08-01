@@ -528,7 +528,7 @@ export const fileIcons: FileIcons = {
         { name: 'cabal', fileExtensions: ['cabal'] },
         { name: 'nix', fileExtensions: ['nix'] },
         { name: 'slim', fileExtensions: ['slim'] },
-        { name: 'http', fileExtensions: ['http', 'rest'] },
+        { name: 'http', fileExtensions: ['http', 'rest'], fileNames: ['CNAME'] },
         { name: 'restql', fileExtensions: ['rql', 'restql'] },
         { name: 'kivy', fileExtensions: ['kv'] },
         {
