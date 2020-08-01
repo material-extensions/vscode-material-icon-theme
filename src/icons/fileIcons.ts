@@ -929,5 +929,6 @@ export const fileIcons: FileIcons = {
             fileNames: ['nuget.config', '.nuspec', 'nuget.exe'],
             fileExtensions: ['nupkg']
         },
+        { name: 'command', fileExtensions: ['command'] },
     ]
 };
