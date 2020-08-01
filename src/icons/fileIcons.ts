@@ -924,5 +924,6 @@ export const fileIcons: FileIcons = {
         { name: 'shaderlab', fileExtensions: ['unity'] },
         { name: 'roadmap', fileNames: ['roadmap.md', 'roadmap.txt', 'timeline.md', 'timeline.txt', 'milestones.md', 'milestones.txt'] },
         { name: 'sas', fileExtensions: ['sas', 'sas7bdat', 'sashdat', 'astore', 'ast', 'sast'] },
+        { name: 'command', fileExtensions: ['command'] },
     ]
 };
