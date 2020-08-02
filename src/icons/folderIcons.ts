@@ -134,6 +134,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-serverless', folderNames: ['.serverless', 'serverless'] },
             { name: 'folder-api', folderNames: ['api', 'apis'] },
             { name: 'folder-app', folderNames: ['app', 'apps'] },
+            { name: 'folder-apollo', folderNames: ['apollo', 'apolloclient', 'apollo-client', 'apollocache', 'apollo-cache', 'apolloconfig', 'apollo-config'] },
             { name: 'folder-archive', folderNames: ['archive', 'archives', 'archival', 'backup', 'backups', 'back-up', 'back-ups'] },
             { name: 'folder-batch', folderNames: ['batch', 'batchs', 'batches'] },
             { name: 'folder-cluster', folderNames: ['cluster', 'clusters'] },
