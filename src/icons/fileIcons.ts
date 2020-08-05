@@ -608,7 +608,7 @@ export const fileIcons: FileIcons = {
         { name: 'ionic', fileNames: ['ionic.config.json', '.io-config.json'] },
         {
             name: 'gulp',
-            fileNames: ['gulpfile.js', 'gulpfile.ts', 'gulpfile.babel.js']
+            fileNames: ['gulpfile.js', 'gulpfile.mjs', 'gulpfile.ts', 'gulpfile.babel.js']
         },
         {
             name: 'nodejs',
