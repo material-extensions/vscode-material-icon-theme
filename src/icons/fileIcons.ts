@@ -930,5 +930,6 @@ export const fileIcons: FileIcons = {
             fileExtensions: ['nupkg']
         },
         { name: 'command', fileExtensions: ['command'] },
+        { name: 'denizenscript', fileExtensions: ['dsc'] },
     ]
 };
