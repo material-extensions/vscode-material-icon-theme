@@ -930,6 +930,7 @@ export const fileIcons: FileIcons = {
             fileExtensions: ['nupkg']
         },
         { name: 'command', fileExtensions: ['command'] },
+        { name: 'stryker', fileNames: ['stryker.conf.js', 'stryker.conf.json'] },
         { name: 'denizenscript', fileExtensions: ['dsc'] },
     ]
 };
