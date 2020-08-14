@@ -52,6 +52,7 @@ export const fileIcons: FileIcons = {
             fileExtensions: ['sublime-project', 'sublime-workspace']
         },
         { name: 'yaml', fileExtensions: ['yaml', 'YAML-tmLanguage', 'yml'] },
+        { name: 'poetry', fileNames: ['pyproject.toml', 'poetry.lock'] },
         {
             name: 'xml',
             fileExtensions: [
