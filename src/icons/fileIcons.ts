@@ -232,7 +232,10 @@ export const fileIcons: FileIcons = {
         { name: 'hpp', fileExtensions: ['hh', 'hpp', 'hxx', 'h++', 'hp', 'tcc', 'inl'] },
         { name: 'go', fileExtensions: ['go'] },
         { name: 'go-mod', fileNames: ['go.mod', 'go.sum'] },
-        { name: 'python', fileExtensions: ['py'] },
+        {
+            name: 'python', fileExtensions: ['py'],
+            fileNames: ['python.exe', 'pythonw.exe']
+        },
         {
             name: 'python-misc',
             fileExtensions: ['pyc', 'whl'],
