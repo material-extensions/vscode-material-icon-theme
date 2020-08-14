@@ -115,7 +115,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-benchmark', folderNames: ['benchmark', 'benchmarks', 'performance', 'measure', 'measures', 'measurement'] },
             { name: 'folder-messages', folderNames: ['messages', 'forum', 'chat', 'chats', 'conversation', 'conversations'] },
             { name: 'folder-less', folderNames: ['less'] },
-            { name: 'folder-python', folderNames: ['python', '__pycache__', '.pytest_cache'] },
+            { name: 'folder-python', folderNames: ['python', '__pycache__', '.pytest_cache', ".mypy_cache"] },
             { name: 'folder-debug', folderNames: ['debug', 'debugging'] },
             { name: 'folder-fastlane', folderNames: ['fastlane'] },
             { name: 'folder-plugin', folderNames: ['plugin', 'plugins', '_plugins', 'extension', 'extensions', 'addon', 'addons'] },
