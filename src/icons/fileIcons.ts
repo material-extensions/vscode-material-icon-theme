@@ -331,6 +331,7 @@ export const fileIcons: FileIcons = {
                 'docker-compose.test.yml'
             ]
         },
+        { name: 'dotenv', fileExtensions: ['env'] },
         { name: 'tex', fileExtensions: ['tex', 'sty', 'dtx', 'ltx'] },
         {
             name: 'powerpoint',
@@ -634,7 +635,6 @@ export const fileIcons: FileIcons = {
         { name: 'android', fileNames: ['androidmanifest.xml'], fileExtensions: ['apk'] },
         {
             name: 'tune',
-            fileExtensions: ['env'],
             fileNames: [
                 '.env.defaults',
                 '.env.example',
