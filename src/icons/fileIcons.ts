@@ -124,6 +124,7 @@ export const fileIcons: FileIcons = {
         { name: 'javascript', fileExtensions: ['js', 'esx', 'mjs'] },
         { name: 'react', fileExtensions: ['jsx'] },
         { name: 'react_ts', fileExtensions: ['tsx'] },
+        { name: 'tox', fileName: ['tox.ini', 'tox.exe'] },
         {
             name: 'routing',
             fileExtensions: ['routing.ts', 'routing.tsx', 'routing.js', 'routing.jsx', 'routes.ts', 'routes.tsx', 'routes.js', 'routes.jsx'],
