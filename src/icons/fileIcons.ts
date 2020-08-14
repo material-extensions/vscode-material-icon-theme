@@ -7,6 +7,7 @@ export const fileIcons: FileIcons = {
     defaultIcon: { name: 'file' },
     icons: [
         { name: 'html', fileExtensions: ['htm', 'xhtml', 'html_vm', 'asp'] },
+        { name: 'coala', fileExtensions: ['coafile'] },
         {
             name: 'pug',
             fileExtensions: ['jade', 'pug'],
