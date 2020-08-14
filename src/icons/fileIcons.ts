@@ -25,6 +25,7 @@ export const fileIcons: FileIcons = {
             ]
         },
         { name: 'blink', fileExtensions: ['blink'], light: true },
+        { name: 'bandit', fileNames: ['bandit.exe', 'bandit-config-generator.exe', 'bandit-baseline.exe'] },
         { name: 'css', fileExtensions: ['css'] },
         { name: 'sass', fileExtensions: ['scss', 'sass'] },
         { name: 'less', fileExtensions: ['less'] },
