@@ -248,10 +248,7 @@ export const fileIcons: FileIcons = {
         { name: 'url', fileExtensions: ['url'] },
         {
             name: 'console',
-            fileNames: [
-                'activate', 
-                'deactivate'
-            ],
+            fileNames: ['activate', 'deactivate'],
             fileExtensions: [
                 'sh',
                 'ksh',
