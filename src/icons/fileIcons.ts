@@ -821,6 +821,7 @@ export const fileIcons: FileIcons = {
         { name: 'san', fileExtensions: ['san'] },
         { name: 'wallaby', fileNames: ['wallaby.js', 'wallaby.conf.js'] },
         { name: 'django', fileExtensions: ['djt'] },
+        { name: 'stylo', fileNames: ['stylo.config.js', 'stylo.config.ts'], light: true },
         { name: 'stencil', fileNames: ['stencil.config.js', 'stencil.config.ts'] },
         { name: 'red', fileExtensions: ['red'] },
         { name: 'makefile', fileNames: ['makefile'] },
