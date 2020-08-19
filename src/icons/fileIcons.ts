@@ -708,6 +708,7 @@ export const fileIcons: FileIcons = {
             name: 'eslint',
             fileNames: [
                 '.eslintrc.js',
+                '.eslintrc.cjs',
                 '.eslintrc.yaml',
                 '.eslintrc.yml',
                 '.eslintrc.json',
