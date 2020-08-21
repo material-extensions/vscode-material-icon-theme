@@ -933,5 +933,13 @@ export const fileIcons: FileIcons = {
         { name: 'command', fileExtensions: ['command'] },
         { name: 'stryker', fileNames: ['stryker.conf.js', 'stryker.conf.json'] },
         { name: 'denizenscript', fileExtensions: ['dsc'] },
+        {
+            name: 'modernizr',
+            fileNames: [
+                '.modernizrrc',
+                '.modernizrrc.js',
+                '.modernizrrc.json'
+            ]
+        },
     ]
 };
