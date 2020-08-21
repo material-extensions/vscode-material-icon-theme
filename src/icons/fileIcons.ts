@@ -43,7 +43,7 @@ export const fileIcons: FileIcons = {
         },
         {
             name: 'jinja',
-            fileExtensions: ['jinja', 'jinja2', 'j2'],
+            fileExtensions: ['jinja', 'jinja2', 'j2', 'jinja-html'],
             light: true
         },
         {
