@@ -394,6 +394,10 @@ export const fileIcons: FileIcons = {
             ]
         },
         { name: 'lua', fileExtensions: ['lua'], fileNames: ['.luacheckrc'] },
+        { 
+            name: 'bandit', 
+            fileNames: ['.bandit.yml', '.bandit.yaml', 'bandit.yaml', '.bandit']
+        },
         { name: 'clojure', fileExtensions: ['clj', 'cljs', 'cljc'] },
         { name: 'groovy', fileExtensions: ['groovy'] },
         { name: 'r', fileExtensions: ['r', 'rmd'], fileNames: ['.Rhistory'] },
