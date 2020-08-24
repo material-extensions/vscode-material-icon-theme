@@ -120,6 +120,7 @@ export const fileIcons: FileIcons = {
                 'xcf'
             ]
         },
+        { name: 'squid', fileNames: ['styleguide.config.js'] },
         { name: 'javascript', fileExtensions: ['js', 'esx', 'mjs'] },
         { name: 'react', fileExtensions: ['jsx'] },
         { name: 'react_ts', fileExtensions: ['tsx'] },
