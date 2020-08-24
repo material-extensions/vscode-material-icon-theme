@@ -236,7 +236,7 @@ export const fileIcons: FileIcons = {
         {
             name: 'python-misc',
             fileExtensions: ['pyc', 'whl'],
-            fileNames: ['requirements.txt', 'pipfile', '.python-version', 'manifest.in']
+            fileNames: ['requirements.txt', 'pipfile', 'requirements-dev.txt', '.python-version', 'manifest.in']
         },
         { name: 'url', fileExtensions: ['url'] },
         {
