@@ -629,8 +629,11 @@ export const fileIcons: FileIcons = {
         },
         { name: 'android', fileNames: ['androidmanifest.xml'], fileExtensions: ['apk'] },
         {
-            name: 'tune',
+            name: 'dotenv',
             fileExtensions: ['env'],
+        },
+        {
+            name: 'tune',
             fileNames: [
                 '.env.defaults',
                 '.env.example',
