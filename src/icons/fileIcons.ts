@@ -394,8 +394,8 @@ export const fileIcons: FileIcons = {
             ]
         },
         { name: 'lua', fileExtensions: ['lua'], fileNames: ['.luacheckrc'] },
-        { 
-            name: 'bandit', 
+        {
+            name: 'bandit',
             fileNames: ['.bandit.yml', '.bandit.yaml', 'bandit.yaml', '.bandit']
         },
         { name: 'clojure', fileExtensions: ['clj', 'cljs', 'cljc'] },
