@@ -50,6 +50,7 @@ export const fileIcons: FileIcons = {
             name: 'sublime',
             fileExtensions: ['sublime-project', 'sublime-workspace']
         },
+        { name: 'coala', fileExtensions: ['coafile'] },
         { name: 'yaml', fileExtensions: ['yaml', 'YAML-tmLanguage', 'yml'] },
         {
             name: 'xml',
