@@ -28,6 +28,7 @@ export const fileIcons: FileIcons = {
         { name: 'css', fileExtensions: ['css'] },
         { name: 'sass', fileExtensions: ['scss', 'sass'] },
         { name: 'less', fileExtensions: ['less'] },
+        { name: 'tox', fileName: ['tox.ini'] },
         {
             name: 'json',
             fileExtensions: ['json', 'tsbuildinfo', 'json5'],
