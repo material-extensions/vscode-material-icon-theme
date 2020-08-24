@@ -252,7 +252,8 @@ export const fileIcons: FileIcons = {
                 'cmd',
                 'awk',
                 'fish'
-            ]
+            ],
+            fileNames: ['activate', 'deactivate'],
         },
         {
             name: 'powershell',
