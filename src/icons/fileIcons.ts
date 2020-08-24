@@ -343,6 +343,7 @@ export const fileIcons: FileIcons = {
                 'ppa'
             ]
         },
+        { name: 'poetry', fileNames: ['pyproject.toml', 'poetry.lock'] },
         {
             name: 'video',
             fileExtensions: [
