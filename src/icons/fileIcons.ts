@@ -961,5 +961,6 @@ export const fileIcons: FileIcons = {
                 '.modernizrrc.json'
             ]
         },
+        { name: 'slug', fileNames: ['.slugignore'] },
     ]
 };
