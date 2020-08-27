@@ -895,8 +895,8 @@ export const fileIcons: FileIcons = {
         { name: 'dhall', fileExtensions: ['dhall', 'dhallb'] },
         { name: 'sml', fileExtensions: ['sml', 'mlton', 'mlb', 'sig', 'fun', 'cm', 'lex', 'use', 'grm'] },
         { name: 'nrwl', fileNames: ['nx.json'] },
-        { name: 'tsconfig', fileNames: ['tsconfig.json'] },
-        { name: 'jsconfig', fileNames: ['jsconfig.json'] },
+        { name: 'tsconfig', fileNames: ['tsconfig.json'], fileExtensions: ['tsconfig.json'] },
+        { name: 'jsconfig', fileNames: ['jsconfig.json'], fileExtensions: ['jsconfig.json'] },
         { name: 'imba', fileExtensions: ['imba'] },
     ]
 };
