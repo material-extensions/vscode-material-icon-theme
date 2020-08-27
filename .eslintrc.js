@@ -13,7 +13,13 @@ module.exports = {
         "@typescript-eslint",
     ],
     "rules": {
-        "@typescript-eslint/class-name-casing": "error",
+        "@typescript-eslint/naming-convention": [
+            "error",
+            {
+              "selector": "variable",
+              "format": ["camelCase"]
+            }
+        ],
         "@typescript-eslint/indent": "error",
         "@typescript-eslint/member-delimiter-style": [
             "error",
