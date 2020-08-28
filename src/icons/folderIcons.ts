@@ -134,6 +134,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-serverless', folderNames: ['.serverless', 'serverless'] },
             { name: 'folder-api', folderNames: ['api', 'apis'] },
             { name: 'folder-app', folderNames: ['app', 'apps'] },
+            { name: 'folder-apollo', folderNames: ['apollo', 'apollo-client', 'apollo-cache', 'apollo-config'] },
             { name: 'folder-archive', folderNames: ['archive', 'archives', 'archival', 'backup', 'backups', 'back-up', 'back-ups'] },
             { name: 'folder-batch', folderNames: ['batch', 'batchs', 'batches'] },
             { name: 'folder-cluster', folderNames: ['cluster', 'clusters'] },
@@ -187,6 +188,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-svelte', folderNames: ['svelte'] },
             { name: 'folder-update', folderNames: ['update', 'updates', 'upgrade', 'upgrades'] },
             { name: 'folder-intellij', folderNames: ['.idea'], light: true },
+            { name: 'folder-azure-pipelines', folderNames: ['.azure-pipelines', '.azure-pipelines-ci'] },
         ]
     },
     { name: 'classic', defaultIcon: { name: 'folder' }, rootFolder: { name: 'folder-root' } },
