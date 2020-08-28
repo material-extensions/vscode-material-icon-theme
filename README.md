@@ -85,6 +85,15 @@ If there's no leading `*` it will be automatically configured as filename and no
 
 It's possible to add custom icons by adding a path to an SVG file which is located relative to the extension's dist folder. For example a custom SVG file called "sample.svg" can be placed in an icons folder next to VS Code's extensions folder:
 
+```
+.vscode
+ ┣ extensions
+ ┗ icons
+   ┗ sample.svg
+```
+
+In the settings.json the icon can be associated to a file name or file extension like this:
+
 ```json
 "material-icon-theme.files.associations": {
     "fileName.ts": "../../../icons/sample"
