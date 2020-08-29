@@ -962,5 +962,6 @@ export const fileIcons: FileIcons = {
             ]
         },
         { name: 'slug', fileNames: ['.slugignore'] },
+        { name: 'rescript', fileExtensions: ['.res', '.resi'] }
     ]
 };

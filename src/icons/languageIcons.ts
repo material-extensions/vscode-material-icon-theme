@@ -82,4 +82,5 @@ export const languageIcons: LanguageIcon[] = [
     { icon: { name: 'tex' }, ids: ['tex'] },
     { icon: { name: 'salesforce' }, ids: ['apex'] },
     { icon: { name: 'sas' }, ids: ['sas'] },
+    { icon: { name: 'rescript' }, ids: ['rescript'] }
 ];
