@@ -30,7 +30,7 @@ export const fileIcons: FileIcons = {
         { name: 'less', fileExtensions: ['less'] },
         {
             name: 'json',
-            fileExtensions: ['json', 'tsbuildinfo', 'json5'],
+            fileExtensions: ['json', 'tsbuildinfo', 'json5', 'jsonl', 'ndjson'],
             fileNames: [
                 '.jscsrc',
                 '.jshintrc',
@@ -43,7 +43,7 @@ export const fileIcons: FileIcons = {
         },
         {
             name: 'jinja',
-            fileExtensions: ['jinja', 'jinja2', 'j2'],
+            fileExtensions: ['jinja', 'jinja2', 'j2', 'jinja-html'],
             light: true
         },
         {
@@ -222,6 +222,7 @@ export const fileIcons: FileIcons = {
                 'tgz'
             ]
         },
+        { name: 'vala', fileExtensions: ['vala'] },
         { name: 'zig', fileExtensions: ['zig'] },
         { name: 'exe', fileExtensions: ['exe', 'msi'] },
         { name: 'java', fileExtensions: ['java', 'jar', 'jsp'] },
@@ -326,7 +327,7 @@ export const fileIcons: FileIcons = {
                 'docker-compose.test.yml'
             ]
         },
-        { name: 'tex', fileExtensions: ['tex', 'cls', 'sty', 'dtx', 'ltx'] },
+        { name: 'tex', fileExtensions: ['tex', 'sty', 'dtx', 'ltx'] },
         {
             name: 'powerpoint',
             fileExtensions: [
@@ -427,11 +428,11 @@ export const fileIcons: FileIcons = {
         { name: 'vue', fileExtensions: ['vue'] },
         { name: 'vue-config', fileNames: ['vue.config.js', 'vue.config.ts'] },
         { name: 'vuex-store', fileExtensions: ['store.js', 'store.ts'], fileNames: ['store.js', 'store.ts'], enabledFor: [IconPack.Vuex] },
-        { name: 'nuxt', fileNames: ['nuxt.config.js', 'nuxt.config.ts'], enabledFor: [IconPack.Vuex, IconPack.Vue] },
+        { name: 'nuxt', fileNames: ['nuxt.config.js', 'nuxt.config.ts'] },
         { name: 'ocaml', fileExtensions: ['ml', 'mli', 'cmx'] },
         { name: 'javascript-map', fileExtensions: ['js.map', 'mjs.map'] },
         { name: 'css-map', fileExtensions: ['css.map'] },
-        { name: 'lock', fileExtensions: ['lock'] },
+        { name: 'lock', fileExtensions: ['lock'], fileNames: ['security.md', 'security.txt', 'security'] },
         { name: 'handlebars', fileExtensions: ['hbs', 'mustache'] },
         { name: 'perl', fileExtensions: ['pm', 'raku'] },
         { name: 'haxe', fileExtensions: ['hx'] },
@@ -527,7 +528,7 @@ export const fileIcons: FileIcons = {
         { name: 'cabal', fileExtensions: ['cabal'] },
         { name: 'nix', fileExtensions: ['nix'] },
         { name: 'slim', fileExtensions: ['slim'] },
-        { name: 'http', fileExtensions: ['http', 'rest'] },
+        { name: 'http', fileExtensions: ['http', 'rest'], fileNames: ['CNAME'] },
         { name: 'restql', fileExtensions: ['rql', 'restql'] },
         { name: 'kivy', fileExtensions: ['kv'] },
         {
@@ -607,7 +608,7 @@ export const fileIcons: FileIcons = {
         { name: 'ionic', fileNames: ['ionic.config.json', '.io-config.json'] },
         {
             name: 'gulp',
-            fileNames: ['gulpfile.js', 'gulpfile.ts', 'gulpfile.babel.js']
+            fileNames: ['gulpfile.js', 'gulpfile.mjs', 'gulpfile.ts', 'gulpfile.babel.js']
         },
         {
             name: 'nodejs',
@@ -631,8 +632,10 @@ export const fileIcons: FileIcons = {
             name: 'tune',
             fileExtensions: ['env'],
             fileNames: [
+                '.env.defaults',
                 '.env.example',
                 '.env.sample',
+                '.env.schema',
                 '.env.local',
                 '.env.dev',
                 '.env.development',
@@ -658,7 +661,7 @@ export const fileIcons: FileIcons = {
         { name: 'readme', fileNames: ['readme.md', 'readme.txt', 'readme'] },
         {
             name: 'changelog',
-            fileNames: ['changelog', 'changelog.md', 'changelog.txt']
+            fileNames: ['changelog', 'changelog.md', 'changelog.txt', 'changes', 'changes.md', 'changes.txt']
         },
         {
             name: 'credits',
@@ -705,6 +708,7 @@ export const fileIcons: FileIcons = {
             name: 'eslint',
             fileNames: [
                 '.eslintrc.js',
+                '.eslintrc.cjs',
                 '.eslintrc.yaml',
                 '.eslintrc.yml',
                 '.eslintrc.json',
@@ -731,7 +735,15 @@ export const fileIcons: FileIcons = {
             ]
         },
         { name: 'jenkins', fileNames: ['jenkinsfile'], fileExtensions: ['jenkinsfile', 'jenkins'] },
-        { name: 'firebase', fileNames: ['firebase.json', '.firebaserc'] },
+        {
+            name: 'firebase',
+            fileNames: [
+                'firebase.json',
+                '.firebaserc',
+                'firestore.rules',
+                'firestore.indexes.json'
+            ]
+        },
         {
             name: 'rollup',
             fileNames: [
@@ -799,7 +811,27 @@ export const fileIcons: FileIcons = {
                 'gruntfile.babel.coffee'
             ],
         },
-        { name: 'jest', fileNames: ['jest.config.js', 'jest.config.ts', 'jest.config.cjs', 'jest.config.mjs', 'jest.config.json', 'jest.setup.js', 'jest.setup.ts', 'jest.json', '.jestrc', '.jestrc.js', '.jestrc.json', 'jest.teardown.js'] },
+        {
+            name: 'jest', fileNames: [
+                'jest.config.js',
+                'jest.config.ts',
+                'jest.config.cjs',
+                'jest.config.mjs',
+                'jest.config.json',
+                'jest.e2e.config.js',
+                'jest.e2e.config.ts',
+                'jest.e2e.config.cjs',
+                'jest.e2e.config.mjs',
+                'jest.e2e.config.json',
+                'jest.setup.js',
+                'jest.setup.ts',
+                'jest.json',
+                '.jestrc',
+                '.jestrc.js',
+                '.jestrc.json',
+                'jest.teardown.js'
+            ]
+        },
         { name: 'processing', fileExtensions: ['pde'], light: true },
         { name: 'storybook', fileExtensions: ['stories.js', 'stories.jsx', 'story.js', 'story.jsx', 'stories.ts', 'stories.tsx', 'story.ts', 'story.tsx'] },
         { name: 'wepy', fileExtensions: ['wpy'] },
@@ -837,6 +869,7 @@ export const fileIcons: FileIcons = {
         { name: 'istanbul', fileNames: ['.nycrc', '.nycrc.json'] },
         { name: 'edge', fileExtensions: ['edge'] },
         { name: 'scheme', fileExtensions: ['ss', 'scm'] },
+        { name: 'lisp', fileExtensions: ['lisp', 'lsp', 'cl', 'fast'] },
         { name: 'tailwindcss', fileNames: ['tailwind.js', 'tailwind.config.js'] },
         {
             name: '3d',
@@ -882,6 +915,7 @@ export const fileIcons: FileIcons = {
         { name: 'gcp', fileNames: ['.gcloudignore'] },
         { name: 'disc', fileExtensions: ['iso'] },
         { name: 'fortran', fileExtensions: ['f', 'f77', 'f90', 'f95', 'f03', 'f08'] },
+        { name: 'tcl', fileExtensions: ['tcl'] },
         { name: 'liquid', fileExtensions: ['liquid'] },
         { name: 'prolog', fileExtensions: ['p', 'pro'] },
         { name: 'husky', fileNames: ['.huskyrc', 'husky.config.js', '.huskyrc.json', '.huskyrc.js', '.huskyrc.yaml', '.huskyrc.yml'] },
@@ -889,7 +923,9 @@ export const fileIcons: FileIcons = {
         { name: 'tilt', fileNames: ['tiltfile'] },
         { name: 'capacitor', fileNames: ['capacitor.config.json'] },
         { name: 'sketch', fileExtensions: ['sketch'] },
-        { name: 'adonis', fileNames: ['.adonisrc.json'] },
+        { name: 'pawn', fileExtensions: ['pwn', 'amx'] },
+        { name: 'adonis', fileNames: ['.adonisrc.json', 'ace'] },
+        { name: 'forth', fileExtensions: ['4th', 'fth', 'frt'] },
         {
             name: 'uml',
             fileExtensions: ['iuml', 'pu', 'puml', 'plantuml', 'wsd'],
@@ -901,6 +937,30 @@ export const fileIcons: FileIcons = {
         { name: 'dhall', fileExtensions: ['dhall', 'dhallb'] },
         { name: 'sml', fileExtensions: ['sml', 'mlton', 'mlb', 'sig', 'fun', 'cm', 'lex', 'use', 'grm'] },
         { name: 'nrwl', fileNames: ['nx.json'] },
+        { name: 'opam', fileExtensions: ['opam'] },
+        { name: 'dune', fileNames: ['dune', 'dune-project'] },
         { name: 'imba', fileExtensions: ['imba'] },
+        { name: 'drawio', fileExtensions: ['drawio', 'dio'] },
+        { name: 'pascal', fileExtensions: ['pas'] },
+        { name: 'shaderlab', fileExtensions: ['unity'] },
+        { name: 'roadmap', fileNames: ['roadmap.md', 'roadmap.txt', 'timeline.md', 'timeline.txt', 'milestones.md', 'milestones.txt'] },
+        { name: 'sas', fileExtensions: ['sas', 'sas7bdat', 'sashdat', 'astore', 'ast', 'sast'] },
+        {
+            name: 'nuget',
+            fileNames: ['nuget.config', '.nuspec', 'nuget.exe'],
+            fileExtensions: ['nupkg']
+        },
+        { name: 'command', fileExtensions: ['command'] },
+        { name: 'stryker', fileNames: ['stryker.conf.js', 'stryker.conf.json'] },
+        { name: 'denizenscript', fileExtensions: ['dsc'] },
+        {
+            name: 'modernizr',
+            fileNames: [
+                '.modernizrrc',
+                '.modernizrrc.js',
+                '.modernizrrc.json'
+            ]
+        },
+        { name: 'slug', fileNames: ['.slugignore'] },
     ]
 };
