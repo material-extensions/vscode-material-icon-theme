@@ -79,7 +79,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-theme', folderNames: ['themes', 'theme', 'color', 'colors', 'design', 'designs'] },
             { name: 'folder-webpack', folderNames: ['webpack', '.webpack'] },
             { name: 'folder-global', folderNames: ['global'] },
-            { name: 'folder-public', folderNames: ['public', 'wwwroot', 'web', 'website'] },
+            { name: 'folder-public', folderNames: ['public', 'www', 'wwwroot', 'web', 'website'] },
             { name: 'folder-include', folderNames: ['include', 'includes', '_includes'] },
             { name: 'folder-docker', folderNames: ['docker', 'dockerfiles', '.docker'] },
             { name: 'folder-ngrx-effects', folderNames: ['effects'], enabledFor: [IconPack.Ngrx] },
