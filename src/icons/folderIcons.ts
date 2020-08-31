@@ -160,7 +160,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-shared', folderNames: ['shared', 'common'] },
             { name: 'folder-stack', folderNames: ['stack', 'stacks'] },
             { name: 'folder-template', folderNames: ['template', 'templates'] },
-            { name: 'folder-utils', folderNames: ['util', 'utils'] },
+            { name: 'folder-utils', folderNames: ['util', 'utils', 'utility', 'utilities'] },
             { name: 'folder-private', folderNames: ['private', '.private'] },
             { name: 'folder-error', folderNames: ['error', 'errors', 'err'] },
             { name: 'folder-event', folderNames: ['event', 'events'] },
