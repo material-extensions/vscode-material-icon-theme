@@ -7,7 +7,7 @@ export const getCurrentLanguage = (): string =>
 
 let currentTranslation;
 let fallbackTranslation; // default: en
-const PLACEHOLDER = '%';
+const placeholder = '%';
 
 /** Initialize the translations */
 export const initTranslations = async () => {
@@ -41,10 +41,9 @@ const getTranslationObject = async (language: string) => {
  * and the fallback (required for testing purposes).
  * */
 export const getTranslationValue = (key: string, translations = currentTranslation, fallback = fallbackTranslation) => {
-    return getObjectPropertyValue(translations, key) ?
-        getObjectPropertyValue(translations, key) :
-        getObjectPropertyValue(fallback, key) ?
-            getObjectPropertyValue(fallback, key) : undefined;
+    return getObjectPropertyValue(translations, key)
+        || getObjectPropertyValue(fallback, key)
+        || undefined;
 };
 
 /**
@@ -68,7 +67,7 @@ export const replace = (value: string = '', words: string | string[]) => {
 
     const values: string[] = [].concat(words);
     values.forEach((e, i) => {
-        translation = translation.replace(PLACEHOLDER.concat(<any>i), e);
+        translation = translation.replace(placeholder.concat(<any>i), e);
     });
 
     return translation;
