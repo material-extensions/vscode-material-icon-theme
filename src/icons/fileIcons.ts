@@ -315,6 +315,8 @@ export const fileIcons: FileIcons = {
             fileExtensions: ['dockerignore', 'dockerfile'],
             fileNames: [
                 'dockerfile',
+                'dockerfile.prod',
+                'dockerfile.production',
                 'docker-compose.yml',
                 'docker-compose.yaml',
                 'docker-compose.dev.yml',
