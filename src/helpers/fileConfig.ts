@@ -2,10 +2,10 @@ import { getDefaultIconOptions } from '../icons';
 import { IconJsonOptions } from '../models';
 
 /**
- * Generate a config string that is appended to each icon file name.
+ * Generate a config hashed string that is appended to each icon file name.
  * @param config Icon Configuration object
  */
-export const getFileConfigString = (options: IconJsonOptions) => {
+export const getFileConfigHash = (options: IconJsonOptions) => {
     try {
         const defaults = getDefaultIconOptions();
         let fileConfigString = '';
