@@ -1,13 +1,15 @@
 import * as fs from 'fs';
 import * as path from 'path';
+import { getCustomIconPaths } from '../../helpers/customIcons';
+import { IconJsonOptions } from '../../models';
 
 /**
  * Changes the opacity of all icons in the set.
- * @param opacity Opacity value
+ * @param options Icon JSON options which include the opacity value.
  * @param fileNames Only change the opacity of certain file names.
  */
-export const setIconOpacity = (opacity: number, fileNames?: string[]) => {
-    if (!validateOpacityValue(opacity)) {
+export const setIconOpacity = (options: IconJsonOptions, fileNames?: string[]) => {
+    if (!validateOpacityValue(options.opacity)) {
         return console.error('Invalid opacity value! Opacity must be a decimal number between 0 and 1!');
     }
 
@@ -19,28 +21,16 @@ export const setIconOpacity = (opacity: number, fileNames?: string[]) => {
         iconsPath = path.join(__dirname, '..', '..', '..', 'icons');
     }
 
+    const customIconPaths = getCustomIconPaths(options);
+    const iconFiles = fs.readdirSync(iconsPath);
+
     try {
         // read all icon files from the icons folder
-        (fileNames || fs.readdirSync(iconsPath)).forEach(iconFileName => {
-            const svgFilePath = path.join(iconsPath, iconFileName);
+        (fileNames || iconFiles).forEach(adjustOpacity(iconsPath, options));
 
-            // Read SVG file
-            const svg = fs.readFileSync(svgFilePath, 'utf-8');
-
-            // Get the root element of the SVG file
-            const svgRootElement = getSVGRootElement(svg);
-            if (!svgRootElement) return;
-
-            let updatedRootElement: string;
-
-            if (opacity < 1) {
-                updatedRootElement = addOpacityAttribute(svgRootElement, opacity);
-            } else {
-                updatedRootElement = removeOpacityAttribute(svgRootElement);
-            }
-            const updatedSVG = svg.replace(/<svg[^>]*>/, updatedRootElement);
-
-            fs.writeFileSync(svgFilePath, updatedSVG);
+        customIconPaths.forEach(iconPath => {
+            const customIcons = fs.readdirSync(iconPath);
+            customIcons.forEach(adjustOpacity(iconPath, options));
         });
     } catch (error) {
         console.error(error);
@@ -87,3 +77,30 @@ const removeOpacityAttribute = (svgRoot: string) => {
     const pattern = new RegExp(/\sopacity="[\d.]+"/);
     return svgRoot.replace(pattern, '');
 };
+
+const adjustOpacity = (iconPath: string, options: IconJsonOptions): (value: string, index: number, array: string[]) => void => {
+    return iconFileName => {
+        const svgFilePath = path.join(iconPath, iconFileName);
+
+        // Read SVG file
+        const svg = fs.readFileSync(svgFilePath, 'utf-8');
+
+        // Get the root element of the SVG file
+        const svgRootElement = getSVGRootElement(svg);
+        if (!svgRootElement)
+            return;
+
+        let updatedRootElement: string;
+
+        if (options.opacity < 1) {
+            updatedRootElement = addOpacityAttribute(svgRootElement, options.opacity);
+        }
+        else {
+            updatedRootElement = removeOpacityAttribute(svgRootElement);
+        }
+        const updatedSVG = svg.replace(/<svg[^>]*>/, updatedRootElement);
+
+        fs.writeFileSync(svgFilePath, updatedSVG);
+    };
+};
+

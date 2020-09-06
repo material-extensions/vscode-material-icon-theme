@@ -53,13 +53,13 @@ export const createIconFile = (updatedConfigs?: IconJsonOptions, updatedJSONConf
             // if updatedConfigs do not exist (because of initial setup)
             // or new config value was detected by the change detection
             generateFolderIcons(options.folders.color);
-            setIconOpacity(options.opacity, ['folder.svg', 'folder-open.svg', 'folder-root.svg', 'folder-root-open.svg']);
+            setIconOpacity(options, ['folder.svg', 'folder-open.svg', 'folder-root.svg', 'folder-root-open.svg']);
         }
         if (!updatedConfigs || updatedConfigs.opacity !== undefined) {
-            setIconOpacity(options.opacity);
+            setIconOpacity(options);
         }
         if (!updatedConfigs || updatedConfigs.saturation !== undefined) {
-            setIconSaturation(options.saturation);
+            setIconSaturation(options);
         }
         renameIconFiles(iconJsonPath, options);
     } catch (error) {
