@@ -190,6 +190,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-intellij', folderNames: ['.idea'], light: true },
             { name: 'folder-azure-pipelines', folderNames: ['.azure-pipelines', '.azure-pipelines-ci'] },
             { name: 'folder-mjml', folderNames: ['mjml'] },
+            { name: 'folder-privileged', folderNames: ['admin'] },
         ]
     },
     { name: 'classic', defaultIcon: { name: 'folder' }, rootFolder: { name: 'folder-root' } },
