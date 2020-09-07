@@ -1,5 +1,5 @@
 /**
- * Get the nested properties of an object
+ * Get the nested properties of an object.
  * This solution is lighter than the lodash get-version.
  * Source: http://stackoverflow.com/a/6491621/6942210
  */

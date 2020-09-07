@@ -36,8 +36,7 @@ const validateSaturationInput = (saturationInput: string) => {
 export const getCurrentSaturationValue = (): number => {
     const defaultOptions = getDefaultIconOptions();
     const config = helpers.getMaterialIconsJSON();
-    return config.options.saturation === undefined ?
-        defaultOptions.saturation : config.options.saturation;
+    return config.options.saturation ?? defaultOptions.saturation;
 };
 
 const setSaturationConfig = (saturation: number) => {

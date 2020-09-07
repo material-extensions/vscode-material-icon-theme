@@ -1,13 +1,14 @@
 import * as fs from 'fs';
 import * as merge from 'lodash.merge';
 import * as path from 'path';
+import { getFileConfigHash } from '../../helpers/fileConfig';
 import { DefaultIcon, FolderIcon, FolderTheme, IconAssociations, IconConfiguration, IconJsonOptions } from '../../models/index';
 import { highContrastVersion, iconFolderPath, lightVersion, openedFolder } from './constants';
 
 /**
  * Get the folder icon definitions as object.
  */
-export const getFolderIconDefinitions = (folderThemes: FolderTheme[], config: IconConfiguration, options: IconJsonOptions): IconConfiguration => {
+export const loadFolderIconDefinitions = (folderThemes: FolderTheme[], config: IconConfiguration, options: IconJsonOptions): IconConfiguration => {
     config = merge({}, config);
     config.hidesExplorerArrows = options.hidesExplorerArrows;
     const activeTheme = getEnabledFolderTheme(folderThemes, options.folders.theme);
@@ -87,11 +88,12 @@ const setIconDefinitions = (config: IconConfiguration, icon: FolderIcon | Defaul
 
 const createIconDefinitions = (config: IconConfiguration, iconName: string, appendix: string = '') => {
     config = merge({}, config);
+    const fileConfigHash = getFileConfigHash(config.options);
     config.iconDefinitions[iconName + appendix] = {
-        iconPath: `${iconFolderPath}${iconName}${appendix}.svg`
+        iconPath: `${iconFolderPath}${iconName}${appendix}${fileConfigHash}.svg`
     };
     config.iconDefinitions[`${iconName}${openedFolder}${appendix}`] = {
-        iconPath: `${iconFolderPath}${iconName}${openedFolder}${appendix}.svg`
+        iconPath: `${iconFolderPath}${iconName}${openedFolder}${appendix}${fileConfigHash}.svg`
     };
     return config;
 };

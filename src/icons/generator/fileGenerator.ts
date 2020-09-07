@@ -1,11 +1,12 @@
 import * as merge from 'lodash.merge';
+import { getFileConfigHash } from '../../helpers/fileConfig';
 import { FileIcon, FileIcons, IconAssociations, IconConfiguration, IconJsonOptions } from '../../models/index';
 import { highContrastVersion, iconFolderPath, lightVersion, wildcardPattern } from './constants';
 
 /**
  * Get all file icons that can be used in this theme.
  */
-export const getFileIconDefinitions = (fileIcons: FileIcons, config: IconConfiguration, options: IconJsonOptions): IconConfiguration => {
+export const loadFileIconDefinitions = (fileIcons: FileIcons, config: IconConfiguration, options: IconJsonOptions): IconConfiguration => {
     config = merge({}, config);
     const enabledIcons = disableIconsByPack(fileIcons, options.activeIconPack);
     const customIcons = getCustomIcons(options.files.associations);
@@ -13,13 +14,13 @@ export const getFileIconDefinitions = (fileIcons: FileIcons, config: IconConfigu
 
     allFileIcons.forEach(icon => {
         if (icon.disabled) return;
-        config = merge({}, config, setIconDefinition(icon.name));
+        config = merge({}, config, setIconDefinition(config, icon.name));
 
         if (icon.light) {
-            config = merge({}, config, setIconDefinition(icon.name, lightVersion));
+            config = merge({}, config, setIconDefinition(config, icon.name, lightVersion));
         }
         if (icon.highContrast) {
-            config = merge({}, config, setIconDefinition(icon.name, highContrastVersion));
+            config = merge({}, config, setIconDefinition(config, icon.name, highContrastVersion));
         }
 
         if (icon.fileExtensions) {
@@ -31,16 +32,16 @@ export const getFileIconDefinitions = (fileIcons: FileIcons, config: IconConfigu
     });
 
     // set default file icon
-    config = merge({}, config, setIconDefinition(fileIcons.defaultIcon.name));
+    config = merge({}, config, setIconDefinition(config, fileIcons.defaultIcon.name));
     config.file = fileIcons.defaultIcon.name;
 
     if (fileIcons.defaultIcon.light) {
-        config = merge({}, config, setIconDefinition(fileIcons.defaultIcon.name, lightVersion));
+        config = merge({}, config, setIconDefinition(config, fileIcons.defaultIcon.name, lightVersion));
         config.light.file = fileIcons.defaultIcon.name + lightVersion;
     }
 
     if (fileIcons.defaultIcon.highContrast) {
-        config = merge({}, config, setIconDefinition(fileIcons.defaultIcon.name, highContrastVersion));
+        config = merge({}, config, setIconDefinition(config, fileIcons.defaultIcon.name, highContrastVersion));
         config.highContrast.file = fileIcons.defaultIcon.name + highContrastVersion;
     }
 
@@ -87,10 +88,11 @@ const disableIconsByPack = (fileIcons: FileIcons, activatedIconPack: string): Fi
     });
 };
 
-const setIconDefinition = (iconName: string, appendix: string = '') => {
+const setIconDefinition = (config: IconConfiguration, iconName: string, appendix: string = '') => {
     const obj = { iconDefinitions: {} };
+    const fileConfigHash = getFileConfigHash(config.options);
     obj.iconDefinitions[`${iconName}${appendix}`] = {
-        iconPath: `${iconFolderPath}${iconName}${appendix}.svg`
+        iconPath: `${iconFolderPath}${iconName}${appendix}${fileConfigHash}.svg`
     };
     return obj;
 };

@@ -52,7 +52,7 @@ const fetchContributors = (page: string): Promise<{ contributorsOfPage: Contribu
                     const buffer = Buffer.concat(result);
                     const bufferAsString = buffer.toString('utf8');
                     const contributorsOfPage = JSON.parse(bufferAsString);
-                    resolve({ contributorsOfPage, nextPage: nextPage ? nextPage[1] : undefined });
+                    resolve({ contributorsOfPage, nextPage: nextPage?.[1] });
                 } catch (error) {
                     reject(error);
                 }

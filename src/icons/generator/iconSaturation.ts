@@ -1,13 +1,15 @@
 import * as fs from 'fs';
 import * as path from 'path';
+import { getCustomIconPaths } from '../../helpers/customIcons';
+import { IconJsonOptions } from '../../models';
 
 /**
  * Changes saturation of all icons in the set.
- * @param saturation Saturation value.
+ * @param options Icon JSON options which include the saturation value.
  * @param fileNames Only change the saturation of certain file names.
  */
-export const setIconSaturation = (saturation: number, fileNames?: string[]) => {
-    if (!validateSaturationValue(saturation)) {
+export const setIconSaturation = (options: IconJsonOptions, fileNames?: string[]) => {
+    if (!validateSaturationValue(options.saturation)) {
         return console.error('Invalid saturation value! Saturation must be a decimal number between 0 and 1!');
     }
 
@@ -19,35 +21,16 @@ export const setIconSaturation = (saturation: number, fileNames?: string[]) => {
         iconsPath = path.join(__dirname, '..', '..', '..', 'icons');
     }
 
+    const customIconPaths = getCustomIconPaths(options);
+    const iconFiles = fs.readdirSync(iconsPath);
+
     // read all icon files from the icons folder
     try {
-        (fileNames || fs.readdirSync(iconsPath)).forEach(iconFileName => {
-            const svgFilePath = path.join(iconsPath, iconFileName);
+        (fileNames || iconFiles).forEach(adjustSaturation(iconsPath, options));
 
-            // Read SVG file
-            const svg = fs.readFileSync(svgFilePath, 'utf-8');
-
-            // Get the root element of the SVG file
-            const svgRootElement = getSVGRootElement(svg);
-            if (!svgRootElement) return;
-
-            let updatedRootElement: string;
-
-            if (saturation < 1) {
-                updatedRootElement = addFilterAttribute(svgRootElement);
-            } else {
-                updatedRootElement = removeFilterAttribute(svgRootElement);
-            }
-
-            let updatedSVG = svg.replace(/<svg[^>]*>/, updatedRootElement);
-
-            if (saturation < 1) {
-                updatedSVG = addFilterElement(updatedSVG, saturation);
-            } else {
-                updatedSVG = removeFilterElement(updatedSVG);
-            }
-
-            fs.writeFileSync(svgFilePath, updatedSVG);
+        customIconPaths.forEach(iconPath => {
+            const customIcons = fs.readdirSync(iconPath);
+            customIcons.forEach(adjustSaturation(iconPath, options));
         });
     } catch (error) {
         console.error(error);
@@ -60,7 +43,7 @@ export const setIconSaturation = (saturation: number, fileNames?: string[]) => {
  */
 const getSVGRootElement = (svg: string) => {
     const result = new RegExp(/<svg[^>]*>/).exec(svg);
-    return result.length > 0 ? result[0] : undefined;
+    return result?.[0];
 };
 
 /**
@@ -114,5 +97,39 @@ const removeFilterElement = (svg: string) => {
  * @param saturation Saturation value
  */
 export const validateSaturationValue = (saturation: number) => {
-    return saturation !== null && saturation <= 1 && saturation >= 0;
+    return saturation !== undefined && saturation <= 1 && saturation >= 0;
+};
+
+const adjustSaturation = (iconsPath: any, options: IconJsonOptions): (value: string, index: number, array: string[]) => void => {
+    return iconFileName => {
+        const svgFilePath = path.join(iconsPath, iconFileName);
+
+        // Read SVG file
+        const svg = fs.readFileSync(svgFilePath, 'utf-8');
+
+        // Get the root element of the SVG file
+        const svgRootElement = getSVGRootElement(svg);
+        if (!svgRootElement)
+            return;
+
+        let updatedRootElement: string;
+
+        if (options.saturation < 1) {
+            updatedRootElement = addFilterAttribute(svgRootElement);
+        }
+        else {
+            updatedRootElement = removeFilterAttribute(svgRootElement);
+        }
+
+        let updatedSVG = svg.replace(/<svg[^>]*>/, updatedRootElement);
+
+        if (options.saturation < 1) {
+            updatedSVG = addFilterElement(updatedSVG, options.saturation);
+        }
+        else {
+            updatedSVG = removeFilterElement(updatedSVG);
+        }
+
+        fs.writeFileSync(svgFilePath, updatedSVG);
+    };
 };

@@ -92,7 +92,7 @@ const getAllUsedFolderIcons = (): string[] => {
 };
 
 const getAllFolderIcons = (theme: FolderTheme): (FolderIcon | DefaultIcon)[] => {
-    const icons = theme.icons ? theme.icons : [];
+    const icons = theme.icons || [];
     return [
         theme.defaultIcon,
         theme.rootFolder,
