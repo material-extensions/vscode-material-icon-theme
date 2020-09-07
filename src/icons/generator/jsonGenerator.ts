@@ -1,7 +1,8 @@
 import * as fs from 'fs';
 import * as merge from 'lodash.merge';
 import * as path from 'path';
-import { getFileConfigString } from '../../helpers/fileConfig';
+import { getCustomIconPaths } from '../../helpers/customIcons';
+import { getFileConfigHash } from '../../helpers/fileConfig';
 import { IconConfiguration, IconJsonOptions } from '../../models/index';
 import { fileIcons } from '../fileIcons';
 import { folderIcons } from '../folderIcons';
@@ -43,22 +44,22 @@ export const createIconFile = (updatedConfigs?: IconJsonOptions, updatedJSONConf
     }
 
     try {
-        if (!updatedConfigs || (updatedConfigs.folders || {}).color) {
-            // if updatedConfigs do not exist (because of initial setup)
-            // or new config value was detected by the change detection
-            generateFolderIcons(options.folders.color);
-            setIconOpacity(options.opacity, ['folder.svg', 'folder-open.svg', 'folder-root.svg', 'folder-root-open.svg']);
-        }
-        if (!updatedConfigs || updatedConfigs.opacity !== undefined) {
-            setIconOpacity(options.opacity);
-        }
-        if (!updatedConfigs || updatedConfigs.saturation !== undefined) {
-            setIconSaturation(options.saturation);
-        }
         let iconJsonPath = __dirname;
         // if executed via script
         if (path.basename(__dirname) !== 'dist') {
             iconJsonPath = path.join(__dirname, '..', '..', '..', 'dist');
+        }
+        if (!updatedConfigs || (updatedConfigs.folders || {}).color) {
+            // if updatedConfigs do not exist (because of initial setup)
+            // or new config value was detected by the change detection
+            generateFolderIcons(options.folders.color);
+            setIconOpacity(options, ['folder.svg', 'folder-open.svg', 'folder-root.svg', 'folder-root-open.svg']);
+        }
+        if (!updatedConfigs || updatedConfigs.opacity !== undefined) {
+            setIconOpacity(options);
+        }
+        if (!updatedConfigs || updatedConfigs.saturation !== undefined) {
+            setIconSaturation(options);
         }
         renameIconFiles(iconJsonPath, options);
     } catch (error) {
@@ -102,20 +103,26 @@ export const getDefaultIconOptions = (): IconJsonOptions => ({
  * @param options Icon Json Options
  */
 const renameIconFiles = (iconJsonPath: string, options: IconJsonOptions) => {
-    fs.readdirSync(path.join(iconJsonPath, '..', 'icons'))
-        .filter(f => f.match(/\.svg/gi))
-        .forEach(f => {
-            const filePath = path.join(iconJsonPath, '..', 'icons', f);
-            const fileConfig = getFileConfigString(options);
+    const customPaths = getCustomIconPaths(options);
+    const defaultIconPath = path.join(iconJsonPath, '..', 'icons');
+    const iconPaths = [defaultIconPath, ...customPaths];
 
-            // append file config to file name
-            const newFilePath = path.join(iconJsonPath, '..', 'icons', f.replace(/(^[^\.~]+)(.*)\.svg/, `$1${fileConfig}.svg`));
+    iconPaths.forEach(iconPath => {
+        fs.readdirSync(iconPath)
+            .filter(f => f.match(/\.svg/gi))
+            .forEach(f => {
+                const filePath = path.join(iconPath, f);
+                const fileConfigHash = getFileConfigHash(options);
 
-            // if generated files are already in place, do not overwrite them
-            if (filePath !== newFilePath && fs.existsSync(newFilePath)) {
-                fs.unlinkSync(filePath);
-            } else {
-                fs.renameSync(filePath, newFilePath);
-            }
-        });
+                // append file config to file name
+                const newFilePath = path.join(iconPath, f.replace(/(^[^\.~]+)(.*)\.svg/, `$1${fileConfigHash}.svg`));
+
+                // if generated files are already in place, do not overwrite them
+                if (filePath !== newFilePath && fs.existsSync(newFilePath)) {
+                    fs.unlinkSync(filePath);
+                } else {
+                    fs.renameSync(filePath, newFilePath);
+                }
+            });
+    });
 };

@@ -1,5 +1,5 @@
 import * as merge from 'lodash.merge';
-import { getFileConfigString } from '../../helpers/fileConfig';
+import { getFileConfigHash } from '../../helpers/fileConfig';
 import { DefaultIcon, IconAssociations, IconConfiguration, IconJsonOptions, LanguageIcon } from '../../models/index';
 import { highContrastVersion, iconFolderPath, lightVersion } from './constants';
 
@@ -33,9 +33,9 @@ const setIconDefinitions = (config: IconConfiguration, icon: DefaultIcon) => {
 
 const createIconDefinitions = (config: IconConfiguration, iconName: string) => {
     config = merge({}, config);
-    const fileConfig = getFileConfigString(config.options);
+    const fileConfigHash = getFileConfigHash(config.options);
     config.iconDefinitions[iconName] = {
-        iconPath: `${iconFolderPath}${iconName}${fileConfig}.svg`
+        iconPath: `${iconFolderPath}${iconName}${fileConfigHash}.svg`
     };
     return config;
 };

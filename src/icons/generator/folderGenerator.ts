@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import * as merge from 'lodash.merge';
 import * as path from 'path';
-import { getFileConfigString } from '../../helpers/fileConfig';
+import { getFileConfigHash } from '../../helpers/fileConfig';
 import { DefaultIcon, FolderIcon, FolderTheme, IconAssociations, IconConfiguration, IconJsonOptions } from '../../models/index';
 import { highContrastVersion, iconFolderPath, lightVersion, openedFolder } from './constants';
 
@@ -88,12 +88,12 @@ const setIconDefinitions = (config: IconConfiguration, icon: FolderIcon | Defaul
 
 const createIconDefinitions = (config: IconConfiguration, iconName: string, appendix: string = '') => {
     config = merge({}, config);
-    const fileConfig = getFileConfigString(config.options);
+    const fileConfigHash = getFileConfigHash(config.options);
     config.iconDefinitions[iconName + appendix] = {
-        iconPath: `${iconFolderPath}${iconName}${appendix}${fileConfig}.svg`
+        iconPath: `${iconFolderPath}${iconName}${appendix}${fileConfigHash}.svg`
     };
     config.iconDefinitions[`${iconName}${openedFolder}${appendix}`] = {
-        iconPath: `${iconFolderPath}${iconName}${openedFolder}${appendix}${fileConfig}.svg`
+        iconPath: `${iconFolderPath}${iconName}${openedFolder}${appendix}${fileConfigHash}.svg`
     };
     return config;
 };

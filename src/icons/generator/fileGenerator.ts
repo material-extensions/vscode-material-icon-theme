@@ -1,5 +1,5 @@
 import * as merge from 'lodash.merge';
-import { getFileConfigString } from '../../helpers/fileConfig';
+import { getFileConfigHash } from '../../helpers/fileConfig';
 import { FileIcon, FileIcons, IconAssociations, IconConfiguration, IconJsonOptions } from '../../models/index';
 import { highContrastVersion, iconFolderPath, lightVersion, wildcardPattern } from './constants';
 
@@ -90,9 +90,9 @@ const disableIconsByPack = (fileIcons: FileIcons, activatedIconPack: string): Fi
 
 const setIconDefinition = (config: IconConfiguration, iconName: string, appendix: string = '') => {
     const obj = { iconDefinitions: {} };
-    const fileConfig = getFileConfigString(config.options);
+    const fileConfigHash = getFileConfigHash(config.options);
     obj.iconDefinitions[`${iconName}${appendix}`] = {
-        iconPath: `${iconFolderPath}${iconName}${appendix}${fileConfig}.svg`
+        iconPath: `${iconFolderPath}${iconName}${appendix}${fileConfigHash}.svg`
     };
     return obj;
 };
