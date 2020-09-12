@@ -64,7 +64,7 @@ export const folderIcons: FolderTheme[] = [
             },
             { name: 'folder-vue', folderNames: ['vue'] },
             { name: 'folder-expo', folderNames: ['.expo', '.expo-shared'] },
-            { name: 'folder-config', folderNames: ['config', 'configs', 'configuration', 'configurations', 'settings', '.settings', 'META-INF'] },
+            { name: 'folder-config', folderNames: ['config', 'configs', 'configuration', 'configurations', 'setting', '.setting', 'settings', '.settings', 'META-INF'] },
             {
                 name: 'folder-i18n',
                 folderNames: ['i18n', 'internationalization', 'lang', 'language', 'languages', 'locale', 'locales', 'l10n', 'localization', 'translation', 'translate', 'translations', '.tx']
