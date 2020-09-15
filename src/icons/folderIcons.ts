@@ -163,7 +163,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-utils', folderNames: ['util', 'utils', 'utility', 'utilities'] },
             { name: 'folder-private', folderNames: ['private', '.private'] },
             { name: 'folder-error', folderNames: ['error', 'errors', 'err'] },
-            { name: 'folder-event', folderNames: ['event', 'events'] },
+            { name: 'folder-event', folderNames: ['event', 'events', 'listener', 'listeners'] },
             { name: 'folder-secure', folderNames: ['auth', 'authentication', 'secure', 'security', 'cert', 'certs', 'certificate', 'certificates', 'ssl'] },
             { name: 'folder-custom', folderNames: ['custom', 'customs'] },
             { name: 'folder-mock', folderNames: ['mock', 'mocks', 'draft', 'drafts', 'concept', 'concepts', 'sketch', 'sketches'] },
