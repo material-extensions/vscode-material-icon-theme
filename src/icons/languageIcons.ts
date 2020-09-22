@@ -111,5 +111,5 @@ export const languageIcons: LanguageIcon[] = [
     { icon: { name: 'svg' }, ids: ['svg'] },
     { icon: { name: 'swift' }, ids: ['swift'] },
     { icon: { name: 'react_ts' }, ids: ['typescriptreact'] },
-    { icon: { name: 'magnify' }, ids: ['search-result'] },
+    { icon: { name: 'search' }, ids: ['search-result'] },
 ];
