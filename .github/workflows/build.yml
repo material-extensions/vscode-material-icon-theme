@@ -41,4 +41,4 @@ jobs:
           npm test
           npm run vscode:prepublish
         env:
-          DISPLAY: ":99.0"
+          DISPLAY: ':99.0'
