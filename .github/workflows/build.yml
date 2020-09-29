@@ -10,20 +10,21 @@ jobs:
         os: [windows-latest, ubuntu-latest]
         node-version: [12.x, 14.x]
 
-    name: Test on ${{ matrix.os }} (Node.js ${{ matrix.node-version }})
+    name: ${{ matrix.os }} (Node.js ${{ matrix.node-version }})
 
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Checkout 🛎
+        uses: actions/checkout@v2
+      - name: Setup Node.js ${{ matrix.node-version }} ⚙
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
       - run: /usr/bin/Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 & echo "Started xvfb"
         shell: bash
         if: ${{ success() && matrix.os == 'ubuntu-latest' }}
-      - name: Install dependencies
+      - name: Install node_modules 📦
         run: npm install
-      - name: Cache node modules
+      - name: Cache node modules 💾
         uses: actions/cache@v2
         env:
           cache-name: cache-node-modules
@@ -35,7 +36,7 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-      - name: Test + Build
+      - name: Test + Build 🚀
         run: |
           npm test
           npm run vscode:prepublish
