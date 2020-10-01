@@ -113,6 +113,19 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'javascript', fileExtensions: ['js', 'esx', 'mjs'] },
+    { 
+      name: 'rc-configs',
+      fileExtensions: [ 'fish' ],
+      fileNames: [
+        '.bashrc',
+        '.bash_aliases',
+        '.bash_profile',
+        '.zshrc',
+        '.zprofile',
+        '.kshrc',
+        '.profile',
+      ]
+    },
     { name: 'react', fileExtensions: ['jsx'] },
     { name: 'react_ts', fileExtensions: ['tsx'] },
     {
