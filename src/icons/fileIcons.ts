@@ -1111,7 +1111,11 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'svg', fileExtensions: ['svg'] },
-    { name: 'svelte', fileExtensions: ['svelte'] },
+    {
+      name: 'svelte',
+      fileExtensions: ['svelte'],
+      fileNames: ['svelte.config.js'],
+    },
     { name: 'vim', fileExtensions: ['vimrc', 'gvimrc', 'exrc'] },
     {
       name: 'nest',
