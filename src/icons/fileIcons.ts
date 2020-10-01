@@ -114,7 +114,7 @@ export const fileIcons: FileIcons = {
     },
     { name: 'javascript', fileExtensions: ['js', 'esx', 'mjs'] },
     { 
-      name: 'rc-configs',
+      name: 'rc',
       fileNames: [
         '.bashrc',
         '.bash_aliases',
