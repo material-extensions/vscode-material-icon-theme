@@ -113,7 +113,7 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'javascript', fileExtensions: ['js', 'esx', 'mjs'] },
-    { 
+    {
       name: 'rc',
       fileNames: [
         '.bashrc',
@@ -122,7 +122,7 @@ export const fileIcons: FileIcons = {
         '.zshrc',
         '.zprofile',
         '.kshrc',
-        '.profile',
+        '.profile'
       ]
     },
     { name: 'react', fileExtensions: ['jsx'] },
