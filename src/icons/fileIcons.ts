@@ -330,7 +330,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'key',
-      fileExtensions: ['pub', 'key', 'pem', 'asc', 'gpg'],
+      fileExtensions: ['pub', 'key', 'pem', 'asc', 'gpg', 'passwd'],
       fileNames: ['.htpasswd'],
     },
     {
