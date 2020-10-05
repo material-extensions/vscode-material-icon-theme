@@ -148,6 +148,8 @@ export const folderIcons: FolderTheme[] = [
           'asset',
           'assets',
           'static',
+          'report',
+          'reports',
         ],
       },
       {
@@ -573,6 +575,7 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['.azure-pipelines', '.azure-pipelines-ci'],
       },
       { name: 'folder-mjml', folderNames: ['mjml'] },
+      { name: 'folder-support', folderNames: ['support', 'help'] },
     ],
   },
   {
