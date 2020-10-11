@@ -328,7 +328,16 @@ export const folderIcons: FolderTheme[] = [
           'conversations',
         ],
       },
-      { name: 'folder-less', folderNames: ['less'] },
+      { name: 'folder-less', folderNames: ['less'] },,
+      { 
+        name: 'folder-gulp', 
+        folderNames: [
+          'gulpfile.js',
+          'gulpfile.mjs',
+          'gulpfile.ts',
+          'gulpfile.babel.js'
+        ] 
+      },
       {
         name: 'folder-python',
         folderNames: ['python', '__pycache__', '.pytest_cache'],
