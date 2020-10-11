@@ -329,14 +329,14 @@ export const folderIcons: FolderTheme[] = [
         ],
       },
       { name: 'folder-less', folderNames: ['less'] },,
-      { 
-        name: 'folder-gulp', 
+      {
+        name: 'folder-gulp',
         folderNames: [
           'gulpfile.js',
           'gulpfile.mjs',
           'gulpfile.ts',
           'gulpfile.babel.js'
-        ] 
+        ]
       },
       {
         name: 'folder-python',
