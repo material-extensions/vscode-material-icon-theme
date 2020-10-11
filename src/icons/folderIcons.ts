@@ -328,7 +328,7 @@ export const folderIcons: FolderTheme[] = [
           'conversations',
         ],
       },
-      { name: 'folder-less', folderNames: ['less'] },,
+      { name: 'folder-less', folderNames: ['less'] },
       {
         name: 'folder-gulp',
         folderNames: [
