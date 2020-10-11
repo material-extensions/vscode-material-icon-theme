@@ -330,7 +330,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'key',
-      fileExtensions: ['pub', 'key', 'pem', 'asc', 'gpg'],
+      fileExtensions: ['pub', 'key', 'pem', 'asc', 'gpg', 'passwd'],
       fileNames: ['.htpasswd'],
     },
     {
@@ -1111,7 +1111,11 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'svg', fileExtensions: ['svg'] },
-    { name: 'svelte', fileExtensions: ['svelte'] },
+    {
+      name: 'svelte',
+      fileExtensions: ['svelte'],
+      fileNames: ['svelte.config.js'],
+    },
     { name: 'vim', fileExtensions: ['vimrc', 'gvimrc', 'exrc'] },
     {
       name: 'nest',
@@ -1277,5 +1281,6 @@ export const fileIcons: FileIcons = {
     { name: 'slug', fileNames: ['.slugignore'] },
     { name: 'search', fileExtensions: ['code-search'] },
     { name: 'stitches', fileNames: ['stitches.config.js', 'stitches.config.ts'] },
+    { name: 'nginx', fileNames: ['nginx.conf'] },
   ],
 };

@@ -148,6 +148,8 @@ export const folderIcons: FolderTheme[] = [
           'asset',
           'assets',
           'static',
+          'report',
+          'reports',
         ],
       },
       {
