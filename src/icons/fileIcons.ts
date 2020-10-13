@@ -1281,5 +1281,6 @@ export const fileIcons: FileIcons = {
     { name: 'slug', fileNames: ['.slugignore'] },
     { name: 'search', fileExtensions: ['code-search'] },
     { name: 'pm2', fileNames: ['ecosystem.config.js', 'ecosystem.config.yml'] },
+    { name: 'nginx', fileNames: ['nginx.conf'] },
   ],
 };
