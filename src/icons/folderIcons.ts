@@ -321,6 +321,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-messages',
         folderNames: [
           'messages',
+          'messaging',
           'forum',
           'chat',
           'chats',
