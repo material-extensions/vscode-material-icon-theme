@@ -333,10 +333,7 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-gulp',
         folderNames: [
-          'gulpfile.js',
-          'gulpfile.mjs',
-          'gulpfile.ts',
-          'gulpfile.babel.js'
+          'gulp'
         ]
       },
       {
