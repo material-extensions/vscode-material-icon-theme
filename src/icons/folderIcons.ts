@@ -321,6 +321,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-messages',
         folderNames: [
           'messages',
+          'messaging',
           'forum',
           'chat',
           'chats',
@@ -329,6 +330,12 @@ export const folderIcons: FolderTheme[] = [
         ],
       },
       { name: 'folder-less', folderNames: ['less'] },
+      {
+        name: 'folder-gulp',
+        folderNames: [
+          'gulp'
+        ]
+      },
       {
         name: 'folder-python',
         folderNames: ['python', '__pycache__', '.pytest_cache'],
@@ -575,7 +582,6 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['.azure-pipelines', '.azure-pipelines-ci'],
       },
       { name: 'folder-mjml', folderNames: ['mjml'] },
-      { name: 'folder-support', folderNames: ['support', 'help'] },
     ],
   },
   {
