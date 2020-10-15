@@ -331,6 +331,12 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-less', folderNames: ['less'] },
       {
+        name: 'folder-gulp',
+        folderNames: [
+          'gulp'
+        ]
+      },
+      {
         name: 'folder-python',
         folderNames: ['python', '__pycache__', '.pytest_cache'],
       },
