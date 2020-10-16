@@ -4,6 +4,7 @@ import { LanguageIcon } from '../models';
  * Defines icons for language ids
  */
 export const languageIcons: LanguageIcon[] = [
+  { icon: { name: 'mcfunction_alt' }, ids: [] },
   { icon: { name: 'git' }, ids: ['git', 'git-commit', 'git-rebase', 'ignore'] },
   { icon: { name: 'c' }, ids: ['c', 'objective-c', 'objective-cpp'] },
   { icon: { name: 'yaml' }, ids: ['yaml'] },
