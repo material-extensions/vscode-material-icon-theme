@@ -7,6 +7,7 @@ export const fileIcons: FileIcons = {
   defaultIcon: { name: 'file' },
   icons: [
     { name: 'mcfunction', fileExtensions: ['mcfunction'] },
+    { name: 'mcfunction_alt', fileExtensions: ['mcfunction_alt'] },
     { name: 'html', fileExtensions: ['htm', 'xhtml', 'html_vm', 'asp'] },
     {
       name: 'pug',
