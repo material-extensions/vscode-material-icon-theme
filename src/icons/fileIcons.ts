@@ -1286,5 +1286,6 @@ export const fileIcons: FileIcons = {
       light: true,
     },
     { name: 'nginx', fileNames: ['nginx.conf'] },
+    { name: 'replit', fileNames: ['.replit'] },
   ],
 };
