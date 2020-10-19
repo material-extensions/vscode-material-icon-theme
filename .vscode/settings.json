@@ -1,8 +1,8 @@
 {
-    "files.exclude": {
-        "out": false
-    },
-    "search.exclude": {
-        "out": true
-    }
+  "files.exclude": {
+    "out": false
+  },
+  "search.exclude": {
+    "out": true
+  }
 }
