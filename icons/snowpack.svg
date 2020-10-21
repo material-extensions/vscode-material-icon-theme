@@ -1,3 +1,3 @@
-<svg filter="url(#saturation)" xmlns="http://www.w3.org/2000/svg" viewBox="-30 -94 700 700">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-30 -94 700 700">
   <path fill="#eee" fill-rule="nonzero" d="M635 463L347 15a32 32 0 00-54 0L5 463a32 32 0 0027 49h576a32 32 0 0027-49zM320 91l85 133h-85l-64 64-38-38L320 91z"/>
 </svg>
