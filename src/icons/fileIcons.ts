@@ -1288,5 +1288,15 @@ export const fileIcons: FileIcons = {
     { name: 'nginx', fileNames: ['nginx.conf'] },
     { name: 'replit', fileNames: ['.replit'] },
     { name: 'rescript', fileExtensions: ['res', 'resi'] },
+    {
+      name: 'snowpack',
+      fileNames: [
+        'snowpack.config.cjs',
+        'snowpack.config.js',
+        'snowpack.config.ts',
+        'snowpack.config.json'
+      ],
+      light: true,
+    }
   ],
 };
