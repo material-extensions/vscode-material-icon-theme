@@ -1288,5 +1288,6 @@ export const fileIcons: FileIcons = {
     { name: 'nginx', fileNames: ['nginx.conf'] },
     { name: 'replit', fileNames: ['.replit'] },
     { name: 'rescript', fileExtensions: ['res', 'resi'] },
+    { name: 'brainfuck', fileExtensions: ['b', 'bf'] },
   ],
 };
