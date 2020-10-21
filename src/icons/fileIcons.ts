@@ -1297,6 +1297,7 @@ export const fileIcons: FileIcons = {
         'snowpack.config.json'
       ],
       light: true,
-    }
+    },
+    { name: 'brainfuck', fileExtensions: ['b', 'bf'] },
   ],
 };
