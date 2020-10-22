@@ -936,6 +936,11 @@ export const fileIcons: FileIcons = {
       fileNames: ['.entity'],
       enabledFor: [IconPack.Ngrx],
     },
+    {
+      name: 'ngrx-selectors',
+      fileExtensions: ['selectors.ts'],
+      enabledFor: [IconPack.Ngrx],
+    },
     { name: 'webhint', fileNames: ['.hintrc'] },
     {
       name: 'browserlist',
