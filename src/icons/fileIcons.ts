@@ -1280,7 +1280,15 @@ export const fileIcons: FileIcons = {
     },
     { name: 'slug', fileNames: ['.slugignore'] },
     { name: 'search', fileExtensions: ['code-search'] },
+    {
+      name: 'stitches',
+      fileNames: ['stitches.config.js', 'stitches.config.ts'],
+      light: true,
+    },
     { name: 'nginx', fileNames: ['nginx.conf'] },
     { name: 'minecraft', fileExtensions: ['mcfunction'] },
+    { name: 'replit', fileNames: ['.replit'] },
+    { name: 'rescript', fileExtensions: ['res', 'resi'] },
+    { name: 'brainfuck', fileExtensions: ['b', 'bf'] },
   ],
 };
