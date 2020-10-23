@@ -1286,6 +1286,7 @@ export const fileIcons: FileIcons = {
       light: true,
     },
     { name: 'nginx', fileNames: ['nginx.conf'] },
+    { name: 'minecraft', fileExtensions: ['mcfunction'] },
     { name: 'replit', fileNames: ['.replit'] },
     { name: 'rescript', fileExtensions: ['res', 'resi'] },
     { name: 'brainfuck', fileExtensions: ['b', 'bf'] },
