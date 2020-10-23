@@ -6,7 +6,6 @@ import { FileIcons, IconPack } from '../models/index';
 export const fileIcons: FileIcons = {
   defaultIcon: { name: 'file' },
   icons: [
-    { name: 'mcfunction', fileExtensions: ['mcfunction'] },
     { name: 'html', fileExtensions: ['htm', 'xhtml', 'html_vm', 'asp'] },
     {
       name: 'pug',
@@ -1282,5 +1281,6 @@ export const fileIcons: FileIcons = {
     { name: 'slug', fileNames: ['.slugignore'] },
     { name: 'search', fileExtensions: ['code-search'] },
     { name: 'nginx', fileNames: ['nginx.conf'] },
+    { name: 'minecraft', fileExtensions: ['mcfunction'] },
   ],
 };
