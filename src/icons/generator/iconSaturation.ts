@@ -1,57 +1,45 @@
 import * as fs from 'fs';
 import * as path from 'path';
+import { getCustomIconPaths } from '../../helpers/customIcons';
+import { IconJsonOptions } from '../../models';
 
 /**
  * Changes saturation of all icons in the set.
- * @param saturation Saturation value.
+ * @param options Icon JSON options which include the saturation value.
  * @param fileNames Only change the saturation of certain file names.
  */
-export const setIconSaturation = (saturation: number, fileNames?: string[]) => {
-    if (!validateSaturationValue(saturation)) {
-        return console.error('Invalid saturation value! Saturation must be a decimal number between 0 and 1!');
-    }
+export const setIconSaturation = (
+  options: IconJsonOptions,
+  fileNames?: string[]
+) => {
+  if (!validateSaturationValue(options.saturation)) {
+    return console.error(
+      'Invalid saturation value! Saturation must be a decimal number between 0 and 1!'
+    );
+  }
 
-    let iconsPath;
-    if (path.basename(__dirname) === 'dist') {
-        iconsPath = path.join(__dirname, '..', 'icons');
-    } else {
-        // executed via script
-        iconsPath = path.join(__dirname, '..', '..', '..', 'icons');
-    }
+  let iconsPath;
+  if (path.basename(__dirname) === 'dist') {
+    iconsPath = path.join(__dirname, '..', 'icons');
+  } else {
+    // executed via script
+    iconsPath = path.join(__dirname, '..', '..', '..', 'icons');
+  }
 
-    // read all icon files from the icons folder
-    try {
-        (fileNames || fs.readdirSync(iconsPath)).forEach(iconFileName => {
-            const svgFilePath = path.join(iconsPath, iconFileName);
+  const customIconPaths = getCustomIconPaths(options);
+  const iconFiles = fs.readdirSync(iconsPath);
 
-            // Read SVG file
-            const svg = fs.readFileSync(svgFilePath, 'utf-8');
+  // read all icon files from the icons folder
+  try {
+    (fileNames || iconFiles).forEach(adjustSaturation(iconsPath, options));
 
-            // Get the root element of the SVG file
-            const svgRootElement = getSVGRootElement(svg);
-            if (!svgRootElement) return;
-
-            let updatedRootElement: string;
-
-            if (saturation < 1) {
-                updatedRootElement = addFilterAttribute(svgRootElement);
-            } else {
-                updatedRootElement = removeFilterAttribute(svgRootElement);
-            }
-
-            let updatedSVG = svg.replace(/<svg[^>]*>/, updatedRootElement);
-
-            if (saturation < 1) {
-                updatedSVG = addFilterElement(updatedSVG, saturation);
-            } else {
-                updatedSVG = removeFilterElement(updatedSVG);
-            }
-
-            fs.writeFileSync(svgFilePath, updatedSVG);
-        });
-    } catch (error) {
-        console.error(error);
-    }
+    customIconPaths.forEach((iconPath) => {
+      const customIcons = fs.readdirSync(iconPath);
+      customIcons.forEach(adjustSaturation(iconPath, options));
+    });
+  } catch (error) {
+    console.error(error);
+  }
 };
 
 /**
@@ -59,8 +47,8 @@ export const setIconSaturation = (saturation: number, fileNames?: string[]) => {
  * @param svg SVG file as string.
  */
 const getSVGRootElement = (svg: string) => {
-    const result = new RegExp(/<svg[^>]*>/).exec(svg);
-    return result.length > 0 ? result[0] : undefined;
+  const result = new RegExp(/<svg[^>]*>/).exec(svg);
+  return result?.[0];
 };
 
 /**
@@ -68,13 +56,13 @@ const getSVGRootElement = (svg: string) => {
  * @param svgRoot Root element of the SVG icon.
  */
 const addFilterAttribute = (svgRoot: string) => {
-    const pattern = new RegExp(/\sfilter="[^"]+?"/);
-    // if the filter attribute already exists
-    if (pattern.test(svgRoot)) {
-        return svgRoot.replace(pattern, ` filter="url(#saturation)"`);
-    } else {
-        return svgRoot.replace(/^<svg/, `<svg filter="url(#saturation)"`);
-    }
+  const pattern = new RegExp(/\sfilter="[^"]+?"/);
+  // if the filter attribute already exists
+  if (pattern.test(svgRoot)) {
+    return svgRoot.replace(pattern, ' filter="url(#saturation)"');
+  } else {
+    return svgRoot.replace(/^<svg/, '<svg filter="url(#saturation)"');
+  }
 };
 
 /**
@@ -82,8 +70,8 @@ const addFilterAttribute = (svgRoot: string) => {
  * @param svgRoot Root element of the SVG icon.
  */
 const removeFilterAttribute = (svgRoot: string) => {
-    const pattern = new RegExp(/\sfilter="[^"]+?"/);
-    return svgRoot.replace(pattern, '');
+  const pattern = new RegExp(/\sfilter="[^"]+?"/);
+  return svgRoot.replace(pattern, '');
 };
 
 /**
@@ -91,13 +79,13 @@ const removeFilterAttribute = (svgRoot: string) => {
  * @param svg SVG file as string.
  */
 const addFilterElement = (svg: string, value: number) => {
-    const pattern = new RegExp(/<filter id="saturation".+<\/filter>(.*<\/svg>)/);
-    const filterElement = `<filter id="saturation"><feColorMatrix type="saturate" values="${value}"/></filter>`;
-    if (pattern.test(svg)) {
-        return svg.replace(pattern, `${filterElement}$1`);
-    } else {
-        return svg.replace(/<\/svg>/, `${filterElement}</svg>`);
-    }
+  const pattern = new RegExp(/<filter id="saturation".+<\/filter>(.*<\/svg>)/);
+  const filterElement = `<filter id="saturation"><feColorMatrix type="saturate" values="${value}"/></filter>`;
+  if (pattern.test(svg)) {
+    return svg.replace(pattern, `${filterElement}$1`);
+  } else {
+    return svg.replace(/<\/svg>/, `${filterElement}</svg>`);
+  }
 };
 
 /**
@@ -105,8 +93,8 @@ const addFilterElement = (svg: string, value: number) => {
  * @param svg SVG file as string.
  */
 const removeFilterElement = (svg: string) => {
-    const pattern = new RegExp(/<filter id="saturation".+<\/filter>(.*<\/svg>)/);
-    return svg.replace(pattern, `$1`);
+  const pattern = new RegExp(/<filter id="saturation".+<\/filter>(.*<\/svg>)/);
+  return svg.replace(pattern, '$1');
 };
 
 /**
@@ -114,5 +102,39 @@ const removeFilterElement = (svg: string) => {
  * @param saturation Saturation value
  */
 export const validateSaturationValue = (saturation: number) => {
-    return saturation !== null && saturation <= 1 && saturation >= 0;
+  return saturation !== undefined && saturation <= 1 && saturation >= 0;
+};
+
+const adjustSaturation = (
+  iconsPath: any,
+  options: IconJsonOptions
+): ((value: string, index: number, array: string[]) => void) => {
+  return (iconFileName) => {
+    const svgFilePath = path.join(iconsPath, iconFileName);
+
+    // Read SVG file
+    const svg = fs.readFileSync(svgFilePath, 'utf-8');
+
+    // Get the root element of the SVG file
+    const svgRootElement = getSVGRootElement(svg);
+    if (!svgRootElement) return;
+
+    let updatedRootElement: string;
+
+    if (options.saturation < 1) {
+      updatedRootElement = addFilterAttribute(svgRootElement);
+    } else {
+      updatedRootElement = removeFilterAttribute(svgRootElement);
+    }
+
+    let updatedSVG = svg.replace(/<svg[^>]*>/, updatedRootElement);
+
+    if (options.saturation < 1) {
+      updatedSVG = addFilterElement(updatedSVG, options.saturation);
+    } else {
+      updatedSVG = removeFilterElement(updatedSVG);
+    }
+
+    fs.writeFileSync(svgFilePath, updatedSVG);
+  };
 };
