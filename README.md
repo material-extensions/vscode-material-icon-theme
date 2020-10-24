@@ -113,6 +113,26 @@ The following configuration can customize the folder icons. It is also possible 
 }
 ```
 
+#### Custom SVG folder icons
+
+Similar to the files, it is also possible to reference your own SVG icons for folder icons. Here it's important to provide two SVG files: one for the folder if it's closed and another one for the opened state. These two files - let's call them "folder-sample.svg" and "folder-sample-open.svg" - have to be placed into a directory which is relative to the extensions dist folder. In our example we place them into an icons folder inside of the .vscode folder:
+
+```
+.vscode
+ ┣ extensions
+ ┗ icons
+   ┣ folder-sample.svg
+   ┗ folder-sample-open.svg
+```
+
+In the settings.json the folder icons can be associated to a folder name (e.g. "src") like this:
+
+```json
+"material-icon-theme.folders.associations": {
+    "src": "../../../../../icons/folder-sample"
+}
+```
+
 ### Language associations
 
 With the following configuration you can customize the language icons. It is also possible to overwrite existing associations.
