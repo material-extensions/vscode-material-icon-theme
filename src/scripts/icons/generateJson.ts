@@ -1,10 +1,10 @@
 /**
- * This file is only a script file that should only be executed by the npm scripts.
+ * This file is meant to be executed exclusively by npm scripts.
  */
 import { createIconFile } from './../../icons/index';
 
 try {
-    createIconFile();
+  createIconFile();
 } catch (error) {
-    throw Error(error);
+  throw Error(error);
 }
