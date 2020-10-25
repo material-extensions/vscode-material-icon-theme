@@ -1231,6 +1231,8 @@ export const fileIcons: FileIcons = {
         '.commitlintrc.json',
         '.commitlint.yaml',
         '.commitlint.yml',
+        '.commitlintrc.yaml',
+        '.commitlintrc.yml',
       ],
     },
     { name: 'buck', fileNames: ['.buckconfig'] },
