@@ -1,19 +1,15 @@
-environment:
-  ELECTRON_RUN_AS_NODE: 1
-  VSCODE_BUILD_VERBOSE: true
-  NODE_VERSION: "9"
+image: ubuntu
+stack: node 10
 
 cache:
   - node_modules
-  - '%APPDATA%\npm-cache'
 
 branches:
   only:
     - master
-    - dev
+    - develop
 
 install:
-  - ps: Install-Product node $env:NODE_VERSION x64
   - npm install
 
 build: off
