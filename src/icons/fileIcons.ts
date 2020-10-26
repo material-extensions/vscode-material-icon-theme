@@ -1306,6 +1306,16 @@ export const fileIcons: FileIcons = {
     { name: 'minecraft', fileExtensions: ['mcfunction'] },
     { name: 'replit', fileNames: ['.replit'] },
     { name: 'rescript', fileExtensions: ['res', 'resi'] },
+    {
+      name: 'snowpack',
+      fileNames: [
+        'snowpack.config.cjs',
+        'snowpack.config.js',
+        'snowpack.config.ts',
+        'snowpack.config.json'
+      ],
+      light: true,
+    },
     { name: 'brainfuck', fileExtensions: ['b', 'bf'] },
   ],
 };
