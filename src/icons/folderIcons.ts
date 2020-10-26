@@ -570,6 +570,7 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['mobile', 'mobiles', 'portable', 'portability'],
       },
       { name: 'folder-stencil', folderNames: ['.stencil'] },
+      { name: 'folder-strategy', folderNames: ['strategy', 'strategies'] },
       { name: 'folder-firebase', folderNames: ['.firebase'] },
       { name: 'folder-svelte', folderNames: ['svelte'] },
       {
