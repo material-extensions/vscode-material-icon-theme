@@ -317,15 +317,15 @@ export const fileIcons: FileIcons = {
       name: 'certificate',
       fileExtensions: ['cer', 'cert', 'crt'],
       fileNames: [
+        'copying',
+        'copying.md',
+        'copying.txt',
         'license',
         'license.md',
         'license.txt',
         'licence',
         'licence.md',
-        'licence.txt',
-        'unlicense',
-        'unlicense.md',
-        'unlicense.txt',
+        'licence.txt'
       ],
     },
     {
