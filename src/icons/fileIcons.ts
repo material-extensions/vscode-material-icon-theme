@@ -619,7 +619,13 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'posthtml',
-      fileNames: ['posthtml.config.js', '.posthtmlrc.js', '.posthtmlrc', '.posthtmlrc.json', '.posthtmlrc.yml']
+      fileNames: [
+        'posthtml.config.js',
+        '.posthtmlrc.js',
+        '.posthtmlrc',
+        '.posthtmlrc.json',
+        '.posthtmlrc.yml',
+      ],
     },
     { name: 'todo', fileExtensions: ['todo'] },
     { name: 'coldfusion', fileExtensions: ['cfml', 'cfc', 'lucee', 'cfm'] },
