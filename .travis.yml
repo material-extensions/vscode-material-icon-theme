@@ -10,7 +10,7 @@ node_js:
 
 install:
   - npm ci
-  - npm -g install webpack-cli ts-node
+  - npm -g install webpack-cli ts-node typescript webpack
 
 cache:
   directories:
