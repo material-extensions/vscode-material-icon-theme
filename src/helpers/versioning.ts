@@ -16,7 +16,13 @@ export const checkThemeStatus = async (state: vscode.Memento) => {
     const packageVersion = getCurrentExtensionVersion();
 
     // check if the theme was used before
-    if (stateVersion === undefined) {
+    if (
+      stateVersion === undefined ||
+      !(
+        stateVersion instanceof semver.SemVer ||
+        typeof stateVersion === 'string'
+      )
+    ) {
       await updateExtensionVersionInMemento(state);
       return themeIsAlreadyActivated()
         ? ThemeStatus.updated
