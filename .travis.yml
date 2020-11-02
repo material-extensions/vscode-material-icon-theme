@@ -6,10 +6,11 @@ os:
 
 node_js:
   - node
+  - lts/*
 
 install:
   - npm ci
-  - npm -g install webpack-cli
+  - npm -g install webpack-cli ts-node
 
 cache:
   directories:
