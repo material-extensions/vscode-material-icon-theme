@@ -1,5 +1,5 @@
 import * as assert from 'assert';
-import * as merge from 'lodash.merge';
+import merge from 'lodash.merge';
 import {
   getDefaultIconOptions,
   loadFolderIconDefinitions,

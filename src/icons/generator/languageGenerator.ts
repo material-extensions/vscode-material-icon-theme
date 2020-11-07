@@ -1,4 +1,4 @@
-import * as merge from 'lodash.merge';
+import merge from 'lodash.merge';
 import { getFileConfigHash } from '../../helpers/fileConfig';
 import {
   DefaultIcon,
