@@ -106,7 +106,7 @@ export const folderIcons: FolderTheme[] = [
             { name: 'folder-wordpress', folderNames: ['wp-content'] },
             { name: 'folder-gradle', folderNames: ['gradle', '.gradle'] },
             { name: 'folder-coverage', folderNames: ['coverage', '.nyc-output', '.nyc_output', 'e2e', 'it', 'integration-test', 'integration-tests'] },
-            { name: 'folder-class', folderNames: ['class', 'classes', 'model', 'models'] },
+            { name: 'folder-class', folderNames: ['class', 'classes', 'model', 'models', 'schemes', 'schema'] },
             { name: 'folder-other', folderNames: ['other', 'others', 'misc', 'miscellaneous', 'extra', 'extras'] },
             { name: 'folder-typescript', folderNames: ['typescript', 'ts', 'typings', '@types'] },
             { name: 'folder-graphql', folderNames: ['graphql', 'gql'] },
