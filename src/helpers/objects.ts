@@ -10,10 +10,9 @@ export const getObjectPropertyValue = (obj: Object, path: string) => {
     .split('.'); // separate paths in array
 
   /** Avoid errors in the getValue function. */
-  const isObject = (object) => {
+  const isObject = (object:  unknown) => {
     return object === Object(object);
   };
-
   let result = JSON.parse(JSON.stringify(obj));
 
   for (let i = 0; i < pathArray.length; ++i) {

@@ -7,7 +7,9 @@
     "sourceMap": true,
     "rootDir": "src",
     "noUnusedLocals": true,
-    "noUnusedParameters": true
+    "noUnusedParameters": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop":true
   },
   "include": [
     "src/**/*.ts",
