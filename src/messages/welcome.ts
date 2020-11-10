@@ -19,7 +19,7 @@ export const showWelcomeMessage = () => {
 };
 
 /** Handle the actions of the welcome message. */
-const handleWelcomeMessageActions = (value) => {
+const handleWelcomeMessageActions = (value: string) => {
   switch (value) {
     case i18n.translate('activate'):
       activateIcons();

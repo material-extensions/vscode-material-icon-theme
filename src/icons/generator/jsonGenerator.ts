@@ -1,5 +1,5 @@
 import * as fs from 'fs';
-import * as merge from 'lodash.merge';
+import merge from 'lodash.merge';
 import * as path from 'path';
 import { getCustomIconPaths } from '../../helpers/customIcons';
 import { getFileConfigHash } from '../../helpers/fileConfig';
