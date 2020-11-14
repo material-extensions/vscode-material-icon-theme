@@ -1273,7 +1273,15 @@ export const fileIcons: FileIcons = {
     },
     { name: 'nrwl', fileNames: ['nx.json'] },
     { name: 'opam', fileExtensions: ['opam'] },
-    { name: 'dune', fileNames: ['dune', 'dune-project'] },
+    {
+      name: 'dune',
+      fileNames: [
+        'dune',
+        'dune-project',
+        'dune-workspace',
+        'dune-workspace.dev',
+      ],
+    },
     { name: 'imba', fileExtensions: ['imba'] },
     { name: 'drawio', fileExtensions: ['drawio', 'dio'] },
     { name: 'pascal', fileExtensions: ['pas'] },
