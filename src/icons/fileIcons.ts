@@ -1241,7 +1241,11 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['iuml', 'pu', 'puml', 'plantuml', 'wsd'],
       light: true,
     },
-    { name: 'meson', fileNames: ['meson.build'] },
+    {
+      name: 'meson',
+      fileNames: ['meson.build', 'meson_options.txt'],
+      fileExtensions: ['wrap'],
+    },
     {
       name: 'commitlint',
       fileNames: [
