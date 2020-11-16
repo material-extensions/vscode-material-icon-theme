@@ -629,7 +629,15 @@ export const fileIcons: FileIcons = {
     },
     { name: 'todo', fileExtensions: ['todo'] },
     { name: 'coldfusion', fileExtensions: ['cfml', 'cfc', 'lucee', 'cfm'] },
-    { name: 'cabal', fileExtensions: ['cabal'] },
+    {
+      name: 'cabal',
+      fileExtensions: ['cabal'],
+      fileNames: [
+        'cabal.project',
+        'cabal.project.freeze',
+        'cabal.project.local',
+      ],
+    },
     { name: 'nix', fileExtensions: ['nix'] },
     { name: 'slim', fileExtensions: ['slim'] },
     { name: 'http', fileExtensions: ['http', 'rest'], fileNames: ['CNAME'] },
