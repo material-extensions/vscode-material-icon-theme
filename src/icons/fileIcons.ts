@@ -326,7 +326,7 @@ export const fileIcons: FileIcons = {
         'license.txt',
         'licence',
         'licence.md',
-        'licence.txt'
+        'licence.txt',
       ],
     },
     {
@@ -1343,10 +1343,11 @@ export const fileIcons: FileIcons = {
         'snowpack.config.cjs',
         'snowpack.config.js',
         'snowpack.config.ts',
-        'snowpack.config.json'
+        'snowpack.config.json',
       ],
       light: true,
     },
     { name: 'brainfuck', fileExtensions: ['b', 'bf'] },
+    { name: 'bicep', fileExtensions: ['bicep'] },
   ],
 };
