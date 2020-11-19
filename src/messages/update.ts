@@ -19,7 +19,7 @@ export const showUpdateMessage = () => {
 };
 
 /** Handle the actions of the update message. */
-const handleUpdateMessageActions = (value) => {
+const handleUpdateMessageActions = (value: string) => {
   switch (value) {
     case i18n.translate('activate'):
       activateIcons();

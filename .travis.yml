@@ -3,11 +3,14 @@ language: node_js
 os:
   - osx
 
+
 node_js:
   - node
+  - lts/*
 
 install:
-  - npm install
+  - npm ci
+  - npm -g install webpack-cli ts-node typescript webpack
 
 cache:
   directories:
