@@ -302,6 +302,7 @@ export const fileIcons: FileIcons = {
         'cmd',
         'awk',
         'fish',
+        'exp',
       ],
     },
     {
