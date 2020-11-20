@@ -7,7 +7,7 @@
   "engines": {
     "vscode": "^1.31.0"
   },
-  "homepage": "https://github.com/PKief/vscode-material-icon-theme/blob/master/README.md",
+  "homepage": "https://github.com/PKief/vscode-material-icon-theme/blob/main/README.md",
   "repository": {
     "type": "git",
     "url": "https://github.com/PKief/vscode-material-icon-theme.git"

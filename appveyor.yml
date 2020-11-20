@@ -6,7 +6,7 @@ cache:
 
 branches:
   only:
-    - master
+    - main
     - develop
 
 install:
