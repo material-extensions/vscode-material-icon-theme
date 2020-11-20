@@ -1,6 +1,6 @@
-import * as glob from 'glob';
-import * as Mocha from 'mocha';
-import * as path from 'path';
+import glob from 'glob';
+import Mocha from 'mocha';
+import path from 'path';
 
 export const run = (): Promise<void> => {
   // Create the mocha test

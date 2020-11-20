@@ -1,5 +1,41 @@
 # Changelog
 
+## 4.4.0 (2020-11-01)
+
+### New file icons
+
+- Stitches ([@peduarte](https://github.com/peduarte) in [#841](https://github.com/PKief/vscode-material-icon-theme/pull/841))
+- Search file ([@PKief](https://github.com/PKief) in commit [5c50244](https://github.com/PKief/vscode-material-icon-theme/commit/5c502447b18f774cb647f1183dbdc25bbe443086))
+- svelte.config.js ([@eyalch](https://github.com/eyalch) in [#845](https://github.com/PKief/vscode-material-icon-theme/pull/845))
+- \*.passwd ([issue #838](https://github.com/PKief/vscode-material-icon-theme/issues/838))
+- Nginx ([@LukeTimeWalker](https://github.com/LukeTimeWalker) in [#849](https://github.com/PKief/vscode-material-icon-theme/pull/849))
+- Minecraft Function ([@llgava](https://github.com/llgava) in [#854](https://github.com/PKief/vscode-material-icon-theme/pull/854))
+- Replit ([@Banakin](https://github.com/Banakin) in [#853](https://github.com/PKief/vscode-material-icon-theme/pull/853))
+- Rescript ([@prazdevs](https://github.com/prazdevs) in [#823](https://github.com/PKief/vscode-material-icon-theme/pull/823))
+- Brainfuck ([@PKief](https://github.com/PKief) in commit [b12830b](https://github.com/PKief/vscode-material-icon-theme/commit/b12830b3e917f3b2058edf88f9478235ddde8a0c))
+- Snowpack ([@prazdevs](https://github.com/prazdevs) in [#863](https://github.com/PKief/vscode-material-icon-theme/pull/863))
+- Dockerfiles ([@LucasPaganini](https://github.com/LucasPaganini) in [#865](https://github.com/PKief/vscode-material-icon-theme/pull/865))
+- NgRx selectors ([@PKief](https://github.com/PKief) in [#867](https://github.com/PKief/vscode-material-icon-theme/pull/867))
+- copying ([@waldyrious](https://github.com/waldyrious) in [#619](https://github.com/PKief/vscode-material-icon-theme/pull/619))
+- commitlintrc ([@Flandre-X](https://github.com/Flandre-X) in [#870](https://github.com/PKief/vscode-material-icon-theme/pull/870))
+- PostHTML ([@Scrum](https://github.com/Scrum) in [#482](https://github.com/PKief/vscode-material-icon-theme/pull/482))
+
+### New folder icons
+
+- setting ([@slowaways](https://github.com/slowaways) in [#835](https://github.com/PKief/vscode-material-icon-theme/pull/835))
+- reports ([@PKief](https://github.com/PKief) in commit [2d1e9f2](https://github.com/PKief/vscode-material-icon-theme/commit/2d1e9f28194127d1c2fb0dcda37580cd9f9a70f6))
+- gulp ([@entrywayaudibly](https://github.com/entrywayaudibly) in [#850](https://github.com/PKief/vscode-material-icon-theme/pull/850))
+- messaging ([@PKief](https://github.com/PKief) in commit [f901627](https://github.com/PKief/vscode-material-icon-theme/commit/f901627d240fa31b0781e9fdf97e99cd862b3847))
+- NgRx selectors ([@PKief](https://github.com/PKief) in [#867](https://github.com/PKief/vscode-material-icon-theme/pull/867))
+
+### Other improvements
+
+- Add description for custom folder icons ([@PKief](https://github.com/PKief) in commit [5b7ca02](https://github.com/PKief/vscode-material-icon-theme/commit/5b7ca028d2948d6a3b525821ff2b4379a8eff122))
+- Add language ids ([@PKief](https://github.com/PKief) in commit [d3bcd69](https://github.com/PKief/vscode-material-icon-theme/commit/d3bcd6978451a9a1dbb71d2814f60b69ebacf068))
+- Update workflow file for GitHub Actions ([@PKief](https://github.com/PKief) in commit [952dc39](https://github.com/PKief/vscode-material-icon-theme/commit/952dc39e875be9f4431f7895cecfde14b2740d01))
+- Add prettier to project ([@PKief](https://github.com/PKief) in commit [9dfe4a1](https://github.com/PKief/vscode-material-icon-theme/commit/9dfe4a1791b95b648c149eb39b8a14ee56fff6a7))
+- Remove animation from animation folder icon due to performance reasons ([issue #872](https://github.com/PKief/vscode-material-icon-theme/issues/872))
+
 ## 4.3.0 (2020-09-09)
 
 ### New file icons

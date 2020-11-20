@@ -291,7 +291,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-class',
-        folderNames: ['class', 'classes', 'model', 'models'],
+        folderNames: ['class', 'classes', 'model', 'models', 'schemes', 'schema'],
       },
       {
         name: 'folder-other',

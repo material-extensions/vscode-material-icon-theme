@@ -117,4 +117,5 @@ export const languageIcons: LanguageIcon[] = [
   { icon: { name: 'search' }, ids: ['search-result'] },
   { icon: { name: 'minecraft' }, ids: ['mcfunction'] },
   { icon: { name: 'rescript' }, ids: ['rescript'] },
+  { icon: { name: 'twine' }, ids: ['twee3', 'twee3-harlowe-3', 'twee3-chapbook-1', 'twee3-sugarcube-2'] },
 ];
