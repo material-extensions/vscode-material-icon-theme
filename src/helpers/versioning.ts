@@ -2,6 +2,8 @@ import * as semver from 'semver';
 import * as vscode from 'vscode';
 import * as helpers from './index';
 
+export const VERSION_KEY = 'material-icon-theme.version';
+
 export enum ThemeStatus {
   neverUsedBefore,
   updated,
@@ -48,7 +50,7 @@ const themeIsAlreadyActivated = () => {
 /** Update the version number to the current version in the memento. */
 const updateExtensionVersionInMemento = (state: vscode.Memento) => {
   return state.update(
-    'material-icon-theme.version',
+    VERSION_KEY,
     getCurrentExtensionVersion()
   );
 };
