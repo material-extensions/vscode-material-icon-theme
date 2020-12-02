@@ -553,6 +553,11 @@ export const folderIcons: FolderTheme[] = [
         enabledFor: [IconPack.Vuex],
       },
       {
+        name: 'folder-vue-composable',
+        folderNames: ['composable', 'composables'],
+        enabledFor: [IconPack.Vue, IconPack.Vuex],
+      },
+      {
         name: 'folder-nuxt',
         folderNames: ['nuxt', '.nuxt'],
         enabledFor: [IconPack.Vuex, IconPack.Vue],
