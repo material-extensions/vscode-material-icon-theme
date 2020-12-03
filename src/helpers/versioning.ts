@@ -2,7 +2,7 @@ import * as semver from 'semver';
 import * as vscode from 'vscode';
 import * as helpers from './index';
 
-export const VERSION_KEY = 'material-icon-theme.version';
+export const versionKey = 'material-icon-theme.version';
 
 export enum ThemeStatus {
   neverUsedBefore,
@@ -10,11 +10,14 @@ export enum ThemeStatus {
   current,
 }
 
-/** Check the current status of the theme */
+/**
+ * Check the current status of the theme
+ * @param state Global state of context (Memento API)
+ */
 export const checkThemeStatus = async (state: vscode.Memento) => {
   try {
     // get the version from the state
-    const stateVersion = state.get('material-icon-theme.version');
+    const stateVersion = state.get(versionKey);
     const packageVersion = getCurrentExtensionVersion();
 
     // check if the theme was used before
@@ -49,10 +52,7 @@ const themeIsAlreadyActivated = () => {
 
 /** Update the version number to the current version in the memento. */
 const updateExtensionVersionInMemento = (state: vscode.Memento) => {
-  return state.update(
-    VERSION_KEY,
-    getCurrentExtensionVersion()
-  );
+  return state.update(versionKey, getCurrentExtensionVersion());
 };
 
 /** Get the current version of the extension */
