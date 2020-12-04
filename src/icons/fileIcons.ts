@@ -241,6 +241,7 @@ export const fileIcons: FileIcons = {
         'pgsql',
         'postgres',
         'psql',
+        'db',
       ],
     },
     { name: 'csharp', fileExtensions: ['cs', 'csx'] },
