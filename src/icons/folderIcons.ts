@@ -291,7 +291,14 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-class',
-        folderNames: ['class', 'classes', 'model', 'models', 'schemes', 'schema'],
+        folderNames: [
+          'class',
+          'classes',
+          'model',
+          'models',
+          'schemes',
+          'schema',
+        ],
       },
       {
         name: 'folder-other',
@@ -586,6 +593,7 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-mjml', folderNames: ['mjml'] },
       { name: 'folder-scala', folderNames: ['scala'] },
+      { name: 'folder-connection', folderNames: ['connection', 'connections'] },
     ],
   },
   {
