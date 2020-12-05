@@ -1141,7 +1141,10 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['svelte'],
       fileNames: ['svelte.config.js'],
     },
-    { name: 'vim', fileExtensions: ['vimrc', 'gvimrc', 'exrc'] },
+    {
+      name: 'vim',
+      fileExtensions: ['vimrc', 'gvimrc', 'exrc', 'vim', 'viminfo'],
+    },
     {
       name: 'nest',
       fileNames: [
