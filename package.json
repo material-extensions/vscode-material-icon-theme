@@ -2,12 +2,12 @@
   "name": "material-icon-theme",
   "displayName": "Material Icon Theme",
   "description": "Material Design Icons for Visual Studio Code",
-  "version": "3.9.2",
+  "version": "4.4.0",
   "publisher": "PKief",
   "engines": {
-    "vscode": "^1.5.0"
+    "vscode": "^1.51.0"
   },
-  "homepage": "https://github.com/PKief/vscode-material-icon-theme/blob/master/README.md",
+  "homepage": "https://github.com/PKief/vscode-material-icon-theme/blob/main/README.md",
   "repository": {
     "type": "git",
     "url": "https://github.com/PKief/vscode-material-icon-theme.git"
@@ -17,7 +17,7 @@
   },
   "icon": "logo.png",
   "galleryBanner": {
-    "color": "#263238",
+    "color": "#1e1e1e",
     "theme": "dark"
   },
   "categories": [
@@ -30,7 +30,10 @@
     "icon-theme",
     "customization"
   ],
-  "extensionKind": "ui",
+  "extensionKind": [
+    "ui",
+    "workspace"
+  ],
   "activationEvents": [
     "*"
   ],
@@ -192,7 +195,7 @@
     "compile:watch": "webpack --mode none --watch",
     "contributors": "ts-node ./src/scripts/contributors/index.ts",
     "generateJson": "ts-node ./src/scripts/icons/generateJson.ts",
-    "lint": "tslint -c tslint.json ./src/**/*.ts",
+    "lint": "eslint -c .eslintrc.json --ext .ts ./src/**/*.ts",
     "postcompile": "npm run generateJson && npm run check",
     "pretest": "npm run build && tsc -p ./",
     "preview": "ts-node ./src/scripts/preview",
@@ -201,26 +204,30 @@
   },
   "dependencies": {
     "lodash.merge": "4.6.2",
-    "open": "7.0.0",
-    "semver": "6.3.0"
+    "semver": "7.3.2"
   },
   "devDependencies": {
-    "@types/glob": "^7.1.1",
-    "@types/mocha": "^5.2.7",
-    "@types/node": "^12.12.11",
-    "@types/puppeteer": "^2.0.0",
-    "@types/vscode": "^1.5.0",
+    "@types/glob": "^7.1.3",
+    "@types/lodash.merge": "^4.6.6",
+    "@types/mocha": "^8.0.3",
+    "@types/node": "^14.14.6",
+    "@types/puppeteer": "^5.4.0",
+    "@types/semver": "^7.3.4",
+    "@types/vscode": "~1.51.0",
+    "@typescript-eslint/eslint-plugin": "^4.6.1",
+    "@typescript-eslint/parser": "^4.6.1",
     "clean-webpack-plugin": "^3.0.0",
-    "glob": "^7.1.4",
-    "mocha": "^6.2.2",
-    "puppeteer": "^2.0.0",
-    "rimraf": "^3.0.0",
-    "ts-loader": "^6.2.1",
-    "ts-node": "^8.5.2",
-    "tslint": "^5.20.1",
-    "typescript": "^3.7.2",
-    "vscode-test": "^1.2.3",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10"
+    "eslint": "^7.13.0",
+    "eslint-config-prettier": "^6.15.0",
+    "glob": "^7.1.6",
+    "mocha": "^8.2.1",
+    "puppeteer": "^5.4.1",
+    "rimraf": "^3.0.2",
+    "ts-loader": "^8.0.10",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.5",
+    "vscode-test": "^1.4.1",
+    "webpack": "^5.4.0",
+    "webpack-cli": "^4.2.0"
   }
 }
