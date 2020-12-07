@@ -111,6 +111,7 @@ export const fileIcons: FileIcons = {
         'sai',
         'tga',
         'xcf',
+        'jfif',
       ],
     },
     { name: 'javascript', fileExtensions: ['js', 'esx', 'mjs'] },
