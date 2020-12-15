@@ -504,7 +504,10 @@ export const fileIcons: FileIcons = {
     },
     { name: 'nuxt', fileNames: ['nuxt.config.js', 'nuxt.config.ts'] },
     { name: 'ocaml', fileExtensions: ['ml', 'mli', 'cmx'] },
-    { name: 'javascript-map', fileExtensions: ['js.map', 'mjs.map'] },
+    {
+      name: 'javascript-map',
+      fileExtensions: ['js.map', 'mjs.map', 'cjs.map'],
+    },
     { name: 'css-map', fileExtensions: ['css.map'] },
     {
       name: 'lock',
