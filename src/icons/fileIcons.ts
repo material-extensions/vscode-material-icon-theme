@@ -111,6 +111,7 @@ export const fileIcons: FileIcons = {
         'sai',
         'tga',
         'xcf',
+        'jfif',
       ],
     },
     { name: 'javascript', fileExtensions: ['js', 'esx', 'mjs'] },
@@ -287,6 +288,8 @@ export const fileIcons: FileIcons = {
         'pipfile',
         '.python-version',
         'manifest.in',
+        'pylintrc',
+        '.pylintrc',
       ],
     },
     { name: 'url', fileExtensions: ['url'] },
@@ -503,7 +506,10 @@ export const fileIcons: FileIcons = {
     },
     { name: 'nuxt', fileNames: ['nuxt.config.js', 'nuxt.config.ts'] },
     { name: 'ocaml', fileExtensions: ['ml', 'mli', 'cmx'] },
-    { name: 'javascript-map', fileExtensions: ['js.map', 'mjs.map'] },
+    {
+      name: 'javascript-map',
+      fileExtensions: ['js.map', 'mjs.map', 'cjs.map'],
+    },
     { name: 'css-map', fileExtensions: ['css.map'] },
     {
       name: 'lock',
@@ -1152,7 +1158,10 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['svelte'],
       fileNames: ['svelte.config.js'],
     },
-    { name: 'vim', fileExtensions: ['vimrc', 'gvimrc', 'exrc'] },
+    {
+      name: 'vim',
+      fileExtensions: ['vimrc', 'gvimrc', 'exrc', 'vim', 'viminfo'],
+    },
     {
       name: 'nest',
       fileNames: [
