@@ -288,6 +288,8 @@ export const fileIcons: FileIcons = {
         'pipfile',
         '.python-version',
         'manifest.in',
+        'pylintrc',
+        '.pylintrc',
       ],
     },
     { name: 'url', fileExtensions: ['url'] },
