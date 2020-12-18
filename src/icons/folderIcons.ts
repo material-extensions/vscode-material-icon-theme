@@ -88,6 +88,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-github', folderNames: ['.github'] },
       { name: 'folder-gitlab', folderNames: ['.gitlab'] },
       { name: 'folder-vscode', folderNames: ['.vscode', '.vscode-test'] },
+      { name: 'folder-netlify', folderNames: ['.netlify'] },
       {
         name: 'folder-views',
         folderNames: [
