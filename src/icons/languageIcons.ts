@@ -122,4 +122,5 @@ export const languageIcons: LanguageIcon[] = [
     ids: ['twee3', 'twee3-harlowe-3', 'twee3-chapbook-1', 'twee3-sugarcube-2'],
   },
   { icon: { name: 'grain' }, ids: ['grain'] },
+  { icon: { name: 'lolcode' }, ids: ['lolcode'] },
 ];
