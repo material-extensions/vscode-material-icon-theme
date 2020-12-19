@@ -1363,5 +1363,6 @@ export const fileIcons: FileIcons = {
     { name: 'cobol', fileExtensions: ['cob', 'cbl'] },
     { name: 'grain', fileExtensions: ['gr'] },
     { name: 'lolcode', fileExtensions: ['lol'] },
+    { name: 'idris', fileExtensions: ['idr', 'ibc'] },
   ],
 };
