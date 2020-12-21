@@ -1364,5 +1364,11 @@ export const fileIcons: FileIcons = {
     { name: 'grain', fileExtensions: ['gr'] },
     { name: 'lolcode', fileExtensions: ['lol'] },
     { name: 'idris', fileExtensions: ['idr', 'ibc'] },
+    {
+      name:'psm',
+      fileNames:[
+        'psm.json'
+      ]
+    },
   ],
 };
