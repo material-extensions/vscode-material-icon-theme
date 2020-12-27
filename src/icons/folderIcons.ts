@@ -594,6 +594,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-mjml', folderNames: ['mjml'] },
       { name: 'folder-scala', folderNames: ['scala'] },
       { name: 'folder-connection', folderNames: ['connection', 'connections'] },
+      { name: 'folder-quasar', folderNames: ['.quasar'] },
     ],
   },
   {
