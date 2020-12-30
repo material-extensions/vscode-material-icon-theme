@@ -1368,7 +1368,8 @@ export const fileIcons: FileIcons = {
     {
       name: 'why3',
       fileExtensions: ['mlw', 'why'],
-      fileNames: ['why3session.xml']
+      fileNames: ['why3session.xml'],
+      light: true
     },
   ],
 };
