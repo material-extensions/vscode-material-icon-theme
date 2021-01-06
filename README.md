@@ -190,3 +190,7 @@ Press `Ctrl-Shift-P` to open the command palette and type `Material Icons`.
 **Would you like to contribute?**
 
 Take a look at the [contribution guidelines](https://github.com/PKief/vscode-material-icon-theme/blob/master/CONTRIBUTING.md) and open a [new issue](https://github.com/PKief/vscode-material-icon-theme/issues) or [pull request](https://github.com/PKief/vscode-material-icon-theme/pulls) on GitHub.
+
+## Related extensions
+
+- [Material Icons for GitHub](https://github.com/Claudiohbsantos/github-material-icons-extension)
