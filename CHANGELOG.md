@@ -1,5 +1,44 @@
 # Changelog
 
+## 4.5.0 (2021-01-10)
+
+### New file icons
+
+- dune-workspace ([@zweimach](https://github.com/zweimach) in [#881](https://github.com/PKief/vscode-material-icon-theme/pull/881))
+- meson_options.txt ([@zweimach](https://github.com/zweimach) in [#882](https://github.com/PKief/vscode-material-icon-theme/pull/882))
+- cabal.project ([@zweimach](https://github.com/zweimach) in [#883](https://github.com/PKief/vscode-material-icon-theme/pull/883))
+- Twine ([@caberg](https://github.com/caberg) in [#873](https://github.com/PKief/vscode-material-icon-theme/pull/873))
+- Bicep ([@PKief](https://github.com/PKief) in commit [a634f5b](https://github.com/PKief/vscode-material-icon-theme/commit/a634f5bb51b7f8e9959bae13d17ae01e8b1719a3))
+- expect script ([@gugabguerra](https://github.com/gugabguerra) in [#875](https://github.com/PKief/vscode-material-icon-theme/pull/875))
+- Cobol ([@LukeTimeWalker](https://github.com/LukeTimeWalker) in [#889](https://github.com/PKief/vscode-material-icon-theme/pull/889))
+- Grain ([@zweimach](https://github.com/zweimach) in [#892](https://github.com/PKief/vscode-material-icon-theme/pull/892))
+- \*.db ([@FeixuRuins](https://github.com/FeixuRuins) in [#898](https://github.com/PKief/vscode-material-icon-theme/pull/898))
+- Vim ([@arturo-enriquez](https://github.com/arturo-enriquez) in [#904](https://github.com/PKief/vscode-material-icon-theme/pull/904))
+- \*.jfif ([@PKief](https://github.com/PKief) in commit [3952f7a](https://github.com/PKief/vscode-material-icon-theme/commit/3952f7a477f0c0e7fa2c2b5ddaae3627ed83509c))
+- \*.cjs.map ([@PKief](https://github.com/PKief) in commit [23d2f66](https://github.com/PKief/vscode-material-icon-theme/commit/23d2f66ea768869494682f6ff32d73f19b9e96e7))
+- .pylintrc ([@PKief](https://github.com/PKief) in commit [ef0506d](https://github.com/PKief/vscode-material-icon-theme/commit/ef0506d09ea56258485154b18b7a7ba5c1fb4694))
+- Lolcode ([@PKief](https://github.com/PKief) in commit [f55b409](https://github.com/PKief/vscode-material-icon-theme/commit/f55b40906ab2bef383803187a6a96cde242b1aaa))
+- Idris ([@PKief](https://github.com/PKief) in commit [1717925](https://github.com/PKief/vscode-material-icon-theme/commit/171792577b2e536e393b3f7d5372b93f50965773))
+- Quasar ([@PKief](https://github.com/PKief) in commit [b8a1fc6](https://github.com/PKief/vscode-material-icon-theme/commit/b8a1fc61d9f0a86f839fd3e60085e70f79f7b74a))
+
+### New folder icons
+
+- schema ([@peach-lasagna](https://github.com/peach-lasagna) in [#880](https://github.com/PKief/vscode-material-icon-theme/pull/880))
+- Scala ([LukeTimeWalker](https://github.com/LukeTimeWalker) in [#856](https://github.com/PKief/vscode-material-icon-theme/pull/856))
+- connection ([voyyy](https://github.com/voyyy) in [#903](https://github.com/PKief/vscode-material-icon-theme/pull/903))
+- Quasar ([@PKief](https://github.com/PKief) in commit [b8a1fc6](https://github.com/PKief/vscode-material-icon-theme/commit/b8a1fc61d9f0a86f839fd3e60085e70f79f7b74a))
+- admin ([nallenscott](https://github.com/nallenscott) in [#831](https://github.com/PKief/vscode-material-icon-theme/pull/831))
+
+### Updated icons
+
+- Robot ([@Snooz82](https://github.com/Snooz82) in [#911](https://github.com/PKief/vscode-material-icon-theme/pull/911))
+- PostCSS ([@PKief](https://github.com/PKief) in commit [472823f](https://github.com/PKief/vscode-material-icon-theme/commit/472823f690eb5d7fee3a3f9f2669ca68e73f434e))
+
+### Other improvements
+
+- Fix Typescript "hint" level warnings and trivial typing issue ([@Luxcium](https://github.com/Luxcium) in [#877](https://github.com/PKief/vscode-material-icon-theme/pull/877))
+- Sync version key value ([@sandy081](https://github.com/sandy081) in [#897](https://github.com/PKief/vscode-material-icon-theme/pull/897))
+
 ## 4.4.0 (2020-11-01)
 
 ### New file icons
