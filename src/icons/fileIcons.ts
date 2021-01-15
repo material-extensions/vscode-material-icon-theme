@@ -1367,5 +1367,6 @@ export const fileIcons: FileIcons = {
     { name: 'lolcode', fileExtensions: ['lol'] },
     { name: 'idris', fileExtensions: ['idr', 'ibc'] },
     { name: 'quasar', fileNames: ['quasar.conf.js'] },
+    { name: 'next', fileNames: ['next.config.js'] },
   ],
 };
