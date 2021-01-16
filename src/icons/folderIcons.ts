@@ -220,6 +220,11 @@ export const folderIcons: FolderTheme[] = [
         enabledFor: [IconPack.Ngrx],
       },
       {
+        name: 'folder-ngrx-selectors',
+        folderNames: ['selectors'],
+        enabledFor: [IconPack.Ngrx],
+      },
+      {
         name: 'folder-redux-reducer',
         folderNames: ['reducers', 'reducer'],
         enabledFor: [IconPack.Redux],
@@ -286,7 +291,14 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-class',
-        folderNames: ['class', 'classes', 'model', 'models'],
+        folderNames: [
+          'class',
+          'classes',
+          'model',
+          'models',
+          'schemes',
+          'schema',
+        ],
       },
       {
         name: 'folder-other',
@@ -330,6 +342,10 @@ export const folderIcons: FolderTheme[] = [
         ],
       },
       { name: 'folder-less', folderNames: ['less'] },
+      {
+        name: 'folder-gulp',
+        folderNames: ['gulp'],
+      },
       {
         name: 'folder-python',
         folderNames: ['python', '__pycache__', '.pytest_cache'],
@@ -580,6 +596,10 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-archetypes',
         folderNames: ['archetypes', 'archetype'],
       },
+      { name: 'folder-admin', folderNames: ['admin'] },
+      { name: 'folder-scala', folderNames: ['scala'] },
+      { name: 'folder-connection', folderNames: ['connection', 'connections'] },
+      { name: 'folder-quasar', folderNames: ['.quasar'] },
     ],
   },
   {

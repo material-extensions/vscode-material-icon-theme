@@ -70,13 +70,14 @@ You can customize the icon associations directly in the user settings.
 
 ### File associations
 
-With the `*.[extension]` pattern you can define custom file icon associations. For example you could define an icon for `*.sample` and every file that ends with `.sample` will have the defined icon. Use `**.[extension]` with two asterisks to apply the file association also for the filenames ending with that file extension.
+With the `*.[extension]` pattern you can define custom file icon associations. For example you could define an icon for `*.sample` and every file that ends with `.sample` will have the defined icon. However, not all files with the same file extension always have the same icon. For some specific file names there is a special icon. In order to overwrite all the specific file icons as well, two asterisks must be set instead of one, i.e. `**.[extension]`.
 
 If there's no leading `*` it will be automatically configured as filename and not as file extension.
 
 ```json
 "material-icon-theme.files.associations": {
     "*.ts": "typescript",
+    "**.json": "json",
     "fileName.ts": "angular"
 }
 ```
@@ -190,3 +191,7 @@ Press `Ctrl-Shift-P` to open the command palette and type `Material Icons`.
 **Would you like to contribute?**
 
 Take a look at the [contribution guidelines](https://github.com/PKief/vscode-material-icon-theme/blob/master/CONTRIBUTING.md) and open a [new issue](https://github.com/PKief/vscode-material-icon-theme/issues) or [pull request](https://github.com/PKief/vscode-material-icon-theme/pulls) on GitHub.
+
+## Related extensions
+
+- [Material Icons for GitHub](https://github.com/Claudiohbsantos/github-material-icons-extension)
