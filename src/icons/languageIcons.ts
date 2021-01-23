@@ -9,6 +9,7 @@ export const languageIcons: LanguageIcon[] = [
   { icon: { name: 'yaml' }, ids: ['yaml'] },
   { icon: { name: 'xml' }, ids: ['xml', 'xquery', 'xsl'] },
   { icon: { name: 'matlab' }, ids: ['matlab'] },
+  { icon: { name: 'vlang' }, ids: ['v', 'vlang'] },
   {
     icon: { name: 'settings' },
     ids: ['makefile', 'toml', 'ini', 'properties'],
