@@ -30,7 +30,7 @@ You need an icon for a specific file ending? No problem, just follow these guide
 
 ### Icon color
 
-Choose your icon colors from the [material design colors](https://material.io/design/color/the-color-system.html#tools-for-picking-colors).
+Choose your icon colors from the [material design colors](https://material.io/design/color/the-color-system.html#tools-for-picking-colors). Alternatively, the [Material Color Converter](https://pkief.github.io/material-color-converter/) allows you to pick the correct color by matching a custom color code with the colors of the Material Design color palette.
 
 ### Free software to create/edit SVG icons
 
