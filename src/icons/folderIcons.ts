@@ -600,6 +600,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-connection', folderNames: ['connection', 'connections'] },
       { name: 'folder-quasar', folderNames: ['.quasar'] },
       { name: 'folder-next', folderNames: ['.next'] },
+      { name: 'folder-cobol', folderNames: ['cobol'] },
     ],
   },
   {
