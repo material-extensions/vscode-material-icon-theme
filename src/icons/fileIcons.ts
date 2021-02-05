@@ -684,6 +684,7 @@ export const fileIcons: FileIcons = {
         'webpack.config.dev.babel.js',
         'webpack.config.dev.babel.ts',
         'webpack.prod.js',
+        'webpack.prod.config.js',
         'webpack.prod.ts',
         'webpack.production.js',
         'webpack.production.ts',
