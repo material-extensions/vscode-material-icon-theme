@@ -6,6 +6,8 @@ import { FileIcons, IconPack } from '../models/index';
 export const fileIcons: FileIcons = {
   defaultIcon: { name: 'file' },
   icons: [
+    { name: 'vite', fileNames: ['vite.config.js'] },
+
     { name: 'html', fileExtensions: ['htm', 'xhtml', 'html_vm', 'asp'] },
     {
       name: 'pug',
@@ -1368,6 +1370,6 @@ export const fileIcons: FileIcons = {
     { name: 'lolcode', fileExtensions: ['lol'] },
     { name: 'idris', fileExtensions: ['idr', 'ibc'] },
     { name: 'quasar', fileNames: ['quasar.conf.js'] },
-    { name: 'pipeline', fileExtensions: ['pipeline'] }
+    { name: 'pipeline', fileExtensions: ['pipeline'] },
   ],
 };
