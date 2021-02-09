@@ -684,6 +684,7 @@ export const fileIcons: FileIcons = {
         'webpack.config.dev.babel.js',
         'webpack.config.dev.babel.ts',
         'webpack.prod.js',
+        'webpack.prod.config.js',
         'webpack.prod.ts',
         'webpack.production.js',
         'webpack.production.ts',
@@ -1369,5 +1370,7 @@ export const fileIcons: FileIcons = {
     { name: 'quasar', fileNames: ['quasar.conf.js'] },
     { name: 'next', fileNames: ['next.config.js'] },
     { name: 'pipeline', fileExtensions: ['pipeline'] }
+    { name: 'pipeline', fileExtensions: ['pipeline'] },
+    { name: 'opa', fileExtensions: ['rego']}
   ],
 };
