@@ -114,7 +114,7 @@ export const fileIcons: FileIcons = {
         'jfif',
       ],
     },
-    { name: 'javascript', fileExtensions: ['js', 'esx', 'mjs'] },
+    { name: 'javascript', fileExtensions: ['esx', 'mjs'] },
     { name: 'react', fileExtensions: ['jsx'] },
     { name: 'react_ts', fileExtensions: ['tsx'] },
     {
@@ -200,7 +200,6 @@ export const fileIcons: FileIcons = {
         '.clang-tidy',
       ],
     },
-    { name: 'typescript', fileExtensions: ['ts'] },
     { name: 'typescript-def', fileExtensions: ['d.ts'] },
     { name: 'markojs', fileExtensions: ['marko'] },
     { name: 'pdf', fileExtensions: ['pdf'] },
@@ -1369,6 +1368,6 @@ export const fileIcons: FileIcons = {
     { name: 'idris', fileExtensions: ['idr', 'ibc'] },
     { name: 'quasar', fileNames: ['quasar.conf.js'] },
     { name: 'pipeline', fileExtensions: ['pipeline'] },
-    { name: 'opa', fileExtensions: ['rego']}
+    { name: 'opa', fileExtensions: ['rego'] },
   ],
 };
