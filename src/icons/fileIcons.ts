@@ -1395,5 +1395,6 @@ export const fileIcons: FileIcons = {
     { name: 'quasar', fileNames: ['quasar.conf.js'] },
     { name: 'pipeline', fileExtensions: ['pipeline'] },
     { name: 'opa', fileExtensions: ['rego'] },
+    { name: 'lerna', fileNames: ['lerna.json'] },
   ],
 };
