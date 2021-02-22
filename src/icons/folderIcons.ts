@@ -577,7 +577,7 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['components'],
         enabledFor: [IconPack.Vuex, IconPack.Vue],
       },
-      { name: 'folder-terraform', folderNames: ['terraform'] },
+      { name: 'folder-terraform', folderNames: ['terraform', '.terraform'] },
       {
         name: 'folder-mobile',
         folderNames: ['mobile', 'mobiles', 'portable', 'portability'],
