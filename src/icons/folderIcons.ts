@@ -378,7 +378,10 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-ansible', folderNames: ['ansible'] },
       { name: 'folder-server', folderNames: ['server', 'servers', 'backend'] },
-      { name: 'folder-client', folderNames: ['client', 'clients', 'frontend'] },
+      {
+        name: 'folder-client',
+        folderNames: ['client', 'clients', 'frontend', 'pwa'],
+      },
       { name: 'folder-tasks', folderNames: ['tasks', 'tickets'] },
       { name: 'folder-android', folderNames: ['android'] },
       { name: 'folder-ios', folderNames: ['ios'] },
@@ -574,7 +577,7 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['components'],
         enabledFor: [IconPack.Vuex, IconPack.Vue],
       },
-      { name: 'folder-terraform', folderNames: ['terraform'] },
+      { name: 'folder-terraform', folderNames: ['terraform', '.terraform'] },
       {
         name: 'folder-mobile',
         folderNames: ['mobile', 'mobiles', 'portable', 'portability'],
@@ -596,6 +599,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-scala', folderNames: ['scala'] },
       { name: 'folder-connection', folderNames: ['connection', 'connections'] },
       { name: 'folder-quasar', folderNames: ['.quasar'] },
+      { name: 'folder-cobol', folderNames: ['cobol'] },
     ],
   },
   {
