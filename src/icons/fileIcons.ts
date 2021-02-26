@@ -1396,5 +1396,6 @@ export const fileIcons: FileIcons = {
     { name: 'pipeline', fileExtensions: ['pipeline'] },
     { name: 'vite', fileNames: ['vite.config.js', 'vite.config.ts'] },
     { name: 'opa', fileExtensions: ['rego'] },
+    { name: 'windicss', fileNames: ['windi.js', 'windi.config.js'] },
   ],
 };
