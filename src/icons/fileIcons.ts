@@ -1394,7 +1394,17 @@ export const fileIcons: FileIcons = {
     { name: 'idris', fileExtensions: ['idr', 'ibc'] },
     { name: 'quasar', fileNames: ['quasar.conf.js'] },
     { name: 'pipeline', fileExtensions: ['pipeline'] },
+    { name: 'vite', fileNames: ['vite.config.js', 'vite.config.ts'] },
     { name: 'opa', fileExtensions: ['rego'] },
     { name: 'semgrep', fileNames: ['.semgrep.yml', '.semgrepignore'] },
+    {
+      name: 'windicss',
+      fileNames: [
+        'windi.config.js',
+        'windi.config.ts',
+        'windi.config.cjs',
+        'windi.config.json',
+      ],
+    },
   ],
 };

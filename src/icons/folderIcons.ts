@@ -69,6 +69,7 @@ export const folderIcons: FolderTheme[] = [
         folderNames: [
           'doc',
           'docs',
+          'document',
           'documents',
           'documentation',
           'post',
@@ -264,7 +265,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-aws', folderNames: ['aws', '.aws'] },
       {
         name: 'folder-audio',
-        folderNames: ['audio', 'audios', 'music', 'sound', 'sounds'],
+        folderNames: ['audio', 'audios', 'music', 'musics', 'sound', 'sounds'],
       },
       {
         name: 'folder-video',
@@ -577,7 +578,7 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['components'],
         enabledFor: [IconPack.Vuex, IconPack.Vue],
       },
-      { name: 'folder-terraform', folderNames: ['terraform'] },
+      { name: 'folder-terraform', folderNames: ['terraform', '.terraform'] },
       {
         name: 'folder-mobile',
         folderNames: ['mobile', 'mobiles', 'portable', 'portability'],
