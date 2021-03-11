@@ -110,6 +110,7 @@ export const languageIcons: LanguageIcon[] = [
   { icon: { name: 'r' }, ids: ['r', 'rsweave'] },
   { icon: { name: 'rust' }, ids: ['rust'] },
   { icon: { name: 'database' }, ids: ['sql'] },
+  { icon: { name: 'kusto' }, ids: ['kql'] },
   { icon: { name: 'lock' }, ids: ['ssh_config'] },
   { icon: { name: 'svg' }, ids: ['svg'] },
   { icon: { name: 'swift' }, ids: ['swift'] },

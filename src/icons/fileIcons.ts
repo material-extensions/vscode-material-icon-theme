@@ -246,6 +246,7 @@ export const fileIcons: FileIcons = {
         'db3',
       ],
     },
+    { name: 'kusto', fileExtensions: ['kql'] },
     { name: 'csharp', fileExtensions: ['cs', 'csx'] },
     { name: 'qsharp', fileExtensions: ['qs'] },
     {
