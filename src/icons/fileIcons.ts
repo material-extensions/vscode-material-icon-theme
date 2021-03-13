@@ -1389,6 +1389,7 @@ export const fileIcons: FileIcons = {
     { name: 'brainfuck', fileExtensions: ['b', 'bf'] },
     { name: 'bicep', fileExtensions: ['bicep'] },
     { name: 'cobol', fileExtensions: ['cob', 'cbl'] },
+    { name: 'codeql', fileExtensions: ['ql'] },
     { name: 'grain', fileExtensions: ['gr'] },
     { name: 'lolcode', fileExtensions: ['lol'] },
     { name: 'idris', fileExtensions: ['idr', 'ibc'] },
