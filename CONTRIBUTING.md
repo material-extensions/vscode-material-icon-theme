@@ -35,8 +35,8 @@ Choose your icon colors from the [material design colors](https://material.io/de
 ### Free software to create/edit SVG icons
 
 - [Inkscape](https://inkscape.org/en/) is a free, open source SVG editor
-- [Vectorizer.io](https://vectorizer.io) is an online tool that traces a raster image (png, jpg) and produces a vector image (svg)
-- It's important to produce fully vectorized graphic. Do not include base64 image string in the svg file.
+- There are tools available to convert PNG/JPG images to SVG - [Autotracer.org](https://autotracer.org) and [Vectorizer.io](https://vectorizer.io) are two examples.
+- It's important to produce fully _vectorized_ graphic (don't include a base64 image string in the svg file).
 
 ### Use icons from here
 
