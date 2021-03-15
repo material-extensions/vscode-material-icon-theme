@@ -532,7 +532,11 @@ export const fileIcons: FileIcons = {
       fileNames: ['store.js', 'store.ts'],
       enabledFor: [IconPack.Vuex],
     },
-    { name: 'nuxt', fileNames: ['nuxt.config.js', 'nuxt.config.ts'] },
+    {
+      name: 'nuxt',
+      fileNames: ['nuxt.config.js', 'nuxt.config.ts'],
+      light: true,
+    },
     { name: 'ocaml', fileExtensions: ['ml', 'mli', 'cmx'] },
     {
       name: 'javascript-map',
