@@ -1406,5 +1406,9 @@ export const fileIcons: FileIcons = {
         'windi.config.json',
       ],
     },
+    {
+      name: 'textlint',
+      fileNames: ['.textlintrc'],
+    },
   ],
 };
