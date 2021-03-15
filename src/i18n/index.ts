@@ -2,8 +2,7 @@ import * as vscode from 'vscode';
 import { getObjectPropertyValue } from '../helpers/objects';
 
 // Get current language of the vs code workspace
-export const getCurrentLanguage = (): string =>
-    vscode.env.language;
+export const getCurrentLanguage = (): string => vscode.env.language;
 
 let currentTranslation;
 let fallbackTranslation; // default: en
@@ -11,27 +10,27 @@ const placeholder = '%';
 
 /** Initialize the translations */
 export const initTranslations = async () => {
-    try {
-        currentTranslation = await loadTranslation(getCurrentLanguage());
-        fallbackTranslation = await loadTranslation('en');
-    } catch (error) {
-        console.error(error);
-    }
+  try {
+    currentTranslation = await loadTranslation(getCurrentLanguage());
+    fallbackTranslation = await loadTranslation('en');
+  } catch (error) {
+    console.error(error);
+  }
 };
 
 /** Load the required translation */
 const loadTranslation = async (language: string) => {
-    try {
-        return await getTranslationObject(language);
-    } catch (error) {
-        return await getTranslationObject('en');
-    }
+  try {
+    return await getTranslationObject(language);
+  } catch (error) {
+    return await getTranslationObject('en');
+  }
 };
 
 /** Get the translation object of the separated translation files */
 const getTranslationObject = async (language: string) => {
-    const lang = await import(/* webpackMode: "eager" */ `./lang-${language}`);
-    return lang.translation;
+  const lang = await import(/* webpackMode: "eager" */ `./lang-${language}`);
+  return lang.translation;
 };
 
 /**
@@ -40,10 +39,16 @@ const getTranslationObject = async (language: string) => {
  * With optional parameters you can configure both the translations
  * and the fallback (required for testing purposes).
  * */
-export const getTranslationValue = (key: string, translations = currentTranslation, fallback = fallbackTranslation) => {
-    return getObjectPropertyValue(translations, key)
-        || getObjectPropertyValue(fallback, key)
-        || undefined;
+export const getTranslationValue = (
+  key: string,
+  translations = currentTranslation,
+  fallback = fallbackTranslation
+) => {
+  return (
+    getObjectPropertyValue(translations, key) ||
+    getObjectPropertyValue(fallback, key) ||
+    undefined
+  );
 };
 
 /**
@@ -51,10 +56,10 @@ export const getTranslationValue = (key: string, translations = currentTranslati
  * It helps to translate a word instantly.
  */
 export const translate = (key: string, words?: string | string[]) => {
-    const translation = <string>getTranslationValue(key);
+  const translation = <string>getTranslationValue(key);
 
-    if (!words) return translation;
-    return replace(translation, words);
+  if (!words) return translation;
+  return replace(translation, words);
 };
 
 /**
@@ -63,12 +68,12 @@ export const translate = (key: string, words?: string | string[]) => {
  * parameters ('words').
  */
 export const replace = (value: string = '', words: string | string[]) => {
-    let translation: string = value;
+  let translation: string = value;
 
-    const values: string[] = [].concat(words);
-    values.forEach((e, i) => {
-        translation = translation.replace(placeholder.concat(<any>i), e);
-    });
+  const values: string[] = [].concat(words);
+  values.forEach((e, i) => {
+    translation = translation.replace(placeholder.concat(<any>i), e);
+  });
 
-    return translation;
+  return translation;
 };
