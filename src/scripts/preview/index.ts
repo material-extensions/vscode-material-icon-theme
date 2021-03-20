@@ -31,9 +31,9 @@ const folderThemes = filterDuplicates(
 
 generatePreview('fileIcons', basicFileIcons, 5, [
   'virtual',
-  'powerpoint',
-  'word',
-  'credits',
+  // 'powerpoint',
+  // 'word',
+  // 'credits',
 ]);
 generatePreview('folderIcons', folderThemes, 5, [
   'folder-aurelia',

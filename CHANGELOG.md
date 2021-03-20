@@ -1,5 +1,36 @@
 # Changelog
 
+## 4.6.0 (2021-03-20)
+
+### New file icons
+
+- sqlite3 and .db3 ([@Sadra1f](https://github.com/Sadra1f) in [#929](https://github.com/PKief/vscode-material-icon-theme/pull/929))
+- pipeline ([@bourdakos1](https://github.com/bourdakos1) in [#941](https://github.com/PKief/vscode-material-icon-theme/pull/941))
+- webpack.prod.config.js ([@PKief](https://github.com/PKief) in commit [97932ed](https://github.com/PKief/vscode-material-icon-theme/commit/97932ed0e187810305f21d2f0e3c7853eb0f1287))
+- OPA ([@developer-guy](https://github.com/developer-guy) in [#949](https://github.com/PKief/vscode-material-icon-theme/pull/949))
+- docker compose ([@LucasPaganini](https://github.com/LucasPaganini) in [#953](https://github.com/PKief/vscode-material-icon-theme/pull/953))
+- Vitejs ([@yousefelgoharyx](https://github.com/yousefelgoharyx) in [#948](https://github.com/PKief/vscode-material-icon-theme/pull/948))
+- windicss ([@alexanderniebuhr](https://github.com/alexanderniebuhr) in [#960](https://github.com/PKief/vscode-material-icon-theme/pull/960))
+- KQL ([@diligent176](https://github.com/diligent176) in [#968](https://github.com/PKief/vscode-material-icon-theme/pull/968))
+- textlint ([@PKief](https://github.com/PKief) in commit [3ad84a1](https://github.com/PKief/vscode-material-icon-theme/commit/3ad84a1bb821e0f66c90b4a4b16f83b2e52b529a))
+
+### New folder icons
+
+- pwa ([@andylib93](https://github.com/andylib93) in [#939](https://github.com/PKief/vscode-material-icon-theme/pull/939))
+- cobol ([@andylib93](https://github.com/andylib93) in [#940](https://github.com/PKief/vscode-material-icon-theme/pull/940))
+- .terraform ([@altokarev](https://github.com/altokarev) in [#957](https://github.com/PKief/vscode-material-icon-theme/pull/957))
+- musics, document ([@JulesdeCube](https://github.com/JulesdeCube) in [#964](https://github.com/PKief/vscode-material-icon-theme/pull/964))
+- proto ([@dynamic-entropy](https://github.com/dynamic-entropy) in [#963](https://github.com/PKief/vscode-material-icon-theme/pull/963))
+
+### Updated icons
+
+- Nuxt ([@stefanobartoletti](https://github.com/stefanobartoletti) in [#824](https://github.com/PKief/vscode-material-icon-theme/pull/824))
+
+### Other changes
+
+- Update file associations documentation ([@PKief](https://github.com/PKief) in commit [f0dc223](https://github.com/PKief/vscode-material-icon-theme/commit/f0dc22381c4cf24241752ca8ac8661f94545e5f2))
+- Update contributing guidelines
+
 ## 4.5.0 (2021-01-10)
 
 ### New file icons
