@@ -39,6 +39,10 @@ export const fileIcons: FileIcons = {
       light: true,
     },
     {
+      name: 'proto',
+      fileExtensions: ['proto'],
+    },
+    {
       name: 'sublime',
       fileExtensions: ['sublime-project', 'sublime-workspace'],
     },
