@@ -16,6 +16,11 @@
     <a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"><img src="https://vsmarketplacebadge.apphb.com/downloads-short/PKief.material-icon-theme.svg?style=for-the-badge&colorA=252526&colorB=43A047&label=Downloads" alt="Downloads"></a>
 </p>
 
+<p align="center"><br>
+<b>Sponsored by<b><br><br>
+<a title="Try CodeStream" href="https://sponsorlink.codestream.com/?utm_source=vscmarket&amp;utm_campaign=pkief_material&amp;utm_medium=banner"><img src="https://alt-images.codestream.com/codestream_logo_pkief_material.png"></a>
+</p>
+
 ### File icons
 
 <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/master/images/fileIcons.png" alt="file icons">
@@ -70,13 +75,14 @@ You can customize the icon associations directly in the user settings.
 
 ### File associations
 
-With the `*.[extension]` pattern you can define custom file icon associations. For example you could define an icon for `*.sample` and every file that ends with `.sample` will have the defined icon. Use `**.[extension]` with two asterisks to apply the file association also for the filenames ending with that file extension.
+With the `*.[extension]` pattern you can define custom file icon associations. For example you could define an icon for `*.sample` and every file that ends with `.sample` will have the defined icon. However, not all files with the same file extension always have the same icon. For some specific file names there is a special icon. In order to overwrite all the specific file icons as well, two asterisks must be set instead of one, i.e. `**.[extension]`.
 
 If there's no leading `*` it will be automatically configured as filename and not as file extension.
 
 ```json
 "material-icon-theme.files.associations": {
     "*.ts": "typescript",
+    "**.json": "json",
     "fileName.ts": "angular"
 }
 ```
@@ -110,6 +116,26 @@ The following configuration can customize the folder icons. It is also possible 
 "material-icon-theme.folders.associations": {
     "customFolderName": "src",
     "sample": "dist"
+}
+```
+
+#### Custom SVG folder icons
+
+Similar to the files, it is also possible to reference your own SVG icons for folder icons. Here it's important to provide two SVG files: one for the folder if it's closed and another one for the opened state. These two files - let's call them "folder-sample.svg" and "folder-sample-open.svg" - have to be placed into a directory which is relative to the extensions dist folder. In our example we place them into an icons folder inside of the .vscode folder:
+
+```
+.vscode
+ ┣ extensions
+ ┗ icons
+   ┣ folder-sample.svg
+   ┗ folder-sample-open.svg
+```
+
+In the settings.json the folder icons can be associated to a folder name (e.g. "src") like this:
+
+```json
+"material-icon-theme.folders.associations": {
+    "src": "../../../../../icons/folder-sample"
 }
 ```
 
@@ -170,3 +196,7 @@ Press `Ctrl-Shift-P` to open the command palette and type `Material Icons`.
 **Would you like to contribute?**
 
 Take a look at the [contribution guidelines](https://github.com/PKief/vscode-material-icon-theme/blob/master/CONTRIBUTING.md) and open a [new issue](https://github.com/PKief/vscode-material-icon-theme/issues) or [pull request](https://github.com/PKief/vscode-material-icon-theme/pulls) on GitHub.
+
+## Related extensions
+
+- [Material Icons for GitHub](https://github.com/Claudiohbsantos/github-material-icons-extension)

@@ -4,7 +4,7 @@
 import { createIconFile } from './../../icons/index';
 
 try {
-    createIconFile();
+  createIconFile();
 } catch (error) {
-    throw Error(error);
+  throw Error(error);
 }
