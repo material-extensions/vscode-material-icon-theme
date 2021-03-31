@@ -116,6 +116,7 @@ export const fileIcons: FileIcons = {
         'tga',
         'xcf',
         'jfif',
+        'ppm',
       ],
     },
     { name: 'javascript', fileExtensions: ['esx', 'mjs'] },
