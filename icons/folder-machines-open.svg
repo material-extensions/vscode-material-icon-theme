@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="18px" viewBox="0 0 22 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>Artboard</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="folder-opem" fill="#009CB9" fill-rule="nonzero">
+            <path d="M17,16 L2,16 C0.89,16 0,15.1 0,14 L0,2 C0,0.89 0.89,0 2,0 L8,0 L10,2 L17,2 C18.097,2 19,2.903 19,4 L2,4 L2,14 L4.14,6 L21.21,6 L18.93,14.5 C18.7,15.37 17.92,16 17,16 Z" id="Path"></path>
+        </g>
+        <g id="X-state-logo" transform="translate(11.000000, 7.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <path d="M7.25999961,0 L9.6835443,0 L7.23514274,5 C6.48943668,3.43567251 6.50186511,1.53508772 7.25999961,0 Z" id="Path"></path>
+            <polygon id="Path" points="9.6835443 11 3.40869958 0 0.683544304 0 3.81397909 5.50707851 0.683544304 11 3.40869958 11 5.1835443 7.8996139 6.94441387 11"></polygon>
+        </g>
+    </g>
+</svg>
