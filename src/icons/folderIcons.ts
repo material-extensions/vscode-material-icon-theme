@@ -446,6 +446,7 @@ export const folderIcons: FolderTheme[] = [
           '.env',
           '.environment',
           'env',
+          'envs',
           'environment',
           'environments',
         ],
