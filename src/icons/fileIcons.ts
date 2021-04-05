@@ -1161,7 +1161,15 @@ export const fileIcons: FileIcons = {
     { name: 'edge', fileExtensions: ['edge'] },
     { name: 'scheme', fileExtensions: ['ss', 'scm'] },
     { name: 'lisp', fileExtensions: ['lisp', 'lsp', 'cl', 'fast'] },
-    { name: 'tailwindcss', fileNames: ['tailwind.js', 'tailwind.config.js'] },
+    {
+      name: 'tailwindcss',
+      fileNames: [
+        'tailwind.js',
+        'tailwind.ts',
+        'tailwind.config.js',
+        'tailwind.config.ts',
+      ],
+    },
     {
       name: '3d',
       fileExtensions: [
@@ -1193,7 +1201,7 @@ export const fileIcons: FileIcons = {
     {
       name: 'svelte',
       fileExtensions: ['svelte'],
-      fileNames: ['svelte.config.js'],
+      fileNames: ['svelte.config.js', 'svelte.config.cjs'],
     },
     {
       name: 'vim',
