@@ -94,7 +94,6 @@ export const fileIcons: FileIcons = {
         'jb2',
         'jng',
         'jxr',
-        'pbm',
         'pgf',
         'pic',
         'raw',
