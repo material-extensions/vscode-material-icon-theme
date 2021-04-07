@@ -1427,5 +1427,8 @@ export const fileIcons: FileIcons = {
       fileNames: ['.textlintrc'],
     },
     { name: 'scala', fileExtensions: ['scala', 'sc'] },
+    { name: 'catala', fileExtensions: ['catala'] },
+    { name: 'catala_en', fileExtensions: ['catala_en'] },
+    { name: 'catala_fr', fileExtensions: ['catala_fr'] },
   ],
 };
