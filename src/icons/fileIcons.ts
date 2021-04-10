@@ -1430,5 +1430,6 @@ export const fileIcons: FileIcons = {
       fileNames: ['.textlintrc'],
     },
     { name: 'scala', fileExtensions: ['scala', 'sc'] },
+    { name: 'lilypond', fileExtensions: ['ly'] },
   ],
 };
