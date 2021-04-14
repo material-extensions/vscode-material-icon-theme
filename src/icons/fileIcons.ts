@@ -805,7 +805,7 @@ export const fileIcons: FileIcons = {
     {
       name: 'android',
       fileNames: ['androidmanifest.xml'],
-      fileExtensions: ['apk'],
+      fileExtensions: ['apk', 'smali', 'dex'],
     },
     {
       name: 'tune',
