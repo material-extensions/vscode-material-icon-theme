@@ -31,6 +31,7 @@ export const fileIcons: FileIcons = {
         '.esformatter',
         'cdp.pid',
         '.mjmlconfig',
+        '.lintstagedrc',
       ],
     },
     {
