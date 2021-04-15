@@ -69,6 +69,7 @@ export const folderIcons: FolderTheme[] = [
         folderNames: [
           'doc',
           'docs',
+          'document',
           'documents',
           'documentation',
           'post',
@@ -101,6 +102,7 @@ export const folderIcons: FolderTheme[] = [
         ],
       },
       { name: 'folder-vue', folderNames: ['vue'] },
+      { name: 'folder-vuepress', folderNames: ['.vuepress'] },
       { name: 'folder-expo', folderNames: ['.expo', '.expo-shared'] },
       {
         name: 'folder-config',
@@ -264,7 +266,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-aws', folderNames: ['aws', '.aws'] },
       {
         name: 'folder-audio',
-        folderNames: ['audio', 'audios', 'music', 'sound', 'sounds'],
+        folderNames: ['audio', 'audios', 'music', 'musics', 'sound', 'sounds'],
       },
       {
         name: 'folder-video',
@@ -313,7 +315,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-typescript',
-        folderNames: ['typescript', 'ts', 'typings', '@types'],
+        folderNames: ['typescript', 'ts', 'typings', '@types', 'types'],
       },
       { name: 'folder-graphql', folderNames: ['graphql', 'gql'] },
       { name: 'folder-routes', folderNames: ['routes', 'router', 'routers'] },
@@ -445,6 +447,7 @@ export const folderIcons: FolderTheme[] = [
           '.env',
           '.environment',
           'env',
+          'envs',
           'environment',
           'environments',
         ],
@@ -577,7 +580,7 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['components'],
         enabledFor: [IconPack.Vuex, IconPack.Vue],
       },
-      { name: 'folder-terraform', folderNames: ['terraform'] },
+      { name: 'folder-terraform', folderNames: ['terraform', '.terraform'] },
       {
         name: 'folder-mobile',
         folderNames: ['mobile', 'mobiles', 'portable', 'portability'],
