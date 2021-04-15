@@ -1435,5 +1435,6 @@ export const fileIcons: FileIcons = {
     },
     { name: 'scala', fileExtensions: ['scala', 'sc'] },
     { name: 'lilypond', fileExtensions: ['ly'] },
+    { name: 'gemini', fileExtensions: ['gmi', 'gemini'] },
   ],
 };
