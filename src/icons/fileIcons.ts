@@ -31,6 +31,7 @@ export const fileIcons: FileIcons = {
         '.esformatter',
         'cdp.pid',
         '.mjmlconfig',
+        '.lintstagedrc',
       ],
     },
     {
@@ -805,7 +806,7 @@ export const fileIcons: FileIcons = {
     {
       name: 'android',
       fileNames: ['androidmanifest.xml'],
-      fileExtensions: ['apk'],
+      fileExtensions: ['apk', 'smali', 'dex'],
     },
     {
       name: 'tune',
@@ -1435,5 +1436,6 @@ export const fileIcons: FileIcons = {
     { name: 'scala', fileExtensions: ['scala', 'sc'] },
     { name: 'lilypond', fileExtensions: ['ly'] },
     { name: 'chess', fileExtensions: ['pgn', 'fen'], light: true },
+    { name: 'gemini', fileExtensions: ['gmi', 'gemini'] },
   ],
 };

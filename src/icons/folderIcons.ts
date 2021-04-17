@@ -102,6 +102,7 @@ export const folderIcons: FolderTheme[] = [
         ],
       },
       { name: 'folder-vue', folderNames: ['vue'] },
+      { name: 'folder-vuepress', folderNames: ['.vuepress'] },
       { name: 'folder-expo', folderNames: ['.expo', '.expo-shared'] },
       {
         name: 'folder-config',
@@ -602,6 +603,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-connection', folderNames: ['connection', 'connections'] },
       { name: 'folder-quasar', folderNames: ['.quasar'] },
       { name: 'folder-cobol', folderNames: ['cobol'] },
+      { name: 'folder-husky', folderNames: ['husky', '.husky'] },
     ],
   },
   {
