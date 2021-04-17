@@ -126,5 +126,6 @@ export const languageIcons: LanguageIcon[] = [
   { icon: { name: 'grain' }, ids: ['grain'] },
   { icon: { name: 'lolcode' }, ids: ['lolcode'] },
   { icon: { name: 'idris' }, ids: ['idris'] },
+  { icon: { name: 'chess' }, ids: ['pgn'] },
   { icon: { name: 'gemini' }, ids: ['gemini', 'text-gemini'] },
 ];
