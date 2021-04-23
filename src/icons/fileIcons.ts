@@ -210,6 +210,7 @@ export const fileIcons: FileIcons = {
     },
     { name: 'typescript-def', fileExtensions: ['d.ts'] },
     { name: 'markojs', fileExtensions: ['marko'] },
+    { name: 'astro', fileExtensions: ['astro'] },
     { name: 'pdf', fileExtensions: ['pdf'] },
     { name: 'table', fileExtensions: ['xlsx', 'xls', 'csv', 'tsv'] },
     {
