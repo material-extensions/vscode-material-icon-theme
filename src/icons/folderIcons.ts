@@ -185,7 +185,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-include',
-        folderNames: ['include', 'includes', '_includes'],
+        folderNames: ['include', 'includes', '_includes', 'inc'],
       },
       {
         name: 'folder-docker',
@@ -604,6 +604,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-quasar', folderNames: ['.quasar'] },
       { name: 'folder-cobol', folderNames: ['cobol'] },
       { name: 'folder-acf', folderNames: ['acf-json'] },
+      { name: 'folder-husky', folderNames: ['husky', '.husky'] },
     ],
   },
   {
