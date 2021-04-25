@@ -430,6 +430,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-core', folderNames: ['core'] },
       { name: 'folder-delta', folderNames: ['delta', 'deltas', 'changes'] },
       { name: 'folder-dump', folderNames: ['dump', 'dumps'] },
+      { name: 'folder-enums', folderNames: ['enum', 'enums'] },
       {
         name: 'folder-examples',
         folderNames: [
