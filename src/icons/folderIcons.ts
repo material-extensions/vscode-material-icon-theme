@@ -69,6 +69,7 @@ export const folderIcons: FolderTheme[] = [
         folderNames: [
           'doc',
           'docs',
+          'document',
           'documents',
           'documentation',
           'post',
@@ -101,6 +102,7 @@ export const folderIcons: FolderTheme[] = [
         ],
       },
       { name: 'folder-vue', folderNames: ['vue'] },
+      { name: 'folder-vuepress', folderNames: ['.vuepress'] },
       { name: 'folder-expo', folderNames: ['.expo', '.expo-shared'] },
       {
         name: 'folder-config',
@@ -183,7 +185,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-include',
-        folderNames: ['include', 'includes', '_includes'],
+        folderNames: ['include', 'includes', '_includes', 'inc'],
       },
       {
         name: 'folder-docker',
@@ -217,6 +219,11 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-ngrx-entities',
         folderNames: ['entities'],
+        enabledFor: [IconPack.Ngrx],
+      },
+      {
+        name: 'folder-ngrx-selectors',
+        folderNames: ['selectors'],
         enabledFor: [IconPack.Ngrx],
       },
       {
@@ -259,7 +266,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-aws', folderNames: ['aws', '.aws'] },
       {
         name: 'folder-audio',
-        folderNames: ['audio', 'audios', 'music', 'sound', 'sounds'],
+        folderNames: ['audio', 'audios', 'music', 'musics', 'sound', 'sounds'],
       },
       {
         name: 'folder-video',
@@ -286,7 +293,14 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-class',
-        folderNames: ['class', 'classes', 'model', 'models'],
+        folderNames: [
+          'class',
+          'classes',
+          'model',
+          'models',
+          'schemes',
+          'schema',
+        ],
       },
       {
         name: 'folder-other',
@@ -301,7 +315,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-typescript',
-        folderNames: ['typescript', 'ts', 'typings', '@types'],
+        folderNames: ['typescript', 'ts', 'typings', '@types', 'types'],
       },
       { name: 'folder-graphql', folderNames: ['graphql', 'gql'] },
       { name: 'folder-routes', folderNames: ['routes', 'router', 'routers'] },
@@ -332,9 +346,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-less', folderNames: ['less'] },
       {
         name: 'folder-gulp',
-        folderNames: [
-          'gulp'
-        ]
+        folderNames: ['gulp'],
       },
       {
         name: 'folder-python',
@@ -368,7 +380,10 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-ansible', folderNames: ['ansible'] },
       { name: 'folder-server', folderNames: ['server', 'servers', 'backend'] },
-      { name: 'folder-client', folderNames: ['client', 'clients', 'frontend'] },
+      {
+        name: 'folder-client',
+        folderNames: ['client', 'clients', 'frontend', 'pwa'],
+      },
       { name: 'folder-tasks', folderNames: ['tasks', 'tickets'] },
       { name: 'folder-android', folderNames: ['android'] },
       { name: 'folder-ios', folderNames: ['ios'] },
@@ -432,6 +447,7 @@ export const folderIcons: FolderTheme[] = [
           '.env',
           '.environment',
           'env',
+          'envs',
           'environment',
           'environments',
         ],
@@ -564,7 +580,7 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['components'],
         enabledFor: [IconPack.Vuex, IconPack.Vue],
       },
-      { name: 'folder-terraform', folderNames: ['terraform'] },
+      { name: 'folder-terraform', folderNames: ['terraform', '.terraform'] },
       {
         name: 'folder-mobile',
         folderNames: ['mobile', 'mobiles', 'portable', 'portability'],
@@ -583,6 +599,12 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['.azure-pipelines', '.azure-pipelines-ci'],
       },
       { name: 'folder-mjml', folderNames: ['mjml'] },
+      { name: 'folder-admin', folderNames: ['admin'] },
+      { name: 'folder-scala', folderNames: ['scala'] },
+      { name: 'folder-connection', folderNames: ['connection', 'connections'] },
+      { name: 'folder-quasar', folderNames: ['.quasar'] },
+      { name: 'folder-cobol', folderNames: ['cobol'] },
+      { name: 'folder-husky', folderNames: ['husky', '.husky'] },
     ],
   },
   {
