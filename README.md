@@ -17,7 +17,7 @@
 </p>
 
 <p align="center"><br>
-<b>Sponsored by<b><br><br>
+<b>Sponsored by</b><br><br>
 <a title="Try CodeStream" href="https://sponsorlink.codestream.com/?utm_source=vscmarket&amp;utm_campaign=pkief_material&amp;utm_medium=banner"><img src="https://alt-images.codestream.com/codestream_logo_pkief_material.png"></a>
 </p>
 
