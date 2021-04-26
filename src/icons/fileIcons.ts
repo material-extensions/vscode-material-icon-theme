@@ -31,6 +31,7 @@ export const fileIcons: FileIcons = {
         '.esformatter',
         'cdp.pid',
         '.mjmlconfig',
+        '.lintstagedrc',
       ],
     },
     {
@@ -335,6 +336,9 @@ export const fileIcons: FileIcons = {
         'copying',
         'copying.md',
         'copying.txt',
+        'copyright',
+        'copyright.txt',
+        'copyright.md',
         'license',
         'license.md',
         'license.txt',
@@ -802,7 +806,7 @@ export const fileIcons: FileIcons = {
     {
       name: 'android',
       fileNames: ['androidmanifest.xml'],
-      fileExtensions: ['apk'],
+      fileExtensions: ['apk', 'smali', 'dex'],
     },
     {
       name: 'tune',
@@ -878,6 +882,7 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'bithound', fileNames: ['.bithoundrc'] },
+    { name: 'svgo', fileNames: ['svgo.config.js'] },
     { name: 'appveyor', fileNames: ['.appveyor.yml', 'appveyor.yml'] },
     { name: 'travis', fileNames: ['.travis.yml'] },
     { name: 'codecov', fileNames: ['.codecov.yml', 'codecov.yml'] },
@@ -1432,5 +1437,7 @@ export const fileIcons: FileIcons = {
     { name: 'scala', fileExtensions: ['scala', 'sc'] },
     { name: 'lilypond', fileExtensions: ['ly'] },
     { name: 'vlang', fileExtensions: ['v']},
+    { name: 'chess', fileExtensions: ['pgn', 'fen'], light: true },
+    { name: 'gemini', fileExtensions: ['gmi', 'gemini'] },
   ],
 };

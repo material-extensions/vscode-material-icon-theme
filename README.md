@@ -102,7 +102,7 @@ In the settings.json the icon can be associated to a file name or file extension
 
 ```json
 "material-icon-theme.files.associations": {
-    "fileName.ts": "../../../icons/sample"
+    "fileName.ts": "../../icons/sample"
 }
 ```
 
@@ -135,7 +135,7 @@ In the settings.json the folder icons can be associated to a folder name (e.g. "
 
 ```json
 "material-icon-theme.folders.associations": {
-    "src": "../../../../../icons/folder-sample"
+    "src": "../../../../icons/folder-sample"
 }
 ```
 
