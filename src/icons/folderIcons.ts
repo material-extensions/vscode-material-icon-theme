@@ -74,6 +74,8 @@ export const folderIcons: FolderTheme[] = [
           'documentation',
           'post',
           'posts',
+          'article',
+          'articles',
         ],
       },
       {
@@ -605,6 +607,19 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-cobol', folderNames: ['cobol'] },
       { name: 'folder-husky', folderNames: ['husky', '.husky'] },
       { name: 'folder-storybook', folderNames: ['.storybook', 'stories'] },
+      { name: 'folder-base', folderNames: ['base', '.base'] },
+      {
+        name: 'folder-cart',
+        folderNames: ['cart', 'shopping-cart', 'shopping', 'shop'],
+      },
+      {
+        name: 'folder-home',
+        folderNames: ['home', '.home', 'start', '.start'],
+      },
+      {
+        name: 'folder-project',
+        folderNames: ['project', 'projects', '.project', '.projects'],
+      },
     ],
   },
   {
