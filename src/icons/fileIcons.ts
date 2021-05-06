@@ -1291,7 +1291,7 @@ export const fileIcons: FileIcons = {
     },
     { name: 'tcl', fileExtensions: ['tcl'] },
     { name: 'liquid', fileExtensions: ['liquid'] },
-    { name: 'prolog', fileExtensions: ['p', 'pro'] },
+    { name: 'prolog', fileExtensions: ['p', 'pro', 'pl'] },
     {
       name: 'husky',
       fileNames: [
