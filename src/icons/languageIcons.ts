@@ -97,6 +97,7 @@ export const languageIcons: LanguageIcon[] = [
   { icon: { name: 'groovy' }, ids: ['groovy'] },
   { icon: { name: 'markdown' }, ids: ['markdown'] },
   { icon: { name: 'jinja' }, ids: ['jinja'] },
+  { icon: { name: 'proto' }, ids: ['proto'] },
   { icon: { name: 'python-misc' }, ids: ['pip-requirements'] },
   { icon: { name: 'vue' }, ids: ['vue', 'vue-postcss', 'vue-html'] },
   { icon: { name: 'lua' }, ids: ['lua'] },
@@ -110,6 +111,7 @@ export const languageIcons: LanguageIcon[] = [
   { icon: { name: 'r' }, ids: ['r', 'rsweave'] },
   { icon: { name: 'rust' }, ids: ['rust'] },
   { icon: { name: 'database' }, ids: ['sql'] },
+  { icon: { name: 'kusto' }, ids: ['kql'] },
   { icon: { name: 'lock' }, ids: ['ssh_config'] },
   { icon: { name: 'svg' }, ids: ['svg'] },
   { icon: { name: 'swift' }, ids: ['swift'] },
@@ -124,4 +126,6 @@ export const languageIcons: LanguageIcon[] = [
   { icon: { name: 'grain' }, ids: ['grain'] },
   { icon: { name: 'lolcode' }, ids: ['lolcode'] },
   { icon: { name: 'idris' }, ids: ['idris'] },
+  { icon: { name: 'chess' }, ids: ['pgn'] },
+  { icon: { name: 'gemini' }, ids: ['gemini', 'text-gemini'] },
 ];
