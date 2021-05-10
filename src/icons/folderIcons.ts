@@ -629,6 +629,8 @@ export const folderIcons: FolderTheme[] = [
           '.contract',
           'contracts',
           'contract-testing',
+          'contract-test',
+          'contract-tests',
         ],
       },
     ],
