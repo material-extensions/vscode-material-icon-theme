@@ -1431,6 +1431,7 @@ export const fileIcons: FileIcons = {
         'windi.config.cjs',
         'windi.config.json',
       ],
+      fileExtensions: ['windi']
     },
     {
       name: 'textlint',
