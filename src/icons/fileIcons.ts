@@ -1441,5 +1441,6 @@ export const fileIcons: FileIcons = {
     { name: 'lilypond', fileExtensions: ['ly'] },
     { name: 'chess', fileExtensions: ['pgn', 'fen'], light: true },
     { name: 'gemini', fileExtensions: ['gmi', 'gemini'] },
+    { name: 'sentry', fileNames: ['.sentryclirc'] },
   ],
 };
