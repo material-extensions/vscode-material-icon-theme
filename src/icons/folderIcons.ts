@@ -452,6 +452,7 @@ export const folderIcons: FolderTheme[] = [
           'envs',
           'environment',
           'environments',
+          '.venv',
         ],
       },
       {
