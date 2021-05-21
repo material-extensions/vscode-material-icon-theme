@@ -16,6 +16,11 @@
     <a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"><img src="https://vsmarketplacebadge.apphb.com/downloads-short/PKief.material-icon-theme.svg?style=for-the-badge&colorA=252526&colorB=43A047&label=Downloads" alt="Downloads"></a>
 </p>
 
+<p align="center"><br>
+<b>Sponsored by</b><br><br>
+<a title="Try CodeStream" href="https://sponsorlink.codestream.com/?utm_source=vscmarket&amp;utm_campaign=pkief_material&amp;utm_medium=banner"><img src="https://alt-images.codestream.com/codestream_logo_pkief_material.png"></a>
+</p>
+
 ### File icons
 
 <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/master/images/fileIcons.png" alt="file icons">
@@ -84,20 +89,22 @@ If there's no leading `*` it will be automatically configured as filename and no
 
 #### Custom SVG icons
 
-It's possible to add custom icons by adding a path to an SVG file which is located relative to the extension's dist folder. For example a custom SVG file called "sample.svg" can be placed in an icons folder next to VS Code's extensions folder:
+It's possible to add custom icons by adding a path to an SVG file which is located relative to the extension's dist folder. However, the restriction applies that the directory in which the custom icons are located must be within the `extensions` directory of the `.vscode` folder in the user directory.
+
+For example a custom SVG file called `sample.svg` can be placed in an `icons` folder inside of VS Code's `extensions` folder:
 
 ```
 .vscode
- ┣ extensions
- ┗ icons
-   ┗ sample.svg
+ ┗ extensions
+   ┗ icons
+     ┗ sample.svg
 ```
 
 In the settings.json the icon can be associated to a file name or file extension like this:
 
 ```json
 "material-icon-theme.files.associations": {
-    "fileName.ts": "../../../icons/sample"
+    "fileName.ts": "../../icons/sample"
 }
 ```
 
@@ -116,21 +123,23 @@ The following configuration can customize the folder icons. It is also possible 
 
 #### Custom SVG folder icons
 
-Similar to the files, it is also possible to reference your own SVG icons for folder icons. Here it's important to provide two SVG files: one for the folder if it's closed and another one for the opened state. These two files - let's call them "folder-sample.svg" and "folder-sample-open.svg" - have to be placed into a directory which is relative to the extensions dist folder. In our example we place them into an icons folder inside of the .vscode folder:
+Similar to the files, it is also possible to reference your own SVG icons for folder icons. Here it's important to provide two SVG files: one for the folder if it's closed and another one for the opened state. These two files - let's call them "folder-sample.svg" and "folder-sample-open.svg" - have to be placed into a directory which is relative to the extensions dist folder. This directory has to be somewhere inside of the `.vscode/extensions` folder.
+
+In our example we place them into an `icons` folder inside of the `.vscode/extensions` folder:
 
 ```
 .vscode
- ┣ extensions
- ┗ icons
-   ┣ folder-sample.svg
-   ┗ folder-sample-open.svg
+ ┗ extensions
+   ┗ icons
+     ┣ folder-sample.svg
+     ┗ folder-sample-open.svg
 ```
 
 In the settings.json the folder icons can be associated to a folder name (e.g. "src") like this:
 
 ```json
 "material-icon-theme.folders.associations": {
-    "src": "../../../../../icons/folder-sample"
+    "src": "../../../../icons/folder-sample"
 }
 ```
 

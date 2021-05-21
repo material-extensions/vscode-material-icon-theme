@@ -34,13 +34,19 @@ Choose your icon colors from the [material design colors](https://material.io/de
 
 ### Free software to create/edit SVG icons
 
-- [Inkscape](https://inkscape.org/en/)
+- [Inkscape](https://inkscape.org/en/) is a free, open source SVG editor
+- There are tools available to convert PNG/JPG images to SVG - [Autotracer.org](https://autotracer.org) and [Vectorizer.io](https://vectorizer.io) are two examples.
+- It's important to produce fully _vectorized_ graphic (don't include a base64 image string in the svg).
 
 ### Use icons from here
 
 - [Material Design Icons](https://materialdesignicons.com/)
   - download them as SVG and edit the icons e.g. with Inkscape
 - you can use any other source **as long as the icons are free to use!** This icon theme is absolutely non-commercial, but you should always check the license of your sources!
+
+### Test your icons before submitting
+- Preview your own custom icons locally before submitting a Pull Request. See [Custom icon associations](README.md#custom-icon-associations) in README.md for instructions.
+
 
 ## Add translations
 
@@ -53,3 +59,4 @@ Choose your icon colors from the [material design colors](https://material.io/de
 2. Open project with VS Code
 3. Press `F5` or run `Launch Extension` in the debug window
 4. Run tests with `Launch Tests`
+
