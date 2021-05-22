@@ -31,12 +31,17 @@ export const fileIcons: FileIcons = {
         '.esformatter',
         'cdp.pid',
         '.mjmlconfig',
+        '.lintstagedrc',
       ],
     },
     {
       name: 'jinja',
       fileExtensions: ['jinja', 'jinja2', 'j2', 'jinja-html'],
       light: true,
+    },
+    {
+      name: 'proto',
+      fileExtensions: ['proto'],
     },
     {
       name: 'sublime',
@@ -90,7 +95,6 @@ export const fileIcons: FileIcons = {
         'jb2',
         'jng',
         'jxr',
-        'pbm',
         'pgf',
         'pic',
         'raw',
@@ -112,6 +116,10 @@ export const fileIcons: FileIcons = {
         'tga',
         'xcf',
         'jfif',
+        'ppm',
+        'pbm',
+        'pgm',
+        'pnm',
       ],
     },
     { name: 'javascript', fileExtensions: ['esx', 'mjs'] },
@@ -202,6 +210,7 @@ export const fileIcons: FileIcons = {
     },
     { name: 'typescript-def', fileExtensions: ['d.ts'] },
     { name: 'markojs', fileExtensions: ['marko'] },
+    { name: 'astro', fileExtensions: ['astro'] },
     { name: 'pdf', fileExtensions: ['pdf'] },
     { name: 'table', fileExtensions: ['xlsx', 'xls', 'csv', 'tsv'] },
     {
@@ -328,6 +337,9 @@ export const fileIcons: FileIcons = {
         'copying',
         'copying.md',
         'copying.txt',
+        'copyright',
+        'copyright.txt',
+        'copyright.md',
         'license',
         'license.md',
         'license.txt',
@@ -467,7 +479,7 @@ export const fileIcons: FileIcons = {
     },
     { name: 'virtual', fileExtensions: ['vdi', 'vbox', 'vbox-prev'] },
     { name: 'email', fileExtensions: ['ics'], fileNames: ['.mailmap'] },
-    { name: 'audio', fileExtensions: ['mp3', 'flac', 'm4a', 'wma', 'aiff'] },
+    { name: 'audio', fileExtensions: ['mp3', 'flac', 'm4a', 'wma', 'aiff', 'wav'] },
     { name: 'coffee', fileExtensions: ['coffee', 'cson', 'iced'] },
     { name: 'document', fileExtensions: ['txt'] },
     {
@@ -532,7 +544,11 @@ export const fileIcons: FileIcons = {
       fileNames: ['store.js', 'store.ts'],
       enabledFor: [IconPack.Vuex],
     },
-    { name: 'nuxt', fileNames: ['nuxt.config.js', 'nuxt.config.ts'] },
+    {
+      name: 'nuxt',
+      fileNames: ['nuxt.config.js', 'nuxt.config.ts'],
+      light: true,
+    },
     { name: 'ocaml', fileExtensions: ['ml', 'mli', 'cmx'] },
     {
       name: 'javascript-map',
@@ -791,7 +807,7 @@ export const fileIcons: FileIcons = {
     {
       name: 'android',
       fileNames: ['androidmanifest.xml'],
-      fileExtensions: ['apk'],
+      fileExtensions: ['apk', 'smali', 'dex'],
     },
     {
       name: 'tune',
@@ -867,6 +883,7 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'bithound', fileNames: ['.bithoundrc'] },
+    { name: 'svgo', fileNames: ['svgo.config.js'] },
     { name: 'appveyor', fileNames: ['.appveyor.yml', 'appveyor.yml'] },
     { name: 'travis', fileNames: ['.travis.yml'] },
     { name: 'codecov', fileNames: ['.codecov.yml', 'codecov.yml'] },
@@ -1128,7 +1145,7 @@ export const fileIcons: FileIcons = {
     {
       name: 'bazel',
       fileExtensions: ['bzl', 'bazel'],
-      fileNames: ['.bazelignore', '.bazelrc'],
+      fileNames: ['.bazelignore', '.bazelrc', '.bazelversion'],
     },
     { name: 'mint', fileExtensions: ['mint'] },
     { name: 'velocity', fileExtensions: ['vm', 'fhtml', 'vtl'] },
@@ -1153,7 +1170,16 @@ export const fileIcons: FileIcons = {
     { name: 'edge', fileExtensions: ['edge'] },
     { name: 'scheme', fileExtensions: ['ss', 'scm'] },
     { name: 'lisp', fileExtensions: ['lisp', 'lsp', 'cl', 'fast'] },
-    { name: 'tailwindcss', fileNames: ['tailwind.js', 'tailwind.config.js'] },
+    {
+      name: 'tailwindcss',
+      fileNames: [
+        'tailwind.js',
+        'tailwind.ts',
+        'tailwind.config.js',
+        'tailwind.config.ts',
+        'tailwind.config.cjs'
+      ],
+    },
     {
       name: '3d',
       fileExtensions: [
@@ -1185,7 +1211,7 @@ export const fileIcons: FileIcons = {
     {
       name: 'svelte',
       fileExtensions: ['svelte'],
-      fileNames: ['svelte.config.js'],
+      fileNames: ['svelte.config.js', 'svelte.config.cjs'],
     },
     {
       name: 'vim',
@@ -1266,7 +1292,7 @@ export const fileIcons: FileIcons = {
     },
     { name: 'tcl', fileExtensions: ['tcl'] },
     { name: 'liquid', fileExtensions: ['liquid'] },
-    { name: 'prolog', fileExtensions: ['p', 'pro'] },
+    { name: 'prolog', fileExtensions: ['p', 'pro', 'pl'] },
     {
       name: 'husky',
       fileNames: [
@@ -1405,6 +1431,15 @@ export const fileIcons: FileIcons = {
         'windi.config.cjs',
         'windi.config.json',
       ],
+      fileExtensions: ['windi']
     },
+    {
+      name: 'textlint',
+      fileNames: ['.textlintrc'],
+    },
+    { name: 'scala', fileExtensions: ['scala', 'sc'] },
+    { name: 'lilypond', fileExtensions: ['ly'] },
+    { name: 'chess', fileExtensions: ['pgn', 'fen'], light: true },
+    { name: 'gemini', fileExtensions: ['gmi', 'gemini'] },
   ],
 };
