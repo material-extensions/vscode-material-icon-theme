@@ -816,6 +816,7 @@ export const fileIcons: FileIcons = {
         '.env.defaults',
         '.env.example',
         '.env.sample',
+        '.env.template',
         '.env.schema',
         '.env.local',
         '.env.dev',
