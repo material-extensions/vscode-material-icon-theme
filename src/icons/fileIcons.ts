@@ -31,6 +31,7 @@ export const fileIcons: FileIcons = {
         '.esformatter',
         'cdp.pid',
         '.mjmlconfig',
+        '.lintstagedrc',
       ],
     },
     {
@@ -94,7 +95,6 @@ export const fileIcons: FileIcons = {
         'jb2',
         'jng',
         'jxr',
-        'pbm',
         'pgf',
         'pic',
         'raw',
@@ -116,6 +116,10 @@ export const fileIcons: FileIcons = {
         'tga',
         'xcf',
         'jfif',
+        'ppm',
+        'pbm',
+        'pgm',
+        'pnm',
       ],
     },
     { name: 'javascript', fileExtensions: ['esx', 'mjs'] },
@@ -206,6 +210,7 @@ export const fileIcons: FileIcons = {
     },
     { name: 'typescript-def', fileExtensions: ['d.ts'] },
     { name: 'markojs', fileExtensions: ['marko'] },
+    { name: 'astro', fileExtensions: ['astro'] },
     { name: 'pdf', fileExtensions: ['pdf'] },
     { name: 'table', fileExtensions: ['xlsx', 'xls', 'csv', 'tsv'] },
     {
@@ -332,6 +337,9 @@ export const fileIcons: FileIcons = {
         'copying',
         'copying.md',
         'copying.txt',
+        'copyright',
+        'copyright.txt',
+        'copyright.md',
         'license',
         'license.md',
         'license.txt',
@@ -799,7 +807,7 @@ export const fileIcons: FileIcons = {
     {
       name: 'android',
       fileNames: ['androidmanifest.xml'],
-      fileExtensions: ['apk'],
+      fileExtensions: ['apk', 'smali', 'dex'],
     },
     {
       name: 'tune',
@@ -808,6 +816,7 @@ export const fileIcons: FileIcons = {
         '.env.defaults',
         '.env.example',
         '.env.sample',
+        '.env.template',
         '.env.schema',
         '.env.local',
         '.env.dev',
@@ -875,6 +884,7 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'bithound', fileNames: ['.bithoundrc'] },
+    { name: 'svgo', fileNames: ['svgo.config.js'] },
     { name: 'appveyor', fileNames: ['.appveyor.yml', 'appveyor.yml'] },
     { name: 'travis', fileNames: ['.travis.yml'] },
     { name: 'codecov', fileNames: ['.codecov.yml', 'codecov.yml'] },
@@ -1136,7 +1146,7 @@ export const fileIcons: FileIcons = {
     {
       name: 'bazel',
       fileExtensions: ['bzl', 'bazel'],
-      fileNames: ['.bazelignore', '.bazelrc'],
+      fileNames: ['.bazelignore', '.bazelrc', '.bazelversion'],
     },
     { name: 'mint', fileExtensions: ['mint'] },
     { name: 'velocity', fileExtensions: ['vm', 'fhtml', 'vtl'] },
@@ -1168,6 +1178,7 @@ export const fileIcons: FileIcons = {
         'tailwind.ts',
         'tailwind.config.js',
         'tailwind.config.ts',
+        'tailwind.config.cjs'
       ],
     },
     {
@@ -1282,7 +1293,7 @@ export const fileIcons: FileIcons = {
     },
     { name: 'tcl', fileExtensions: ['tcl'] },
     { name: 'liquid', fileExtensions: ['liquid'] },
-    { name: 'prolog', fileExtensions: ['p', 'pro'] },
+    { name: 'prolog', fileExtensions: ['p', 'pro', 'pl'] },
     {
       name: 'husky',
       fileNames: [
@@ -1421,6 +1432,7 @@ export const fileIcons: FileIcons = {
         'windi.config.cjs',
         'windi.config.json',
       ],
+      fileExtensions: ['windi']
     },
     {
       name: 'textlint',
@@ -1430,5 +1442,9 @@ export const fileIcons: FileIcons = {
     { name: 'catala', fileExtensions: ['catala'] },
     { name: 'catala_en', fileExtensions: ['catala_en'] },
     { name: 'catala_fr', fileExtensions: ['catala_fr'] },
+    { name: 'lilypond', fileExtensions: ['ly'] },
+    { name: 'chess', fileExtensions: ['pgn', 'fen'], light: true },
+    { name: 'gemini', fileExtensions: ['gmi', 'gemini'] },
+    { name: 'sentry', fileNames: ['.sentryclirc'] },
   ],
 };

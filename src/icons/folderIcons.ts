@@ -74,6 +74,8 @@ export const folderIcons: FolderTheme[] = [
           'documentation',
           'post',
           'posts',
+          'article',
+          'articles',
         ],
       },
       {
@@ -102,6 +104,7 @@ export const folderIcons: FolderTheme[] = [
         ],
       },
       { name: 'folder-vue', folderNames: ['vue'] },
+      { name: 'folder-vuepress', folderNames: ['.vuepress'] },
       { name: 'folder-expo', folderNames: ['.expo', '.expo-shared'] },
       {
         name: 'folder-config',
@@ -184,7 +187,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-include',
-        folderNames: ['include', 'includes', '_includes'],
+        folderNames: ['include', 'includes', '_includes', 'inc'],
       },
       {
         name: 'folder-docker',
@@ -449,6 +452,7 @@ export const folderIcons: FolderTheme[] = [
           'envs',
           'environment',
           'environments',
+          '.venv',
         ],
       },
       {
@@ -602,6 +606,34 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-connection', folderNames: ['connection', 'connections'] },
       { name: 'folder-quasar', folderNames: ['.quasar'] },
       { name: 'folder-cobol', folderNames: ['cobol'] },
+      { name: 'folder-husky', folderNames: ['husky', '.husky'] },
+      { name: 'folder-storybook', folderNames: ['.storybook', 'stories'] },
+      { name: 'folder-base', folderNames: ['base', '.base'] },
+      {
+        name: 'folder-cart',
+        folderNames: ['cart', 'shopping-cart', 'shopping', 'shop'],
+      },
+      {
+        name: 'folder-home',
+        folderNames: ['home', '.home', 'start', '.start'],
+      },
+      {
+        name: 'folder-project',
+        folderNames: ['project', 'projects', '.project', '.projects'],
+      },
+      {
+        name: 'folder-contract',
+        folderNames: [
+          'pact',
+          'pacts',
+          'contract',
+          '.contract',
+          'contracts',
+          'contract-testing',
+          'contract-test',
+          'contract-tests',
+        ],
+      },
     ],
   },
   {

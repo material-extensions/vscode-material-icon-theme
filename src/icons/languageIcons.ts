@@ -129,4 +129,6 @@ export const languageIcons: LanguageIcon[] = [
   { icon: { name: 'catala' }, ids: ['catala_nv'] },
   { icon: { name: 'catala_en' }, ids: ['catala_en'] },
   { icon: { name: 'catala_fr' }, ids: ['catala_fr'] },
+  { icon: { name: 'chess' }, ids: ['pgn'] },
+  { icon: { name: 'gemini' }, ids: ['gemini', 'text-gemini'] },
 ];
