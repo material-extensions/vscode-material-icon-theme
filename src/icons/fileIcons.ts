@@ -277,6 +277,7 @@ export const fileIcons: FileIcons = {
     { name: 'vala', fileExtensions: ['vala'] },
     { name: 'zig', fileExtensions: ['zig'] },
     { name: 'exe', fileExtensions: ['exe', 'msi'] },
+    { name: 'hex', fileExtensions: ['dat', 'bin', 'hex'] },
     { name: 'java', fileExtensions: ['java', 'jar', 'jsp'] },
     { name: 'javaclass', fileExtensions: ['class'] },
     { name: 'c', fileExtensions: ['c', 'm', 'i', 'mi'] },
