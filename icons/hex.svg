@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   sodipodi:docname="hex.svg"
+   id="svg4"
+   viewBox="0 0 24 24"
+   height="24"
+   width="24"
+   version="1.1">
+  <metadata
+     id="metadata10">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     inkscape:current-layer="svg4"
+     inkscape:window-maximized="1"
+     inkscape:window-y="-8"
+     inkscape:window-x="-8"
+     inkscape:cy="22.567777"
+     inkscape:cx="-10.972139"
+     inkscape:zoom="14.166667"
+     showgrid="false"
+     id="namedview6"
+     inkscape:window-height="847"
+     inkscape:window-width="1600"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     inkscape:document-rotation="0" />
+  <path
+     id="path2"
+     style="fill:#26a69a;fill-opacity:1;stroke-width:1.18115"
+     d="m 14.770718,11.549205 -1.665878,1.641586 2.499632,2.460783 -2.499632,2.460782 1.665878,1.639988 2.501256,-2.46078 2.499632,2.46078 1.665876,-1.639988 -2.499629,-2.460782 2.499631,-2.460783 -1.665878,-1.641586 -2.499632,2.46078 z" />
+  <path
+     id="path837"
+     style="fill:#26a69a;fill-opacity:1;stroke-width:1.50263"
+     d="m 5.9881462,4.5008425 c -1.6435353,0 -2.9884048,1.3602032 -2.9884048,3.0224777 V 16.58869 c 0,1.677385 1.3448695,3.022477 2.9884048,3.022477 h 2.988411 c 1.6584778,0 2.9884018,-1.345092 2.9884018,-3.022477 V 7.5233202 c 0,-1.6622746 -1.329924,-3.0224777 -2.9884018,-3.0224777 z m 0,3.0224777 h 2.988411 V 16.58869 h -2.988411 z" />
+</svg>
