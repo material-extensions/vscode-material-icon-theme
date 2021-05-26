@@ -537,7 +537,12 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'vue', fileExtensions: ['vue'] },
-    { name: 'vue-config', fileNames: ['vue.config.js', 'vue.config.ts'] },
+    { name: 'vue-config', fileNames: [
+      'vue.config.js',
+      'vue.config.ts',
+      'vetur.config.js',
+      'vetur.config.ts'
+    ] },
     {
       name: 'vuex-store',
       fileExtensions: ['store.js', 'store.ts'],
