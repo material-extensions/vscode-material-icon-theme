@@ -1436,7 +1436,7 @@ export const fileIcons: FileIcons = {
     },
     { name: 'scala', fileExtensions: ['scala', 'sc'] },
     { name: 'lilypond', fileExtensions: ['ly'] },
-    { name: 'vlang', fileExtensions: ['v']},
+    { name: 'vlang', fileExtensions: ['v'], fileNames: ['vpkg.json', 'v.mod']},
     { name: 'chess', fileExtensions: ['pgn', 'fen'], light: true },
     { name: 'gemini', fileExtensions: ['gmi', 'gemini'] },
   ],
