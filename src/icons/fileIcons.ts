@@ -1110,6 +1110,7 @@ export const fileIcons: FileIcons = {
         'stories.tsx',
         'story.ts',
         'story.tsx',
+        'stories.svelte',
       ],
     },
     { name: 'wepy', fileExtensions: ['wpy'] },
