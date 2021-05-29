@@ -282,10 +282,6 @@ export const fileIcons: FileIcons = {
       fileExtensions: [
         'a',
         'bin',
-        'cma',
-        'cmi',
-        'cmo',
-        'cmxa',
         'dat',
         'hex',
         'hl',
@@ -576,7 +572,18 @@ export const fileIcons: FileIcons = {
       fileNames: ['nuxt.config.js', 'nuxt.config.ts'],
       light: true,
     },
-    { name: 'ocaml', fileExtensions: ['ml', 'mli', 'cmx'] },
+    {
+      name: 'ocaml',
+      fileExtensions: [
+        'ml',
+        'mli',
+        'cma',
+        'cmi',
+        'cmo',
+        'cmx',
+        'cmxa',
+      ]
+    },
     {
       name: 'javascript-map',
       fileExtensions: ['js.map', 'mjs.map', 'cjs.map'],
