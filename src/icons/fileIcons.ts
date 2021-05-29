@@ -277,7 +277,29 @@ export const fileIcons: FileIcons = {
     { name: 'vala', fileExtensions: ['vala'] },
     { name: 'zig', fileExtensions: ['zig'] },
     { name: 'exe', fileExtensions: ['exe', 'msi'] },
-    { name: 'hex', fileExtensions: ['dat', 'bin', 'hex'] },
+    {
+      name: 'hex',
+      fileExtensions: [
+        'a',
+        'bin',
+        'cma',
+        'cmi',
+        'cmo',
+        'cmxa',
+        'dat',
+        'hex',
+        'hl',
+        'ilk',
+        'n',
+        'ndll',
+        'o',
+        'pyd',
+        'pyo',
+        'scpt',
+        'scptd',
+        'so',
+      ],
+    },
     { name: 'java', fileExtensions: ['java', 'jar', 'jsp'] },
     { name: 'javaclass', fileExtensions: ['class'] },
     { name: 'c', fileExtensions: ['c', 'm', 'i', 'mi'] },
@@ -481,7 +503,10 @@ export const fileIcons: FileIcons = {
     },
     { name: 'virtual', fileExtensions: ['vdi', 'vbox', 'vbox-prev'] },
     { name: 'email', fileExtensions: ['ics'], fileNames: ['.mailmap'] },
-    { name: 'audio', fileExtensions: ['mp3', 'flac', 'm4a', 'wma', 'aiff', 'wav'] },
+    {
+      name: 'audio',
+      fileExtensions: ['mp3', 'flac', 'm4a', 'wma', 'aiff', 'wav'],
+    },
     { name: 'coffee', fileExtensions: ['coffee', 'cson', 'iced'] },
     { name: 'document', fileExtensions: ['txt'] },
     {
@@ -1181,7 +1206,7 @@ export const fileIcons: FileIcons = {
         'tailwind.ts',
         'tailwind.config.js',
         'tailwind.config.ts',
-        'tailwind.config.cjs'
+        'tailwind.config.cjs',
       ],
     },
     {
@@ -1435,7 +1460,7 @@ export const fileIcons: FileIcons = {
         'windi.config.cjs',
         'windi.config.json',
       ],
-      fileExtensions: ['windi']
+      fileExtensions: ['windi'],
     },
     {
       name: 'textlint',
