@@ -18,7 +18,7 @@ export const setIconOpacity = (
     );
   }
 
-  let iconsPath;
+  let iconsPath = '';
   if (path.basename(__dirname) === 'dist') {
     iconsPath = path.join(__dirname, '..', 'icons');
   } else {

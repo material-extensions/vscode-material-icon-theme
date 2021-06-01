@@ -1,5 +1,5 @@
-import * as path from 'path';
-import * as puppeteer from 'puppeteer';
+import path from 'path';
+import puppeteer from 'puppeteer';
 
 /**
  * Create a screenshot from an HTML file and save it as image.
