@@ -27,7 +27,6 @@ export const fileIcons: FileIcons = {
         '.jscsrc',
         '.jshintrc',
         'composer.lock',
-        '.jsbeautifyrc',
         '.esformatter',
         'cdp.pid',
         '.mjmlconfig',
