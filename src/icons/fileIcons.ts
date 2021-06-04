@@ -481,7 +481,10 @@ export const fileIcons: FileIcons = {
     },
     { name: 'virtual', fileExtensions: ['vdi', 'vbox', 'vbox-prev'] },
     { name: 'email', fileExtensions: ['ics'], fileNames: ['.mailmap'] },
-    { name: 'audio', fileExtensions: ['mp3', 'flac', 'm4a', 'wma', 'aiff', 'wav'] },
+    {
+      name: 'audio',
+      fileExtensions: ['mp3', 'flac', 'm4a', 'wma', 'aiff', 'wav'],
+    },
     { name: 'coffee', fileExtensions: ['coffee', 'cson', 'iced'] },
     { name: 'document', fileExtensions: ['txt'] },
     {
@@ -539,7 +542,12 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'vue', fileExtensions: ['vue'] },
-    { name: 'vue-config', fileNames: ['vue.config.js', 'vue.config.ts'] },
+    { name: 'vue-config', fileNames: [
+      'vue.config.js',
+      'vue.config.ts',
+      'vetur.config.js',
+      'vetur.config.ts'
+    ] },
     {
       name: 'vuex-store',
       fileExtensions: ['store.js', 'store.ts'],
@@ -655,7 +663,7 @@ export const fileIcons: FileIcons = {
     {
       name: 'laravel',
       fileExtensions: ['blade.php', 'inky.php'],
-      fileNames: ['artisan']
+      fileNames: ['artisan'],
     },
     { name: 'applescript', fileExtensions: ['applescript', 'ipa'] },
     { name: 'cake', fileExtensions: ['cake'] },
@@ -1188,7 +1196,7 @@ export const fileIcons: FileIcons = {
         'tailwind.ts',
         'tailwind.config.js',
         'tailwind.config.ts',
-        'tailwind.config.cjs'
+        'tailwind.config.cjs',
       ],
     },
     {
@@ -1442,7 +1450,7 @@ export const fileIcons: FileIcons = {
         'windi.config.cjs',
         'windi.config.json',
       ],
-      fileExtensions: ['windi']
+      fileExtensions: ['windi'],
     },
     {
       name: 'textlint',
@@ -1453,5 +1461,15 @@ export const fileIcons: FileIcons = {
     { name: 'chess', fileExtensions: ['pgn', 'fen'], light: true },
     { name: 'gemini', fileExtensions: ['gmi', 'gemini'] },
     { name: 'sentry', fileNames: ['.sentryclirc'] },
+    {
+      name: 'tsconfig',
+      fileNames: ['tsconfig.json'],
+      fileExtensions: ['tsconfig.json'],
+    },
+    {
+      name: 'jsconfig',
+      fileNames: ['jsconfig.json'],
+      fileExtensions: ['jsconfig.json'],
+    },
   ],
 };
