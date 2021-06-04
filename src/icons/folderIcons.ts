@@ -30,6 +30,8 @@ export const folderIcons: FolderTheme[] = [
           'ico',
           'screenshot',
           'screenshots',
+          'picture',
+          'pictures',
         ],
       },
       { name: 'folder-scripts', folderNames: ['script', 'scripts'] },
@@ -607,7 +609,10 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-quasar', folderNames: ['.quasar'] },
       { name: 'folder-cobol', folderNames: ['cobol'] },
       { name: 'folder-husky', folderNames: ['husky', '.husky'] },
-      { name: 'folder-storybook', folderNames: ['.storybook', 'stories', '__stories__'] },
+      {
+        name: 'folder-storybook',
+        folderNames: ['.storybook', 'stories', '__stories__'],
+      },
       { name: 'folder-base', folderNames: ['base', '.base'] },
       {
         name: 'folder-cart',
