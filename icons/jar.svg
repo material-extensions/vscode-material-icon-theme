@@ -1,43 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg
-   version="1.1"
-   width="24"
-   height="24"
-   viewBox="0 0 24 24"
-   id="svg4"
-   sodipodi:docname="square-rounded.svg"
-   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-  <defs
-     id="defs8" />
-  <sodipodi:namedview
-     id="namedview6"
-     pagecolor="#505050"
-     bordercolor="#ffffff"
-     borderopacity="1"
-     inkscape:pageshadow="0"
-     inkscape:pageopacity="0"
-     inkscape:pagecheckerboard="1"
-     showgrid="false"
-     inkscape:object-paths="true"
-     inkscape:snap-intersection-paths="true"
-     inkscape:snap-object-midpoints="true"
-     inkscape:object-nodes="true"
-     inkscape:snap-others="true"
-     inkscape:zoom="22.627417"
-     inkscape:cx="0.64081552"
-     inkscape:cy="13.103573"
-     inkscape:window-width="1600"
-     inkscape:window-height="847"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="svg4" />
-  <path
-     id="path2"
-     style="fill:#f44336;fill-opacity:1;stroke-width:1.14099"
-     d="M 7.4355469 1.7304688 C 4.286423 1.7304687 1.7304688 4.286423 1.7304688 7.4355469 L 1.7304688 16.564453 C 1.7304687 19.713577 4.286423 22.269531 7.4355469 22.269531 L 16.564453 22.269531 C 19.713577 22.269531 22.269531 19.713577 22.269531 16.564453 L 22.269531 7.4355469 C 22.269531 4.286423 19.713577 1.7304688 16.564453 1.7304688 L 7.4355469 1.7304688 z M 6.0371094 6.2128906 L 16.548828 6.2128906 L 18.203125 6.2128906 C 19.112626 6.2128906 19.855469 6.9168842 19.855469 7.7929688 L 19.855469 10.160156 A 1.6536387 1.5785279 0 0 1 18.203125 11.736328 L 16.548828 11.736328 L 16.548828 12.470703 L 16.548828 13.453125 A 3.0036731 2.896588 0 0 1 13.544922 16.351562 L 9.0410156 16.351562 A 3.0036731 2.896588 0 0 1 6.0371094 13.453125 L 6.0371094 6.2128906 z M 16.548828 7.7929688 L 16.548828 9.8339844 L 16.548828 10.160156 L 18.203125 10.160156 L 18.203125 7.7929688 L 16.548828 7.7929688 z M 4.2753906 17.763672 L 19.503906 17.763672 L 19.503906 19.417969 L 4.2753906 19.417969 L 4.2753906 17.763672 z " />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path d="M7.4 1.7a5.7 5.7 0 0 0-5.7 5.7v9.2c0 3.1 2.6 5.7 5.7 5.7h9.2c3.1 0 5.7-2.6 5.7-5.7V7.4c0-3.1-2.6-5.7-5.7-5.7H7.4zM6 6.2h12.2c1 0 1.7.7 1.7 1.6v2.4a1.7 1.6 0 0 1-1.7 1.5h-1.7v1.8a3 2.9 0 0 1-3 2.9H9a3 2.9 0 0 1-3-3V6.3zm10.5 1.6v2.4h1.7V7.8h-1.7zm-12.2 10h15.2v1.6H4.3v-1.6z" fill="#f44336"/>
 </svg>
