@@ -543,12 +543,15 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'vue', fileExtensions: ['vue'] },
-    { name: 'vue-config', fileNames: [
-      'vue.config.js',
-      'vue.config.ts',
-      'vetur.config.js',
-      'vetur.config.ts'
-    ] },
+    {
+      name: 'vue-config',
+      fileNames: [
+        'vue.config.js',
+        'vue.config.ts',
+        'vetur.config.js',
+        'vetur.config.ts',
+      ],
+    },
     {
       name: 'vuex-store',
       fileExtensions: ['store.js', 'store.ts'],
@@ -1370,7 +1373,7 @@ export const fileIcons: FileIcons = {
         'grm',
       ],
     },
-    { name: 'nrwl', fileNames: ['nx.json'] },
+    { name: 'nx', light: true, fileNames: ['nx.json'] },
     { name: 'opam', fileExtensions: ['opam'] },
     {
       name: 'dune',
@@ -1462,7 +1465,7 @@ export const fileIcons: FileIcons = {
     { name: 'chess', fileExtensions: ['pgn', 'fen'], light: true },
     { name: 'gemini', fileExtensions: ['gmi', 'gemini'] },
     { name: 'sentry', fileNames: ['.sentryclirc'] },
-    { name: 'robots', fileNames: [ 'robots.txt' ] },
+    { name: 'robots', fileNames: ['robots.txt'] },
     {
       name: 'tsconfig',
       fileNames: ['tsconfig.json'],
