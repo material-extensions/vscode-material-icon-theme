@@ -1471,5 +1471,9 @@ export const fileIcons: FileIcons = {
       fileNames: ['jsconfig.json'],
       fileExtensions: ['jsconfig.json'],
     },
+    {
+      name: 'electron',
+      fileNames: ['index.electron.js']
+    }
   ],
 };
