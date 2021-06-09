@@ -639,6 +639,10 @@ export const folderIcons: FolderTheme[] = [
           'contract-tests',
         ],
       },
+      {
+        name: 'folder-media',
+        folderNames: ['media', 'gallery'],
+      },
     ],
   },
   {
