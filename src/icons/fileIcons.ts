@@ -1473,5 +1473,10 @@ export const fileIcons: FileIcons = {
       fileNames: ['jsconfig.json'],
       fileExtensions: ['jsconfig.json'],
     },
+    {
+      name: 'horusec',
+      fileNames: ['horusec-config.json'],
+      fileExtensions: ['horusec-config.json'],
+    },
   ],
 };
