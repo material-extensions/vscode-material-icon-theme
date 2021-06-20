@@ -1462,7 +1462,7 @@ export const fileIcons: FileIcons = {
     { name: 'chess', fileExtensions: ['pgn', 'fen'], light: true },
     { name: 'gemini', fileExtensions: ['gmi', 'gemini'] },
     { name: 'sentry', fileNames: ['.sentryclirc'] },
-    { name: 'robots', fileNames: [ 'robots.txt' ] },
+    { name: 'robots', fileNames: ['robots.txt'] },
     {
       name: 'tsconfig',
       fileNames: ['tsconfig.json'],
@@ -1478,10 +1478,13 @@ export const fileIcons: FileIcons = {
       fileNames: [
           '.ember-cli',
           '.ember-cli.js',
+          'ember-cli-builds.js',
           'environment.js',
+          'deploy.js',
           'fastboot.js',
-          'deploy.js'
-      ]
+          'targets.js'
+      ],
+      fileExtensions: ['local.js']
     },
   ],
 };
