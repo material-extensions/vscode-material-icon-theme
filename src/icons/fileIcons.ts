@@ -1473,5 +1473,15 @@ export const fileIcons: FileIcons = {
       fileNames: ['jsconfig.json'],
       fileExtensions: ['jsconfig.json'],
     },
+    {
+      name: 'ember',
+      fileNames: [
+          '.ember-cli',
+          '.ember-cli.js',
+          'environment.js',
+          'fastboot.js',
+          'deploy.js'
+      ]
+    },
   ],
 };
