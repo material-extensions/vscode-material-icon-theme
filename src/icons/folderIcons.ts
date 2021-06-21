@@ -396,7 +396,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-tools', folderNames: ['tools'] },
       { name: 'folder-helper', folderNames: ['helpers', 'helper'] },
       { name: 'folder-serverless', folderNames: ['.serverless', 'serverless'] },
-      { name: 'folder-api', folderNames: ['api', 'apis'] },
+      { name: 'folder-api', folderNames: ['api', 'apis', 'restapi'] },
       { name: 'folder-app', folderNames: ['app', 'apps'] },
       {
         name: 'folder-apollo',
