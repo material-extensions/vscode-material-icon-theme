@@ -1470,7 +1470,10 @@ export const fileIcons: FileIcons = {
     { name: 'robots', fileNames: [ 'robots.txt' ] },
     {
       name: 'tsconfig',
-      fileNames: ['tsconfig.json'],
+      fileNames: [
+        'tsconfig.json',
+        'tsconfig.base.json'
+      ],
       fileExtensions: ['tsconfig.json'],
     },
     {
