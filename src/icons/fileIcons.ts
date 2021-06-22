@@ -48,7 +48,11 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['sublime-project', 'sublime-workspace'],
     },
     { name: 'twine', fileExtensions: ['tw', 'twee'] },
-    { name: 'yaml', fileExtensions: ['yaml', 'YAML-tmLanguage', 'yml'] },
+    { 
+		name: 'yaml',
+		fileExtensions: ['yaml', 'YAML-tmLanguage', 'yml'],
+		fileNames: ['phpunit-watcher.yml.dist'],
+	},
     {
       name: 'xml',
       fileExtensions: [
@@ -65,7 +69,11 @@ export const fileIcons: FileIcons = {
         'manifest',
         'project',
       ],
-      fileNames: ['.htaccess'],
+      fileNames: [
+        '.htaccess',
+        'phpcs.xml.dist',
+        'phpunit.xml.dist'
+      ],
     },
     {
       name: 'image',
