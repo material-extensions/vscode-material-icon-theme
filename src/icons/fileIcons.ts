@@ -48,7 +48,7 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['sublime-project', 'sublime-workspace'],
     },
     { name: 'twine', fileExtensions: ['tw', 'twee'] },
-    { 
+    {
 		name: 'yaml',
 		fileExtensions: ['yaml', 'YAML-tmLanguage', 'yml'],
 		fileNames: ['phpunit-watcher.yml.dist'],
