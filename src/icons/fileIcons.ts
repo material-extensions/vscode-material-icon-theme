@@ -65,7 +65,11 @@ export const fileIcons: FileIcons = {
         'manifest',
         'project',
       ],
-      fileNames: ['.htaccess'],
+      fileNames: [
+        '.htaccess'
+        'phpcs.xml.dist',
+        '.phpcs.xml.dist',
+      ],
     },
     {
       name: 'image',
