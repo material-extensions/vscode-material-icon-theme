@@ -122,7 +122,7 @@ export const fileIcons: FileIcons = {
         'pnm',
       ],
     },
-    { name: 'javascript', fileExtensions: ['esx', 'mjs'] },
+    { name: 'javascript', fileExtensions: ['js', 'esx', 'mjs'] },
     { name: 'react', fileExtensions: ['jsx'] },
     { name: 'react_ts', fileExtensions: ['tsx'] },
     {
@@ -208,6 +208,7 @@ export const fileIcons: FileIcons = {
         '.clang-tidy',
       ],
     },
+    { name: 'typescript', fileExtensions: ['ts'] },
     { name: 'typescript-def', fileExtensions: ['d.ts'] },
     { name: 'markojs', fileExtensions: ['marko'] },
     { name: 'astro', fileExtensions: ['astro'] },
