@@ -1478,8 +1478,7 @@ export const fileIcons: FileIcons = {
       fileNames: [
           '.ember-cli',
           '.ember-cli.js',
-          'ember-cli-builds.js',
-          'fastboot.js',
+          'ember-cli-builds.js'
       ],
       fileExtensions: ['local.js']
     },
