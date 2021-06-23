@@ -302,7 +302,7 @@ export const folderIcons: FolderTheme[] = [
           'classes',
           'model',
           'models',
-          'schemes',
+          'schemas',
           'schema',
         ],
       },
