@@ -30,6 +30,8 @@ export const folderIcons: FolderTheme[] = [
           'ico',
           'screenshot',
           'screenshots',
+          'picture',
+          'pictures',
         ],
       },
       { name: 'folder-scripts', folderNames: ['script', 'scripts'] },
@@ -300,7 +302,7 @@ export const folderIcons: FolderTheme[] = [
           'classes',
           'model',
           'models',
-          'schemes',
+          'schemas',
           'schema',
         ],
       },
@@ -394,7 +396,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-tools', folderNames: ['tools'] },
       { name: 'folder-helper', folderNames: ['helpers', 'helper'] },
       { name: 'folder-serverless', folderNames: ['.serverless', 'serverless'] },
-      { name: 'folder-api', folderNames: ['api', 'apis'] },
+      { name: 'folder-api', folderNames: ['api', 'apis', 'restapi'] },
       { name: 'folder-app', folderNames: ['app', 'apps'] },
       {
         name: 'folder-apollo',
@@ -607,7 +609,10 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-quasar', folderNames: ['.quasar'] },
       { name: 'folder-cobol', folderNames: ['cobol'] },
       { name: 'folder-husky', folderNames: ['husky', '.husky'] },
-      { name: 'folder-storybook', folderNames: ['.storybook', 'stories'] },
+      {
+        name: 'folder-storybook',
+        folderNames: ['.storybook', 'stories', '__stories__'],
+      },
       { name: 'folder-base', folderNames: ['base', '.base'] },
       {
         name: 'folder-cart',
