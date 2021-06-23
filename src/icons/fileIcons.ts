@@ -1443,6 +1443,15 @@ export const fileIcons: FileIcons = {
     { name: 'chess', fileExtensions: ['pgn', 'fen'], light: true },
     { name: 'gemini', fileExtensions: ['gmi', 'gemini'] },
     { name: 'sentry', fileNames: ['.sentryclirc'] },
-    { name: 'phpunit', fileNames: ['phpunit.xml.dist', 'phpunit.xml'] },
+    {
+      name: 'phpunit',
+      fileNames: [
+        '.phpunit-watcher.yml',
+        'phpunit.xml',
+        'phpunit.xml.dist',
+        'phpunit-watcher.yml',
+        'phpunit-watcher.yml.dist',
+      ],
+    },
   ],
 };
