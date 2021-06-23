@@ -857,8 +857,9 @@ export const fileIcons: FileIcons = {
         '.babelrc',
         '.babelrc.js',
         '.babelrc.json',
-        'babel.config.json',
         'babel.config.js',
+        'babel.config.json',
+        'babel-transform.js',
       ],
     },
     {
@@ -927,6 +928,7 @@ export const fileIcons: FileIcons = {
         '.eslintrc.yaml',
         '.eslintrc.yml',
         '.eslintrc.json',
+        '.eslintrc-md.js',
         '.eslintrc',
         '.eslintignore',
         '.eslintcache',
@@ -1102,6 +1104,9 @@ export const fileIcons: FileIcons = {
         'jest.e2e.config.cjs',
         'jest.e2e.config.mjs',
         'jest.e2e.config.json',
+        'jest-unit.config.js',
+        'jest-e2e.config.js',
+        'jest-github-actions-reporter.js',
         'jest.setup.js',
         'jest.setup.ts',
         'jest.json',
@@ -1428,6 +1433,8 @@ export const fileIcons: FileIcons = {
       fileNames: [
         'snowpack.config.cjs',
         'snowpack.config.js',
+        'snowpack.config.mjs',
+        'snowpack.deps.json',
         'snowpack.config.ts',
         'snowpack.config.json',
       ],
@@ -1465,7 +1472,10 @@ export const fileIcons: FileIcons = {
     { name: 'robots', fileNames: ['robots.txt'] },
     {
       name: 'tsconfig',
-      fileNames: ['tsconfig.json'],
+      fileNames: [
+        'tsconfig.json',
+        'tsconfig.base.json'
+      ],
       fileExtensions: ['tsconfig.json'],
     },
     {
@@ -1480,6 +1490,11 @@ export const fileIcons: FileIcons = {
           '.ember-cli.js',
           'ember-cli-builds.js'
       ]
+    },
+    {
+      name: 'horusec',
+      fileNames: ['horusec-config.json'],
+      fileExtensions: ['horusec-config.json'],
     },
   ],
 };
