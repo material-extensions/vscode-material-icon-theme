@@ -1479,8 +1479,7 @@ export const fileIcons: FileIcons = {
           '.ember-cli',
           '.ember-cli.js',
           'ember-cli-builds.js'
-      ],
-      fileExtensions: ['local.js']
+      ]
     },
   ],
 };
