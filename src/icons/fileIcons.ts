@@ -48,7 +48,16 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['sublime-project', 'sublime-workspace'],
     },
     { name: 'twine', fileExtensions: ['tw', 'twee'] },
-    { name: 'yaml', fileExtensions: ['yaml', 'YAML-tmLanguage', 'yml', 'yml.dist'] },
+    {
+      name: 'yaml',
+      fileExtensions: [
+        'yml',
+        'yaml',
+        'yml.dist',
+        'yaml.dist',
+        'YAML-tmLanguage',
+      ],
+    },
     {
       name: 'xml',
       fileExtensions: [
@@ -544,12 +553,15 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'vue', fileExtensions: ['vue'] },
-    { name: 'vue-config', fileNames: [
-      'vue.config.js',
-      'vue.config.ts',
-      'vetur.config.js',
-      'vetur.config.ts'
-    ] },
+    {
+      name: 'vue-config',
+      fileNames: [
+        'vue.config.js',
+        'vue.config.ts',
+        'vetur.config.js',
+        'vetur.config.ts',
+      ],
+    },
     {
       name: 'vuex-store',
       fileExtensions: ['store.js', 'store.ts'],
@@ -930,6 +942,7 @@ export const fileIcons: FileIcons = {
         '.eslintrc.yml',
         '.eslintrc.json',
         '.eslintrc-md.js',
+        '.eslintrc-jsdoc.js',
         '.eslintrc',
         '.eslintignore',
         '.eslintcache',
@@ -1473,10 +1486,7 @@ export const fileIcons: FileIcons = {
     { name: 'robots', fileNames: ['robots.txt'] },
     {
       name: 'tsconfig',
-      fileNames: [
-        'tsconfig.json',
-        'tsconfig.base.json'
-      ],
+      fileNames: ['tsconfig.json', 'tsconfig.base.json'],
       fileExtensions: ['tsconfig.json'],
     },
     {
@@ -1486,11 +1496,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'ember',
-      fileNames: [
-          '.ember-cli',
-          '.ember-cli.js',
-          'ember-cli-builds.js'
-      ]
+      fileNames: ['.ember-cli', '.ember-cli.js', 'ember-cli-builds.js'],
     },
     {
       name: 'horusec',
