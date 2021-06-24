@@ -611,7 +611,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-husky', folderNames: ['husky', '.husky'] },
       {
         name: 'folder-storybook',
-        folderNames: ['.storybook', 'stories', '__stories__'],
+        folderNames: ['.storybook', 'storybook', 'stories', '__stories__'],
       },
       { name: 'folder-base', folderNames: ['base', '.base'] },
       {
