@@ -48,7 +48,7 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['sublime-project', 'sublime-workspace'],
     },
     { name: 'twine', fileExtensions: ['tw', 'twee'] },
-    { name: 'yaml', fileExtensions: ['yaml', 'YAML-tmLanguage', 'yml'] },
+    { name: 'yaml', fileExtensions: ['yaml', 'YAML-tmLanguage', 'yml', 'yml.dist'] },
     {
       name: 'xml',
       fileExtensions: [
@@ -64,12 +64,9 @@ export const fileIcons: FileIcons = {
         'tmLanguage',
         'manifest',
         'project',
+        'xml.dist',
       ],
-      fileNames: [
-        '.htaccess',
-        'phpcs.xml.dist',
-        '.phpcs.xml.dist',
-      ],
+      fileNames: ['.htaccess'],
     },
     {
       name: 'image',
@@ -933,7 +930,6 @@ export const fileIcons: FileIcons = {
         '.eslintrc.yml',
         '.eslintrc.json',
         '.eslintrc-md.js',
-        '.eslintrc-jsdoc.js',
         '.eslintrc',
         '.eslintignore',
         '.eslintcache',
