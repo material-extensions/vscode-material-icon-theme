@@ -933,6 +933,7 @@ export const fileIcons: FileIcons = {
         '.eslintrc.yml',
         '.eslintrc.json',
         '.eslintrc-md.js',
+        '.eslintrc-jsdoc.js',
         '.eslintrc',
         '.eslintignore',
         '.eslintcache',
