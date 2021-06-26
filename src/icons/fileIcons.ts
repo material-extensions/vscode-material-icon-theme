@@ -31,6 +31,7 @@ export const fileIcons: FileIcons = {
         '.esformatter',
         'cdp.pid',
         '.mjmlconfig',
+        '.lintstagedrc',
       ],
     },
     {
@@ -47,7 +48,16 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['sublime-project', 'sublime-workspace'],
     },
     { name: 'twine', fileExtensions: ['tw', 'twee'] },
-    { name: 'yaml', fileExtensions: ['yaml', 'YAML-tmLanguage', 'yml'] },
+    {
+      name: 'yaml',
+      fileExtensions: [
+        'yml',
+        'yaml',
+        'yml.dist',
+        'yaml.dist',
+        'YAML-tmLanguage',
+      ],
+    },
     {
       name: 'xml',
       fileExtensions: [
@@ -63,6 +73,7 @@ export const fileIcons: FileIcons = {
         'tmLanguage',
         'manifest',
         'project',
+        'xml.dist',
       ],
       fileNames: ['.htaccess'],
     },
@@ -209,6 +220,7 @@ export const fileIcons: FileIcons = {
     },
     { name: 'typescript-def', fileExtensions: ['d.ts'] },
     { name: 'markojs', fileExtensions: ['marko'] },
+    { name: 'astro', fileExtensions: ['astro'] },
     { name: 'pdf', fileExtensions: ['pdf'] },
     { name: 'table', fileExtensions: ['xlsx', 'xls', 'csv', 'tsv'] },
     {
@@ -275,7 +287,10 @@ export const fileIcons: FileIcons = {
     { name: 'vala', fileExtensions: ['vala'] },
     { name: 'zig', fileExtensions: ['zig'] },
     { name: 'exe', fileExtensions: ['exe', 'msi'] },
-    { name: 'java', fileExtensions: ['java', 'jar', 'jsp'] },
+    { name: 'hex', fileExtensions: ['dat', 'bin', 'hex'] },
+    { name: 'java', fileExtensions: ['java', 'jsp'] },
+    { name: 'jar', fileExtensions: ['jar'] },
+    { name: 'javaclass', fileExtensions: ['class'] },
     { name: 'c', fileExtensions: ['c', 'm', 'i', 'mi'] },
     { name: 'h', fileExtensions: ['h'] },
     {
@@ -477,7 +492,10 @@ export const fileIcons: FileIcons = {
     },
     { name: 'virtual', fileExtensions: ['vdi', 'vbox', 'vbox-prev'] },
     { name: 'email', fileExtensions: ['ics'], fileNames: ['.mailmap'] },
-    { name: 'audio', fileExtensions: ['mp3', 'flac', 'm4a', 'wma', 'aiff', 'wav'] },
+    {
+      name: 'audio',
+      fileExtensions: ['mp3', 'flac', 'm4a', 'wma', 'aiff', 'wav'],
+    },
     { name: 'coffee', fileExtensions: ['coffee', 'cson', 'iced'] },
     { name: 'document', fileExtensions: ['txt'] },
     {
@@ -535,7 +553,15 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'vue', fileExtensions: ['vue'] },
-    { name: 'vue-config', fileNames: ['vue.config.js', 'vue.config.ts'] },
+    {
+      name: 'vue-config',
+      fileNames: [
+        'vue.config.js',
+        'vue.config.ts',
+        'vetur.config.js',
+        'vetur.config.ts',
+      ],
+    },
     {
       name: 'vuex-store',
       fileExtensions: ['store.js', 'store.ts'],
@@ -648,7 +674,11 @@ export const fileIcons: FileIcons = {
       name: 'terraform',
       fileExtensions: ['tf', 'tf.json', 'tfvars', 'tfstate'],
     },
-    { name: 'laravel', fileExtensions: ['blade.php', 'inky.php'] },
+    {
+      name: 'laravel',
+      fileExtensions: ['blade.php', 'inky.php'],
+      fileNames: ['artisan'],
+    },
     { name: 'applescript', fileExtensions: ['applescript', 'ipa'] },
     { name: 'cake', fileExtensions: ['cake'] },
     { name: 'cucumber', fileExtensions: ['feature'] },
@@ -723,6 +753,7 @@ export const fileIcons: FileIcons = {
         'webpack.config.dev.ts',
         'webpack.config.dev.babel.js',
         'webpack.config.dev.babel.ts',
+        'webpack.mix.js',
         'webpack.prod.js',
         'webpack.prod.config.js',
         'webpack.prod.ts',
@@ -805,7 +836,7 @@ export const fileIcons: FileIcons = {
     {
       name: 'android',
       fileNames: ['androidmanifest.xml'],
-      fileExtensions: ['apk'],
+      fileExtensions: ['apk', 'smali', 'dex'],
     },
     {
       name: 'tune',
@@ -814,6 +845,7 @@ export const fileIcons: FileIcons = {
         '.env.defaults',
         '.env.example',
         '.env.sample',
+        '.env.template',
         '.env.schema',
         '.env.local',
         '.env.dev',
@@ -838,8 +870,9 @@ export const fileIcons: FileIcons = {
         '.babelrc',
         '.babelrc.js',
         '.babelrc.json',
-        'babel.config.json',
         'babel.config.js',
+        'babel.config.json',
+        'babel-transform.js',
       ],
     },
     {
@@ -881,6 +914,7 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'bithound', fileNames: ['.bithoundrc'] },
+    { name: 'svgo', fileNames: ['svgo.config.js'] },
     { name: 'appveyor', fileNames: ['.appveyor.yml', 'appveyor.yml'] },
     { name: 'travis', fileNames: ['.travis.yml'] },
     { name: 'codecov', fileNames: ['.codecov.yml', 'codecov.yml'] },
@@ -907,6 +941,8 @@ export const fileIcons: FileIcons = {
         '.eslintrc.yaml',
         '.eslintrc.yml',
         '.eslintrc.json',
+        '.eslintrc-md.js',
+        '.eslintrc-jsdoc.js',
         '.eslintrc',
         '.eslintignore',
         '.eslintcache',
@@ -1082,6 +1118,9 @@ export const fileIcons: FileIcons = {
         'jest.e2e.config.cjs',
         'jest.e2e.config.mjs',
         'jest.e2e.config.json',
+        'jest-unit.config.js',
+        'jest-e2e.config.js',
+        'jest-github-actions-reporter.js',
         'jest.setup.js',
         'jest.setup.ts',
         'jest.json',
@@ -1097,12 +1136,15 @@ export const fileIcons: FileIcons = {
       fileExtensions: [
         'stories.js',
         'stories.jsx',
+        'stories.mdx',
         'story.js',
         'story.jsx',
         'stories.ts',
         'stories.tsx',
         'story.ts',
         'story.tsx',
+        'stories.svelte',
+        'story.mdx',
       ],
     },
     { name: 'wepy', fileExtensions: ['wpy'] },
@@ -1142,7 +1184,7 @@ export const fileIcons: FileIcons = {
     {
       name: 'bazel',
       fileExtensions: ['bzl', 'bazel'],
-      fileNames: ['.bazelignore', '.bazelrc'],
+      fileNames: ['.bazelignore', '.bazelrc', '.bazelversion'],
     },
     { name: 'mint', fileExtensions: ['mint'] },
     { name: 'velocity', fileExtensions: ['vm', 'fhtml', 'vtl'] },
@@ -1174,6 +1216,7 @@ export const fileIcons: FileIcons = {
         'tailwind.ts',
         'tailwind.config.js',
         'tailwind.config.ts',
+        'tailwind.config.cjs',
       ],
     },
     {
@@ -1288,7 +1331,7 @@ export const fileIcons: FileIcons = {
     },
     { name: 'tcl', fileExtensions: ['tcl'] },
     { name: 'liquid', fileExtensions: ['liquid'] },
-    { name: 'prolog', fileExtensions: ['p', 'pro'] },
+    { name: 'prolog', fileExtensions: ['p', 'pro', 'pl'] },
     {
       name: 'husky',
       fileNames: [
@@ -1404,6 +1447,8 @@ export const fileIcons: FileIcons = {
       fileNames: [
         'snowpack.config.cjs',
         'snowpack.config.js',
+        'snowpack.config.mjs',
+        'snowpack.deps.json',
         'snowpack.config.ts',
         'snowpack.config.json',
       ],
@@ -1427,6 +1472,7 @@ export const fileIcons: FileIcons = {
         'windi.config.cjs',
         'windi.config.json',
       ],
+      fileExtensions: ['windi'],
     },
     {
       name: 'textlint',
@@ -1435,5 +1481,28 @@ export const fileIcons: FileIcons = {
     { name: 'scala', fileExtensions: ['scala', 'sc'] },
     { name: 'lilypond', fileExtensions: ['ly'] },
     { name: 'hosts', fileNames: ['hosts'], light: true },
+    { name: 'chess', fileExtensions: ['pgn', 'fen'], light: true },
+    { name: 'gemini', fileExtensions: ['gmi', 'gemini'] },
+    { name: 'sentry', fileNames: ['.sentryclirc'] },
+    { name: 'robots', fileNames: ['robots.txt'] },
+    {
+      name: 'tsconfig',
+      fileNames: ['tsconfig.json', 'tsconfig.base.json'],
+      fileExtensions: ['tsconfig.json'],
+    },
+    {
+      name: 'jsconfig',
+      fileNames: ['jsconfig.json'],
+      fileExtensions: ['jsconfig.json'],
+    },
+    {
+      name: 'ember',
+      fileNames: ['.ember-cli', '.ember-cli.js', 'ember-cli-builds.js'],
+    },
+    {
+      name: 'horusec',
+      fileNames: ['horusec-config.json'],
+      fileExtensions: ['horusec-config.json'],
+    },
   ],
 };
