@@ -1494,6 +1494,7 @@ export const fileIcons: FileIcons = {
       fileNames: ['jsconfig.json'],
       fileExtensions: ['jsconfig.json'],
     },
+    { name: 'ada', fileExtensions: ['ada','adb','ads','ali'] },
     {
       name: 'ember',
       fileNames: ['.ember-cli', '.ember-cli.js', 'ember-cli-builds.js'],
