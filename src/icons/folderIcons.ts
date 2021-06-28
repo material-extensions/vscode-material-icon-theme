@@ -281,7 +281,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-export', folderNames: ['export', 'exports', 'exported'] },
       { name: 'folder-wakatime', folderNames: ['wakatime'] },
       { name: 'folder-circleci', folderNames: ['.circleci'] },
-      { name: 'folder-wordpress', folderNames: ['wp-content'] },
+      { name: 'folder-wordpress', folderNames: ['.wordpress-org', 'wp-content'] },
       { name: 'folder-gradle', folderNames: ['gradle', '.gradle'] },
       {
         name: 'folder-coverage',
@@ -302,7 +302,7 @@ export const folderIcons: FolderTheme[] = [
           'classes',
           'model',
           'models',
-          'schemes',
+          'schemas',
           'schema',
         ],
       },
@@ -396,7 +396,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-tools', folderNames: ['tools'] },
       { name: 'folder-helper', folderNames: ['helpers', 'helper'] },
       { name: 'folder-serverless', folderNames: ['.serverless', 'serverless'] },
-      { name: 'folder-api', folderNames: ['api', 'apis'] },
+      { name: 'folder-api', folderNames: ['api', 'apis', 'restapi'] },
       { name: 'folder-app', folderNames: ['app', 'apps'] },
       {
         name: 'folder-apollo',
@@ -437,12 +437,13 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-examples',
         folderNames: [
+          'demo',
+          'demos',
           'example',
           'examples',
           'sample',
           'samples',
-          'demo',
-          'demos',
+          'sample-data',
         ],
       },
       {
@@ -611,7 +612,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-husky', folderNames: ['husky', '.husky'] },
       {
         name: 'folder-storybook',
-        folderNames: ['.storybook', 'stories', '__stories__'],
+        folderNames: ['.storybook', 'storybook', 'stories', '__stories__'],
       },
       { name: 'folder-base', folderNames: ['base', '.base'] },
       {
