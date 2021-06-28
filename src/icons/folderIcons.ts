@@ -159,6 +159,12 @@ export const folderIcons: FolderTheme[] = [
         ],
       },
       {
+      name: 'yarn',
+      folderNames: [
+        '.yarn',
+      ],
+    },
+      {
         name: 'folder-lib',
         folderNames: [
           'lib',
