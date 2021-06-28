@@ -1496,7 +1496,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'maven',
-      fileNames: ['extensions.xml', 'maven.config', 'jvm.config'],
+      fileNames: ['maven.config', 'jvm.config'],
     },
     { name: 'ada', fileExtensions: ['ada','adb','ads','ali'] },
     {
