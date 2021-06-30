@@ -1483,6 +1483,17 @@ export const fileIcons: FileIcons = {
     { name: 'chess', fileExtensions: ['pgn', 'fen'], light: true },
     { name: 'gemini', fileExtensions: ['gmi', 'gemini'] },
     { name: 'sentry', fileNames: ['.sentryclirc'] },
+    {
+      name: 'php-cs-fixer',
+      fileNames: [
+          '.php_cs',
+          '.php_cs.dist',
+          '.php_cs.php',
+          '.php_cs.dist.php',
+          '.php-cs-fixer.php',
+          '.php-cs-fixer.dist.php'
+      ]
+    },
     { name: 'robots', fileNames: ['robots.txt'] },
     {
       name: 'tsconfig',
