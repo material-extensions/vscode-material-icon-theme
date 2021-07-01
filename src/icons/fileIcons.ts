@@ -1487,13 +1487,13 @@ export const fileIcons: FileIcons = {
     {
       name: 'php-cs-fixer',
       fileNames: [
-          '.php_cs',
-          '.php_cs.dist',
-          '.php_cs.php',
-          '.php_cs.dist.php',
-          '.php-cs-fixer.php',
-          '.php-cs-fixer.dist.php'
-      ]
+        '.php_cs',
+        '.php_cs.dist',
+        '.php_cs.php',
+        '.php_cs.dist.php',
+        '.php-cs-fixer.php',
+        '.php-cs-fixer.dist.php',
+      ],
     },
     { name: 'robots', fileNames: ['robots.txt'] },
     {
@@ -1506,7 +1506,7 @@ export const fileIcons: FileIcons = {
       fileNames: ['jsconfig.json'],
       fileExtensions: ['jsconfig.json'],
     },
-    { name: 'ada', fileExtensions: ['ada','adb','ads','ali'] },
+    { name: 'ada', fileExtensions: ['ada', 'adb', 'ads', 'ali'] },
     {
       name: 'ember',
       fileNames: ['.ember-cli', '.ember-cli.js', 'ember-cli-builds.js'],
