@@ -1,8 +1,8 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { toTitleCase } from './../helpers/titleCase';
 import { createScreenshot } from '../helpers/screenshots';
 import * as painter from './../helpers/painter';
+import { toTitleCase } from './../helpers/titleCase';
 
 const htmlDoctype = '<!DOCTYPE html>';
 const cssFilePath = path.join('style.css');
@@ -94,9 +94,8 @@ const getIconDefinitionsMatrix = (
   size: number,
   excluded: string[] = []
 ): IconDefinition[][] => {
-  const iconList = icons
-    .sort((a, b) => a.label.localeCompare(b.label))
-    .filter((i) => excluded.indexOf(i.iconName) === -1);
+  const iconList = icons.sort((a, b) => a.label.localeCompare(b.label));
+  trimIconListToSize(iconList, size, excluded);
 
   // list for the columns with the icons
   const matrix: IconDefinition[][] = [];
@@ -124,18 +123,43 @@ const getIconDefinitionsMatrix = (
  * @param name name of the preview
  * @param icons icons for the preview
  * @param size amount of table columns
- * @param excluded which icons shall be excluded
+ * @param trimmableIcons List of icons that can possibly be trimmed
  */
 export const generatePreview = (
   name: string,
   icons: IconDefinition[],
   size: number,
-  excluded: string[] = []
+  trimmableIcons: string[] = []
 ) => {
-  savePreview(name, size, getIconDefinitionsMatrix(icons, size, excluded));
+  savePreview(
+    name,
+    size,
+    getIconDefinitionsMatrix(icons, size, trimmableIcons)
+  );
 };
 
 interface IconDefinition {
   iconName: string;
   label: string;
 }
+
+/**
+ * Trim the list of icons into the matrix
+ * @param iconList List of icons
+ * @param size Amount of columns
+ * @param trimmableIcons List of icons that can possibly be trimmed
+ */
+const trimIconListToSize = (
+  iconList: IconDefinition[],
+  size: number,
+  trimmableIcons: string[]
+) => {
+  while (iconList.length % size !== 0) {
+    iconList.splice(
+      iconList.findIndex(
+        (i) => i.iconName === trimmableIcons[iconList.length % size]
+      ),
+      1
+    );
+  }
+};

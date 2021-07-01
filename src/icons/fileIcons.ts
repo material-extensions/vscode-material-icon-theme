@@ -851,6 +851,7 @@ export const fileIcons: FileIcons = {
         '.env.dev',
         '.env.development',
         '.env.qa',
+        '.env.dist',
         '.env.prod',
         '.env.production',
         '.env.staging',
@@ -1483,6 +1484,17 @@ export const fileIcons: FileIcons = {
     { name: 'chess', fileExtensions: ['pgn', 'fen'], light: true },
     { name: 'gemini', fileExtensions: ['gmi', 'gemini'] },
     { name: 'sentry', fileNames: ['.sentryclirc'] },
+    {
+      name: 'php-cs-fixer',
+      fileNames: [
+        '.php_cs',
+        '.php_cs.dist',
+        '.php_cs.php',
+        '.php_cs.dist.php',
+        '.php-cs-fixer.php',
+        '.php-cs-fixer.dist.php',
+      ],
+    },
     { name: 'robots', fileNames: ['robots.txt'] },
     {
       name: 'tsconfig',
@@ -1498,7 +1510,7 @@ export const fileIcons: FileIcons = {
       name: 'maven',
       fileNames: ['maven.config', 'jvm.config'],
     },
-    { name: 'ada', fileExtensions: ['ada','adb','ads','ali'] },
+    { name: 'ada', fileExtensions: ['ada', 'adb', 'ads', 'ali'] },
     {
       name: 'ember',
       fileNames: ['.ember-cli', '.ember-cli.js', 'ember-cli-builds.js'],
