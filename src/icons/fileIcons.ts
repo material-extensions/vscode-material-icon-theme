@@ -1506,6 +1506,10 @@ export const fileIcons: FileIcons = {
       fileNames: ['jsconfig.json'],
       fileExtensions: ['jsconfig.json'],
     },
+    {
+      name: 'maven',
+      fileNames: ['maven.config', 'jvm.config'],
+    },
     { name: 'ada', fileExtensions: ['ada', 'adb', 'ads', 'ali'] },
     {
       name: 'ember',
