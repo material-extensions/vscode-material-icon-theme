@@ -30,6 +30,8 @@ export const folderIcons: FolderTheme[] = [
           'ico',
           'screenshot',
           'screenshots',
+          'picture',
+          'pictures',
         ],
       },
       { name: 'folder-scripts', folderNames: ['script', 'scripts'] },
@@ -74,6 +76,8 @@ export const folderIcons: FolderTheme[] = [
           'documentation',
           'post',
           'posts',
+          'article',
+          'articles',
         ],
       },
       {
@@ -277,7 +281,10 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-export', folderNames: ['export', 'exports', 'exported'] },
       { name: 'folder-wakatime', folderNames: ['wakatime'] },
       { name: 'folder-circleci', folderNames: ['.circleci'] },
-      { name: 'folder-wordpress', folderNames: ['wp-content'] },
+      {
+        name: 'folder-wordpress',
+        folderNames: ['.wordpress-org', 'wp-content'],
+      },
       { name: 'folder-gradle', folderNames: ['gradle', '.gradle'] },
       {
         name: 'folder-coverage',
@@ -298,7 +305,7 @@ export const folderIcons: FolderTheme[] = [
           'classes',
           'model',
           'models',
-          'schemes',
+          'schemas',
           'schema',
         ],
       },
@@ -392,7 +399,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-tools', folderNames: ['tools'] },
       { name: 'folder-helper', folderNames: ['helpers', 'helper'] },
       { name: 'folder-serverless', folderNames: ['.serverless', 'serverless'] },
-      { name: 'folder-api', folderNames: ['api', 'apis'] },
+      { name: 'folder-api', folderNames: ['api', 'apis', 'restapi'] },
       { name: 'folder-app', folderNames: ['app', 'apps'] },
       {
         name: 'folder-apollo',
@@ -433,12 +440,13 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-examples',
         folderNames: [
+          'demo',
+          'demos',
           'example',
           'examples',
           'sample',
           'samples',
-          'demo',
-          'demos',
+          'sample-data',
         ],
       },
       {
@@ -450,6 +458,7 @@ export const folderIcons: FolderTheme[] = [
           'envs',
           'environment',
           'environments',
+          '.venv',
         ],
       },
       {
@@ -604,7 +613,38 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-quasar', folderNames: ['.quasar'] },
       { name: 'folder-cobol', folderNames: ['cobol'] },
       { name: 'folder-acf', folderNames: ['acf-json'] },
+      { name: 'folder-yarn', folderNames: ['yarn', '.yarn'] },
       { name: 'folder-husky', folderNames: ['husky', '.husky'] },
+      {
+        name: 'folder-storybook',
+        folderNames: ['.storybook', 'storybook', 'stories', '__stories__'],
+      },
+      { name: 'folder-base', folderNames: ['base', '.base'] },
+      {
+        name: 'folder-cart',
+        folderNames: ['cart', 'shopping-cart', 'shopping', 'shop'],
+      },
+      {
+        name: 'folder-home',
+        folderNames: ['home', '.home', 'start', '.start'],
+      },
+      {
+        name: 'folder-project',
+        folderNames: ['project', 'projects', '.project', '.projects'],
+      },
+      {
+        name: 'folder-contract',
+        folderNames: [
+          'pact',
+          'pacts',
+          'contract',
+          '.contract',
+          'contracts',
+          'contract-testing',
+          'contract-test',
+          'contract-tests',
+        ],
+      },
     ],
   },
   {

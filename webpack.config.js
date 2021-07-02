@@ -1,8 +1,8 @@
 'use strict';
 
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
 
+/** @type {import('webpack').Configuration} */
 const config = {
   target: 'node',
   node: {
@@ -10,12 +10,12 @@ const config = {
     __filename: false,
   },
   entry: './src/extension.ts',
-  plugins: [new CleanWebpackPlugin()],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'extension.js',
     libraryTarget: 'commonjs2',
     devtoolModuleFilenameTemplate: '../[resource-path]',
+    clean: true,
   },
   devtool: 'source-map',
   externals: {
