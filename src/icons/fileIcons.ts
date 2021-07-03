@@ -513,6 +513,7 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['patch'],
       fileNames: [
         '.gitignore',
+        '.gitignore_global',
         '.gitconfig',
         '.gitattributes',
         '.gitmodules',
