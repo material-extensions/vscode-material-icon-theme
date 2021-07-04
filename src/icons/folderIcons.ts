@@ -608,6 +608,39 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-mjml', folderNames: ['mjml'] },
       { name: 'folder-admin', folderNames: ['admin'] },
+
+      // TypeORM folders
+      {
+        name: 'folder-typeorm',
+        folderNames: ['typeorm', 'database'],
+        enabledFor: [IconPack.TypeOrm]
+      },
+      {
+        name: 'folder-typeorm-entities',
+        folderNames: ['entities'],
+        enabledFor: [IconPack.TypeOrm]
+      },
+      {
+        name: 'folder-typeorm-migrations',
+        folderNames: ['migrations'],
+        enabledFor: [IconPack.TypeOrm]
+      },
+      {
+        name: 'folder-typeorm-repositories',
+        folderNames: ['repositories'],
+        enabledFor: [IconPack.TypeOrm]
+      },
+      {
+        name: 'folder-typeorm-subscribers',
+        folderNames: ['subscribers'],
+        enabledFor: [IconPack.TypeOrm]
+      },
+      {
+        name: 'folder-typeorm-transformers',
+        folderNames: ['transformers'],
+        enabledFor: [IconPack.TypeOrm]
+      },
+
       { name: 'folder-scala', folderNames: ['scala'] },
       { name: 'folder-connection', folderNames: ['connection', 'connections'] },
       { name: 'folder-quasar', folderNames: ['.quasar'] },

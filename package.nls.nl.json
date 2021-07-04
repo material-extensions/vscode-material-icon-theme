@@ -23,6 +23,7 @@
   "configuration.activeIconPack.vue": "Icons voor Vue.",
   "configuration.activeIconPack.vue_vuex": "Icons voor Vue en Vuex.",
   "configuration.activeIconPack.nest": "Icons voor NestJS.",
+  "configuration.activeIconPack.typeorm": "Icons voor TypeORM.",
   "configuration.activeIconPack.none": "Geen iconpakket ingeschakeld.",
   "configuration.folders.theme": "Kies het type foldericons.",
   "configuration.folders.theme.specific": "Selecteer bepaalde foldericons.",

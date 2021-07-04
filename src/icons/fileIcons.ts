@@ -1321,6 +1321,39 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['resolver.ts', 'resolver.js'],
       enabledFor: [IconPack.Nest],
     },
+
+    // TypeORM files
+    {
+      name: 'typeorm-config',
+      fileExtensions: ['ormconfig.json', 'ormconfig.js', 'ormconfig.yml', 'ormconfig.xml'],
+      enabledFor: [IconPack.TypeOrm],
+    },
+    {
+      name: 'typeorm-entity',
+      fileExtensions: ['entity.ts', 'entity.js'],
+      enabledFor: [IconPack.TypeOrm],
+    },
+    {
+      name: 'typeorm-migration',
+      fileExtensions: ['migration.ts', 'migration.js'],
+      enabledFor: [IconPack.TypeOrm],
+    },
+    {
+      name: 'typeorm-repository',
+      fileExtensions: ['repository.ts', 'repository.js'],
+      enabledFor: [IconPack.TypeOrm],
+    },
+    {
+      name: 'typeorm-subscriber',
+      fileExtensions: ['subscriber.ts', 'subscriber.js'],
+      enabledFor: [IconPack.TypeOrm],
+    },
+    {
+      name: 'typeorm-transformer',
+      fileExtensions: ['transformer.ts', 'transformer.js'],
+      enabledFor: [IconPack.TypeOrm],
+    },
+
     { name: 'moonscript', fileExtensions: ['moon'] },
     { name: 'percy', fileNames: ['.percy.yml'] },
     { name: 'gitpod', fileNames: ['.gitpod.yml'] },

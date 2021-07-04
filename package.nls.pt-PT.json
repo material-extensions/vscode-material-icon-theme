@@ -21,6 +21,7 @@
   "configuration.activeIconPack.vue": "Ícones para Vue.",
   "configuration.activeIconPack.vue_vuex": "Ícones para Vue e Vuex.",
   "configuration.activeIconPack.nest": "Ícones para NestJS.",
+  "configuration.activeIconPack.typeorm": "Ícones para TypeORM.",
   "configuration.activeIconPack.none": "Nenhum pacote de ícones ativado.",
   "configuration.folders.theme": "Definir o formato dos ícones dos directórios.",
   "configuration.folders.theme.specific": "Selecciona ícones de pastas específicas.",

@@ -23,6 +23,7 @@
   "configuration.activeIconPack.vue": "Ikony dla Vue.",
   "configuration.activeIconPack.vue_vuex": "Ikony dla Vue i Vuex.",
   "configuration.activeIconPack.nest": "Ikony dla NestJS.",
+  "configuration.activeIconPack.typeorm": "Ikony dla TypeORM.",
   "configuration.activeIconPack.none": "Brak włączonej paczki ikon.",
   "configuration.folders.theme": "Wybierz typ ikon folderów.",
   "configuration.folders.theme.specific": "Wybierz ikony folderów.",
