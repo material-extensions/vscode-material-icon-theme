@@ -19,7 +19,7 @@
 <p align="center"><br>
 <b>Sponsored by</b><br><br>
 <a title="Try CodeStream" href="https://sponsorlink.codestream.com/?utm_source=vscmarket&amp;utm_campaign=pkief_material&amp;utm_medium=banner"><img width="300px" src="https://alt-images.codestream.com/codestream_logo_pkief_material.png"></a><br><br>
-<a title="Try Stepsize" href="https://marketplace.visualstudio.com/items?itemName=Stepsize.stepsize"><img width="300px" src="./images/stepsize.png"></a>
+<a title="Try Stepsize" href="https://marketplace.visualstudio.com/items?itemName=Stepsize.stepsize"><img width="300px" src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/stepsize.png"></a>
 </p>
 
 ### File icons
