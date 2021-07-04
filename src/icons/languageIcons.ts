@@ -129,4 +129,5 @@ export const languageIcons: LanguageIcon[] = [
   { icon: { name: 'idris' }, ids: ['idris'] },
   { icon: { name: 'chess' }, ids: ['pgn'] },
   { icon: { name: 'gemini' }, ids: ['gemini', 'text-gemini'] },
+  { icon: { name: 'json_alt' }, ids: [] },
 ];
