@@ -26,7 +26,6 @@ export const fileIcons: FileIcons = {
       fileNames: [
         '.jscsrc',
         '.jshintrc',
-        'composer.lock',
         '.jsbeautifyrc',
         '.esformatter',
         'cdp.pid',
@@ -34,6 +33,7 @@ export const fileIcons: FileIcons = {
         '.lintstagedrc',
       ],
     },
+    { name: 'composer', fileNames: ['composer.json', 'composer.lock'] },
     {
       name: 'jinja',
       fileExtensions: ['jinja', 'jinja2', 'j2', 'jinja-html'],
