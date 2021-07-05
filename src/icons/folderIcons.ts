@@ -281,7 +281,10 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-export', folderNames: ['export', 'exports', 'exported'] },
       { name: 'folder-wakatime', folderNames: ['wakatime'] },
       { name: 'folder-circleci', folderNames: ['.circleci'] },
-      { name: 'folder-wordpress', folderNames: ['wp-content'] },
+      {
+        name: 'folder-wordpress',
+        folderNames: ['.wordpress-org', 'wp-content'],
+      },
       { name: 'folder-gradle', folderNames: ['gradle', '.gradle'] },
       {
         name: 'folder-coverage',
@@ -437,12 +440,13 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-examples',
         folderNames: [
+          'demo',
+          'demos',
           'example',
           'examples',
           'sample',
           'samples',
-          'demo',
-          'demos',
+          'sample-data',
         ],
       },
       {
@@ -608,10 +612,11 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-connection', folderNames: ['connection', 'connections'] },
       { name: 'folder-quasar', folderNames: ['.quasar'] },
       { name: 'folder-cobol', folderNames: ['cobol'] },
+      { name: 'folder-yarn', folderNames: ['yarn', '.yarn'] },
       { name: 'folder-husky', folderNames: ['husky', '.husky'] },
       {
         name: 'folder-storybook',
-        folderNames: ['.storybook', 'stories', '__stories__'],
+        folderNames: ['.storybook', 'storybook', 'stories', '__stories__'],
       },
       { name: 'folder-base', folderNames: ['base', '.base'] },
       {
