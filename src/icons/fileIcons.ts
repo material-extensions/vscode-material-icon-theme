@@ -1500,7 +1500,6 @@ export const fileIcons: FileIcons = {
         'phpunit-watcher.yml.dist',
       ],
     },
-    { name: 'robots', fileNames: ['robots.txt'] },
     {
       name: 'php-cs-fixer',
       fileNames: [
