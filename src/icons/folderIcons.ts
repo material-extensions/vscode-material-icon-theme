@@ -613,32 +613,32 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-typeorm',
         folderNames: ['typeorm', 'database'],
-        enabledFor: [IconPack.TypeOrm]
+        enabledFor: [IconPack.TypeOrm],
       },
       {
         name: 'folder-typeorm-entities',
         folderNames: ['entities'],
-        enabledFor: [IconPack.TypeOrm]
+        enabledFor: [IconPack.TypeOrm],
       },
       {
         name: 'folder-typeorm-migrations',
         folderNames: ['migrations'],
-        enabledFor: [IconPack.TypeOrm]
+        enabledFor: [IconPack.TypeOrm],
       },
       {
         name: 'folder-typeorm-repositories',
         folderNames: ['repositories'],
-        enabledFor: [IconPack.TypeOrm]
+        enabledFor: [IconPack.TypeOrm],
       },
       {
         name: 'folder-typeorm-subscribers',
         folderNames: ['subscribers'],
-        enabledFor: [IconPack.TypeOrm]
+        enabledFor: [IconPack.TypeOrm],
       },
       {
         name: 'folder-typeorm-transformers',
         folderNames: ['transformers'],
-        enabledFor: [IconPack.TypeOrm]
+        enabledFor: [IconPack.TypeOrm],
       },
 
       { name: 'folder-scala', folderNames: ['scala'] },

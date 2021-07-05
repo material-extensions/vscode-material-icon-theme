@@ -1325,7 +1325,12 @@ export const fileIcons: FileIcons = {
     // TypeORM files
     {
       name: 'typeorm-config',
-      fileExtensions: ['ormconfig.json', 'ormconfig.js', 'ormconfig.yml', 'ormconfig.xml'],
+      fileExtensions: [
+        'ormconfig.json',
+        'ormconfig.js',
+        'ormconfig.yml',
+        'ormconfig.xml',
+      ],
       enabledFor: [IconPack.TypeOrm],
     },
     {
