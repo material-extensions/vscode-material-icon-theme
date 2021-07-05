@@ -332,6 +332,7 @@ export const fileIcons: FileIcons = {
         'fish',
         'exp',
       ],
+      fileNames: ['pre-commit', 'pre-push', 'post-merge'],
     },
     {
       name: 'powershell',
