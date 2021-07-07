@@ -1127,6 +1127,7 @@ export const fileIcons: FileIcons = {
         'jest.e2e.config.json',
         'jest-unit.config.js',
         'jest-e2e.config.js',
+        'jest-e2e.json',
         'jest-github-actions-reporter.js',
         'jest.setup.js',
         'jest.setup.ts',
