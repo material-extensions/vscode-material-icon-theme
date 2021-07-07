@@ -1493,6 +1493,7 @@ export const fileIcons: FileIcons = {
     {
       name: 'phpunit',
       fileNames: [
+        '.phpunit.result.cache',
         '.phpunit-watcher.yml',
         'phpunit.xml',
         'phpunit.xml.dist',
