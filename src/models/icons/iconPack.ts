@@ -5,6 +5,7 @@ export enum IconPack {
   Angular = 'angular',
   Nest = 'nest',
   Ngrx = 'angular_ngrx',
+  OpenHab = 'openhab',
   React = 'react',
   Redux = 'react_redux',
   Vue = 'vue',

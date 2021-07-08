@@ -1505,11 +1505,7 @@ export const fileIcons: FileIcons = {
     { name: 'robots', fileNames: ['robots.txt'] },
     {
       name: 'tsconfig',
-      fileNames: [
-        'tsconfig.json',
-        'tsconfig.base.json',
-        'tsconfig.build.json'
-      ],
+      fileNames: ['tsconfig.json', 'tsconfig.base.json', 'tsconfig.build.json'],
       fileExtensions: ['tsconfig.json'],
     },
     {
@@ -1530,6 +1526,46 @@ export const fileIcons: FileIcons = {
       name: 'horusec',
       fileNames: ['horusec-config.json'],
       fileExtensions: ['horusec-config.json'],
+    },
+    {
+      name: 'openhab-bindings',
+      fileExtensions: ['bindings'],
+      enabledFor: [IconPack.OpenHab],
+    },
+    {
+      name: 'openhab-map',
+      fileExtensions: ['map'],
+      enabledFor: [IconPack.OpenHab],
+    },
+    {
+      name: 'openhab-persist',
+      fileExtensions: ['persist'],
+      enabledFor: [IconPack.OpenHab],
+    },
+    {
+      name: 'openhab-rule',
+      fileExtensions: ['rule'],
+      enabledFor: [IconPack.OpenHab],
+    },
+    {
+      name: 'openhab-scale',
+      fileExtensions: ['rule'],
+      enabledFor: [IconPack.OpenHab],
+    },
+    {
+      name: 'openhab-script',
+      fileExtensions: ['script'],
+      enabledFor: [IconPack.OpenHab],
+    },
+    {
+      name: 'openhab-sitemap',
+      fileExtensions: ['sitemap'],
+      enabledFor: [IconPack.OpenHab],
+    },
+    {
+      name: 'openhab-things',
+      fileExtensions: ['things'],
+      enabledFor: [IconPack.OpenHab],
     },
   ],
 };
