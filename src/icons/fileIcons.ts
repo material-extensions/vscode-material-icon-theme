@@ -20,6 +20,7 @@ export const fileIcons: FileIcons = {
     { name: 'css', fileExtensions: ['css'] },
     { name: 'sass', fileExtensions: ['scss', 'sass'] },
     { name: 'less', fileExtensions: ['less'] },
+    { name: 'dist', fileExtensions: ['dist'] },
     {
       name: 'json',
       fileExtensions: ['json', 'tsbuildinfo', 'json5', 'jsonl', 'ndjson'],
@@ -1503,6 +1504,5 @@ export const fileIcons: FileIcons = {
       fileNames: ['horusec-config.json'],
       fileExtensions: ['horusec-config.json'],
     },
-    { name: 'dist', fileExtensions: ['dist'] },
   ],
 };
