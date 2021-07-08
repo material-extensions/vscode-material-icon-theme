@@ -1505,11 +1505,7 @@ export const fileIcons: FileIcons = {
     { name: 'robots', fileNames: ['robots.txt'] },
     {
       name: 'tsconfig',
-      fileNames: [
-        'tsconfig.json',
-        'tsconfig.base.json',
-        'tsconfig.build.json'
-      ],
+      fileNames: ['tsconfig.json', 'tsconfig.base.json', 'tsconfig.build.json'],
       fileExtensions: ['tsconfig.json'],
     },
     {
@@ -1531,5 +1527,6 @@ export const fileIcons: FileIcons = {
       fileNames: ['horusec-config.json'],
       fileExtensions: ['horusec-config.json'],
     },
+    { name: 'tox', fileNames: ['tox.ini'] },
   ],
 };
