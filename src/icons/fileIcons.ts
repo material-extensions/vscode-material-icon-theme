@@ -1166,7 +1166,11 @@ export const fileIcons: FileIcons = {
     { name: 'red', fileExtensions: ['red'] },
     { name: 'makefile', fileNames: ['makefile'] },
     { name: 'foxpro', fileExtensions: ['fxp', 'prg'] },
-    { name: 'i18n', fileExtensions: ['pot', 'po', 'mo'] },
+    {
+      name: 'i18n',
+      fileExtensions: ['pot', 'po', 'mo', 'nls.json'],
+      fileNames: ['i18n.json'],
+    },
     { name: 'webassembly', fileExtensions: ['wat', 'wasm'] },
     {
       name: 'semantic-release',
@@ -1505,11 +1509,7 @@ export const fileIcons: FileIcons = {
     { name: 'robots', fileNames: ['robots.txt'] },
     {
       name: 'tsconfig',
-      fileNames: [
-        'tsconfig.json',
-        'tsconfig.base.json',
-        'tsconfig.build.json'
-      ],
+      fileNames: ['tsconfig.json', 'tsconfig.base.json', 'tsconfig.build.json'],
       fileExtensions: ['tsconfig.json'],
     },
     {
