@@ -1492,6 +1492,17 @@ export const fileIcons: FileIcons = {
     { name: 'gemini', fileExtensions: ['gmi', 'gemini'] },
     { name: 'sentry', fileNames: ['.sentryclirc'] },
     {
+      name: 'phpunit',
+      fileNames: [
+        '.phpunit.result.cache',
+        '.phpunit-watcher.yml',
+        'phpunit.xml',
+        'phpunit.xml.dist',
+        'phpunit-watcher.yml',
+        'phpunit-watcher.yml.dist',
+      ],
+    },
+    {
       name: 'php-cs-fixer',
       fileNames: [
         '.php_cs',
@@ -1505,11 +1516,7 @@ export const fileIcons: FileIcons = {
     { name: 'robots', fileNames: ['robots.txt'] },
     {
       name: 'tsconfig',
-      fileNames: [
-        'tsconfig.json',
-        'tsconfig.base.json',
-        'tsconfig.build.json'
-      ],
+      fileNames: ['tsconfig.json', 'tsconfig.base.json', 'tsconfig.build.json'],
       fileExtensions: ['tsconfig.json'],
     },
     {
