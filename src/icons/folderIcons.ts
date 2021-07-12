@@ -372,7 +372,7 @@ export const folderIcons: FolderTheme[] = [
           'addon',
           'addons',
           'module',
-          'modules'
+          'modules',
         ],
       },
       { name: 'folder-middleware', folderNames: ['middleware', 'middlewares'] },
