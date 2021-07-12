@@ -48,7 +48,16 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['sublime-project', 'sublime-workspace'],
     },
     { name: 'twine', fileExtensions: ['tw', 'twee'] },
-    { name: 'yaml', fileExtensions: ['yaml', 'YAML-tmLanguage', 'yml'] },
+    {
+      name: 'yaml',
+      fileExtensions: [
+        'yml',
+        'yaml',
+        'yml.dist',
+        'yaml.dist',
+        'YAML-tmLanguage',
+      ],
+    },
     {
       name: 'xml',
       fileExtensions: [
@@ -64,6 +73,7 @@ export const fileIcons: FileIcons = {
         'tmLanguage',
         'manifest',
         'project',
+        'xml.dist',
       ],
       fileNames: ['.htaccess'],
     },
@@ -322,6 +332,7 @@ export const fileIcons: FileIcons = {
         'fish',
         'exp',
       ],
+      fileNames: ['pre-commit', 'pre-push', 'post-merge'],
     },
     {
       name: 'powershell',
@@ -503,6 +514,7 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['patch'],
       fileNames: [
         '.gitignore',
+        '.gitignore_global',
         '.gitconfig',
         '.gitattributes',
         '.gitmodules',
@@ -543,12 +555,15 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'vue', fileExtensions: ['vue'] },
-    { name: 'vue-config', fileNames: [
-      'vue.config.js',
-      'vue.config.ts',
-      'vetur.config.js',
-      'vetur.config.ts'
-    ] },
+    {
+      name: 'vue-config',
+      fileNames: [
+        'vue.config.js',
+        'vue.config.ts',
+        'vetur.config.js',
+        'vetur.config.ts',
+      ],
+    },
     {
       name: 'vuex-store',
       fileExtensions: ['store.js', 'store.ts'],
@@ -838,6 +853,7 @@ export const fileIcons: FileIcons = {
         '.env.dev',
         '.env.development',
         '.env.qa',
+        '.env.dist',
         '.env.prod',
         '.env.production',
         '.env.staging',
@@ -857,8 +873,9 @@ export const fileIcons: FileIcons = {
         '.babelrc',
         '.babelrc.js',
         '.babelrc.json',
-        'babel.config.json',
         'babel.config.js',
+        'babel.config.json',
+        'babel-transform.js',
       ],
     },
     {
@@ -927,6 +944,8 @@ export const fileIcons: FileIcons = {
         '.eslintrc.yaml',
         '.eslintrc.yml',
         '.eslintrc.json',
+        '.eslintrc-md.js',
+        '.eslintrc-jsdoc.js',
         '.eslintrc',
         '.eslintignore',
         '.eslintcache',
@@ -1002,11 +1021,24 @@ export const fileIcons: FileIcons = {
       fileNames: [
         '.prettierrc',
         'prettier.config.js',
+        'prettier.config.cjs',
         '.prettierrc.js',
+        '.prettierrc.cjs',
         '.prettierrc.json',
+        '.prettierrc.json5',
         '.prettierrc.yaml',
         '.prettierrc.yml',
         '.prettierignore',
+        '.prettierrc.toml',
+      ],
+    },
+    {
+      name: 'renovate',
+      fileNames: [
+        '.renovaterc',
+        '.renovaterc.json',
+        'renovate.json',
+        'renovate.json5',
       ],
     },
     { name: 'apollo', fileNames: ['apollo.config.js'] },
@@ -1102,6 +1134,10 @@ export const fileIcons: FileIcons = {
         'jest.e2e.config.cjs',
         'jest.e2e.config.mjs',
         'jest.e2e.config.json',
+        'jest-unit.config.js',
+        'jest-e2e.config.js',
+        'jest-e2e.json',
+        'jest-github-actions-reporter.js',
         'jest.setup.js',
         'jest.setup.ts',
         'jest.json',
@@ -1428,6 +1464,8 @@ export const fileIcons: FileIcons = {
       fileNames: [
         'snowpack.config.cjs',
         'snowpack.config.js',
+        'snowpack.config.mjs',
+        'snowpack.deps.json',
         'snowpack.config.ts',
         'snowpack.config.json',
       ],
@@ -1462,16 +1500,52 @@ export const fileIcons: FileIcons = {
     { name: 'chess', fileExtensions: ['pgn', 'fen'], light: true },
     { name: 'gemini', fileExtensions: ['gmi', 'gemini'] },
     { name: 'sentry', fileNames: ['.sentryclirc'] },
-    { name: 'robots', fileNames: [ 'robots.txt' ] },
+    {
+      name: 'phpunit',
+      fileNames: [
+        '.phpunit.result.cache',
+        '.phpunit-watcher.yml',
+        'phpunit.xml',
+        'phpunit.xml.dist',
+        'phpunit-watcher.yml',
+        'phpunit-watcher.yml.dist',
+      ],
+    },
+    {
+      name: 'php-cs-fixer',
+      fileNames: [
+        '.php_cs',
+        '.php_cs.dist',
+        '.php_cs.php',
+        '.php_cs.dist.php',
+        '.php-cs-fixer.php',
+        '.php-cs-fixer.dist.php',
+      ],
+    },
+    { name: 'robots', fileNames: ['robots.txt'] },
     {
       name: 'tsconfig',
-      fileNames: ['tsconfig.json'],
+      fileNames: ['tsconfig.json', 'tsconfig.base.json', 'tsconfig.build.json'],
       fileExtensions: ['tsconfig.json'],
     },
     {
       name: 'jsconfig',
       fileNames: ['jsconfig.json'],
       fileExtensions: ['jsconfig.json'],
+    },
+    {
+      name: 'maven',
+      fileNames: ['maven.config', 'jvm.config'],
+    },
+    { name: 'ada', fileExtensions: ['ada', 'adb', 'ads', 'ali'] },
+    {
+      name: 'ember',
+      fileNames: ['.ember-cli', '.ember-cli.js', 'ember-cli-builds.js'],
+    },
+    {
+      name: 'horusec',
+      fileNames: ['horusec-config.json'],
+      fileExtensions: ['horusec-config.json'],
     },
   ],
 };
