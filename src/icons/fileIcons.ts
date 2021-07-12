@@ -1032,6 +1032,15 @@ export const fileIcons: FileIcons = {
         '.prettierrc.toml',
       ],
     },
+    {
+      name: 'renovate',
+      fileNames: [
+        '.renovaterc',
+        '.renovaterc.json',
+        'renovate.json',
+        'renovate.json5',
+      ],
+    },
     { name: 'apollo', fileNames: ['apollo.config.js'] },
     { name: 'nodemon', fileNames: ['nodemon.json', 'nodemon-debug.json'] },
     {
