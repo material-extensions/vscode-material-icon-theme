@@ -1526,7 +1526,12 @@ export const fileIcons: FileIcons = {
     { name: 'robots', fileNames: ['robots.txt'] },
     {
       name: 'tsconfig',
-      fileNames: ['tsconfig.json', 'tsconfig.base.json', 'tsconfig.build.json'],
+      fileNames: [
+        'tsconfig.json',
+        'tsconfig.base.json',
+        'tsconfig.build.json',
+        'tsconfig.eslint.json',
+      ],
       fileExtensions: ['tsconfig.json'],
     },
     {
