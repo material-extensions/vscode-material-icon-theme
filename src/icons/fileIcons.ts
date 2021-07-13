@@ -332,6 +332,7 @@ export const fileIcons: FileIcons = {
         'fish',
         'exp',
       ],
+      fileNames: ['pre-commit', 'pre-push', 'post-merge'],
     },
     {
       name: 'powershell',
@@ -656,7 +657,7 @@ export const fileIcons: FileIcons = {
     { name: 'reason', fileExtensions: ['re', 'rei'] },
     { name: 'bucklescript', fileExtensions: ['cmj'] },
     { name: 'merlin', fileExtensions: ['merlin'] },
-    { name: 'verilog', fileExtensions: ['v', 'vhd', 'sv', 'svh'] },
+    { name: 'verilog', fileExtensions: ['vhd', 'sv', 'svh'] },
     { name: 'mathematica', fileExtensions: ['nb'] },
     { name: 'wolframlanguage', fileExtensions: ['wl', 'wls'] },
     { name: 'nunjucks', fileExtensions: ['njk', 'nunjucks'] },
@@ -1031,6 +1032,15 @@ export const fileIcons: FileIcons = {
         '.prettierrc.toml',
       ],
     },
+    {
+      name: 'renovate',
+      fileNames: [
+        '.renovaterc',
+        '.renovaterc.json',
+        'renovate.json',
+        'renovate.json5',
+      ],
+    },
     { name: 'apollo', fileNames: ['apollo.config.js'] },
     { name: 'nodemon', fileNames: ['nodemon.json', 'nodemon-debug.json'] },
     {
@@ -1126,6 +1136,7 @@ export const fileIcons: FileIcons = {
         'jest.e2e.config.json',
         'jest-unit.config.js',
         'jest-e2e.config.js',
+        'jest-e2e.json',
         'jest-github-actions-reporter.js',
         'jest.setup.js',
         'jest.setup.ts',
@@ -1486,9 +1497,21 @@ export const fileIcons: FileIcons = {
     },
     { name: 'scala', fileExtensions: ['scala', 'sc'] },
     { name: 'lilypond', fileExtensions: ['ly'] },
+    { name: 'vlang', fileExtensions: ['v'], fileNames: ['vpkg.json', 'v.mod'] },
     { name: 'chess', fileExtensions: ['pgn', 'fen'], light: true },
     { name: 'gemini', fileExtensions: ['gmi', 'gemini'] },
     { name: 'sentry', fileNames: ['.sentryclirc'] },
+    {
+      name: 'phpunit',
+      fileNames: [
+        '.phpunit.result.cache',
+        '.phpunit-watcher.yml',
+        'phpunit.xml',
+        'phpunit.xml.dist',
+        'phpunit-watcher.yml',
+        'phpunit-watcher.yml.dist',
+      ],
+    },
     {
       name: 'php-cs-fixer',
       fileNames: [
@@ -1503,7 +1526,12 @@ export const fileIcons: FileIcons = {
     { name: 'robots', fileNames: ['robots.txt'] },
     {
       name: 'tsconfig',
-      fileNames: ['tsconfig.json', 'tsconfig.base.json'],
+      fileNames: [
+        'tsconfig.json',
+        'tsconfig.base.json',
+        'tsconfig.build.json',
+        'tsconfig.eslint.json',
+      ],
       fileExtensions: ['tsconfig.json'],
     },
     {
@@ -1525,5 +1553,6 @@ export const fileIcons: FileIcons = {
       fileNames: ['horusec-config.json'],
       fileExtensions: ['horusec-config.json'],
     },
+    { name: 'coala', fileExtensions: ['coarc', 'coafile'] },
   ],
 };
