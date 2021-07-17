@@ -699,6 +699,7 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['pcss', 'sss'],
       fileNames: [
         'postcss.config.js',
+        'postcss.config.cjs',
         '.postcssrc.js',
         '.postcssrc',
         '.postcssrc.json',
