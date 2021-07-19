@@ -74,6 +74,7 @@ export const fileIcons: FileIcons = {
         'manifest',
         'project',
         'xml.dist',
+        'dmn',
       ],
       fileNames: ['.htaccess'],
     },
