@@ -611,7 +611,18 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'test-js',
-      fileExtensions: ['spec.js', 'e2e-spec.js', 'test.js', 'js.snap'],
+      fileExtensions: [
+        'spec.js',
+        'spec.cjs',
+        'spec.mjs',
+        'e2e-spec.js',
+        'e2e-spec.cjs',
+        'e2e-spec.mjs',
+        'test.js',
+        'test.cjs',
+        'test.mjs',
+        'js.snap',
+      ],
     },
     {
       name: 'angular',
@@ -918,7 +929,7 @@ export const fileIcons: FileIcons = {
         '.babel-plugin-macrosrc.yaml',
         '.babel-plugin-macrosrc.yml',
         '.babel-plugin-macrosrc.js',
-        'babel-plugin-macros.config.js'
+        'babel-plugin-macros.config.js',
       ],
     },
     {
