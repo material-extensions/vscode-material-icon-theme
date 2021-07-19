@@ -877,9 +877,13 @@ export const fileIcons: FileIcons = {
       name: 'babel',
       fileNames: [
         '.babelrc',
+        '.babelrc.cjs',
         '.babelrc.js',
+        '.babelrc.mjs',
         '.babelrc.json',
+        'babel.config.cjs',
         'babel.config.js',
+        'babel.config.mjs',
         'babel.config.json',
         'babel-transform.js',
       ],
