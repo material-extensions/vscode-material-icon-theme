@@ -886,6 +886,12 @@ export const fileIcons: FileIcons = {
         'babel.config.mjs',
         'babel.config.json',
         'babel-transform.js',
+        '.babel-plugin-macrosrc',
+        '.babel-plugin-macrosrc.json',
+        '.babel-plugin-macrosrc.yaml',
+        '.babel-plugin-macrosrc.yml',
+        '.babel-plugin-macrosrc.js',
+        'babel-plugin-macros.config.js'
       ],
     },
     {
