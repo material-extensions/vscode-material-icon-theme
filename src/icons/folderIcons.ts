@@ -636,6 +636,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['project', 'projects', '.project', '.projects'],
       },
       {
+        name: 'folder-interface',
+        folderNames: ['interface', 'interfaces'],
+      },
+      {
         name: 'folder-contract',
         folderNames: [
           'pact',
