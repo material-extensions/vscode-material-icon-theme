@@ -652,6 +652,17 @@ export const folderIcons: FolderTheme[] = [
           'contract-tests',
         ],
       },
+      {
+        name: 'folder-helm',
+        folderNames: [
+          'helm',
+          'helmchart',
+          'helmcharts',
+          '.helm',
+          '.helmchart',
+          '.helmcharts',
+        ],
+      },
     ],
   },
   {
