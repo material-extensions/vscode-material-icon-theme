@@ -1614,5 +1614,9 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['horusec-config.json'],
     },
     { name: 'coala', fileExtensions: ['coarc', 'coafile'] },
+    {
+      name: 'dinophp',
+      fileExtensions: ['bubble', 'html.bubble', 'php.bubble'],
+    },
   ],
 };
