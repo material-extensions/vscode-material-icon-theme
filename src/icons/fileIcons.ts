@@ -1618,5 +1618,6 @@ export const fileIcons: FileIcons = {
       name: 'dinophp',
       fileExtensions: ['bubble', 'html.bubble', 'php.bubble'],
     },
+    { name: 'teal', fileExtensions: ['tl'] },
   ],
 };
