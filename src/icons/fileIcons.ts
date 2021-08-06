@@ -394,7 +394,7 @@ export const fileIcons: FileIcons = {
     { name: 'gemfile', fileNames: ['gemfile'] },
     {
       name: 'rubocop',
-      fileNames: ['.rubocop.yml', '.rubocop-todo.yml'],
+      fileNames: ['.rubocop.yml', '.rubocop-todo.yml', '.rubocop_todo.yml'],
       light: true,
     },
     { name: 'fsharp', fileExtensions: ['fs', 'fsx', 'fsi', 'fsproj'] },
