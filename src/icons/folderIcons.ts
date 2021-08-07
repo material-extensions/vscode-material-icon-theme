@@ -640,6 +640,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['interface', 'interfaces'],
       },
       {
+        name: 'folder-enum',
+        folderNames: ['enum', 'enums'],
+      },
+      {
         name: 'folder-contract',
         folderNames: [
           'pact',
