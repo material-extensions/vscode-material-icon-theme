@@ -143,7 +143,16 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-components',
-        folderNames: ['components', 'widget', 'widgets'],
+        folderNames: [
+          'component',
+          'components',
+          'widget',
+          'widgets',
+          'dialog',
+          'dialogs',
+          'modal',
+          'modals',
+        ],
       },
       { name: 'folder-aurelia', folderNames: ['aurelia_project'] },
       {
