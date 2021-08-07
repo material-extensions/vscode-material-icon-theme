@@ -632,6 +632,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['home', '.home', 'start', '.start'],
       },
       {
+        name: 'folder-dto',
+        folderNames: ['dto', 'dtos'],
+      },
+      {
         name: 'folder-project',
         folderNames: ['project', 'projects', '.project', '.projects'],
       },
