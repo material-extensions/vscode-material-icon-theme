@@ -205,7 +205,7 @@
     "postcompile": "npm run generateJson && npm run check",
     "pretest": "npm run build && tsc -p ./",
     "preview": "ts-node ./src/scripts/preview",
-    "svgo": "svgo",
+    "svgo": "svgo -i icons -o icons -q",
     "test": "node ./out/test/runTest.js",
     "vscode:prepublish": "npm run lint && npm run compile"
   },
