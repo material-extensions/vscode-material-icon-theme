@@ -1599,6 +1599,7 @@ export const fileIcons: FileIcons = {
         'tsconfig.base.json',
         'tsconfig.build.json',
         'tsconfig.eslint.json',
+        'tsconfig.lib.json',
       ],
       fileExtensions: ['tsconfig.json'],
     },
