@@ -84,6 +84,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-git',
         folderNames: [
           '.git',
+          'patches',
           'githooks',
           '.githooks',
           'submodules',
@@ -371,6 +372,8 @@ export const folderIcons: FolderTheme[] = [
           'extensions',
           'addon',
           'addons',
+          'module',
+          'modules',
         ],
       },
       { name: 'folder-middleware', folderNames: ['middleware', 'middlewares'] },
@@ -434,6 +437,7 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['container', 'containers', '.devcontainer'],
       },
       { name: 'folder-content', folderNames: ['content', 'contents'] },
+      { name: 'folder-context', folderNames: ['context', 'contexts'] },
       { name: 'folder-core', folderNames: ['core'] },
       { name: 'folder-delta', folderNames: ['delta', 'deltas', 'changes'] },
       { name: 'folder-dump', folderNames: ['dump', 'dumps'] },
@@ -630,6 +634,10 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-project',
         folderNames: ['project', 'projects', '.project', '.projects'],
+      },
+      {
+        name: 'folder-interface',
+        folderNames: ['interface', 'interfaces'],
       },
       {
         name: 'folder-contract',
