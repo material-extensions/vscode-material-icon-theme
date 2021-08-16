@@ -30,7 +30,6 @@ export const fileIcons: FileIcons = {
         '.jsbeautifyrc',
         '.esformatter',
         'cdp.pid',
-        '.mjmlconfig',
         '.lintstagedrc',
       ],
     },
@@ -684,7 +683,11 @@ export const fileIcons: FileIcons = {
     { name: 'autoit', fileExtensions: ['au3'] },
     { name: 'haml', fileExtensions: ['haml'] },
     { name: 'yang', fileExtensions: ['yang'] },
-    { name: 'mjml', fileExtensions: ['mjml'] },
+    { 
+      name: 'mjml', 
+      fileExtensions: ['mjml'],
+      fileNames: ['.mjmlconfig'],
+    },
     {
       name: 'vercel',
       fileNames: ['vercel.json', '.vercelignore', 'now.json', '.nowignore'],
