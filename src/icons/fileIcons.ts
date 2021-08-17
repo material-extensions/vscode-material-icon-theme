@@ -694,6 +694,11 @@ export const fileIcons: FileIcons = {
       light: true,
     },
     {
+      name: 'next',
+      fileNames: [ 'next.config.js', 'next.config.ts' ],
+      light: true,
+    },
+    {
       name: 'terraform',
       fileExtensions: ['tf', 'tf.json', 'tfvars', 'tfstate'],
     },
