@@ -683,8 +683,8 @@ export const fileIcons: FileIcons = {
     { name: 'autoit', fileExtensions: ['au3'] },
     { name: 'haml', fileExtensions: ['haml'] },
     { name: 'yang', fileExtensions: ['yang'] },
-    { 
-      name: 'mjml', 
+    {
+      name: 'mjml',
       fileExtensions: ['mjml'],
       fileNames: ['.mjmlconfig'],
     },
@@ -695,7 +695,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'next',
-      fileNames: [ 'next.config.js', 'next.config.ts' ],
+      fileNames: ['next.config.js', 'next.config.ts'],
       light: true,
     },
     {
