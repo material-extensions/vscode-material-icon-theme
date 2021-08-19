@@ -1,0 +1,105 @@
+<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" fill="#0535C1"/>
+  <mask id="lighthouse-a" maskUnits="userSpaceOnUse" x="14" y="7" width="6" height="5">
+    <path d="M18.59 9.008h-.597a1.846 1.846 0 10-1.741 2.462h2.339a1.231 1.231 0 000-2.462z" fill="#fff"/>
+  </mask>
+  <g mask="url(#lighthouse-a)">
+    <path d="M18.59 9.008h-.597a1.846 1.846 0 10-1.741 2.462h2.339a1.231 1.231 0 000-2.462z" fill="#EAEAEA"/>
+    <path d="M19.822 10.253v-.014c0-.68-.551-1.231-1.231-1.231h-.616v.03h.616c.674 0 1.222.542 1.23 1.216z" fill="#fff" fill-opacity=".2"/>
+    <path d="M20.456 11.47h-4.204l1.742-2.462 2.462 2.462z" fill="url(#lighthouse-paint0_linear)"/>
+    <mask id="lighthouse-b" maskUnits="userSpaceOnUse" x="16" y="9" width="4" height="3">
+      <path d="M18.59 9.008h-2.338v2.462h2.339a1.231 1.231 0 000-2.462z" fill="#fff"/>
+    </mask>
+    <g mask="url(#lighthouse-b)">
+      <g filter="url(#lighthouse-filter0_d)">
+        <path d="M16.252 7.776l.998 3.153c.334-.335.848-.796.848-1.306 0-1.02-.827-1.847-1.846-1.847z" fill="#000"/>
+      </g>
+      <path d="M16.252 7.776l.998 3.153c.334-.335.848-.796.848-1.306 0-1.02-.827-1.847-1.846-1.847z" fill="#E1E1E1"/>
+    </g>
+    <path d="M16.252 11.47a1.846 1.846 0 100-3.693 1.846 1.846 0 000 3.692z" fill="#EEE"/>
+    <path d="M16.252 7.807c1.014 0 1.838.82 1.847 1.832v-.014a1.847 1.847 0 00-3.694-.002v.015a1.847 1.847 0 011.847-1.83z" fill="#fff" fill-opacity=".2"/>
+    <path d="M18.59 11.439h-2.338a1.847 1.847 0 01-1.847-1.832v.015c0 1.02.828 1.847 1.847 1.847h2.339c.68 0 1.23-.552 1.23-1.231v-.015a1.232 1.232 0 01-1.23 1.216z" fill="#212121" fill-opacity=".1"/>
+  </g>
+  <path d="M9.273 6.205H14.5v4.545H9.273V6.205z" fill="#FFF176"/>
+  <path d="M8.704 13.136h6.25v6.25h-6.25v-6.25z" fill="#fff"/>
+  <path d="M15.636 10.296h.91v1.818H7.454v-1.819h.909V6.66L12 4.386l3.636 2.273v3.637zm-1.818 0v-2.63L12 6.532l-1.818 1.136v2.629h3.636z" fill="#F4481E"/>
+  <path d="M7.05 20.691l1.54-10.396h6.82l1.54 10.396A9.953 9.953 0 0112 22c-1.8 0-3.49-.476-4.95-1.309zm6.986-7.26l-4.278 1.39-.52 3.51 5.27-1.713-.472-3.186z" fill="#F4481E"/>
+  <path d="M15.628 12.114l1.27 8.577A9.953 9.953 0 0111.95 22c-1.8 0-3.49-.476-4.95-1.309l1.272-8.577h-.816v-1.819h.909V6.66L12 4.386l3.636 2.273v3.637h.91v1.818h-.918z" fill="url(#lighthouse-paint1_linear)"/>
+  <path d="M12 10.296H8.364V6.659L12 4.386v5.91z" fill="url(#lighthouse-paint2_linear)"/>
+  <path d="M12 22a9.992 9.992 0 01-4.95-1.309l1.14-8.577H12V22z" fill="url(#lighthouse-paint3_linear)"/>
+  <path d="M12 10.296H7.455v1.818H12v-1.819z" fill="url(#lighthouse-paint4_linear)"/>
+  <mask id="lighthouse-c" maskUnits="userSpaceOnUse" x="4" y="9" width="7" height="6">
+    <path d="M9.273 11.318h-.69a2.13 2.13 0 10-2.01 2.841h2.7a1.421 1.421 0 000-2.841z" fill="#fff"/>
+  </mask>
+  <g mask="url(#lighthouse-c)">
+    <path d="M9.273 11.318h-.69a2.13 2.13 0 10-2.01 2.841h2.7a1.421 1.421 0 000-2.841z" fill="#FAFAFA"/>
+    <path d="M10.693 12.756v-.017c0-.785-.636-1.42-1.42-1.42h-.71v.035h.71c.777 0 1.41.624 1.42 1.402z" fill="#fff" fill-opacity=".2"/>
+    <path d="M11.425 14.159H6.574l2.01-2.84 2.84 2.84z" fill="url(#lighthouse-paint5_linear)"/>
+    <mask id="lighthouse-d" maskUnits="userSpaceOnUse" x="6" y="11" width="5" height="4">
+      <path d="M9.273 11.318h-2.7v2.841h2.7a1.421 1.421 0 000-2.84z" fill="#fff"/>
+    </mask>
+    <g mask="url(#lighthouse-d)">
+      <g filter="url(#filter1_d)">
+        <path d="M6.574 9.898l1.152 3.638c.385-.387.978-.92.978-1.508 0-1.176-.954-2.13-2.13-2.13z" fill="#000"/>
+      </g>
+      <path d="M6.574 9.898l1.152 3.638c.385-.387.978-.92.978-1.508 0-1.176-.954-2.13-2.13-2.13z" fill="#E1E1E1"/>
+    </g>
+    <path d="M6.574 14.159a2.13 2.13 0 100-4.261 2.13 2.13 0 000 4.261z" fill="#fff"/>
+    <path d="M6.574 9.933c1.17 0 2.12.945 2.13 2.114v-.017a2.131 2.131 0 00-4.261-.001v.017a2.131 2.131 0 012.13-2.113z" fill="#fff" fill-opacity=".2"/>
+    <path d="M9.273 14.123h-2.7c-1.17 0-2.12-.944-2.13-2.113v.017c0 1.176.955 2.13 2.13 2.13h2.7c.784 0 1.42-.636 1.42-1.42v-.017a1.421 1.421 0 01-1.42 1.403z" fill="#212121" fill-opacity=".1"/>
+  </g>
+  <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" fill="url(#lighthouse-paint6_radial)"/>
+  <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" fill="url(#lighthouse-paint7_radial)"/>
+  <defs>
+    <linearGradient id="lighthouse-paint0_linear" x1="18.354" y1="9.013" x2="18.354" y2="11.463" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#212121" stop-opacity=".04"/>
+      <stop offset=".66" stop-color="#212121" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="lighthouse-paint1_linear" x1="10.625" y1="7.972" x2="17.628" y2="19.51" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff" stop-opacity=".1"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="lighthouse-paint2_linear" x1="12" y1="11.205" x2="7.455" y2="11.205" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#262626" stop-opacity=".1"/>
+      <stop offset="1" stop-color="#262626" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="lighthouse-paint3_linear" x1="12" y1="11.205" x2="7.455" y2="11.205" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#262626" stop-opacity=".1"/>
+      <stop offset="1" stop-color="#262626" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="lighthouse-paint4_linear" x1="12" y1="11.205" x2="7.455" y2="11.205" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#262626" stop-opacity=".1"/>
+      <stop offset="1" stop-color="#262626" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="lighthouse-paint5_linear" x1="8.999" y1="11.325" x2="8.999" y2="14.151" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#212121" stop-opacity=".04"/>
+      <stop offset=".66" stop-color="#212121" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="lighthouse-paint6_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(4.898 4.917) scale(19.9946)">
+      <stop stop-color="#fff" stop-opacity=".1"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="lighthouse-paint7_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(4.898 4.917) scale(19.9946)">
+      <stop stop-color="#fff" stop-opacity=".1"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="lighthouse-filter0_d" x="12.252" y="5.776" width="9.847" height="11.153" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="2"/>
+      <feGaussianBlur stdDeviation="2"/>
+      <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/>
+      <feBlend in2="BackgroundImageFix" result="effect1_dropShadow"/>
+      <feBlend in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+    </filter>
+    <filter id="filter1_d" x="2.574" y="7.898" width="10.131" height="11.638" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="2"/>
+      <feGaussianBlur stdDeviation="2"/>
+      <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+      <feBlend in2="BackgroundImageFix" result="effect1_dropShadow"/>
+      <feBlend in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+    </filter>
+  </defs>
+</svg>
