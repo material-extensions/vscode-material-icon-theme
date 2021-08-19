@@ -1633,15 +1633,18 @@ export const fileIcons: FileIcons = {
     { name: 'coala', fileExtensions: ['coarc', 'coafile'] },
     { name: 'teal', fileExtensions: ['tl'] },
     { name: 'astyle', fileNames: ['.astylerc'] },
-    { name: 'lighthouse', fileNames: [
-      '.lighthouserc.js',
-      'lighthouserc.js',
-      '.lighthouserc.json',
-      'lighthouserc.json',
-      '.lighthouserc.yml',
-      'lighthouserc.yml',
-      '.lighthouserc.yaml',
-      'lighthouserc.yaml'
-    ] },
+    { 
+      name: 'lighthouse', 
+      fileNames: [
+        '.lighthouserc.js',
+        'lighthouserc.js',
+        '.lighthouserc.json',
+        'lighthouserc.json',
+        '.lighthouserc.yml',
+        'lighthouserc.yml',
+        '.lighthouserc.yaml',
+        'lighthouserc.yaml'
+      ]
+    },
   ],
 };
