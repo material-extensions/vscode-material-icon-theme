@@ -656,6 +656,10 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-vercel',
         folderNames: ['vercel', '.vercel', 'now', '.now'],
       },
+      {
+        name: 'folder-glsl',
+        folderNames: ['glsl', 'shader', 'shaders'],
+      },
     ],
   },
   {
