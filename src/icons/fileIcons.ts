@@ -1633,6 +1633,17 @@ export const fileIcons: FileIcons = {
     { name: 'coala', fileExtensions: ['coarc', 'coafile'] },
     { name: 'teal', fileExtensions: ['tl'] },
     { name: 'astyle', fileNames: ['.astylerc'] },
-    { name: 'svgr', fileNames: ['.svgrrc', 'svgr.config.js', '.svgrrc.js', '.svgrrc.yaml', '.svgrrc.yml', '.svgrrc.json'] },
+    {
+      name: 'svgr',
+      light: true,
+      fileNames: [
+        '.svgrrc',
+        'svgr.config.js',
+        '.svgrrc.js',
+        '.svgrrc.yaml',
+        '.svgrrc.yml',
+        '.svgrrc.json',
+      ]
+    },
   ],
 };
