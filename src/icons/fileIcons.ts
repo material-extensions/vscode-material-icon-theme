@@ -1646,5 +1646,6 @@ export const fileIcons: FileIcons = {
         'lighthouserc.yaml',
       ],
     },
+    { name: 'rome', fileNames: ['rome.json'] },
   ],
 };
