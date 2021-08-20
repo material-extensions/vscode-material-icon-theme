@@ -1665,5 +1665,6 @@ export const fileIcons: FileIcons = {
         'computeshader',
       ],
     },
+    { name: 'rome', fileNames: ['rome.json'] },
   ],
 };
