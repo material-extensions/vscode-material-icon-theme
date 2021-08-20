@@ -1645,5 +1645,6 @@ export const fileIcons: FileIcons = {
         '.svgrrc.json',
       ],
     },
+    { name: 'rome', fileNames: ['rome.json'] },
   ],
 };
