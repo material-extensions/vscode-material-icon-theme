@@ -1643,7 +1643,7 @@ export const fileIcons: FileIcons = {
         '.svgrrc.yaml',
         '.svgrrc.yml',
         '.svgrrc.json',
-      ]
+      ],
     },
   ],
 };
