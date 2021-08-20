@@ -44,6 +44,7 @@
     "*"
   ],
   "main": "./dist/extension",
+  "browser": "./dist/web/extension.js",
   "contributes": {
     "iconThemes": [
       {
@@ -196,9 +197,12 @@
   "scripts": {
     "build": "npm run compile:dev && npm run postcompile",
     "check": "ts-node ./src/scripts/icons/checks",
-    "compile": "webpack --mode production",
-    "compile:dev": "webpack --mode none",
-    "compile:watch": "webpack --mode none --watch",
+    "compile": "webpack --config ./build/webpack.config.js --mode production",
+    "compile:dev": "webpack --config ./build/webpack.config.js --mode none",
+    "compile:watch": "webpack --config ./build/webpack.config.js --mode none --watch",
+    "compile-web": "webpack --config ./build/web-extension.webpack.config.js",
+    "watch-web": "webpack --watch --config ./build/web-extension.webpack.config.js",
+    "package-web": "webpack --mode production --devtool hidden-source-map --config ./build/web-extension.webpack.config.js",
     "contributors": "ts-node ./src/scripts/contributors/index.ts",
     "generateJson": "ts-node ./src/scripts/icons/generateJson.ts",
     "lint": "eslint -c .eslintrc.json --ext .ts ./src/**/*.ts",
@@ -207,7 +211,7 @@
     "preview": "ts-node ./src/scripts/preview",
     "svgo": "svgo -i icons -o icons -q",
     "test": "node ./out/test/runTest.js",
-    "vscode:prepublish": "npm run lint && npm run compile"
+    "vscode:prepublish": "npm run lint && npm run compile && npm run package-web"
   },
   "dependencies": {
     "lodash.merge": "4.6.2",

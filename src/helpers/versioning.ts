@@ -1,6 +1,6 @@
 import * as semver from 'semver';
 import * as vscode from 'vscode';
-import * as helpers from './index';
+import { isThemeActivated } from '.';
 
 export const versionKey = 'material-icon-theme.version';
 
@@ -47,7 +47,7 @@ export const checkThemeStatus = async (state: vscode.Memento) => {
 
 /** Check if the theme was used before */
 const themeIsAlreadyActivated = () => {
-  return helpers.isThemeActivated() || helpers.isThemeActivated(true);
+  return isThemeActivated() || isThemeActivated(true);
 };
 
 /** Update the version number to the current version in the memento. */
