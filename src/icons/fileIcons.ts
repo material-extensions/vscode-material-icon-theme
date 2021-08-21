@@ -1634,5 +1634,6 @@ export const fileIcons: FileIcons = {
     { name: 'teal', fileExtensions: ['tl'] },
     { name: 'astyle', fileNames: ['.astylerc'] },
     { name: 'rome', fileNames: ['rome.json'] },
+    { name: 'cypress', fileNames: ['cypress.json', 'cypress.env.json'] },
   ],
 };
