@@ -652,6 +652,10 @@ export const folderIcons: FolderTheme[] = [
           'contract-tests',
         ],
       },
+      {
+        name: 'folder-vercel',
+        folderNames: ['vercel', '.vercel', 'now', '.now'],
+      },
     ],
   },
   {
