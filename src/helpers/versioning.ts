@@ -1,4 +1,4 @@
-import { extensions, Memento, version, workspace } from 'vscode';
+import { extensions, Memento, workspace } from 'vscode';
 import { isThemeActivated } from '.';
 import { ThemeStatus } from '../models/helpers/themeStatus';
 
@@ -29,7 +29,7 @@ export const checkThemeStatus = async (
         : ThemeStatus.neverUsedBefore;
     }
     // compare the version in the state with the package version
-    else if (isGreaterVersion(packageVersion, stateVersion)) {
+    else if (packageVersion && isGreaterVersion(packageVersion, stateVersion)) {
       await updateExtensionVersionInMemento(state);
       return ThemeStatus.updated;
     } else {
@@ -60,19 +60,14 @@ const themeIsAlreadyActivated = () => {
 
 /** Update the version number to the current version in the memento. */
 const updateExtensionVersionInMemento = (state: Memento) => {
-  return state.update(versionKey, getCurrentExtensionVersion());
+  const currentVersion = getCurrentExtensionVersion();
+  if (currentVersion) {
+    return state.update(versionKey, currentVersion);
+  }
 };
 
 /** Get the current version of the extension */
-const getCurrentExtensionVersion = (): string => {
-  return extensions.getExtension('PKief.material-icon-theme').packageJSON
+const getCurrentExtensionVersion = (): string | undefined => {
+  return extensions.getExtension('PKief.material-icon-theme')?.packageJSON
     .version;
-};
-
-/**
- * Check if the current version of VS Code
- * supports new features.
- */
-export const checkVersionSupport = (supportedVersion: string): boolean => {
-  return isGreaterVersion(version, supportedVersion);
 };
