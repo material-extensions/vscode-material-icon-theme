@@ -58,39 +58,48 @@
     "commands": [
       {
         "command": "material-icon-theme.activateIcons",
-        "title": "%command.activateIcons%"
+        "title": "%command.activateIcons%",
+        "enablement": "!isWeb"
       },
       {
         "command": "material-icon-theme.toggleIconPacks",
-        "title": "%command.toggleIconPacks%"
+        "title": "%command.toggleIconPacks%",
+        "enablement": "!isWeb"
       },
       {
         "command": "material-icon-theme.changeFolderTheme",
-        "title": "%command.changeFolderTheme%"
+        "title": "%command.changeFolderTheme%",
+        "enablement": "!isWeb"
       },
       {
         "command": "material-icon-theme.changeFolderColor",
-        "title": "%command.changeFolderColor%"
+        "title": "%command.changeFolderColor%",
+        "enablement": "!isWeb"
       },
       {
         "command": "material-icon-theme.restoreDefaultConfig",
-        "title": "%command.restoreDefaultConfig%"
+        "title": "%command.restoreDefaultConfig%",
+        "enablement": "!isWeb"
       },
       {
         "command": "material-icon-theme.toggleExplorerArrows",
-        "title": "%command.toggleExplorerArrows%"
+        "title": "%command.toggleExplorerArrows%",
+        "enablement": "!isWeb"
       },
       {
         "command": "material-icon-theme.changeOpacity",
-        "title": "%command.changeOpacity%"
+        "title": "%command.changeOpacity%",
+        "enablement": "!isWeb"
       },
       {
         "command": "material-icon-theme.toggleGrayscale",
-        "title": "%command.toggleGrayscale%"
+        "title": "%command.toggleGrayscale%",
+        "enablement": "!isWeb"
       },
       {
         "command": "material-icon-theme.changeSaturation",
-        "title": "%command.changeSaturation%"
+        "title": "%command.changeSaturation%",
+        "enablement": "!isWeb"
       }
     ],
     "configuration": {
