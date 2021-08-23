@@ -45,6 +45,7 @@
   ],
   "main": "./dist/extension",
   "browser": "./dist/web/extension.js",
+  "sideEffects": false,
   "contributes": {
     "iconThemes": [
       {
@@ -214,8 +215,7 @@
     "vscode:prepublish": "npm run lint && npm run compile && npm run package-web"
   },
   "dependencies": {
-    "lodash.merge": "4.6.2",
-    "semver": "7.3.5"
+    "lodash.merge": "4.6.2"
   },
   "devDependencies": {
     "@types/glob": "^7.1.4",
@@ -223,7 +223,6 @@
     "@types/mocha": "^9.0.0",
     "@types/node": "^16.4.12",
     "@types/puppeteer": "^5.4.4",
-    "@types/semver": "^7.3.8",
     "@types/vscode": "~1.51.0",
     "@typescript-eslint/eslint-plugin": "^4.29.0",
     "@typescript-eslint/parser": "^4.29.0",

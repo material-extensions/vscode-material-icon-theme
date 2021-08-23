@@ -25,6 +25,8 @@ module.exports = /** @type WebpackConfig */ {
     alias: {},
     fallback: {
       assert: require.resolve('assert'),
+      path: false,
+      fs: false,
     },
   },
   module: {
