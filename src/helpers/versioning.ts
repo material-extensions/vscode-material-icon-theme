@@ -1,22 +1,10 @@
 import { extensions, Memento, version, workspace } from 'vscode';
-// import { isThemeActivated } from '.';
+import { isThemeActivated } from '.';
 import { ThemeStatus } from '../models/helpers/themeStatus';
 
 /** Get configuration of vs code. */
 export const getConfig = (section?: string) => {
   return workspace.getConfiguration(section);
-};
-
-/**
- * Is the theme already activated in the editor configuration?
- * @param{boolean} global false by default
- */
-export const isThemeActivated = (global: boolean = false): boolean => {
-  return global
-    ? getConfig().inspect('workbench.iconTheme').globalValue ===
-        'material-icon-theme'
-    : getConfig().inspect('workbench.iconTheme').workspaceValue ===
-        'material-icon-theme';
 };
 
 export const versionKey = 'material-icon-theme.version';
@@ -25,7 +13,9 @@ export const versionKey = 'material-icon-theme.version';
  * Check the current status of the theme
  * @param state Global state of context (Memento API)
  */
-export const checkThemeStatus = async (state: Memento) => {
+export const checkThemeStatus = async (
+  state: Memento
+): Promise<ThemeStatus> => {
   try {
     // get the version from the state
     const stateVersion = state.get(versionKey);
@@ -47,6 +37,7 @@ export const checkThemeStatus = async (state: Memento) => {
     }
   } catch (error) {
     console.error(error);
+    return ThemeStatus.current;
   }
 };
 
