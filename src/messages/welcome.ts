@@ -1,19 +1,18 @@
 import * as vscode from 'vscode';
 import { activateIcons } from '../commands/activate';
-import * as helpers from './../helpers';
-import * as i18n from './../i18n';
+import { getThemeConfig, isThemeNotVisible, setThemeConfig } from '../helpers';
+import { translate } from '../i18n';
 
 /** Show the welcome message if the icon theme has been installed the first time. */
 export const showWelcomeMessage = () => {
   // if the user does not want to see the welcome message
-  if (helpers.getThemeConfig('showWelcomeMessage').globalValue === false)
-    return;
+  if (getThemeConfig('showWelcomeMessage').globalValue === false) return;
 
   vscode.window
     .showInformationMessage(
-      i18n.translate('themeInstalled'),
-      helpers.isThemeNotVisible() ? i18n.translate('activate') : undefined,
-      i18n.translate('neverShowAgain')
+      translate('themeInstalled'),
+      isThemeNotVisible() ? translate('activate') : undefined,
+      translate('neverShowAgain')
     )
     .then(handleWelcomeMessageActions);
 };
@@ -21,11 +20,11 @@ export const showWelcomeMessage = () => {
 /** Handle the actions of the welcome message. */
 const handleWelcomeMessageActions = (value: string) => {
   switch (value) {
-    case i18n.translate('activate'):
+    case translate('activate'):
       activateIcons();
       break;
 
-    case i18n.translate('howToActivate'):
+    case translate('howToActivate'):
       vscode.env.openExternal(
         vscode.Uri.parse(
           'https://code.visualstudio.com/blogs/2016/09/08/icon-themes#_file-icon-themes'
@@ -33,7 +32,7 @@ const handleWelcomeMessageActions = (value: string) => {
       );
       break;
 
-    case i18n.translate('neverShowAgain'):
+    case translate('neverShowAgain'):
       disableWelcomeMessage();
       break;
 
@@ -44,5 +43,5 @@ const handleWelcomeMessageActions = (value: string) => {
 
 /** Disable the welcome messages in the global settings */
 const disableWelcomeMessage = () => {
-  helpers.setThemeConfig('showWelcomeMessage', false, true);
+  setThemeConfig('showWelcomeMessage', false, true);
 };
