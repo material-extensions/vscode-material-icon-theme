@@ -12,7 +12,7 @@ export const getFileConfigHash = (options: IconJsonOptions) => {
     if (
       options.saturation !== defaults.saturation ||
       options.opacity !== defaults.opacity ||
-      options.folders.color !== defaults.folders.color
+      options?.folders?.color !== defaults?.folders?.color
     ) {
       fileConfigString += `~${getHash(JSON.stringify(options))}`;
     }

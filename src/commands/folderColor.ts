@@ -24,7 +24,9 @@ export const changeFolderColor = async () => {
   try {
     const status = checkFolderColorStatus();
     const response = await showQuickPickItems(status);
-    handleQuickPickActions(response);
+    if (response) {
+      handleQuickPickActions(response);
+    }
   } catch (error) {
     console.error(error);
   }
@@ -58,7 +60,7 @@ const handleQuickPickActions = (value: vscode.QuickPickItem) => {
       })
       .then((value) => setColorConfig(value));
   } else {
-    const hexCode = iconPalette.find((c) => c.label === value.description).hex;
+    const hexCode = iconPalette.find((c) => c.label === value.description)?.hex;
     setColorConfig(hexCode);
   }
 };
@@ -74,10 +76,10 @@ const validateColorInput = (colorInput: string) => {
 export const checkFolderColorStatus = (): string => {
   const defaultOptions = getDefaultIconOptions();
   const config = helpers.getMaterialIconsJSON();
-  return config.options.folders.color ?? defaultOptions.folders.color;
+  return config?.options?.folders?.color ?? defaultOptions.folders.color!;
 };
 
-const setColorConfig = (value: string) => {
+const setColorConfig = (value: string | undefined) => {
   if (value) {
     helpers.setThemeConfig('folders.color', value.toLowerCase(), true);
   }

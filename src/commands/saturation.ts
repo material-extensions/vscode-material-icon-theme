@@ -7,8 +7,10 @@ import * as i18n from './../i18n';
 export const changeSaturation = async () => {
   try {
     const currentSaturationValue = getCurrentSaturationValue();
-    const response = Number(await showInput(currentSaturationValue));
-    setSaturationConfig(response);
+    const response = await showInput(currentSaturationValue);
+    if (response) {
+      await setSaturationConfig(+response);
+    }
   } catch (error) {
     console.error(error);
   }
@@ -36,11 +38,9 @@ const validateSaturationInput = (saturationInput: string) => {
 export const getCurrentSaturationValue = (): number => {
   const defaultOptions = getDefaultIconOptions();
   const config = helpers.getMaterialIconsJSON();
-  return config.options.saturation ?? defaultOptions.saturation;
+  return config?.options?.saturation ?? defaultOptions.saturation;
 };
 
 const setSaturationConfig = (saturation: number) => {
-  if (saturation !== undefined) {
-    return helpers.setThemeConfig('saturation', saturation, true);
-  }
+  return helpers.setThemeConfig('saturation', saturation, true);
 };

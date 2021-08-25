@@ -7,8 +7,10 @@ import * as i18n from './../i18n';
 export const changeOpacity = async () => {
   try {
     const currentOpacityValue = getCurrentOpacityValue();
-    const response = Number(await showInput(currentOpacityValue));
-    return setOpacityConfig(response);
+    const response = await showInput(currentOpacityValue);
+    if (response) {
+      await setOpacityConfig(+response);
+    }
   } catch (error) {
     console.error(error);
   }
@@ -36,11 +38,9 @@ const validateOpacityInput = (opacityInput: string) => {
 export const getCurrentOpacityValue = (): number => {
   const defaultOptions = getDefaultIconOptions();
   const config = helpers.getMaterialIconsJSON();
-  return config.options.opacity ?? defaultOptions.opacity;
+  return config?.options?.opacity ?? defaultOptions.opacity;
 };
 
 const setOpacityConfig = (opacity: number) => {
-  if (opacity !== undefined) {
-    return helpers.setThemeConfig('opacity', opacity, true);
-  }
+  return helpers.setThemeConfig('opacity', opacity, true);
 };

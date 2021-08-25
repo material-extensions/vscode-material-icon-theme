@@ -137,7 +137,7 @@ export const createIconFile = (
 /**
  * The options control the generator and decide which icons are disabled or not.
  */
-export const getDefaultIconOptions = (): IconJsonOptions => ({
+export const getDefaultIconOptions = (): Required<IconJsonOptions> => ({
   folders: {
     theme: 'specific',
     color: '#90a4ae',
@@ -149,6 +149,8 @@ export const getDefaultIconOptions = (): IconJsonOptions => ({
   saturation: 1,
   files: { associations: {} },
   languages: { associations: {} },
+  showUpdateMessage: false,
+  showWelcomeMessage: false,
 });
 
 /**
