@@ -15,7 +15,7 @@ assignees: ''
 <!-- delete if not applicable -->
 - ...
 
-**File Names (if applicable)**
+**File Names**
 <!-- delete if not applicable -->
 - ...
 
