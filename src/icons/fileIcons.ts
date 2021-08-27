@@ -30,7 +30,6 @@ export const fileIcons: FileIcons = {
         '.jsbeautifyrc',
         '.esformatter',
         'cdp.pid',
-        '.mjmlconfig',
         '.lintstagedrc',
       ],
     },
@@ -394,7 +393,7 @@ export const fileIcons: FileIcons = {
     { name: 'gemfile', fileNames: ['gemfile'] },
     {
       name: 'rubocop',
-      fileNames: ['.rubocop.yml', '.rubocop-todo.yml'],
+      fileNames: ['.rubocop.yml', '.rubocop-todo.yml', '.rubocop_todo.yml'],
       light: true,
     },
     { name: 'fsharp', fileExtensions: ['fs', 'fsx', 'fsi', 'fsproj'] },
@@ -583,6 +582,7 @@ export const fileIcons: FileIcons = {
       light: true,
     },
     { name: 'ocaml', fileExtensions: ['ml', 'mli', 'cmx'] },
+    { name: 'odin', fileExtensions: ['odin'] },
     {
       name: 'javascript-map',
       fileExtensions: ['js.map', 'mjs.map', 'cjs.map'],
@@ -684,10 +684,19 @@ export const fileIcons: FileIcons = {
     { name: 'autoit', fileExtensions: ['au3'] },
     { name: 'haml', fileExtensions: ['haml'] },
     { name: 'yang', fileExtensions: ['yang'] },
-    { name: 'mjml', fileExtensions: ['mjml'] },
+    {
+      name: 'mjml',
+      fileExtensions: ['mjml'],
+      fileNames: ['.mjmlconfig'],
+    },
     {
       name: 'vercel',
       fileNames: ['vercel.json', '.vercelignore', 'now.json', '.nowignore'],
+      light: true,
+    },
+    {
+      name: 'next',
+      fileNames: ['next.config.js', 'next.config.ts'],
       light: true,
     },
     {
@@ -1535,7 +1544,15 @@ export const fileIcons: FileIcons = {
     { name: 'idris', fileExtensions: ['idr', 'ibc'] },
     { name: 'quasar', fileNames: ['quasar.conf.js'] },
     { name: 'pipeline', fileExtensions: ['pipeline'] },
-    { name: 'vite', fileNames: ['vite.config.js', 'vite.config.ts'] },
+    {
+      name: 'vite',
+      fileNames: [
+        'vite.config.js',
+        'vite.config.mjs',
+        'vite.config.cjs',
+        'vite.config.ts',
+      ],
+    },
     { name: 'opa', fileExtensions: ['rego'] },
     { name: 'lerna', fileNames: ['lerna.json'] },
     {
@@ -1591,6 +1608,7 @@ export const fileIcons: FileIcons = {
         'tsconfig.base.json',
         'tsconfig.build.json',
         'tsconfig.eslint.json',
+        'tsconfig.lib.json',
       ],
       fileExtensions: ['tsconfig.json'],
     },
@@ -1614,5 +1632,12 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['horusec-config.json'],
     },
     { name: 'coala', fileExtensions: ['coarc', 'coafile'] },
+    {
+      name: 'dinophp',
+      fileExtensions: ['bubble', 'html.bubble', 'php.bubble'],
+    },
+    { name: 'teal', fileExtensions: ['tl'] },
+    { name: 'astyle', fileNames: ['.astylerc'] },
+    { name: 'rome', fileNames: ['rome.json'] },
   ],
 };

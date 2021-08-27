@@ -663,6 +663,10 @@ export const folderIcons: FolderTheme[] = [
           '.helmcharts',
         ],
       },
+      {
+        name: 'folder-vercel',
+        folderNames: ['vercel', '.vercel', 'now', '.now'],
+      },
     ],
   },
   {
