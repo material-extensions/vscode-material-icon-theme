@@ -34,9 +34,9 @@ export const getObjectPropertyValue = (obj: Object, path: string) => {
  * Source: https://stackoverflow.com/a/13719799/6942210
  */
 export const setObjectPropertyValue = (
-  obj: { [key: string]: {} },
+  obj: { [key: string]: any },
   path: string | string[],
-  value: string
+  value: any
 ) => {
   if (typeof path === 'string') {
     path = path.split('.');
