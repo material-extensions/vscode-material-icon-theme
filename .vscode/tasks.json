@@ -20,6 +20,13 @@
       "type": "npm",
       "script": "lint",
       "problemMatcher": ["$eslint-stylish"]
+    },
+    {
+      "type": "npm",
+      "script": "watch-web",
+      "group": "build",
+      "isBackground": true,
+      "problemMatcher": ["$ts-webpack-watch", "$tslint-webpack-watch"]
     }
   ]
 }
