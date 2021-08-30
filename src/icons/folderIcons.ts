@@ -84,6 +84,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-git',
         folderNames: [
           '.git',
+          'patches',
           'githooks',
           '.githooks',
           'submodules',
@@ -281,7 +282,10 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-export', folderNames: ['export', 'exports', 'exported'] },
       { name: 'folder-wakatime', folderNames: ['wakatime'] },
       { name: 'folder-circleci', folderNames: ['.circleci'] },
-      { name: 'folder-wordpress', folderNames: ['.wordpress-org', 'wp-content'] },
+      {
+        name: 'folder-wordpress',
+        folderNames: ['.wordpress-org', 'wp-content'],
+      },
       { name: 'folder-gradle', folderNames: ['gradle', '.gradle'] },
       {
         name: 'folder-coverage',
@@ -368,6 +372,8 @@ export const folderIcons: FolderTheme[] = [
           'extensions',
           'addon',
           'addons',
+          'module',
+          'modules',
         ],
       },
       { name: 'folder-middleware', folderNames: ['middleware', 'middlewares'] },
@@ -431,6 +437,7 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['container', 'containers', '.devcontainer'],
       },
       { name: 'folder-content', folderNames: ['content', 'contents'] },
+      { name: 'folder-context', folderNames: ['context', 'contexts'] },
       { name: 'folder-core', folderNames: ['core'] },
       { name: 'folder-delta', folderNames: ['delta', 'deltas', 'changes'] },
       { name: 'folder-dump', folderNames: ['dump', 'dumps'] },
@@ -609,6 +616,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-connection', folderNames: ['connection', 'connections'] },
       { name: 'folder-quasar', folderNames: ['.quasar'] },
       { name: 'folder-cobol', folderNames: ['cobol'] },
+      { name: 'folder-yarn', folderNames: ['yarn', '.yarn'] },
       { name: 'folder-husky', folderNames: ['husky', '.husky'] },
       {
         name: 'folder-storybook',
@@ -628,6 +636,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['project', 'projects', '.project', '.projects'],
       },
       {
+        name: 'folder-interface',
+        folderNames: ['interface', 'interfaces'],
+      },
+      {
         name: 'folder-contract',
         folderNames: [
           'pact',
@@ -639,6 +651,14 @@ export const folderIcons: FolderTheme[] = [
           'contract-test',
           'contract-tests',
         ],
+      },
+      {
+        name: 'folder-vercel',
+        folderNames: ['vercel', '.vercel', 'now', '.now'],
+      },
+      {
+        name: 'folder-cypress',
+        folderNames: ['cypress', '.cypress'],
       },
     ],
   },
