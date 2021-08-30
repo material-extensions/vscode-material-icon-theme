@@ -1652,6 +1652,7 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['bubble', 'html.bubble', 'php.bubble'],
     },
     { name: 'teal', fileExtensions: ['tl'] },
+    { name: 'template', fileExtensions: ['template'] },
     { name: 'astyle', fileNames: ['.astylerc'] },
     { name: 'rome', fileNames: ['rome.json'] },
     { name: 'cypress', fileNames: ['cypress.json', 'cypress.env.json'] },
