@@ -1635,7 +1635,6 @@ export const fileIcons: FileIcons = {
     { name: 'astyle', fileNames: ['.astylerc'] },
     {
       name: 'glsl',
-      light: true,
       fileExtensions: [
         'glsl',
         'vert',
