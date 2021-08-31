@@ -660,6 +660,10 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-shader',
         folderNames: ['glsl', 'shader', 'shaders'],
       },
+      {
+        name: 'folder-cypress',
+        folderNames: ['cypress', '.cypress'],
+      },
     ],
   },
   {

@@ -508,7 +508,22 @@ export const fileIcons: FileIcons = {
     {
       name: 'graphql',
       fileExtensions: ['graphql', 'gql'],
-      fileNames: ['.graphqlconfig'],
+      fileNames: [
+        '.graphqlconfig',
+        '.graphqlrc',
+        '.graphqlrc.json',
+        '.graphqlrc.js',
+        '.graphqlrc.ts',
+        '.graphqlrc.toml',
+        '.graphqlrc.yaml',
+        '.graphqlrc.yml',
+        'graphql.config.json',
+        'graphql.config.js',
+        'graphql.config.ts',
+        'graphql.config.toml',
+        'graphql.config.yaml',
+        'graphql.config.yml',
+      ],
     },
     { name: 'rust', fileExtensions: ['rs'] },
     { name: 'raml', fileExtensions: ['raml'] },
@@ -582,6 +597,7 @@ export const fileIcons: FileIcons = {
       light: true,
     },
     { name: 'ocaml', fileExtensions: ['ml', 'mli', 'cmx'] },
+    { name: 'odin', fileExtensions: ['odin'] },
     {
       name: 'javascript-map',
       fileExtensions: ['js.map', 'mjs.map', 'cjs.map'],
@@ -1631,6 +1647,10 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['horusec-config.json'],
     },
     { name: 'coala', fileExtensions: ['coarc', 'coafile'] },
+    {
+      name: 'dinophp',
+      fileExtensions: ['bubble', 'html.bubble', 'php.bubble'],
+    },
     { name: 'teal', fileExtensions: ['tl'] },
     { name: 'astyle', fileNames: ['.astylerc'] },
     {
@@ -1674,5 +1694,6 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'rome', fileNames: ['rome.json'] },
+    { name: 'cypress', fileNames: ['cypress.json', 'cypress.env.json'] },
   ],
 };
