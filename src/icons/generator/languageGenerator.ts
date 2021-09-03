@@ -22,7 +22,7 @@ export const loadLanguageIconDefinitions = (
     languages,
     options.activeIconPack
   );
-  const customIcons = getCustomIcons(options.languages.associations);
+  const customIcons = getCustomIcons(options.languages?.associations);
   const allLanguageIcons = [...enabledLanguages, ...customIcons];
 
   allLanguageIcons.forEach((lang) => {
@@ -74,22 +74,24 @@ const setIconDefinitions = (config: IconConfiguration, icon: DefaultIcon) => {
 
 const createIconDefinitions = (config: IconConfiguration, iconName: string) => {
   config = merge({}, config);
-  const fileConfigHash = getFileConfigHash(config.options);
-  config.iconDefinitions[iconName] = {
-    iconPath: `${iconFolderPath}${iconName}${fileConfigHash}.svg`,
-  };
+  const fileConfigHash = getFileConfigHash(config.options ?? {});
+  if (config.iconDefinitions) {
+    config.iconDefinitions[iconName] = {
+      iconPath: `${iconFolderPath}${iconName}${fileConfigHash}.svg`,
+    };
+  }
   return config;
 };
 
 const setLanguageIdentifiers = (iconName: string, languageIds: string[]) => {
-  const obj = { languageIds: {} };
+  const obj: Partial<IconConfiguration> = { languageIds: {} };
   languageIds.forEach((id) => {
-    obj.languageIds[id] = iconName;
+    obj.languageIds![id as keyof IconConfiguration] = iconName;
   });
   return obj;
 };
 
-const getCustomIcons = (languageAssociations: IconAssociations) => {
+const getCustomIcons = (languageAssociations: IconAssociations | undefined) => {
   if (!languageAssociations) return [];
 
   const icons: LanguageIcon[] = Object.keys(languageAssociations).map((fa) => ({
@@ -105,7 +107,7 @@ const getCustomIcons = (languageAssociations: IconAssociations) => {
  */
 const disableLanguagesByPack = (
   languageIcons: LanguageIcon[],
-  activatedIconPack: string
+  activatedIconPack: string | undefined
 ) => {
   return languageIcons.filter((language) => {
     return !language.enabledFor

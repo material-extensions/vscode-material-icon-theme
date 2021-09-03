@@ -97,7 +97,7 @@ export const createIconFile = (
     if (!updatedConfigs || (updatedConfigs.folders || {}).color) {
       // if updatedConfigs do not exist (because of initial setup)
       // or new config value was detected by the change detection
-      generateFolderIcons(options.folders.color);
+      generateFolderIcons(options.folders?.color);
       setIconOpacity(options, [
         'folder.svg',
         'folder-open.svg',
@@ -113,7 +113,7 @@ export const createIconFile = (
     }
     renameIconFiles(iconJsonPath, options);
   } catch (error) {
-    throw Error(error);
+    throw new Error('Failed to update icons: ' + error);
   }
 
   try {
@@ -128,7 +128,7 @@ export const createIconFile = (
       'utf-8'
     );
   } catch (error) {
-    throw Error(error);
+    throw new Error('Failed to create icon file: ' + error);
   }
 
   return iconJsonName;
