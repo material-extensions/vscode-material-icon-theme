@@ -23,8 +23,11 @@ export const loadFileIconDefinitions = (
   options: IconJsonOptions
 ): IconConfiguration => {
   config = merge({}, config);
-  const enabledIcons = disableIconsByPack(fileIcons, options.activeIconPack);
-  const customIcons = getCustomIcons(options.files.associations);
+  const enabledIcons = disableIconsByPack(
+    fileIcons,
+    options.activeIconPack ?? ''
+  );
+  const customIcons = getCustomIcons(options.files?.associations);
   const allFileIcons = [...enabledIcons, ...customIcons];
 
   allFileIcons.forEach((icon) => {
@@ -60,7 +63,7 @@ export const loadFileIconDefinitions = (
         mapSpecificFileIcons(
           icon,
           FileMappingType.FileNames,
-          options.files.associations
+          options.files?.associations
         )
       );
     }
@@ -74,13 +77,15 @@ export const loadFileIconDefinitions = (
   );
   config.file = fileIcons.defaultIcon.name;
 
-  if (fileIcons.defaultIcon.light) {
+  if (fileIcons.defaultIcon.light && config.light) {
     config = merge(
       {},
       config,
       setIconDefinition(config, fileIcons.defaultIcon.name, lightVersion)
     );
-    config.light.file = fileIcons.defaultIcon.name + lightVersion;
+    if (config.light) {
+      config.light.file = fileIcons.defaultIcon.name + lightVersion;
+    }
   }
 
   if (fileIcons.defaultIcon.highContrast) {
@@ -89,7 +94,10 @@ export const loadFileIconDefinitions = (
       config,
       setIconDefinition(config, fileIcons.defaultIcon.name, highContrastVersion)
     );
-    config.highContrast.file = fileIcons.defaultIcon.name + highContrastVersion;
+    if (config.highContrast) {
+      config.highContrast.file =
+        fileIcons.defaultIcon.name + highContrastVersion;
+    }
   }
 
   return config;
@@ -104,7 +112,11 @@ const mapSpecificFileIcons = (
   customFileAssociation: IconAssociations = {}
 ) => {
   const config = new IconConfiguration();
-  icon[mappingType].forEach((name) => {
+  const iconMappingType = icon[mappingType];
+  if (iconMappingType === undefined) {
+    return;
+  }
+  iconMappingType.forEach((name) => {
     // if the custom file extension should also overwrite the file names
     const shouldOverwriteFileNames = Object.keys(customFileAssociation).some(
       (key) => {
@@ -119,14 +131,24 @@ const mapSpecificFileIcons = (
     );
 
     // if overwrite is enabled then do not continue to set the icons for file names containing the file extension
-    if (shouldOverwriteFileNames) return;
+    const configMappingType = config[mappingType];
+    const configLightMappingType = config.light?.[mappingType];
+    const configHighContrastMappingType = config.highContrast?.[mappingType];
 
-    config[mappingType][name] = icon.name;
+    if (
+      shouldOverwriteFileNames ||
+      !configMappingType ||
+      !configLightMappingType ||
+      !configHighContrastMappingType
+    )
+      return;
+
+    configMappingType[name] = icon.name;
     if (icon.light) {
-      config.light[mappingType][name] = `${icon.name}${lightVersion}`;
+      configLightMappingType[name] = `${icon.name}${lightVersion}`;
     }
     if (icon.highContrast) {
-      config.highContrast[mappingType][
+      configHighContrastMappingType[
         name
       ] = `${icon.name}${highContrastVersion}`;
     }
@@ -153,15 +175,17 @@ const setIconDefinition = (
   iconName: string,
   appendix: string = ''
 ) => {
-  const obj = { iconDefinitions: {} };
-  const fileConfigHash = getFileConfigHash(config.options);
-  obj.iconDefinitions[`${iconName}${appendix}`] = {
-    iconPath: `${iconFolderPath}${iconName}${appendix}${fileConfigHash}.svg`,
-  };
+  const obj: Partial<IconConfiguration> = { iconDefinitions: {} };
+  if (config.options) {
+    const fileConfigHash = getFileConfigHash(config.options);
+    obj.iconDefinitions![`${iconName}${appendix}`] = {
+      iconPath: `${iconFolderPath}${iconName}${appendix}${fileConfigHash}.svg`,
+    };
+  }
   return obj;
 };
 
-const getCustomIcons = (fileAssociations: IconAssociations) => {
+const getCustomIcons = (fileAssociations: IconAssociations | undefined) => {
   if (!fileAssociations) return [];
 
   const icons: FileIcon[] = Object.keys(fileAssociations).map((fa) => {
