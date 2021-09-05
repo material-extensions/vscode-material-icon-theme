@@ -1635,7 +1635,6 @@ export const fileIcons: FileIcons = {
     { name: 'astyle', fileNames: ['.astylerc'] },
     {
       name: 'svgr',
-      light: true,
       fileNames: [
         '.svgrrc',
         'svgr.config.js',
