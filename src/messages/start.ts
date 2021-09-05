@@ -1,4 +1,4 @@
-import { ThemeStatus } from '../helpers/versioning';
+import { ThemeStatus } from '../models/helpers/themeStatus';
 import { showUpdateMessage } from './update';
 import { showWelcomeMessage } from './welcome';
 
