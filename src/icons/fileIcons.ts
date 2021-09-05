@@ -1654,6 +1654,17 @@ export const fileIcons: FileIcons = {
     { name: 'teal', fileExtensions: ['tl'] },
     { name: 'template', fileExtensions: ['template'] },
     { name: 'astyle', fileNames: ['.astylerc'] },
+    {
+      name: 'svgr',
+      fileNames: [
+        '.svgrrc',
+        'svgr.config.js',
+        '.svgrrc.js',
+        '.svgrrc.yaml',
+        '.svgrrc.yml',
+        '.svgrrc.json',
+      ],
+    },
     { name: 'rome', fileNames: ['rome.json'] },
     { name: 'cypress', fileNames: ['cypress.json', 'cypress.env.json'] },
   ],
