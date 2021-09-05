@@ -678,7 +678,7 @@ export const fileIcons: FileIcons = {
       enabledFor: [IconPack.Angular, IconPack.Ngrx],
     },
     { name: 'puppet', fileExtensions: ['pp'] },
-    { name: 'elixir', fileExtensions: ['ex', 'exs', 'eex', 'leex'] },
+    { name: 'elixir', fileExtensions: ['ex', 'exs', 'eex', 'leex', 'heex'] },
     { name: 'livescript', fileExtensions: ['ls'] },
     { name: 'erlang', fileExtensions: ['erl'] },
     { name: 'twig', fileExtensions: ['twig'] },
@@ -1652,6 +1652,7 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['bubble', 'html.bubble', 'php.bubble'],
     },
     { name: 'teal', fileExtensions: ['tl'] },
+    { name: 'template', fileExtensions: ['template'] },
     { name: 'astyle', fileNames: ['.astylerc'] },
     {
       name: 'shader',
@@ -1691,6 +1692,17 @@ export const fileIcons: FileIcons = {
         'geom.hlsl',
         'comp.hlsl',
         'tess.hlsl',
+      ]
+    },
+    {
+      name: 'svgr',
+      fileNames: [
+        '.svgrrc',
+        'svgr.config.js',
+        '.svgrrc.js',
+        '.svgrrc.yaml',
+        '.svgrrc.yml',
+        '.svgrrc.json',
       ],
     },
     { name: 'rome', fileNames: ['rome.json'] },
