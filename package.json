@@ -2,7 +2,7 @@
   "name": "material-icon-theme",
   "displayName": "Material Icon Theme",
   "description": "Material Design Icons for Visual Studio Code",
-  "version": "4.8.0",
+  "version": "4.10.0",
   "publisher": "PKief",
   "engines": {
     "vscode": "^1.51.0"
@@ -44,6 +44,8 @@
     "*"
   ],
   "main": "./dist/extension",
+  "browser": "./dist/web/extension.js",
+  "sideEffects": false,
   "contributes": {
     "iconThemes": [
       {
@@ -56,39 +58,48 @@
     "commands": [
       {
         "command": "material-icon-theme.activateIcons",
-        "title": "%command.activateIcons%"
+        "title": "%command.activateIcons%",
+        "enablement": "!isWeb"
       },
       {
         "command": "material-icon-theme.toggleIconPacks",
-        "title": "%command.toggleIconPacks%"
+        "title": "%command.toggleIconPacks%",
+        "enablement": "!isWeb"
       },
       {
         "command": "material-icon-theme.changeFolderTheme",
-        "title": "%command.changeFolderTheme%"
+        "title": "%command.changeFolderTheme%",
+        "enablement": "!isWeb"
       },
       {
         "command": "material-icon-theme.changeFolderColor",
-        "title": "%command.changeFolderColor%"
+        "title": "%command.changeFolderColor%",
+        "enablement": "!isWeb"
       },
       {
         "command": "material-icon-theme.restoreDefaultConfig",
-        "title": "%command.restoreDefaultConfig%"
+        "title": "%command.restoreDefaultConfig%",
+        "enablement": "!isWeb"
       },
       {
         "command": "material-icon-theme.toggleExplorerArrows",
-        "title": "%command.toggleExplorerArrows%"
+        "title": "%command.toggleExplorerArrows%",
+        "enablement": "!isWeb"
       },
       {
         "command": "material-icon-theme.changeOpacity",
-        "title": "%command.changeOpacity%"
+        "title": "%command.changeOpacity%",
+        "enablement": "!isWeb"
       },
       {
         "command": "material-icon-theme.toggleGrayscale",
-        "title": "%command.toggleGrayscale%"
+        "title": "%command.toggleGrayscale%",
+        "enablement": "!isWeb"
       },
       {
         "command": "material-icon-theme.changeSaturation",
-        "title": "%command.changeSaturation%"
+        "title": "%command.changeSaturation%",
+        "enablement": "!isWeb"
       }
     ],
     "configuration": {
@@ -196,45 +207,48 @@
   "scripts": {
     "build": "npm run compile:dev && npm run postcompile",
     "check": "ts-node ./src/scripts/icons/checks",
-    "compile": "webpack --mode production",
-    "compile:dev": "webpack --mode none",
-    "compile:watch": "webpack --mode none --watch",
+    "compile": "webpack --config ./build/webpack.config.js --mode production",
+    "compile:dev": "webpack --config ./build/webpack.config.js --mode none",
+    "compile:watch": "webpack --config ./build/webpack.config.js --mode none --watch",
+    "compile-web": "webpack --config ./build/web-extension.webpack.config.js",
+    "watch-web": "webpack --watch --config ./build/web-extension.webpack.config.js",
+    "package-web": "webpack --mode production --devtool hidden-source-map --config ./build/web-extension.webpack.config.js",
     "contributors": "ts-node ./src/scripts/contributors/index.ts",
     "generateJson": "ts-node ./src/scripts/icons/generateJson.ts",
     "lint": "eslint -c .eslintrc.json --ext .ts ./src/**/*.ts",
     "postcompile": "npm run generateJson && npm run check",
     "pretest": "npm run build && tsc -p ./",
     "preview": "ts-node ./src/scripts/preview",
+    "svgo": "svgo -i icons -o icons -q",
     "test": "node ./out/test/runTest.js",
-    "vscode:prepublish": "npm run lint && npm run compile"
+    "vscode:prepublish": "npm run lint && npm run compile && npm run package-web"
   },
   "dependencies": {
-    "lodash.merge": "4.6.2",
-    "semver": "7.3.5"
+    "lodash.merge": "4.6.2"
   },
   "devDependencies": {
-    "@types/glob": "^7.1.3",
+    "@types/glob": "^7.1.4",
     "@types/lodash.merge": "^4.6.6",
-    "@types/mocha": "^8.2.2",
-    "@types/node": "^15.12.5",
-    "@types/puppeteer": "^5.4.3",
-    "@types/semver": "^7.3.6",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^16.7.1",
+    "@types/puppeteer": "^5.4.4",
     "@types/vscode": "~1.51.0",
-    "@typescript-eslint/eslint-plugin": "^4.28.1",
-    "@typescript-eslint/parser": "^4.28.1",
-    "eslint": "^7.29.0",
+    "@typescript-eslint/eslint-plugin": "^4.29.3",
+    "@typescript-eslint/parser": "^4.29.3",
+    "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-prettier": "^3.4.1",
     "glob": "^7.1.7",
-    "mocha": "^9.0.1",
+    "mocha": "^9.1.0",
     "prettier": "^2.3.2",
-    "puppeteer": "^10.1.0",
+    "puppeteer": "^10.2.0",
     "rimraf": "^3.0.2",
-    "ts-loader": "^9.2.3",
-    "ts-node": "^10.0.0",
+    "svgo": "^2.4.0",
+    "ts-loader": "^9.2.5",
+    "ts-node": "^10.2.1",
     "typescript": "^4.3.5",
-    "vscode-test": "^1.5.2",
-    "webpack": "^5.41.1",
-    "webpack-cli": "^4.7.2"
+    "vscode-test": "^1.6.1",
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.8.0"
   }
 }
