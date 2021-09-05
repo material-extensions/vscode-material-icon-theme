@@ -1692,7 +1692,7 @@ export const fileIcons: FileIcons = {
         'geom.hlsl',
         'comp.hlsl',
         'tess.hlsl',
-      ]
+      ],
     },
     {
       name: 'svgr',
