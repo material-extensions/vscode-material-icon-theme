@@ -1667,5 +1667,6 @@ export const fileIcons: FileIcons = {
     },
     { name: 'rome', fileNames: ['rome.json'] },
     { name: 'cypress', fileNames: ['cypress.json', 'cypress.env.json'] },
+    { name: 'buddy', fileNames: ['buddy.yml'] },
   ],
 };
