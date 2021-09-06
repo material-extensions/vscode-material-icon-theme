@@ -661,7 +661,7 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['cypress', '.cypress'],
       },
       {
-        name: 'buildkite',
+        name: 'folder-buildkite',
         folderNames: ['.buildkite'],
       },
     ],
