@@ -1,5 +1,29 @@
 # Changelog
 
+## 4.10.0 (2021-08-24)
+
+### New file icons
+
+- .rubocop_todo.yml ([@OmriSama](https://github.com/OmriSama) in [#1192](https://github.com/PKief/vscode-material-icon-theme/pull/1192))
+- NextJS ([@bart-krakowski](https://github.com/bart-krakowski) in [#1209](https://github.com/PKief/vscode-material-icon-theme/pull/1209))
+- Rome ([@bart-krakowski](https://github.com/bart-krakowski) in [#1214](https://github.com/PKief/vscode-material-icon-theme/pull/1214))
+- Odin ([@xpyxel](https://github.com/xpyxel) in [#1222](https://github.com/PKief/vscode-material-icon-theme/pull/1222))
+- DinoPHP ([@Ahmed-Ibrahimm](https://github.com/Ahmed-Ibrahimm) in [#1186](https://github.com/PKief/vscode-material-icon-theme/pull/1186))
+- mjs/cjs to vite.config.\* ([@Airkro](https://github.com/Airkro) in [#1190](https://github.com/PKief/vscode-material-icon-theme/pull/1190))
+- Artistic Style ([@PKief](https://github.com/PKief) in [#1203](https://github.com/PKief/vscode-material-icon-theme/pull/1203))
+- tsconfig.lib.json ([@PKief](https://github.com/PKief) in commit [5f2be65](https://github.com/PKief/vscode-material-icon-theme/commit/5f2be65d28bc5f69e551fe32144cab323ad1f2e1))
+- Wolfram language ([@PKief](https://github.com/PKief) in commit [e080095](https://github.com/PKief/vscode-material-icon-theme/commit/e08009567a4ae9251d479c2c4a1134b858992c68))
+- .mjmlconfig ([@PKief](https://github.com/PKief) in commit [0b40fd8](https://github.com/PKief/vscode-material-icon-theme/commit/0b40fd805d7b60b447eb1d054c0a63b8a0d65cf1))
+
+### New folder icons
+
+- vercel ([@SNDST00M](https://github.com/SNDST00M) in [#1211](https://github.com/PKief/vscode-material-icon-theme/pull/1211))
+
+### Other changes
+
+- Optimize extension for web usage ([@PKief](https://github.com/PKief) in [#1219](https://github.com/PKief/vscode-material-icon-theme/pull/1219))
+- Svgo optimize (total size of icons reduced by approx. 18%) ([@stefanobartoletti](https://github.com/stefanobartoletti) in [#1129](https://github.com/PKief/vscode-material-icon-theme/pull/1129) and [@PKief](https://github.com/PKief) in commit [cff00b4](https://github.com/PKief/vscode-material-icon-theme/commit/cff00b43022d9852623b7626361b74934318e73c))
+
 ## 4.9.0 (2021-08-05)
 
 ### New file icons
