@@ -242,6 +242,11 @@ export const folderIcons: FolderTheme[] = [
         enabledFor: [IconPack.Redux],
       },
       {
+        name: 'folder-redux-selector',
+        folderNames: ['selectors', 'selector'],
+        enabledFor: [IconPack.Redux],
+      },
+      {
         name: 'folder-redux-store',
         folderNames: ['store'],
         enabledFor: [IconPack.Redux],

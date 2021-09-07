@@ -185,6 +185,12 @@ export const fileIcons: FileIcons = {
       enabledFor: [IconPack.Redux],
     },
     {
+      name: 'redux-selector',
+      fileExtensions: ['selector.js', 'selectors.js', 'selector.ts', 'selectors.ts'],
+      fileNames: ['selector.js', 'selectors.js', 'selector.ts', 'selectors.ts'],
+      enabledFor: [IconPack.Redux],
+    },
+    {
       name: 'redux-store',
       fileExtensions: ['store.js', 'store.ts'],
       fileNames: ['store.js', 'store.ts'],
