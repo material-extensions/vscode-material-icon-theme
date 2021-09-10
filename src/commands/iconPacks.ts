@@ -17,22 +17,20 @@ export const toggleIconPacks = async () => {
 /** Show QuickPick items to select preferred configuration for the icon packs. */
 const showQuickPickItems = (activePack: string) => {
   const packs = [...getAllIconPacks().sort(), 'none'];
-  const options = packs.map(
-    (pack): vscode.QuickPickItem => {
-      const packLabel = helpers.toTitleCase(pack.replace('_', ' + '));
-      const active = isPackActive(activePack, pack);
-      const iconPacksDeactivated = pack === 'none' && activePack === '';
+  const options = packs.map((pack): vscode.QuickPickItem => {
+    const packLabel = helpers.toTitleCase(pack.replace('_', ' + '));
+    const active = isPackActive(activePack, pack);
+    const iconPacksDeactivated = pack === 'none' && activePack === '';
 
-      return {
-        description: packLabel,
-        detail: i18n.translate(
-          `iconPacks.${pack === 'none' ? 'disabled' : 'description'}`,
-          packLabel
-        ),
-        label: iconPacksDeactivated ? '\u2714' : active ? '\u2714' : '\u25FB',
-      };
-    }
-  );
+    return {
+      description: packLabel,
+      detail: i18n.translate(
+        `iconPacks.${pack === 'none' ? 'disabled' : 'description'}`,
+        packLabel
+      ),
+      label: iconPacksDeactivated ? '\u2714' : active ? '\u2714' : '\u25FB',
+    };
+  });
 
   return vscode.window.showQuickPick(options, {
     placeHolder: i18n.translate('iconPacks.selectPack'),

@@ -37,5 +37,7 @@ generatePreview('fileIcons', basicFileIcons, 5, [
 ]);
 generatePreview('folderIcons', folderThemes, 5, [
   'folder-aurelia',
-  'folder-bower',
+  'folder-phpmailer',
+  'folder-syntax',
+  'folder-ansible',
 ]);
