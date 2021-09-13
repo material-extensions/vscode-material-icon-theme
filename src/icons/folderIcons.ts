@@ -653,6 +653,10 @@ export const folderIcons: FolderTheme[] = [
         ],
       },
       {
+        name: 'folder-queue',
+        folderNames: ['queue', 'queues', 'bull', 'mq'],
+      },
+      {
         name: 'folder-vercel',
         folderNames: ['vercel', '.vercel', 'now', '.now'],
       },
