@@ -504,13 +504,7 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-mappings', folderNames: ['mappings', 'mapping'] },
       { name: 'folder-meta', folderNames: ['meta'] },
-      { name: 'folder-packages', 
-        folderNames: [
-          'package', 
-          'packages',
-          'pkg'
-        ] 
-      },
+      { name: 'folder-packages', folderNames: ['package', 'packages', 'pkg'] },
       { name: 'folder-shared', folderNames: ['shared', 'common'] },
       { name: 'folder-stack', folderNames: ['stack', 'stacks'] },
       { name: 'folder-template', folderNames: ['template', 'templates'] },
