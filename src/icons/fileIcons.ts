@@ -1656,6 +1656,19 @@ export const fileIcons: FileIcons = {
     { name: 'template', fileExtensions: ['template'] },
     { name: 'astyle', fileNames: ['.astylerc'] },
     {
+      name: 'lighthouse',
+      fileNames: [
+        '.lighthouserc.js',
+        'lighthouserc.js',
+        '.lighthouserc.json',
+        'lighthouserc.json',
+        '.lighthouserc.yml',
+        'lighthouserc.yml',
+        '.lighthouserc.yaml',
+        'lighthouserc.yaml',
+      ],
+    },
+    {
       name: 'svgr',
       fileNames: [
         '.svgrrc',
