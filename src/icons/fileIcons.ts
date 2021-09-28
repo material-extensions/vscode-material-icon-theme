@@ -1577,8 +1577,11 @@ export const fileIcons: FileIcons = {
     { name: 'asciidoc', fileExtensions: ['ad', 'adoc', 'asciidoc'] },
     { name: 'istanbul', fileNames: ['.nycrc', '.nycrc.json'] },
     { name: 'edge', fileExtensions: ['edge'] },
-    { name: 'scheme', fileExtensions: ['ss', 'scm'] },
+    { name: 'scheme', fileExtensions: ['ss', 'scm', 'sld'] },
     { name: 'lisp', fileExtensions: ['lisp', 'lsp', 'cl', 'fast'] },
+    { name: 'apl', fileExtensions: ['apl'] },
+    { name: 'dyalog', fileExtensions: ['dyalog', 'dws'] },
+    { name: 'lean', fileExtensions: ['lean'], light: true },
     {
       name: 'tailwindcss',
       fileNames: [
