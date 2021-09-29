@@ -1691,6 +1691,6 @@ export const fileIcons: FileIcons = {
       name: 'pnpm',
       fileNames: ['pnpm-lock.yaml'],
       light: true,
-    }
+    },
   ],
 };
