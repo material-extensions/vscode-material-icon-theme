@@ -553,7 +553,7 @@ export const fileIcons: FileIcons = {
     { name: 'clojure', fileExtensions: ['clj', 'cljs', 'cljc'] },
     { name: 'groovy', fileExtensions: ['groovy'] },
     { name: 'r', fileExtensions: ['r', 'rmd'], fileNames: ['.Rhistory'] },
-    { name: 'dart', fileExtensions: ['dart'] },
+    { name: 'dart', fileExtensions: ['dart'], fileNames: ['.pubignore'] },
     { name: 'actionscript', fileExtensions: ['as'] },
     { name: 'mxml', fileExtensions: ['mxml'] },
     { name: 'autohotkey', fileExtensions: ['ahk'] },
