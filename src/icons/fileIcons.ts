@@ -185,6 +185,12 @@ export const fileIcons: FileIcons = {
       enabledFor: [IconPack.Redux],
     },
     {
+      name: 'redux-selector',
+      fileExtensions: ['selector.js', 'selectors.js', 'selector.ts', 'selectors.ts'],
+      fileNames: ['selector.js', 'selectors.js', 'selector.ts', 'selectors.ts'],
+      enabledFor: [IconPack.Redux],
+    },
+    {
       name: 'redux-store',
       fileExtensions: ['store.js', 'store.ts'],
       fileNames: ['store.js', 'store.ts'],
@@ -292,7 +298,7 @@ export const fileIcons: FileIcons = {
     { name: 'java', fileExtensions: ['java', 'jsp'] },
     { name: 'jar', fileExtensions: ['jar'] },
     { name: 'javaclass', fileExtensions: ['class'] },
-    { name: 'c', fileExtensions: ['c', 'm', 'i', 'mi'] },
+    { name: 'c', fileExtensions: ['c', 'i', 'mi'] },
     { name: 'h', fileExtensions: ['h'] },
     {
       name: 'cpp',
@@ -547,7 +553,7 @@ export const fileIcons: FileIcons = {
     { name: 'clojure', fileExtensions: ['clj', 'cljs', 'cljc'] },
     { name: 'groovy', fileExtensions: ['groovy'] },
     { name: 'r', fileExtensions: ['r', 'rmd'], fileNames: ['.Rhistory'] },
-    { name: 'dart', fileExtensions: ['dart'] },
+    { name: 'dart', fileExtensions: ['dart'], fileNames: ['.pubignore'] },
     { name: 'actionscript', fileExtensions: ['as'] },
     { name: 'mxml', fileExtensions: ['mxml'] },
     { name: 'autohotkey', fileExtensions: ['ahk'] },
@@ -1486,7 +1492,7 @@ export const fileIcons: FileIcons = {
         'grm',
       ],
     },
-    { name: 'nrwl', fileNames: ['nx.json'] },
+    { name: 'nrwl', fileNames: ['nx.json', '.nxignore'] },
     { name: 'opam', fileExtensions: ['opam'] },
     {
       name: 'dune',
@@ -1558,6 +1564,7 @@ export const fileIcons: FileIcons = {
     { name: 'lolcode', fileExtensions: ['lol'] },
     { name: 'idris', fileExtensions: ['idr', 'ibc'] },
     { name: 'quasar', fileNames: ['quasar.conf.js'] },
+    { name: 'dependabot', fileNames: ['dependabot.yml'] },
     { name: 'pipeline', fileExtensions: ['pipeline'] },
     {
       name: 'vite',
@@ -1692,6 +1699,19 @@ export const fileIcons: FileIcons = {
         'geom.hlsl',
         'comp.hlsl',
         'tess.hlsl',
+      ]
+    },
+    {
+      name: 'lighthouse',
+      fileNames: [
+        '.lighthouserc.js',
+        'lighthouserc.js',
+        '.lighthouserc.json',
+        'lighthouserc.json',
+        '.lighthouserc.yml',
+        'lighthouserc.yml',
+        '.lighthouserc.yaml',
+        'lighthouserc.yaml',
       ],
     },
     {
