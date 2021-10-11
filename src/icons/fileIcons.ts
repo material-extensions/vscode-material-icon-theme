@@ -186,8 +186,18 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'redux-selector',
-      fileExtensions: ['selector.js', 'selectors.js', 'selector.ts', 'selectors.ts'],
-      fileNames: ['selector.js', 'selectors.js', 'selector.ts', 'selectors.ts'],
+      fileExtensions: [
+        'selector.js',
+        'selectors.js',
+        'selector.ts',
+        'selectors.ts',
+      ],
+      fileNames: [
+        'selector.js',
+        'selectors.js',
+        'selector.ts',
+        'selectors.ts',
+      ],
       enabledFor: [IconPack.Redux],
     },
     {
@@ -1699,7 +1709,7 @@ export const fileIcons: FileIcons = {
         'geom.hlsl',
         'comp.hlsl',
         'tess.hlsl',
-      ]
+      ],
     },
     {
       name: 'lighthouse',
