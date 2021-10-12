@@ -1548,7 +1548,20 @@ export const fileIcons: FileIcons = {
       light: true,
     },
     { name: 'nginx', fileNames: ['nginx.conf'] },
-    { name: 'minecraft', fileExtensions: ['mcfunction'] },
+    {
+      name: 'minecraft',
+      fileExtensions: [
+        'mcfunction',
+        'mcmeta',
+        'mcr',
+        'mca',
+        'mcgame',
+        'mclevel',
+        'mcworld',
+        'mine',
+        'mus',
+      ],
+    },
     { name: 'replit', fileNames: ['.replit'] },
     { name: 'rescript', fileExtensions: ['res', 'resi'] },
     {
