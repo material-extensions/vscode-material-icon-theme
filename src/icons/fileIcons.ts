@@ -551,6 +551,7 @@ export const fileIcons: FileIcons = {
         '.gitattributes',
         '.gitmodules',
         '.gitkeep',
+        '.gitinclude',
         'git-history',
       ],
     },
