@@ -673,6 +673,10 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-java',
         folderNames: ['java'],
       },
+      {
+        name: 'folder-resolver',
+        folderNames: ['resolver', 'resolvers'],
+      },
     ],
   },
   {
