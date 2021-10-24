@@ -1712,5 +1712,7 @@ export const fileIcons: FileIcons = {
     },
     { name: 'rome', fileNames: ['rome.json'] },
     { name: 'cypress', fileNames: ['cypress.json', 'cypress.env.json'] },
+    { name: 'cargo-toml', fileNames: ['cargo.toml'] },
+    { name: 'cargo-lock', fileNames: ['cargo.lock'] },
   ],
 };
