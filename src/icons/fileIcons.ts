@@ -1590,6 +1590,7 @@ export const fileIcons: FileIcons = {
     { name: 'idris', fileExtensions: ['idr', 'ibc'] },
     { name: 'quasar', fileNames: ['quasar.conf.js'] },
     { name: 'dependabot', fileNames: ['dependabot.yml'] },
+    { name: 'devmoji', fileNames: ['devmoji.config.js'] },
     { name: 'pipeline', fileExtensions: ['pipeline'] },
     {
       name: 'vite',
