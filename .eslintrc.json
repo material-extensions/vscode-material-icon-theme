@@ -1,5 +1,5 @@
 {
-  "extends": ["prettier"],
+  "extends": ["plugin:prettier/recommended"],
   "env": {
     "browser": true,
     "es6": true,
@@ -40,6 +40,12 @@
     "no-underscore-dangle": "error",
     "no-unsafe-finally": "error",
     "no-var": "error",
-    "spaced-comment": "error"
+    "spaced-comment": "error",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ]
   }
 }

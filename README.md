@@ -18,7 +18,9 @@
 
 <p align="center"><br>
 <b>Sponsored by</b><br><br>
-<a title="Try CodeStream" href="https://sponsorlink.codestream.com/?utm_source=vscmarket&amp;utm_campaign=pkief_material&amp;utm_medium=banner"><img src="https://alt-images.codestream.com/codestream_logo_pkief_material.png"></a>
+<a title="Try CodeStream" href="https://sponsorlink.codestream.com/?utm_source=vscmarket&amp;utm_campaign=pkief_material&amp;utm_medium=banner"><img width="198px" src="https://alt-images.codestream.com/codestream_logo_pkief_material.png"></a><br><br>
+<a title="Try Stepsize" href="https://marketplace.visualstudio.com/items?itemName=Stepsize.stepsize"><img width="200px" src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/stepsize.png"></a><br><br>
+<a title="Try Bloop" href="https://bloop.ai/?utm_source=vscmarket&utm_campaign=material-icon-theme&utm_medium=banner"><img width="110px" src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/bloop.png"></a>
 </p>
 
 ### File icons
