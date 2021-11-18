@@ -1100,10 +1100,12 @@ export const fileIcons: FileIcons = {
       fileNames: [
         '.stylelintrc',
         'stylelint.config.js',
+        'stylelint.config.cjs',
         '.stylelintrc.json',
         '.stylelintrc.yaml',
         '.stylelintrc.yml',
         '.stylelintrc.js',
+        '.stylelintrc.cjs',
         '.stylelintignore',
       ],
       light: true,
