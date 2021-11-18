@@ -242,6 +242,11 @@ export const folderIcons: FolderTheme[] = [
         enabledFor: [IconPack.Redux],
       },
       {
+        name: 'folder-redux-selector',
+        folderNames: ['selectors', 'selector'],
+        enabledFor: [IconPack.Redux],
+      },
+      {
         name: 'folder-redux-store',
         folderNames: ['store'],
         enabledFor: [IconPack.Redux],
@@ -504,7 +509,7 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-mappings', folderNames: ['mappings', 'mapping'] },
       { name: 'folder-meta', folderNames: ['meta'] },
-      { name: 'folder-packages', folderNames: ['package', 'packages'] },
+      { name: 'folder-packages', folderNames: ['package', 'packages', 'pkg'] },
       { name: 'folder-shared', folderNames: ['shared', 'common'] },
       { name: 'folder-stack', folderNames: ['stack', 'stacks'] },
       { name: 'folder-template', folderNames: ['template', 'templates'] },
@@ -663,9 +668,29 @@ export const folderIcons: FolderTheme[] = [
           '.helmcharts',
         ],
       },
+      {  
+        name: 'folder-queue',
+        folderNames: ['queue', 'queues', 'bull', 'mq'],
+      },
       {
         name: 'folder-vercel',
         folderNames: ['vercel', '.vercel', 'now', '.now'],
+      },
+      {
+        name: 'folder-cypress',
+        folderNames: ['cypress', '.cypress'],
+      },
+      {
+        name: 'folder-java',
+        folderNames: ['java'],
+      },
+      {
+        name: 'folder-resolver',
+        folderNames: ['resolver', 'resolvers'],
+      },
+      {
+        name: 'folder-angular',
+        folderNames: ['.angular'],
       },
     ],
   },
