@@ -677,6 +677,10 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-resolver',
         folderNames: ['resolver', 'resolvers'],
       },
+      {
+        name: 'folder-angular',
+        folderNames: ['.angular'],
+      },
     ],
   },
   {
