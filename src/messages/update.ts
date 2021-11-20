@@ -6,12 +6,12 @@ import { translate } from './../i18n';
 /** Show the update message if the icon theme has been updated. */
 export const showUpdateMessage = () => {
   // if the user does not want to see the update message
-  if (getThemeConfig('showUpdateMessage').globalValue !== true) return;
+  if (getThemeConfig('showUpdateMessage')?.globalValue !== true) return;
 
   vscode.window
     .showInformationMessage(
       translate('themeUpdated'),
-      isThemeNotVisible() ? translate('activate') : undefined,
+      isThemeNotVisible() ? translate('activate') : '',
       translate('readChangelog'),
       translate('neverShowAgain')
     )
@@ -19,7 +19,7 @@ export const showUpdateMessage = () => {
 };
 
 /** Handle the actions of the update message. */
-const handleUpdateMessageActions = (value: string) => {
+const handleUpdateMessageActions = (value: string | undefined) => {
   switch (value) {
     case translate('activate'):
       activateIcons();
