@@ -83,9 +83,10 @@ const isIconAvailable = (
   hasOpenedFolder?: boolean
 ) => {
   let iconName = `${icon.name}${hasOpenedFolder ? openedFolder : ''}`;
-  if (iconColor === IconColor.light) {
+  if (icon.light && iconColor === IconColor.light) {
     iconName += lightColorFileEnding;
-  } else if (iconColor === IconColor.highContrast) {
+  }
+  if (icon.highContrast && iconColor === IconColor.highContrast) {
     iconName += highContrastColorFileEnding;
   }
 
