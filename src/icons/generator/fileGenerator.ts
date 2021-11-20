@@ -120,7 +120,7 @@ const mapSpecificFileIcons = (
   customFileAssociation: IconAssociations = {}
 ) => {
   const config = new IconConfiguration();
-  const iconMappingType = icon[mappingType];
+  const iconMappingType = icon[mappingType as keyof FileIcon] as string[];
   if (iconMappingType === undefined) {
     return;
   }
@@ -197,13 +197,15 @@ const getCustomIcons = (fileAssociations: IconAssociations | undefined) => {
   if (!fileAssociations) return [];
 
   const icons: FileIcon[] = Object.keys(fileAssociations).map((fa) => {
-    const icon: FileIcon = { name: fileAssociations[fa].toLowerCase() };
+    const icon: Partial<FileIcon> = {
+      name: fileAssociations[fa].toLowerCase(),
+    };
     if (wildcardPattern.test(fa)) {
       icon.fileExtensions = [fa.toLowerCase().replace(wildcardPattern, '')];
     } else {
       icon.fileNames = [fa.toLowerCase()];
     }
-    return icon;
+    return icon as FileIcon;
   });
   return icons;
 };
