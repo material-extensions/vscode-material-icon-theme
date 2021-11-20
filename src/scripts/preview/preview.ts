@@ -46,7 +46,7 @@ const createHTMLTableBodyRows = (items: IconDefinition[][]) => {
   return rows;
 };
 
-const createHTMLTable = (headRow, bodyRows) => `
+const createHTMLTable = (headRow: string, bodyRows: string) => `
     <table>
         ${headRow}
         ${bodyRows}

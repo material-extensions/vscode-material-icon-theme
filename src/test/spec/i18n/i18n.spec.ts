@@ -8,15 +8,18 @@ describe('i18n', () => {
   });
 
   it('should translate key', () => {
-    assert.equal(i18n.getTranslationValue('a', { a: 'b' }), 'b');
+    assert.equal(i18n.getTranslationValue('activate', { activate: 'b' }), 'b');
   });
 
   it('should return undefined if translation is not defined', () => {
-    assert.equal(i18n.getTranslationValue('c', { a: 'b' }), undefined);
+    assert.equal(i18n.getTranslationValue('activate', {}), undefined);
   });
 
   it('should use fallback if translation is not defined', () => {
-    assert.equal(i18n.getTranslationValue('a', { b: 'b' }, { a: 'fb' }), 'fb');
+    assert.equal(
+      i18n.getTranslationValue('activate', {}, { activate: 'fb' }),
+      'fb'
+    );
   });
 
   it('should get the correct translation value of the translation object', () => {
@@ -36,7 +39,7 @@ describe('i18n', () => {
       'test with placeholder'
     );
     assert.equal(
-      i18n.replace('%0 with %1', ['test', 'placeholder']),
+      i18n.replace('%0 with %1', 'test', 'placeholder'),
       'test with placeholder'
     );
   });

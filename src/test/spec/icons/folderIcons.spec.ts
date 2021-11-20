@@ -115,7 +115,7 @@ describe('folder icons', () => {
     expectedConfig.folderNames = {};
     expectedConfig.folderNamesExpanded = {};
     expectedConfig.hidesExplorerArrows = false;
-    expectedConfig.options.folders.theme = 'none';
+    expectedConfig.options!.folders!.theme = 'none';
 
     assert.deepStrictEqual(iconDefinitions, expectedConfig);
   });
@@ -157,7 +157,7 @@ describe('folder icons', () => {
       source: 'folder-blue-src-open',
     };
     expectedConfig.hidesExplorerArrows = false;
-    expectedConfig.options.folders.theme = 'blue';
+    expectedConfig.options!.folders!.theme = 'blue';
 
     assert.deepStrictEqual(iconDefinitions, expectedConfig);
   });
@@ -218,7 +218,7 @@ describe('folder icons', () => {
       sample: 'folder-src-open',
     };
     expectedConfig.hidesExplorerArrows = false;
-    expectedConfig.options.folders.associations = {
+    expectedConfig.options!.folders!.associations = {
       sample: 'src',
     };
 
@@ -269,7 +269,7 @@ describe('folder icons', () => {
     expectedConfig.hidesExplorerArrows = false;
 
     // disable default icon pack by using empty string
-    expectedConfig.options.activeIconPack = '';
+    expectedConfig.options!.activeIconPack = '';
 
     assert.deepStrictEqual(iconDefinitions, expectedConfig);
   });
