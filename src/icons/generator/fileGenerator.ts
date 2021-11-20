@@ -8,9 +8,9 @@ import {
   IconJsonOptions,
 } from '../../models/index';
 import {
-  highContrastVersion,
+  highContrastColorFileEnding,
   iconFolderPath,
-  lightVersion,
+  lightColorFileEnding,
   wildcardPattern,
 } from './constants';
 
@@ -38,14 +38,14 @@ export const loadFileIconDefinitions = (
       config = merge(
         {},
         config,
-        setIconDefinition(config, icon.name, lightVersion)
+        setIconDefinition(config, icon.name, lightColorFileEnding)
       );
     }
     if (icon.highContrast) {
       config = merge(
         {},
         config,
-        setIconDefinition(config, icon.name, highContrastVersion)
+        setIconDefinition(config, icon.name, highContrastColorFileEnding)
       );
     }
 
@@ -81,10 +81,14 @@ export const loadFileIconDefinitions = (
     config = merge(
       {},
       config,
-      setIconDefinition(config, fileIcons.defaultIcon.name, lightVersion)
+      setIconDefinition(
+        config,
+        fileIcons.defaultIcon.name,
+        lightColorFileEnding
+      )
     );
     if (config.light) {
-      config.light.file = fileIcons.defaultIcon.name + lightVersion;
+      config.light.file = fileIcons.defaultIcon.name + lightColorFileEnding;
     }
   }
 
@@ -92,11 +96,15 @@ export const loadFileIconDefinitions = (
     config = merge(
       {},
       config,
-      setIconDefinition(config, fileIcons.defaultIcon.name, highContrastVersion)
+      setIconDefinition(
+        config,
+        fileIcons.defaultIcon.name,
+        highContrastColorFileEnding
+      )
     );
     if (config.highContrast) {
       config.highContrast.file =
-        fileIcons.defaultIcon.name + highContrastVersion;
+        fileIcons.defaultIcon.name + highContrastColorFileEnding;
     }
   }
 
@@ -145,12 +153,12 @@ const mapSpecificFileIcons = (
 
     configMappingType[name] = icon.name;
     if (icon.light) {
-      configLightMappingType[name] = `${icon.name}${lightVersion}`;
+      configLightMappingType[name] = `${icon.name}${lightColorFileEnding}`;
     }
     if (icon.highContrast) {
       configHighContrastMappingType[
         name
-      ] = `${icon.name}${highContrastVersion}`;
+      ] = `${icon.name}${highContrastColorFileEnding}`;
     }
   });
   return config;

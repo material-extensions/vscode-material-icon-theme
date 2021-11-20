@@ -7,7 +7,11 @@ import {
   IconJsonOptions,
   LanguageIcon,
 } from '../../models/index';
-import { highContrastVersion, iconFolderPath, lightVersion } from './constants';
+import {
+  highContrastColorFileEnding,
+  iconFolderPath,
+  lightColorFileEnding,
+} from './constants';
 
 /**
  * Get all file icons that can be used in this theme.
@@ -37,14 +41,20 @@ export const loadLanguageIconDefinitions = (
       ? merge(
           {},
           config.light,
-          setLanguageIdentifiers(lang.icon.name + lightVersion, lang.ids)
+          setLanguageIdentifiers(
+            lang.icon.name + lightColorFileEnding,
+            lang.ids
+          )
         )
       : config.light;
     config.highContrast = lang.icon.highContrast
       ? merge(
           {},
           config.highContrast,
-          setLanguageIdentifiers(lang.icon.name + highContrastVersion, lang.ids)
+          setLanguageIdentifiers(
+            lang.icon.name + highContrastColorFileEnding,
+            lang.ids
+          )
         )
       : config.highContrast;
   });
@@ -59,14 +69,14 @@ const setIconDefinitions = (config: IconConfiguration, icon: DefaultIcon) => {
     {},
     config,
     icon.light
-      ? createIconDefinitions(config, icon.name + lightVersion)
+      ? createIconDefinitions(config, icon.name + lightColorFileEnding)
       : config.light
   );
   config = merge(
     {},
     config,
     icon.highContrast
-      ? createIconDefinitions(config, icon.name + highContrastVersion)
+      ? createIconDefinitions(config, icon.name + highContrastColorFileEnding)
       : config.highContrast
   );
   return config;

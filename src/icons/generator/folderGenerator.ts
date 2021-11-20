@@ -11,9 +11,9 @@ import {
   IconJsonOptions,
 } from '../../models/index';
 import {
-  highContrastVersion,
+  highContrastColorFileEnding,
   iconFolderPath,
-  lightVersion,
+  lightColorFileEnding,
   openedFolder,
 } from './constants';
 
@@ -50,14 +50,18 @@ export const loadFolderIconDefinitions = (
       ? merge(
           {},
           config.light,
-          setFolderNames(icon.name, icon.folderNames, lightVersion)
+          setFolderNames(icon.name, icon.folderNames, lightColorFileEnding)
         )
       : config.light;
     config.highContrast = icon.highContrast
       ? merge(
           {},
           config.highContrast,
-          setFolderNames(icon.name, icon.folderNames, highContrastVersion)
+          setFolderNames(
+            icon.name,
+            icon.folderNames,
+            highContrastColorFileEnding
+          )
         )
       : config.highContrast;
   });
@@ -88,7 +92,11 @@ const setDefaultFolderIcons = (
     ? merge(
         {},
         config.light,
-        createDefaultIconConfigObject(hasFolderIcons, theme, lightVersion)
+        createDefaultIconConfigObject(
+          hasFolderIcons,
+          theme,
+          lightColorFileEnding
+        )
       )
     : config.light;
   config.highContrast = theme.defaultIcon.highContrast
@@ -98,7 +106,7 @@ const setDefaultFolderIcons = (
         createDefaultIconConfigObject(
           hasFolderIcons,
           theme,
-          highContrastVersion
+          highContrastColorFileEnding
         )
       )
     : config.highContrast;
@@ -114,14 +122,22 @@ const setDefaultFolderIcons = (
       ? merge(
           {},
           config.light,
-          createRootIconConfigObject(hasFolderIcons, theme, lightVersion)
+          createRootIconConfigObject(
+            hasFolderIcons,
+            theme,
+            lightColorFileEnding
+          )
         )
       : config.light;
     config.highContrast = theme.rootFolder.highContrast
       ? merge(
           {},
           config.highContrast,
-          createRootIconConfigObject(hasFolderIcons, theme, highContrastVersion)
+          createRootIconConfigObject(
+            hasFolderIcons,
+            theme,
+            highContrastColorFileEnding
+          )
         )
       : config.highContrast;
   }
@@ -166,14 +182,14 @@ const setIconDefinitions = (
     config = merge(
       {},
       config,
-      createIconDefinitions(config, icon.name, lightVersion)
+      createIconDefinitions(config, icon.name, lightColorFileEnding)
     );
   }
   if (icon.highContrast) {
     config = merge(
       {},
       config,
-      createIconDefinitions(config, icon.name, highContrastVersion)
+      createIconDefinitions(config, icon.name, highContrastColorFileEnding)
     );
   }
   return config;
