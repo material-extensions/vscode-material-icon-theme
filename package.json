@@ -3,6 +3,25 @@
   "displayName": "Material Icon Theme",
   "description": "Material Design Icons for Visual Studio Code",
   "version": "4.10.0",
+  "scripts": {
+    "build": "npm run compile:dev && npm run postcompile",
+    "check": "ts-node ./src/scripts/icons/checks",
+    "compile": "webpack --config ./build/webpack.config.js --mode production",
+    "compile:dev": "webpack --config ./build/webpack.config.js --mode none",
+    "compile:watch": "webpack --config ./build/webpack.config.js --mode none --watch",
+    "compile-web": "webpack --config ./build/web-extension.webpack.config.js",
+    "watch-web": "webpack --watch --config ./build/web-extension.webpack.config.js",
+    "package-web": "webpack --mode production --devtool hidden-source-map --config ./build/web-extension.webpack.config.js",
+    "contributors": "ts-node ./src/scripts/contributors/index.ts",
+    "generateJson": "ts-node ./src/scripts/icons/generateJson.ts",
+    "lint": "eslint -c .eslintrc.json --ext .ts ./src/**/*.ts",
+    "postcompile": "npm run generateJson && npm run check",
+    "pretest": "npm run build && tsc -p ./",
+    "preview": "ts-node ./src/scripts/preview",
+    "svgo": "svgo -i icons -o icons -q",
+    "test": "node ./out/test/runTest.js",
+    "vscode:prepublish": "npm run lint && npm run compile && npm run package-web"
+  },
   "publisher": "PKief",
   "engines": {
     "vscode": "^1.51.0"
@@ -203,25 +222,6 @@
         }
       }
     }
-  },
-  "scripts": {
-    "build": "npm run compile:dev && npm run postcompile",
-    "check": "ts-node ./src/scripts/icons/checks",
-    "compile": "webpack --config ./build/webpack.config.js --mode production",
-    "compile:dev": "webpack --config ./build/webpack.config.js --mode none",
-    "compile:watch": "webpack --config ./build/webpack.config.js --mode none --watch",
-    "compile-web": "webpack --config ./build/web-extension.webpack.config.js",
-    "watch-web": "webpack --watch --config ./build/web-extension.webpack.config.js",
-    "package-web": "webpack --mode production --devtool hidden-source-map --config ./build/web-extension.webpack.config.js",
-    "contributors": "ts-node ./src/scripts/contributors/index.ts",
-    "generateJson": "ts-node ./src/scripts/icons/generateJson.ts",
-    "lint": "eslint -c .eslintrc.json --ext .ts ./src/**/*.ts",
-    "postcompile": "npm run generateJson && npm run check",
-    "pretest": "npm run build && tsc -p ./",
-    "preview": "ts-node ./src/scripts/preview",
-    "svgo": "svgo -i icons -o icons -q",
-    "test": "node ./out/test/runTest.js",
-    "vscode:prepublish": "npm run lint && npm run compile && npm run package-web"
   },
   "dependencies": {
     "lodash.merge": "4.6.2"
