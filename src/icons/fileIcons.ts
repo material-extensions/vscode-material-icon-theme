@@ -564,7 +564,8 @@ export const fileIcons: FileIcons = {
     { name: 'mxml', fileExtensions: ['mxml'] },
     { name: 'autohotkey', fileExtensions: ['ahk'] },
     { name: 'flash', fileExtensions: ['swf'] },
-    { name: 'swc', fileExtensions: ['swc'] },
+    { name: 'adobe-swc', fileExtensions: ['swc'] },
+    { name: 'swc', fileNames: ['.swcrc'] },
     {
       name: 'cmake',
       fileExtensions: ['cmake'],
