@@ -674,6 +674,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['java'],
       },
       {
+        name: 'folder-kotlin',
+        folderNames: ['kotlin'],
+      },
+      {
         name: 'folder-resolver',
         folderNames: ['resolver', 'resolvers'],
       },
