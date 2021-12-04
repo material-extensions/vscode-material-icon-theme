@@ -391,6 +391,8 @@ export const folderIcons: FolderTheme[] = [
           'services',
           'provider',
           'providers',
+          'handler',
+          'handlers',
         ],
       },
       { name: 'folder-ansible', folderNames: ['ansible'] },
