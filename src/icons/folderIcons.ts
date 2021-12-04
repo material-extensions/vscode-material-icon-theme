@@ -683,8 +683,21 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-angular',
-        folderNames: ['.angular'],
+        folderNames: ['.angular', 'angular'],
       },
+      {
+        name: 'folder-c',
+        folderNames: ['c', '.c'],
+      },
+      {
+        name: 'folder-c++',
+        folderNames: ['c++', '.c++'],
+      },
+      {
+        name: 'folder-c#',
+        folderNames: ['c#', '.c#'],
+      },
+
     ],
   },
   {
