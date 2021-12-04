@@ -1,6 +1,7 @@
 import * as assert from 'assert';
 import { getObjectPropertyValue } from '../../../helpers/objects';
 import * as i18n from '../../../i18n';
+import { Translation } from '../../../models';
 
 describe('i18n', () => {
   it('should initialize translations', () => {
@@ -8,16 +9,26 @@ describe('i18n', () => {
   });
 
   it('should translate key', () => {
-    assert.equal(i18n.getTranslationValue('activate', { activate: 'b' }), 'b');
+    assert.equal(
+      i18n.getTranslationValue('activate', { activate: 'b' } as Translation),
+      'b'
+    );
   });
 
   it('should return undefined if translation is not defined', () => {
-    assert.equal(i18n.getTranslationValue('activate', {}), undefined);
+    assert.equal(
+      i18n.getTranslationValue('activate', {} as Translation),
+      undefined
+    );
   });
 
   it('should use fallback if translation is not defined', () => {
     assert.equal(
-      i18n.getTranslationValue('activate', {}, { activate: 'fb' }),
+      i18n.getTranslationValue(
+        'activate',
+        {} as Translation,
+        { activate: 'fb' } as Translation
+      ),
       'fb'
     );
   });

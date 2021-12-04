@@ -40,4 +40,13 @@ export const translation: Translation = {
   reload: '重启',
   outdatedVersion: '你必须更新VS Code才能使用该命令',
   updateVSCode: '更新VS Code',
+  grayscale: {
+    toggle: '切换灰度图标',
+    enable: '启用灰度图标',
+    disable: '禁用灰度图标',
+  },
+  saturation: {
+    inputPlaceholder: '饱和度值（在0和1之间）。',
+    wrongValue: '该值必须在0和1之间!',
+  },
 };
