@@ -49,19 +49,22 @@ const showQuickPickItems = (currentColor: string) => {
 };
 
 /** Handle the actions from the QuickPick. */
-const handleQuickPickActions = (value: vscode.QuickPickItem) => {
+const handleQuickPickActions = async (value: vscode.QuickPickItem) => {
   if (!value || !value.description) return;
   if (value.description === 'Custom Color') {
-    vscode.window
-      .showInputBox({
-        placeHolder: i18n.translate('folders.hexCode'),
-        ignoreFocusOut: true,
-        validateInput: validateColorInput,
-      })
-      .then((value) => setColorConfig(value));
+    const value = await vscode.window.showInputBox({
+      placeHolder: i18n.translate('folders.hexCode'),
+      ignoreFocusOut: true,
+      validateInput: validateColorInput,
+    });
+    if (value) {
+      setColorConfig(value);
+    }
   } else {
     const hexCode = iconPalette.find((c) => c.label === value.description)?.hex;
-    setColorConfig(hexCode);
+    if (hexCode) {
+      setColorConfig(hexCode);
+    }
   }
 };
 
@@ -79,10 +82,8 @@ export const checkFolderColorStatus = (): string => {
   return config?.options?.folders?.color ?? defaultOptions.folders.color!;
 };
 
-const setColorConfig = (value: string | undefined) => {
-  if (value) {
-    helpers.setThemeConfig('folders.color', value.toLowerCase(), true);
-  }
+const setColorConfig = (value: string) => {
+  helpers.setThemeConfig('folders.color', value.toLowerCase(), true);
 };
 
 const isColorActive = (color: FolderColor, currentColor: string): boolean => {
