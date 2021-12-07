@@ -391,6 +391,8 @@ export const folderIcons: FolderTheme[] = [
           'services',
           'provider',
           'providers',
+          'handler',
+          'handlers',
         ],
       },
       { name: 'folder-ansible', folderNames: ['ansible'] },
@@ -668,6 +670,18 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-cypress',
         folderNames: ['cypress', '.cypress'],
+      },
+      {
+        name: 'folder-java',
+        folderNames: ['java'],
+      },
+      {
+        name: 'folder-resolver',
+        folderNames: ['resolver', 'resolvers'],
+      },
+      {
+        name: 'folder-angular',
+        folderNames: ['.angular'],
       },
     ],
   },
