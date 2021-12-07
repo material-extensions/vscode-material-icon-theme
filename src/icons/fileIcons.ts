@@ -198,7 +198,6 @@ export const fileIcons: FileIcons = {
         'selector.ts',
         'selectors.ts',
       ],
-      fileNames: ['selector.js', 'selectors.js', 'selector.ts', 'selectors.ts'],
       enabledFor: [IconPack.Redux],
     },
     {
