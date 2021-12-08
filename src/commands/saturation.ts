@@ -21,7 +21,7 @@ const showInput = (saturation: number) => {
   return vscode.window.showInputBox({
     placeHolder: i18n.translate('saturation.inputPlaceholder'),
     ignoreFocusOut: true,
-    value: String(saturation),
+    value: saturation.toString(),
     validateInput: validateSaturationInput,
   });
 };

@@ -121,7 +121,7 @@ const adjustSaturation = (
 
     let updatedRootElement: string;
 
-    if (options.saturation && options.saturation < 1) {
+    if (options.saturation !== undefined && options.saturation < 1) {
       updatedRootElement = addFilterAttribute(svgRootElement);
     } else {
       updatedRootElement = removeFilterAttribute(svgRootElement);
@@ -129,7 +129,7 @@ const adjustSaturation = (
 
     let updatedSVG = svg.replace(/<svg[^>]*>/, updatedRootElement);
 
-    if (options.saturation && options.saturation < 1) {
+    if (options.saturation !== undefined && options.saturation < 1) {
       updatedSVG = addFilterElement(updatedSVG, options.saturation);
     } else {
       updatedSVG = removeFilterElement(updatedSVG);

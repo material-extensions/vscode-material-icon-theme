@@ -99,7 +99,7 @@ const adjustOpacity = (
 
     let updatedRootElement: string;
 
-    if (options.opacity && (options.opacity ?? 1) < 1) {
+    if (options.opacity !== undefined && options.opacity < 1) {
       updatedRootElement = addOpacityAttribute(svgRootElement, options.opacity);
     } else {
       updatedRootElement = removeOpacityAttribute(svgRootElement);

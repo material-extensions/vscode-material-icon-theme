@@ -21,7 +21,7 @@ const showInput = (opacity: number) => {
   return vscode.window.showInputBox({
     placeHolder: i18n.translate('opacity.inputPlaceholder'),
     ignoreFocusOut: true,
-    value: String(opacity),
+    value: opacity.toString(),
     validateInput: validateOpacityInput,
   });
 };
