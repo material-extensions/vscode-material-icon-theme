@@ -17,7 +17,11 @@ describe('i18n', () => {
 
   it('should return undefined if translation is not defined', () => {
     assert.equal(
-      i18n.getTranslationValue('activate', {} as Translation),
+      i18n.getTranslationValue(
+        'activate',
+        {} as Translation,
+        {} as Translation
+      ),
       undefined
     );
   });
