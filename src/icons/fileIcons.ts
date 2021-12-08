@@ -29,8 +29,7 @@ export const fileIcons: FileIcons = {
         'composer.lock',
         '.jsbeautifyrc',
         '.esformatter',
-        'cdp.pid',
-        '.lintstagedrc',
+        'cdp.pid'
       ],
     },
     {
@@ -723,7 +722,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'next',
-      fileNames: ['next.config.js', 'next.config.ts'],
+      fileNames: ['next.config.js', 'next.config.mjs', 'next.config.ts'],
       light: true,
     },
     {
@@ -1111,6 +1110,21 @@ export const fileIcons: FileIcons = {
       light: true,
     },
     { name: 'code-climate', fileNames: ['.codeclimate.yml'], light: true },
+    {
+      name: 'lint_staged',
+      fileNames: [
+        '.lintstagedrc',
+        '.lintstagedrc.json',
+        '.lintstagedrc.yaml',
+        '.lintstagedrc.yml',
+        '.lintstagedrc.mjs',
+        'lint-staged.config.mjs',
+        '.lintstagedrc.cjs',
+        'lint-staged.config.cjs',
+        'lint-staged.config.js',
+        '.lintstagedrc.js'
+      ]
+    },
     {
       name: 'prettier',
       fileNames: [
