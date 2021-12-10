@@ -1669,7 +1669,7 @@ export const fileIcons: FileIcons = {
         'tauri.config.json',
         'tauri.linux.conf.json',
         'tauri.windows.conf.json',
-        'tauri.macos.conf.json'
+        'tauri.macos.conf.json',
       ],
       fileExtensions: ['tauri'],
     },
