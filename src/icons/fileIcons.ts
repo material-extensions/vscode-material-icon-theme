@@ -1666,6 +1666,16 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['tsconfig.json'],
     },
     {
+      name: 'tauri',
+      fileNames: [
+        'tauri.config.json',
+        'tauri.linux.conf.json',
+        'tauri.windows.conf.json',
+        'tauri.macos.conf.json',
+      ],
+      fileExtensions: ['tauri'],
+    },
+    {
       name: 'jsconfig',
       fileNames: ['jsconfig.json'],
       fileExtensions: ['jsconfig.json'],
