@@ -6,6 +6,8 @@ import { FileIcons, IconPack } from '../models/index';
 export const fileIcons: FileIcons = {
   defaultIcon: { name: 'file' },
   icons: [
+    { name: 'tobi', fileExtensions: ['tl', 'tobi']},
+    { name: 'tobimake', fileExtensions: ['tlmake', 'tobimake']},
     { name: 'html', fileExtensions: ['htm', 'xhtml', 'html_vm', 'asp'] },
     {
       name: 'pug',
