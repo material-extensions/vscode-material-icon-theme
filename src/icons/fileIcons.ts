@@ -1100,10 +1100,12 @@ export const fileIcons: FileIcons = {
       fileNames: [
         '.stylelintrc',
         'stylelint.config.js',
+        'stylelint.config.cjs',
         '.stylelintrc.json',
         '.stylelintrc.yaml',
         '.stylelintrc.yml',
         '.stylelintrc.js',
+        '.stylelintrc.cjs',
         '.stylelintignore',
       ],
       light: true,
@@ -1664,6 +1666,16 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['tsconfig.json'],
     },
     {
+      name: 'tauri',
+      fileNames: [
+        'tauri.config.json',
+        'tauri.linux.conf.json',
+        'tauri.windows.conf.json',
+        'tauri.macos.conf.json',
+      ],
+      fileExtensions: ['tauri'],
+    },
+    {
       name: 'jsconfig',
       fileNames: ['jsconfig.json'],
       fileExtensions: ['jsconfig.json'],
@@ -1717,5 +1729,6 @@ export const fileIcons: FileIcons = {
     { name: 'rome', fileNames: ['rome.json'] },
     { name: 'cypress', fileNames: ['cypress.json', 'cypress.env.json'] },
     { name: 'siyuan', fileExtensions: ['sy'] },
+    { name: 'ndst', fileExtensions: ['ndst.yml', 'ndst.yaml', 'ndst.json'] },
   ],
 };

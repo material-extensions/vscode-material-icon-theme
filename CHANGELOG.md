@@ -1,5 +1,42 @@
 # Changelog
 
+## 4.11.0 (2021-11-25)
+
+### New file icons
+
+- GraphQL config ([@arturoeh](https://github.com/arturoeh) in [#1231](https://github.com/PKief/vscode-material-icon-theme/pull/1231))
+- Cypress ([@bart-krakowski](https://github.com/bart-krakowski) in [#1221](https://github.com/PKief/vscode-material-icon-theme/pull/1221))
+- \*.template ([@PKief](https://github.com/PKief) in [#1224](https://github.com/PKief/vscode-material-icon-theme/pull/1224))
+- \*.heex ([@PKief](https://github.com/PKief) in [#1240](https://github.com/PKief/vscode-material-icon-theme/pull/1240))
+- Minecraft ([@PKief](https://github.com/PKief) in [#1283](https://github.com/PKief/vscode-material-icon-theme/pull/1283))
+- .nxignore ([@PKief](https://github.com/PKief) in commit [828083e](https://github.com/PKief/vscode-material-icon-theme/commit/828083ec0b204420a958429767cc20824ac5fa6b))
+- .pubignore ([@PKief](https://github.com/PKief) in commit [008de61](https://github.com/PKief/vscode-material-icon-theme/commit/008de61e8c89f70d30edfea0cf621f8159fbc387))
+- SVGR ([@bart-krakowski](https://github.com/bart-krakowski) in [#1218](https://github.com/PKief/vscode-material-icon-theme/pull/1218))
+- Dependabot ([@stefanobartoletti](https://github.com/stefanobartoletti) in [#1248](https://github.com/PKief/vscode-material-icon-theme/pull/1248))
+- Lighthouse ([@bart-krakowski](https://github.com/bart-krakowski) in [#1215](https://github.com/PKief/vscode-material-icon-theme/pull/1215))
+- Redux selector ([@arealglitterboy](https://github.com/arealglitterboy) in [#1247](https://github.com/PKief/vscode-material-icon-theme/pull/1247))
+- .env.stage ([@swensorm](https://github.com/swensorm) in [#1282](https://github.com/PKief/vscode-material-icon-theme/pull/1282))
+- .gitinclude ([@noghartt](https://github.com/noghartt) in [#1286](https://github.com/PKief/vscode-material-icon-theme/pull/1286))
+- nestjs e2e jest config ([@shian15810](https://github.com/shian15810) in [#1287](https://github.com/PKief/vscode-material-icon-theme/pull/1287))
+- cjs and ts endings to commitlint ([@jamiehaywood](https://github.com/jamiehaywood) in [#1304](https://github.com/PKief/vscode-material-icon-theme/pull/1304))
+- stylelintrc cjs ([@baruchiro](https://github.com/baruchiro) in [#1315](https://github.com/PKief/vscode-material-icon-theme/pull/1315))
+- ndst ([@imartingon](https://github.com/imartingon) in [#1314](https://github.com/PKief/vscode-material-icon-theme/pull/1314))
+
+### New folder icons
+
+- Cypress ([@bart-krakowski](https://github.com/bart-krakowski) in [#1221](https://github.com/PKief/vscode-material-icon-theme/pull/1221))
+- queue ([@ryanmattos](https://github.com/ryanmattos) in [#1159](https://github.com/PKief/vscode-material-icon-theme/pull/1159))
+- pkg ([@Juicestus](https://github.com/Juicestus) in [#1256](https://github.com/PKief/vscode-material-icon-theme/pull/1256))
+- Java ([@PKief](https://github.com/PKief) in [#1285](https://github.com/PKief/vscode-material-icon-theme/pull/1285))
+- resolver ([@PKief](https://github.com/PKief) in [#1297](https://github.com/PKief/vscode-material-icon-theme/pull/1297))
+- Angular ([@PKief](https://github.com/PKief) in commit [90cc462](https://github.com/PKief/vscode-material-icon-theme/commit/90cc4628fedca6c8e8a90998fd460d4f7b4d2b52))
+- Redux selector ([@arealglitterboy](https://github.com/arealglitterboy) in [#1247](https://github.com/PKief/vscode-material-icon-theme/pull/1247))
+
+### Other changes
+
+- Icon request template ([@mahyarmirrashed](https://github.com/mahyarmirrashed) in [#1226](https://github.com/PKief/vscode-material-icon-theme/pull/1226))
+- Update lang-es.ts ([@Dvd-22](https://github.com/Dvd-22) in [#1271](https://github.com/PKief/vscode-material-icon-theme/pull/1271))
+
 ## 4.10.0 (2021-08-24)
 
 ### New file icons
