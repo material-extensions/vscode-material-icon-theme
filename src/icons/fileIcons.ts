@@ -1730,6 +1730,6 @@ export const fileIcons: FileIcons = {
     { name: 'cypress', fileNames: ['cypress.json', 'cypress.env.json'] },
     { name: 'ndst', fileExtensions: ['ndst.yml', 'ndst.yaml', 'ndst.json'] },
     { name: 'tobi', fileExtensions: ['tobi'] },
-    { name: 'tobimake', fileExtensions: ['tobimake'] },
+    { name: 'tobimake', fileNames: ['.tobimake'] },
   ],
 };
