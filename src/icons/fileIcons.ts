@@ -6,8 +6,6 @@ import { FileIcons, IconPack } from '../models/index';
 export const fileIcons: FileIcons = {
   defaultIcon: { name: 'file' },
   icons: [
-    { name: 'tobi', fileExtensions: ['tl', 'tobi']},
-    { name: 'tobimake', fileExtensions: ['tlmake', 'tobimake']},
     { name: 'html', fileExtensions: ['htm', 'xhtml', 'html_vm', 'asp'] },
     {
       name: 'pug',
@@ -1731,5 +1729,7 @@ export const fileIcons: FileIcons = {
     { name: 'rome', fileNames: ['rome.json'] },
     { name: 'cypress', fileNames: ['cypress.json', 'cypress.env.json'] },
     { name: 'ndst', fileExtensions: ['ndst.yml', 'ndst.yaml', 'ndst.json'] },
+    { name: 'tobi', fileExtensions: ['tl', 'tobi'] },
+    { name: 'tobimake', fileExtensions: ['tlmake', 'tobimake'] },
   ],
 };
