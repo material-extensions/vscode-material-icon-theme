@@ -1132,6 +1132,7 @@ export const fileIcons: FileIcons = {
       fileNames: [
         '.renovaterc',
         '.renovaterc.json',
+        'renovate-config.json',
         'renovate.json',
         'renovate.json5',
       ],
