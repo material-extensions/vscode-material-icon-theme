@@ -43,6 +43,10 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['proto'],
     },
     {
+      name: 'playwright',
+      fileExtensions: ['playwright.config.js', 'playwright.config.ts'],
+    },
+    {
       name: 'sublime',
       fileExtensions: ['sublime-project', 'sublime-workspace'],
     },
