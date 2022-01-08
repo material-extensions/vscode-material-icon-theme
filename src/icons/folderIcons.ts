@@ -630,6 +630,10 @@ export const folderIcons: FolderTheme[] = [
           'integrations',
         ],
       },
+      {
+        name: 'folder-migration',
+        folderNames: ['migration', 'migrations'],
+      },
       { name: 'folder-quasar', folderNames: ['.quasar'] },
       { name: 'folder-cobol', folderNames: ['cobol'] },
       { name: 'folder-yarn', folderNames: ['yarn', '.yarn'] },
