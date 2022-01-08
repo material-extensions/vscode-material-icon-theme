@@ -384,6 +384,10 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-middleware', folderNames: ['middleware', 'middlewares'] },
       {
+        name: 'folder-migration',
+        folderNames: ['migration', 'migrations'],
+      },
+      {
         name: 'folder-controller',
         folderNames: [
           'controller',
