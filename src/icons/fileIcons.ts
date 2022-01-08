@@ -973,7 +973,11 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'blitz',
-      fileNames: ['blitz.config.js', 'blitz.config.ts'],
+      fileNames: [
+        'blitz.config.js',
+        'blitz.config.ts',
+        '.blitz.config.compiled.js',
+      ],
     },
     {
       name: 'contributing',
