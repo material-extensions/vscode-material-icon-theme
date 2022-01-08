@@ -1441,7 +1441,7 @@ export const fileIcons: FileIcons = {
     { name: 'advpl_tlpp', fileExtensions: ['tlpp'] },
     { name: 'advpl_include', fileExtensions: ['ch'] },
     { name: 'codeowners', fileNames: ['codeowners'] },
-    { name: 'gcp', fileNames: ['.gcloudignore'] },
+    { name: 'gcp', fileNames: ['.gcloudignore', 'app.yml', 'app.yaml'] },
     { name: 'disc', fileExtensions: ['iso'] },
     {
       name: 'fortran',
