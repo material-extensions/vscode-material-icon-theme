@@ -1076,10 +1076,6 @@ export const fileIcons: FileIcons = {
       ],
     },
     {
-      name: 'figma',
-      fileExtensions: ['fig'],
-    },
-    {
       name: 'rollup',
       fileNames: [
         'rollup.config.js',
