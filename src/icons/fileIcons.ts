@@ -735,6 +735,11 @@ export const fileIcons: FileIcons = {
       light: true,
     },
     {
+      name: 'remix',
+      fileNames: ['remix.config.js', 'remix.config.ts'],
+      light: true,
+    },
+    {
       name: 'terraform',
       fileExtensions: ['tf', 'tf.json', 'tfvars', 'tfstate'],
     },
