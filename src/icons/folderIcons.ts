@@ -437,7 +437,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-cluster', folderNames: ['cluster', 'clusters'] },
       {
         name: 'folder-command',
-        folderNames: ['command', 'commands', 'cli', 'clis'],
+        folderNames: ['command', 'commands', 'cmd', 'cli', 'clis'],
       },
       { name: 'folder-constant', folderNames: ['constant', 'constants'] },
       {
