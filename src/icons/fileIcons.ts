@@ -1703,6 +1703,7 @@ export const fileIcons: FileIcons = {
       fileNames: ['maven.config', 'jvm.config'],
     },
     { name: 'ada', fileExtensions: ['ada', 'adb', 'ads', 'ali'] },
+    { name: 'serverless', fileNames: ['serverless.yml'] },
     {
       name: 'ember',
       fileNames: ['.ember-cli', '.ember-cli.js', 'ember-cli-builds.js'],
