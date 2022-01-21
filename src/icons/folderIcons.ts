@@ -673,6 +673,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['cypress', '.cypress'],
       },
       {
+        name: 'folder-next',
+        folderNames: ['.next', '_next'],
+      },
+      {
         name: 'folder-java',
         folderNames: ['java'],
       },
