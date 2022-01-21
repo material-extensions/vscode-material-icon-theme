@@ -232,7 +232,11 @@ export const fileIcons: FileIcons = {
     },
     { name: 'typescript-def', fileExtensions: ['d.ts'] },
     { name: 'markojs', fileExtensions: ['marko'] },
-    { name: 'astro', fileExtensions: ['astro'] },
+    {
+      name: 'astro',
+      fileExtensions: ['astro'],
+      fileNames: ['astro.config.js', 'astro.config.mjs', 'astro.config.cjs'],
+    },
     { name: 'pdf', fileExtensions: ['pdf'] },
     { name: 'table', fileExtensions: ['xlsx', 'xls', 'csv', 'tsv'] },
     {
@@ -723,7 +727,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'next',
-      fileNames: ['next.config.js', 'next.config.ts'],
+      fileNames: ['next.config.js', 'next.config.ts', 'next.config.mjs'],
       light: true,
     },
     {
@@ -1731,6 +1735,8 @@ export const fileIcons: FileIcons = {
     { name: 'cypress', fileNames: ['cypress.json', 'cypress.env.json'] },
     { name: 'siyuan', fileExtensions: ['sy'] },
     { name: 'ndst', fileExtensions: ['ndst.yml', 'ndst.yaml', 'ndst.json'] },
-    { name: 'plop', fileNames: ['plopfile.js', 'plopfile.ts'] }
+    { name: 'plop', fileNames: ['plopfile.js', 'plopfile.ts'] },
+    { name: 'tobi', fileExtensions: ['tobi'] },
+    { name: 'tobimake', fileNames: ['.tobimake'] },
   ],
 };
