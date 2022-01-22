@@ -1163,7 +1163,7 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'apollo', fileNames: ['apollo.config.js'] },
-    { name: 'nodemon', fileNames: ['nodemon.json', 'nodemon-debug.json'] },
+    { name: 'nodemon', fileNames: ['nodemon.json', 'nodemon-debug.json', '.node-dev.json'] },
     {
       name: 'ngrx-reducer',
       fileExtensions: ['reducer.ts', 'rootReducer.ts'],
