@@ -7,7 +7,9 @@ export const toggleGrayscale = async () => {
   try {
     const status = checkGrayscaleStatus();
     const response = await showQuickPickItems(status);
-    handleQuickPickActions(response);
+    if (response) {
+      handleQuickPickActions(response);
+    }
   } catch (error) {
     console.error(error);
   }
@@ -49,5 +51,5 @@ const handleQuickPickActions = (value: vscode.QuickPickItem) => {
 
 /** Is grayscale icons enabled? */
 export const checkGrayscaleStatus = (): boolean => {
-  return helpers.getMaterialIconsJSON().options.saturation === 0;
+  return helpers.getMaterialIconsJSON()?.options?.saturation === 0;
 };

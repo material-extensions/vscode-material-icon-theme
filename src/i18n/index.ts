@@ -1,11 +1,13 @@
 import * as vscode from 'vscode';
 import { getObjectPropertyValue } from '../helpers/objects';
+import { Translation } from '../models';
 
 // Get current language of the vs code workspace
 export const getCurrentLanguage = (): string => vscode.env.language;
 
-let currentTranslation;
-let fallbackTranslation; // default: en
+let currentTranslation: Translation;
+let fallbackTranslation: Translation;
+
 const placeholder = '%';
 
 /** Initialize the translations */
@@ -28,9 +30,9 @@ const loadTranslation = async (language: string) => {
 };
 
 /** Get the translation object of the separated translation files */
-const getTranslationObject = async (language: string) => {
+const getTranslationObject = async (language: string): Promise<Translation> => {
   const lang = await import(/* webpackMode: "eager" */ `./lang-${language}`);
-  return lang.translation;
+  return lang.translation as Translation;
 };
 
 /**
@@ -43,11 +45,10 @@ export const getTranslationValue = (
   key: string,
   translations = currentTranslation,
   fallback = fallbackTranslation
-) => {
+): string | undefined => {
   return (
-    getObjectPropertyValue(translations, key) ||
-    getObjectPropertyValue(fallback, key) ||
-    undefined
+    getObjectPropertyValue(translations, key) ??
+    getObjectPropertyValue(fallback, key)
   );
 };
 
@@ -55,24 +56,22 @@ export const getTranslationValue = (
  * The instant method is required for the translate pipe.
  * It helps to translate a word instantly.
  */
-export const translate = (key: string, words?: string | string[]) => {
-  const translation = <string>getTranslationValue(key);
+export const translate = (key: string, ...variables: string[]): string => {
+  const translation = getTranslationValue(key);
 
-  if (!words) return translation;
-  return replace(translation, words);
+  if (variables.length === 0) return translation ?? key;
+  return replace(translation, ...variables);
 };
 
 /**
  * The replace function will replace the current placeholder with the
  * data parameter from the translation. You can give it one or more optional
- * parameters ('words').
+ * parameters ('variables').
  */
-export const replace = (value: string = '', words: string | string[]) => {
+export const replace = (value: string = '', ...variables: string[]) => {
   let translation: string = value;
-
-  const values: string[] = [].concat(words);
-  values.forEach((e, i) => {
-    translation = translation.replace(placeholder.concat(<any>i), e);
+  variables.forEach((variable, i) => {
+    translation = translation.replace(`${placeholder}${i}`, variable);
   });
 
   return translation;
