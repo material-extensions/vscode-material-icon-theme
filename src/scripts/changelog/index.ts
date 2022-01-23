@@ -90,7 +90,7 @@ const createMarkdown = (title: string, tagGroups: TagGroup[]) => {
     tagGroups.reduce((result, group) => {
       const subtitle = `\n#### [${
         group.tag === 'HEAD' ? 'v' + process.env.npm_package_version : group.tag
-      }](${config.repoName}/compare/${group.tag}...${group.previousTag})\n`;
+      }](${config.repoName}/compare/${group.previousTag}...${group.tag})\n`;
       const date = `\n> ${formatDate(group.date)}\n\n`;
       const commits = group.commits.reduce((result, commit) => {
         const ticket = ticketRecognition(commit.subject);
