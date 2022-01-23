@@ -5,6 +5,7 @@
   "version": "4.11.0",
   "scripts": {
     "build": "npm run compile:dev && npm run postcompile",
+    "changelog": "ts-node ./src/scripts/changelog/index",
     "check": "ts-node ./src/scripts/icons/checks",
     "compile": "webpack --config ./build/webpack.config.js --mode production",
     "compile:dev": "webpack --config ./build/webpack.config.js --mode none",
