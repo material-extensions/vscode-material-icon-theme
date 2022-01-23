@@ -36,7 +36,6 @@ const getReleaseCommits = async (
   const logResult = await execAsync(command);
   return logResult.stdout
     .split('\n')
-    .filter((message) => !new RegExp(config.blacklistPattern).test(message))
     .filter((message) => !!message)
     .map((message) => {
       const data = message.split(separator);
@@ -46,6 +45,9 @@ const getReleaseCommits = async (
         author: data[2],
         subject: data[3],
       } as Commit;
+    })
+    .filter((commit) => {
+      return !new RegExp(config.blacklistPattern, 'gm').test(commit.subject);
     });
 };
 
