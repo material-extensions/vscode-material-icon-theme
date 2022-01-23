@@ -58,7 +58,6 @@ const groupCommitsByTags = async () => {
   const allTags = [headTag, ...(await getReleaseTags())];
   for await (const [index, value] of allTags.slice(0, -1).entries()) {
     const previousTag = allTags[index + 1].tag;
-    console.log({ previousTag, tag: value });
     const commits = await getReleaseCommits(value.tag, previousTag);
     releaseCommits.push({
       commits,
