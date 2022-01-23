@@ -28,11 +28,11 @@ const getReleaseTags = async (): Promise<
 };
 
 const getReleaseCommits = async (
-  tagStart: string,
-  tagEnd: string
+  toTag: string,
+  fromTag: string
 ): Promise<Commit[]> => {
   const separator = '_||_';
-  const command = `git log ${tagEnd}..${tagStart} --no-merges --pretty=format:"%ad${separator}%h${separator}%ae${separator}%s"`;
+  const command = `git log ${fromTag}..${toTag} --no-merges --pretty=format:"%ad${separator}%h${separator}%ae${separator}%s"`;
   const logResult = await execAsync(command);
   return logResult.stdout
     .split('\n')
@@ -51,9 +51,14 @@ const getReleaseCommits = async (
 const groupCommitsByTags = async () => {
   const releaseCommits = [];
 
-  const tags = await getReleaseTags();
-  for await (const [index, value] of tags.slice(0, -1).entries()) {
-    const previousTag = tags[index + 1].tag;
+  const headTag = {
+    creatorDate: new Date().toISOString().slice(0, 10),
+    tag: process.env.npm_package_version || 'HEAD',
+  };
+  const allTags = [headTag, ...(await getReleaseTags())];
+  for await (const [index, value] of allTags.slice(0, -1).entries()) {
+    const previousTag = allTags[index + 1].tag;
+    console.log({ previousTag, tag: value });
     const commits = await getReleaseCommits(value.tag, previousTag);
     releaseCommits.push({
       commits,
