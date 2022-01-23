@@ -53,7 +53,7 @@ const groupCommitsByTags = async () => {
 
   const headTag = {
     creatorDate: new Date().toISOString().slice(0, 10),
-    tag: process.env.npm_package_version || 'HEAD',
+    tag: 'HEAD',
   };
   const allTags = [headTag, ...(await getReleaseTags())];
   for await (const [index, value] of allTags.slice(0, -1).entries()) {
@@ -86,7 +86,9 @@ const createMarkdown = (title: string, tagGroups: TagGroup[]) => {
   return (
     title +
     tagGroups.reduce((result, group) => {
-      const subtitle = `\n#### [${group.tag}](${config.repoName}/compare/${group.tag}...${group.previousTag})\n`;
+      const subtitle = `\n#### [${
+        group.tag === 'HEAD' ? 'v' + process.env.npm_package_version : group.tag
+      }](${config.repoName}/compare/${group.tag}...${group.previousTag})\n`;
       const date = `\n> ${formatDate(group.date)}\n\n`;
       const commits = group.commits.reduce((result, commit) => {
         const ticket = ticketRecognition(commit.subject);
