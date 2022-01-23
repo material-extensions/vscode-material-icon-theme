@@ -437,7 +437,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-cluster', folderNames: ['cluster', 'clusters'] },
       {
         name: 'folder-command',
-        folderNames: ['command', 'commands', 'cli', 'clis'],
+        folderNames: ['command', 'commands', 'cmd', 'cli', 'clis'],
       },
       { name: 'folder-constant', folderNames: ['constant', 'constants'] },
       {
@@ -508,7 +508,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-layout', folderNames: ['layout', 'layouts'] },
       {
         name: 'folder-mail',
-        folderNames: ['mail', 'mails', 'email', 'emails', 'smtp'],
+        folderNames: ['mail', 'mails', 'email', 'emails', 'smtp', 'mailers'],
       },
       { name: 'folder-mappings', folderNames: ['mappings', 'mapping'] },
       { name: 'folder-meta', folderNames: ['meta'] },

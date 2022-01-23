@@ -43,6 +43,10 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['proto'],
     },
     {
+      name: 'playwright',
+      fileNames: ['playwright.config.js', 'playwright.config.ts'],
+    },
+    {
       name: 'sublime',
       fileExtensions: ['sublime-project', 'sublime-workspace'],
     },
@@ -232,7 +236,11 @@ export const fileIcons: FileIcons = {
     },
     { name: 'typescript-def', fileExtensions: ['d.ts'] },
     { name: 'markojs', fileExtensions: ['marko'] },
-    { name: 'astro', fileExtensions: ['astro'] },
+    {
+      name: 'astro',
+      fileExtensions: ['astro'],
+      fileNames: ['astro.config.js', 'astro.config.mjs', 'astro.config.cjs'],
+    },
     { name: 'pdf', fileExtensions: ['pdf'] },
     { name: 'table', fileExtensions: ['xlsx', 'xls', 'csv', 'tsv'] },
     {
@@ -723,7 +731,12 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'next',
-      fileNames: ['next.config.js', 'next.config.ts'],
+      fileNames: ['next.config.js', 'next.config.ts', 'next.config.mjs'],
+      light: true,
+    },
+    {
+      name: 'remix',
+      fileNames: ['remix.config.js', 'remix.config.ts'],
       light: true,
     },
     {
@@ -972,6 +985,14 @@ export const fileIcons: FileIcons = {
       ],
     },
     {
+      name: 'blitz',
+      fileNames: [
+        'blitz.config.js',
+        'blitz.config.ts',
+        '.blitz.config.compiled.js',
+      ],
+    },
+    {
       name: 'contributing',
       fileNames: ['contributing.md'],
     },
@@ -1074,6 +1095,10 @@ export const fileIcons: FileIcons = {
         'firestore.rules',
         'firestore.indexes.json',
       ],
+    },
+    {
+      name: 'figma',
+      fileExtensions: ['fig'],
     },
     {
       name: 'rollup',
@@ -1686,6 +1711,7 @@ export const fileIcons: FileIcons = {
       fileNames: ['maven.config', 'jvm.config'],
     },
     { name: 'ada', fileExtensions: ['ada', 'adb', 'ads', 'ali'] },
+    { name: 'serverless', fileNames: ['serverless.yml'] },
     {
       name: 'ember',
       fileNames: ['.ember-cli', '.ember-cli.js', 'ember-cli-builds.js'],

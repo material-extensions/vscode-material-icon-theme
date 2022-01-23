@@ -46,7 +46,7 @@ export const setIconOpacity = (
  * Validate the opacity value.
  * @param opacity Opacity value
  */
-export const validateOpacityValue = (opacity: number) => {
+export const validateOpacityValue = (opacity: number | undefined) => {
   return opacity !== undefined && opacity <= 1 && opacity >= 0;
 };
 
@@ -99,7 +99,7 @@ const adjustOpacity = (
 
     let updatedRootElement: string;
 
-    if (options.opacity < 1) {
+    if (options.opacity !== undefined && options.opacity < 1) {
       updatedRootElement = addOpacityAttribute(svgRootElement, options.opacity);
     } else {
       updatedRootElement = removeOpacityAttribute(svgRootElement);
