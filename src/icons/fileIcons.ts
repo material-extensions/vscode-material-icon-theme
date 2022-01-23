@@ -1120,6 +1120,7 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'hack', fileNames: ['.hhconfig'] },
+    { name: 'hardhat', fileNames: ['hardhat.config.js', 'hardhat.config.ts'] },
     {
       name: 'stylelint',
       fileNames: [
