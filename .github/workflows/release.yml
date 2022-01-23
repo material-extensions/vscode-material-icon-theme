@@ -20,6 +20,8 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - name: Setup Node.js ⚙️
         uses: actions/setup-node@v2
         with:
@@ -32,6 +34,7 @@ jobs:
         run: |
           git config --global user.name 'Philipp Kief'
           git config --global user.email 'PKief@users.noreply.github.com'
+          git config --global push.followTags true
           npm version ${{ env.VERSION_CHANGE }}
       - name: Get version 🔍
         run: |
@@ -40,7 +43,7 @@ jobs:
       - name: Build ⚒️
         run: vsce package
       - name: Push tags 📌
-        run: git push --follow-tags
+        run: git push
       - name: Release ${{ env.VERSION }} 🔆
         uses: softprops/action-gh-release@v1
         with:

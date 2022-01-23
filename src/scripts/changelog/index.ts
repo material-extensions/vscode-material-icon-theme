@@ -37,6 +37,7 @@ const getReleaseCommits = async (
   return logResult.stdout
     .split('\n')
     .filter((message) => !new RegExp(config.blacklistPattern).test(message))
+    .filter((message) => !!message)
     .map((message) => {
       const data = message.split(separator);
       return {
