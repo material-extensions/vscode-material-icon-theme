@@ -20,6 +20,7 @@
     "preview": "ts-node ./src/scripts/preview",
     "svgo": "svgo -i icons -o icons -q",
     "test": "node ./out/test/runTest.js",
+    "preversion": "npm run contributors && git add images/contributors.png && npm run preview && git add images/fileIcons.png && git add images/folderIcons.png",
     "version": "ts-node ./src/scripts/changelog/index && git add CHANGELOG.md",
     "vscode:prepublish": "npm run lint && npm run compile && npm run package-web"
   },
