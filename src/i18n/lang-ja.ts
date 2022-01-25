@@ -39,7 +39,8 @@ export const translation: Translation = {
   confirmReload:
     'アイコンの変更を反映するには VS Code を再起動する必要があります。',
   reload: '再起動',
-  outdatedVersion: 'このコマンドを使用するには VS Code を更新する必要があります。',
+  outdatedVersion:
+    'このコマンドを使用するには VS Code を更新する必要があります。',
   updateVSCode: 'VS Code を更新',
   grayscale: {
     toggle: 'グレースケールアイコンを切り替える',
