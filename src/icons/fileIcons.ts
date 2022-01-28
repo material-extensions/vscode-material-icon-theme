@@ -730,6 +730,15 @@ export const fileIcons: FileIcons = {
       light: true,
     },
     {
+      name: 'pulumi',
+      fileNames: [
+        'pulumi.yaml',
+        'pulumi.dev.yaml',
+        'pulumi.prod.yaml',
+        'pulumi.staging.yaml',
+      ],
+    },
+    {
       name: 'next',
       fileNames: ['next.config.js', 'next.config.ts', 'next.config.mjs'],
       light: true,
