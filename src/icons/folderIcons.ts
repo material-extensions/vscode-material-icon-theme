@@ -631,6 +631,7 @@ export const folderIcons: FolderTheme[] = [
         ],
       },
       { name: 'folder-quasar', folderNames: ['.quasar'] },
+      { name: 'folder-next', folderNames: ['.next'] },
       { name: 'folder-cobol', folderNames: ['cobol'] },
       { name: 'folder-yarn', folderNames: ['yarn', '.yarn'] },
       { name: 'folder-husky', folderNames: ['husky', '.husky'] },
