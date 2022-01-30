@@ -1759,5 +1759,9 @@ export const fileIcons: FileIcons = {
     { name: 'ndst', fileExtensions: ['ndst.yml', 'ndst.yaml', 'ndst.json'] },
     { name: 'tobi', fileExtensions: ['tobi'] },
     { name: 'tobimake', fileNames: ['.tobimake'] },
+    {
+      name: 'pnpm',
+      fileNames: ['pnpm-lock.yaml', 'pnpm-workspace.yaml'],
+    },
   ],
 };
