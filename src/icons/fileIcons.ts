@@ -1760,6 +1760,11 @@ export const fileIcons: FileIcons = {
     { name: 'tobi', fileExtensions: ['tobi'] },
     { name: 'tobimake', fileNames: ['.tobimake'] },
     {
+      name: 'pnpm',
+      light: true,
+      fileNames: ['pnpm-lock.yaml', 'pnpm-workspace.yaml', '.pnpmfile.cjs'],
+    },
+    {
       name: 'gridsome',
       fileNames: ['gridsome.config.js', 'gridsome.server.js'],
     },
