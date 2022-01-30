@@ -1764,5 +1764,9 @@ export const fileIcons: FileIcons = {
       light: true,
       fileNames: ['pnpm-lock.yaml', 'pnpm-workspace.yaml', '.pnpmfile.cjs'],
     },
+    {
+      name: 'gridsome',
+      fileNames: ['gridsome.config.js', 'gridsome.server.js'],
+    },
   ],
 };
