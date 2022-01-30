@@ -1761,7 +1761,8 @@ export const fileIcons: FileIcons = {
     { name: 'tobimake', fileNames: ['.tobimake'] },
     {
       name: 'pnpm',
-      fileNames: ['pnpm-lock.yaml', 'pnpm-workspace.yaml'],
+      light: true,
+      fileNames: ['pnpm-lock.yaml', 'pnpm-workspace.yaml', '.pnpmfile.cjs'],
     },
   ],
 };
