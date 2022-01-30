@@ -1,58 +1,73 @@
-import * as semver from 'semver';
-import * as vscode from 'vscode';
-import * as helpers from './index';
+import { extensions, Memento, workspace } from 'vscode';
+import { isThemeActivated } from '.';
+import { ThemeStatus } from '../models/helpers/themeStatus';
 
-export enum ThemeStatus {
-    neverUsedBefore,
-    updated,
-    current
-}
+/** Get configuration of vs code. */
+export const getConfig = (section?: string) => {
+  return workspace.getConfiguration(section);
+};
 
-/** Check the current status of the theme */
-export const checkThemeStatus = async (state: vscode.Memento) => {
-    try {
-        // get the version from the state
-        const stateVersion = state.get('material-icon-theme.version');
-        const packageVersion = getCurrentExtensionVersion();
+export const versionKey = 'material-icon-theme.version';
 
-        // check if the theme was used before
-        if (stateVersion === undefined) {
-            await updateExtensionVersionInMemento(state);
-            return themeIsAlreadyActivated() ? ThemeStatus.updated : ThemeStatus.neverUsedBefore;
-        }
-        // compare the version in the state with the package version
-        else if (semver.lt(stateVersion, packageVersion)) {
-            await updateExtensionVersionInMemento(state);
-            return ThemeStatus.updated;
-        }
-        else {
-            return ThemeStatus.current;
-        }
+/**
+ * Check the current status of the theme
+ * @param state Global state of context (Memento API)
+ */
+export const checkThemeStatus = async (
+  state: Memento
+): Promise<ThemeStatus> => {
+  try {
+    // get the version from the state
+    const stateVersion = state.get(versionKey);
+    const packageVersion = getCurrentExtensionVersion();
+
+    // check if the theme was used before
+    if (stateVersion === undefined || typeof stateVersion !== 'string') {
+      await updateExtensionVersionInMemento(state);
+      return themeIsAlreadyActivated()
+        ? ThemeStatus.updated
+        : ThemeStatus.neverUsedBefore;
     }
-    catch (error) {
-        console.error(error);
+    // compare the version in the state with the package version
+    else if (packageVersion && isGreaterVersion(packageVersion, stateVersion)) {
+      await updateExtensionVersionInMemento(state);
+      return ThemeStatus.updated;
+    } else {
+      return ThemeStatus.current;
     }
+  } catch (error) {
+    console.error(error);
+    return ThemeStatus.current;
+  }
+};
+
+/**
+ * Compares two version numbers (e.g. 1.0.0 with 1.0.1)
+ * @param a version b
+ * @param b version a
+ * @returns true if version `a` is greater than version `b`
+ */
+const isGreaterVersion = (a: string, b: string): boolean => {
+  return (
+    a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }) === 1
+  );
 };
 
 /** Check if the theme was used before */
 const themeIsAlreadyActivated = () => {
-    return helpers.isThemeActivated() || helpers.isThemeActivated(true);
+  return isThemeActivated() || isThemeActivated(true);
 };
 
 /** Update the version number to the current version in the memento. */
-const updateExtensionVersionInMemento = (state: vscode.Memento) => {
-    return state.update('material-icon-theme.version', getCurrentExtensionVersion());
+const updateExtensionVersionInMemento = (state: Memento) => {
+  const currentVersion = getCurrentExtensionVersion();
+  if (currentVersion) {
+    return state.update(versionKey, currentVersion);
+  }
 };
 
 /** Get the current version of the extension */
-const getCurrentExtensionVersion = (): string => {
-    return vscode.extensions.getExtension('PKief.material-icon-theme').packageJSON.version;
-};
-
-/**
- * Check if the current version of VS Code
- * supports new features.
-*/
-export const checkVersionSupport = (supportedVersion: string): boolean => {
-    return !semver.lt(vscode.version, supportedVersion);
+const getCurrentExtensionVersion = (): string | undefined => {
+  return extensions.getExtension('PKief.material-icon-theme')?.packageJSON
+    .version;
 };

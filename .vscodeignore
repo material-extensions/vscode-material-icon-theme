@@ -1,4 +1,5 @@
 .vscode/**
+.github/**
 .vscode-test/**
 out/**
 test/**
@@ -6,8 +7,6 @@ src/**
 scripts/**
 **/*.map
 .gitignore
-.travis.yml
-appveyor.yml
 tsconfig.json
 tslint.json
 images/**
@@ -16,4 +15,6 @@ logo.svg
 node_modules
 package-lock.json
 yarn.lock
-webpack.config.js
+build/**
+svgo.config.js
+.eslintignore

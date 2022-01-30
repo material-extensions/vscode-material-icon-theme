@@ -1,0 +1,51 @@
+{
+  "extends": ["plugin:prettier/recommended"],
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "tsconfig.json",
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "variable",
+        "format": ["camelCase"]
+      }
+    ],
+    "@typescript-eslint/prefer-namespace-keyword": "error",
+    "no-trailing-spaces": "error",
+    "camelcase": "error",
+    "prefer-const": "error",
+    "eqeqeq": ["error", "smart"],
+    "id-blacklist": [
+      "error",
+      "any",
+      "Number",
+      "number",
+      "String",
+      "string",
+      "Boolean",
+      "boolean",
+      "Undefined"
+    ],
+    "id-match": "error",
+    "no-eval": "error",
+    "no-underscore-dangle": "error",
+    "no-unsafe-finally": "error",
+    "no-var": "error",
+    "spaced-comment": "error",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ]
+  }
+}

@@ -14,14 +14,14 @@ export const iconJsonName: string = 'material-icons.json';
 export const openedFolder: string = '-open';
 
 /**
- * FIle ending for light icons.
+ * File ending for light icons.
  */
-export const lightVersion: string = '_light';
+export const lightColorFileEnding: string = '_light';
 
 /**
  * File ending for high contrast icons.
  */
-export const highContrastVersion: string = '_highContrast';
+export const highContrastColorFileEnding: string = '_highContrast';
 
 /**
  * Pattern to match wildcards for custom file icon mappings.
