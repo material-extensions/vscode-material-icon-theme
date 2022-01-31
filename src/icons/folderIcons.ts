@@ -693,6 +693,9 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-angular',
         folderNames: ['.angular'],
       },
+      { name: 'folder-atom', folderNames: ['atom', 'atoms'] },
+      { name: 'folder-molecule', folderNames: ['molecule', 'molecules'] },
+      { name: 'folder-organism', folderNames: ['organism', 'organisms'] },
     ],
   },
   {
