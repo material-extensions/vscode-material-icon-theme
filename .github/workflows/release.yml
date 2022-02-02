@@ -35,7 +35,7 @@ jobs:
           git config --global user.name 'Philipp Kief'
           git config --global user.email 'PKief@users.noreply.github.com'
           git config --global push.followTags true
-          npm version ${{ env.VERSION_CHANGE }}
+          npm version ${{ env.VERSION_CHANGE }} -m "Release %s"
       - name: Get meta data 🔍
         run: |
           NODE_VERSION=$(node -p -e "require('./package.json').version")
