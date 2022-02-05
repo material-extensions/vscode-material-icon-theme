@@ -964,6 +964,10 @@ export const fileIcons: FileIcons = {
       ],
     },
     {
+      name: 'turborepo',
+      fileNames: ['turbo.json'],
+    },
+    {
       name: 'babel',
       fileNames: [
         '.babelrc',
