@@ -505,7 +505,7 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-job', folderNames: ['job', 'jobs'] },
       { name: 'folder-keys', folderNames: ['keys', 'key', 'token', 'tokens'] },
-      { name: 'folder-layout', folderNames: ['layout', 'layouts'] },
+      { name: 'folder-layout', folderNames: ['layout', 'layouts', '_layouts'] },
       {
         name: 'folder-mail',
         folderNames: ['mail', 'mails', 'email', 'emails', 'smtp', 'mailers'],
@@ -631,6 +631,7 @@ export const folderIcons: FolderTheme[] = [
         ],
       },
       { name: 'folder-quasar', folderNames: ['.quasar'] },
+      { name: 'folder-next', folderNames: ['.next'] },
       { name: 'folder-cobol', folderNames: ['cobol'] },
       { name: 'folder-yarn', folderNames: ['yarn', '.yarn'] },
       { name: 'folder-husky', folderNames: ['husky', '.husky'] },
