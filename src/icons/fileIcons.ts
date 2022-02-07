@@ -29,7 +29,7 @@ export const fileIcons: FileIcons = {
         'composer.lock',
         '.jsbeautifyrc',
         '.esformatter',
-        'cdp.pid'
+        'cdp.pid',
       ],
     },
     {
@@ -1148,7 +1148,7 @@ export const fileIcons: FileIcons = {
         'lint-staged.config.cjs',
         'lint-staged.config.js',
         '.lintstagedrc.js',
-      ]
+      ],
     },
     {
       name: 'prettier',
