@@ -1147,7 +1147,7 @@ export const fileIcons: FileIcons = {
         '.lintstagedrc.cjs',
         'lint-staged.config.cjs',
         'lint-staged.config.js',
-        '.lintstagedrc.js'
+        '.lintstagedrc.js',
       ]
     },
     {
