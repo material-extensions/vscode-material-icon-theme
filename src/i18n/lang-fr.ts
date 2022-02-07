@@ -41,4 +41,13 @@ export const translation: Translation = {
   outdatedVersion:
     'Vous devez mettre VS Code à jour pour utiliser cette commande.',
   updateVSCode: 'Mettre VS Code à jour.',
+  grayscale: {
+    toggle: 'Basculer les icônes en niveaux de gris',
+    enable: 'Activer les icônes en niveaux de gris',
+    disable: 'Désactiver les icônes en niveaux de gris',
+  },
+  saturation: {
+    inputPlaceholder: 'Valeur de saturation (entre 0 et 1)',
+    wrongValue: 'La valeur doit être comprise entre 0 et 1 !',
+  },
 };

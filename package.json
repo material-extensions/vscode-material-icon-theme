@@ -2,7 +2,7 @@
   "name": "material-icon-theme",
   "displayName": "Material Icon Theme",
   "description": "Material Design Icons for Visual Studio Code",
-  "version": "4.11.0",
+  "version": "4.12.1",
   "scripts": {
     "build": "npm run compile:dev && npm run postcompile",
     "check": "ts-node ./src/scripts/icons/checks",
@@ -20,6 +20,9 @@
     "preview": "ts-node ./src/scripts/preview",
     "svgo": "svgo -i icons -o icons -q",
     "test": "node ./out/test/runTest.js",
+    "changelog": "ts-node ./src/scripts/changelog/index",
+    "preversion": "npm run contributors && git add images/contributors.png && npm run preview && git add images/fileIcons.png && git add images/folderIcons.png",
+    "version": "npm run changelog && git add CHANGELOG.md",
     "vscode:prepublish": "npm run lint && npm run compile && npm run package-web"
   },
   "publisher": "PKief",

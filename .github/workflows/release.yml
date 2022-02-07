@@ -1,0 +1,64 @@
+name: Release + Publish
+
+on:
+  workflow_dispatch:
+    inputs:
+      versionChange:
+        type: choice
+        description: Select the version change
+        requried: true
+        options:
+          - major
+          - minor
+          - patch
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      VERSION_CHANGE: ${{ github.event.inputs.versionChange }}
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Setup Node.js ⚙️
+        uses: actions/setup-node@v2
+        with:
+          node-version: 'lts/*'
+      - name: Install node_modules 📦
+        run: |
+          npm install
+          npm install --global vsce
+      - name: Update version ↗
+        run: |
+          git config --global user.name 'Philipp Kief'
+          git config --global user.email 'PKief@users.noreply.github.com'
+          git config --global push.followTags true
+          npm version ${{ env.VERSION_CHANGE }}
+      - name: Get version 🔍
+        run: |
+          NODE_VERSION=$(node -p -e "require('./package.json').version")
+          echo VERSION=$NODE_VERSION >> $GITHUB_ENV
+      - name: Build ⚒️
+        run: vsce package
+      - name: Push tags 📌
+        run: git push
+      - name: Release ${{ env.VERSION }} 🔆
+        uses: softprops/action-gh-release@v1
+        with:
+          files: material-icon-theme-${{ env.VERSION }}.vsix
+          tag_name: v${{ env.VERSION }}
+          name: Material Icon Theme v${{ env.VERSION }}
+          generate_release_notes: true
+      - name: Publish to Open VSX Registry 🌐
+        uses: HaaLeo/publish-vscode-extension@v1
+        with:
+          pat: ${{ secrets.OPEN_VSX_TOKEN }}
+          extensionFile: material-icon-theme-${{ env.VERSION }}.vsix
+      - name: Publish to Visual Studio Marketplace 🌐
+        uses: HaaLeo/publish-vscode-extension@v1
+        with:
+          pat: ${{ secrets.VS_MARKETPLACE_TOKEN }}
+          registryUrl: https://marketplace.visualstudio.com
+          extensionFile: material-icon-theme-${{ env.VERSION }}.vsix

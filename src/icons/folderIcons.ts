@@ -261,6 +261,7 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['db', 'database', 'databases', 'sql', 'data', '_data'],
       },
       { name: 'folder-log', folderNames: ['log', 'logs'] },
+      { name: 'folder-target', folderNames: ['target'] },
       {
         name: 'folder-temp',
         folderNames: [
@@ -436,7 +437,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-cluster', folderNames: ['cluster', 'clusters'] },
       {
         name: 'folder-command',
-        folderNames: ['command', 'commands', 'cli', 'clis'],
+        folderNames: ['command', 'commands', 'cmd', 'cli', 'clis'],
       },
       { name: 'folder-constant', folderNames: ['constant', 'constants'] },
       {
@@ -504,10 +505,10 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-job', folderNames: ['job', 'jobs'] },
       { name: 'folder-keys', folderNames: ['keys', 'key', 'token', 'tokens'] },
-      { name: 'folder-layout', folderNames: ['layout', 'layouts'] },
+      { name: 'folder-layout', folderNames: ['layout', 'layouts', '_layouts'] },
       {
         name: 'folder-mail',
-        folderNames: ['mail', 'mails', 'email', 'emails', 'smtp'],
+        folderNames: ['mail', 'mails', 'email', 'emails', 'smtp', 'mailers'],
       },
       { name: 'folder-mappings', folderNames: ['mappings', 'mapping'] },
       { name: 'folder-meta', folderNames: ['meta'] },
@@ -620,8 +621,17 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-mjml', folderNames: ['mjml'] },
       { name: 'folder-admin', folderNames: ['admin'] },
       { name: 'folder-scala', folderNames: ['scala'] },
-      { name: 'folder-connection', folderNames: ['connection', 'connections'] },
+      {
+        name: 'folder-connection',
+        folderNames: [
+          'connection',
+          'connections',
+          'integration',
+          'integrations',
+        ],
+      },
       { name: 'folder-quasar', folderNames: ['.quasar'] },
+      { name: 'folder-next', folderNames: ['.next'] },
       { name: 'folder-cobol', folderNames: ['cobol'] },
       { name: 'folder-yarn', folderNames: ['yarn', '.yarn'] },
       { name: 'folder-husky', folderNames: ['husky', '.husky'] },

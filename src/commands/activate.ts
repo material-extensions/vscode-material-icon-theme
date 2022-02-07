@@ -16,10 +16,7 @@ const setIconTheme = async () => {
       .update('workbench.iconTheme', 'material-icon-theme', true);
 
     // local workspace config
-    if (
-      helpers.getConfig().inspect('workbench.iconTheme').workspaceValue !==
-      undefined
-    ) {
+    if (helpers.getConfig().inspect('workbench.iconTheme')?.workspaceValue) {
       helpers.getConfig().update('workbench.iconTheme', 'material-icon-theme');
     }
     vscode.window.showInformationMessage(i18n.translate('activated'));

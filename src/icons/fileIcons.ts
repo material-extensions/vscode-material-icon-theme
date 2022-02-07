@@ -42,6 +42,10 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['proto'],
     },
     {
+      name: 'playwright',
+      fileNames: ['playwright.config.js', 'playwright.config.ts'],
+    },
+    {
       name: 'sublime',
       fileExtensions: ['sublime-project', 'sublime-workspace'],
     },
@@ -231,7 +235,11 @@ export const fileIcons: FileIcons = {
     },
     { name: 'typescript-def', fileExtensions: ['d.ts'] },
     { name: 'markojs', fileExtensions: ['marko'] },
-    { name: 'astro', fileExtensions: ['astro'] },
+    {
+      name: 'astro',
+      fileExtensions: ['astro'],
+      fileNames: ['astro.config.js', 'astro.config.mjs', 'astro.config.cjs'],
+    },
     { name: 'pdf', fileExtensions: ['pdf'] },
     { name: 'table', fileExtensions: ['xlsx', 'xls', 'csv', 'tsv'] },
     {
@@ -313,7 +321,7 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['hh', 'hpp', 'hxx', 'h++', 'hp', 'tcc', 'inl'],
     },
     { name: 'go', fileExtensions: ['go'] },
-    { name: 'go-mod', fileNames: ['go.mod', 'go.sum'] },
+    { name: 'go-mod', fileNames: ['go.mod', 'go.sum', 'go.work'] },
     { name: 'python', fileExtensions: ['py'] },
     {
       name: 'python-misc',
@@ -722,7 +730,12 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'next',
-      fileNames: ['next.config.js', 'next.config.mjs', 'next.config.ts'],
+      fileNames: ['next.config.js', 'next.config.ts', 'next.config.mjs'],
+      light: true,
+    },
+    {
+      name: 'remix',
+      fileNames: ['remix.config.js', 'remix.config.ts'],
       light: true,
     },
     {
@@ -971,6 +984,14 @@ export const fileIcons: FileIcons = {
       ],
     },
     {
+      name: 'blitz',
+      fileNames: [
+        'blitz.config.js',
+        'blitz.config.ts',
+        '.blitz.config.compiled.js',
+      ],
+    },
+    {
       name: 'contributing',
       fileNames: ['contributing.md'],
     },
@@ -1075,6 +1096,10 @@ export const fileIcons: FileIcons = {
       ],
     },
     {
+      name: 'figma',
+      fileExtensions: ['fig'],
+    },
+    {
       name: 'rollup',
       fileNames: [
         'rollup.config.js',
@@ -1146,6 +1171,7 @@ export const fileIcons: FileIcons = {
       fileNames: [
         '.renovaterc',
         '.renovaterc.json',
+        'renovate-config.json',
         'renovate.json',
         'renovate.json5',
       ],
@@ -1680,6 +1706,16 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['tsconfig.json'],
     },
     {
+      name: 'tauri',
+      fileNames: [
+        'tauri.config.json',
+        'tauri.linux.conf.json',
+        'tauri.windows.conf.json',
+        'tauri.macos.conf.json',
+      ],
+      fileExtensions: ['tauri'],
+    },
+    {
       name: 'jsconfig',
       fileNames: ['jsconfig.json'],
       fileExtensions: ['jsconfig.json'],
@@ -1689,6 +1725,7 @@ export const fileIcons: FileIcons = {
       fileNames: ['maven.config', 'jvm.config'],
     },
     { name: 'ada', fileExtensions: ['ada', 'adb', 'ads', 'ali'] },
+    { name: 'serverless', fileNames: ['serverless.yml'] },
     {
       name: 'ember',
       fileNames: ['.ember-cli', '.ember-cli.js', 'ember-cli-builds.js'],
@@ -1732,6 +1769,18 @@ export const fileIcons: FileIcons = {
     },
     { name: 'rome', fileNames: ['rome.json'] },
     { name: 'cypress', fileNames: ['cypress.json', 'cypress.env.json'] },
+    { name: 'siyuan', fileExtensions: ['sy'] },
     { name: 'ndst', fileExtensions: ['ndst.yml', 'ndst.yaml', 'ndst.json'] },
+    { name: 'tobi', fileExtensions: ['tobi'] },
+    { name: 'tobimake', fileNames: ['.tobimake'] },
+    {
+      name: 'pnpm',
+      light: true,
+      fileNames: ['pnpm-lock.yaml', 'pnpm-workspace.yaml', '.pnpmfile.cjs'],
+    },
+    {
+      name: 'gridsome',
+      fileNames: ['gridsome.config.js', 'gridsome.server.js'],
+    },
   ],
 };
