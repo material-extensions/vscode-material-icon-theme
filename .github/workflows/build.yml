@@ -24,7 +24,7 @@ jobs:
         shell: bash
         if: ${{ success() && matrix.os == 'ubuntu-latest' }}
       - name: Install node_modules 📦
-        run: npm install
+        run: npm ci
       - name: Cache node_modules 💾
         uses: actions/cache@v2
         env:
