@@ -322,7 +322,7 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['hh', 'hpp', 'hxx', 'h++', 'hp', 'tcc', 'inl'],
     },
     { name: 'go', fileExtensions: ['go'] },
-    { name: 'go-mod', fileNames: ['go.mod', 'go.sum'] },
+    { name: 'go-mod', fileNames: ['go.mod', 'go.sum', 'go.work'] },
     { name: 'python', fileExtensions: ['py'] },
     {
       name: 'python-misc',
@@ -1759,5 +1759,14 @@ export const fileIcons: FileIcons = {
     { name: 'ndst', fileExtensions: ['ndst.yml', 'ndst.yaml', 'ndst.json'] },
     { name: 'tobi', fileExtensions: ['tobi'] },
     { name: 'tobimake', fileNames: ['.tobimake'] },
+    {
+      name: 'pnpm',
+      light: true,
+      fileNames: ['pnpm-lock.yaml', 'pnpm-workspace.yaml', '.pnpmfile.cjs'],
+    },
+    {
+      name: 'gridsome',
+      fileNames: ['gridsome.config.js', 'gridsome.server.js'],
+    },
   ],
 };
