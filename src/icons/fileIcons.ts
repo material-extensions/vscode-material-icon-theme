@@ -1768,5 +1768,9 @@ export const fileIcons: FileIcons = {
       name: 'gridsome',
       fileNames: ['gridsome.config.js', 'gridsome.server.js'],
     },
+    {
+      name: 'electron',
+      fileNames: ['.electron.js'],
+    },
   ],
 };
