@@ -1094,6 +1094,7 @@ export const fileIcons: FileIcons = {
         '.firebaserc',
         'firestore.rules',
         'firestore.indexes.json',
+        'storage.rules',
       ],
     },
     {
