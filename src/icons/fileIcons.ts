@@ -1488,7 +1488,10 @@ export const fileIcons: FileIcons = {
     },
     { name: 'coconut', fileExtensions: ['coco'] },
     { name: 'tilt', fileNames: ['tiltfile'] },
-    { name: 'capacitor', fileNames: ['capacitor.config.json'] },
+    {
+      name: 'capacitor',
+      fileNames: ['capacitor.config.json', 'capacitor.config.ts'],
+    },
     { name: 'sketch', fileExtensions: ['sketch'] },
     { name: 'pawn', fileExtensions: ['pwn', 'amx'] },
     { name: 'adonis', fileNames: ['.adonisrc.json', 'ace'] },
