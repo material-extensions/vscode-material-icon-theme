@@ -1711,7 +1711,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'maven',
-      fileNames: ['maven.config', 'jvm.config'],
+      fileNames: ['maven.config', 'jvm.config', 'pom.xml'],
     },
     { name: 'ada', fileExtensions: ['ada', 'adb', 'ads', 'ali'] },
     { name: 'serverless', fileNames: ['serverless.yml'] },
