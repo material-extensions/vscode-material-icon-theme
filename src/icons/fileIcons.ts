@@ -1771,5 +1771,15 @@ export const fileIcons: FileIcons = {
       name: 'gridsome',
       fileNames: ['gridsome.config.js', 'gridsome.server.js'],
     },
+    {
+      name: 'steadybit',
+      fileExtensions: ['steadybit.yml', 'steadybit.yaml'],
+      fileNames: [
+        '.steadybit.yml',
+        'steadybit.yml',
+        '.steadybit.yaml',
+        'steadybit.yaml',
+      ],
+    },
   ],
 };
