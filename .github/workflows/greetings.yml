@@ -1,0 +1,17 @@
+name: Greetings
+
+on: [pull_request, issues]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+      - name: First interaction 👍
+        uses: actions/first-interaction@v1.1.0
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          issue-message: 🎉 Thanks for opening your first issue here! Be sure to follow the issue template! \n\nPlease be patient until we can take care of your issue 👨‍💻
+          pr-message: 🎉 Thanks for opening this pull request! Please check out our [contributing guidelines](https://github.com/PKief/vscode-material-icon-theme/blob/main/CONTRIBUTING.md). \n\nPlease be patient until we review your changes 💌
