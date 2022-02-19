@@ -26,6 +26,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 'lts/*'
+          registry-url: 'https://registry.npmjs.org'
       - name: Install node_modules 📦
         run: |
           npm ci
@@ -66,3 +67,7 @@ jobs:
           pat: ${{ secrets.VS_MARKETPLACE_TOKEN }}
           registryUrl: https://marketplace.visualstudio.com
           extensionFile: ${{ env.NAME }}-${{ env.VERSION }}.vsix
+      - name: Publish to NPM Registry 🌐
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
