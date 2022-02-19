@@ -6,5 +6,6 @@ import { createIconFile } from './../../icons/index';
 try {
   createIconFile();
 } catch (error) {
-  throw Error(error);
+  console.error(error);
+  throw Error('Could not create icon file!');
 }

@@ -9,7 +9,7 @@ import { changeOpacity } from './opacity';
 import { restoreDefaultConfig } from './restoreConfig';
 import { changeSaturation } from './saturation';
 
-const commands = {
+const commands: { [commmand: string]: () => Promise<void> } = {
   activateIcons,
   toggleIconPacks,
   changeFolderTheme,
