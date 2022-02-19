@@ -40,4 +40,13 @@ export const translation: Translation = {
   reload: 'Перезагрузить',
   outdatedVersion: 'Нужно обновить VS Code чтобы использовать эту команду.',
   updateVSCode: 'Обновить VS Code',
+  grayscale: {
+    toggle: 'Переключение полутоновых значков',
+    enable: 'Включить полутоновые значки',
+    disable: 'Отключить значки в оттенках серого',
+  },
+  saturation: {
+    inputPlaceholder: 'Значение насыщенности (между 0 и 1)',
+    wrongValue: 'Значение должно быть между 0 и 1!',
+  },
 };

@@ -15,9 +15,9 @@ const parseLinkHeader = (linkHeader: string) => {
   const lastPagePattern = new RegExp(/\bpage=(\d)[^>]*>;\srel="last"/);
   const prevPagePattern = new RegExp(/\bpage=(\d)[^>]*>;\srel="prev"/);
 
-  const nextPage = nextPagePattern.exec(linkHeader);
-  const lastPage = lastPagePattern.exec(linkHeader);
-  const prevPage = prevPagePattern.exec(linkHeader);
+  const nextPage = nextPagePattern.exec(linkHeader) ?? '';
+  const lastPage = lastPagePattern.exec(linkHeader) ?? '';
+  const prevPage = prevPagePattern.exec(linkHeader) ?? '';
 
   return { nextPage, lastPage, prevPage };
 };
@@ -43,7 +43,7 @@ const fetchContributors = (
 
     const req = https.request(requestOptions, (res) => {
       const { nextPage, lastPage, prevPage } = parseLinkHeader(
-        res.headers.link.toString()
+        res.headers?.link?.toString() ?? ''
       );
       console.log(
         '> Material Icon Theme:',
@@ -53,7 +53,7 @@ const fetchContributors = (
           }] Loading contributors from GitHub...`
         )
       );
-      const result = [];
+      const result: Uint8Array[] = [];
       res.on('data', (data: Buffer) => {
         result.push(data);
       });

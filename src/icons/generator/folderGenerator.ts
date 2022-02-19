@@ -11,9 +11,9 @@ import {
   IconJsonOptions,
 } from '../../models/index';
 import {
-  highContrastVersion,
+  highContrastColorFileEnding,
   iconFolderPath,
-  lightVersion,
+  lightColorFileEnding,
   openedFolder,
 } from './constants';
 
@@ -29,13 +29,16 @@ export const loadFolderIconDefinitions = (
   config.hidesExplorerArrows = options.hidesExplorerArrows;
   const activeTheme = getEnabledFolderTheme(
     folderThemes,
-    options.folders.theme
+    options.folders?.theme
   );
+  if (!activeTheme) {
+    return {};
+  }
   const enabledIcons = disableIconsByPack(activeTheme, options.activeIconPack);
-  const customIcons = getCustomIcons(options.folders.associations);
+  const customIcons = getCustomIcons(options.folders?.associations);
   const allIcons = [...enabledIcons, ...customIcons];
 
-  if (options.folders.theme === 'none') {
+  if (options.folders?.theme === 'none') {
     return config;
   }
 
@@ -47,14 +50,18 @@ export const loadFolderIconDefinitions = (
       ? merge(
           {},
           config.light,
-          setFolderNames(icon.name, icon.folderNames, lightVersion)
+          setFolderNames(icon.name, icon.folderNames, lightColorFileEnding)
         )
       : config.light;
     config.highContrast = icon.highContrast
       ? merge(
           {},
           config.highContrast,
-          setFolderNames(icon.name, icon.folderNames, highContrastVersion)
+          setFolderNames(
+            icon.name,
+            icon.folderNames,
+            highContrastColorFileEnding
+          )
         )
       : config.highContrast;
   });
@@ -72,7 +79,7 @@ const setDefaultFolderIcons = (
 ): IconConfiguration => {
   config = merge({}, config);
   const hasFolderIcons =
-    theme.defaultIcon.name && theme.defaultIcon.name.length > 0;
+    !!theme.defaultIcon.name && theme.defaultIcon.name.length > 0;
   if (hasFolderIcons) {
     config = setIconDefinitions(config, theme.defaultIcon);
   }
@@ -85,7 +92,11 @@ const setDefaultFolderIcons = (
     ? merge(
         {},
         config.light,
-        createDefaultIconConfigObject(hasFolderIcons, theme, lightVersion)
+        createDefaultIconConfigObject(
+          hasFolderIcons,
+          theme,
+          lightColorFileEnding
+        )
       )
     : config.light;
   config.highContrast = theme.defaultIcon.highContrast
@@ -95,7 +106,7 @@ const setDefaultFolderIcons = (
         createDefaultIconConfigObject(
           hasFolderIcons,
           theme,
-          highContrastVersion
+          highContrastColorFileEnding
         )
       )
     : config.highContrast;
@@ -111,14 +122,22 @@ const setDefaultFolderIcons = (
       ? merge(
           {},
           config.light,
-          createRootIconConfigObject(hasFolderIcons, theme, lightVersion)
+          createRootIconConfigObject(
+            hasFolderIcons,
+            theme,
+            lightColorFileEnding
+          )
         )
       : config.light;
     config.highContrast = theme.rootFolder.highContrast
       ? merge(
           {},
           config.highContrast,
-          createRootIconConfigObject(hasFolderIcons, theme, highContrastVersion)
+          createRootIconConfigObject(
+            hasFolderIcons,
+            theme,
+            highContrastColorFileEnding
+          )
         )
       : config.highContrast;
   }
@@ -131,8 +150,8 @@ const setDefaultFolderIcons = (
  */
 const getEnabledFolderTheme = (
   themes: FolderTheme[],
-  enabledTheme: string
-): FolderTheme => {
+  enabledTheme: string | undefined
+): FolderTheme | undefined => {
   return themes.find((theme) => theme.name === enabledTheme);
 };
 
@@ -140,10 +159,10 @@ const getEnabledFolderTheme = (
  * Disable all file icons that are in a pack which is disabled.
  */
 const disableIconsByPack = (
-  folderIcons: FolderTheme,
-  activatedIconPack: string
+  folderIcons: FolderTheme | undefined,
+  activatedIconPack: string | undefined
 ): FolderIcon[] => {
-  if (!folderIcons.icons || folderIcons.icons.length === 0) {
+  if (!folderIcons?.icons || folderIcons.icons.length === 0) {
     return [];
   }
   return folderIcons.icons.filter((icon) => {
@@ -163,14 +182,14 @@ const setIconDefinitions = (
     config = merge(
       {},
       config,
-      createIconDefinitions(config, icon.name, lightVersion)
+      createIconDefinitions(config, icon.name, lightColorFileEnding)
     );
   }
   if (icon.highContrast) {
     config = merge(
       {},
       config,
-      createIconDefinitions(config, icon.name, highContrastVersion)
+      createIconDefinitions(config, icon.name, highContrastColorFileEnding)
     );
   }
   return config;
@@ -182,13 +201,16 @@ const createIconDefinitions = (
   appendix: string = ''
 ) => {
   config = merge({}, config);
-  const fileConfigHash = getFileConfigHash(config.options);
-  config.iconDefinitions[iconName + appendix] = {
-    iconPath: `${iconFolderPath}${iconName}${appendix}${fileConfigHash}.svg`,
-  };
-  config.iconDefinitions[`${iconName}${openedFolder}${appendix}`] = {
-    iconPath: `${iconFolderPath}${iconName}${openedFolder}${appendix}${fileConfigHash}.svg`,
-  };
+  const fileConfigHash = getFileConfigHash(config.options ?? {});
+  const configIconDefinitions = config.iconDefinitions;
+  if (configIconDefinitions) {
+    configIconDefinitions[iconName + appendix] = {
+      iconPath: `${iconFolderPath}${iconName}${appendix}${fileConfigHash}.svg`,
+    };
+    configIconDefinitions[`${iconName}${openedFolder}${appendix}`] = {
+      iconPath: `${iconFolderPath}${iconName}${openedFolder}${appendix}${fileConfigHash}.svg`,
+    };
+  }
   return config;
 };
 
@@ -197,10 +219,19 @@ const setFolderNames = (
   folderNames: string[],
   appendix: string = ''
 ) => {
-  const obj = { folderNames: {}, folderNamesExpanded: {} };
-  folderNames.forEach((fn) => {
-    obj.folderNames[fn] = iconName + appendix;
-    obj.folderNamesExpanded[fn] = `${iconName}${openedFolder}${appendix}`;
+  const obj: Partial<IconConfiguration> = {
+    folderNames: {},
+    folderNamesExpanded: {},
+  };
+  folderNames.forEach((name) => {
+    if (obj.folderNames) {
+      obj.folderNames[name as keyof IconConfiguration] = iconName + appendix;
+    }
+    if (obj.folderNamesExpanded) {
+      obj.folderNamesExpanded[
+        name as keyof IconConfiguration
+      ] = `${iconName}${openedFolder}${appendix}`;
+    }
   });
   return obj;
 };
@@ -243,7 +274,7 @@ const createRootIconConfigObject = (
   return obj;
 };
 
-const getCustomIcons = (folderAssociations: IconAssociations) => {
+const getCustomIcons = (folderAssociations: IconAssociations | undefined) => {
   if (!folderAssociations) return [];
 
   const icons: FolderIcon[] = Object.keys(folderAssociations).map((fa) => ({
@@ -258,8 +289,8 @@ const getCustomIcons = (folderAssociations: IconAssociations) => {
   return icons;
 };
 
-export const generateFolderIcons = (color: string) => {
-  if (!validateHEXColorCode(color)) {
+export const generateFolderIcons = (color: string | undefined) => {
+  if (!color || !validateHEXColorCode(color)) {
     return console.error('Invalid color code for folder icons');
   }
 
@@ -303,7 +334,7 @@ const writeSVGFiles = (iconName: string, svg: string) => {
  * Validate the HEX color code
  * @param color HEX code
  */
-export const validateHEXColorCode = (color: string) => {
+export const validateHEXColorCode = (color: string = '') => {
   const hexPattern = new RegExp(/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/);
   return color.length > 0 && hexPattern.test(color);
 };

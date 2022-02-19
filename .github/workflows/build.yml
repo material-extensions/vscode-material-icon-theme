@@ -8,7 +8,7 @@ jobs:
     strategy:
       matrix:
         os: [windows-latest, ubuntu-latest]
-        node-version: [14.x, 16.x]
+        node-version: [16.x]
 
     name: ${{ matrix.os }} (Node.js ${{ matrix.node-version }})
 
@@ -24,7 +24,7 @@ jobs:
         shell: bash
         if: ${{ success() && matrix.os == 'ubuntu-latest' }}
       - name: Install node_modules 📦
-        run: npm install
+        run: npm ci
       - name: Cache node_modules 💾
         uses: actions/cache@v2
         env:
