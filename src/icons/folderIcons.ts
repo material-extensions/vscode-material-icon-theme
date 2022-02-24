@@ -608,7 +608,7 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-stencil', folderNames: ['.stencil'] },
       { name: 'folder-firebase', folderNames: ['.firebase'] },
-      { name: 'folder-svelte', folderNames: ['svelte'] },
+      { name: 'folder-svelte', folderNames: ['svelte', '.svelte-kit'] },
       {
         name: 'folder-update',
         folderNames: ['update', 'updates', 'upgrade', 'upgrades'],
