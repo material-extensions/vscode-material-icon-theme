@@ -3,7 +3,7 @@ name: Check SVG icon colors
 on:
   pull_request:
     paths:
-      - './icons/*.svg'
+      - 'icons/*.svg'
 
 jobs:
   color-check:
