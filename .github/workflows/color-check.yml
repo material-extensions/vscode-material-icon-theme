@@ -3,7 +3,7 @@ name: Check SVG icon colors
 on:
   pull_request:
     paths:
-      - './icons/*.svg'
+      - 'icons/*.svg'
 
 jobs:
   color-check:
@@ -17,7 +17,6 @@ jobs:
         with:
           fetch-depth: 0
       - name: Check colors 🎨
-        run: >
-          git diff origin/${{ env.TARGET_BRANCH }} --name-only | 
-          grep '.svg$' | 
-          npx svg-color-linter --colors material-colors.yml
+        run: |
+          svgFiles=$(git diff origin/${{ env.TARGET_BRANCH }} --name-only | grep '.svg$')
+          npx svg-color-linter --colors material-colors.yml ${svgFiles}
