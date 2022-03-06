@@ -750,7 +750,7 @@ export const fileIcons: FileIcons = {
     },
     { name: 'applescript', fileExtensions: ['applescript', 'ipa'] },
     { name: 'cake', fileExtensions: ['cake'] },
-    { name: 'cucumber', fileExtensions: ['feature'] },
+    { name: 'cucumber', fileExtensions: ['feature', 'features'] },
     { name: 'nim', fileExtensions: ['nim', 'nimble'] },
     { name: 'apiblueprint', fileExtensions: ['apib', 'apiblueprint'] },
     { name: 'riot', fileExtensions: ['riot', 'tag'] },

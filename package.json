@@ -26,6 +26,12 @@
     "vscode:prepublish": "npm run lint && npm run compile && npm run package-web"
   },
   "publisher": "PKief",
+  "author": {
+    "name": "Philipp Kief",
+    "email": "philipp.kief@gmx.de",
+    "url": "https://pkief.github.io"
+  },
+  "funding": "https://github.com/sponsors/pkief",
   "engines": {
     "vscode": "^1.51.0"
   },
