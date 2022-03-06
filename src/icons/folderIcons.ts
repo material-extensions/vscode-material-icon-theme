@@ -40,6 +40,10 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-javascript',
         folderNames: ['js', 'javascript', 'javascripts'],
       },
+      {
+        name: 'folder-jest',
+        folderNames: ['jest'],
+      },
       { name: 'folder-json', folderNames: ['json'] },
       { name: 'folder-font', folderNames: ['font', 'fonts'] },
       { name: 'folder-bower', folderNames: ['bower_components'] },
