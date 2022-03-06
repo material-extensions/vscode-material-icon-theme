@@ -18,9 +18,6 @@ const folderThemes = filterDuplicates(
   folderIcons
     .map((theme) => {
       const folders = [];
-      if (theme.defaultIcon.name !== '') {
-        folders.push(theme.defaultIcon.name);
-      }
       if (theme.icons && theme.icons.length > 0) {
         folders.push(...theme.icons.map((i) => i.name));
       }

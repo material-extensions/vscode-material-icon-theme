@@ -750,7 +750,7 @@ export const fileIcons: FileIcons = {
     },
     { name: 'applescript', fileExtensions: ['applescript', 'ipa'] },
     { name: 'cake', fileExtensions: ['cake'] },
-    { name: 'cucumber', fileExtensions: ['feature'] },
+    { name: 'cucumber', fileExtensions: ['feature', 'features'] },
     { name: 'nim', fileExtensions: ['nim', 'nimble'] },
     { name: 'apiblueprint', fileExtensions: ['apib', 'apiblueprint'] },
     { name: 'riot', fileExtensions: ['riot', 'tag'] },
@@ -1120,6 +1120,7 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'hack', fileNames: ['.hhconfig'] },
+    { name: 'hardhat', fileNames: ['hardhat.config.js', 'hardhat.config.ts'] },
     {
       name: 'stylelint',
       fileNames: [
@@ -1299,7 +1300,11 @@ export const fileIcons: FileIcons = {
     { name: 'django', fileExtensions: ['djt'] },
     { name: 'stencil', fileNames: ['stencil.config.js', 'stencil.config.ts'] },
     { name: 'red', fileExtensions: ['red'] },
-    { name: 'makefile', fileNames: ['makefile'] },
+    {
+      name: 'makefile',
+      fileExtensions: ['mk'],
+      fileNames: ['makefile', 'gnumakefile', 'kbuild'],
+    },
     { name: 'foxpro', fileExtensions: ['fxp', 'prg'] },
     { name: 'i18n', fileExtensions: ['pot', 'po', 'mo'] },
     { name: 'webassembly', fileExtensions: ['wat', 'wasm'] },
@@ -1488,7 +1493,10 @@ export const fileIcons: FileIcons = {
     },
     { name: 'coconut', fileExtensions: ['coco'] },
     { name: 'tilt', fileNames: ['tiltfile'] },
-    { name: 'capacitor', fileNames: ['capacitor.config.json'] },
+    {
+      name: 'capacitor',
+      fileNames: ['capacitor.config.json', 'capacitor.config.ts'],
+    },
     { name: 'sketch', fileExtensions: ['sketch'] },
     { name: 'pawn', fileExtensions: ['pwn', 'amx'] },
     { name: 'adonis', fileNames: ['.adonisrc.json', 'ace'] },
@@ -1708,7 +1716,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'maven',
-      fileNames: ['maven.config', 'jvm.config'],
+      fileNames: ['maven.config', 'jvm.config', 'pom.xml'],
     },
     { name: 'ada', fileExtensions: ['ada', 'adb', 'ads', 'ali'] },
     { name: 'serverless', fileNames: ['serverless.yml'] },
@@ -1722,6 +1730,7 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['horusec-config.json'],
     },
     { name: 'coala', fileExtensions: ['coarc', 'coafile'] },
+    { name: 'parcel', fileNames: ['.parcelrc'] },
     {
       name: 'dinophp',
       fileExtensions: ['bubble', 'html.bubble', 'php.bubble'],

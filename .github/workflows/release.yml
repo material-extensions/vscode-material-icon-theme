@@ -26,20 +26,25 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 'lts/*'
+          registry-url: 'https://registry.npmjs.org'
       - name: Install node_modules 📦
         run: |
-          npm install
+          npm ci
           npm install --global vsce
       - name: Update version ↗
         run: |
           git config --global user.name 'Philipp Kief'
           git config --global user.email 'PKief@users.noreply.github.com'
           git config --global push.followTags true
-          npm version ${{ env.VERSION_CHANGE }}
-      - name: Get version 🔍
+          npm version ${{ env.VERSION_CHANGE }} -m "Release %s"
+      - name: Get meta data 🔍
         run: |
           NODE_VERSION=$(node -p -e "require('./package.json').version")
           echo VERSION=$NODE_VERSION >> $GITHUB_ENV
+          NODE_NAME=$(node -p -e "require('./package.json').name")
+          echo NAME=$NODE_NAME >> $GITHUB_ENV
+          NODE_DISPLAY_NAME=$(node -p -e "require('./package.json').displayName")
+          echo DISPLAY_NAME=$NODE_DISPLAY_NAME >> $GITHUB_ENV
       - name: Build ⚒️
         run: vsce package
       - name: Push tags 📌
@@ -47,18 +52,22 @@ jobs:
       - name: Release ${{ env.VERSION }} 🔆
         uses: softprops/action-gh-release@v1
         with:
-          files: material-icon-theme-${{ env.VERSION }}.vsix
+          files: ${{ env.NAME }}-${{ env.VERSION }}.vsix
           tag_name: v${{ env.VERSION }}
-          name: Material Icon Theme v${{ env.VERSION }}
+          name: ${{ env.DISPLAY_NAME }} v${{ env.VERSION }}
           generate_release_notes: true
       - name: Publish to Open VSX Registry 🌐
         uses: HaaLeo/publish-vscode-extension@v1
         with:
           pat: ${{ secrets.OPEN_VSX_TOKEN }}
-          extensionFile: material-icon-theme-${{ env.VERSION }}.vsix
+          extensionFile: ${{ env.NAME }}-${{ env.VERSION }}.vsix
       - name: Publish to Visual Studio Marketplace 🌐
         uses: HaaLeo/publish-vscode-extension@v1
         with:
           pat: ${{ secrets.VS_MARKETPLACE_TOKEN }}
           registryUrl: https://marketplace.visualstudio.com
-          extensionFile: material-icon-theme-${{ env.VERSION }}.vsix
+          extensionFile: ${{ env.NAME }}-${{ env.VERSION }}.vsix
+      - name: Publish to NPM Registry 🌐
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
