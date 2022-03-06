@@ -1299,7 +1299,11 @@ export const fileIcons: FileIcons = {
     { name: 'django', fileExtensions: ['djt'] },
     { name: 'stencil', fileNames: ['stencil.config.js', 'stencil.config.ts'] },
     { name: 'red', fileExtensions: ['red'] },
-    { name: 'makefile', fileNames: ['makefile'] },
+    {
+      name: 'makefile',
+      fileExtensions: ['mk'],
+      fileNames: ['makefile', 'gnumakefile', 'kbuild'],
+    },
     { name: 'foxpro', fileExtensions: ['fxp', 'prg'] },
     { name: 'i18n', fileExtensions: ['pot', 'po', 'mo'] },
     { name: 'webassembly', fileExtensions: ['wat', 'wasm'] },
