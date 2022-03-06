@@ -1,0 +1,20 @@
+name: Check SVG icon colors
+
+on: [push, pull_request]
+
+jobs:
+  color-check:
+    name: SVG Color Check
+    runs-on: ubuntu-latest
+    env:
+      TARGET_BRANCH: ${{ github.event.pull_request.base.ref }}
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Check colors 🎨
+        run: >
+          git diff origin/${{ env.TARGET_BRANCH }} --name-only | 
+          grep '.svg$' | 
+          npx svg-color-linter --colors material-colors.yml
