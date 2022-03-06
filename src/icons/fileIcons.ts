@@ -1729,6 +1729,7 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['horusec-config.json'],
     },
     { name: 'coala', fileExtensions: ['coarc', 'coafile'] },
+    { name: 'parcel', fileNames: ['.parcelrc'] },
     {
       name: 'dinophp',
       fileExtensions: ['bubble', 'html.bubble', 'php.bubble'],
