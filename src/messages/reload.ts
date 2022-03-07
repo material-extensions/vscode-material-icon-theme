@@ -5,7 +5,7 @@ import { translate } from '../i18n';
 /** User has to confirm if he wants to reload the editor */
 export const showConfirmToReloadMessage = async (): Promise<boolean> => {
   // if the user does not want to see the reload message
-  if (getThemeConfig('showReloadMessage').globalValue === false) return;
+  if (getThemeConfig('showReloadMessage')?.globalValue === false) false;
 
   const response = await vscode.window.showInformationMessage(
     translate('confirmReload'),
