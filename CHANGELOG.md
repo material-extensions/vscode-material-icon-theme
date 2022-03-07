@@ -3,7 +3,25 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
-#### [v4.13.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.12.1...HEAD) 
+#### [v4.14.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.13.0...HEAD) 
+
+> March 7, 2022 
+
+- Update vscodeignore [`a2b05b6`](https://github.com/PKief/vscode-material-icon-theme/commit/a2b05b6)
+- Support partials folders [`#1307`](https://github.com/PKief/vscode-material-icon-theme/pull/1307)
+- [Icon Request] Gleam language [`#1415`](https://github.com/PKief/vscode-material-icon-theme/pull/1415)
+- Update color check workflow [`4e0a489`](https://github.com/PKief/vscode-material-icon-theme/commit/4e0a489)
+- feat: hardhat [`#1377`](https://github.com/PKief/vscode-material-icon-theme/pull/1377)
+- Add Parcel bundler icon [`#1414`](https://github.com/PKief/vscode-material-icon-theme/pull/1414)
+- Improve range of language `Makefile` [`#1409`](https://github.com/PKief/vscode-material-icon-theme/pull/1409)
+- Improve build workflow [`#1413`](https://github.com/PKief/vscode-material-icon-theme/pull/1413)
+- Adds second extension to the cucumber file type [`#1411`](https://github.com/PKief/vscode-material-icon-theme/pull/1411)
+- Add firebase as folder name [`#1410`](https://github.com/PKief/vscode-material-icon-theme/pull/1410)
+- Add Svelte-Kit to be included with the folder-svelte [`#1405`](https://github.com/PKief/vscode-material-icon-theme/pull/1405)
+- Add `pom.xml` to maven files [`#1398`](https://github.com/PKief/vscode-material-icon-theme/pull/1398)
+- Add TS support for capacitor config file [`#1396`](https://github.com/PKief/vscode-material-icon-theme/pull/1396)
+ 
+#### [v4.13.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.12.1...v4.13.0) 
 
 > February 11, 2022 
 
@@ -368,7 +386,7 @@
 - Fixed icon configuration in folderIcons.ts due to broken checks [`ac17075`](https://github.com/PKief/vscode-material-icon-theme/commit/ac17075)
 - Added Terraform Folder Icons [`6392bb4`](https://github.com/PKief/vscode-material-icon-theme/commit/6392bb4)
  
-#### [v4.0.2](https://github.com/PKief/vscode-material-icon-theme/compare/v6.5.2...v4.0.2) 
+#### [v4.0.2](https://github.com/PKief/vscode-material-icon-theme/compare/v4.2.0...v4.0.2) 
 
 > September 2, 2020 
 
@@ -397,22 +415,12 @@
 - Added apollo folder icon [`a4b4851`](https://github.com/PKief/vscode-material-icon-theme/commit/a4b4851)
 - Add command file icon (Closes #748) [`2ebf511`](https://github.com/PKief/vscode-material-icon-theme/commit/2ebf511)
 - Add NuGet file icon for nuget.config, .nuspec, nuget.exe, *.nupkg [`377f5bc`](https://github.com/PKief/vscode-material-icon-theme/commit/377f5bc)
- 
-#### [v6.5.2](https://github.com/PKief/vscode-material-icon-theme/compare/v4.17.15...v6.5.2) 
-
-> July 30, 2020 
-
 - Bump elliptic from 6.5.2 to 6.5.3 [`1e262f5`](https://github.com/PKief/vscode-material-icon-theme/commit/1e262f5)
 - Add CNAME file name to http icon [`2e744e9`](https://github.com/PKief/vscode-material-icon-theme/commit/2e744e9)
 - Update sas icon [`f24d561`](https://github.com/PKief/vscode-material-icon-theme/commit/f24d561)
 - change sas-icon.svg to sas.svg [`b2c899d`](https://github.com/PKief/vscode-material-icon-theme/commit/b2c899d)
 - add SAS icon [`44028c6`](https://github.com/PKief/vscode-material-icon-theme/commit/44028c6)
 - Add salesforce icon (Closes #779) [`34f7a52`](https://github.com/PKief/vscode-material-icon-theme/commit/34f7a52)
- 
-#### [v4.17.15](https://github.com/PKief/vscode-material-icon-theme/compare/v4.2.0...v4.17.15) 
-
-> July 15, 2020 
-
 - Bump lodash from 4.17.15 to 4.17.19 [`ad47a81`](https://github.com/PKief/vscode-material-icon-theme/commit/ad47a81)
 - Update color of azure pipelines folder icon [`c04fd92`](https://github.com/PKief/vscode-material-icon-theme/commit/c04fd92)
 - Update color of the rocket [`916f1dd`](https://github.com/PKief/vscode-material-icon-theme/commit/916f1dd)
@@ -504,7 +512,7 @@
 - Add icon for Tiltfile (https://tilt.dev/) [`84e8d8f`](https://github.com/PKief/vscode-material-icon-theme/commit/84e8d8f)
 - Add vala icon [`a4b535e`](https://github.com/PKief/vscode-material-icon-theme/commit/a4b535e)
  
-#### [v4.1.0](https://github.com/PKief/vscode-material-icon-theme/compare/v6.4.0...v4.1.0) 
+#### [v4.1.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.0.1...v4.1.0) 
 
 > April 26, 2020 
 
@@ -551,21 +559,16 @@
 - Remove unused code [`4088170`](https://github.com/PKief/vscode-material-icon-theme/commit/4088170)
 - Refactor code [`a133ab0`](https://github.com/PKief/vscode-material-icon-theme/commit/a133ab0)
 - Refactor code with nullish coalescing and optional chaining [`e4920f5`](https://github.com/PKief/vscode-material-icon-theme/commit/e4920f5)
-- Add icon to fileicons [`b6c065a`](https://github.com/PKief/vscode-material-icon-theme/commit/b6c065a)
-- [Icon Request] AdonisJs icon [`a85a467`](https://github.com/PKief/vscode-material-icon-theme/commit/a85a467)
-- Add Dhall icon [`2ca9a8f`](https://github.com/PKief/vscode-material-icon-theme/commit/2ca9a8f)
-- Remove comment [`3c52d45`](https://github.com/PKief/vscode-material-icon-theme/commit/3c52d45)
-- Add UML icon [`173e35e`](https://github.com/PKief/vscode-material-icon-theme/commit/173e35e)
- 
-#### [v6.4.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.0.1...v6.4.0) 
-
-> March 14, 2020 
-
 - Bump acorn from 6.4.0 to 6.4.1 [`1ef5eb6`](https://github.com/PKief/vscode-material-icon-theme/commit/1ef5eb6)
 - Update container folder icon [`7c5a5d6`](https://github.com/PKief/vscode-material-icon-theme/commit/7c5a5d6)
 - Add json file extension to babel file association [`3d0be81`](https://github.com/PKief/vscode-material-icon-theme/commit/3d0be81)
 - Add stencil folder icon (Closes #659) [`8f31e30`](https://github.com/PKief/vscode-material-icon-theme/commit/8f31e30)
 - Update stencil file icon (references #659) [`3e8f10f`](https://github.com/PKief/vscode-material-icon-theme/commit/3e8f10f)
+- Add icon to fileicons [`b6c065a`](https://github.com/PKief/vscode-material-icon-theme/commit/b6c065a)
+- [Icon Request] AdonisJs icon [`a85a467`](https://github.com/PKief/vscode-material-icon-theme/commit/a85a467)
+- Add Dhall icon [`2ca9a8f`](https://github.com/PKief/vscode-material-icon-theme/commit/2ca9a8f)
+- Remove comment [`3c52d45`](https://github.com/PKief/vscode-material-icon-theme/commit/3c52d45)
+- Add UML icon [`173e35e`](https://github.com/PKief/vscode-material-icon-theme/commit/173e35e)
  
 #### [v4.0.1](https://github.com/PKief/vscode-material-icon-theme/compare/v4.0.0...v4.0.1) 
 
