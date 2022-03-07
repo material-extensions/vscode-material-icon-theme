@@ -196,7 +196,7 @@ export const folderIcons: FolderTheme[] = [
           '_includes',
           'inc',
           'partials',
-          '_partials'
+          '_partials',
         ],
       },
       {
