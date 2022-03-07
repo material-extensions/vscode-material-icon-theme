@@ -43,6 +43,10 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['proto'],
     },
     {
+      name: 'playwright',
+      fileNames: ['playwright.config.js', 'playwright.config.ts'],
+    },
+    {
       name: 'sublime',
       fileExtensions: ['sublime-project', 'sublime-workspace'],
     },
@@ -232,7 +236,11 @@ export const fileIcons: FileIcons = {
     },
     { name: 'typescript-def', fileExtensions: ['d.ts'] },
     { name: 'markojs', fileExtensions: ['marko'] },
-    { name: 'astro', fileExtensions: ['astro'] },
+    {
+      name: 'astro',
+      fileExtensions: ['astro'],
+      fileNames: ['astro.config.js', 'astro.config.mjs', 'astro.config.cjs'],
+    },
     { name: 'pdf', fileExtensions: ['pdf'] },
     { name: 'table', fileExtensions: ['xlsx', 'xls', 'csv', 'tsv'] },
     {
@@ -314,7 +322,7 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['hh', 'hpp', 'hxx', 'h++', 'hp', 'tcc', 'inl'],
     },
     { name: 'go', fileExtensions: ['go'] },
-    { name: 'go-mod', fileNames: ['go.mod', 'go.sum'] },
+    { name: 'go-mod', fileNames: ['go.mod', 'go.sum', 'go.work'] },
     { name: 'python', fileExtensions: ['py'] },
     {
       name: 'python-misc',
@@ -723,7 +731,12 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'next',
-      fileNames: ['next.config.js', 'next.config.ts'],
+      fileNames: ['next.config.js', 'next.config.ts', 'next.config.mjs'],
+      light: true,
+    },
+    {
+      name: 'remix',
+      fileNames: ['remix.config.js', 'remix.config.ts'],
       light: true,
     },
     {
@@ -737,7 +750,7 @@ export const fileIcons: FileIcons = {
     },
     { name: 'applescript', fileExtensions: ['applescript', 'ipa'] },
     { name: 'cake', fileExtensions: ['cake'] },
-    { name: 'cucumber', fileExtensions: ['feature'] },
+    { name: 'cucumber', fileExtensions: ['feature', 'features'] },
     { name: 'nim', fileExtensions: ['nim', 'nimble'] },
     { name: 'apiblueprint', fileExtensions: ['apib', 'apiblueprint'] },
     { name: 'riot', fileExtensions: ['riot', 'tag'] },
@@ -972,6 +985,14 @@ export const fileIcons: FileIcons = {
       ],
     },
     {
+      name: 'blitz',
+      fileNames: [
+        'blitz.config.js',
+        'blitz.config.ts',
+        '.blitz.config.compiled.js',
+      ],
+    },
+    {
       name: 'contributing',
       fileNames: ['contributing.md'],
     },
@@ -1076,6 +1097,10 @@ export const fileIcons: FileIcons = {
       ],
     },
     {
+      name: 'figma',
+      fileExtensions: ['fig'],
+    },
+    {
       name: 'rollup',
       fileNames: [
         'rollup.config.js',
@@ -1095,15 +1120,18 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'hack', fileNames: ['.hhconfig'] },
+    { name: 'hardhat', fileNames: ['hardhat.config.js', 'hardhat.config.ts'] },
     {
       name: 'stylelint',
       fileNames: [
         '.stylelintrc',
         'stylelint.config.js',
+        'stylelint.config.cjs',
         '.stylelintrc.json',
         '.stylelintrc.yaml',
         '.stylelintrc.yml',
         '.stylelintrc.js',
+        '.stylelintrc.cjs',
         '.stylelintignore',
       ],
       light: true,
@@ -1130,6 +1158,7 @@ export const fileIcons: FileIcons = {
       fileNames: [
         '.renovaterc',
         '.renovaterc.json',
+        'renovate-config.json',
         'renovate.json',
         'renovate.json5',
       ],
@@ -1271,7 +1300,11 @@ export const fileIcons: FileIcons = {
     { name: 'django', fileExtensions: ['djt'] },
     { name: 'stencil', fileNames: ['stencil.config.js', 'stencil.config.ts'] },
     { name: 'red', fileExtensions: ['red'] },
-    { name: 'makefile', fileNames: ['makefile'] },
+    {
+      name: 'makefile',
+      fileExtensions: ['mk'],
+      fileNames: ['makefile', 'gnumakefile', 'kbuild'],
+    },
     { name: 'foxpro', fileExtensions: ['fxp', 'prg'] },
     { name: 'i18n', fileExtensions: ['pot', 'po', 'mo'] },
     { name: 'webassembly', fileExtensions: ['wat', 'wasm'] },
@@ -1460,7 +1493,10 @@ export const fileIcons: FileIcons = {
     },
     { name: 'coconut', fileExtensions: ['coco'] },
     { name: 'tilt', fileNames: ['tiltfile'] },
-    { name: 'capacitor', fileNames: ['capacitor.config.json'] },
+    {
+      name: 'capacitor',
+      fileNames: ['capacitor.config.json', 'capacitor.config.ts'],
+    },
     { name: 'sketch', fileExtensions: ['sketch'] },
     { name: 'pawn', fileExtensions: ['pwn', 'amx'] },
     { name: 'adonis', fileNames: ['.adonisrc.json', 'ace'] },
@@ -1664,15 +1700,26 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['tsconfig.json'],
     },
     {
+      name: 'tauri',
+      fileNames: [
+        'tauri.config.json',
+        'tauri.linux.conf.json',
+        'tauri.windows.conf.json',
+        'tauri.macos.conf.json',
+      ],
+      fileExtensions: ['tauri'],
+    },
+    {
       name: 'jsconfig',
       fileNames: ['jsconfig.json'],
       fileExtensions: ['jsconfig.json'],
     },
     {
       name: 'maven',
-      fileNames: ['maven.config', 'jvm.config'],
+      fileNames: ['maven.config', 'jvm.config', 'pom.xml'],
     },
     { name: 'ada', fileExtensions: ['ada', 'adb', 'ads', 'ali'] },
+    { name: 'serverless', fileNames: ['serverless.yml'] },
     {
       name: 'ember',
       fileNames: ['.ember-cli', '.ember-cli.js', 'ember-cli-builds.js'],
@@ -1683,6 +1730,7 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['horusec-config.json'],
     },
     { name: 'coala', fileExtensions: ['coarc', 'coafile'] },
+    { name: 'parcel', fileNames: ['.parcelrc'] },
     {
       name: 'dinophp',
       fileExtensions: ['bubble', 'html.bubble', 'php.bubble'],
@@ -1716,5 +1764,19 @@ export const fileIcons: FileIcons = {
     },
     { name: 'rome', fileNames: ['rome.json'] },
     { name: 'cypress', fileNames: ['cypress.json', 'cypress.env.json'] },
+    { name: 'siyuan', fileExtensions: ['sy'] },
+    { name: 'ndst', fileExtensions: ['ndst.yml', 'ndst.yaml', 'ndst.json'] },
+    { name: 'tobi', fileExtensions: ['tobi'] },
+    { name: 'tobimake', fileNames: ['.tobimake'] },
+    { name: 'gleam', fileNames: ['gleam.toml'], fileExtensions: ['gleam'] },
+    {
+      name: 'pnpm',
+      light: true,
+      fileNames: ['pnpm-lock.yaml', 'pnpm-workspace.yaml', '.pnpmfile.cjs'],
+    },
+    {
+      name: 'gridsome',
+      fileNames: ['gridsome.config.js', 'gridsome.server.js'],
+    },
   ],
 };

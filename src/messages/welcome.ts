@@ -6,19 +6,19 @@ import { translate } from '../i18n';
 /** Show the welcome message if the icon theme has been installed the first time. */
 export const showWelcomeMessage = () => {
   // if the user does not want to see the welcome message
-  if (getThemeConfig('showWelcomeMessage').globalValue === false) return;
+  if (getThemeConfig('showWelcomeMessage')?.globalValue === false) return;
 
   vscode.window
     .showInformationMessage(
       translate('themeInstalled'),
-      isThemeNotVisible() ? translate('activate') : undefined,
+      isThemeNotVisible() ? translate('activate') : '',
       translate('neverShowAgain')
     )
     .then(handleWelcomeMessageActions);
 };
 
 /** Handle the actions of the welcome message. */
-const handleWelcomeMessageActions = (value: string) => {
+const handleWelcomeMessageActions = (value: string | undefined) => {
   switch (value) {
     case translate('activate'):
       activateIcons();
