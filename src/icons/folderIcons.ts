@@ -528,6 +528,7 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['util', 'utils', 'utility', 'utilities'],
       },
       { name: 'folder-private', folderNames: ['private', '.private'] },
+      { name: 'folder-pulumi', folderNames: ['pulumi'] },
       { name: 'folder-error', folderNames: ['error', 'errors', 'err'] },
       { name: 'folder-event', folderNames: ['event', 'events'] },
       {
