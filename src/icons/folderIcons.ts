@@ -190,7 +190,14 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-include',
-        folderNames: ['include', 'includes', '_includes', 'inc'],
+        folderNames: [
+          'include',
+          'includes',
+          '_includes',
+          'inc',
+          'partials',
+          '_partials',
+        ],
       },
       {
         name: 'folder-docker',
