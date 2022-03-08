@@ -3,7 +3,13 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
-#### [v4.14.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.13.0...HEAD) 
+#### [v4.14.1](https://github.com/PKief/vscode-material-icon-theme/compare/v4.14.0...HEAD) 
+
+> March 8, 2022 
+
+- Hardhat icon is broken [`#1420`](https://github.com/PKief/vscode-material-icon-theme/pull/1420)
+ 
+#### [v4.14.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.13.0...v4.14.0) 
 
 > March 7, 2022 
 
