@@ -96,6 +96,7 @@ export const fileIcons: FileIcons = {
         'psb',
         'ami',
         'apx',
+        'avif',
         'bmp',
         'bpg',
         'brk',
