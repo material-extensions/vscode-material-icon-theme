@@ -24,8 +24,8 @@ export const translation: Translation = {
     },
   },
   opacity: {
-    inputPlaceholder: 'Значение непрозрачности (между 0 до 1)',
-    wrongValue: 'Значение должно быть между 0 до 1!',
+    inputPlaceholder: 'Значение непрозрачности (между 0 и 1)',
+    wrongValue: 'Значение должно быть между 0 и 1!',
   },
   toggleSwitch: {
     on: 'Включить',
@@ -41,7 +41,7 @@ export const translation: Translation = {
   outdatedVersion: 'Нужно обновить VS Code, чтобы использовать эту команду.',
   updateVSCode: 'Обновить VS Code',
   grayscale: {
-    toggle: 'Переключение полутоновых значков',
+    toggle: 'Переключение серых значков',
     enable: 'Включить значки в оттенках серого',
     disable: 'Отключить значки в оттенках серого',
   },
