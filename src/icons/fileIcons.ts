@@ -1730,6 +1730,7 @@ export const fileIcons: FileIcons = {
       fileNames: ['horusec-config.json'],
       fileExtensions: ['horusec-config.json'],
     },
+    { name: 'distignore', fileNames: ['.distignore'] },
     { name: 'coala', fileExtensions: ['coarc', 'coafile'] },
     { name: 'parcel', fileNames: ['.parcelrc'] },
     {
