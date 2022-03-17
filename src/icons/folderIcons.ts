@@ -84,6 +84,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-git',
         folderNames: [
           '.git',
+          'patches',
           'githooks',
           '.githooks',
           'submodules',
@@ -189,7 +190,14 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-include',
-        folderNames: ['include', 'includes', '_includes', 'inc'],
+        folderNames: [
+          'include',
+          'includes',
+          '_includes',
+          'inc',
+          'partials',
+          '_partials',
+        ],
       },
       {
         name: 'folder-docker',
@@ -241,6 +249,11 @@ export const folderIcons: FolderTheme[] = [
         enabledFor: [IconPack.Redux],
       },
       {
+        name: 'folder-redux-selector',
+        folderNames: ['selectors', 'selector'],
+        enabledFor: [IconPack.Redux],
+      },
+      {
         name: 'folder-redux-store',
         folderNames: ['store'],
         enabledFor: [IconPack.Redux],
@@ -255,6 +268,7 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['db', 'database', 'databases', 'sql', 'data', '_data'],
       },
       { name: 'folder-log', folderNames: ['log', 'logs'] },
+      { name: 'folder-target', folderNames: ['target'] },
       {
         name: 'folder-temp',
         folderNames: [
@@ -371,6 +385,8 @@ export const folderIcons: FolderTheme[] = [
           'extensions',
           'addon',
           'addons',
+          'module',
+          'modules',
         ],
       },
       { name: 'folder-middleware', folderNames: ['middleware', 'middlewares'] },
@@ -383,6 +399,8 @@ export const folderIcons: FolderTheme[] = [
           'services',
           'provider',
           'providers',
+          'handler',
+          'handlers',
         ],
       },
       { name: 'folder-ansible', folderNames: ['ansible'] },
@@ -426,7 +444,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-cluster', folderNames: ['cluster', 'clusters'] },
       {
         name: 'folder-command',
-        folderNames: ['command', 'commands', 'cli', 'clis'],
+        folderNames: ['command', 'commands', 'cmd', 'cli', 'clis'],
       },
       { name: 'folder-constant', folderNames: ['constant', 'constants'] },
       {
@@ -434,6 +452,7 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['container', 'containers', '.devcontainer'],
       },
       { name: 'folder-content', folderNames: ['content', 'contents'] },
+      { name: 'folder-context', folderNames: ['context', 'contexts'] },
       { name: 'folder-core', folderNames: ['core'] },
       { name: 'folder-delta', folderNames: ['delta', 'deltas', 'changes'] },
       { name: 'folder-dump', folderNames: ['dump', 'dumps'] },
@@ -493,14 +512,14 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-job', folderNames: ['job', 'jobs'] },
       { name: 'folder-keys', folderNames: ['keys', 'key', 'token', 'tokens'] },
-      { name: 'folder-layout', folderNames: ['layout', 'layouts'] },
+      { name: 'folder-layout', folderNames: ['layout', 'layouts', '_layouts'] },
       {
         name: 'folder-mail',
-        folderNames: ['mail', 'mails', 'email', 'emails', 'smtp'],
+        folderNames: ['mail', 'mails', 'email', 'emails', 'smtp', 'mailers'],
       },
       { name: 'folder-mappings', folderNames: ['mappings', 'mapping'] },
       { name: 'folder-meta', folderNames: ['meta'] },
-      { name: 'folder-packages', folderNames: ['package', 'packages'] },
+      { name: 'folder-packages', folderNames: ['package', 'packages', 'pkg'] },
       { name: 'folder-shared', folderNames: ['shared', 'common'] },
       { name: 'folder-stack', folderNames: ['stack', 'stacks'] },
       { name: 'folder-template', folderNames: ['template', 'templates'] },
@@ -595,8 +614,8 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['mobile', 'mobiles', 'portable', 'portability'],
       },
       { name: 'folder-stencil', folderNames: ['.stencil'] },
-      { name: 'folder-firebase', folderNames: ['.firebase'] },
-      { name: 'folder-svelte', folderNames: ['svelte'] },
+      { name: 'folder-firebase', folderNames: ['firebase', '.firebase'] },
+      { name: 'folder-svelte', folderNames: ['svelte', '.svelte-kit'] },
       {
         name: 'folder-update',
         folderNames: ['update', 'updates', 'upgrade', 'upgrades'],
@@ -609,8 +628,17 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-mjml', folderNames: ['mjml'] },
       { name: 'folder-admin', folderNames: ['admin'] },
       { name: 'folder-scala', folderNames: ['scala'] },
-      { name: 'folder-connection', folderNames: ['connection', 'connections'] },
+      {
+        name: 'folder-connection',
+        folderNames: [
+          'connection',
+          'connections',
+          'integration',
+          'integrations',
+        ],
+      },
       { name: 'folder-quasar', folderNames: ['.quasar'] },
+      { name: 'folder-next', folderNames: ['.next'] },
       { name: 'folder-cobol', folderNames: ['cobol'] },
       { name: 'folder-yarn', folderNames: ['yarn', '.yarn'] },
       { name: 'folder-husky', folderNames: ['husky', '.husky'] },
@@ -632,6 +660,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['project', 'projects', '.project', '.projects'],
       },
       {
+        name: 'folder-interface',
+        folderNames: ['interface', 'interfaces'],
+      },
+      {
         name: 'folder-contract',
         folderNames: [
           'pact',
@@ -643,6 +675,30 @@ export const folderIcons: FolderTheme[] = [
           'contract-test',
           'contract-tests',
         ],
+      },
+      {
+        name: 'folder-queue',
+        folderNames: ['queue', 'queues', 'bull', 'mq'],
+      },
+      {
+        name: 'folder-vercel',
+        folderNames: ['vercel', '.vercel', 'now', '.now'],
+      },
+      {
+        name: 'folder-cypress',
+        folderNames: ['cypress', '.cypress'],
+      },
+      {
+        name: 'folder-java',
+        folderNames: ['java'],
+      },
+      {
+        name: 'folder-resolver',
+        folderNames: ['resolver', 'resolvers'],
+      },
+      {
+        name: 'folder-angular',
+        folderNames: ['.angular'],
       },
     ],
   },

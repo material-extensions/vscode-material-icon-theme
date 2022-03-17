@@ -4,9 +4,9 @@ import { DefaultIcon, FolderIcon, FolderTheme } from '../../../models/index';
 import {
   fileIcons,
   folderIcons,
-  highContrastVersion,
+  highContrastColorFileEnding,
   languageIcons,
-  lightVersion,
+  lightColorFileEnding,
   openedFolder,
 } from './../../../icons';
 import * as painter from './../../helpers/painter';
@@ -24,9 +24,12 @@ const availableIcons: { [s: string]: string } = {};
 /**
  * Get all icon file names from the file system.
  */
-const fsReadAllIconFiles = (err: Error, files: string[]) => {
-  if (err) {
-    throw Error(err.message);
+const fsReadAllIconFiles = (
+  error: NodeJS.ErrnoException | null,
+  files: string[]
+) => {
+  if (error) {
+    throw Error(error.message);
   }
 
   files.forEach((file) => {
@@ -44,11 +47,11 @@ const checkUsageOfAllIcons = () => {
   const usedFolderIcons: string[] = getAllUsedFolderIcons();
   const usedLanguageIcons: string[] = getAllUsedLanguageIcons();
 
-  []
-    .concat(usedFileIcons, usedFolderIcons, usedLanguageIcons)
-    .forEach((icon) => {
+  [...usedFileIcons, ...usedFolderIcons, ...usedLanguageIcons].forEach(
+    (icon) => {
       delete availableIcons[icon];
-    });
+    }
+  );
 };
 
 const handleErrors = () => {
@@ -74,23 +77,22 @@ const handleErrors = () => {
 export const check = () => fs.readdir(folderPath, fsReadAllIconFiles);
 
 const getAllUsedFileIcons = (): string[] => {
-  const icons = [
+  return [
     fileIcons.defaultIcon.name,
     fileIcons.defaultIcon.light
-      ? fileIcons.defaultIcon.name + lightVersion
-      : undefined,
+      ? fileIcons.defaultIcon.name + lightColorFileEnding
+      : '',
     fileIcons.defaultIcon.highContrast
-      ? fileIcons.defaultIcon.name + highContrastVersion
-      : undefined,
+      ? fileIcons.defaultIcon.name + highContrastColorFileEnding
+      : '',
     ...fileIcons.icons.map((icon) => icon.name),
     ...fileIcons.icons
       .filter((icon) => icon.light)
-      .map((icon) => icon.name + lightVersion),
+      .map((icon) => icon.name + lightColorFileEnding),
     ...fileIcons.icons
       .filter((icon) => icon.highContrast)
-      .map((icon) => icon.name + highContrastVersion),
-  ];
-  return icons;
+      .map((icon) => icon.name + highContrastColorFileEnding),
+  ].filter((f) => f !== '');
 };
 
 const getAllUsedFolderIcons = (): string[] => {
@@ -102,12 +104,12 @@ const getAllUsedFolderIcons = (): string[] => {
       return [
         icon.name,
         icon.name + openedFolder,
-        icon.light ? icon.name + lightVersion : undefined,
-        icon.light ? icon.name + openedFolder + lightVersion : undefined,
-        icon.highContrast ? icon.name + highContrastVersion : undefined,
+        icon.light ? icon.name + lightColorFileEnding : '',
+        icon.light ? icon.name + openedFolder + lightColorFileEnding : '',
+        icon.highContrast ? icon.name + highContrastColorFileEnding : '',
         icon.highContrast
-          ? icon.name + openedFolder + highContrastVersion
-          : undefined,
+          ? icon.name + openedFolder + highContrastColorFileEnding
+          : '',
       ];
     })
     .filter((icon) => icon !== undefined)
@@ -118,9 +120,11 @@ const getAllFolderIcons = (
   theme: FolderTheme
 ): (FolderIcon | DefaultIcon)[] => {
   const icons = theme.icons || [];
-  return [theme.defaultIcon, theme.rootFolder, ...icons].filter(
-    (icon) => icon !== undefined
-  ); // filter undefined root folder icons
+  const allFolderIcons = [theme.defaultIcon, ...icons];
+  if (theme.rootFolder) {
+    allFolderIcons.push(theme.rootFolder);
+  }
+  return allFolderIcons;
 };
 
 const getAllUsedLanguageIcons = (): string[] => {
@@ -128,10 +132,10 @@ const getAllUsedLanguageIcons = (): string[] => {
     ...languageIcons.map((lang) => lang.icon.name),
     ...languageIcons
       .filter((lang) => lang.icon.light)
-      .map((lang) => lang.icon.name + lightVersion),
+      .map((lang) => lang.icon.name + lightColorFileEnding),
     ...languageIcons
       .filter((lang) => lang.icon.highContrast)
-      .map((lang) => lang.icon.name + highContrastVersion),
+      .map((lang) => lang.icon.name + highContrastColorFileEnding),
   ];
   return icons;
 };

@@ -4,7 +4,14 @@ import { fileIcons, folderIcons, languageIcons } from './../../../icons';
 /**
  * Store all icons that are wrong configured
  */
-const allConflicts = {
+const allConflicts: {
+  fileIcons: {
+    fileExtensions: Record<string, string[]>;
+    fileNames: Record<string, string[]>;
+  };
+  folderIcons: Record<string, string[]>;
+  languageIcons: Record<string, string[]>;
+} = {
   fileIcons: {
     fileExtensions: {},
     fileNames: {},
@@ -26,11 +33,13 @@ const checkFileIcons = () => {
   checkForConflictsInFileIcons('fileNames');
 };
 
-const checkForConflictsInFileIcons = (fileIconDefinitionType: string) => {
-  const icons = {};
+const checkForConflictsInFileIcons = (
+  fileIconDefinitionType: 'fileExtensions' | 'fileNames'
+) => {
+  const icons: Record<string, string> = {};
   fileIcons.icons.forEach((icon) => {
     if (!icon[fileIconDefinitionType]) return;
-    icon[fileIconDefinitionType]
+    (icon[fileIconDefinitionType] ?? [])
       .map((d) => d.toLowerCase())
       .forEach((definition) => {
         if (
@@ -57,7 +66,7 @@ const checkForConflictsInFileIcons = (fileIconDefinitionType: string) => {
 const checkFolderIcons = () => {
   folderIcons.forEach((theme) => {
     if (!theme.icons) return;
-    const icons = {};
+    const icons: Record<string, string> = {};
     theme.icons.forEach((icon) => {
       icon.folderNames
         .map((f) => f.toLowerCase())
@@ -83,7 +92,7 @@ const checkFolderIcons = () => {
 };
 
 const checkLanguageIcons = () => {
-  const icons = {};
+  const icons: Record<string, string> = {};
   languageIcons.forEach((langIcon) => {
     langIcon.ids
       .map((id) => id.toLowerCase())

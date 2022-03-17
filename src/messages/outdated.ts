@@ -1,21 +1,21 @@
 import * as vscode from 'vscode';
-import * as i18n from './../i18n';
+import { translate } from '../i18n';
 
 /** Show message that the editor version is outdated. */
 export const showOutdatedMessage = () => {
   vscode.window
     .showWarningMessage(
-      i18n.translate('outdatedVersion'),
-      i18n.translate('updateVSCode'),
-      i18n.translate('howToActivate')
+      translate('outdatedVersion'),
+      translate('updateVSCode'),
+      translate('howToActivate')
     )
     .then(handleActivateActions);
 };
 
 /** Handle the actions from the outdatedMessage command message */
-const handleActivateActions = (value: string) => {
+const handleActivateActions = (value: string | undefined) => {
   switch (value) {
-    case i18n.translate('howToActivate'):
+    case translate('howToActivate'):
       vscode.env.openExternal(
         vscode.Uri.parse(
           'https://code.visualstudio.com/blogs/2016/09/08/icon-themes#_file-icon-themes'
@@ -23,7 +23,7 @@ const handleActivateActions = (value: string) => {
       );
       break;
 
-    case i18n.translate('updateVSCode'):
+    case translate('updateVSCode'):
       open('https://code.visualstudio.com/download');
       break;
 

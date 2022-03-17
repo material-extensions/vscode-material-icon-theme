@@ -8,7 +8,9 @@ export const toggleIconPacks = async () => {
   try {
     const activeIconPack = getActiveIconPack();
     const response = await showQuickPickItems(activeIconPack);
-    handleQuickPickActions(response);
+    if (response) {
+      handleQuickPickActions(response);
+    }
   } catch (error) {
     console.error(error);
   }
@@ -53,18 +55,12 @@ const handleQuickPickActions = (value: vscode.QuickPickItem) => {
 };
 
 const getActiveIconPack = (): string => {
-  return helpers.getMaterialIconsJSON().options.activeIconPack;
+  return helpers.getMaterialIconsJSON()?.options?.activeIconPack ?? '';
 };
 
 /** Get all packs that can be used in this icon theme. */
-export const getAllIconPacks = () => {
-  const packs: string[] = [];
-  for (const item in IconPack) {
-    if (isNaN(Number(item))) {
-      packs.push(IconPack[item].toLowerCase());
-    }
-  }
-  return packs;
+export const getAllIconPacks = (): string[] => {
+  return Object.values(IconPack).map((p) => p.toLowerCase());
 };
 
 const isPackActive = (activePack: string, pack: string) => {

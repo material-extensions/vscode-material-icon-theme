@@ -7,7 +7,11 @@ import {
   IconJsonOptions,
   LanguageIcon,
 } from '../../models/index';
-import { highContrastVersion, iconFolderPath, lightVersion } from './constants';
+import {
+  highContrastColorFileEnding,
+  iconFolderPath,
+  lightColorFileEnding,
+} from './constants';
 
 /**
  * Get all file icons that can be used in this theme.
@@ -22,7 +26,7 @@ export const loadLanguageIconDefinitions = (
     languages,
     options.activeIconPack
   );
-  const customIcons = getCustomIcons(options.languages.associations);
+  const customIcons = getCustomIcons(options.languages?.associations);
   const allLanguageIcons = [...enabledLanguages, ...customIcons];
 
   allLanguageIcons.forEach((lang) => {
@@ -37,14 +41,20 @@ export const loadLanguageIconDefinitions = (
       ? merge(
           {},
           config.light,
-          setLanguageIdentifiers(lang.icon.name + lightVersion, lang.ids)
+          setLanguageIdentifiers(
+            lang.icon.name + lightColorFileEnding,
+            lang.ids
+          )
         )
       : config.light;
     config.highContrast = lang.icon.highContrast
       ? merge(
           {},
           config.highContrast,
-          setLanguageIdentifiers(lang.icon.name + highContrastVersion, lang.ids)
+          setLanguageIdentifiers(
+            lang.icon.name + highContrastColorFileEnding,
+            lang.ids
+          )
         )
       : config.highContrast;
   });
@@ -59,14 +69,14 @@ const setIconDefinitions = (config: IconConfiguration, icon: DefaultIcon) => {
     {},
     config,
     icon.light
-      ? createIconDefinitions(config, icon.name + lightVersion)
+      ? createIconDefinitions(config, icon.name + lightColorFileEnding)
       : config.light
   );
   config = merge(
     {},
     config,
     icon.highContrast
-      ? createIconDefinitions(config, icon.name + highContrastVersion)
+      ? createIconDefinitions(config, icon.name + highContrastColorFileEnding)
       : config.highContrast
   );
   return config;
@@ -74,22 +84,24 @@ const setIconDefinitions = (config: IconConfiguration, icon: DefaultIcon) => {
 
 const createIconDefinitions = (config: IconConfiguration, iconName: string) => {
   config = merge({}, config);
-  const fileConfigHash = getFileConfigHash(config.options);
-  config.iconDefinitions[iconName] = {
-    iconPath: `${iconFolderPath}${iconName}${fileConfigHash}.svg`,
-  };
+  const fileConfigHash = getFileConfigHash(config.options ?? {});
+  if (config.iconDefinitions) {
+    config.iconDefinitions[iconName] = {
+      iconPath: `${iconFolderPath}${iconName}${fileConfigHash}.svg`,
+    };
+  }
   return config;
 };
 
 const setLanguageIdentifiers = (iconName: string, languageIds: string[]) => {
-  const obj = { languageIds: {} };
+  const obj: Partial<IconConfiguration> = { languageIds: {} };
   languageIds.forEach((id) => {
-    obj.languageIds[id] = iconName;
+    obj.languageIds![id as keyof IconConfiguration] = iconName;
   });
   return obj;
 };
 
-const getCustomIcons = (languageAssociations: IconAssociations) => {
+const getCustomIcons = (languageAssociations: IconAssociations | undefined) => {
   if (!languageAssociations) return [];
 
   const icons: LanguageIcon[] = Object.keys(languageAssociations).map((fa) => ({
@@ -105,7 +117,7 @@ const getCustomIcons = (languageAssociations: IconAssociations) => {
  */
 const disableLanguagesByPack = (
   languageIcons: LanguageIcon[],
-  activatedIconPack: string
+  activatedIconPack: string | undefined
 ) => {
   return languageIcons.filter((language) => {
     return !language.enabledFor

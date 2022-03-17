@@ -11,9 +11,9 @@ import { similarity } from '../../helpers/similarity';
 import {
   fileIcons,
   folderIcons,
-  highContrastVersion,
+  highContrastColorFileEnding,
   languageIcons,
-  lightVersion,
+  lightColorFileEnding,
   openedFolder,
 } from './../../../icons';
 
@@ -25,12 +25,12 @@ const folderPath = path.join('icons');
 /**
  * Defines an array with all icons that can be found in the file system.
  */
-const availableIcons: { [s: string]: string } = {};
+const availableIcons: Record<string, string> = {};
 
 /**
  * Save the misconfigured icons.
  */
-const wrongIconNames: { [s: string]: string[] } = {
+const wrongIconNames: Record<string, string[]> = {
   fileIcons: [],
   folderIcons: [],
   languageIcons: [],
@@ -39,7 +39,10 @@ const wrongIconNames: { [s: string]: string[] } = {
 /**
  * Get all icon file names from the file system.
  */
-const fsReadAllIconFiles = (err: Error, files: string[]) => {
+const fsReadAllIconFiles = (
+  err: NodeJS.ErrnoException | null,
+  files: string[]
+) => {
   if (err) {
     throw Error(err.message);
   }
@@ -66,7 +69,7 @@ export const check = () => fs.readdir(folderPath, fsReadAllIconFiles);
  * Check if the file icons from the configuration are available on the file system.
  */
 const checkFileIcons = () => {
-  fileIcons.icons.concat([fileIcons.defaultIcon]).forEach((icon) => {
+  [...fileIcons.icons, fileIcons.defaultIcon].forEach((icon) => {
     isIconAvailable(icon, IconType.fileIcons, IconColor.default);
     isIconAvailable(icon, IconType.fileIcons, IconColor.light);
     isIconAvailable(icon, IconType.fileIcons, IconColor.highContrast);
@@ -79,15 +82,14 @@ const isIconAvailable = (
   iconColor: IconColor,
   hasOpenedFolder?: boolean
 ) => {
-  const iconName = `${icon.name}${hasOpenedFolder ? openedFolder : ''}${
-    icon[iconColor]
-      ? iconColor === IconColor.light
-        ? lightVersion
-        : highContrastVersion
-        ? highContrastVersion
-        : ''
-      : ''
-  }`;
+  let iconName = `${icon.name}${hasOpenedFolder ? openedFolder : ''}`;
+  if (icon.light && iconColor === IconColor.light) {
+    iconName += lightColorFileEnding;
+  }
+  if (icon.highContrast && iconColor === IconColor.highContrast) {
+    iconName += highContrastColorFileEnding;
+  }
+
   if (
     !availableIcons[iconName] &&
     wrongIconNames[iconType].indexOf(iconName) === -1
@@ -104,12 +106,19 @@ const checkFolderIcons = () => {
     .map((theme) => (theme.name === 'none' ? [] : getAllFolderIcons(theme)))
     .reduce((a, b) => a.concat(b))
     .forEach((icon) => {
-      isIconAvailable(icon, IconType.folderIcons, IconColor.default);
-      isIconAvailable(icon, IconType.folderIcons, IconColor.default, true);
-      isIconAvailable(icon, IconType.folderIcons, IconColor.light);
-      isIconAvailable(icon, IconType.folderIcons, IconColor.light, true);
-      isIconAvailable(icon, IconType.folderIcons, IconColor.highContrast);
-      isIconAvailable(icon, IconType.folderIcons, IconColor.highContrast, true);
+      if (icon) {
+        isIconAvailable(icon, IconType.folderIcons, IconColor.default);
+        isIconAvailable(icon, IconType.folderIcons, IconColor.default, true);
+        isIconAvailable(icon, IconType.folderIcons, IconColor.light);
+        isIconAvailable(icon, IconType.folderIcons, IconColor.light, true);
+        isIconAvailable(icon, IconType.folderIcons, IconColor.highContrast);
+        isIconAvailable(
+          icon,
+          IconType.folderIcons,
+          IconColor.highContrast,
+          true
+        );
+      }
     });
 };
 
@@ -172,13 +181,15 @@ const logIconInformation = (wrongIcons: string[], title: string) => {
     const suggestionString = suggestion
       ? ` (Did you mean ${painter.green(suggestion)}?)`
       : '';
-    const isWrongLightVersion = icon.endsWith(lightVersion);
+    const isWrongLightVersion = icon.endsWith(lightColorFileEnding);
     const isWrongLightVersionString = isWrongLightVersion
       ? ` (There is no light icon for ${painter.green(
           icon.slice(0, -6)
         )}! Set the light option to false!)`
       : '';
-    const isWrongHighContrastVersion = icon.endsWith(highContrastVersion);
+    const isWrongHighContrastVersion = icon.endsWith(
+      highContrastColorFileEnding
+    );
     const isWrongHighContrastVersionString = isWrongHighContrastVersion
       ? ` (There is no high contrast icon for ${painter.green(
           icon.slice(0, -13)
