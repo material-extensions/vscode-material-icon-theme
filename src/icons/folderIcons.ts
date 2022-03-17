@@ -700,6 +700,36 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-angular',
         folderNames: ['.angular'],
       },
+      {
+        name: 'folder-angular-components',
+        folderNames: ['components'],
+        enabledFor: [IconPack.Angular, IconPack.Ngrx],
+      },
+      {
+        name: 'folder-angular-directives',
+        folderNames: ['directives'],
+        enabledFor: [IconPack.Angular, IconPack.Ngrx],
+      },
+      {
+        name: 'folder-angular-guards',
+        folderNames: ['guards'],
+        enabledFor: [IconPack.Angular, IconPack.Ngrx],
+      },
+      {
+        name: 'folder-angular-pipes',
+        folderNames: ['pipes'],
+        enabledFor: [IconPack.Angular, IconPack.Ngrx],
+      },
+      {
+        name: 'folder-angular-resolvers',
+        folderNames: ['resolvers'],
+        enabledFor: [IconPack.Angular, IconPack.Ngrx],
+      },
+      {
+        name: 'folder-angular-services',
+        folderNames: ['services'],
+        enabledFor: [IconPack.Angular, IconPack.Ngrx],
+      },
     ],
   },
   {
