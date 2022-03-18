@@ -2,7 +2,7 @@
   "name": "material-icon-theme",
   "displayName": "Material Icon Theme",
   "description": "Material Design Icons for Visual Studio Code",
-  "version": "4.12.1",
+  "version": "4.13.0",
   "scripts": {
     "build": "npm run compile:dev && npm run postcompile",
     "check": "ts-node ./src/scripts/icons/checks",
@@ -20,12 +20,18 @@
     "preview": "ts-node ./src/scripts/preview",
     "svgo": "svgo -i icons -o icons -q",
     "test": "node ./out/test/runTest.js",
-    "changelog": "ts-node ./src/scripts/changelog/index",
+    "changelog": "changelog-machine --config changelog.config.json",
     "preversion": "npm run contributors && git add images/contributors.png && npm run preview && git add images/fileIcons.png && git add images/folderIcons.png",
     "version": "npm run changelog && git add CHANGELOG.md",
     "vscode:prepublish": "npm run lint && npm run compile && npm run package-web"
   },
   "publisher": "PKief",
+  "author": {
+    "name": "Philipp Kief",
+    "email": "philipp.kief@gmx.de",
+    "url": "https://pkief.github.io"
+  },
+  "funding": "https://github.com/sponsors/pkief",
   "engines": {
     "vscode": "^1.51.0"
   },
@@ -238,6 +244,7 @@
     "@types/vscode": "~1.51.0",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
+    "changelog-machine": "^1.0.0",
     "eslint": "^8.3.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
