@@ -700,6 +700,10 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-angular',
         folderNames: ['.angular'],
       },
+      {
+        name: 'folder-unity',
+        folderNames: ['unity'],
+      },
     ],
   },
   {
