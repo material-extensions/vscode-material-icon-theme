@@ -243,7 +243,7 @@ export const fileIcons: FileIcons = {
       fileNames: ['astro.config.js', 'astro.config.mjs', 'astro.config.cjs'],
     },
     { name: 'pdf', fileExtensions: ['pdf'] },
-    { name: 'table', fileExtensions: ['xlsx', 'xls', 'csv', 'tsv'] },
+    { name: 'table', fileExtensions: ['xlsx', 'xls', 'csv', 'tsv', 'psv'] },
     {
       name: 'vscode',
       fileExtensions: [
