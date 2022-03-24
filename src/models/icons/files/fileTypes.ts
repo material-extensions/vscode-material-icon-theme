@@ -1,7 +1,7 @@
 import { DefaultIcon } from '../defaultIcon';
 import { FileIcon } from './index';
 
-export class FileIcons {
+export type FileIcons = {
   /**
    * Define the default icon for folders.
    */
@@ -10,5 +10,5 @@ export class FileIcons {
   /**
    * Defines all folder icons.
    */
-  icons?: FileIcon[];
-}
+  icons: FileIcon[];
+};

@@ -34,7 +34,7 @@ export const getObjectPropertyValue = (obj: Object, path: string) => {
  * Source: https://stackoverflow.com/a/13719799/6942210
  */
 export const setObjectPropertyValue = (
-  obj: Object,
+  obj: { [key: string]: any },
   path: string | string[],
   value: any
 ) => {
@@ -43,7 +43,7 @@ export const setObjectPropertyValue = (
   }
 
   if (path.length > 1) {
-    const e = path.shift();
+    const e = path.shift() ?? '';
     setObjectPropertyValue(
       (obj[e] =
         Object.prototype.toString.call(obj[e]) === '[object Object]'

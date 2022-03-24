@@ -36,12 +36,18 @@ const compareConfigs = (): {
   return configs.reduce(
     (result, configName) => {
       try {
-        const themeConfig = getThemeConfig(configName);
+        const themeConfig = getThemeConfig(configName) ?? {
+          globalValue: '',
+          defaultValue: '',
+        };
         const configValue = themeConfig.globalValue ?? themeConfig.defaultValue;
-        const currentState = getObjectPropertyValue(json.options, configName);
+        const currentState = getObjectPropertyValue(
+          json.options ?? {},
+          configName
+        );
 
         if (JSON.stringify(configValue) !== JSON.stringify(currentState)) {
-          setObjectPropertyValue(json.options, configName, configValue);
+          setObjectPropertyValue(json.options as {}, configName, configValue);
           setObjectPropertyValue(
             result.updatedConfigs,
             configName,
@@ -54,6 +60,9 @@ const compareConfigs = (): {
 
       return result;
     },
-    { updatedConfigs: {}, updatedJSONConfig: json.options }
+    {
+      updatedConfigs: {} as IconJsonOptions,
+      updatedJSONConfig: json.options as IconJsonOptions,
+    }
   );
 };

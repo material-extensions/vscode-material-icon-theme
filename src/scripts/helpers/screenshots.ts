@@ -27,6 +27,6 @@ export const createScreenshot = async (filePath: string, fileName: string) => {
     await browser.close();
   } catch (error) {
     console.error(error);
-    throw Error(error);
+    throw Error('Could not create screenshot for a preview');
   }
 };

@@ -13,7 +13,7 @@ export const showOutdatedMessage = () => {
 };
 
 /** Handle the actions from the outdatedMessage command message */
-const handleActivateActions = (value: string) => {
+const handleActivateActions = (value: string | undefined) => {
   switch (value) {
     case translate('howToActivate'):
       vscode.env.openExternal(
