@@ -685,6 +685,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['vercel', '.vercel', 'now', '.now'],
       },
       {
+        name: 'folder-shader',
+        folderNames: ['glsl', 'hlsl', 'shader', 'shaders'],
+      },
+      {
         name: 'folder-cypress',
         folderNames: ['cypress', '.cypress'],
       },
