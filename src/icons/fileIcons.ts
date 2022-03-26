@@ -1795,5 +1795,19 @@ export const fileIcons: FileIcons = {
         'steadybit.yaml',
       ],
     },
+    {
+      name: 'commitizen',
+      fileNames: [
+        '.czrc',
+        '.cz.json',
+        '.cz.toml',
+        '.cz.yaml',
+        '.cz.yml',
+        'cz.json',
+        'cz.toml',
+        'cz.yaml',
+        'cz.yml',
+      ],
+    },
   ],
 };
