@@ -96,6 +96,7 @@ export const fileIcons: FileIcons = {
         'psb',
         'ami',
         'apx',
+        'avif',
         'bmp',
         'bpg',
         'brk',
@@ -242,7 +243,7 @@ export const fileIcons: FileIcons = {
       fileNames: ['astro.config.js', 'astro.config.mjs', 'astro.config.cjs'],
     },
     { name: 'pdf', fileExtensions: ['pdf'] },
-    { name: 'table', fileExtensions: ['xlsx', 'xls', 'csv', 'tsv'] },
+    { name: 'table', fileExtensions: ['xlsx', 'xls', 'csv', 'tsv', 'psv'] },
     {
       name: 'vscode',
       fileExtensions: [
@@ -352,7 +353,7 @@ export const fileIcons: FileIcons = {
         'fish',
         'exp',
       ],
-      fileNames: ['pre-commit', 'pre-push', 'post-merge'],
+      fileNames: ['commit-msg', 'pre-commit', 'pre-push', 'post-merge'],
     },
     {
       name: 'powershell',
@@ -962,6 +963,11 @@ export const fileIcons: FileIcons = {
         '.env.staging.local',
         '.env.test.local',
       ],
+    },
+    {
+      name: 'turborepo',
+      light: true,
+      fileNames: ['turbo.json'],
     },
     {
       name: 'babel',
@@ -1729,6 +1735,7 @@ export const fileIcons: FileIcons = {
       fileNames: ['horusec-config.json'],
       fileExtensions: ['horusec-config.json'],
     },
+    { name: 'poetry', fileNames: ['pyproject.toml', 'poetry.lock'] },
     { name: 'coala', fileExtensions: ['coarc', 'coafile'] },
     { name: 'parcel', fileNames: ['.parcelrc'] },
     {
@@ -1778,6 +1785,16 @@ export const fileIcons: FileIcons = {
     {
       name: 'gridsome',
       fileNames: ['gridsome.config.js', 'gridsome.server.js'],
+    },
+    {
+      name: 'steadybit',
+      fileExtensions: ['steadybit.yml', 'steadybit.yaml'],
+      fileNames: [
+        '.steadybit.yml',
+        'steadybit.yml',
+        '.steadybit.yaml',
+        'steadybit.yaml',
+      ],
     },
   ],
 };

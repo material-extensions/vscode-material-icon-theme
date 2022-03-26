@@ -87,7 +87,7 @@ export const languageIcons: LanguageIcon[] = [
   { icon: { name: 'salesforce' }, ids: ['apex'] },
   { icon: { name: 'sas' }, ids: ['sas'] },
   { icon: { name: 'docker' }, ids: ['dockerfile'] },
-  { icon: { name: 'table' }, ids: ['csv', 'tsv'] },
+  { icon: { name: 'table' }, ids: ['csv', 'tsv', 'psv'] },
   { icon: { name: 'csharp' }, ids: ['csharp'] },
   { icon: { name: 'console' }, ids: ['bat', 'awk', 'shellscript'] },
   { icon: { name: 'cpp' }, ids: ['cpp'] },
