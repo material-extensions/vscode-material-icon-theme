@@ -22,7 +22,14 @@ export const fileIcons: FileIcons = {
     { name: 'less', fileExtensions: ['less'] },
     {
       name: 'json',
-      fileExtensions: ['json', 'tsbuildinfo', 'json5', 'jsonl', 'ndjson'],
+      fileExtensions: [
+        'json',
+        'jsonc',
+        'tsbuildinfo',
+        'json5',
+        'jsonl',
+        'ndjson',
+      ],
       fileNames: [
         '.jscsrc',
         '.jshintrc',
@@ -38,10 +45,7 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['jinja', 'jinja2', 'j2', 'jinja-html'],
       light: true,
     },
-    {
-      name: 'proto',
-      fileExtensions: ['proto'],
-    },
+    { name: 'proto', fileExtensions: ['proto'] },
     {
       name: 'playwright',
       fileNames: ['playwright.config.js', 'playwright.config.ts'],
@@ -243,7 +247,17 @@ export const fileIcons: FileIcons = {
       fileNames: ['astro.config.js', 'astro.config.mjs', 'astro.config.cjs'],
     },
     { name: 'pdf', fileExtensions: ['pdf'] },
-    { name: 'table', fileExtensions: ['xlsx', 'xls', 'csv', 'tsv', 'psv'] },
+    {
+      name: 'table',
+      fileExtensions: [
+        'xlsx',
+        'xls',
+        'csv',
+        'tsv',
+        'psv',
+        'ods',
+      ],
+    },
     {
       name: 'vscode',
       fileExtensions: [
@@ -297,6 +311,7 @@ export const fileIcons: FileIcons = {
         'gz',
         'xz',
         'br',
+        'bz2',
         'bzip2',
         'gzip',
         'brotli',
@@ -364,7 +379,7 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['gradle'],
       fileNames: ['gradle.properties', 'gradlew', 'gradle-wrapper.properties'],
     },
-    { name: 'word', fileExtensions: ['doc', 'docx', 'rtf'] },
+    { name: 'word', fileExtensions: ['doc', 'docx', 'rtf', 'odt'] },
     {
       name: 'certificate',
       fileExtensions: ['cer', 'cert', 'crt'],
@@ -488,6 +503,7 @@ export const fileIcons: FileIcons = {
         'pps',
         'ppam',
         'ppa',
+        'odp',
       ],
     },
     {
@@ -545,7 +561,7 @@ export const fileIcons: FileIcons = {
         'graphql.config.yml',
       ],
     },
-    { name: 'rust', fileExtensions: ['rs'] },
+    { name: 'rust', fileExtensions: ['rs', 'ron'] },
     { name: 'raml', fileExtensions: ['raml'] },
     { name: 'xaml', fileExtensions: ['xaml'] },
     { name: 'haskell', fileExtensions: ['hs'] },
@@ -555,6 +571,7 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['patch'],
       fileNames: [
         '.gitignore',
+        '.gitignore-global',
         '.gitignore_global',
         '.gitconfig',
         '.gitattributes',
@@ -1000,27 +1017,56 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'contributing',
-      fileNames: ['contributing.md'],
+      fileNames: [
+        'contributing.md',
+        'contributing.rst',
+        'contributing.txt',
+        'contributing',
+      ],
     },
-    { name: 'readme', fileNames: ['readme.md', 'readme.txt', 'readme'] },
+    { name: 'readme',
+      fileNames: [
+        'readme.md',
+        'readme.rst',
+        'readme.txt',
+        'readme',
+      ],
+    },
     {
       name: 'changelog',
       fileNames: [
         'changelog',
         'changelog.md',
+        'changelog.rst',
         'changelog.txt',
         'changes',
         'changes.md',
+        'changes.rst',
         'changes.txt',
+        'changes',
       ],
     },
     {
       name: 'credits',
-      fileNames: ['credits', 'credits.txt', 'credits.md'],
+      fileNames: [
+        'credits.md',
+        'credits.rst',
+        'credits.txt',
+        'credits'
+      ],
     },
     {
       name: 'authors',
-      fileNames: ['authors', 'authors.md', 'authors.txt'],
+      fileNames: [
+        'authors.md',
+        'authors.rst',
+        'authors.txt',
+        'authors',
+        'contributors.md',
+        'contributors.rst',
+        'contributors.txt',
+        'contributors',
+      ],
     },
     { name: 'flow', fileNames: ['.flowconfig'] },
     { name: 'favicon', fileNames: ['favicon.ico'] },
