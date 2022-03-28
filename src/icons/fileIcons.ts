@@ -1051,7 +1051,6 @@ export const fileIcons: FileIcons = {
         'changes.md',
         'changes.rst',
         'changes.txt',
-        'changes',
       ],
     },
     {
