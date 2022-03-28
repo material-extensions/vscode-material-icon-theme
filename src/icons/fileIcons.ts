@@ -249,14 +249,7 @@ export const fileIcons: FileIcons = {
     { name: 'pdf', fileExtensions: ['pdf'] },
     {
       name: 'table',
-      fileExtensions: [
-        'xlsx',
-        'xls',
-        'csv',
-        'tsv',
-        'psv',
-        'ods',
-      ],
+      fileExtensions: ['xlsx', 'xls', 'csv', 'tsv', 'psv', 'ods'],
     },
     {
       name: 'vscode',
@@ -1032,13 +1025,9 @@ export const fileIcons: FileIcons = {
         'contributing',
       ],
     },
-    { name: 'readme',
-      fileNames: [
-        'readme.md',
-        'readme.rst',
-        'readme.txt',
-        'readme',
-      ],
+    {
+      name: 'readme',
+      fileNames: ['readme.md', 'readme.rst', 'readme.txt', 'readme'],
     },
     {
       name: 'changelog',
@@ -1055,12 +1044,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'credits',
-      fileNames: [
-        'credits.md',
-        'credits.rst',
-        'credits.txt',
-        'credits'
-      ],
+      fileNames: ['credits.md', 'credits.rst', 'credits.txt', 'credits'],
     },
     {
       name: 'authors',

@@ -9,14 +9,9 @@ export const folderIcons: FolderTheme[] = [
     defaultIcon: { name: 'folder' },
     rootFolder: { name: 'folder-root' },
     icons: [
-      { name: 'folder-src',
-        folderNames: [
-          'src',
-          'srcs',
-          'source',
-          'sources',
-          'code',
-        ],
+      {
+        name: 'folder-src',
+        folderNames: ['src', 'srcs', 'source', 'sources', 'code'],
       },
       {
         name: 'folder-dist',
@@ -315,14 +310,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-video',
-        folderNames: [
-          'vid',
-          'vids',
-          'video',
-          'videos',
-          'movie',
-          'movies',
-        ],
+        folderNames: ['vid', 'vids', 'video', 'videos', 'movie', 'movies'],
       },
       { name: 'folder-kubernetes', folderNames: ['kubernetes', 'k8s'] },
       { name: 'folder-import', folderNames: ['import', 'imports', 'imported'] },
@@ -565,12 +553,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-meta', folderNames: ['meta'] },
       {
         name: 'folder-packages',
-        folderNames: [
-          'package',
-          'packages',
-          'pkg',
-          'pkgs',
-        ],
+        folderNames: ['package', 'packages', 'pkg', 'pkgs'],
       },
       { name: 'folder-shared', folderNames: ['shared', 'common'] },
       { name: 'folder-stack', folderNames: ['stack', 'stacks'] },
@@ -634,13 +617,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-animation',
-        folderNames: [
-          'anim',
-          'anims',
-          'animation',
-          'animations',
-          'animated',
-        ],
+        folderNames: ['anim', 'anims', 'animation', 'animations', 'animated'],
       },
       { name: 'folder-guard', folderNames: ['guard', 'guards'] },
       { name: 'folder-prisma', folderNames: ['prisma'] },
