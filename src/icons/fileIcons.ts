@@ -1317,7 +1317,7 @@ export const fileIcons: FileIcons = {
         'jest.teardown.js',
       ],
     },
-    { name: 'processing', fileExtensions: ['pde'], light: true },
+    { name: 'processing', fileExtensions: ['pde'] },
     {
       name: 'storybook',
       fileExtensions: [

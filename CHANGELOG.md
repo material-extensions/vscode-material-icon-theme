@@ -3,7 +3,25 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
-#### [v4.14.1](https://github.com/PKief/vscode-material-icon-theme/compare/v4.14.0...HEAD) 
+#### [v4.15.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.14.1...HEAD) 
+
+> March 30, 2022 
+
+- Aligns Processing icon to Processing 4.x [`#1440`](https://github.com/PKief/vscode-material-icon-theme/pull/1440)
+- Update color check to ignore deleted SVG icons [`#1450`](https://github.com/PKief/vscode-material-icon-theme/pull/1450)
+- Several file extension, file name, and folder name icon associations [`#1447`](https://github.com/PKief/vscode-material-icon-theme/pull/1447)
+- feat: add 'commit'msg' as file name to display 'console' icon [`#1445`](https://github.com/PKief/vscode-material-icon-theme/pull/1445)
+- feat: psv alias [`#1442`](https://github.com/PKief/vscode-material-icon-theme/pull/1442)
+- Unity folder icon [`#1434`](https://github.com/PKief/vscode-material-icon-theme/pull/1434)
+- Update Gleam file icon [`#1433`](https://github.com/PKief/vscode-material-icon-theme/pull/1433)
+- feat: turborepo [`#1388`](https://github.com/PKief/vscode-material-icon-theme/pull/1388)
+- Add Poetry Python icon [`#1155`](https://github.com/PKief/vscode-material-icon-theme/pull/1155)
+- Update lang-ru.ts [`#1428`](https://github.com/PKief/vscode-material-icon-theme/pull/1428)
+- Update lang-ru.ts [`#1427`](https://github.com/PKief/vscode-material-icon-theme/pull/1427)
+- feat: support avif image file type [`#1424`](https://github.com/PKief/vscode-material-icon-theme/pull/1424)
+- feat: fileicon for steadybit configuration files [`#1399`](https://github.com/PKief/vscode-material-icon-theme/pull/1399)
+ 
+#### [v4.14.1](https://github.com/PKief/vscode-material-icon-theme/compare/v4.14.0...v4.14.1) 
 
 > March 8, 2022 
 
