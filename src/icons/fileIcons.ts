@@ -347,6 +347,7 @@ export const fileIcons: FileIcons = {
         'manifest.in',
         'pylintrc',
         '.pylintrc',
+        'pyproject.toml',
       ],
     },
     { name: 'url', fileExtensions: ['url'] },
