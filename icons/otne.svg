@@ -4,56 +4,32 @@
    height="1024"
    version="1.1"
    id="svg14"
-   sodipodi:docname="otne.svg"
-   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
-  <sodipodi:namedview
-     id="namedview16"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     showgrid="false"
-     inkscape:zoom="0.40576172"
-     inkscape:cx="380.76534"
-     inkscape:cy="500.29362"
-     inkscape:window-width="1920"
-     inkscape:window-height="1017"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="svg14" />
   <defs
      id="defs27">
     <linearGradient
-       inkscape:collect="always"
-       id="linearGradient5899">
+       id="linearGradient1067">
       <stop
-         style="stop-color:#009bff;stop-opacity:1"
+         style="stop-color:#000000;stop-opacity:1;"
          offset="0"
-         id="stop5895" />
+         id="stop1063" />
       <stop
-         style="stop-color:#00ff6e;stop-opacity:1"
+         style="stop-color:#000000;stop-opacity:0;"
          offset="1"
-         id="stop5897" />
+         id="stop1065" />
     </linearGradient>
     <linearGradient
-       inkscape:collect="always"
-       id="linearGradient8009">
+       id="linearGradient1059">
       <stop
-         style="stop-color:#009bff;stop-opacity:1"
+         style="stop-color:#000000;stop-opacity:1;"
          offset="0"
-         id="stop8005" />
+         id="stop1055" />
       <stop
-         style="stop-color:#00ff6e;stop-opacity:1"
+         style="stop-color:#000000;stop-opacity:0;"
          offset="1"
-         id="stop8007" />
+         id="stop1057" />
     </linearGradient>
     <linearGradient
        id="linearGradient5260-4">
@@ -75,33 +51,23 @@
        xlink:href="#linearGradient5260-4"
        gradientUnits="userSpaceOnUse" />
     <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient8009"
-       id="linearGradient8011"
-       x1="12"
-       y1="512"
-       x2="1012"
-       y2="512"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(0)" />
+       xlink:href="#linearGradient1059"
+       id="linearGradient1061" />
     <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient5899"
-       id="linearGradient5901"
-       x1="262"
-       y1="512"
-       x2="762"
-       y2="512"
-       gradientUnits="userSpaceOnUse" />
+       xlink:href="#linearGradient1067"
+       id="linearGradient1069" />
   </defs>
   <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
   <g
-     id="g6">
+     id="g6"
+     style="fill-opacity:1;fill:#2979ff">
     <title
-       id="title2">background</title>
+       id="title2"
+       style="fill-opacity:1;fill:url(#linearGradient1069)">background</title>
     <g
        id="canvasGrid"
-       display="none">
+       display="none"
+       style="fill-opacity:1;fill:#2979ff">
       <rect
          id="svg_2"
          width="100%"
@@ -109,20 +75,23 @@
          x="0"
          y="0"
          stroke-width="0"
-         fill="url(#gridpattern)" />
+         fill="url(#gridpattern)"
+         style="fill-opacity:1;fill:#2979ff" />
     </g>
   </g>
   <g
-     id="g21">
+     id="g21"
+     style="fill-opacity:1;fill:#2979ff">
     <title
-       id="title8">Layer 1</title>
+       id="title8"
+       style="fill-opacity:1;fill:url(#linearGradient1061)">Layer 1</title>
   </g>
   <path
      id="path6258"
-     style="fill:url(#linearGradient8011);fill-opacity:1;stroke-width:1.58209"
+     style="fill:#2979ff;fill-opacity:1;stroke-width:1.58209"
      d="m 512,212.00002 a 300,300 0 0 0 -300,300 300,300 0 0 0 300,300 300,300 0 0 0 300,-300 300,300 0 0 0 -300,-300 z m 500,300 A 500,500 0 0 1 512,1012 500,500 0 0 1 12,512.00002 500,500 0 0 1 512,12.000001 500,500 0 0 1 1012,512.00002 Z" />
   <path
      id="svg_9"
-     style="fill:url(#linearGradient5901);fill-opacity:1;stroke-width:1.24934;stroke-miterlimit:4;stroke-dasharray:none"
+     style="fill:#2979ff;fill-opacity:1;stroke-width:1.24934;stroke-miterlimit:4;stroke-dasharray:none"
      d="m 762,428.87494 -125.14907,5e-5 -0.006,166.24997 125.15267,8e-5 z M 595.02419,262 H 428.9759 V 762 H 595.02419 Z M 387.15263,428.87499 H 262 v 166.25002 h 125.14916 z" />
 </svg>
