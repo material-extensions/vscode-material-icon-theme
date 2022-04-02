@@ -1773,7 +1773,7 @@ export const fileIcons: FileIcons = {
       fileNames: ['horusec-config.json'],
       fileExtensions: ['horusec-config.json'],
     },
-    { name: 'poetry', fileNames: ['pyproject.toml', 'poetry.lock'] },
+    { name: 'poetry', fileNames: ['poetry.lock'] },
     { name: 'coala', fileExtensions: ['coarc', 'coafile'] },
     { name: 'parcel', fileNames: ['.parcelrc'] },
     {
