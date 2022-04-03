@@ -742,7 +742,7 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-kotlin',
         folderNames: ['kotlin'],
-      }
+      },
     ],
   },
   {
