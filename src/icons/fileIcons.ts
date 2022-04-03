@@ -244,7 +244,7 @@ export const fileIcons: FileIcons = {
     {
       name: 'astro',
       fileExtensions: ['astro'],
-      fileNames: ['astro.config.js', 'astro.config.mjs', 'astro.config.cjs'],
+      fileNames: ['astro.config.js', 'astro.config.mjs', 'astro.config.cjs', 'astro.config.ts'],
     },
     { name: 'pdf', fileExtensions: ['pdf'] },
     {
