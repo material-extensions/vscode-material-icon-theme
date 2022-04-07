@@ -143,6 +143,7 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'javascript', fileExtensions: ['esx', 'mjs'] },
+    { name: 'deno', fileNames: ['deno.json', 'deno.jsonc'] },
     { name: 'react', fileExtensions: ['jsx'] },
     { name: 'react_ts', fileExtensions: ['tsx'] },
     {
