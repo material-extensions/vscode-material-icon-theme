@@ -633,6 +633,11 @@ export const folderIcons: FolderTheme[] = [
         enabledFor: [IconPack.Vuex],
       },
       {
+        name: 'folder-pinia-store',
+        folderNames: ['store', 'stores'],
+        enabledFor: [IconPack.VuePinia],
+      },
+      {
         name: 'folder-nuxt',
         folderNames: ['nuxt', '.nuxt'],
         enabledFor: [IconPack.Vuex, IconPack.Vue],
