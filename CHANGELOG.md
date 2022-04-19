@@ -3,7 +3,17 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
-#### [v4.15.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.14.1...HEAD) 
+#### [v4.16.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.15.0...HEAD) 
+
+> April 19, 2022 
+
+- Add icons for figure(s) and fig(s) [`#1466`](https://github.com/PKief/vscode-material-icon-theme/pull/1466)
+- Bump minimist from 1.2.5 to 1.2.6 [`#1451`](https://github.com/PKief/vscode-material-icon-theme/pull/1451)
+- Support astro.config.ts [`#1460`](https://github.com/PKief/vscode-material-icon-theme/pull/1460)
+- Add license names commonly used in multi-license projects [`#1463`](https://github.com/PKief/vscode-material-icon-theme/pull/1463)
+- Associate pyproject.toml with python-misc file icon [`#1459`](https://github.com/PKief/vscode-material-icon-theme/pull/1459)
+ 
+#### [v4.15.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.14.1...v4.15.0) 
 
 > March 30, 2022 
 
