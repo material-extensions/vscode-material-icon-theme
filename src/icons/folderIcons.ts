@@ -165,7 +165,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-verdaccio',
-        folderNames: ['.verdaccio'],
+        folderNames: ['.verdaccio', 'verdaccio'],
       },
       { name: 'folder-aurelia', folderNames: ['aurelia_project'] },
       {
