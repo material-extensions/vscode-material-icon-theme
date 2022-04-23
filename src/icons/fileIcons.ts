@@ -767,6 +767,11 @@ export const fileIcons: FileIcons = {
       light: true,
     },
     {
+      name: 'verdaccio',
+      fileNames: ['verdaccio.yml'],
+      light: true,
+    },
+    {
       name: 'next',
       fileNames: ['next.config.js', 'next.config.ts', 'next.config.mjs'],
       light: true,
