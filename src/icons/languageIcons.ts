@@ -131,5 +131,8 @@ export const languageIcons: LanguageIcon[] = [
   { icon: { name: 'gemini' }, ids: ['gemini', 'text-gemini'] },
   { icon: { name: 'vlang' }, ids: ['v'] },
   { icon: { name: 'wolframlanguage' }, ids: ['wolfram'] },
-  { icon: { name: 'systemd', light: true }, ids: ['systemd-conf'] },
+  {
+    icon: { name: 'systemd', light: true },
+    ids: ['systemd-conf', 'systemd-unit-file'],
+  },
 ];
