@@ -769,7 +769,6 @@ export const fileIcons: FileIcons = {
     {
       name: 'verdaccio',
       fileNames: ['verdaccio.yml'],
-      light: true,
     },
     {
       name: 'next',
