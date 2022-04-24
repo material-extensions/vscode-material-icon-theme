@@ -1393,7 +1393,7 @@ export const fileIcons: FileIcons = {
     {
       name: 'bazel',
       fileExtensions: ['bzl', 'bazel'],
-      fileNames: ['.bazelignore', '.bazelrc', '.bazelversion'],
+      fileNames: ['.bazelignore', '.bazelrc', '.bazelversion', 'WORKSPACE', 'BUILD'],
     },
     { name: 'mint', fileExtensions: ['mint'] },
     { name: 'velocity', fileExtensions: ['vm', 'fhtml', 'vtl'] },
