@@ -13,8 +13,6 @@ numbers_list = list(range(0,10))
 alphabet_list = numbers_list + alphabet_list
 
 # Dictionaries for alphabet
-# dict_for_file_icons = dict.fromkeys(string.ascii_lowercase, [])
-# dict_for_folder_icons = dict.fromkeys(string.ascii_lowercase, [])
 dict_for_file_icons = dict.fromkeys(alphabet_list, [])
 dict_for_folder_icons = dict.fromkeys(alphabet_list, [])
 
@@ -61,8 +59,26 @@ def generate_tables():
         if len(value) == 0:
             dict_for_folder_icons.pop(key, None)
 
-    # Create file with table for file icons
-    with open('icons_file.txt','w') as file:
+    # Create .md file with tables for icons
+    with open('../../../icons-overview.md','w') as file:
+        file.write(f'## Icons Overview\n\n')
+        # Create Table of Contents
+        file.write(f'### Table of Contents\n\n')
+
+        file.write(f'### File Icons\n\n')
+        for key in dict_for_file_icons.keys():
+            file.write(f'[{str(key).upper()}](#{key}) ')
+
+        file.write(f'\n\n### Folder Icons\n\n')
+        for key in dict_for_folder_icons.keys():
+            if dict_for_file_icons.get(key): # Check to see if '-1' must be added to end of link
+                file.write(f'[{str(key).upper()}](#{key}-1) ')
+            else:
+                file.write(f'[{str(key).upper()}](#{key}) ')
+
+    # Add tables for file icons
+    with open('../../../icons-overview.md','a') as file:
+        file.write(f'\n\n### File Icons\n\n')
         for key, value in dict_for_file_icons.items():
             if key in range(0,10): # Tables for icon names beginning with numbers
                 if len(value) < 5: # Table columns should not exceed length of 5 icons + names
@@ -138,11 +154,12 @@ def generate_tables():
                     file.write(f'</table>\n\n')
     file.close()
 
-    # Create file with table for folder icons
-    with open('folders_file.txt','w') as file:
+    # Add tables for folder icons
+    with open('../../../icons-overview.md','a') as file:
+        file.write(f'### Folder Icons\n\n')
         for key, value in dict_for_folder_icons.items():
             if key in range(0,10): # Tables for icon names beginning with numbers
-                if len(value) < 4: # Table columns should not exceed length of 4 icons + names
+                if len(value) < 5: # Table columns should not exceed length of 5 icons + names
                     file.write(f'#### {key}\n')
                     file.write(f'<table>\n')
                     file.write(f'<tr>\n')
@@ -160,7 +177,7 @@ def generate_tables():
                     file.write(f'#### {key}\n')
                     file.write(f'<table>\n')
                     file.write(f'<tr>\n')
-                    for _ in range(0, 4):
+                    for _ in range(0, 5):
                         file.write(f'<th>Icon</th>\n')
                         file.write(f'<th>Name</th>\n')
                     file.write(f'</tr>\n')
@@ -178,7 +195,7 @@ def generate_tables():
                             file.write(f'<td>{file_name.split(".svg")[0]}</td>\n')
                     file.write(f'</table>\n\n')
             else: # Tables for icon names beginning with letter
-                if len(value) < 5: # Table columns should not exceed length of 4 icons + names
+                if len(value) < 5: # Table columns should not exceed length of 5 icons + names
                     file.write(f'#### {key.upper()}\n')
                     file.write(f'<table>\n')
                     file.write(f'<tr>\n')
