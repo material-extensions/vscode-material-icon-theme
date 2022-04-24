@@ -1850,23 +1850,5 @@ export const fileIcons: FileIcons = {
         'steadybit.yaml',
       ],
     },
-    {
-      name: 'systemd',
-      fileExtensions: [
-        'service',
-        'target',
-        'automount',
-        'device',
-        'mount',
-        'path',
-        'scope',
-        'slice',
-        'snapshot',
-        'socket',
-        'swap',
-        'timer',
-      ],
-      light: true,
-    },
   ],
 };
