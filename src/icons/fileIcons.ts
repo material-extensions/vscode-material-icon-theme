@@ -1065,6 +1065,15 @@ export const fileIcons: FileIcons = {
       ],
     },
     {
+      name: 'architecture',
+      fileNames: [
+        'architecture.md',
+        'architecture.rst',
+        'architecture.txt',
+        'architecture',
+      ],
+    },
+    {
       name: 'credits',
       fileNames: ['credits.md', 'credits.rst', 'credits.txt', 'credits'],
     },
