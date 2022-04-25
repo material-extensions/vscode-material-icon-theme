@@ -738,10 +738,6 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['cypress', '.cypress'],
       },
       {
-        name: 'folder-buildkite',
-        folderNames: ['.buildkite'],
-      },
-      {
         name: 'folder-java',
         folderNames: ['java'],
       },
