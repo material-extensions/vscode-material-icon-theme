@@ -397,7 +397,13 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-less', folderNames: ['less'] },
       {
         name: 'folder-gulp',
-        folderNames: ['gulp'],
+        folderNames: [
+          'gulp',
+          'gulpfile.js',
+          'gulpfile.mjs',
+          'gulpfile.ts',
+          'gulpfile.babel.js',
+        ],
       },
       {
         name: 'folder-python',
