@@ -17,7 +17,7 @@ export const translation: Translation = {
     toggleIcons: 'Cambiar activación de iconos de carpetas',
     color: 'Elija un color de carpeta',
     hexCode: 'Insertar un código de color HEX',
-    wrongHexCode: 'Código de color HEX inválido!',
+    wrongHexCode: '¡Código de color HEX inválido!',
     disabled: 'Sin iconos de carpeta',
     theme: {
       description: "Iconos de carpeta '%0'",
@@ -25,7 +25,7 @@ export const translation: Translation = {
   },
   opacity: {
     inputPlaceholder: 'Valor de opacidad (entre 0 y 1)',
-    wrongValue: 'El valor debe estar entre 0 y 1!',
+    wrongValue: '¡El valor debe estar entre 0 y 1!',
   },
   toggleSwitch: {
     on: 'ON',
@@ -41,4 +41,13 @@ export const translation: Translation = {
   reload: 'Reiniciar',
   outdatedVersion: 'Debe actualizar VS Code para utilizar este comando.',
   updateVSCode: 'Actualizar VS Code',
+  grayscale: {
+    toggle: 'Alternar los iconos en escala de grises',
+    enable: 'Activar los iconos en escala de grises',
+    disable: 'Desactivar los iconos en escala de grises',
+  },
+  saturation: {
+    inputPlaceholder: 'Valor de saturación (entre 0 y 1)',
+    wrongValue: 'El valor debe estar entre 0 y 1.',
+  },
 };

@@ -1,5 +1,5 @@
-import * as path from 'path';
-import * as puppeteer from 'puppeteer';
+import path from 'path';
+import puppeteer from 'puppeteer';
 
 /**
  * Create a screenshot from an HTML file and save it as image.
@@ -27,6 +27,6 @@ export const createScreenshot = async (filePath: string, fileName: string) => {
     await browser.close();
   } catch (error) {
     console.error(error);
-    throw Error(error);
+    throw Error('Could not create screenshot for a preview');
   }
 };

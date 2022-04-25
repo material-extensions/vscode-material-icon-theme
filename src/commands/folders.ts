@@ -6,9 +6,11 @@ import * as i18n from './../i18n';
 /** Command to toggle the folder icons. */
 export const changeFolderTheme = async () => {
   try {
-    const status = checkFolderIconsStatus();
+    const status = getFolderIconTheme();
     const response = await showQuickPickItems(status);
-    handleQuickPickActions(response);
+    if (response) {
+      handleQuickPickActions(response);
+    }
   } catch (error) {
     console.error(error);
   }
@@ -47,7 +49,7 @@ const handleQuickPickActions = (value: vscode.QuickPickItem) => {
   );
 };
 
-/** Are the folder icons enabled? */
-export const checkFolderIconsStatus = (): string => {
-  return helpers.getMaterialIconsJSON().options.folders.theme;
+/** Get the current folder theme. */
+export const getFolderIconTheme = (): string => {
+  return helpers.getMaterialIconsJSON()?.options?.folders?.theme ?? '';
 };

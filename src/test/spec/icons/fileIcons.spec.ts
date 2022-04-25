@@ -1,5 +1,5 @@
 import * as assert from 'assert';
-import * as merge from 'lodash.merge';
+import merge from 'lodash.merge';
 import {
   getDefaultIconOptions,
   loadFileIconDefinitions,
@@ -106,7 +106,7 @@ describe('file icons', () => {
     };
 
     // disable default icon pack by using empty string
-    expectedConfig.options.activeIconPack = '';
+    expectedConfig.options!.activeIconPack = '';
 
     assert.deepStrictEqual(iconDefinitions, expectedConfig);
   });
@@ -160,7 +160,7 @@ describe('file icons', () => {
       'sample.js': 'javascript',
       'filename.js': 'javascript',
     };
-    expectedConfig.options.files.associations = {
+    expectedConfig.options!.files!.associations = {
       '*.sample.ts': 'angular',
       'sample.js': 'javascript',
     };

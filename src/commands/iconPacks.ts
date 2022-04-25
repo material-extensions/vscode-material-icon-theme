@@ -8,7 +8,9 @@ export const toggleIconPacks = async () => {
   try {
     const activeIconPack = getActiveIconPack();
     const response = await showQuickPickItems(activeIconPack);
-    handleQuickPickActions(response);
+    if (response) {
+      handleQuickPickActions(response);
+    }
   } catch (error) {
     console.error(error);
   }
@@ -17,22 +19,20 @@ export const toggleIconPacks = async () => {
 /** Show QuickPick items to select preferred configuration for the icon packs. */
 const showQuickPickItems = (activePack: string) => {
   const packs = [...getAllIconPacks().sort(), 'none'];
-  const options = packs.map(
-    (pack): vscode.QuickPickItem => {
-      const packLabel = helpers.toTitleCase(pack.replace('_', ' + '));
-      const active = isPackActive(activePack, pack);
-      const iconPacksDeactivated = pack === 'none' && activePack === '';
+  const options = packs.map((pack): vscode.QuickPickItem => {
+    const packLabel = helpers.toTitleCase(pack.replace('_', ' + '));
+    const active = isPackActive(activePack, pack);
+    const iconPacksDeactivated = pack === 'none' && activePack === '';
 
-      return {
-        description: packLabel,
-        detail: i18n.translate(
-          `iconPacks.${pack === 'none' ? 'disabled' : 'description'}`,
-          packLabel
-        ),
-        label: iconPacksDeactivated ? '\u2714' : active ? '\u2714' : '\u25FB',
-      };
-    }
-  );
+    return {
+      description: packLabel,
+      detail: i18n.translate(
+        `iconPacks.${pack === 'none' ? 'disabled' : 'description'}`,
+        packLabel
+      ),
+      label: iconPacksDeactivated ? '\u2714' : active ? '\u2714' : '\u25FB',
+    };
+  });
 
   return vscode.window.showQuickPick(options, {
     placeHolder: i18n.translate('iconPacks.selectPack'),
@@ -55,18 +55,12 @@ const handleQuickPickActions = (value: vscode.QuickPickItem) => {
 };
 
 const getActiveIconPack = (): string => {
-  return helpers.getMaterialIconsJSON().options.activeIconPack;
+  return helpers.getMaterialIconsJSON()?.options?.activeIconPack ?? '';
 };
 
 /** Get all packs that can be used in this icon theme. */
-export const getAllIconPacks = () => {
-  const packs: string[] = [];
-  for (const item in IconPack) {
-    if (isNaN(Number(item))) {
-      packs.push(IconPack[item].toLowerCase());
-    }
-  }
-  return packs;
+export const getAllIconPacks = (): string[] => {
+  return Object.values(IconPack).map((p) => p.toLowerCase());
 };
 
 const isPackActive = (activePack: string, pack: string) => {

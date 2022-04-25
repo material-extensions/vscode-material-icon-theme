@@ -1,6 +1,7 @@
+import { RequireAtLeastOne } from '../../../helpers/types';
 import { IconPack } from '../index';
 
-export interface FileIcon {
+interface BasicFileIcon {
   /**
    * Name of the icon, e.g. 'javascript'
    */
@@ -38,3 +39,11 @@ export interface FileIcon {
    */
   enabledFor?: IconPack[];
 }
+
+/**
+ * Type for a FileIcon. In addition to the `name` property, either a `fileExtensions` or `fileNames` property is required.
+ */
+export type FileIcon = RequireAtLeastOne<
+  BasicFileIcon,
+  'fileExtensions' | 'fileNames'
+>;

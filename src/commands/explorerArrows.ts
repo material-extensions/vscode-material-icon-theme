@@ -14,7 +14,9 @@ export const toggleExplorerArrows = async () => {
 };
 
 /** Show QuickPick items to select preferred configuration for the explorer arrows. */
-const showQuickPickItems = (status: boolean) => {
+const showQuickPickItems = (
+  status: boolean
+): Thenable<vscode.QuickPickItem | undefined> => {
   const on: vscode.QuickPickItem = {
     description: i18n.translate('toggleSwitch.on'),
     detail: i18n.translate('explorerArrows.enable'),
@@ -33,8 +35,8 @@ const showQuickPickItems = (status: boolean) => {
 };
 
 /** Handle the actions from the QuickPick. */
-const handleQuickPickActions = (value: vscode.QuickPickItem) => {
-  if (!value || !value.description) return;
+const handleQuickPickActions = (value: vscode.QuickPickItem | undefined) => {
+  if (!value?.description) return;
   switch (value.description) {
     case i18n.translate('toggleSwitch.on'): {
       return helpers.setThemeConfig('hidesExplorerArrows', false, true);
@@ -47,7 +49,7 @@ const handleQuickPickActions = (value: vscode.QuickPickItem) => {
   }
 };
 
-/** Are the arrows enabled? */
+/** Check if arrows are enabled. */
 export const checkArrowStatus = (): boolean => {
-  return helpers.getMaterialIconsJSON().hidesExplorerArrows;
+  return !!helpers.getMaterialIconsJSON()?.hidesExplorerArrows;
 };

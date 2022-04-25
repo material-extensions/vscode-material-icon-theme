@@ -1,5 +1,5 @@
 import * as assert from 'assert';
-import * as merge from 'lodash.merge';
+import merge from 'lodash.merge';
 import {
   getDefaultIconOptions,
   loadLanguageIconDefinitions,
@@ -176,7 +176,7 @@ describe('language icons', () => {
       a: 'json',
       xml: 'json',
     };
-    expectedConfig.options.languages.associations = {
+    expectedConfig.options!.languages!.associations = {
       xml: 'json',
     };
     assert.deepStrictEqual(iconDefinitions, expectedConfig);

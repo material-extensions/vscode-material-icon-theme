@@ -41,4 +41,13 @@ export const translation: Translation = {
   reload: 'Reiniciar',
   outdatedVersion: 'Precisas actualizar o VS Code para utilizar este comando.',
   updateVSCode: 'Actualizar o VS Code',
+  grayscale: {
+    toggle: 'Alternar ícones em escala de cinzentos',
+    enable: 'Habilitar ícones em escala de cinzentos',
+    disable: 'Desactivar ícones em escala de cinzentos',
+  },
+  saturation: {
+    inputPlaceholder: 'Valor de saturação (entre 0 e 1)',
+    wrongValue: 'O valor deve estar entre 0 e 1!',
+  },
 };

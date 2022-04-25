@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-    <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/master/logo.png" alt="logo" width="200">
+    <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/logo.png" alt="logo" width="200">
   <br><br>
   Material Icon Theme
   <br>
@@ -16,19 +16,27 @@
     <a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"><img src="https://vsmarketplacebadge.apphb.com/downloads-short/PKief.material-icon-theme.svg?style=for-the-badge&colorA=252526&colorB=43A047&label=Downloads" alt="Downloads"></a>
 </p>
 
+<p align="center"><br>
+<b>Sponsored by</b><br><br>
+<a title="Try CodeStream" href="https://sponsorlink.codestream.com/?utm_source=vscmarket&amp;utm_campaign=pkief_material&amp;utm_medium=banner"><img width="198px" src="https://alt-images.codestream.com/codestream_logo_pkief_material.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a title="Try Stepsize" href="https://marketplace.visualstudio.com/items?itemName=Stepsize.stepsize"><img width="200px" src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/stepsize.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a title="Try CodeStream" href="https://bit.ly/3gtiOFF"><img width="180px" src="https://storage.googleapis.com/gitduck/img/duckly-sponsor-vsc-opt.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a title="Try Bloop" href="https://bloop.ai/?utm_source=vscmarket&utm_campaign=material-icon-theme&utm_medium=banner"><img width="150px" src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/bloop.png"></a>
+</p>
+
 ### File icons
 
-<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/master/images/fileIcons.png" alt="file icons">
+<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/fileIcons.png" alt="file icons">
 
 ### Folder icons
 
-<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/master/images/folderIcons.png" alt="folder icons">
+<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/folderIcons.png" alt="folder icons">
 
 #### Customize folder color
 
 You can change the color of the default folder icon using the command palette:
 
-<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/master/images/set-folder-color.gif" alt="custom folder colors">
+<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/set-folder-color.gif" alt="custom folder colors">
 
 or via user settings:
 
@@ -40,7 +48,7 @@ or via user settings:
 
 You can change the design of the folder icons using the command palette:
 
-<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/master/images/set-folder-theme.gif" alt="folder themes">
+<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/set-folder-theme.gif" alt="folder themes">
 
 or via user settings:
 
@@ -70,33 +78,36 @@ You can customize the icon associations directly in the user settings.
 
 ### File associations
 
-With the `*.[extension]` pattern you can define custom file icon associations. For example you could define an icon for `*.sample` and every file that ends with `.sample` will have the defined icon. Use `**.[extension]` with two asterisks to apply the file association also for the filenames ending with that file extension.
+With the `*.[extension]` pattern you can define custom file icon associations. For example you could define an icon for `*.sample` and every file that ends with `.sample` will have the defined icon. However, not all files with the same file extension always have the same icon. For some specific file names there is a special icon. In order to overwrite all the specific file icons as well, two asterisks must be set instead of one, i.e. `**.[extension]`.
 
 If there's no leading `*` it will be automatically configured as filename and not as file extension.
 
 ```json
 "material-icon-theme.files.associations": {
     "*.ts": "typescript",
+    "**.json": "json",
     "fileName.ts": "angular"
 }
 ```
 
 #### Custom SVG icons
 
-It's possible to add custom icons by adding a path to an SVG file which is located relative to the extension's dist folder. For example a custom SVG file called "sample.svg" can be placed in an icons folder next to VS Code's extensions folder:
+It's possible to add custom icons by adding a path to an SVG file which is located relative to the extension's dist folder. However, the restriction applies that the directory in which the custom icons are located must be within the `extensions` directory of the `.vscode` folder in the user directory.
+
+For example a custom SVG file called `sample.svg` can be placed in an `icons` folder inside of VS Code's `extensions` folder:
 
 ```
 .vscode
- ┣ extensions
- ┗ icons
-   ┗ sample.svg
+ ┗ extensions
+   ┗ icons
+     ┗ sample.svg
 ```
 
 In the settings.json the icon can be associated to a file name or file extension like this:
 
 ```json
 "material-icon-theme.files.associations": {
-    "fileName.ts": "../../../icons/sample"
+    "fileName.ts": "../../icons/sample"
 }
 ```
 
@@ -115,21 +126,23 @@ The following configuration can customize the folder icons. It is also possible 
 
 #### Custom SVG folder icons
 
-Similar to the files, it is also possible to reference your own SVG icons for folder icons. Here it's important to provide two SVG files: one for the folder if it's closed and another one for the opened state. These two files - let's call them "folder-sample.svg" and "folder-sample-open.svg" - have to be placed into a directory which is relative to the extensions dist folder. In our example we place them into an icons folder inside of the .vscode folder:
+Similar to the files, it is also possible to reference your own SVG icons for folder icons. Here it's important to provide two SVG files: one for the folder if it's closed and another one for the opened state. These two files - let's call them "folder-sample.svg" and "folder-sample-open.svg" - have to be placed into a directory which is relative to the extensions dist folder. This directory has to be somewhere inside of the `.vscode/extensions` folder.
+
+In our example we place them into an `icons` folder inside of the `.vscode/extensions` folder:
 
 ```
 .vscode
- ┣ extensions
- ┗ icons
-   ┣ folder-sample.svg
-   ┗ folder-sample-open.svg
+ ┗ extensions
+   ┗ icons
+     ┣ folder-sample.svg
+     ┗ folder-sample-open.svg
 ```
 
 In the settings.json the folder icons can be associated to a folder name (e.g. "src") like this:
 
 ```json
 "material-icon-theme.folders.associations": {
-    "src": "../../../../../icons/folder-sample"
+    "src": "../../../../icons/folder-sample"
 }
 ```
 
@@ -154,13 +167,13 @@ You can see the available icon names in the overview above.
 
 After installation or update you can click on the 'Activate'-button to activate the icon theme, if you haven't already. The icons will be visible immediately.
 
-<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/master/images/oneclickactivation.png" alt="activation">
+<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/oneclickactivation.png" alt="activation">
 
 ## Commands
 
 Press `Ctrl-Shift-P` to open the command palette and type `Material Icons`.
 
-<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/master/images/commandPalette.png" alt="commands">
+<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/commandPalette.png" alt="commands">
 
 <p></p>
 
@@ -184,9 +197,13 @@ Press `Ctrl-Shift-P` to open the command palette and type `Material Icons`.
 ## Contributors
 
 <a href="https://github.com/PKief/vscode-material-icon-theme/graphs/contributors">
-    <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/master/images/contributors.png" alt="Contributors">
+    <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/contributors.png" alt="Contributors">
 </a>
 
 **Would you like to contribute?**
 
-Take a look at the [contribution guidelines](https://github.com/PKief/vscode-material-icon-theme/blob/master/CONTRIBUTING.md) and open a [new issue](https://github.com/PKief/vscode-material-icon-theme/issues) or [pull request](https://github.com/PKief/vscode-material-icon-theme/pulls) on GitHub.
+Take a look at the [contribution guidelines](https://github.com/PKief/vscode-material-icon-theme/blob/main/CONTRIBUTING.md) and open a [new issue](https://github.com/PKief/vscode-material-icon-theme/issues) or [pull request](https://github.com/PKief/vscode-material-icon-theme/pulls) on GitHub.
+
+## Related extensions
+
+- [Material Icons for GitHub](https://github.com/Claudiohbsantos/github-material-icons-extension)
