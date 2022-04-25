@@ -650,8 +650,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'nuxt',
-      fileNames: ['nuxt.config.js', 'nuxt.config.ts'],
-      light: true,
+      fileNames: ['nuxt.config.js', 'nuxt.config.ts', '.nuxtignore'],
     },
     { name: 'ocaml', fileExtensions: ['ml', 'mli', 'cmx'] },
     { name: 'odin', fileExtensions: ['odin'] },
