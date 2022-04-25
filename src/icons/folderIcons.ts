@@ -9,7 +9,10 @@ export const folderIcons: FolderTheme[] = [
     defaultIcon: { name: 'folder' },
     rootFolder: { name: 'folder-root' },
     icons: [
-      { name: 'folder-src', folderNames: ['src', 'source', 'sources', 'code'] },
+      {
+        name: 'folder-src',
+        folderNames: ['src', 'srcs', 'source', 'sources', 'code'],
+      },
       {
         name: 'folder-dist',
         folderNames: ['dist', 'out', 'build', 'release', 'bin'],
@@ -24,12 +27,22 @@ export const folderIcons: FolderTheme[] = [
         folderNames: [
           'images',
           'image',
+          'imgs',
           'img',
           'icons',
           'icon',
+          'icos',
           'ico',
+          'figures',
+          'figure',
+          'figs',
+          'fig',
           'screenshot',
           'screenshots',
+          'screengrab',
+          'screengrabs',
+          'pic',
+          'pics',
           'picture',
           'pictures',
         ],
@@ -40,7 +53,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-javascript',
         folderNames: ['js', 'javascript', 'javascripts'],
       },
-      { name: 'folder-json', folderNames: ['json'] },
+      { name: 'folder-json', folderNames: ['json', 'jsons'] },
       { name: 'folder-font', folderNames: ['font', 'fonts'] },
       { name: 'folder-bower', folderNames: ['bower_components'] },
       {
@@ -112,6 +125,10 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-config',
         folderNames: [
+          'cfg',
+          'cfgs',
+          'conf',
+          'confs',
           'config',
           'configs',
           'configuration',
@@ -129,6 +146,7 @@ export const folderIcons: FolderTheme[] = [
           'i18n',
           'internationalization',
           'lang',
+          'langs',
           'language',
           'languages',
           'locale',
@@ -144,6 +162,10 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-components',
         folderNames: ['components', 'widget', 'widgets'],
+      },
+      {
+        name: 'folder-verdaccio',
+        folderNames: ['.verdaccio', 'verdaccio'],
       },
       { name: 'folder-aurelia', folderNames: ['aurelia_project'] },
       {
@@ -284,11 +306,19 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-aws', folderNames: ['aws', '.aws'] },
       {
         name: 'folder-audio',
-        folderNames: ['audio', 'audios', 'music', 'musics', 'sound', 'sounds'],
+        folderNames: [
+          'aud',
+          'auds',
+          'audio',
+          'audios',
+          'music',
+          'sound',
+          'sounds',
+        ],
       },
       {
         name: 'folder-video',
-        folderNames: ['video', 'videos', 'movie', 'movies'],
+        folderNames: ['vid', 'vids', 'video', 'videos', 'movie', 'movies'],
       },
       { name: 'folder-kubernetes', folderNames: ['kubernetes', 'k8s'] },
       { name: 'folder-import', folderNames: ['import', 'imports', 'imported'] },
@@ -431,9 +461,15 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-archive',
         folderNames: [
+          'arc',
+          'arcs',
           'archive',
           'archives',
           'archival',
+          'bkp',
+          'bkps',
+          'bak',
+          'baks',
           'backup',
           'backups',
           'back-up',
@@ -483,13 +519,17 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-functions',
         folderNames: [
+          'func',
+          'funcs',
           'function',
           'functions',
           'lambda',
           'lambdas',
           'logic',
           'math',
+          'maths',
           'calc',
+          'calcs',
           'calculation',
           'calculations',
         ],
@@ -519,7 +559,10 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-mappings', folderNames: ['mappings', 'mapping'] },
       { name: 'folder-meta', folderNames: ['meta'] },
-      { name: 'folder-packages', folderNames: ['package', 'packages', 'pkg'] },
+      {
+        name: 'folder-packages',
+        folderNames: ['package', 'packages', 'pkg', 'pkgs'],
+      },
       { name: 'folder-shared', folderNames: ['shared', 'common'] },
       { name: 'folder-stack', folderNames: ['stack', 'stacks'] },
       { name: 'folder-template', folderNames: ['template', 'templates'] },
@@ -582,7 +625,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-animation',
-        folderNames: ['animation', 'animations', 'animated'],
+        folderNames: ['anim', 'anims', 'animation', 'animations', 'animated'],
       },
       { name: 'folder-guard', folderNames: ['guard', 'guards'] },
       { name: 'folder-prisma', folderNames: ['prisma'] },
