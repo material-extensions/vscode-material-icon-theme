@@ -483,6 +483,7 @@ export const folderIcons: FolderTheme[] = [
         ],
       },
       { name: 'folder-batch', folderNames: ['batch', 'batchs', 'batches'] },
+      { name: 'folder-buildkite', folderNames: ['buildkite', '.buildkite'] },
       { name: 'folder-cluster', folderNames: ['cluster', 'clusters'] },
       {
         name: 'folder-command',
