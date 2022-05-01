@@ -571,6 +571,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['package', 'packages', 'pkg', 'pkgs'],
       },
       { name: 'folder-shared', folderNames: ['shared', 'common'] },
+      {
+        name: 'folder-shader',
+        folderNames: ['glsl', 'hlsl', 'shader', 'shaders'],
+      },
       { name: 'folder-stack', folderNames: ['stack', 'stacks'] },
       { name: 'folder-template', folderNames: ['template', 'templates'] },
       {
