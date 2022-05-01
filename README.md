@@ -26,15 +26,13 @@
 
 ### File icons
 
-For an alphabetized view of the File icons please have a look [here](/icons-overview.md#file-icons-1)
-
 <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/fileIcons.png" alt="file icons">
 
 ### Folder icons
 
-For an alphabetized view of the Folder icons please have a look [here](/icons-overview.md#folder-icons-1)
-
 <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/folderIcons.png" alt="folder icons">
+
+The [Icon Overview](/icons-overview.md) provides an alphabetized overview for all icons.
 
 #### Customize folder color
 
