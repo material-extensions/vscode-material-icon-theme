@@ -369,6 +369,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['typescript', 'ts', 'typings', '@types', 'types'],
       },
       { name: 'folder-graphql', folderNames: ['graphql', 'gql'] },
+      {
+        name: 'folder-transaction',
+        folderNames: ['transaction', 'transactions'],
+      },
       { name: 'folder-routes', folderNames: ['routes', 'router', 'routers'] },
       { name: 'folder-ci', folderNames: ['.ci', 'ci'] },
       {
