@@ -1881,6 +1881,7 @@ export const fileIcons: FileIcons = {
     { name: 'cypress', fileNames: ['cypress.json', 'cypress.env.json'] },
     { name: 'siyuan', fileExtensions: ['sy'] },
     { name: 'ndst', fileExtensions: ['ndst.yml', 'ndst.yaml', 'ndst.json'] },
+    { name: 'plop', fileNames: ['plopfile.js', 'plopfile.ts'] },
     { name: 'tobi', fileExtensions: ['tobi'] },
     { name: 'tobimake', fileNames: ['.tobimake'] },
     { name: 'gleam', fileNames: ['gleam.toml'], fileExtensions: ['gleam'] },
