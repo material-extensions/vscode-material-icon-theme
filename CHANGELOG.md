@@ -3,7 +3,24 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
-#### [v4.16.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.15.0...HEAD) 
+#### [v4.17.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.16.0...HEAD) 
+
+> May 6, 2022 
+
+- feat: add Otne icon [`#1431`](https://github.com/PKief/vscode-material-icon-theme/pull/1431)
+- Add support to plop file icon [`#1350`](https://github.com/PKief/vscode-material-icon-theme/pull/1350)
+- feat: shaders [`#1483`](https://github.com/PKief/vscode-material-icon-theme/pull/1483)
+- feat: buildkite [`#1486`](https://github.com/PKief/vscode-material-icon-theme/pull/1486)
+- Update nuxt folder icons [`#1490`](https://github.com/PKief/vscode-material-icon-theme/pull/1490)
+- Remove sponsor badge [`#1491`](https://github.com/PKief/vscode-material-icon-theme/pull/1491)
+- Update azure icon [`#1488`](https://github.com/PKief/vscode-material-icon-theme/pull/1488)
+- Dart generated files icon [`#1465`](https://github.com/PKief/vscode-material-icon-theme/pull/1465)
+- Replace Nuxt Icon [`#1481`](https://github.com/PKief/vscode-material-icon-theme/pull/1481)
+- feat: icon for the architecture.md file [`#1475`](https://github.com/PKief/vscode-material-icon-theme/pull/1475)
+- Add gulpfile.ts etc. as folder names [`#1479`](https://github.com/PKief/vscode-material-icon-theme/pull/1479)
+- feat: verdaccio [`#1476`](https://github.com/PKief/vscode-material-icon-theme/pull/1476)
+ 
+#### [v4.16.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.15.0...v4.16.0) 
 
 > April 19, 2022 
 
