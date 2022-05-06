@@ -585,6 +585,7 @@ export const fileIcons: FileIcons = {
     { name: 'xaml', fileExtensions: ['xaml'] },
     { name: 'haskell', fileExtensions: ['hs'] },
     { name: 'kotlin', fileExtensions: ['kt', 'kts'] },
+    { name: 'otne', fileExtensions: ['otne'] },
     {
       name: 'git',
       fileExtensions: ['patch'],

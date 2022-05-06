@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <g transform="matrix(1.0531 0 0 1.0531 -27.187 -27.187)" fill="#00c853">
+  <g transform="matrix(.81614 0 0 .81614 94.136 94.136)">
+   <title>background</title>
+   <g id="canvasGrid" display="none" fill="#00c853">
+    <rect width="100%" height="100%" fill="#00c853" stroke-width="0"/>
+   </g>
+  </g>
+  <g transform="matrix(.81614 0 0 .81614 94.136 94.136)">
+   <title>Layer 1</title>
+  </g>
+  <path d="m512 267.16a244.84 244.84 0 0 0-244.84 244.84 244.84 244.84 0 0 0 244.84 244.84 244.84 244.84 0 0 0 244.84-244.84 244.84 244.84 0 0 0-244.84-244.84zm408.07 244.84a408.07 408.07 0 0 1-408.07 408.07 408.07 408.07 0 0 1-408.07-408.07 408.07 408.07 0 0 1 408.07-408.07 408.07 408.07 0 0 1 408.07 408.07z" stroke-width="1.2912"/>
+  <path d="m686.67 453.92-87.438 3e-5 -4e-3 116.15 87.441 6e-5zm-116.66-116.59h-116.01v349.34h116.01zm-145.23 116.59h-87.441v116.15h87.438z" stroke-width=".87288"/>
+ </g>
+</svg>
