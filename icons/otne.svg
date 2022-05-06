@@ -1,97 +1,16 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg
-   width="1024"
-   height="1024"
-   version="1.1"
-   id="svg14"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-  <defs
-     id="defs27">
-    <linearGradient
-       id="linearGradient1067">
-      <stop
-         style="stop-color:#000000;stop-opacity:1;"
-         offset="0"
-         id="stop1063" />
-      <stop
-         style="stop-color:#000000;stop-opacity:0;"
-         offset="1"
-         id="stop1065" />
-    </linearGradient>
-    <linearGradient
-       id="linearGradient1059">
-      <stop
-         style="stop-color:#000000;stop-opacity:1;"
-         offset="0"
-         id="stop1055" />
-      <stop
-         style="stop-color:#000000;stop-opacity:0;"
-         offset="1"
-         id="stop1057" />
-    </linearGradient>
-    <linearGradient
-       id="linearGradient5260-4">
-      <stop
-         stop-color="#009bff"
-         id="stop5256"
-         offset="0" />
-      <stop
-         stop-color="#00ff6e"
-         id="stop5258"
-         offset="1" />
-    </linearGradient>
-    <linearGradient
-       y2="512"
-       x2="1012"
-       y1="512"
-       x1="11.999999"
-       id="linearGradient5262"
-       xlink:href="#linearGradient5260-4"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       xlink:href="#linearGradient1059"
-       id="linearGradient1061" />
-    <linearGradient
-       xlink:href="#linearGradient1067"
-       id="linearGradient1069" />
-  </defs>
-  <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
-  <g
-     id="g6"
-     style="fill-opacity:1;fill:#00C853">
-    <title
-       id="title2"
-       style="fill-opacity:1;fill:url(#linearGradient1069)">background</title>
-    <g
-       id="canvasGrid"
-       display="none"
-       style="fill-opacity:1;fill:#00C853">
-      <rect
-         id="svg_2"
-         width="100%"
-         height="100%"
-         x="0"
-         y="0"
-         stroke-width="0"
-         fill="url(#gridpattern)"
-         style="fill-opacity:1;fill:#00C853" />
-    </g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <g transform="matrix(1.0531 0 0 1.0531 -27.187 -27.187)" fill="#00c853">
+  <g transform="matrix(.81614 0 0 .81614 94.136 94.136)">
+   <title>background</title>
+   <g id="canvasGrid" display="none" fill="#00c853">
+    <rect width="100%" height="100%" fill="#00c853" stroke-width="0"/>
+   </g>
   </g>
-  <g
-     id="g21"
-     style="fill-opacity:1;fill:#00C853">
-    <title
-       id="title8"
-       style="fill-opacity:1;fill:url(#linearGradient1061)">Layer 1</title>
+  <g transform="matrix(.81614 0 0 .81614 94.136 94.136)">
+   <title>Layer 1</title>
   </g>
-  <path
-     id="path6258"
-     style="fill:#00C853;fill-opacity:1;stroke-width:1.58209"
-     d="m 512,212.00002 a 300,300 0 0 0 -300,300 300,300 0 0 0 300,300 300,300 0 0 0 300,-300 300,300 0 0 0 -300,-300 z m 500,300 A 500,500 0 0 1 512,1012 500,500 0 0 1 12,512.00002 500,500 0 0 1 512,12.000001 500,500 0 0 1 1012,512.00002 Z" />
-  <path
-     id="svg_9"
-     style="fill:#00C853;fill-opacity:1;stroke-width:1.24934;stroke-miterlimit:4;stroke-dasharray:none"
-     d="m 762,428.87494 -125.14907,5e-5 -0.006,166.24997 125.15267,8e-5 z M 595.02419,262 H 428.9759 V 762 H 595.02419 Z M 387.15263,428.87499 H 262 v 166.25002 h 125.14916 z" />
+  <path d="m512 267.16a244.84 244.84 0 0 0-244.84 244.84 244.84 244.84 0 0 0 244.84 244.84 244.84 244.84 0 0 0 244.84-244.84 244.84 244.84 0 0 0-244.84-244.84zm408.07 244.84a408.07 408.07 0 0 1-408.07 408.07 408.07 408.07 0 0 1-408.07-408.07 408.07 408.07 0 0 1 408.07-408.07 408.07 408.07 0 0 1 408.07 408.07z" stroke-width="1.2912"/>
+  <path d="m686.67 453.92-87.438 3e-5 -4e-3 116.15 87.441 6e-5zm-116.66-116.59h-116.01v349.34h116.01zm-145.23 116.59h-87.441v116.15h87.438z" stroke-width=".87288"/>
+ </g>
 </svg>
