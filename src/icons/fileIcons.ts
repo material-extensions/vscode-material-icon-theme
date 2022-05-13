@@ -1151,6 +1151,20 @@ export const fileIcons: FileIcons = {
     { name: 'watchman', fileNames: ['.watchmanconfig'] },
     { name: 'aurelia', fileNames: ['aurelia.json'] },
     {
+      name: 'auto',
+      fileNames: [
+        '.autorc',
+        'auto.config.js',
+        'auto.config.ts',
+        'auto-config.json',
+        'auto-config.yaml',
+        'auto-config.yml',
+        'auto-config.ts',
+        'auto-config.js',
+      ],
+      light: true,
+    },
+    {
       name: 'mocha',
       fileNames: [
         'mocha.opts',
