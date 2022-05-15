@@ -568,6 +568,7 @@ export const fileIcons: FileIcons = {
         '.graphqlrc',
         '.graphqlrc.json',
         '.graphqlrc.js',
+        '.graphqlrc.cjs',
         '.graphqlrc.ts',
         '.graphqlrc.toml',
         '.graphqlrc.yaml',
