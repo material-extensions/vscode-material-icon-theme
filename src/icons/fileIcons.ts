@@ -330,6 +330,7 @@ export const fileIcons: FileIcons = {
     { name: 'jar', fileExtensions: ['jar'] },
     { name: 'javaclass', fileExtensions: ['class'] },
     { name: 'c', fileExtensions: ['c', 'i', 'mi'] },
+    { name: 'c-main', fileNames: ['main.c'] },
     { name: 'h', fileExtensions: ['h'] },
     {
       name: 'cpp',
