@@ -320,13 +320,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-sound',
-        folderNames: [
-          'sfx',
-          'snd',
-          'sound',
-          'soundfx',
-          'sounds',
-        ],
+        folderNames: ['sfx', 'snd', 'sound', 'soundfx', 'sounds'],
       },
       {
         name: 'folder-video',
