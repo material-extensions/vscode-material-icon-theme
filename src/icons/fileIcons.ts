@@ -254,7 +254,7 @@ export const fileIcons: FileIcons = {
     { name: 'pdf', fileExtensions: ['pdf'] },
     {
       name: 'table',
-      fileExtensions: ['xlsx', 'xls', 'csv', 'tsv', 'psv', 'ods'],
+      fileExtensions: ['xlsx', 'xlsm', 'xls', 'csv', 'tsv', 'psv', 'ods'],
     },
     {
       name: 'vscode',
