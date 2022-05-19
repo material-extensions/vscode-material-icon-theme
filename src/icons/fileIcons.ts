@@ -142,6 +142,7 @@ export const fileIcons: FileIcons = {
         'pnm',
       ],
     },
+    { name: 'palette', fileExtensions: ['pal', 'gpl', 'act'] },
     { name: 'javascript', fileExtensions: ['esx', 'mjs'] },
     { name: 'react', fileExtensions: ['jsx'] },
     { name: 'react_ts', fileExtensions: ['tsx'] },
