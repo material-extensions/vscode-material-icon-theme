@@ -558,6 +558,7 @@ export const fileIcons: FileIcons = {
       name: 'audio',
       fileExtensions: ['mp3', 'flac', 'm4a', 'wma', 'aiff', 'wav'],
     },
+    { name: 'vgm', fileExtensions: ['vgm', 'vgz', 'nsf', 'gym'] },
     { name: 'coffee', fileExtensions: ['coffee', 'cson', 'iced'] },
     { name: 'document', fileExtensions: ['txt'] },
     {
