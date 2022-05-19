@@ -322,6 +322,7 @@ export const fileIcons: FileIcons = {
         'tgz',
       ],
     },
+    { name: 'cue', fileExtensions: ['cue'] },
     { name: 'vala', fileExtensions: ['vala'] },
     { name: 'zig', fileExtensions: ['zig'] },
     { name: 'exe', fileExtensions: ['exe', 'msi'] },
