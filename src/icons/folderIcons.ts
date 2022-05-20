@@ -583,6 +583,7 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-private', folderNames: ['private', '.private'] },
       { name: 'folder-error', folderNames: ['error', 'errors', 'err'] },
+      { name: 'folder-adr', folderNames: ['adr', 'decisions'] },
       { name: 'folder-event', folderNames: ['event', 'events'] },
       {
         name: 'folder-secure',
