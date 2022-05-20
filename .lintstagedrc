@@ -1,0 +1,3 @@
+{
+  "**/*.svg": "npx svg-color-linter --colors ./material-colors.yml"
+}
