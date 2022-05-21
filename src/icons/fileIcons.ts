@@ -450,7 +450,16 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'lib', fileExtensions: ['lib', 'bib'] },
-    { name: 'ruby', fileExtensions: ['rb', 'erb'] },
+    {
+      name: 'ruby',
+      fileExtensions: ['rb', 'erb'],
+      fileNames: ['.ruby-version'],
+    },
+    {
+      name: 'ruby_rbs',
+      fileExtensions: ['rbs'],
+      fileNames: ['steepfile', 'rbs_collection.yaml'],
+    },
     { name: 'gemfile', fileNames: ['gemfile'] },
     {
       name: 'rubocop',
