@@ -683,6 +683,10 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-angular',
         folderNames: ['.angular'],
       },
+      {
+        name: 'folder-migration',
+        folderNames: ['migration', 'migrations'],
+      },
     ],
   },
   {
