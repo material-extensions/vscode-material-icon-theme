@@ -1944,5 +1944,6 @@ export const fileIcons: FileIcons = {
         'steadybit.yaml',
       ],
     },
+    { name: 'redis', fileExtensions: ['rdb'] },
   ],
 };
