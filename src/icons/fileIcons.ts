@@ -1420,7 +1420,7 @@ export const fileIcons: FileIcons = {
       fileNames: ['makefile', 'gnumakefile', 'kbuild'],
     },
     { name: 'foxpro', fileExtensions: ['fxp', 'prg'] },
-    { name: 'i18n', fileExtensions: ['pot', 'po', 'mo'] },
+    { name: 'i18n', fileExtensions: ['pot', 'po', 'mo', 'lang'] },
     { name: 'webassembly', fileExtensions: ['wat', 'wasm'] },
     {
       name: 'semantic-release',
@@ -1720,7 +1720,9 @@ export const fileIcons: FileIcons = {
         'mcworld',
         'mine',
         'mus',
+        'mcstructure',
       ],
+      fileNames: ['.mcattributes', '.mcdefinitions', '.mcignore'],
     },
     { name: 'replit', fileNames: ['.replit'] },
     { name: 'rescript', fileExtensions: ['res', 'resi'] },

@@ -320,7 +320,10 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-video',
         folderNames: ['vid', 'vids', 'video', 'videos', 'movie', 'movies'],
       },
-      { name: 'folder-kubernetes', folderNames: ['kubernetes', '.kubernetes', 'k8s', '.k8s'] },
+      {
+        name: 'folder-kubernetes',
+        folderNames: ['kubernetes', '.kubernetes', 'k8s', '.k8s'],
+      },
       { name: 'folder-import', folderNames: ['import', 'imports', 'imported'] },
       { name: 'folder-export', folderNames: ['export', 'exports', 'exported'] },
       { name: 'folder-wakatime', folderNames: ['wakatime'] },
