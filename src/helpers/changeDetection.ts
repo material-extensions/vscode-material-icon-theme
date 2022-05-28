@@ -27,20 +27,25 @@ const compareConfigs = (): {
   updatedConfigs: IconJsonOptions;
   updatedJSONConfig: IconJsonOptions;
 } => {
-  const configs = Object.keys(getConfigProperties())
+  const configPropertyNames = Object.keys(getConfigProperties())
     .map((c) => c.split('.').slice(1).join('.'))
     // remove configurable notification messages
     .filter((c) => !/show(Welcome|Update|Reload)Message/g.test(c));
 
   const json = getMaterialIconsJSON();
-  return configs.reduce(
+  return configPropertyNames.reduce(
     (result, configName) => {
       try {
         const themeConfig = getThemeConfig(configName) ?? {
           globalValue: '',
+          workspaceValue: '',
           defaultValue: '',
         };
-        const configValue = themeConfig.globalValue ?? themeConfig.defaultValue;
+        const configValue =
+          themeConfig.workspaceValue ??
+          themeConfig.globalValue ??
+          themeConfig.defaultValue;
+
         const currentState = getObjectPropertyValue(
           json.options ?? {},
           configName
