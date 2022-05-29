@@ -794,7 +794,12 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'next',
-      fileNames: ['next.config.js', 'next.config.mjs', 'next.config.ts', 'next.config.mts'],
+      fileNames: [
+        'next.config.js',
+        'next.config.mjs',
+        'next.config.ts',
+        'next.config.mts',
+      ],
       light: true,
     },
     {
