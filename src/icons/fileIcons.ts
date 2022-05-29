@@ -1725,7 +1725,8 @@ export const fileIcons: FileIcons = {
       fileNames: ['.mcattributes', '.mcdefinitions', '.mcignore'],
     },
     { name: 'replit', fileNames: ['.replit'] },
-    { name: 'rescript', fileExtensions: ['res', 'resi'] },
+    { name: 'rescript', fileExtensions: ['res'] },
+    { name: 'rescript-interface', fileExtensions: ['resi'] },
     {
       name: 'snowpack',
       fileNames: [
