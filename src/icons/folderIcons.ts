@@ -208,7 +208,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-global', folderNames: ['global'] },
       {
         name: 'folder-public',
-        folderNames: ['public', 'www', 'wwwroot', 'web', 'website'],
+        folderNames: ['public', 'www', 'wwwroot', 'web', 'website', 'site'],
       },
       {
         name: 'folder-include',
