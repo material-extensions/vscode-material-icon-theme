@@ -37,7 +37,6 @@ export const fileIcons: FileIcons = {
         '.jsbeautifyrc',
         '.esformatter',
         'cdp.pid',
-        '.lintstagedrc',
       ],
     },
     {
@@ -1329,6 +1328,21 @@ export const fileIcons: FileIcons = {
       light: true,
     },
     { name: 'code-climate', fileNames: ['.codeclimate.yml'], light: true },
+    {
+      name: 'lint_staged',
+      fileNames: [
+        '.lintstagedrc',
+        '.lintstagedrc.json',
+        '.lintstagedrc.yaml',
+        '.lintstagedrc.yml',
+        '.lintstagedrc.mjs',
+        'lint-staged.config.mjs',
+        '.lintstagedrc.cjs',
+        'lint-staged.config.cjs',
+        'lint-staged.config.js',
+        '.lintstagedrc.js',
+      ],
+    },
     {
       name: 'prettier',
       fileNames: [
