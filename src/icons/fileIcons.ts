@@ -340,7 +340,10 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['hh', 'hpp', 'hxx', 'h++', 'hp', 'tcc', 'inl'],
     },
     { name: 'go', fileExtensions: ['go'] },
-    { name: 'go-mod', fileNames: ['go.mod', 'go.sum', 'go.work', 'go.work.sum'] },
+    {
+      name: 'go-mod',
+      fileNames: ['go.mod', 'go.sum', 'go.work', 'go.work.sum'],
+    },
     { name: 'python', fileExtensions: ['py'] },
     {
       name: 'python-misc',
