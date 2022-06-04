@@ -282,7 +282,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-react-components',
-        folderNames: ['components'],
+        folderNames: ['components', 'react', 'jsx', 'reactjs'],
         enabledFor: [IconPack.React, IconPack.Redux],
       },
       {
