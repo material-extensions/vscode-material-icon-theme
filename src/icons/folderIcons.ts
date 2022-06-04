@@ -367,6 +367,7 @@ export const folderIcons: FolderTheme[] = [
           'extras',
         ],
       },
+      { name: 'folder-lua', folderNames: ['lua'] },
       {
         name: 'folder-typescript',
         folderNames: ['typescript', 'ts', 'typings', '@types', 'types'],
