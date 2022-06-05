@@ -3,7 +3,26 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
-#### [v4.17.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.16.0...HEAD) 
+#### [v4.18.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.17.0...v4.18.0) 
+
+> June 5, 2022 
+
+- Support workspace settings [`#1540`](https://github.com/PKief/vscode-material-icon-theme/pull/1540)
+- Add React and Jsx folder icon [`#1519`](https://github.com/PKief/vscode-material-icon-theme/pull/1519)
+- Feature: added folder for Lua language; [`#1542`](https://github.com/PKief/vscode-material-icon-theme/pull/1542)
+- feat: add go.work.sum to list of go-mod files [`#1512`](https://github.com/PKief/vscode-material-icon-theme/pull/1512)
+- Add new `.cts` and `.mts` file extensions [`#1541`](https://github.com/PKief/vscode-material-icon-theme/pull/1541)
+- feat: add site to folder-public [`#1544`](https://github.com/PKief/vscode-material-icon-theme/pull/1544)
+- Add separate file icon for rescript interface [`#1539`](https://github.com/PKief/vscode-material-icon-theme/pull/1539)
+- Add new extension for i18n and Minecraft icon. [`#1538`](https://github.com/PKief/vscode-material-icon-theme/pull/1538)
+- feat: add `.` possibility to kubernetes folders [`#1536`](https://github.com/PKief/vscode-material-icon-theme/pull/1536)
+- feat: Support Playwright component test config files [`#1527`](https://github.com/PKief/vscode-material-icon-theme/pull/1527)
+- associate xlsm with excel icon, closes #1493 [`#1521`](https://github.com/PKief/vscode-material-icon-theme/pull/1521)
+- feat: add support for the graphqlrc.cjs file [`#1513`](https://github.com/PKief/vscode-material-icon-theme/pull/1513)
+- feat: introduce support for the webpack config in mjs [`#1514`](https://github.com/PKief/vscode-material-icon-theme/pull/1514)
+- feat: improve postcss config icon [`#1507`](https://github.com/PKief/vscode-material-icon-theme/pull/1507)
+ 
+#### [v4.17.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.16.0...v4.17.0) 
 
 > May 6, 2022 
 
