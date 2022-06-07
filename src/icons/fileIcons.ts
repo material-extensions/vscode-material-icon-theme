@@ -781,6 +781,9 @@ export const fileIcons: FileIcons = {
     { name: 'autoit', fileExtensions: ['au3'] },
     { name: 'haml', fileExtensions: ['haml'] },
     { name: 'yang', fileExtensions: ['yang'] },
+    { name: 'game-maker', fileExtensions: ['gml'] },
+    { name: 'game-maker', fileExtensions: ['yy'] },
+    { name: 'game-maker', fileExtensions: ['yyp'] },
     {
       name: 'mjml',
       fileExtensions: ['mjml'],
