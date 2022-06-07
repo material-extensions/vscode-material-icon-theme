@@ -1,3 +1,4 @@
+import merge from 'lodash.merge';
 import { getConfigProperties, getMaterialIconsJSON, getThemeConfig } from '.';
 import { createIconFile } from '../icons/index';
 import { IconJsonOptions } from '../models';
@@ -41,10 +42,14 @@ const compareConfigs = (): {
           workspaceValue: '',
           defaultValue: '',
         };
-        const configValue =
-          themeConfig.workspaceValue ??
-          themeConfig.globalValue ??
-          themeConfig.defaultValue;
+
+        const configValue = getConfigValue(
+          themeConfig as {
+            globalValue: unknown;
+            workspaceValue: unknown;
+            defaultValue: unknown;
+          }
+        );
 
         const currentState = getObjectPropertyValue(
           json.options ?? {},
@@ -70,4 +75,31 @@ const compareConfigs = (): {
       updatedJSONConfig: json.options as IconJsonOptions,
     }
   );
+};
+
+/**
+ * Returns the value of a specific configuration by checking the workspace and the user configuration and fallback to the default value.
+ *
+ * @param themeConfig Theme configuration
+ * @returns Actual theme configuration value
+ */
+const getConfigValue = (themeConfig: {
+  globalValue: unknown;
+  workspaceValue: unknown;
+  defaultValue: unknown;
+}) => {
+  let configValue;
+  if (themeConfig.workspaceValue && themeConfig.globalValue) {
+    configValue = merge(
+      {},
+      themeConfig.workspaceValue,
+      themeConfig.globalValue
+    );
+  } else {
+    configValue =
+      themeConfig.workspaceValue ??
+      themeConfig.globalValue ??
+      themeConfig.defaultValue;
+  }
+  return configValue;
 };
