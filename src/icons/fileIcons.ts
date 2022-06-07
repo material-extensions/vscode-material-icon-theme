@@ -783,7 +783,7 @@ export const fileIcons: FileIcons = {
     { name: 'yang', fileExtensions: ['yang'] },
     { name: 'game-maker', fileExtensions: ['gml'] },
     { name: 'game-maker', fileExtensions: ['yy'] },
-    { name: 'game-maker', fileExtensions: ['yyp'] },
+    { name: 'game-maker', fileExtensions: ['gml'] },
     {
       name: 'mjml',
       fileExtensions: ['mjml'],
