@@ -3,6 +3,14 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v4.18.1](https://github.com/PKief/vscode-material-icon-theme/compare/v4.18.0...v4.18.1) 
+
+> June 9, 2022 
+
+- On-boarding to VS Code sponsor [`#1558`](https://github.com/PKief/vscode-material-icon-theme/pull/1558)
+- feat: introduce the icon for the config files of auto [`#1511`](https://github.com/PKief/vscode-material-icon-theme/pull/1511)
+- Fix: Workspace settings override user settings [`#1553`](https://github.com/PKief/vscode-material-icon-theme/pull/1553)
+ 
 #### [v4.18.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.17.0...v4.18.0) 
 
 > June 5, 2022 
