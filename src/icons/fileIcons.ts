@@ -34,7 +34,6 @@ export const fileIcons: FileIcons = {
         '.jscsrc',
         '.jshintrc',
         'composer.lock',
-        '.jsbeautifyrc',
         '.esformatter',
         'cdp.pid',
         '.lintstagedrc',
@@ -1888,6 +1887,7 @@ export const fileIcons: FileIcons = {
     { name: 'chess', fileExtensions: ['pgn', 'fen'], light: true },
     { name: 'gemini', fileExtensions: ['gmi', 'gemini'] },
     { name: 'sentry', fileNames: ['.sentryclirc'] },
+    { name: 'js-beautifier', fileNames: ['.jsbeautifyrc', '.jsbeautify.json'] },
     {
       name: 'phpunit',
       fileNames: [
