@@ -31,7 +31,10 @@
     "email": "philipp.kief@gmx.de",
     "url": "https://pkief.github.io"
   },
-  "funding": "https://github.com/sponsors/pkief",
+  "funding": "https://github.com/sponsors/PKief",
+  "sponsor": {
+    "url": "https://github.com/sponsors/PKief"
+  },
   "engines": {
     "vscode": "^1.51.0"
   },
