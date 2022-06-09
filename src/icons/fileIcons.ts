@@ -1941,6 +1941,15 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['jsconfig.json'],
     },
     {
+      name: 'openapi',
+      fileNames: [
+        'openapi.yaml',
+        'openapi.json',
+        'spectral.yaml',
+        'spectral.yml',
+      ],
+    },
+    { name: 'spectral', fileNames: ['.spectral.yaml', '.spectral.yml'] },
       name: 'maven',
       fileNames: ['maven.config', 'jvm.config', 'pom.xml'],
     },
