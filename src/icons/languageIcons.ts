@@ -133,4 +133,5 @@ export const languageIcons: LanguageIcon[] = [
   { icon: { name: 'vlang' }, ids: ['v'] },
   { icon: { name: 'wolframlanguage' }, ids: ['wolfram'] },
   { icon: { name: 'shader' }, ids: ['hlsl', 'glsl'] },
+  { icon: { name: 'luau' }, ids: ['luau'] },
 ];

@@ -2056,5 +2056,15 @@ export const fileIcons: FileIcons = {
         'steadybit.yaml',
       ],
     },
+    { name: 'luau', fileExtensions: ['luau'] },
+    {
+      name: 'roblox',
+      fileExtensions: ['rbxl', 'rbxlx', 'rbxm', 'rbxmx'],
+    },
+    {
+      name: 'rojo',
+      fileExtensions: ['project.json', 'model.json', 'meta.json'],
+    },
+    { name: 'wally', fileNames: ['wally.toml'] },
   ],
 };

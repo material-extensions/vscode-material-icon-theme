@@ -762,6 +762,10 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-unity',
         folderNames: ['unity'],
       },
+      {
+        name: 'folder-luau',
+        folderNames: ['luau'],
+      },
     ],
   },
   {
