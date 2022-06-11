@@ -572,7 +572,14 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-meta', folderNames: ['meta'] },
       {
         name: 'folder-packages',
-        folderNames: ['package', 'packages', 'pkg', 'pkgs'],
+        folderNames: [
+          'package',
+          'packages',
+          'pkg',
+          'pkgs',
+          'serverpackages',
+          'devpackages',
+        ],
       },
       { name: 'folder-shared', folderNames: ['shared', 'common'] },
       {
