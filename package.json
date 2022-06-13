@@ -1,267 +1,273 @@
 {
-  "name": "material-icon-theme",
-  "displayName": "Material Icon Theme",
-  "description": "Material Design Icons for Visual Studio Code",
-  "version": "4.18.1",
-  "scripts": {
-    "build": "npm run compile:dev && npm run postcompile",
-    "check": "ts-node ./src/scripts/icons/checks",
-    "compile": "webpack --config ./build/webpack.config.js --mode production",
-    "compile:dev": "webpack --config ./build/webpack.config.js --mode none",
-    "compile:watch": "webpack --config ./build/webpack.config.js --mode none --watch",
-    "compile-web": "webpack --config ./build/web-extension.webpack.config.js",
-    "watch-web": "webpack --watch --config ./build/web-extension.webpack.config.js",
-    "package-web": "webpack --mode production --devtool hidden-source-map --config ./build/web-extension.webpack.config.js",
-    "contributors": "ts-node ./src/scripts/contributors/index.ts",
-    "generateJson": "ts-node ./src/scripts/icons/generateJson.ts",
-    "lint": "eslint -c .eslintrc.json --ext .ts ./src/**/*.ts",
-    "postcompile": "npm run generateJson && npm run check",
-    "pretest": "npm run build && tsc -p ./",
-    "preview": "ts-node ./src/scripts/preview",
-    "svgo": "svgo -i icons -o icons -q",
-    "test": "node ./out/test/runTest.js",
-    "changelog": "changelog-machine --config changelog.config.json",
-    "preversion": "npm run contributors && git add images/contributors.png && npm run preview && git add images/fileIcons.png && git add images/folderIcons.png",
-    "version": "npm run changelog && git add CHANGELOG.md",
-    "vscode:prepublish": "npm run lint && npm run compile && npm run package-web"
-  },
-  "publisher": "PKief",
-  "author": {
-    "name": "Philipp Kief",
-    "email": "philipp.kief@gmx.de",
-    "url": "https://pkief.github.io"
-  },
-  "funding": "https://github.com/sponsors/PKief",
-  "sponsor": {
-    "url": "https://github.com/sponsors/PKief"
-  },
-  "engines": {
-    "vscode": "^1.51.0"
-  },
-  "homepage": "https://github.com/PKief/vscode-material-icon-theme/blob/main/README.md",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/PKief/vscode-material-icon-theme.git"
-  },
-  "bugs": {
-    "url": "https://github.com/PKief/vscode-material-icon-theme/issues"
-  },
-  "icon": "logo.png",
-  "galleryBanner": {
-    "color": "#1e1e1e",
-    "theme": "dark"
-  },
-  "categories": [
-    "Themes"
-  ],
-  "keywords": [
-    "icons",
-    "theme",
-    "material",
-    "icon-theme",
-    "customization"
-  ],
-  "extensionKind": [
-    "ui",
-    "workspace"
-  ],
-  "capabilities": {
-    "untrustedWorkspaces": {
-      "supported": true
-    },
-    "virtualWorkspaces": true
-  },
-  "activationEvents": [
-    "onStartupFinished"
-  ],
-  "main": "./dist/extension",
-  "browser": "./dist/web/extension.js",
-  "sideEffects": false,
-  "contributes": {
-    "iconThemes": [
-      {
-        "id": "material-icon-theme",
-        "label": "Material Icon Theme",
-        "path": "./dist/material-icons.json",
-        "_watch": true
-      }
-    ],
-    "commands": [
-      {
-        "command": "material-icon-theme.activateIcons",
-        "title": "%command.activateIcons%",
-        "enablement": "!isWeb"
-      },
-      {
-        "command": "material-icon-theme.toggleIconPacks",
-        "title": "%command.toggleIconPacks%",
-        "enablement": "!isWeb"
-      },
-      {
-        "command": "material-icon-theme.changeFolderTheme",
-        "title": "%command.changeFolderTheme%",
-        "enablement": "!isWeb"
-      },
-      {
-        "command": "material-icon-theme.changeFolderColor",
-        "title": "%command.changeFolderColor%",
-        "enablement": "!isWeb"
-      },
-      {
-        "command": "material-icon-theme.restoreDefaultConfig",
-        "title": "%command.restoreDefaultConfig%",
-        "enablement": "!isWeb"
-      },
-      {
-        "command": "material-icon-theme.toggleExplorerArrows",
-        "title": "%command.toggleExplorerArrows%",
-        "enablement": "!isWeb"
-      },
-      {
-        "command": "material-icon-theme.changeOpacity",
-        "title": "%command.changeOpacity%",
-        "enablement": "!isWeb"
-      },
-      {
-        "command": "material-icon-theme.toggleGrayscale",
-        "title": "%command.toggleGrayscale%",
-        "enablement": "!isWeb"
-      },
-      {
-        "command": "material-icon-theme.changeSaturation",
-        "title": "%command.changeSaturation%",
-        "enablement": "!isWeb"
-      }
-    ],
-    "configuration": {
-      "type": "object",
-      "title": "%configuration.title%",
-      "properties": {
-        "material-icon-theme.showWelcomeMessage": {
-          "type": "boolean",
-          "default": true,
-          "description": "%configuration.showWelcomeMessage%"
-        },
-        "material-icon-theme.showUpdateMessage": {
-          "type": "boolean",
-          "default": false,
-          "description": "%configuration.showUpdateMessage%"
-        },
-        "material-icon-theme.showReloadMessage": {
-          "type": "boolean",
-          "default": true,
-          "description": "%configuration.showReloadMessage%"
-        },
-        "material-icon-theme.activeIconPack": {
-          "type": "string",
-          "default": "angular",
-          "description": "%configuration.activeIconPack%",
-          "enumDescriptions": [
-            "%configuration.activeIconPack.angular%",
-            "%configuration.activeIconPack.angular_ngrx%",
-            "%configuration.activeIconPack.react%",
-            "%configuration.activeIconPack.react_redux%",
-            "%configuration.activeIconPack.vue%",
-            "%configuration.activeIconPack.vue_vuex%",
-            "%configuration.activeIconPack.nest%",
-            "%configuration.activeIconPack.none%"
-          ],
-          "enum": [
-            "angular",
-            "angular_ngrx",
-            "react",
-            "react_redux",
-            "vue",
-            "vue_vuex",
-            "nest",
-            "none"
-          ]
-        },
-        "material-icon-theme.files.associations": {
-          "type": "object",
-          "default": {},
-          "description": "%configuration.files.associations%"
-        },
-        "material-icon-theme.folders.associations": {
-          "type": "object",
-          "default": {},
-          "description": "%configuration.folders.associations%"
-        },
-        "material-icon-theme.languages.associations": {
-          "type": "object",
-          "default": {},
-          "description": "%configuration.languages.associations%"
-        },
-        "material-icon-theme.folders.theme": {
-          "type": "string",
-          "default": "specific",
-          "description": "%configuration.folders.theme%",
-          "enumDescriptions": [
-            "%configuration.folders.theme.specific%",
-            "%configuration.folders.theme.classic%",
-            "%configuration.folders.theme.none%"
-          ],
-          "enum": [
-            "specific",
-            "classic",
-            "none"
-          ]
-        },
-        "material-icon-theme.folders.color": {
-          "type": "string",
-          "default": "#90a4ae",
-          "pattern": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-          "description": "%configuration.folders.color%"
-        },
-        "material-icon-theme.opacity": {
-          "type": "number",
-          "default": 1,
-          "minimum": 0,
-          "maximum": 1,
-          "description": "%configuration.opacity%"
-        },
-        "material-icon-theme.hidesExplorerArrows": {
-          "type": "boolean",
-          "default": false,
-          "description": "%configuration.hidesExplorerArrows%"
-        },
-        "material-icon-theme.saturation": {
-          "type": "number",
-          "default": 1,
-          "minimum": 0,
-          "maximum": 1,
-          "description": "%configuration.saturation%"
-        }
-      }
-    }
-  },
-  "dependencies": {
-    "lodash.merge": "4.6.2"
-  },
-  "devDependencies": {
-    "@types/glob": "^7.2.0",
-    "@types/lodash.merge": "^4.6.7",
-    "@types/mocha": "^9.1.1",
-    "@types/node": "^17.0.35",
-    "@types/puppeteer": "^5.4.6",
-    "@types/vscode": "~1.51.0",
-    "@typescript-eslint/eslint-plugin": "^5.26.0",
-    "@typescript-eslint/parser": "^5.26.0",
-    "changelog-machine": "^1.0.2",
-    "eslint": "^8.16.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "glob": "^8.0.3",
-    "mocha": "^10.0.0",
-    "prettier": "^2.6.2",
-    "puppeteer": "^14.1.1",
-    "rimraf": "^3.0.2",
-    "svgo": "^2.8.0",
-    "ts-loader": "^9.3.0",
-    "ts-node": "^10.8.0",
-    "typescript": "^4.7.2",
-    "vscode-test": "^1.6.1",
-    "webpack": "^5.71.1",
-    "webpack-cli": "^4.9.2"
-  }
+	"name": "material-icon-theme",
+	"displayName": "Material Icon Theme",
+	"description": "Material Design Icons for Visual Studio Code",
+	"version": "4.18.1",
+	"scripts": {
+		"build": "npm run compile:dev && npm run postcompile",
+		"check": "ts-node ./src/scripts/icons/checks",
+		"compile": "webpack --config ./build/webpack.config.js --mode production",
+		"compile:dev": "webpack --config ./build/webpack.config.js --mode none",
+		"compile:watch": "webpack --config ./build/webpack.config.js --mode none --watch",
+		"compile-web": "webpack --config ./build/web-extension.webpack.config.js",
+		"watch-web": "webpack --watch --config ./build/web-extension.webpack.config.js",
+		"package-web": "webpack --mode production --devtool hidden-source-map --config ./build/web-extension.webpack.config.js",
+		"contributors": "ts-node ./src/scripts/contributors/index.ts",
+		"generateJson": "ts-node ./src/scripts/icons/generateJson.ts",
+		"lint": "eslint -c .eslintrc.json --ext .ts ./src/**/*.ts",
+		"postcompile": "npm run generateJson && npm run check",
+		"pretest": "npm run build && tsc -p ./",
+		"preview": "ts-node ./src/scripts/preview",
+		"svgo": "svgo -i icons -o icons -q",
+		"test": "node ./out/test/runTest.js",
+		"changelog": "changelog-machine --config changelog.config.json",
+		"preversion": "npm run contributors && git add images/contributors.png && npm run preview && git add images/fileIcons.png && git add images/folderIcons.png",
+		"version": "npm run changelog && git add CHANGELOG.md",
+		"vscode:prepublish": "npm run lint && npm run compile && npm run package-web"
+	},
+	"publisher": "PKief",
+	"author": {
+		"name": "Philipp Kief",
+		"email": "philipp.kief@gmx.de",
+		"url": "https://pkief.github.io"
+	},
+	"funding": "https://github.com/sponsors/PKief",
+	"sponsor": {
+		"url": "https://github.com/sponsors/PKief"
+	},
+	"engines": {
+		"vscode": "^1.51.0"
+	},
+	"homepage": "https://github.com/PKief/vscode-material-icon-theme/blob/main/README.md",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/PKief/vscode-material-icon-theme.git"
+	},
+	"bugs": {
+		"url": "https://github.com/PKief/vscode-material-icon-theme/issues"
+	},
+	"icon": "logo.png",
+	"galleryBanner": {
+		"color": "#1e1e1e",
+		"theme": "dark"
+	},
+	"categories": [
+		"Themes"
+	],
+	"keywords": [
+		"icons",
+		"theme",
+		"material",
+		"icon-theme",
+		"customization"
+	],
+	"extensionKind": [
+		"ui",
+		"workspace"
+	],
+	"capabilities": {
+		"untrustedWorkspaces": {
+			"supported": true
+		},
+		"virtualWorkspaces": true
+	},
+	"activationEvents": [
+		"onStartupFinished"
+	],
+	"main": "./dist/extension",
+	"browser": "./dist/web/extension.js",
+	"sideEffects": false,
+	"contributes": {
+		"iconThemes": [
+			{
+				"id": "material-icon-theme",
+				"label": "Material Icon Theme",
+				"path": "./dist/material-icons.json",
+				"_watch": true
+			}
+		],
+		"commands": [
+			{
+				"command": "material-icon-theme.activateIcons",
+				"title": "%command.activateIcons%",
+				"enablement": "!isWeb"
+			},
+			{
+				"command": "material-icon-theme.toggleIconPacks",
+				"title": "%command.toggleIconPacks%",
+				"enablement": "!isWeb"
+			},
+			{
+				"command": "material-icon-theme.changeFolderTheme",
+				"title": "%command.changeFolderTheme%",
+				"enablement": "!isWeb"
+			},
+			{
+				"command": "material-icon-theme.changeFolderColor",
+				"title": "%command.changeFolderColor%",
+				"enablement": "!isWeb"
+			},
+			{
+				"command": "material-icon-theme.restoreDefaultConfig",
+				"title": "%command.restoreDefaultConfig%",
+				"enablement": "!isWeb"
+			},
+			{
+				"command": "material-icon-theme.toggleExplorerArrows",
+				"title": "%command.toggleExplorerArrows%",
+				"enablement": "!isWeb"
+			},
+			{
+				"command": "material-icon-theme.changeOpacity",
+				"title": "%command.changeOpacity%",
+				"enablement": "!isWeb"
+			},
+			{
+				"command": "material-icon-theme.toggleGrayscale",
+				"title": "%command.toggleGrayscale%",
+				"enablement": "!isWeb"
+			},
+			{
+				"command": "material-icon-theme.changeSaturation",
+				"title": "%command.changeSaturation%",
+				"enablement": "!isWeb"
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "%configuration.title%",
+			"properties": {
+				"material-icon-theme.showWelcomeMessage": {
+					"type": "boolean",
+					"default": true,
+					"description": "%configuration.showWelcomeMessage%"
+				},
+				"material-icon-theme.showUpdateMessage": {
+					"type": "boolean",
+					"default": false,
+					"description": "%configuration.showUpdateMessage%"
+				},
+				"material-icon-theme.showReloadMessage": {
+					"type": "boolean",
+					"default": true,
+					"description": "%configuration.showReloadMessage%"
+				},
+				"material-icon-theme.activeIconPack": {
+					"type": "string",
+					"default": "angular",
+					"description": "%configuration.activeIconPack%",
+					"enumDescriptions": [
+						"%configuration.activeIconPack.angular%",
+						"%configuration.activeIconPack.angular_ngrx%",
+						"%configuration.activeIconPack.react%",
+						"%configuration.activeIconPack.react_redux%",
+						"%configuration.activeIconPack.vue%",
+						"%configuration.activeIconPack.vue_vuex%",
+						"%configuration.activeIconPack.nest%",
+						"%configuration.activeIconPack.none%"
+					],
+					"enum": [
+						"angular",
+						"angular_ngrx",
+						"react",
+						"react_redux",
+						"vue",
+						"vue_vuex",
+						"nest",
+						"none"
+					]
+				},
+				"material-icon-theme.files.associations": {
+					"type": "object",
+					"default": {},
+					"description": "%configuration.files.associations%"
+				},
+				"material-icon-theme.folders.associations": {
+					"type": "object",
+					"default": {},
+					"description": "%configuration.folders.associations%"
+				},
+				"material-icon-theme.languages.associations": {
+					"type": "object",
+					"default": {},
+					"description": "%configuration.languages.associations%"
+				},
+				"material-icon-theme.folders.theme": {
+					"type": "string",
+					"default": "specific",
+					"description": "%configuration.folders.theme%",
+					"enumDescriptions": [
+						"%configuration.folders.theme.specific%",
+						"%configuration.folders.theme.classic%",
+						"%configuration.folders.theme.none%"
+					],
+					"enum": [
+						"specific",
+						"classic",
+						"none"
+					]
+				},
+				"material-icon-theme.folders.color": {
+					"type": "string",
+					"default": "#90a4ae",
+					"pattern": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+					"description": "%configuration.folders.color%"
+				},
+				"material-icon-theme.opacity": {
+					"type": "number",
+					"default": 1,
+					"minimum": 0,
+					"maximum": 1,
+					"description": "%configuration.opacity%"
+				},
+				"material-icon-theme.hidesExplorerArrows": {
+					"type": "boolean",
+					"default": false,
+					"description": "%configuration.hidesExplorerArrows%"
+				},
+				"material-icon-theme.saturation": {
+					"type": "number",
+					"default": 1,
+					"minimum": 0,
+					"maximum": 1,
+					"description": "%configuration.saturation%"
+				}
+			}
+		}
+	},
+	"dependencies": {
+		"lodash.merge": "4.6.2"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.2.0",
+		"@types/lodash.merge": "^4.6.7",
+		"@types/mocha": "^9.1.1",
+		"@types/node": "^17.0.35",
+		"@types/puppeteer": "^5.4.6",
+		"@types/vscode": "~1.51.0",
+		"@typescript-eslint/eslint-plugin": "^5.26.0",
+		"@typescript-eslint/parser": "^5.26.0",
+		"changelog-machine": "^1.0.2",
+		"eslint": "^8.16.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-prettier": "^4.0.0",
+		"glob": "^8.0.3",
+		"mocha": "^10.0.0",
+		"prettier": "^2.6.2",
+		"puppeteer": "^14.1.1",
+		"rimraf": "^3.0.2",
+		"svgo": "^2.8.0",
+		"ts-loader": "^9.3.0",
+		"ts-node": "^10.8.0",
+		"typescript": "^4.7.2",
+		"vscode-test": "^1.6.1",
+		"webpack": "^5.71.1",
+		"webpack-cli": "^4.9.2"
+	},
+	"__metadata": {
+		"id": "5db78037-f674-459f-a236-db622c427c5b",
+		"publisherDisplayName": "Philipp Kief",
+		"publisherId": "f9e5bc2f-fea1-4075-917f-d83e01e69f56",
+		"isPreReleaseVersion": false
+	}
 }
