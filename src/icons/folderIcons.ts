@@ -751,6 +751,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['java'],
       },
       {
+        name: 'folder-jwt',
+        folderNames: ['jwt'],
+      },
+      {
         name: 'folder-resolver',
         folderNames: ['resolver', 'resolvers'],
       },
