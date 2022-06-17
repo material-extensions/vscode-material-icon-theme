@@ -1587,9 +1587,11 @@ export const fileIcons: FileIcons = {
       name: '3d',
       fileExtensions: [
         'stl',
+        'stp',
         'obj',
         'ac',
         'blend',
+        'fbx',
         'mesh',
         'mqo',
         'pmd',
