@@ -1846,6 +1846,7 @@ export const fileIcons: FileIcons = {
       light: true,
     },
     { name: 'brainfuck', fileExtensions: ['b', 'bf'] },
+    { name: 'brainfuck_binary_format', fileExtensions: ['bfbf', 'fbfbf'] },
     { name: 'bicep', fileExtensions: ['bicep'] },
     { name: 'cobol', fileExtensions: ['cob', 'cbl'] },
     { name: 'grain', fileExtensions: ['gr'] },
