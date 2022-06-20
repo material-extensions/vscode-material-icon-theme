@@ -1865,6 +1865,10 @@ export const fileIcons: FileIcons = {
         'vite.config.mts',
       ],
     },
+    {
+      name: 'vitest',
+      fileNames: ['vitest.config.js', 'vitest.config.mjs', 'vitest.config.ts'],
+    },
     { name: 'opa', fileExtensions: ['rego'] },
     { name: 'lerna', fileNames: ['lerna.json'] },
     {
