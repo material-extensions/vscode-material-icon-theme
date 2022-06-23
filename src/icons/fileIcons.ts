@@ -2032,7 +2032,10 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'rome', fileNames: ['rome.json'] },
-    { name: 'cypress', fileNames: ['cypress.json', 'cypress.env.json', 'cypress.config.ts'] },
+    {
+      name: 'cypress',
+      fileNames: ['cypress.json', 'cypress.env.json', 'cypress.config.ts'],
+    },
     { name: 'siyuan', fileExtensions: ['sy'] },
     { name: 'ndst', fileExtensions: ['ndst.yml', 'ndst.yaml', 'ndst.json'] },
     { name: 'plop', fileNames: ['plopfile.js', 'plopfile.ts'] },
