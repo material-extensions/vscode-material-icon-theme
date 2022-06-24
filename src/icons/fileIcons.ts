@@ -246,7 +246,10 @@ export const fileIcons: FileIcons = {
         '.clang-tidy',
       ],
     },
-    { name: 'typescript-def', fileExtensions: ['d.ts'] },
+    {
+      name: 'typescript-def',
+      fileExtensions: ['d.ts', 'd.cts', 'd.mts'],
+    },
     { name: 'markojs', fileExtensions: ['marko'] },
     {
       name: 'astro',
