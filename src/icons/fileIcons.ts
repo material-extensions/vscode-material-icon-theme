@@ -692,7 +692,6 @@ export const fileIcons: FileIcons = {
         'spec.cts',
         'spec.mts',
         'cy.ts',
-        'cy.js',
         'e2e-spec.ts',
         'e2e-spec.cts',
         'e2e-spec.mts',
