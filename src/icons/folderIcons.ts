@@ -343,6 +343,8 @@ export const folderIcons: FolderTheme[] = [
           'it',
           'integration-test',
           'integration-tests',
+          '__integration-test__',
+          '__integration-tests__',
         ],
       },
       {
