@@ -10,6 +10,5 @@
     "source.fixAll.eslint": true
   },
   "eslint.validate": ["typescript"],
-"editor.formatOnSave": true,
-"svg.preview.background": "transparent"
+  "editor.formatOnSave": true
 }
