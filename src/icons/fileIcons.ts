@@ -1936,6 +1936,7 @@ export const fileIcons: FileIcons = {
     {
       name: 'tauri',
       fileNames: [
+        'tauri.conf.json',
         'tauri.config.json',
         'tauri.linux.conf.json',
         'tauri.windows.conf.json',
