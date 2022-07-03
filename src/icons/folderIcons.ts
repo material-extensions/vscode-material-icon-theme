@@ -291,6 +291,7 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-log', folderNames: ['log', 'logs'] },
       { name: 'folder-target', folderNames: ['target'] },
+      { name: 'folder-tauri', folderNames: ['src-tauri'] },
       {
         name: 'folder-temp',
         folderNames: [
