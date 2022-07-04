@@ -65,6 +65,7 @@ export const folderIcons: FolderTheme[] = [
           '__tests__',
           '__snapshots__',
           '__mocks__',
+          '__fixtures__',
           '__test__',
           'spec',
           'specs',
@@ -610,6 +611,8 @@ export const folderIcons: FolderTheme[] = [
         folderNames: [
           'mock',
           'mocks',
+          'fixture',
+          'fixtures',
           'draft',
           'drafts',
           'concept',
