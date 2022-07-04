@@ -562,7 +562,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['hook', 'hooks', 'trigger', 'triggers'],
       },
       { name: 'folder-job', folderNames: ['job', 'jobs'] },
-      { name: 'folder-keys', folderNames: ['keys', 'key', 'token', 'tokens'] },
+      {
+        name: 'folder-keys',
+        folderNames: ['keys', 'key', 'token', 'tokens', 'jwt'],
+      },
       { name: 'folder-layout', folderNames: ['layout', 'layouts', '_layouts'] },
       {
         name: 'folder-mail',
@@ -749,10 +752,6 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-java',
         folderNames: ['java'],
-      },
-      {
-        name: 'folder-jwt',
-        folderNames: ['jwt'],
       },
       {
         name: 'folder-resolver',
