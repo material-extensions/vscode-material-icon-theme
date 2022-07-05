@@ -2078,5 +2078,9 @@ export const fileIcons: FileIcons = {
         'steadybit.yaml',
       ],
     },
+    {
+      name: 'dev-template',
+      fileExtensions: ['dt'],
+    },
   ],
 };
