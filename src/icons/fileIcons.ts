@@ -1093,6 +1093,10 @@ export const fileIcons: FileIcons = {
       ],
     },
     {
+      name: 'deno',
+      fileNames: ['deno.json'],
+    },
+    {
       name: 'android',
       fileNames: ['androidmanifest.xml'],
       fileExtensions: ['apk', 'smali', 'dex'],
