@@ -65,6 +65,7 @@ export const folderIcons: FolderTheme[] = [
           '__tests__',
           '__snapshots__',
           '__mocks__',
+          '__fixtures__',
           '__test__',
           'spec',
           'specs',
@@ -343,6 +344,8 @@ export const folderIcons: FolderTheme[] = [
           'it',
           'integration-test',
           'integration-tests',
+          '__integration-test__',
+          '__integration-tests__',
         ],
       },
       {
@@ -562,7 +565,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['hook', 'hooks', 'trigger', 'triggers'],
       },
       { name: 'folder-job', folderNames: ['job', 'jobs'] },
-      { name: 'folder-keys', folderNames: ['keys', 'key', 'token', 'tokens'] },
+      {
+        name: 'folder-keys',
+        folderNames: ['keys', 'key', 'token', 'tokens', 'jwt'],
+      },
       { name: 'folder-layout', folderNames: ['layout', 'layouts', '_layouts'] },
       {
         name: 'folder-mail',
@@ -608,6 +614,8 @@ export const folderIcons: FolderTheme[] = [
         folderNames: [
           'mock',
           'mocks',
+          'fixture',
+          'fixtures',
           'draft',
           'drafts',
           'concept',

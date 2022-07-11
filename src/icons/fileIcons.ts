@@ -246,7 +246,10 @@ export const fileIcons: FileIcons = {
         '.clang-tidy',
       ],
     },
-    { name: 'typescript-def', fileExtensions: ['d.ts'] },
+    {
+      name: 'typescript-def',
+      fileExtensions: ['d.ts', 'd.cts', 'd.mts'],
+    },
     { name: 'markojs', fileExtensions: ['marko'] },
     {
       name: 'astro',
@@ -688,6 +691,7 @@ export const fileIcons: FileIcons = {
         'spec.ts',
         'spec.cts',
         'spec.mts',
+        'cy.ts',
         'e2e-spec.ts',
         'e2e-spec.cts',
         'e2e-spec.mts',
@@ -706,6 +710,8 @@ export const fileIcons: FileIcons = {
         'spec.jsx',
         'test.jsx',
         'jsx.snap',
+        'cy.jsx',
+        'cy.tsx',
       ],
     },
     {
@@ -721,6 +727,7 @@ export const fileIcons: FileIcons = {
         'test.cjs',
         'test.mjs',
         'js.snap',
+        'cy.js',
       ],
     },
     {
@@ -1851,7 +1858,7 @@ export const fileIcons: FileIcons = {
     { name: 'grain', fileExtensions: ['gr'] },
     { name: 'lolcode', fileExtensions: ['lol'] },
     { name: 'idris', fileExtensions: ['idr', 'ibc'] },
-    { name: 'quasar', fileNames: ['quasar.conf.js'] },
+    { name: 'quasar', fileNames: ['quasar.conf.js', 'quasar.config.js'] },
     { name: 'dependabot', fileNames: ['dependabot.yml'] },
     { name: 'pipeline', fileExtensions: ['pipeline'] },
     {
@@ -1922,12 +1929,16 @@ export const fileIcons: FileIcons = {
         'tsconfig.build.json',
         'tsconfig.eslint.json',
         'tsconfig.lib.json',
+        'tsconfig.node.json',
+        'tsconfig.test.json',
+        'tsconfig.e2e.json',
       ],
       fileExtensions: ['tsconfig.json'],
     },
     {
       name: 'tauri',
       fileNames: [
+        'tauri.conf.json',
         'tauri.config.json',
         'tauri.linux.conf.json',
         'tauri.windows.conf.json',
@@ -2003,6 +2014,7 @@ export const fileIcons: FileIcons = {
         'geom.hlsl',
         'comp.hlsl',
         'tess.hlsl',
+        'wgsl',
       ],
     },
     {
@@ -2030,7 +2042,17 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'rome', fileNames: ['rome.json'] },
-    { name: 'cypress', fileNames: ['cypress.json', 'cypress.env.json'] },
+    {
+      name: 'cypress',
+      fileNames: [
+        'cypress.json',
+        'cypress.env.json',
+        'cypress.config.ts',
+        'cypress.config.js',
+        'cypress.config.cjs',
+        'cypress.config.mjs',
+      ],
+    },
     { name: 'siyuan', fileExtensions: ['sy'] },
     { name: 'ndst', fileExtensions: ['ndst.yml', 'ndst.yaml', 'ndst.json'] },
     { name: 'plop', fileNames: ['plopfile.js', 'plopfile.ts'] },
