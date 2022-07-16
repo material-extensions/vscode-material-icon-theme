@@ -521,6 +521,9 @@ export const fileIcons: FileIcons = {
         'docker-compose.ci.yaml',
         'docker-compose.web.yaml',
         'docker-compose.worker.yaml',
+
+        'compose.yaml',
+        'compose.yml',
       ],
     },
     { name: 'tex', fileExtensions: ['tex', 'sty', 'dtx', 'ltx'] },
