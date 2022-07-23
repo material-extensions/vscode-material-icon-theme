@@ -2085,5 +2085,9 @@ export const fileIcons: FileIcons = {
         'steadybit.yaml',
       ],
     },
+    {
+      name: 'pcd',
+      fileExtensions: ['pcd'],
+    },
   ],
 };
