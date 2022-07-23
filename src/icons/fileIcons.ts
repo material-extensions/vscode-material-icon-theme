@@ -2085,5 +2085,6 @@ export const fileIcons: FileIcons = {
         'steadybit.yaml',
       ],
     },
+    { name: 'earthly', fileNames: ['Earthfile', '.earthlyignore'] },
   ],
 };
