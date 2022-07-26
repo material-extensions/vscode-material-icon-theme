@@ -89,7 +89,11 @@ const getConfigValue = (themeConfig: {
   defaultValue: unknown;
 }) => {
   let configValue;
-  if (themeConfig.workspaceValue && themeConfig.globalValue) {
+  if (
+    typeof themeConfig.workspaceValue === 'object' &&
+    themeConfig.workspaceValue &&
+    themeConfig.globalValue
+  ) {
     configValue = merge(
       {},
       themeConfig.workspaceValue,
