@@ -2058,6 +2058,10 @@ export const fileIcons: FileIcons = {
         'cypress.config.js',
         'cypress.config.cjs',
         'cypress.config.mjs',
+        '.cy.js',
+        '.cy.jsx',
+        '.cy.ts',
+        '.cy.tsx'
       ],
     },
     { name: 'siyuan', fileExtensions: ['sy'] },
