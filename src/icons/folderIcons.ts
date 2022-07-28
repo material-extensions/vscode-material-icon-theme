@@ -11,7 +11,7 @@ export const folderIcons: FolderTheme[] = [
     icons: [
       {
         name: 'folder-entity',
-        folderNames: ['entity', 'entities'],
+        folderNames: ['entity'],
       },
       {
         name: 'folder-friend',
