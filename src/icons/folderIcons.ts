@@ -10,6 +10,10 @@ export const folderIcons: FolderTheme[] = [
     rootFolder: { name: 'folder-root' },
     icons: [
       {
+        name: 'folder-entity',
+        folderNames: ['entity', 'entities'],
+      },
+      {
         name: 'folder-friend',
         folderNames: ['friend', 'friends'],
       },
