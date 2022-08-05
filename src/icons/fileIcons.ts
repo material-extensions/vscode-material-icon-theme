@@ -90,6 +90,7 @@ export const fileIcons: FileIcons = {
         'xml.dist',
         'xml.dist.sample',
         'dmn',
+        'jrxml'
       ],
       fileNames: ['.htaccess'],
     },
