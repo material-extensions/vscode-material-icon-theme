@@ -592,6 +592,9 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['util', 'utils', 'utility', 'utilities'],
       },
       { name: 'folder-private', folderNames: ['private', '.private'] },
+      { name: 'folder-linux', folderNames: ['linux'] },
+      { name: 'folder-windows', folderNames: ['windows'] },
+      { name: 'folder-macos', folderNames: ['macos'] },
       { name: 'folder-error', folderNames: ['error', 'errors', 'err'] },
       { name: 'folder-event', folderNames: ['event', 'events'] },
       {
