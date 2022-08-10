@@ -26,6 +26,13 @@ export const activate = async (context: vscode.ExtensionContext) => {
 
     // Observe changes in the config
     vscode.workspace.onDidChangeConfiguration(detectConfigChanges);
+
+    // Observe if the window got focused to trigger config changes
+    vscode.window.onDidChangeWindowState((state) => {
+      if (state.focused) {
+        detectConfigChanges();
+      }
+    });
   } catch (error) {
     console.error(error);
   }
