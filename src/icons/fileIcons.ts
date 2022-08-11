@@ -72,6 +72,7 @@ export const fileIcons: FileIcons = {
         'YAML-tmLanguage',
       ],
     },
+    { name: 'pre-commit', fileNames: ['.pre-commit-config.yaml', '.pre-commit-hooks.yaml'] },
     {
       name: 'xml',
       fileExtensions: [
