@@ -1823,7 +1823,11 @@ export const fileIcons: FileIcons = {
       fileNames: ['stitches.config.js', 'stitches.config.ts'],
       light: true,
     },
-    { name: 'nginx', fileNames: ['nginx.conf'] },
+    {
+      name: 'nginx',
+      fileNames: ['nginx.conf'],
+      fileExtensions: ['nginx', 'nginxconfig'],
+    },
     {
       name: 'minecraft',
       fileExtensions: [
