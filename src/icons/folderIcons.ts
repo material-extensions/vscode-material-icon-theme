@@ -770,6 +770,10 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-unity',
         folderNames: ['unity'],
       },
+      {
+        name: 'folder-pdf',
+        folderNames: ['pdf', 'pdfs'],
+      },
     ],
   },
   {
