@@ -6,7 +6,7 @@ on:
       versionChange:
         type: choice
         description: Select the version change
-        requried: true
+        required: true
         options:
           - major
           - minor
