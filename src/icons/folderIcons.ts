@@ -772,7 +772,8 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-angular-directive',
-        folderNames: ['directive', 'directives'],
+        folderNames: ['directives'],
+        enabledFor: [IconPack.Angular],
       },
     ],
   },
