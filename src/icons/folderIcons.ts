@@ -772,7 +772,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-modal',
-        folderNames: ['modal'],
+        folderNames: ['modal', 'modals'],
       },
     ],
   },
