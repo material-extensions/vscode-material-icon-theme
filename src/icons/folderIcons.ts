@@ -162,7 +162,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-components',
-        folderNames: ['components', 'widget', 'widgets'],
+        folderNames: ['components', 'widget', 'widgets', 'fragments'],
       },
       {
         name: 'folder-verdaccio',
