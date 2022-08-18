@@ -772,7 +772,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-contacts',
-        folderNames: ['contact', 'contacts'],
+        folderNames: ['contacts'],
       },
     ],
   },
