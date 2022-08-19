@@ -3,6 +3,18 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v4.19.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.18.1...v4.19.0) 
+
+> July 2, 2022 
+
+- fix: added __integration-tests__ folder [`#1585`](https://github.com/PKief/vscode-material-icon-theme/pull/1585)
+- fix: update cypress files [`#1582`](https://github.com/PKief/vscode-material-icon-theme/pull/1582)
+- [Add] Cypress file name "cypress.config.js" in fileIcon.ts [`#1579`](https://github.com/PKief/vscode-material-icon-theme/pull/1579)
+- feat: add support for new type declaration files [`#1576`](https://github.com/PKief/vscode-material-icon-theme/pull/1576)
+- feat: add `tsconfig.node.json` [`#1575`](https://github.com/PKief/vscode-material-icon-theme/pull/1575)
+- Adds Cypress 10.x e2e extension [`#1573`](https://github.com/PKief/vscode-material-icon-theme/pull/1573)
+- Fixing non-object workspace settings bug [`#1565`](https://github.com/PKief/vscode-material-icon-theme/pull/1565)
+ 
 #### [v4.18.1](https://github.com/PKief/vscode-material-icon-theme/compare/v4.18.0...v4.18.1) 
 
 > June 9, 2022 
