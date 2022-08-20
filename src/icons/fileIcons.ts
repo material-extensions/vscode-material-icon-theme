@@ -1552,6 +1552,7 @@ export const fileIcons: FileIcons = {
     { name: 'jupyter', fileExtensions: ['ipynb'] },
     { name: 'd', fileExtensions: ['d'] },
     { name: 'mdx', fileExtensions: ['mdx'] },
+    { name: 'mdsvex', fileExtensions: ['svx'] },
     { name: 'ballerina', fileExtensions: ['bal', 'balx'] },
     { name: 'racket', fileExtensions: ['rkt'] },
     {
