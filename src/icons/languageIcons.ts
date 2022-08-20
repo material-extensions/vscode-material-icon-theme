@@ -134,4 +134,5 @@ export const languageIcons: LanguageIcon[] = [
   { icon: { name: 'wolframlanguage' }, ids: ['wolfram'] },
   { icon: { name: 'shader' }, ids: ['hlsl', 'glsl', 'wgsl'] },
   { icon: { name: 'tree' }, ids: ['tree'] },
+  { icon: { name: 'svelte' }, ids: ['svelte'] },
 ];
