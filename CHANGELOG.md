@@ -3,6 +3,28 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v4.20.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.19.0...v4.20.0) 
+
+> August 20, 2022 
+
+- feat: mdsvex [`#1633`](https://github.com/PKief/vscode-material-icon-theme/pull/1633)
+- feat: add icon for ".tree" files [`#1653`](https://github.com/PKief/vscode-material-icon-theme/pull/1653)
+- add folderName fragments [`#1650`](https://github.com/PKief/vscode-material-icon-theme/pull/1650)
+- Update Gitlab icon [`#1649`](https://github.com/PKief/vscode-material-icon-theme/pull/1649)
+- fix: typo in release yaml [`#1647`](https://github.com/PKief/vscode-material-icon-theme/pull/1647)
+- add - folderName : bases [`#1644`](https://github.com/PKief/vscode-material-icon-theme/pull/1644)
+- feat: add `nginx` extensions [`#1641`](https://github.com/PKief/vscode-material-icon-theme/pull/1641)
+- build(deps): bump terser from 5.7.1 to 5.14.2 [`#1614`](https://github.com/PKief/vscode-material-icon-theme/pull/1614)
+- [Icon Request] compose [`#1610`](https://github.com/PKief/vscode-material-icon-theme/pull/1610)
+- Update fileIcons.ts with fbx and stp. [`#1570`](https://github.com/PKief/vscode-material-icon-theme/pull/1570)
+- feat: add web and webworker to tsconfig [`#1605`](https://github.com/PKief/vscode-material-icon-theme/pull/1605)
+- Add quasar.config.js [`#1600`](https://github.com/PKief/vscode-material-icon-theme/pull/1600)
+- feat: jwt folder [`#1566`](https://github.com/PKief/vscode-material-icon-theme/pull/1566)
+- feat: fixtures folder [`#1595`](https://github.com/PKief/vscode-material-icon-theme/pull/1595)
+- fix: tsconfig [`#1594`](https://github.com/PKief/vscode-material-icon-theme/pull/1594)
+- fix: add tauri.conf.json file [`#1590`](https://github.com/PKief/vscode-material-icon-theme/pull/1590)
+- Added `wgsl` extension [`#1592`](https://github.com/PKief/vscode-material-icon-theme/pull/1592)
+ 
 #### [v4.19.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.18.1...v4.19.0) 
 
 > July 2, 2022 
