@@ -135,4 +135,5 @@ export const languageIcons: LanguageIcon[] = [
   { icon: { name: 'shader' }, ids: ['hlsl', 'glsl', 'wgsl'] },
   { icon: { name: 'tree' }, ids: ['tree'] },
   { icon: { name: 'svelte' }, ids: ['svelte'] },
+  { icon: { name: 'dart' }, ids: ['dart'] },
 ];
