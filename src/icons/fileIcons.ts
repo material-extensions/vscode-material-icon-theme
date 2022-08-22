@@ -149,6 +149,7 @@ export const fileIcons: FileIcons = {
         'pnm',
       ],
     },
+    { name: 'imgbot', fileNames: ['.imgbotconfig'] },
     { name: 'javascript', fileExtensions: ['esx', 'mjs'] },
     { name: 'react', fileExtensions: ['jsx'] },
     { name: 'react_ts', fileExtensions: ['tsx'] },
