@@ -1436,7 +1436,7 @@ export const fileIcons: FileIcons = {
     {
       name: 'gatsby',
       fileNames: [
-        'gatsby.config.js',
+        'gatsby.config.ts',
         'gatsby-config.js',
         'gatsby-node.js',
         'gatsby-browser.js',
