@@ -1240,6 +1240,7 @@ export const fileIcons: FileIcons = {
     { name: 'appveyor', fileNames: ['.appveyor.yml', 'appveyor.yml'] },
     { name: 'travis', fileNames: ['.travis.yml'] },
     { name: 'codecov', fileNames: ['.codecov.yml', 'codecov.yml'] },
+    { name: 'sonarcloud', fileNames: ['sonar-project.properties', '.sonarcloud.properties', 'sonarcloud.yaml'] },
     {
       name: 'protractor',
       fileNames: [
