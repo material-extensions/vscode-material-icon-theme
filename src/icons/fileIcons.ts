@@ -1268,6 +1268,7 @@ export const fileIcons: FileIcons = {
         '.eslintrc',
         '.eslintignore',
         '.eslintcache',
+        'eslint.config.js',
       ],
     },
     {
