@@ -1133,6 +1133,7 @@ export const fileIcons: FileIcons = {
         '.env.production.local',
         '.env.staging.local',
         '.env.test.local',
+        '.tool-versions',
       ],
     },
     {
