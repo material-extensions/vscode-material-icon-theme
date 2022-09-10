@@ -1,6 +1,6 @@
 {
   "files.exclude": {
-    "out": true
+    "out": false
   },
   "search.exclude": {
     "out": true
@@ -9,9 +9,6 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
-  "eslint.validate": [
-    "typescript"
-  ],
+  "eslint.validate": ["typescript"],
   "editor.formatOnSave": true,
-  "workspace.isHidden": true
 }
