@@ -136,4 +136,5 @@ export const languageIcons: LanguageIcon[] = [
   { icon: { name: 'tree' }, ids: ['tree'] },
   { icon: { name: 'svelte' }, ids: ['svelte'] },
   { icon: { name: 'dart' }, ids: ['dart'] },
+  { icon: { name: 'cadence' }, ids: ['cadence'] }
 ];

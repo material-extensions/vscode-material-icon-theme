@@ -1,0 +1,25 @@
+<svg version="1.1"
+	 id="svg32" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 256 256"
+	 style="enable-background:new 0 0 256 256;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#00EF8B;}
+	.st1{fill:#FFFFFF;}
+	.st2{fill:#16FF99;}
+</style>
+<sodipodi:namedview  bordercolor="#666666" borderopacity="1" fit-margin-bottom="0" fit-margin-left="0" fit-margin-right="0" fit-margin-top="0" gridtolerance="10" guidetolerance="10" id="namedview34" inkscape:current-layer="Layer_1-2" inkscape:cx="-165.09584" inkscape:cy="294.4716" inkscape:pageopacity="0" inkscape:pageshadow="2" inkscape:window-height="878" inkscape:window-maximized="1" inkscape:window-width="1440" inkscape:window-x="0" inkscape:window-y="0" inkscape:zoom="0.40971549" objecttolerance="10" pagecolor="#ffffff" showgrid="false">
+	</sodipodi:namedview>
+<g id="Layer_2_1_">
+	<g id="Layer_1-2">
+		<g id="g43" transform="scale(2.56)">
+			<circle id="circle20" class="st0" cx="50" cy="50" r="50"/>
+			<rect id="rect22" x="57.8" y="42.2" class="st1" width="14.1" height="14.1"/>
+			<path id="path24" class="st1" d="M43.7,61.6c0,2.9-2.4,5.3-5.3,5.3s-5.3-2.4-5.3-5.3c0-2.9,2.4-5.3,5.3-5.3c0,0,0,0,0,0h5.3V42.2
+				h-5.3C27.7,42.2,19,50.9,19,61.6S27.7,81,38.4,81s19.4-8.7,19.4-19.4l0,0v-5.3H43.7V61.6z"/>
+			<path id="path26" class="st1" d="M63.1,35.1H79V21H63.1c-10.7,0-19.4,8.7-19.4,19.4v1.8h14.1v-1.8C57.8,37.5,60.2,35.1,63.1,35.1
+				z"/>
+			<polygon id="polygon28" class="st2" points="57.8,42.2 57.8,42.2 43.7,42.2 43.7,56.3 57.8,56.3 			"/>
+		</g>
+	</g>
+</g>
+</svg>
