@@ -2094,5 +2094,9 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'tree', fileExtensions: ['tree'] },
+    {
+      name: 'moon',
+      fileNames: ['moon.yml', 'template.yml'],
+    },
   ],
 };
