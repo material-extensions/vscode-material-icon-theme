@@ -2,12 +2,43 @@
   "name": "material-icon-theme",
   "displayName": "Material Icon Theme",
   "description": "Material Design Icons for Visual Studio Code",
-  "version": "3.9.1",
-  "publisher": "PKief",
-  "engines": {
-    "vscode": "^1.5.0"
+  "version": "4.20.0",
+  "scripts": {
+    "build": "npm run compile:dev && npm run postcompile",
+    "check": "ts-node ./src/scripts/icons/checks",
+    "compile": "webpack --config ./build/webpack.config.js --mode production",
+    "compile:dev": "webpack --config ./build/webpack.config.js --mode none",
+    "compile:watch": "webpack --config ./build/webpack.config.js --mode none --watch",
+    "compile-web": "webpack --config ./build/web-extension.webpack.config.js",
+    "watch-web": "webpack --watch --config ./build/web-extension.webpack.config.js",
+    "package-web": "webpack --mode production --devtool hidden-source-map --config ./build/web-extension.webpack.config.js",
+    "contributors": "ts-node ./src/scripts/contributors/index.ts",
+    "generateJson": "ts-node ./src/scripts/icons/generateJson.ts",
+    "lint": "eslint -c .eslintrc.json --ext .ts ./src/**/*.ts",
+    "postcompile": "npm run generateJson && npm run check",
+    "pretest": "npm run build && tsc -p ./",
+    "preview": "ts-node ./src/scripts/preview",
+    "svgo": "svgo -i icons -o icons -q",
+    "test": "node ./out/test/runTest.js",
+    "changelog": "changelog-machine --config changelog.config.json",
+    "preversion": "npm run contributors && git add images/contributors.png && npm run preview && git add images/fileIcons.png && git add images/folderIcons.png",
+    "version": "npm run changelog && git add CHANGELOG.md",
+    "vscode:prepublish": "npm run lint && npm run compile && npm run package-web"
   },
-  "homepage": "https://github.com/PKief/vscode-material-icon-theme/blob/master/README.md",
+  "publisher": "PKief",
+  "author": {
+    "name": "Philipp Kief",
+    "email": "philipp.kief@gmx.de",
+    "url": "https://pkief.github.io"
+  },
+  "funding": "https://github.com/sponsors/PKief",
+  "sponsor": {
+    "url": "https://github.com/sponsors/PKief"
+  },
+  "engines": {
+    "vscode": "^1.51.0"
+  },
+  "homepage": "https://github.com/PKief/vscode-material-icon-theme/blob/main/README.md",
   "repository": {
     "type": "git",
     "url": "https://github.com/PKief/vscode-material-icon-theme.git"
@@ -17,7 +48,7 @@
   },
   "icon": "logo.png",
   "galleryBanner": {
-    "color": "#263238",
+    "color": "#1e1e1e",
     "theme": "dark"
   },
   "categories": [
@@ -30,11 +61,22 @@
     "icon-theme",
     "customization"
   ],
-  "extensionKind": "ui",
+  "extensionKind": [
+    "ui",
+    "workspace"
+  ],
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true
+    },
+    "virtualWorkspaces": true
+  },
   "activationEvents": [
-    "*"
+    "onStartupFinished"
   ],
   "main": "./dist/extension",
+  "browser": "./dist/web/extension.js",
+  "sideEffects": false,
   "contributes": {
     "iconThemes": [
       {
@@ -47,39 +89,48 @@
     "commands": [
       {
         "command": "material-icon-theme.activateIcons",
-        "title": "%command.activateIcons%"
+        "title": "%command.activateIcons%",
+        "enablement": "!isWeb"
       },
       {
         "command": "material-icon-theme.toggleIconPacks",
-        "title": "%command.toggleIconPacks%"
+        "title": "%command.toggleIconPacks%",
+        "enablement": "!isWeb"
       },
       {
         "command": "material-icon-theme.changeFolderTheme",
-        "title": "%command.changeFolderTheme%"
+        "title": "%command.changeFolderTheme%",
+        "enablement": "!isWeb"
       },
       {
         "command": "material-icon-theme.changeFolderColor",
-        "title": "%command.changeFolderColor%"
+        "title": "%command.changeFolderColor%",
+        "enablement": "!isWeb"
       },
       {
         "command": "material-icon-theme.restoreDefaultConfig",
-        "title": "%command.restoreDefaultConfig%"
+        "title": "%command.restoreDefaultConfig%",
+        "enablement": "!isWeb"
       },
       {
         "command": "material-icon-theme.toggleExplorerArrows",
-        "title": "%command.toggleExplorerArrows%"
+        "title": "%command.toggleExplorerArrows%",
+        "enablement": "!isWeb"
       },
       {
         "command": "material-icon-theme.changeOpacity",
-        "title": "%command.changeOpacity%"
+        "title": "%command.changeOpacity%",
+        "enablement": "!isWeb"
       },
       {
         "command": "material-icon-theme.toggleGrayscale",
-        "title": "%command.toggleGrayscale%"
+        "title": "%command.toggleGrayscale%",
+        "enablement": "!isWeb"
       },
       {
         "command": "material-icon-theme.changeSaturation",
-        "title": "%command.changeSaturation%"
+        "title": "%command.changeSaturation%",
+        "enablement": "!isWeb"
       }
     ],
     "configuration": {
@@ -184,43 +235,33 @@
       }
     }
   },
-  "scripts": {
-    "build": "npm run compile:dev && npm run postcompile",
-    "check": "ts-node ./src/scripts/icons/checks",
-    "compile": "webpack --mode production",
-    "compile:dev": "webpack --mode none",
-    "compile:watch": "webpack --mode none --watch",
-    "contributors": "ts-node ./src/scripts/contributors/index.ts",
-    "generateJson": "ts-node ./src/scripts/icons/generateJson.ts",
-    "lint": "tslint -c tslint.json ./src/**/*.ts",
-    "postcompile": "npm run generateJson && npm run check",
-    "pretest": "npm run build && tsc -p ./",
-    "preview": "ts-node ./src/scripts/preview",
-    "test": "node ./out/test/runTest.js",
-    "vscode:prepublish": "npm run lint && npm run compile"
-  },
   "dependencies": {
-    "lodash.merge": "4.6.2",
-    "open": "6.4.0",
-    "semver": "6.3.0"
+    "lodash.merge": "4.6.2"
   },
   "devDependencies": {
-    "@types/glob": "^7.1.1",
-    "@types/mocha": "^5.2.7",
-    "@types/node": "^12.7.11",
-    "@types/puppeteer": "^1.20.1",
-    "@types/vscode": "^1.5.0",
-    "clean-webpack-plugin": "^3.0.0",
-    "glob": "^7.1.4",
-    "mocha": "^6.2.1",
-    "puppeteer": "^1.20.0",
-    "rimraf": "^3.0.0",
-    "ts-loader": "^6.2.0",
-    "ts-node": "^8.4.1",
-    "tslint": "^5.20.0",
-    "typescript": "^3.6.3",
-    "vscode-test": "^1.2.0",
-    "webpack": "^4.41.0",
-    "webpack-cli": "^3.3.9"
+    "@types/glob": "^7.2.0",
+    "@types/lodash.merge": "^4.6.7",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "^17.0.35",
+    "@types/puppeteer": "^5.4.6",
+    "@types/vscode": "~1.51.0",
+    "@typescript-eslint/eslint-plugin": "^5.26.0",
+    "@typescript-eslint/parser": "^5.26.0",
+    "changelog-machine": "^1.0.2",
+    "eslint": "^8.16.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "glob": "^8.0.3",
+    "mocha": "^10.0.0",
+    "prettier": "^2.6.2",
+    "puppeteer": "^14.1.1",
+    "rimraf": "^3.0.2",
+    "svgo": "^2.8.0",
+    "ts-loader": "^9.3.0",
+    "ts-node": "^10.8.0",
+    "typescript": "^4.7.2",
+    "vscode-test": "^1.6.1",
+    "webpack": "^5.71.1",
+    "webpack-cli": "^4.9.2"
   }
 }

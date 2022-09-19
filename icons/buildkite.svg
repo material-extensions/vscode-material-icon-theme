@@ -1,1 +1,9 @@
-<svg version="1.1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-1{fill:#00ff93;}.cls-2{fill:#00b368;}</style></defs><g transform="matrix(.50483 0 0 .50483 1.4249 4.9375)" style="fill-rule:evenodd;fill:none"><g transform="matrix(.13264 0 0 .13264 1.0527 .72649)" data-name="Layer 2"><g id="Mark"><polygon class="cls-1" points="100 49 100 149 0 100 0 0" style="fill:#00ff93"/><polygon class="cls-1" points="201 100 201 0 300 49" style="fill:#00ff93"/><polygon class="cls-2" points="100 49 100 149 201 100 201 0" style="fill:#00b368"/><polygon class="cls-2" points="201 100 201 200 300 149 300 49" style="fill:#00b368"/></g></g></g></svg>
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <defs />
+  <g transform="translate(1.956 5.304) scale(.06696)" data-name="Layer 2" fill-rule="evenodd" fill="none">
+    <g id="Mark">
+      <path class="cls-1" fill="#00E676" d="M100 49v100L0 100V0zM201 100V0l99 49z" />
+      <path class="cls-2" fill="#00C853" d="M100 49v100l101-49V0zM201 100v100l99-51V49z" />
+    </g>
+  </g>
+</svg>
