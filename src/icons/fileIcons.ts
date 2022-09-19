@@ -1119,6 +1119,8 @@ export const fileIcons: FileIcons = {
         '.env.local',
         '.env.dev',
         '.env.development',
+        '.env.alpha',
+        '.env.e2e',
         '.env.qa',
         '.env.dist',
         '.env.prod',
@@ -1268,6 +1270,7 @@ export const fileIcons: FileIcons = {
         '.eslintrc',
         '.eslintignore',
         '.eslintcache',
+        'eslint.config.js',
       ],
     },
     {
@@ -1436,7 +1439,7 @@ export const fileIcons: FileIcons = {
     {
       name: 'gatsby',
       fileNames: [
-        'gatsby.config.js',
+        'gatsby-config.ts',
         'gatsby-config.js',
         'gatsby-node.js',
         'gatsby-browser.js',
@@ -1552,6 +1555,7 @@ export const fileIcons: FileIcons = {
     { name: 'jupyter', fileExtensions: ['ipynb'] },
     { name: 'd', fileExtensions: ['d'] },
     { name: 'mdx', fileExtensions: ['mdx'] },
+    { name: 'mdsvex', fileExtensions: ['svx'] },
     { name: 'ballerina', fileExtensions: ['bal', 'balx'] },
     { name: 'racket', fileExtensions: ['rkt'] },
     {
@@ -1823,7 +1827,11 @@ export const fileIcons: FileIcons = {
       fileNames: ['stitches.config.js', 'stitches.config.ts'],
       light: true,
     },
-    { name: 'nginx', fileNames: ['nginx.conf'] },
+    {
+      name: 'nginx',
+      fileNames: ['nginx.conf'],
+      fileExtensions: ['nginx', 'nginxconfig'],
+    },
     {
       name: 'minecraft',
       fileExtensions: [
@@ -2095,5 +2103,6 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['project.json', 'model.json', 'meta.json'],
     },
     { name: 'wally', fileNames: ['wally.toml'] },
+    { name: 'tree', fileExtensions: ['tree'] },
   ],
 };
