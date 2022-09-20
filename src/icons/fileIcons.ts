@@ -1355,6 +1355,7 @@ export const fileIcons: FileIcons = {
         '.stylelintrc.js',
         '.stylelintrc.cjs',
         '.stylelintignore',
+        '.stylelintcache',
       ],
       light: true,
     },
@@ -2097,6 +2098,7 @@ export const fileIcons: FileIcons = {
     {
       name: 'cadence',
       fileExtensions: ['.cdc'],
-    }
+    },
+    { name: 'caddy', fileNames: ['Caddyfile'] },
   ],
 };
