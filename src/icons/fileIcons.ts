@@ -1355,6 +1355,7 @@ export const fileIcons: FileIcons = {
         '.stylelintrc.js',
         '.stylelintrc.cjs',
         '.stylelintignore',
+        '.stylelintcache',
       ],
       light: true,
     },
