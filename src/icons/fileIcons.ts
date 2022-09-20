@@ -2097,7 +2097,7 @@ export const fileIcons: FileIcons = {
     { name: 'tree', fileExtensions: ['tree'] },
     {
       name: 'cadence',
-      fileExtensions: ['.cdc'],
+      fileExtensions: ['cdc'],
     },
     { name: 'caddy', fileNames: ['Caddyfile'] },
   ],
