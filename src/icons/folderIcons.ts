@@ -729,6 +729,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-interface',
         folderNames: ['interface', 'interfaces'],
       },
+      { name: 'folder-netlify', folderNames: ['.netlify'] },
       {
         name: 'folder-contract',
         folderNames: [
