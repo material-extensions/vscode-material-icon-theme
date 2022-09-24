@@ -162,7 +162,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-components',
-        folderNames: ['components', 'widget', 'widgets'],
+        folderNames: ['components', 'widget', 'widgets', 'fragments'],
       },
       {
         name: 'folder-verdaccio',
@@ -712,7 +712,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-storybook',
         folderNames: ['.storybook', 'storybook', 'stories', '__stories__'],
       },
-      { name: 'folder-base', folderNames: ['base', '.base'] },
+      { name: 'folder-base', folderNames: ['base', '.base', 'bases'] },
       {
         name: 'folder-cart',
         folderNames: ['cart', 'shopping-cart', 'shopping', 'shop'],
@@ -769,6 +769,10 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-unity',
         folderNames: ['unity'],
+      },
+      {
+        name: 'folder-proto',
+        folderNames: ['protobufs'],
       },
     ],
   },
