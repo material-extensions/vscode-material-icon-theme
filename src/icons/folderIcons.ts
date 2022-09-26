@@ -162,7 +162,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-components',
-        folderNames: ['components', 'widget', 'widgets'],
+        folderNames: ['components', 'widget', 'widgets', 'fragments'],
       },
       {
         name: 'folder-verdaccio',
@@ -729,6 +729,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-interface',
         folderNames: ['interface', 'interfaces'],
       },
+      { name: 'folder-netlify', folderNames: ['.netlify'] },
       {
         name: 'folder-contract',
         folderNames: [
@@ -773,6 +774,10 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-pdf',
         folderNames: ['pdf', 'pdfs'],
+      },
+      {
+        name: 'folder-proto',
+        folderNames: ['protobufs'],
       },
     ],
   },

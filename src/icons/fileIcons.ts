@@ -1119,6 +1119,8 @@ export const fileIcons: FileIcons = {
         '.env.local',
         '.env.dev',
         '.env.development',
+        '.env.alpha',
+        '.env.e2e',
         '.env.qa',
         '.env.dist',
         '.env.prod',
@@ -1268,6 +1270,7 @@ export const fileIcons: FileIcons = {
         '.eslintrc',
         '.eslintignore',
         '.eslintcache',
+        'eslint.config.js',
       ],
     },
     {
@@ -1352,6 +1355,7 @@ export const fileIcons: FileIcons = {
         '.stylelintrc.js',
         '.stylelintrc.cjs',
         '.stylelintignore',
+        '.stylelintcache',
       ],
       light: true,
     },
@@ -1436,7 +1440,7 @@ export const fileIcons: FileIcons = {
     {
       name: 'gatsby',
       fileNames: [
-        'gatsby.config.js',
+        'gatsby-config.ts',
         'gatsby-config.js',
         'gatsby-node.js',
         'gatsby-browser.js',
@@ -1552,6 +1556,7 @@ export const fileIcons: FileIcons = {
     { name: 'jupyter', fileExtensions: ['ipynb'] },
     { name: 'd', fileExtensions: ['d'] },
     { name: 'mdx', fileExtensions: ['mdx'] },
+    { name: 'mdsvex', fileExtensions: ['svx'] },
     { name: 'ballerina', fileExtensions: ['bal', 'balx'] },
     { name: 'racket', fileExtensions: ['rkt'] },
     {
@@ -2089,5 +2094,11 @@ export const fileIcons: FileIcons = {
         'steadybit.yaml',
       ],
     },
+    { name: 'tree', fileExtensions: ['tree'] },
+    {
+      name: 'cadence',
+      fileExtensions: ['cdc'],
+    },
+    { name: 'caddy', fileNames: ['Caddyfile'] },
   ],
 };
