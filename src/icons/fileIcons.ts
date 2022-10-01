@@ -1444,8 +1444,11 @@ export const fileIcons: FileIcons = {
         'gatsby-config.ts',
         'gatsby-config.js',
         'gatsby-node.js',
+        'gatsby-node.ts',
         'gatsby-browser.js',
+        'gatsby-browser.tsx',
         'gatsby-ssr.js',
+        'gatsby-ssr.tsx',
       ],
     },
     {
