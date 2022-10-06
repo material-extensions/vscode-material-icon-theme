@@ -90,6 +90,7 @@ export const fileIcons: FileIcons = {
         'xml.dist',
         'xml.dist.sample',
         'dmn',
+        'jrxml',
       ],
       fileNames: ['.htaccess'],
     },
@@ -470,7 +471,7 @@ export const fileIcons: FileIcons = {
     { name: 'arduino', fileExtensions: ['ino'] },
     {
       name: 'docker',
-      fileExtensions: ['dockerignore', 'dockerfile'],
+      fileExtensions: ['dockerignore', 'dockerfile', 'docker-compose.yml', 'docker-compose.yaml'],
       fileNames: [
         'dockerfile',
         'dockerfile.prod',
@@ -1443,8 +1444,11 @@ export const fileIcons: FileIcons = {
         'gatsby-config.ts',
         'gatsby-config.js',
         'gatsby-node.js',
+        'gatsby-node.ts',
         'gatsby-browser.js',
+        'gatsby-browser.tsx',
         'gatsby-ssr.js',
+        'gatsby-ssr.tsx',
       ],
     },
     {
