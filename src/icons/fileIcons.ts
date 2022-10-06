@@ -471,7 +471,12 @@ export const fileIcons: FileIcons = {
     { name: 'arduino', fileExtensions: ['ino'] },
     {
       name: 'docker',
-      fileExtensions: ['dockerignore', 'dockerfile', 'docker-compose.yml', 'docker-compose.yaml'],
+      fileExtensions: [
+        'dockerignore',
+        'dockerfile',
+        'docker-compose.yml',
+        'docker-compose.yaml',
+      ],
       fileNames: [
         'dockerfile',
         'dockerfile.prod',
