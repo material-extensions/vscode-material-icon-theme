@@ -1,4 +1,4 @@
-import { FileIcons, IconPack } from '../models/index';
+import { FileIcons, IconPack } from "../models/index"
 
 /**
  * Defines file icons
@@ -471,7 +471,12 @@ export const fileIcons: FileIcons = {
     { name: 'arduino', fileExtensions: ['ino'] },
     {
       name: 'docker',
-      fileExtensions: ['dockerignore', 'dockerfile', 'docker-compose.yml', 'docker-compose.yaml'],
+      fileExtensions: [
+        'dockerignore',
+        'dockerfile',
+        'docker-compose.yml',
+        'docker-compose.yaml',
+      ],
       fileNames: [
         'dockerfile',
         'dockerfile.prod',
@@ -2104,5 +2109,6 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['cdc'],
     },
     { name: 'caddy', fileNames: ['Caddyfile'] },
+    { name: 'bun', fileNames: ['bun.lockb'] },
   ],
 };
