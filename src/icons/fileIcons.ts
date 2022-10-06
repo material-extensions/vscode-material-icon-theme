@@ -1,4 +1,4 @@
-import { FileIcons, IconPack } from "../models/index"
+import { FileIcons, IconPack } from '../models/index';
 
 /**
  * Defines file icons
