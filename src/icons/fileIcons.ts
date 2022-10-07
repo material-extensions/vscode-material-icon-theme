@@ -1802,7 +1802,7 @@ export const fileIcons: FileIcons = {
     { name: 'imba', fileExtensions: ['imba'] },
     { name: 'drawio', fileExtensions: ['drawio', 'dio'] },
     { name: 'pascal', fileExtensions: ['pas'] },
-    { name: 'unity', fileExtensions: ['unity'] },
+    { name: 'unity', fileExtensions: ['unity'], light: true },
     {
       name: 'roadmap',
       fileNames: [
