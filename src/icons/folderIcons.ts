@@ -338,6 +338,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-export', folderNames: ['export', 'exports', 'exported'] },
       { name: 'folder-wakatime', folderNames: ['wakatime'] },
       { name: 'folder-circleci', folderNames: ['.circleci'] },
+      { name: 'folder-woodpecker', folderNames: ['.woodpecker'] },
       {
         name: 'folder-wordpress',
         folderNames: ['.wordpress-org', 'wp-content'],

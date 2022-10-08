@@ -1439,6 +1439,11 @@ export const fileIcons: FileIcons = {
       fileNames: ['.drone.yml'],
       light: true,
     },
+    {
+      name: 'woodpecker',
+      fileExtensions: ['woodpecker.yml'],
+      fileNames: ['.woodpecker.yml'],
+    },
     { name: 'cuda', fileExtensions: ['cu', 'cuh'] },
     { name: 'log', fileExtensions: ['log'] },
     { name: 'dotjs', fileExtensions: ['def', 'dot', 'jst'] },
