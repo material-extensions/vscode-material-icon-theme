@@ -2121,5 +2121,6 @@ export const fileIcons: FileIcons = {
         'swagger.yaml',
       ],
     },
+    { name: 'antlr', fileExtensions: ['g4'] },
   ],
 };
