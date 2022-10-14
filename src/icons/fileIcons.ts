@@ -2110,5 +2110,6 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['cdc'],
     },
     { name: 'caddy', fileNames: ['Caddyfile'] },
+    { name: 'antlr', fileExtensions: ['g4'] },
   ],
 };
