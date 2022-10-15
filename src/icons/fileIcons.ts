@@ -2111,5 +2111,19 @@ export const fileIcons: FileIcons = {
     },
     { name: 'caddy', fileNames: ['Caddyfile'] },
     { name: 'antlr', fileExtensions: ['g4'] },
+    {
+      name: 'nano-staged',
+      fileNames: [
+        `.nano-staged.js`,
+        `nano-staged.js`,
+        `.nano-staged.cjs`,
+        `nano-staged.cjs`,
+        `.nano-staged.mjs`,
+        `nano-staged.mjs`,
+        `.nano-staged.json`,
+        `nano-staged.json`,
+        `.nanostagedrc`,
+      ],
+    },
   ],
 };
