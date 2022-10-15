@@ -2111,5 +2111,14 @@ export const fileIcons: FileIcons = {
     },
     { name: 'caddy', fileNames: ['Caddyfile'] },
     { name: 'antlr', fileExtensions: ['g4'] },
+    {
+      name: 'size-limit',
+      fileNames: [
+        '.size-limit',
+        '.size-limit.json',
+        '.size-limit.js',
+        '.size-limit.cjs',
+      ],
+    },
   ],
 };
