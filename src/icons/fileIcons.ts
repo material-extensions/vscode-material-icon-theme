@@ -2113,6 +2113,7 @@ export const fileIcons: FileIcons = {
     { name: 'antlr', fileExtensions: ['g4'] },
     {
       name: 'nano-staged',
+      light: true,
       fileNames: [
         `.nano-staged.js`,
         `nano-staged.js`,
