@@ -1958,6 +1958,8 @@ export const fileIcons: FileIcons = {
         'tsconfig.e2e.json',
         'tsconfig.web.json',
         'tsconfig.webworker.json',
+        'tsconfig.config.json',
+        'tsconfig.vitest.json',
       ],
       fileExtensions: ['tsconfig.json'],
     },
