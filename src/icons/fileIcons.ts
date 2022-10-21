@@ -1245,7 +1245,10 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'bithound', fileNames: ['.bithoundrc'] },
-    { name: 'svgo', fileNames: ['svgo.config.js'] },
+    {
+      name: 'svgo',
+      fileNames: ['svgo.config.js', 'svgo.config.cjs', 'svgo.config.mjs'],
+    },
     { name: 'appveyor', fileNames: ['.appveyor.yml', 'appveyor.yml'] },
     { name: 'travis', fileNames: ['.travis.yml'] },
     { name: 'codecov', fileNames: ['.codecov.yml', 'codecov.yml'] },
