@@ -2116,6 +2116,7 @@ export const fileIcons: FileIcons = {
     },
     { name: 'caddy', fileNames: ['Caddyfile'] },
     { name: 'antlr', fileExtensions: ['g4'] },
+    { name: 'pinejs', fileExtensions: ['pine'] },
     {
       name: 'nano-staged',
       light: true,
