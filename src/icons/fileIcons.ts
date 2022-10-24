@@ -1245,7 +1245,10 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'bithound', fileNames: ['.bithoundrc'] },
-    { name: 'svgo', fileNames: ['svgo.config.js'] },
+    {
+      name: 'svgo',
+      fileNames: ['svgo.config.js', 'svgo.config.cjs', 'svgo.config.mjs'],
+    },
     { name: 'appveyor', fileNames: ['.appveyor.yml', 'appveyor.yml'] },
     { name: 'travis', fileNames: ['.travis.yml'] },
     { name: 'codecov', fileNames: ['.codecov.yml', 'codecov.yml'] },
@@ -2114,5 +2117,21 @@ export const fileIcons: FileIcons = {
     { name: 'caddy', fileNames: ['Caddyfile'] },
     { name: 'antlr', fileExtensions: ['g4'] },
     { name: 'stylable', fileExtensions: ['st.css'] }
+    { name: 'pinejs', fileExtensions: ['pine'] },
+    {
+      name: 'nano-staged',
+      light: true,
+      fileNames: [
+        `.nano-staged.js`,
+        `nano-staged.js`,
+        `.nano-staged.cjs`,
+        `nano-staged.cjs`,
+        `.nano-staged.mjs`,
+        `nano-staged.mjs`,
+        `.nano-staged.json`,
+        `nano-staged.json`,
+        `.nanostagedrc`,
+      ],
+    },
   ],
 };
