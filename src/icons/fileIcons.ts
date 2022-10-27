@@ -1866,6 +1866,8 @@ export const fileIcons: FileIcons = {
         'mine',
         'mus',
         'mcstructure',
+        'mcpack',
+        'mcaddon',
       ],
       fileNames: ['.mcattributes', '.mcdefinitions', '.mcignore'],
     },
