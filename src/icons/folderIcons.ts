@@ -788,6 +788,10 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-proto',
         folderNames: ['protobufs'],
       },
+      {
+        name: 'folder-taskfile',
+        folderNames: ['tskf', 'taskfile', '.taskfile'],
+      },
     ],
   },
   {

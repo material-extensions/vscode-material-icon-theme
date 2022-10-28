@@ -2141,5 +2141,15 @@ export const fileIcons: FileIcons = {
         `.nanostagedrc`,
       ],
     },
+    {
+      name: 'taskfile',
+      fileExtensions: ['Taskfile.yml', 'Taskfile.yaml'],
+      fileNames: [
+        'Taskfile.yml',
+        'Taskfile.yaml',
+        'Taskfile.dist.yml',
+        'Taskfile.dist.yaml',
+      ],
+    }
   ],
 };
