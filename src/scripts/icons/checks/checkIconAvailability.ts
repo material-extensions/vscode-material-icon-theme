@@ -6,7 +6,7 @@ import {
   FolderIcon,
   FolderTheme,
 } from '../../../models/index';
-import * as painter from '../../helpers/painter';
+import { green, red } from '../../helpers/painter';
 import { similarity } from '../../helpers/similarity';
 import {
   fileIcons,
@@ -152,12 +152,12 @@ const handleErrors = () => {
   if (amountOfErrors > 0) {
     console.log(
       '> Material Icon Theme:',
-      painter.red(`Found ${amountOfErrors} error(s) in the icon configuration!`)
+      red(`Found ${amountOfErrors} error(s) in the icon configuration!`)
     );
   } else {
     console.log(
       '> Material Icon Theme:',
-      painter.green('Passed icon availability checks!')
+      green('Passed icon availability checks!')
     );
   }
   logIconInformation(wrongIconNames.fileIcons, 'File icons');
@@ -179,11 +179,11 @@ const logIconInformation = (wrongIcons: string[], title: string) => {
       return similarity(icon, i) > 0.75;
     });
     const suggestionString = suggestion
-      ? ` (Did you mean ${painter.green(suggestion)}?)`
+      ? ` (Did you mean ${green(suggestion)}?)`
       : '';
     const isWrongLightVersion = icon.endsWith(lightColorFileEnding);
     const isWrongLightVersionString = isWrongLightVersion
-      ? ` (There is no light icon for ${painter.green(
+      ? ` (There is no light icon for ${green(
           icon.slice(0, -6)
         )}! Set the light option to false!)`
       : '';
@@ -191,12 +191,12 @@ const logIconInformation = (wrongIcons: string[], title: string) => {
       highContrastColorFileEnding
     );
     const isWrongHighContrastVersionString = isWrongHighContrastVersion
-      ? ` (There is no high contrast icon for ${painter.green(
+      ? ` (There is no high contrast icon for ${green(
           icon.slice(0, -13)
         )}! Set the highContrast option to false!)`
       : '';
     console.log(
-      painter.red(`Icon not found: ${icon}.svg`) +
+      red(`Icon not found: ${icon}.svg`) +
         `${suggestionString}${isWrongLightVersionString}${isWrongHighContrastVersionString}`
     );
   });
