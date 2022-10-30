@@ -1,5 +1,5 @@
-import * as fs from 'fs';
-import * as path from 'path';
+import { readdir } from 'fs';
+import { join, parse } from 'path';
 import {
   DefaultIcon,
   FileIcon,
@@ -20,7 +20,7 @@ import {
 /**
  * Defines the folder where all icon files are located.
  */
-const folderPath = path.join('icons');
+const folderPath = join('icons');
 
 /**
  * Defines an array with all icons that can be found in the file system.
@@ -49,7 +49,7 @@ const fsReadAllIconFiles = (
 
   files.forEach((file) => {
     const fileName = file;
-    const iconName = path.parse(file).name;
+    const iconName = parse(file).name;
     availableIcons[iconName] = fileName;
   });
 
@@ -63,7 +63,7 @@ const fsReadAllIconFiles = (
 };
 
 // read from the file system
-export const check = () => fs.readdir(folderPath, fsReadAllIconFiles);
+export const check = () => readdir(folderPath, fsReadAllIconFiles);
 
 /**
  * Check if the file icons from the configuration are available on the file system.
