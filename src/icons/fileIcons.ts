@@ -668,6 +668,7 @@ export const fileIcons: FileIcons = {
         'vue.config.ts',
         'vetur.config.js',
         'vetur.config.ts',
+        'volar.config.js'
       ],
     },
     {
