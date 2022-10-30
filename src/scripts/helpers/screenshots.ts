@@ -1,5 +1,5 @@
 import { join } from 'path';
-import { launch } from 'puppeteer';
+import Puppeteer from 'puppeteer';
 
 /**
  * Create a screenshot from an HTML file and save it as image.
@@ -9,7 +9,7 @@ import { launch } from 'puppeteer';
 export const createScreenshot = async (filePath: string, fileName: string) => {
   try {
     const htmlFilePath = join('file:', filePath);
-    const browser = await launch();
+    const browser = await Puppeteer.launch();
     const page = await browser.newPage();
     await page.setViewport({
       height: 10,
