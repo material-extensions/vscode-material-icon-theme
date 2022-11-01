@@ -137,21 +137,6 @@
       "type": "object",
       "title": "%configuration.title%",
       "properties": {
-        "material-icon-theme.showWelcomeMessage": {
-          "type": "boolean",
-          "default": true,
-          "description": "%configuration.showWelcomeMessage%"
-        },
-        "material-icon-theme.showUpdateMessage": {
-          "type": "boolean",
-          "default": false,
-          "description": "%configuration.showUpdateMessage%"
-        },
-        "material-icon-theme.showReloadMessage": {
-          "type": "boolean",
-          "default": true,
-          "description": "%configuration.showReloadMessage%"
-        },
         "material-icon-theme.activeIconPack": {
           "type": "string",
           "default": "angular",
