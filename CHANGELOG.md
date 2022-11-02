@@ -3,6 +3,26 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v4.21.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.20.0...v4.21.0) 
+
+> October 7, 2022 
+
+- feat: add folder-pdf [`#1651`](https://github.com/PKief/vscode-material-icon-theme/pull/1651)
+- Added file association to docker-compose file extension [`#1706`](https://github.com/PKief/vscode-material-icon-theme/pull/1706)
+- Add support for gatsby config typescript  files [`#1701`](https://github.com/PKief/vscode-material-icon-theme/pull/1701)
+- Add jrxml file extension to xml icon [`#1632`](https://github.com/PKief/vscode-material-icon-theme/pull/1632)
+- feat: Update drone icon [`#1698`](https://github.com/PKief/vscode-material-icon-theme/pull/1698)
+- Add support for other Netlify files and folders [`#582`](https://github.com/PKief/vscode-material-icon-theme/pull/582)
+- Flow - Cadence Icon Addition [`#1686`](https://github.com/PKief/vscode-material-icon-theme/pull/1686)
+- Folder association `protobufs` [`#1691`](https://github.com/PKief/vscode-material-icon-theme/pull/1691)
+- chore: adds file-ending .stylelintcache as a stylelint file [`#1693`](https://github.com/PKief/vscode-material-icon-theme/pull/1693)
+- feat: Caddyfile  (#1689) [`#1017`](https://github.com/PKief/vscode-material-icon-theme/pull/1017)
+- Add .env.alpha [`#1680`](https://github.com/PKief/vscode-material-icon-theme/pull/1680)
+- Add eslint.config.js [`#1678`](https://github.com/PKief/vscode-material-icon-theme/pull/1678)
+- fix: add support to gatsby-config.ts [`#1672`](https://github.com/PKief/vscode-material-icon-theme/pull/1672)
+- Support Dart language [`#1663`](https://github.com/PKief/vscode-material-icon-theme/pull/1663)
+- feat: support Svelte language [`#1662`](https://github.com/PKief/vscode-material-icon-theme/pull/1662)
+ 
 #### [v4.20.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.19.0...v4.20.0) 
 
 > August 20, 2022 

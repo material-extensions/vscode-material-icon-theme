@@ -162,12 +162,6 @@ https://code.visualstudio.com/docs/languages/identifiers#_known-language-identif
 
 You can see the available icon names in the overview above.
 
-## One-click activation
-
-After installation or update you can click on the 'Activate'-button to activate the icon theme, if you haven't already. The icons will be visible immediately.
-
-<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/oneclickactivation.png" alt="activation">
-
 ## Commands
 
 Press `Ctrl-Shift-P` to open the command palette and type `Material Icons`.
