@@ -180,7 +180,7 @@ Press `Ctrl-Shift-P` to open the command palette and type `Material Icons`.
 | **Configure Icon Packs**          | Selects an icon pack that enables additional icons (e.g. for Angular, React, Ngrx).|
 | **Toggle Explorer Arrows**        | Show or hide the arrows next to the folder icons.                                  |
 | **Restore Default Configuration** | Reset to the default configuration.                                                |
-| **Toggle Grayscale**              | Set icon saturation to `0` (grayscale), or `1` (colour).                           |
+| **Toggle Grayscale**              | Set icon saturation to `0` (grayscale), or `1` (color).                           |
 
 ## Icon sources
 
