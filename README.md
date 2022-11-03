@@ -71,6 +71,8 @@ If colors do not make you happy you can change the icons to have less saturation
 "material-icon-theme.saturation": 0.5
 ```
 
+You can also achieve no saturation (i.e., grayscale) by setting **Toggle Grayscale** to ON.
+
 ## Custom icon associations
 
 You can customize the icon associations directly in the user settings.
