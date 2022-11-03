@@ -4,7 +4,7 @@
   "description": "Material Design Icons for Visual Studio Code",
   "version": "4.21.0",
   "scripts": {
-    "build": "npm run compile:dev && npm run postcompile",
+    "build": "npm run compile:dev && npm run generateJson",
     "check": "ts-node ./src/scripts/icons/checks",
     "compile": "webpack --config ./build/webpack.config.js --mode production",
     "compile:dev": "webpack --config ./build/webpack.config.js --mode none",
