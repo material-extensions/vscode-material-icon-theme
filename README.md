@@ -173,15 +173,14 @@ Press `Ctrl-Shift-P` to open the command palette and type `Material Icons`.
 | **Change Folder Theme**           | Change the design of the folder icons.                                             |
 | **Change Opacity**                | Change the opacity of the icons.                                                   |
 | **Change Saturation**             | Change the saturation value of the icons.                                          |
-| **Configure Icon Packs**          | Select an icon pack that enables additional icons (e.g. for Angular, React, Ngrx). |
-| **Hide Folder Arrows**            | Hides the arrows next to the folder icons.                                         |
-| **Restore Default Configuration** | Reset the default configurations of the icon theme.                                |
-| **Toggle Grayscale**              | Sets the saturation of the icons to zero, so that they are grayscale.              |
+| **Configure Icon Packs**          | Selects an icon pack that enables additional icons (e.g. for Angular, React, Ngrx).|
+| **Toggle Explorer Arrows**        | Show or hide the arrows next to the folder icons.                                  |
+| **Restore Default Configuration** | Reset to the default configuration.                                                |
+| **Toggle Grayscale**              | Set icon saturation to `0` (grayscale), or `1` (color).                           |
 
 ## Icon sources
 
 - [Material Design Icons](https://materialdesignicons.com/)
-- official icons
 
 ## Contributors
 
