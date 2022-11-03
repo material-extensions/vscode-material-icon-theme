@@ -1999,6 +1999,10 @@ export const fileIcons: FileIcons = {
     { name: 'ada', fileExtensions: ['ada', 'adb', 'ads', 'ali'] },
     { name: 'serverless', fileNames: ['serverless.yml'] },
     {
+      name: 'supabase',
+      fileNames: ['supabase.js', 'supabase.py'],
+    },
+    {
       name: 'ember',
       fileNames: ['.ember-cli', '.ember-cli.js', 'ember-cli-builds.js'],
     },
