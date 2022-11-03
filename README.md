@@ -156,11 +156,7 @@ With the following configuration you can customize the language icons. It is als
 }
 ```
 
-Available language ids:
-
-https://code.visualstudio.com/docs/languages/identifiers#_known-language-identifiers
-
-You can see the available icon names in the overview above.
+You can see the available icon names in the overview above. See "[Known language identifiers](https://code.visualstudio.com/docs/languages/identifiers#_known-language-identifiers)" in the VS Code documentation for a list of permitted values for `languageId`.
 
 ## Commands
 
