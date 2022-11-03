@@ -20,7 +20,7 @@ export const translation: Translation = {
   },
   opacity: {
     inputPlaceholder: 'Opacity value (between 0 and 1)',
-    wrongValue: 'The value must be between 0 and 1!',
+    wrongValue: 'Please enter a floating-point number between 0 and 1.',
   },
   toggleSwitch: {
     on: 'ON',
@@ -38,6 +38,6 @@ export const translation: Translation = {
   },
   saturation: {
     inputPlaceholder: 'Saturation value (between 0 and 1)',
-    wrongValue: 'The value must be between 0 and 1!',
+    wrongValue: 'Please enter a floating-point number between 0 and 1.',
   },
 };
