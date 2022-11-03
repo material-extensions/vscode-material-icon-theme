@@ -27,9 +27,9 @@ export const translation: Translation = {
     off: 'OFF',
   },
   explorerArrows: {
-    toggle: 'Toggle folder arrows',
-    enable: 'Show folder arrows',
-    disable: 'Hide folder arrows',
+    toggle: 'Toggle folder arrows in Explorer',
+    enable: 'Show folder arrows in Explorer',
+    disable: 'Hide folder arrows in Explorer',
   },
   grayscale: {
     toggle: 'Toggle grayscale icons',
