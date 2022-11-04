@@ -1,5 +1,5 @@
 import { writeFileSync } from 'fs';
-import { request, RequestOptions } from 'http';
+import { request, RequestOptions } from 'https';
 import { join } from 'path';
 import { Contributor } from '../../models/scripts/contributors/contributor';
 import { green, red, yellow } from '../helpers/painter';
