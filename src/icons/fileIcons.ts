@@ -386,6 +386,7 @@ export const fileIcons: FileIcons = {
         'awk',
         'fish',
         'exp',
+        'nu',
       ],
       fileNames: ['commit-msg', 'pre-commit', 'pre-push', 'post-merge'],
     },
