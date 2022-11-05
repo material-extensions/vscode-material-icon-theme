@@ -1294,7 +1294,11 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'conduct',
-      fileNames: ['code_of_conduct.md', 'code_of_conduct.txt'],
+      fileNames: [
+        'code_of_conduct.md',
+        'code_of_conduct.txt',
+        'code_of_conduct',
+      ],
     },
     { name: 'watchman', fileNames: ['.watchmanconfig'] },
     { name: 'aurelia', fileNames: ['aurelia.json'] },
