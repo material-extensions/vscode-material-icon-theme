@@ -71,6 +71,8 @@ If colors do not make you happy you can change the icons to have less saturation
 "material-icon-theme.saturation": 0.5
 ```
 
+You can also achieve no saturation (i.e., grayscale) by setting **Toggle Grayscale** to ON.
+
 ## Custom icon associations
 
 You can customize the icon associations directly in the user settings.
@@ -156,17 +158,7 @@ With the following configuration you can customize the language icons. It is als
 }
 ```
 
-Available language ids:
-
-https://code.visualstudio.com/docs/languages/identifiers#_known-language-identifiers
-
-You can see the available icon names in the overview above.
-
-## One-click activation
-
-After installation or update you can click on the 'Activate'-button to activate the icon theme, if you haven't already. The icons will be visible immediately.
-
-<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/oneclickactivation.png" alt="activation">
+You can see the available icon names in the overview above. See "[Known language identifiers](https://code.visualstudio.com/docs/languages/identifiers#_known-language-identifiers)" in the VS Code documentation for a list of permitted values for `languageId`.
 
 ## Commands
 
@@ -183,15 +175,14 @@ Press `Ctrl-Shift-P` to open the command palette and type `Material Icons`.
 | **Change Folder Theme**           | Change the design of the folder icons.                                             |
 | **Change Opacity**                | Change the opacity of the icons.                                                   |
 | **Change Saturation**             | Change the saturation value of the icons.                                          |
-| **Configure Icon Packs**          | Select an icon pack that enables additional icons (e.g. for Angular, React, Ngrx). |
-| **Hide Folder Arrows**            | Hides the arrows next to the folder icons.                                         |
-| **Restore Default Configuration** | Reset the default configurations of the icon theme.                                |
-| **Toggle Grayscale**              | Sets the saturation of the icons to zero, so that they are grayscale.              |
+| **Configure Icon Packs**          | Selects an icon pack that enables additional icons (e.g. for Angular, React, Ngrx).|
+| **Toggle Explorer Arrows**        | Show or hide the arrows next to the folder icons.                                  |
+| **Restore Default Configuration** | Reset to the default configuration.                                                |
+| **Toggle Grayscale**              | Set icon saturation to `0` (grayscale), or `1` (color).                           |
 
 ## Icon sources
 
 - [Material Design Icons](https://materialdesignicons.com/)
-- official icons
 
 ## Contributors
 

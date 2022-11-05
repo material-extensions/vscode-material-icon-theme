@@ -209,7 +209,16 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-global', folderNames: ['global'] },
       {
         name: 'folder-public',
-        folderNames: ['public', 'www', 'wwwroot', 'web', 'website', 'site'],
+        folderNames: [
+          'public',
+          'www',
+          'wwwroot',
+          'web',
+          'website',
+          'site',
+          'browser',
+          'browsers',
+        ],
       },
       {
         name: 'folder-include',
@@ -591,6 +600,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-utils',
         folderNames: ['util', 'utils', 'utility', 'utilities'],
       },
+      { name: 'folder-supabase', folderNames: ['supabase', '.supabase'] },
       { name: 'folder-private', folderNames: ['private', '.private'] },
       { name: 'folder-error', folderNames: ['error', 'errors', 'err'] },
       { name: 'folder-event', folderNames: ['event', 'events'] },
@@ -756,6 +766,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['cypress', '.cypress'],
       },
       {
+        name: 'folder-decorators',
+        folderNames: ['decorator', 'decorators'],
+      },
+      {
         name: 'folder-java',
         folderNames: ['java'],
       },
@@ -772,8 +786,12 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['unity'],
       },
       {
+        name: 'folder-pdf',
+        folderNames: ['pdf', 'pdfs'],
+      },
+      {
         name: 'folder-proto',
-        folderNames: ['protobufs'],
+        folderNames: ['protobufs', 'proto'],
       },
     ],
   },

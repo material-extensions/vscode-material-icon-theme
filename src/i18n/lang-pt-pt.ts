@@ -1,13 +1,8 @@
 import { Translation } from '../models';
 
 export const translation: Translation = {
-  themeInstalled: 'O Material Icon Theme foi instalado.',
-  howToActivate: 'Como habilitar os ícones',
   activate: 'Habilitar',
   activated: 'O Material Icon Theme está habilitado.',
-  neverShowAgain: 'Não mostrar novamente',
-  themeUpdated: 'O Material Icon Theme foi atualizado.',
-  readChangelog: 'Ler registos',
   iconPacks: {
     selectPack: 'Seleccione um pacote de ícones',
     description: "Seleccionar o pacote de ícones '%0'",
@@ -36,11 +31,6 @@ export const translation: Translation = {
     enable: 'Exibir setas do explorador de ficheiros',
     disable: 'Ocultar setas do explorador de ficheiros',
   },
-  confirmReload:
-    'Precisas reinicializar o VS Code para habilitar a alteração de ícones.',
-  reload: 'Reiniciar',
-  outdatedVersion: 'Precisas actualizar o VS Code para utilizar este comando.',
-  updateVSCode: 'Actualizar o VS Code',
   grayscale: {
     toggle: 'Alternar ícones em escala de cinzentos',
     enable: 'Habilitar ícones em escala de cinzentos',
