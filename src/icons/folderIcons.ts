@@ -377,6 +377,7 @@ export const folderIcons: FolderTheme[] = [
           'miscellaneous',
           'extra',
           'extras',
+          'etc',
         ],
       },
       { name: 'folder-lua', folderNames: ['lua'] },
