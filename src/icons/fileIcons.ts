@@ -2159,5 +2159,9 @@ export const fileIcons: FileIcons = {
         `.nanostagedrc`,
       ],
     },
+    {
+      name: 'docusaurus',
+      fileNames: ['docusaurus.config.js']
+    }
   ],
 };
