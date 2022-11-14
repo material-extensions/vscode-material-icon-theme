@@ -2193,5 +2193,9 @@ export const fileIcons: FileIcons = {
         '.cracorc',
       ],
     },
+    {
+      name: 'vanilla-extract',
+      fileExtensions: ['css.ts', 'css.js'],
+    },
   ],
 };
