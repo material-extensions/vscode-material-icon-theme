@@ -2160,5 +2160,16 @@ export const fileIcons: FileIcons = {
         `.nanostagedrc`,
       ],
     },
+    {
+      name: 'craco',
+      fileNames: [
+        'craco.config.ts',
+        'craco.config.js',
+        'craco.config.cjs',
+        'cracorc.ts',
+        'cracorc.js',
+        '.cracorc',
+      ],
+    },
   ],
 };
