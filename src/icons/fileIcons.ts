@@ -148,6 +148,7 @@ export const fileIcons: FileIcons = {
         'pbm',
         'pgm',
         'pnm',
+        'icns',
       ],
     },
     { name: 'javascript', fileExtensions: ['esx', 'mjs'] },
