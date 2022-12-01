@@ -1101,7 +1101,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'deno',
-      fileNames: ['deno.json'],
+      fileNames: ['deno.json', 'deno.jsonc'],
     },
     {
       name: 'android',
