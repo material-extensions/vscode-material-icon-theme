@@ -3,7 +3,122 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
-#### [v4.17.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.16.0...HEAD) 
+#### [v4.22.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.21.0...v4.22.0) 
+
+> November 5, 2022 
+
+- Update import in scripts [`66d9e48`](https://github.com/PKief/vscode-material-icon-theme/commit/66d9e48)
+- feat: add support for Sonarcloud [`#1677`](https://github.com/PKief/vscode-material-icon-theme/pull/1677)
+- Update build script [`8b24b74`](https://github.com/PKief/vscode-material-icon-theme/commit/8b24b74)
+- docs: add note to saturation section re: Toggle Grayscale setting [`#1747`](https://github.com/PKief/vscode-material-icon-theme/pull/1747)
+- Change explanation of `languageId` values [`#1753`](https://github.com/PKief/vscode-material-icon-theme/pull/1753)
+- rm unlinked "official icons" list entry [`#1752`](https://github.com/PKief/vscode-material-icon-theme/pull/1752)
+- harmonise/clarify wording of Toggle Explorer Arrows [`#1749`](https://github.com/PKief/vscode-material-icon-theme/pull/1749)
+- change error messages for Opacity and Saturation (value should be float) [`#1746`](https://github.com/PKief/vscode-material-icon-theme/pull/1746)
+- feat: decorators folder [`#1671`](https://github.com/PKief/vscode-material-icon-theme/pull/1671)
+- feat: add stylable icon [`#1724`](https://github.com/PKief/vscode-material-icon-theme/pull/1724)
+- feat: supabase [`#1516`](https://github.com/PKief/vscode-material-icon-theme/pull/1516)
+- Add proto folder icon association [`#1751`](https://github.com/PKief/vscode-material-icon-theme/pull/1751)
+- Optimize SVG icons [`#1741`](https://github.com/PKief/vscode-material-icon-theme/pull/1741)
+- Remove welcome and update messages [`#1740`](https://github.com/PKief/vscode-material-icon-theme/pull/1740)
+- feat(dependabot): Add missing filename dependabot.yaml [`#1615`](https://github.com/PKief/vscode-material-icon-theme/pull/1615)
+- Add missing `,` to `vue-config` fileNames [`#1743`](https://github.com/PKief/vscode-material-icon-theme/pull/1743)
+- Add `volar.config.js` to `vue-config` fileNames [`#1742`](https://github.com/PKief/vscode-material-icon-theme/pull/1742)
+- Associate `.mcpack` and `.mcaddon` files with Minecraft file icon [`#1734`](https://github.com/PKief/vscode-material-icon-theme/pull/1734)
+- Add rollup .mjs config file support [`#1733`](https://github.com/PKief/vscode-material-icon-theme/pull/1733)
+- Pine script file icon [`#1725`](https://github.com/PKief/vscode-material-icon-theme/pull/1725)
+- feat: enhance svgo icon support [`#1730`](https://github.com/PKief/vscode-material-icon-theme/pull/1730)
+- feat: add nano-staged icon [`#1722`](https://github.com/PKief/vscode-material-icon-theme/pull/1722)
+- Update replit.svg [`#1728`](https://github.com/PKief/vscode-material-icon-theme/pull/1728)
+- Add tsconfig file names [`0eba308`](https://github.com/PKief/vscode-material-icon-theme/commit/0eba308)
+- Update drone light icon [`2ad273e`](https://github.com/PKief/vscode-material-icon-theme/commit/2ad273e)
+- Update antrl icon [`93da3f9`](https://github.com/PKief/vscode-material-icon-theme/commit/93da3f9)
+- [Icon Request] Antlr4's grammar files [`#1711`](https://github.com/PKief/vscode-material-icon-theme/pull/1711)
+- Add browser folder icon association [`0ddc6f4`](https://github.com/PKief/vscode-material-icon-theme/commit/0ddc6f4)
+- Add .git-blame-ignore icon association [`14afac1`](https://github.com/PKief/vscode-material-icon-theme/commit/14afac1)
+ 
+#### [v4.21.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.20.0...v4.21.0) 
+
+> October 7, 2022 
+
+- feat: add folder-pdf [`#1651`](https://github.com/PKief/vscode-material-icon-theme/pull/1651)
+- Added file association to docker-compose file extension [`#1706`](https://github.com/PKief/vscode-material-icon-theme/pull/1706)
+- Add support for gatsby config typescript  files [`#1701`](https://github.com/PKief/vscode-material-icon-theme/pull/1701)
+- Add jrxml file extension to xml icon [`#1632`](https://github.com/PKief/vscode-material-icon-theme/pull/1632)
+- feat: Update drone icon [`#1698`](https://github.com/PKief/vscode-material-icon-theme/pull/1698)
+- Add support for other Netlify files and folders [`#582`](https://github.com/PKief/vscode-material-icon-theme/pull/582)
+- Flow - Cadence Icon Addition [`#1686`](https://github.com/PKief/vscode-material-icon-theme/pull/1686)
+- Folder association `protobufs` [`#1691`](https://github.com/PKief/vscode-material-icon-theme/pull/1691)
+- chore: adds file-ending .stylelintcache as a stylelint file [`#1693`](https://github.com/PKief/vscode-material-icon-theme/pull/1693)
+- feat: Caddyfile  (#1689) [`#1017`](https://github.com/PKief/vscode-material-icon-theme/pull/1017)
+- Add .env.alpha [`#1680`](https://github.com/PKief/vscode-material-icon-theme/pull/1680)
+- Add eslint.config.js [`#1678`](https://github.com/PKief/vscode-material-icon-theme/pull/1678)
+- fix: add support to gatsby-config.ts [`#1672`](https://github.com/PKief/vscode-material-icon-theme/pull/1672)
+- Support Dart language [`#1663`](https://github.com/PKief/vscode-material-icon-theme/pull/1663)
+- feat: support Svelte language [`#1662`](https://github.com/PKief/vscode-material-icon-theme/pull/1662)
+ 
+#### [v4.20.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.19.0...v4.20.0) 
+
+> August 20, 2022 
+
+- feat: mdsvex [`#1633`](https://github.com/PKief/vscode-material-icon-theme/pull/1633)
+- feat: add icon for ".tree" files [`#1653`](https://github.com/PKief/vscode-material-icon-theme/pull/1653)
+- add folderName fragments [`#1650`](https://github.com/PKief/vscode-material-icon-theme/pull/1650)
+- Update Gitlab icon [`#1649`](https://github.com/PKief/vscode-material-icon-theme/pull/1649)
+- fix: typo in release yaml [`#1647`](https://github.com/PKief/vscode-material-icon-theme/pull/1647)
+- add - folderName : bases [`#1644`](https://github.com/PKief/vscode-material-icon-theme/pull/1644)
+- feat: add `nginx` extensions [`#1641`](https://github.com/PKief/vscode-material-icon-theme/pull/1641)
+- build(deps): bump terser from 5.7.1 to 5.14.2 [`#1614`](https://github.com/PKief/vscode-material-icon-theme/pull/1614)
+- [Icon Request] compose [`#1610`](https://github.com/PKief/vscode-material-icon-theme/pull/1610)
+- Update fileIcons.ts with fbx and stp. [`#1570`](https://github.com/PKief/vscode-material-icon-theme/pull/1570)
+- feat: add web and webworker to tsconfig [`#1605`](https://github.com/PKief/vscode-material-icon-theme/pull/1605)
+- Add quasar.config.js [`#1600`](https://github.com/PKief/vscode-material-icon-theme/pull/1600)
+- feat: jwt folder [`#1566`](https://github.com/PKief/vscode-material-icon-theme/pull/1566)
+- feat: fixtures folder [`#1595`](https://github.com/PKief/vscode-material-icon-theme/pull/1595)
+- fix: tsconfig [`#1594`](https://github.com/PKief/vscode-material-icon-theme/pull/1594)
+- fix: add tauri.conf.json file [`#1590`](https://github.com/PKief/vscode-material-icon-theme/pull/1590)
+- Added `wgsl` extension [`#1592`](https://github.com/PKief/vscode-material-icon-theme/pull/1592)
+ 
+#### [v4.19.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.18.1...v4.19.0) 
+
+> July 2, 2022 
+
+- fix: added __integration-tests__ folder [`#1585`](https://github.com/PKief/vscode-material-icon-theme/pull/1585)
+- fix: update cypress files [`#1582`](https://github.com/PKief/vscode-material-icon-theme/pull/1582)
+- [Add] Cypress file name "cypress.config.js" in fileIcon.ts [`#1579`](https://github.com/PKief/vscode-material-icon-theme/pull/1579)
+- feat: add support for new type declaration files [`#1576`](https://github.com/PKief/vscode-material-icon-theme/pull/1576)
+- feat: add `tsconfig.node.json` [`#1575`](https://github.com/PKief/vscode-material-icon-theme/pull/1575)
+- Adds Cypress 10.x e2e extension [`#1573`](https://github.com/PKief/vscode-material-icon-theme/pull/1573)
+- Fixing non-object workspace settings bug [`#1565`](https://github.com/PKief/vscode-material-icon-theme/pull/1565)
+ 
+#### [v4.18.1](https://github.com/PKief/vscode-material-icon-theme/compare/v4.18.0...v4.18.1) 
+
+> June 9, 2022 
+
+- On-boarding to VS Code sponsor [`#1558`](https://github.com/PKief/vscode-material-icon-theme/pull/1558)
+- feat: introduce the icon for the config files of auto [`#1511`](https://github.com/PKief/vscode-material-icon-theme/pull/1511)
+- Fix: Workspace settings override user settings [`#1553`](https://github.com/PKief/vscode-material-icon-theme/pull/1553)
+ 
+#### [v4.18.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.17.0...v4.18.0) 
+
+> June 5, 2022 
+
+- Support workspace settings [`#1540`](https://github.com/PKief/vscode-material-icon-theme/pull/1540)
+- Add React and Jsx folder icon [`#1519`](https://github.com/PKief/vscode-material-icon-theme/pull/1519)
+- Feature: added folder for Lua language; [`#1542`](https://github.com/PKief/vscode-material-icon-theme/pull/1542)
+- feat: add go.work.sum to list of go-mod files [`#1512`](https://github.com/PKief/vscode-material-icon-theme/pull/1512)
+- Add new `.cts` and `.mts` file extensions [`#1541`](https://github.com/PKief/vscode-material-icon-theme/pull/1541)
+- feat: add site to folder-public [`#1544`](https://github.com/PKief/vscode-material-icon-theme/pull/1544)
+- Add separate file icon for rescript interface [`#1539`](https://github.com/PKief/vscode-material-icon-theme/pull/1539)
+- Add new extension for i18n and Minecraft icon. [`#1538`](https://github.com/PKief/vscode-material-icon-theme/pull/1538)
+- feat: add `.` possibility to kubernetes folders [`#1536`](https://github.com/PKief/vscode-material-icon-theme/pull/1536)
+- feat: Support Playwright component test config files [`#1527`](https://github.com/PKief/vscode-material-icon-theme/pull/1527)
+- associate xlsm with excel icon, closes #1493 [`#1521`](https://github.com/PKief/vscode-material-icon-theme/pull/1521)
+- feat: add support for the graphqlrc.cjs file [`#1513`](https://github.com/PKief/vscode-material-icon-theme/pull/1513)
+- feat: introduce support for the webpack config in mjs [`#1514`](https://github.com/PKief/vscode-material-icon-theme/pull/1514)
+- feat: improve postcss config icon [`#1507`](https://github.com/PKief/vscode-material-icon-theme/pull/1507)
+ 
+#### [v4.17.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.16.0...v4.17.0) 
 
 > May 6, 2022 
 

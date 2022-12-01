@@ -65,6 +65,7 @@ export const folderIcons: FolderTheme[] = [
           '__tests__',
           '__snapshots__',
           '__mocks__',
+          '__fixtures__',
           '__test__',
           'spec',
           'specs',
@@ -161,7 +162,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-components',
-        folderNames: ['components', 'widget', 'widgets'],
+        folderNames: ['components', 'widget', 'widgets', 'fragments'],
       },
       {
         name: 'folder-verdaccio',
@@ -208,7 +209,16 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-global', folderNames: ['global'] },
       {
         name: 'folder-public',
-        folderNames: ['public', 'www', 'wwwroot', 'web', 'website'],
+        folderNames: [
+          'public',
+          'www',
+          'wwwroot',
+          'web',
+          'website',
+          'site',
+          'browser',
+          'browsers',
+        ],
       },
       {
         name: 'folder-include',
@@ -282,7 +292,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-react-components',
-        folderNames: ['components'],
+        folderNames: ['components', 'react', 'jsx', 'reactjs'],
         enabledFor: [IconPack.React, IconPack.Redux],
       },
       {
@@ -320,7 +330,10 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-video',
         folderNames: ['vid', 'vids', 'video', 'videos', 'movie', 'movies'],
       },
-      { name: 'folder-kubernetes', folderNames: ['kubernetes', 'k8s'] },
+      {
+        name: 'folder-kubernetes',
+        folderNames: ['kubernetes', '.kubernetes', 'k8s', '.k8s'],
+      },
       { name: 'folder-import', folderNames: ['import', 'imports', 'imported'] },
       { name: 'folder-export', folderNames: ['export', 'exports', 'exported'] },
       { name: 'folder-wakatime', folderNames: ['wakatime'] },
@@ -340,6 +353,8 @@ export const folderIcons: FolderTheme[] = [
           'it',
           'integration-test',
           'integration-tests',
+          '__integration-test__',
+          '__integration-tests__',
         ],
       },
       {
@@ -362,8 +377,10 @@ export const folderIcons: FolderTheme[] = [
           'miscellaneous',
           'extra',
           'extras',
+          'etc',
         ],
       },
+      { name: 'folder-lua', folderNames: ['lua'] },
       {
         name: 'folder-typescript',
         folderNames: ['typescript', 'ts', 'typings', '@types', 'types'],
@@ -558,7 +575,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['hook', 'hooks', 'trigger', 'triggers'],
       },
       { name: 'folder-job', folderNames: ['job', 'jobs'] },
-      { name: 'folder-keys', folderNames: ['keys', 'key', 'token', 'tokens'] },
+      {
+        name: 'folder-keys',
+        folderNames: ['keys', 'key', 'token', 'tokens', 'jwt'],
+      },
       { name: 'folder-layout', folderNames: ['layout', 'layouts', '_layouts'] },
       {
         name: 'folder-mail',
@@ -581,6 +601,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-utils',
         folderNames: ['util', 'utils', 'utility', 'utilities'],
       },
+      { name: 'folder-supabase', folderNames: ['supabase', '.supabase'] },
       { name: 'folder-private', folderNames: ['private', '.private'] },
       { name: 'folder-error', folderNames: ['error', 'errors', 'err'] },
       { name: 'folder-event', folderNames: ['event', 'events'] },
@@ -604,6 +625,8 @@ export const folderIcons: FolderTheme[] = [
         folderNames: [
           'mock',
           'mocks',
+          'fixture',
+          'fixtures',
           'draft',
           'drafts',
           'concept',
@@ -700,7 +723,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-storybook',
         folderNames: ['.storybook', 'storybook', 'stories', '__stories__'],
       },
-      { name: 'folder-base', folderNames: ['base', '.base'] },
+      { name: 'folder-base', folderNames: ['base', '.base', 'bases'] },
       {
         name: 'folder-cart',
         folderNames: ['cart', 'shopping-cart', 'shopping', 'shop'],
@@ -717,6 +740,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-interface',
         folderNames: ['interface', 'interfaces'],
       },
+      { name: 'folder-netlify', folderNames: ['.netlify'] },
       {
         name: 'folder-contract',
         folderNames: [
@@ -743,6 +767,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['cypress', '.cypress'],
       },
       {
+        name: 'folder-decorators',
+        folderNames: ['decorator', 'decorators'],
+      },
+      {
         name: 'folder-java',
         folderNames: ['java'],
       },
@@ -758,7 +786,16 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-unity',
         folderNames: ['unity'],
       },
+
       { name: 'folder-cue', folderNames: ['cue.mod'] },
+
+      {
+        name: 'folder-pdf',
+        folderNames: ['pdf', 'pdfs'],
+      },
+      {
+        name: 'folder-proto',
+        folderNames: ['protobufs', 'proto'],
     ],
   },
   {
