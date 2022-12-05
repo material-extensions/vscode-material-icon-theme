@@ -794,6 +794,10 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-proto',
         folderNames: ['protobufs', 'proto'],
       },
+      {
+        name: 'folder-repository',
+        folderNames: ['repository', 'repositories'],
+      },
     ],
   },
   {
