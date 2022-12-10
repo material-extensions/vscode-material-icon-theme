@@ -586,6 +586,7 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-mappings', folderNames: ['mappings', 'mapping'] },
       { name: 'folder-meta', folderNames: ['meta'] },
+      { name: 'folder-changesets', folderNames: ['.changesets', '.changeset'] },
       {
         name: 'folder-packages',
         folderNames: ['package', 'packages', 'pkg', 'pkgs'],
