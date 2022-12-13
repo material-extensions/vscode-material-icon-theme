@@ -148,6 +148,7 @@ export const fileIcons: FileIcons = {
         'pbm',
         'pgm',
         'pnm',
+        'icns',
       ],
     },
     { name: 'javascript', fileExtensions: ['esx', 'mjs'] },
@@ -386,6 +387,7 @@ export const fileIcons: FileIcons = {
         'awk',
         'fish',
         'exp',
+        'nu',
       ],
       fileNames: ['commit-msg', 'pre-commit', 'pre-push', 'post-merge'],
     },
@@ -668,6 +670,7 @@ export const fileIcons: FileIcons = {
         'vue.config.ts',
         'vetur.config.js',
         'vetur.config.ts',
+        'volar.config.js',
       ],
     },
     {
@@ -743,7 +746,12 @@ export const fileIcons: FileIcons = {
     {
       name: 'angular',
       fileExtensions: ['module.ts', 'module.js', 'ng-template'],
-      fileNames: ['angular-cli.json', '.angular-cli.json', 'angular.json'],
+      fileNames: [
+        'angular-cli.json',
+        '.angular-cli.json',
+        'angular.json',
+        'ng-package.json',
+      ],
       enabledFor: [IconPack.Angular, IconPack.Ngrx],
     },
     {
@@ -1252,6 +1260,14 @@ export const fileIcons: FileIcons = {
     { name: 'appveyor', fileNames: ['.appveyor.yml', 'appveyor.yml'] },
     { name: 'travis', fileNames: ['.travis.yml'] },
     { name: 'codecov', fileNames: ['.codecov.yml', 'codecov.yml'] },
+    {
+      name: 'sonarcloud',
+      fileNames: [
+        'sonar-project.properties',
+        '.sonarcloud.properties',
+        'sonarcloud.yaml',
+      ],
+    },
     {
       name: 'protractor',
       fileNames: [
@@ -1895,7 +1911,7 @@ export const fileIcons: FileIcons = {
     { name: 'lolcode', fileExtensions: ['lol'] },
     { name: 'idris', fileExtensions: ['idr', 'ibc'] },
     { name: 'quasar', fileNames: ['quasar.conf.js', 'quasar.config.js'] },
-    { name: 'dependabot', fileNames: ['dependabot.yml'] },
+    { name: 'dependabot', fileNames: ['dependabot.yml', 'dependabot.yaml'] },
     { name: 'pipeline', fileExtensions: ['pipeline'] },
     {
       name: 'vite',
@@ -1965,13 +1981,18 @@ export const fileIcons: FileIcons = {
         'tsconfig.build.json',
         'tsconfig.eslint.json',
         'tsconfig.lib.json',
+        'tsconfig.lib.prod.json',
         'tsconfig.node.json',
         'tsconfig.test.json',
         'tsconfig.e2e.json',
         'tsconfig.web.json',
         'tsconfig.webworker.json',
+        'tsconfig.worker.json',
         'tsconfig.config.json',
         'tsconfig.vitest.json',
+        'tsconfig.cjs.json',
+        'tsconfig.esm.json',
+        'tsconfig.mjs.json',
       ],
       fileExtensions: ['tsconfig.json'],
     },
@@ -1997,6 +2018,10 @@ export const fileIcons: FileIcons = {
     },
     { name: 'ada', fileExtensions: ['ada', 'adb', 'ads', 'ali'] },
     { name: 'serverless', fileNames: ['serverless.yml'] },
+    {
+      name: 'supabase',
+      fileNames: ['supabase.js', 'supabase.py'],
+    },
     {
       name: 'ember',
       fileNames: ['.ember-cli', '.ember-cli.js', 'ember-cli-builds.js'],
@@ -2125,6 +2150,7 @@ export const fileIcons: FileIcons = {
     },
     { name: 'caddy', fileNames: ['Caddyfile'] },
     { name: 'antlr', fileExtensions: ['g4'] },
+    { name: 'stylable', fileExtensions: ['st.css'] },
     { name: 'pinejs', fileExtensions: ['pine'] },
     {
       name: 'nano-staged',
@@ -2150,6 +2176,17 @@ export const fileIcons: FileIcons = {
         'Taskfile.dist.yml',
         'Taskfile.dist.yaml',
       ],
-    }
+    },
+    {
+      name: 'craco',
+      fileNames: [
+        'craco.config.ts',
+        'craco.config.js',
+        'craco.config.cjs',
+        '.cracorc.ts',
+        '.cracorc.js',
+        '.cracorc',
+      ],
+    },
   ],
 };

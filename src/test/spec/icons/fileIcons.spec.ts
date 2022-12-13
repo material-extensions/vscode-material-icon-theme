@@ -1,4 +1,4 @@
-import * as assert from 'assert';
+import { deepStrictEqual } from 'assert';
 import merge from 'lodash.merge';
 import {
   getDefaultIconOptions,
@@ -60,7 +60,7 @@ describe('file icons', () => {
       'filename.js': 'javascript',
     };
 
-    assert.deepStrictEqual(iconDefinitions, expectedConfig);
+    deepStrictEqual(iconDefinitions, expectedConfig);
   });
 
   it('should disable icon packs', () => {
@@ -108,7 +108,7 @@ describe('file icons', () => {
     // disable default icon pack by using empty string
     expectedConfig.options!.activeIconPack = '';
 
-    assert.deepStrictEqual(iconDefinitions, expectedConfig);
+    deepStrictEqual(iconDefinitions, expectedConfig);
   });
 
   it('should configure custom icon associations', () => {
@@ -165,7 +165,7 @@ describe('file icons', () => {
       'sample.js': 'javascript',
     };
 
-    assert.deepStrictEqual(iconDefinitions, expectedConfig);
+    deepStrictEqual(iconDefinitions, expectedConfig);
   });
 
   it('should configure language icons for light and high contrast', () => {
@@ -245,6 +245,6 @@ describe('file icons', () => {
       'filename.js': 'javascript',
     };
     /* eslint-enable camelcase */
-    assert.deepStrictEqual(iconDefinitions, expectedConfig);
+    deepStrictEqual(iconDefinitions, expectedConfig);
   });
 });

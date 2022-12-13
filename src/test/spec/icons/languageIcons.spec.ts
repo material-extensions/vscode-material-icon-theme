@@ -1,4 +1,4 @@
-import * as assert from 'assert';
+import { deepStrictEqual } from 'assert';
 import merge from 'lodash.merge';
 import {
   getDefaultIconOptions,
@@ -50,7 +50,7 @@ describe('language icons', () => {
       c: 'c',
       d: 'c',
     };
-    assert.deepStrictEqual(iconDefinitions, expectedConfig);
+    deepStrictEqual(iconDefinitions, expectedConfig);
   });
 
   it('should disable icon definitions', () => {
@@ -74,7 +74,7 @@ describe('language icons', () => {
     expectedConfig.languageIds = {
       a: 'a',
     };
-    assert.deepStrictEqual(iconDefinitions, expectedConfig);
+    deepStrictEqual(iconDefinitions, expectedConfig);
   });
 
   it('should disable icon packs', () => {
@@ -92,7 +92,7 @@ describe('language icons', () => {
 
     expectedConfig.iconDefinitions = {};
     expectedConfig.languageIds = {};
-    assert.deepStrictEqual(iconDefinitions, expectedConfig);
+    deepStrictEqual(iconDefinitions, expectedConfig);
   });
 
   it('should configure language icons for light and high contrast', () => {
@@ -149,7 +149,7 @@ describe('language icons', () => {
       },
     };
     /* eslint-enable camelcase */
-    assert.deepStrictEqual(iconDefinitions, expectedConfig);
+    deepStrictEqual(iconDefinitions, expectedConfig);
   });
 
   it('should configure custom icon associations', () => {
@@ -179,6 +179,6 @@ describe('language icons', () => {
     expectedConfig.options!.languages!.associations = {
       xml: 'json',
     };
-    assert.deepStrictEqual(iconDefinitions, expectedConfig);
+    deepStrictEqual(iconDefinitions, expectedConfig);
   });
 });
