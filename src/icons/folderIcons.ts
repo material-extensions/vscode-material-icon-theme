@@ -790,7 +790,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-taskfile',
-        folderNames: ['taskfile', 'taskfiles', '.taskfile', '.taskfiles', 'Taskfile', '.Taskfile', 'Taskfiles'],
+        folderNames: ['taskfile', 'taskfiles', '.taskfile', '.taskfiles', 'Taskfile', 'Taskfiles', '.Taskfile', '.Taskfiles'],
       },
     ],
   },
