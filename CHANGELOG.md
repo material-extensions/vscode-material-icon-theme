@@ -3,6 +3,20 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v4.23.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.22.0...v4.23.0) 
+
+> December 15, 2022 
+
+- feat: introduce icon folder for changesets [`#1603`](https://github.com/PKief/vscode-material-icon-theme/pull/1603)
+- Add icon for craco [`#1774`](https://github.com/PKief/vscode-material-icon-theme/pull/1774)
+- Add Angular icon to ng-package.json [`d6ea9c7`](https://github.com/PKief/vscode-material-icon-theme/commit/d6ea9c7)
+- Add tsconfig.lib.prod.json icon association [`72bd904`](https://github.com/PKief/vscode-material-icon-theme/commit/72bd904)
+- feat: support icns file type [`#1777`](https://github.com/PKief/vscode-material-icon-theme/pull/1777)
+- Add tsconfig.worker.json icon association [`90bfc9e`](https://github.com/PKief/vscode-material-icon-theme/commit/90bfc9e)
+- feat: support `etc` folder [`#1762`](https://github.com/PKief/vscode-material-icon-theme/pull/1762)
+- Add tsconfig file names [`#1756`](https://github.com/PKief/vscode-material-icon-theme/pull/1756)
+- feat: 🎨 add console icon for nushell [`#1761`](https://github.com/PKief/vscode-material-icon-theme/pull/1761)
+ 
 #### [v4.22.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.21.0...v4.22.0) 
 
 > November 5, 2022 
