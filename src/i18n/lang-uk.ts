@@ -1,13 +1,8 @@
 import { Translation } from '../models';
 
 export const translation: Translation = {
-  themeInstalled: 'Material Icon Theme був встановлений.',
-  howToActivate: 'Як активувати значки',
   activate: 'Активувати',
   activated: 'Material Icon Theme активований.',
-  neverShowAgain: 'Ніколи не показувати знову',
-  themeUpdated: 'Material Icon Theme був оновлений.',
-  readChangelog: 'Прочитати зміни',
   iconPacks: {
     selectPack: 'Виберіть набір іконок',
     description: "Виберіть набір значків '%0'",
@@ -36,12 +31,6 @@ export const translation: Translation = {
     enable: 'Показати стрілки папки',
     disable: 'Приховати стрілки папки',
   },
-  confirmReload:
-    'Необхідно перезавантажити VS Code, щоб активувати зміни значків.',
-  reload: 'Перезавантажити',
-  outdatedVersion:
-    'Ви повинні оновити VS Code, щоб використовувати цю команду.',
-  updateVSCode: 'Оновити VS Code',
   grayscale: {
     toggle: 'Перемикання значків у відтінках сірого',
     enable: 'Увімкнути значки у відтінках сірого',

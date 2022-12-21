@@ -1,13 +1,8 @@
 import { Translation } from '../models';
 
 export const translation: Translation = {
-  themeInstalled: 'Material主題圖標已安裝',
-  howToActivate: '如何激活圖標',
   activate: '激活',
   activated: 'Material主題圖標已激活',
-  neverShowAgain: '不再顯示',
-  themeUpdated: 'Material主題圖標已更新',
-  readChangelog: '閲讀更新日志',
   iconPacks: {
     selectPack: '選擇圖標包',
     description: '選擇％0符號',
@@ -36,10 +31,6 @@ export const translation: Translation = {
     enable: '顯示文件夾箭頭',
     disable: '隱藏文件夾箭頭',
   },
-  confirmReload: '你必須重啟VS Code來應用對圖標的更改',
-  reload: '重啟',
-  outdatedVersion: '你必須更新VS Code才能使用該命令',
-  updateVSCode: '更新VS Code',
   grayscale: {
     toggle: '切換灰度圖標',
     enable: '啟用灰度圖標',

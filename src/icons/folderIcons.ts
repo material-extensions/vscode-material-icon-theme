@@ -377,6 +377,7 @@ export const folderIcons: FolderTheme[] = [
           'miscellaneous',
           'extra',
           'extras',
+          'etc',
         ],
       },
       { name: 'folder-lua', folderNames: ['lua'] },
@@ -585,6 +586,7 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-mappings', folderNames: ['mappings', 'mapping'] },
       { name: 'folder-meta', folderNames: ['meta'] },
+      { name: 'folder-changesets', folderNames: ['.changesets', '.changeset'] },
       {
         name: 'folder-packages',
         folderNames: ['package', 'packages', 'pkg', 'pkgs'],
@@ -600,6 +602,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-utils',
         folderNames: ['util', 'utils', 'utility', 'utilities'],
       },
+      { name: 'folder-supabase', folderNames: ['supabase', '.supabase'] },
       { name: 'folder-private', folderNames: ['private', '.private'] },
       { name: 'folder-error', folderNames: ['error', 'errors', 'err'] },
       { name: 'folder-event', folderNames: ['event', 'events'] },
@@ -765,6 +768,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['cypress', '.cypress'],
       },
       {
+        name: 'folder-decorators',
+        folderNames: ['decorator', 'decorators'],
+      },
+      {
         name: 'folder-java',
         folderNames: ['java'],
       },
@@ -786,7 +793,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-proto',
-        folderNames: ['protobufs'],
+        folderNames: ['protobufs', 'proto'],
       },
     ],
   },
