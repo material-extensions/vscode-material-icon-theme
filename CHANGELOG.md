@@ -3,6 +3,17 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v4.23.1](https://github.com/PKief/vscode-material-icon-theme/compare/v4.23.0...v4.23.1) 
+
+> December 23, 2022 
+
+- Add support for vitest config files [`#1572`](https://github.com/PKief/vscode-material-icon-theme/pull/1572)
+- Add icons for vscode files [`#1803`](https://github.com/PKief/vscode-material-icon-theme/pull/1803)
+- Add manager / moderator folder icon [`#1802`](https://github.com/PKief/vscode-material-icon-theme/pull/1802)
+- Update release workflow [`68bc32f`](https://github.com/PKief/vscode-material-icon-theme/commit/68bc32f)
+- Update badges in Readme [`#1796`](https://github.com/PKief/vscode-material-icon-theme/pull/1796)
+- add filename .env.uat into tune icon [`#1801`](https://github.com/PKief/vscode-material-icon-theme/pull/1801)
+ 
 #### [v4.23.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.22.0...v4.23.0) 
 
 > December 15, 2022 
