@@ -2195,7 +2195,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'vanilla-extract',
-      fileExtensions: ['css.ts', 'css.js'],
+      fileExtensions: ['css.js', 'css.mjs', 'css.jsx', 'css.ts', 'css.tsx'],
     },
   ],
 };
