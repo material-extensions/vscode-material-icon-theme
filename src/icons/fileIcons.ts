@@ -277,6 +277,9 @@ export const fileIcons: FileIcons = {
         'vsixmanifest',
         'vsix',
         'code-workplace',
+        'code-workspace',
+        'code-profile',
+        'code-snippets',
       ],
     },
     {
