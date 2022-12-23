@@ -704,7 +704,7 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['.azure-pipelines', '.azure-pipelines-ci'],
       },
       { name: 'folder-mjml', folderNames: ['mjml'] },
-      { name: 'folder-admin', folderNames: ['admin'] },
+      { name: 'folder-admin', folderNames: ['admin', 'manager', 'moderator'] },
       { name: 'folder-scala', folderNames: ['scala'] },
       {
         name: 'folder-connection',
