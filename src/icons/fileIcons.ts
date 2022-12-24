@@ -2193,5 +2193,13 @@ export const fileIcons: FileIcons = {
         '.cracorc',
       ],
     },
+    {
+      name: 'metro',
+      fileNames: [
+        'metro.config.ts',
+        'metro.config.js',
+        'metro.config.json',
+      ],
+    },
   ],
 };
