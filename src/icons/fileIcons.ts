@@ -152,7 +152,11 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'javascript', fileExtensions: ['esx', 'mjs'] },
-    { name: 'react', fileExtensions: ['jsx'] },
+    {
+      name: 'react',
+      fileExtensions: ['jsx'],
+      fileNames: ['react-native.config.ts', 'react-native.config.js']
+    },
     { name: 'react_ts', fileExtensions: ['tsx'] },
     {
       name: 'routing',
