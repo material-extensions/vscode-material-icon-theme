@@ -19,18 +19,18 @@ jobs:
       VERSION_CHANGE: ${{ github.event.inputs.versionChange }}
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - name: Setup Node.js ⚙️
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: 'lts/*'
           registry-url: 'https://registry.npmjs.org'
       - name: Install node_modules 📦
         run: |
           npm ci
-          npm install --global vsce
+          npm install --global @vscode/vsce
       - name: Update version ↗
         run: |
           git config --global user.name 'Philipp Kief'

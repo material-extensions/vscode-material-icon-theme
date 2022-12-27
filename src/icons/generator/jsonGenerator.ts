@@ -1,6 +1,12 @@
-import * as fs from 'fs';
+import {
+  existsSync,
+  readdirSync,
+  renameSync,
+  unlinkSync,
+  writeFileSync,
+} from 'fs';
 import merge from 'lodash.merge';
-import * as path from 'path';
+import { basename, join } from 'path';
 import { getCustomIconPaths } from '../../helpers/customIcons';
 import { getFileConfigHash } from '../../helpers/fileConfig';
 import { IconConfiguration, IconJsonOptions } from '../../models/index';
@@ -91,8 +97,8 @@ export const createIconFile = (
   try {
     let iconJsonPath = __dirname;
     // if executed via script
-    if (path.basename(__dirname) !== 'dist') {
-      iconJsonPath = path.join(__dirname, '..', '..', '..', 'dist');
+    if (basename(__dirname) !== 'dist') {
+      iconJsonPath = join(__dirname, '..', '..', '..', 'dist');
     }
     if (!updatedConfigs || (updatedConfigs.folders || {}).color) {
       // if updatedConfigs do not exist (because of initial setup)
@@ -119,11 +125,11 @@ export const createIconFile = (
   try {
     let iconJsonPath = __dirname;
     // if executed via script
-    if (path.basename(__dirname) !== 'dist') {
-      iconJsonPath = path.join(__dirname, '..', '..', '..', 'dist');
+    if (basename(__dirname) !== 'dist') {
+      iconJsonPath = join(__dirname, '..', '..', '..', 'dist');
     }
-    fs.writeFileSync(
-      path.join(iconJsonPath, iconJsonName),
+    writeFileSync(
+      join(iconJsonPath, iconJsonName),
       JSON.stringify(json, undefined, 2),
       'utf-8'
     );
@@ -149,8 +155,6 @@ export const getDefaultIconOptions = (): Required<IconJsonOptions> => ({
   saturation: 1,
   files: { associations: {} },
   languages: { associations: {} },
-  showUpdateMessage: false,
-  showWelcomeMessage: false,
 });
 
 /**
@@ -160,27 +164,27 @@ export const getDefaultIconOptions = (): Required<IconJsonOptions> => ({
  */
 const renameIconFiles = (iconJsonPath: string, options: IconJsonOptions) => {
   const customPaths = getCustomIconPaths(options);
-  const defaultIconPath = path.join(iconJsonPath, '..', 'icons');
+  const defaultIconPath = join(iconJsonPath, '..', 'icons');
   const iconPaths = [defaultIconPath, ...customPaths];
 
   iconPaths.forEach((iconPath) => {
-    fs.readdirSync(iconPath)
+    readdirSync(iconPath)
       .filter((f) => f.match(/\.svg/gi))
       .forEach((f) => {
-        const filePath = path.join(iconPath, f);
+        const filePath = join(iconPath, f);
         const fileConfigHash = getFileConfigHash(options);
 
         // append file config to file name
-        const newFilePath = path.join(
+        const newFilePath = join(
           iconPath,
           f.replace(/(^[^\.~]+)(.*)\.svg/, `$1${fileConfigHash}.svg`)
         );
 
         // if generated files are already in place, do not overwrite them
-        if (filePath !== newFilePath && fs.existsSync(newFilePath)) {
-          fs.unlinkSync(filePath);
+        if (filePath !== newFilePath && existsSync(newFilePath)) {
+          unlinkSync(filePath);
         } else {
-          fs.renameSync(filePath, newFilePath);
+          renameSync(filePath, newFilePath);
         }
       });
   });
