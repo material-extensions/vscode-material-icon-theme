@@ -2193,5 +2193,6 @@ export const fileIcons: FileIcons = {
         '.cracorc',
       ],
     },
+    { name: 'qml', fileExtensions: ['qml'] },
   ],
 };
