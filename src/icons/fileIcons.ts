@@ -2193,5 +2193,30 @@ export const fileIcons: FileIcons = {
         '.cracorc',
       ],
     },
+    {
+      name: 'redhat',
+      fileNames: ['.s2iignore'],
+    },
+    {
+      name: 'openshift',
+      fileExtensions: ['.openshift/conf'],
+    },
+    {
+      name: 'ansible',
+      fileNames: [
+        'ansible.cfg',
+        'inventory',
+        'ansible-navigator.yml',
+        'ansible-navigator.yaml',
+        'ansible-navigator.json',
+        'execution_environment.yml',
+        'execution_environment.yaml',
+        'playbook.yml',
+        'playbook.yaml',
+        'main.yml',
+        'main.yaml',
+      ],
+      fileExtensions: ['ansible/yml', 'ansible/yaml'],
+    },
   ],
 };

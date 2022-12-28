@@ -456,7 +456,22 @@ export const folderIcons: FolderTheme[] = [
           'handlers',
         ],
       },
-      { name: 'folder-ansible', folderNames: ['ansible'] },
+      {
+        name: 'folder-ansible',
+        folderNames: [
+          'ansible',
+          'inventories',
+          'inventory',
+          'playbooks',
+          'collections',
+          'ansible_collections',
+          'roles',
+        ],
+      },
+      {
+        name: 'folder-red-hat',
+        folderNames: ['.s2i', 's2i'],
+      },
       { name: 'folder-server', folderNames: ['server', 'servers', 'backend'] },
       {
         name: 'folder-client',
