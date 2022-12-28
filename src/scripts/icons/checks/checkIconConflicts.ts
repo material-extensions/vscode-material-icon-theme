@@ -1,4 +1,4 @@
-import * as painter from '../../helpers/painter';
+import { green, red } from '../../helpers/painter';
 import { fileIcons, folderIcons, languageIcons } from './../../../icons';
 
 /**
@@ -119,22 +119,20 @@ const handleErrors = () => {
       ...Object.keys(allConflicts.languageIcons),
     ].length > 0
   ) {
-    console.log('> Material Icon Theme:', painter.red('Icon conflicts:'));
-    console.log(painter.red('--------------------------------------'));
+    console.log('> Material Icon Theme:', red('Icon conflicts:'));
+    console.log(red('--------------------------------------'));
 
     printErrorMessage(allConflicts.fileIcons.fileExtensions, 'fileExtension');
     printErrorMessage(allConflicts.fileIcons.fileNames, 'fileName');
     printErrorMessage(allConflicts.folderIcons, 'folderName');
     printErrorMessage(allConflicts.languageIcons, 'languageId');
 
-    console.log(
-      '\n' + painter.red('Please check the wrong icon configurations!\n')
-    );
+    console.log('\n' + red('Please check the wrong icon configurations!\n'));
     process.exit(1);
   } else {
     console.log(
       '> Material Icon Theme:',
-      painter.green('Passed icon conflict checks!')
+      green('Passed icon conflict checks!')
     );
   }
 };
@@ -144,7 +142,7 @@ const printErrorMessage = (icons: any, definitionType: string) => {
   keys.forEach((key) => {
     const conflictIcons = icons[key];
     console.log(
-      painter.red(
+      red(
         `For ${definitionType} "${key}" are ${
           conflictIcons.length
         } icons defined: [${conflictIcons.join(', ')}]`

@@ -1,6 +1,6 @@
-import * as fs from 'fs';
+import { writeFileSync } from 'fs';
 import merge from 'lodash.merge';
-import * as path from 'path';
+import { basename, join } from 'path';
 import { getFileConfigHash } from '../../helpers/fileConfig';
 import {
   DefaultIcon,
@@ -316,15 +316,15 @@ const getSVG = (path: string) =>
 
 const writeSVGFiles = (iconName: string, svg: string) => {
   let iconsPath;
-  if (path.basename(__dirname) === 'dist') {
-    iconsPath = path.join(__dirname, '..', 'icons');
+  if (basename(__dirname) === 'dist') {
+    iconsPath = join(__dirname, '..', 'icons');
   } else {
     // executed via script
-    iconsPath = path.join(__dirname, '..', '..', '..', 'icons');
+    iconsPath = join(__dirname, '..', '..', '..', 'icons');
   }
-  const iconsFolderPath = path.join(iconsPath, `${iconName}.svg`);
+  const iconsFolderPath = join(iconsPath, `${iconName}.svg`);
   try {
-    fs.writeFileSync(iconsFolderPath, svg);
+    writeFileSync(iconsFolderPath, svg);
   } catch (error) {
     console.error(error);
   }

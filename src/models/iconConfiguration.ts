@@ -1,4 +1,4 @@
-import { IconJsonOptions } from './index';
+import { IconJsonOptions } from './';
 
 export class IconConfiguration {
   file?: string;
