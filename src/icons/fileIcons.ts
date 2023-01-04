@@ -604,6 +604,7 @@ export const fileIcons: FileIcons = {
         '.graphqlrc.yml',
         'graphql.config.json',
         'graphql.config.js',
+        'graphql.config.cjs',
         'graphql.config.ts',
         'graphql.config.toml',
         'graphql.config.yaml',
