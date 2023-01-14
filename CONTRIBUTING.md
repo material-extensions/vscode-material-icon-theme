@@ -43,9 +43,9 @@ Your creativity is needed when creating icons. However, there are a few things y
 1. Create icon as SVG
 2. Copy icon to `icons`-folder
 3. Edit the icon configuration files under `src/icons` folder:
-   - fileIcons.ts
-   - folderIcons.ts
-   - languageIcons.ts
+   - [fileIcons.ts](src/icons/fileIcons.ts)
+   - [folderIcons.ts](src/icons/folderIcons.ts)
+   - [languageIcons.ts](src/icons/languageIcons.ts)
 
 ## How tos
 
