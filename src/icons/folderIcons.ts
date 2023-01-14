@@ -25,6 +25,10 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-images',
         folderNames: [
+          '_images',
+          '_image',
+          '_imgs',
+          '_img',
           'images',
           'image',
           'imgs',
@@ -83,6 +87,8 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-docs',
         folderNames: [
+          '_post',
+          '_posts',
           'doc',
           'docs',
           'document',
@@ -210,6 +216,7 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-public',
         folderNames: [
+          '_site',
           'public',
           'www',
           'wwwroot',
@@ -627,6 +634,8 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-mock',
         folderNames: [
+          '_draft',
+          '_drafts',
           'mock',
           'mocks',
           'fixture',
