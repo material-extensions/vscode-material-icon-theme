@@ -2,11 +2,15 @@
 
 <!-- TOC -->
 
-- [Create issues](#create-issues)
+- [Icon Requests](#icon-requests)
 - [Add new icons](#add-new-icons)
-  - [Icon color](#icon-color)
-  - [Free software to create/edit SVG icons](#free-software-to-createedit-svg-icons)
-  - [Use icons from here](#use-icons-from-here)
+- [How-To's](#how-tos)
+  - [Free software to create/edit SVG icons](#create-icon-as-svg)
+  - [Use existing SVGs](#use-existing-svg)
+  - [Use Material Design colors](#material-design-colors)
+  - [Icon spacing](#spacing)
+  - [Icons for color themes](#icons-for-color-themes)
+  - [Unique assignment to file and folder names](#icon-assignments)
 - [Add translations](#add-translations)
 - [Update API](#update-api)
 
@@ -23,37 +27,34 @@ A new icon for a file name, file extension or folder name is needed? Please crea
 
 ## Add new icons
 
-It is always welcome to add new icons to the extension. The following describes the things that need to be considered and the guidelines to follow:
+It is always welcome to add new icons to the extension. However, there are a few things you should take into account so that the icon can be included in the extension.
 
-### Icon creation
-
-Your creativity is needed when creating icons. However, there are a few things you should take into account so that the icon can be included in the extension.
-
-#### Checklist
+**Checklist**
 
 1. [ ] Create icon as SVG ([how to](#create-icon-as-svg)) or use existing SVG ([how to](#use-existing-svg))
 2. [ ] Icon color fits to Material Design ([how to](#material-design-colors))
 3. [ ] SVG has some space around the icon ([how to](#spacing))
 4. [ ] Provide separate icons for color themes if necessary ([how to](#icons-for-color-themes))
 5. [ ] Unique assignment to file and folder names ([how to](#icon-assignments))
-6. [ ] Folder icons need to have an opened and closed state (i.e. two SVGs)
-
-### Integration
-
-1. Create icon as SVG
-2. Copy icon to `icons`-folder
-3. Edit the icon configuration files under `src/icons` folder:
-   - [fileIcons.ts](src/icons/fileIcons.ts)
-   - [folderIcons.ts](src/icons/folderIcons.ts)
-   - [languageIcons.ts](src/icons/languageIcons.ts)
 
 ## How tos
 
 <h3 id="create-icon-as-svg">Free software to create/edit SVG icons</h3>
 
+These free tools are recommended to create or edit new SVG icons:
+
 - [Inkscape](https://inkscape.org/en/) is a free, open source SVG editor
 - There are tools available to convert PNG/JPG images to SVG - [Autotracer.org](https://autotracer.org) and [Vectorizer.io](https://vectorizer.io) are two examples.
-- It's important to produce fully _vectorized_ graphic (don't include a base64 image string in the svg).
+
+> **Note**
+> It's important to produce fully _vectorized_ graphic (don't include a base64 image string in the svg).
+
+When you create a folder icon, please keep in mind that two SVG files are needed here: one that represents the folder closed and another that represents it open.
+
+```
+📁 folder-example.svg
+📂 folder-example-open.svg
+```
 
 <h3 id="use-existing-svg">Use existing SVGs</h3>
 
@@ -105,6 +106,12 @@ The icon with the ending '\_light' will be automatically chosen when VS Code is 
 | <img src="./images/how-tos/svg-with-light-color.png" width="200px" /> | <img src="./images/how-tos/svg-with-too-dark-color.png" width="200px" /> |
 
 <h3 id="icon-assignments">Unique assignment to file and folder names</h3>
+
+Icons are assigned to file names, folder names or registered languages of VS Code in these files:
+
+- [fileIcons.ts](src/icons/fileIcons.ts)
+- [folderIcons.ts](src/icons/folderIcons.ts)
+- [languageIcons.ts](src/icons/languageIcons.ts)
 
 It is very important that icons are only assigned to the file and folder names that really apply to them. This means that you should be careful which files and folders you assign icons to. There are many people with different projects all over the world and not everyone expects that e.g. a file name will have a special framework based icon even though the framework is not used at all by this one user. Of course, it can never be avoided with 100% certainty that some icons are displayed even though they do not fit the context of the current VS Code workspace. Therefore, caution is still required here.
 
