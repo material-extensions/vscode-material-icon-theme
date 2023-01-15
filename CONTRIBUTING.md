@@ -71,6 +71,8 @@ An important success factor of this icon extension is the fact that all colors f
 
 Now it often happens that many programming languages already have icons with their own colors. To find the matching color from the Material Design color palette based on a known color, there is the [Material Color Converter](https://pkief.github.io/material-color-converter/). With its help any color can be converted into a Material Design color.
 
+Continue reading [here](#design-folder-icons) to find out about colors for the folder icons.
+
 | ✅                                                                | ❌                                                                    |
 | ----------------------------------------------------------------- | --------------------------------------------------------------------- |
 | <img src="./images/how-tos/svg-with-spacing.png" width="200px" /> | <img src="./images/how-tos/svg-with-wrong-color.png" width="200px" /> |
