@@ -10,7 +10,7 @@ Glad you're here and interested in expanding this project 🎉 In order to make 
   - [Create icon as SVG](#create-icon-as-svg)
   - [Use Material Design colors](#material-design-colors)
   - [Design folder icons](#design-folder-icons)
-  - [Icon spacing](#spacing)
+  - [Icon spacing](#icon-spacing)
   - [Icons for color themes](#icons-for-color-themes)
   - [Unique assignment to file and folder names](#icon-assignments)
   - [Create icon packs](#icon-packs)
@@ -93,7 +93,7 @@ This uniform color selection makes the folder icons look more consistent and fit
 | ------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------- |
 | <img src="./images/how-tos/svg-folder-icon-with-correct-colors.png" width="200px" /> | <img src="./images/how-tos/svg-folder-icon-with-wrong-colors.png" width="200px" /> |
 
-<h3 id="material-design-colors">Icon spacing</h3>
+<h3 id="icon-spacing">Icon spacing</h3>
 
 All icons have a small distance to the edge. This way they don't seem so pressed together and have a little more air. It is not defined how much margin you have to leave them, because this is always a bit different. Just make sure that there is a space to the outside.
 
