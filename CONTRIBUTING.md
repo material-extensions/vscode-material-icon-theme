@@ -7,12 +7,13 @@ Glad you're here and interested in expanding this project 🎉 In order to make 
 - [Icon Requests](#icon-requests)
 - [Add new icons](#add-new-icons)
 - [How-To's](#how-tos)
-  - [Free software to create/edit SVG icons](#create-icon-as-svg)
-  - [Use existing SVGs](#use-existing-svg)
+  - [Create icon as SVG](#create-icon-as-svg)
   - [Use Material Design colors](#material-design-colors)
+  - [Design folder icons](#design-folder-icons)
   - [Icon spacing](#spacing)
   - [Icons for color themes](#icons-for-color-themes)
   - [Unique assignment to file and folder names](#icon-assignments)
+  - [Create icon packs](#icon-packs)
 - [Add translations](#add-translations)
 - [Update API](#update-api)
 
@@ -73,6 +74,16 @@ Now it often happens that many programming languages already have icons with the
 | ✅                                                                | ❌                                                                    |
 | ----------------------------------------------------------------- | --------------------------------------------------------------------- |
 | <img src="./images/how-tos/svg-with-spacing.png" width="200px" /> | <img src="./images/how-tos/svg-with-wrong-color.png" width="200px" /> |
+
+<h3 id="design-folder-icons">Design folder icons</h3>
+
+When designing folder icons there are also a few points to consider. A folder icon always consists of two icons - the folder in the background and a motive in the foreground:
+
+<img src="./images/how-tos/folder-icon-parts.png" width="300px" />
+
+For the motive, only colors from the second row in the [color palette](https://pkief.com/material-color-converter/) are allowed. For the background choose a slightly darker hue (mostly in rows 5-7 in the palette).
+
+<img src="./images/how-tos/folder-motive-colors.png" width="500px" />
 
 <h3 id="material-design-colors">Icon spacing</h3>
 
@@ -166,7 +177,7 @@ If the `highContrast` attribute is set to `true`, it is necessary to provide two
 - sample.svg
 - sample_highContrast.svg
 
-<h3 id="icon-packs">Create icon pack</h3>
+<h3 id="icon-packs">Create icon packs</h3>
 
 Sometimes it can happen that certain files or folders need an icon, but you cannot avoid that there could be different icons for them. An icon pack can bundle different icons and as an end user you can decide which icons to display.
 
