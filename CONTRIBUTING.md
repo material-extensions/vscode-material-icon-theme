@@ -83,9 +83,15 @@ When designing folder icons there are also a few points to consider. A folder ic
 
 <img src="./images/how-tos/folder-icon-parts.png" width="300px" />
 
-For the motive, only colors from the second row in the [color palette](https://pkief.com/material-color-converter/) are allowed. For the background choose a slightly darker hue (mostly in rows 5-7 in the palette).
+For the motive, only colors from the second row in the [color palette](https://pkief.com/material-color-converter/) are allowed. For the background choose a slightly darker hue (mostly in rows 4-6 in the palette).
 
-<img src="./images/how-tos/folder-motive-colors.png" width="500px" />
+<img src="./images/how-tos/pick-folder-colors.png" width="500px" />
+
+This uniform color selection makes the folder icons look more consistent and fit well together. This ensures a good quality of the icons.
+
+| ✅                                                                                   | ❌                                                                                 |
+| ------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------- |
+| <img src="./images/how-tos/svg-folder-icon-with-correct-colors.png" width="200px" /> | <img src="./images/how-tos/svg-folder-icon-with-wrong-colors.png" width="200px" /> |
 
 <h3 id="material-design-colors">Icon spacing</h3>
 
