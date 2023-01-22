@@ -183,7 +183,6 @@ Press `Ctrl-Shift-P` to open the command palette and type `Material Icons`.
 ## Icon sources
 
 - [Material Design Icons](https://materialdesignicons.com/)
-- [Swagger-API Github](https://github.com/swagger-api)
 - official icons
 
 ## Contributors
