@@ -14,8 +14,6 @@ export interface IconJsonOptions {
   languages?: {
     associations?: IconAssociations;
   };
-  showWelcomeMessage?: boolean;
-  showUpdateMessage?: boolean;
 }
 
 export interface IconAssociations {

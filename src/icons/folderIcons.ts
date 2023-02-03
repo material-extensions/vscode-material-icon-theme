@@ -25,6 +25,10 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-images',
         folderNames: [
+          '_images',
+          '_image',
+          '_imgs',
+          '_img',
           'images',
           'image',
           'imgs',
@@ -83,6 +87,8 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-docs',
         folderNames: [
+          '_post',
+          '_posts',
           'doc',
           'docs',
           'document',
@@ -209,7 +215,17 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-global', folderNames: ['global'] },
       {
         name: 'folder-public',
-        folderNames: ['public', 'www', 'wwwroot', 'web', 'website', 'site'],
+        folderNames: [
+          '_site',
+          'public',
+          'www',
+          'wwwroot',
+          'web',
+          'website',
+          'site',
+          'browser',
+          'browsers',
+        ],
       },
       {
         name: 'folder-include',
@@ -368,6 +384,7 @@ export const folderIcons: FolderTheme[] = [
           'miscellaneous',
           'extra',
           'extras',
+          'etc',
         ],
       },
       { name: 'folder-lua', folderNames: ['lua'] },
@@ -457,7 +474,10 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-ios', folderNames: ['ios'] },
       { name: 'folder-upload', folderNames: ['uploads', 'upload'] },
       { name: 'folder-download', folderNames: ['downloads', 'download'] },
-      { name: 'folder-tools', folderNames: ['tools'] },
+      {
+        name: 'folder-tools',
+        folderNames: ['tools', 'toolkit', 'toolkits', 'toolbox', 'toolboxes'],
+      },
       { name: 'folder-helper', folderNames: ['helpers', 'helper'] },
       { name: 'folder-serverless', folderNames: ['.serverless', 'serverless'] },
       { name: 'folder-api', folderNames: ['api', 'apis', 'restapi'] },
@@ -576,6 +596,7 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-mappings', folderNames: ['mappings', 'mapping'] },
       { name: 'folder-meta', folderNames: ['meta'] },
+      { name: 'folder-changesets', folderNames: ['.changesets', '.changeset'] },
       {
         name: 'folder-packages',
         folderNames: [
@@ -598,6 +619,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-utils',
         folderNames: ['util', 'utils', 'utility', 'utilities'],
       },
+      { name: 'folder-supabase', folderNames: ['supabase', '.supabase'] },
       { name: 'folder-private', folderNames: ['private', '.private'] },
       { name: 'folder-error', folderNames: ['error', 'errors', 'err'] },
       { name: 'folder-event', folderNames: ['event', 'events'] },
@@ -619,6 +641,8 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-mock',
         folderNames: [
+          '_draft',
+          '_drafts',
           'mock',
           'mocks',
           'fixture',
@@ -699,7 +723,7 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['.azure-pipelines', '.azure-pipelines-ci'],
       },
       { name: 'folder-mjml', folderNames: ['mjml'] },
-      { name: 'folder-admin', folderNames: ['admin'] },
+      { name: 'folder-admin', folderNames: ['admin', 'manager', 'moderator'] },
       { name: 'folder-scala', folderNames: ['scala'] },
       {
         name: 'folder-connection',
@@ -736,6 +760,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-interface',
         folderNames: ['interface', 'interfaces'],
       },
+      { name: 'folder-netlify', folderNames: ['.netlify'] },
       {
         name: 'folder-contract',
         folderNames: [
@@ -762,6 +787,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['cypress', '.cypress'],
       },
       {
+        name: 'folder-decorators',
+        folderNames: ['decorator', 'decorators'],
+      },
+      {
         name: 'folder-java',
         folderNames: ['java'],
       },
@@ -780,6 +809,14 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-luau',
         folderNames: ['luau'],
+      },
+      {
+        name: 'folder-pdf',
+        folderNames: ['pdf', 'pdfs'],
+      },
+      {
+        name: 'folder-proto',
+        folderNames: ['protobufs', 'proto'],
       },
     ],
   },
