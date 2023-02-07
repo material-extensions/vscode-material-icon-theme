@@ -87,7 +87,7 @@ export const languageIcons: LanguageIcon[] = [
   { icon: { name: 'salesforce' }, ids: ['apex'] },
   { icon: { name: 'sas' }, ids: ['sas'] },
   { icon: { name: 'docker' }, ids: ['dockerfile'] },
-  { icon: { name: 'table' }, ids: ['csv', 'tsv'] },
+  { icon: { name: 'table' }, ids: ['csv', 'tsv', 'psv'] },
   { icon: { name: 'csharp' }, ids: ['csharp'] },
   { icon: { name: 'console' }, ids: ['bat', 'awk', 'shellscript'] },
   { icon: { name: 'cpp' }, ids: ['cpp'] },
@@ -120,6 +120,7 @@ export const languageIcons: LanguageIcon[] = [
   { icon: { name: 'search' }, ids: ['search-result'] },
   { icon: { name: 'minecraft' }, ids: ['mcfunction'] },
   { icon: { name: 'rescript' }, ids: ['rescript'] },
+  { icon: { name: 'otne' }, ids: ['otne'] },
   {
     icon: { name: 'twine' },
     ids: ['twee3', 'twee3-harlowe-3', 'twee3-chapbook-1', 'twee3-sugarcube-2'],
@@ -131,4 +132,10 @@ export const languageIcons: LanguageIcon[] = [
   { icon: { name: 'gemini' }, ids: ['gemini', 'text-gemini'] },
   { icon: { name: 'vlang' }, ids: ['v'] },
   { icon: { name: 'wolframlanguage' }, ids: ['wolfram'] },
+  { icon: { name: 'shader' }, ids: ['hlsl', 'glsl', 'wgsl'] },
+  { icon: { name: 'tree' }, ids: ['tree'] },
+  { icon: { name: 'svelte' }, ids: ['svelte'] },
+  { icon: { name: 'dart' }, ids: ['dart'] },
+  { icon: { name: 'cadence' }, ids: ['cadence'] },
+  { icon: { name: 'stylable' }, ids: ['stylable'] },
 ];
