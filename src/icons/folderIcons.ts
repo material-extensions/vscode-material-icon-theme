@@ -521,7 +521,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-container',
         folderNames: ['container', 'containers', '.devcontainer'],
       },
-      { name: 'folder-content', folderNames: ['content', 'contents'] },
+      { name: 'folder-content', folderNames: ['content', 'contents', 'feature', 'features'] },
       { name: 'folder-context', folderNames: ['context', 'contexts'] },
       { name: 'folder-core', folderNames: ['core'] },
       { name: 'folder-delta', folderNames: ['delta', 'deltas', 'changes'] },
