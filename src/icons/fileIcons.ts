@@ -2150,14 +2150,19 @@ export const fileIcons: FileIcons = {
     },
     { name: 'caddy', fileNames: ['Caddyfile'] },
     {
-      name: 'swagger',
+      name: 'openapi',
       fileExtensions: [
         'openapi.json',
         'openapi.yml',
-        'openapi.yaml',
+        'openapi.yaml'
+      ],
+    },
+    {
+      name: 'swagger',
+      fileExtensions: [
         'swagger.json',
         'swagger.yml',
-        'swagger.yaml',
+        'swagger.yaml'
       ],
     },
     { name: 'antlr', fileExtensions: ['g4'] },
