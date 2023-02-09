@@ -3,6 +3,19 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v4.24.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.23.1...v4.24.0) 
+
+> February 9, 2023 
+
+- Add folder icon for "angular" folder name [`#1859`](https://github.com/PKief/vscode-material-icon-theme/pull/1859)
+- Add  icon for .git-blame-ignore-revs [`#1836`](https://github.com/PKief/vscode-material-icon-theme/pull/1836)
+- Update contributions guidelines [`#1833`](https://github.com/PKief/vscode-material-icon-theme/pull/1833)
+- Add icon for code_of_conduct [`#1759`](https://github.com/PKief/vscode-material-icon-theme/pull/1759)
+- Added icon support for typical jekyll folders [`#1832`](https://github.com/PKief/vscode-material-icon-theme/pull/1832)
+- Add .cjs and .mjs extensions to `plop` fileNames [`#1819`](https://github.com/PKief/vscode-material-icon-theme/pull/1819)
+- Add .cjs extension to `graphql.config` [`#1818`](https://github.com/PKief/vscode-material-icon-theme/pull/1818)
+- Add Toolkit (Toolkits) and Toolbox (Toolboxes) [`#1809`](https://github.com/PKief/vscode-material-icon-theme/pull/1809)
+ 
 #### [v4.23.1](https://github.com/PKief/vscode-material-icon-theme/compare/v4.23.0...v4.23.1) 
 
 > December 23, 2022 
