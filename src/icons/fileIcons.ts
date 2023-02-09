@@ -1156,6 +1156,7 @@ export const fileIcons: FileIcons = {
         '.env.staging.local',
         '.env.test.local',
         '.env.uat',
+        '.env.prd',
       ],
     },
     {
