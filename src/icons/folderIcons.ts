@@ -53,6 +53,7 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-scripts', folderNames: ['script', 'scripts'] },
       { name: 'folder-node', folderNames: ['node_modules'] },
+      { name: 'folder-tauri', folderNames: ['src-tauri'] },
       {
         name: 'folder-javascript',
         folderNames: ['js', 'javascript', 'javascripts'],
