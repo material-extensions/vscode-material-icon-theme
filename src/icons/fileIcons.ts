@@ -2014,6 +2014,7 @@ export const fileIcons: FileIcons = {
         'tsconfig.cjs.json',
         'tsconfig.esm.json',
         'tsconfig.mjs.json',
+        'tsconfig.doc.json',
       ],
       fileExtensions: ['tsconfig.json'],
     },
