@@ -2203,5 +2203,9 @@ export const fileIcons: FileIcons = {
         '.cracorc',
       ],
     },
+    {
+      name: 'gamemaker',
+      fileExtensions: ['gml', 'yy', 'yyp', 'yyz'],
+    },
   ],
 };
