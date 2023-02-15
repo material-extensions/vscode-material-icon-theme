@@ -2203,5 +2203,6 @@ export const fileIcons: FileIcons = {
         '.cracorc',
       ],
     },
+    { name: 'tldraw', fileExtensions: ['tldr'], light: true },
   ],
 };
