@@ -1613,7 +1613,18 @@ export const fileIcons: FileIcons = {
     { name: 'mint', fileExtensions: ['mint'] },
     { name: 'velocity', fileExtensions: ['vm', 'fhtml', 'vtl'] },
     { name: 'godot', fileExtensions: ['gd'] },
-    { name: 'godot-assets', fileExtensions: ['godot', 'tres', 'tscn'] },
+    {
+      name: 'godot-assets',
+      fileExtensions: [
+        'godot',
+        'tres',
+        'tscn',
+        'gdns',
+        'gdnlib',
+        'gdshader',
+        'gdextension',
+      ],
+    },
     {
       name: 'azure-pipelines',
       fileNames: ['azure-pipelines.yml', 'azure-pipelines.yaml'],
