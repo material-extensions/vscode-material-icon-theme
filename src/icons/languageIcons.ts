@@ -77,6 +77,7 @@ export const languageIcons: LanguageIcon[] = [
   { icon: { name: 'django' }, ids: ['django-html', 'django-txt'] },
   { icon: { name: 'html' }, ids: ['html'] },
   { icon: { name: 'godot' }, ids: ['gdscript'] },
+  { icon: { name: 'godot-assets' }, ids: ['gdresource', 'gdshader'] },
   { icon: { name: 'vim' }, ids: ['viml'] },
   { icon: { name: 'silverstripe' }, ids: [] },
   { icon: { name: 'prolog' }, ids: ['prolog'] },
