@@ -717,6 +717,8 @@ export const fileIcons: FileIcons = {
         'test.cts',
         'test.mts',
         'ts.snap',
+        'spec-d.ts',
+        'test-d.ts',
       ],
     },
     {
@@ -730,6 +732,8 @@ export const fileIcons: FileIcons = {
         'jsx.snap',
         'cy.jsx',
         'cy.tsx',
+        'spec-d.tsx',
+        'test-d.tsx',
       ],
     },
     {
