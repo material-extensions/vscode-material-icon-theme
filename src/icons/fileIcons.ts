@@ -2215,5 +2215,15 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'tldraw', fileExtensions: ['tldr'], light: true },
+    {
+      name: 'plastic',
+      fileNames: [
+        'plastic.branchexplorer',
+        'plastic.selector',
+        'plastic.wktree',
+        'plastic.workspace',
+        'plastic.workspaces',
+      ],
+    },
   ],
 };
