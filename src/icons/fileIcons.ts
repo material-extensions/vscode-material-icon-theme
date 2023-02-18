@@ -703,6 +703,7 @@ export const fileIcons: FileIcons = {
     { name: 'handlebars', fileExtensions: ['hbs', 'mustache'] },
     { name: 'perl', fileExtensions: ['pm', 'raku'] },
     { name: 'haxe', fileExtensions: ['hx'] },
+    { name: 'hxproj', fileExtensions: ['hxproj', 'hxml'] },
     {
       name: 'test-ts',
       fileExtensions: [
@@ -885,7 +886,7 @@ export const fileIcons: FileIcons = {
         '.posthtmlrc.yml',
       ],
     },
-    { name: 'todo', fileExtensions: ['todo'] },
+    { name: 'todo', fileExtensions: ['todo'], fileNames: ['TODO.md', 'todo.md'], },
     { name: 'coldfusion', fileExtensions: ['cfml', 'cfc', 'lucee', 'cfm'] },
     {
       name: 'cabal',
