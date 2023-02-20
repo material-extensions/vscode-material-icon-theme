@@ -2215,5 +2215,17 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'tldraw', fileExtensions: ['tldr'], light: true },
+    {
+      name: 'scons',
+      light: true,
+      fileExtensions: ['dblite'],
+      fileNames: [
+        '.scons_env.json',
+        '.scons_node_count',
+        'sconstruct',
+        'sconscript',
+        'scsub',
+      ],
+    },
   ],
 };

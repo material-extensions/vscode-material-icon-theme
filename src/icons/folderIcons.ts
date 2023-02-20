@@ -807,6 +807,10 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-proto',
         folderNames: ['protobufs', 'proto'],
       },
+      {
+        name: 'folder-scons',
+        folderNames: ['scons', '.scons', '.sconf_temp'],
+      },
     ],
   },
   {
