@@ -1623,7 +1623,9 @@ export const fileIcons: FileIcons = {
         'gdnlib',
         'gdshader',
         'gdextension',
+        'import',
       ],
+      fileNames: ['.gdignore', '._sc_', '_sc_'],
     },
     {
       name: 'azure-pipelines',
