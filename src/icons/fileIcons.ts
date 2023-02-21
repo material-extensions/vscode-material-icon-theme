@@ -885,7 +885,11 @@ export const fileIcons: FileIcons = {
         '.posthtmlrc.yml',
       ],
     },
-    { name: 'todo', fileExtensions: ['todo'] },
+    {
+      name: 'todo',
+      fileExtensions: ['todo'],
+      fileNames: ['todo.md', 'todos.md'],
+    },
     { name: 'coldfusion', fileExtensions: ['cfml', 'cfc', 'lucee', 'cfm'] },
     {
       name: 'cabal',
