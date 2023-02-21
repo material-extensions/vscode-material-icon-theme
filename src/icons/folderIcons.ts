@@ -807,6 +807,10 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-proto',
         folderNames: ['protobufs', 'proto'],
       },
+      {
+        name: 'folder-godot',
+        folderNames: ['godot', '.godot', 'godot-cpp'],
+      },
     ],
   },
   {
