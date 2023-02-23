@@ -2218,6 +2218,10 @@ export const fileIcons: FileIcons = {
         '.cracorc',
       ],
     },
+    {
+      name: 'gamemaker',
+      fileExtensions: ['gml', 'yy', 'yyp', 'yyz'],
+    },
     { name: 'tldraw', fileExtensions: ['tldr'], light: true },
   ],
 };
