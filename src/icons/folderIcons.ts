@@ -808,6 +808,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['protobufs', 'proto'],
       },
       {
+        name: 'folder-gamemaker',
+        folderNames: ['gamemaker', 'gamemaker2'],
+      },
+      {
         name: 'folder-godot',
         folderNames: ['godot', '.godot', 'godot-cpp'],
       },
