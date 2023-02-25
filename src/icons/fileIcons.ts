@@ -1626,6 +1626,7 @@ export const fileIcons: FileIcons = {
         'gdns',
         'gdnlib',
         'gdshader',
+        'gdshaderinc',
         'gdextension',
         'import',
       ],
