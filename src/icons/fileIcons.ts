@@ -1628,7 +1628,6 @@ export const fileIcons: FileIcons = {
         'gdshader',
         'gdshaderinc',
         'gdextension',
-        'import',
       ],
       fileNames: ['.gdignore', '._sc_', '_sc_'],
     },
