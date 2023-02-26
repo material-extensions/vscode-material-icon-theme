@@ -2189,6 +2189,7 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['cdc'],
     },
     { name: 'caddy', fileNames: ['Caddyfile'] },
+    { name: 'bun', fileNames: ['bun.lockb'], light: true },
     { name: 'antlr', fileExtensions: ['g4'] },
     { name: 'stylable', fileExtensions: ['st.css'] },
     { name: 'pinejs', fileExtensions: ['pine'] },
