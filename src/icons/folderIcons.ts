@@ -423,6 +423,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-gulp',
         folderNames: [
           'gulp',
+          'gulp-tasks',
           'gulpfile.js',
           'gulpfile.mjs',
           'gulpfile.ts',
