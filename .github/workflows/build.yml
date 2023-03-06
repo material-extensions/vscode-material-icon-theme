@@ -14,9 +14,9 @@ jobs:
 
     steps:
       - name: Checkout 🛎
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Setup Node.js ${{ matrix.node-version }} ⚙
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
       - name: Run display server 🖥
@@ -26,7 +26,7 @@ jobs:
       - name: Install node_modules 📦
         run: npm ci
       - name: Cache node_modules 💾
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         env:
           cache-name: cache-node-modules
         with:
