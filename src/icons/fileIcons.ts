@@ -2236,5 +2236,10 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['gml', 'yy', 'yyp', 'yyz'],
     },
     { name: 'tldraw', fileExtensions: ['tldr'], light: true },
+    {
+      name: 'deno',
+      fileNames: ['deno.json', 'deno.jsonc', 'deno.lock'],
+      light: true,
+    },
   ],
 };
