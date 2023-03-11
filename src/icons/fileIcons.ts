@@ -2236,5 +2236,16 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['gml', 'yy', 'yyp', 'yyz'],
     },
     { name: 'tldraw', fileExtensions: ['tldr'], light: true },
+    {
+      name: 'mercurial',
+      fileNames: [
+        '.hg',
+        '.hgignore',
+        '.hgflow',
+        '.hgrc',
+        'hgrc',
+        'mercurial.ini',
+      ],
+    },
   ],
 };
