@@ -2246,7 +2246,7 @@ export const fileIcons: FileIcons = {
     {
       name: 'rnconfig',
       fileNames: ['react-native.config.ts', 'react-native.config.js']
-    }
+    },
     {
       name: 'gamemaker',
       fileExtensions: ['gml', 'yy', 'yyp', 'yyz'],
