@@ -350,12 +350,14 @@ export const fileIcons: FileIcons = {
     { name: 'h', fileExtensions: ['h'] },
     {
       name: 'cpp',
-      fileExtensions: ['cc', 'cpp', 'cxx', 'c++', 'cp', 'mm', 'mii', 'ii'],
+      fileExtensions: ['cc', 'cpp', 'cxx', 'c++', 'cp', 'mii', 'ii'],
     },
     {
       name: 'hpp',
       fileExtensions: ['hh', 'hpp', 'hxx', 'h++', 'hp', 'tcc', 'inl'],
     },
+    { name: 'objective-c', fileExtensions: ['m'] },
+    { name: 'objective-cpp', fileExtensions: ['mm'] },
     { name: 'go', fileExtensions: ['go'] },
     {
       name: 'go-mod',
@@ -608,6 +610,7 @@ export const fileIcons: FileIcons = {
         '.graphqlrc.yml',
         'graphql.config.json',
         'graphql.config.js',
+        'graphql.config.cjs',
         'graphql.config.ts',
         'graphql.config.toml',
         'graphql.config.yaml',
@@ -624,15 +627,20 @@ export const fileIcons: FileIcons = {
       name: 'git',
       fileExtensions: ['patch'],
       fileNames: [
+        '.git',
         '.gitignore',
-        '.git-blame-ignore',
         '.gitignore-global',
         '.gitignore_global',
-        '.gitconfig',
         '.gitattributes',
+        '.gitattributes-global',
+        '.gitattributes_global',
+        '.gitconfig',
         '.gitmodules',
         '.gitkeep',
         '.gitinclude',
+        '.git-blame-ignore',
+        '.git-blame-ignore-revs',
+        '.git-for-windows-updater',
         'git-history',
       ],
     },
@@ -719,6 +727,8 @@ export const fileIcons: FileIcons = {
         'test.cts',
         'test.mts',
         'ts.snap',
+        'spec-d.ts',
+        'test-d.ts',
       ],
     },
     {
@@ -732,6 +742,8 @@ export const fileIcons: FileIcons = {
         'jsx.snap',
         'cy.jsx',
         'cy.tsx',
+        'spec-d.tsx',
+        'test-d.tsx',
       ],
     },
     {
@@ -887,7 +899,11 @@ export const fileIcons: FileIcons = {
         '.posthtmlrc.yml',
       ],
     },
-    { name: 'todo', fileExtensions: ['todo'] },
+    {
+      name: 'todo',
+      fileExtensions: ['todo'],
+      fileNames: ['todo.md', 'todos.md'],
+    },
     { name: 'coldfusion', fileExtensions: ['cfml', 'cfc', 'lucee', 'cfm'] },
     {
       name: 'cabal',
@@ -1309,7 +1325,11 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'conduct',
-      fileNames: ['code_of_conduct.md', 'code_of_conduct.txt'],
+      fileNames: [
+        'code_of_conduct.md',
+        'code_of_conduct.txt',
+        'code_of_conduct',
+      ],
     },
     { name: 'watchman', fileNames: ['.watchmanconfig'] },
     { name: 'aurelia', fileNames: ['aurelia.json'] },
@@ -1481,9 +1501,11 @@ export const fileIcons: FileIcons = {
     {
       name: 'gatsby',
       fileNames: [
-        'gatsby-config.ts',
         'gatsby-config.js',
+        'gatsby-config.mjs',
+        'gatsby-config.ts',
         'gatsby-node.js',
+        'gatsby-node.mjs',
         'gatsby-node.ts',
         'gatsby-browser.js',
         'gatsby-browser.tsx',
@@ -1611,7 +1633,18 @@ export const fileIcons: FileIcons = {
     { name: 'mint', fileExtensions: ['mint'] },
     { name: 'velocity', fileExtensions: ['vm', 'fhtml', 'vtl'] },
     { name: 'godot', fileExtensions: ['gd'] },
-    { name: 'godot-assets', fileExtensions: ['godot', 'tres', 'tscn'] },
+    {
+      name: 'godot-assets',
+      fileExtensions: [
+        'godot',
+        'tres',
+        'tscn',
+        'gdns',
+        'gdnlib',
+        'gdshader',
+        'gdextension',
+      ],
+    },
     {
       name: 'azure-pipelines',
       fileNames: ['azure-pipelines.yml', 'azure-pipelines.yaml'],
@@ -2012,6 +2045,7 @@ export const fileIcons: FileIcons = {
         'tsconfig.cjs.json',
         'tsconfig.esm.json',
         'tsconfig.mjs.json',
+        'tsconfig.doc.json',
       ],
       fileExtensions: ['tsconfig.json'],
     },
@@ -2139,7 +2173,10 @@ export const fileIcons: FileIcons = {
     },
     { name: 'siyuan', fileExtensions: ['sy'] },
     { name: 'ndst', fileExtensions: ['ndst.yml', 'ndst.yaml', 'ndst.json'] },
-    { name: 'plop', fileNames: ['plopfile.js', 'plopfile.ts'] },
+    {
+      name: 'plop',
+      fileNames: ['plopfile.js', 'plopfile.cjs', 'plopfile.mjs', 'plopfile.ts'],
+    },
     { name: 'tobi', fileExtensions: ['tobi'] },
     { name: 'tobimake', fileNames: ['.tobimake'] },
     { name: 'gleam', fileNames: ['gleam.toml'], fileExtensions: ['gleam'] },
@@ -2168,6 +2205,7 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['cdc'],
     },
     { name: 'caddy', fileNames: ['Caddyfile'] },
+    { name: 'bun', fileNames: ['bun.lockb'], light: true },
     { name: 'antlr', fileExtensions: ['g4'] },
     { name: 'stylable', fileExtensions: ['st.css'] },
     { name: 'pinejs', fileExtensions: ['pine'] },
@@ -2209,5 +2247,10 @@ export const fileIcons: FileIcons = {
       name: 'rnconfig',
       fileNames: ['react-native.config.ts', 'react-native.config.js']
     }
+    {
+      name: 'gamemaker',
+      fileExtensions: ['gml', 'yy', 'yyp', 'yyz'],
+    },
+    { name: 'tldraw', fileExtensions: ['tldr'], light: true },
   ],
 };
