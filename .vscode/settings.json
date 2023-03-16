@@ -10,5 +10,8 @@
     "source.fixAll.eslint": true
   },
   "eslint.validate": ["typescript"],
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "material-icon-theme.files.associations": {
+    "package.nls.json": "i18n"
+  }
 }
