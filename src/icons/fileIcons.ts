@@ -2066,7 +2066,16 @@ export const fileIcons: FileIcons = {
       fileNames: ['maven.config', 'jvm.config', 'pom.xml'],
     },
     { name: 'ada', fileExtensions: ['ada', 'adb', 'ads', 'ali'] },
-    { name: 'serverless', fileNames: ['serverless.yml'] },
+    {
+      name: 'serverless',
+      fileNames: [
+        'serverless.yml',
+        'serverless.yaml',
+        'serverless.json',
+        'serverless.js',
+        'serverless.ts',
+      ],
+    },
     {
       name: 'supabase',
       fileNames: ['supabase.js', 'supabase.py'],
