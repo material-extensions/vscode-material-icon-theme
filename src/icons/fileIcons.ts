@@ -1699,6 +1699,7 @@ export const fileIcons: FileIcons = {
         'netlify.yaml',
         'netlify.toml',
       ],
+      light: true,
     },
     { name: 'svg', fileExtensions: ['svg'] },
     {
@@ -1891,15 +1892,15 @@ export const fileIcons: FileIcons = {
     {
       name: 'stryker',
       fileNames: [
-        "stryker.conf.json",
-        "stryker.conf.js",
-        "stryker.conf.cjs",
-        "stryker.conf.mjs",
-        ".stryker.conf.json",
-        ".stryker.conf.js",
-        ".stryker.conf.cjs",
-        ".stryker.conf.mjs"
-      ]
+        'stryker.conf.json',
+        'stryker.conf.js',
+        'stryker.conf.cjs',
+        'stryker.conf.mjs',
+        '.stryker.conf.json',
+        '.stryker.conf.js',
+        '.stryker.conf.cjs',
+        '.stryker.conf.mjs',
+      ],
     },
     { name: 'denizenscript', fileExtensions: ['dsc'] },
     {
