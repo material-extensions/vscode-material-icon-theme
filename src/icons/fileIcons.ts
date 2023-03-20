@@ -1888,7 +1888,19 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['nupkg'],
     },
     { name: 'command', fileExtensions: ['command'] },
-    { name: 'stryker', fileNames: ['stryker.conf.js', 'stryker.conf.json'] },
+    {
+      name: 'stryker',
+      fileNames: [
+        "stryker.conf.json",
+        "stryker.conf.js",
+        "stryker.conf.cjs",
+        "stryker.conf.mjs",
+        ".stryker.conf.json",
+        ".stryker.conf.js",
+        ".stryker.conf.cjs",
+        ".stryker.conf.mjs"
+      ]
+    },
     { name: 'denizenscript', fileExtensions: ['dsc'] },
     {
       name: 'modernizr',
