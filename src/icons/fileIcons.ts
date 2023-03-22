@@ -2258,5 +2258,14 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['gml', 'yy', 'yyp', 'yyz'],
     },
     { name: 'tldraw', fileExtensions: ['tldr'], light: true },
+    {
+      name: 'unocss',
+      fileNames: [
+        'unocss.config.ts',
+        'unocss.config.js',
+        'unocss.config.mts',
+        'unocss.config.mjs',
+      ]
+    },
   ],
 };
