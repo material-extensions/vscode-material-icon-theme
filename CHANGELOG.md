@@ -3,6 +3,26 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v4.25.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.24.0...v4.25.0) 
+
+> March 15, 2023 
+
+- Remove logo of sponsor [`#1893`](https://github.com/PKief/vscode-material-icon-theme/pull/1893)
+- build(deps-dev): bump webpack from 5.72.1 to 5.76.0 [`#1901`](https://github.com/PKief/vscode-material-icon-theme/pull/1901)
+- Additional git filenames [`#1891`](https://github.com/PKief/vscode-material-icon-theme/pull/1891)
+- Add type test file support [`#1874`](https://github.com/PKief/vscode-material-icon-theme/pull/1874)
+- Add folder name gulp-tasks [`#1875`](https://github.com/PKief/vscode-material-icon-theme/pull/1875)
+- Gatsby - add new supported file extensions [`#1886`](https://github.com/PKief/vscode-material-icon-theme/pull/1886)
+- Objective-C/C++ icons & associations [`#1888`](https://github.com/PKief/vscode-material-icon-theme/pull/1888)
+- Update bitbucket icon [`#1890`](https://github.com/PKief/vscode-material-icon-theme/pull/1890)
+- feat: :sparkles: Bun icon to bun.lockb [`#1709`](https://github.com/PKief/vscode-material-icon-theme/pull/1709)
+- feat: add GameMaker icon [`#1868`](https://github.com/PKief/vscode-material-icon-theme/pull/1868)
+- extend todo to more files [`#1879`](https://github.com/PKief/vscode-material-icon-theme/pull/1879)
+- Convert Pascal to Vector [`#1883`](https://github.com/PKief/vscode-material-icon-theme/pull/1883)
+- Expand godot-assets associations [`#1863`](https://github.com/PKief/vscode-material-icon-theme/pull/1863)
+- feat: add tldraw icon [`#1869`](https://github.com/PKief/vscode-material-icon-theme/pull/1869)
+- Add tsconfig.doc.json icon association [`c03e18d`](https://github.com/PKief/vscode-material-icon-theme/commit/c03e18d)
+ 
 #### [v4.24.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.23.1...v4.24.0) 
 
 > February 9, 2023 

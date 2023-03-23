@@ -423,6 +423,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-gulp',
         folderNames: [
           'gulp',
+          'gulp-tasks',
           'gulpfile.js',
           'gulpfile.mjs',
           'gulpfile.ts',
@@ -810,6 +811,10 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-plastic',
         folderNames: ['plastic', '.plastic'],
+      },
+      {
+        name: 'folder-gamemaker',
+        folderNames: ['gamemaker', 'gamemaker2'],
       },
     ],
   },

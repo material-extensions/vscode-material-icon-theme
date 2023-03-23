@@ -350,12 +350,14 @@ export const fileIcons: FileIcons = {
     { name: 'h', fileExtensions: ['h'] },
     {
       name: 'cpp',
-      fileExtensions: ['cc', 'cpp', 'cxx', 'c++', 'cp', 'mm', 'mii', 'ii'],
+      fileExtensions: ['cc', 'cpp', 'cxx', 'c++', 'cp', 'mii', 'ii'],
     },
     {
       name: 'hpp',
       fileExtensions: ['hh', 'hpp', 'hxx', 'h++', 'hp', 'tcc', 'inl'],
     },
+    { name: 'objective-c', fileExtensions: ['m'] },
+    { name: 'objective-cpp', fileExtensions: ['mm'] },
     { name: 'go', fileExtensions: ['go'] },
     {
       name: 'go-mod',
@@ -621,16 +623,20 @@ export const fileIcons: FileIcons = {
       name: 'git',
       fileExtensions: ['patch'],
       fileNames: [
+        '.git',
         '.gitignore',
-        '.git-blame-ignore',
-        '.git-blame-ignore-revs',
         '.gitignore-global',
         '.gitignore_global',
-        '.gitconfig',
         '.gitattributes',
+        '.gitattributes-global',
+        '.gitattributes_global',
+        '.gitconfig',
         '.gitmodules',
         '.gitkeep',
         '.gitinclude',
+        '.git-blame-ignore',
+        '.git-blame-ignore-revs',
+        '.git-for-windows-updater',
         'git-history',
       ],
     },
@@ -717,6 +723,8 @@ export const fileIcons: FileIcons = {
         'test.cts',
         'test.mts',
         'ts.snap',
+        'spec-d.ts',
+        'test-d.ts',
       ],
     },
     {
@@ -730,6 +738,8 @@ export const fileIcons: FileIcons = {
         'jsx.snap',
         'cy.jsx',
         'cy.tsx',
+        'spec-d.tsx',
+        'test-d.tsx',
       ],
     },
     {
@@ -885,7 +895,11 @@ export const fileIcons: FileIcons = {
         '.posthtmlrc.yml',
       ],
     },
-    { name: 'todo', fileExtensions: ['todo'] },
+    {
+      name: 'todo',
+      fileExtensions: ['todo'],
+      fileNames: ['todo.md', 'todos.md'],
+    },
     { name: 'coldfusion', fileExtensions: ['cfml', 'cfc', 'lucee', 'cfm'] },
     {
       name: 'cabal',
@@ -1483,9 +1497,11 @@ export const fileIcons: FileIcons = {
     {
       name: 'gatsby',
       fileNames: [
-        'gatsby-config.ts',
         'gatsby-config.js',
+        'gatsby-config.mjs',
+        'gatsby-config.ts',
         'gatsby-node.js',
+        'gatsby-node.mjs',
         'gatsby-node.ts',
         'gatsby-browser.js',
         'gatsby-browser.tsx',
@@ -1683,6 +1699,7 @@ export const fileIcons: FileIcons = {
         'netlify.yaml',
         'netlify.toml',
       ],
+      light: true,
     },
     { name: 'svg', fileExtensions: ['svg'] },
     {
@@ -1872,7 +1889,19 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['nupkg'],
     },
     { name: 'command', fileExtensions: ['command'] },
-    { name: 'stryker', fileNames: ['stryker.conf.js', 'stryker.conf.json'] },
+    {
+      name: 'stryker',
+      fileNames: [
+        'stryker.conf.json',
+        'stryker.conf.js',
+        'stryker.conf.cjs',
+        'stryker.conf.mjs',
+        '.stryker.conf.json',
+        '.stryker.conf.js',
+        '.stryker.conf.cjs',
+        '.stryker.conf.mjs',
+      ],
+    },
     { name: 'denizenscript', fileExtensions: ['dsc'] },
     {
       name: 'modernizr',
@@ -2050,7 +2079,16 @@ export const fileIcons: FileIcons = {
       fileNames: ['maven.config', 'jvm.config', 'pom.xml'],
     },
     { name: 'ada', fileExtensions: ['ada', 'adb', 'ads', 'ali'] },
-    { name: 'serverless', fileNames: ['serverless.yml'] },
+    {
+      name: 'serverless',
+      fileNames: [
+        'serverless.yml',
+        'serverless.yaml',
+        'serverless.json',
+        'serverless.js',
+        'serverless.ts',
+      ],
+    },
     {
       name: 'supabase',
       fileNames: ['supabase.js', 'supabase.py'],
@@ -2185,6 +2223,7 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['cdc'],
     },
     { name: 'caddy', fileNames: ['Caddyfile'] },
+    { name: 'bun', fileNames: ['bun.lockb'], light: true },
     { name: 'antlr', fileExtensions: ['g4'] },
     { name: 'stylable', fileExtensions: ['st.css'] },
     { name: 'pinejs', fileExtensions: ['pine'] },
@@ -2213,6 +2252,10 @@ export const fileIcons: FileIcons = {
         '.cracorc.js',
         '.cracorc',
       ],
+    },
+    {
+      name: 'gamemaker',
+      fileExtensions: ['gml', 'yy', 'yyp', 'yyz'],
     },
     { name: 'tldraw', fileExtensions: ['tldr'], light: true },
     {
