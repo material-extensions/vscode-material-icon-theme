@@ -2265,7 +2265,8 @@ export const fileIcons: FileIcons = {
         'unocss.config.js',
         'unocss.config.mts',
         'unocss.config.mjs',
-      ]
+      ],
+      light: true,
     },
   ],
 };
