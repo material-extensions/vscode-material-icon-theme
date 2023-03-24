@@ -1936,6 +1936,8 @@ export const fileIcons: FileIcons = {
         'mcstructure',
         'mcpack',
         'mcaddon',
+        'mctemplate',
+        'mcproject',
       ],
       fileNames: ['.mcattributes', '.mcdefinitions', '.mcignore'],
     },
