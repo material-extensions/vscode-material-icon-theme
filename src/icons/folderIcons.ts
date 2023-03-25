@@ -111,7 +111,7 @@ export const folderIcons: FolderTheme[] = [
           '.submodules',
         ],
       },
-      { name: 'folder-github', folderNames: ['.github'] },
+      { name: 'folder-github', folderNames: ['.github', 'github'] },
       { name: 'folder-gitlab', folderNames: ['.gitlab'] },
       { name: 'folder-vscode', folderNames: ['.vscode', '.vscode-test'] },
       {
