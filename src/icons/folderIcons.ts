@@ -809,6 +809,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['protobufs', 'proto'],
       },
       {
+        name: 'folder-plastic',
+        folderNames: ['plastic', '.plastic'],
+      },
+      {
         name: 'folder-gamemaker',
         folderNames: ['gamemaker', 'gamemaker2'],
       },
