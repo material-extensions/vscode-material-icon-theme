@@ -2272,5 +2272,6 @@ export const fileIcons: FileIcons = {
         'plastic.workspaces',
       ],
     },
+    { name: 'typst', fileExtensions: ['typ'] },
   ],
 };
