@@ -1,6 +1,7 @@
 import { commands } from 'vscode';
 import { activateIcons } from './activate';
 import { toggleExplorerArrows } from './explorerArrows';
+import { changeFileColor } from './fileColor';
 import { changeFolderColor } from './folderColor';
 import { changeFolderTheme } from './folders';
 import { toggleGrayscale } from './grayscale';
@@ -14,6 +15,7 @@ const extensionCommands: { [commmand: string]: () => Promise<void> } = {
   toggleIconPacks,
   changeFolderTheme,
   changeFolderColor,
+  changeFileColor,
   restoreDefaultConfig,
   toggleExplorerArrows,
   changeOpacity,

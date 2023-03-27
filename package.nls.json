@@ -3,6 +3,7 @@
   "command.toggleIconPacks": "Material Icons: Configure Icon Packs",
   "command.changeFolderTheme": "Material Icons: Change Folder Theme",
   "command.changeFolderColor": "Material Icons: Change Folder Color",
+  "command.changeFileColor": "Material Icons: Change File Color",
   "command.restoreDefaultConfig": "Material Icons: Restore Default Configuration",
   "command.toggleExplorerArrows": "Material Icons: Toggle Explorer Arrows",
   "command.changeOpacity": "Material Icons: Change Opacity",
@@ -26,6 +27,7 @@
   "configuration.folders.theme.classic": "Select classic folder icons.",
   "configuration.folders.theme.none": "No folder icons.",
   "configuration.folders.color": "Change the color of the folder icons.",
+  "configuration.files.color": "Change the color of the file icons.",
   "configuration.hidesExplorerArrows": "Hide explorer arrows before folder.",
   "configuration.opacity": "Change the opacity of the icons.",
   "configuration.saturation": "Change the saturation of the icons."
