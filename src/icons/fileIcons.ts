@@ -2274,7 +2274,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'peg',
-      fileExtensions: ['pegjs', 'pest', 'gram'],
+      fileExtensions: ['peg', 'cleanpeg', 'pegjs', 'pest', 'gram'],
     },
   ],
 };
