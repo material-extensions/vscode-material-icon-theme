@@ -2272,5 +2272,9 @@ export const fileIcons: FileIcons = {
         'plastic.workspaces',
       ],
     },
+    {
+      name: 'peg',
+      fileExtensions: ['pegjs', 'pest'],
+    },
   ],
 };
