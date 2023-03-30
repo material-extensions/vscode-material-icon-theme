@@ -2263,6 +2263,11 @@ export const fileIcons: FileIcons = {
     },
     { name: 'tldraw', fileExtensions: ['tldr'], light: true },
     {
+      name: 'deno',
+      fileNames: ['deno.json', 'deno.jsonc', 'deno.lock'],
+      light: true,
+    },
+    {
       name: 'plastic',
       fileNames: [
         'plastic.branchexplorer',
