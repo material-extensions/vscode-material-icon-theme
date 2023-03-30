@@ -1638,8 +1638,10 @@ export const fileIcons: FileIcons = {
         'gdns',
         'gdnlib',
         'gdshader',
+        'gdshaderinc',
         'gdextension',
       ],
+      fileNames: ['.gdignore', '._sc_', '_sc_'],
     },
     {
       name: 'azure-pipelines',
@@ -1699,6 +1701,7 @@ export const fileIcons: FileIcons = {
         'netlify.yaml',
         'netlify.toml',
       ],
+      light: true,
     },
     { name: 'svg', fileExtensions: ['svg'] },
     {
@@ -1888,7 +1891,19 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['nupkg'],
     },
     { name: 'command', fileExtensions: ['command'] },
-    { name: 'stryker', fileNames: ['stryker.conf.js', 'stryker.conf.json'] },
+    {
+      name: 'stryker',
+      fileNames: [
+        'stryker.conf.json',
+        'stryker.conf.js',
+        'stryker.conf.cjs',
+        'stryker.conf.mjs',
+        '.stryker.conf.json',
+        '.stryker.conf.js',
+        '.stryker.conf.cjs',
+        '.stryker.conf.mjs',
+      ],
+    },
     { name: 'denizenscript', fileExtensions: ['dsc'] },
     {
       name: 'modernizr',
@@ -1921,6 +1936,8 @@ export const fileIcons: FileIcons = {
         'mcstructure',
         'mcpack',
         'mcaddon',
+        'mctemplate',
+        'mcproject',
       ],
       fileNames: ['.mcattributes', '.mcdefinitions', '.mcignore'],
     },
@@ -2066,7 +2083,16 @@ export const fileIcons: FileIcons = {
       fileNames: ['maven.config', 'jvm.config', 'pom.xml'],
     },
     { name: 'ada', fileExtensions: ['ada', 'adb', 'ads', 'ali'] },
-    { name: 'serverless', fileNames: ['serverless.yml'] },
+    {
+      name: 'serverless',
+      fileNames: [
+        'serverless.yml',
+        'serverless.yaml',
+        'serverless.json',
+        'serverless.js',
+        'serverless.ts',
+      ],
+    },
     {
       name: 'supabase',
       fileNames: ['supabase.js', 'supabase.py'],
@@ -2241,5 +2267,16 @@ export const fileIcons: FileIcons = {
       fileNames: ['deno.json', 'deno.jsonc', 'deno.lock'],
       light: true,
     },
+    {
+      name: 'plastic',
+      fileNames: [
+        'plastic.branchexplorer',
+        'plastic.selector',
+        'plastic.wktree',
+        'plastic.workspace',
+        'plastic.workspaces',
+      ],
+    },
+    { name: 'typst', fileExtensions: ['typ'] },
   ],
 };
