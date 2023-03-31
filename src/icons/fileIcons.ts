@@ -358,6 +358,7 @@ export const fileIcons: FileIcons = {
     },
     { name: 'objective-c', fileExtensions: ['m'] },
     { name: 'objective-cpp', fileExtensions: ['mm'] },
+    { name: 'rc', fileExtensions: ['rc'] },
     { name: 'go', fileExtensions: ['go'] },
     {
       name: 'go-mod',
