@@ -361,6 +361,10 @@ export const fileIcons: FileIcons = {
     { name: 'rc', fileExtensions: ['rc'] },
     { name: 'go', fileExtensions: ['go'] },
     {
+      name: 'test-go',
+      fileExtensions: ['_test.go'],
+    },
+    {
       name: 'go-mod',
       fileNames: ['go.mod', 'go.sum', 'go.work', 'go.work.sum'],
     },
