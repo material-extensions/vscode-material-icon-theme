@@ -5,7 +5,6 @@ import { LanguageIcon } from '../models';
  */
 export const languageIcons: LanguageIcon[] = [
   { icon: { name: 'git' }, ids: ['git', 'git-commit', 'git-rebase', 'ignore'] },
-  { icon: { name: 'c' }, ids: ['c', 'objective-c', 'objective-cpp'] },
   { icon: { name: 'yaml' }, ids: ['yaml'] },
   { icon: { name: 'xml' }, ids: ['xml', 'xquery', 'xsl'] },
   { icon: { name: 'matlab' }, ids: ['matlab'] },
@@ -77,6 +76,7 @@ export const languageIcons: LanguageIcon[] = [
   { icon: { name: 'django' }, ids: ['django-html', 'django-txt'] },
   { icon: { name: 'html' }, ids: ['html'] },
   { icon: { name: 'godot' }, ids: ['gdscript'] },
+  { icon: { name: 'godot-assets' }, ids: ['gdresource', 'gdshader'] },
   { icon: { name: 'vim' }, ids: ['viml'] },
   { icon: { name: 'silverstripe' }, ids: [] },
   { icon: { name: 'prolog' }, ids: ['prolog'] },
@@ -90,7 +90,10 @@ export const languageIcons: LanguageIcon[] = [
   { icon: { name: 'table' }, ids: ['csv', 'tsv', 'psv'] },
   { icon: { name: 'csharp' }, ids: ['csharp'] },
   { icon: { name: 'console' }, ids: ['bat', 'awk', 'shellscript'] },
+  { icon: { name: 'c' }, ids: ['c'] },
   { icon: { name: 'cpp' }, ids: ['cpp'] },
+  { icon: { name: 'objective-c' }, ids: ['objective-c'] },
+  { icon: { name: 'objective-cpp' }, ids: ['objective-cpp'] },
   { icon: { name: 'coffee' }, ids: ['coffeescript'] },
   { icon: { name: 'fsharp' }, ids: ['fsharp'] },
   { icon: { name: 'editorconfig' }, ids: ['editorconfig'] },
@@ -133,4 +136,9 @@ export const languageIcons: LanguageIcon[] = [
   { icon: { name: 'vlang' }, ids: ['v'] },
   { icon: { name: 'wolframlanguage' }, ids: ['wolfram'] },
   { icon: { name: 'shader' }, ids: ['hlsl', 'glsl', 'wgsl'] },
+  { icon: { name: 'tree' }, ids: ['tree'] },
+  { icon: { name: 'svelte' }, ids: ['svelte'] },
+  { icon: { name: 'dart' }, ids: ['dart'] },
+  { icon: { name: 'cadence' }, ids: ['cadence'] },
+  { icon: { name: 'stylable' }, ids: ['stylable'] },
 ];

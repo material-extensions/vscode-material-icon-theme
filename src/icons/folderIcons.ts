@@ -25,6 +25,10 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-images',
         folderNames: [
+          '_images',
+          '_image',
+          '_imgs',
+          '_img',
           'images',
           'image',
           'imgs',
@@ -83,6 +87,8 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-docs',
         folderNames: [
+          '_post',
+          '_posts',
           'doc',
           'docs',
           'document',
@@ -105,7 +111,7 @@ export const folderIcons: FolderTheme[] = [
           '.submodules',
         ],
       },
-      { name: 'folder-github', folderNames: ['.github'] },
+      { name: 'folder-github', folderNames: ['.github', 'github'] },
       { name: 'folder-gitlab', folderNames: ['.gitlab'] },
       { name: 'folder-vscode', folderNames: ['.vscode', '.vscode-test'] },
       {
@@ -162,7 +168,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-components',
-        folderNames: ['components', 'widget', 'widgets'],
+        folderNames: ['components', 'widget', 'widgets', 'fragments'],
       },
       {
         name: 'folder-verdaccio',
@@ -209,7 +215,17 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-global', folderNames: ['global'] },
       {
         name: 'folder-public',
-        folderNames: ['public', 'www', 'wwwroot', 'web', 'website', 'site'],
+        folderNames: [
+          '_site',
+          'public',
+          'www',
+          'wwwroot',
+          'web',
+          'website',
+          'site',
+          'browser',
+          'browsers',
+        ],
       },
       {
         name: 'folder-include',
@@ -368,6 +384,7 @@ export const folderIcons: FolderTheme[] = [
           'miscellaneous',
           'extra',
           'extras',
+          'etc',
         ],
       },
       { name: 'folder-lua', folderNames: ['lua'] },
@@ -406,6 +423,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-gulp',
         folderNames: [
           'gulp',
+          'gulp-tasks',
           'gulpfile.js',
           'gulpfile.mjs',
           'gulpfile.ts',
@@ -457,7 +475,10 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-ios', folderNames: ['ios'] },
       { name: 'folder-upload', folderNames: ['uploads', 'upload'] },
       { name: 'folder-download', folderNames: ['downloads', 'download'] },
-      { name: 'folder-tools', folderNames: ['tools'] },
+      {
+        name: 'folder-tools',
+        folderNames: ['tools', 'toolkit', 'toolkits', 'toolbox', 'toolboxes'],
+      },
       { name: 'folder-helper', folderNames: ['helpers', 'helper'] },
       { name: 'folder-serverless', folderNames: ['.serverless', 'serverless'] },
       { name: 'folder-api', folderNames: ['api', 'apis', 'restapi'] },
@@ -576,6 +597,7 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-mappings', folderNames: ['mappings', 'mapping'] },
       { name: 'folder-meta', folderNames: ['meta'] },
+      { name: 'folder-changesets', folderNames: ['.changesets', '.changeset'] },
       {
         name: 'folder-packages',
         folderNames: ['package', 'packages', 'pkg', 'pkgs'],
@@ -591,6 +613,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-utils',
         folderNames: ['util', 'utils', 'utility', 'utilities'],
       },
+      { name: 'folder-supabase', folderNames: ['supabase', '.supabase'] },
       { name: 'folder-private', folderNames: ['private', '.private'] },
       { name: 'folder-error', folderNames: ['error', 'errors', 'err'] },
       { name: 'folder-event', folderNames: ['event', 'events'] },
@@ -612,6 +635,8 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-mock',
         folderNames: [
+          '_draft',
+          '_drafts',
           'mock',
           'mocks',
           'fixture',
@@ -692,7 +717,7 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['.azure-pipelines', '.azure-pipelines-ci'],
       },
       { name: 'folder-mjml', folderNames: ['mjml'] },
-      { name: 'folder-admin', folderNames: ['admin'] },
+      { name: 'folder-admin', folderNames: ['admin', 'manager', 'moderator'] },
       { name: 'folder-scala', folderNames: ['scala'] },
       {
         name: 'folder-connection',
@@ -712,7 +737,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-storybook',
         folderNames: ['.storybook', 'storybook', 'stories', '__stories__'],
       },
-      { name: 'folder-base', folderNames: ['base', '.base'] },
+      { name: 'folder-base', folderNames: ['base', '.base', 'bases'] },
       {
         name: 'folder-cart',
         folderNames: ['cart', 'shopping-cart', 'shopping', 'shop'],
@@ -729,6 +754,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-interface',
         folderNames: ['interface', 'interfaces'],
       },
+      { name: 'folder-netlify', folderNames: ['.netlify'] },
       {
         name: 'folder-contract',
         folderNames: [
@@ -755,6 +781,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['cypress', '.cypress'],
       },
       {
+        name: 'folder-decorators',
+        folderNames: ['decorator', 'decorators'],
+      },
+      {
         name: 'folder-java',
         folderNames: ['java'],
       },
@@ -764,11 +794,31 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-angular',
-        folderNames: ['.angular'],
+        folderNames: ['angular', '.angular'],
       },
       {
         name: 'folder-unity',
         folderNames: ['unity'],
+      },
+      {
+        name: 'folder-pdf',
+        folderNames: ['pdf', 'pdfs'],
+      },
+      {
+        name: 'folder-proto',
+        folderNames: ['protobufs', 'proto'],
+      },
+      {
+        name: 'folder-plastic',
+        folderNames: ['plastic', '.plastic'],
+      },
+      {
+        name: 'folder-gamemaker',
+        folderNames: ['gamemaker', 'gamemaker2'],
+      },
+      {
+        name: 'folder-godot',
+        folderNames: ['godot', '.godot', 'godot-cpp', '.godot-cpp'],
       },
     ],
   },
