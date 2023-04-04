@@ -10,17 +10,16 @@
 <h4 align="center">Get the Material Design icons into your VS Code.</h4>
 
 <p align="center">
-    <a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"><img src="https://vsmarketplacebadge.apphb.com/version-short/pkief.material-icon-theme.svg?style=for-the-badge&colorA=252526&colorB=43A047&label=VERSION" alt="Version"></a>&nbsp;
-    <a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"><img src="https://vsmarketplacebadge.apphb.com/rating-short/pkief.material-icon-theme.svg?style=for-the-badge&colorA=252526&colorB=43A047&label=Rating" alt="Rating"></a>&nbsp;
-    <a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"><img src="https://vsmarketplacebadge.apphb.com/installs-short/PKief.material-icon-theme.svg?style=for-the-badge&colorA=252526&colorB=43A047&label=Installs" alt="Installs"></a>&nbsp;
-    <a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"><img src="https://vsmarketplacebadge.apphb.com/downloads-short/PKief.material-icon-theme.svg?style=for-the-badge&colorA=252526&colorB=43A047&label=Downloads" alt="Downloads"></a>
+    <a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"><img src="https://vsmarketplacebadges.dev/version-short/pkief.material-icon-theme.svg?style=for-the-badge&colorA=252526&colorB=43A047&label=VERSION" alt="Version"></a>&nbsp;
+    <a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"><img src="https://vsmarketplacebadges.dev/rating-short/pkief.material-icon-theme.svg?style=for-the-badge&colorA=252526&colorB=43A047&label=Rating" alt="Rating"></a>&nbsp;
+    <a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"><img src="https://vsmarketplacebadges.dev/installs-short/PKief.material-icon-theme.svg?style=for-the-badge&colorA=252526&colorB=43A047&label=Installs" alt="Installs"></a>&nbsp;
+    <a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"><img src="https://vsmarketplacebadges.dev/downloads-short/PKief.material-icon-theme.svg?style=for-the-badge&colorA=252526&colorB=43A047&label=Downloads" alt="Downloads"></a>
 </p>
 
 <p align="center"><br>
 <b>Sponsored by</b><br><br>
 <a title="Try CodeStream" href="https://sponsorlink.codestream.com/?utm_source=vscmarket&amp;utm_campaign=pkief_material&amp;utm_medium=banner"><img width="198px" src="https://alt-images.codestream.com/codestream_logo_pkief_material.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a title="Try Stepsize" href="https://marketplace.visualstudio.com/items?itemName=Stepsize.stepsize"><img width="200px" src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/stepsize.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a title="Try Bloop" href="https://bloop.ai/?utm_source=vscmarket&utm_campaign=material-icon-theme&utm_medium=banner"><img width="150px" src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/bloop.png"></a>
 </p>
 
 ### File icons
@@ -168,17 +167,17 @@ Press `Ctrl-Shift-P` to open the command palette and type `Material Icons`.
 
 <p></p>
 
-| Command                           | Description                                                                        |
-| --------------------------------- | ---------------------------------------------------------------------------------- |
-| **Activate Icon Theme**           | Activate the icon theme.                                                           |
-| **Change Folder Color**           | Change the color of the folder icons.                                              |
-| **Change Folder Theme**           | Change the design of the folder icons.                                             |
-| **Change Opacity**                | Change the opacity of the icons.                                                   |
-| **Change Saturation**             | Change the saturation value of the icons.                                          |
-| **Configure Icon Packs**          | Selects an icon pack that enables additional icons (e.g. for Angular, React, Ngrx).|
-| **Toggle Explorer Arrows**        | Show or hide the arrows next to the folder icons.                                  |
-| **Restore Default Configuration** | Reset to the default configuration.                                                |
-| **Toggle Grayscale**              | Set icon saturation to `0` (grayscale), or `1` (color).                           |
+| Command                           | Description                                                                         |
+| --------------------------------- | ----------------------------------------------------------------------------------- |
+| **Activate Icon Theme**           | Activate the icon theme.                                                            |
+| **Change Folder Color**           | Change the color of the folder icons.                                               |
+| **Change Folder Theme**           | Change the design of the folder icons.                                              |
+| **Change Opacity**                | Change the opacity of the icons.                                                    |
+| **Change Saturation**             | Change the saturation value of the icons.                                           |
+| **Configure Icon Packs**          | Selects an icon pack that enables additional icons (e.g. for Angular, React, Ngrx). |
+| **Toggle Explorer Arrows**        | Show or hide the arrows next to the folder icons.                                   |
+| **Restore Default Configuration** | Reset to the default configuration.                                                 |
+| **Toggle Grayscale**              | Set icon saturation to `0` (grayscale), or `1` (color).                             |
 
 ## Icon sources
 

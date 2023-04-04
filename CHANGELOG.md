@@ -3,6 +3,50 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v4.25.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.24.0...v4.25.0) 
+
+> March 15, 2023 
+
+- Remove logo of sponsor [`#1893`](https://github.com/PKief/vscode-material-icon-theme/pull/1893)
+- build(deps-dev): bump webpack from 5.72.1 to 5.76.0 [`#1901`](https://github.com/PKief/vscode-material-icon-theme/pull/1901)
+- Additional git filenames [`#1891`](https://github.com/PKief/vscode-material-icon-theme/pull/1891)
+- Add type test file support [`#1874`](https://github.com/PKief/vscode-material-icon-theme/pull/1874)
+- Add folder name gulp-tasks [`#1875`](https://github.com/PKief/vscode-material-icon-theme/pull/1875)
+- Gatsby - add new supported file extensions [`#1886`](https://github.com/PKief/vscode-material-icon-theme/pull/1886)
+- Objective-C/C++ icons & associations [`#1888`](https://github.com/PKief/vscode-material-icon-theme/pull/1888)
+- Update bitbucket icon [`#1890`](https://github.com/PKief/vscode-material-icon-theme/pull/1890)
+- feat: :sparkles: Bun icon to bun.lockb [`#1709`](https://github.com/PKief/vscode-material-icon-theme/pull/1709)
+- feat: add GameMaker icon [`#1868`](https://github.com/PKief/vscode-material-icon-theme/pull/1868)
+- extend todo to more files [`#1879`](https://github.com/PKief/vscode-material-icon-theme/pull/1879)
+- Convert Pascal to Vector [`#1883`](https://github.com/PKief/vscode-material-icon-theme/pull/1883)
+- Expand godot-assets associations [`#1863`](https://github.com/PKief/vscode-material-icon-theme/pull/1863)
+- feat: add tldraw icon [`#1869`](https://github.com/PKief/vscode-material-icon-theme/pull/1869)
+- Add tsconfig.doc.json icon association [`c03e18d`](https://github.com/PKief/vscode-material-icon-theme/commit/c03e18d)
+ 
+#### [v4.24.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.23.1...v4.24.0) 
+
+> February 9, 2023 
+
+- Add folder icon for "angular" folder name [`#1859`](https://github.com/PKief/vscode-material-icon-theme/pull/1859)
+- Add  icon for .git-blame-ignore-revs [`#1836`](https://github.com/PKief/vscode-material-icon-theme/pull/1836)
+- Update contributions guidelines [`#1833`](https://github.com/PKief/vscode-material-icon-theme/pull/1833)
+- Add icon for code_of_conduct [`#1759`](https://github.com/PKief/vscode-material-icon-theme/pull/1759)
+- Added icon support for typical jekyll folders [`#1832`](https://github.com/PKief/vscode-material-icon-theme/pull/1832)
+- Add .cjs and .mjs extensions to `plop` fileNames [`#1819`](https://github.com/PKief/vscode-material-icon-theme/pull/1819)
+- Add .cjs extension to `graphql.config` [`#1818`](https://github.com/PKief/vscode-material-icon-theme/pull/1818)
+- Add Toolkit (Toolkits) and Toolbox (Toolboxes) [`#1809`](https://github.com/PKief/vscode-material-icon-theme/pull/1809)
+ 
+#### [v4.23.1](https://github.com/PKief/vscode-material-icon-theme/compare/v4.23.0...v4.23.1) 
+
+> December 23, 2022 
+
+- Add support for vitest config files [`#1572`](https://github.com/PKief/vscode-material-icon-theme/pull/1572)
+- Add icons for vscode files [`#1803`](https://github.com/PKief/vscode-material-icon-theme/pull/1803)
+- Add manager / moderator folder icon [`#1802`](https://github.com/PKief/vscode-material-icon-theme/pull/1802)
+- Update release workflow [`68bc32f`](https://github.com/PKief/vscode-material-icon-theme/commit/68bc32f)
+- Update badges in Readme [`#1796`](https://github.com/PKief/vscode-material-icon-theme/pull/1796)
+- add filename .env.uat into tune icon [`#1801`](https://github.com/PKief/vscode-material-icon-theme/pull/1801)
+ 
 #### [v4.23.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.22.0...v4.23.0) 
 
 > December 15, 2022 
