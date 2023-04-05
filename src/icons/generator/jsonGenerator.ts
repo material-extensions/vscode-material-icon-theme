@@ -15,6 +15,7 @@ import { folderIcons } from '../folderIcons';
 import { languageIcons } from '../languageIcons';
 import { iconJsonName } from './constants';
 import {
+  generateFileIcons,
   generateFolderIcons,
   loadFileIconDefinitions,
   loadFolderIconDefinitions,
@@ -93,12 +94,24 @@ export const createIconFile = (
   ) {
     throw Error('Material Icons: Invalid folder color value!');
   }
+  if (
+    updatedConfigs?.files?.color &&
+    !validateHEXColorCode(updatedConfigs?.files?.color)
+  ) {
+    throw Error('Material Icons: Invalid file color value!');
+  }
 
   try {
     let iconJsonPath = __dirname;
     // if executed via script
     if (basename(__dirname) !== 'dist') {
       iconJsonPath = join(__dirname, '..', '..', '..', 'dist');
+    }
+    if (!updatedConfigs || (updatedConfigs.files || {}).color) {
+      // if updatedConfigs do not exist (because of initial setup)
+      // or new config value was detected by the change detection
+      generateFileIcons(options.files?.color);
+      setIconOpacity(options, ['file.svg']);
     }
     if (!updatedConfigs || (updatedConfigs.folders || {}).color) {
       // if updatedConfigs do not exist (because of initial setup)
@@ -153,7 +166,10 @@ export const getDefaultIconOptions = (): Required<IconJsonOptions> => ({
   hidesExplorerArrows: false,
   opacity: 1,
   saturation: 1,
-  files: { associations: {} },
+  files: {
+    color: '#90a4ae',
+    associations: {},
+  },
   languages: { associations: {} },
 });
 

@@ -9,6 +9,7 @@ export interface IconJsonOptions {
     associations?: IconAssociations;
   };
   files?: {
+    color?: string;
     associations?: IconAssociations;
   };
   languages?: {
