@@ -358,6 +358,7 @@ export const fileIcons: FileIcons = {
     },
     { name: 'objective-c', fileExtensions: ['m'] },
     { name: 'objective-cpp', fileExtensions: ['mm'] },
+    { name: 'rc', fileExtensions: ['rc'] },
     { name: 'go', fileExtensions: ['go'] },
     {
       name: 'go-mod',
@@ -2272,6 +2273,11 @@ export const fileIcons: FileIcons = {
         'hgrc',
         'mercurial.ini',
       ],
+    },
+    {
+      name: 'deno',
+      fileNames: ['deno.json', 'deno.jsonc', 'deno.lock'],
+      light: true,
     },
     {
       name: 'plastic',
