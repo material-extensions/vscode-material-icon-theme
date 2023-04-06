@@ -30,9 +30,9 @@
 
 <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/folderIcons.png" alt="folder icons">
 
-#### Customize folder color
+#### Customize file & folder color
 
-You can change the color of the default folder icon using the command palette:
+You can change the color of the default file and folder icons using the command palette:
 
 <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/set-folder-color.gif" alt="custom folder colors">
 
@@ -40,6 +40,7 @@ or via user settings:
 
 ```json
 "material-icon-theme.folders.color": "#ef5350",
+"material-icon-theme.files.color": "#42a5f5",
 ```
 
 #### Folder themes
@@ -170,6 +171,7 @@ Press `Ctrl-Shift-P` to open the command palette and type `Material Icons`.
 | Command                           | Description                                                                         |
 | --------------------------------- | ----------------------------------------------------------------------------------- |
 | **Activate Icon Theme**           | Activate the icon theme.                                                            |
+| **Change File Color**             | Change the color of the file icons.                                                 |
 | **Change Folder Color**           | Change the color of the folder icons.                                               |
 | **Change Folder Theme**           | Change the design of the folder icons.                                              |
 | **Change Opacity**                | Change the opacity of the icons.                                                    |

@@ -10,13 +10,15 @@ export const translation: Translation = {
   },
   folders: {
     toggleIcons: 'フォルダーアイコンを切り替える',
-    color: 'フォルダーの色を切り替える',
-    hexCode: 'HEX カラーコードを入力する',
-    wrongHexCode: '無効な HEX カラーコードです！',
     disabled: 'フォルダーアイコンを表示しない',
     theme: {
       description: "フォルダーテーマ '%0' を選択する",
     },
+  },
+  colorSelect: {
+    color: '色を変える',
+    hexCode: 'HEX カラーコードを入力する',
+    wrongHexCode: '無効な HEX カラーコードです！',
   },
   opacity: {
     inputPlaceholder: '不透明度（0〜1）',

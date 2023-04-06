@@ -108,6 +108,11 @@
         "enablement": "!isWeb"
       },
       {
+        "command": "material-icon-theme.changeFileColor",
+        "title": "%command.changeFileColor%",
+        "enablement": "!isWeb"
+      },
+      {
         "command": "material-icon-theme.restoreDefaultConfig",
         "title": "%command.restoreDefaultConfig%",
         "enablement": "!isWeb"
@@ -197,6 +202,12 @@
           "default": "#90a4ae",
           "pattern": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
           "description": "%configuration.folders.color%"
+        },
+        "material-icon-theme.files.color": {
+          "type": "string",
+          "default": "#90a4ae",
+          "pattern": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+          "description": "%configuration.files.color%"
         },
         "material-icon-theme.opacity": {
           "type": "number",

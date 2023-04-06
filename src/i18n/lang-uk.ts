@@ -10,13 +10,15 @@ export const translation: Translation = {
   },
   folders: {
     toggleIcons: 'Переключити теку icons',
-    color: 'Виберіть колір папки',
-    hexCode: 'Введіть HEX колірний код',
-    wrongHexCode: 'Недійсний HEX колірний код!',
     disabled: 'Немає піктограм папок',
     theme: {
       description: "Виберіть тему папки '%0'",
     },
+  },
+  colorSelect: {
+    color: 'Виберіть колір',
+    hexCode: 'Введіть HEX колірний код',
+    wrongHexCode: 'Недійсний HEX колірний код!',
   },
   opacity: {
     inputPlaceholder: 'Значення непрозорості (від 0 до 1)',

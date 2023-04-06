@@ -358,6 +358,7 @@ export const fileIcons: FileIcons = {
     },
     { name: 'objective-c', fileExtensions: ['m'] },
     { name: 'objective-cpp', fileExtensions: ['mm'] },
+    { name: 'rc', fileExtensions: ['rc'] },
     { name: 'go', fileExtensions: ['go'] },
     {
       name: 'go-mod',
@@ -1638,8 +1639,10 @@ export const fileIcons: FileIcons = {
         'gdns',
         'gdnlib',
         'gdshader',
+        'gdshaderinc',
         'gdextension',
       ],
+      fileNames: ['.gdignore', '._sc_', '_sc_'],
     },
     {
       name: 'azure-pipelines',
@@ -1934,6 +1937,8 @@ export const fileIcons: FileIcons = {
         'mcstructure',
         'mcpack',
         'mcaddon',
+        'mctemplate',
+        'mcproject',
       ],
       fileNames: ['.mcattributes', '.mcdefinitions', '.mcignore'],
     },
@@ -2258,6 +2263,22 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['gml', 'yy', 'yyp', 'yyz'],
     },
     { name: 'tldraw', fileExtensions: ['tldr'], light: true },
+    {
+      name: 'deno',
+      fileNames: ['deno.json', 'deno.jsonc', 'deno.lock'],
+      light: true,
+    },
+    {
+      name: 'plastic',
+      fileNames: [
+        'plastic.branchexplorer',
+        'plastic.selector',
+        'plastic.wktree',
+        'plastic.workspace',
+        'plastic.workspaces',
+      ],
+    },
+    { name: 'typst', fileExtensions: ['typ'] },
     {
       name: 'unocss',
       fileNames: [

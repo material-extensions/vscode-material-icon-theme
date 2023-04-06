@@ -10,13 +10,15 @@ export const translation: Translation = {
   },
   folders: {
     toggleIcons: 'Escolhe um tema para os directórios',
-    color: 'Escolhe uma cor para os directórios',
-    hexCode: 'Insira um código de cor hexadecimal',
-    wrongHexCode: 'Código de cor hexadecimal inválido!',
     disabled: 'Nenhum ícone do directório',
     theme: {
       description: "Seleccionar o tema para directórios '%0'",
     },
+  },
+  colorSelect: {
+    color: 'Escolhe uma cor',
+    hexCode: 'Insira um código de cor hexadecimal',
+    wrongHexCode: 'Código de cor hexadecimal inválido!',
   },
   opacity: {
     inputPlaceholder: 'Valor de opacidade (entre 0 e 1)',
