@@ -817,6 +817,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['gamemaker', 'gamemaker2'],
       },
       {
+        name: 'folder-mercurial',
+        folderNames: ['.hg', 'hghooks', '.hghooks', '.hgext'],
+      },
+      {
         name: 'folder-godot',
         folderNames: ['godot', '.godot', 'godot-cpp', '.godot-cpp'],
       },

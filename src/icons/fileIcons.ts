@@ -2264,6 +2264,17 @@ export const fileIcons: FileIcons = {
     },
     { name: 'tldraw', fileExtensions: ['tldr'], light: true },
     {
+      name: 'mercurial',
+      fileNames: [
+        '.hg',
+        '.hgignore',
+        '.hgflow',
+        '.hgrc',
+        'hgrc',
+        'mercurial.ini',
+      ],
+    },
+    {
       name: 'deno',
       fileNames: ['deno.json', 'deno.jsonc', 'deno.lock'],
       light: true,
