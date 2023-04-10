@@ -2290,5 +2290,6 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'typst', fileExtensions: ['typ'] },
+    { name: 'ifanr-cloud', fileNames: ['.mincloudrc'] },
   ],
 };
