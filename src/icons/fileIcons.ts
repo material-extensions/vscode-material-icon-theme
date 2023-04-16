@@ -2325,5 +2325,6 @@ export const fileIcons: FileIcons = {
     },
     { name: 'typst', fileExtensions: ['typ'] },
     { name: 'swagger', fileExtensions: ['swagger.ts', 'swagger.js', 'swagger.json'],  light: true,},
+    { name: 'ifanr-cloud', fileNames: ['.mincloudrc'] },
   ],
 };
