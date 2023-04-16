@@ -723,6 +723,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-cobol', folderNames: ['cobol'] },
       { name: 'folder-yarn', folderNames: ['yarn', '.yarn'] },
       { name: 'folder-husky', folderNames: ['husky', '.husky'] },
+      { name: 'folder-windows', folderNames: ['windows'] },
       {
         name: 'folder-storybook',
         folderNames: ['.storybook', 'storybook', 'stories', '__stories__'],
