@@ -2332,6 +2332,14 @@ export const fileIcons: FileIcons = {
     },
     { name: 'typst', fileExtensions: ['typ'] },
     { name: 'ifanr-cloud', fileNames: ['.mincloudrc'] },
+    {
+      name: 'wechat-miniprogram',
+      fileNames: [
+        'project.config.json',
+        'project.private.config.json',
+        'sitemap.json',
+      ],
+    },
     { name: 'qwik', fileExtensions: ['tsx'], enabledFor: [IconPack.Qwik] },
     { name: 'mermaid', fileExtensions: ['mmd', 'mermaid'] },
     {
