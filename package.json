@@ -2,7 +2,7 @@
   "name": "material-icon-theme",
   "displayName": "Material Icon Theme",
   "description": "Material Design Icons for Visual Studio Code",
-  "version": "4.25.0",
+  "version": "4.26.0",
   "scripts": {
     "build": "npm run compile:dev && npm run generateJson",
     "check": "ts-node ./src/scripts/icons/checks",
@@ -108,6 +108,11 @@
         "enablement": "!isWeb"
       },
       {
+        "command": "material-icon-theme.changeFileColor",
+        "title": "%command.changeFileColor%",
+        "enablement": "!isWeb"
+      },
+      {
         "command": "material-icon-theme.restoreDefaultConfig",
         "title": "%command.restoreDefaultConfig%",
         "enablement": "!isWeb"
@@ -197,6 +202,12 @@
           "default": "#90a4ae",
           "pattern": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
           "description": "%configuration.folders.color%"
+        },
+        "material-icon-theme.files.color": {
+          "type": "string",
+          "default": "#90a4ae",
+          "pattern": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+          "description": "%configuration.files.color%"
         },
         "material-icon-theme.opacity": {
           "type": "number",
