@@ -434,7 +434,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-python',
         folderNames: ['python', '__pycache__', '.pytest_cache'],
       },
-      { name: 'folder-debug', folderNames: ['debug', 'debugging'] },
+      { name: 'folder-debug', folderNames: ['dbg', 'debug', 'debugging'] },
       { name: 'folder-fastlane', folderNames: ['fastlane'] },
       {
         name: 'folder-plugin',
