@@ -17,6 +17,7 @@
   "configuration.activeIconPack.angular_ngrx": "Angular と ngrx 用のアイコンです。",
   "configuration.activeIconPack.react": "React 用のアイコンです。",
   "configuration.activeIconPack.react_redux": "React と Redux 用のアイコンです。",
+  "configuration.activeIconPack.qwik": "Qwik 用のアイコンです。",
   "configuration.activeIconPack.vue": "Vue 用のアイコンです。",
   "configuration.activeIconPack.vue_vuex": "Vue と Vuex 用のアイコンです。",
   "configuration.activeIconPack.nest": "NestJS 用のアイコンです。",
