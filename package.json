@@ -149,6 +149,7 @@
           "enumDescriptions": [
             "%configuration.activeIconPack.angular%",
             "%configuration.activeIconPack.angular_ngrx%",
+            "%configuration.activeIconPack.autocat%",
             "%configuration.activeIconPack.react%",
             "%configuration.activeIconPack.react_redux%",
             "%configuration.activeIconPack.qwik%",
@@ -160,6 +161,7 @@
           "enum": [
             "angular",
             "angular_ngrx",
+            "autocat",
             "react",
             "react_redux",
             "qwik",
