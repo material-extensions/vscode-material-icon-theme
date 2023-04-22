@@ -17,6 +17,7 @@
   "configuration.activeIconPack.angular_ngrx": "Ikony dla Angulara i ngrx.",
   "configuration.activeIconPack.react": "Ikony dla Reacta.",
   "configuration.activeIconPack.react_redux": "Ikony dla Reacta i Reduxa.",
+  "configuration.activeIconPack.qwik": "Ikony dla Qwik.",
   "configuration.activeIconPack.vue": "Ikony dla Vue.",
   "configuration.activeIconPack.vue_vuex": "Ikony dla Vue i Vuex.",
   "configuration.activeIconPack.nest": "Ikony dla NestJS.",

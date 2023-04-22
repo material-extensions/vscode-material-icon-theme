@@ -2094,7 +2094,7 @@ export const fileIcons: FileIcons = {
         'tsconfig.esm.json',
         'tsconfig.mjs.json',
         'tsconfig.doc.json',
-        'tsconfig.paths.json'
+        'tsconfig.paths.json',
       ],
       fileExtensions: ['tsconfig.json'],
     },
@@ -2326,5 +2326,6 @@ export const fileIcons: FileIcons = {
     },
     { name: 'typst', fileExtensions: ['typ'] },
     { name: 'ifanr-cloud', fileNames: ['.mincloudrc'] },
+    { name: 'qwik', fileExtensions: ['tsx'], enabledFor: [IconPack.Qwik] },
   ],
 };
