@@ -15,6 +15,7 @@
   "configuration.activeIconPack": "Selecteer een iconpakket dat bepaalde icons inschakelt.",
   "configuration.activeIconPack.angular": "Icons voor Angular.",
   "configuration.activeIconPack.angular_ngrx": "Icons voor Angular en ngrx.",
+  "configuration.activeIconPack.autocat": "Icons voor AutoCat.",
   "configuration.activeIconPack.react": "Icons voor React.",
   "configuration.activeIconPack.react_redux": "Icons for React en Redux.",
   "configuration.activeIconPack.qwik": "Icons voor Qwik.",
