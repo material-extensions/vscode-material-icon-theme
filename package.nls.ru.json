@@ -13,6 +13,7 @@
   "configuration.activeIconPack": "Выберите набор значков, которые включают определенные значки.",
   "configuration.activeIconPack.angular": "Иконки для Angular.",
   "configuration.activeIconPack.angular_ngrx": "Иконки для Angular и ngrx.",
+  "configuration.activeIconPack.autocat": "Иконки для AutoCat.",
   "configuration.activeIconPack.react": "Иконки для React.",
   "configuration.activeIconPack.react_redux": "Иконки для React и Redux.",
   "configuration.activeIconPack.qwik": "Иконки для Qwik.",
