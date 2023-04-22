@@ -13,6 +13,7 @@
   "configuration.activeIconPack": "Sélectionner un pack d'icônes qui active des icônes spécifiques.",
   "configuration.activeIconPack.angular": "Icônes pour Angular.",
   "configuration.activeIconPack.angular_ngrx": "Icônes pour Angular et ngrx.",
+  "configuration.activeIconPack.autocat": "Icônes pour AutoCat.",
   "configuration.activeIconPack.react": "Icônes pour React.",
   "configuration.activeIconPack.react_redux": "Icônes pour React et Redux.",
   "configuration.activeIconPack.qwik": "Icônes pour Qwik.",
