@@ -3,6 +3,7 @@
  */
 export enum IconPack {
   Angular = 'angular',
+  Autocat = 'autocat',
   Nest = 'nest',
   Ngrx = 'angular_ngrx',
   React = 'react',
