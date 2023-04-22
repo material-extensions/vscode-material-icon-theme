@@ -15,6 +15,7 @@
   "configuration.activeIconPack": "特定のアイコンを有効にするアイコンパックを選択する。",
   "configuration.activeIconPack.angular": "Angular 用のアイコンです。",
   "configuration.activeIconPack.angular_ngrx": "Angular と ngrx 用のアイコンです。",
+  "configuration.activeIconPack.angular_ngrx": "AutoCat 用のアイコンです。",
   "configuration.activeIconPack.react": "React 用のアイコンです。",
   "configuration.activeIconPack.react_redux": "React と Redux 用のアイコンです。",
   "configuration.activeIconPack.qwik": "Qwik 用のアイコンです。",
