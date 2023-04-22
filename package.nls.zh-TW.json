@@ -13,6 +13,7 @@
   "configuration.activeIconPack": "選擇一個圖標包。",
   "configuration.activeIconPack.angular": "Angular的圖標。",
   "configuration.activeIconPack.angular_ngrx": "Angular和ngrx的圖標。",
+  "configuration.activeIconPack.autocat": "AutoCat的圖標。",
   "configuration.activeIconPack.react": "React的圖標。",
   "configuration.activeIconPack.react_redux": "React和Redux的圖標。",
   "configuration.activeIconPack.qwik": "Qwik的圖標。",
