@@ -77,6 +77,10 @@
   "main": "./dist/extension",
   "browser": "./dist/web/extension.js",
   "sideEffects": false,
+  "files": [
+    "icons",
+    "dist/material-icons.json"
+  ],
   "contributes": {
     "iconThemes": [
       {
