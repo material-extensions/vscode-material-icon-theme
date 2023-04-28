@@ -827,7 +827,7 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-windows',
         folderNames: ['windows']
-      }
+      },
     ],
   },
   {
