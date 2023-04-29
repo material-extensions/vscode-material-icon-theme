@@ -2329,14 +2329,14 @@ export const fileIcons: FileIcons = {
     {
       name: 'unocss',
       fileNames: [
-        'unocss.config.js',
-        'unocss.config.mjs',
-        'unocss.config.ts',
-        'unocss.config.mts',
         'uno.config.js',
         'uno.config.mjs',
         'uno.config.ts',
         'uno.config.mts',
+        'unocss.config.js',
+        'unocss.config.mjs',
+        'unocss.config.ts',
+        'unocss.config.mts',
       ],
       light: true,
     },
