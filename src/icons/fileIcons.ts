@@ -20,6 +20,7 @@ export const fileIcons: FileIcons = {
     { name: 'css', fileExtensions: ['css'] },
     { name: 'sass', fileExtensions: ['scss', 'sass'] },
     { name: 'less', fileExtensions: ['less'] },
+    { name: 'just', fileNames: ['justfile', '.justfile'] },
     {
       name: 'json',
       fileExtensions: [
