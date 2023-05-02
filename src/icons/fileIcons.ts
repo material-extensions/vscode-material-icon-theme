@@ -659,6 +659,7 @@ export const fileIcons: FileIcons = {
       fileNames: [
         '.git',
         '.gitignore',
+        '.gitmessage',
         '.gitignore-global',
         '.gitignore_global',
         '.gitattributes',
