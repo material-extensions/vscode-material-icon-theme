@@ -84,6 +84,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-php', folderNames: ['php'] },
       { name: 'folder-phpmailer', folderNames: ['phpmailer'] },
       { name: 'folder-sublime', folderNames: ['sublime'] },
+      { name: 'folder-linux', folderNames: ['linux'] },
       {
         name: 'folder-docs',
         folderNames: [
