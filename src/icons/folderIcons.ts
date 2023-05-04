@@ -294,7 +294,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-redux-store',
-        folderNames: ['store'],
+        folderNames: ['store', 'stores'],
         enabledFor: [IconPack.Redux],
       },
       {
@@ -681,7 +681,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-svg', folderNames: ['svg', 'svgs'] },
       {
         name: 'folder-vuex-store',
-        folderNames: ['store'],
+        folderNames: ['store', 'stores'],
         enabledFor: [IconPack.Vuex],
       },
       {
