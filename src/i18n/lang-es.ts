@@ -10,13 +10,15 @@ export const translation: Translation = {
   },
   folders: {
     toggleIcons: 'Cambiar activación de iconos de carpetas',
-    color: 'Elija un color de carpeta',
-    hexCode: 'Insertar un código de color HEX',
-    wrongHexCode: '¡Código de color HEX inválido!',
     disabled: 'Sin iconos de carpeta',
     theme: {
       description: "Iconos de carpeta '%0'",
     },
+  },
+  colorSelect: {
+    color: 'Elija un color',
+    hexCode: 'Insertar un código de color HEX',
+    wrongHexCode: '¡Código de color HEX inválido!',
   },
   opacity: {
     inputPlaceholder: 'Valor de opacidad (entre 0 y 1)',
