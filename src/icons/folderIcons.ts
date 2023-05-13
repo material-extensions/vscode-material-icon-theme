@@ -123,6 +123,7 @@ export const folderIcons: FolderTheme[] = [
           'screens',
           'page',
           'pages',
+          'public_html',
           'html',
         ],
       },
