@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <ellipse cx="128" cy="119" rx="90" ry="75" fill="#4A148C" />
+  <path fill="#4A148C" fill-rule="evenodd" d="M128,212c66.3,0,120-20.1,120-45s-53.7-45-120-45S8,142.2,8,167,61.7,212,128,212Z" />
+  <rect x="38" y="119" width="180" height="60" fill="#4A148C" />
+</svg>

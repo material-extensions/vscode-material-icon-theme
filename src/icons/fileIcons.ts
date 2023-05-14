@@ -2334,5 +2334,9 @@ export const fileIcons: FileIcons = {
     { name: 'ifanr-cloud', fileNames: ['.mincloudrc'] },
     { name: 'qwik', fileExtensions: ['tsx'], enabledFor: [IconPack.Qwik] },
     { name: 'mermaid', fileExtensions: ['mmd', 'mermaid'] },
+    {
+      name: 'alfred',
+      fileExtensions: ['alfredworkflow', 'alfredpreferences'],
+    },
   ],
 };
