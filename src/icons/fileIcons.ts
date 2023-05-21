@@ -2334,5 +2334,16 @@ export const fileIcons: FileIcons = {
     { name: 'ifanr-cloud', fileNames: ['.mincloudrc'] },
     { name: 'qwik', fileExtensions: ['tsx'], enabledFor: [IconPack.Qwik] },
     { name: 'mermaid', fileExtensions: ['mmd', 'mermaid'] },
+    {
+      name: 'velociraptor',
+      fileNames: [
+        'velociraptor.js',
+        'velociraptor.mjs',
+        'velociraptor.ts',
+        'velociraptor.json',
+        'velociraptor.yaml',
+        'velociraptor.yml',
+      ],
+    },
   ],
 };
