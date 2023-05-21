@@ -467,9 +467,10 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'lib', fileExtensions: ['lib', 'bib'] },
-    { name: 'ruby',
+    { 
+      name: 'ruby',
       fileExtensions: ['rb', 'erb', 'rbs'],
-      fileNames: ['.ruby-version']
+      fileNames: ['.ruby-version'],
     },
     { name: 'gemfile', fileNames: ['gemfile'] },
     {
