@@ -467,7 +467,7 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'lib', fileExtensions: ['lib', 'bib'] },
-    { 
+    {
       name: 'ruby',
       fileExtensions: ['rb', 'erb', 'rbs'],
       fileNames: ['.ruby-version'],
