@@ -2335,12 +2335,8 @@ export const fileIcons: FileIcons = {
     { name: 'qwik', fileExtensions: ['tsx'], enabledFor: [IconPack.Qwik] },
     { name: 'mermaid', fileExtensions: ['mmd', 'mermaid'] },
     {
-      name: 'mojo-fire',
-      fileExtensions: ['mojo'],
-    },
-    {
-      name: 'mojo-alt',
-      fileExtensions: ['🔥'],
+      name: 'mojo',
+      fileExtensions: ['mojo', '🔥'],
     },
   ],
 };
