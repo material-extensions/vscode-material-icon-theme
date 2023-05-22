@@ -2334,15 +2334,18 @@ export const fileIcons: FileIcons = {
     { name: 'ifanr-cloud', fileNames: ['.mincloudrc'] },
     { name: 'qwik', fileExtensions: ['tsx'], enabledFor: [IconPack.Qwik] },
     { name: 'mermaid', fileExtensions: ['mmd', 'mermaid'] },
-    { name: 'syncpack', fileExtensions: [
-      '.syncpackrc',
-      'syncpackrc.json',
-      '.syncpackrc.yaml',
-      '.syncpackrc.yml',
-      '.syncpackrc.js',
-      '.syncpackrc.cjs',
-      'syncpack.config.js',
-      'syncpack.config.cjs',
-    ]}
+    {
+      name: 'syncpack',
+      fileExtensions: [
+        '.syncpackrc',
+        'syncpackrc.json',
+        '.syncpackrc.yaml',
+        '.syncpackrc.yml',
+        '.syncpackrc.js',
+        '.syncpackrc.cjs',
+        'syncpack.config.js',
+        'syncpack.config.cjs',
+      ],
+    },
   ],
 };
