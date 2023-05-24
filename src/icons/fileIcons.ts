@@ -2338,7 +2338,6 @@ export const fileIcons: FileIcons = {
         'unocss.config.ts',
         'unocss.config.mts',
       ],
-      light: true,
     },
     { name: 'ifanr-cloud', fileNames: ['.mincloudrc'] },
     { name: 'qwik', fileExtensions: ['tsx'], enabledFor: [IconPack.Qwik] },
