@@ -1,5 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" version="1.1" viewBox="0 0 124 124" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
-    
-    <g transform="matrix(1.0713 0 0 1.0713 -4.4236 -4.4236)" stroke-width=".87904"><path d="m56.067 31.809c-2.8323-4.8699-9.9138-4.8699-12.746 0l-30.868 53.076c-2.8323 4.8699 0.7085 10.957 6.373 10.957h24.098c-2.4209-2.1158-3.3175-5.7753-1.4856-8.9152l23.378-40.074z" fill="#69f0ae"/><path d="m75.625 43.452c2.3444-3.9847 8.204-3.9847 10.548 0l25.546 43.425c2.3444 3.9847-0.58544 8.9653-5.2734 8.9653h-51.093c-4.6879 0-7.6177-4.9806-5.2733-8.9653z" fill="#00e676" fill-rule="nonzero"/></g>
-</svg>
+<svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 124 124" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><g stroke-width=".879"><path d="M55.641 29.653c-3.034-5.217-10.62-5.217-13.655 0L8.917 86.513c-3.034 5.218.76 11.739 6.828 11.739H41.56c-2.594-2.267-3.554-6.187-1.592-9.55L65.014 45.77z" fill="#69f0ae"/><path d="M76.593 42.127c2.512-4.27 8.79-4.27 11.3 0l27.368 46.52c2.512 4.27-.627 9.605-5.65 9.605H54.877c-5.023 0-8.161-5.335-5.65-9.604z" fill="#00e676" fill-rule="nonzero"/></g></svg>
