@@ -1,8 +1,8 @@
-import * as fs from 'fs';
-import * as https from 'https';
-import * as path from 'path';
+import { writeFileSync } from 'fs';
+import { request, RequestOptions } from 'https';
+import { join } from 'path';
 import { Contributor } from '../../models/scripts/contributors/contributor';
-import * as painter from '../helpers/painter';
+import { green, red, yellow } from '../helpers/painter';
 import { createScreenshot } from '../helpers/screenshots';
 
 /**
@@ -29,7 +29,7 @@ const fetchContributors = (
   page: string
 ): Promise<{ contributorsOfPage: Contributor[]; nextPage: string }> => {
   return new Promise((resolve, reject) => {
-    const requestOptions: https.RequestOptions = {
+    const requestOptions: RequestOptions = {
       method: 'GET',
       hostname: 'api.github.com',
       path: `/repos/pkief/vscode-material-icon-theme/contributors?page=${page}`,
@@ -41,13 +41,13 @@ const fetchContributors = (
       },
     };
 
-    const req = https.request(requestOptions, (res) => {
+    const req = request(requestOptions, (res) => {
       const { nextPage, lastPage, prevPage } = parseLinkHeader(
         res.headers?.link?.toString() ?? ''
       );
       console.log(
         '> Material Icon Theme:',
-        painter.yellow(
+        yellow(
           `[${page}/${
             lastPage ? lastPage[1] : +prevPage[1] + 1
           }] Loading contributors from GitHub...`
@@ -90,8 +90,8 @@ const createContributorsList = (contributors: Contributor[]) => {
   const styling = '<link rel="stylesheet" href="contributors.css">';
   const generatedHtml = `${htmlDoctype}${styling}<ul>${list}</ul>`;
 
-  const outputPath = path.join(__dirname, 'contributors.html');
-  fs.writeFileSync(outputPath, generatedHtml);
+  const outputPath = join(__dirname, 'contributors.html');
+  writeFileSync(outputPath, generatedHtml);
   return outputPath;
 };
 
@@ -109,29 +109,29 @@ const init = async () => {
   if (contributorsList.length > 0) {
     console.log(
       '> Material Icon Theme:',
-      painter.green('Successfully fetched all contributors from GitHub!')
+      green('Successfully fetched all contributors from GitHub!')
     );
   } else {
     console.log(
       '> Material Icon Theme:',
-      painter.red('Error: Could not fetch contributors from GitHub!')
+      red('Error: Could not fetch contributors from GitHub!')
     );
     throw Error();
   }
   const outputPath = createContributorsList(contributorsList);
 
   // create the image
-  console.log('> Material Icon Theme:', painter.yellow('Creating image...'));
+  console.log('> Material Icon Theme:', yellow('Creating image...'));
   const fileName = 'contributors';
   createScreenshot(outputPath, fileName)
     .then(() => {
       console.log(
         '> Material Icon Theme:',
-        painter.green(`Successfully created ${fileName} image!`)
+        green(`Successfully created ${fileName} image!`)
       );
     })
     .catch(() => {
-      throw Error(painter.red(`Error while creating ${fileName} image`));
+      throw Error(red(`Error while creating ${fileName} image`));
     });
 };
 

@@ -1,7 +1,7 @@
-import * as checkAvailability from './checkIconAvailability';
-import * as checkIconConflicts from './checkIconConflicts';
-import * as checkIconUsage from './checkIconUsage';
+import { check as checkAvailability } from './checkIconAvailability';
+import { check as checkIconConflicts } from './checkIconConflicts';
+import { check as checkIconUsage } from './checkIconUsage';
 
-checkAvailability.check();
-checkIconUsage.check();
-checkIconConflicts.check();
+checkAvailability();
+checkIconUsage();
+checkIconConflicts();
