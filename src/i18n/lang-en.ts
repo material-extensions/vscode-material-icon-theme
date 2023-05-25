@@ -1,13 +1,8 @@
 import { Translation } from '../models';
 
 export const translation: Translation = {
-  themeInstalled: 'Material Icon Theme has been installed.',
-  howToActivate: 'How to activate icons',
   activate: 'Activate',
   activated: 'Material Icon Theme is active.',
-  neverShowAgain: 'Never show again',
-  themeUpdated: 'Material Icon Theme has been updated.',
-  readChangelog: 'Read changelog',
   iconPacks: {
     selectPack: 'Select an icon pack',
     description: "Select the '%0' icon pack",
@@ -15,32 +10,29 @@ export const translation: Translation = {
   },
   folders: {
     toggleIcons: 'Pick a folder theme',
-    color: 'Choose a folder color',
-    hexCode: 'Insert a HEX color code',
-    wrongHexCode: 'Invalid HEX color code!',
     disabled: 'No folder icons',
     theme: {
       description: "Select the '%0' folder theme",
     },
   },
+  colorSelect: {
+    color: 'Choose a color',
+    hexCode: 'Insert a HEX color code',
+    wrongHexCode: 'Invalid HEX color code!',
+  },
   opacity: {
     inputPlaceholder: 'Opacity value (between 0 and 1)',
-    wrongValue: 'The value must be between 0 and 1!',
+    wrongValue: 'Please enter a floating-point number between 0 and 1.',
   },
   toggleSwitch: {
     on: 'ON',
     off: 'OFF',
   },
   explorerArrows: {
-    toggle: 'Toggle folder arrows',
-    enable: 'Show folder arrows',
-    disable: 'Hide folder arrows',
+    toggle: 'Toggle folder arrows in Explorer',
+    enable: 'Show folder arrows in Explorer',
+    disable: 'Hide folder arrows in Explorer',
   },
-  confirmReload:
-    'You have to restart VS Code to activate the changes to the icons.',
-  reload: 'Restart',
-  outdatedVersion: 'You have to update VS Code to use this command.',
-  updateVSCode: 'Update VS Code',
   grayscale: {
     toggle: 'Toggle grayscale icons',
     enable: 'Enable grayscale icons',
@@ -48,6 +40,6 @@ export const translation: Translation = {
   },
   saturation: {
     inputPlaceholder: 'Saturation value (between 0 and 1)',
-    wrongValue: 'The value must be between 0 and 1!',
+    wrongValue: 'Please enter a floating-point number between 0 and 1.',
   },
 };

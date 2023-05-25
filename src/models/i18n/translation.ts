@@ -1,11 +1,6 @@
 export interface Translation {
-  themeInstalled: string;
-  howToActivate: string;
   activate: string;
   activated: string;
-  neverShowAgain: string;
-  themeUpdated: string;
-  readChangelog: string;
   iconPacks: {
     selectPack: string;
     description: string;
@@ -13,13 +8,15 @@ export interface Translation {
   };
   folders: {
     toggleIcons: string;
-    color: string;
-    hexCode: string;
-    wrongHexCode: string;
     disabled: string;
     theme: {
       description: string;
     };
+  };
+  colorSelect: {
+    color: string;
+    hexCode: string;
+    wrongHexCode: string;
   };
   opacity: {
     inputPlaceholder: string;
@@ -34,10 +31,6 @@ export interface Translation {
     enable: string;
     disable: string;
   };
-  confirmReload: string;
-  reload: string;
-  outdatedVersion: string;
-  updateVSCode: string;
   grayscale: {
     toggle: string;
     enable: string;

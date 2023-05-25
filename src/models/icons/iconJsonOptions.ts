@@ -9,13 +9,12 @@ export interface IconJsonOptions {
     associations?: IconAssociations;
   };
   files?: {
+    color?: string;
     associations?: IconAssociations;
   };
   languages?: {
     associations?: IconAssociations;
   };
-  showWelcomeMessage?: boolean;
-  showUpdateMessage?: boolean;
 }
 
 export interface IconAssociations {
