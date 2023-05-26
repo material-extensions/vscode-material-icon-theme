@@ -123,6 +123,7 @@ export const folderIcons: FolderTheme[] = [
           'screens',
           'page',
           'pages',
+          'public_html',
           'html',
         ],
       },
@@ -433,6 +434,10 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-python',
         folderNames: ['python', '__pycache__', '.pytest_cache'],
+      },
+      {
+        name: 'folder-mojo',
+        folderNames: ['mojo'],
       },
       { name: 'folder-debug', folderNames: ['debug', 'debugging'] },
       { name: 'folder-fastlane', folderNames: ['fastlane'] },

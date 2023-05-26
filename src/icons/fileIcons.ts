@@ -467,7 +467,11 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'lib', fileExtensions: ['lib', 'bib'] },
-    { name: 'ruby', fileExtensions: ['rb', 'erb'] },
+    {
+      name: 'ruby',
+      fileExtensions: ['rb', 'erb', 'rbs'],
+      fileNames: ['.ruby-version'],
+    },
     { name: 'gemfile', fileNames: ['gemfile'] },
     {
       name: 'rubocop',
@@ -1601,6 +1605,10 @@ export const fileIcons: FileIcons = {
         '.jestrc.js',
         '.jestrc.json',
         'jest.teardown.js',
+        'jest-preset.json',
+        'jest-preset.js',
+        'jest-preset.cjs',
+        'jest-preset.mjs',
       ],
     },
     { name: 'processing', fileExtensions: ['pde'] },
@@ -2334,6 +2342,10 @@ export const fileIcons: FileIcons = {
     { name: 'ifanr-cloud', fileNames: ['.mincloudrc'] },
     { name: 'qwik', fileExtensions: ['tsx'], enabledFor: [IconPack.Qwik] },
     { name: 'mermaid', fileExtensions: ['mmd', 'mermaid'] },
+    {
+      name: 'mojo',
+      fileExtensions: ['mojo', '🔥'],
+    },
     { name: 'swcrc', fileNames: ['.swcrc'] },
   ],
 };
