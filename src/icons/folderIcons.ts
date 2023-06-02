@@ -111,7 +111,7 @@ export const folderIcons: FolderTheme[] = [
           '.submodules',
         ],
       },
-      { name: 'folder-github', folderNames: ['.github'] },
+      { name: 'folder-github', folderNames: ['.github', 'github'] },
       { name: 'folder-gitlab', folderNames: ['.gitlab'] },
       { name: 'folder-vscode', folderNames: ['.vscode', '.vscode-test'] },
       {
@@ -123,6 +123,7 @@ export const folderIcons: FolderTheme[] = [
           'screens',
           'page',
           'pages',
+          'public_html',
           'html',
         ],
       },
@@ -294,7 +295,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-redux-store',
-        folderNames: ['store'],
+        folderNames: ['store', 'stores'],
         enabledFor: [IconPack.Redux],
       },
       {
@@ -433,6 +434,10 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-python',
         folderNames: ['python', '__pycache__', '.pytest_cache'],
+      },
+      {
+        name: 'folder-mojo',
+        folderNames: ['mojo'],
       },
       { name: 'folder-debug', folderNames: ['debug', 'debugging'] },
       { name: 'folder-fastlane', folderNames: ['fastlane'] },
@@ -681,7 +686,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-svg', folderNames: ['svg', 'svgs'] },
       {
         name: 'folder-vuex-store',
-        folderNames: ['store'],
+        folderNames: ['store', 'stores'],
         enabledFor: [IconPack.Vuex],
       },
       {
@@ -809,13 +814,25 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['protobufs', 'proto'],
       },
       {
+        name: 'folder-plastic',
+        folderNames: ['plastic', '.plastic'],
+      },
+      {
         name: 'folder-gamemaker',
         folderNames: ['gamemaker', 'gamemaker2'],
       },
       {
+        name: 'folder-mercurial',
+        folderNames: ['.hg', 'hghooks', '.hghooks', '.hgext'],
+      },
+      {
+        name: 'folder-godot',
+        folderNames: ['godot', '.godot', 'godot-cpp', '.godot-cpp'],
+      },
+      {
         name: 'folder-taskfile',
         folderNames: ['taskfile', 'taskfiles', '.taskfile', '.taskfiles', 'Taskfile', 'Taskfiles', '.Taskfile', '.Taskfiles'],
-      }
+      },
     ],
   },
   {
