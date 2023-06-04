@@ -713,6 +713,7 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'vue', fileExtensions: ['vue'] },
+    { name: 'semgrep', fileNames: ['semgrep.yml', '.semgrepignore'] },
     {
       name: 'vue-config',
       fileNames: [
