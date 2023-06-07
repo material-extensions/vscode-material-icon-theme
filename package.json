@@ -2,7 +2,7 @@
   "name": "material-icon-theme",
   "displayName": "Material Icon Theme",
   "description": "Material Design Icons for Visual Studio Code",
-  "version": "4.26.0",
+  "version": "4.28.0",
   "scripts": {
     "build": "npm run compile:dev && npm run generateJson",
     "check": "ts-node ./src/scripts/icons/checks",
@@ -77,6 +77,10 @@
   "main": "./dist/extension",
   "browser": "./dist/web/extension.js",
   "sideEffects": false,
+  "files": [
+    "icons",
+    "dist/material-icons.json"
+  ],
   "contributes": {
     "iconThemes": [
       {
@@ -151,6 +155,7 @@
             "%configuration.activeIconPack.angular_ngrx%",
             "%configuration.activeIconPack.react%",
             "%configuration.activeIconPack.react_redux%",
+            "%configuration.activeIconPack.qwik%",
             "%configuration.activeIconPack.vue%",
             "%configuration.activeIconPack.vue_vuex%",
             "%configuration.activeIconPack.nest%",
@@ -161,6 +166,7 @@
             "angular_ngrx",
             "react",
             "react_redux",
+            "qwik",
             "vue",
             "vue_vuex",
             "nest",
