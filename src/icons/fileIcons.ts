@@ -2360,5 +2360,14 @@ export const fileIcons: FileIcons = {
       name: 'mojo',
       fileExtensions: ['mojo', '🔥'],
     },
+    {
+      name: 'werf',
+      fileNames: [
+        'werf.yaml',
+        'werf.yml',
+        'werf-giterminism.yaml',
+        'werf-giterminism.yml',
+      ],
+    },
   ],
 };
