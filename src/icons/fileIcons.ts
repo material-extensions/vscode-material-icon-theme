@@ -2367,6 +2367,7 @@ export const fileIcons: FileIcons = {
         '.syncpackrc.cjs',
         'syncpack.config.js',
         'syncpack.config.cjs',
+      ],
     },
     {
       name: 'mojo',
