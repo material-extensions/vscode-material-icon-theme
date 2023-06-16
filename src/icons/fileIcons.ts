@@ -713,6 +713,7 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'vue', fileExtensions: ['vue'] },
+    { name: 'semgrep', fileNames: ['semgrep.yml', '.semgrepignore'] },
     {
       name: 'vue-config',
       fileNames: [
@@ -2339,6 +2340,19 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'typst', fileExtensions: ['typ'] },
+    {
+      name: 'unocss',
+      fileNames: [
+        'uno.config.js',
+        'uno.config.mjs',
+        'uno.config.ts',
+        'uno.config.mts',
+        'unocss.config.js',
+        'unocss.config.mjs',
+        'unocss.config.ts',
+        'unocss.config.mts',
+      ],
+    },
     { name: 'ifanr-cloud', fileNames: ['.mincloudrc'] },
     { name: 'qwik', fileExtensions: ['tsx'], enabledFor: [IconPack.Qwik] },
     { name: 'mermaid', fileExtensions: ['mmd', 'mermaid'] },
@@ -2347,5 +2361,14 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['mojo', '🔥'],
     },
     { name: 'swcrc', fileNames: ['.swcrc'] },
+    {
+      name: 'werf',
+      fileNames: [
+        'werf.yaml',
+        'werf.yml',
+        'werf-giterminism.yaml',
+        'werf-giterminism.yml',
+      ],
+    },
   ],
 };
