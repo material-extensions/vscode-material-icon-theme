@@ -3,6 +3,19 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v4.28.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.27.0...v4.28.0) 
+
+> May 31, 2023 
+
+- feat: add "stores" (plural) to folder name [`#1965`](https://github.com/PKief/vscode-material-icon-theme/pull/1965)
+- feat: add UnoCSS icon and file mappings [`#1910`](https://github.com/PKief/vscode-material-icon-theme/pull/1910)
+- Add jest file names [`#1984`](https://github.com/PKief/vscode-material-icon-theme/pull/1984)
+- Add Mojo file and folder icons [`#1972`](https://github.com/PKief/vscode-material-icon-theme/pull/1972)
+- Add rbs file extension and .ruby-version file name [`#1978`](https://github.com/PKief/vscode-material-icon-theme/pull/1978)
+- Update folderIcons.ts for HTML FolderIcon [`#1974`](https://github.com/PKief/vscode-material-icon-theme/pull/1974)
+- feat: assign icons for electron process related configs [`#1963`](https://github.com/PKief/vscode-material-icon-theme/pull/1963)
+- Add .gitmessage file name [`8e599fe`](https://github.com/PKief/vscode-material-icon-theme/commit/8e599fe)
+ 
 #### [v4.27.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.26.0...v4.27.0) 
 
 > April 30, 2023 

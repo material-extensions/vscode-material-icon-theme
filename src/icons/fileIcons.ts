@@ -467,7 +467,11 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'lib', fileExtensions: ['lib', 'bib'] },
-    { name: 'ruby', fileExtensions: ['rb', 'erb'] },
+    {
+      name: 'ruby',
+      fileExtensions: ['rb', 'erb', 'rbs'],
+      fileNames: ['.ruby-version'],
+    },
     { name: 'gemfile', fileNames: ['gemfile'] },
     {
       name: 'rubocop',
@@ -709,6 +713,7 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'vue', fileExtensions: ['vue'] },
+    { name: 'semgrep', fileNames: ['semgrep.yml', '.semgrepignore'] },
     {
       name: 'vue-config',
       fileNames: [
@@ -1601,6 +1606,10 @@ export const fileIcons: FileIcons = {
         '.jestrc.js',
         '.jestrc.json',
         'jest.teardown.js',
+        'jest-preset.json',
+        'jest-preset.js',
+        'jest-preset.cjs',
+        'jest-preset.mjs',
       ],
     },
     { name: 'processing', fileExtensions: ['pde'] },
@@ -2331,6 +2340,19 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'typst', fileExtensions: ['typ'] },
+    {
+      name: 'unocss',
+      fileNames: [
+        'uno.config.js',
+        'uno.config.mjs',
+        'uno.config.ts',
+        'uno.config.mts',
+        'unocss.config.js',
+        'unocss.config.mjs',
+        'unocss.config.ts',
+        'unocss.config.mts',
+      ],
+    },
     { name: 'ifanr-cloud', fileNames: ['.mincloudrc'] },
     { name: 'qwik', fileExtensions: ['tsx'], enabledFor: [IconPack.Qwik] },
     { name: 'mermaid', fileExtensions: ['mmd', 'mermaid'] },
@@ -2345,6 +2367,18 @@ export const fileIcons: FileIcons = {
         '.syncpackrc.cjs',
         'syncpack.config.js',
         'syncpack.config.cjs',
+    },
+    {
+      name: 'mojo',
+      fileExtensions: ['mojo', '🔥'],
+    },
+    {
+      name: 'werf',
+      fileNames: [
+        'werf.yaml',
+        'werf.yml',
+        'werf-giterminism.yaml',
+        'werf-giterminism.yml',
       ],
     },
   ],

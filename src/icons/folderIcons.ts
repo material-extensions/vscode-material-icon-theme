@@ -123,6 +123,7 @@ export const folderIcons: FolderTheme[] = [
           'screens',
           'page',
           'pages',
+          'public_html',
           'html',
         ],
       },
@@ -294,7 +295,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-redux-store',
-        folderNames: ['store'],
+        folderNames: ['store', 'stores'],
         enabledFor: [IconPack.Redux],
       },
       {
@@ -433,6 +434,10 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-python',
         folderNames: ['python', '__pycache__', '.pytest_cache'],
+      },
+      {
+        name: 'folder-mojo',
+        folderNames: ['mojo'],
       },
       { name: 'folder-debug', folderNames: ['debug', 'debugging'] },
       { name: 'folder-fastlane', folderNames: ['fastlane'] },
@@ -681,7 +686,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-svg', folderNames: ['svg', 'svgs'] },
       {
         name: 'folder-vuex-store',
-        folderNames: ['store'],
+        folderNames: ['store', 'stores'],
         enabledFor: [IconPack.Vuex],
       },
       {
