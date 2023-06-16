@@ -1655,6 +1655,7 @@ export const fileIcons: FileIcons = {
         '.releaserc.yml',
         '.releaserc.json',
         '.releaserc.js',
+        '.releaserc.cjs',
         'release.config.js',
         'release.config.cjs',
       ],
