@@ -1968,7 +1968,7 @@ export const fileIcons: FileIcons = {
     {
       name: 'nginx',
       fileNames: ['nginx.conf'],
-      fileExtensions: ['nginx', 'nginxconfig'],
+      fileExtensions: ['nginx', 'nginxconf', 'nginxconfig'],
     },
     {
       name: 'minecraft',
