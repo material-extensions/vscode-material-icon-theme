@@ -1758,6 +1758,14 @@ export const fileIcons: FileIcons = {
       fileNames: ['svelte.config.js', 'svelte.config.cjs'],
     },
     {
+      name: 'javascript-svelte',
+      fileNames: ['+page.js', '+page.server.js', '+layout.js', '+server.js'],
+    },
+    {
+      name: 'typescript-svelte',
+      fileNames: ['+page.ts', '+page.server.ts', '+layout.ts', '+server.ts'],
+    },
+    {
       name: 'vim',
       fileExtensions: ['vimrc', 'gvimrc', 'exrc', 'vim', 'viminfo'],
     },
