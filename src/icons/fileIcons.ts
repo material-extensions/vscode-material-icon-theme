@@ -672,6 +672,8 @@ export const fileIcons: FileIcons = {
         '.gitconfig',
         '.gitmodules',
         '.gitkeep',
+        '.keep',
+        '.gitpreserve',
         '.gitinclude',
         '.git-blame-ignore',
         '.git-blame-ignore-revs',
