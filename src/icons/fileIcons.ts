@@ -52,6 +52,9 @@ export const fileIcons: FileIcons = {
         'playwright.config.js',
         'playwright.config.mjs',
         'playwright.config.ts',
+        'playwright.config.base.js',
+        'playwright.config.base.mjs',
+        'playwright.config.base.ts',
         'playwright-ct.config.js',
         'playwright-ct.config.mjs',
         'playwright-ct.config.ts',
@@ -672,6 +675,8 @@ export const fileIcons: FileIcons = {
         '.gitconfig',
         '.gitmodules',
         '.gitkeep',
+        '.keep',
+        '.gitpreserve',
         '.gitinclude',
         '.git-blame-ignore',
         '.git-blame-ignore-revs',
@@ -1360,6 +1365,7 @@ export const fileIcons: FileIcons = {
         '.eslintcache',
         'eslint.config.js',
         'eslint.config.mjs',
+        '.eslintrc.base.json',
       ],
     },
     {
@@ -1655,6 +1661,7 @@ export const fileIcons: FileIcons = {
         '.releaserc.yml',
         '.releaserc.json',
         '.releaserc.js',
+        '.releaserc.cjs',
         'release.config.js',
         'release.config.cjs',
       ],
@@ -1967,7 +1974,7 @@ export const fileIcons: FileIcons = {
     {
       name: 'nginx',
       fileNames: ['nginx.conf'],
-      fileExtensions: ['nginx', 'nginxconfig'],
+      fileExtensions: ['nginx', 'nginxconf', 'nginxconfig'],
     },
     {
       name: 'minecraft',
@@ -2361,5 +2368,14 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['mojo', '🔥'],
     },
     { name: 'csharpier', fileNames: ['.csharpierrc', '.csharpierrc.json', '.csharpierrc.yaml'] }
+    {
+      name: 'werf',
+      fileNames: [
+        'werf.yaml',
+        'werf.yml',
+        'werf-giterminism.yaml',
+        'werf-giterminism.yml',
+      ],
+    },
   ],
 };
