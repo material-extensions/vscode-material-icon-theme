@@ -1480,6 +1480,8 @@ export const fileIcons: FileIcons = {
         '.prettierrc.yml',
         '.prettierignore',
         '.prettierrc.toml',
+        'prettier.config.mjs',
+        '.prettierrc.mjs',
       ],
     },
     {
