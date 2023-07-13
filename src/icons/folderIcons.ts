@@ -829,10 +829,13 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-godot',
         folderNames: ['godot', '.godot', 'godot-cpp', '.godot-cpp'],
       },
+<<<<<<< HEAD
       {
         name: 'folder-directive',
         folderNames: ['directives'],
       },
+=======
+>>>>>>> parent of 4870639 (add icons)
     ],
   },
   {
