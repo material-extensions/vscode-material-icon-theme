@@ -830,7 +830,7 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['godot', '.godot', 'godot-cpp', '.godot-cpp'],
       },
       {
-        name: 'folder-directives',
+        name: 'folder-directive',
         folderNames: ['directives'],
       },
     ],
