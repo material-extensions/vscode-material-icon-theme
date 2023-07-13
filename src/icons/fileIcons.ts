@@ -237,9 +237,12 @@ export const fileIcons: FileIcons = {
         'props',
         'toml',
         'prefs',
-        'sln.dotsettings',
-        'sln.dotsettings.user',
+        'dotsettings',
+        'user',
         'cfg',
+        'targets',
+        'o',
+        'so',
       ],
       fileNames: [
         '.jshintignore',
@@ -469,7 +472,7 @@ export const fileIcons: FileIcons = {
         'mrf',
       ],
     },
-    { name: 'lib', fileExtensions: ['lib', 'bib'] },
+    { name: 'lib', fileExtensions: ['lib', 'bib', 'a'] },
     {
       name: 'ruby',
       fileExtensions: ['rb', 'erb', 'rbs'],
