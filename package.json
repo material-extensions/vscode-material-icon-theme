@@ -249,6 +249,7 @@
     "@types/vscode": "~1.51.0",
     "@typescript-eslint/eslint-plugin": "^5.26.0",
     "@typescript-eslint/parser": "^5.26.0",
+    "axios": "^1.4.0",
     "changelog-machine": "^1.0.2",
     "eslint": "^8.16.0",
     "eslint-config-prettier": "^8.5.0",
