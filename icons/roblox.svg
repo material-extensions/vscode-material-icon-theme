@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
-  <path class="st0" d="M 118.379 25.547 L 463.766 118.015 L 426.487 257.632 L 220.351 202.443 L 209.752 241.916 L 70.501 204.636 L 118.379 25.547 Z M 370.932 463.767 L 25.546 371.299 L 62.826 231.682 L 268.596 286.871 L 279.195 247.399 L 418.812 284.678 L 370.932 463.767 Z" style="clip-rule: evenodd; fill: rgb(66, 165, 245); fill-rule: evenodd;"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+ <path class="st0" d="m127.87 38.084 334.05 89.432-36.055 135.03-199.37-53.377-10.251 38.177-134.68-36.056zm244.26 423.83-334.05-89.432 36.056-135.03 199.01 53.377 10.251-38.176 135.03 36.055z" clip-rule="evenodd" fill="#42a5f5" fill-rule="evenodd" stroke-width=".96717"/>
 </svg>
