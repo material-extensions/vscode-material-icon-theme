@@ -19,6 +19,7 @@
   "configuration.activeIconPack.vue": "Vue的圖標。",
   "configuration.activeIconPack.vue_vuex": "Vue和Vuex的圖標。",
   "configuration.activeIconPack.nest": "NestJS的圖標。",
+  "configuration.activeIconPack.kdu": "Kdu的圖標。",
   "configuration.activeIconPack.none": "沒有啟用圖標包。",
   "configuration.folders.theme": "設置文件夾圖標的類型。",
   "configuration.folders.theme.specific": "選擇特定文件夾圖標。",

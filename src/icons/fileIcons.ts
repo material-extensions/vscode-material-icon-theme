@@ -181,6 +181,7 @@ export const fileIcons: FileIcons = {
       ],
       enabledFor: [
         IconPack.Angular,
+        IconPack.Kdu,
         IconPack.Ngrx,
         IconPack.React,
         IconPack.Redux,
@@ -703,6 +704,16 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'lua', fileExtensions: ['lua'], fileNames: ['.luacheckrc'] },
+    { name: 'kdu', fileExtensions: ['kdu'] },
+    {
+      name: 'kdu-config',
+      fileNames: [
+        'kdu.config.js',
+        'kdu.config.ts',
+        'kocan.config.js',
+        'kocan.config.js',
+      ],
+    },
     { name: 'clojure', fileExtensions: ['clj', 'cljs', 'cljc'] },
     { name: 'groovy', fileExtensions: ['groovy'] },
     { name: 'r', fileExtensions: ['r', 'rmd'], fileNames: ['.Rhistory'] },
@@ -772,6 +783,7 @@ export const fileIcons: FileIcons = {
     { name: 'handlebars', fileExtensions: ['hbs', 'mustache'] },
     { name: 'perl', fileExtensions: ['pm', 'raku'] },
     { name: 'haxe', fileExtensions: ['hx'] },
+    { name: 'family', fileNames: ['family.config.json', '.fml-config.json'] },
     {
       name: 'test-ts',
       fileExtensions: [
@@ -1847,6 +1859,7 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['resolver.ts', 'resolver.js'],
       enabledFor: [IconPack.Nest],
     },
+    { name: 'rindo', fileNames: ['rindo.config.js', 'rindo.config.ts'] },
     { name: 'moonscript', fileExtensions: ['moon'] },
     { name: 'percy', fileNames: ['.percy.yml'] },
     { name: 'gitpod', fileNames: ['.gitpod.yml'] },
@@ -1987,6 +2000,10 @@ export const fileIcons: FileIcons = {
     { name: 'slug', fileNames: ['.slugignore'] },
     { name: 'search', fileExtensions: ['code-search'] },
     {
+      name: 'jigra',
+      fileNames: ['jigra.config.json', 'jigra.config.ts'],
+    },
+    {
       name: 'stitches',
       fileNames: ['stitches.config.js', 'stitches.config.ts'],
       light: true,
@@ -2087,6 +2104,17 @@ export const fileIcons: FileIcons = {
     { name: 'chess', fileExtensions: ['pgn', 'fen'], light: true },
     { name: 'gemini', fileExtensions: ['gmi', 'gemini'] },
     { name: 'sentry', fileNames: ['.sentryclirc'] },
+    {
+      name: 'wite',
+      fileNames: [
+        'wite.config.js',
+        'wite.config.mjs',
+        'wite.config.cjs',
+        'wite.config.ts',
+        'wite.config.cts',
+        'wite.config.mts',
+      ],
+    },
     {
       name: 'phpunit',
       fileNames: [

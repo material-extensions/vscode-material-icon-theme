@@ -59,6 +59,17 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-json', folderNames: ['json', 'jsons'] },
       { name: 'folder-font', folderNames: ['font', 'fonts'] },
+      { name: 'folder-kdu', folderNames: ['kdu'] },
+      {
+        name: 'folder-kdu-directives',
+        folderNames: ['directives'],
+        enabledFor: [IconPack.Kdu],
+      },
+      {
+        name: 'folder-kdu',
+        folderNames: ['components'],
+        enabledFor: [IconPack.Kdu],
+      },
       { name: 'folder-bower', folderNames: ['bower_components'] },
       {
         name: 'folder-test',
@@ -797,6 +808,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-resolver',
         folderNames: ['resolver', 'resolvers'],
       },
+      { name: 'folder-rindo', folderNames: ['.rindo'] },
       {
         name: 'folder-angular',
         folderNames: ['angular', '.angular'],

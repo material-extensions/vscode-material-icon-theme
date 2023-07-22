@@ -159,6 +159,7 @@
             "%configuration.activeIconPack.vue%",
             "%configuration.activeIconPack.vue_vuex%",
             "%configuration.activeIconPack.nest%",
+            "%configuration.activeIconPack.kdu%",
             "%configuration.activeIconPack.none%"
           ],
           "enum": [
@@ -170,6 +171,7 @@
             "vue",
             "vue_vuex",
             "nest",
+            "kdu",
             "none"
           ]
         },

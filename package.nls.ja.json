@@ -21,6 +21,7 @@
   "configuration.activeIconPack.vue": "Vue 用のアイコンです。",
   "configuration.activeIconPack.vue_vuex": "Vue と Vuex 用のアイコンです。",
   "configuration.activeIconPack.nest": "NestJS 用のアイコンです。",
+  "configuration.activeIconPack.kdu": "Kdu 用のアイコンです。",
   "configuration.activeIconPack.none": "アイコンパックは有効ではありません。",
   "configuration.folders.theme": "フォルダーアイコンの種類を設定する。",
   "configuration.folders.theme.specific": "特定のフォルダーアイコンを選択する。",
