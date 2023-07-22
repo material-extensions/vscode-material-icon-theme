@@ -2397,5 +2397,6 @@ export const fileIcons: FileIcons = {
         'werf-giterminism.yml',
       ],
     },
+    { name: 'roblox', fileExtensions: ['rbxl', 'rbxlx', 'rbxm', 'rbxmx'] },
   ],
 };
