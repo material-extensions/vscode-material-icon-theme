@@ -900,7 +900,12 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'swagger',
-      fileExtensions: ['swagger.json', 'swagger-config.yaml', 'swagger.yml', 'swagger.yaml'],
+      fileExtensions: [
+        'swagger.json',
+        'swagger-config.yaml',
+        'swagger.yml',
+        'swagger.yaml'
+      ],
     },
     {
       name: 'verdaccio',
