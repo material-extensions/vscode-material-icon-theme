@@ -114,6 +114,8 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-github', folderNames: ['.github', 'github'] },
       { name: 'folder-gitlab', folderNames: ['.gitlab'] },
       { name: 'folder-vscode', folderNames: ['.vscode', '.vscode-test'] },
+      { name: 'folder-openapi', folderNames: ['oas', 'openapi'] },
+      { name: 'folder-swagger', folderNames: ['swagger'] },
       {
         name: 'folder-views',
         folderNames: [
