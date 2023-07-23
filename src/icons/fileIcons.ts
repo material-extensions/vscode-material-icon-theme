@@ -904,7 +904,7 @@ export const fileIcons: FileIcons = {
         'swagger.json',
         'swagger-config.yaml',
         'swagger.yml',
-        'swagger.yaml'
+        'swagger.yaml',
       ],
     },
     {
