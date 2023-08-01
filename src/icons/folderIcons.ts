@@ -1,4 +1,4 @@
-import { FolderTheme, IconPack } from '../models/index';
+import { FolderTheme, IconPack } from '../models';
 
 /**
  * Defines folder icons
@@ -9,6 +9,10 @@ export const folderIcons: FolderTheme[] = [
     defaultIcon: { name: 'folder' },
     rootFolder: { name: 'folder-root' },
     icons: [
+      {
+        name: 'folder-robot',
+        folderNames: ['bot', 'robot', '.bot', '.robot', '_bot', '_robot'],
+      },
       {
         name: 'folder-src',
         folderNames: ['src', 'srcs', 'source', 'sources', 'code'],
