@@ -1733,7 +1733,17 @@ export const fileIcons: FileIcons = {
     { name: 'razor', fileExtensions: ['cshtml', 'vbhtml'] },
     { name: 'abc', fileExtensions: ['abc'] },
     { name: 'asciidoc', fileExtensions: ['ad', 'adoc', 'asciidoc'] },
-    { name: 'istanbul', fileNames: ['.nycrc', '.nycrc.json'] },
+    {
+      name: 'istanbul',
+      fileNames: [
+        '.nycrc',
+        '.nycrc.json',
+        '.nycrc.yaml',
+        '.nycrc.yml',
+        'nyc.config.js',
+        '.istanbul.yml',
+      ],
+    },
     { name: 'edge', fileExtensions: ['edge'] },
     { name: 'scheme', fileExtensions: ['ss', 'scm'] },
     { name: 'lisp', fileExtensions: ['lisp', 'lsp', 'cl', 'fast'] },
