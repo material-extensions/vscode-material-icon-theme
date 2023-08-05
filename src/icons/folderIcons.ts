@@ -765,6 +765,10 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-netlify', folderNames: ['.netlify'] },
       {
+        name: 'folder-enum',
+        folderNames: ['enum', 'enums'],
+      },
+      {
         name: 'folder-contract',
         folderNames: [
           'pact',
