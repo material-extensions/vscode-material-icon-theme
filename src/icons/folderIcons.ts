@@ -843,6 +843,7 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['macos', 'maccatalyst', '.macos', '.maccatalyst'],
       },
       { name: 'folder-windows', folderNames: ['windows', '.windows'] },
+      { name: 'folder-tizen', folderNames: ['tizen', '.tizen'] },
     ],
   },
   {
