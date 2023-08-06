@@ -838,6 +838,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['godot', '.godot', 'godot-cpp', '.godot-cpp'],
       },
       { name: 'folder-linux', folderNames: ['linux', '.linux'] },
+      {
+        name: 'folder-apple',
+        folderNames: ['macos', 'maccatalyst', '.macos', '.maccatalyst'],
+      },
     ],
   },
   {
