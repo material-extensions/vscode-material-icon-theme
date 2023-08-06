@@ -842,6 +842,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-apple',
         folderNames: ['macos', 'maccatalyst', '.macos', '.maccatalyst'],
       },
+      { name: 'folder-windows', folderNames: ['windows', '.windows'] },
     ],
   },
   {
