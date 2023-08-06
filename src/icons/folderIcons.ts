@@ -844,6 +844,10 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-windows', folderNames: ['windows', '.windows'] },
       { name: 'folder-tizen', folderNames: ['tizen', '.tizen'] },
+      {
+        name: 'folder-platform',
+        folderNames: ['platform', 'platforms', '.platform', '.platforms'],
+      },
     ],
   },
   {
