@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   clip-rule="evenodd"
+   fill-rule="evenodd"
+   stroke-linejoin="round"
+   stroke-miterlimit="1.414"
+   viewBox="0 0 500 500"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="minecraft-fabric.svg"
+   inkscape:version="1.3 (0e150ed, 2023-07-21)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.73"
+     inkscape:cx="250"
+     inkscape:cy="250"
+     inkscape:window-width="1392"
+     inkscape:window-height="1212"
+     inkscape:window-x="2240"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg1" />
+  <g
+     id="g37"
+     transform="matrix(7.2857143,0,0,7.2857143,60,46)">
+    <path
+       style="fill:#38342a;stroke:none"
+       d="m 28,0 v 4 h -4 v 8 h -4 v 4 h -4 v 4 h -4 v 4 H 8 v 4 H 4 v 4 H 0 v 8 h 4 v 4 h 4 v 4 h 4 v 4 h 4 v 4 h 8 v -4 h 4 v -8 h 4 v -4 h 4 v -4 h 4 v -4 h 8 v -4 h 4 V 20 H 48 V 16 H 44 V 12 H 40 V 8 H 36 V 4 H 32 V 0 Z"
+       id="path2" />
+    <path
+       style="fill:#dbd0b4;stroke:none"
+       d="m 28,4 v 4 h 4 v 4 h 4 v 4 h 4 v 4 h 4 V 16 H 40 V 12 H 36 V 8 H 32 V 4 Z"
+       id="path4" />
+    <path
+       style="fill:#dbd0b4;stroke:none"
+       d="m 24,12 v 8 h -8 v 4 h -4 v 4 H 8 v 8 h 4 v 4 h 4 v 4 h 8 v -8 h -4 v -4 h 8 v 4 h 4 v -8 h -4 v -4 h 8 v -4 h -4 v -4 h -4 v -4 z"
+       id="path6" />
+    <path
+       style="fill:#38342a;stroke:none"
+       d="m 28,12 v 4 h 4 v 4 h 4 v 4 h 4 v -4 h -4 v -4 h -4 v -4 z"
+       id="path7" />
+    <path
+       d="m 32,12 v 4 h 4 v -4 z m 4,4 v 4 h 4 v -4 z m 4,4 v 4 h 4 v -4 z m 0,4 h -4 v 4 h -4 v 8 h 4 v -4 h 4 z m -8,12 h -8 v 8 h 4 v -4 h 4 z m -8,8 h -4 v 4 h 4 z"
+       style="fill:#bcb29c"
+       id="path27" />
+    <path
+       style="fill:#807a6d;stroke:none"
+       d="m 44,24 v 4 h 4 v -4 z"
+       id="path15" />
+    <path
+       style="fill:#aea694;stroke:none"
+       d="m 4,32 v 4 h 4 v 4 h 4 v 4 h 4 v 4 h 4 V 44 H 16 V 40 H 12 V 36 H 8 v -4 z"
+       id="path18" />
+    <path
+       d="m 4,36 v 4 h 4 v -4 z m 4,4 v 4 h 4 v -4 z m 4,4 v 4 h 4 v -4 z m 4,4 v 4 h 4 v -4 z"
+       style="display:inline;fill:#9a927e"
+       id="path26" />
+    <path
+       d="m 28,8 v 4 h 4 V 8 Z m -8,8 v 4 h 4 v -4 z m 4,4 v 4 h 4 v -4 z m 4,4 v 4 h 8 v -4 z m -12,4 v 4 h 4 v -4 z m 4,4 v 4 h 8 v -4 z"
+       style="fill:#c6bca5"
+       id="path28" />
+  </g>
+</svg>
