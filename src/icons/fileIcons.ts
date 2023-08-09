@@ -915,7 +915,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'terraform',
-      fileExtensions: ['tf', 'tf.json', 'tfvars', 'tfstate'],
+      fileExtensions: ['tf', 'tf.json', 'tfvars', 'tfstate', 'tfbackend'],
     },
     {
       name: 'laravel',
