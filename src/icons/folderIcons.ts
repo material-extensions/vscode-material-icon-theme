@@ -477,7 +477,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-server', folderNames: ['server', 'servers', 'backend'] },
       {
         name: 'folder-client',
-        folderNames: ['client', 'clients', 'frontend', 'pwa'],
+        folderNames: ['client', 'clients', 'frontend', 'frontends', 'pwa'],
       },
       { name: 'folder-tasks', folderNames: ['tasks', 'tickets'] },
       { name: 'folder-android', folderNames: ['android'] },
