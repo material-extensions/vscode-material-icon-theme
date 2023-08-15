@@ -1758,6 +1758,16 @@ export const fileIcons: FileIcons = {
       fileNames: ['svelte.config.js', 'svelte.config.cjs'],
     },
     {
+      name: 'svelte',
+      fileNames: [
+        'hooks.client.js',
+        'hooks.client.ts',
+        'hooks.server.js',
+        'hooks.server.ts',
+      ],
+      enabledFor: [IconPack.Svelte],
+    },
+    {
       name: 'javascript-svelte',
       fileNames: [
         '+page.js',
