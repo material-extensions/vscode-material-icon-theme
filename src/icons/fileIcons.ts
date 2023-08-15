@@ -1759,7 +1759,13 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'javascript-svelte',
-      fileNames: ['+page.js', '+page.server.js', '+layout.js', '+server.js'],
+      fileNames: [
+        '+page.js',
+        '+page.server.js',
+        '+layout.js',
+        '+server.js',
+        '+layout.server.js',
+      ],
     },
     {
       name: 'typescript-svelte',
