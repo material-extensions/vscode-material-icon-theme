@@ -399,7 +399,7 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-graphql', folderNames: ['graphql', 'gql'] },
       { name: 'folder-routes', folderNames: ['routes', 'router', 'routers'] },
-      { name: 'folder-ci', folderNames: ['.ci', 'ci'] },
+      { name: 'folder-ci', folderNames: ['.ci', 'ci', 'workflows'] },
       {
         name: 'folder-benchmark',
         folderNames: [
