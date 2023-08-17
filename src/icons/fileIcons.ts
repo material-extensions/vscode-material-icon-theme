@@ -2402,7 +2402,10 @@ export const fileIcons: FileIcons = {
       name: 'mojo',
       fileExtensions: ['mojo', '🔥'],
     },
-    { name: 'csharpier', fileNames: ['.csharpierrc', '.csharpierrc.json', '.csharpierrc.yaml'] }
+    {
+      name: 'csharpier',
+      fileNames: ['.csharpierrc', '.csharpierrc.json', '.csharpierrc.yaml'],
+    },
     {
       name: 'werf',
       fileNames: [
