@@ -1,4 +1,4 @@
-import { FolderTheme, IconPack } from '../models/index';
+import { FolderTheme, IconPack } from '../models';
 
 /**
  * Defines folder icons
@@ -9,6 +9,10 @@ export const folderIcons: FolderTheme[] = [
     defaultIcon: { name: 'folder' },
     rootFolder: { name: 'folder-root' },
     icons: [
+      {
+        name: 'folder-robot',
+        folderNames: ['bot', 'robot', '.bot', '.robot', '_bot', '_robot'],
+      },
       {
         name: 'folder-src',
         folderNames: ['src', 'srcs', 'source', 'sources', 'code'],
@@ -473,7 +477,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-server', folderNames: ['server', 'servers', 'backend'] },
       {
         name: 'folder-client',
-        folderNames: ['client', 'clients', 'frontend', 'pwa'],
+        folderNames: ['client', 'clients', 'frontend', 'frontends', 'pwa'],
       },
       { name: 'folder-tasks', folderNames: ['tasks', 'tickets'] },
       { name: 'folder-android', folderNames: ['android'] },
@@ -760,6 +764,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['interface', 'interfaces'],
       },
       { name: 'folder-netlify', folderNames: ['.netlify'] },
+      {
+        name: 'folder-enum',
+        folderNames: ['enum', 'enums'],
+      },
       {
         name: 'folder-contract',
         folderNames: [

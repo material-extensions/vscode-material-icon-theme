@@ -3,6 +3,21 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v4.29.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.28.0...v4.29.0) 
+
+> July 14, 2023 
+
+- Fix contributors script [`1d90a53`](https://github.com/PKief/vscode-material-icon-theme/commit/1d90a53)
+- Prettier supports config files in ESM [`#2019`](https://github.com/PKief/vscode-material-icon-theme/pull/2019)
+- Add playwright file names [`df129a4`](https://github.com/PKief/vscode-material-icon-theme/commit/df129a4)
+- Add .eslintrc.base.json file name [`1dcba8d`](https://github.com/PKief/vscode-material-icon-theme/commit/1dcba8d)
+- Add git icon to .keep [`#2010`](https://github.com/PKief/vscode-material-icon-theme/pull/2010)
+- fix: `nginx` file extensions typo [`#2002`](https://github.com/PKief/vscode-material-icon-theme/pull/2002)
+- fix: add semantic release as cjs extension [`#2000`](https://github.com/PKief/vscode-material-icon-theme/pull/2000)
+- feat: werf icon [`#1995`](https://github.com/PKief/vscode-material-icon-theme/pull/1995)
+- Use shields.io for marketplace badges in README [`#1996`](https://github.com/PKief/vscode-material-icon-theme/pull/1996)
+- feat: introduce support for semgrep files [`#1991`](https://github.com/PKief/vscode-material-icon-theme/pull/1991)
+ 
 #### [v4.28.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.27.0...v4.28.0) 
 
 > May 31, 2023 
