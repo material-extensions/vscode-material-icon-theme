@@ -597,7 +597,15 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-job', folderNames: ['job', 'jobs'] },
       {
         name: 'folder-keys',
-        folderNames: ['keys', 'key', 'token', 'tokens', 'jwt'],
+        folderNames: [
+          'key',
+          'keys',
+          'token',
+          'tokens',
+          'jwt',
+          'secret',
+          'secrets',
+        ],
       },
       { name: 'folder-layout', folderNames: ['layout', 'layouts', '_layouts'] },
       {
