@@ -67,13 +67,7 @@ export const fileIcons: FileIcons = {
     { name: 'twine', fileExtensions: ['tw', 'twee'] },
     {
       name: 'yaml',
-      fileExtensions: [
-        'yml',
-        'yaml',
-        'yml.dist',
-        'yaml.dist',
-        'YAML-tmLanguage',
-      ],
+      fileExtensions: ['yml.dist', 'yaml.dist', 'YAML-tmLanguage'],
     },
     {
       name: 'xml',
