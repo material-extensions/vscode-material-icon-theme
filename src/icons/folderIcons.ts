@@ -845,6 +845,14 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-godot',
         folderNames: ['godot', '.godot', 'godot-cpp', '.godot-cpp'],
       },
+      {
+        name: 'folder-3d',
+        folderNames: ['3d', '3d-model', '3d-models', 'object', 'objects', 'obj'],
+      },
+      {
+        name: 'folder-visualstudio',
+        folderNames: ['.vs'],
+      }
     ],
   },
   {
