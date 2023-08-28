@@ -5,12 +5,15 @@ import { LanguageIcon } from '../models';
  */
 export const languageIcons: LanguageIcon[] = [
   { icon: { name: 'git' }, ids: ['git', 'git-commit', 'git-rebase', 'ignore'] },
-  { icon: { name: 'yaml' }, ids: ['yaml', 'github-actions-workflow'] },
+  {
+    icon: { name: 'yaml' },
+    ids: ['yaml', 'github-actions-workflow', 'spring-boot-properties-yaml'],
+  },
   { icon: { name: 'xml' }, ids: ['xml', 'xquery', 'xsl'] },
   { icon: { name: 'matlab' }, ids: ['matlab'] },
   {
     icon: { name: 'settings' },
-    ids: ['makefile', 'toml', 'ini', 'properties'],
+    ids: ['makefile', 'toml', 'ini', 'properties', 'spring-boot-properties'],
   },
   { icon: { name: 'shaderlab' }, ids: ['shaderlab'] },
   { icon: { name: 'diff' }, ids: ['diff'] },
