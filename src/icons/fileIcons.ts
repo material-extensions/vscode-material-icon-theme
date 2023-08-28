@@ -1874,7 +1874,7 @@ export const fileIcons: FileIcons = {
         'qcow',
         'qcow2',
         'qed',
-        'dmg'
+        'dmg',
       ],
     },
     {
