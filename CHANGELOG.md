@@ -3,6 +3,12 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v4.30.1](https://github.com/PKief/vscode-material-icon-theme/compare/v4.30.0...v4.30.1) 
+
+> August 28, 2023 
+
+- Add missing language ids for yaml icon [`#2066`](https://github.com/PKief/vscode-material-icon-theme/pull/2066)
+ 
 #### [v4.30.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.29.0...v4.30.0) 
 
 > August 26, 2023 
