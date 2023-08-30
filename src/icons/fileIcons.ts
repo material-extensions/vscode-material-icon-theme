@@ -1865,7 +1865,7 @@ export const fileIcons: FileIcons = {
     { name: 'codeowners', fileNames: ['codeowners'] },
     { name: 'gcp', fileNames: ['.gcloudignore'] },
     { 
-      name: 'disc', 
+      name: 'disc',
       fileExtensions: [
         'iso',
         'vdi',
