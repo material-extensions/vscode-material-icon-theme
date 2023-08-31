@@ -1866,15 +1866,7 @@ export const fileIcons: FileIcons = {
     { name: 'gcp', fileNames: ['.gcloudignore'] },
     {
       name: 'disc',
-      fileExtensions: [
-        'iso',
-        'vmdk',
-        'hdd',
-        'qcow',
-        'qcow2',
-        'qed',
-        'dmg',
-      ],
+      fileExtensions: ['iso', 'vmdk', 'hdd', 'qcow', 'qcow2', 'qed', 'dmg'],
     },
     {
       name: 'fortran',
