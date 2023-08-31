@@ -1868,8 +1868,6 @@ export const fileIcons: FileIcons = {
       name: 'disc',
       fileExtensions: [
         'iso',
-        'vdi',
-        'vhd',
         'vmdk',
         'hdd',
         'qcow',
