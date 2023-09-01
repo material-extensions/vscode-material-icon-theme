@@ -2407,6 +2407,6 @@ export const fileIcons: FileIcons = {
     },
     { name: 'roblox', fileExtensions: ['rbxl', 'rbxlx', 'rbxm', 'rbxmx'] },
     { name: 'panda', fileNames: ['panda.config.ts', 'panda.config.js'] },
-    { name: 'lottie',  fileExtensions: ['lottie'] },
+    { name: 'lottie', fileExtensions: ['lottie'] },
   ],
 };
