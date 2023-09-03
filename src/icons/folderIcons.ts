@@ -632,6 +632,9 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-supabase', folderNames: ['supabase', '.supabase'] },
       { name: 'folder-private', folderNames: ['private', '.private'] },
+      { name: 'folder-linux', folderNames: ['linux'] },
+      { name: 'folder-windows', folderNames: ['windows'] },
+      { name: 'folder-macos', folderNames: ['macos', '.DS_Store'] },
       { name: 'folder-error', folderNames: ['error', 'errors', 'err'] },
       { name: 'folder-event', folderNames: ['event', 'events'] },
       {
