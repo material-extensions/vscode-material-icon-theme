@@ -1,13 +1,8 @@
 import { Translation } from '../models';
 
 export const translation: Translation = {
-  themeInstalled: 'Material Icon Theme a été installé.',
-  howToActivate: 'Comment activer les icônes',
   activate: 'Activer',
   activated: 'Material Icon Theme est actif.',
-  neverShowAgain: 'Ne plus afficher',
-  themeUpdated: 'Material Icon Theme a été mis à jour.',
-  readChangelog: 'Lire la liste des changements',
   iconPacks: {
     selectPack: "Sélectionnez un pack d'icônes",
     description: "Sélectionner le pack d'icônes '%0'",
@@ -15,13 +10,15 @@ export const translation: Translation = {
   },
   folders: {
     toggleIcons: 'Basculer les icônes de dossiers',
-    color: 'Choisissez une couleur de dossier',
-    hexCode: 'Insérer un code couleur HEX',
-    wrongHexCode: 'Code couleur HEX non valide!',
     disabled: 'Aucune icônes de dossiers',
     theme: {
       description: "Icônes de dossiers '%0'",
     },
+  },
+  colorSelect: {
+    color: 'Choisissez une couleur',
+    hexCode: 'Insérer un code couleur HEX',
+    wrongHexCode: 'Code couleur HEX non valide!',
   },
   opacity: {
     inputPlaceholder: "Valeur d'opacité (entre 0 et 1)",
@@ -36,11 +33,6 @@ export const translation: Translation = {
     enable: 'Afficher les flèches du dossier',
     disable: 'Cacher les flèches de dossier',
   },
-  confirmReload: 'Veuillez redémarrer VS Code pour activer les icônes',
-  reload: 'Redémarrer',
-  outdatedVersion:
-    'Vous devez mettre VS Code à jour pour utiliser cette commande.',
-  updateVSCode: 'Mettre VS Code à jour.',
   grayscale: {
     toggle: 'Basculer les icônes en niveaux de gris',
     enable: 'Activer les icônes en niveaux de gris',
