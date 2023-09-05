@@ -1,4 +1,4 @@
-import { FolderTheme, IconPack } from '../models/index';
+import { FolderTheme, IconPack } from '../models';
 
 /**
  * Defines folder icons
@@ -9,6 +9,10 @@ export const folderIcons: FolderTheme[] = [
     defaultIcon: { name: 'folder' },
     rootFolder: { name: 'folder-root' },
     icons: [
+      {
+        name: 'folder-robot',
+        folderNames: ['bot', 'robot', '.bot', '.robot', '_bot', '_robot'],
+      },
       {
         name: 'folder-src',
         folderNames: ['src', 'srcs', 'source', 'sources', 'code'],
@@ -111,7 +115,7 @@ export const folderIcons: FolderTheme[] = [
           '.submodules',
         ],
       },
-      { name: 'folder-github', folderNames: ['.github'] },
+      { name: 'folder-github', folderNames: ['.github', 'github'] },
       { name: 'folder-gitlab', folderNames: ['.gitlab'] },
       { name: 'folder-vscode', folderNames: ['.vscode', '.vscode-test'] },
       {
@@ -123,6 +127,7 @@ export const folderIcons: FolderTheme[] = [
           'screens',
           'page',
           'pages',
+          'public_html',
           'html',
         ],
       },
@@ -294,7 +299,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-redux-store',
-        folderNames: ['store'],
+        folderNames: ['store', 'stores'],
         enabledFor: [IconPack.Redux],
       },
       {
@@ -423,6 +428,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-gulp',
         folderNames: [
           'gulp',
+          'gulp-tasks',
           'gulpfile.js',
           'gulpfile.mjs',
           'gulpfile.ts',
@@ -432,6 +438,10 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-python',
         folderNames: ['python', '__pycache__', '.pytest_cache'],
+      },
+      {
+        name: 'folder-mojo',
+        folderNames: ['mojo'],
       },
       { name: 'folder-debug', folderNames: ['debug', 'debugging'] },
       { name: 'folder-fastlane', folderNames: ['fastlane'] },
@@ -467,7 +477,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-server', folderNames: ['server', 'servers', 'backend'] },
       {
         name: 'folder-client',
-        folderNames: ['client', 'clients', 'frontend', 'pwa'],
+        folderNames: ['client', 'clients', 'frontend', 'frontends', 'pwa'],
       },
       { name: 'folder-tasks', folderNames: ['tasks', 'tickets'] },
       { name: 'folder-android', folderNames: ['android'] },
@@ -587,7 +597,15 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-job', folderNames: ['job', 'jobs'] },
       {
         name: 'folder-keys',
-        folderNames: ['keys', 'key', 'token', 'tokens', 'jwt'],
+        folderNames: [
+          'key',
+          'keys',
+          'token',
+          'tokens',
+          'jwt',
+          'secret',
+          'secrets',
+        ],
       },
       { name: 'folder-layout', folderNames: ['layout', 'layouts', '_layouts'] },
       {
@@ -621,6 +639,9 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-supabase', folderNames: ['supabase', '.supabase'] },
       { name: 'folder-private', folderNames: ['private', '.private'] },
+      { name: 'folder-linux', folderNames: ['linux'] },
+      { name: 'folder-windows', folderNames: ['windows'] },
+      { name: 'folder-macos', folderNames: ['macos', '.DS_Store'] },
       { name: 'folder-error', folderNames: ['error', 'errors', 'err'] },
       { name: 'folder-event', folderNames: ['event', 'events'] },
       {
@@ -687,7 +708,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-svg', folderNames: ['svg', 'svgs'] },
       {
         name: 'folder-vuex-store',
-        folderNames: ['store'],
+        folderNames: ['store', 'stores'],
         enabledFor: [IconPack.Vuex],
       },
       {
@@ -762,6 +783,10 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-netlify', folderNames: ['.netlify'] },
       {
+        name: 'folder-enum',
+        folderNames: ['enum', 'enums'],
+      },
+      {
         name: 'folder-contract',
         folderNames: [
           'pact',
@@ -800,7 +825,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-angular',
-        folderNames: ['.angular'],
+        folderNames: ['angular', '.angular'],
       },
       {
         name: 'folder-unity',
@@ -817,6 +842,22 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-proto',
         folderNames: ['protobufs', 'proto'],
+      },
+      {
+        name: 'folder-plastic',
+        folderNames: ['plastic', '.plastic'],
+      },
+      {
+        name: 'folder-gamemaker',
+        folderNames: ['gamemaker', 'gamemaker2'],
+      },
+      {
+        name: 'folder-mercurial',
+        folderNames: ['.hg', 'hghooks', '.hghooks', '.hgext'],
+      },
+      {
+        name: 'folder-godot',
+        folderNames: ['godot', '.godot', 'godot-cpp', '.godot-cpp'],
       },
     ],
   },
