@@ -2313,10 +2313,6 @@ export const fileIcons: FileIcons = {
     },
     { name: 'luau', fileExtensions: ['luau'] },
     {
-      name: 'roblox',
-      fileExtensions: ['rbxl', 'rbxlx', 'rbxm', 'rbxmx'],
-    },
-    {
       name: 'rojo',
       fileExtensions: ['project.json', 'model.json', 'meta.json'],
     },
