@@ -2416,5 +2416,9 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['project.json', 'model.json', 'meta.json'],
     },
     { name: 'wally', fileNames: ['wally.toml'] },
+    {
+      name: 'rbxmk',
+      fileExtensions: ['rbxmk.lua'],
+    },
   ],
 };
