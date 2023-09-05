@@ -2410,5 +2410,6 @@ export const fileIcons: FileIcons = {
     },
     { name: 'roblox', fileExtensions: ['rbxl', 'rbxlx', 'rbxm', 'rbxmx'] },
     { name: 'panda', fileNames: ['panda.config.ts', 'panda.config.js'] },
+    { name: 'kubernetes', fileNames: ['k8s.yml', 'k8s.yaml', 'kubernetes.yml', 'kubernetes.yaml'] },
   ],
 };
