@@ -2311,12 +2311,6 @@ export const fileIcons: FileIcons = {
         'steadybit.yaml',
       ],
     },
-    { name: 'luau', fileExtensions: ['luau'] },
-    {
-      name: 'rojo',
-      fileExtensions: ['project.json', 'model.json', 'meta.json'],
-    },
-    { name: 'wally', fileNames: ['wally.toml'] },
     { name: 'tree', fileExtensions: ['tree'] },
     {
       name: 'cadence',
@@ -2416,5 +2410,11 @@ export const fileIcons: FileIcons = {
     },
     { name: 'roblox', fileExtensions: ['rbxl', 'rbxlx', 'rbxm', 'rbxmx'] },
     { name: 'panda', fileNames: ['panda.config.ts', 'panda.config.js'] },
+    { name: 'luau', fileExtensions: ['luau'] },
+    {
+      name: 'rojo',
+      fileExtensions: ['project.json', 'model.json', 'meta.json'],
+    },
+    { name: 'wally', fileNames: ['wally.toml'] },
   ],
 };

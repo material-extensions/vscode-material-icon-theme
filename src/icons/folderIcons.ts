@@ -832,10 +832,6 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['unity'],
       },
       {
-        name: 'folder-luau',
-        folderNames: ['luau'],
-      },
-      {
         name: 'folder-pdf',
         folderNames: ['pdf', 'pdfs'],
       },
@@ -858,6 +854,10 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-godot',
         folderNames: ['godot', '.godot', 'godot-cpp', '.godot-cpp'],
+      },
+      {
+        name: 'folder-luau',
+        folderNames: ['luau'],
       },
     ],
   },
