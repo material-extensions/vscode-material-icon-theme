@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" width="240px" height="240px" viewBox="0 0 240 240">
+<defs>
+<g id="HashLinkLogo">
+<path fill="rgb(100,33,138)" class="hashlink-color-alt" stroke="none" d="M 59.15 126.85L 59.15 184.75 95.45 168.25 95.45 140.05 59.15 126.85M 59.15 41.7L 59.15 91.7 95.45 104.9 95.45 54.95 59.15 41.7M 162.2 160L 162.2 117.6 162.2 79.25 128.9 67.15 128.9 210.1 128.9 210.4 214.1 171.65 214.1 136.4 162.2 160 Z"/>
+<path fill="#00CCFF" class="hashlink-color" stroke="none" d="M 128.9 67.15L 95.45 54.95 95.45 104.9 59.15 91.7 59.15 41.7 25.9 29.6 25.9 172.6 59 184.7 59.15 184.75 59.15 126.85 95.45 140.05 95.45 168.25 95.45 197.95 128.9 210.1 128.9 67.15M 214.1 136.4L 162.2 117.6 162.2 160 214.1 136.4 Z"/>
+</g>
+</defs>
+<g transform="matrix( 1, 0, 0, 1, 0,0) ">
+<use xlink:href="#HashLinkLogo"/>
+</g>
+</svg>

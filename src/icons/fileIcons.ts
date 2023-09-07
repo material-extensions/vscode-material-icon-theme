@@ -766,6 +766,8 @@ export const fileIcons: FileIcons = {
     { name: 'handlebars', fileExtensions: ['hbs', 'mustache'] },
     { name: 'perl', fileExtensions: ['pm', 'raku'] },
     { name: 'haxe', fileExtensions: ['hx'] },
+    { name: 'hashlink', fileExtensions: ['hl'] },
+    { name: 'neko', fileExtensions: ['n'] },
     {
       name: 'test-ts',
       fileExtensions: [

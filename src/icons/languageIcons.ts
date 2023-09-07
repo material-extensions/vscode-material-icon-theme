@@ -35,6 +35,8 @@ export const languageIcons: LanguageIcon[] = [
   { icon: { name: 'handlebars' }, ids: ['handlebars'] },
   { icon: { name: 'perl' }, ids: ['perl', 'perl6'] },
   { icon: { name: 'haxe' }, ids: ['haxe', 'hxml'] },
+  { icon: { name: 'hashlink' }, ids: ['hl'] },
+  { icon: { name: 'neko' }, ids: ['n'] },
   { icon: { name: 'puppet' }, ids: ['puppet'] },
   { icon: { name: 'elixir' }, ids: ['elixir'] },
   { icon: { name: 'livescript' }, ids: ['livescript'] },
