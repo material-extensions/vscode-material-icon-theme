@@ -313,7 +313,7 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'kusto', fileExtensions: ['kql'] },
-    { name: 'csharp', fileExtensions: ['cs', 'csx'] },
+    { name: 'csharp', fileExtensions: ['cs', 'csx', 'csharp'] },
     { name: 'qsharp', fileExtensions: ['qs'] },
     {
       name: 'zip',
