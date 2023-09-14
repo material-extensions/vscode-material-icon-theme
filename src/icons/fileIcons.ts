@@ -1862,7 +1862,7 @@ export const fileIcons: FileIcons = {
     { name: 'advpl_ptm', fileExtensions: ['ptm'] },
     { name: 'advpl_tlpp', fileExtensions: ['tlpp'] },
     { name: 'advpl_include', fileExtensions: ['ch'] },
-    { name: 'codeowners', fileNames: ['codeowners'] },
+    { name: 'codeowners', fileNames: ['codeowners', 'OWNERS'] },
     { name: 'gcp', fileNames: ['.gcloudignore'] },
     {
       name: 'disc',
