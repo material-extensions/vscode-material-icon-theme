@@ -848,6 +848,18 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-godot',
         folderNames: ['godot', '.godot', 'godot-cpp', '.godot-cpp'],
       },
+      {
+        name: 'folder-jupyter',
+        folderNames: ['juputer', '.jupyter']
+      },
+      {
+        name: 'folder-julia',
+        folderNames: ['julia', '.julia']
+      },
+      {
+        name: 'folder-r',
+        folderNames: ['r', '.r']
+      },
     ],
   },
   {
