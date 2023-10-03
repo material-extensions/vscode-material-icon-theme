@@ -334,7 +334,7 @@ export const fileIcons: FileIcons = {
         'tz',
         'txz',
         'tgz',
-        'zst'
+        'zst',
       ],
     },
     { name: 'vala', fileExtensions: ['vala'] },
@@ -2437,6 +2437,7 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'spwn', fileExtensions: ['spwn'] },
+    { name: 'templ', fileExtensions: ['templ'] },
     { name: 'stan', fileExtensions: ['stan'] },
   ],
 };
