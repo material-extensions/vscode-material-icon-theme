@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   clip-rule="evenodd"
+   fill-rule="evenodd"
+   stroke-linejoin="round"
+   stroke-miterlimit="1.414"
+   viewBox="0 0 500 500"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="stan.svg"
+   inkscape:version="1.3 (0e150ed, 2023-07-21)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.726"
+     inkscape:cx="250"
+     inkscape:cy="249.71031"
+     inkscape:window-width="1392"
+     inkscape:window-height="1097"
+     inkscape:window-x="2760"
+     inkscape:window-y="344"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg1" />
+  <path
+     style="fill:#b71c1c;fill-opacity:1;stroke:none;stroke-width:1.22396"
+     d="M 249.98091,46 C 137.31439,46 46,137.35254 46,250.01908 c 0,53.2089 20.3759,101.6486 53.739624,137.96342 24.726106,-7.49362 49.697486,-14.46379 70.033486,-19.77463 58.82592,-15.36268 159.52699,-41.32706 174.07035,-74.04967 -4.09024,11.36203 -17.74744,41.80593 -17.74744,41.80593 -18.63372,18.17926 -103.3206,38.34213 -159.07682,49.07321 -17.78747,3.42346 -38.0887,7.37949 -58.67354,11.74238 36.6885,35.40848 86.61254,57.22021 141.63525,57.22021 112.66652,0 204.01909,-91.3143 204.01909,-203.98085 0,-33.44788 -8.06946,-65.01204 -22.3373,-92.86808 -36.8126,5.93943 -152.94991,27.02038 -182.71445,33.73544 -32.84954,7.41096 -98.92743,20.87956 -112.10729,43.60363 8.18059,-20.90612 32.89397,-75.65613 32.89397,-75.65613 17.7248,-29.08671 96.19309,-49.89527 150.92976,-65.022941 12.7669,-3.528424 28.01623,-7.859315 44.06261,-12.507358 C 332.03517,59.024457 292.52667,46 249.98091,46 Z"
+     id="path3042"
+     inkscape:connector-curvature="0"
+     inkscape:export-filename="/Users/Betancourt/Documents/Research/Code/Visualizations/stan_logo/print/final/logo.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90" />
+  <path
+     inkscape:export-ydpi="90"
+     inkscape:export-xdpi="90"
+     inkscape:export-filename="/Users/Betancourt/Documents/Research/Code/Visualizations/stan_logo/print/final/logo.png"
+     style="fill:#3e2723;fill-opacity:1;stroke:none;stroke-width:1.22396"
+     d="m 136.67837,235.24528 c -3.66809,17.11759 51.29089,33.69478 100.84432,49.3725 49.55331,15.67773 70.41775,24.14903 82.57414,31.94984 19.70627,-9.42465 24.2223,-23.5195 24.2223,-23.5195 5.50207,-21.70255 -43.8984,-49.45153 -76.84108,-61.62065 -32.94256,-12.16911 -40.32109,-18.01675 -64.21588,-29.7604 -62.90301,16.64767 -66.5838,33.57821 -66.5838,33.57821 z"
+     id="path3044"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="czcczcc" />
+</svg>
