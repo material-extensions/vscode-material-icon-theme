@@ -2419,5 +2419,18 @@ export const fileIcons: FileIcons = {
         'panda.config.cjs',
       ],
     },
+    {
+      name: 'esbuild',
+      fileNames: [
+        'esbuild.js',
+        'esbuild.ts',
+        'esbuild.cjs',
+        'esbuild.mjs',
+        'esbuild.config.js',
+        'esbuild.config.ts',
+        'esbuild.config.cjs',
+        'esbuild.config.mjs',
+      ],
+    },
   ],
 };
