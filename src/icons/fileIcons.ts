@@ -2432,5 +2432,6 @@ export const fileIcons: FileIcons = {
         'esbuild.config.mjs',
       ],
     },
+    { name: 'spwn', fileExtensions: ['spwn'] },
   ],
 };
