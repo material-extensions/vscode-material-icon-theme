@@ -2420,5 +2420,19 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'biome', fileNames: ['biome.json'] },
+    {
+      name: 'esbuild',
+      fileNames: [
+        'esbuild.js',
+        'esbuild.ts',
+        'esbuild.cjs',
+        'esbuild.mjs',
+        'esbuild.config.js',
+        'esbuild.config.ts',
+        'esbuild.config.cjs',
+        'esbuild.config.mjs',
+      ],
+    },
+    { name: 'spwn', fileExtensions: ['spwn'] },
   ],
 };
