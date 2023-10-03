@@ -2433,5 +2433,6 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'spwn', fileExtensions: ['spwn'] },
+    { name: 'stan', fileExtensions: ['stan'] },
   ],
 };
