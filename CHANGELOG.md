@@ -3,6 +3,30 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v4.30.1](https://github.com/PKief/vscode-material-icon-theme/compare/v4.30.0...v4.30.1) 
+
+> August 28, 2023 
+
+- Add missing language ids for yaml icon [`#2066`](https://github.com/PKief/vscode-material-icon-theme/pull/2066)
+ 
+#### [v4.30.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.29.0...v4.30.0) 
+
+> August 26, 2023 
+
+- [Icon Request] Add icon association to dockercompose language id [`#2059`](https://github.com/PKief/vscode-material-icon-theme/pull/2059)
+- [Icon Request] Secret Folder [`#2060`](https://github.com/PKief/vscode-material-icon-theme/pull/2060)
+- Add frontends folder icon [`379040f`](https://github.com/PKief/vscode-material-icon-theme/commit/379040f)
+- Associate `.tfbackend` files with Terraform [`#2055`](https://github.com/PKief/vscode-material-icon-theme/pull/2055)
+- Add jest file names [`43bde80`](https://github.com/PKief/vscode-material-icon-theme/commit/43bde80)
+- feat: enum icon [`#1195`](https://github.com/PKief/vscode-material-icon-theme/pull/1195)
+- Add istanbul file names [`5ce97ae`](https://github.com/PKief/vscode-material-icon-theme/commit/5ce97ae)
+- Add folder-robot icon [`#2039`](https://github.com/PKief/vscode-material-icon-theme/pull/2039)
+- czech translation [`#2040`](https://github.com/PKief/vscode-material-icon-theme/pull/2040)
+- [Icon Request] panda.config.ts [`#2034`](https://github.com/PKief/vscode-material-icon-theme/pull/2034)
+- Adding Roblox Studio icons [`#2029`](https://github.com/PKief/vscode-material-icon-theme/pull/2029)
+- Add .taurignore [`#2033`](https://github.com/PKief/vscode-material-icon-theme/pull/2033)
+- maint: `.containerfile` and `.containerignore` icon [`#2026`](https://github.com/PKief/vscode-material-icon-theme/pull/2026)
+ 
 #### [v4.29.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.28.0...v4.29.0) 
 
 > July 14, 2023 
