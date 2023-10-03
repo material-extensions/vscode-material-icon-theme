@@ -334,6 +334,7 @@ export const fileIcons: FileIcons = {
         'tz',
         'txz',
         'tgz',
+        'zst'
       ],
     },
     { name: 'vala', fileExtensions: ['vala'] },
@@ -1762,8 +1763,10 @@ export const fileIcons: FileIcons = {
         'stl',
         'stp',
         'obj',
+        'o',
         'ac',
         'blend',
+        'dxf',
         'fbx',
         'mesh',
         'mqo',
