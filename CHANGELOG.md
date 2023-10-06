@@ -3,6 +3,24 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v4.31.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.30.1...v4.31.0) 
+
+> October 6, 2023 
+
+- added templ file icon [`#2102`](https://github.com/PKief/vscode-material-icon-theme/pull/2102)
+- Add .o and .zst extensions [`#2063`](https://github.com/PKief/vscode-material-icon-theme/pull/2063)
+- Add Biome icon [`#2075`](https://github.com/PKief/vscode-material-icon-theme/pull/2075)
+- Added .stan file icon [`#2050`](https://github.com/PKief/vscode-material-icon-theme/pull/2050)
+- [Icon Request] ESBuild [`#2104`](https://github.com/PKief/vscode-material-icon-theme/pull/2104)
+- add plural versions for manager, moderator, and admin folders [`#2098`](https://github.com/PKief/vscode-material-icon-theme/pull/2098)
+- Add SPWN file icon [`#2090`](https://github.com/PKief/vscode-material-icon-theme/pull/2090)
+- Support OWNERS files [`#2088`](https://github.com/PKief/vscode-material-icon-theme/pull/2088)
+- Remove sponsors badge from readme [`#2082`](https://github.com/PKief/vscode-material-icon-theme/pull/2082)
+- Add more panda file names (Closes #2065) [`afac99a`](https://github.com/PKief/vscode-material-icon-theme/commit/afac99a)
+- Add csharp file extension (Closes #2080) [`411e1c9`](https://github.com/PKief/vscode-material-icon-theme/commit/411e1c9)
+- feat: icons for desktop os [`#1635`](https://github.com/PKief/vscode-material-icon-theme/pull/1635)
+- Added disc file extensions (vmdk, qcow2, etc.) [`#2069`](https://github.com/PKief/vscode-material-icon-theme/pull/2069)
+ 
 #### [v4.30.1](https://github.com/PKief/vscode-material-icon-theme/compare/v4.30.0...v4.30.1) 
 
 > August 28, 2023 
