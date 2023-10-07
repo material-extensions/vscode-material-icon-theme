@@ -476,6 +476,7 @@ export const fileIcons: FileIcons = {
       fileNames: ['.rubocop.yml', '.rubocop-todo.yml', '.rubocop_todo.yml'],
       light: true,
     },
+    { name: 'rspec', fileNames: ['.rspec'] },
     { name: 'fsharp', fileExtensions: ['fs', 'fsx', 'fsi', 'fsproj'] },
     { name: 'swift', fileExtensions: ['swift'] },
     { name: 'arduino', fileExtensions: ['ino'] },
