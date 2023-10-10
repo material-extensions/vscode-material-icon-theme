@@ -129,6 +129,7 @@ export const languageIcons: LanguageIcon[] = [
   { icon: { name: 'lock' }, ids: ['ssh_config'] },
   { icon: { name: 'svg' }, ids: ['svg'] },
   { icon: { name: 'swift' }, ids: ['swift'] },
+  { icon: { name: 'sino' }, ids: ['sino'] },
   { icon: { name: 'react_ts' }, ids: ['typescriptreact'] },
   { icon: { name: 'search' }, ids: ['search-result'] },
   { icon: { name: 'minecraft' }, ids: ['mcfunction'] },
