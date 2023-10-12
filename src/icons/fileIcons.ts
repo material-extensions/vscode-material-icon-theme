@@ -1753,8 +1753,10 @@ export const fileIcons: FileIcons = {
         'tailwind.ts',
         'tailwind.config.js',
         'tailwind.config.cjs',
+        'tailwind.config.mjs',
         'tailwind.config.ts',
         'tailwind.config.cts',
+        'tailwind.config.mts',
       ],
     },
     {
