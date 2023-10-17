@@ -904,6 +904,78 @@ export const fileIcons: FileIcons = {
       light: true,
     },
     {
+      name: "next-layout",
+      fileNames: [
+        "layout.jsx",
+        "layout.tsx",
+        "layout.ts",
+        "layout.js"
+      ],
+      enabledFor: [
+        IconPack.Next
+      ],
+    },
+    {
+      name: "next-loading",
+      fileNames: [
+        "loading.jsx",
+        "loading.tsx",
+        "loading.js",
+        "loading.ts"
+      ],
+      enabledFor: [
+        IconPack.Next
+      ],
+    },
+    {
+      name: "next-not-found",
+      fileNames: [
+        "not-found.jsx",
+        "not-found.tsx",
+        "not-found.js",
+        "not-found.ts"
+      ],
+      enabledFor: [
+        IconPack.Next
+      ],
+    },
+    {
+      name: "next-page",
+      fileNames: [
+        "page.jsx",
+        "page.tsx",
+        "page.js",
+        "page.ts"
+      ],
+      enabledFor: [
+        IconPack.Next
+      ],
+    },
+    {
+      name: "next-error",
+      fileNames: [
+        "error.jsx",
+        "error.tsx",
+        "error.js",
+        "error.ts"
+      ],
+      enabledFor: [
+        IconPack.Next
+      ],
+    },
+    {
+      name: "next-route",
+      fileNames: [
+        "route.jsx",
+        "route.tsx",
+        "route.js",
+        "route.ts"
+      ],
+      enabledFor: [
+        IconPack.Next
+      ],
+    },
+    {
       name: 'remix',
       fileNames: ['remix.config.js', 'remix.config.ts'],
       light: true,
