@@ -1,8 +1,16 @@
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
-<circle fill="#F2F2F2" cx="148.2" cy="148.9" r="126.9"/>
-<path fill="#355700" d="M214,78.8H86c-7.8,0-14.2,6.4-14.2,14.2v113.8c0,7.8,6.4,14.2,14.2,14.2H214c7.8,0,14.2-6.4,14.2-14.2V93.1
-	C228.3,85.3,221.9,78.8,214,78.8 M214,206.9H86v-99.6H214V206.9z"/>
-<circle fill="#FFFFFF" cx="93.6" cy="93" r="4.2"/>
-<circle fill="#FFFFFF" cx="109.3" cy="93" r="4.2"/>
-<circle fill="#FFFFFF" cx="125" cy="93" r="4.2"/>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 300 300" style="enable-background:new 0 0 300 300;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#90A3AE;}
+	.st1{fill:#FFFFFF;}
+</style>
+<g>
+	<path class="st0" d="M258.8,29.1H41.2c-13.3,0-24.1,10.9-24.1,24.1v193.4c0,13.3,10.9,24.1,24.1,24.1h217.5
+		c13.3,0,24.1-10.9,24.1-24.1V53.4C283.1,40.1,272.2,29.1,258.8,29.1 M258.8,246.8H41.2V77.5h217.5V246.8z"/>
+	<circle class="st1" cx="51.2" cy="53.2" r="10.8"/>
+	<circle class="st1" cx="80.8" cy="53.2" r="10.8"/>
+	<circle class="st1" cx="110.5" cy="53.2" r="10.8"/>
+</g>
 </svg>
