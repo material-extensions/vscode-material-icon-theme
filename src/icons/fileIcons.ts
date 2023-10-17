@@ -1780,6 +1780,15 @@ export const fileIcons: FileIcons = {
         'vox',
       ],
     },
+    {
+      name: 'usd',
+      fileExtensions: [
+        'usd',
+        'usda',
+        'usdc',
+        'usdz'
+      ],
+    },
     { name: 'buildkite', fileNames: ['buildkite.yml', 'buildkite.yaml'] },
     {
       name: 'netlify',
