@@ -843,6 +843,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['protobufs', 'proto'],
       },
       {
+        name: 'folder-storyblok',
+        folderNames: ['storyblok'],
+      },
+      {
         name: 'folder-plastic',
         folderNames: ['plastic', '.plastic'],
       },
