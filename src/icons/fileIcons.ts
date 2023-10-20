@@ -38,6 +38,7 @@ export const fileIcons: FileIcons = {
         '.esformatter',
         'cdp.pid',
         '.lintstagedrc',
+        '.whitesource',
       ],
     },
     {
