@@ -631,6 +631,7 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['util', 'utils', 'utility', 'utilities'],
       },
       { name: 'folder-supabase', folderNames: ['supabase', '.supabase'] },
+      { name: 'folder-mindsdb', folderNames: ['mindsdb', '.mindsdb'] },
       { name: 'folder-private', folderNames: ['private', '.private'] },
       { name: 'folder-linux', folderNames: ['linux'] },
       { name: 'folder-windows', folderNames: ['windows'] },

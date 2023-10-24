@@ -2194,6 +2194,10 @@ export const fileIcons: FileIcons = {
       fileNames: ['supabase.js', 'supabase.py'],
     },
     {
+      name: 'mindsdb',
+      fileNames: ['mindsdb.js', 'mindsdb.py'],
+    },
+    {
       name: 'ember',
       fileNames: ['.ember-cli', '.ember-cli.js', 'ember-cli-builds.js'],
     },
