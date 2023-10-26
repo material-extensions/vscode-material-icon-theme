@@ -2442,5 +2442,9 @@ export const fileIcons: FileIcons = {
     { name: 'spwn', fileExtensions: ['spwn'] },
     { name: 'templ', fileExtensions: ['templ'] },
     { name: 'stan', fileExtensions: ['stan'] },
+    {
+      name: 'abap',
+      fileExtensions: ['abap', 'acds', 'asddls'],
+    },
   ],
 };
