@@ -2298,12 +2298,12 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'taskfile',
-      fileExtensions: ['Taskfile.yml', 'Taskfile.yaml'],
+      fileExtensions: ['taskfile.yml', 'taskfile.yaml'],
       fileNames: [
-        'Taskfile.yml',
-        'Taskfile.yaml',
-        'Taskfile.dist.yml',
-        'Taskfile.dist.yaml',
+        'taskfile.yml',
+        'taskfile.yaml',
+        'taskfile.dist.yml',
+        'taskfile.dist.yaml',
       ],
     },
     {
