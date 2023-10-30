@@ -858,6 +858,10 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-godot',
         folderNames: ['godot', '.godot', 'godot-cpp', '.godot-cpp'],
       },
+      {
+        name: 'folder-taskfile',
+        folderNames: ['taskfile', 'taskfiles', '.taskfile', '.taskfiles'],
+      },
     ],
   },
   {

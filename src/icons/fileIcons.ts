@@ -2343,6 +2343,16 @@ export const fileIcons: FileIcons = {
       ],
     },
     {
+      name: 'taskfile',
+      fileExtensions: ['taskfile.yml', 'taskfile.yaml'],
+      fileNames: [
+        'taskfile.yml',
+        'taskfile.yaml',
+        'taskfile.dist.yml',
+        'taskfile.dist.yaml',
+      ],
+    },
+    {
       name: 'craco',
       fileNames: [
         'craco.config.ts',
