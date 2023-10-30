@@ -38,6 +38,7 @@ export const fileIcons: FileIcons = {
         '.esformatter',
         'cdp.pid',
         '.lintstagedrc',
+        '.whitesource',
       ],
     },
     {
@@ -67,13 +68,7 @@ export const fileIcons: FileIcons = {
     { name: 'twine', fileExtensions: ['tw', 'twee'] },
     {
       name: 'yaml',
-      fileExtensions: [
-        'yml',
-        'yaml',
-        'yml.dist',
-        'yaml.dist',
-        'YAML-tmLanguage',
-      ],
+      fileExtensions: ['yml.dist', 'yaml.dist', 'YAML-tmLanguage'],
     },
     {
       name: 'xml',
@@ -319,7 +314,7 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'kusto', fileExtensions: ['kql'] },
-    { name: 'csharp', fileExtensions: ['cs', 'csx'] },
+    { name: 'csharp', fileExtensions: ['cs', 'csx', 'csharp'] },
     { name: 'qsharp', fileExtensions: ['qs'] },
     {
       name: 'zip',
@@ -340,6 +335,7 @@ export const fileIcons: FileIcons = {
         'tz',
         'txz',
         'tgz',
+        'zst',
       ],
     },
     { name: 'vala', fileExtensions: ['vala'] },
@@ -915,7 +911,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'terraform',
-      fileExtensions: ['tf', 'tf.json', 'tfvars', 'tfstate'],
+      fileExtensions: ['tf', 'tf.json', 'tfvars', 'tfstate', 'tfbackend'],
     },
     {
       name: 'laravel',
@@ -1636,6 +1632,10 @@ export const fileIcons: FileIcons = {
         'jest-preset.js',
         'jest-preset.cjs',
         'jest-preset.mjs',
+        'jest.preset.js',
+        'jest.preset.mjs',
+        'jest.preset.cjs',
+        'jest.preset.json',
       ],
     },
     { name: 'processing', fileExtensions: ['pde'] },
@@ -1754,8 +1754,10 @@ export const fileIcons: FileIcons = {
         'tailwind.ts',
         'tailwind.config.js',
         'tailwind.config.cjs',
+        'tailwind.config.mjs',
         'tailwind.config.ts',
         'tailwind.config.cts',
+        'tailwind.config.mts',
       ],
     },
     {
@@ -1764,8 +1766,10 @@ export const fileIcons: FileIcons = {
         'stl',
         'stp',
         'obj',
+        'o',
         'ac',
         'blend',
+        'dxf',
         'fbx',
         'mesh',
         'mqo',
@@ -1864,9 +1868,12 @@ export const fileIcons: FileIcons = {
     { name: 'advpl_ptm', fileExtensions: ['ptm'] },
     { name: 'advpl_tlpp', fileExtensions: ['tlpp'] },
     { name: 'advpl_include', fileExtensions: ['ch'] },
-    { name: 'codeowners', fileNames: ['codeowners'] },
+    { name: 'codeowners', fileNames: ['codeowners', 'OWNERS'] },
     { name: 'gcp', fileNames: ['.gcloudignore'] },
-    { name: 'disc', fileExtensions: ['iso'] },
+    {
+      name: 'disc',
+      fileExtensions: ['iso', 'vmdk', 'hdd', 'qcow', 'qcow2', 'qed', 'dmg'],
+    },
     {
       name: 'fortran',
       fileExtensions: ['f', 'f77', 'f90', 'f95', 'f03', 'f08'],
@@ -2410,5 +2417,36 @@ export const fileIcons: FileIcons = {
     { name: 'roblox', fileExtensions: ['rbxl', 'rbxlx', 'rbxm', 'rbxmx'] },
     { name: 'panda', fileNames: ['panda.config.ts', 'panda.config.js'] },
     { name: 'formkit', fileNames: ['formkit.config.js', 'formkit.config.ts'] },
+    {
+      name: 'panda',
+      fileNames: [
+        'panda.config.ts',
+        'panda.config.js',
+        'panda.config.mjs',
+        'panda.config.mts',
+        'panda.config.cjs',
+      ],
+    },
+    { name: 'biome', fileNames: ['biome.json'] },
+    {
+      name: 'esbuild',
+      fileNames: [
+        'esbuild.js',
+        'esbuild.ts',
+        'esbuild.cjs',
+        'esbuild.mjs',
+        'esbuild.config.js',
+        'esbuild.config.ts',
+        'esbuild.config.cjs',
+        'esbuild.config.mjs',
+      ],
+    },
+    { name: 'spwn', fileExtensions: ['spwn'] },
+    { name: 'templ', fileExtensions: ['templ'] },
+    { name: 'stan', fileExtensions: ['stan'] },
+    {
+      name: 'abap',
+      fileExtensions: ['abap', 'acds', 'asddls'],
+    },
   ],
 };

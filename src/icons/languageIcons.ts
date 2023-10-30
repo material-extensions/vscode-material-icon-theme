@@ -5,12 +5,21 @@ import { LanguageIcon } from '../models';
  */
 export const languageIcons: LanguageIcon[] = [
   { icon: { name: 'git' }, ids: ['git', 'git-commit', 'git-rebase', 'ignore'] },
-  { icon: { name: 'yaml' }, ids: ['yaml'] },
+  {
+    icon: { name: 'yaml' },
+    ids: [
+      'yaml',
+      'github-actions-workflow',
+      'spring-boot-properties-yaml',
+      'ansible',
+      'ansible-jinja',
+    ],
+  },
   { icon: { name: 'xml' }, ids: ['xml', 'xquery', 'xsl'] },
   { icon: { name: 'matlab' }, ids: ['matlab'] },
   {
     icon: { name: 'settings' },
-    ids: ['makefile', 'toml', 'ini', 'properties'],
+    ids: ['makefile', 'toml', 'ini', 'properties', 'spring-boot-properties'],
   },
   { icon: { name: 'shaderlab' }, ids: ['shaderlab'] },
   { icon: { name: 'diff' }, ids: ['diff'] },
@@ -87,7 +96,7 @@ export const languageIcons: LanguageIcon[] = [
   { icon: { name: 'tex' }, ids: ['tex', 'doctex', 'latex', 'latex-expl3'] },
   { icon: { name: 'salesforce' }, ids: ['apex'] },
   { icon: { name: 'sas' }, ids: ['sas'] },
-  { icon: { name: 'docker' }, ids: ['dockerfile'] },
+  { icon: { name: 'docker' }, ids: ['dockerfile', 'dockercompose'] },
   { icon: { name: 'table' }, ids: ['csv', 'tsv', 'psv'] },
   { icon: { name: 'csharp' }, ids: ['csharp'] },
   { icon: { name: 'console' }, ids: ['bat', 'awk', 'shellscript'] },
