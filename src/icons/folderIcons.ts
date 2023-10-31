@@ -517,6 +517,8 @@ export const folderIcons: FolderTheme[] = [
           'backups',
           'back-up',
           'back-ups',
+          'history',
+          'histories',
         ],
       },
       { name: 'folder-batch', folderNames: ['batch', 'batchs', 'batches'] },
