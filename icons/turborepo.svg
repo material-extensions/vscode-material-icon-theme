@@ -1,1 +1,119 @@
-<svg fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10.386 1.507c-2.4-.083-4.8.666-6.786 2.249l1.324.75c1.573-1.167 3.559-1.666 5.462-1.583z" fill="#2979ff"/><path d="M17.42 4.67c-1.654-1.747-3.806-2.83-6.123-3.08v1.416a9.306 9.306 0 0 1 5.13 2.665l.994-1z" fill="#448aff"/><path d="M20.4 11.5c-.083-2.165-.91-4.33-2.317-6.162l-.993 1c1.158 1.582 1.82 3.33 1.903 5.163z" fill="#7e57c2"/><path d="M18.083 18.663c1.407-1.832 2.234-3.998 2.317-6.163h-1.407c-.082 1.832-.745 3.58-1.903 5.163z" fill="#ab47bc"/><path d="M11.297 22.41c2.234-.25 4.469-1.332 6.124-3.081l-.993-1c-1.407 1.5-3.228 2.416-5.131 2.666z" fill="#d81b60"/><path d="M3.6 20.245a10.275 10.275 0 0 0 6.786 2.248v-1.415c-1.903.083-3.807-.417-5.462-1.583z" fill="#f50057"/><path d="M10.008 6.212a6.47 6.47 0 0 1 2.45.455 5.62 5.62 0 0 1 1.924 1.232 5.755 5.755 0 0 1 1.72 4.152c0 .822-.15 1.59-.452 2.303a5.802 5.802 0 0 1-3.193 3.095 6.63 6.63 0 0 1-2.449.44c-.894 0-1.715-.146-2.463-.44a5.836 5.836 0 0 1-1.91-1.246 5.75 5.75 0 0 1-1.254-1.85 5.86 5.86 0 0 1-.452-2.302c0-.821.15-1.584.452-2.29A5.71 5.71 0 0 1 5.635 7.9a5.65 5.65 0 0 1 1.91-1.232c.748-.303 1.57-.455 2.463-.455zm0 2.788c-.418 0-.816.078-1.195.234-.37.147-.695.357-.977.63a3.08 3.08 0 0 0-.67.969 2.965 2.965 0 0 0-.248 1.218c0 .44.082.846.248 1.218a3.08 3.08 0 0 0 1.647 1.613c.379.147.777.22 1.195.22s.812-.073 1.181-.22c.38-.156.71-.371.992-.645a2.98 2.98 0 0 0 .685-.968 2.97 2.97 0 0 0 .248-1.218c0-.44-.083-.846-.248-1.218a2.97 2.97 0 0 0-.685-.968 2.917 2.917 0 0 0-.992-.63A2.994 2.994 0 0 0 10.009 9z" fill="#eceff1"/></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   class=""
+   fill="none"
+   height="150"
+   viewBox="0 0 28 28"
+   width="150"
+   version="1.1"
+   id="svg12"
+   sodipodi:docname="turborepo.svg"
+   inkscape:version="1.3 (0e150ed, 2023-07-21)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview12"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="6.6916667"
+     inkscape:cx="74.79452"
+     inkscape:cy="76.139477"
+     inkscape:window-width="1392"
+     inkscape:window-height="1212"
+     inkscape:window-x="2240"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg12"
+     pagecolor="#ffffff" />
+  <title
+     id="title1">Turborepo</title>
+  <defs
+     id="defs6">
+    <linearGradient
+       gradientUnits="userSpaceOnUse"
+       id="logo-ring-gradient"
+       x1="15.0234"
+       x2="3.64419"
+       y1="4.00556"
+       y2="15.3847">
+      <stop
+         stop-color="#0096FF"
+         id="stop1" />
+      <stop
+         offset="1"
+         stop-color="#FF1E56"
+         id="stop2" />
+    </linearGradient>
+    <linearGradient
+       id="gradient">
+      <stop
+         offset="0%"
+         stop-color="#000000"
+         id="stop3" />
+      <stop
+         offset="25%"
+         stop-color="#ffffff"
+         id="stop4" />
+      <stop
+         offset="85%"
+         stop-color="#ffffff"
+         id="stop5" />
+      <stop
+         offset="100%"
+         stop-color="#000000"
+         id="stop6" />
+    </linearGradient>
+    <mask
+       id="logo-mask">
+      <rect
+         fill="url(#gradient)"
+         height="26"
+         transform="translate(-8,0)"
+         width="46"
+         x="0"
+         y="0"
+         id="rect6" />
+    </mask>
+  </defs>
+  <g
+     mask="url(#logo-mask)"
+     transform="translate(0,0)"
+     id="g8">
+    <g
+       class="z-0 relative"
+       opacity="1"
+       transform-origin="13.948790550231934px 13.939799308776855px"
+       id="g7"
+       style="transform: none; transform-origin: 13.9488px 13.9398px;">
+      <path
+         class="dark:fill-white fill-black"
+         d="M13.9396 6.42181C9.79423 6.42181 6.42163 9.79441 6.42163 13.9398C6.42163 18.0852 9.79423 21.4578 13.9396 21.4578C18.085 21.4578 21.4576 18.0852 21.4576 13.9398C21.4576 9.79441 18.085 6.42181 13.9396 6.42181ZM13.9396 17.8304C11.7906 17.8304 10.049 16.0888 10.049 13.9398C10.049 11.7908 11.7906 10.0492 13.9396 10.0492C16.0886 10.0492 17.8302 11.7908 17.8302 13.9398C17.8302 16.0888 16.0886 17.8304 13.9396 17.8304Z"
+         id="path6"
+         style="fill:#ffffff" />
+      <path
+         clip-rule="evenodd"
+         d="M14.5697 5.187V2.38C20.6709 2.7062 25.5177 7.7574 25.5177 13.9398C25.5177 20.1222 20.6709 25.172 14.5697 25.4996V22.6926C19.1169 22.3678 22.7177 18.5682 22.7177 13.9398C22.7177 9.3114 19.1169 5.5118 14.5697 5.187ZM7.30928 19.6798C6.10388 18.2882 5.32688 16.5158 5.18828 14.5698H2.37988C2.52548 17.2928 3.61468 19.7638 5.32128 21.6664L7.30788 19.6798H7.30928ZM13.3097 25.4996V22.6926C11.3623 22.554 9.5899 21.7784 8.1983 20.5716L6.2117 22.5582C8.1157 24.2662 10.5867 25.354 13.3083 25.4996H13.3097Z"
+         fill="url(#logo-ring-gradient)"
+         fill-rule="evenodd"
+         id="path7" />
+    </g>
+  </g>
+  <metadata
+     id="metadata12">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>Turborepo</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>
