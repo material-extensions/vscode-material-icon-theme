@@ -2456,5 +2456,9 @@ export const fileIcons: FileIcons = {
       name: 'abap',
       fileExtensions: ['abap', 'acds', 'asddls'],
     },
+    {
+      name: 'drizzle',
+      fileExtensions: ['drizzle.config.ts', 'drizzle.config.js', 'drizzle.config.json'],
+    },
   ],
 };
