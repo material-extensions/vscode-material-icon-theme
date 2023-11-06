@@ -93,8 +93,7 @@ This uniform color selection makes the folder icons look more consistent and fit
 | ------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------- |
 | <img src="./images/how-tos/svg-folder-icon-with-correct-colors.png" width="200px" /> | <img src="./images/how-tos/svg-folder-icon-with-wrong-colors.png" width="200px" /> |
 
-The use of colors for the motive from outside the second row of the Material Design pallete is permissable where the motive duplicates an existing file icon, where the file icon is derived from an existing third party icon. In this case the motive coloring should match that of the corresponding file icon, which must still follow the guidelines specified in
-[Use Material Design colors](#use-material-design-colors), so that colours are not introduced from outside the Material Design pallete unnecessarily.
+The use of colors for the motive from outside the second row of the Material Design pallete is permissable where the motive duplicates an existing file icon, where the file icon is derived from an existing third party icon. In this case the motive coloring should match that of the corresponding file icon, which must still follow the guidelines specified in [Use Material Design colors](#use-material-design-colors), so that colours are not introduced from outside the Material Design pallete unnecessarily.
 
 <h3 id="icon-spacing">Icon spacing</h3>
 
