@@ -864,6 +864,10 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-taskfile',
         folderNames: ['taskfile', 'taskfiles', '.taskfile', '.taskfiles'],
       },
+      {
+        name: 'folder-cmake',
+        folderNames: ['cmake'],
+      },
     ],
   },
   {
