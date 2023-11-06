@@ -517,6 +517,8 @@ export const folderIcons: FolderTheme[] = [
           'backups',
           'back-up',
           'back-ups',
+          'history',
+          'histories',
         ],
       },
       { name: 'folder-batch', folderNames: ['batch', 'batchs', 'batches'] },
@@ -632,6 +634,9 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-supabase', folderNames: ['supabase', '.supabase'] },
       { name: 'folder-private', folderNames: ['private', '.private'] },
+      { name: 'folder-linux', folderNames: ['linux'] },
+      { name: 'folder-windows', folderNames: ['windows'] },
+      { name: 'folder-macos', folderNames: ['macos', '.DS_Store'] },
       { name: 'folder-error', folderNames: ['error', 'errors', 'err'] },
       { name: 'folder-event', folderNames: ['event', 'events'] },
       {
@@ -734,7 +739,17 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['.azure-pipelines', '.azure-pipelines-ci'],
       },
       { name: 'folder-mjml', folderNames: ['mjml'] },
-      { name: 'folder-admin', folderNames: ['admin', 'manager', 'moderator'] },
+      {
+        name: 'folder-admin',
+        folderNames: [
+          'admin',
+          'admins',
+          'manager',
+          'managers',
+          'moderator',
+          'moderators',
+        ],
+      },
       { name: 'folder-scala', folderNames: ['scala'] },
       {
         name: 'folder-connection',
@@ -848,6 +863,10 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-lottie',
         folderNames: ['lottie', 'lotties', 'lottiefiles'],
+      },
+      {
+        name: 'folder-taskfile',
+        folderNames: ['taskfile', 'taskfiles', '.taskfile', '.taskfiles'],
       },
     ],
   },
