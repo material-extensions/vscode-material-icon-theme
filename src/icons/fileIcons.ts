@@ -2463,5 +2463,6 @@ export const fileIcons: FileIcons = {
       name: 'abap',
       fileExtensions: ['abap', 'acds', 'asddls'],
     },
+    { name: 'lottie', fileExtensions: ['lottie'] },
   ],
 };
