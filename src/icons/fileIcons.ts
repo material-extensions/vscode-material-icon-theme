@@ -2464,5 +2464,6 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['abap', 'acds', 'asddls'],
     },
     { name: 'lottie', fileExtensions: ['lottie'] },
+    { name: 'apps-script', fileExtensions: ['gs'] },
   ],
 };
