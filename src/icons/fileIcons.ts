@@ -2464,5 +2464,17 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['abap', 'acds', 'asddls'],
     },
     { name: 'lottie', fileExtensions: ['lottie'] },
+    {
+      name: 'puppeteer',
+      fileNames: [
+        '.puppeteerrc.cjs,',
+        '.puppeteerrc.js,',
+        '.puppeteerrc',
+        '.puppeteerrc.json,',
+        '.puppeteerrc.yaml,',
+        'puppeteer.config.js',
+        'puppeteer.config.cjs',
+      ],
+    },
   ],
 };
