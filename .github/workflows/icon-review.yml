@@ -17,7 +17,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Review SVG files 🔍
+      - name: Review SVG files 🔍 
         run: |
           svgFiles=$(git diff origin/${{ env.TARGET_BRANCH }} --diff-filter=ACMRTUX  --name-only | grep '.svg$')
           echo "SVG files changed: ${svgFiles}"
