@@ -28,7 +28,6 @@ jobs:
           script: |
             const fs = require('fs');
             const path = require('path');
-            const core = require('@actions/core');
 
             const context = github.context;
             const token = core.getInput('github-token', {required: true});
