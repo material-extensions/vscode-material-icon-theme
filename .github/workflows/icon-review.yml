@@ -41,7 +41,7 @@ jobs:
           script: |
             const fs = require('fs');
             const pngFilePath = './preview.png';
-            const commentBody = '![Generated PNG](https://raw.githubusercontent.com/' + context.repo.owner + '/' + context.repo.repo + '/' + 'review-images/review-images/${{ github.event.pull_request.number }}.png';
+            const commentBody = '![Generated PNG](https://raw.githubusercontent.com/' + context.repo.owner + '/' + context.repo.repo + '/' + 'review-images/review-images/${{ github.event.pull_request.number }}.png)';
 
             github.rest.issues.createComment({
               issue_number: context.issue.number,
