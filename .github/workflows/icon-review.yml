@@ -1,4 +1,4 @@
-name: Icon Preview
+name: Icon Review
 
 on:
   pull_request:
@@ -10,13 +10,12 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Generate SVG previews
         run: |
-          for svg_file in $(git diff --name-only HEAD^ HEAD | grep .svg$); do
-            npx generateIconPreview $svg_file > ${svg_file%.svg}.png
-          done
+          svgFiles=$(git diff origin/${{ env.TARGET_BRANCH }} --diff-filter=ACMRTUX  --name-only | grep '.svg$')
+          npx svg-icon-review ${svgFiles}
 
       - name: Post previews in PR
         uses: actions/github-script@v5
