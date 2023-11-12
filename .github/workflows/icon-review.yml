@@ -23,7 +23,7 @@ jobs:
           echo "SVG files changed: ${svgFiles}"
           npx svg-icon-review ${svgFiles}
 
-      - name: Upload PNG to Repository
+      - name: Upload PNG to Repository ⬆️
         run: |
           mkdir -p review-images
           mv ./preview.png review-images/${{ github.event.pull_request.number }}.png
