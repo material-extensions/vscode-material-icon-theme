@@ -23,26 +23,20 @@ jobs:
           npx svg-icon-review ${svgFiles}
 
       - name: Post previews in PR
-        uses: actions/github-script@v5
+        uses: actions/github-script@v6
         with:
           script: |
             const fs = require('fs');
-            const path = require('path');
+            const pngFilePath = './preview.png';
 
-            const token = core.getInput('github-token', {required: true});
-            const octokit = github.getOctokit(token);
+            const data = fs.readFileSync(pngFilePath);
+            const base64Data = data.toString('base64');
 
-            const png_files = fs.readdirSync('.').filter(fn => fn.endsWith('.png'));
-
-            for (const png_file of png_files) {
-              const content = fs.readFileSync(png_file, 'base64');
-              const comment = `!${png_file}`;
-
-              octokit.rest.issues.createComment({
-                ...context.repo,
-                issue_number: context.issue.number,
-                body: comment
-              });
-            }
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `![Generated PNG](data:image/png;base64,${base64Data})`
+            })
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
