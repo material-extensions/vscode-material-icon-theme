@@ -29,6 +29,7 @@ jobs:
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git checkout -b review-images
+          git pull origin review-images
           git add review-images/
           git commit -m "Add generated review image"
           git push origin review-images
