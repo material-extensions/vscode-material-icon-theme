@@ -28,9 +28,10 @@ jobs:
           mv ./preview.png review-images/
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
+          git checkout -b review-images
           git add review-images/
           git commit -m "Add generated review image"
-          git push origin
+          git push origin review-images
 
       - name: Post previews in PR
         uses: actions/github-script@v6
