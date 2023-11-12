@@ -20,6 +20,7 @@ jobs:
       - name: Review SVG files 🔍
         run: |
           svgFiles=$(git diff origin/${{ env.TARGET_BRANCH }} --diff-filter=ACMRTUX  --name-only | grep '.svg$')
+          echo "SVG files changed: ${svgFiles}"
           npx svg-icon-review ${svgFiles}
 
       - name: Upload PNG to Repository
