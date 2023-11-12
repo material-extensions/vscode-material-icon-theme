@@ -42,7 +42,7 @@ jobs:
           script: |
             const fs = require('fs');
             const pngFilePath = './preview.png';
-            const commentBody = '![Generated PNG](https://raw.githubusercontent.com/' + context.repo.owner + '/' + context.repo.repo + '/' + 'review-images/review-images/${{ github.event.pull_request.number }}_${{ github.sha }}.png)';
+            const commentBody = '## Preview \n\nPlease check if your contributed icons are looking good on dark and light theme: \n\n ![Generated PNG](https://raw.githubusercontent.com/' + context.repo.owner + '/' + context.repo.repo + '/' + 'review-images/review-images/${{ github.event.pull_request.number }}_${{ github.sha }}.png) \n\n You can find more information how to contribute in the [contribution guidelines](https://github.com/PKief/vscode-material-icon-theme/blob/main/CONTRIBUTING.md).';
 
             github.rest.issues.createComment({
               issue_number: context.issue.number,
