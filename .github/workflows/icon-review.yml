@@ -26,14 +26,15 @@ jobs:
       - name: Upload PNG to Repository ⬆️
         run: |
           mkdir -p review-images
-          mv ./preview.png review-images/${{ github.event.pull_request.number }}.png
+          mv ./preview.png review-images/${{ github.event.pull_request.number }}_${{ github.sha }}.png
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git checkout -b review-images
           git add review-images/
           git commit -m "Add generated review image"
           git config pull.rebase true
-          git push origin review-images --force
+          git pull origin review-images -X ours
+          git push origin review-images
 
       - name: Post previews in PR
         uses: actions/github-script@v6
@@ -41,7 +42,7 @@ jobs:
           script: |
             const fs = require('fs');
             const pngFilePath = './preview.png';
-            const commentBody = '![Generated PNG](https://raw.githubusercontent.com/' + context.repo.owner + '/' + context.repo.repo + '/' + 'review-images/review-images/${{ github.event.pull_request.number }}.png)';
+            const commentBody = '![Generated PNG](https://raw.githubusercontent.com/' + context.repo.owner + '/' + context.repo.repo + '/' + 'review-images/review-images/${{ github.event.pull_request.number }}_${{ github.sha }}.png)';
 
             github.rest.issues.createComment({
               issue_number: context.issue.number,
