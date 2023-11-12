@@ -2,17 +2,20 @@ name: Icon Review
 
 on:
   pull_request:
-    types: [opened, synchronize]
+    paths:
+      - 'icons/*.svg'
 
 jobs:
-  build:
+  icon-review:
+    name: Icon Review
     runs-on: ubuntu-latest
-
+    env:
+      TARGET_BRANCH: ${{ github.event.pull_request.base.ref }}
     steps:
-      - name: Checkout code
+      - name: Checkout 🛎️
         uses: actions/checkout@v3
 
-      - name: Generate SVG previews
+      - name: Review SVG files 🔍
         run: |
           svgFiles=$(git diff origin/${{ env.TARGET_BRANCH }} --diff-filter=ACMRTUX  --name-only | grep '.svg$')
           npx svg-icon-review ${svgFiles}
