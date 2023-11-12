@@ -27,7 +27,6 @@ jobs:
         run: |
           mkdir -p review-images
           mv ./preview.png review-images/${{ github.event.pull_request.number }}.png
-          mv ./preview.html review-images/${{ github.event.pull_request.number }}.html
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git checkout -b review-images
