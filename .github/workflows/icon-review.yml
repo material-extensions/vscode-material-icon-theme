@@ -30,10 +30,10 @@ jobs:
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git checkout -b review-images
+          git commit -m "Add generated review image"
           git config pull.rebase true
           git pull origin review-images
           git add review-images/
-          git commit -m "Add generated review image"
           git push origin review-images
 
       - name: Post previews in PR
