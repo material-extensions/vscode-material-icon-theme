@@ -22,21 +22,29 @@ jobs:
           svgFiles=$(git diff origin/${{ env.TARGET_BRANCH }} --diff-filter=ACMRTUX  --name-only | grep '.svg$')
           npx svg-icon-review ${svgFiles}
 
+      - name: Upload PNG to Repository
+        run: |
+          mkdir -p review-images
+          mv ./preview.png review-images/
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add review-images/
+          git commit -m "Add generated review image"
+          git push origin
+
       - name: Post previews in PR
         uses: actions/github-script@v6
         with:
           script: |
             const fs = require('fs');
             const pngFilePath = './preview.png';
-
-            const data = fs.readFileSync(pngFilePath);
-            const base64Data = data.toString('base64');
+            const commentBody = '![Generated PNG](https://raw.githubusercontent.com/' + context.repo.owner + '/' + context.repo.repo + '/' + context.sha + '/review-images/preview.png)';
 
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `![Generated PNG](data:image/png;base64,${base64Data})`
+              body: commentBody
             })
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
