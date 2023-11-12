@@ -25,7 +25,7 @@ jobs:
       - name: Upload PNG to Repository
         run: |
           mkdir -p review-images
-          mv ./preview.png review-images/
+          mv ./preview.png review-images/${{ github.event.pull_request.number }}.png
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git checkout -b review-images
@@ -39,7 +39,7 @@ jobs:
           script: |
             const fs = require('fs');
             const pngFilePath = './preview.png';
-            const commentBody = '![Generated PNG](https://raw.githubusercontent.com/' + context.repo.owner + '/' + context.repo.repo + '/' + context.sha + '/review-images/preview.png)';
+            const commentBody = '![Generated PNG](https://raw.githubusercontent.com/' + context.repo.owner + '/' + context.repo.repo + '/' + 'review-images/review-images/${{ github.event.pull_request.number }}.png';
 
             github.rest.issues.createComment({
               issue_number: context.issue.number,
