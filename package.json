@@ -2,7 +2,7 @@
   "name": "material-icon-theme",
   "displayName": "Material Icon Theme",
   "description": "Material Design Icons for Visual Studio Code",
-  "version": "4.22.0",
+  "version": "4.31.0",
   "scripts": {
     "build": "npm run compile:dev && npm run generateJson",
     "check": "ts-node ./src/scripts/icons/checks",
@@ -77,6 +77,10 @@
   "main": "./dist/extension",
   "browser": "./dist/web/extension.js",
   "sideEffects": false,
+  "files": [
+    "icons",
+    "dist/material-icons.json"
+  ],
   "contributes": {
     "iconThemes": [
       {
@@ -105,6 +109,11 @@
       {
         "command": "material-icon-theme.changeFolderColor",
         "title": "%command.changeFolderColor%",
+        "enablement": "!isWeb"
+      },
+      {
+        "command": "material-icon-theme.changeFileColor",
+        "title": "%command.changeFileColor%",
         "enablement": "!isWeb"
       },
       {
@@ -146,6 +155,7 @@
             "%configuration.activeIconPack.angular_ngrx%",
             "%configuration.activeIconPack.react%",
             "%configuration.activeIconPack.react_redux%",
+            "%configuration.activeIconPack.qwik%",
             "%configuration.activeIconPack.vue%",
             "%configuration.activeIconPack.vue_vuex%",
             "%configuration.activeIconPack.nest%",
@@ -156,6 +166,7 @@
             "angular_ngrx",
             "react",
             "react_redux",
+            "qwik",
             "vue",
             "vue_vuex",
             "nest",
@@ -198,6 +209,12 @@
           "pattern": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
           "description": "%configuration.folders.color%"
         },
+        "material-icon-theme.files.color": {
+          "type": "string",
+          "default": "#90a4ae",
+          "pattern": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+          "description": "%configuration.files.color%"
+        },
         "material-icon-theme.opacity": {
           "type": "number",
           "default": 1,
@@ -232,6 +249,7 @@
     "@types/vscode": "~1.51.0",
     "@typescript-eslint/eslint-plugin": "^5.26.0",
     "@typescript-eslint/parser": "^5.26.0",
+    "axios": "^1.4.0",
     "changelog-machine": "^1.0.2",
     "eslint": "^8.16.0",
     "eslint-config-prettier": "^8.5.0",
