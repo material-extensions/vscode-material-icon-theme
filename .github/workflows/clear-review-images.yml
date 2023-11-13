@@ -1,0 +1,38 @@
+name: PR closed
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout review-images branch 🛎️
+      uses: actions/checkout@v3
+      with:
+        ref: review-images
+
+    - name: Delete PR related files 🗑️
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const fs = require('fs');
+          const path = require('path');
+          const dir = './review-images';
+          const prNumber = context.payload.pull_request.number;
+
+          fs.readdirSync(dir).forEach(file => {
+            if (file.startsWith(`${prNumber}_`)) {
+              fs.unlinkSync(path.join(dir, file));
+            }
+          });
+
+    - name: Commit changes ⬆️
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add -A
+        if [[ $(git diff --stat --staged) != '' ]]; then
+          git commit -m "Delete files related to PR #${{ github.event.pull_request.number }}"
+          git push
+        fi
