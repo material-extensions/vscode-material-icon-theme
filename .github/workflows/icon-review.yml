@@ -2,45 +2,52 @@ name: Icon Review
 
 on:
   pull_request:
-    types: [opened, synchronize]
+    paths:
+      - 'icons/*.svg'
 
 jobs:
-  build:
+  icon-review:
+    name: Icon Review
     runs-on: ubuntu-latest
-
+    env:
+      TARGET_BRANCH: ${{ github.event.pull_request.base.ref }}
     steps:
-      - name: Checkout code
+      - name: Checkout 🛎️
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
-      - name: Generate SVG previews
+      - name: Review SVG files 🔍
         run: |
           svgFiles=$(git diff origin/${{ env.TARGET_BRANCH }} --diff-filter=ACMRTUX  --name-only | grep '.svg$')
+          echo "SVG files changed: ${svgFiles}"
           npx svg-icon-review ${svgFiles}
 
-      - name: Post previews in PR
-        uses: actions/github-script@v5
+      - name: Upload PNG to Repository ⬆️
+        run: |
+          mkdir -p review-images
+          mv ./preview.png review-images/${{ github.event.pull_request.number }}_${{ github.sha }}.png
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git fetch origin
+          git checkout -b review-images origin/review-images --no-track
+          git add review-images/
+          git commit -m "Add generated review image"
+          git push -u origin review-images
+
+      - name: Post review in PR ✍️
+        uses: actions/github-script@v6
         with:
           script: |
             const fs = require('fs');
-            const path = require('path');
-            const github = require('@actions/github');
-            const core = require('@actions/core');
+            const pngFilePath = './preview.png';
+            const commentBody = '## Preview \n\nThank you for creating a pull request. This preview shows you how your changes will look on the different themes: \n\n ![Generated Preview](https://raw.githubusercontent.com/' + context.repo.owner + '/' + context.repo.repo + '/' + 'review-images/review-images/${{ github.event.pull_request.number }}_${{ github.sha }}.png) \n\n You can find more information how to contribute in the [contribution guidelines](https://github.com/PKief/vscode-material-icon-theme/blob/main/CONTRIBUTING.md).';
 
-            const context = github.context;
-            const token = core.getInput('github-token', {required: true});
-            const octokit = github.getOctokit(token);
-
-            const png_files = fs.readdirSync('.').filter(fn => fn.endsWith('.png'));
-
-            for (const png_file of png_files) {
-              const content = fs.readFileSync(png_file, 'base64');
-              const comment = `!${png_file}`;
-
-              octokit.rest.issues.createComment({
-                ...context.repo,
-                issue_number: context.issue.number,
-                body: comment
-              });
-            }
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: commentBody
+            })
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
