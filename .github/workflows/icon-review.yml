@@ -29,11 +29,11 @@ jobs:
           mv ./preview.png review-images/${{ github.event.pull_request.number }}_${{ github.sha }}.png
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
-          git checkout -b review-images
+          git fetch origin
+          git checkout -b review-images origin/review-images --no-track
           git add review-images/
           git commit -m "Add generated review image"
-          git config pull.rebase true
-          git push origin review-images
+          git push -u origin review-images
 
       - name: Post review in PR ✍️
         uses: actions/github-script@v6
