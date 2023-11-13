@@ -33,7 +33,6 @@ jobs:
           git add review-images/
           git commit -m "Add generated review image"
           git config pull.rebase true
-          git pull origin review-images -X ours
           git push origin review-images
 
       - name: Post review in PR ✍️
