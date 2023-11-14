@@ -1,19 +1,21 @@
 name: PR closed
+
 on:
   pull_request:
-    types: [closed]
+    types:
+      - closed
 
 jobs:
   cleanup:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout review-images branch 🛎️
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         ref: review-images
 
     - name: Delete PR related files 🗑️
-      uses: actions/github-script@v6
+      uses: actions/github-script@v7
       with:
         script: |
           const fs = require('fs');
@@ -36,3 +38,22 @@ jobs:
           git commit -m "Delete files related to PR #${{ github.event.pull_request.number }}"
           git push
         fi
+
+  thank_you:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true
+    steps:
+      - name: Post Thank You Comment 🙏
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `## Merge Successful 
+              
+              Thanks for your contribution! 🎉 
+              
+              The changes will be part of the upcoming update on the marketplace.`
+            })

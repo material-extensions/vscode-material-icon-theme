@@ -13,7 +13,7 @@ jobs:
       TARGET_BRANCH: ${{ github.event.pull_request.base.ref }}
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
@@ -36,12 +36,20 @@ jobs:
           git push -u origin review-images
 
       - name: Post review in PR ✍️
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           script: |
             const fs = require('fs');
             const pngFilePath = './preview.png';
-            const commentBody = '## Preview \n\nThank you for creating a pull request. This preview shows you how your changes will look on the different themes: \n\n ![Generated Preview](https://raw.githubusercontent.com/' + context.repo.owner + '/' + context.repo.repo + '/' + 'review-images/review-images/${{ github.event.pull_request.number }}_${{ github.sha }}.png) \n\n You can find more information how to contribute in the [contribution guidelines](https://github.com/PKief/vscode-material-icon-theme/blob/main/CONTRIBUTING.md).';
+            const commentBody = `
+                ## Preview 
+                
+                Thank you for creating a pull request. This preview shows you how your changes will look on the different themes: 
+                  
+                ![Generated Preview](https://raw.githubusercontent.com/' + context.repo.owner + '/' + context.repo.repo + '/' + 'review-images/review-images/${{ github.event.pull_request.number }}_${{ github.sha }}.png) 
+                
+                You can find more information how to contribute in the [contribution guidelines](https://github.com/PKief/vscode-material-icon-theme/blob/main/CONTRIBUTING.md).
+            `;
 
             github.rest.issues.createComment({
               issue_number: context.issue.number,
