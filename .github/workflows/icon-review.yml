@@ -19,13 +19,9 @@ jobs:
           repository: ${{ github.event.pull_request.head.repo.full_name }}
           fetch-depth: 0
 
-      - name: Dump GitHub context
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: echo "$GITHUB_CONTEXT"
-
       - name: Review SVG files 🔍
         run: |
+          git fetch origin ${{ env.TARGET_BRANCH }}
           svgFiles=$(git diff origin/${{ env.TARGET_BRANCH }} --diff-filter=ACMRTUX  --name-only | grep '.svg$')
           echo "SVG files changed: ${svgFiles}"
           npx svg-icon-review ${svgFiles}
