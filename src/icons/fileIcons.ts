@@ -2476,5 +2476,6 @@ export const fileIcons: FileIcons = {
         'puppeteer.config.cjs',
       ],
     },
+    { name: 'apps-script', fileExtensions: ['gs'] },
   ],
 };
