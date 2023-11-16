@@ -17,10 +17,13 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Get changed files
+        id: changed-files
+        uses: jitterbit/get-changed-files@v1
+
       - name: Review SVG files 🔍
         run: |
-          svgFiles=$(git diff origin/${{ env.TARGET_BRANCH }} --diff-filter=ACMRTUX  --name-only | grep '.svg$')
-          echo "SVG files changed: ${svgFiles}"
+          svgFiles=$(echo ${{ steps.changed-files.outputs.modified_files }} | tr ' ' '\n' | grep 'icons/*.svg' | tr '\n' ' ')
           npx svg-icon-review ${svgFiles}
 
       - name: Install jq ⚙️
