@@ -10,7 +10,7 @@ jobs:
     name: Icon Review
     runs-on: ubuntu-latest
     env:
-      TARGET_BRANCH: ${{ github.event.pull_request.base.ref }}
+      TARGET_BRANCH: ${{ github.event.pull_request.head.ref }}
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
