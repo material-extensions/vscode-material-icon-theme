@@ -1,7 +1,8 @@
 name: Icon Review
 
 on:
-  pull_request:
+  pull_request_target:
+    types: [assigned, opened, synchronize, reopened]
     paths:
       - 'icons/*.svg'
 
@@ -25,7 +26,7 @@ jobs:
 
       - name: Install jq ⚙️
         run: sudo apt-get install jq
-        
+
       - name: Upload PNG ⬆️
         env:
           IMAGE_UPLOAD: ${{ secrets.IMAGE_UPLOAD }}
