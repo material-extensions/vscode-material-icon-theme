@@ -38,6 +38,7 @@ export const fileIcons: FileIcons = {
         '.esformatter',
         'cdp.pid',
         '.lintstagedrc',
+        '.whitesource',
       ],
     },
     {
@@ -1469,6 +1470,7 @@ export const fileIcons: FileIcons = {
         '.stylelintrc',
         'stylelint.config.js',
         'stylelint.config.cjs',
+        'stylelint.config.mjs',
         '.stylelintrc.json',
         '.stylelintrc.yaml',
         '.stylelintrc.yml',
@@ -1754,8 +1756,10 @@ export const fileIcons: FileIcons = {
         'tailwind.ts',
         'tailwind.config.js',
         'tailwind.config.cjs',
+        'tailwind.config.mjs',
         'tailwind.config.ts',
         'tailwind.config.cts',
+        'tailwind.config.mts',
       ],
     },
     {
@@ -2094,7 +2098,13 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'textlint',
-      fileNames: ['.textlintrc'],
+      fileNames: [
+        '.textlintrc',
+        '.textlintrc.js',
+        '.textlintrc.json',
+        '.textlintrc.yml',
+        '.textlintrc.yaml',
+      ],
     },
     { name: 'scala', fileExtensions: ['scala', 'sc'] },
     { name: 'lilypond', fileExtensions: ['ly'] },
@@ -2341,6 +2351,16 @@ export const fileIcons: FileIcons = {
       ],
     },
     {
+      name: 'taskfile',
+      fileExtensions: ['taskfile.yml', 'taskfile.yaml'],
+      fileNames: [
+        'taskfile.yml',
+        'taskfile.yaml',
+        'taskfile.dist.yml',
+        'taskfile.dist.yaml',
+      ],
+    },
+    {
       name: 'craco',
       fileNames: [
         'craco.config.ts',
@@ -2440,5 +2460,11 @@ export const fileIcons: FileIcons = {
     { name: 'spwn', fileExtensions: ['spwn'] },
     { name: 'templ', fileExtensions: ['templ'] },
     { name: 'stan', fileExtensions: ['stan'] },
+    {
+      name: 'abap',
+      fileExtensions: ['abap', 'acds', 'asddls'],
+    },
+    { name: 'lottie', fileExtensions: ['lottie'] },
+    { name: 'apps-script', fileExtensions: ['gs'] },
   ],
 };
