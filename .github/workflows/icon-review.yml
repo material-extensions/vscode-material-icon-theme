@@ -29,12 +29,7 @@ jobs:
       - name: Compare changes
         run: |
           cd main
-          git diff --no-index ../main ../fork
-
-      - name: Compare changes
-        run: |
-          cd main
-          git diff -- '*.svg' --no-index ../main ../fork
+          git diff --no-index ../main ../fork --diff-filter=ACMRTUX --name-only | grep '.svg$'
 
       - name: Review SVG files 🔍
         run: |
