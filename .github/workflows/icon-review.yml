@@ -12,12 +12,25 @@ jobs:
     env:
       TARGET_BRANCH: ${{ github.event.pull_request.base.ref }}
     steps:
-      - name: Checkout 🛎️
+      - name: Checkout Fork 🛎️
         uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.ref }}
           repository: ${{ github.event.pull_request.head.repo.full_name }}
           fetch-depth: 0
+          path: fork
+
+      - name: Checkout Original 🛎️
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          path: main
+
+      - name: Compare repositories
+        run: git diff -r main fork
+
+      - name: echo git remote origin
+        run: git remote -v
 
       - name: Review SVG files 🔍
         run: |
