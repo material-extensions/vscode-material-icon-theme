@@ -34,12 +34,11 @@ jobs:
       - name: Compare changes
         run: |
           cd main_repo
-          git diff -- '*.svg' --no-index ../main_repo ../fork_repo
+          git diff -- '*.svg' --no-index ../main ../fork
 
       - name: Review SVG files 🔍
         run: |
-          git fetch origin ${{ env.TARGET_BRANCH }}
-          svgFiles=$(git diff origin/${{ env.TARGET_BRANCH }} --diff-filter=ACMRTUX  --name-only | grep '.svg$')
+          svgFiles=$(git diff --no-index ../main ../fork --diff-filter=ACMRTUX --name-only | grep '.svg$')
           echo "SVG files changed: ${svgFiles}"
           npx svg-icon-review ${svgFiles}
 
