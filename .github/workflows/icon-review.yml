@@ -18,7 +18,7 @@ jobs:
           ref: ${{ github.event.pull_request.head.ref }}
           repository: ${{ github.event.pull_request.head.repo.full_name }}
           fetch-depth: 0
-          path: 'fork'
+          path: fork
 
       - name: Checkout Original 🛎️
         uses: actions/checkout@v4
@@ -27,11 +27,7 @@ jobs:
           path: main
 
       - name: Compare repositories
-        run: |
-          diff -r original fork
-
-      - name: Compare repositories
-        run: git diff -r original fork
+        run: git diff -r main fork
 
       - name: echo git remote origin
         run: git remote -v
