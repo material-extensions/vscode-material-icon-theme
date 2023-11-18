@@ -26,11 +26,6 @@ jobs:
           fetch-depth: 0
           path: main
 
-      - name: Compare changes
-        run: |
-          cd main
-          git diff --no-index ../main ../fork --diff-filter=ACMRTUX --name-only | grep '.svg$'
-
       - name: Review SVG files 🔍
         run: |
           cd main
