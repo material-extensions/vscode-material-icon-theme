@@ -28,12 +28,12 @@ jobs:
 
       - name: Compare changes
         run: |
-          cd main_repo
+          cd main
           git diff --no-index ../main ../fork
 
       - name: Compare changes
         run: |
-          cd main_repo
+          cd main
           git diff -- '*.svg' --no-index ../main ../fork
 
       - name: Review SVG files 🔍
