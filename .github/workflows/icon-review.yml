@@ -19,6 +19,9 @@ jobs:
           repository: ${{ github.event.pull_request.head.repo.full_name }}
           fetch-depth: 0
 
+      - name: echo git remote origin
+        run: git remote -v
+
       - name: Review SVG files 🔍
         run: |
           git fetch origin ${{ env.TARGET_BRANCH }}
