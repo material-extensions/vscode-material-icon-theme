@@ -1,4 +1,4 @@
-import { FolderTheme, IconPack } from '../models/index';
+import { FolderTheme, IconPack } from '../models';
 
 /**
  * Defines folder icons
@@ -9,6 +9,10 @@ export const folderIcons: FolderTheme[] = [
     defaultIcon: { name: 'folder' },
     rootFolder: { name: 'folder-root' },
     icons: [
+      {
+        name: 'folder-robot',
+        folderNames: ['bot', 'robot', '.bot', '.robot', '_bot', '_robot'],
+      },
       {
         name: 'folder-src',
         folderNames: ['src', 'srcs', 'source', 'sources', 'code'],
@@ -25,6 +29,10 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-images',
         folderNames: [
+          '_images',
+          '_image',
+          '_imgs',
+          '_img',
           'images',
           'image',
           'imgs',
@@ -65,6 +73,7 @@ export const folderIcons: FolderTheme[] = [
           '__tests__',
           '__snapshots__',
           '__mocks__',
+          '__fixtures__',
           '__test__',
           'spec',
           'specs',
@@ -82,6 +91,8 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-docs',
         folderNames: [
+          '_post',
+          '_posts',
           'doc',
           'docs',
           'document',
@@ -104,7 +115,7 @@ export const folderIcons: FolderTheme[] = [
           '.submodules',
         ],
       },
-      { name: 'folder-github', folderNames: ['.github'] },
+      { name: 'folder-github', folderNames: ['.github', 'github'] },
       { name: 'folder-gitlab', folderNames: ['.gitlab'] },
       { name: 'folder-vscode', folderNames: ['.vscode', '.vscode-test'] },
       {
@@ -116,6 +127,7 @@ export const folderIcons: FolderTheme[] = [
           'screens',
           'page',
           'pages',
+          'public_html',
           'html',
         ],
       },
@@ -161,7 +173,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-components',
-        folderNames: ['components', 'widget', 'widgets'],
+        folderNames: ['components', 'widget', 'widgets', 'fragments'],
       },
       {
         name: 'folder-verdaccio',
@@ -208,7 +220,17 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-global', folderNames: ['global'] },
       {
         name: 'folder-public',
-        folderNames: ['public', 'www', 'wwwroot', 'web', 'website', 'site'],
+        folderNames: [
+          '_site',
+          'public',
+          'www',
+          'wwwroot',
+          'web',
+          'website',
+          'site',
+          'browser',
+          'browsers',
+        ],
       },
       {
         name: 'folder-include',
@@ -277,7 +299,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-redux-store',
-        folderNames: ['store'],
+        folderNames: ['store', 'stores'],
         enabledFor: [IconPack.Redux],
       },
       {
@@ -367,6 +389,7 @@ export const folderIcons: FolderTheme[] = [
           'miscellaneous',
           'extra',
           'extras',
+          'etc',
         ],
       },
       { name: 'folder-lua', folderNames: ['lua'] },
@@ -405,6 +428,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-gulp',
         folderNames: [
           'gulp',
+          'gulp-tasks',
           'gulpfile.js',
           'gulpfile.mjs',
           'gulpfile.ts',
@@ -414,6 +438,10 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-python',
         folderNames: ['python', '__pycache__', '.pytest_cache'],
+      },
+      {
+        name: 'folder-mojo',
+        folderNames: ['mojo'],
       },
       { name: 'folder-debug', folderNames: ['debug', 'debugging'] },
       { name: 'folder-fastlane', folderNames: ['fastlane'] },
@@ -449,14 +477,17 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-server', folderNames: ['server', 'servers', 'backend'] },
       {
         name: 'folder-client',
-        folderNames: ['client', 'clients', 'frontend', 'pwa'],
+        folderNames: ['client', 'clients', 'frontend', 'frontends', 'pwa'],
       },
       { name: 'folder-tasks', folderNames: ['tasks', 'tickets'] },
       { name: 'folder-android', folderNames: ['android'] },
       { name: 'folder-ios', folderNames: ['ios'] },
       { name: 'folder-upload', folderNames: ['uploads', 'upload'] },
       { name: 'folder-download', folderNames: ['downloads', 'download'] },
-      { name: 'folder-tools', folderNames: ['tools'] },
+      {
+        name: 'folder-tools',
+        folderNames: ['tools', 'toolkit', 'toolkits', 'toolbox', 'toolboxes'],
+      },
       { name: 'folder-helper', folderNames: ['helpers', 'helper'] },
       { name: 'folder-serverless', folderNames: ['.serverless', 'serverless'] },
       { name: 'folder-api', folderNames: ['api', 'apis', 'restapi'] },
@@ -486,6 +517,8 @@ export const folderIcons: FolderTheme[] = [
           'backups',
           'back-up',
           'back-ups',
+          'history',
+          'histories',
         ],
       },
       { name: 'folder-batch', folderNames: ['batch', 'batchs', 'batches'] },
@@ -564,7 +597,18 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['hook', 'hooks', 'trigger', 'triggers'],
       },
       { name: 'folder-job', folderNames: ['job', 'jobs'] },
-      { name: 'folder-keys', folderNames: ['keys', 'key', 'token', 'tokens'] },
+      {
+        name: 'folder-keys',
+        folderNames: [
+          'key',
+          'keys',
+          'token',
+          'tokens',
+          'jwt',
+          'secret',
+          'secrets',
+        ],
+      },
       { name: 'folder-layout', folderNames: ['layout', 'layouts', '_layouts'] },
       {
         name: 'folder-mail',
@@ -572,6 +616,7 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-mappings', folderNames: ['mappings', 'mapping'] },
       { name: 'folder-meta', folderNames: ['meta'] },
+      { name: 'folder-changesets', folderNames: ['.changesets', '.changeset'] },
       {
         name: 'folder-packages',
         folderNames: ['package', 'packages', 'pkg', 'pkgs'],
@@ -587,7 +632,11 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-utils',
         folderNames: ['util', 'utils', 'utility', 'utilities'],
       },
+      { name: 'folder-supabase', folderNames: ['supabase', '.supabase'] },
       { name: 'folder-private', folderNames: ['private', '.private'] },
+      { name: 'folder-linux', folderNames: ['linux'] },
+      { name: 'folder-windows', folderNames: ['windows'] },
+      { name: 'folder-macos', folderNames: ['macos', '.DS_Store'] },
       { name: 'folder-error', folderNames: ['error', 'errors', 'err'] },
       { name: 'folder-event', folderNames: ['event', 'events'] },
       {
@@ -608,8 +657,12 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-mock',
         folderNames: [
+          '_draft',
+          '_drafts',
           'mock',
           'mocks',
+          'fixture',
+          'fixtures',
           'draft',
           'drafts',
           'concept',
@@ -650,7 +703,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-svg', folderNames: ['svg', 'svgs'] },
       {
         name: 'folder-vuex-store',
-        folderNames: ['store'],
+        folderNames: ['store', 'stores'],
         enabledFor: [IconPack.Vuex],
       },
       {
@@ -686,7 +739,17 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['.azure-pipelines', '.azure-pipelines-ci'],
       },
       { name: 'folder-mjml', folderNames: ['mjml'] },
-      { name: 'folder-admin', folderNames: ['admin'] },
+      {
+        name: 'folder-admin',
+        folderNames: [
+          'admin',
+          'admins',
+          'manager',
+          'managers',
+          'moderator',
+          'moderators',
+        ],
+      },
       { name: 'folder-scala', folderNames: ['scala'] },
       {
         name: 'folder-connection',
@@ -706,7 +769,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-storybook',
         folderNames: ['.storybook', 'storybook', 'stories', '__stories__'],
       },
-      { name: 'folder-base', folderNames: ['base', '.base'] },
+      { name: 'folder-base', folderNames: ['base', '.base', 'bases'] },
       {
         name: 'folder-cart',
         folderNames: ['cart', 'shopping-cart', 'shopping', 'shop'],
@@ -722,6 +785,11 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-interface',
         folderNames: ['interface', 'interfaces'],
+      },
+      { name: 'folder-netlify', folderNames: ['.netlify'] },
+      {
+        name: 'folder-enum',
+        folderNames: ['enum', 'enums'],
       },
       {
         name: 'folder-contract',
@@ -749,6 +817,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['cypress', '.cypress'],
       },
       {
+        name: 'folder-decorators',
+        folderNames: ['decorator', 'decorators'],
+      },
+      {
         name: 'folder-java',
         folderNames: ['java'],
       },
@@ -758,11 +830,43 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-angular',
-        folderNames: ['.angular'],
+        folderNames: ['angular', '.angular'],
       },
       {
         name: 'folder-unity',
         folderNames: ['unity'],
+      },
+      {
+        name: 'folder-pdf',
+        folderNames: ['pdf', 'pdfs'],
+      },
+      {
+        name: 'folder-proto',
+        folderNames: ['protobufs', 'proto'],
+      },
+      {
+        name: 'folder-plastic',
+        folderNames: ['plastic', '.plastic'],
+      },
+      {
+        name: 'folder-gamemaker',
+        folderNames: ['gamemaker', 'gamemaker2'],
+      },
+      {
+        name: 'folder-mercurial',
+        folderNames: ['.hg', 'hghooks', '.hghooks', '.hgext'],
+      },
+      {
+        name: 'folder-godot',
+        folderNames: ['godot', '.godot', 'godot-cpp', '.godot-cpp'],
+      },
+      {
+        name: 'folder-lottie',
+        folderNames: ['lottie', 'lotties', 'lottiefiles'],
+      },
+      {
+        name: 'folder-taskfile',
+        folderNames: ['taskfile', 'taskfiles', '.taskfile', '.taskfiles'],
       },
     ],
   },

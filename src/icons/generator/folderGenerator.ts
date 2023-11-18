@@ -1,6 +1,6 @@
-import * as fs from 'fs';
+import { writeFileSync } from 'fs';
 import merge from 'lodash.merge';
-import * as path from 'path';
+import { basename, join } from 'path';
 import { getFileConfigHash } from '../../helpers/fileConfig';
 import {
   DefaultIcon,
@@ -309,22 +309,22 @@ export const generateFolderIcons = (color: string | undefined) => {
   writeSVGFiles('folder-root-open', getSVG(getPath(rootFolderIconOpen, color)));
 };
 
-const getPath = (d: string, color: string) =>
+export const getPath = (d: string, color: string) =>
   `<path d="${d}" fill="${color}" />`;
-const getSVG = (path: string) =>
+export const getSVG = (path: string) =>
   `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">${path}</svg>`;
 
-const writeSVGFiles = (iconName: string, svg: string) => {
+export const writeSVGFiles = (iconName: string, svg: string) => {
   let iconsPath;
-  if (path.basename(__dirname) === 'dist') {
-    iconsPath = path.join(__dirname, '..', 'icons');
+  if (basename(__dirname) === 'dist') {
+    iconsPath = join(__dirname, '..', 'icons');
   } else {
     // executed via script
-    iconsPath = path.join(__dirname, '..', '..', '..', 'icons');
+    iconsPath = join(__dirname, '..', '..', '..', 'icons');
   }
-  const iconsFolderPath = path.join(iconsPath, `${iconName}.svg`);
+  const iconsFolderPath = join(iconsPath, `${iconName}.svg`);
   try {
-    fs.writeFileSync(iconsFolderPath, svg);
+    writeFileSync(iconsFolderPath, svg);
   } catch (error) {
     console.error(error);
   }
