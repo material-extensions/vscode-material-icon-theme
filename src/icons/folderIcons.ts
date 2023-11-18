@@ -517,6 +517,8 @@ export const folderIcons: FolderTheme[] = [
           'backups',
           'back-up',
           'back-ups',
+          'history',
+          'histories',
         ],
       },
       { name: 'folder-batch', folderNames: ['batch', 'batchs', 'batches'] },
@@ -858,6 +860,14 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-godot',
         folderNames: ['godot', '.godot', 'godot-cpp', '.godot-cpp'],
+      },
+      {
+        name: 'folder-lottie',
+        folderNames: ['lottie', 'lotties', 'lottiefiles'],
+      },
+      {
+        name: 'folder-taskfile',
+        folderNames: ['taskfile', 'taskfiles', '.taskfile', '.taskfiles'],
       },
     ],
   },
