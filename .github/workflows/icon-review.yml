@@ -1,7 +1,7 @@
 name: Icon Review
 
 on:
-  pull_request:
+  pull_request_target:
     paths:
       - 'icons/*.svg'
 
@@ -12,26 +12,36 @@ jobs:
     env:
       TARGET_BRANCH: ${{ github.event.pull_request.base.ref }}
     steps:
-      - name: Checkout 🛎️
+      - name: Checkout Fork 🛎️
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          fetch-depth: 0
+          path: fork
+
+      - name: Checkout Original 🛎️
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          path: main
 
       - name: Review SVG files 🔍
         run: |
-          svgFiles=$(git diff origin/${{ env.TARGET_BRANCH }} --diff-filter=ACMRTUX  --name-only | grep '.svg$')
+          cd main
+          svgFiles=$(git diff --no-index ../main ../fork --diff-filter=ACMRTUX --name-only | grep '.svg$')
           echo "SVG files changed: ${svgFiles}"
           npx svg-icon-review ${svgFiles}
 
       - name: Install jq ⚙️
         run: sudo apt-get install jq
-        
+
       - name: Upload PNG ⬆️
         env:
           IMAGE_UPLOAD: ${{ secrets.IMAGE_UPLOAD }}
         id: upload
         run: |
-          IMAGE_URL=$(curl --location 'https://freeimage.host/json' --form 'source=@"./preview.png"' --form 'type="file"' --form 'action="upload"' --form 'auth_token="${{env.IMAGE_UPLOAD}}"' | jq -r '.image.url')
+          IMAGE_URL=$(curl --location 'https://freeimage.host/json' --form 'source=@"./main/preview.png"' --form 'type="file"' --form 'action="upload"' --form 'auth_token="${{env.IMAGE_UPLOAD}}"' | jq -r '.image.url')
           echo image_url=$IMAGE_URL >> $GITHUB_ENV
         shell: bash
 
