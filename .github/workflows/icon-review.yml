@@ -26,11 +26,15 @@ jobs:
           fetch-depth: 0
           path: main
 
-      - name: Compare repositories
-        run: find main fork -name "*.svg" -exec diff -q {} \;
+      - name: Compare changes
+        run: |
+          cd main_repo
+          git diff --no-index ../main ../fork
 
-      - name: echo git remote origin
-        run: git remote -v
+      - name: Compare changes
+        run: |
+          cd main_repo
+          git diff -- '*.svg' --no-index ../main_repo ../fork_repo
 
       - name: Review SVG files 🔍
         run: |
