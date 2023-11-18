@@ -27,7 +27,7 @@ jobs:
           path: main
 
       - name: Compare repositories
-        run: git diff -r main fork
+        run: find main fork -name "*.svg" -exec diff -q {} \;
 
       - name: echo git remote origin
         run: git remote -v
