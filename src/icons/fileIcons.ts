@@ -2101,7 +2101,13 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'textlint',
-      fileNames: ['.textlintrc'],
+      fileNames: [
+        '.textlintrc',
+        '.textlintrc.js',
+        '.textlintrc.json',
+        '.textlintrc.yml',
+        '.textlintrc.yaml',
+      ],
     },
     { name: 'scala', fileExtensions: ['scala', 'sc'] },
     { name: 'lilypond', fileExtensions: ['ly'] },
@@ -2461,5 +2467,7 @@ export const fileIcons: FileIcons = {
       name: 'abap',
       fileExtensions: ['abap', 'acds', 'asddls'],
     },
+    { name: 'lottie', fileExtensions: ['lottie'] },
+    { name: 'apps-script', fileExtensions: ['gs'] },
   ],
 };
