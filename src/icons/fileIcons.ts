@@ -42,6 +42,10 @@ export const fileIcons: FileIcons = {
       ],
     },
     {
+      name: 'hjson',
+      fileExtensions: ['hjson'],
+    },
+    {
       name: 'jinja',
       fileExtensions: ['jinja', 'jinja2', 'j2', 'jinja-html'],
       light: true,
@@ -2464,5 +2468,6 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['abap', 'acds', 'asddls'],
     },
     { name: 'lottie', fileExtensions: ['lottie'] },
+    { name: 'apps-script', fileExtensions: ['gs'] },
   ],
 };
