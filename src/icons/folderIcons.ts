@@ -150,6 +150,8 @@ export const folderIcons: FolderTheme[] = [
           'settings',
           '.settings',
           'META-INF',
+          'option',
+          'options',
         ],
       },
       {
