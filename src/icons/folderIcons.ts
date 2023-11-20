@@ -55,7 +55,10 @@ export const folderIcons: FolderTheme[] = [
           'pictures',
         ],
       },
-      { name: 'folder-scripts', folderNames: ['script', 'scripts', 'scripting'], },
+      {
+        name: 'folder-scripts',
+        folderNames: ['script', 'scripts', 'scripting'],
+      },
       { name: 'folder-node', folderNames: ['node_modules'] },
       {
         name: 'folder-javascript',
@@ -642,7 +645,10 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-linux', folderNames: ['linux'] },
       { name: 'folder-windows', folderNames: ['windows'] },
       { name: 'folder-macos', folderNames: ['macos', '.DS_Store'] },
-      { name: 'folder-error', folderNames: ['error', 'errors', 'err', 'errs', 'crash', 'crashes'] },
+      {
+        name: 'folder-error',
+        folderNames: ['error', 'errors', 'err', 'errs', 'crash', 'crashes'],
+      },
       { name: 'folder-event', folderNames: ['event', 'events'] },
       {
         name: 'folder-secure',
