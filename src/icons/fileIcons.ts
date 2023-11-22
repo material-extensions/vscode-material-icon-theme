@@ -771,7 +771,13 @@ export const fileIcons: FileIcons = {
     },
     { name: 'handlebars', fileExtensions: ['hbs', 'mustache'] },
     { name: 'perl', fileExtensions: ['pm', 'raku'] },
-    { name: 'haxe', fileExtensions: ['hx'] },
+    {
+      name: 'haxe',
+      fileExtensions: ['hx', 'hxml', 'hxproj', 'hxs', 'hscript'],
+      fileNames: ['hxformat.json'],
+    },
+    { name: 'nekovm', fileExtensions: ['n', 'neko', 'ndll'] },
+    { name: 'hashlink', fileExtensions: ['hl'] },
     {
       name: 'test-ts',
       fileExtensions: [

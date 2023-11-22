@@ -879,6 +879,14 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-taskfile',
         folderNames: ['taskfile', 'taskfiles', '.taskfile', '.taskfiles'],
       },
+      {
+        name: 'folder-haxe',
+        folderNames: ['haxe', 'hx'],
+      },
+      {
+        name: 'folder-flixel',
+        folderNames: ['flixel', 'flx'],
+      },
     ],
   },
   {
