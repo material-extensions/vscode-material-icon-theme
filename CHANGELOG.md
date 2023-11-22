@@ -3,6 +3,24 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v4.32.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.31.0...v4.32.0) 
+
+> November 20, 2023 
+
+- [Icon Request] HJSON file icon [`#2136`](https://github.com/PKief/vscode-material-icon-theme/pull/2136)
+- Update workflow files [`d5912bb`](https://github.com/PKief/vscode-material-icon-theme/commit/d5912bb)
+- Add Google App Script (*.gs) file icon [`#2143`](https://github.com/PKief/vscode-material-icon-theme/pull/2143)
+- build(deps-dev): bump axios from 1.4.0 to 1.6.0 [`#2141`](https://github.com/PKief/vscode-material-icon-theme/pull/2141)
+- Added Lottie Folder Icons aswell as the File Icon. [`#2073`](https://github.com/PKief/vscode-material-icon-theme/pull/2073)
+- [Icon Request] Add more textlintrc file names [`#2137`](https://github.com/PKief/vscode-material-icon-theme/pull/2137)
+- Update Angular icons [`#2134`](https://github.com/PKief/vscode-material-icon-theme/pull/2134)
+- Added mjs extension for stylelint [`#2129`](https://github.com/PKief/vscode-material-icon-theme/pull/2129)
+- Add history icon association [`71173fc`](https://github.com/PKief/vscode-material-icon-theme/commit/71173fc)
+- [Icon Request] Taskfile [`#1739`](https://github.com/PKief/vscode-material-icon-theme/pull/1739)
+- [Icon Request] ABAP [`#2123`](https://github.com/PKief/vscode-material-icon-theme/pull/2123)
+- Associate .whitesource file name with json file [`04e6cce`](https://github.com/PKief/vscode-material-icon-theme/commit/04e6cce)
+- feat: add tailwind config esm [`#2112`](https://github.com/PKief/vscode-material-icon-theme/pull/2112)
+ 
 #### [v4.31.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.30.1...v4.31.0) 
 
 > October 6, 2023 
