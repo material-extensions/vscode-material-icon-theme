@@ -774,7 +774,7 @@ export const fileIcons: FileIcons = {
     {
       name: 'haxe',
       fileExtensions: ['hx', 'hxml', 'hxproj', 'hxs', 'hscript'],
-      fileNames: ['hxformat.json'],
+      fileNames: ['hxformat.json', 'haxelib.json],
     },
     { name: 'nekovm', fileExtensions: ['n', 'neko', 'ndll'] },
     { name: 'hashlink', fileExtensions: ['hl'] },
