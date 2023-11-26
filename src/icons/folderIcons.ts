@@ -55,7 +55,10 @@ export const folderIcons: FolderTheme[] = [
           'pictures',
         ],
       },
-      { name: 'folder-scripts', folderNames: ['script', 'scripts'] },
+      {
+        name: 'folder-scripts',
+        folderNames: ['script', 'scripts', 'scripting'],
+      },
       { name: 'folder-node', folderNames: ['node_modules'] },
       {
         name: 'folder-javascript',
@@ -150,6 +153,8 @@ export const folderIcons: FolderTheme[] = [
           'settings',
           '.settings',
           'META-INF',
+          'option',
+          'options',
         ],
       },
       {
@@ -311,7 +316,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-database',
         folderNames: ['db', 'database', 'databases', 'sql', 'data', '_data'],
       },
-      { name: 'folder-log', folderNames: ['log', 'logs'] },
+      { name: 'folder-log', folderNames: ['log', 'logs', 'logging'] },
       { name: 'folder-target', folderNames: ['target'] },
       {
         name: 'folder-temp',
@@ -451,6 +456,9 @@ export const folderIcons: FolderTheme[] = [
           'plugin',
           'plugins',
           '_plugins',
+          'mod',
+          'mods',
+          'modding',
           'extension',
           'extensions',
           'addon',
@@ -638,7 +646,10 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-linux', folderNames: ['linux'] },
       { name: 'folder-windows', folderNames: ['windows'] },
       { name: 'folder-macos', folderNames: ['macos', '.DS_Store'] },
-      { name: 'folder-error', folderNames: ['error', 'errors', 'err'] },
+      {
+        name: 'folder-error',
+        folderNames: ['error', 'errors', 'err', 'errs', 'crash', 'crashes'],
+      },
       { name: 'folder-event', folderNames: ['event', 'events'] },
       {
         name: 'folder-secure',

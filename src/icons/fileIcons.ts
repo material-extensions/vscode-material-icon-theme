@@ -42,6 +42,10 @@ export const fileIcons: FileIcons = {
       ],
     },
     {
+      name: 'hjson',
+      fileExtensions: ['hjson'],
+    },
+    {
       name: 'jinja',
       fileExtensions: ['jinja', 'jinja2', 'j2', 'jinja-html'],
       light: true,
@@ -2462,12 +2466,25 @@ export const fileIcons: FileIcons = {
     },
     { name: 'spwn', fileExtensions: ['spwn'] },
     { name: 'templ', fileExtensions: ['templ'] },
+    { name: 'chrome', fileExtensions: ['crx'] },
     { name: 'stan', fileExtensions: ['stan'] },
     {
       name: 'abap',
       fileExtensions: ['abap', 'acds', 'asddls'],
     },
     { name: 'lottie', fileExtensions: ['lottie'] },
+    {
+      name: 'puppeteer',
+      fileNames: [
+        '.puppeteerrc.cjs,',
+        '.puppeteerrc.js,',
+        '.puppeteerrc',
+        '.puppeteerrc.json,',
+        '.puppeteerrc.yaml,',
+        'puppeteer.config.js',
+        'puppeteer.config.cjs',
+      ],
+    },
     { name: 'apps-script', fileExtensions: ['gs'] },
   ],
 };
