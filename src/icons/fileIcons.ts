@@ -2485,18 +2485,6 @@ export const fileIcons: FileIcons = {
     {
       name: 'kubernetes',
       fileNames: [
-        'deployment.yml',
-        'deployment.yaml',
-        'ingress.yml',
-        'ingress.yaml',
-        'service.yml',
-        'kustomization.yml',
-        'kustomization.yaml',
-        'kustomize.yml',
-        'kustomize.yaml',
-        'pod.yml',
-        'pod.yaml',
-        'service.yaml',
         'k8s.yml',
         'k8s.yaml',
         'kubernetes.yml',
