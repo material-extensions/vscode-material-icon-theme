@@ -2436,7 +2436,52 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'roblox', fileExtensions: ['rbxl', 'rbxlx', 'rbxm', 'rbxmx'] },
-    { name: 'panda', fileNames: ['panda.config.ts', 'panda.config.js'] },
+    {
+      name: 'panda',
+      fileNames: [
+        'panda.config.ts',
+        'panda.config.js',
+        'panda.config.mjs',
+        'panda.config.mts',
+        'panda.config.cjs',
+      ],
+    },
+    { name: 'biome', fileNames: ['biome.json'] },
+    {
+      name: 'esbuild',
+      fileNames: [
+        'esbuild.js',
+        'esbuild.ts',
+        'esbuild.cjs',
+        'esbuild.mjs',
+        'esbuild.config.js',
+        'esbuild.config.ts',
+        'esbuild.config.cjs',
+        'esbuild.config.mjs',
+      ],
+    },
+    { name: 'spwn', fileExtensions: ['spwn'] },
+    { name: 'templ', fileExtensions: ['templ'] },
+    { name: 'chrome', fileExtensions: ['crx'] },
+    { name: 'stan', fileExtensions: ['stan'] },
+    {
+      name: 'abap',
+      fileExtensions: ['abap', 'acds', 'asddls'],
+    },
+    { name: 'lottie', fileExtensions: ['lottie'] },
+    {
+      name: 'puppeteer',
+      fileNames: [
+        '.puppeteerrc.cjs,',
+        '.puppeteerrc.js,',
+        '.puppeteerrc',
+        '.puppeteerrc.json,',
+        '.puppeteerrc.yaml,',
+        'puppeteer.config.js',
+        'puppeteer.config.cjs',
+      ],
+    },
+    { name: 'apps-script', fileExtensions: ['gs'] },
     {
       name: 'kubernetes',
       fileNames: [
