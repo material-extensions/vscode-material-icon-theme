@@ -10,6 +10,14 @@ export const folderIcons: FolderTheme[] = [
     rootFolder: { name: 'folder-root' },
     icons: [
       {
+        name: 'folder-totvs',
+        folderNames: ['protheus', 'totvs', 'advpl'],
+      },
+      {
+        name: 'folder-fluig',
+        folderNames: ['fluig'],
+      },
+      {
         name: 'folder-robot',
         folderNames: ['bot', 'robot', '.bot', '.robot', '_bot', '_robot'],
       },

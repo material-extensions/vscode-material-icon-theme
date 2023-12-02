@@ -4,6 +4,7 @@ import { LanguageIcon } from '../models';
  * Defines icons for language ids
  */
 export const languageIcons: LanguageIcon[] = [
+  { icon: { name: 'advpl' }, ids: ['prw', 'tlpp', 'ptm', 'include'] },
   { icon: { name: 'git' }, ids: ['git', 'git-commit', 'git-rebase', 'ignore'] },
   {
     icon: { name: 'yaml' },
