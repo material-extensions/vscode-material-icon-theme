@@ -135,6 +135,7 @@ export const folderIcons: FolderTheme[] = [
         ],
       },
       { name: 'folder-vue', folderNames: ['vue'] },
+      { name: 'folder-branches', folderNames: ['branches', '.branches'] },
       { name: 'folder-vuepress', folderNames: ['.vuepress'] },
       { name: 'folder-expo', folderNames: ['.expo', '.expo-shared'] },
       {
