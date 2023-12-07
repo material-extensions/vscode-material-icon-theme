@@ -500,7 +500,7 @@ export const folderIcons: FolderTheme[] = [
           'toolkits',
           'toolbox',
           'toolboxes',
-          'tooling'
+          'tooling',
         ],
       },
       { name: 'folder-helper', folderNames: ['helpers', 'helper'] },
