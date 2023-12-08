@@ -2482,5 +2482,6 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'apps-script', fileExtensions: ['gs'] },
+    { name: 'postgres', fileExtensions: ['plpgsql'] },
   ],
 };
