@@ -2493,6 +2493,10 @@ export const fileIcons: FileIcons = {
         'metro.config.cjs',
         'metro.config.ts'
       ]
+    },
+    {
+      name: 'react-native',
+      fileNames: ['react-native.config.js', 'react-native.config.cjs'],
     }
   ],
 };
