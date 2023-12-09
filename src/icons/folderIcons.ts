@@ -144,6 +144,7 @@ export const folderIcons: FolderTheme[] = [
           'cfgs',
           'conf',
           'confs',
+          '.config',
           'config',
           'configs',
           'configuration',
