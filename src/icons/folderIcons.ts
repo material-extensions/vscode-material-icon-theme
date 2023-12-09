@@ -686,7 +686,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-syntax',
         folderNames: ['syntax', 'syntaxes', 'spellcheck'],
       },
-      { name: 'styled', folderNames: ['styled'] },
+      { name: 'folder-styled', folderNames: ['styled'] },
       { name: 'folder-vm', folderNames: ['vm', 'vms'] },
       { name: 'folder-stylus', folderNames: ['stylus'] },
       { name: 'folder-flow', folderNames: ['flow-typed'] },
