@@ -2482,5 +2482,17 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'apps-script', fileExtensions: ['gs'] },
+    {
+      name: 'metro',
+      fileNames: [
+        'metro.config.json',
+        'metro.config.yml',
+        'metro.config.yaml',
+        'metro.config.js',
+        'metro.config.mjs',
+        'metro.config.cjs',
+        'metro.config.ts'
+      ]
+    }
   ],
 };
