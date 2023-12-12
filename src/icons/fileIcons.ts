@@ -2483,5 +2483,15 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'apps-script', fileExtensions: ['gs'] },
+    {
+      name: 'garden',
+      fileNames: [
+        'garden.yml',
+        'garden.yaml',
+        'project.garden.yml',
+        'project.garden.yaml',
+      ],
+      fileExtensions: ['.garden.yml', '.garden.yaml'],
+    },
   ],
 };

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+Copyright (C) 2018-2022 Garden Technologies, Inc. <info@garden.io>
+
+All rights reserved.
+-->
+
+<svg
+   version="1.1"
+   width="250"
+   height="250"
+   id="svg12"
+   sodipodi:docname="material-garden.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs12" />
+  <sodipodi:namedview
+     id="namedview12"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="3.452"
+     inkscape:cx="124.85516"
+     inkscape:cy="124.85516"
+     inkscape:window-width="2936"
+     inkscape:window-height="1639"
+     inkscape:window-x="73"
+     inkscape:window-y="1105"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg11" />
+  <svg
+     fill="none"
+     viewBox="0 0 250 250"
+     version="1.1"
+     id="svg11"
+     style="stroke:#dddddd;stroke-opacity:0">
+    <path
+       fill="#74D0B3"
+       d="M250 250V0h-35.746v250H250Z"
+       id="path1"
+       style="stroke:#dddddd;stroke-opacity:0;fill:#80cbc4;fill-opacity:1" />
+    <path
+       fill="#74D4E2"
+       d="M178.747 250V0h-35.746v250h35.746Z"
+       id="path2"
+       style="stroke:#dddddd;stroke-opacity:0;fill:#80deea;fill-opacity:1" />
+    <path
+       fill="#00BEAD"
+       d="M178.755 145.436V0h-35.746v145.436h35.746Z"
+       id="path3"
+       style="stroke:#dddddd;stroke-opacity:0;fill:#26a69a;fill-opacity:1" />
+    <path
+       fill="#FC7ACF"
+       d="M179.309 167.387v-34.386h-36.751v34.386h36.751Z"
+       id="path4"
+       style="stroke:#dddddd;stroke-opacity:0;fill:#ff80ab;fill-opacity:1" />
+    <path
+       fill="#0068A4"
+       d="M107.187 250V91.1923H71.9007V250h35.2863Z"
+       id="path5"
+       style="stroke:#dddddd;stroke-opacity:0;fill:#1565c0;fill-opacity:1" />
+    <path
+       fill="#00A06A"
+       d="M71.9006 250V0H35.7545v250h36.1461Z"
+       id="path6"
+       style="stroke:#dddddd;stroke-opacity:0;fill:#43a047;fill-opacity:1" />
+    <path
+       fill="#00B4AB"
+       d="M35.7458 250V0H-.00006485v250H35.7458Z"
+       id="path7"
+       style="stroke:#dddddd;stroke-opacity:0;fill:#4db6ac;fill-opacity:1" />
+    <path
+       fill="#0083c4"
+       d="M 107.24976,93.279929 V -0.00376461 H 71.896835 V 93.279929 Z"
+       id="path8"
+       style="stroke:#dddddd;stroke-width:0.992471;stroke-opacity:0;fill:#0288d1;fill-opacity:1" />
+    <path
+       fill="#FC7ACF"
+       d="M107.187 128.379V93.8224H71.9007v34.5566h35.2863Z"
+       id="path9"
+       style="stroke:#dddddd;stroke-opacity:0;fill:#ff80ab;fill-opacity:1" />
+    <path
+       fill="#00AE6D"
+       d="M214.492 250V0h-35.745v250h35.745Z"
+       id="path10"
+       style="stroke:#dddddd;stroke-opacity:0;fill:#4caf50;fill-opacity:1" />
+    <path
+       fill="#27C5B2"
+       d="M142.992 250V0h-35.746v250h35.746Z"
+       id="path11"
+       style="stroke:#dddddd;stroke-opacity:0;fill:#00bfa5;fill-opacity:1" />
+  </svg>
+  <style
+     id="style11">@media (prefers-color-scheme: light) { :root { filter: none; } }
+</style>
+  <path
+     style="fill:none;fill-opacity:1;stroke:#4db6ac;stroke-width:0.289687;stroke-opacity:0"
+     d="M 0,125 V 0.14484357 H 17.815759 35.631518 V 125 249.85516 H 17.815759 0 Z"
+     id="path22" />
+  <path
+     style="fill:none;fill-opacity:1;stroke:#4db6ac;stroke-width:0.289687;stroke-opacity:0"
+     d="M 35.921205,125 V 0.14484357 H 53.881808 71.84241 V 125 249.85516 H 53.881808 35.921205 Z"
+     id="path23" />
+  <path
+     style="fill:none;fill-opacity:1;stroke:#4db6ac;stroke-width:0.289687;stroke-opacity:0"
+     d="M 72.132097,46.929316 V 0.14484357 H 89.658169 107.18424 V 46.929316 93.713789 H 89.658169 72.132097 Z"
+     id="path24" />
+  <path
+     style="fill:none;fill-opacity:1;stroke:#4db6ac;stroke-width:0.289687;stroke-opacity:0"
+     d="M 107.47393,125 V 0.14484357 h 17.67091 17.67092 V 125 249.85516 h -17.67092 -17.67091 z"
+     id="path25" />
+  <path
+     style="fill:none;fill-opacity:1;stroke:#4db6ac;stroke-width:0.289687;stroke-opacity:0"
+     d="M 107.47393,125 V 0.14484357 h 17.67091 17.67092 V 125 249.85516 h -17.67092 -17.67091 z"
+     id="path26" />
+  <path
+     style="fill:none;fill-opacity:1;stroke:#4db6ac;stroke-width:0.289687;stroke-opacity:0"
+     d="M 143.10545,66.483198 V 0.14484357 h 17.81576 17.81575 V 66.483198 132.82155 h -17.81575 -17.81576 z"
+     id="path27" />
+  <path
+     style="fill:none;fill-opacity:1;stroke:#4db6ac;stroke-width:0.289687;stroke-opacity:0"
+     d="M 179.02665,125 V 0.14484357 h 17.67092 17.67091 V 125 249.85516 h -17.67091 -17.67092 z"
+     id="path28" />
+  <path
+     style="fill:none;fill-opacity:1;stroke:#4db6ac;stroke-width:0.289687;stroke-opacity:0"
+     d="m 143.10545,150.20278 v -17.09154 h 17.81576 17.81575 v 17.09154 17.09154 h -17.81575 -17.81576 z"
+     id="path29" />
+  <path
+     style="fill:none;fill-opacity:1;stroke:#4db6ac;stroke-width:0.289687;stroke-opacity:0"
+     d="M 72.132097,111.09502 V 94.003476 h 17.526072 17.526071 v 17.091544 17.09154 H 89.658169 72.132097 Z"
+     id="path30" />
+  <path
+     style="fill:none;fill-opacity:1;stroke:#4db6ac;stroke-width:0.289687;stroke-opacity:0"
+     d="M 214.65817,125 V 0.14484357 H 232.32908 250 V 125 249.85516 h -17.67092 -17.67091 z"
+     id="path31" />
+</svg>
