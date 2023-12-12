@@ -10,15 +10,10 @@
 <h4 align="center">Get the Material Design icons into your VS Code.</h4>
 
 <p align="center">
-    <a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"><img src="https://vsmarketplacebadges.dev/version-short/pkief.material-icon-theme.svg?style=for-the-badge&colorA=252526&colorB=43A047&label=VERSION" alt="Version"></a>&nbsp;
-    <a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"><img src="https://vsmarketplacebadges.dev/rating-short/pkief.material-icon-theme.svg?style=for-the-badge&colorA=252526&colorB=43A047&label=Rating" alt="Rating"></a>&nbsp;
-    <a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"><img src="https://vsmarketplacebadges.dev/installs-short/PKief.material-icon-theme.svg?style=for-the-badge&colorA=252526&colorB=43A047&label=Installs" alt="Installs"></a>&nbsp;
-    <a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"><img src="https://vsmarketplacebadges.dev/downloads-short/PKief.material-icon-theme.svg?style=for-the-badge&colorA=252526&colorB=43A047&label=Downloads" alt="Downloads"></a>
-</p>
-
-<p align="center"><br>
-<b>Sponsored by</b><br><br>
-<a title="Try CodeStream" href="https://sponsorlink.codestream.com/?utm_source=vscmarket&amp;utm_campaign=pkief_material&amp;utm_medium=banner"><img width="198px" src="https://alt-images.codestream.com/codestream_logo_pkief_material.png"></a>
+    <a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"><img src="https://img.shields.io/visual-studio-marketplace/v/PKief.material-icon-theme?style=for-the-badge&colorA=252526&colorB=43A047&label=VERSION" alt="Version"></a>&nbsp;
+    <a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"><img src="https://img.shields.io/visual-studio-marketplace/r/PKief.material-icon-theme?style=for-the-badge&colorA=252526&colorB=43A047&label=Rating" alt="Rating"></a>&nbsp;
+    <a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"><img src="https://img.shields.io/visual-studio-marketplace/i/PKief.material-icon-theme?style=for-the-badge&colorA=252526&colorB=43A047&label=Installs" alt="Installs"></a>&nbsp;
+    <a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"><img src="https://img.shields.io/visual-studio-marketplace/d/PKief.material-icon-theme?style=for-the-badge&colorA=252526&colorB=43A047&label=Downloads" alt="Downloads"></a>
 </p>
 
 ### File icons
@@ -103,7 +98,7 @@ For example a custom SVG file called `sample.svg` can be placed in an `icons` fo
      ┗ sample.svg
 ```
 
-In the settings.json the icon can be associated to a file name or file extension like this:
+In the settings.json (User Settings only!) the icon can be associated to a file name or file extension like this:
 
 ```json
 "material-icon-theme.files.associations": {
@@ -138,7 +133,7 @@ In our example we place them into an `icons` folder inside of the `.vscode/exten
      ┗ folder-sample-open.svg
 ```
 
-In the settings.json the folder icons can be associated to a folder name (e.g. "src") like this:
+In the settings.json (User Settings only!) the folder icons can be associated to a folder name (e.g. "src") like this:
 
 ```json
 "material-icon-theme.folders.associations": {
