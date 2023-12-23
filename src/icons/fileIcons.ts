@@ -2484,5 +2484,16 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'apps-script', fileExtensions: ['gs'] },
+    {
+      name: 'kubernetes',
+      fileNames: [
+        'k8s.yml',
+        'k8s.yaml',
+        'kubernetes.yml',
+        'kubernetes.yaml',
+        '.k8s.yml',
+        '.k8s.yaml',
+      ],
+    },
   ],
 };
