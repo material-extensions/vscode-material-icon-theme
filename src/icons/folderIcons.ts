@@ -449,6 +449,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-mojo',
         folderNames: ['mojo'],
       },
+      { name: 'folder-moon', folderNames: ['.moon'] },
       { name: 'folder-debug', folderNames: ['debug', 'debugging'] },
       { name: 'folder-fastlane', folderNames: ['fastlane'] },
       {
@@ -495,7 +496,14 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-download', folderNames: ['downloads', 'download'] },
       {
         name: 'folder-tools',
-        folderNames: ['tools', 'toolkit', 'toolkits', 'toolbox', 'toolboxes'],
+        folderNames: [
+          'tools',
+          'toolkit',
+          'toolkits',
+          'toolbox',
+          'toolboxes',
+          'tooling',
+        ],
       },
       { name: 'folder-helper', folderNames: ['helpers', 'helper'] },
       { name: 'folder-serverless', folderNames: ['.serverless', 'serverless'] },
