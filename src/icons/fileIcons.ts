@@ -2422,7 +2422,7 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'ifanr-cloud', fileNames: ['.mincloudrc'] },
-    { name: 'concourse', fileNames: ['concourse.yml'], light: true },
+    { name: 'concourse', fileNames: ['concourse.yml'] },
     { name: 'qwik', fileExtensions: ['tsx'], enabledFor: [IconPack.Qwik] },
     { name: 'mermaid', fileExtensions: ['mmd', 'mermaid'] },
     {
