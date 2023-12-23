@@ -482,6 +482,7 @@ export const fileIcons: FileIcons = {
       fileNames: ['.rubocop.yml', '.rubocop-todo.yml', '.rubocop_todo.yml'],
       light: true,
     },
+    { name: 'rspec', fileNames: ['.rspec'] },
     { name: 'fsharp', fileExtensions: ['fs', 'fsx', 'fsi', 'fsproj'] },
     { name: 'swift', fileExtensions: ['swift'] },
     { name: 'arduino', fileExtensions: ['ino'] },
@@ -1867,6 +1868,7 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['resolver.ts', 'resolver.js'],
       enabledFor: [IconPack.Nest],
     },
+    { name: 'moon', fileNames: ['moon.yml'] },
     { name: 'moonscript', fileExtensions: ['moon'] },
     { name: 'percy', fileNames: ['.percy.yml'] },
     { name: 'gitpod', fileNames: ['.gitpod.yml'] },
@@ -2483,5 +2485,16 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'apps-script', fileExtensions: ['gs'] },
+    {
+      name: 'kubernetes',
+      fileNames: [
+        'k8s.yml',
+        'k8s.yaml',
+        'kubernetes.yml',
+        'kubernetes.yaml',
+        '.k8s.yml',
+        '.k8s.yaml',
+      ],
+    },
   ],
 };
