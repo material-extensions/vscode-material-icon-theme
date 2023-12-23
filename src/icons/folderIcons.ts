@@ -449,6 +449,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-mojo',
         folderNames: ['mojo'],
       },
+      { name: 'folder-moon', folderNames: ['.moon'] },
       { name: 'folder-debug', folderNames: ['debug', 'debugging'] },
       { name: 'folder-fastlane', folderNames: ['fastlane'] },
       {
