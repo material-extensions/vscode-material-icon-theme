@@ -109,10 +109,7 @@ Icons are assigned to file names, folder names or registered languages of VS Cod
 - [folderIcons.ts](src/icons/folderIcons.ts)
 - [languageIcons.ts](src/icons/languageIcons.ts)
 
-> **Note**
-> It is very important that icons are only assigned to the file and folder names that really apply to them. This means that you should be careful which files and folders you assign icons to. There are many people with different projects all over the world and not everyone expects that e.g. a file name will have a special framework based icon even though the framework is not used at all by this one user.
->
-> A solution for this can be [icon packs](#icon-packs).
+Be careful when assigning icons to files and folders, as not everyone expects a file name to have a special icon based on a framework that is not used by them. A solution for this can be the usage of [Language icon definitions](#language-icons) or [icon packs](#icon-packs).
 
 #### File icons
 
