@@ -1968,7 +1968,9 @@ export const fileIcons: FileIcons = {
     { name: 'imba', fileExtensions: ['imba'] },
     { name: 'drawio', fileExtensions: ['drawio', 'dio'] },
     { name: 'pascal', fileExtensions: ['pas'] },
-    { name: 'shaderlab', fileExtensions: [
+    { 
+      name: 'shaderlab',
+      fileExtensions: [
         'animset',
         'asmdef',
         'asset',
