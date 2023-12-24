@@ -882,7 +882,14 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-3d',
-        folderNames: ['3d', '3d-model', '3d-models', 'object', 'objects', 'obj'],
+        folderNames: [
+          '3d',
+          '3d-model',
+          '3d-models',
+          'object',
+          'objects',
+          'obj',
+        ],
       },
       {
         name: 'folder-visualstudio',
