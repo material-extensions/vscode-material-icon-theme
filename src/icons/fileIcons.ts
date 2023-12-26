@@ -312,6 +312,7 @@ export const fileIcons: FileIcons = {
         'sqlite3',
         'pgsql',
         'postgres',
+        'plpgsql',
         'psql',
         'db',
         'db3',
