@@ -22,6 +22,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['dist', 'out', 'build', 'release', 'bin'],
       },
       {
+        name: 'folder-sst',
+        folderNames: ['sst'],
+      },
+      {
         name: 'folder-css',
         folderNames: ['css', 'stylesheet', 'stylesheets', 'style', 'styles'],
       },
