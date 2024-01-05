@@ -1769,10 +1769,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'sst',
-      fileNames: [
-        'sst.config.js',
-        'sst.config.ts',
-      ],
+      fileNames: ['sst.config.js', 'sst.config.ts'],
     },
     {
       name: '3d',
