@@ -719,6 +719,7 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-guard', folderNames: ['guard', 'guards'] },
       { name: 'folder-prisma', folderNames: ['prisma'] },
+      { name: 'folder-conductor', folderNames: ['conductor'] },
       { name: 'folder-pipe', folderNames: ['pipe', 'pipes'] },
       { name: 'folder-svg', folderNames: ['svg', 'svgs'] },
       {
