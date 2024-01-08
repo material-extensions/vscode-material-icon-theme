@@ -1728,8 +1728,18 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'azure-pipelines',
-      fileNames: ['azure-pipelines.yml', 'azure-pipelines.yaml'],
-      fileExtensions: ['azure-pipelines.yml', 'azure-pipelines.yaml'],
+      fileNames: [
+        'azure-pipelines.yml',
+        'azure-pipelines.yaml',
+        'azure-pipelines-main.yml',
+        'azure-pipelines-main.yaml',
+      ],
+      fileExtensions: [
+        'azure-pipelines.yml',
+        'azure-pipelines.yaml',
+        'azure-pipelines-main.yml',
+        'azure-pipelines-main.yaml',
+      ],
     },
     { name: 'azure', fileExtensions: ['azcli'] },
     {
