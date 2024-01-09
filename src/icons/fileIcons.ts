@@ -312,6 +312,7 @@ export const fileIcons: FileIcons = {
         'sqlite3',
         'pgsql',
         'postgres',
+        'plpgsql',
         'psql',
         'db',
         'db3',
@@ -644,6 +645,7 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'virtual', fileExtensions: ['vdi', 'vbox', 'vbox-prev'] },
+    { name: 'vedic', fileExtensions: ['ved', 'veda', 'vedic'] },
     { name: 'email', fileExtensions: ['ics'], fileNames: ['.mailmap'] },
     {
       name: 'audio',
@@ -1726,8 +1728,18 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'azure-pipelines',
-      fileNames: ['azure-pipelines.yml', 'azure-pipelines.yaml'],
-      fileExtensions: ['azure-pipelines.yml', 'azure-pipelines.yaml'],
+      fileNames: [
+        'azure-pipelines.yml',
+        'azure-pipelines.yaml',
+        'azure-pipelines-main.yml',
+        'azure-pipelines-main.yaml',
+      ],
+      fileExtensions: [
+        'azure-pipelines.yml',
+        'azure-pipelines.yaml',
+        'azure-pipelines-main.yml',
+        'azure-pipelines-main.yaml',
+      ],
     },
     { name: 'azure', fileExtensions: ['azcli'] },
     {
@@ -1867,6 +1879,7 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['resolver.ts', 'resolver.js'],
       enabledFor: [IconPack.Nest],
     },
+    { name: 'moon', fileNames: ['moon.yml'] },
     { name: 'moonscript', fileExtensions: ['moon'] },
     { name: 'percy', fileNames: ['.percy.yml'] },
     { name: 'gitpod', fileNames: ['.gitpod.yml'] },
@@ -2422,6 +2435,7 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'ifanr-cloud', fileNames: ['.mincloudrc'] },
+    { name: 'concourse', fileNames: ['concourse.yml'] },
     { name: 'qwik', fileExtensions: ['tsx'], enabledFor: [IconPack.Qwik] },
     { name: 'mermaid', fileExtensions: ['mmd', 'mermaid'] },
     {
@@ -2484,5 +2498,16 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'apps-script', fileExtensions: ['gs'] },
+    {
+      name: 'kubernetes',
+      fileNames: [
+        'k8s.yml',
+        'k8s.yaml',
+        'kubernetes.yml',
+        'kubernetes.yaml',
+        '.k8s.yml',
+        '.k8s.yaml',
+      ],
+    },
   ],
 };
