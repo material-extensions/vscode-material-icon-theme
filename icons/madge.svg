@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="279" height="269" viewBox="0 0 279 269">
+  <defs>
+    <linearGradient id="logo-a" x1="32.157%" x2="70.686%" y1="46.417%" y2="49.75%">
+      <stop offset="0%" stop-color="#91C5AA"/>
+      <stop offset="100%" stop-color="#3965AF"/>
+    </linearGradient>
+    <linearGradient id="logo-b" x1="53.539%" x2="53.539%" y1="68.101%" y2="19.969%">
+      <stop offset="0%" stop-color="#803FA5"/>
+      <stop offset="100%" stop-color="#4B114A"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <polygon fill="#6750E5" fill-opacity=".498" points="132 28 230.188 234.004 96 234.004" transform="matrix(-1 0 0 1 326.188 0)"/>
+    <polygon fill="#6750E5" fill-opacity=".498" points="86.416 28 182.875 234.004 45 234.004"/>
+    <polygon fill="url(#logo-b)" points="64.312 220 93.193 72.48 140.293 179.121 189.081 72.48 215.03 220 193.791 220 180.55 137.176 139.938 226.31 100.481 137.087 85.729 220"/>
+    <g stroke="#A28BCA" stroke-linecap="square" stroke-opacity=".356" stroke-width="2" transform="translate(80 93)">
+      <path d="M-2.5 112.5L15.5 15.5M59 106L16 13M61 105L105 13M121.5 114.5L105 15"/>
+    </g>
+    <g fill="#DCC6FF" transform="translate(77 92)">
+      <ellipse cx="19" cy="16" rx="3" ry="3"/>
+      <circle cx="63" cy="110" r="3"/>
+      <ellipse cx="108" cy="16" rx="3" ry="3"/>
+      <circle cx="125" cy="116" r="3"/>
+      <circle cy="116" r="3"/>
+    </g>
+  </g>
+</svg>
