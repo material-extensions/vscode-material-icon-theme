@@ -55,8 +55,8 @@ export const folderIcons: FolderTheme[] = [
           'pictures',
           'photo',
           'photos',
-          'photograph'
-          'photographs'
+          'photograph',
+          'photographs',
         ],
       },
       {
