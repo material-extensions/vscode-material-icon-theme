@@ -3,6 +3,65 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v4.33.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.32.0...v4.33.0) 
+
+> January 9, 2024 
+
+- Adjust azure pipelines filename [`#2186`](https://github.com/PKief/vscode-material-icon-theme/pull/2186)
+- add file icon for `Vedic` Programming Language. [`#2111`](https://github.com/PKief/vscode-material-icon-theme/pull/2111)
+- Delete unused files [`0f5fd1b`](https://github.com/PKief/vscode-material-icon-theme/commit/0f5fd1b)
+- Update vscode settings [`e10f594`](https://github.com/PKief/vscode-material-icon-theme/commit/e10f594)
+- chore: add "protobuf" to proto folder names [`#2182`](https://github.com/PKief/vscode-material-icon-theme/pull/2182)
+- Concourse Icon [`#1947`](https://github.com/PKief/vscode-material-icon-theme/pull/1947)
+- feat: add postgres icon [`#2169`](https://github.com/PKief/vscode-material-icon-theme/pull/2169)
+- feat: add kubernetes file icon [`#2077`](https://github.com/PKief/vscode-material-icon-theme/pull/2077)
+- Add moon icons [`#2178`](https://github.com/PKief/vscode-material-icon-theme/pull/2178)
+- feat: add tooling folder [`#2167`](https://github.com/PKief/vscode-material-icon-theme/pull/2167)
+- Add RSpec file icon [`#2106`](https://github.com/PKief/vscode-material-icon-theme/pull/2106)
+- Simplify contribution guidelines [`7856d63`](https://github.com/PKief/vscode-material-icon-theme/commit/7856d63)
+- feat: add the .config folder [`#2172`](https://github.com/PKief/vscode-material-icon-theme/pull/2172)
+- Update README.md [`a18fd92`](https://github.com/PKief/vscode-material-icon-theme/commit/a18fd92)
+- Add puppeteer file icons [`#2142`](https://github.com/PKief/vscode-material-icon-theme/pull/2142)
+- CRX file icon [`#2139`](https://github.com/PKief/vscode-material-icon-theme/pull/2139)
+- Additions to folder icons [`#2140`](https://github.com/PKief/vscode-material-icon-theme/pull/2140)
+- Update nuxt icons [`#2119`](https://github.com/PKief/vscode-material-icon-theme/pull/2119)
+ 
+#### [v4.32.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.31.0...v4.32.0) 
+
+> November 20, 2023 
+
+- [Icon Request] HJSON file icon [`#2136`](https://github.com/PKief/vscode-material-icon-theme/pull/2136)
+- Update workflow files [`d5912bb`](https://github.com/PKief/vscode-material-icon-theme/commit/d5912bb)
+- Add Google App Script (*.gs) file icon [`#2143`](https://github.com/PKief/vscode-material-icon-theme/pull/2143)
+- build(deps-dev): bump axios from 1.4.0 to 1.6.0 [`#2141`](https://github.com/PKief/vscode-material-icon-theme/pull/2141)
+- Added Lottie Folder Icons aswell as the File Icon. [`#2073`](https://github.com/PKief/vscode-material-icon-theme/pull/2073)
+- [Icon Request] Add more textlintrc file names [`#2137`](https://github.com/PKief/vscode-material-icon-theme/pull/2137)
+- Update Angular icons [`#2134`](https://github.com/PKief/vscode-material-icon-theme/pull/2134)
+- Added mjs extension for stylelint [`#2129`](https://github.com/PKief/vscode-material-icon-theme/pull/2129)
+- Add history icon association [`71173fc`](https://github.com/PKief/vscode-material-icon-theme/commit/71173fc)
+- [Icon Request] Taskfile [`#1739`](https://github.com/PKief/vscode-material-icon-theme/pull/1739)
+- [Icon Request] ABAP [`#2123`](https://github.com/PKief/vscode-material-icon-theme/pull/2123)
+- Associate .whitesource file name with json file [`04e6cce`](https://github.com/PKief/vscode-material-icon-theme/commit/04e6cce)
+- feat: add tailwind config esm [`#2112`](https://github.com/PKief/vscode-material-icon-theme/pull/2112)
+ 
+#### [v4.31.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.30.1...v4.31.0) 
+
+> October 6, 2023 
+
+- added templ file icon [`#2102`](https://github.com/PKief/vscode-material-icon-theme/pull/2102)
+- Add .o and .zst extensions [`#2063`](https://github.com/PKief/vscode-material-icon-theme/pull/2063)
+- Add Biome icon [`#2075`](https://github.com/PKief/vscode-material-icon-theme/pull/2075)
+- Added .stan file icon [`#2050`](https://github.com/PKief/vscode-material-icon-theme/pull/2050)
+- [Icon Request] ESBuild [`#2104`](https://github.com/PKief/vscode-material-icon-theme/pull/2104)
+- add plural versions for manager, moderator, and admin folders [`#2098`](https://github.com/PKief/vscode-material-icon-theme/pull/2098)
+- Add SPWN file icon [`#2090`](https://github.com/PKief/vscode-material-icon-theme/pull/2090)
+- Support OWNERS files [`#2088`](https://github.com/PKief/vscode-material-icon-theme/pull/2088)
+- Remove sponsors badge from readme [`#2082`](https://github.com/PKief/vscode-material-icon-theme/pull/2082)
+- Add more panda file names (Closes #2065) [`afac99a`](https://github.com/PKief/vscode-material-icon-theme/commit/afac99a)
+- Add csharp file extension (Closes #2080) [`411e1c9`](https://github.com/PKief/vscode-material-icon-theme/commit/411e1c9)
+- feat: icons for desktop os [`#1635`](https://github.com/PKief/vscode-material-icon-theme/pull/1635)
+- Added disc file extensions (vmdk, qcow2, etc.) [`#2069`](https://github.com/PKief/vscode-material-icon-theme/pull/2069)
+ 
 #### [v4.30.1](https://github.com/PKief/vscode-material-icon-theme/compare/v4.30.0...v4.30.1) 
 
 > August 28, 2023 

@@ -151,5 +151,11 @@ export const languageIcons: LanguageIcon[] = [
   { icon: { name: 'dart' }, ids: ['dart'] },
   { icon: { name: 'cadence' }, ids: ['cadence'] },
   { icon: { name: 'stylable' }, ids: ['stylable'] },
+  { icon: { name: 'hjson' }, ids: ['hjson'] },
+  { icon: { name: 'huff' }, ids: ['huff'] },
+  {
+    icon: { name: 'concourse' },
+    ids: ['concourse-pipeline-yaml', 'concourse-task-yaml'],
+  },
   { icon: { name: 'chapel' }, ids: ['chapel'] },
 ];
