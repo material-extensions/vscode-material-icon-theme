@@ -226,7 +226,6 @@ export const fileIcons: FileIcons = {
       fileExtensions: [
         'ini',
         'dlc',
-        'dll',
         'config',
         'conf',
         'properties',
@@ -316,6 +315,9 @@ export const fileIcons: FileIcons = {
         'psql',
         'db',
         'db3',
+        'dblite',
+        'dblite3',
+        'debugsymbols',
       ],
     },
     { name: 'kusto', fileExtensions: ['kql'] },
@@ -470,7 +472,8 @@ export const fileIcons: FileIcons = {
         'mrf',
       ],
     },
-    { name: 'lib', fileExtensions: ['lib', 'bib'] },
+    { name: 'lib', fileExtensions: ['lib', 'bib', 'a'] },
+    { name: 'dll', fileExtensions: ['dll', 'ilk', 'so'] },
     {
       name: 'ruby',
       fileExtensions: ['rb', 'erb', 'rbs'],
