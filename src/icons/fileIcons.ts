@@ -2233,6 +2233,11 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['horusec-config.json'],
     },
     { name: 'poetry', fileNames: ['poetry.lock'] },
+    {
+      name: 'pdm',
+      fileNames: ['pdm.lock', 'pdm.toml', '.pdm-python'],
+      fileExtensions: ['pdm.lock', 'pdm.toml'],
+    },
     { name: 'coala', fileExtensions: ['coarc', 'coafile'] },
     { name: 'parcel', fileNames: ['.parcelrc'] },
     {
