@@ -2,7 +2,7 @@ import { Translation } from '../models';
 
 export const translation: Translation = {
   activate: 'Habilitar',
-  activated: 'O Material Icon Theme está habilitado.',
+  activated: 'O lucode.ar icons está habilitado.',
   iconPacks: {
     selectPack: 'Seleccione um pacote de ícones',
     description: "Seleccionar o pacote de ícones '%0'",

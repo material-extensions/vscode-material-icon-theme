@@ -1,8 +1,8 @@
 {
-  "name": "material-icon-theme",
-  "displayName": "Material Icon Theme",
-  "description": "Material Design Icons for Visual Studio Code",
-  "version": "4.33.0",
+  "name": "lucodear-icons",
+  "displayName": "lucodear-icons",
+  "description": "🍭 lucodear-icons » A PKief's 'Material Icons Theme' fork with my own custom additions. This was made for my personal use",
+  "version": "0.0.1",
   "scripts": {
     "build": "npm run compile:dev && npm run generateJson",
     "check": "ts-node ./src/scripts/icons/checks",
@@ -25,30 +25,26 @@
     "version": "npm run changelog && git add CHANGELOG.md",
     "vscode:prepublish": "npm run lint && npm run compile && npm run package-web"
   },
-  "publisher": "PKief",
+  "publisher": "lucaslabs",
   "author": {
-    "name": "Philipp Kief",
-    "email": "philipp.kief@gmx.de",
-    "url": "https://pkief.github.io"
-  },
-  "funding": "https://github.com/sponsors/PKief",
-  "sponsor": {
-    "url": "https://github.com/sponsors/PKief"
+    "name": "Lucas Colombo",
+    "email": "lucas@lucode.ar",
+    "url": "https://lucode.ar"
   },
   "engines": {
     "vscode": "^1.51.0"
   },
-  "homepage": "https://github.com/PKief/vscode-material-icon-theme/blob/main/README.md",
+  "homepage": "https://github.com/lucas-labs/lucodear-icons/blob/main/README.md",
   "repository": {
     "type": "git",
-    "url": "https://github.com/PKief/vscode-material-icon-theme.git"
+    "url": "https://github.com/lucas-labs/lucodear-icons.git"
   },
   "bugs": {
-    "url": "https://github.com/PKief/vscode-material-icon-theme/issues"
+    "url": "https://github.com/lucas-labs/lucodear-icons/issues"
   },
   "icon": "logo.png",
   "galleryBanner": {
-    "color": "#1e1e1e",
+    "color": "#11131c",
     "theme": "dark"
   },
   "categories": [
@@ -84,60 +80,60 @@
   "contributes": {
     "iconThemes": [
       {
-        "id": "material-icon-theme",
-        "label": "Material Icon Theme",
+        "id": "lucodear-icons",
+        "label": "lucode.ar icons",
         "path": "./dist/material-icons.json",
         "_watch": true
       }
     ],
     "commands": [
       {
-        "command": "material-icon-theme.activateIcons",
+        "command": "lucodear-icons.activateIcons",
         "title": "%command.activateIcons%",
         "enablement": "!isWeb"
       },
       {
-        "command": "material-icon-theme.toggleIconPacks",
+        "command": "lucodear-icons.toggleIconPacks",
         "title": "%command.toggleIconPacks%",
         "enablement": "!isWeb"
       },
       {
-        "command": "material-icon-theme.changeFolderTheme",
+        "command": "lucodear-icons.changeFolderTheme",
         "title": "%command.changeFolderTheme%",
         "enablement": "!isWeb"
       },
       {
-        "command": "material-icon-theme.changeFolderColor",
+        "command": "lucodear-icons.changeFolderColor",
         "title": "%command.changeFolderColor%",
         "enablement": "!isWeb"
       },
       {
-        "command": "material-icon-theme.changeFileColor",
+        "command": "lucodear-icons.changeFileColor",
         "title": "%command.changeFileColor%",
         "enablement": "!isWeb"
       },
       {
-        "command": "material-icon-theme.restoreDefaultConfig",
+        "command": "lucodear-icons.restoreDefaultConfig",
         "title": "%command.restoreDefaultConfig%",
         "enablement": "!isWeb"
       },
       {
-        "command": "material-icon-theme.toggleExplorerArrows",
+        "command": "lucodear-icons.toggleExplorerArrows",
         "title": "%command.toggleExplorerArrows%",
         "enablement": "!isWeb"
       },
       {
-        "command": "material-icon-theme.changeOpacity",
+        "command": "lucodear-icons.changeOpacity",
         "title": "%command.changeOpacity%",
         "enablement": "!isWeb"
       },
       {
-        "command": "material-icon-theme.toggleGrayscale",
+        "command": "lucodear-icons.toggleGrayscale",
         "title": "%command.toggleGrayscale%",
         "enablement": "!isWeb"
       },
       {
-        "command": "material-icon-theme.changeSaturation",
+        "command": "lucodear-icons.changeSaturation",
         "title": "%command.changeSaturation%",
         "enablement": "!isWeb"
       }
@@ -146,7 +142,7 @@
       "type": "object",
       "title": "%configuration.title%",
       "properties": {
-        "material-icon-theme.activeIconPack": {
+        "lucodear-icons.activeIconPack": {
           "type": "string",
           "default": "angular",
           "description": "%configuration.activeIconPack%",
@@ -173,22 +169,22 @@
             "none"
           ]
         },
-        "material-icon-theme.files.associations": {
+        "lucodear-icons.files.associations": {
           "type": "object",
           "default": {},
           "description": "%configuration.files.associations%"
         },
-        "material-icon-theme.folders.associations": {
+        "lucodear-icons.folders.associations": {
           "type": "object",
           "default": {},
           "description": "%configuration.folders.associations%"
         },
-        "material-icon-theme.languages.associations": {
+        "lucodear-icons.languages.associations": {
           "type": "object",
           "default": {},
           "description": "%configuration.languages.associations%"
         },
-        "material-icon-theme.folders.theme": {
+        "lucodear-icons.folders.theme": {
           "type": "string",
           "default": "specific",
           "description": "%configuration.folders.theme%",
@@ -203,31 +199,31 @@
             "none"
           ]
         },
-        "material-icon-theme.folders.color": {
+        "lucodear-icons.folders.color": {
           "type": "string",
           "default": "#90a4ae",
           "pattern": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
           "description": "%configuration.folders.color%"
         },
-        "material-icon-theme.files.color": {
+        "lucodear-icons.files.color": {
           "type": "string",
           "default": "#90a4ae",
           "pattern": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
           "description": "%configuration.files.color%"
         },
-        "material-icon-theme.opacity": {
+        "lucodear-icons.opacity": {
           "type": "number",
           "default": 1,
           "minimum": 0,
           "maximum": 1,
           "description": "%configuration.opacity%"
         },
-        "material-icon-theme.hidesExplorerArrows": {
+        "lucodear-icons.hidesExplorerArrows": {
           "type": "boolean",
           "default": false,
           "description": "%configuration.hidesExplorerArrows%"
         },
-        "material-icon-theme.saturation": {
+        "lucodear-icons.saturation": {
           "type": "number",
           "default": 1,
           "minimum": 0,
