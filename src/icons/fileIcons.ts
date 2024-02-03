@@ -2358,7 +2358,7 @@ export const fileIcons: FileIcons = {
     { name: 'mermaid', fileExtensions: ['mmd', 'mermaid'] },
     {
       name: 'syncpack',
-      fileExtensions: [
+      fileNames: [
         '.syncpackrc',
         'syncpackrc.json',
         '.syncpackrc.yaml',
