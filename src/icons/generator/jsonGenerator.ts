@@ -26,6 +26,7 @@ import {
   validateOpacityValue,
   validateSaturationValue,
 } from './index';
+import { loadLucodearAddonIconDefinitions } from '../../lucodear/generator';
 
 /**
  * Generate the complete icon configuration object that can be written as JSON file.
@@ -50,11 +51,19 @@ export const generateIconConfigurationObject = (
     options
   );
 
+  // #region: lucodear - addon
+  const lucodearIconDefinitios = loadLucodearAddonIconDefinitions(
+    iconConfig,
+    options
+  );
+  // #endregion
+
   return merge(
     {},
     languageIconDefinitions,
     fileIconDefinitions,
-    folderIconDefinitions
+    folderIconDefinitions,
+    lucodearIconDefinitios
   );
 };
 
@@ -107,12 +116,12 @@ export const createIconFile = (
     if (basename(__dirname) !== 'dist') {
       iconJsonPath = join(__dirname, '..', '..', '..', 'dist');
     }
-    if (!updatedConfigs || (updatedConfigs.files || {}).color) {
-      // if updatedConfigs do not exist (because of initial setup)
-      // or new config value was detected by the change detection
-      generateFileIcons(options.files?.color);
-      setIconOpacity(options, ['file.svg']);
-    }
+    // if (!updatedConfigs || (updatedConfigs.files || {}).color) {
+    // if updatedConfigs do not exist (because of initial setup)
+    // or new config value was detected by the change detection
+    generateFileIcons(options.files?.color);
+    setIconOpacity(options, ['file.svg']);
+    // }
     if (!updatedConfigs || (updatedConfigs.folders || {}).color) {
       // if updatedConfigs do not exist (because of initial setup)
       // or new config value was detected by the change detection

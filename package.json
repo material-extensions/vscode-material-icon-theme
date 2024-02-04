@@ -229,6 +229,11 @@
           "minimum": 0,
           "maximum": 1,
           "description": "%configuration.saturation%"
+        },
+        "lucodear-icons.addon.enable-custom-lucodear": {
+          "type": "boolean",
+          "default": false,
+          "description": "%configuration.addon.enable-custom-lucodear%"
         }
       }
     }

@@ -2,14 +2,14 @@
   "files.exclude": {
     // 📙 » others
     "build": true,
-    // ".github": true,
+    ".github": true,
     "src/**/scripts": true,
 
     // ⚙️ » config
     "**/**/tsconfig*": true,
     "svgo.config.js": true,
     "**/**/*code-workspace": true,
-    "package.nls*.json": true, // all i18n package.json files
+    "package.nls.*.json": true, // all i18n package.json files
     "material-colors.yml": true,
     "changelog.config.json": true,
 
@@ -29,7 +29,7 @@
     // "logo.{png,svg}": true,
     "package-lock.json": true,
     ".vscodeignore": true,
-    ".gitignore": true,
+    // ".gitignore": true,
     ".git": true,
 
     // ".vscode": true,
