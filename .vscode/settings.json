@@ -2,7 +2,7 @@
   "files.exclude": {
     // 📙 » others
     "build": true,
-    ".github": true,
+    // ".github": true,
     "src/**/scripts": true,
 
     // ⚙️ » config

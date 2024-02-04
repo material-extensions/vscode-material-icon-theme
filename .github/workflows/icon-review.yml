@@ -4,6 +4,8 @@ on:
   pull_request_target:
     paths:
       - 'icons/*.svg'
+      - 'icons-lucode.ar/files/*.svg'
+      - 'icons-lucode.ar/folders/*.svg'
 
 jobs:
   icon-review:
