@@ -4,6 +4,8 @@ on:
   pull_request:
     paths:
       - 'icons/*.svg'
+      - 'icons-lucode.ar/files/*.svg'
+      - 'icons-lucode.ar/folders/*.svg'
 
 jobs:
   color-check:
@@ -16,7 +18,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          
+
       - name: Check colors 🎨
         run: |
           svgFiles=$(git diff origin/${{ env.TARGET_BRANCH }} --diff-filter=ACMRTUX  --name-only | grep '.svg$')
