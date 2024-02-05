@@ -3,7 +3,8 @@ name: New Icon/s
 about: Ask for specific icons to be added
 title: '🏷️ » new icons'
 labels: '🏷️ » new icons'
-assignees: '@lucas-labs'
+assignees:
+  - lucas-labs
 ---
 
 **Icon Type**
