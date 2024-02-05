@@ -1,6 +1,42 @@
 {
   "files.exclude": {
-    "out": false
+    // 📙 » others
+    "build": true,
+    // ".github": true,
+    "src/**/scripts": true,
+
+    // ⚙️ » config
+    "**/**/tsconfig*": true,
+    "svgo.config.js": true,
+    "**/**/*code-workspace": true,
+    "package.nls.*.json": true, // all i18n package.json files
+    "material-colors.yml": true,
+    "changelog.config.json": true,
+
+    // 🧼 » linters & styles
+    "**/**/.prettierrc": true,
+    "**/**/.editorconfig": true,
+    "**/**/*.eslintrc.*": true,
+
+    // 📝 » documents
+    "README.md": true,
+    "LICENSE*": true,
+    "CHANGELOG*": true,
+    "CONTRIBUTING*": true,
+
+    // 🗑️ » trash
+    "node_modules": true,
+    "logo.{png,svg}": true,
+    "package-lock.json": true,
+    ".vscodeignore": true,
+    ".gitignore": true,
+    ".git": true,
+
+    ".vscode": true,
+    "images": true,
+
+    // 🧪 » tests
+    "**/**/test": true
   },
   "search.exclude": {
     "out": true

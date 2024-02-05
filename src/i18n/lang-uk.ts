@@ -2,7 +2,7 @@ import { Translation } from '../models';
 
 export const translation: Translation = {
   activate: 'Активувати',
-  activated: 'Material Icon Theme активований.',
+  activated: 'lucode.ar icons активований.',
   iconPacks: {
     selectPack: 'Виберіть набір іконок',
     description: "Виберіть набір значків '%0'",

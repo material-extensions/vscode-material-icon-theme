@@ -13,7 +13,7 @@ const createHTMLTableHeadRow = (amount: number) => {
         <th class="icon">Icon</th>
         <th class="iconName">Name</th>
     `;
-  const columns = [...Array(amount)].map(() => pair).join('');
+  const columns = [...Array(amount > 0 ? amount : 5)].map(() => pair).join('');
   return `
         <tr>
             ${columns}
@@ -21,14 +21,17 @@ const createHTMLTableHeadRow = (amount: number) => {
     `;
 };
 
-const createHTMLTableBodyRows = (items: IconDefinition[][]) => {
+const createHTMLTableBodyRows = (
+  items: IconDefinition[][],
+  iconsPath: string
+) => {
   let rows = '';
   items.forEach((row) => {
     const columns = row
       .map(
         (icon) => `
             <td class="icon">
-                <img src="./../../../icons/${icon.iconName}.svg" alt="${
+                <img src="${iconsPath}/${icon.iconName}.svg" alt="${
           icon.label
         }">
             </td>
@@ -53,32 +56,44 @@ const createHTMLTable = (headRow: string, bodyRows: string) => `
     </table>
 `;
 
-const createPreviewTable = (icons: IconDefinition[][], size: number) => {
+const noIconsFound = `
+  <div class="no-icons">
+    Oops, no icons found!
+  </div>
+`;
+
+const createPreviewTable = (
+  icons: IconDefinition[][],
+  size: number,
+  iconsPath: string
+) => {
   const table =
     htmlDoctype +
     styling +
     createHTMLTable(
       createHTMLTableHeadRow(size),
-      createHTMLTableBodyRows(icons)
-    );
+      createHTMLTableBodyRows(icons, iconsPath)
+    ) +
+    (icons.length === 0 ? noIconsFound : '');
   return table;
 };
 
 const savePreview = (
   fileName: string,
   size: number,
-  icons: IconDefinition[][]
+  icons: IconDefinition[][],
+  iconsPath: string
 ) => {
   const filePath = join(__dirname, fileName + '.html');
 
   // write the html file with the icon table
-  writeFileSync(filePath, createPreviewTable(icons, size));
+  writeFileSync(filePath, createPreviewTable(icons, size, iconsPath));
 
   // create the image
   createScreenshot(filePath, fileName)
     .then(() => {
       console.log(
-        '> Material Icon Theme:',
+        '> 🍭 lucodear-icons:',
         green(`Successfully created ${fileName} preview image!`)
       );
     })
@@ -127,12 +142,16 @@ export const generatePreview = (
   name: string,
   icons: IconDefinition[],
   size: number,
-  trimmableIcons: string[] = []
+  trimmableIcons: string[] = [],
+  iconsPath: string = './../../../icons'
 ) => {
+  const safeSize = icons.length >= size ? size : icons.length;
+
   savePreview(
     name,
-    size,
-    getIconDefinitionsMatrix(icons, size, trimmableIcons)
+    safeSize,
+    getIconDefinitionsMatrix(icons, safeSize, trimmableIcons),
+    iconsPath
   );
 };
 
@@ -152,6 +171,10 @@ const trimIconListToSize = (
   size: number,
   trimmableIcons: string[]
 ) => {
+  if (size === 0) {
+    return;
+  }
+
   while (iconList.length % size !== 0) {
     iconList.splice(
       iconList.findIndex(

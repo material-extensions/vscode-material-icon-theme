@@ -119,7 +119,7 @@ const handleErrors = () => {
       ...Object.keys(allConflicts.languageIcons),
     ].length > 0
   ) {
-    console.log('> Material Icon Theme:', red('Icon conflicts:'));
+    console.log('> 🍭 lucodear-icons:', red('Icon conflicts:'));
     console.log(red('--------------------------------------'));
 
     printErrorMessage(allConflicts.fileIcons.fileExtensions, 'fileExtension');
@@ -130,10 +130,7 @@ const handleErrors = () => {
     console.log('\n' + red('Please check the wrong icon configurations!\n'));
     process.exit(1);
   } else {
-    console.log(
-      '> Material Icon Theme:',
-      green('Passed icon conflict checks!')
-    );
+    console.log('> 🍭 lucodear-icons:', green('Passed icon conflict checks!'));
   }
 };
 

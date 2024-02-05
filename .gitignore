@@ -14,3 +14,5 @@ icons/folder-root-open.svg
 
 src/scripts/preview/*.html
 src/scripts/contributors/*.html
+
+*.code-workspace

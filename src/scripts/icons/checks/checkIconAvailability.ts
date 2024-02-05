@@ -151,12 +151,12 @@ const handleErrors = () => {
     wrongIconNames.languageIcons.length;
   if (amountOfErrors > 0) {
     console.log(
-      '> Material Icon Theme:',
+      '> 🍭 lucodear-icons:',
       red(`Found ${amountOfErrors} error(s) in the icon configuration!`)
     );
   } else {
     console.log(
-      '> Material Icon Theme:',
+      '> 🍭 lucodear-icons:',
       green('Passed icon availability checks!')
     );
   }

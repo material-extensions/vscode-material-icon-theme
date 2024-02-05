@@ -9,8 +9,12 @@
       "name": "Launch Extension",
       "type": "extensionHost",
       "request": "launch",
+
       "runtimeExecutable": "${execPath}",
-      "args": ["--extensionDevelopmentPath=${workspaceFolder}"],
+      "args": [
+        "--extensionDevelopmentPath=${workspaceFolder}",
+        "--disable-extensions"
+      ],
       "outFiles": ["${workspaceFolder}/dist/**/*.js"],
       "smartStep": true,
       "preLaunchTask": "npm: build"

@@ -11,7 +11,7 @@ export const getConfig = (section?: string) => {
 
 /** Get list of configuration entries of package.json */
 export const getConfigProperties = (): { [config: string]: unknown } => {
-  return extensions.getExtension('PKief.material-icon-theme')?.packageJSON
+  return extensions.getExtension('lucaslabs.lucodear-icons')?.packageJSON
     ?.contributes?.configuration?.properties;
 };
 
@@ -25,7 +25,7 @@ export const setConfig = (
 };
 
 export const getThemeConfig = (section: string) => {
-  return getConfig('material-icon-theme').inspect(section);
+  return getConfig('lucodear-icons').inspect(section);
 };
 
 /** Set the config of the theme. */
@@ -34,7 +34,7 @@ export const setThemeConfig = (
   value: any,
   global: boolean = false
 ) => {
-  return getConfig('material-icon-theme').update(section, value, global);
+  return getConfig('lucodear-icons').update(section, value, global);
 };
 
 /**
@@ -44,9 +44,9 @@ export const setThemeConfig = (
 export const isThemeActivated = (global: boolean = false): boolean => {
   return global
     ? getConfig().inspect('workbench.iconTheme')?.globalValue ===
-        'material-icon-theme'
+        'lucodear-icons'
     : getConfig().inspect('workbench.iconTheme')?.workspaceValue ===
-        'material-icon-theme';
+        'lucodear-icons';
 };
 
 /** Checks if the theme is not the active icon theme */
@@ -60,7 +60,7 @@ export const isThemeNotVisible = (): boolean => {
 
 /** Return the path of the extension in the file system. */
 const getExtensionPath = () =>
-  extensions.getExtension('PKief.material-icon-theme')?.extensionPath ?? '';
+  extensions.getExtension('lucaslabs.lucodear-icons')?.extensionPath ?? '';
 
 /** Get the configuration of the icons as JSON Object */
 export const getMaterialIconsJSON = (): IconConfiguration => {

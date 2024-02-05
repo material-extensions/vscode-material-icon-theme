@@ -26,13 +26,14 @@ import {
   validateOpacityValue,
   validateSaturationValue,
 } from './index';
+import { loadLucodearAddonIconDefinitions } from '../../lucodear/generator';
 
 /**
  * Generate the complete icon configuration object that can be written as JSON file.
  */
-export const generateIconConfigurationObject = (
+export const generateIconConfigurationObject = async (
   options: IconJsonOptions
-): IconConfiguration => {
+): Promise<IconConfiguration> => {
   const iconConfig = merge({}, new IconConfiguration(), { options });
   const languageIconDefinitions = loadLanguageIconDefinitions(
     languageIcons,
@@ -50,11 +51,21 @@ export const generateIconConfigurationObject = (
     options
   );
 
+  // #region: lucodear - addon
+  const lucodearIconDefinitios = await loadLucodearAddonIconDefinitions(
+    iconConfig,
+    options as any,
+    merge({}, languageIconDefinitions, fileIconDefinitions),
+    folderIconDefinitions
+  );
+  // #endregion
+
   return merge(
     {},
     languageIconDefinitions,
     fileIconDefinitions,
-    folderIconDefinitions
+    folderIconDefinitions,
+    lucodearIconDefinitios
   );
 };
 
@@ -63,7 +74,7 @@ export const generateIconConfigurationObject = (
  * @param updatedConfigs Options that have been changed.
  * @param updatedJSONConfig New JSON options that already include the updatedConfigs.
  */
-export const createIconFile = (
+export const createIconFile = async (
   updatedConfigs?: IconJsonOptions,
   updatedJSONConfig: IconJsonOptions = {}
 ) => {
@@ -73,7 +84,7 @@ export const createIconFile = (
     getDefaultIconOptions(),
     updatedJSONConfig
   );
-  const json = generateIconConfigurationObject(options);
+  const json = await generateIconConfigurationObject(options);
 
   // make sure that the folder color, opacity and saturation values are entered correctly
   if (
@@ -107,12 +118,12 @@ export const createIconFile = (
     if (basename(__dirname) !== 'dist') {
       iconJsonPath = join(__dirname, '..', '..', '..', 'dist');
     }
-    if (!updatedConfigs || (updatedConfigs.files || {}).color) {
-      // if updatedConfigs do not exist (because of initial setup)
-      // or new config value was detected by the change detection
-      generateFileIcons(options.files?.color);
-      setIconOpacity(options, ['file.svg']);
-    }
+    // if (!updatedConfigs || (updatedConfigs.files || {}).color) {
+    // if updatedConfigs do not exist (because of initial setup)
+    // or new config value was detected by the change detection
+    generateFileIcons(options.files?.color);
+    setIconOpacity(options, ['file.svg']);
+    // }
     if (!updatedConfigs || (updatedConfigs.folders || {}).color) {
       // if updatedConfigs do not exist (because of initial setup)
       // or new config value was detected by the change detection

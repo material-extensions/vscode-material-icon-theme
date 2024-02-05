@@ -7,7 +7,9 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [windows-latest, ubuntu-latest]
+        os:
+          # - windows-latest
+          - ubuntu-latest
         node-version: [16.x]
 
     name: ${{ matrix.os }} (Node.js ${{ matrix.node-version }})
