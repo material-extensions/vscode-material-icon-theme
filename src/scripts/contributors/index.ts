@@ -31,7 +31,7 @@ const fetchContributors = (
   return new Promise((resolve, reject) => {
     const config: AxiosRequestConfig = {
       method: 'get',
-      url: `https://api.github.com/repos/pkief/vscode-material-icon-theme/contributors`,
+      url: `https://api.github.com/repos/lucas-labs/lucodear-icons/contributors`,
       params: { page },
       headers: {
         accept: 'application/json',
