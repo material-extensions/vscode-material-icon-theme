@@ -18,7 +18,7 @@
     "postcompile": "npm run generateJson && npm run check",
     "pretest": "npm run build && tsc -p ./",
     "preview": "ts-node ./src/scripts/preview",
-    "svgo": "svgo -i icons -o icons -q",
+    "svgo": "svgo -i icons icons-lucodear/files icons-lucodear/folders -q",
     "test": "node ./out/test/runTest.js",
     "changelog": "changelog-machine --config changelog.config.json",
     "preversion": "npm run contributors && git add images/contributors.png && npm run preview && git add images/fileIcons.png && git add images/folderIcons.png",
@@ -230,10 +230,31 @@
           "maximum": 1,
           "description": "%configuration.saturation%"
         },
-        "lucodear-icons.addon.enable-custom-lucodear": {
+        "lucodear-icons.lucodear.enable": {
           "type": "boolean",
           "default": false,
-          "description": "%configuration.addon.enable-custom-lucodear%"
+          "description": "%configuration.lucodear.enable%"
+        },
+        "lucodear-icons.lucodear.ignoreLookupPaths": {
+          "type": "array",
+          "default": [
+            "node_modules",
+            ".git",
+            ".venv",
+            "venv",
+            ".yarn"
+          ],
+          "description": "%configuration.lucodear.ignoreLookupPaths%"
+        },
+        "lucodear-icons.lucodear.files.regexAssociations": {
+          "type": "object",
+          "default": {},
+          "description": "%configuration.lucodear.files.regexAssociations%"
+        },
+        "lucodear-icons.lucodear.folders.regexAssociations": {
+          "type": "object",
+          "default": {},
+          "description": "%configuration.lucodear.folders.regexAssociations%"
         }
       }
     }

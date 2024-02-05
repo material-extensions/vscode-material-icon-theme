@@ -1,34 +1,51 @@
 <h1 align="center">
   <br>
-    <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/logo.png" alt="logo" width="200">
+    <img src="https://raw.githubusercontent.com/lucas-labs/lucodear-icons/main/logo.png" alt="logo" width="200">
   <br><br>
-  Material Icon Theme
+  lucode.ar icons
   <br>
   <br>
 </h1>
 
-<h4 align="center">Get the Material Design icons into your VS Code.</h4>
+> [!IMPORTANT]  
+> This is a fork of [PKief/vscode-material-icon-theme](https://github.com/PKief/vscode-material-icon-theme).
+> It contains custom and **opinionated** modifications and tweaks. It's not meant to be used as a replacement
+> for the original extension and it wasn't made to be used by anyone other than me. My changes are not documented
+> at all and I don't plan to do so. If you want to use this extension, I recommend you to use the original one or
+> to go through the code if you're curious about the changes I made =)
 
 <p align="center">
-    <a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"><img src="https://img.shields.io/visual-studio-marketplace/v/PKief.material-icon-theme?style=for-the-badge&colorA=252526&colorB=43A047&label=VERSION" alt="Version"></a>&nbsp;
-    <a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"><img src="https://img.shields.io/visual-studio-marketplace/r/PKief.material-icon-theme?style=for-the-badge&colorA=252526&colorB=43A047&label=Rating" alt="Rating"></a>&nbsp;
-    <a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"><img src="https://img.shields.io/visual-studio-marketplace/i/PKief.material-icon-theme?style=for-the-badge&colorA=252526&colorB=43A047&label=Installs" alt="Installs"></a>&nbsp;
-    <a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"><img src="https://img.shields.io/visual-studio-marketplace/d/PKief.material-icon-theme?style=for-the-badge&colorA=252526&colorB=43A047&label=Downloads" alt="Downloads"></a>
+    <a href="https://marketplace.visualstudio.com/items?itemName=lucaslabs.lucodear-icons"><img src="https://img.shields.io/visual-studio-marketplace/v/lucaslabs.lucodear-icons?style=for-the-badge&colorA=252526&colorB=43A047&label=VERSION" alt="Version"></a>&nbsp;
+    <a href="https://marketplace.visualstudio.com/items?itemName=lucaslabs.lucodear-icons"><img src="https://img.shields.io/visual-studio-marketplace/r/lucaslabs.lucodear-icons?style=for-the-badge&colorA=252526&colorB=43A047&label=Rating" alt="Rating"></a>&nbsp;
+    <a href="https://marketplace.visualstudio.com/items?itemName=lucaslabs.lucodear-icons"><img src="https://img.shields.io/visual-studio-marketplace/i/lucaslabs.lucodear-icons?style=for-the-badge&colorA=252526&colorB=43A047&label=Installs" alt="Installs"></a>&nbsp;
+    <a href="https://marketplace.visualstudio.com/items?itemName=lucaslabs.lucodear-icons"><img src="https://img.shields.io/visual-studio-marketplace/d/lucaslabs.lucodear-icons?style=for-the-badge&colorA=252526&colorB=43A047&label=Downloads" alt="Downloads"></a>
 </p>
+
+## 🍭 lucodear
+
+### Files
+
+<img src="https://raw.githubusercontent.com/lucas-labs/lucodear-icons/main/images/lucodearFileIcons.png" alt="file icons">
+
+### Folders
+
+<img src="https://raw.githubusercontent.com/lucas-labs/lucodear-icons/main/images/lucodearFolderIcons.png" alt="file icons">
+
+## Material Icon Theme (original documentation)
 
 ### File icons
 
-<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/fileIcons.png" alt="file icons">
+<img src="https://raw.githubusercontent.com/lucas-labs/lucodear-icons/main/images/fileIcons.png" alt="file icons">
 
 ### Folder icons
 
-<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/folderIcons.png" alt="folder icons">
+<img src="https://raw.githubusercontent.com/lucas-labs/lucodear-icons/main/images/folderIcons.png" alt="folder icons">
 
 #### Customize file & folder color
 
 You can change the color of the default file and folder icons using the command palette:
 
-<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/set-folder-color.gif" alt="custom folder colors">
+<img src="https://raw.githubusercontent.com/lucas-labs/lucodear-icons/main/images/set-folder-color.gif" alt="custom folder colors">
 
 or via user settings:
 
@@ -41,7 +58,7 @@ or via user settings:
 
 You can change the design of the folder icons using the command palette:
 
-<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/set-folder-theme.gif" alt="folder themes">
+<img src="https://raw.githubusercontent.com/lucas-labs/lucodear-icons/main/images/set-folder-theme.gif" alt="folder themes">
 
 or via user settings:
 
@@ -158,7 +175,7 @@ You can see the available icon names in the overview above. See "[Known language
 
 Press `Ctrl-Shift-P` to open the command palette and type `Material Icons`.
 
-<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/commandPalette.png" alt="commands">
+<img src="https://raw.githubusercontent.com/lucas-labs/lucodear-icons/main/images/commandPalette.png" alt="commands">
 
 <p></p>
 
@@ -182,7 +199,7 @@ Press `Ctrl-Shift-P` to open the command palette and type `Material Icons`.
 ## Contributors
 
 <a href="https://github.com/PKief/vscode-material-icon-theme/graphs/contributors">
-    <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/contributors.png" alt="Contributors">
+    <img src="https://raw.githubusercontent.com/lucas-labs/lucodear-icons/main/images/contributors.png" alt="Contributors">
 </a>
 
 **Would you like to contribute?**

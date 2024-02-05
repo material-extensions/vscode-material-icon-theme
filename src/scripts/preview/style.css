@@ -1,10 +1,11 @@
 :root {
-  --main-bg-color: #1e1e1e;
+  --main-bg-color: #21252b;
 }
 
 body {
   margin: 0;
   padding: 0;
+  background-color: var(--main-bg-color);
 }
 
 table {
@@ -14,6 +15,15 @@ table {
   background: var(--main-bg-color);
   color: rgb(250, 250, 250);
   font-size: 1rem;
+}
+
+.no-icons {
+  font-family: arial, sans-serif;
+  color: rgb(250, 250, 250);
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
 }
 
 td,
