@@ -1,7 +1,7 @@
 ---
 name: New Icon/s
 about: Ask for specific icons to be added
-title: '🏷️ » new icons'
+title: '🏷️ » new icons: [icon/s description]'
 labels: '🏷️ » new icons'
 assignees:
   - lucas-labs
