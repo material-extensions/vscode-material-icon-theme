@@ -4,6 +4,9 @@
     "build": true,
     // ".github": true,
     "src/**/scripts": true,
+    "images": true,
+    "icons": true,
+    "dist": true,
 
     // ⚙️ » config
     "**/**/tsconfig*": true,
@@ -31,9 +34,9 @@
     ".vscodeignore": true,
     ".gitignore": true,
     ".git": true,
+    ".vscode-test": true,
 
     ".vscode": true,
-    "images": true,
 
     // 🧪 » tests
     "**/**/test": true

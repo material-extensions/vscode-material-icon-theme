@@ -16,3 +16,5 @@ src/scripts/preview/*.html
 src/scripts/contributors/*.html
 
 *.code-workspace
+
+INSTRUCTIONS.md
