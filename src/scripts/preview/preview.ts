@@ -22,22 +22,24 @@ const createHTMLTableHeadRow = (amount: number) => {
 };
 
 const createHTMLTableBodyRows = (
-  items: IconDefinition[][],
+  items: (IconDefinition & { subpath?: string })[][],
   iconsPath: string
 ) => {
   let rows = '';
   items.forEach((row) => {
     const columns = row
-      .map(
-        (icon) => `
-            <td class="icon">
-                <img src="${iconsPath}/${icon.iconName}.svg" alt="${
+      .map((icon) => {
+        const subpath = icon.subpath ? `${icon.subpath}/` : '';
+
+        return `
+          <td class="icon">
+              <img src="${iconsPath}/${subpath}${icon.iconName}.svg" alt="${
           icon.label
         }">
-            </td>
-            <td class="iconName">${toTitleCase(icon.label)}</td>
-        `
-      )
+          </td>
+          <td class="iconName">${toTitleCase(icon.label)}</td>
+        `;
+      })
       .join('');
     const tableRow = `
             <tr>
@@ -63,7 +65,7 @@ const noIconsFound = `
 `;
 
 const createPreviewTable = (
-  icons: IconDefinition[][],
+  icons: (IconDefinition & { subpath?: string })[][],
   size: number,
   iconsPath: string
 ) => {
@@ -105,16 +107,23 @@ const savePreview = (
 const getIconDefinitionsMatrix = (
   icons: IconDefinition[],
   size: number,
-  excluded: string[] = []
+  excluded: string[] = [],
+  sort: boolean = true,
+  trim: boolean = false
 ): IconDefinition[][] => {
-  const iconList = icons.sort((a, b) => a.label.localeCompare(b.label));
-  trimIconListToSize(iconList, size, excluded);
+  const iconList = sort
+    ? icons.sort((a, b) => a.label.localeCompare(b.label))
+    : icons;
+
+  trim && trimIconListToSize(iconList, size, excluded);
 
   // list for the columns with the icons
   const matrix: IconDefinition[][] = [];
 
   // calculate the amount of icons per column
   const itemsPerColumn = Math.floor(iconList.length / size);
+  const rest = iconList.length % size;
+  const restItems = iconList.slice(-rest);
 
   // create the columns with the icons
   let counter = 0;
@@ -126,6 +135,11 @@ const getIconDefinitionsMatrix = (
       matrix[i][s] = iconList[counter];
       counter++;
     }
+  }
+
+  // add another row with the rest of the icons
+  if (rest > 0) {
+    matrix.push(restItems);
   }
 
   return matrix;
