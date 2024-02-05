@@ -26,13 +26,13 @@
 
     // 🗑️ » trash
     "node_modules": true,
-    // "logo.{png,svg}": true,
+    "logo.{png,svg}": true,
     "package-lock.json": true,
     ".vscodeignore": true,
-    // ".gitignore": true,
+    ".gitignore": true,
     ".git": true,
 
-    // ".vscode": true,
+    ".vscode": true,
     "images": true,
 
     // 🧪 » tests
