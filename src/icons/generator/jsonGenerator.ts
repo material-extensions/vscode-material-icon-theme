@@ -31,9 +31,9 @@ import { loadLucodearAddonIconDefinitions } from '../../lucodear/generator';
 /**
  * Generate the complete icon configuration object that can be written as JSON file.
  */
-export const generateIconConfigurationObject = (
+export const generateIconConfigurationObject = async (
   options: IconJsonOptions
-): IconConfiguration => {
+): Promise<IconConfiguration> => {
   const iconConfig = merge({}, new IconConfiguration(), { options });
   const languageIconDefinitions = loadLanguageIconDefinitions(
     languageIcons,
@@ -52,9 +52,11 @@ export const generateIconConfigurationObject = (
   );
 
   // #region: lucodear - addon
-  const lucodearIconDefinitios = loadLucodearAddonIconDefinitions(
+  const lucodearIconDefinitios = await loadLucodearAddonIconDefinitions(
     iconConfig,
-    options
+    options as any,
+    merge({}, languageIconDefinitions, fileIconDefinitions),
+    folderIconDefinitions
   );
   // #endregion
 
@@ -72,7 +74,7 @@ export const generateIconConfigurationObject = (
  * @param updatedConfigs Options that have been changed.
  * @param updatedJSONConfig New JSON options that already include the updatedConfigs.
  */
-export const createIconFile = (
+export const createIconFile = async (
   updatedConfigs?: IconJsonOptions,
   updatedJSONConfig: IconJsonOptions = {}
 ) => {
@@ -82,7 +84,7 @@ export const createIconFile = (
     getDefaultIconOptions(),
     updatedJSONConfig
   );
-  const json = generateIconConfigurationObject(options);
+  const json = await generateIconConfigurationObject(options);
 
   // make sure that the folder color, opacity and saturation values are entered correctly
   if (

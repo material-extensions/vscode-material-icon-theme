@@ -120,7 +120,7 @@ export const loadFileIconDefinitions = (
 /**
  * Map the file extensions and the filenames to the related icons.
  */
-const mapSpecificFileIcons = (
+export const mapSpecificFileIcons = (
   icon: FileIcon,
   mappingType: FileMappingType,
   customFileAssociation: IconAssociations = {}
@@ -227,7 +227,7 @@ const getCustomIcons = (fileAssociations: IconAssociations | undefined) => {
   return icons;
 };
 
-const enum FileMappingType {
+export const enum FileMappingType {
   FileExtensions = 'fileExtensions',
   FileNames = 'fileNames',
 }

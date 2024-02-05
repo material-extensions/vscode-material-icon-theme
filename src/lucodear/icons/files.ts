@@ -3,7 +3,7 @@ import { FileIcons } from '../../models';
 /**
  * Defines file icons
  */
-export const fileIcons: FileIcons = {
+export const lucodearFileIcons: FileIcons = {
   defaultIcon: { name: 'file' },
   icons: [
     {

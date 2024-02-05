@@ -11,12 +11,12 @@ export const detectConfigChanges = () => {
   // if there's nothing to update
   if (Object.keys(changes.updatedConfigs).length === 0) return;
 
-  try {
-    // update icon json file with new options
-    createIconFile(changes.updatedConfigs, changes.updatedJSONConfig);
-  } catch (error) {
-    console.error(error);
-  }
+  // update icon json file with new options
+  createIconFile(changes.updatedConfigs, changes.updatedJSONConfig).catch(
+    (error) => {
+      console.error(error);
+    }
+  );
 };
 
 /**

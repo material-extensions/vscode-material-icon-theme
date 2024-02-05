@@ -3,9 +3,14 @@ import { FolderTheme } from '../../models';
 /**
  * Defines folder icons
  */
-export const folderIcons: FolderTheme = {
+export const lucodearFolderIcons: FolderTheme = {
   name: 'specific',
   defaultIcon: { name: 'folder' },
   rootFolder: { name: 'folder-root' },
-  icons: [],
+  icons: [
+    // {
+    //   name: 'folder-example',
+    //   folderNames: ['example', 'examples'],
+    // },
+  ],
 };
