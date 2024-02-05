@@ -1,4 +1,11 @@
-import { IconAssociations, IconJsonOptions } from '../models';
+import {
+  DefaultIcon,
+  FileIcon,
+  FolderIcon,
+  FolderTheme,
+  IconAssociations,
+  IconJsonOptions,
+} from '../models';
 
 export interface LucodearOptions {
   enable?: boolean;
@@ -11,6 +18,23 @@ export interface LucodearOptions {
   };
 }
 
-export type ExtendedOptions = IconJsonOptions & {
+export interface ExtendedOptions extends IconJsonOptions {
   lucodear: LucodearOptions;
+}
+
+export type LucodearFileIcon = FileIcon & {
+  subpath?: string;
 };
+
+export interface LucodearFileIcons {
+  defaultIcon?: DefaultIcon;
+  icons: LucodearFileIcon[];
+}
+
+export interface LucodearFolderIcon extends FolderIcon {
+  subpath?: string;
+}
+
+export interface LucodearFolderTheme extends FolderTheme {
+  icons: LucodearFolderIcon[];
+}

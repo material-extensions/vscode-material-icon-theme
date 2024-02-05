@@ -1,7 +1,6 @@
 import merge from 'lodash.merge';
 import {
   FileIcon,
-  FileIcons,
   IconAssociations,
   IconConfiguration,
   IconJsonOptions,
@@ -14,9 +13,10 @@ import {
 } from '../../icons';
 import { getFileConfigHash } from '../../helpers/fileConfig';
 import { lucodearFileIconsPath } from '../constants';
+import { LucodearFileIcon, LucodearFileIcons } from '../model';
 
 export const loadLucodearFileIconDefinitions = (
-  fileIcons: FileIcons,
+  fileIcons: LucodearFileIcons,
   config: IconConfiguration,
   options: IconJsonOptions
 ): IconConfiguration => {
@@ -29,20 +29,21 @@ export const loadLucodearFileIconDefinitions = (
   // const customIcons = getCustomFilesIcons(options.files?.associations);
   enabledIcons.forEach((icon) => {
     if (icon.disabled) return;
-    config = merge({}, config, setFileIconDefinition(config, icon.name));
+    const defos = setFileIconDefinition(config, icon);
+    config = merge({}, config, defos);
 
     if (icon.light) {
       config = merge(
         {},
         config,
-        setFileIconDefinition(config, icon.name, lightColorFileEnding)
+        setFileIconDefinition(config, icon, lightColorFileEnding)
       );
     }
     if (icon.highContrast) {
       config = merge(
         {},
         config,
-        setFileIconDefinition(config, icon.name, highContrastColorFileEnding)
+        setFileIconDefinition(config, icon, highContrastColorFileEnding)
       );
     }
 
@@ -67,41 +68,43 @@ export const loadLucodearFileIconDefinitions = (
   });
 
   // set default file icon
-  config = merge(
-    {},
-    config,
-    setFileIconDefinition(config, fileIcons.defaultIcon.name)
-  );
-  config.file = fileIcons.defaultIcon.name;
-
-  if (fileIcons.defaultIcon.light && config.light) {
+  if (fileIcons.defaultIcon) {
     config = merge(
       {},
       config,
-      setFileIconDefinition(
-        config,
-        fileIcons.defaultIcon.name,
-        lightColorFileEnding
-      )
+      setFileIconDefinition(config, fileIcons.defaultIcon.name)
     );
-    if (config.light) {
-      config.light.file = fileIcons.defaultIcon.name + lightColorFileEnding;
+    config.file = fileIcons.defaultIcon.name;
+
+    if (fileIcons.defaultIcon.light && config.light) {
+      config = merge(
+        {},
+        config,
+        setFileIconDefinition(
+          config,
+          fileIcons.defaultIcon.name,
+          lightColorFileEnding
+        )
+      );
+      if (config.light) {
+        config.light.file = fileIcons.defaultIcon.name + lightColorFileEnding;
+      }
     }
-  }
 
-  if (fileIcons.defaultIcon.highContrast) {
-    config = merge(
-      {},
-      config,
-      setFileIconDefinition(
+    if (fileIcons.defaultIcon.highContrast) {
+      config = merge(
+        {},
         config,
-        fileIcons.defaultIcon.name,
-        highContrastColorFileEnding
-      )
-    );
-    if (config.highContrast) {
-      config.highContrast.file =
-        fileIcons.defaultIcon.name + highContrastColorFileEnding;
+        setFileIconDefinition(
+          config,
+          fileIcons.defaultIcon.name,
+          highContrastColorFileEnding
+        )
+      );
+      if (config.highContrast) {
+        config.highContrast.file =
+          fileIcons.defaultIcon.name + highContrastColorFileEnding;
+      }
     }
   }
 
@@ -128,7 +131,7 @@ export const loadLucodearFileIconDefinitions = (
 // };
 
 const disableIconsByPack = (
-  fileIcons: FileIcons,
+  fileIcons: LucodearFileIcons,
   activatedIconPack: string
 ): FileIcon[] => {
   return fileIcons.icons.filter((icon) => {
@@ -157,19 +160,27 @@ export function getCustomFileIcons(
 
 export const setFileIconDefinition = (
   config: IconConfiguration,
-  iconName: string,
+  icon: LucodearFileIcon | string,
   appendix: string = '',
   // 🍭
   path: string = lucodearFileIconsPath
 ) => {
+  const iconName = typeof icon === 'string' ? icon : icon.name;
+  const subpath =
+    typeof icon === 'string'
+      ? ''
+      : icon.subpath === undefined
+      ? ''
+      : `${icon.subpath}/`;
+
   const obj: Partial<IconConfiguration> = { iconDefinitions: {} };
   if (config.options) {
     const fileConfigHash = getFileConfigHash(config.options);
-    if (!Object.hasOwnProperty.call(config.iconDefinitions ?? {}, iconName)) {
-      obj.iconDefinitions![`${iconName}${appendix}`] = {
-        iconPath: `${path}${iconName}${appendix}${fileConfigHash}.svg`,
-      };
-    }
+    // if (!Object.hasOwnProperty.call(config.iconDefinitions ?? {}, iconName)) {
+    obj.iconDefinitions![`${iconName}${appendix}`] = {
+      iconPath: `${path}${subpath}${iconName}${appendix}${fileConfigHash}.svg`,
+    };
+    // }
   }
   return obj;
 };

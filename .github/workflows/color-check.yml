@@ -4,8 +4,7 @@ on:
   pull_request:
     paths:
       - 'icons/*.svg'
-      - 'icons-lucodear/files/*.svg'
-      - 'icons-lucodear/folders/*.svg'
+      - 'icons-lucodear/**/*.svg'
 
 jobs:
   color-check:

@@ -1,14 +1,15 @@
-import { lucodearFileIcons } from '../../lucodear/icons/files';
-import { lucodearFolderIcons } from '../../lucodear/icons/folders';
+import { lucodearFileIcons, lucodearFolderIcons } from '../../lucodear/icons';
 import { FolderTheme } from '../../models';
 import { fileIcons } from './../../icons/fileIcons';
 import { folderIcons } from './../../icons/folderIcons';
 import { languageIcons } from './../../icons/languageIcons';
 import { generatePreview } from './preview';
 
-const filterDuplicates = (icons: string[]) => {
+const filterDuplicates = <T>(icons: T[]) => {
   return [...new Set(icons)];
 };
+
+type Icon = { name: string; subpath?: string };
 
 const getFolders = (icons: FolderTheme[]) => {
   return filterDuplicates(
@@ -24,18 +25,27 @@ const getFolders = (icons: FolderTheme[]) => {
   ).map((i) => ({ iconName: i, label: i.replace('folder-', '') }));
 };
 
-const getFiles = (icons: string[]) => {
-  return filterDuplicates(icons).map((i) => ({ iconName: i, label: i }));
+const getFiles = (icons: Icon[]) => {
+  return filterDuplicates(icons).map((i) => ({
+    iconName: i.name,
+    label: i.name,
+    subpath: i.subpath,
+  }));
 };
 
 const basicFileIcons = getFiles(
   fileIcons.icons
-    .map((i) => i.name)
-    .concat(languageIcons.map((i) => i.icon.name))
+    .map((i) => ({ name: i.name, subpath: (i as any).subpath } as Icon))
+    .concat(languageIcons.map((i) => ({ name: i.icon.name } as Icon)))
 );
 const folderThemes = getFolders(folderIcons);
 const lucodearFolders = getFolders([lucodearFolderIcons]);
-const lucodearFiles = getFiles(lucodearFileIcons.icons.map((i) => i.name));
+const lucodearFiles = getFiles(
+  lucodearFileIcons.icons.map((i) => ({
+    name: i.name,
+    subpath: (i as any).subpath,
+  }))
+);
 
 generatePreview('fileIcons', basicFileIcons, 5, [
   'virtual',

@@ -12,8 +12,6 @@ on:
           - minor
           - patch
 
-#asdasd
-
 jobs:
   release:
     runs-on: ubuntu-latest

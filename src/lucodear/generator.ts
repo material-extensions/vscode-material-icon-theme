@@ -21,16 +21,12 @@ import {
   setFileIconDefinition,
   // setFileIconDefinition,
 } from './dups/fileGenerator';
-import { lucodearFileIcons } from './icons/files';
-import { lucodearFolderIcons } from './icons/folders';
+import { lucodearFileIcons, lucodearFolderIcons } from './icons';
 import {
   getCustomFolderIcons,
   loadLucodearFolderIconDefinitions,
   setFolderIconDefinitions,
 } from './dups/folderGenerator';
-// import {
-//   /* lucodearFileIconsPath,*/ lucodearFolderIconsPath,
-// } from './constants';
 
 /**
  * Get addons icon definitions as object.
@@ -44,6 +40,7 @@ export const loadLucodearAddonIconDefinitions = async (
   config = merge({}, config);
   let files: FileIcon[] = [];
   let folders: FolderIcon[] = [];
+  let addonRegexConfigs: IconConfiguration = {};
 
   if (env.LUCODEAR_SCRIPT_EXECUTION !== 'true') {
     // this would only work if it's not running as a script, because the regex implementation
@@ -59,7 +56,7 @@ export const loadLucodearAddonIconDefinitions = async (
     files = [...files, ...getCustomFileIcons(regexAssociations.files)];
     folders = [...folders, ...getCustomFolderIcons(regexAssociations.folders)];
 
-    config = merge(
+    addonRegexConfigs = merge(
       {},
       config,
       makeRegexConfig(
@@ -85,7 +82,13 @@ export const loadLucodearAddonIconDefinitions = async (
     options
   );
 
-  config = merge({}, config, addonFileIcons, addonFolderIcons);
+  config = merge(
+    {},
+    config,
+    addonRegexConfigs,
+    addonFileIcons,
+    addonFolderIcons
+  );
 
   return config;
 };

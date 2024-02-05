@@ -3,13 +3,13 @@
     // 📙 » others
     "build": true,
     // ".github": true,
-    "src/**/scripts": true,
-    "images": true,
+    // "src/**/scripts": true,
+    // "images": true,
     "icons": true,
-    "dist": true,
+    // "dist": true,
 
     // ⚙️ » config
-    "**/**/tsconfig*": true,
+    // "**/**/tsconfig*": true,
     "svgo.config.js": true,
     "**/**/*code-workspace": true,
     "package.nls.*.json": true, // all i18n package.json files

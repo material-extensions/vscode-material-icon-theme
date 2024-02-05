@@ -18,9 +18,10 @@ import {
 } from '../../icons';
 import { getFileConfigHash } from '../../helpers/fileConfig';
 import { lucodearFolderIconsPath } from '../constants';
+import { LucodearFolderIcon, LucodearFolderTheme } from '../model';
 
 export const loadLucodearFolderIconDefinitions = (
-  folderThemes: FolderTheme[],
+  folderThemes: LucodearFolderTheme[],
   config: IconConfiguration,
   options: IconJsonOptions
 ): IconConfiguration => {
@@ -83,29 +84,24 @@ const disableIconsByPack = (
 
 export const setFolderIconDefinitions = (
   config: IconConfiguration,
-  icon: FolderIcon | DefaultIcon,
+  icon: LucodearFolderIcon | DefaultIcon,
   // 🍭
   path: string = lucodearFolderIconsPath
 ) => {
   config = merge({}, config);
-  config = createIconDefinitions(config, icon.name, '', path);
+  config = createIconDefinitions(config, icon, '', path);
   if (icon.light) {
     config = merge(
       {},
       config,
-      createIconDefinitions(config, icon.name, lightColorFileEnding, path)
+      createIconDefinitions(config, icon, lightColorFileEnding, path)
     );
   }
   if (icon.highContrast) {
     config = merge(
       {},
       config,
-      createIconDefinitions(
-        config,
-        icon.name,
-        highContrastColorFileEnding,
-        path
-      )
+      createIconDefinitions(config, icon, highContrastColorFileEnding, path)
     );
   }
   return config;
@@ -113,19 +109,26 @@ export const setFolderIconDefinitions = (
 
 const createIconDefinitions = (
   config: IconConfiguration,
-  iconName: string,
+  icon: LucodearFolderIcon | DefaultIcon,
   appendix: string = '',
   path: string = iconFolderPath
 ) => {
   config = merge({}, config);
   const fileConfigHash = getFileConfigHash(config.options ?? {});
   const configIconDefinitions = config.iconDefinitions;
+
+  const iconName = icon.name;
+  const subpath =
+    (icon as LucodearFolderIcon).subpath === undefined
+      ? ''
+      : `/${(icon as LucodearFolderIcon).subpath}/`;
+
   if (configIconDefinitions) {
     configIconDefinitions[iconName + appendix] = {
-      iconPath: `${path}${iconName}${appendix}${fileConfigHash}.svg`,
+      iconPath: `${path}${subpath}${iconName}${appendix}${fileConfigHash}.svg`,
     };
     configIconDefinitions[`${iconName}${openedFolder}${appendix}`] = {
-      iconPath: `${path}${iconName}${openedFolder}${appendix}${fileConfigHash}.svg`,
+      iconPath: `${path}${subpath}${iconName}${openedFolder}${appendix}${fileConfigHash}.svg`,
     };
   }
   return config;
