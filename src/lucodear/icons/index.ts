@@ -1,6 +1,6 @@
 import { FolderTheme } from '../../models';
 import { LucodearFileIcons, LucodearFolderTheme } from '../model';
-import { miscFiles } from './misc';
+import { miscFiles, miscFolders } from './misc';
 import { folderPatches } from './patches';
 import { typescriptFiles } from './typescript';
 
@@ -15,12 +15,7 @@ export const lucodearFolderIcons: LucodearFolderTheme = {
   name: 'specific',
   defaultIcon: { name: 'folder' },
   rootFolder: { name: 'folder-root' },
-  icons: [
-    // {
-    //   name: 'folder-example',
-    //   folderNames: ['example', 'examples'],
-    // },
-  ],
+  icons: [...miscFolders],
 };
 
 export const patchFolders = (folders: FolderTheme[]) => {
