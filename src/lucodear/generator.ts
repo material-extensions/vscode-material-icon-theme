@@ -10,7 +10,6 @@ import { ExtendedOptions } from './model';
 import {
   FileMappingType,
   highContrastColorFileEnding,
-  // iconFolderPath,
   lightColorFileEnding,
   mapSpecificFileIcons,
   setFolderNames,
@@ -19,7 +18,6 @@ import {
   getCustomFileIcons,
   loadLucodearFileIconDefinitions,
   setFileIconDefinition,
-  // setFileIconDefinition,
 } from './dups/fileGenerator';
 import { lucodearFileIcons, lucodearFolderIcons } from './icons';
 import {
