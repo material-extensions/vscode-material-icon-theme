@@ -1,6 +1,20 @@
 import { IconPack } from '../../models';
 import { LucodearFileIcon, LucodearFolderIcon } from '../model';
 
+export function prefix(
+  icons: LucodearFolderIcon[],
+  prefixes: string[] = ['@', '~', '=']
+): LucodearFolderIcon[] {
+  return icons.map((icon) => {
+    icon.folderNames.forEach((folderName) => {
+      icon.folderNames = icon.folderNames.concat(
+        prefixes.map((prefix) => `${prefix}${folderName}`)
+      );
+    });
+    return icon;
+  });
+}
+
 export function subpath<T extends LucodearFileIcon | LucodearFolderIcon>(
   subpath: string,
   icons: T[]
