@@ -11,7 +11,6 @@ import {
   lightColorFileEnding,
   mapSpecificFileIcons,
 } from '../../icons';
-import { getFileConfigHash } from '../../helpers/fileConfig';
 import { lucodearFileIconsPath } from '../constants';
 import { LucodearFileIcon, LucodearFileIcons } from '../model';
 
@@ -175,12 +174,9 @@ export const setFileIconDefinition = (
 
   const obj: Partial<IconConfiguration> = { iconDefinitions: {} };
   if (config.options) {
-    const fileConfigHash = getFileConfigHash(config.options);
-    // if (!Object.hasOwnProperty.call(config.iconDefinitions ?? {}, iconName)) {
     obj.iconDefinitions![`${iconName}${appendix}`] = {
-      iconPath: `${path}${subpath}${iconName}${appendix}${fileConfigHash}.svg`,
+      iconPath: `${path}${subpath}${iconName}${appendix}.svg`,
     };
-    // }
   }
   return obj;
 };
