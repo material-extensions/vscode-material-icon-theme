@@ -1,7 +1,7 @@
 import { lucodearFileIcons, lucodearFolderIcons } from '../../lucodear/icons';
 import { FolderTheme } from '../../models';
 import { fileIcons } from './../../icons/fileIcons';
-import { folderIcons } from './../../icons/folderIcons';
+import { folderIcons } from './../../icons';
 import { languageIcons } from './../../icons/languageIcons';
 import { generatePreview } from './preview';
 

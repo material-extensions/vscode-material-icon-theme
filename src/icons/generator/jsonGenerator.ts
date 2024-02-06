@@ -11,7 +11,7 @@ import { getCustomIconPaths } from '../../helpers/customIcons';
 import { getFileConfigHash } from '../../helpers/fileConfig';
 import { IconConfiguration, IconJsonOptions } from '../../models/index';
 import { fileIcons } from '../fileIcons';
-import { folderIcons } from '../folderIcons';
+import { folderIcons } from '..';
 import { languageIcons } from '../languageIcons';
 import { iconJsonName } from './constants';
 import {
