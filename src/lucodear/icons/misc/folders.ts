@@ -22,7 +22,7 @@ export const miscFolders: LucodearFolderIcon[] = prefix(
     },
     {
       name: 'folder-idea',
-      folderNames: ['idea', 'ideas', '.idea', '.ideas'],
+      folderNames: ['idea', 'ideas', '.idea', '.ideas', '💡'],
     },
     {
       name: 'folder-metadata',
