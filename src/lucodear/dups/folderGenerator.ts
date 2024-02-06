@@ -16,7 +16,6 @@ import {
   setDefaultFolderIcons,
   setFolderNames,
 } from '../../icons';
-import { getFileConfigHash } from '../../helpers/fileConfig';
 import { lucodearFolderIconsPath } from '../constants';
 import { LucodearFolderIcon, LucodearFolderTheme } from '../model';
 
@@ -114,21 +113,20 @@ const createIconDefinitions = (
   path: string = iconFolderPath
 ) => {
   config = merge({}, config);
-  const fileConfigHash = getFileConfigHash(config.options ?? {});
   const configIconDefinitions = config.iconDefinitions;
 
   const iconName = icon.name;
   const subpath =
     (icon as LucodearFolderIcon).subpath === undefined
       ? ''
-      : `/${(icon as LucodearFolderIcon).subpath}/`;
+      : `${(icon as LucodearFolderIcon).subpath}/`;
 
   if (configIconDefinitions) {
     configIconDefinitions[iconName + appendix] = {
-      iconPath: `${path}${subpath}${iconName}${appendix}${fileConfigHash}.svg`,
+      iconPath: `${path}${subpath}${iconName}${appendix}.svg`,
     };
     configIconDefinitions[`${iconName}${openedFolder}${appendix}`] = {
-      iconPath: `${path}${subpath}${iconName}${openedFolder}${appendix}${fileConfigHash}.svg`,
+      iconPath: `${path}${subpath}${iconName}${openedFolder}${appendix}.svg`,
     };
   }
   return config;
