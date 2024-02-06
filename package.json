@@ -21,7 +21,7 @@
     "svgo": "svgo -i icons icons-lucodear/files icons-lucodear/folders -q",
     "test": "node ./out/test/runTest.js",
     "changelog": "changelog-machine --config changelog.config.json",
-    "preversion": "npm run contributors && git add images/contributors.png && npm run preview && git add images/fileIcons.png && git add images/folderIcons.png",
+    "preversion": "npm run contributors && npm run preview && git add images/*.png",
     "version": "npm run changelog && git add CHANGELOG.md",
     "vscode:prepublish": "npm run lint && npm run compile && npm run package-web"
   },

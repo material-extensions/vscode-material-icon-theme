@@ -4,6 +4,7 @@ import { fileIcons } from './../../icons/fileIcons';
 import { folderIcons } from './../../icons';
 import { languageIcons } from './../../icons/languageIcons';
 import { generatePreview } from './preview';
+import { LucodearFolderIcon, LucodearFolderTheme } from '../../lucodear/model';
 
 const filterDuplicates = <T>(icons: T[]) => {
   return [...new Set(icons)];
@@ -11,18 +12,27 @@ const filterDuplicates = <T>(icons: T[]) => {
 
 type Icon = { name: string; subpath?: string };
 
-const getFolders = (icons: FolderTheme[]) => {
+const getFolders = (icons: LucodearFolderTheme[] | FolderTheme[]) => {
   return filterDuplicates(
     icons
       .map((theme) => {
         const folders = [];
         if (theme.icons && theme.icons.length > 0) {
-          folders.push(...theme.icons.map((i) => i.name));
+          folders.push(
+            ...theme.icons.map((i) => ({
+              name: i.name,
+              subpath: (i as LucodearFolderIcon).subpath,
+            }))
+          );
         }
         return [...folders];
       })
       .reduce((a, b) => a.concat(b))
-  ).map((i) => ({ iconName: i, label: i.replace('folder-', '') }));
+  ).map((i) => ({
+    iconName: i.name,
+    label: i.name.replace('folder-', ''),
+    subpath: i.subpath,
+  }));
 };
 
 const getFiles = (icons: Icon[]) => {
