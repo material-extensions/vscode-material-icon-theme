@@ -22,7 +22,7 @@
     "**/**/*.eslintrc.*": true,
 
     // 📝 » documents
-    "README.md": true,
+    // "README.md": true,
     "LICENSE*": true,
     "CHANGELOG*": true,
     "CONTRIBUTING*": true,

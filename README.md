@@ -198,13 +198,13 @@ Press `Ctrl-Shift-P` to open the command palette and type `Material Icons`.
 
 ## Contributors
 
-<a href="https://github.com/PKief/vscode-material-icon-theme/graphs/contributors">
+<a href="https://github.com/lucas-labs/lucodear-icons/graphs/contributors">
     <img src="https://raw.githubusercontent.com/lucas-labs/lucodear-icons/main/images/contributors.png" alt="Contributors">
 </a>
 
 **Would you like to contribute?**
 
-Take a look at the [contribution guidelines](https://github.com/PKief/vscode-material-icon-theme/blob/main/CONTRIBUTING.md) and open a [new issue](https://github.com/PKief/vscode-material-icon-theme/issues) or [pull request](https://github.com/PKief/vscode-material-icon-theme/pulls) on GitHub.
+Take a look at the [contribution guidelines](https://github.com/lucas-labs/lucodear-icons/blob/main/CONTRIBUTING.md) and open a [new issue](https://github.com/lucas-labs/lucodear-icons/issues) or [pull request](https://github.com/lucas-labs/lucodear-icons/pulls) on GitHub.
 
 ## Related extensions
 
