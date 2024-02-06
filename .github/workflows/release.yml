@@ -1,5 +1,5 @@
 name: Release + Publish
-
+run-name: release 🔖 + publish 🚀
 on:
   workflow_dispatch:
     inputs:
@@ -39,7 +39,7 @@ jobs:
           git config --global user.name 'Lucas Colombo'
           git config --global user.email 'lucasncolombo@gmail.com'
           git config --global push.followTags true
-          npm version ${{ env.VERSION_CHANGE }} -m "Release %s"
+          npm version ${{ env.VERSION_CHANGE }} -m "release: 🔖 v%s"
 
       - name: Get meta data 🔍
         run: |
@@ -56,7 +56,7 @@ jobs:
       - name: Push tags 📌
         run: git push
 
-      - name: Release ${{ env.VERSION }} 🔆
+      - name: 'release: ${{ env.VERSION }} 🔆'
         uses: softprops/action-gh-release@v1
         with:
           files: ${{ env.NAME }}-${{ env.VERSION }}.vsix
@@ -72,7 +72,7 @@ jobs:
           pat: ${{ secrets.OPEN_VSX_TOKEN }}
           extensionFile: ${{ env.NAME }}-${{ env.VERSION }}.vsix
 
-      - name: Publish to Visual Studio Marketplace 🌐
+      - name: Publish to Visual Studio Marketplace 🚀
         uses: HaaLeo/publish-vscode-extension@v1
         with:
           pat: ${{ secrets.VS_MARKETPLACE_TOKEN }}
