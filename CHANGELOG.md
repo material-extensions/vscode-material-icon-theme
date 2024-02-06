@@ -3,6 +3,14 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v0.4.1](https://github.com/PKief/vscode-material-icon-theme/compare/v0.4.0...v0.4.1) 
+
+> February 6, 2024 
+
+- feat: ✨ small tweaks to release.yml github action [`383bac03`](https://github.com/PKief/vscode-material-icon-theme/commit/383bac03)
+- ci: 🔄 small tweaks to release.yml github action [`196d3c6c`](https://github.com/PKief/vscode-material-icon-theme/commit/196d3c6c)
+- feat: ✨ extend ideas [`e0055b4d`](https://github.com/PKief/vscode-material-icon-theme/commit/e0055b4d)
+ 
 #### [v0.4.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.2.0...v0.4.0) 
 
 > February 6, 2024 
