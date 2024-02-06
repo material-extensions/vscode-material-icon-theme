@@ -3,9 +3,14 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v0.3.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.2.0...v0.3.0) 
+
+> February 5, 2024 
+
+ 
 #### [v0.2.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.1.0...v0.2.0) 
 
-> February 6, 2024 
+> February 5, 2024 
 
 - fix: 🚑 invalid color (not material swatch) [`7221665`](https://github.com/PKief/vscode-material-icon-theme/commit/7221665)
 - feat: ✨ misc folders [`345bec0`](https://github.com/PKief/vscode-material-icon-theme/commit/345bec0)
