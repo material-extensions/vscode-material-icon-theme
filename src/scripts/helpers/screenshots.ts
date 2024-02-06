@@ -1,6 +1,6 @@
 import { join } from 'path';
 import Puppeteer from 'puppeteer';
-// import { rm } from 'fs/promises';
+import { rm } from 'fs/promises';
 
 /**
  * Create a screenshot from an HTML file and save it as image.
@@ -26,7 +26,7 @@ export const createScreenshot = async (filePath: string, fileName: string) => {
     });
 
     await browser.close();
-    // await rm(filePath);
+    await rm(filePath);
   } catch (error) {
     console.error(error);
     throw Error('Could not create screenshot for a preview');
