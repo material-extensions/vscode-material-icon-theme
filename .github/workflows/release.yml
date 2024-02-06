@@ -1,4 +1,4 @@
-name: Release + Publish
+name: 🔖 Release + 🚀 Publish
 run-name: release 🔖 + publish 🚀
 on:
   workflow_dispatch:
