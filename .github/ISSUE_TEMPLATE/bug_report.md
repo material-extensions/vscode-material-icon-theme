@@ -3,7 +3,8 @@ name: Bug report
 about: Create a report to help us improve
 title: '🐞 » bug: [bug title]'
 labels: '🐞 » bug'
-assignees: ''
+assignees:
+  - lucas-labs
 ---
 
 **Describe the bug**
