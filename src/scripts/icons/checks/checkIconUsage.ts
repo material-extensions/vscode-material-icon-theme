@@ -102,6 +102,12 @@ const getAllUsedFileIcons = (): string[] => {
       .filter((icon) => icon.highContrast)
       .map((icon) => icon.name + highContrastColorFileEnding),
     ...lucodearFileIcons.icons.map((icon) => icon.name),
+    ...lucodearFileIcons.icons
+      .filter((icon) => icon.light)
+      .map((icon) => icon.name + lightColorFileEnding),
+    ...lucodearFileIcons.icons
+      .filter((icon) => icon.highContrast)
+      .map((icon) => icon.name + highContrastColorFileEnding),
   ].filter((f) => f !== '');
 };
 
