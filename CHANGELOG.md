@@ -3,10 +3,17 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v0.5.1](https://github.com/PKief/vscode-material-icon-theme/compare/v0.5.0...v0.5.1) 
+
+> February 7, 2024 
+
+- patch: 🩹 add .task to folder-taskfile mappings [`7d10ca24`](https://github.com/PKief/vscode-material-icon-theme/commit/7d10ca24)
+ 
 #### [v0.5.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.4.1...v0.5.0) 
 
 > February 7, 2024 
 
+- release: 🔖 v0.5.0 [`36547ade`](https://github.com/PKief/vscode-material-icon-theme/commit/36547ade)
 - feat: ✨ lucodear icons + pureref, adobe light icons [`7489192b`](https://github.com/PKief/vscode-material-icon-theme/commit/7489192b)
 - chore: 🧹 add lucodear light icon checks to usage check [`995f6001`](https://github.com/PKief/vscode-material-icon-theme/commit/995f6001)
  
