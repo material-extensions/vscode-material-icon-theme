@@ -1,7 +1,7 @@
 import { LucodearFolderIcon } from '../../model';
 import { prefix, subpath } from '../utils';
 
-export const miscFolders: LucodearFolderIcon[] = prefix(
+export const folders: LucodearFolderIcon[] = prefix(
   subpath('misc', [
     {
       name: 'folder-exceptions',
