@@ -18,7 +18,7 @@ export const lucodearFolderIcons: LucodearFolderTheme = {
   icons: [...misc.folders, ...lucodear.folders],
 };
 
-// #region helpers
+// #region patcher
 
 export const patchFolders = (folders: FolderTheme[]) => {
   const theme = folders.find((f) => f.name === 'specific');
@@ -29,14 +29,16 @@ export const patchFolders = (folders: FolderTheme[]) => {
   for (const patch of folderPatches) {
     const existing = theme.icons?.find((i) => i.name === patch.name);
     if (existing) {
-      const folderNames = patch.folderNames?.reduce((acc, folderName) => {
-        return acc.concat([
-          folderName,
-          `@${folderName}`,
-          `=${folderName}`,
-          `~${folderName}`,
-        ]);
-      }, [] as string[]);
+      const folderNames = !patch.skipExtend
+        ? patch.folderNames?.reduce((acc, folderName) => {
+            return acc.concat([
+              folderName,
+              `@${folderName}`,
+              `=${folderName}`,
+              `~${folderName}`,
+            ]);
+          }, [] as string[])
+        : patch.folderNames;
 
       existing.folderNames.push(...(folderNames || []));
 
