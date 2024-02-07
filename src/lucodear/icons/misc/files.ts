@@ -1,14 +1,7 @@
 import { LucodearFileIcon } from '../../model';
+import { subpath } from '../utils';
 
-export const miscFiles: LucodearFileIcon[] = [
-  {
-    name: 'illustrator',
-    fileExtensions: ['ai'],
-  },
-  {
-    name: 'photoshop',
-    fileExtensions: ['psd'],
-  },
+export const files: LucodearFileIcon[] = subpath('misc', [
   {
     name: 'idea',
     fileNames: [
@@ -84,4 +77,19 @@ export const miscFiles: LucodearFileIcon[] = [
       '💡/html',
     ],
   },
-];
+  {
+    name: 'illustrator',
+    fileExtensions: ['ai'],
+    light: true,
+  },
+  {
+    name: 'photoshop',
+    fileExtensions: ['psd'],
+    light: true,
+  },
+  {
+    name: 'pureref',
+    fileExtensions: ['pur'],
+    light: true,
+  },
+] as LucodearFileIcon[]);

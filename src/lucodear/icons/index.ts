@@ -1,22 +1,24 @@
 import { FolderTheme } from '../../models';
 import { LucodearFileIcons, LucodearFolderTheme } from '../model';
-import { miscFiles, miscFolders } from './misc';
 import { folderPatches } from './patches';
-import { typescriptFiles } from './typescript';
+import * as misc from './misc';
+import * as ts from './typescript';
+import * as lucodear from './lucodear';
 
+/** Defines file icons */
 export const lucodearFileIcons: LucodearFileIcons = {
-  icons: [...miscFiles, ...typescriptFiles],
+  icons: [...misc.files, ...ts.files, ...lucodear.files],
 };
 
-/**
- * Defines folder icons
- */
+/** Defines folder icons */
 export const lucodearFolderIcons: LucodearFolderTheme = {
   name: 'specific',
   defaultIcon: { name: 'folder' },
   rootFolder: { name: 'folder-root' },
-  icons: [...miscFolders],
+  icons: [...misc.folders, ...lucodear.folders],
 };
+
+// #region helpers
 
 export const patchFolders = (folders: FolderTheme[]) => {
   const theme = folders.find((f) => f.name === 'specific');
@@ -46,3 +48,5 @@ export const patchFolders = (folders: FolderTheme[]) => {
 
   return folders;
 };
+
+// #endregion

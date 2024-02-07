@@ -1,6 +1,7 @@
+import { LucodearFileIcon } from '../../model';
 import { subpath } from '../utils';
 
-export const typescriptFiles = subpath('typescript', [
+export const files = subpath('typescript', [
   {
     name: 'ts-abstract',
     fileNames: ['abstract.ts', 'abs.ts', 'abstracts.ts'],
@@ -59,4 +60,4 @@ export const typescriptFiles = subpath('typescript', [
     fileNames: ['util.ts', 'utils.ts', 'helper.ts', 'helpers.ts'],
     fileExtensions: ['util.ts', 'utils.ts', 'helper.ts', 'helpers.ts'],
   },
-]);
+] as LucodearFileIcon[]);
