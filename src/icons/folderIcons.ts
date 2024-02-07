@@ -1,5 +1,6 @@
 import { FolderTheme, IconPack } from '../models';
 
+
 /**
  * Defines folder icons
  */
