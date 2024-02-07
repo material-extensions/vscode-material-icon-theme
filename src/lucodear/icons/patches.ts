@@ -1,6 +1,10 @@
 import { FolderIcon } from '../../models';
 
-export const folderPatches: Partial<FolderIcon>[] = [
+export const folderPatches: Partial<
+  FolderIcon & {
+    skipExtend?: boolean;
+  }
+>[] = [
   {
     name: 'folder-functions',
     folderNames: ['fx', 'behaviour', 'functions'],
@@ -36,5 +40,10 @@ export const folderPatches: Partial<FolderIcon>[] = [
   {
     name: 'folder-typescript',
     folderNames: ['ts', 'typescript', 'types'],
+  },
+  {
+    name: 'folder-taskfile',
+    folderNames: ['.task'],
+    skipExtend: true,
   },
 ];
