@@ -1,4 +1,4 @@
-import { FolderTheme, IconPack } from '../models/index';
+import { FolderTheme, IconPack } from '../models';
 
 /**
  * Defines folder icons
@@ -9,6 +9,10 @@ export const folderIcons: FolderTheme[] = [
     defaultIcon: { name: 'folder' },
     rootFolder: { name: 'folder-root' },
     icons: [
+      {
+        name: 'folder-robot',
+        folderNames: ['bot', 'robot', '.bot', '.robot', '_bot', '_robot'],
+      },
       {
         name: 'folder-src',
         folderNames: ['src', 'srcs', 'source', 'sources', 'code'],
@@ -49,9 +53,16 @@ export const folderIcons: FolderTheme[] = [
           'pics',
           'picture',
           'pictures',
+          'photo',
+          'photos',
+          'photograph',
+          'photographs',
         ],
       },
-      { name: 'folder-scripts', folderNames: ['script', 'scripts'] },
+      {
+        name: 'folder-scripts',
+        folderNames: ['script', 'scripts', 'scripting'],
+      },
       { name: 'folder-node', folderNames: ['node_modules'] },
       {
         name: 'folder-javascript',
@@ -81,6 +92,7 @@ export const folderIcons: FolderTheme[] = [
         light: true,
       },
       { name: 'folder-markdown', folderNames: ['markdown', 'md'] },
+      { name: 'folder-pdm', folderNames: ['.pdm-plugins', '.pdm-build'] },
       { name: 'folder-php', folderNames: ['php'] },
       { name: 'folder-phpmailer', folderNames: ['phpmailer'] },
       { name: 'folder-sublime', folderNames: ['sublime'] },
@@ -137,6 +149,7 @@ export const folderIcons: FolderTheme[] = [
           'cfgs',
           'conf',
           'confs',
+          '.config',
           'config',
           'configs',
           'configuration',
@@ -146,6 +159,8 @@ export const folderIcons: FolderTheme[] = [
           'settings',
           '.settings',
           'META-INF',
+          'option',
+          'options',
         ],
       },
       {
@@ -307,7 +322,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-database',
         folderNames: ['db', 'database', 'databases', 'sql', 'data', '_data'],
       },
-      { name: 'folder-log', folderNames: ['log', 'logs'] },
+      { name: 'folder-log', folderNames: ['log', 'logs', 'logging'] },
       { name: 'folder-target', folderNames: ['target'] },
       {
         name: 'folder-temp',
@@ -439,6 +454,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-mojo',
         folderNames: ['mojo'],
       },
+      { name: 'folder-moon', folderNames: ['.moon'] },
       { name: 'folder-debug', folderNames: ['debug', 'debugging'] },
       { name: 'folder-fastlane', folderNames: ['fastlane'] },
       {
@@ -447,6 +463,9 @@ export const folderIcons: FolderTheme[] = [
           'plugin',
           'plugins',
           '_plugins',
+          'mod',
+          'mods',
+          'modding',
           'extension',
           'extensions',
           'addon',
@@ -473,7 +492,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-server', folderNames: ['server', 'servers', 'backend'] },
       {
         name: 'folder-client',
-        folderNames: ['client', 'clients', 'frontend', 'pwa'],
+        folderNames: ['client', 'clients', 'frontend', 'frontends', 'pwa'],
       },
       { name: 'folder-tasks', folderNames: ['tasks', 'tickets'] },
       { name: 'folder-android', folderNames: ['android'] },
@@ -482,7 +501,14 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-download', folderNames: ['downloads', 'download'] },
       {
         name: 'folder-tools',
-        folderNames: ['tools', 'toolkit', 'toolkits', 'toolbox', 'toolboxes'],
+        folderNames: [
+          'tools',
+          'toolkit',
+          'toolkits',
+          'toolbox',
+          'toolboxes',
+          'tooling',
+        ],
       },
       { name: 'folder-helper', folderNames: ['helpers', 'helper'] },
       { name: 'folder-serverless', folderNames: ['.serverless', 'serverless'] },
@@ -513,6 +539,8 @@ export const folderIcons: FolderTheme[] = [
           'backups',
           'back-up',
           'back-ups',
+          'history',
+          'histories',
         ],
       },
       { name: 'folder-batch', folderNames: ['batch', 'batchs', 'batches'] },
@@ -593,7 +621,15 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-job', folderNames: ['job', 'jobs'] },
       {
         name: 'folder-keys',
-        folderNames: ['keys', 'key', 'token', 'tokens', 'jwt'],
+        folderNames: [
+          'key',
+          'keys',
+          'token',
+          'tokens',
+          'jwt',
+          'secret',
+          'secrets',
+        ],
       },
       { name: 'folder-layout', folderNames: ['layout', 'layouts', '_layouts'] },
       {
@@ -620,7 +656,13 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-supabase', folderNames: ['supabase', '.supabase'] },
       { name: 'folder-private', folderNames: ['private', '.private'] },
-      { name: 'folder-error', folderNames: ['error', 'errors', 'err'] },
+      { name: 'folder-linux', folderNames: ['linux'] },
+      { name: 'folder-windows', folderNames: ['windows'] },
+      { name: 'folder-macos', folderNames: ['macos', '.DS_Store'] },
+      {
+        name: 'folder-error',
+        folderNames: ['error', 'errors', 'err', 'errs', 'crash', 'crashes'],
+      },
       { name: 'folder-event', folderNames: ['event', 'events'] },
       {
         name: 'folder-secure',
@@ -722,7 +764,17 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['.azure-pipelines', '.azure-pipelines-ci'],
       },
       { name: 'folder-mjml', folderNames: ['mjml'] },
-      { name: 'folder-admin', folderNames: ['admin', 'manager', 'moderator'] },
+      {
+        name: 'folder-admin',
+        folderNames: [
+          'admin',
+          'admins',
+          'manager',
+          'managers',
+          'moderator',
+          'moderators',
+        ],
+      },
       { name: 'folder-scala', folderNames: ['scala'] },
       {
         name: 'folder-connection',
@@ -760,6 +812,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['interface', 'interfaces'],
       },
       { name: 'folder-netlify', folderNames: ['.netlify'] },
+      {
+        name: 'folder-enum',
+        folderNames: ['enum', 'enums'],
+      },
       {
         name: 'folder-contract',
         folderNames: [
@@ -811,7 +867,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-proto',
-        folderNames: ['protobufs', 'proto'],
+        folderNames: ['protobuf', 'protobufs', 'proto', 'protos'],
       },
       {
         name: 'folder-plastic',
@@ -828,6 +884,14 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-godot',
         folderNames: ['godot', '.godot', 'godot-cpp', '.godot-cpp'],
+      },
+      {
+        name: 'folder-lottie',
+        folderNames: ['lottie', 'lotties', 'lottiefiles'],
+      },
+      {
+        name: 'folder-taskfile',
+        folderNames: ['taskfile', 'taskfiles', '.taskfile', '.taskfiles'],
       },
     ],
   },
