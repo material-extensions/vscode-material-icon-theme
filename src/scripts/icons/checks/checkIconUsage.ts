@@ -1,7 +1,7 @@
 import { readdir, readdirSync, statSync } from 'fs';
 import { join, parse } from 'path';
 import { DefaultIcon, FolderIcon, FolderTheme } from '../../../models/index';
-import { green, red } from '../../helpers/painter';
+import { green, magenta, red } from '../../helpers/painter';
 import {
   fileIcons,
   folderIcons,
@@ -18,7 +18,7 @@ import {
 /**
  * Defines the folder where all icon files are located.
  */
-const folderPaths = [join('icons'), join('icons-lucodear')];
+const folderPaths = [join('icons'), join('icons-lc')];
 
 /**
  * Defines an array with all icons that can be found in the file system.
@@ -52,7 +52,7 @@ const fsReadAllIconFiles = (dir: string) => {
     });
 
     checkUsageOfAllIcons();
-    handleErrors();
+    handleErrors(dir);
   };
 
   return callback;
@@ -70,10 +70,14 @@ const checkUsageOfAllIcons = () => {
   );
 };
 
-const handleErrors = () => {
+const handleErrors = (dir: string) => {
   const amountOfUnusedIcons = Object.keys(availableIcons).length;
   if (amountOfUnusedIcons === 0) {
-    console.log('> 🍭 lucodear-icons:', green('Passed icon usage checks!'));
+    console.log(
+      '> 🍭 lucodear-icons',
+      magenta(`[${dir}]:`),
+      green('Passed icon usage checks!')
+    );
   } else {
     console.log(
       '> 🍭 lucodear-icons: ' + red(`${amountOfUnusedIcons} unused icon(s):`)
