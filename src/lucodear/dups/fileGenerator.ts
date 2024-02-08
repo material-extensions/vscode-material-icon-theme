@@ -11,7 +11,7 @@ import {
   lightColorFileEnding,
   mapSpecificFileIcons,
 } from '../../icons';
-import { lucodearFileIconsPath } from '../constants';
+import { lucodearIconsPath } from '../constants';
 import { LucodearFileIcon, LucodearFileIcons } from '../model';
 
 export const loadLucodearFileIconDefinitions = (
@@ -162,7 +162,7 @@ export const setFileIconDefinition = (
   icon: LucodearFileIcon | string,
   appendix: string = '',
   // 🍭
-  path: string = lucodearFileIconsPath
+  path: string = lucodearIconsPath
 ) => {
   const iconName = typeof icon === 'string' ? icon : icon.name;
   const subpath =

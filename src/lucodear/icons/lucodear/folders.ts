@@ -1,16 +1,14 @@
 import { LucodearFolderIcon } from '../../model';
-import { prefix, subpath } from '../utils';
+import { lucodear } from '../utils';
 
-export const folders: LucodearFolderIcon[] = prefix(
-  subpath('lucodear', [
-    {
-      name: 'folder-lucodear',
-      folderNames: ['lucodear'],
-    },
-    {
-      name: 'folder-pest',
-      folderNames: ['pest'],
-      light: true,
-    },
-  ] as LucodearFolderIcon[])
-);
+export const folders = lucodear('lucodear', [
+  {
+    name: 'lucodear',
+    folderNames: ['lucodear'],
+  },
+  {
+    name: 'pest',
+    folderNames: ['pest'],
+    light: true,
+  },
+] as LucodearFolderIcon[]);

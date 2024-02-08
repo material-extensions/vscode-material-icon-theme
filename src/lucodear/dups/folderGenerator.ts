@@ -16,7 +16,7 @@ import {
   setDefaultFolderIcons,
   setFolderNames,
 } from '../../icons';
-import { lucodearFolderIconsPath } from '../constants';
+import { lucodearIconsPath } from '../constants';
 import { LucodearFolderIcon, LucodearFolderTheme } from '../model';
 
 export const loadLucodearFolderIconDefinitions = (
@@ -85,7 +85,7 @@ export const setFolderIconDefinitions = (
   config: IconConfiguration,
   icon: LucodearFolderIcon | DefaultIcon,
   // 🍭
-  path: string = lucodearFolderIconsPath
+  path: string = lucodearIconsPath
 ) => {
   config = merge({}, config);
   config = createIconDefinitions(config, icon, '', path);
