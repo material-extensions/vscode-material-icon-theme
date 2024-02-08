@@ -21,7 +21,7 @@ export function lucodear<T extends LucodearIconConfig>(
 ): T[];
 
 export function lucodear<T extends LucodearIconConfig>(
-  subpath: string,
+  theme: string,
   pack: IconPack | IconPack[],
   icons: T[]
 ): T[];
@@ -47,7 +47,7 @@ export function lucodear<T extends LucodearIconConfig>(
     result = addPack(packs, icons);
   }
 
-  return addSubpath(path, result);
+  return addTheme(path, result);
 }
 
 function addPrefixes<T extends LucodearIconConfig>(
@@ -78,12 +78,12 @@ function addPrefixes<T extends LucodearIconConfig>(
   });
 }
 
-function addSubpath<T extends LucodearIconConfig>(
-  subpath: string,
+function addTheme<T extends LucodearIconConfig>(
+  theme: string,
   icons: T[]
 ): T[] {
   return icons.map((icon) => {
-    icon.subpath = subpath;
+    icon.theme = theme;
     return icon;
   });
 }

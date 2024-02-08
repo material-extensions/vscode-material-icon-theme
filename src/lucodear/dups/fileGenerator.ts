@@ -165,17 +165,17 @@ export const setFileIconDefinition = (
   path: string = lucodearIconsPath
 ) => {
   const iconName = typeof icon === 'string' ? icon : icon.name;
-  const subpath =
+  const theme =
     typeof icon === 'string'
       ? ''
-      : icon.subpath === undefined
+      : icon.theme === undefined
       ? ''
-      : `${icon.subpath}/`;
+      : `${icon.theme}/`;
 
   const obj: Partial<IconConfiguration> = { iconDefinitions: {} };
   if (config.options) {
     obj.iconDefinitions![`${iconName}${appendix}`] = {
-      iconPath: `${path}${subpath}${iconName}${appendix}.svg`,
+      iconPath: `${path}${theme}${iconName}${appendix}.svg`,
     };
   }
   return obj;

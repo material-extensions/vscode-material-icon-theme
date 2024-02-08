@@ -23,7 +23,7 @@ export interface ExtendedOptions extends IconJsonOptions {
 }
 
 export type LucodearFileIcon = FileIcon & {
-  subpath?: string;
+  theme?: string;
 };
 
 export interface LucodearFileIcons {
@@ -32,7 +32,7 @@ export interface LucodearFileIcons {
 }
 
 export interface LucodearFolderIcon extends FolderIcon {
-  subpath?: string;
+  theme?: string;
 }
 
 export interface LucodearFolderTheme extends FolderTheme {
