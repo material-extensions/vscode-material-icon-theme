@@ -16,7 +16,7 @@ import {
   setDefaultFolderIcons,
   setFolderNames,
 } from '../../icons';
-import { lucodearFolderIconsPath } from '../constants';
+import { lucodearIconsPath } from '../constants';
 import { LucodearFolderIcon, LucodearFolderTheme } from '../model';
 
 export const loadLucodearFolderIconDefinitions = (
@@ -85,7 +85,7 @@ export const setFolderIconDefinitions = (
   config: IconConfiguration,
   icon: LucodearFolderIcon | DefaultIcon,
   // 🍭
-  path: string = lucodearFolderIconsPath
+  path: string = lucodearIconsPath
 ) => {
   config = merge({}, config);
   config = createIconDefinitions(config, icon, '', path);
@@ -116,17 +116,17 @@ const createIconDefinitions = (
   const configIconDefinitions = config.iconDefinitions;
 
   const iconName = icon.name;
-  const subpath =
-    (icon as LucodearFolderIcon).subpath === undefined
+  const theme =
+    (icon as LucodearFolderIcon).theme === undefined
       ? ''
-      : `${(icon as LucodearFolderIcon).subpath}/`;
+      : `${(icon as LucodearFolderIcon).theme}/`;
 
   if (configIconDefinitions) {
     configIconDefinitions[iconName + appendix] = {
-      iconPath: `${path}${subpath}${iconName}${appendix}.svg`,
+      iconPath: `${path}${theme}${iconName}${appendix}.svg`,
     };
     configIconDefinitions[`${iconName}${openedFolder}${appendix}`] = {
-      iconPath: `${path}${subpath}${iconName}${openedFolder}${appendix}.svg`,
+      iconPath: `${path}${theme}${iconName}${openedFolder}${appendix}.svg`,
     };
   }
   return config;

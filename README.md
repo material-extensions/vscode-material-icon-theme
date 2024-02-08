@@ -23,13 +23,13 @@
 
 ## 🍭 lucodear
 
-### Files
+<img src="https://raw.githubusercontent.com/lucas-labs/lucodear-icons/main/images/lucodear-icons.png" alt="file icons">
 
-<img src="https://raw.githubusercontent.com/lucas-labs/lucodear-icons/main/images/lucodearFileIcons.png" alt="file icons">
+<br><br>
 
-### Folders
+---
 
-<img src="https://raw.githubusercontent.com/lucas-labs/lucodear-icons/main/images/lucodearFolderIcons.png" alt="file icons">
+<br><br>
 
 ## Material Icon Theme (original documentation)
 

@@ -1,7 +1,7 @@
 import { LucodearFileIcon } from '../../model';
-import { subpath } from '../utils';
+import { lucodear } from '../utils';
 
-export const files: LucodearFileIcon[] = subpath('misc', [
+export const files: LucodearFileIcon[] = lucodear('misc', [
   {
     name: 'idea',
     fileNames: [

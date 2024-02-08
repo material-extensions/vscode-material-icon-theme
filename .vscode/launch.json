@@ -13,7 +13,8 @@
       "runtimeExecutable": "${execPath}",
       "args": [
         "--extensionDevelopmentPath=${workspaceFolder}",
-        "--disable-extensions"
+        "--disable-extensions",
+        "--profile-temp"
       ],
       "outFiles": ["${workspaceFolder}/dist/**/*.js"],
       "smartStep": true,

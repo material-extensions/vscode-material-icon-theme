@@ -1,0 +1,94 @@
+:root {
+  --main-bg-color: #21252b;
+}
+
+html {
+  display: grid;
+}
+
+body {
+  display: block;
+  margin: 0;
+  background-color: var(--main-bg-color);
+  color: rgb(250, 250, 250);
+  font-family: arial, sans-serif;
+}
+
+/* odd sections */
+section:nth-child(odd) {
+  background-color: rgba(44, 48, 54, 0.6);
+  padding-bottom: 1rem;
+}
+
+section {
+  padding: 2rem 0;
+}
+
+h1 {
+  text-align: center;
+  margin: 0;
+  font-size: 1.5rem;
+  padding: 0;
+}
+
+.icons-table {
+  margin-top: 2rem;
+}
+
+h1 + .icons-table {
+  margin-top: 0;
+}
+
+span {
+  display: block;
+  padding: 0.25rem 0.7rem;
+  border-radius: 0.5rem;
+  margin: 1rem 1rem;
+  background-color: rgba(250, 250, 250, 0.1);
+  width: fit-content;
+  font-size: 1rem;
+}
+
+h1 + h2 {
+  margin-top: 0rem;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.no-icons {
+  font-family: arial, sans-serif;
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+td,
+th {
+  border: 0;
+  text-align: left;
+  padding: 8px;
+}
+
+tr {
+  border: 0;
+}
+
+.icon {
+  width: 2rem;
+  text-align: center;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+}
+
+.iconName {
+  min-width: 9rem;
+}
+
+img {
+  width: 30px;
+  height: auto;
+}

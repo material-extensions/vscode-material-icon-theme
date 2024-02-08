@@ -2,11 +2,13 @@ import { writeFileSync } from 'fs';
 import { join } from 'path';
 import { green, red } from '../helpers/painter';
 import { createScreenshot } from '../helpers/screenshots';
-import { toTitleCase } from './../helpers/titleCase';
+// import { toTitleCase } from './../helpers/titleCase';
+import { IconDefinition } from './icon';
 
-const htmlDoctype = '<!DOCTYPE html>';
+export const htmlDoctype = '<!DOCTYPE html>';
+
 const cssFilePath = 'style.css';
-const styling = `<link rel="stylesheet" href="${cssFilePath}">`;
+export const styling = `<link rel="stylesheet" href="${cssFilePath}">`;
 
 const createHTMLTableHeadRow = (amount: number) => {
   const pair = `
@@ -22,22 +24,22 @@ const createHTMLTableHeadRow = (amount: number) => {
 };
 
 const createHTMLTableBodyRows = (
-  items: (IconDefinition & { subpath?: string })[][],
+  items: IconDefinition[][],
   iconsPath: string
 ) => {
   let rows = '';
   items.forEach((row) => {
     const columns = row
       .map((icon) => {
-        const subpath = icon.subpath ? `${icon.subpath}/` : '';
+        const subpath = icon.theme ? `${icon.theme}/` : '';
 
         return `
           <td class="icon">
-              <img src="${iconsPath}/${subpath}${icon.iconName}.svg" alt="${
+              <img src="${iconsPath}/${subpath}${icon.name}.svg" alt="${
           icon.label
         }">
           </td>
-          <td class="iconName">${toTitleCase(icon.label)}</td>
+          <td class="iconName">${icon.label ?? icon.name}</td>
         `;
       })
       .join('');
@@ -64,14 +66,15 @@ const noIconsFound = `
   </div>
 `;
 
-const createPreviewTable = (
-  icons: (IconDefinition & { subpath?: string })[][],
+export const createPreviewTable = (
+  icons: IconDefinition[][],
   size: number,
-  iconsPath: string
+  iconsPath: string,
+  fullPage: boolean = true
 ) => {
   const table =
-    htmlDoctype +
-    styling +
+    (fullPage ? htmlDoctype : '') +
+    (fullPage ? styling : '') +
     createHTMLTable(
       createHTMLTableHeadRow(size),
       createHTMLTableBodyRows(icons, iconsPath)
@@ -104,7 +107,7 @@ const savePreview = (
     });
 };
 
-const getIconDefinitionsMatrix = (
+export const getIconDefinitionsMatrix = (
   icons: IconDefinition[],
   size: number,
   excluded: string[] = [],
@@ -112,7 +115,7 @@ const getIconDefinitionsMatrix = (
   trim: boolean = false
 ): IconDefinition[][] => {
   const iconList = sort
-    ? icons.sort((a, b) => a.label.localeCompare(b.label))
+    ? icons.sort((a, b) => (a.label ?? a.name).localeCompare(b.label ?? b.name))
     : icons;
 
   trim && trimIconListToSize(iconList, size, excluded);
@@ -169,11 +172,6 @@ export const generatePreview = (
   );
 };
 
-interface IconDefinition {
-  iconName: string;
-  label: string;
-}
-
 /**
  * Trim the list of icons into the matrix
  * @param iconList List of icons
@@ -192,7 +190,7 @@ const trimIconListToSize = (
   while (iconList.length % size !== 0) {
     iconList.splice(
       iconList.findIndex(
-        (i) => i.iconName === trimmableIcons[iconList.length % size]
+        (i) => i.name === trimmableIcons[iconList.length % size]
       ),
       1
     );
