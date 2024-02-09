@@ -10,7 +10,7 @@
       }
 
       .c {
-        fill: #57606a;
+        fill: #455a64;
         fill-rule: evenodd;
       }
     </style>
