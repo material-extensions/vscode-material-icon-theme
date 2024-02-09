@@ -1,13 +1,8 @@
 import { Translation } from '../models';
 
 export const translation: Translation = {
-  themeInstalled: 'Material Icon Theme был установлен.',
-  howToActivate: 'Как активировать иконки',
   activate: 'Активировать',
   activated: 'Material Icon Theme активен.',
-  neverShowAgain: 'Никогда не показывать снова',
-  themeUpdated: 'Material Icon Theme был обновлен.',
-  readChangelog: 'Смотреть список изменений',
   iconPacks: {
     selectPack: 'Выбрать набор иконок',
     description: "Выбрать '%0' набор иконок",
@@ -15,13 +10,15 @@ export const translation: Translation = {
   },
   folders: {
     toggleIcons: 'Выбрать тему папки',
-    color: 'Выбрать цвет папки',
-    hexCode: 'Вставить HEX-код цвета',
-    wrongHexCode: 'Неверный HEX-код цвета!',
     disabled: 'Нет иконок для папки',
     theme: {
       description: "Выбрать '%0' тему папки",
     },
+  },
+  colorSelect: {
+    color: 'Выберите цвет',
+    hexCode: 'Вставить HEX-код цвета',
+    wrongHexCode: 'Неверный HEX-код цвета!',
   },
   opacity: {
     inputPlaceholder: 'Значение непрозрачности (между 0 и 1)',
@@ -36,10 +33,6 @@ export const translation: Translation = {
     enable: 'Показать стрелки у папок',
     disable: 'Скрыть стрелки у папок',
   },
-  confirmReload: 'Нужно перезапустить VS Code для активации иконок.',
-  reload: 'Перезагрузить',
-  outdatedVersion: 'Нужно обновить VS Code, чтобы использовать эту команду.',
-  updateVSCode: 'Обновить VS Code',
   grayscale: {
     toggle: 'Переключение серых значков',
     enable: 'Включить значки в оттенках серого',

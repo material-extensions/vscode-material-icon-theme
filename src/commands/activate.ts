@@ -1,6 +1,6 @@
-import * as vscode from 'vscode';
-import * as helpers from './../helpers';
-import * as i18n from './../i18n';
+import { window as codeWindow } from 'vscode';
+import { getConfig } from '../helpers';
+import { translate } from '../i18n';
 
 /** Activate the icon theme by changing the settings for the iconTheme. */
 export const activateIcons = () => {
@@ -11,15 +11,17 @@ export const activateIcons = () => {
 const setIconTheme = async () => {
   // global user config
   try {
-    await helpers
-      .getConfig()
-      .update('workbench.iconTheme', 'material-icon-theme', true);
+    await getConfig().update(
+      'workbench.iconTheme',
+      'material-icon-theme',
+      true
+    );
 
     // local workspace config
-    if (helpers.getConfig().inspect('workbench.iconTheme')?.workspaceValue) {
-      helpers.getConfig().update('workbench.iconTheme', 'material-icon-theme');
+    if (getConfig().inspect('workbench.iconTheme')?.workspaceValue) {
+      getConfig().update('workbench.iconTheme', 'material-icon-theme');
     }
-    vscode.window.showInformationMessage(i18n.translate('activated'));
+    codeWindow.showInformationMessage(translate('activated'));
   } catch (error) {
     console.error(error);
   }
