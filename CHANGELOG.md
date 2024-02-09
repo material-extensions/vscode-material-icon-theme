@@ -3,10 +3,25 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v0.6.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.5.1...v0.6.0) 
+
+> February 9, 2024 
+
+- fix: 🚑 duplicated icons in preview [`2520eebb`](https://github.com/PKief/vscode-material-icon-theme/commit/2520eebb)
+- fix: 🚑 fix colors not aligning with material colors [`a22a1131`](https://github.com/PKief/vscode-material-icon-theme/commit/a22a1131)
+- ci: 🔄 fix ci action routes [`9b1bac4b`](https://github.com/PKief/vscode-material-icon-theme/commit/9b1bac4b)
+- feat: ✨ artificial intelligence related folder icons [`553faf99`](https://github.com/PKief/vscode-material-icon-theme/commit/553faf99)
+- feat: ✨ python variants [`b26463a5`](https://github.com/PKief/vscode-material-icon-theme/commit/b26463a5)
+- fix: 🚑 used icons check failing [`b8a959bf`](https://github.com/PKief/vscode-material-icon-theme/commit/b8a959bf)
+- docs: 📝 update readme [`2826ec09`](https://github.com/PKief/vscode-material-icon-theme/commit/2826ec09)
+- refactor: 🔨 change preview script for lucodear icons [`ef2bbfa5`](https://github.com/PKief/vscode-material-icon-theme/commit/ef2bbfa5)
+- refactor: 🔨 change lucodear icons folder structure [`81a52165`](https://github.com/PKief/vscode-material-icon-theme/commit/81a52165)
+ 
 #### [v0.5.1](https://github.com/PKief/vscode-material-icon-theme/compare/v0.5.0...v0.5.1) 
 
 > February 7, 2024 
 
+- release: 🔖 v0.5.1 [`69cc41a9`](https://github.com/PKief/vscode-material-icon-theme/commit/69cc41a9)
 - patch: 🩹 add .task to folder-taskfile mappings [`7d10ca24`](https://github.com/PKief/vscode-material-icon-theme/commit/7d10ca24)
  
 #### [v0.5.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.4.1...v0.5.0) 
