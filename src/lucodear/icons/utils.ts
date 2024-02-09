@@ -34,11 +34,11 @@ export function lucodear<T extends LucodearIconConfig>(
   let packs: IconPack | IconPack[] | undefined;
   let icons: T[];
 
-  if (isIconPack(arg1) || isIconPackArray(arg1)) {
+  if ((isIconPack(arg1) || isIconPackArray(arg1)) && arg2 !== undefined) {
     packs = arg1;
-    icons = arg2!;
+    icons = arg2;
   } else {
-    icons = arg1 ?? [];
+    icons = (arg1 ?? []) as T[];
   }
 
   let result: T[] = addPrefixes(icons);
