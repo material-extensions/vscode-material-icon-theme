@@ -95,5 +95,6 @@ export const files: LucodearFileIcon[] = lucodear('misc', [
   {
     name: 'workflow',
     fileExtensions: ['workflow/yml', 'workflow/yaml'],
+    light: true,
   },
 ] as LucodearFileIcon[]);
