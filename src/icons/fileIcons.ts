@@ -2514,6 +2514,11 @@ export const fileIcons: FileIcons = {
     },
     { name: 'apps-script', fileExtensions: ['gs'] },
     {
+      name: 'pkl',
+      fileExtensions: ['pkl'],
+      fileNames: ['PklProject', 'PklProject.deps.json'],
+    },
+    {
       name: 'kubernetes',
       fileNames: [
         'k8s.yml',
