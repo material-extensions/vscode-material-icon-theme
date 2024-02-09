@@ -3,6 +3,37 @@ import { lucodear } from '../utils';
 
 export const folders = lucodear('misc', [
   {
+    name: 'aggregate',
+    folderNames: ['aggregate', 'aggregates', 'aggs', 'agg'],
+  },
+  {
+    name: 'azure',
+    folderNames: ['azure', 'az'],
+  },
+  {
+    name: 'controller',
+    folderNames: ['controller', 'controllers', 'ctrl'],
+  },
+  {
+    name: 'decorator',
+    folderNames: ['decorator', 'decorators'],
+  },
+  {
+    name: 'di',
+    folderNames: [
+      'di',
+      'ioc',
+      'injection',
+      'injector',
+      'injections',
+      'container',
+    ],
+  },
+  {
+    name: 'dto',
+    folderNames: ['dto', 'dtos'],
+  },
+  {
     name: 'exceptions',
     folderNames: [
       'exceptions',
@@ -26,6 +57,36 @@ export const folders = lucodear('misc', [
   {
     name: 'metadata',
     folderNames: ['metadata', 'meta', 'data', 'tags', 'tag'],
+  },
+  {
+    name: 'middleware',
+    folderNames: ['middleware', 'middlewares', 'mdw'],
+  },
+  {
+    name: 'model',
+    folderNames: ['model', 'models', 'entities', 'entity'],
+  },
+  {
+    name: 'module',
+    folderNames: ['module', 'modules', 'mod', 'domain', 'domains'],
+  },
+  {
+    name: 'oracle',
+    folderNames: ['oracle', 'osb', 'soa'],
+  },
+  {
+    name: 'provider',
+    folderNames: [
+      'provider',
+      'providers',
+      'infra',
+      'infrastructure',
+      'infrastructures',
+    ],
+  },
+  {
+    name: 'service',
+    folderNames: ['service', 'services', 'srv', 'svc'],
   },
   {
     name: 'tasks',

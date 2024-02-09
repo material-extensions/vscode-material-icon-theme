@@ -7,8 +7,11 @@ export type IconDefinition = {
   theme?: string;
 };
 
-export const filterDuplicates = <T>(icons: T[]) => {
-  return [...new Set(icons)];
+export const filterDuplicates = <T extends { name: string }>(icons: T[]) => {
+  // duplicates have the same name
+  return icons.filter((icon, index, self) => {
+    return index === self.findIndex((i) => i.name === icon.name);
+  });
 };
 
 export const getFolders = (icons: LucodearFolderTheme[] | FolderTheme[]) => {

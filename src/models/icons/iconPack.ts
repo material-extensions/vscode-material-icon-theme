@@ -12,5 +12,5 @@ export enum IconPack {
   Vuex = 'vue_vuex',
 
   // 🍭 » lucode
-  Python = 'python',
+  Pest = 'pest',
 }

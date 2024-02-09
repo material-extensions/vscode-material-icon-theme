@@ -19,7 +19,7 @@ export const folderPatches: Partial<
   },
   {
     name: 'folder-class',
-    folderNames: ['aggregates', 'classes'],
+    folderNames: ['classes'],
   },
   {
     name: 'folder-shared',
@@ -42,8 +42,17 @@ export const folderPatches: Partial<
     folderNames: ['ts', 'typescript', 'types'],
   },
   {
+    name: 'folder-python',
+    folderNames: ['py'],
+    skipExtend: true,
+  },
+  {
     name: 'folder-taskfile',
     folderNames: ['.task'],
     skipExtend: true,
+  },
+  {
+    name: 'folder-tools',
+    folderNames: ['tool', 'tools', 'tooling'],
   },
 ];

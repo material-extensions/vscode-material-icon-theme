@@ -4,10 +4,12 @@ import { folderPatches } from './patches';
 import * as misc from './misc';
 import * as ts from './typescript';
 import * as lucodear from './lucodear';
+import * as python from './python';
+import * as ai from './ai';
 
 /** Defines file icons */
 export const lucodearFileIcons: LucodearFileIcons = {
-  icons: [...misc.files, ...ts.files, ...lucodear.files],
+  icons: [...misc.files, ...ts.files, ...lucodear.files, ...python.files],
 };
 
 /** Defines folder icons */
@@ -15,7 +17,12 @@ export const lucodearFolderIcons: LucodearFolderTheme = {
   name: 'specific',
   defaultIcon: { name: 'folder' },
   rootFolder: { name: 'folder-root' },
-  icons: [...misc.folders, ...lucodear.folders],
+  icons: [
+    ...misc.folders,
+    ...lucodear.folders,
+    ...python.folders,
+    ...ai.folders,
+  ],
 };
 
 // #region patcher
