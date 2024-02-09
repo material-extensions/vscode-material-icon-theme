@@ -19,7 +19,7 @@
     "pretest": "npm run build && tsc -p ./",
     "preview": "ts-node ./src/scripts/preview && npm run preview-lc",
     "preview-lc": "ts-node ./src/scripts/preview/lucodear-preview",
-    "svgo": "svgo -i icons icons-lucodear/files icons-lucodear/folders -q",
+    "svgo": "svgo -i icons icons-lc -r -q",
     "test": "node ./out/test/runTest.js",
     "changelog": "changelog-machine --config changelog.config.json",
     "preversion": "npm run contributors && npm run preview && git add images/*.png",
