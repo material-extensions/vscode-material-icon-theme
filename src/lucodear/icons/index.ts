@@ -6,10 +6,17 @@ import * as ts from './typescript';
 import * as lucodear from './lucodear';
 import * as python from './python';
 import * as ai from './ai';
+import * as react from './react';
 
 /** Defines file icons */
 export const lucodearFileIcons: LucodearFileIcons = {
-  icons: [...misc.files, ...ts.files, ...lucodear.files, ...python.files],
+  icons: [
+    ...misc.files,
+    ...ts.files,
+    ...lucodear.files,
+    ...python.files,
+    ...react.files,
+  ],
 };
 
 /** Defines folder icons */
