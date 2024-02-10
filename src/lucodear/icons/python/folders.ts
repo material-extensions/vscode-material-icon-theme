@@ -2,42 +2,28 @@ import { IconPack } from '../../../models';
 import { LucodearFolderIcon } from '../../model';
 import { lucodear } from '../utils';
 
+const pyprefix = (...x: string[]) => x.flatMap((x) => [x, `_${x}`, `__${x}`]);
+const pyfolder = (icon: string, names: string[], light: boolean = false) => ({
+  name: `py-${icon}`,
+  folderNames: pyprefix(...[icon, ...names]),
+  light,
+});
+
 export const common = lucodear('python', [
   {
     name: 'py',
     folderNames: ['python', '__pycache__', '.pytest_cache'],
   },
-  {
-    name: 'py-jupyter',
-    folderNames: [
-      'jupyter',
-      'jupyter-notebook',
-      'jupyter-notebooks',
-      'notebook',
-      'notebooks',
-      'ipynb',
-    ],
-  },
-  {
-    name: 'py-abc',
-    folderNames: ['abc', 'abstract', 'abstracts'],
-  },
-  {
-    name: 'py-dataclass',
-    folderNames: ['dataclass', 'dataclasses'],
-  },
-  {
-    name: 'py-dict',
-    folderNames: ['dict', 'dicts', 'dictionary', 'dictionaries'],
-  },
-  {
-    name: 'py-protocol',
-    folderNames: ['protocol', 'protocols', 'interface', 'interfaces'],
-  },
-  {
-    name: 'py-typing',
-    folderNames: ['types', 'typing', 'type', 'typings'],
-  },
+  pyfolder(
+    'jupyter',
+    ['jupyter-notebook', 'jupyter-notebooks', 'notebook', 'notebooks', 'ipynb'],
+    true
+  ),
+  pyfolder('abc', ['abstract', 'abstracts'], true),
+  pyfolder('dataclass', ['dataclasses']),
+  pyfolder('dict', ['dicts', 'dictionary', 'dictionaries']),
+  pyfolder('protocol', ['protocols', 'interface', 'interfaces'], true),
+  pyfolder('typing', ['types', 'type', 'typings']),
 ] as LucodearFolderIcon[]);
 
 export const pestPack = lucodear('python', IconPack.Pest, [

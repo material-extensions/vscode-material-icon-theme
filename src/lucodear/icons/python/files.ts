@@ -50,14 +50,14 @@ const common = lucodear('python', [
 
 // #region python file variants
 const pythonFiles: LucodearFileIcon[] = lucodear('python', [
-  ...pyfile('abc', ['abstract', 'abstracts'], false),
+  ...pyfile('abc', ['abstract', 'abstracts'], true),
   ...pyfile('dataclass', ['dataclasses'], false),
   ...pyfile('dict', ['dicts', 'dictionary', 'dictionaries'], false),
   {
     name: 'py-main',
     fileNames: prefixpy('main.py', 'app.py', 'run.py', 'application.py'),
   },
-  ...pyfile('protocol', ['protocols', 'interface', 'interfaces'], false),
+  ...pyfile('protocol', ['protocols', 'interface', 'interfaces'], true),
   ...pyfile('script', ['scripts'], false),
   ...pyfile('test', ['tests', 'spec', 'specs'], false),
   ...pyfile('tool', ['tools'], false),
