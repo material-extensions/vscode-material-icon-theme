@@ -4,6 +4,10 @@ import { lucodear } from '../utils';
 
 export const common = lucodear('python', [
   {
+    name: 'py',
+    folderNames: ['python', '__pycache__', '.pytest_cache'],
+  },
+  {
     name: 'py-jupyter',
     folderNames: [
       'jupyter',
