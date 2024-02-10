@@ -59,28 +59,27 @@ table {
   font-size: 1rem;
 }
 
-.no-icons {
-  font-family: arial, sans-serif;
-  font-size: 1.1rem;
-  display: flex;
-  justify-content: center;
-  padding: 1rem;
-}
-
 td,
 th {
   border: 0;
   text-align: left;
-  padding: 8px;
+  /* padding: 8px; */
 }
 
 tr {
   border: 0;
+  /* display: flex;
+  align-items: center; */
+  gap: 2rem;
 }
 
 .icon {
   width: 2rem;
   text-align: center;
+  /* background-color: green; */
+  border: 0;
+  padding: 0;
+  line-height: 0;
   padding: 0.5rem 1rem 0.5rem 1rem;
 }
 
@@ -89,6 +88,6 @@ tr {
 }
 
 img {
-  width: 30px;
+  width: 32px;
   height: auto;
 }
