@@ -1,40 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32">
   <defs>
-    <style>
-      .a {
-        fill: none;
-      }
-
-      .b {
-        fill: #4e342e;
-      }
-
-      .c {
-        fill: #ff5722;
-      }
-
-      .d {
-        clip-path: url(#a);
-      }
-
-      .e {
-        fill: url(#b);
-      }
-    </style>
     <clipPath id="a">
-      <path class="a" d="M10,4H4A1.99309,1.99309,0,0,0,2,6V18a2.00977,2.00977,0,0,0,2,2H20a2.00977,2.00977,0,0,0,2-2V8a2,2,0,0,0-2-2H12Z"/>
+      <path d="M13.84376,7.53645l-1.28749-1.0729A2,2,0,0,0,11.27591,6H4A2,2,0,0,0,2,8V24a2,2,0,0,0,2,2H28a2,2,0,0,0,2-2V10a2,2,0,0,0-2-2H15.12412A2,2,0,0,1,13.84376,7.53645Z" style="fill: none"/>
     </clipPath>
-    <radialGradient id="b" cx="12.7875" cy="14.7875" r="10.42669" gradientTransform="translate(0.21155 2.91023) rotate(1.03039) scale(1 0.78777)" gradientUnits="userSpaceOnUse">
+    <radialGradient id="b" cx="13.05" cy="19.05" r="13.90225" gradientTransform="matrix(1.04983, 0.01798, -0.01487, 0.78765, 3.68558, 3.81066)" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#ff5722" stop-opacity="0.4"/>
       <stop offset="1" stop-color="#ff5722" stop-opacity="0"/>
     </radialGradient>
   </defs>
-  <g>
-    <path class="b" d="M10,4H4A1.99309,1.99309,0,0,0,2,6V18a2.00977,2.00977,0,0,0,2,2H20a2.00977,2.00977,0,0,0,2-2V8a2,2,0,0,0-2-2H12Z"/>
-    <circle class="c" cx="9" cy="14.5625" r="2.5"/>
-    <circle class="c" cx="16.35" cy="14.5625" r="2.5"/>
-    <g class="d">
-      <rect class="e" x="2" y="4" width="20" height="16"/>
-    </g>
+  <path d="M13.84376,7.53645l-1.28749-1.0729A2,2,0,0,0,11.27591,6H4A2,2,0,0,0,2,8V24a2,2,0,0,0,2,2H28a2,2,0,0,0,2-2V10a2,2,0,0,0-2-2H15.12412A2,2,0,0,1,13.84376,7.53645Z" style="fill: #4e342e"/>
+  <g style="clip-path: url(#a)">
+    <rect x="2" y="4.66667" width="28" height="21.33333" style="fill: url(#b)"/>
   </g>
+  <rect x="6" y="14" width="8" height="8" rx="4" style="fill: #ff5722"/>
+  <rect x="18" y="14" width="8" height="8" rx="4" style="fill: #ff5722"/>
 </svg>

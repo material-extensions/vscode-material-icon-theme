@@ -1,14 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32">
   <defs>
-    <style>
-      .a {
-        fill: url(#a);
-      }
-    </style>
-    <radialGradient id="a" cx="17.03986" cy="20.73229" r="15.3551" gradientTransform="translate(-0.39575 -1.0031) scale(1.00324 1.04838)" gradientUnits="userSpaceOnUse">
+    <radialGradient id="a" cx="28.14857" cy="29.51817" r="22.04835" gradientTransform="translate(-3.15583 -2.79317) scale(0.89419 1.07034)" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#29b6f6"/>
       <stop offset="1" stop-color="#bbdefb"/>
     </radialGradient>
   </defs>
-  <path class="a" d="M19.59975,12C18.30748,6.46094,15.0413,2.45,12,2.45S5.69252,6.46094,4.40025,12a7.79888,7.79888,0,1,0,15.1995,0Z"/>
+  <path d="M25.72627,16C24.0724,7.87991,19.8923,2,16,2S7.9276,7.87991,6.27373,16C4.73987,23.531,9.88015,30,16,30S27.26013,23.531,25.72627,16Z" style="fill: url(#a)"/>
 </svg>
