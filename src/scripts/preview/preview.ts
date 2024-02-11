@@ -25,7 +25,8 @@ const createHTMLTableHeadRow = (amount: number) => {
 
 const createHTMLTableBodyRows = (
   items: IconDefinition[][],
-  iconsPath: string
+  iconsPath: string,
+  size: number
 ) => {
   let rows = '';
   items.forEach((row) => {
@@ -35,7 +36,9 @@ const createHTMLTableBodyRows = (
 
         return `
           <td class="icon">
-              <img src="${iconsPath}/${subpath}${icon.name}.svg" alt="${
+              <img style="width: ${size.toFixed(
+                0
+              )}px" src="${iconsPath}/${subpath}${icon.name}.svg" alt="${
           icon.label
         }">
           </td>
@@ -70,14 +73,15 @@ export const createPreviewTable = (
   icons: IconDefinition[][],
   size: number,
   iconsPath: string,
-  fullPage: boolean = true
+  fullPage: boolean = true,
+  iconSize: number = 30
 ) => {
   const table =
     (fullPage ? htmlDoctype : '') +
     (fullPage ? styling : '') +
     createHTMLTable(
       createHTMLTableHeadRow(size),
-      createHTMLTableBodyRows(icons, iconsPath)
+      createHTMLTableBodyRows(icons, iconsPath, iconSize)
     ) +
     (icons.length === 0 ? noIconsFound : '');
   return table;

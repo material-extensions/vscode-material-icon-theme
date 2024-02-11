@@ -1,14 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32">
   <defs>
     <radialGradient id="a" cx="15.95" cy="11.925" r="8.86429" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#ffecb3"/>
-      <stop offset="0.74581" stop-color="#ffecb3"/>
-      <stop offset="0.86313" stop-color="#ffecb3"/>
-      <stop offset="1" stop-color="#ffcc80"/>
+      <stop offset="0" stop-color="#ffd54f"/>
+      <stop offset="0.74581" stop-color="#ffd54f"/>
+      <stop offset="0.86313" stop-color="#ffd54f"/>
+      <stop offset="1" stop-color="#ffb300"/>
     </radialGradient>
     <linearGradient id="b" x1="12" y1="27" x2="20" y2="27" gradientUnits="userSpaceOnUse">
-      <stop offset="0.55307" stop-color="#b0bec5"/>
-      <stop offset="1" stop-color="#607d8b"/>
+      <stop offset="0.55307" stop-color="#78909c"/>
+      <stop offset="1" stop-color="#455a64"/>
     </linearGradient>
   </defs>
   <path d="M26,12a10.00116,10.00116,0,1,0-15.74483,8.18047A4.03749,4.03749,0,0,1,12,23.47665V28h8V23.47924a4.07938,4.07938,0,0,1,1.77085-3.31713A9.9792,9.9792,0,0,0,26,12Z" style="fill: url(#a)"/>

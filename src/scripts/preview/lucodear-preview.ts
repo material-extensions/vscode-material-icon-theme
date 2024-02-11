@@ -15,6 +15,15 @@ const filesIcons = getFiles(lucodearFileIcons.icons);
 const themes = getThemes(folderIcons, filesIcons);
 
 const lucodearPreview = (size = 5, path = './../../../icons-lc') => {
+  // get argument --dev
+  const dev = process.argv.slice(2).includes('--dev');
+  // get argument --size 16 (get the number after --size)
+  const iconSize =
+    process.argv.includes('--size') &&
+    !isNaN(parseInt(process.argv[process.argv.indexOf('--size') + 1]))
+      ? parseInt(process.argv[process.argv.indexOf('--size') + 1])
+      : 32;
+
   let content = '';
   const fileName = `lucodear-icons`;
   const filePath = join(__dirname, fileName + '.html');
@@ -33,7 +42,8 @@ const lucodearPreview = (size = 5, path = './../../../icons-lc') => {
       filesSafeSize,
       themeFolderIcons,
       themeFileIcons,
-      path
+      path,
+      iconSize
     );
   }
 
@@ -52,7 +62,7 @@ const lucodearPreview = (size = 5, path = './../../../icons-lc') => {
   `;
 
   // save preview
-  saveScreenshot(fileName, filePath, content);
+  saveScreenshot(fileName, filePath, content, dev);
 };
 
 const makeThemeSection = (
@@ -61,7 +71,8 @@ const makeThemeSection = (
   filesSize: number,
   folderIcons: IconDefinition[],
   fileIcons: IconDefinition[],
-  iconsPath: string
+  iconsPath: string,
+  iconSize: number
 ): string => {
   const filesMatrix = getIconDefinitionsMatrix(fileIcons, filesSize);
   const foldersMatrix = getIconDefinitionsMatrix(folderIcons, foldersSize);
@@ -71,13 +82,15 @@ const makeThemeSection = (
     filesMatrix,
     filesSize,
     iconsPath,
-    false
+    false,
+    iconSize
   );
   const foldersTable = createPreviewTable(
     foldersMatrix,
     foldersSize,
     iconsPath,
-    false
+    false,
+    iconSize
   );
 
   return `
@@ -100,9 +113,18 @@ const makeThemeSection = (
 const saveScreenshot = async (
   fileName: string,
   filePath: string,
-  content: string
+  content: string,
+  dev: boolean = false
 ) => {
   writeFileSync(filePath, content);
+
+  if (dev) {
+    console.log(
+      '> 🍭 lucodear-icons:',
+      green(`html review available at ${filePath}`)
+    );
+    return;
+  }
 
   // create the image
   createScreenshot(filePath, fileName)

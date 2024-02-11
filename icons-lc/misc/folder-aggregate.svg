@@ -1,17 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-  <defs>
-    <style>
-      .a {
-        fill: #7e57c2;
-      }
-
-      .b {
-        fill: #e1bee7;
-      }
-    </style>
-  </defs>
-  <path class="a" d="M10,4H4A1.99309,1.99309,0,0,0,2,5.98616Q2,5.99308,2,6V18a2,2,0,0,0,2,2H20a2,2,0,0,0,2-2V8a1.99944,1.99944,0,0,0-1.99888-2H12Z"/>
-  <rect class="b" x="12.06515" y="9.5155" width="4.95943" height="4.95943" rx="0.82657"/>
-  <rect class="b" x="18.52972" y="16.12807" width="4.95943" height="4.95943" rx="0.82657"/>
-  <rect class="b" x="12.06515" y="16.12807" width="4.95943" height="4.95943" rx="0.82657"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <path d="M13.84376,7.53645l-1.28749-1.0729A2,2,0,0,0,11.27591,6H4A2,2,0,0,0,2,8V24a2,2,0,0,0,2,2H28a2,2,0,0,0,2-2V10a2,2,0,0,0-2-2H15.12412A2,2,0,0,1,13.84376,7.53645Z" style="fill: #7e57c2"/>
+  <rect x="14" y="9.9625" width="8" height="8" rx="1" style="fill: #e1bee7"/>
+  <rect x="24" y="19.9625" width="8" height="8" rx="1" style="fill: #e1bee7"/>
+  <rect x="14" y="19.9625" width="8" height="8" rx="1" style="fill: #e1bee7"/>
 </svg>

@@ -76,6 +76,7 @@ export const files: LucodearFileIcon[] = lucodear('misc', [
       '💡/txt',
       '💡/html',
     ],
+    light: true,
   },
   {
     name: 'illustrator',

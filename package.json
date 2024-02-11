@@ -19,6 +19,7 @@
     "pretest": "npm run build && tsc -p ./",
     "preview": "ts-node ./src/scripts/preview && npm run preview-lc",
     "preview-lc": "ts-node ./src/scripts/preview/lucodear-preview",
+    "preview-lc:dev": "ts-node ./src/scripts/preview/lucodear-preview --dev --size 16 && browser-sync start -c .\\build\\bs-config.js",
     "svgo": "svgo -i icons icons-lc -r -q",
     "test": "node ./out/test/runTest.js",
     "changelog": "changelog-machine --config changelog.config.json",
