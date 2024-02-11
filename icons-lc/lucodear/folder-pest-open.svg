@@ -1,40 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32">
   <defs>
-    <style>
-      .a {
-        fill: none;
-      }
-
-      .b {
-        fill: #795548;
-      }
-
-      .c {
-        fill: #ff5722;
-      }
-
-      .d {
-        clip-path: url(#a);
-      }
-
-      .e {
-        fill: url(#b);
-      }
-    </style>
     <clipPath id="a">
-      <path class="a" d="M19,20H4a2,2,0,0,1-2-2V6A1.99309,1.99309,0,0,1,4,4h6l2,2h7a2.00977,2.00977,0,0,1,2,2H4V18l2.14-8H23.21l-2.28,8.5A2.00187,2.00187,0,0,1,19,20Z"/>
+      <path d="M28.96692,12H9.44152a2,2,0,0,0-1.89737,1.36754L4,24V10H28a2,2,0,0,0-2-2H15.1241a2,2,0,0,1-1.28038-.46357L12.5563,6.46357A2,2,0,0,0,11.27592,6H4A2,2,0,0,0,2,8V24a2,2,0,0,0,2,2H26l4.80523-11.21213A2,2,0,0,0,28.96692,12Z" style="fill: none"/>
     </clipPath>
-    <radialGradient id="b" cx="13.44014" cy="14.7875" r="10.90788" gradientTransform="translate(0.21166 2.89849) rotate(1.03039) scale(1 0.78777)" gradientUnits="userSpaceOnUse">
+    <radialGradient id="b" cx="17.92019" cy="19.05" r="14.54384" gradientTransform="matrix(1.06065, 0.01686, -0.01503, 0.73842, -0.5395, 5.11539)" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#ff5722" stop-opacity="0.4"/>
       <stop offset="1" stop-color="#ff5722" stop-opacity="0"/>
     </radialGradient>
   </defs>
-  <g>
-    <path class="b" d="M19,20H4a2,2,0,0,1-2-2V6A1.99309,1.99309,0,0,1,4,4h6l2,2h7a2.00977,2.00977,0,0,1,2,2H4V18l2.14-8H23.21l-2.28,8.5A2.00187,2.00187,0,0,1,19,20Z"/>
-    <circle class="c" cx="9" cy="14.5625" r="2.5"/>
-    <circle class="c" cx="16.35" cy="14.5625" r="2.5"/>
-    <g class="d">
-      <rect class="e" x="2" y="4" width="21.21" height="16"/>
-    </g>
+  <path d="M28.96692,12H9.44152a2,2,0,0,0-1.89737,1.36754L4,24V10H28a2,2,0,0,0-2-2H15.1241a2,2,0,0,1-1.28038-.46357L12.5563,6.46357A2,2,0,0,0,11.27592,6H4A2,2,0,0,0,2,8V24a2,2,0,0,0,2,2H26l4.80523-11.21213A2,2,0,0,0,28.96692,12Z" style="fill: #795548"/>
+  <g style="clip-path: url(#a)">
+    <rect x="2" y="6" width="30" height="20" style="fill: url(#b)"/>
   </g>
+  <path d="M24.209,18H21.6522a4.09168,4.09168,0,0,0-3.48737,2h0c-.51395,1.10457.21412,2,1.62619,2H22.3478a4.09168,4.09168,0,0,0,3.48737-2h0C26.34912,18.89543,25.62105,18,24.209,18Z" style="fill: #ff5722"/>
+  <path d="M14.209,18H11.6522a4.09168,4.09168,0,0,0-3.48737,2h0c-.514,1.10457.21412,2,1.62619,2H12.3478a4.09168,4.09168,0,0,0,3.48737-2h0C16.34912,18.89543,15.62105,18,14.209,18Z" style="fill: #ff5722"/>
 </svg>
