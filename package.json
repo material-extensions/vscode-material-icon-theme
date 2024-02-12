@@ -270,7 +270,7 @@
     "@types/browser-sync": "^2.29.0",
     "@types/lodash.merge": "^4.6.7",
     "@types/mocha": "^9.1.1",
-    "@types/node": "^17.0.35",
+    "@types/node": "^20.11.17",
     "@types/puppeteer": "^5.4.6",
     "@types/vscode": "^1.86.0",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
