@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>lucodear icons diffs preview</title>
+    {{! import style from ./template/diff-list.css }}
+    <link rel='stylesheet' href='./template/diff-list.css' />
+  </head>
+  <body>
+    <main>
+      {{#each diffs as |diff|}}
+        <section data-dir='{{diff.dir}}'>
+          <h2>{{diff.dir}}</h2>
+
+          <article>
+            {{#each diff.files as |file|}}
+              <div class='icon-preview'>
+                <img src='{{file.relPath}}' alt='{{file.name}}' />
+                <div class='tooltip'>
+                  {{file.name}}
+                </div>
+              </div>
+            {{/each}}
+          </article>
+        </section>
+      {{/each}}
+    </main>
+  </body>
+</html>
