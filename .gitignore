@@ -13,6 +13,7 @@ icons/folder-root.svg
 icons/folder-root-open.svg
 
 src/scripts/preview/*.html
+src/scripts/preview/changes/*.html
 src/scripts/contributors/*.html
 
 *.code-workspace
