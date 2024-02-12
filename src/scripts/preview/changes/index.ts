@@ -1,22 +1,44 @@
-import { red, blue } from '../../helpers/painter';
+import { debounce } from 'lodash';
+import { /* red,*/ blue } from '../../helpers/painter';
 import { getGitStatus, organizeDiff, printDiff } from './diff';
 import { makePreview } from './diff-preview';
+import bs from 'browser-sync';
+import chokidar from 'chokidar';
 
-async function main() {
+export async function makeHtml() {
   console.log(`${blue('> 🍭 lucodear-icons')} [changes-preview]\n`);
 
-  // regex for only svg
-  const dff = /\.svg$/;
-  // regex for svg but not _light.svg
-  // const dffnotlight = /^(?!.*_light\.svg).*\.svg$/;
-
-  //
-  const diff = organizeDiff(await getGitStatus(dff));
+  // get modified/untracked/deleted svg files except for _light.svg
+  const diff = organizeDiff(await getGitStatus(/^(?!.*_light\.svg).*\.svg$/));
   printDiff(diff);
 
+  // make preview html
   makePreview(diff);
 }
 
-main().catch((error) => {
-  console.error('> 🍭 lucodear-icons [changes-preview]:', red(`Error:`), error);
+makeHtml().then(() => {
+  const server = bs({
+    ui: false,
+    startPath: 'src/scripts/preview/changes/diff-list.html',
+    server: true,
+  });
+
+  async function onWatchEvent(
+    event: 'add' | 'addDir' | 'change' | 'unlink' | 'unlinkDir',
+    path: string
+  ) {
+    console.log(`\n${blue('> 🍭 lucodear-icons')} ${path} [${event}]`);
+
+    await makeHtml();
+    server.reload();
+  }
+
+  chokidar
+    .watch('./icons*/**/**/*.svg', {
+      ignoreInitial: true,
+      ignored: /(^|[/\\])\../,
+      usePolling: true,
+      interval: 250,
+    })
+    .on('all', debounce(onWatchEvent, 500));
 });
