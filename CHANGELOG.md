@@ -3,6 +3,29 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v4.33.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.32.0...v4.33.0) 
+
+> January 9, 2024 
+
+- Adjust azure pipelines filename [`#2186`](https://github.com/PKief/vscode-material-icon-theme/pull/2186)
+- add file icon for `Vedic` Programming Language. [`#2111`](https://github.com/PKief/vscode-material-icon-theme/pull/2111)
+- Delete unused files [`0f5fd1b`](https://github.com/PKief/vscode-material-icon-theme/commit/0f5fd1b)
+- Update vscode settings [`e10f594`](https://github.com/PKief/vscode-material-icon-theme/commit/e10f594)
+- chore: add "protobuf" to proto folder names [`#2182`](https://github.com/PKief/vscode-material-icon-theme/pull/2182)
+- Concourse Icon [`#1947`](https://github.com/PKief/vscode-material-icon-theme/pull/1947)
+- feat: add postgres icon [`#2169`](https://github.com/PKief/vscode-material-icon-theme/pull/2169)
+- feat: add kubernetes file icon [`#2077`](https://github.com/PKief/vscode-material-icon-theme/pull/2077)
+- Add moon icons [`#2178`](https://github.com/PKief/vscode-material-icon-theme/pull/2178)
+- feat: add tooling folder [`#2167`](https://github.com/PKief/vscode-material-icon-theme/pull/2167)
+- Add RSpec file icon [`#2106`](https://github.com/PKief/vscode-material-icon-theme/pull/2106)
+- Simplify contribution guidelines [`7856d63`](https://github.com/PKief/vscode-material-icon-theme/commit/7856d63)
+- feat: add the .config folder [`#2172`](https://github.com/PKief/vscode-material-icon-theme/pull/2172)
+- Update README.md [`a18fd92`](https://github.com/PKief/vscode-material-icon-theme/commit/a18fd92)
+- Add puppeteer file icons [`#2142`](https://github.com/PKief/vscode-material-icon-theme/pull/2142)
+- CRX file icon [`#2139`](https://github.com/PKief/vscode-material-icon-theme/pull/2139)
+- Additions to folder icons [`#2140`](https://github.com/PKief/vscode-material-icon-theme/pull/2140)
+- Update nuxt icons [`#2119`](https://github.com/PKief/vscode-material-icon-theme/pull/2119)
+ 
 #### [v4.32.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.31.0...v4.32.0) 
 
 > November 20, 2023 

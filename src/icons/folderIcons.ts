@@ -53,6 +53,10 @@ export const folderIcons: FolderTheme[] = [
           'pics',
           'picture',
           'pictures',
+          'photo',
+          'photos',
+          'photograph',
+          'photographs',
         ],
       },
       {
@@ -88,6 +92,7 @@ export const folderIcons: FolderTheme[] = [
         light: true,
       },
       { name: 'folder-markdown', folderNames: ['markdown', 'md'] },
+      { name: 'folder-pdm', folderNames: ['.pdm-plugins', '.pdm-build'] },
       { name: 'folder-php', folderNames: ['php'] },
       { name: 'folder-phpmailer', folderNames: ['phpmailer'] },
       { name: 'folder-sublime', folderNames: ['sublime'] },
@@ -449,6 +454,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-mojo',
         folderNames: ['mojo'],
       },
+      { name: 'folder-moon', folderNames: ['.moon'] },
       { name: 'folder-debug', folderNames: ['debug', 'debugging'] },
       { name: 'folder-fastlane', folderNames: ['fastlane'] },
       {
@@ -495,7 +501,14 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-download', folderNames: ['downloads', 'download'] },
       {
         name: 'folder-tools',
-        folderNames: ['tools', 'toolkit', 'toolkits', 'toolbox', 'toolboxes'],
+        folderNames: [
+          'tools',
+          'toolkit',
+          'toolkits',
+          'toolbox',
+          'toolboxes',
+          'tooling',
+        ],
       },
       { name: 'folder-helper', folderNames: ['helpers', 'helper'] },
       { name: 'folder-serverless', folderNames: ['.serverless', 'serverless'] },
@@ -854,7 +867,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-proto',
-        folderNames: ['protobufs', 'proto'],
+        folderNames: ['protobuf', 'protobufs', 'proto', 'protos'],
       },
       {
         name: 'folder-plastic',
