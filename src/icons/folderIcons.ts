@@ -53,6 +53,10 @@ export const folderIcons: FolderTheme[] = [
           'pics',
           'picture',
           'pictures',
+          'photo',
+          'photos',
+          'photograph',
+          'photographs',
         ],
       },
       {
@@ -88,6 +92,7 @@ export const folderIcons: FolderTheme[] = [
         light: true,
       },
       { name: 'folder-markdown', folderNames: ['markdown', 'md'] },
+      { name: 'folder-pdm', folderNames: ['.pdm-plugins', '.pdm-build'] },
       { name: 'folder-php', folderNames: ['php'] },
       { name: 'folder-phpmailer', folderNames: ['phpmailer'] },
       { name: 'folder-sublime', folderNames: ['sublime'] },

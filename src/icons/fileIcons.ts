@@ -226,7 +226,6 @@ export const fileIcons: FileIcons = {
       fileExtensions: [
         'ini',
         'dlc',
-        'dll',
         'config',
         'conf',
         'properties',
@@ -316,6 +315,9 @@ export const fileIcons: FileIcons = {
         'psql',
         'db',
         'db3',
+        'dblite',
+        'dblite3',
+        'debugsymbols',
       ],
     },
     { name: 'kusto', fileExtensions: ['kql'] },
@@ -470,7 +472,8 @@ export const fileIcons: FileIcons = {
         'mrf',
       ],
     },
-    { name: 'lib', fileExtensions: ['lib', 'bib'] },
+    { name: 'lib', fileExtensions: ['lib', 'bib', 'a'] },
+    { name: 'dll', fileExtensions: ['dll', 'ilk', 'so'] },
     {
       name: 'ruby',
       fileExtensions: ['rb', 'erb', 'rbs'],
@@ -1483,6 +1486,7 @@ export const fileIcons: FileIcons = {
         '.stylelintrc.yml',
         '.stylelintrc.js',
         '.stylelintrc.cjs',
+        '.stylelintrc.mjs',
         '.stylelintignore',
         '.stylelintcache',
       ],
@@ -2099,6 +2103,12 @@ export const fileIcons: FileIcons = {
         'vitest.config.js',
         'vitest.config.mjs',
         'vitest.config.cjs',
+        'vitest.workspace.ts',
+        'vitest.workspace.mts',
+        'vitest.workspace.cts',
+        'vitest.workspace.js',
+        'vitest.workspace.mjs',
+        'vitest.workspace.cjs',
       ],
     },
     { name: 'opa', fileExtensions: ['rego'] },
@@ -2229,6 +2239,11 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['horusec-config.json'],
     },
     { name: 'poetry', fileNames: ['poetry.lock'] },
+    {
+      name: 'pdm',
+      fileNames: ['pdm.lock', 'pdm.toml', '.pdm-python'],
+      fileExtensions: ['pdm.lock', 'pdm.toml'],
+    },
     { name: 'coala', fileExtensions: ['coarc', 'coafile'] },
     { name: 'parcel', fileNames: ['.parcelrc'] },
     {
@@ -2499,6 +2514,11 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'apps-script', fileExtensions: ['gs'] },
+    {
+      name: 'pkl',
+      fileExtensions: ['pkl'],
+      fileNames: ['PklProject', 'PklProject.deps.json'],
+    },
     {
       name: 'kubernetes',
       fileNames: [
