@@ -2520,6 +2520,7 @@ export const fileIcons: FileIcons = {
         'garden.yaml',
         'project.garden.yml',
         'project.garden.yaml',
+        '.gardenignore',
       ],
       fileExtensions: ['.garden.yml', '.garden.yaml'],
     },
