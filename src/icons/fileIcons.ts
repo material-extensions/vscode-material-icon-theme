@@ -905,6 +905,16 @@ export const fileIcons: FileIcons = {
       fileNames: ['verdaccio.yml'],
     },
     {
+      name: 'payload',
+      fileNames: [
+        'payload.config.js',
+        'payload.config.mjs',
+        'payload.config.ts',
+        'payload.config.mts',
+      ],
+      light: true,
+    },
+    {
       name: 'next',
       fileNames: [
         'next.config.js',
