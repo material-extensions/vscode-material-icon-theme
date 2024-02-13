@@ -2364,6 +2364,15 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['cdc'],
     },
     { name: 'caddy', fileNames: ['Caddyfile'] },
+    {
+      name: 'openapi',
+      light: true,
+      fileNames: ['openapi.json', 'openapi.yml', 'openapi.yaml'],
+    },
+    {
+      name: 'swagger',
+      fileNames: ['swagger.json', 'swagger.yml', 'swagger.yaml'],
+    },
     { name: 'bun', fileNames: ['bun.lockb'], light: true },
     { name: 'antlr', fileExtensions: ['g4'] },
     { name: 'stylable', fileExtensions: ['st.css'] },
