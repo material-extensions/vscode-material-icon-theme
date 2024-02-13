@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <title>lucodear icons diffs preview</title>
+    {{! import style from ./template/diff-list.css }}
+    <link rel='stylesheet' href='./template/diff-list.css' />
+    <script>
+      const defaultIconSize={{defaultIconSize}};
+
+      {{! icon sizes will be used in the diff-list-controls.js file}}
+
+      const iconSizes = [
+      {{#each iconSizes as |size|}}
+        {{size}},
+      {{/each}}
+      ];
+    </script>
+  </head>
+  <body>
+    <div id='controls'></div>
+
+    <main>
+      <section class='theme dark'>
+        {{#each diffs as |diff|}}
+          <section class='dir' data-dir='{{diff.dir}}'>
+            <h2>{{diff.dir}}</h2>
+
+            <article>
+              {{#each diff.files as |file|}}
+                <div class='icon-preview {{file.status}}'>
+                  <img src='{{file.relPath}}' alt='{{file.name}}' />
+                  <div class='tooltip'>
+                    {{file.name}}
+                  </div>
+                </div>
+              {{/each}}
+            </article>
+          </section>
+        {{/each}}
+      </section>
+
+      <section class='theme light'>
+        {{#each diffs as |diff|}}
+          <section class='dir' data-dir='{{diff.dir}}'>
+            <h2>{{diff.dir}}</h2>
+
+            <article>
+              {{#each diff.files as |file|}}
+                <div class='icon-preview {{file.status}}'>
+                  <img src='{{file.lightRelPath}}' alt='{{file.name}}' />
+                  <div class='tooltip'>
+                    {{file.name}}
+                  </div>
+                </div>
+              {{/each}}
+            </article>
+          </section>
+        {{/each}}
+      </section>
+
+    </main>
+  </body>
+
+  {{! import javascript from ./template/diff-list-controls.js }}
+  <script src='./template/diff-list-controls.js'></script>
+</html>
