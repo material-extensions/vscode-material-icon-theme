@@ -3,10 +3,28 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v0.8.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.7.0...v0.8.0) 
+
+> February 13, 2024 
+
+- fix: 🚑 downgrade @types/vscode to match configured engine [`586aa860`](https://github.com/PKief/vscode-material-icon-theme/commit/586aa860)
+- feat: ✨ pp pkief: helper, i18n, images, scripts, utils [`8958de00`](https://github.com/PKief/vscode-material-icon-theme/commit/8958de00)
+- feat: ✨ pp pkief: log, shared, src, taskfile, task folders [`ddc5f6fd`](https://github.com/PKief/vscode-material-icon-theme/commit/ddc5f6fd)
+- feat: ✨ pp pkief: api, dist, git, github, gitlab folders [`17700617`](https://github.com/PKief/vscode-material-icon-theme/commit/17700617)
+- feat: ✨ 32px canvas /2px grid default file and folder icon [`3de5cb70`](https://github.com/PKief/vscode-material-icon-theme/commit/3de5cb70)
+- wip: 🚧 diff previewer tool [`96c0feee`](https://github.com/PKief/vscode-material-icon-theme/commit/96c0feee)
+- wip: 🚧 diff previews [`640f0f75`](https://github.com/PKief/vscode-material-icon-theme/commit/640f0f75)
+- wip: 🚧 git diff utilities [`8c5cd521`](https://github.com/PKief/vscode-material-icon-theme/commit/8c5cd521)
+- chore: 🧹 downgrade to node 18 [`89657563`](https://github.com/PKief/vscode-material-icon-theme/commit/89657563)
+- chore: 🧹 upgrade @types/node to v20 [`9ed42a8a`](https://github.com/PKief/vscode-material-icon-theme/commit/9ed42a8a)
+- ci: 🔄 build with node 20.x [`ec898978`](https://github.com/PKief/vscode-material-icon-theme/commit/ec898978)
+- chore: 🧹 update+upgrade dependencies [`b7293573`](https://github.com/PKief/vscode-material-icon-theme/commit/b7293573)
+ 
 #### [v0.7.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.6.0...v0.7.0) 
 
 > February 11, 2024 
 
+- release: 🔖 v0.7.0 [`de3777c4`](https://github.com/PKief/vscode-material-icon-theme/commit/de3777c4)
 - fix: 🚑 light versions [`cf576f45`](https://github.com/PKief/vscode-material-icon-theme/commit/cf576f45)
 - feat: ✨ pixel perfect ai icons [`1573c7ba`](https://github.com/PKief/vscode-material-icon-theme/commit/1573c7ba)
 - feat: ✨ pixel perfect lucodear specific icons [`3e99ad87`](https://github.com/PKief/vscode-material-icon-theme/commit/3e99ad87)
