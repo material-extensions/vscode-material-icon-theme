@@ -9,55 +9,59 @@ with all listed folder icons (32x32) as artboards.
 var ICONS_PATH = '~/desktop/dev/node/ext/lucodear-icons/icons/';
 var ORIGINAL_ICON_SIZE = 24;
 var RESIZED_ICON_SIZE = 32;
+var INITIAL_POSITION = [2, -6];
+
+var DO_RESIZE = false;
+var GROUPED = false;
 
 var folders = [
-  'constant',
-  'keys',
-  'pdf',
-  'svg',
-  'target',
-  'enum',
-  'dump',
-  'plugin',
-  'prisma',
-  'messages',
+  'aws',
+  'azure-pipelines',
   'base',
-  'macos',
-  'proto',
-  'error',
-  'private',
-  'temp',
-  'circleci',
   'batch',
-  'event',
-  'video',
-  'config',
-  'global',
-  'connection',
-  'less',
   'benchmark',
-  'linux',
+  'ci',
+  'circleci',
+  'cluster',
+  'config',
+  'connection',
+  'constant',
+  'container',
+  'dump',
+  'enum',
+  'error',
+  'event',
   'export',
   'firebase',
-  'ci',
-  'azure-pipelines',
-  'kubernetes',
-  'upload',
-  'cluster',
   'generator',
-  'resolver',
-  'verdaccio',
-  'rules',
-  'container',
+  'global',
   'gulp',
-  'netlify',
-  'secure',
   'home',
-  'windows',
-  'yarn',
+  'keys',
+  'kubernetes',
+  'less',
+  'linux',
+  'macos',
+  'messages',
+  'netlify',
+  'pdf',
+  'plugin',
+  'prisma',
+  'private',
+  'proto',
+  'resolver',
+  'rules',
+  'secure',
   'sublime',
   'supabase',
-  'aws',
+  'svg',
+  'target',
+  'temp',
+  'upload',
+  'verdaccio',
+  'video',
+  'windows',
+  'yarn',
 ];
 var artboardCount = folders.length * 2;
 
@@ -101,36 +105,45 @@ function placeInArtboard(file, artboard) {
 
   if (f.exists) {
     var iconGroup = docRef.groupItems.createFromFile(f);
-    iconGroup.position = [2, -4];
+    iconGroup.position = INITIAL_POSITION;
 
-    // pkief's icons are 24x24, but I want them resized to 32x32
-    // We'll use a 24x24 rectangle to resize the entire icon to 32x32
-    // so that we don't have to mess with re-positioning the icon
-    var rect = docRef.pathItems.rectangle(
-      0,
-      0,
-      ORIGINAL_ICON_SIZE,
-      ORIGINAL_ICON_SIZE
-    );
+    if (DO_RESIZE) {
+      performResize(iconGroup, artboard.width, artboard.height);
+    }
 
-    // group the icon and the rectangle
-    var grouped = group([iconGroup, rect]);
-
-    // resize the group to take the whole artboard (32x32)
-    grouped.height = RESIZED_ICON_SIZE;
-    grouped.width = RESIZED_ICON_SIZE;
-
-    // ungroup the group
-    ungroup(grouped);
-
-    // remove the rectangle
-    rect.remove();
-
-    // ungroup the icon (remove this to keep the icon as a group in the artboard)
-    ungroup(iconGroup);
+    if (GROUPED) {
+      iconGroup.name = artboard.name;
+    } else {
+      ungroup(iconGroup);
+    }
   } else {
     alert('Damn! Icon not found: ' + file);
   }
+}
+
+function performResize(obj, width, height) {
+  // pkief's icons are 24x24, but I want them resized to 32x32
+  // We'll use a 24x24 rectangle to resize the entire icon to 32x32
+  // so that we don't have to mess with re-positioning the icon
+  var rect = docRef.pathItems.rectangle(
+    0,
+    0,
+    ORIGINAL_ICON_SIZE,
+    ORIGINAL_ICON_SIZE
+  );
+
+  // group the icon and the rectangle
+  var grouped = group([obj, rect]);
+
+  // resize the group to take the whole artboard (32x32)
+  grouped.height = RESIZED_ICON_SIZE;
+  grouped.width = RESIZED_ICON_SIZE;
+
+  // ungroup the group
+  ungroup(grouped);
+
+  // remove the rectangle
+  rect.remove();
 }
 
 function group(objs) {
