@@ -16,6 +16,8 @@ src/scripts/preview/*.html
 src/scripts/preview/changes/*.html
 src/scripts/contributors/*.html
 
+src/scripts/illustrator/package-lock.json
+
 *.code-workspace
 
 INSTRUCTIONS.md
