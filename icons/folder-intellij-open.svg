@@ -1,23 +1,23 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32">
   <defs>
-    <linearGradient id="a" x1="0.44462" y1="11919.64659" x2="104.97663" y2="11856.55321" gradientTransform="translate(18.126 -1283.98909) scale(0.11021)" gradientUnits="userSpaceOnUse">
+    <linearGradient id="a" x1="0.44462" y1="3272.83527" x2="104.97663" y2="3209.74189" gradientTransform="translate(18.126 -331.024) scale(0.11021)" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#fdd835"/>
       <stop offset="1" stop-color="#f57c00"/>
     </linearGradient>
-    <linearGradient id="b" x1="22.54961" y1="11768.15467" x2="117.96162" y2="11851.68397" gradientTransform="translate(18.126 -1283.98909) scale(0.11021)" gradientUnits="userSpaceOnUse">
+    <linearGradient id="b" x1="22.54961" y1="3121.34335" x2="117.96162" y2="3204.87265" gradientTransform="translate(18.126 -331.024) scale(0.11021)" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#ef5350"/>
       <stop offset="0.57" stop-color="#ff6e40"/>
       <stop offset="1" stop-color="#f57c00"/>
     </linearGradient>
-    <linearGradient id="c" x1="28.60789" y1="11843.87497" x2="-27.93745" y2="11808.56161" gradientTransform="translate(18.126 -1283.98909) scale(0.11021)" gradientUnits="userSpaceOnUse">
+    <linearGradient id="c" x1="28.60789" y1="3197.06365" x2="-27.93745" y2="3161.75029" gradientTransform="translate(18.126 -331.024) scale(0.11021)" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#8e24aa"/>
       <stop offset="0.385" stop-color="#ab47bc"/>
       <stop offset="0.765" stop-color="#ec407a"/>
       <stop offset="0.957" stop-color="#ec407a"/>
     </linearGradient>
-    <linearGradient id="d" x1="27.58766" y1="11763.89637" x2="-27.61634" y2="11809.48975" gradientTransform="translate(18.126 -1283.98909) scale(0.11021)" gradientUnits="userSpaceOnUse">
+    <linearGradient id="d" x1="27.58766" y1="3117.08505" x2="-27.61634" y2="3162.67843" gradientTransform="translate(18.126 -331.024) scale(0.11021)" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#ef5350"/>
-      <stop offset="0.364" stop-color="#ee4e72"/>
+      <stop offset="0.364" stop-color="#ec407a"/>
       <stop offset="1" stop-color="#ec407a"/>
     </linearGradient>
   </defs>

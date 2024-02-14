@@ -1,23 +1,23 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32">
   <defs>
-    <linearGradient id="a" x1="0.44462" y1="12258.73723" x2="104.97663" y2="12195.64385" gradientTransform="translate(18.126 -1321.36027) scale(0.11021)" gradientUnits="userSpaceOnUse">
+    <linearGradient id="a" x1="0.44462" y1="3611.92591" x2="104.97663" y2="3548.83253" gradientTransform="translate(18.126 -368.39518) scale(0.11021)" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#fdd835"/>
       <stop offset="1" stop-color="#f57c00"/>
     </linearGradient>
-    <linearGradient id="b" x1="22.54961" y1="12107.24531" x2="117.96162" y2="12190.77461" gradientTransform="translate(18.126 -1321.36027) scale(0.11021)" gradientUnits="userSpaceOnUse">
+    <linearGradient id="b" x1="22.54961" y1="3460.43399" x2="117.96162" y2="3543.96329" gradientTransform="translate(18.126 -368.39518) scale(0.11021)" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#ef5350"/>
       <stop offset="0.57" stop-color="#ff6e40"/>
       <stop offset="1" stop-color="#f57c00"/>
     </linearGradient>
-    <linearGradient id="c" x1="28.60789" y1="12182.96561" x2="-27.93745" y2="12147.65225" gradientTransform="translate(18.126 -1321.36027) scale(0.11021)" gradientUnits="userSpaceOnUse">
+    <linearGradient id="c" x1="28.60789" y1="3536.15429" x2="-27.93745" y2="3500.84093" gradientTransform="translate(18.126 -368.39518) scale(0.11021)" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#8e24aa"/>
       <stop offset="0.385" stop-color="#ab47bc"/>
       <stop offset="0.765" stop-color="#ec407a"/>
       <stop offset="0.957" stop-color="#ec407a"/>
     </linearGradient>
-    <linearGradient id="d" x1="27.58766" y1="12102.98701" x2="-27.61634" y2="12148.58039" gradientTransform="translate(18.126 -1321.36027) scale(0.11021)" gradientUnits="userSpaceOnUse">
+    <linearGradient id="d" x1="27.58766" y1="3456.17569" x2="-27.61634" y2="3501.76907" gradientTransform="translate(18.126 -368.39518) scale(0.11021)" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#ef5350"/>
-      <stop offset="0.364" stop-color="#ee4e72"/>
+      <stop offset="0.364" stop-color="#ec407a"/>
       <stop offset="1" stop-color="#ec407a"/>
     </linearGradient>
   </defs>
