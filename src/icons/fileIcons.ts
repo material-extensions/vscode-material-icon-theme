@@ -905,6 +905,16 @@ export const fileIcons: FileIcons = {
       fileNames: ['verdaccio.yml'],
     },
     {
+      name: 'payload',
+      fileNames: [
+        'payload.config.js',
+        'payload.config.mjs',
+        'payload.config.ts',
+        'payload.config.mts',
+      ],
+      light: true,
+    },
+    {
       name: 'next',
       fileNames: [
         'next.config.js',
@@ -2190,6 +2200,7 @@ export const fileIcons: FileIcons = {
         'tsconfig.paths.json',
         'tsconfig.main.json',
         'tsconfig.renderer.json',
+        'tsconfig.server.json',
       ],
       fileExtensions: ['tsconfig.json'],
     },
@@ -2462,6 +2473,19 @@ export const fileIcons: FileIcons = {
     { name: 'concourse', fileNames: ['concourse.yml'] },
     { name: 'qwik', fileExtensions: ['tsx'], enabledFor: [IconPack.Qwik] },
     { name: 'mermaid', fileExtensions: ['mmd', 'mermaid'] },
+    {
+      name: 'syncpack',
+      fileNames: [
+        '.syncpackrc',
+        'syncpackrc.json',
+        '.syncpackrc.yaml',
+        '.syncpackrc.yml',
+        '.syncpackrc.js',
+        '.syncpackrc.cjs',
+        'syncpack.config.js',
+        'syncpack.config.cjs',
+      ],
+    },
     {
       name: 'mojo',
       fileExtensions: ['mojo', '🔥'],
