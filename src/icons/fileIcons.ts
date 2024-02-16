@@ -2474,6 +2474,19 @@ export const fileIcons: FileIcons = {
     { name: 'qwik', fileExtensions: ['tsx'], enabledFor: [IconPack.Qwik] },
     { name: 'mermaid', fileExtensions: ['mmd', 'mermaid'] },
     {
+      name: 'syncpack',
+      fileNames: [
+        '.syncpackrc',
+        'syncpackrc.json',
+        '.syncpackrc.yaml',
+        '.syncpackrc.yml',
+        '.syncpackrc.js',
+        '.syncpackrc.cjs',
+        'syncpack.config.js',
+        'syncpack.config.cjs',
+      ],
+    },
+    {
       name: 'mojo',
       fileExtensions: ['mojo', '🔥'],
     },
