@@ -3,10 +3,34 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v0.9.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.8.0...v0.9.0) 
+
+> February 17, 2024 
+
+- feat: ✨ pp pkief: files 6th batch [`aee58b7f`](https://github.com/PKief/vscode-material-icon-theme/commit/aee58b7f)
+- feat: ✨ pp pkief: files 5th batch [`7012cecc`](https://github.com/PKief/vscode-material-icon-theme/commit/7012cecc)
+- feat: ✨ pp pkief: files 4th batch [`d8804a40`](https://github.com/PKief/vscode-material-icon-theme/commit/d8804a40)
+- feat: ✨ pp pkief: files 2nd batch [`c74ff693`](https://github.com/PKief/vscode-material-icon-theme/commit/c74ff693)
+- feat: add syncpack icon [`#1968`](https://github.com/PKief/vscode-material-icon-theme/pull/1968)
+- feat: ✨ converted icons to 32px grid [`d5ef5b64`](https://github.com/PKief/vscode-material-icon-theme/commit/d5ef5b64)
+- feat: payload cms [`#2222`](https://github.com/PKief/vscode-material-icon-theme/pull/2222)
+- fix: 🚑 fix webpack folder colors [`589c3a39`](https://github.com/PKief/vscode-material-icon-theme/commit/589c3a39)
+- fix: 🚑 fix some of the failing colors [`3037e3a3`](https://github.com/PKief/vscode-material-icon-theme/commit/3037e3a3)
+- feat: ✨ pp pkief: angular, ansible, apollo, archive... [`121dc063`](https://github.com/PKief/vscode-material-icon-theme/commit/121dc063)
+- feat: add `tsconfig.server.json` to file names [`#2223`](https://github.com/PKief/vscode-material-icon-theme/pull/2223)
+- feat: ✨ pp pkief: aws, azure-pipelines, base, batch, ... [`72cfea75`](https://github.com/PKief/vscode-material-icon-theme/commit/72cfea75)
+- feat: ✨ illustrator script to import and resize icons [`6a4ba27b`](https://github.com/PKief/vscode-material-icon-theme/commit/6a4ba27b)
+- feat: ✨ pp pkief: mail, mappings, docker, client, ... [`a6e43dc0`](https://github.com/PKief/vscode-material-icon-theme/commit/a6e43dc0)
+- feat: ✨ pp pkief: font, views, meta, resource, docs... [`e44fe20a`](https://github.com/PKief/vscode-material-icon-theme/commit/e44fe20a)
+- feat: ✨ pp pkief: js, layout, lib, mock, next, node, ... [`fada414d`](https://github.com/PKief/vscode-material-icon-theme/commit/fada414d)
+- Added swagger icon [`#1718`](https://github.com/PKief/vscode-material-icon-theme/pull/1718)
+- feat: ✨ 2nd iteration pkief 32px icon replacement [`6c66bbfe`](https://github.com/PKief/vscode-material-icon-theme/commit/6c66bbfe)
+ 
 #### [v0.8.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.7.0...v0.8.0) 
 
 > February 13, 2024 
 
+- release: 🔖 v0.8.0 [`3ceafeed`](https://github.com/PKief/vscode-material-icon-theme/commit/3ceafeed)
 - fix: 🚑 downgrade @types/vscode to match configured engine [`586aa860`](https://github.com/PKief/vscode-material-icon-theme/commit/586aa860)
 - feat: ✨ pp pkief: helper, i18n, images, scripts, utils [`8958de00`](https://github.com/PKief/vscode-material-icon-theme/commit/8958de00)
 - feat: ✨ pp pkief: log, shared, src, taskfile, task folders [`ddc5f6fd`](https://github.com/PKief/vscode-material-icon-theme/commit/ddc5f6fd)
