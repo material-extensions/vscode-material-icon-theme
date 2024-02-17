@@ -9,5 +9,6 @@ export const files = lucodear('rust', [
   {
     name: 'rust-mod',
     fileNames: ['mod.rs'],
+    light: true,
   },
 ] as LucodearFileIcon[]);
