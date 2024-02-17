@@ -51,7 +51,7 @@ function parseGitStatus(output: string, filter: RegExp): FileStatus[] {
 export async function getGitStatus(
   filter: RegExp = /.*/
 ): Promise<FileStatus[]> {
-  const { stdout, stderr } = await exec('git status --porcelain');
+  const { stdout, stderr } = await exec('git status -uall --porcelain');
   if (stderr) {
     throw new Error(stderr);
   }

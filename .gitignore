@@ -17,6 +17,7 @@ src/scripts/preview/changes/*.html
 src/scripts/contributors/*.html
 src/scripts/preview/pixel-perfect-diff
 src/scripts/preview/pixel-perfect-pending
+src/scripts/preview/full-diff
 
 src/scripts/illustrator/*
 !src/scripts/illustrator/make-file-artboards.js
@@ -30,3 +31,4 @@ INSTRUCTIONS.md
 pixelperfect-templates.ai
 
 .todo
+
