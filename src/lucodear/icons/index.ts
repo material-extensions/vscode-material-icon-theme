@@ -7,6 +7,7 @@ import * as lucodear from './lucodear';
 import * as python from './python';
 import * as ai from './ai';
 import * as react from './react';
+import * as rust from './rust';
 
 /** Defines file icons */
 export const lucodearFileIcons: LucodearFileIcons = {
@@ -16,6 +17,7 @@ export const lucodearFileIcons: LucodearFileIcons = {
     ...lucodear.files,
     ...python.files,
     ...react.files,
+    ...rust.files,
   ],
 };
 
@@ -29,6 +31,7 @@ export const lucodearFolderIcons: LucodearFolderTheme = {
     ...lucodear.folders,
     ...python.folders,
     ...ai.folders,
+    ...rust.folders,
   ],
 };
 

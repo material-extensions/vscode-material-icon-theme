@@ -11,4 +11,9 @@ export const folders = lucodear('lucodear', [
     folderNames: ['pest'],
     light: true,
   },
+  {
+    name: 'kurv',
+    folderNames: ['kurv'],
+    light: true,
+  },
 ] as LucodearFolderIcon[]);
