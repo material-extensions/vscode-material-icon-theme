@@ -3,10 +3,20 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v0.11.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.10.0...v0.11.0) 
+
+> February 18, 2024 
+
+- ci: 🔄 fix gh pages action (create _site dir before cp) [`09ac7fad`](https://github.com/PKief/vscode-material-icon-theme/commit/09ac7fad)
+- ci: 🔄 gh pages: create a _site folder with the site [`c0ff4961`](https://github.com/PKief/vscode-material-icon-theme/commit/c0ff4961)
+- ci: 🔄 github pages action [`84ce1c99`](https://github.com/PKief/vscode-material-icon-theme/commit/84ce1c99)
+- feat: ✨ make full-diff page script public [`d0c34a83`](https://github.com/PKief/vscode-material-icon-theme/commit/d0c34a83)
+ 
 #### [v0.10.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.9.0...v0.10.0) 
 
 > February 17, 2024 
 
+- release: 🔖 v0.10.0 [`c0b41616`](https://github.com/PKief/vscode-material-icon-theme/commit/c0b41616)
 - feat: ✨ fix missing mod.rs light theme and replace rust [`fd0ea7dd`](https://github.com/PKief/vscode-material-icon-theme/commit/fd0ea7dd)
 - feat: ✨ rust pack [`514a03d0`](https://github.com/PKief/vscode-material-icon-theme/commit/514a03d0)
  
