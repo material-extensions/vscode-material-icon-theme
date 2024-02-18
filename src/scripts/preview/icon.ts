@@ -14,7 +14,9 @@ export const filterDuplicates = <T extends { name: string }>(icons: T[]) => {
   });
 };
 
-export const getFolders = (icons: LucodearFolderTheme[] | FolderTheme[]) => {
+export const getFolders = (
+  icons: LucodearFolderTheme[] | FolderTheme[]
+): IconDefinition[] => {
   return filterDuplicates(
     icons
       .map((theme) => {
@@ -37,7 +39,7 @@ export const getFolders = (icons: LucodearFolderTheme[] | FolderTheme[]) => {
   }));
 };
 
-export const getFiles = (icons: IconDefinition[]) => {
+export const getFiles = (icons: IconDefinition[]): IconDefinition[] => {
   return filterDuplicates(icons).map((i) => ({
     name: i.name,
     label: i.name.replace('file-', ''),

@@ -21,6 +21,8 @@
     "preview-lc": "ts-node ./src/scripts/preview/lucodear-preview",
     "preview-lc:dev": "ts-node ./src/scripts/preview/lucodear-preview --dev --size 16 && browser-sync start -c .\\build\\bs-config.js",
     "preview:dev:diffs": "ts-node ./src/scripts/preview/changes",
+    "preview:dev:full-diff": "ts-node ./src/scripts/preview/full-diff",
+    "preview:dev:full-diff:live": "ts-node ./src/scripts/preview/full-diff/live",
     "svgo": "svgo -i icons icons-lc -r -q",
     "test": "node ./out/test/runTest.js",
     "changelog": "changelog-machine --config changelog.config.json",

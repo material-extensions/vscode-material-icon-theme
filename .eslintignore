@@ -3,3 +3,4 @@ src/scripts/preview/changes/template
 src/scripts/preview/pixel-perfect-diff/template
 src/scripts/preview/pixel-perfect-pending/template
 src/scripts/illustrator
+src/scripts/preview/full-diff
