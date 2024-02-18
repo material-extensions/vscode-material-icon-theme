@@ -1,4 +1,4 @@
-name: PR closed
+name: 🔐 » closed pr message
 
 on:
   pull_request_target:

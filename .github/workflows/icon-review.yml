@@ -1,4 +1,4 @@
-name: Icon Review
+name: 🔎 » generate preview image
 
 on:
   pull_request_target:

@@ -1,4 +1,4 @@
-name: Build + Test
+name: 🏗️ » build & test
 
 on:
   push:

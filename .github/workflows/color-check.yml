@@ -1,4 +1,4 @@
-name: Check SVG icon colors
+name: 🎨 » color check
 
 on:
   pull_request:

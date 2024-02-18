@@ -1,5 +1,5 @@
-name: 🔖 Release + 🚀 Publish
-run-name: release 🔖 + publish 🚀
+name: 🔖 » release and publish
+run-name: 🔖 » release and publish
 on:
   workflow_dispatch:
     inputs:
