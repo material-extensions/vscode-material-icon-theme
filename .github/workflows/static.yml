@@ -46,6 +46,7 @@ jobs:
       - name: Make Page 📄
         run: |
           npm run preview:dev:full-diff
+          mkdir -p _site
           cp -r src _site/src
           cp -r icons _site/icons
           cp -r icons-lc _site/icons-lc
