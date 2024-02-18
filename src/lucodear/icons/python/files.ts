@@ -55,7 +55,10 @@ const pythonFiles: LucodearFileIcon[] = lucodear('python', [
   ...pyfile('dict', ['dicts', 'dictionary', 'dictionaries'], false),
   {
     name: 'py-main',
-    fileNames: prefixpy('main.py', 'app.py', 'run.py', 'application.py'),
+    fileNames: [
+      ...prefixpy('main.py', 'app.py', 'run.py', 'application.py'),
+      '__main__.py',
+    ],
   },
   ...pyfile('protocol', ['protocols', 'interface', 'interfaces'], true),
   ...pyfile('script', ['scripts'], false),
