@@ -237,8 +237,6 @@ The following are some tips to help you design nice and sharp-looking icons. The
 
   <img src="./images/how-tos/aligned-vs-missaligned.png" />
 
-  As you can see, the missaligned icon (left) have blurry edges with "ghost pixels" that are rendered in an effort of simulating "half a pixel". Also, the suitcase motive in it is a bit harder to recognize as such. In the other hand, the aligned icon (right) looks sharper and clearer.
-
   As you can see, the misaligned icon (left) has blurry edges with "ghost pixels" that attempt to simulate "half a pixel". Additionally, the suitcase motif in it is slightly harder to recognize. On the other hand, the aligned icon (right) looks sharper and clearer.
 
   So, even though the difference between the two icons was subtle, the impact on the final result is quite significant.
