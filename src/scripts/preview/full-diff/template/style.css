@@ -1,0 +1,103 @@
+:root {
+  --bg-color: #21252b;
+  --text-color: #dcdcdc;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+
+  padding: 1em 0;
+  margin: 0;
+  align-items: center;
+  font-family: 'IBM Plex Mono', monospace;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+header svg {
+  margin-bottom: 1.5em;
+}
+
+#container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  width: max-content;
+
+  gap: 3em;
+}
+
+@media (max-width: 768px) {
+  #container {
+    grid-template-columns: 1fr;
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+.icon-list {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  flex-shrink: 0;
+}
+
+.icon-instance {
+  display: flex;
+  gap: 0.5em;
+}
+
+.icon-instance img {
+  width: var(--icon-size);
+  height: var(--icon-size);
+}
+
+.icon-instance .name {
+  flex: 1;
+}
+
+#controls {
+  display: flex;
+  gap: 1em;
+}
+
+button {
+  padding: 0.5em 1em;
+  margin: 0.5em 0;
+  border: none;
+  border-radius: 0.25em;
+  background-color: #2e3338;
+  color: var(--text-color);
+  font-family: 'Kode Mono', monospace;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #3e444a;
+}
+
+#lucodear-icons h3 {
+  opacity: 0.5;
+  font-size: 1em;
+  font-weight: normal;
+}
+
+#lucodear-icons h2 {
+  background: linear-gradient(
+    135deg,
+    rgba(191, 57, 137, 1) 0%,
+    rgba(9, 107, 222, 1) 100%
+  );
+  margin-top: 1.5em;
+  border-radius: 0.25em;
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  font-size: 1.1em;
+  color: #fff;
+  font-weight: normal;
+}

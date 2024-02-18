@@ -1,0 +1,121 @@
+<html>
+  <head>
+    <title>lucodear-pkief icons diff</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true" />
+    
+    <link 
+      rel="preload" 
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" 
+      as="style"
+    />
+
+    <link
+      rel='stylesheet'
+      href='https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap'
+    />
+
+    <style>
+      :root { --icon-size:{{iconSize}}; }
+    </style>
+
+    <link
+      rel='stylesheet'
+      href='./src/scripts/preview/full-diff/template/style.css'
+    />
+
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧉</text></svg>"
+    />
+
+    <script src='./src/scripts/preview/full-diff/template/script.js'></script>
+  </head>
+  <body>
+    <header>
+      <svg 
+        height="32"
+        fill="currentcolor"
+        viewBox="0 0 174 32"
+      >
+        <polygon points="50 14 50 10 46 10 46 14 46 18 46 26 50 26 50 18 50 14"/>
+        <polygon points="58 18 58 26 54 26 50 26 50 30 54 30 58 30 62 30 62 18 62 14 58 14 58 18"/>
+        <polygon points="76 14 76 10 72 10 68 10 68 14 72 14 76 14"/>
+        <polygon points="90 18 90 26 82 26 82 18 82 14 86 14 90 14 90 10 86 10 82 10 78 10 78 18 78 26 76 26 72 26 68 26 68 18 68 14 64 14 64 18 64 30 68 30 72 30 76 30 78 30 82 30 90 30 94 30 94 18 94 14 90 14 90 18"/><path d="M108,18H96V30h16V10h-4Zm-4,8h-4V22h8v4Z"/><rect x="118" y="26" width="10" height="4"/><polygon points="126 14 126 18 130 18 130 10 126 10 122 10 118 10 118 14 122 14 126 14"/><rect x="130" y="26" width="4" height="4"/><polygon points="166 10 162 10 162 14 166 14 170 14 170 10 166 10"/><polygon points="158 10 154 10 154 26 152 26 152 22 152 18 152 14 148 14 148 18 144 18 140 18 136 18 136 22 136 26 140 26 140 22 144 22 148 22 148 26 144 26 140 26 140 30 144 30 148 30 152 30 154 30 158 30 158 18 162 18 162 14 158 14 158 10"/><polygon points="122 22 126 22 126 18 122 18 118 18 118 14 114 14 114 18 114 22 114 26 118 26 118 22 122 22"/><rect x="138" y="10" width="10" height="4"/><polygon points="40 14 40 18 40 22 40 26 40 30 44 30 44 26 44 22 44 18 44 14 44 10 40 10 40 14"/><polygon points="16 10 16 14 20 14 20 10 20 6 16 6 16 10"/><rect x="20" y="2" width="4" height="4"/><polygon points="6 12 6 14 6 16 6 20 4 20 4 22 6 22 6 26 6 28 6 30 10 30 12 30 12 28 10 28 10 26 10 22 8 22 8 20 10 20 10 16 10 14 12 14 12 12 10 12 6 12"/><polygon points="30 16 30 14 30 12 26 12 24 12 24 14 26 14 26 16 26 20 28 20 28 22 26 22 26 26 26 28 24 28 24 30 26 30 30 30 30 28 30 26 30 22 32 22 32 20 30 20 30 16"/>
+      </svg>
+    </header>
+
+    <div id='controls'></div>
+    
+    <div id="container">
+      <main>
+        <h1>pkief's originals</h1>
+
+        <section>
+          <h2>file icons</h2>
+          <div style="text-align: right; margin-bottom: 1.5em;">
+            replacement/original
+          </div>
+          <div class='icon-list'>
+            {{#each fileIcons as |icon|}}
+              <div class='icon-instance'>
+                <div class='name'>{{plusone @index}}. {{icon.name}}</div>
+                <img src='{{icon.localPath}}' class='icon local' />
+                <img src='{{icon.remotePath}}' class='icon remote' />
+              </div>
+            {{/each}}
+          </div>
+        </section>
+
+        <section>
+          <h2>folder icons</h2>
+          <div style="text-align: right; margin-bottom: 1.5em;">
+            replacement/original
+          </div>
+          <div class='icon-list'>
+            {{#each folderIcons as |icon|}}
+              <div class='icon-instance'>
+                <div class='name'>{{plusone @index}}. {{icon.name}}</div>
+                <img src='{{icon.localPath}}' class='icon local' />
+                <img src='{{icon.remotePath}}' class='icon remote' />
+              </div>
+            {{/each}}
+          </div>
+        </section>
+      </main>
+
+      <div id="lucodear-icons">
+        <h1>lucodear icons » 🧉</h1>
+        {{#each lucodearThemes as |theme|}}
+          {{#if (hasFolderOrFiles theme)}}
+            <section>
+              <h2>{{theme.name}}</h2>
+
+              {{#if theme.hasFiles}}
+                <h3>file icons</h3>
+                {{#each theme.files as |file|}}
+                  <div class='icon-instance'>
+                    <div class='name'>{{plusone @index}}. {{file.name}}</div>
+                    <img src='{{file.localPath}}' class='icon local' />
+                  </div>
+                {{/each}}
+              {{/if}}              
+            </section>
+          {{/if}}
+
+          {{#if theme.hasFolders}}
+            <section>
+              <h3>folder icons</h3>
+              {{#each theme.folders as |folder|}}
+                <div class='icon-instance'>
+                  <div class='name'>{{plusone @index}}. {{folder.name}}</div>
+                  <img src='{{folder.localPath}}' class='icon local' />
+                </div>
+              {{/each}}
+            </section>
+          {{/if}}
+        {{/each}}
+      </div>
+    </div>
+  </body>
+</html>
