@@ -3,10 +3,17 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v0.12.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.11.0...v0.12.0) 
+
+> February 18, 2024 
+
+- fix: 🚑 database and json file icons [`1ab37826`](https://github.com/PKief/vscode-material-icon-theme/commit/1ab37826)
+ 
 #### [v0.11.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.10.0...v0.11.0) 
 
 > February 18, 2024 
 
+- release: 🔖 v0.11.0 [`13ce5429`](https://github.com/PKief/vscode-material-icon-theme/commit/13ce5429)
 - ci: 🔄 fix gh pages action (create _site dir before cp) [`09ac7fad`](https://github.com/PKief/vscode-material-icon-theme/commit/09ac7fad)
 - ci: 🔄 gh pages: create a _site folder with the site [`c0ff4961`](https://github.com/PKief/vscode-material-icon-theme/commit/c0ff4961)
 - ci: 🔄 github pages action [`84ce1c99`](https://github.com/PKief/vscode-material-icon-theme/commit/84ce1c99)
