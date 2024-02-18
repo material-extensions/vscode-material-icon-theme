@@ -3,10 +3,17 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v0.13.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.12.0...v0.13.0) 
+
+> February 18, 2024 
+
+- fix: 🚑 fix workflows/yml specification [`8afdedd0`](https://github.com/PKief/vscode-material-icon-theme/commit/8afdedd0)
+ 
 #### [v0.12.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.11.0...v0.12.0) 
 
 > February 18, 2024 
 
+- release: 🔖 v0.12.0 [`252f243d`](https://github.com/PKief/vscode-material-icon-theme/commit/252f243d)
 - fix: 🚑 database and json file icons [`1ab37826`](https://github.com/PKief/vscode-material-icon-theme/commit/1ab37826)
  
 #### [v0.11.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.10.0...v0.11.0) 
