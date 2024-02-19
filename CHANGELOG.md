@@ -3,10 +3,17 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v0.15.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.14.0...v0.15.0) 
+
+> February 19, 2024 
+
+- fix: 🚑 temporary hot fix: commands not working [`a3fda0dd`](https://github.com/PKief/vscode-material-icon-theme/commit/a3fda0dd)
+ 
 #### [v0.14.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.13.0...v0.14.0) 
 
 > February 18, 2024 
 
+- release: 🔖 v0.14.0 [`306b9b4f`](https://github.com/PKief/vscode-material-icon-theme/commit/306b9b4f)
 - feat: ✨ go and go-mod file icons new version [`c16464f0`](https://github.com/PKief/vscode-material-icon-theme/commit/c16464f0)
  
 #### [v0.13.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.12.0...v0.13.0) 
