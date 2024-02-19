@@ -1,1 +1,10 @@
-<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.5 1.5c-1.11 0-2 .89-2 2v11c0 1.11.89 2 2 2h2v-2h-2v-11h11v2h2v-2c0-1.11-.89-2-2-2h-11m6 6c-1.11 0-2 .89-2 2v2h2v-2h2v-2h-2m4 0v2h1v1h2v-3h-3m5 0v2h2v11h-11v-2h-2v2c0 1.11.89 2 2 2h11c1.11 0 2-.89 2-2v-11c0-1.11-.89-2-2-2h-2m-4 5v2h-2v2h2c1.11 0 2-.89 2-2v-2h-2m-7 1v3h3v-2h-1v-1z" style="fill:#42a5f5"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <g>
+    <path d="M2,4V20a2,2,0,0,0,2,2H8V20H4V4H20V8h2V4a2,2,0,0,0-2-2H4A2,2,0,0,0,2,4Z" style="fill: #42a5f5"/>
+    <path d="M10,12v4h2V12h4V10H12A2,2,0,0,0,10,12Z" style="fill: #42a5f5"/>
+    <path d="M24,10v2h4V28H12V24H10v4a2,2,0,0,0,2,2H28a2,2,0,0,0,2-2V12a2,2,0,0,0-2-2Z" style="fill: #42a5f5"/>
+    <polygon points="12 20 12 18 10 18 10 22 14 22 14 20 12 20" style="fill: #42a5f5"/>
+    <path d="M20,16v4H16v2h4a2,2,0,0,0,2-2V16Z" style="fill: #42a5f5"/>
+    <polygon points="18 10 18 12 20 12 20 14 22 14 22 10 18 10" style="fill: #42a5f5"/>
+  </g>
+</svg>
