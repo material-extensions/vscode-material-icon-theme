@@ -31,8 +31,38 @@ const loadTranslation = async (language: string) => {
 
 /** Get the translation object of the separated translation files */
 const getTranslationObject = async (language: string): Promise<Translation> => {
-  const lang = await import(/* webpackMode: "eager" */ `./lang-${language}`);
-  return lang.translation as Translation;
+  const getTranslations = (lang: any) => lang.translation as Translation;
+
+  switch (language) {
+    case 'cs':
+      return getTranslations(await import(`./lang-cs`));
+    case 'de':
+      return getTranslations(await import(`./lang-de`));
+    case 'es':
+      return getTranslations(await import(`./lang-es`));
+    case 'fr':
+      return getTranslations(await import(`./lang-fr`));
+    case 'ja':
+      return getTranslations(await import(`./lang-ja`));
+    case 'nl':
+      return getTranslations(await import(`./lang-nl`));
+    case 'pl':
+      return getTranslations(await import(`./lang-pl`));
+    case 'pt-br':
+      return getTranslations(await import(`./lang-pt-br`));
+    case 'pt-pt':
+      return getTranslations(await import(`./lang-pt-pt`));
+    case 'ru':
+      return getTranslations(await import(`./lang-ru`));
+    case 'uk':
+      return getTranslations(await import(`./lang-uk`));
+    case 'zh-cn':
+      return getTranslations(await import(`./lang-zh-cn`));
+    case 'zh-tw':
+      return getTranslations(await import(`./lang-zh-tw`));
+    default:
+      return getTranslations(await import(`./lang-en`));
+  }
 };
 
 /**
