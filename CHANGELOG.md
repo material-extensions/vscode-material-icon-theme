@@ -3,10 +3,17 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v0.16.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.15.0...v0.16.0) 
+
+> February 19, 2024 
+
+- fix: 🚑 inconsistent squared language icons [`dd244d79`](https://github.com/PKief/vscode-material-icon-theme/commit/dd244d79)
+ 
 #### [v0.15.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.14.0...v0.15.0) 
 
 > February 19, 2024 
 
+- release: 🔖 v0.15.0 [`059c7c38`](https://github.com/PKief/vscode-material-icon-theme/commit/059c7c38)
 - fix: 🚑 temporary hot fix: commands not working [`a3fda0dd`](https://github.com/PKief/vscode-material-icon-theme/commit/a3fda0dd)
  
 #### [v0.14.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.13.0...v0.14.0) 
