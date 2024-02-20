@@ -3,10 +3,17 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v0.21.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.20.0...v0.21.0) 
+
+> February 20, 2024 
+
+- feat: ✨ lucodear: lucode config files [`aec9cc1d`](https://github.com/PKief/vscode-material-icon-theme/commit/aec9cc1d)
+ 
 #### [v0.20.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.19.0...v0.20.0) 
 
 > February 20, 2024 
 
+- release: 🔖 v0.20.0 [`a428e8d2`](https://github.com/PKief/vscode-material-icon-theme/commit/a428e8d2)
 - feat: ✨ rust main.rs file icon and new colors [`48bcea09`](https://github.com/PKief/vscode-material-icon-theme/commit/48bcea09)
 - chore: 🧹 update repo urls (due to tranfer) [`7dc5344a`](https://github.com/PKief/vscode-material-icon-theme/commit/7dc5344a)
  
