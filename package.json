@@ -39,13 +39,13 @@
   "engines": {
     "vscode": "^1.51.0"
   },
-  "homepage": "https://github.com/lucas-labs/lucodear-icons/blob/main/README.md",
+  "homepage": "https://github.com/lucodear/lucodear-icons/blob/main/README.md",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lucas-labs/lucodear-icons.git"
+    "url": "https://github.com/lucodear/lucodear-icons.git"
   },
   "bugs": {
-    "url": "https://github.com/lucas-labs/lucodear-icons/issues"
+    "url": "https://github.com/lucodear/lucodear-icons/issues"
   },
   "icon": "logo.png",
   "galleryBanner": {

@@ -52,7 +52,7 @@ jobs:
           script: |
             const image_url = "${{ env.image_url }}";
             console.log('URL: '+image_url);
-            const commentBody = '## Preview \n\nThank you for creating a pull request. This preview shows you how your changes will look on the different themes: \n\n ![Generated Preview](' + image_url + ') \n\n You can find more information how to contribute in the [contribution guidelines](https://github.com/lucas-labs/lucodear-icons/blob/main/CONTRIBUTING.md).';
+            const commentBody = '## Preview \n\nThank you for creating a pull request. This preview shows you how your changes will look on the different themes: \n\n ![Generated Preview](' + image_url + ') \n\n You can find more information how to contribute in the [contribution guidelines](https://github.com/lucodear/lucodear-icons/blob/main/CONTRIBUTING.md).';
 
             github.rest.issues.createComment({
               issue_number: context.issue.number,

@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-    <img src="https://raw.githubusercontent.com/lucas-labs/lucodear-icons/main/logo.png" alt="logo" width="200">
+    <img src="https://raw.githubusercontent.com/lucodear/lucodear-icons/main/logo.png" alt="logo" width="200">
   <br><br>
   lucode.ar icons
   <br>
@@ -23,7 +23,7 @@
 
 ## 🍭 lucodear
 
-<img src="https://raw.githubusercontent.com/lucas-labs/lucodear-icons/main/images/lucodear-icons.png" alt="file icons">
+<img src="https://raw.githubusercontent.com/lucodear/lucodear-icons/main/images/lucodear-icons.png" alt="file icons">
 
 <br><br>
 
@@ -35,17 +35,17 @@
 
 ### File icons
 
-<img src="https://raw.githubusercontent.com/lucas-labs/lucodear-icons/main/images/fileIcons.png" alt="file icons">
+<img src="https://raw.githubusercontent.com/lucodear/lucodear-icons/main/images/fileIcons.png" alt="file icons">
 
 ### Folder icons
 
-<img src="https://raw.githubusercontent.com/lucas-labs/lucodear-icons/main/images/folderIcons.png" alt="folder icons">
+<img src="https://raw.githubusercontent.com/lucodear/lucodear-icons/main/images/folderIcons.png" alt="folder icons">
 
 #### Customize file & folder color
 
 You can change the color of the default file and folder icons using the command palette:
 
-<img src="https://raw.githubusercontent.com/lucas-labs/lucodear-icons/main/images/set-folder-color.gif" alt="custom folder colors">
+<img src="https://raw.githubusercontent.com/lucodear/lucodear-icons/main/images/set-folder-color.gif" alt="custom folder colors">
 
 or via user settings:
 
@@ -58,7 +58,7 @@ or via user settings:
 
 You can change the design of the folder icons using the command palette:
 
-<img src="https://raw.githubusercontent.com/lucas-labs/lucodear-icons/main/images/set-folder-theme.gif" alt="folder themes">
+<img src="https://raw.githubusercontent.com/lucodear/lucodear-icons/main/images/set-folder-theme.gif" alt="folder themes">
 
 or via user settings:
 
@@ -175,7 +175,7 @@ You can see the available icon names in the overview above. See "[Known language
 
 Press `Ctrl-Shift-P` to open the command palette and type `Material Icons`.
 
-<img src="https://raw.githubusercontent.com/lucas-labs/lucodear-icons/main/images/commandPalette.png" alt="commands">
+<img src="https://raw.githubusercontent.com/lucodear/lucodear-icons/main/images/commandPalette.png" alt="commands">
 
 <p></p>
 
@@ -198,13 +198,13 @@ Press `Ctrl-Shift-P` to open the command palette and type `Material Icons`.
 
 ## Contributors
 
-<a href="https://github.com/lucas-labs/lucodear-icons/graphs/contributors">
-    <img src="https://raw.githubusercontent.com/lucas-labs/lucodear-icons/main/images/contributors.png" alt="Contributors">
+<a href="https://github.com/lucodear/lucodear-icons/graphs/contributors">
+    <img src="https://raw.githubusercontent.com/lucodear/lucodear-icons/main/images/contributors.png" alt="Contributors">
 </a>
 
 **Would you like to contribute?**
 
-Take a look at the [contribution guidelines](https://github.com/lucas-labs/lucodear-icons/blob/main/CONTRIBUTING.md) and open a [new issue](https://github.com/lucas-labs/lucodear-icons/issues) or [pull request](https://github.com/lucas-labs/lucodear-icons/pulls) on GitHub.
+Take a look at the [contribution guidelines](https://github.com/lucodear/lucodear-icons/blob/main/CONTRIBUTING.md) and open a [new issue](https://github.com/lucodear/lucodear-icons/issues) or [pull request](https://github.com/lucodear/lucodear-icons/pulls) on GitHub.
 
 ## Related extensions
 
