@@ -7,6 +7,11 @@ export const files = lucodear('rust', [
     fileExtensions: ['rs'],
   },
   {
+    name: 'rust-cargo',
+    fileNames: ['Cargo.toml', 'cargo.toml'],
+    light: true,
+  },
+  {
     name: 'rust-mod',
     fileNames: ['mod.rs'],
     light: true,
