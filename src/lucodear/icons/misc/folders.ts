@@ -97,6 +97,10 @@ export const folders = lucodear('misc', [
     ],
   },
   {
+    name: 'result',
+    folderNames: ['result', 'results', 'res'],
+  },
+  {
     name: 'service',
     folderNames: ['service', 'services', 'srv', 'svc'],
   },
