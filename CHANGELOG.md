@@ -3,10 +3,17 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v0.18.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.17.0...v0.18.0) 
+
+> February 20, 2024 
+
+- feat: ✨ change Cargo.toml icon color [`fdf7b625`](https://github.com/PKief/vscode-material-icon-theme/commit/fdf7b625)
+ 
 #### [v0.17.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.16.0...v0.17.0) 
 
 > February 20, 2024 
 
+- release: 🔖 v0.17.0 [`f10b1639`](https://github.com/PKief/vscode-material-icon-theme/commit/f10b1639)
 - feat: ✨ file rust cargo config [`03b47fa5`](https://github.com/PKief/vscode-material-icon-theme/commit/03b47fa5)
 - feat: ✨ folder subcmd, file rust cargo [`81052eb8`](https://github.com/PKief/vscode-material-icon-theme/commit/81052eb8)
 - Pixel perfect icons at 16px [`#2226`](https://github.com/PKief/vscode-material-icon-theme/pull/2226)
