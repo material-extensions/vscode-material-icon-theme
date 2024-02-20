@@ -1,62 +1,72 @@
-### Changelog
+### Changelog 
 
-All notable changes to this project will be documented in this file. Dates are displayed in UTC.
+ All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
-#### [v0.16.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.15.0...v0.16.0)
+ 
+#### [v0.17.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.16.0...v0.17.0) 
 
-> February 19, 2024
+> February 20, 2024 
 
+- feat: ✨ file rust cargo config [`03b47fa5`](https://github.com/PKief/vscode-material-icon-theme/commit/03b47fa5)
+- feat: ✨ folder subcmd, file rust cargo [`81052eb8`](https://github.com/PKief/vscode-material-icon-theme/commit/81052eb8)
+- Pixel perfect icons at 16px [`#2226`](https://github.com/PKief/vscode-material-icon-theme/pull/2226)
+ 
+#### [v0.16.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.15.0...v0.16.0) 
+
+> February 19, 2024 
+
+- release: 🔖 v0.16.0 [`e91b1d1d`](https://github.com/PKief/vscode-material-icon-theme/commit/e91b1d1d)
 - fix: 🚑 inconsistent squared language icons [`dd244d79`](https://github.com/PKief/vscode-material-icon-theme/commit/dd244d79)
+ 
+#### [v0.15.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.14.0...v0.15.0) 
 
-#### [v0.15.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.14.0...v0.15.0)
-
-> February 19, 2024
+> February 19, 2024 
 
 - release: 🔖 v0.15.0 [`059c7c38`](https://github.com/PKief/vscode-material-icon-theme/commit/059c7c38)
 - fix: 🚑 temporary hot fix: commands not working [`a3fda0dd`](https://github.com/PKief/vscode-material-icon-theme/commit/a3fda0dd)
+ 
+#### [v0.14.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.13.0...v0.14.0) 
 
-#### [v0.14.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.13.0...v0.14.0)
-
-> February 18, 2024
+> February 18, 2024 
 
 - release: 🔖 v0.14.0 [`306b9b4f`](https://github.com/PKief/vscode-material-icon-theme/commit/306b9b4f)
 - feat: ✨ go and go-mod file icons new version [`c16464f0`](https://github.com/PKief/vscode-material-icon-theme/commit/c16464f0)
+ 
+#### [v0.13.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.12.0...v0.13.0) 
 
-#### [v0.13.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.12.0...v0.13.0)
-
-> February 18, 2024
+> February 18, 2024 
 
 - release: 🔖 v0.13.0 [`75f3bbfb`](https://github.com/PKief/vscode-material-icon-theme/commit/75f3bbfb)
 - fix: 🚑 fix workflows/yml specification [`8afdedd0`](https://github.com/PKief/vscode-material-icon-theme/commit/8afdedd0)
+ 
+#### [v0.12.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.11.0...v0.12.0) 
 
-#### [v0.12.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.11.0...v0.12.0)
-
-> February 18, 2024
+> February 18, 2024 
 
 - release: 🔖 v0.12.0 [`252f243d`](https://github.com/PKief/vscode-material-icon-theme/commit/252f243d)
 - fix: 🚑 database and json file icons [`1ab37826`](https://github.com/PKief/vscode-material-icon-theme/commit/1ab37826)
+ 
+#### [v0.11.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.10.0...v0.11.0) 
 
-#### [v0.11.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.10.0...v0.11.0)
-
-> February 18, 2024
+> February 18, 2024 
 
 - release: 🔖 v0.11.0 [`13ce5429`](https://github.com/PKief/vscode-material-icon-theme/commit/13ce5429)
-- ci: 🔄 fix gh pages action (create \_site dir before cp) [`09ac7fad`](https://github.com/PKief/vscode-material-icon-theme/commit/09ac7fad)
-- ci: 🔄 gh pages: create a \_site folder with the site [`c0ff4961`](https://github.com/PKief/vscode-material-icon-theme/commit/c0ff4961)
+- ci: 🔄 fix gh pages action (create _site dir before cp) [`09ac7fad`](https://github.com/PKief/vscode-material-icon-theme/commit/09ac7fad)
+- ci: 🔄 gh pages: create a _site folder with the site [`c0ff4961`](https://github.com/PKief/vscode-material-icon-theme/commit/c0ff4961)
 - ci: 🔄 github pages action [`84ce1c99`](https://github.com/PKief/vscode-material-icon-theme/commit/84ce1c99)
 - feat: ✨ make full-diff page script public [`d0c34a83`](https://github.com/PKief/vscode-material-icon-theme/commit/d0c34a83)
+ 
+#### [v0.10.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.9.0...v0.10.0) 
 
-#### [v0.10.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.9.0...v0.10.0)
-
-> February 17, 2024
+> February 17, 2024 
 
 - release: 🔖 v0.10.0 [`c0b41616`](https://github.com/PKief/vscode-material-icon-theme/commit/c0b41616)
 - feat: ✨ fix missing mod.rs light theme and replace rust [`fd0ea7dd`](https://github.com/PKief/vscode-material-icon-theme/commit/fd0ea7dd)
 - feat: ✨ rust pack [`514a03d0`](https://github.com/PKief/vscode-material-icon-theme/commit/514a03d0)
+ 
+#### [v0.9.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.8.0...v0.9.0) 
 
-#### [v0.9.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.8.0...v0.9.0)
-
-> February 17, 2024
+> February 17, 2024 
 
 - release: 🔖 v0.9.0 [`4ac604fb`](https://github.com/PKief/vscode-material-icon-theme/commit/4ac604fb)
 - feat: ✨ pp pkief: files 6th batch [`aee58b7f`](https://github.com/PKief/vscode-material-icon-theme/commit/aee58b7f)
@@ -77,10 +87,10 @@ All notable changes to this project will be documented in this file. Dates are d
 - feat: ✨ pp pkief: js, layout, lib, mock, next, node, ... [`fada414d`](https://github.com/PKief/vscode-material-icon-theme/commit/fada414d)
 - Added swagger icon [`#1718`](https://github.com/PKief/vscode-material-icon-theme/pull/1718)
 - feat: ✨ 2nd iteration pkief 32px icon replacement [`6c66bbfe`](https://github.com/PKief/vscode-material-icon-theme/commit/6c66bbfe)
+ 
+#### [v0.8.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.7.0...v0.8.0) 
 
-#### [v0.8.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.7.0...v0.8.0)
-
-> February 13, 2024
+> February 13, 2024 
 
 - release: 🔖 v0.8.0 [`3ceafeed`](https://github.com/PKief/vscode-material-icon-theme/commit/3ceafeed)
 - fix: 🚑 downgrade @types/vscode to match configured engine [`586aa860`](https://github.com/PKief/vscode-material-icon-theme/commit/586aa860)
@@ -95,10 +105,10 @@ All notable changes to this project will be documented in this file. Dates are d
 - chore: 🧹 upgrade @types/node to v20 [`9ed42a8a`](https://github.com/PKief/vscode-material-icon-theme/commit/9ed42a8a)
 - ci: 🔄 build with node 20.x [`ec898978`](https://github.com/PKief/vscode-material-icon-theme/commit/ec898978)
 - chore: 🧹 update+upgrade dependencies [`b7293573`](https://github.com/PKief/vscode-material-icon-theme/commit/b7293573)
+ 
+#### [v0.7.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.6.0...v0.7.0) 
 
-#### [v0.7.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.6.0...v0.7.0)
-
-> February 11, 2024
+> February 11, 2024 
 
 - release: 🔖 v0.7.0 [`de3777c4`](https://github.com/PKief/vscode-material-icon-theme/commit/de3777c4)
 - fix: 🚑 light versions [`cf576f45`](https://github.com/PKief/vscode-material-icon-theme/commit/cf576f45)
@@ -115,10 +125,10 @@ All notable changes to this project will be documented in this file. Dates are d
 - feat: ✨ pixel perfect lucodear python icons [`a9efd8b1`](https://github.com/PKief/vscode-material-icon-theme/commit/a9efd8b1)
 - feat: ✨ react icons variants [`b3088bed`](https://github.com/PKief/vscode-material-icon-theme/commit/b3088bed)
 - Add PKL icon [`#2217`](https://github.com/PKief/vscode-material-icon-theme/pull/2217)
+ 
+#### [v0.6.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.5.1...v0.6.0) 
 
-#### [v0.6.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.5.1...v0.6.0)
-
-> February 9, 2024
+> February 9, 2024 
 
 - release: 🔖 v0.6.0 [`fb329ee3`](https://github.com/PKief/vscode-material-icon-theme/commit/fb329ee3)
 - fix: 🚑 duplicated icons in preview [`2520eebb`](https://github.com/PKief/vscode-material-icon-theme/commit/2520eebb)
@@ -130,34 +140,34 @@ All notable changes to this project will be documented in this file. Dates are d
 - docs: 📝 update readme [`2826ec09`](https://github.com/PKief/vscode-material-icon-theme/commit/2826ec09)
 - refactor: 🔨 change preview script for lucodear icons [`ef2bbfa5`](https://github.com/PKief/vscode-material-icon-theme/commit/ef2bbfa5)
 - refactor: 🔨 change lucodear icons folder structure [`81a52165`](https://github.com/PKief/vscode-material-icon-theme/commit/81a52165)
+ 
+#### [v0.5.1](https://github.com/PKief/vscode-material-icon-theme/compare/v0.5.0...v0.5.1) 
 
-#### [v0.5.1](https://github.com/PKief/vscode-material-icon-theme/compare/v0.5.0...v0.5.1)
-
-> February 7, 2024
+> February 7, 2024 
 
 - release: 🔖 v0.5.1 [`69cc41a9`](https://github.com/PKief/vscode-material-icon-theme/commit/69cc41a9)
 - patch: 🩹 add .task to folder-taskfile mappings [`7d10ca24`](https://github.com/PKief/vscode-material-icon-theme/commit/7d10ca24)
+ 
+#### [v0.5.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.4.1...v0.5.0) 
 
-#### [v0.5.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.4.1...v0.5.0)
-
-> February 7, 2024
+> February 7, 2024 
 
 - release: 🔖 v0.5.0 [`36547ade`](https://github.com/PKief/vscode-material-icon-theme/commit/36547ade)
 - feat: ✨ lucodear icons + pureref, adobe light icons [`7489192b`](https://github.com/PKief/vscode-material-icon-theme/commit/7489192b)
 - chore: 🧹 add lucodear light icon checks to usage check [`995f6001`](https://github.com/PKief/vscode-material-icon-theme/commit/995f6001)
+ 
+#### [v0.4.1](https://github.com/PKief/vscode-material-icon-theme/compare/v0.4.0...v0.4.1) 
 
-#### [v0.4.1](https://github.com/PKief/vscode-material-icon-theme/compare/v0.4.0...v0.4.1)
-
-> February 6, 2024
+> February 6, 2024 
 
 - release: 🔖 v0.4.1 [`4cf6e34a`](https://github.com/PKief/vscode-material-icon-theme/commit/4cf6e34a)
 - feat: ✨ small tweaks to release.yml github action [`383bac03`](https://github.com/PKief/vscode-material-icon-theme/commit/383bac03)
 - ci: 🔄 small tweaks to release.yml github action [`196d3c6c`](https://github.com/PKief/vscode-material-icon-theme/commit/196d3c6c)
 - feat: ✨ extend ideas [`e0055b4d`](https://github.com/PKief/vscode-material-icon-theme/commit/e0055b4d)
+ 
+#### [v0.4.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.2.0...v0.4.0) 
 
-#### [v0.4.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.2.0...v0.4.0)
-
-> February 6, 2024
+> February 6, 2024 
 
 - ci: 🔄 add default assignee for bug report issue template [`877924fa`](https://github.com/PKief/vscode-material-icon-theme/commit/877924fa)
 - fix: 🚑 addon icons not working if icon options specified [`1ab45439`](https://github.com/PKief/vscode-material-icon-theme/commit/1ab45439)
@@ -165,10 +175,10 @@ All notable changes to this project will be documented in this file. Dates are d
 - ci: 🔄 remove html preview files [`768a0272`](https://github.com/PKief/vscode-material-icon-theme/commit/768a0272)
 - docs: 📝 fix links in README.md [`bd501b33`](https://github.com/PKief/vscode-material-icon-theme/commit/bd501b33)
 - ci: 🔄 fix folder icon preview [`ac02d45e`](https://github.com/PKief/vscode-material-icon-theme/commit/ac02d45e)
+ 
+#### [v0.2.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.1.0...v0.2.0) 
 
-#### [v0.2.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.1.0...v0.2.0)
-
-> February 6, 2024
+> February 6, 2024 
 
 - fix: 🚑 invalid color (not material swatch) [`72216650`](https://github.com/PKief/vscode-material-icon-theme/commit/72216650)
 - feat: ✨ misc folders [`345bec0f`](https://github.com/PKief/vscode-material-icon-theme/commit/345bec0f)
