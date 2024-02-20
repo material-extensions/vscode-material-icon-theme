@@ -2,7 +2,7 @@
   "name": "lucodear-icons",
   "displayName": "lucodear-icons",
   "description": "🍭 lucodear-icons » A PKief's 'Material Icons Theme' fork with my own custom additions. This was made for my personal use",
-  "version": "0.19.0",
+  "version": "0.20.0",
   "scripts": {
     "build": "npm run compile:dev && npm run generateJson",
     "check": "ts-node ./src/scripts/icons/checks",

@@ -3,10 +3,18 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v0.20.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.19.0...v0.20.0) 
+
+> February 20, 2024 
+
+- feat: ✨ rust main.rs file icon and new colors [`48bcea09`](https://github.com/PKief/vscode-material-icon-theme/commit/48bcea09)
+- chore: 🧹 update repo urls (due to tranfer) [`7dc5344a`](https://github.com/PKief/vscode-material-icon-theme/commit/7dc5344a)
+ 
 #### [v0.19.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.18.0...v0.19.0) 
 
 > February 20, 2024 
 
+- release: 🔖 v0.19.0 [`1098b281`](https://github.com/PKief/vscode-material-icon-theme/commit/1098b281)
 - feat: ✨ rust lib.rs file icon [`4c9d99c3`](https://github.com/PKief/vscode-material-icon-theme/commit/4c9d99c3)
 - feat: ✨ misc: result folder [`f70615a4`](https://github.com/PKief/vscode-material-icon-theme/commit/f70615a4)
  
