@@ -15,6 +15,18 @@ export const folders = lucodear('misc', [
     folderNames: ['controller', 'controllers', 'ctrl'],
   },
   {
+    name: 'subcommand',
+    folderNames: [
+      'subcommand',
+      'subcommands',
+      'subcmd',
+      'subcmds',
+      'sub-cmd',
+      'sub-cmds',
+    ],
+    light: true,
+  },
+  {
     name: 'decorator',
     folderNames: ['decorator', 'decorators'],
   },

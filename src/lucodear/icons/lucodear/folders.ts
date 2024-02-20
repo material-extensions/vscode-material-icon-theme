@@ -4,7 +4,7 @@ import { lucodear } from '../utils';
 export const folders = lucodear('lucodear', [
   {
     name: 'lucodear',
-    folderNames: ['lucodear'],
+    folderNames: ['lucodear', 'lucode', 'lucode.ar'],
   },
   {
     name: 'pest',
