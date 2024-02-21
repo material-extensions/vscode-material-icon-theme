@@ -63,6 +63,10 @@ export const folders = lucodear('misc', [
     folderNames: ['factory', 'factories'],
   },
   {
+    name: 'help',
+    folderNames: ['help', 'question', 'questions', 'faq', 'faqs'],
+  },
+  {
     name: 'idea',
     folderNames: ['idea', 'ideas', '.idea', '.ideas', '💡'],
   },
@@ -123,6 +127,10 @@ export const folders = lucodear('misc', [
       'convert',
       'conversion',
     ],
+  },
+  {
+    name: 'version',
+    folderNames: ['version', 'versions', 'vx'],
   },
   {
     name: 'workflow',
