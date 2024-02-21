@@ -27,6 +27,17 @@ export const folders = lucodear('misc', [
     light: true,
   },
   {
+    name: 'subprogram',
+    folderNames: [
+      'subprogram',
+      'subprograms',
+      'subprog',
+      'subprogs',
+      'sub-prog',
+      'sub-progs',
+    ],
+  },
+  {
     name: 'decorator',
     folderNames: ['decorator', 'decorators'],
   },
