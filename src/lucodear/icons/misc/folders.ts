@@ -101,6 +101,10 @@ export const folders = lucodear('misc', [
     folderNames: ['result', 'results', 'res'],
   },
   {
+    name: 'runtime',
+    folderNames: ['runtime', 'runtimes', 'rt', 'realtime', 'real-time'],
+  },
+  {
     name: 'service',
     folderNames: ['service', 'services', 'srv', 'svc'],
   },
