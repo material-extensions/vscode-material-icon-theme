@@ -2378,6 +2378,7 @@ export const fileIcons: FileIcons = {
     {
       name: 'openapi',
       light: true,
+      fileExtensions: ['openapi.json', 'openapi.yml', 'openapi.yaml'],
       fileNames: ['openapi.json', 'openapi.yml', 'openapi.yaml'],
     },
     {
