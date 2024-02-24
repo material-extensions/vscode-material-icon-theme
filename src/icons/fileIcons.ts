@@ -2383,6 +2383,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'swagger',
+      fileExtensions: ['swagger.json', 'swagger.yml', 'swagger.yaml'],
       fileNames: ['swagger.json', 'swagger.yml', 'swagger.yaml'],
     },
     { name: 'bun', fileNames: ['bun.lockb'], light: true },
