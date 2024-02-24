@@ -2378,10 +2378,12 @@ export const fileIcons: FileIcons = {
     {
       name: 'openapi',
       light: true,
+      fileExtensions: ['openapi.json', 'openapi.yml', 'openapi.yaml'],
       fileNames: ['openapi.json', 'openapi.yml', 'openapi.yaml'],
     },
     {
       name: 'swagger',
+      fileExtensions: ['swagger.json', 'swagger.yml', 'swagger.yaml'],
       fileNames: ['swagger.json', 'swagger.yml', 'swagger.yaml'],
     },
     { name: 'bun', fileNames: ['bun.lockb'], light: true },
