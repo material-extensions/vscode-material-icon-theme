@@ -5,9 +5,9 @@
   "command.changeFolderColor": "Material Icons: 폴더 색상 변경",
   "command.changeFileColor": "Material Icons: 파일 색상 변경",
   "command.restoreDefaultConfig": "Material Icons: 기본 설정 복원",
-  "command.toggleExplorerArrows": "Material Icons: 폴더 앞의 파일 탐색기 화살표 설정",
+  "command.toggleExplorerArrows": "Material Icons: 파일 탐색기의 폴더 화살표 설정",
   "command.changeOpacity": "Material Icons: 투명도 변경",
-  "command.toggleGrayscale": "Material Icons: 그레이 스케일 전환",
+  "command.toggleGrayscale": "Material Icons: 그레이스케일 설정",
   "command.changeSaturation": "Material Icons: 채도 변경",
   "configuration.title": "Material Icons",
   "configuration.files.associations": "사용자 정의 파일 아이콘 설정.",
@@ -29,7 +29,7 @@
   "configuration.folders.theme.none": "폴더 아이콘 없음.",
   "configuration.folders.color": "폴더 아이콘의 색상 변경.",
   "configuration.files.color": "파일 아이콘의 색상 변경.",
-  "configuration.hidesExplorerArrows": "폴더 앞의 파일 탐색기 화살표 숨기기.",
+  "configuration.hidesExplorerArrows": "파일 탐색기의 폴더 화살표 숨기기.",
   "configuration.opacity": "아이콘의 투명도 변경.",
   "configuration.saturation": "아이콘의 채도 변경."
 }
