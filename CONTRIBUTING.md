@@ -6,17 +6,12 @@ Glad you're here and interested in expanding this project 🎉 In order to make 
 
 - [Icon Requests](#icon-requests)
 - [Add new icons](#add-new-icons)
-- [How-To's](#how-tos)
-  - [Create icon as SVG](#create-icon-as-svg)
-  - [Use Material Design colors](#material-design-colors)
-  - [Design folder icons](#design-folder-icons)
-  - [Icon spacing](#icon-spacing)
-  - [Icons for color themes](#icons-for-color-themes)
-  - [Unique assignment to file and folder names](#icon-assignments)
-  - [Create icon packs](#icon-packs)
-  - [Designing Pixel Perfect Icons](#pixel-perfect-icons)
+- [How tos](#how-tos)
+    - [File icons](#file-icons)
+    - [Folder icons](#folder-icons)
+    - [Language icons](#language-icons)
 - [Add translations](#add-translations)
-- [Update API](#update-api)
+- [Debug extension locally](#debug-extension-locally)
 
 <!-- /TOC -->
 
@@ -71,6 +66,12 @@ Of course, there is also the possibility to add existing SVGs. Mostly, however, 
 An important success factor of this icon extension is the fact that all colors fit together harmoniously. This is due to the fact that all icons exist only from colors of the [Material Design color palette](https://material.io/design/color/the-color-system.html#tools-for-picking-colors). This creates nice contrasts and the icons are easily recognizable.
 
 Now it often happens that many programming languages already have icons with their own colors. To find the matching color from the Material Design color palette based on a known color, there is the [Material Color Converter](https://pkief.github.io/material-color-converter/). With its help any color can be converted into a Material Design color.
+
+You can check if your icon fits to the Material Design color palette by running the follwing command:
+
+```sh
+npm run check-colors <path/to/svg>
+```
 
 Continue reading [here](#design-folder-icons) to find out about colors for the folder icons.
 
