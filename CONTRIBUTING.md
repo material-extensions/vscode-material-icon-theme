@@ -6,12 +6,17 @@ Glad you're here and interested in expanding this project 🎉 In order to make 
 
 - [Icon Requests](#icon-requests)
 - [Add new icons](#add-new-icons)
-- [How tos](#how-tos)
-    - [File icons](#file-icons)
-    - [Folder icons](#folder-icons)
-    - [Language icons](#language-icons)
+- [How-To's](#how-tos)
+  - [Create icon as SVG](#create-icon-as-svg)
+  - [Use Material Design colors](#material-design-colors)
+  - [Design folder icons](#design-folder-icons)
+  - [Icon spacing](#icon-spacing)
+  - [Icons for color themes](#icons-for-color-themes)
+  - [Unique assignment to file and folder names](#icon-assignments)
+  - [Create icon packs](#icon-packs)
+  - [Designing Pixel Perfect Icons](#pixel-perfect-icons)
 - [Add translations](#add-translations)
-- [Debug extension locally](#debug-extension-locally)
+- [Update API](#update-api)
 
 <!-- /TOC -->
 
