@@ -1,1 +1,22 @@
-<svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 4H4c-1.11 0-2 .89-2 2v12c0 1.097.903 2 2 2h16c1.097 0 2-.903 2-2V8a2 2 0 0 0-2-2h-8l-2-2z" fill="#1976D2" fill-rule="nonzero"/><path d="M11.47 10.422h1.29v-1.29c-.71 0-1.29.58-1.29 1.29zm0 5.158h1.29v-1.29h-1.29zm2.58 5.16h1.29v-1.29h-1.29zM11.47 13h1.29v-1.288h-1.29zm6.45-3.868h-1.291v1.29h1.29zm3.869 0v1.29h1.289c0-.71-.58-1.29-1.29-1.29zM12.76 20.74v-1.29h-1.29c0 .71.58 1.29 1.29 1.29zm-1.29-2.58h1.29v-1.288h-1.29zm3.87-9.028h-1.29v1.29h1.29zm1.289 11.608h1.29v-1.29h-1.29zm5.16-5.159h1.289v-1.29h-1.29zm0 5.159c.708 0 1.289-.58 1.289-1.29h-1.29zm0-7.739h1.289v-1.289h-1.29zm0 5.159h1.289v-1.288h-1.29zm-2.58 2.58h1.29v-1.29h-1.29zm0-10.318h1.29v-1.29h-1.29zM14.05 18.16h6.449v-6.448h-6.45zm1.29-5.158h3.869v3.869H15.34z" style="fill:#bbdefb;stroke-width:1.0094"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <path d="M13.84376,7.53645l-1.28749-1.0729A2,2,0,0,0,11.27591,6H4A2,2,0,0,0,2,8V24a2,2,0,0,0,2,2H28a2,2,0,0,0,2-2V10a2,2,0,0,0-2-2H15.12412A2,2,0,0,1,13.84376,7.53645Z" style="fill: #1976d2"/>
+  <g>
+    <path d="M18,14V24H28V14Zm8,8H20V16h6Z" style="fill: #bbdefb;fill-rule: evenodd"/>
+    <path d="M14,12h2V10A2,2,0,0,0,14,12Z" style="fill: #bbdefb;fill-rule: evenodd"/>
+    <rect x="18" y="10" width="2" height="2" style="fill: #bbdefb"/>
+    <rect x="22" y="10" width="2" height="2" style="fill: #bbdefb"/>
+    <rect x="26" y="10" width="2" height="2" style="fill: #bbdefb"/>
+    <path d="M30,10v2h2A2,2,0,0,0,30,10Z" style="fill: #bbdefb;fill-rule: evenodd"/>
+    <rect x="30" y="14" width="2" height="2" style="fill: #bbdefb"/>
+    <rect x="30" y="18" width="2" height="2" style="fill: #bbdefb"/>
+    <rect x="30" y="22" width="2" height="2" style="fill: #bbdefb"/>
+    <path d="M30,28a2,2,0,0,0,2-2H30Z" style="fill: #bbdefb;fill-rule: evenodd"/>
+    <rect x="26" y="26" width="2" height="2" style="fill: #bbdefb"/>
+    <rect x="22" y="26" width="2" height="2" style="fill: #bbdefb"/>
+    <rect x="18" y="26" width="2" height="2" style="fill: #bbdefb"/>
+    <path d="M16,28V26H14A2,2,0,0,0,16,28Z" style="fill: #bbdefb;fill-rule: evenodd"/>
+    <rect x="14" y="22" width="2" height="2" style="fill: #bbdefb"/>
+    <rect x="14" y="18" width="2" height="2" style="fill: #bbdefb"/>
+    <rect x="14" y="14" width="2" height="2" style="fill: #bbdefb"/>
+  </g>
+</svg>

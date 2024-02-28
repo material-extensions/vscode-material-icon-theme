@@ -346,7 +346,7 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'vala', fileExtensions: ['vala'] },
-    { name: 'zig', fileExtensions: ['zig'] },
+    { name: 'zig', fileExtensions: ['zig', 'zon'] },
     { name: 'exe', fileExtensions: ['exe', 'msi'] },
     { name: 'hex', fileExtensions: ['dat', 'bin', 'hex'] },
     { name: 'java', fileExtensions: ['java', 'jsp'] },
@@ -903,6 +903,16 @@ export const fileIcons: FileIcons = {
     {
       name: 'verdaccio',
       fileNames: ['verdaccio.yml'],
+    },
+    {
+      name: 'payload',
+      fileNames: [
+        'payload.config.js',
+        'payload.config.mjs',
+        'payload.config.ts',
+        'payload.config.mts',
+      ],
+      light: true,
     },
     {
       name: 'next',
@@ -2190,6 +2200,7 @@ export const fileIcons: FileIcons = {
         'tsconfig.paths.json',
         'tsconfig.main.json',
         'tsconfig.renderer.json',
+        'tsconfig.server.json',
       ],
       fileExtensions: ['tsconfig.json'],
     },
@@ -2364,6 +2375,17 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['cdc'],
     },
     { name: 'caddy', fileNames: ['Caddyfile'] },
+    {
+      name: 'openapi',
+      light: true,
+      fileExtensions: ['openapi.json', 'openapi.yml', 'openapi.yaml'],
+      fileNames: ['openapi.json', 'openapi.yml', 'openapi.yaml'],
+    },
+    {
+      name: 'swagger',
+      fileExtensions: ['swagger.json', 'swagger.yml', 'swagger.yaml'],
+      fileNames: ['swagger.json', 'swagger.yml', 'swagger.yaml'],
+    },
     { name: 'bun', fileNames: ['bun.lockb'], light: true },
     { name: 'antlr', fileExtensions: ['g4'] },
     { name: 'stylable', fileExtensions: ['st.css'] },
@@ -2454,6 +2476,19 @@ export const fileIcons: FileIcons = {
     { name: 'qwik', fileExtensions: ['tsx'], enabledFor: [IconPack.Qwik] },
     { name: 'mermaid', fileExtensions: ['mmd', 'mermaid'] },
     {
+      name: 'syncpack',
+      fileNames: [
+        '.syncpackrc',
+        'syncpackrc.json',
+        '.syncpackrc.yaml',
+        '.syncpackrc.yml',
+        '.syncpackrc.js',
+        '.syncpackrc.cjs',
+        'syncpack.config.js',
+        'syncpack.config.cjs',
+      ],
+    },
+    {
       name: 'mojo',
       fileExtensions: ['mojo', '🔥'],
     },
@@ -2513,6 +2548,11 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'apps-script', fileExtensions: ['gs'] },
+    {
+      name: 'pkl',
+      fileExtensions: ['pkl'],
+      fileNames: ['PklProject', 'PklProject.deps.json'],
+    },
     {
       name: 'kubernetes',
       fileNames: [
