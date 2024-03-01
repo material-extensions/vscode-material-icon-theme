@@ -161,6 +161,9 @@
             "%configuration.activeIconPack.vue_vuex%",
             "%configuration.activeIconPack.nest%",
             "%configuration.activeIconPack.pest%",
+            "%configuration.activeIconPack.rust_ferris%",
+            "%configuration.activeIconPack.rust_ferris_minimal%",
+            "%configuration.activeIconPack.rust_ferris_full%",
             "%configuration.activeIconPack.none%"
           ],
           "enum": [
@@ -173,6 +176,9 @@
             "vue_vuex",
             "nest",
             "pest",
+            "rust_ferris",
+            "rust_ferris_minimal",
+            "rust_ferris_full",
             "none"
           ]
         },

@@ -13,4 +13,7 @@ export enum IconPack {
 
   // 🍭 » lucode
   Pest = 'pest',
+  RustFerris = 'rust_ferris',
+  RustFerrisMinimal = 'rust_ferris_minimal',
+  RustFerrisFull = 'rust_ferris_full',
 }
