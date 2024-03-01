@@ -889,6 +889,10 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-swagger',
         folderNames: ['swagger', '.swagger', 'Swagger'],
       },
+      {
+        name: 'folder-cloudflare',
+        folderNames: ['cloudflare', '.cloudflare'],
+      },
     ],
   },
   {
