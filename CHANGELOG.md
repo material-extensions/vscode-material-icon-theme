@@ -3,10 +3,26 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v0.26.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.25.0...v0.26.0) 
+
+> February 27, 2024 
+
+- Cloudflare folder icon [`#2235`](https://github.com/PKief/vscode-material-icon-theme/pull/2235)
+- Add zon file extension to zig icon [`ca53a641`](https://github.com/PKief/vscode-material-icon-theme/commit/ca53a641)
+- Feature/openapi file extensions [`#2229`](https://github.com/PKief/vscode-material-icon-theme/pull/2229)
+ 
+#### [v0.25.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.24.0...v0.25.0) 
+
+> February 27, 2024 
+
+- release: 🔖 v0.25.0 [`eb7e1d88`](https://github.com/PKief/vscode-material-icon-theme/commit/eb7e1d88)
+- feat: ✨ folders: console, desktop, television [`b6362a3a`](https://github.com/PKief/vscode-material-icon-theme/commit/b6362a3a)
+ 
 #### [v0.24.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.23.0...v0.24.0) 
 
 > February 21, 2024 
 
+- release: 🔖 v0.24.0 [`2e2e0e5d`](https://github.com/PKief/vscode-material-icon-theme/commit/2e2e0e5d)
 - feat: ✨ subprogram folder [`9fbe87b5`](https://github.com/PKief/vscode-material-icon-theme/commit/9fbe87b5)
  
 #### [v0.23.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.22.0...v0.23.0) 
