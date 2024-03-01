@@ -11,6 +11,10 @@ export const folders = lucodear('misc', [
     folderNames: ['azure', 'az'],
   },
   {
+    name: 'bin',
+    folderNames: ['bin', 'binary', 'binaries', 'bins'],
+  },
+  {
     name: 'controller',
     folderNames: ['controller', 'controllers', 'ctrl'],
   },

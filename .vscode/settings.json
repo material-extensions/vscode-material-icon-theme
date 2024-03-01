@@ -33,7 +33,7 @@
     // "README.md": true,
     "LICENSE*": true,
     "CHANGELOG*": true,
-    "CONTRIBUTING*": true,
+    // "CONTRIBUTING*": true,
 
     // 🗑️ » trash
     "node_modules": true,
