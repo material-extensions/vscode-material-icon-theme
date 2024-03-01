@@ -38,6 +38,7 @@ const rustFerrisMinimal = lucodear('rust', IconPack.RustFerrisMinimal, [
   {
     name: 'rust-ferris-lib',
     fileNames: ['lib.rs'],
+    light: true,
   },
 ] as LucodearFileIcon[]);
 
@@ -50,10 +51,12 @@ const rustFerris = lucodear('rust', IconPack.RustFerris, [
   {
     name: 'rust-ferris-lib',
     fileNames: ['lib.rs'],
+    light: true,
   },
   {
     name: 'rust-ferris-mod',
     fileNames: ['mod.rs'],
+    light: true,
   },
 ] as LucodearFileIcon[]);
 
@@ -66,14 +69,17 @@ const rustFerrisFull = lucodear('rust', IconPack.RustFerrisFull, [
   {
     name: 'rust-ferris-main',
     fileNames: ['main.rs'],
+    light: true,
   },
   {
     name: 'rust-ferris-lib',
     fileNames: ['lib.rs'],
+    light: true,
   },
   {
     name: 'rust-ferris-mod',
     fileNames: ['mod.rs'],
+    light: true,
   },
 ] as LucodearFileIcon[]);
 
