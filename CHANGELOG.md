@@ -3,10 +3,19 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v0.28.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.27.0...v0.28.0) 
+
+> March 1, 2024 
+
+- fix: 🚑 missing config for light theme [`cbcbd8ec`](https://github.com/PKief/vscode-material-icon-theme/commit/cbcbd8ec)
+- feat: ✨ rust ferris icon packs [`d81c70a0`](https://github.com/PKief/vscode-material-icon-theme/commit/d81c70a0)
+- Support Bun's bunfig.toml file [`#2238`](https://github.com/PKief/vscode-material-icon-theme/pull/2238)
+ 
 #### [v0.27.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.26.0...v0.27.0) 
 
 > March 1, 2024 
 
+- release: 🔖 v0.27.0 [`65da3760`](https://github.com/PKief/vscode-material-icon-theme/commit/65da3760)
 - feat: ✨ misc, bin folder [`b1d8c725`](https://github.com/PKief/vscode-material-icon-theme/commit/b1d8c725)
  
 #### [v0.26.0](https://github.com/PKief/vscode-material-icon-theme/compare/v0.25.0...v0.26.0) 
