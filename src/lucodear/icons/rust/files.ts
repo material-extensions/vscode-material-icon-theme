@@ -30,6 +30,7 @@ const rustDefault = lucodear('rust', [
   {
     name: 'rust-test',
     fileExtensions: ['test/rs', 'tests/rs'],
+    light: true,
   },
 ] as LucodearFileIcon[]);
 
