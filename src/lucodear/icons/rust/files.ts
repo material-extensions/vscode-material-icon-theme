@@ -27,6 +27,10 @@ const rustDefault = lucodear('rust', [
     fileNames: ['mod.rs'],
     light: true,
   },
+  {
+    name: 'rust-test',
+    fileExtensions: ['test/rs', 'tests/rs'],
+  },
 ] as LucodearFileIcon[]);
 
 /** Uses Ferris the crab just for main and lib (`main.rs` and `lib.rs`) files. */
