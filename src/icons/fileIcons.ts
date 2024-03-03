@@ -952,10 +952,12 @@ export const fileIcons: FileIcons = {
       fileNames: [
         'postcss.config.js',
         'postcss.config.cjs',
+        'postcss.config.mjs',
         'postcss.config.ts',
         'postcss.config.cts',
         '.postcssrc.js',
         '.postcssrc.cjs',
+        '.postcssrc.mjs',
         '.postcssrc.ts',
         '.postcssrc.cts',
         '.postcssrc',
