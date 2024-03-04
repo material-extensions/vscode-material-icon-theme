@@ -1953,6 +1953,7 @@ export const fileIcons: FileIcons = {
       fileNames: [
         '.commitlintrc',
         '.commitlintrc.js',
+        '.commitlintrc.mjs',
         '.commitlintrc.cjs',
         '.commitlintrc.ts',
         '.commitlintrc.cts',
@@ -1962,6 +1963,7 @@ export const fileIcons: FileIcons = {
         '.commitlint.yaml',
         '.commitlint.yml',
         'commitlint.config.js',
+        'commitlint.config.mjs',
         'commitlint.config.cjs',
         'commitlint.config.ts',
         'commitlint.config.cts',
