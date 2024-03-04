@@ -19,6 +19,10 @@ export const folders = lucodear('misc', [
     folderNames: ['controller', 'controllers', 'ctrl'],
   },
   {
+    name: 'conversion',
+    folderNames: ['conversion', 'convert', 'conversions'],
+  },
+  {
     name: 'subcommand',
     folderNames: [
       'subcommand',
@@ -114,6 +118,10 @@ export const folders = lucodear('misc', [
       'infrastructure',
       'infrastructures',
     ],
+  },
+  {
+    name: 'repo',
+    folderNames: ['repo', 'repos', 'repository', 'repositories', 'branches'],
   },
   {
     name: 'result',
