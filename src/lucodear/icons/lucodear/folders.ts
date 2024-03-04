@@ -3,17 +3,28 @@ import { lucodear } from '../utils';
 
 export const folders = lucodear('lucodear', [
   {
+    name: 'kurv',
+    folderNames: ['kurv'],
+    light: true,
+  },
+  {
     name: 'lucodear',
     folderNames: ['lucodear', 'lucode', 'lucode.ar'],
   },
   {
-    name: 'pest',
-    folderNames: ['pest'],
-    light: true,
+    name: 'lucode-template',
+    folderNames: [
+      '.lucode-template',
+      '.template',
+      '.lc-tmpl',
+      '.lctmpl',
+      '.lctemplate',
+      '.lc-template',
+    ],
   },
   {
-    name: 'kurv',
-    folderNames: ['kurv'],
+    name: 'pest',
+    folderNames: ['pest'],
     light: true,
   },
 ] as LucodearFolderIcon[]);

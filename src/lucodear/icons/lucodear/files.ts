@@ -6,6 +6,29 @@ const nameAndExtension = (...files: string[]) => ({
   fileNames: files,
 });
 
+const tmplFolderExtensions = (...extensions: string[]) => {
+  const folders = [
+    '.lucode-template',
+    '.template',
+    '.lc-tmpl',
+    '.lctmpl',
+    '.lctemplate',
+    '.lc-template',
+  ];
+
+  // for each extensions add <folder>/<extension>
+
+  const folderExt = extensions.reduce((acc, extension) => {
+    folders.forEach((folder) => {
+      acc.push(`${folder}/${extension}`);
+    });
+
+    return acc;
+  }, [] as String[]);
+
+  return folderExt;
+};
+
 export const files = lucodear('lucodear', [
   {
     name: 'coco',
@@ -52,6 +75,19 @@ export const files = lucodear('lucodear', [
       'lucodear.jsonc'
     ),
     light: true,
+  },
+  {
+    name: 'lucode-template',
+    light: true,
+    fileExtensions: [
+      ...tmplFolderExtensions('yml', 'yaml', 'lc', 'json', 'toml'),
+      'lucode-template',
+      'lucodetemplate',
+      'lctemplate',
+      'lc-template',
+      'lctmpl',
+      'lc-tmpl',
+    ],
   },
   {
     name: 'lucode-yaml',
