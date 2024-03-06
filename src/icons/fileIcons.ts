@@ -923,6 +923,20 @@ export const fileIcons: FileIcons = {
       light: true,
     },
     {
+      name: 'remark',
+      fileNames: [
+        '.remarkrc',
+        '.remarkrc.cjs',
+        '.remarkrc.js',
+        '.remarkrc.json',
+        '.remarkrc.mjs',
+        '.remarkrc.yaml',
+        '.remarkrc.yml',
+        '.remarkignore',
+      ],
+      light: true,
+    },
+    {
       name: 'remix',
       fileNames: ['remix.config.js', 'remix.config.ts'],
       light: true,
