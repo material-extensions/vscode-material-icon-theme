@@ -1400,6 +1400,7 @@ export const fileIcons: FileIcons = {
         '.eslintignore',
         '.eslintcache',
         'eslint.config.js',
+        'eslint.config.cjs',
         'eslint.config.mjs',
         '.eslintrc.base.json',
       ],
