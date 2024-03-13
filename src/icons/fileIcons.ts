@@ -2435,7 +2435,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'funding',
-      fileNames: ['FUNDING.json', 'FUNDING.yml'],
+      fileNames: ['funding.json', 'funding.yml', 'funding.yaml'],
     },
     { name: 'tldraw', fileExtensions: ['tldr'], light: true },
     {
