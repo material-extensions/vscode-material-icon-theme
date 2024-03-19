@@ -153,8 +153,6 @@ export const languageIcons: LanguageIcon[] = [
   { icon: { name: 'stylable' }, ids: ['stylable'] },
   { icon: { name: 'hjson' }, ids: ['hjson'] },
   { icon: { name: 'huff' }, ids: ['huff'] },
-  { icon: { name: 'objective-c' }, ids: ['objective-c'] },
-  { icon: { name: 'objective-cpp' }, ids: ['objective-cpp'] },
   {
     icon: { name: 'concourse' },
     ids: ['concourse-pipeline-yaml', 'concourse-task-yaml'],
