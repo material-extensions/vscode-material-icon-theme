@@ -31,7 +31,7 @@ jobs:
           cd main
           svgFiles=$(git diff --no-index ../main ../fork --diff-filter=ACMRTUX --name-only | grep '.svg$')
           echo "SVG files changed: ${svgFiles}"
-          npx svg-icon-review ${svgFiles}
+          npx svg-icon-review --bigIcon ${svgFiles}
 
       - name: Install jq ⚙️
         run: sudo apt-get install jq
