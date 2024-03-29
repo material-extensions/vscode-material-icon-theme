@@ -2313,6 +2313,8 @@ export const fileIcons: FileIcons = {
       fileNames: [
         '.lighthouserc.js',
         'lighthouserc.js',
+        '.lighthouserc.cjs',
+        'lighthouserc.cjs',
         '.lighthouserc.json',
         'lighthouserc.json',
         '.lighthouserc.yml',
