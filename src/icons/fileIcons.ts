@@ -2569,5 +2569,9 @@ export const fileIcons: FileIcons = {
         '.k8s.yaml',
       ],
     },
+    {
+      name: 'csharpier',
+      fileNames: ['.csharpierrc', '.csharpierrc.json', '.csharpierrc.yaml'],
+    },
   ],
 };
