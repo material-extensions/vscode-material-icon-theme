@@ -2498,6 +2498,10 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['mojo', '🔥'],
     },
     {
+      name: 'csharpier',
+      fileNames: ['.csharpierrc', '.csharpierrc.json', '.csharpierrc.yaml'],
+    },
+    {
       name: 'werf',
       fileNames: [
         'werf.yaml',
