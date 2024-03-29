@@ -13,6 +13,12 @@ import {
   lightColorFileEnding,
   wildcardPattern,
 } from './constants';
+import {
+  validateHEXColorCode,
+  writeSVGFiles,
+  getSVG,
+  getPath,
+} from './folderGenerator';
 
 /**
  * Get all file icons that can be used in this theme.
@@ -191,6 +197,17 @@ const setIconDefinition = (
     };
   }
   return obj;
+};
+
+export const generateFileIcons = (color: string | undefined) => {
+  if (!color || !validateHEXColorCode(color)) {
+    return console.error('Invalid color code for file icons');
+  }
+
+  const fileIcon =
+    'M25.669,10.702,16,2H8A2,2,0,0,0,6,4V28a2,2,0,0,0,2,2H24a2,2,0,0,0,2-2V11.44537A1,1,0,0,0,25.669,10.702ZM24,28H8V4h6V14H24Zm0-16H16V4.69073l8,7.2Z';
+
+  writeSVGFiles('file', getSVG(getPath(fileIcon, color)));
 };
 
 const getCustomIcons = (fileAssociations: IconAssociations | undefined) => {

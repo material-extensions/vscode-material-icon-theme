@@ -1,4 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg fill="none" version="1.1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
- <path d="m2.0773 16.605h3.5126l-1.0883 3.2866h-2.4243zm0-6.2483h5.5816l-1.0882 3.2866h-4.4934zm0-6.2482h7.6507l-1.0884 3.2865h-6.5623zm11.113 0h8.7328v3.2865h-9.821zm-2.0689 6.2482h10.802v3.2866h-11.89zm-2.069 6.2483h12.871v3.2866h-13.959z" fill="#ef5350" stroke-width=".94502"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <g>
+    <polygon points="12.897 6 2 6 2 10 11.613 10 12.897 6" style="fill: #ef5350"/>
+    <polygon points="17.098 6 15.814 10 30 10 30 6 17.098 6" style="fill: #ef5350"/>
+  </g>
+  <g>
+    <polygon points="14.53 14 13.247 18 30 18 30 14 14.53 14" style="fill: #ef5350"/>
+    <polygon points="10.33 14 2 14 2 18 9.046 18 10.33 14" style="fill: #ef5350"/>
+  </g>
+  <g>
+    <polygon points="11.963 22 10.68 26 30 26 30 22 11.963 22" style="fill: #ef5350"/>
+    <polygon points="7.762 22 2 22 2 26 6.479 26 7.762 22" style="fill: #ef5350"/>
+  </g>
 </svg>
