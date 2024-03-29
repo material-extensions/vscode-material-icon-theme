@@ -3,6 +3,12 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v6.0.1](https://github.com/PKief/vscode-material-icon-theme/compare/v6.0.0...v6.0.1) 
+
+> March 29, 2024 
+
+- Update csharpier.svg [`e49d15dd`](https://github.com/PKief/vscode-material-icon-theme/commit/e49d15dd)
+ 
 #### [v6.0.0](https://github.com/PKief/vscode-material-icon-theme/compare/v5.0.1...v6.0.0) 
 
 > March 29, 2024 
