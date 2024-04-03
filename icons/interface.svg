@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect x="8" y="8" width="16" height="16" rx="2" ry="2" style="fill: #1976d2"/>
+  <path d="M10,11 H22 a1,1,0,0,1,1,1 V20 a1,1,0,0,1-1,1 H10 a1,1,0,0,1-1-1 V12 A1,1,0,0,1,10,11 Z" style="fill: #bbdefb"/>
+  <line x1="11" y1="13" x2="21" y2="13" style="stroke: #1976d2; stroke-linecap: round; stroke-width: 1"/>
+  <line x1="11" y1="16" x2="21" y2="16" style="stroke: #1976d2; stroke-linecap: round; stroke-width: 1"/>
+  <line x1="11" y1="19" x2="21" y2="19" style="stroke: #1976d2; stroke-linecap: round; stroke-width: 1"/>
+</svg>
