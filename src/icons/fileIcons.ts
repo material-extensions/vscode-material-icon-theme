@@ -2570,10 +2570,5 @@ export const fileIcons: FileIcons = {
         '.k8s.yaml',
       ],
     },
-    {
-      name: 'interface',
-      fileNames: ['interface.ts', 'interfaces.ts'],
-      fileExtensions: ['.ts'],
-    },
   ],
 };
