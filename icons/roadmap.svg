@@ -1,9 +1,3 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect x="4" y="4" width="2" height="24" style="fill: #26a69a"/>
-  <rect x="6" y="26" width="22" height="2" style="fill: #26a69a"/>
-  <rect x="8" y="6" width="4" height="6" style="fill: #26a69a"/>
-  <rect x="24" y="6" width="4" height="6" style="fill: #26a69a"/>
-  <rect x="12" y="6" width="12" height="2" style="fill: #26a69a"/>
-  <rect x="10" y="14" width="12" height="4" style="fill: #26a69a"/>
-  <rect x="14" y="20" width="12" height="4" style="fill: #26a69a"/>
+<svg version="1.1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+ <path d="M2,2H4V20H22V22H2V2M7,10H17V13H7V10M11,15H21V18H11V15M6,4H22V8H20V6H8V8H6V4Z" fill="#26a69a"/>
 </svg>
