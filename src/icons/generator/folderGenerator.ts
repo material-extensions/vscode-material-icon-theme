@@ -311,7 +311,7 @@ export const generateFolderIcons = (color: string | undefined) => {
 
 export const getPath = (d: string, color: string) =>
   `<path d="${d}" fill="${color}" />`;
-export const getSVG = (path: string, viewBoxSize: number = 32) =>
+export const getSVG = (path: string, viewBoxSize = 32) =>
   `<svg viewBox="0 0 ${viewBoxSize} ${viewBoxSize}" xmlns="http://www.w3.org/2000/svg">${path}</svg>`;
 
 export const writeSVGFiles = (iconName: string, svg: string) => {
