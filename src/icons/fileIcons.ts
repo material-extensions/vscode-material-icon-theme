@@ -1686,6 +1686,10 @@ export const fileIcons: FileIcons = {
     { name: 'hcl', fileExtensions: ['hcl'], light: true },
     { name: 'helm', fileNames: ['.helmignore'] },
     { name: 'san', fileExtensions: ['san'] },
+    {
+      name: 'quokka',
+      fileExtensions: ['quokka.js', 'quokka.ts', 'quokka.jsx', 'quokka.tsx'],
+    },
     { name: 'wallaby', fileNames: ['wallaby.js', 'wallaby.conf.js'] },
     { name: 'django', fileExtensions: ['djt'] },
     { name: 'stencil', fileNames: ['stencil.config.js', 'stencil.config.ts'] },
