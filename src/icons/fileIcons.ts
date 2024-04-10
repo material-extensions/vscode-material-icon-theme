@@ -1613,6 +1613,8 @@ export const fileIcons: FileIcons = {
       fileNames: [
         'gruntfile.js',
         'gruntfile.ts',
+        'gruntfile.cjs',
+        'gruntfile.cts',
         'gruntfile.coffee',
         'gruntfile.babel.js',
         'gruntfile.babel.ts',
