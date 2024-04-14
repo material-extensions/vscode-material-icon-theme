@@ -2065,7 +2065,7 @@ export const fileIcons: FileIcons = {
       fileNames: [
         'duc.json',
       ],
-      fileExtensions: ['duc.json'],
+      fileExtensions: ['duc.json, duc'],
     },
     {
       name: 'snowpack',
