@@ -900,6 +900,11 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-cloudflare',
         folderNames: ['cloudflare', '.cloudflare'],
       },
+      {
+        name: 'folder-angular-directive',
+        folderNames: ['directives'],
+        enabledFor: [IconPack.Angular],
+      },
     ],
   },
   {
