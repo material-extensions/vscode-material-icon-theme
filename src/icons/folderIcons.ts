@@ -26,6 +26,9 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['css', 'stylesheet', 'stylesheets', 'style', 'styles'],
       },
       { name: 'folder-sass', folderNames: ['sass', '_sass', 'scss', '_scss'] },
+      { name: 'folder-television', folderNames: ['tv', 'television'] },
+      { name: 'folder-desktop', folderNames: ['desktop'] },
+      { name: 'folder-console', folderNames: ['console'] },
       {
         name: 'folder-images',
         folderNames: [
@@ -489,7 +492,10 @@ export const folderIcons: FolderTheme[] = [
         ],
       },
       { name: 'folder-ansible', folderNames: ['ansible'] },
-      { name: 'folder-server', folderNames: ['server', 'servers', 'backend'] },
+      {
+        name: 'folder-server',
+        folderNames: ['server', 'servers', 'backend', 'backends'],
+      },
       {
         name: 'folder-client',
         folderNames: ['client', 'clients', 'frontend', 'frontends', 'pwa'],
@@ -892,6 +898,10 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-taskfile',
         folderNames: ['taskfile', 'taskfiles', '.taskfile', '.taskfiles'],
+      },
+      {
+        name: 'folder-cloudflare',
+        folderNames: ['cloudflare', '.cloudflare'],
       },
     ],
   },
