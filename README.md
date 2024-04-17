@@ -98,7 +98,7 @@ For example a custom SVG file called `sample.svg` can be placed in an `icons` fo
      ┗ sample.svg
 ```
 
-In the settings.json the icon can be associated to a file name or file extension like this:
+In the settings.json (User Settings only!) the icon can be associated to a file name or file extension like this:
 
 ```json
 "material-icon-theme.files.associations": {
@@ -133,7 +133,7 @@ In our example we place them into an `icons` folder inside of the `.vscode/exten
      ┗ folder-sample-open.svg
 ```
 
-In the settings.json the folder icons can be associated to a folder name (e.g. "src") like this:
+In the settings.json (User Settings only!) the folder icons can be associated to a folder name (e.g. "src") like this:
 
 ```json
 "material-icon-theme.folders.associations": {
