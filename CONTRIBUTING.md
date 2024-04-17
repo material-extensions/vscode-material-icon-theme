@@ -14,6 +14,7 @@ Glad you're here and interested in expanding this project 🎉 In order to make 
   - [Icons for color themes](#icons-for-color-themes)
   - [Unique assignment to file and folder names](#icon-assignments)
   - [Create icon packs](#icon-packs)
+  - [Designing Pixel Perfect Icons](#pixel-perfect-icons)
 - [Add translations](#add-translations)
 - [Update API](#update-api)
 
@@ -71,6 +72,12 @@ An important success factor of this icon extension is the fact that all colors f
 
 Now it often happens that many programming languages already have icons with their own colors. To find the matching color from the Material Design color palette based on a known color, there is the [Material Color Converter](https://pkief.github.io/material-color-converter/). With its help any color can be converted into a Material Design color.
 
+You can check if your icon fits the Material Design color palette by running the following command:
+
+```sh
+npm run check-colors <path/to/svg>
+```
+
 Continue reading [here](#design-folder-icons) to find out about colors for the folder icons.
 
 | ✅                                                                | ❌                                                                    |
@@ -81,7 +88,7 @@ Continue reading [here](#design-folder-icons) to find out about colors for the f
 
 When designing folder icons there are also a few points to consider. A folder icon always consists of two icons - the folder in the background and a motive in the foreground:
 
-<img src="./images/how-tos/folder-icon-parts.png" width="300px" />
+<img src="./images/how-tos/folder-icon-parts.svg" width="300px" />
 
 For the motive, only colors from the second row in the [color palette](https://pkief.com/material-color-converter/) are allowed. For the background choose a slightly darker hue (mostly in rows 4-6 in the palette).
 
@@ -91,7 +98,7 @@ This uniform color selection makes the folder icons look more consistent and fit
 
 | ✅                                                                                   | ❌                                                                                 |
 | ------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------- |
-| <img src="./images/how-tos/svg-folder-icon-with-correct-colors.png" width="200px" /> | <img src="./images/how-tos/svg-folder-icon-with-wrong-colors.png" width="200px" /> |
+| <img src="./images/how-tos/svg-folder-icon-with-correct-colors.svg" width="200px" /> | <img src="./images/how-tos/svg-folder-icon-with-wrong-colors.svg" width="200px" /> |
 
 <h3 id="icon-spacing">Icon spacing</h3>
 
@@ -109,10 +116,7 @@ Icons are assigned to file names, folder names or registered languages of VS Cod
 - [folderIcons.ts](src/icons/folderIcons.ts)
 - [languageIcons.ts](src/icons/languageIcons.ts)
 
-> **Note**
-> It is very important that icons are only assigned to the file and folder names that really apply to them. This means that you should be careful which files and folders you assign icons to. There are many people with different projects all over the world and not everyone expects that e.g. a file name will have a special framework based icon even though the framework is not used at all by this one user.
->
-> A solution for this can be [icon packs](#icon-packs).
+Be careful when assigning icons to files and folders, as not everyone expects a file name to have a special icon based on a framework that is not used by them. A solution for this can be the usage of [Language icon definitions](#language-icons) or [icon packs](#icon-packs).
 
 #### File icons
 
@@ -210,6 +214,62 @@ To create an icon pack, the following steps have to be completed:
 2. Add translations to the package.nls.\*.json files under the section `configuration.activeIconPack` (at least to [package.nls.json](package.nls.json), the English translation file)
 3. Adjust [package.json](package.json) under `configuration.properties.material-icon-theme.activeIconPack`
 4. Use the icon pack inside the [fileIcons.ts](src/icons/fileIcons.ts),[folderIcons.ts](src/icons/folderIcons.ts) or [languageIcons.ts](src/icons/languageIcons.ts) files in the `enabledFor` attribute
+
+<h3 id="pixel-perfect-icons">Designing Pixel-Perfect Icons</h3>
+
+At 100% zoom, VS Code displays icons at 16x16 pixels. This means that ideally, the icons should be designed in a way that they look good at this size.
+
+A known issue is that the icons can appear blurry after resizing them, even to the point where they are no longer easily recognizable, depending on the case.
+
+To avoid blurry icons, it is recommended to design them using a 16x16 grid and trying to align the edges of the icon to it. This will help ensure that the icons look sharp and clear, even at smaller sizes.
+
+<img src="./images/how-tos/blurry-issue.png" width="300px" />
+
+<h4 id="pixel-perfect-tips">Tips for Designing Pixel-Perfect Icons</h4>
+
+The following are some tips to help you design nice and sharp-looking icons. These tips are not rules but rather guidelines to help you achieve the best results possible:
+
+- **Use a grid**: This is the most important tip. Try to use a 16x16 grid to design the icons and snap the edges of the icon to the grid. Blurriness is often caused by misalignment of the edges and vertices, resulting in the icon trying to fit a pixel in between two pixels. As this is physically impossible, the engine will create two pixels with different opacity to simulate the in-between pixel, causing the blurriness. When a path is aligned to the grid, each pixel will be a solid color, and the icon will look sharp.
+
+  The following example illustrates an icon with its paths aligned to a 16x16 grid:
+
+  <img src="./images/how-tos/pixel-perfect-icon.svg" width="300px" />
+
+  On the other hand, this other example illustrates an icon with its paths not aligned to a 16x16 grid:
+
+  <img src="./images/how-tos/missaligned-icon.svg" width="300px" />
+
+  Here is a comparison of both icons rendered at 16px:
+
+  <img src="./images/how-tos/aligned-vs-missaligned.png" />
+
+  As you can see, the misaligned icon (left) has blurry edges with "ghost pixels" that attempt to simulate "half a pixel". Additionally, the suitcase motif in it is slightly harder to recognize. On the other hand, the aligned icon (right) looks sharper and clearer.
+
+  So, even though the difference between the two icons was subtle, the impact on the final result is quite significant.
+
+- **Decimals are not your friends**: Related to the previous tip, when designing icons, it's important to try to avoid using decimal values for the positions of the vertices. This is because, as previously mentioned, pixels are square, and there's no such thing as a fractionated pixel. If you keep the vertices aligned to the grid, it will be easier to avoid decimal coordinates. In short, try to keep the vertices on whole numbers.
+
+- **Sometimes less is more**: Detail is valuable, but attempting to incorporate too much detail in 16 pixels or less can pose a significant challenge. It might even be counterproductive, resulting in an icon that is difficult to recognize. Icons are primarily about communicating a concept. To effectively communicate a concept, it must be easily recognizable.
+
+  Let's consider the following example:
+
+  <img src="./images/how-tos/elephant-too-much-detail.svg" width="100px" />
+
+  The icon is visually appealing, but it has some issues: the trunk, the tail and the negative space separating the ear from the body are too thin. Additionally, the eye is too small, and the shapes, in general, are somewhat complex. While this icon would look great if rendered at 24, 32, or 64 pixels, at 16 pixels, we lack sufficient resolution to effectively convey the concept.
+
+  Now, let's explore a minimalistic approach to communicating the same concept:
+
+  | Concept                                                             | Result                                                                |
+  | ------------------------------------------------------------------- | --------------------------------------------------------------------- |
+  | <img src="./images/how-tos/elephant-with-grid.svg" width="150px" /> | <img src="./images/how-tos/elephant-less-detail.svg" width="150px" /> |
+
+  Indeed, the minimalistic version may lack the level of detail present in the first icon, particularly when viewed at a larger size. However, on the other hand, we are still effectively communicating the concept. It's unmistakably an elephant. Furthermore, all edges and paths are aligned to the grid.
+
+  Now, let's examine both icons when rendered at 16px:
+
+  <img src="./images/how-tos/elephant-result.png" />
+
+- **Curves vs straight lines**: Let's face it, pixels are square, there's nothing we can do about it. And since pixels are square, drawing a curve actually involves drawing a series of... squares. Consequently, when rendering a curve, we're essentially asking the display to render a fraction of a pixel, which is impossible. As a result, curves tend to appear blurry. This is normal. However, it's perfectly fine to use curves, circles, and rounded edges in your icons. Just keep in mind these limitations if you're wondering why your icon doesn't look as sharp as you'd like.
 
 ## Add translations
 
