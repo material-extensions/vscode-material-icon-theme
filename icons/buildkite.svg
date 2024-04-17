@@ -1,1 +1,8 @@
-<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g data-name="Layer 2" fill-rule="evenodd" fill="none"><path class="cls-1" fill="#00E676" d="M8.652 8.585v6.696L1.956 12V5.304zM15.415 12V5.304l6.629 3.281z"/><path class="cls-2" fill="#00C853" d="M8.652 8.585v6.696L15.415 12V5.304zM15.415 12v6.696l6.629-3.415V8.585z"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <g>
+    <polygon points="12 22 4 18 4 8 12 12 12 22" style="fill: #00e676;fill-rule: evenodd"/>
+    <polyline points="20 8 20 18 24 18 28 14" style="fill: #00e676;fill-rule: evenodd"/>
+    <polygon points="12 22 20 18 20 8 12 12 12 22" style="fill: #00c853;fill-rule: evenodd"/>
+    <polygon points="20 28 28 24 28 14 20 18 20 28" style="fill: #00c853;fill-rule: evenodd"/>
+  </g>
+</svg>
