@@ -2420,6 +2420,19 @@ export const fileIcons: FileIcons = {
       ],
     },
     {
+      name: 'knip',
+      fileNames: [
+        'knip.json',
+        'knip.jsonc',
+        '.knip.json',
+        '.knip.jsonc',
+        'knip.ts',
+        'knip.js',
+        'knip.config.ts',
+        'knip.config.js',
+      ]
+    },
+    {
       name: 'taskfile',
       fileExtensions: ['taskfile.yml', 'taskfile.yaml'],
       fileNames: [
