@@ -2430,7 +2430,7 @@ export const fileIcons: FileIcons = {
         'knip.js',
         'knip.config.ts',
         'knip.config.js',
-      ]
+      ],
     },
     {
       name: 'taskfile',
