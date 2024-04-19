@@ -2493,7 +2493,7 @@ export const fileIcons: FileIcons = {
       name: 'syncpack',
       fileNames: [
         '.syncpackrc',
-        'syncpackrc.json',
+        '.syncpackrc.json',
         '.syncpackrc.yaml',
         '.syncpackrc.yml',
         '.syncpackrc.js',
