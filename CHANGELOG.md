@@ -3,6 +3,37 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v5.0.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.34.0...v5.0.0) 
+
+> April 18, 2024 
+
+- fix: update version [`0ae248de`](https://github.com/PKief/vscode-material-icon-theme/commit/0ae248de)
+- feat: add backend/backends folder icon (Closes #2276) [`c7fd9c9c`](https://github.com/PKief/vscode-material-icon-theme/commit/c7fd9c9c)
+- feat: update typescript and javascript icons [`d10e0d14`](https://github.com/PKief/vscode-material-icon-theme/commit/d10e0d14)
+- feat: add `.cjs` extension support for `gruntfile` [`#2271`](https://github.com/PKief/vscode-material-icon-theme/pull/2271)
+- feat: update color of JSON icon [`d8d90fd6`](https://github.com/PKief/vscode-material-icon-theme/commit/d8d90fd6)
+- Add Quokka icon and file-extension default config [`#2152`](https://github.com/PKief/vscode-material-icon-theme/pull/2152)
+- Add `mjs` to `postcss.config.*` [`#2269`](https://github.com/PKief/vscode-material-icon-theme/pull/2269)
+- feat: update icons [`75bdd37d`](https://github.com/PKief/vscode-material-icon-theme/commit/75bdd37d)
+- feat: update file icons for grid alignment [`a8095d5f`](https://github.com/PKief/vscode-material-icon-theme/commit/a8095d5f)
+- feat: add capnp [`#2224`](https://github.com/PKief/vscode-material-icon-theme/pull/2224)
+- Update icon-review.yml [`5fa74251`](https://github.com/PKief/vscode-material-icon-theme/commit/5fa74251)
+- feat: add lighthouserc .cjs extension support [`#2256`](https://github.com/PKief/vscode-material-icon-theme/pull/2256)
+- feat: add translation for Korean [`#2234`](https://github.com/PKief/vscode-material-icon-theme/pull/2234)
+- build(deps-dev): bump follow-redirects from 1.15.4 to 1.15.6 [`#2254`](https://github.com/PKief/vscode-material-icon-theme/pull/2254)
+- chore: add `svg-color-linter` to check-colors before requesting merge [`#2237`](https://github.com/PKief/vscode-material-icon-theme/pull/2237)
+- Remove duplicated language id definitions [`ff4bb608`](https://github.com/PKief/vscode-material-icon-theme/commit/ff4bb608)
+- Move objective c and cpp to language associations [`#2249`](https://github.com/PKief/vscode-material-icon-theme/pull/2249)
+- feat: enhance eslint flat config support [`#2247`](https://github.com/PKief/vscode-material-icon-theme/pull/2247)
+- feat: add commitlint .mjs extension support [`#2241`](https://github.com/PKief/vscode-material-icon-theme/pull/2241)
+- Add Controller, Television, and Desktop folder icons [`#2218`](https://github.com/PKief/vscode-material-icon-theme/pull/2218)
+- feat: add postcss .mjs extension support [`#2239`](https://github.com/PKief/vscode-material-icon-theme/pull/2239)
+- Support Bun's bunfig.toml file [`#2238`](https://github.com/PKief/vscode-material-icon-theme/pull/2238)
+- Cloudflare folder icon [`#2235`](https://github.com/PKief/vscode-material-icon-theme/pull/2235)
+- Add zon file extension to zig icon [`ca53a641`](https://github.com/PKief/vscode-material-icon-theme/commit/ca53a641)
+- Feature/openapi file extensions [`#2229`](https://github.com/PKief/vscode-material-icon-theme/pull/2229)
+- Pixel perfect icons at 16px [`#2226`](https://github.com/PKief/vscode-material-icon-theme/pull/2226)
+ 
 #### [v4.34.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.33.0...v4.34.0) 
 
 > February 19, 2024 
