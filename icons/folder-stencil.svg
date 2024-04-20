@@ -1,1 +1,8 @@
-<svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.4142" version="1.1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><path d="m10 4h-6c-1.11 0-2 .89-2 2v12c0 1.097.903 2 2 2h16c1.097 0 2-.903 2-2v-10c0-1.11-.9-2-2-2h-8l-2-2z" fill="#e57373" fill-rule="nonzero" style="fill:#448aff"/><style>.st0{fill:#fff}</style><g transform="matrix(.56815 0 0 .56815 8.8734 9.4092)" style="fill:#bbdefb"><g transform="translate(-3.3597e-5,-5e-5)" style="fill:#bbdefb"><path d="m9.8376 14.066h10.021l-5.4167 5.9341h-9.9666z" style="fill:#bbdefb"/><path d="m26.25 7.033h-20.586l-5.4138 5.934h20.586z" style="fill:#bbdefb"/><path d="m12.041 0h9.9836l-5.3917 5.9341h-9.9916z" style="fill:#bbdefb"/></g></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <path d="M13.84376,7.53645l-1.28749-1.0729A2,2,0,0,0,11.27591,6H4A2,2,0,0,0,2,8V24a2,2,0,0,0,2,2H28a2,2,0,0,0,2-2V10a2,2,0,0,0-2-2H15.12412A2,2,0,0,1,13.84376,7.53645Z" style="fill: #448aff"/>
+  <g>
+    <polygon points="32 18 28 22 12 22 16 18 32 18" style="fill: #bbdefb;fill-rule: evenodd"/>
+    <polygon points="28 12 24 16 18 16 22 12 28 12" style="fill: #bbdefb;fill-rule: evenodd"/>
+    <polygon points="26 24 22 28 16 28 20 24 26 24" style="fill: #bbdefb;fill-rule: evenodd"/>
+  </g>
+</svg>

@@ -1,3 +1,4 @@
+import merge from 'lodash.merge';
 import { getConfigProperties, getMaterialIconsJSON, getThemeConfig } from '.';
 import { createIconFile } from '../icons/index';
 import { IconJsonOptions } from '../models';
@@ -27,21 +28,36 @@ const compareConfigs = (): {
   updatedConfigs: IconJsonOptions;
   updatedJSONConfig: IconJsonOptions;
 } => {
-  const configs = Object.keys(getConfigProperties())
+  const configPropertyNames = Object.keys(getConfigProperties())
     .map((c) => c.split('.').slice(1).join('.'))
     // remove configurable notification messages
     .filter((c) => !/show(Welcome|Update|Reload)Message/g.test(c));
 
   const json = getMaterialIconsJSON();
-  return configs.reduce(
+  return configPropertyNames.reduce(
     (result, configName) => {
       try {
-        const themeConfig = getThemeConfig(configName);
-        const configValue = themeConfig.globalValue ?? themeConfig.defaultValue;
-        const currentState = getObjectPropertyValue(json.options, configName);
+        const themeConfig = getThemeConfig(configName) ?? {
+          globalValue: '',
+          workspaceValue: '',
+          defaultValue: '',
+        };
+
+        const configValue = getConfigValue(
+          themeConfig as {
+            globalValue: unknown;
+            workspaceValue: unknown;
+            defaultValue: unknown;
+          }
+        );
+
+        const currentState = getObjectPropertyValue(
+          json.options ?? {},
+          configName
+        );
 
         if (JSON.stringify(configValue) !== JSON.stringify(currentState)) {
-          setObjectPropertyValue(json.options, configName, configValue);
+          setObjectPropertyValue(json.options as {}, configName, configValue);
           setObjectPropertyValue(
             result.updatedConfigs,
             configName,
@@ -54,6 +70,40 @@ const compareConfigs = (): {
 
       return result;
     },
-    { updatedConfigs: {}, updatedJSONConfig: json.options }
+    {
+      updatedConfigs: {} as IconJsonOptions,
+      updatedJSONConfig: json.options as IconJsonOptions,
+    }
   );
+};
+
+/**
+ * Returns the value of a specific configuration by checking the workspace and the user configuration and fallback to the default value.
+ *
+ * @param themeConfig Theme configuration
+ * @returns Actual theme configuration value
+ */
+const getConfigValue = (themeConfig: {
+  globalValue: unknown;
+  workspaceValue: unknown;
+  defaultValue: unknown;
+}) => {
+  let configValue;
+  if (
+    typeof themeConfig.workspaceValue === 'object' &&
+    themeConfig.workspaceValue &&
+    themeConfig.globalValue
+  ) {
+    configValue = merge(
+      {},
+      themeConfig.workspaceValue,
+      themeConfig.globalValue
+    );
+  } else {
+    configValue =
+      themeConfig.workspaceValue ??
+      themeConfig.globalValue ??
+      themeConfig.defaultValue;
+  }
+  return configValue;
 };

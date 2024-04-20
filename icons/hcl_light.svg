@@ -1,1 +1,7 @@
-<svg style="clip-rule:evenodd;fill-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.4142" version="1.1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><g id="Logo" transform="matrix(.17279 0 0 .17279 2.7644 2.2287)" style="fill:#455a64"><path d="m44.5 0-44.5 25.7v61.7l16.7 9.7v-61.8l27.8-16z" style="fill-rule:nonzero;fill:#455a64"/><path d="m62.3 0v49.2h-17.8v-18.4l-16.7 9.7v62.9l16.7 9.7v-49h17.8v18.2l16.8-9.6v-63z" style="fill-rule:nonzero;fill:#455a64"/><path d="m62.3 113.1 44.6-25.7v-61.7l-16.8-9.6v61.7l-27.8 16z" style="fill-rule:nonzero;fill:#455a64"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <g>
+    <polygon points="18 1.2 18 14 14 14 14 10 10 12 10 28.37 14 30.8 14 18 18 18 18 22 22 20 22 3.63 18 1.2" style="fill: #455a64"/>
+    <polygon points="14 1.2 2 8.49 2 23.51 6 25.94 6 10.74 14 5.88 14 1.2" style="fill: #455a64"/>
+    <polygon points="26 6.06 26 21.26 18 26.12 18 30.8 30 23.51 30 8.49 26 6.06" style="fill: #455a64"/>
+  </g>
+</svg>

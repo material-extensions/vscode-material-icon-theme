@@ -1,2 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.4142" version="1.1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><path d="m10 4h-6c-1.11 0-2 0.89-2 2v12c0 1.097 0.903 2 2 2h16c1.097 0 2-0.903 2-2v-10c0-1.11-0.9-2-2-2h-8l-2-2z" fill="#ff9800" fill-rule="nonzero"/><path d="m21.159 10.275 1.3031 2.6062h-1.9547l-1.3031-2.6062h-1.3031l1.3031 2.6062h-1.9547l-1.3031-2.6062h-1.3031l1.3031 2.6062h-1.9547l-1.3031-2.6062h-0.65156a1.3031 1.3031 0 0 0 -1.3031 1.3031v7.8188a1.3031 1.3031 0 0 0 1.3031 1.3031h10.425a1.3031 1.3031 0 0 0 1.3031 -1.3031v-9.1219z" fill="#ffe0b2" stroke-width=".65156"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <path d="M13.84376,7.53645l-1.28749-1.0729A2,2,0,0,0,11.27591,6H4A2,2,0,0,0,2,8V24a2,2,0,0,0,2,2H28a2,2,0,0,0,2-2V10a2,2,0,0,0-2-2H15.12412A2,2,0,0,1,13.84376,7.53645Z" style="fill: #ff9800"/>
+  <path d="M28,14l2,4H28l-2-4H24l2,4H24l-2-4H20l2,4H20l-2-4H16a2,2,0,0,0-2,2V26a2,2,0,0,0,2,2H30a2,2,0,0,0,2-2V14.5a.5.5,0,0,0-.5-.5Z" style="fill: #ffe0b2;fill-rule: evenodd"/>
+</svg>

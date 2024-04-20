@@ -1,7 +1,7 @@
-import * as vscode from 'vscode';
+import { QuickPickItem, window as codeWindow } from 'vscode';
+import { getMaterialIconsJSON, setThemeConfig } from '../helpers';
+import { translate } from '../i18n';
 import { getDefaultIconOptions, validateHEXColorCode } from '../icons';
-import * as helpers from './../helpers';
-import * as i18n from './../i18n';
 
 interface FolderColor {
   label: string;
@@ -24,7 +24,9 @@ export const changeFolderColor = async () => {
   try {
     const status = checkFolderColorStatus();
     const response = await showQuickPickItems(status);
-    handleQuickPickActions(response);
+    if (response) {
+      handleQuickPickActions(response);
+    }
   } catch (error) {
     console.error(error);
   }
@@ -33,39 +35,42 @@ export const changeFolderColor = async () => {
 /** Show QuickPick items to select preferred color for the folder icons. */
 const showQuickPickItems = (currentColor: string) => {
   const options = iconPalette.map(
-    (color): vscode.QuickPickItem => ({
+    (color): QuickPickItem => ({
       description: color.label,
       label: isColorActive(color, currentColor) ? '\u2714' : '\u25FB',
     })
   );
 
-  return vscode.window.showQuickPick(options, {
-    placeHolder: i18n.translate('folders.color'),
+  return codeWindow.showQuickPick(options, {
+    placeHolder: translate('colorSelect.color'),
     ignoreFocusOut: false,
     matchOnDescription: true,
   });
 };
 
 /** Handle the actions from the QuickPick. */
-const handleQuickPickActions = (value: vscode.QuickPickItem) => {
+const handleQuickPickActions = async (value: QuickPickItem) => {
   if (!value || !value.description) return;
   if (value.description === 'Custom Color') {
-    vscode.window
-      .showInputBox({
-        placeHolder: i18n.translate('folders.hexCode'),
-        ignoreFocusOut: true,
-        validateInput: validateColorInput,
-      })
-      .then((value) => setColorConfig(value));
+    const value = await codeWindow.showInputBox({
+      placeHolder: translate('colorSelect.hexCode'),
+      ignoreFocusOut: true,
+      validateInput: validateColorInput,
+    });
+    if (value) {
+      setColorConfig(value);
+    }
   } else {
-    const hexCode = iconPalette.find((c) => c.label === value.description).hex;
-    setColorConfig(hexCode);
+    const hexCode = iconPalette.find((c) => c.label === value.description)?.hex;
+    if (hexCode) {
+      setColorConfig(hexCode);
+    }
   }
 };
 
 const validateColorInput = (colorInput: string) => {
   if (!validateHEXColorCode(colorInput)) {
-    return i18n.translate('folders.wrongHexCode');
+    return translate('colorSelect.wrongHexCode');
   }
   return undefined;
 };
@@ -73,14 +78,12 @@ const validateColorInput = (colorInput: string) => {
 /** Check status of the folder color */
 export const checkFolderColorStatus = (): string => {
   const defaultOptions = getDefaultIconOptions();
-  const config = helpers.getMaterialIconsJSON();
-  return config.options.folders.color ?? defaultOptions.folders.color;
+  const config = getMaterialIconsJSON();
+  return config?.options?.folders?.color ?? defaultOptions.folders.color!;
 };
 
 const setColorConfig = (value: string) => {
-  if (value) {
-    helpers.setThemeConfig('folders.color', value.toLowerCase(), true);
-  }
+  setThemeConfig('folders.color', value.toLowerCase(), true);
 };
 
 const isColorActive = (color: FolderColor, currentColor: string): boolean => {

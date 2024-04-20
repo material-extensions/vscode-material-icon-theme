@@ -1,9 +1,8 @@
-<svg class="logo" width="50" height="50" version="1.1" viewBox="0 0 50 61" xmlns="http://www.w3.org/2000/svg">
- <g transform="matrix(.86738 0 0 .86738 2.1012 4.3485)">
-  <g fill="#5c6bc0">
-   <path class="rect-dark" d="m36.4 39.13 16.4-9.46v-18.95l-16.4 9.48"/>
-   <path class="rect-light" d="m18.2 10.72 16.4 9.48v18.93l-16.4-9.47"/>
-   <path class="rect-light" d="m0 19.09 16.4 9.47v-18.94l-16.4-9.47m18.2 50.53 16.4 9.47v-18.94l-16.4-9.47"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <g>
+    <polygon points="2 10 10 14 10 6 2 2 2 10" style="fill: #5c6bc0"/>
+    <polygon points="12 15 20 19 20 11 12 7 12 15" style="fill: #5c6bc0"/>
+    <polygon points="12 26 20 30 20 22 12 18 12 26" style="fill: #5c6bc0"/>
+    <polygon points="22 12 22 20 30 16 30 8 22 12" style="fill: #5c6bc0"/>
   </g>
- </g>
 </svg>

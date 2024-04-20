@@ -1,10 +1,17 @@
-import * as painter from '../../helpers/painter';
+import { green, red } from '../../helpers/painter';
 import { fileIcons, folderIcons, languageIcons } from './../../../icons';
 
 /**
  * Store all icons that are wrong configured
  */
-const allConflicts = {
+const allConflicts: {
+  fileIcons: {
+    fileExtensions: Record<string, string[]>;
+    fileNames: Record<string, string[]>;
+  };
+  folderIcons: Record<string, string[]>;
+  languageIcons: Record<string, string[]>;
+} = {
   fileIcons: {
     fileExtensions: {},
     fileNames: {},
@@ -26,11 +33,13 @@ const checkFileIcons = () => {
   checkForConflictsInFileIcons('fileNames');
 };
 
-const checkForConflictsInFileIcons = (fileIconDefinitionType: string) => {
-  const icons = {};
+const checkForConflictsInFileIcons = (
+  fileIconDefinitionType: 'fileExtensions' | 'fileNames'
+) => {
+  const icons: Record<string, string> = {};
   fileIcons.icons.forEach((icon) => {
     if (!icon[fileIconDefinitionType]) return;
-    icon[fileIconDefinitionType]
+    (icon[fileIconDefinitionType] ?? [])
       .map((d) => d.toLowerCase())
       .forEach((definition) => {
         if (
@@ -57,7 +66,7 @@ const checkForConflictsInFileIcons = (fileIconDefinitionType: string) => {
 const checkFolderIcons = () => {
   folderIcons.forEach((theme) => {
     if (!theme.icons) return;
-    const icons = {};
+    const icons: Record<string, string> = {};
     theme.icons.forEach((icon) => {
       icon.folderNames
         .map((f) => f.toLowerCase())
@@ -83,7 +92,7 @@ const checkFolderIcons = () => {
 };
 
 const checkLanguageIcons = () => {
-  const icons = {};
+  const icons: Record<string, string> = {};
   languageIcons.forEach((langIcon) => {
     langIcon.ids
       .map((id) => id.toLowerCase())
@@ -110,22 +119,20 @@ const handleErrors = () => {
       ...Object.keys(allConflicts.languageIcons),
     ].length > 0
   ) {
-    console.log('> Material Icon Theme:', painter.red('Icon conflicts:'));
-    console.log(painter.red('--------------------------------------'));
+    console.log('> Material Icon Theme:', red('Icon conflicts:'));
+    console.log(red('--------------------------------------'));
 
     printErrorMessage(allConflicts.fileIcons.fileExtensions, 'fileExtension');
     printErrorMessage(allConflicts.fileIcons.fileNames, 'fileName');
     printErrorMessage(allConflicts.folderIcons, 'folderName');
     printErrorMessage(allConflicts.languageIcons, 'languageId');
 
-    console.log(
-      '\n' + painter.red('Please check the wrong icon configurations!\n')
-    );
+    console.log('\n' + red('Please check the wrong icon configurations!\n'));
     process.exit(1);
   } else {
     console.log(
       '> Material Icon Theme:',
-      painter.green('Passed icon conflict checks!')
+      green('Passed icon conflict checks!')
     );
   }
 };
@@ -135,7 +142,7 @@ const printErrorMessage = (icons: any, definitionType: string) => {
   keys.forEach((key) => {
     const conflictIcons = icons[key];
     console.log(
-      painter.red(
+      red(
         `For ${definitionType} "${key}" are ${
           conflictIcons.length
         } icons defined: [${conflictIcons.join(', ')}]`

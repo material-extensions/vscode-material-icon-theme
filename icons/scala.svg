@@ -1,1 +1,8 @@
-<svg enable-background="new 0 0 256 256" version="1.1" viewBox="0 0 256 256" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><g transform="translate(-6.1456 .2445)" fill="#f44336" fill-rule="evenodd"><rect transform="matrix(.98931 -.14586 0 1 0 0)" x="60.251" y="59.435" width="150.71" height="49.488"/><rect transform="matrix(.98931 -.14586 0 1 0 0)" x="60.237" y="122.87" width="150.71" height="49.488"/><rect transform="matrix(.98931 -.14586 0 1 0 0)" x="60.231" y="186.14" width="150.71" height="49.488"/><rect transform="rotate(17.923)" x="87.528" y="67.767" width="100.48" height="9.2044"/><rect transform="rotate(17.923)" x="126.41" y="23.362" width="100.48" height="9.2044"/><rect transform="rotate(17.923)" x="107.03" y="128.07" width="100.48" height="9.2044"/><rect transform="rotate(17.923)" x="145.89" y="83.566" width="100.48" height="9.2044"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <g>
+    <path d="M6.45652,9.89438l12.52394,5.16271-.45652,1.211L6,11.10543Zm7.01954-3.09154L26,11.96555l-.45652,1.21105L13.01954,8.01389ZM6.4659,18.885l12.52394,5.1627-.45652,1.21106L6.00937,20.09606Zm7.00735-3.08619,12.52394,5.16271-.45652,1.21105-12.52394-5.1627Z" style="fill: #f44336;fill-rule: evenodd"/>
+    <polygon points="6 24.07 6 30 25.997 26.894 25.997 20.96 6 24.07" style="fill: #f44336;fill-rule: evenodd"/>
+    <polygon points="6 5.11 6 11.1 26 7.99 26 2 6 5.11" style="fill: #f44336;fill-rule: evenodd"/>
+    <polygon points="6 15.07 6 20.1 26 16.99 26 11.96 6 15.07" style="fill: #f44336;fill-rule: evenodd"/>
+  </g>
+</svg>

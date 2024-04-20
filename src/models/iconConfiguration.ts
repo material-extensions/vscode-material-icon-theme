@@ -1,17 +1,17 @@
-import { IconJsonOptions } from './index';
+import { IconJsonOptions } from './';
 
 export class IconConfiguration {
   file?: string;
   folder?: string;
   folderExpanded?: string;
-  folderNames?: { [s: string]: string };
-  folderNamesExpanded?: { [s: string]: string };
+  folderNames?: Record<string, string>;
+  folderNamesExpanded?: Record<string, string>;
   rootFolder?: string;
   rootFolderExpanded?: string;
-  fileExtensions?: { [s: string]: string };
-  fileNames?: { [s: string]: string };
-  languageIds?: { [s: string]: string };
-  iconDefinitions?: { [s: string]: any };
+  fileExtensions?: Record<string, string>;
+  fileNames?: Record<string, string>;
+  languageIds?: Record<string, string>;
+  iconDefinitions?: Record<string, any>;
   light?: IconConfiguration;
   highContrast?: IconConfiguration;
   options?: IconJsonOptions;

@@ -1,5 +1,5 @@
-import * as fs from 'fs';
-import * as path from 'path';
+import { readdirSync, readFileSync, writeFileSync } from 'fs';
+import { basename, join } from 'path';
 import { getCustomIconPaths } from '../../helpers/customIcons';
 import { IconJsonOptions } from '../../models';
 
@@ -19,22 +19,22 @@ export const setIconOpacity = (
   }
 
   let iconsPath = '';
-  if (path.basename(__dirname) === 'dist') {
-    iconsPath = path.join(__dirname, '..', 'icons');
+  if (basename(__dirname) === 'dist') {
+    iconsPath = join(__dirname, '..', 'icons');
   } else {
     // executed via script
-    iconsPath = path.join(__dirname, '..', '..', '..', 'icons');
+    iconsPath = join(__dirname, '..', '..', '..', 'icons');
   }
 
   const customIconPaths = getCustomIconPaths(options);
-  const iconFiles = fs.readdirSync(iconsPath);
+  const iconFiles = readdirSync(iconsPath);
 
   try {
     // read all icon files from the icons folder
     (fileNames || iconFiles).forEach(adjustOpacity(iconsPath, options));
 
     customIconPaths.forEach((iconPath) => {
-      const customIcons = fs.readdirSync(iconPath);
+      const customIcons = readdirSync(iconPath);
       customIcons.forEach(adjustOpacity(iconPath, options));
     });
   } catch (error) {
@@ -46,7 +46,7 @@ export const setIconOpacity = (
  * Validate the opacity value.
  * @param opacity Opacity value
  */
-export const validateOpacityValue = (opacity: number) => {
+export const validateOpacityValue = (opacity: number | undefined) => {
   return opacity !== undefined && opacity <= 1 && opacity >= 0;
 };
 
@@ -88,10 +88,10 @@ const adjustOpacity = (
   options: IconJsonOptions
 ): ((value: string, index: number, array: string[]) => void) => {
   return (iconFileName) => {
-    const svgFilePath = path.join(iconPath, iconFileName);
+    const svgFilePath = join(iconPath, iconFileName);
 
     // Read SVG file
-    const svg = fs.readFileSync(svgFilePath, 'utf-8');
+    const svg = readFileSync(svgFilePath, 'utf-8');
 
     // Get the root element of the SVG file
     const svgRootElement = getSVGRootElement(svg);
@@ -99,13 +99,13 @@ const adjustOpacity = (
 
     let updatedRootElement: string;
 
-    if (options.opacity < 1) {
+    if (options.opacity !== undefined && options.opacity < 1) {
       updatedRootElement = addOpacityAttribute(svgRootElement, options.opacity);
     } else {
       updatedRootElement = removeOpacityAttribute(svgRootElement);
     }
     const updatedSVG = svg.replace(/<svg[^>]*>/, updatedRootElement);
 
-    fs.writeFileSync(svgFilePath, updatedSVG);
+    writeFileSync(svgFilePath, updatedSVG);
   };
 };

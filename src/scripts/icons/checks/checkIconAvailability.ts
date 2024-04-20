@@ -1,36 +1,36 @@
-import * as fs from 'fs';
-import * as path from 'path';
+import { readdir } from 'fs';
+import { join, parse } from 'path';
 import {
   DefaultIcon,
   FileIcon,
   FolderIcon,
   FolderTheme,
 } from '../../../models/index';
-import * as painter from '../../helpers/painter';
+import { green, red } from '../../helpers/painter';
 import { similarity } from '../../helpers/similarity';
 import {
   fileIcons,
   folderIcons,
-  highContrastVersion,
+  highContrastColorFileEnding,
   languageIcons,
-  lightVersion,
+  lightColorFileEnding,
   openedFolder,
 } from './../../../icons';
 
 /**
  * Defines the folder where all icon files are located.
  */
-const folderPath = path.join('icons');
+const folderPath = join('icons');
 
 /**
  * Defines an array with all icons that can be found in the file system.
  */
-const availableIcons: { [s: string]: string } = {};
+const availableIcons: Record<string, string> = {};
 
 /**
  * Save the misconfigured icons.
  */
-const wrongIconNames: { [s: string]: string[] } = {
+const wrongIconNames: Record<string, string[]> = {
   fileIcons: [],
   folderIcons: [],
   languageIcons: [],
@@ -39,14 +39,17 @@ const wrongIconNames: { [s: string]: string[] } = {
 /**
  * Get all icon file names from the file system.
  */
-const fsReadAllIconFiles = (err: Error, files: string[]) => {
+const fsReadAllIconFiles = (
+  err: NodeJS.ErrnoException | null,
+  files: string[]
+) => {
   if (err) {
     throw Error(err.message);
   }
 
   files.forEach((file) => {
     const fileName = file;
-    const iconName = path.parse(file).name;
+    const iconName = parse(file).name;
     availableIcons[iconName] = fileName;
   });
 
@@ -60,13 +63,13 @@ const fsReadAllIconFiles = (err: Error, files: string[]) => {
 };
 
 // read from the file system
-export const check = () => fs.readdir(folderPath, fsReadAllIconFiles);
+export const check = () => readdir(folderPath, fsReadAllIconFiles);
 
 /**
  * Check if the file icons from the configuration are available on the file system.
  */
 const checkFileIcons = () => {
-  fileIcons.icons.concat([fileIcons.defaultIcon]).forEach((icon) => {
+  [...fileIcons.icons, fileIcons.defaultIcon].forEach((icon) => {
     isIconAvailable(icon, IconType.fileIcons, IconColor.default);
     isIconAvailable(icon, IconType.fileIcons, IconColor.light);
     isIconAvailable(icon, IconType.fileIcons, IconColor.highContrast);
@@ -79,15 +82,14 @@ const isIconAvailable = (
   iconColor: IconColor,
   hasOpenedFolder?: boolean
 ) => {
-  const iconName = `${icon.name}${hasOpenedFolder ? openedFolder : ''}${
-    icon[iconColor]
-      ? iconColor === IconColor.light
-        ? lightVersion
-        : highContrastVersion
-        ? highContrastVersion
-        : ''
-      : ''
-  }`;
+  let iconName = `${icon.name}${hasOpenedFolder ? openedFolder : ''}`;
+  if (icon.light && iconColor === IconColor.light) {
+    iconName += lightColorFileEnding;
+  }
+  if (icon.highContrast && iconColor === IconColor.highContrast) {
+    iconName += highContrastColorFileEnding;
+  }
+
   if (
     !availableIcons[iconName] &&
     wrongIconNames[iconType].indexOf(iconName) === -1
@@ -104,12 +106,19 @@ const checkFolderIcons = () => {
     .map((theme) => (theme.name === 'none' ? [] : getAllFolderIcons(theme)))
     .reduce((a, b) => a.concat(b))
     .forEach((icon) => {
-      isIconAvailable(icon, IconType.folderIcons, IconColor.default);
-      isIconAvailable(icon, IconType.folderIcons, IconColor.default, true);
-      isIconAvailable(icon, IconType.folderIcons, IconColor.light);
-      isIconAvailable(icon, IconType.folderIcons, IconColor.light, true);
-      isIconAvailable(icon, IconType.folderIcons, IconColor.highContrast);
-      isIconAvailable(icon, IconType.folderIcons, IconColor.highContrast, true);
+      if (icon) {
+        isIconAvailable(icon, IconType.folderIcons, IconColor.default);
+        isIconAvailable(icon, IconType.folderIcons, IconColor.default, true);
+        isIconAvailable(icon, IconType.folderIcons, IconColor.light);
+        isIconAvailable(icon, IconType.folderIcons, IconColor.light, true);
+        isIconAvailable(icon, IconType.folderIcons, IconColor.highContrast);
+        isIconAvailable(
+          icon,
+          IconType.folderIcons,
+          IconColor.highContrast,
+          true
+        );
+      }
     });
 };
 
@@ -143,12 +152,12 @@ const handleErrors = () => {
   if (amountOfErrors > 0) {
     console.log(
       '> Material Icon Theme:',
-      painter.red(`Found ${amountOfErrors} error(s) in the icon configuration!`)
+      red(`Found ${amountOfErrors} error(s) in the icon configuration!`)
     );
   } else {
     console.log(
       '> Material Icon Theme:',
-      painter.green('Passed icon availability checks!')
+      green('Passed icon availability checks!')
     );
   }
   logIconInformation(wrongIconNames.fileIcons, 'File icons');
@@ -170,22 +179,24 @@ const logIconInformation = (wrongIcons: string[], title: string) => {
       return similarity(icon, i) > 0.75;
     });
     const suggestionString = suggestion
-      ? ` (Did you mean ${painter.green(suggestion)}?)`
+      ? ` (Did you mean ${green(suggestion)}?)`
       : '';
-    const isWrongLightVersion = icon.endsWith(lightVersion);
+    const isWrongLightVersion = icon.endsWith(lightColorFileEnding);
     const isWrongLightVersionString = isWrongLightVersion
-      ? ` (There is no light icon for ${painter.green(
+      ? ` (There is no light icon for ${green(
           icon.slice(0, -6)
         )}! Set the light option to false!)`
       : '';
-    const isWrongHighContrastVersion = icon.endsWith(highContrastVersion);
+    const isWrongHighContrastVersion = icon.endsWith(
+      highContrastColorFileEnding
+    );
     const isWrongHighContrastVersionString = isWrongHighContrastVersion
-      ? ` (There is no high contrast icon for ${painter.green(
+      ? ` (There is no high contrast icon for ${green(
           icon.slice(0, -13)
         )}! Set the highContrast option to false!)`
       : '';
     console.log(
-      painter.red(`Icon not found: ${icon}.svg`) +
+      red(`Icon not found: ${icon}.svg`) +
         `${suggestionString}${isWrongLightVersionString}${isWrongHighContrastVersionString}`
     );
   });

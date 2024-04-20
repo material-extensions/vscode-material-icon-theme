@@ -1,11 +1,11 @@
-import * as fs from 'fs';
-import * as path from 'path';
-import { toTitleCase } from './../helpers/titleCase';
+import { writeFileSync } from 'fs';
+import { join } from 'path';
+import { green, red } from '../helpers/painter';
 import { createScreenshot } from '../helpers/screenshots';
-import * as painter from './../helpers/painter';
+import { toTitleCase } from './../helpers/titleCase';
 
 const htmlDoctype = '<!DOCTYPE html>';
-const cssFilePath = path.join('style.css');
+const cssFilePath = 'style.css';
 const styling = `<link rel="stylesheet" href="${cssFilePath}">`;
 
 const createHTMLTableHeadRow = (amount: number) => {
@@ -46,7 +46,7 @@ const createHTMLTableBodyRows = (items: IconDefinition[][]) => {
   return rows;
 };
 
-const createHTMLTable = (headRow, bodyRows) => `
+const createHTMLTable = (headRow: string, bodyRows: string) => `
     <table>
         ${headRow}
         ${bodyRows}
@@ -69,23 +69,21 @@ const savePreview = (
   size: number,
   icons: IconDefinition[][]
 ) => {
-  const filePath = path.join(__dirname, fileName + '.html');
+  const filePath = join(__dirname, fileName + '.html');
 
   // write the html file with the icon table
-  fs.writeFileSync(filePath, createPreviewTable(icons, size));
+  writeFileSync(filePath, createPreviewTable(icons, size));
 
   // create the image
   createScreenshot(filePath, fileName)
     .then(() => {
       console.log(
         '> Material Icon Theme:',
-        painter.green(`Successfully created ${fileName} preview image!`)
+        green(`Successfully created ${fileName} preview image!`)
       );
     })
     .catch(() => {
-      throw Error(
-        painter.red(`Error while creating ${fileName} preview image`)
-      );
+      throw Error(red(`Error while creating ${fileName} preview image`));
     });
 };
 
@@ -94,9 +92,8 @@ const getIconDefinitionsMatrix = (
   size: number,
   excluded: string[] = []
 ): IconDefinition[][] => {
-  const iconList = icons
-    .sort((a, b) => a.label.localeCompare(b.label))
-    .filter((i) => excluded.indexOf(i.iconName) === -1);
+  const iconList = icons.sort((a, b) => a.label.localeCompare(b.label));
+  trimIconListToSize(iconList, size, excluded);
 
   // list for the columns with the icons
   const matrix: IconDefinition[][] = [];
@@ -124,18 +121,43 @@ const getIconDefinitionsMatrix = (
  * @param name name of the preview
  * @param icons icons for the preview
  * @param size amount of table columns
- * @param excluded which icons shall be excluded
+ * @param trimmableIcons List of icons that can possibly be trimmed
  */
 export const generatePreview = (
   name: string,
   icons: IconDefinition[],
   size: number,
-  excluded: string[] = []
+  trimmableIcons: string[] = []
 ) => {
-  savePreview(name, size, getIconDefinitionsMatrix(icons, size, excluded));
+  savePreview(
+    name,
+    size,
+    getIconDefinitionsMatrix(icons, size, trimmableIcons)
+  );
 };
 
 interface IconDefinition {
   iconName: string;
   label: string;
 }
+
+/**
+ * Trim the list of icons into the matrix
+ * @param iconList List of icons
+ * @param size Amount of columns
+ * @param trimmableIcons List of icons that can possibly be trimmed
+ */
+const trimIconListToSize = (
+  iconList: IconDefinition[],
+  size: number,
+  trimmableIcons: string[]
+) => {
+  while (iconList.length % size !== 0) {
+    iconList.splice(
+      iconList.findIndex(
+        (i) => i.iconName === trimmableIcons[iconList.length % size]
+      ),
+      1
+    );
+  }
+};

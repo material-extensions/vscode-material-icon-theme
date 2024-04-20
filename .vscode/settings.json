@@ -4,5 +4,11 @@
   },
   "search.exclude": {
     "out": true
-  }
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "eslint.validate": ["typescript"],
+  "editor.formatOnSave": true
 }

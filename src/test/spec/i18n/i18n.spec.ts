@@ -1,22 +1,36 @@
-import * as assert from 'assert';
+import { equal } from 'assert';
 import { getObjectPropertyValue } from '../../../helpers/objects';
-import * as i18n from '../../../i18n';
+import { getTranslationValue, initTranslations, replace } from '../../../i18n';
+import { Translation } from '../../../models';
 
 describe('i18n', () => {
   it('should initialize translations', () => {
-    return i18n.initTranslations();
+    return initTranslations();
   });
 
   it('should translate key', () => {
-    assert.equal(i18n.getTranslationValue('a', { a: 'b' }), 'b');
+    equal(
+      getTranslationValue('activate', { activate: 'b' } as Translation),
+      'b'
+    );
   });
 
   it('should return undefined if translation is not defined', () => {
-    assert.equal(i18n.getTranslationValue('c', { a: 'b' }), undefined);
+    equal(
+      getTranslationValue('activate', {} as Translation, {} as Translation),
+      undefined
+    );
   });
 
   it('should use fallback if translation is not defined', () => {
-    assert.equal(i18n.getTranslationValue('a', { b: 'b' }, { a: 'fb' }), 'fb');
+    equal(
+      getTranslationValue(
+        'activate',
+        {} as Translation,
+        { activate: 'fb' } as Translation
+      ),
+      'fb'
+    );
   });
 
   it('should get the correct translation value of the translation object', () => {
@@ -27,16 +41,13 @@ describe('i18n', () => {
         },
       },
     };
-    assert.equal(getObjectPropertyValue(translation, 'a.b.c'), 'c');
+    equal(getObjectPropertyValue(translation, 'a.b.c'), 'c');
   });
 
   it('should use placeholder in translation', () => {
-    assert.equal(
-      i18n.replace('%0 with placeholder', 'test'),
-      'test with placeholder'
-    );
-    assert.equal(
-      i18n.replace('%0 with %1', ['test', 'placeholder']),
+    equal(replace('%0 with placeholder', 'test'), 'test with placeholder');
+    equal(
+      replace('%0 with %1', 'test', 'placeholder'),
       'test with placeholder'
     );
   });

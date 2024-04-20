@@ -1,4 +1,4 @@
-import * as assert from 'assert';
+import { deepStrictEqual } from 'assert';
 import merge from 'lodash.merge';
 import {
   getDefaultIconOptions,
@@ -98,7 +98,7 @@ describe('folder icons', () => {
     };
     expectedConfig.hidesExplorerArrows = false;
 
-    assert.deepStrictEqual(iconDefinitions, expectedConfig);
+    deepStrictEqual(iconDefinitions, expectedConfig);
   });
 
   it('should deactivate folder icons', () => {
@@ -115,9 +115,9 @@ describe('folder icons', () => {
     expectedConfig.folderNames = {};
     expectedConfig.folderNamesExpanded = {};
     expectedConfig.hidesExplorerArrows = false;
-    expectedConfig.options.folders.theme = 'none';
+    expectedConfig.options!.folders!.theme = 'none';
 
-    assert.deepStrictEqual(iconDefinitions, expectedConfig);
+    deepStrictEqual(iconDefinitions, expectedConfig);
   });
 
   it('should enable folder theme', () => {
@@ -157,9 +157,9 @@ describe('folder icons', () => {
       source: 'folder-blue-src-open',
     };
     expectedConfig.hidesExplorerArrows = false;
-    expectedConfig.options.folders.theme = 'blue';
+    expectedConfig.options!.folders!.theme = 'blue';
 
-    assert.deepStrictEqual(iconDefinitions, expectedConfig);
+    deepStrictEqual(iconDefinitions, expectedConfig);
   });
 
   it('should configure custom icon associations', () => {
@@ -218,11 +218,11 @@ describe('folder icons', () => {
       sample: 'folder-src-open',
     };
     expectedConfig.hidesExplorerArrows = false;
-    expectedConfig.options.folders.associations = {
+    expectedConfig.options!.folders!.associations = {
       sample: 'src',
     };
 
-    assert.deepStrictEqual(iconDefinitions, expectedConfig);
+    deepStrictEqual(iconDefinitions, expectedConfig);
   });
 
   it('should disable icon packs', () => {
@@ -269,9 +269,9 @@ describe('folder icons', () => {
     expectedConfig.hidesExplorerArrows = false;
 
     // disable default icon pack by using empty string
-    expectedConfig.options.activeIconPack = '';
+    expectedConfig.options!.activeIconPack = '';
 
-    assert.deepStrictEqual(iconDefinitions, expectedConfig);
+    deepStrictEqual(iconDefinitions, expectedConfig);
   });
 
   it('should configure folder icons for light and high contrast', () => {
@@ -400,7 +400,7 @@ describe('folder icons', () => {
     };
     expectedConfig.hidesExplorerArrows = false;
     /* eslint-enable camelcase */
-    assert.deepStrictEqual(iconDefinitions, expectedConfig);
+    deepStrictEqual(iconDefinitions, expectedConfig);
   });
 
   it('should hide explorer arrows', () => {
@@ -413,6 +413,6 @@ describe('folder icons', () => {
       options
     );
 
-    assert.deepStrictEqual(iconDefinitions.hidesExplorerArrows, true);
+    deepStrictEqual(iconDefinitions.hidesExplorerArrows, true);
   });
 });
