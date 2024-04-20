@@ -1058,7 +1058,10 @@ export const fileIcons: FileIcons = {
         'webpack.config.dev.babel.js',
         'webpack.config.dev.babel.ts',
         'webpack.config.main.js',
+        'webpack.config.renderer.js',
         'webpack.config.renderer.ts',
+        'webpack.config.preload.js',
+        'webpack.config.preload.ts',
         'webpack.mix.js',
         'webpack.mix.cjs',
         'webpack.mix.mjs',
@@ -2605,7 +2608,41 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'electron',
-      fileNames: ['index.electron.js']
-    }
+      fileExtensions: [
+        'electron.js',
+        'electron.ts',
+        'electron.mts',
+        'electron.cts',
+      ],
+      fileNames: [
+        'electron-builder.json',
+        'electron-builder.yaml',
+        'electron-builder.yml',
+        'electron-builder.js',
+        'electron-builder.ts',
+        'electron-builder.mts',
+        'electron-builder.cts',
+
+        'electron.dev.js',
+        'electron.dev.ts',
+        'electron.dev.mts',
+        'electron.dev.cts',
+
+        'electron.main.js',
+        'electron.main.ts',
+        'electron.main.mts',
+        'electron.main.cts',
+
+        'electron.renderer.js',
+        'electron.renderer.ts',
+        'electron.renderer.mts',
+        'electron.renderer.cts',
+
+        'electron.prod.js',
+        'electron.prod.ts',
+        'electron.prod.mts',
+        'electron.prod.cts',
+      ],
+    },
   ],
 };
