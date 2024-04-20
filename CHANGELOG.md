@@ -3,6 +3,15 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v5.1.0](https://github.com/PKief/vscode-material-icon-theme/compare/v5.0.0...v5.1.0) 
+
+> April 20, 2024 
+
+- fix: 🚑 golang icon [`#2287`](https://github.com/PKief/vscode-material-icon-theme/pull/2287)
+- feat: add all syncpack cosmiconfig config [`#2282`](https://github.com/PKief/vscode-material-icon-theme/pull/2282)
+- feat: knip [`#2280`](https://github.com/PKief/vscode-material-icon-theme/pull/2280)
+- Updated ES translation [`#2286`](https://github.com/PKief/vscode-material-icon-theme/pull/2286)
+ 
 #### [v5.0.0](https://github.com/PKief/vscode-material-icon-theme/compare/v4.34.0...v5.0.0) 
 
 > April 18, 2024 
