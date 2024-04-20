@@ -3,9 +3,12 @@
   "command.toggleIconPacks": "Material Icons: Configurar paquetes de iconos",
   "command.changeFolderTheme": "Material Icons: Personalizar iconos de carpetas",
   "command.changeFolderColor": "Material Icons: Cambiar color de carpeta",
+  "command.changeFileColor": "Material Icons: Cambiar color del archivo",
   "command.restoreDefaultConfig": "Material Icons: Restaurar la configuración predeterminada",
   "command.toggleExplorerArrows": "Material Icons: Deshabilitar flechas delante de carpetas",
   "command.changeOpacity": "Material Icons: Cambiar la opacidad",
+  "command.toggleGrayscale": "Material Icons: Alternar la escala de grises",
+  "command.changeSaturation": "Material Icons: Cambiar saturación",
   "configuration.title": "Material Icons",
   "configuration.files.associations": "Configurar asociaciones personalizadas de iconos de archivos.",
   "configuration.folders.associations": "Configurar asociaciones personalizadas de iconos de carpetas.",
@@ -25,6 +28,8 @@
   "configuration.folders.theme.classic": "Seleccione iconos de carpetas clásicas.",
   "configuration.folders.theme.none": "Sin iconos de carpeta.",
   "configuration.folders.color": "Cambia el color de las carpetas.",
+  "configuration.files.color": "Cambiar el color de los iconos de archivos.",
   "configuration.hidesExplorerArrows": "Deshabilitar flechas delante de carpetas.",
-  "configuration.opacity": "Cambia la opacidad de los iconos."
+  "configuration.opacity": "Cambia la opacidad de los iconos.",
+  "configuration.saturation": "Cambiar la saturación de los iconos."
 }
