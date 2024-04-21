@@ -145,6 +145,9 @@ Here's an example of how a folder icon can be assigned to folder icons:
 
 This will apply a folder icon for the folders 'sample' and 'samples'.
 
+> **Note**
+> The tool automatically creates generic "wildcard" variants of these folders, so only assign the base names.
+
 #### Language icons
 
 Here's an example of how a file icon can be assigned to language ids:
