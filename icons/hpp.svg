@@ -1,5 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect y="6" width="4" height="18" style="fill: #0277bd"/>
-  <path d="M32,18H28v4H26V18H24V16h2V12h2v4h4ZM20,12v4h4v2H20v4H18V18H14V16h4V12Z" style="fill: #0277bd"/>
-  <path d="M7.5,11A4.5,4.5,0,0,0,3,15.5V24H4V16a2,2,0,0,1,4,0v8h4V15.5A4.5,4.5,0,0,0,7.5,11Z" style="fill: #0277bd"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><polygon points="28 6 28 2 26 2 26 6 20 6 20 2 18 2 18 6 14 6 14 8 18 8 18 12 20 12 20 8 26 8 26 12 28 12 28 8 32 8 32 6 28 6" style="fill:#0288d1"/><path d="M12.5,11A5.48994,5.48994,0,0,0,8,13.34375V4H2V28H8V17a2,2,0,0,1,4,0V28h6V16.5A5.5,5.5,0,0,0,12.5,11Z" style="fill:#0277bd"/></svg>
