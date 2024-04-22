@@ -1,11 +1,13 @@
 import { FileIcons, IconPack } from '../models/index';
+import { parseByPattern } from './patterns/libs';
+import { Cosmiconfig } from './patterns/utils';
 
 /**
  * Defines file icons
  */
 export const fileIcons: FileIcons = {
   defaultIcon: { name: 'file' },
-  icons: [
+  icons: parseByPattern([
     { name: 'html', fileExtensions: ['htm', 'xhtml', 'html_vm', 'asp'] },
     {
       name: 'pug',
@@ -657,24 +659,10 @@ export const fileIcons: FileIcons = {
     {
       name: 'graphql',
       fileExtensions: ['graphql', 'gql'],
-      fileNames: [
-        '.graphqlconfig',
-        '.graphqlrc',
-        '.graphqlrc.json',
-        '.graphqlrc.js',
-        '.graphqlrc.cjs',
-        '.graphqlrc.ts',
-        '.graphqlrc.toml',
-        '.graphqlrc.yaml',
-        '.graphqlrc.yml',
-        'graphql.config.json',
-        'graphql.config.js',
-        'graphql.config.cjs',
-        'graphql.config.ts',
-        'graphql.config.toml',
-        'graphql.config.yaml',
-        'graphql.config.yml',
-      ],
+      fileNames: ['.graphqlconfig'],
+      patterns: {
+        graphql: Cosmiconfig,
+      },
     },
     { name: 'rust', fileExtensions: ['rs', 'ron'] },
     { name: 'raml', fileExtensions: ['raml'] },
@@ -947,34 +935,17 @@ export const fileIcons: FileIcons = {
     {
       name: 'postcss',
       fileExtensions: ['pcss', 'sss'],
-      fileNames: [
-        'postcss.config.js',
-        'postcss.config.cjs',
-        'postcss.config.mjs',
-        'postcss.config.ts',
-        'postcss.config.cts',
-        'postcss.config.mts',
-        '.postcssrc.js',
-        '.postcssrc.cjs',
-        '.postcssrc.mjs',
-        '.postcssrc.ts',
-        '.postcssrc.cts',
-        '.postcssrc.mts',
-        '.postcssrc',
-        '.postcssrc.json',
-        '.postcssrc.yaml',
-        '.postcssrc.yml',
-      ],
+      fileNames: [],
+      patterns: {
+        postcss: Cosmiconfig,
+      },
     },
     {
       name: 'posthtml',
-      fileNames: [
-        'posthtml.config.js',
-        '.posthtmlrc.js',
-        '.posthtmlrc',
-        '.posthtmlrc.json',
-        '.posthtmlrc.yml',
-      ],
+      fileNames: [],
+      patterns: {
+        posthtml: Cosmiconfig,
+      },
     },
     {
       name: 'todo',
@@ -1262,24 +1233,11 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'babel',
-      fileNames: [
-        '.babelrc',
-        '.babelrc.cjs',
-        '.babelrc.js',
-        '.babelrc.mjs',
-        '.babelrc.json',
-        'babel.config.cjs',
-        'babel.config.js',
-        'babel.config.mjs',
-        'babel.config.json',
-        'babel-transform.js',
-        '.babel-plugin-macrosrc',
-        '.babel-plugin-macrosrc.json',
-        '.babel-plugin-macrosrc.yaml',
-        '.babel-plugin-macrosrc.yml',
-        '.babel-plugin-macrosrc.js',
-        'babel-plugin-macros.config.js',
-      ],
+      fileNames: ['babel-transform.js'],
+      patterns: {
+        babel: Cosmiconfig,
+        'babel-plugin-macros': Cosmiconfig,
+      },
     },
     {
       name: 'blitz',
@@ -1389,21 +1347,15 @@ export const fileIcons: FileIcons = {
     {
       name: 'eslint',
       fileNames: [
-        '.eslintrc.js',
-        '.eslintrc.cjs',
-        '.eslintrc.yaml',
-        '.eslintrc.yml',
-        '.eslintrc.json',
         '.eslintrc-md.js',
         '.eslintrc-jsdoc.js',
-        '.eslintrc',
         '.eslintignore',
         '.eslintcache',
-        'eslint.config.js',
-        'eslint.config.cjs',
-        'eslint.config.mjs',
         '.eslintrc.base.json',
       ],
+      patterns: {
+        eslint: Cosmiconfig,
+      },
     },
     {
       name: 'conduct',
@@ -1489,40 +1441,19 @@ export const fileIcons: FileIcons = {
     { name: 'hardhat', fileNames: ['hardhat.config.js', 'hardhat.config.ts'] },
     {
       name: 'stylelint',
-      fileNames: [
-        '.stylelintrc',
-        'stylelint.config.js',
-        'stylelint.config.cjs',
-        'stylelint.config.mjs',
-        '.stylelintrc.json',
-        '.stylelintrc.yaml',
-        '.stylelintrc.yml',
-        '.stylelintrc.js',
-        '.stylelintrc.cjs',
-        '.stylelintrc.mjs',
-        '.stylelintignore',
-        '.stylelintcache',
-      ],
       light: true,
+      fileNames: ['.stylelintignore', '.stylelintcache'],
+      patterns: {
+        stylelint: Cosmiconfig,
+      },
     },
     { name: 'code-climate', fileNames: ['.codeclimate.yml'], light: true },
     {
       name: 'prettier',
-      fileNames: [
-        '.prettierrc',
-        'prettier.config.js',
-        'prettier.config.cjs',
-        '.prettierrc.js',
-        '.prettierrc.cjs',
-        '.prettierrc.json',
-        '.prettierrc.json5',
-        '.prettierrc.yaml',
-        '.prettierrc.yml',
-        '.prettierignore',
-        '.prettierrc.toml',
-        'prettier.config.mjs',
-        '.prettierrc.mjs',
-      ],
+      fileNames: ['.prettierignore'],
+      patterns: {
+        prettier: Cosmiconfig,
+      },
     },
     {
       name: 'renovate',
@@ -1707,16 +1638,10 @@ export const fileIcons: FileIcons = {
     {
       name: 'semantic-release',
       light: true,
-      fileNames: [
-        '.releaserc',
-        '.releaserc.yaml',
-        '.releaserc.yml',
-        '.releaserc.json',
-        '.releaserc.js',
-        '.releaserc.cjs',
-        'release.config.js',
-        'release.config.cjs',
-      ],
+      fileNames: [],
+      patterns: {
+        release: Cosmiconfig,
+      },
     },
     {
       name: 'bitbucket',
@@ -1926,14 +1851,10 @@ export const fileIcons: FileIcons = {
     { name: 'prolog', fileExtensions: ['p', 'pro', 'pl'] },
     {
       name: 'husky',
-      fileNames: [
-        '.huskyrc',
-        'husky.config.js',
-        '.huskyrc.json',
-        '.huskyrc.js',
-        '.huskyrc.yaml',
-        '.huskyrc.yml',
-      ],
+      fileNames: [],
+      patterns: {
+        husky: Cosmiconfig,
+      },
     },
     { name: 'coconut', fileExtensions: ['coco'] },
     { name: 'tilt', fileNames: ['tiltfile'] },
@@ -1957,24 +1878,10 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'commitlint',
-      fileNames: [
-        '.commitlintrc',
-        '.commitlintrc.js',
-        '.commitlintrc.mjs',
-        '.commitlintrc.cjs',
-        '.commitlintrc.ts',
-        '.commitlintrc.cts',
-        '.commitlintrc.json',
-        '.commitlintrc.yaml',
-        '.commitlintrc.yml',
-        '.commitlint.yaml',
-        '.commitlint.yml',
-        'commitlint.config.js',
-        'commitlint.config.mjs',
-        'commitlint.config.cjs',
-        'commitlint.config.ts',
-        'commitlint.config.cts',
-      ],
+      fileNames: ['.commitlint.yaml', '.commitlint.yml'],
+      patterns: {
+        commitlint: Cosmiconfig,
+      },
     },
     { name: 'buck', fileNames: ['.buckconfig'] },
     { name: 'dhall', fileExtensions: ['dhall', 'dhallb'] },
@@ -2333,14 +2240,10 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'svgr',
-      fileNames: [
-        '.svgrrc',
-        'svgr.config.js',
-        '.svgrrc.js',
-        '.svgrrc.yaml',
-        '.svgrrc.yml',
-        '.svgrrc.json',
-      ],
+      fileNames: [],
+      patterns: {
+        svgr: Cosmiconfig,
+      },
     },
     { name: 'rome', fileNames: ['rome.json'] },
     {
@@ -2444,14 +2347,10 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'craco',
-      fileNames: [
-        'craco.config.ts',
-        'craco.config.js',
-        'craco.config.cjs',
-        '.cracorc.ts',
-        '.cracorc.js',
-        '.cracorc',
-      ],
+      fileNames: [],
+      patterns: {
+        craco: Cosmiconfig,
+      },
     },
     {
       name: 'gamemaker',
@@ -2504,28 +2403,10 @@ export const fileIcons: FileIcons = {
     { name: 'mermaid', fileExtensions: ['mmd', 'mermaid'] },
     {
       name: 'syncpack',
-      fileNames: [
-        '.config/syncpackrc.cjs',
-        '.config/syncpackrc.js',
-        '.config/syncpackrc.json',
-        '.config/syncpackrc.mjs',
-        '.config/syncpackrc.ts',
-        '.config/syncpackrc.yaml',
-        '.config/syncpackrc.yml',
-        '.config/syncpackrc',
-        '.syncpackrc.cjs',
-        '.syncpackrc.js',
-        '.syncpackrc.json',
-        '.syncpackrc.mjs',
-        '.syncpackrc.ts',
-        '.syncpackrc.yaml',
-        '.syncpackrc.yml',
-        '.syncpackrc',
-        'syncpack.config.cjs',
-        'syncpack.config.js',
-        'syncpack.config.mjs',
-        'syncpack.config.ts',
-      ],
+      fileNames: [],
+      patterns: {
+        syncpack: Cosmiconfig,
+      },
     },
     {
       name: 'mojo',
@@ -2576,15 +2457,10 @@ export const fileIcons: FileIcons = {
     { name: 'lottie', fileExtensions: ['lottie'] },
     {
       name: 'puppeteer',
-      fileNames: [
-        '.puppeteerrc.cjs,',
-        '.puppeteerrc.js,',
-        '.puppeteerrc',
-        '.puppeteerrc.json,',
-        '.puppeteerrc.yaml,',
-        'puppeteer.config.js',
-        'puppeteer.config.cjs',
-      ],
+      fileNames: [],
+      patterns: {
+        puppeteer: Cosmiconfig,
+      },
     },
     { name: 'apps-script', fileExtensions: ['gs'] },
     {
@@ -2603,5 +2479,5 @@ export const fileIcons: FileIcons = {
         '.k8s.yaml',
       ],
     },
-  ],
+  ]),
 };
