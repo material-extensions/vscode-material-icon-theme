@@ -132,6 +132,31 @@ Here's an example of how the SVG icon 'sample.svg' is assigned to file names and
 
 This will apply an icon for the files 'sample.js', 'sample.ts' and 'sample.html' as well as for files that end with 'sample' like 'another-file.sample'.
 
+**Apply patterns**
+
+It is also possible to use patterns for file names and extensions. This is useful when you want to assign an icon to a group of files that have a common pattern. Here's an example:
+
+```ts
+{
+  name: 'sample',
+  patterns: {
+    sample: ['ecmascript'],
+  }
+}
+```
+
+In case of this example the generated file names are "sample.js", "sample.mjs", "sample.cjs",
+sample.ts", "sample.mts" and "sample.cts". The pattern is defined in the [patterns.ts](src/icons/patterns/utils.ts) file.
+
+Allowed patterns are right now:
+
+| Pattern       | File extensions                                                                                            |
+| ------------- | ---------------------------------------------------------------------------------------------------------- |
+| ecmascript    | `js`, `mjs`, `cjs`, `ts`, `mts`, `cts`                                                                     |
+| configuration | `json`, `jsonc`, `json5`, `yaml`, `yml`, `toml`                                                            |
+| nodeEcosystem | Combination of ecmascript and configuration patterns                                                       |
+| cosmiconfig   | Similar to nodeEcosystem but in form of `.${fileName}rc`, `.config/${fileName}rc` and `${fileName}.config` |
+
 #### Folder icons
 
 Here's an example of how a folder icon can be assigned to folder icons:
