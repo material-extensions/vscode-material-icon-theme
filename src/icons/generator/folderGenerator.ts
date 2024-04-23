@@ -44,24 +44,21 @@ export const loadFolderIconDefinitions = (
 
   allIcons.forEach((icon) => {
     if (icon.disabled) return;
+    const folderNames = extendFolderNames(icon.folderNames);
     config = setIconDefinitions(config, icon);
-    config = merge({}, config, setFolderNames(icon.name, icon.folderNames));
+    config = merge({}, config, setFolderNames(icon.name, folderNames));
     config.light = icon.light
       ? merge(
           {},
           config.light,
-          setFolderNames(icon.name, icon.folderNames, lightColorFileEnding)
+          setFolderNames(icon.name, folderNames, lightColorFileEnding)
         )
       : config.light;
     config.highContrast = icon.highContrast
       ? merge(
           {},
           config.highContrast,
-          setFolderNames(
-            icon.name,
-            icon.folderNames,
-            highContrastColorFileEnding
-          )
+          setFolderNames(icon.name, folderNames, highContrastColorFileEnding)
         )
       : config.highContrast;
   });
@@ -212,6 +209,22 @@ const createIconDefinitions = (
     };
   }
   return config;
+};
+
+const extendFolderNames = (folderNames: string[]) => {
+  const names: string[] = [];
+  const styles: [string, string][] = [
+    ['', ''],
+    ['.', ''],
+    ['_', ''],
+    ['__', '__'],
+  ];
+  folderNames.forEach((name) => {
+    styles.forEach((style) => {
+      names.push(`${style[0]}${name}${style[1]}`);
+    });
+  });
+  return names;
 };
 
 const setFolderNames = (
