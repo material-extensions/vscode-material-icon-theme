@@ -846,6 +846,10 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-cloudflare',
         folderNames: ['cloudflare'],
       },
+      {
+        name: 'folder-seeders',
+        folderNames: ['seeds', 'seeders', 'seed', 'seeding'],
+      },
     ],
   },
   {
