@@ -1,7 +1,11 @@
-import * as vscode from 'vscode';
+import { QuickPickItem, window as codeWindow } from 'vscode';
+import {
+  capitalizeFirstLetter,
+  getMaterialIconsJSON,
+  setThemeConfig,
+} from '../helpers';
+import { translate } from '../i18n';
 import { folderIcons } from '../icons';
-import * as helpers from './../helpers';
-import * as i18n from './../i18n';
 
 /** Command to toggle the folder icons. */
 export const changeFolderTheme = async () => {
@@ -19,37 +23,33 @@ export const changeFolderTheme = async () => {
 /** Show QuickPick items to select preferred configuration for the folder icons. */
 const showQuickPickItems = (activeTheme: string) => {
   const options = folderIcons.map(
-    (theme): vscode.QuickPickItem => ({
-      description: helpers.capitalizeFirstLetter(theme.name),
+    (theme): QuickPickItem => ({
+      description: capitalizeFirstLetter(theme.name),
       detail:
         theme.name === 'none'
-          ? i18n.translate('folders.disabled')
-          : i18n.translate(
+          ? translate('folders.disabled')
+          : translate(
               'folders.theme.description',
-              helpers.capitalizeFirstLetter(theme.name)
+              capitalizeFirstLetter(theme.name)
             ),
       label: theme.name === activeTheme ? '\u2714' : '\u25FB',
     })
   );
 
-  return vscode.window.showQuickPick(options, {
-    placeHolder: i18n.translate('folders.toggleIcons'),
+  return codeWindow.showQuickPick(options, {
+    placeHolder: translate('folders.toggleIcons'),
     ignoreFocusOut: false,
     matchOnDescription: true,
   });
 };
 
 /** Handle the actions from the QuickPick. */
-const handleQuickPickActions = (value: vscode.QuickPickItem) => {
+const handleQuickPickActions = (value: QuickPickItem) => {
   if (!value || !value.description) return;
-  return helpers.setThemeConfig(
-    'folders.theme',
-    value.description.toLowerCase(),
-    true
-  );
+  return setThemeConfig('folders.theme', value.description.toLowerCase(), true);
 };
 
 /** Get the current folder theme. */
 export const getFolderIconTheme = (): string => {
-  return helpers.getMaterialIconsJSON()?.options?.folders?.theme ?? '';
+  return getMaterialIconsJSON()?.options?.folders?.theme ?? '';
 };

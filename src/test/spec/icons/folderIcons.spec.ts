@@ -1,4 +1,4 @@
-import * as assert from 'assert';
+import { deepStrictEqual } from 'assert';
 import merge from 'lodash.merge';
 import {
   getDefaultIconOptions,
@@ -89,16 +89,40 @@ describe('folder icons', () => {
       source: 'folder-src',
       angular: 'folder-angular',
       ng: 'folder-angular',
+      _src: 'folder-src',
+      _source: 'folder-src',
+      _angular: 'folder-angular',
+      _ng: 'folder-angular',
+      __src__: 'folder-src',
+      __source__: 'folder-src',
+      __angular__: 'folder-angular',
+      __ng__: 'folder-angular',
+      '.src': 'folder-src',
+      '.source': 'folder-src',
+      '.angular': 'folder-angular',
+      '.ng': 'folder-angular',
     };
     expectedConfig.folderNamesExpanded = {
       src: 'folder-src-open',
       source: 'folder-src-open',
       angular: 'folder-angular-open',
       ng: 'folder-angular-open',
+      _src: 'folder-src-open',
+      _source: 'folder-src-open',
+      _angular: 'folder-angular-open',
+      _ng: 'folder-angular-open',
+      __src__: 'folder-src-open',
+      __source__: 'folder-src-open',
+      __angular__: 'folder-angular-open',
+      __ng__: 'folder-angular-open',
+      '.src': 'folder-src-open',
+      '.source': 'folder-src-open',
+      '.angular': 'folder-angular-open',
+      '.ng': 'folder-angular-open',
     };
     expectedConfig.hidesExplorerArrows = false;
 
-    assert.deepStrictEqual(iconDefinitions, expectedConfig);
+    deepStrictEqual(iconDefinitions, expectedConfig);
   });
 
   it('should deactivate folder icons', () => {
@@ -117,7 +141,7 @@ describe('folder icons', () => {
     expectedConfig.hidesExplorerArrows = false;
     expectedConfig.options!.folders!.theme = 'none';
 
-    assert.deepStrictEqual(iconDefinitions, expectedConfig);
+    deepStrictEqual(iconDefinitions, expectedConfig);
   });
 
   it('should enable folder theme', () => {
@@ -151,15 +175,27 @@ describe('folder icons', () => {
     expectedConfig.folderNames = {
       src: 'folder-blue-src',
       source: 'folder-blue-src',
+      _src: 'folder-blue-src',
+      _source: 'folder-blue-src',
+      __src__: 'folder-blue-src',
+      __source__: 'folder-blue-src',
+      '.src': 'folder-blue-src',
+      '.source': 'folder-blue-src',
     };
     expectedConfig.folderNamesExpanded = {
       src: 'folder-blue-src-open',
       source: 'folder-blue-src-open',
+      _src: 'folder-blue-src-open',
+      _source: 'folder-blue-src-open',
+      __src__: 'folder-blue-src-open',
+      __source__: 'folder-blue-src-open',
+      '.src': 'folder-blue-src-open',
+      '.source': 'folder-blue-src-open',
     };
     expectedConfig.hidesExplorerArrows = false;
     expectedConfig.options!.folders!.theme = 'blue';
 
-    assert.deepStrictEqual(iconDefinitions, expectedConfig);
+    deepStrictEqual(iconDefinitions, expectedConfig);
   });
 
   it('should configure custom icon associations', () => {
@@ -209,6 +245,21 @@ describe('folder icons', () => {
       angular: 'folder-angular',
       ng: 'folder-angular',
       sample: 'folder-src',
+      _src: 'folder-src',
+      _source: 'folder-src',
+      _angular: 'folder-angular',
+      _ng: 'folder-angular',
+      _sample: 'folder-src',
+      __src__: 'folder-src',
+      __source__: 'folder-src',
+      __angular__: 'folder-angular',
+      __ng__: 'folder-angular',
+      __sample__: 'folder-src',
+      '.src': 'folder-src',
+      '.source': 'folder-src',
+      '.angular': 'folder-angular',
+      '.ng': 'folder-angular',
+      '.sample': 'folder-src',
     };
     expectedConfig.folderNamesExpanded = {
       src: 'folder-src-open',
@@ -216,13 +267,28 @@ describe('folder icons', () => {
       angular: 'folder-angular-open',
       ng: 'folder-angular-open',
       sample: 'folder-src-open',
+      _src: 'folder-src-open',
+      _source: 'folder-src-open',
+      _angular: 'folder-angular-open',
+      _ng: 'folder-angular-open',
+      _sample: 'folder-src-open',
+      __src__: 'folder-src-open',
+      __source__: 'folder-src-open',
+      __angular__: 'folder-angular-open',
+      __ng__: 'folder-angular-open',
+      __sample__: 'folder-src-open',
+      '.src': 'folder-src-open',
+      '.source': 'folder-src-open',
+      '.angular': 'folder-angular-open',
+      '.ng': 'folder-angular-open',
+      '.sample': 'folder-src-open',
     };
     expectedConfig.hidesExplorerArrows = false;
     expectedConfig.options!.folders!.associations = {
       sample: 'src',
     };
 
-    assert.deepStrictEqual(iconDefinitions, expectedConfig);
+    deepStrictEqual(iconDefinitions, expectedConfig);
   });
 
   it('should disable icon packs', () => {
@@ -261,17 +327,29 @@ describe('folder icons', () => {
     expectedConfig.folderNames = {
       src: 'folder-src',
       source: 'folder-src',
+      _src: 'folder-src',
+      _source: 'folder-src',
+      __src__: 'folder-src',
+      __source__: 'folder-src',
+      '.src': 'folder-src',
+      '.source': 'folder-src',
     };
     expectedConfig.folderNamesExpanded = {
       src: 'folder-src-open',
       source: 'folder-src-open',
+      _src: 'folder-src-open',
+      _source: 'folder-src-open',
+      __src__: 'folder-src-open',
+      __source__: 'folder-src-open',
+      '.src': 'folder-src-open',
+      '.source': 'folder-src-open',
     };
     expectedConfig.hidesExplorerArrows = false;
 
     // disable default icon pack by using empty string
     expectedConfig.options!.activeIconPack = '';
 
-    assert.deepStrictEqual(iconDefinitions, expectedConfig);
+    deepStrictEqual(iconDefinitions, expectedConfig);
   });
 
   it('should configure folder icons for light and high contrast', () => {
@@ -361,10 +439,22 @@ describe('folder icons', () => {
     expectedConfig.folderNames = {
       src: 'folder-src',
       source: 'folder-src',
+      _src: 'folder-src',
+      _source: 'folder-src',
+      __src__: 'folder-src',
+      __source__: 'folder-src',
+      '.src': 'folder-src',
+      '.source': 'folder-src',
     };
     expectedConfig.folderNamesExpanded = {
       src: 'folder-src-open',
       source: 'folder-src-open',
+      _src: 'folder-src-open',
+      _source: 'folder-src-open',
+      __src__: 'folder-src-open',
+      __source__: 'folder-src-open',
+      '.src': 'folder-src-open',
+      '.source': 'folder-src-open',
     };
     expectedConfig.light = {
       fileExtensions: {},
@@ -376,10 +466,22 @@ describe('folder icons', () => {
       folderNames: {
         src: 'folder-src_light',
         source: 'folder-src_light',
+        _src: 'folder-src_light',
+        _source: 'folder-src_light',
+        __src__: 'folder-src_light',
+        __source__: 'folder-src_light',
+        '.src': 'folder-src_light',
+        '.source': 'folder-src_light',
       },
       folderNamesExpanded: {
         src: 'folder-src-open_light',
         source: 'folder-src-open_light',
+        _src: 'folder-src-open_light',
+        _source: 'folder-src-open_light',
+        __src__: 'folder-src-open_light',
+        __source__: 'folder-src-open_light',
+        '.src': 'folder-src-open_light',
+        '.source': 'folder-src-open_light',
       },
     };
     expectedConfig.highContrast = {
@@ -392,15 +494,27 @@ describe('folder icons', () => {
       folderNames: {
         src: 'folder-src_highContrast',
         source: 'folder-src_highContrast',
+        _src: 'folder-src_highContrast',
+        _source: 'folder-src_highContrast',
+        __src__: 'folder-src_highContrast',
+        __source__: 'folder-src_highContrast',
+        '.src': 'folder-src_highContrast',
+        '.source': 'folder-src_highContrast',
       },
       folderNamesExpanded: {
         src: 'folder-src-open_highContrast',
         source: 'folder-src-open_highContrast',
+        _src: 'folder-src-open_highContrast',
+        _source: 'folder-src-open_highContrast',
+        __src__: 'folder-src-open_highContrast',
+        __source__: 'folder-src-open_highContrast',
+        '.src': 'folder-src-open_highContrast',
+        '.source': 'folder-src-open_highContrast',
       },
     };
     expectedConfig.hidesExplorerArrows = false;
     /* eslint-enable camelcase */
-    assert.deepStrictEqual(iconDefinitions, expectedConfig);
+    deepStrictEqual(iconDefinitions, expectedConfig);
   });
 
   it('should hide explorer arrows', () => {
@@ -413,6 +527,6 @@ describe('folder icons', () => {
       options
     );
 
-    assert.deepStrictEqual(iconDefinitions.hidesExplorerArrows, true);
+    deepStrictEqual(iconDefinitions.hidesExplorerArrows, true);
   });
 });
