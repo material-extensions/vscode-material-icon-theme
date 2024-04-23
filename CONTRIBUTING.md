@@ -132,7 +132,7 @@ Here's an example of how the SVG icon 'sample.svg' is assigned to file names and
 
 This will apply an icon for the files 'sample.js', 'sample.ts' and 'sample.html' as well as for files that end with 'sample' like 'another-file.sample'.
 
-**Apply patterns**
+##### Apply patterns
 
 It is also possible to use patterns for file names and extensions. This is useful when you want to assign an icon to a group of files that have a common pattern. Here's an example:
 
