@@ -608,9 +608,9 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-supabase', folderNames: ['supabase'] },
       { name: 'folder-private', folderNames: ['private'] },
-      { name: 'folder-linux', folderNames: ['linux'] },
-      { name: 'folder-windows', folderNames: ['windows'] },
-      { name: 'folder-macos', folderNames: ['macos', 'DS_Store'] },
+      { name: 'folder-linux', folderNames: ['linux', 'linuxbsd', 'unix'] },
+      { name: 'folder-windows', folderNames: ['windows', 'win'] },
+      { name: 'folder-macos', folderNames: ['macos', 'mac', 'DS_Store'] },
       {
         name: 'folder-error',
         folderNames: ['error', 'errors', 'err', 'errs', 'crash', 'crashes'],
