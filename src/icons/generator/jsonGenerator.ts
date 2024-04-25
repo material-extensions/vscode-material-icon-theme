@@ -26,6 +26,7 @@ import {
   validateOpacityValue,
   validateSaturationValue,
 } from './index';
+import { customClonesIcons } from './clones/clonesGenerator';
 
 /**
  * Generate the complete icon configuration object that can be written as JSON file.
@@ -73,7 +74,7 @@ export const createIconFile = (
     getDefaultIconOptions(),
     updatedJSONConfig
   );
-  const json = generateIconConfigurationObject(options);
+  let json = generateIconConfigurationObject(options);
 
   // make sure that the folder color, opacity and saturation values are entered correctly
   if (
@@ -131,6 +132,10 @@ export const createIconFile = (
       setIconSaturation(options);
     }
     renameIconFiles(iconJsonPath, options);
+
+    // generate custom cloned icons after opacity and saturation have
+    // been set so that those changes are also applied to the clones
+    json = merge({}, json, customClonesIcons(json, options));
   } catch (error) {
     throw new Error('Failed to update icons: ' + error);
   }

@@ -1,4 +1,4 @@
-import { readdirSync, readFileSync, writeFileSync } from 'fs';
+import { lstatSync, readdirSync, readFileSync, writeFileSync } from 'fs';
 import { basename, join } from 'path';
 import { getCustomIconPaths } from '../../helpers/customIcons';
 import { IconJsonOptions } from '../../models';
@@ -89,6 +89,9 @@ const adjustOpacity = (
 ): ((value: string, index: number, array: string[]) => void) => {
   return (iconFileName) => {
     const svgFilePath = join(iconPath, iconFileName);
+    if (!lstatSync(svgFilePath).isFile()) {
+      return;
+    }
 
     // Read SVG file
     const svg = readFileSync(svgFilePath, 'utf-8');
