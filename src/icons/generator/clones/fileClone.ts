@@ -7,7 +7,7 @@ import {
   FileIconType,
 } from './utils/paths';
 import { iconFolderPath } from '../constants';
-import { cloneIcon } from './utils/svg';
+import { cloneIcon, createCloneConfig } from './utils/cloning';
 import { writeFileSync } from 'fs';
 
 export function cloneFileIcon(
@@ -28,7 +28,7 @@ function createFileIconClones(
   basePaths: IconPath<FileIconType>[],
   hash: string
 ): IconConfiguration {
-  const config: IconConfiguration = new IconConfiguration();
+  const config = createCloneConfig();
 
   basePaths.forEach((base) => {
     try {

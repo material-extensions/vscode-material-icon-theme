@@ -1,5 +1,5 @@
 import { resolve } from 'path';
-import { runTests } from 'vscode-test';
+import { runTests } from '@vscode/test-electron';
 
 const main = async () => {
   try {

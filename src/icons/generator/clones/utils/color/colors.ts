@@ -1,5 +1,5 @@
 import { INode } from 'svgson';
-import { getStyle, traverse } from '../svg';
+import { getStyle, traverse } from '../cloning';
 import chroma, { valid } from 'chroma-js';
 import {
   closerMaterialColorTo,

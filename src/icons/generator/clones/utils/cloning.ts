@@ -1,6 +1,6 @@
 import { readFileSync } from 'fs';
 import { INode, parseSync, stringify } from 'svgson';
-import { CustomClone } from '../../../../models';
+import { CustomClone, IconConfiguration } from '../../../../models';
 import { getColorList, replacementMap } from './color/colors';
 
 export function traverse(node: INode, callback: (node: INode) => void) {
@@ -90,4 +90,16 @@ export function replaceColors(node: INode, replacements: Map<string, string>) {
       }
     }
   });
+}
+
+export function createCloneConfig() {
+  const config = new IconConfiguration();
+  config.light = {
+    fileExtensions: {},
+    fileNames: {},
+    folderNames: {},
+    folderNamesExpanded: {},
+  };
+
+  return config;
 }

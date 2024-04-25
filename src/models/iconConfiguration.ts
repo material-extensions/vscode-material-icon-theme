@@ -27,14 +27,10 @@ export class IconConfiguration {
     this.light = {
       fileExtensions: {},
       fileNames: {},
-      folderNames: {},
-      folderNamesExpanded: {},
     };
     this.highContrast = {
       fileExtensions: {},
       fileNames: {},
-      folderNames: {},
-      folderNamesExpanded: {},
     };
     this.options = {};
   }
