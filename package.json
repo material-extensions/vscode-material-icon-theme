@@ -189,6 +189,81 @@
           "default": {},
           "description": "%configuration.languages.associations%"
         },
+        "material-icon-theme.files.customClones": {
+          "type": "array",
+          "default": [],
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "%configuration.customClones.name%"
+              },
+              "base": {
+                "type": "string",
+                "description": "%configuration.customClones.base%"
+              },
+              "color": {
+                "type": "string",
+                "description": "%configuration.customClones.color%"
+              },
+              "lightColor": {
+                "type": "string",
+                "description": "%configuration.customClones.lightColor%"
+              },
+              "fileNames": {
+                "type": "array",
+                "default": [],
+                "description": "%configuration.customClones.fileNames%",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "fileExtensions": {
+                "type": "array",
+                "default": [],
+                "description": "%configuration.customClones.fileExtensions%",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "description": "%configuration.customClones%"
+        },
+        "material-icon-theme.folders.customClones": {
+          "type": "array",
+          "default": [],
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "%configuration.customClones.name%"
+              },
+              "base": {
+                "type": "string",
+                "description": "%configuration.customClones.base%"
+              },
+              "color": {
+                "type": "string",
+                "description": "%configuration.customClones.color%"
+              },
+              "lightColor": {
+                "type": "string",
+                "description": "%configuration.customClones.lightColor%"
+              },
+              "folderNames": {
+                "type": "array",
+                "description": "%configuration.customClones.folderNames%",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "description": "%configuration.customClones%"
+        },
         "material-icon-theme.folders.theme": {
           "type": "string",
           "default": "specific",
@@ -239,9 +314,12 @@
     }
   },
   "dependencies": {
-    "lodash.merge": "4.6.2"
+    "chroma-js": "^2.4.2",
+    "lodash.merge": "4.6.2",
+    "svgson": "^5.3.1"
   },
   "devDependencies": {
+    "@types/chroma-js": "^2.4.4",
     "@types/glob": "^7.2.0",
     "@types/lodash.merge": "^4.6.7",
     "@types/mocha": "^9.1.1",
