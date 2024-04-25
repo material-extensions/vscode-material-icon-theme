@@ -8,9 +8,12 @@ import { getColorList, replacementMap } from './color/colors';
  * calling a callback on each node.
  */
 export function traverse(node: INode, callback: (node: INode) => void) {
-  callback(node);
-  if (node.children) {
-    node.children.forEach((child) => traverse(child, callback));
+  if (node.attributes['mit-no-recolor'] !== 'true') {
+    callback(node);
+
+    if (node.children) {
+      node.children.forEach((child) => traverse(child, callback));
+    }
   }
 }
 
