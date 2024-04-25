@@ -6,6 +6,7 @@ import {
   getMaterialColorByKey,
 } from './material-palette';
 
+/** Get all the colors used in the SVG node as a `Set` list. **/
 export function getColorList(node: INode) {
   const colors = new Set<string>();
 
@@ -22,7 +23,7 @@ export function getColorList(node: INode) {
       }
     }
 
-    // check colors in attributes
+    // check colors in svg attributes
     if (node.attributes) {
       if (node.attributes.fill && isValidColor(node.attributes.fill)) {
         colors.add(node.attributes.fill);
@@ -44,6 +45,7 @@ export function getColorList(node: INode) {
   return colors;
 }
 
+/** given a set of colors, orders them from dark to light. **/
 function orderDarkToLight(colors: Set<string>) {
   const colorArray = Array.from(colors);
   return colorArray.sort((a, b) => {
@@ -58,17 +60,22 @@ function orderDarkToLight(colors: Set<string>) {
   });
 }
 
-export function isValidColor(hexColor: string | undefined): boolean {
-  if (hexColor === undefined) {
+/** checks if a string is a valid color. **/
+export function isValidColor(color: string | undefined): boolean {
+  if (color === undefined) {
     return false;
   }
-  return valid(hexColor);
+  return valid(color);
 }
 
 /**
- * receives a base color and a list of colors, orders the list of colors from dark to light
- * and replaces the darkest color (first in the list) with the base color, then grabs the hue
- * of the base color and applies it to the rest of the colors in the list.
+ * Creates a map of color replacements based on the base color and
+ * the list of colors.
+ *
+ * Orders the list of colors from dark to light and replaces the darkest
+ * color with the base color. Then uses the hue of the base color and
+ * the material palette to find the most appropriate color for the rest
+ * in the list.
  */
 export function replacementMap(baseColor: string, colors: Set<string>) {
   if (!isValidColor(baseColor)) {

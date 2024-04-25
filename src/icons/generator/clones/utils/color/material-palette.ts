@@ -272,6 +272,10 @@ export function getMaterialColorByKey(key: string): string | undefined {
   return undefined;
 }
 
+/**
+ * Given a color, returns the closest material color from the
+ * material palette.
+ */
 export function closerMaterialColorTo(color: string): string {
   const palette = Object.values(materialPalette);
 
@@ -283,6 +287,7 @@ export function closerMaterialColorTo(color: string): string {
 
   const distances = palette
     .map((paletteColor) => ({
+      // calculate the distance between the color and the palette color
       distance: deltaE(paletteColor, color),
       color: paletteColor,
     }))

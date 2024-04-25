@@ -6,9 +6,8 @@ import { cloneFolderIcon } from './folderClone';
 import { cloneFileIcon } from './fileClone';
 
 /**
- * This function applies custom colors to the svg icon, respecting
- * the different tones of the original icon based on a provided
- * "base" color.
+ * Creates custom icons by cloning already existing icons and changing
+ * their colors, allowing users create their own variations.
  */
 export function customClonesIcons(
   config: IconConfiguration,

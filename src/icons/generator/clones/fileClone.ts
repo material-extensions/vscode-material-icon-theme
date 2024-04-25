@@ -10,6 +10,13 @@ import { iconFolderPath } from '../constants';
 import { cloneIcon, createCloneConfig } from './utils/cloning';
 import { writeFileSync } from 'fs';
 
+/**
+ * Generates a clone of a file icon.
+ * @param cloneOpts options and configurations on how to clone the file icon
+ * @param config global icon configuration (used to get the base icon)
+ * @param hash current hash being applied to the icons
+ * @returns a partial icon configuration for the new file icon
+ */
 export function cloneFileIcon(
   cloneOpts: FileIconClone,
   config: IconConfiguration,
@@ -23,6 +30,11 @@ export function cloneFileIcon(
   return createFileIconClones(cloneOpts, basePaths, hash);
 }
 
+/**
+ * for each base icon, creates its clone, recolorizes it and writes it to the disk
+ *
+ * @returns partial icon configuration for the cloned file icons
+ */
 function createFileIconClones(
   cloneOpts: FileIconClone,
   basePaths: IconPath<FileIconType>[],
@@ -36,20 +48,25 @@ function createFileIconClones(
       const iconPathConfig = `${iconFolderPath}clones/${basename(
         filePath.path
       )}`;
+
+      // generates the new icon content
       const content = cloneIcon(base.path, hash, cloneOpts);
       const iconName = basename(filePath.path, '.svg');
 
       try {
+        // create the .svg file for the cloned icon
         writeFileSync(filePath.path, content);
       } catch (error) {
         console.error(error);
         return;
       }
 
+      // set the icon path for the cloned icon in the configuration
       config.iconDefinitions![iconName] = {
         iconPath: iconPathConfig,
       };
 
+      // set associations for the cloned icon in the configuration
       cloneOpts.fileNames?.forEach((fileName) => {
         switch (filePath.type) {
           case FileIconType.Base:

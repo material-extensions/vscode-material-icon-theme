@@ -5,6 +5,7 @@ import {
   IconConfiguration,
 } from '../../../../models';
 import { existsSync, mkdirSync, rmSync } from 'fs';
+import { lightColorFileEnding, openedFolder } from '../../constants';
 
 export enum FolderIconType {
   Base,
@@ -23,6 +24,7 @@ export interface IconPath<T extends FolderIconType | FileIconType> {
   type: T;
 }
 
+/** resolves the path of the icon depending of the caller */
 function resolvePath(path: string): string {
   if (basename(__dirname) === 'dist') {
     return join(__dirname, String(path));
@@ -32,27 +34,31 @@ function resolvePath(path: string): string {
   }
 }
 
+/** returns the paths of the base file icons to be cloned (base, light) */
 export function getFileIconBasePaths(
   cloneOpts: FileIconClone,
   config: IconConfiguration
 ): IconPath<FileIconType>[] | undefined {
   const paths = [];
   const base = config.iconDefinitions?.[`${cloneOpts.base}`]?.iconPath;
-  const light = config.iconDefinitions?.[`${cloneOpts.base}_light`]?.iconPath;
+  const light =
+    config.iconDefinitions?.[`${cloneOpts.base}${lightColorFileEnding}`]
+      ?.iconPath;
 
   if (base) {
-    base && paths.push({ type: FileIconType.Base, path: resolvePath(base) });
+    paths.push({ type: FileIconType.Base, path: resolvePath(base) });
     light && paths.push({ type: FileIconType.Light, path: resolvePath(light) });
     return paths;
   }
 }
 
+/** creates and returns the path of the cloned file icon */
 export function getFileIconClonePath(
   base: IconPath<FileIconType>,
   cloneOpts: FileIconClone,
   hash: string
 ): IconPath<FileIconType> {
-  const sufix = base.type === FileIconType.Light ? '_light' : '';
+  const sufix = base.type === FileIconType.Light ? lightColorFileEnding : '';
 
   const clonePath = join(
     dirname(base.path),
@@ -66,6 +72,10 @@ export function getFileIconClonePath(
   };
 }
 
+/**
+ * returns the paths of the base folder icons to be cloned
+ * (base, open, light, light-open)
+ */
 export function getFolderIconBasePaths(
   cloneOpts: FolderIconClone,
   config: IconConfiguration
@@ -75,10 +85,14 @@ export function getFolderIconBasePaths(
     cloneOpts.base === 'folder' ? 'folder' : `folder-${cloneOpts.base}`;
 
   const base = config.iconDefinitions?.[`${folderBase}`]?.iconPath;
-  const open = config.iconDefinitions?.[`${folderBase}-open`]?.iconPath;
-  const light = config.iconDefinitions?.[`${folderBase}_light`]?.iconPath;
+  const open =
+    config.iconDefinitions?.[`${folderBase}${openedFolder}`]?.iconPath;
+  const light =
+    config.iconDefinitions?.[`${folderBase}${lightColorFileEnding}`]?.iconPath;
   const lightOpen =
-    config.iconDefinitions?.[`${folderBase}-open_light`]?.iconPath;
+    config.iconDefinitions?.[
+      `${folderBase}${openedFolder}${lightColorFileEnding}`
+    ]?.iconPath;
 
   if (base && open) {
     base && paths.push({ type: FolderIconType.Base, path: resolvePath(base) });
@@ -99,6 +113,7 @@ export function getFolderIconBasePaths(
   }
 }
 
+/** creates and returns the path of the cloned folder icon */
 export function getFolderIconClonePath(
   base: IconPath<FolderIconType>,
   cloneOpts: FolderIconClone,
@@ -110,13 +125,13 @@ export function getFolderIconClonePath(
     case FolderIconType.Base:
       break;
     case FolderIconType.Open:
-      sufix = '-open';
+      sufix = openedFolder;
       break;
     case FolderIconType.Light:
-      sufix = '_light';
+      sufix = lightColorFileEnding;
       break;
     case FolderIconType.LightOpen:
-      sufix = '-open_light';
+      sufix = `${openedFolder}${lightColorFileEnding}`;
       break;
   }
 
@@ -134,7 +149,7 @@ export function getFolderIconClonePath(
 
 /**
  * removes the clones folder if it exists
- * and creates a new one
+ * and creates a new one if `keep` is true
  */
 export function clearCloneFolder(keep: boolean = true): void {
   const clonesFolderPath = resolvePath('./../icons/clones');

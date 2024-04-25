@@ -3,6 +3,10 @@ import { INode, parseSync, stringify } from 'svgson';
 import { CustomClone, IconConfiguration } from '../../../../models';
 import { getColorList, replacementMap } from './color/colors';
 
+/**
+ * Recursively walks through an SVG node tree and its children,
+ * calling a callback on each node.
+ */
 export function traverse(node: INode, callback: (node: INode) => void) {
   callback(node);
   if (node.children) {
@@ -10,6 +14,7 @@ export function traverse(node: INode, callback: (node: INode) => void) {
   }
 }
 
+/** Reads an icon from the file system and returns its content. */
 export function readIcon(path: string, hash: string): string {
   try {
     return readFileSync(path, 'utf8');
@@ -19,6 +24,7 @@ export function readIcon(path: string, hash: string): string {
   }
 }
 
+/** Clones an icon and changes its colors according to the clone options. */
 export function cloneIcon(
   path: string,
   hash: string,
@@ -31,6 +37,7 @@ export function cloneIcon(
   return stringify(svg);
 }
 
+/** Gets the style attribute of an SVG node if it exists. */
 export function getStyle(node: INode) {
   if (node && node.attributes && node.attributes.style) {
     return parseStyle(node.attributes.style);
@@ -38,6 +45,7 @@ export function getStyle(node: INode) {
   return {};
 }
 
+/** Parses the style attribute of an SVG node. */
 function parseStyle(css: string) {
   const rules = css.split(';');
   const result: Record<string, string> = {};
@@ -48,12 +56,14 @@ function parseStyle(css: string) {
   return result;
 }
 
+/** Converts object to css style string. */
 export function stringifyStyle(css: Record<string, string>) {
   return Object.entries(css)
     .map(([key, value]) => `${key}:${value}`)
     .join(';');
 }
 
+/** Replaces colors in an SVG node using a replacement map. */
 export function replaceColors(node: INode, replacements: Map<string, string>) {
   traverse(node, (node) => {
     // replace colors in style attribute
@@ -92,6 +102,7 @@ export function replaceColors(node: INode, replacements: Map<string, string>) {
   });
 }
 
+/** Creates a clone configuration with empty light object. */
 export function createCloneConfig() {
   const config = new IconConfiguration();
   config.light = {
