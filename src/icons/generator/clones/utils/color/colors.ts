@@ -1,6 +1,6 @@
 import { INode } from 'svgson';
 import { getStyle, traverse } from '../cloning';
-import chroma, { valid } from 'chroma-js';
+import chroma, { Color, valid } from 'chroma-js';
 import {
   closerMaterialColorTo,
   getMaterialColorByKey,
@@ -49,16 +49,23 @@ export function getColorList(node: INode) {
 function orderDarkToLight(colors: Set<string>) {
   const colorArray = Array.from(colors);
   return colorArray.sort((a, b) => {
-    const colorA = chroma(a);
-    const colorB = chroma(b);
+    // sort by lightness
+    const lA = chroma(a).get('hsl.l');
+    const lB = chroma(b).get('hsl.l');
 
-    // determine which one is darker based on saturation and lightness
-    const aDarkness = colorA.get('hsl.l') * colorA.get('hsl.s');
-    const bDarkness = colorB.get('hsl.l') * colorB.get('hsl.s');
-
-    return aDarkness - bDarkness;
+    if (lA < lB) {
+      return -1;
+    } else if (lA > lB) {
+      return 1;
+    } else {
+      return 0;
+    }
   });
 }
+
+/** Lightens a color by a given percentage. **/
+const lighten = (color: Color, hslPercent: number) =>
+  color.set('hsl.l', color.get('hsl.l') + hslPercent);
 
 /** checks if a string is a valid color. **/
 export function isValidColor(color: string | undefined): boolean {
@@ -91,14 +98,30 @@ export function replacementMap(baseColor: string, colors: Set<string>) {
   const orderedColors = orderDarkToLight(colors);
   const baseColorChroma = chroma(baseColor);
   const baseHue = baseColorChroma.get('hsl.h');
-
   const replacement = new Map<string, string>();
   replacement.set(orderedColors[0], baseColor);
 
+  // keep track of the latest color to determine if the next color
+  // should be lightened or not.
+  let latestColor = baseColorChroma;
+
   for (let i = 1; i < orderedColors.length; i++) {
     const color = chroma(orderedColors[i]);
-    const newColor = color.set('hsl.h', baseHue).hex();
-    const matCol = closerMaterialColorTo(newColor);
+    let newColor = color.set('hsl.h', baseHue);
+
+    // the idea is to keep the paths with the same relative darkness
+    // as the original icon, but with different hues. So if the
+    // new color results in a darker color (as we are looping from
+    // dark to light), we set the lightness to the latest color and
+    // then lighten it a bit so that it's brighter than the latest one.
+    if (newColor.luminance() < latestColor.luminance()) {
+      newColor = newColor.set('hsl.l', latestColor.get('hsl.l'));
+      newColor = lighten(newColor, 0.1);
+    }
+
+    const matCol = closerMaterialColorTo(newColor.hex());
+    latestColor = chroma(matCol);
+
     replacement.set(orderedColors[i], matCol);
   }
 
