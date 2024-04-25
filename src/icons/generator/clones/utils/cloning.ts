@@ -1,6 +1,6 @@
 import { readFileSync } from 'fs';
 import { INode, parseSync, stringify } from 'svgson';
-import { CustomClone, IconConfiguration } from '../../../../models';
+import { IconConfiguration } from '../../../../models';
 import { getColorList, replacementMap } from './color/colors';
 
 /**
@@ -25,14 +25,10 @@ export function readIcon(path: string, hash: string): string {
 }
 
 /** Clones an icon and changes its colors according to the clone options. */
-export function cloneIcon(
-  path: string,
-  hash: string,
-  cloneOpts: CustomClone
-): string {
+export function cloneIcon(path: string, hash: string, color: string): string {
   const baseContent = readIcon(path, hash);
   const svg = parseSync(baseContent);
-  const replacements = replacementMap(cloneOpts.color, getColorList(svg));
+  const replacements = replacementMap(color, getColorList(svg));
   replaceColors(svg, replacements);
   return stringify(svg);
 }

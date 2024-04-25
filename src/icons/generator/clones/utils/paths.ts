@@ -41,9 +41,14 @@ export function getFileIconBasePaths(
 ): IconPath<FileIconType>[] | undefined {
   const paths = [];
   const base = config.iconDefinitions?.[`${cloneOpts.base}`]?.iconPath;
-  const light =
+  let light =
     config.iconDefinitions?.[`${cloneOpts.base}${lightColorFileEnding}`]
       ?.iconPath;
+
+  if (cloneOpts.lightColor && !light) {
+    // the original icon does not have a light version, so we re-use the base
+    light = base;
+  }
 
   if (base) {
     paths.push({ type: FileIconType.Base, path: resolvePath(base) });
@@ -87,9 +92,9 @@ export function getFolderIconBasePaths(
   const base = config.iconDefinitions?.[`${folderBase}`]?.iconPath;
   const open =
     config.iconDefinitions?.[`${folderBase}${openedFolder}`]?.iconPath;
-  const light =
+  let light =
     config.iconDefinitions?.[`${folderBase}${lightColorFileEnding}`]?.iconPath;
-  const lightOpen =
+  let lightOpen =
     config.iconDefinitions?.[
       `${folderBase}${openedFolder}${lightColorFileEnding}`
     ]?.iconPath;
@@ -97,6 +102,12 @@ export function getFolderIconBasePaths(
   if (base && open) {
     base && paths.push({ type: FolderIconType.Base, path: resolvePath(base) });
     open && paths.push({ type: FolderIconType.Open, path: resolvePath(open) });
+
+    if (cloneOpts.lightColor && (!light || !lightOpen)) {
+      // the original icon does not have a light version, so we re-use the base icons
+      light = base;
+      lightOpen = open;
+    }
 
     if (light) {
       paths.push({ type: FolderIconType.Light, path: resolvePath(light) });

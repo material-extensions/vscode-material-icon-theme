@@ -49,8 +49,13 @@ function createFileIconClones(
         filePath.path
       )}`;
 
+      const baseColor =
+        base.type === FileIconType.Base
+          ? cloneOpts.color
+          : cloneOpts.lightColor ?? cloneOpts.color;
+
       // generates the new icon content
-      const content = cloneIcon(base.path, hash, cloneOpts);
+      const content = cloneIcon(base.path, hash, baseColor);
       const iconName = basename(filePath.path, '.svg');
 
       try {

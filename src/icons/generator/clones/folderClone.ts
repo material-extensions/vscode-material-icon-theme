@@ -50,8 +50,12 @@ function createFolderClones(
         clonePath.path
       )}`;
 
+      const baseColor = isDarkThemeIcon(clonePath)
+        ? cloneOpts.color
+        : cloneOpts.lightColor ?? cloneOpts.color;
+
       // generates the new icon content
-      const content = cloneIcon(base.path, hash, cloneOpts);
+      const content = cloneIcon(base.path, hash, baseColor);
       const iconName = basename(clonePath.path, '.svg');
 
       try {
@@ -90,4 +94,8 @@ function createFolderClones(
   });
 
   return config;
+}
+
+function isDarkThemeIcon(path: IconPath<FolderIconType>): boolean {
+  return path.type === FolderIconType.Base || path.type === FolderIconType.Open;
 }
