@@ -11,6 +11,7 @@ import {
   IconJsonOptions,
 } from '../../models/index';
 import {
+  cloneIconExtension,
   highContrastColorFileEnding,
   iconFolderPath,
   lightColorFileEnding,
@@ -173,20 +174,27 @@ const setIconDefinitions = (
   config: IconConfiguration,
   icon: FolderIcon | DefaultIcon
 ) => {
+  const isClone = (icon as FolderIcon).clone !== undefined;
   config = merge({}, config);
-  config = createIconDefinitions(config, icon.name);
+
+  config = createIconDefinitions(config, icon.name, '', isClone);
   if (icon.light) {
     config = merge(
       {},
       config,
-      createIconDefinitions(config, icon.name, lightColorFileEnding)
+      createIconDefinitions(config, icon.name, lightColorFileEnding, isClone)
     );
   }
   if (icon.highContrast) {
     config = merge(
       {},
       config,
-      createIconDefinitions(config, icon.name, highContrastColorFileEnding)
+      createIconDefinitions(
+        config,
+        icon.name,
+        highContrastColorFileEnding,
+        isClone
+      )
     );
   }
   return config;
@@ -195,17 +203,20 @@ const setIconDefinitions = (
 const createIconDefinitions = (
   config: IconConfiguration,
   iconName: string,
-  appendix: string = ''
+  appendix: string = '',
+  isClone = false
 ) => {
   config = merge({}, config);
   const fileConfigHash = getFileConfigHash(config.options ?? {});
   const configIconDefinitions = config.iconDefinitions;
+  const ext = isClone ? cloneIconExtension : '.svg';
+
   if (configIconDefinitions) {
     configIconDefinitions[iconName + appendix] = {
-      iconPath: `${iconFolderPath}${iconName}${appendix}${fileConfigHash}.svg`,
+      iconPath: `${iconFolderPath}${iconName}${appendix}${fileConfigHash}${ext}`,
     };
     configIconDefinitions[`${iconName}${openedFolder}${appendix}`] = {
-      iconPath: `${iconFolderPath}${iconName}${openedFolder}${appendix}${fileConfigHash}.svg`,
+      iconPath: `${iconFolderPath}${iconName}${openedFolder}${appendix}${fileConfigHash}${ext}`,
     };
   }
   return config;

@@ -43,7 +43,7 @@ function resolvePath(path: string): string {
     return join(__dirname, String(path));
   } else {
     // executed via script
-    return join(__dirname, '..', '..', '..', String(path));
+    return join(__dirname, '..', '..', '..', '..', String(path));
   }
 }
 
@@ -65,7 +65,9 @@ const isDark = (daa: IconData) =>
 export function getCloneData(
   cloneOpts: CustomClone,
   config: IconConfiguration,
-  hash: string
+  subFolder: string,
+  hash: string,
+  ext?: string
 ): CloneData[] | undefined {
   const baseIcon = isFolder(cloneOpts)
     ? getFolderIconBaseData(cloneOpts, config)
@@ -74,15 +76,17 @@ export function getCloneData(
   if (baseIcon) {
     return baseIcon.map((base) => {
       const cloneIcon = isFolder(cloneOpts)
-        ? getFolderIconCloneData(base, cloneOpts, hash)
-        : getFileIconCloneData(base, cloneOpts, hash);
+        ? getFolderIconCloneData(base, cloneOpts, hash, subFolder, ext)
+        : getFileIconCloneData(base, cloneOpts, hash, subFolder, ext);
 
       return {
         name: getIconName(cloneOpts.name, base),
         color: isDark(base)
           ? cloneOpts.color
           : cloneOpts.lightColor ?? cloneOpts.color,
-        inConfigPath: `${iconFolderPath}clones/${basename(cloneIcon.path)}`,
+        inConfigPath: `${iconFolderPath}${subFolder}${basename(
+          cloneIcon.path
+        )}`,
         base,
         ...cloneIcon,
       };
@@ -114,7 +118,7 @@ function getFileIconBaseData(
     });
     light &&
       icons.push({
-        type: Type.Folder,
+        type: Type.File,
         variant: Variant.Light,
         path: resolvePath(light),
       });
@@ -126,10 +130,12 @@ function getFileIconBaseData(
 function getFileIconCloneData(
   base: IconData,
   cloneOpts: FileIconClone,
-  hash: string
+  hash: string,
+  subFolder: string,
+  ext = '.svg'
 ): IconData {
   const name = getIconName(cloneOpts.name, base);
-  const clonePath = join(dirname(base.path), 'clones', `${name}${hash}.svg`);
+  const clonePath = join(dirname(base.path), subFolder, `${name}${hash}${ext}`);
 
   return {
     variant: base.variant,
@@ -140,12 +146,16 @@ function getFileIconCloneData(
 
 /** returns path, type and variant for the base folder icons to be cloned */
 function getFolderIconBaseData(
-  cloneOpts: FolderIconClone,
+  clone: FolderIconClone,
   config: IconConfiguration
 ): IconData[] | undefined {
   const icons = [];
   const folderBase =
-    cloneOpts.base === 'folder' ? 'folder' : `folder-${cloneOpts.base}`;
+    clone.base === 'folder'
+      ? 'folder'
+      : clone.base.startsWith('folder-')
+      ? clone.base
+      : `folder-${clone.base}`;
 
   const base = config.iconDefinitions?.[`${folderBase}`]?.iconPath;
   const open =
@@ -158,20 +168,19 @@ function getFolderIconBaseData(
     ]?.iconPath;
 
   if (base && open) {
-    base &&
-      icons.push({
-        type: Type.Folder,
-        variant: Variant.Base,
-        path: resolvePath(base),
-      });
-    open &&
-      icons.push({
-        type: Type.Folder,
-        variant: Variant.Open,
-        path: resolvePath(open),
-      });
+    icons.push({
+      type: Type.Folder,
+      variant: Variant.Base,
+      path: resolvePath(base),
+    });
 
-    if (cloneOpts.lightColor && (!light || !lightOpen)) {
+    icons.push({
+      type: Type.Folder,
+      variant: Variant.Open,
+      path: resolvePath(open),
+    });
+
+    if (clone.lightColor && (!light || !lightOpen)) {
       // the original icon does not have a light version, so we re-use the base icons
       light = base;
       lightOpen = open;
@@ -201,10 +210,12 @@ function getFolderIconBaseData(
 function getFolderIconCloneData(
   base: IconData,
   cloneOpts: FolderIconClone,
-  hash: string
+  hash: string,
+  subFolder: string,
+  ext = '.svg'
 ): IconData {
   const name = getIconName(cloneOpts.name, base);
-  const path = join(dirname(base.path), 'clones', `${name}${hash}.svg`);
+  const path = join(dirname(base.path), subFolder, `${name}${hash}${ext}`);
   return { type: base.type, variant: base.variant, path };
 }
 
@@ -226,26 +237,32 @@ export function clearCloneFolder(keep: boolean = true): void {
 
 function getIconName(baseName: string, data: IconData): string {
   let prefix = '';
-  let sufix = '';
+  let suffix = '';
 
   if (data.type === Type.Folder) {
-    prefix = baseName === 'folder' ? '' : `folder-`;
+    prefix =
+      baseName === 'folder'
+        ? ''
+        : baseName.startsWith('folder-')
+        ? ''
+        : 'folder-';
+
     switch (data.variant) {
       case Variant.Base:
         break;
       case Variant.Open:
-        sufix = openedFolder;
+        suffix = openedFolder;
         break;
       case Variant.Light:
-        sufix = lightColorFileEnding;
+        suffix = lightColorFileEnding;
         break;
       case Variant.LightOpen:
-        sufix = `${openedFolder}${lightColorFileEnding}`;
+        suffix = `${openedFolder}${lightColorFileEnding}`;
         break;
     }
   } else {
-    sufix = data.variant === Variant.Light ? lightColorFileEnding : '';
+    suffix = data.variant === Variant.Light ? lightColorFileEnding : '';
   }
 
-  return `${prefix}${baseName}${sufix}`;
+  return `${prefix}${baseName}${suffix}`;
 }

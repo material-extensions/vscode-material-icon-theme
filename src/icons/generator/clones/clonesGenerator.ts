@@ -1,6 +1,9 @@
 import {
+  CustomClone,
   FileIconClone,
+  FileIcons,
   FolderIconClone,
+  FolderTheme,
   IconConfiguration,
   IconJsonOptions,
 } from '../../../models';
@@ -14,10 +17,11 @@ import merge from 'lodash.merge';
 import { getFileConfigHash } from '../../../helpers/fileConfig';
 import { cloneIcon, createCloneConfig } from './utils/cloning';
 import { writeFileSync } from 'fs';
+import { cloneIconExtension, clonesFolder } from '../constants';
 
 /**
  * Creates custom icons by cloning already existing icons and changing
- * their colors, allowing users create their own variations.
+ * their colors, based on the user's provided configurations.
  */
 export function customClonesIcons(
   config: IconConfiguration,
@@ -43,6 +47,62 @@ export function customClonesIcons(
   return clonedIconsConfig;
 }
 
+/**
+ * Creates custom icons by cloning already existing icons and changing
+ * their colors, based on the configurations provided by the extension.
+ * (this is meant to be called at build time)
+ */
+export function generateConfiguredClones(
+  iconsList: FolderTheme[] | FileIcons,
+  config: IconConfiguration
+) {
+  let iconsToClone: CustomClone[] = [];
+
+  if (Array.isArray(iconsList)) {
+    iconsToClone = iconsList.reduce((acc, theme) => {
+      const icons = theme.icons?.filter((icon) => icon.clone) ?? [];
+      return acc.concat(
+        icons.map((icon) => ({
+          folderNames: icon.folderNames,
+          name: icon.name,
+          ...icon.clone!,
+        }))
+      );
+    }, [] as FolderIconClone[]);
+  } else {
+    const icons = iconsList.icons?.filter((icon) => icon.clone) ?? [];
+    iconsToClone = icons.map(
+      (icon) =>
+        ({
+          fileExtensions: icon.fileExtensions,
+          fileNames: icon.fileNames,
+          name: icon.name,
+          ...icon.clone!,
+        } as FileIconClone)
+    );
+  }
+
+  iconsToClone?.forEach((clone) => {
+    const clones = getCloneData(clone, config, '', '', cloneIconExtension);
+    if (!clones) {
+      return;
+    }
+
+    clones.forEach((clone) => {
+      try {
+        // generates the new icon content (svg)
+        const content = cloneIcon(clone.base.path, clone.color);
+
+        // write the new .svg file to the disk
+        writeFileSync(clone.path, content);
+      } catch (error) {
+        console.error(error);
+        return;
+      }
+    });
+  });
+}
+
 /** Checks if there are any custom clones to be created */
 export function hasCustomClones(options: IconJsonOptions): boolean {
   return (
@@ -58,13 +118,13 @@ export function hasCustomClones(options: IconJsonOptions): boolean {
  * @param hash current hash being applied to the icons
  * @returns a partial icon configuration for the new icon
  */
-export function createIconClone(
+function createIconClone(
   cloneOpts: FolderIconClone | FileIconClone,
   config: IconConfiguration,
   hash: string
 ): IconConfiguration {
   // get clones to be created
-  const clones = getCloneData(cloneOpts, config, hash);
+  const clones = getCloneData(cloneOpts, config, clonesFolder, hash);
   if (!clones) {
     return {};
   }
@@ -74,7 +134,7 @@ export function createIconClone(
   clones.forEach((clone) => {
     try {
       // generates the new icon content (svg)
-      const content = cloneIcon(clone.base.path, hash, clone.color);
+      const content = cloneIcon(clone.base.path, clone.color, hash);
 
       try {
         // write the new .svg file to the disk

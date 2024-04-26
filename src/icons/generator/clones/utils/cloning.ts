@@ -28,7 +28,7 @@ export function readIcon(path: string, hash: string): string {
 }
 
 /** Clones an icon and changes its colors according to the clone options. */
-export function cloneIcon(path: string, hash: string, color: string): string {
+export function cloneIcon(path: string, color: string, hash = ''): string {
   const baseContent = readIcon(path, hash);
   const svg = parseSync(baseContent);
   const replacements = replacementMap(color, getColorList(svg));
