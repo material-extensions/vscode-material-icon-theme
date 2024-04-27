@@ -529,4 +529,117 @@ describe('folder icons', () => {
 
     deepStrictEqual(iconDefinitions.hidesExplorerArrows, true);
   });
+
+  it('should generate cloned folder icons config', () => {
+    const folderTheme: FolderTheme[] = [
+      {
+        name: 'specific',
+        defaultIcon: { name: 'folder' },
+        rootFolder: { name: 'folder-root' },
+        icons: [
+          { name: 'foo', folderNames: ['foo', 'bar'] },
+          {
+            name: 'foo-clone',
+            folderNames: ['baz', 'qux'],
+            light: true,
+            clone: {
+              base: 'foo',
+              color: 'green-500',
+              lightColor: 'green-100',
+            },
+          },
+        ],
+      },
+    ];
+
+    const options = getDefaultIconOptions();
+    const iconConfig = merge({}, new IconConfiguration(), { options });
+    const iconDefinitions = loadFolderIconDefinitions(
+      folderTheme,
+      iconConfig,
+      options
+    );
+
+    expectedConfig.iconDefinitions = {
+      foo: { iconPath: './../icons/foo.svg' },
+      'foo-open': { iconPath: './../icons/foo-open.svg' },
+      'foo-clone': { iconPath: './../icons/foo-clone.clone.svg' },
+      'foo-clone-open': { iconPath: './../icons/foo-clone-open.clone.svg' },
+      'foo-clone_light': { iconPath: './../icons/foo-clone_light.clone.svg' },
+      'foo-clone-open_light': {
+        iconPath: './../icons/foo-clone-open_light.clone.svg',
+      },
+      'folder-open': { iconPath: './../icons/folder-open.svg' },
+      'folder-root': { iconPath: './../icons/folder-root.svg' },
+      'folder-root-open': { iconPath: './../icons/folder-root-open.svg' },
+      folder: { iconPath: './../icons/folder.svg' },
+    };
+    expectedConfig.folder = 'folder';
+    expectedConfig.folderExpanded = 'folder-open';
+    expectedConfig.rootFolder = 'folder-root';
+    expectedConfig.rootFolderExpanded = 'folder-root-open';
+    expectedConfig.folderNames = {
+      foo: 'foo',
+      '.foo': 'foo',
+      _foo: 'foo',
+      __foo__: 'foo',
+      bar: 'foo',
+      '.bar': 'foo',
+      _bar: 'foo',
+      __bar__: 'foo',
+      baz: 'foo-clone',
+      '.baz': 'foo-clone',
+      _baz: 'foo-clone',
+      __baz__: 'foo-clone',
+      qux: 'foo-clone',
+      '.qux': 'foo-clone',
+      _qux: 'foo-clone',
+      __qux__: 'foo-clone',
+    };
+    expectedConfig.folderNamesExpanded = {
+      foo: 'foo-open',
+      '.foo': 'foo-open',
+      _foo: 'foo-open',
+      __foo__: 'foo-open',
+      bar: 'foo-open',
+      '.bar': 'foo-open',
+      _bar: 'foo-open',
+      __bar__: 'foo-open',
+      baz: 'foo-clone-open',
+      '.baz': 'foo-clone-open',
+      _baz: 'foo-clone-open',
+      __baz__: 'foo-clone-open',
+      qux: 'foo-clone-open',
+      '.qux': 'foo-clone-open',
+      _qux: 'foo-clone-open',
+      __qux__: 'foo-clone-open',
+    };
+    expectedConfig.light = {
+      fileExtensions: {},
+      fileNames: {},
+      folderNames: {
+        baz: 'foo-clone_light',
+        '.baz': 'foo-clone_light',
+        _baz: 'foo-clone_light',
+        __baz__: 'foo-clone_light',
+        qux: 'foo-clone_light',
+        '.qux': 'foo-clone_light',
+        _qux: 'foo-clone_light',
+        __qux__: 'foo-clone_light',
+      },
+      folderNamesExpanded: {
+        baz: 'foo-clone-open_light',
+        '.baz': 'foo-clone-open_light',
+        _baz: 'foo-clone-open_light',
+        __baz__: 'foo-clone-open_light',
+        qux: 'foo-clone-open_light',
+        '.qux': 'foo-clone-open_light',
+        _qux: 'foo-clone-open_light',
+        __qux__: 'foo-clone-open_light',
+      },
+    };
+    expectedConfig.hidesExplorerArrows = false;
+
+    deepStrictEqual(iconDefinitions, expectedConfig);
+  });
 });
