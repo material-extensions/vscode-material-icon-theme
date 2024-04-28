@@ -38,7 +38,7 @@ export interface CloneData extends IconData {
 }
 
 /** resolves the path of the icon depending on the caller */
-function resolvePath(path: string): string {
+export function resolvePath(path: string): string {
   if (basename(__dirname) === 'dist') {
     return join(__dirname, String(path));
   } else {

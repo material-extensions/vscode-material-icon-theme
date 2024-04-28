@@ -46,7 +46,7 @@ export function getColorList(node: INode) {
 }
 
 /** given a set of colors, orders them from dark to light. **/
-function orderDarkToLight(colors: Set<string>) {
+export function orderDarkToLight(colors: Set<string>) {
   const colorArray = Array.from(colors);
   return colorArray.sort((a, b) => {
     // sort by lightness
