@@ -12,7 +12,7 @@ import {
   clearCloneFolder,
   getCloneData,
   isFolder,
-} from './utils/clone-data';
+} from './utils/cloneData';
 import merge from 'lodash.merge';
 import { getFileConfigHash } from '../../../helpers/fileConfig';
 import { cloneIcon, createCloneConfig } from './utils/cloning';

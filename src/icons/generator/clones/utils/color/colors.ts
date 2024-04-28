@@ -4,7 +4,7 @@ import chroma, { Color, valid } from 'chroma-js';
 import {
   closerMaterialColorTo,
   getMaterialColorByKey,
-} from './material-palette';
+} from './materialPalette';
 
 /** Get all the colors used in the SVG node as a `Set` list. **/
 export function getColorList(node: INode) {
