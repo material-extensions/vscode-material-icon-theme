@@ -14,7 +14,55 @@ import {
   FileIconClone,
   FolderIconClone,
 } from '../../../models/icons/iconJsonOptions';
-import { deepStrictEqual } from 'assert';
+import { deepStrictEqual, throws } from 'assert';
+import { orderDarkToLight } from '../../../icons/generator/clones/utils/color/colors';
+import {
+  closerMaterialColorTo,
+  materialPalette,
+} from '../../../icons/generator/clones/utils/color/materialPalette';
+
+describe('cloning: color manipulation', () => {
+  describe('#orderDarkToLight(..)', () => {
+    it('should order colors from dark to light', () => {
+      const colors = new Set(['#000', '#fff', '#f00', '#0f0', '#00f']);
+      const result = orderDarkToLight(colors);
+      deepStrictEqual(result, ['#000', '#f00', '#0f0', '#00f', '#fff']);
+    });
+
+    it('if empty set, should return empty array', () => {
+      const colors = new Set<string>();
+      const result = orderDarkToLight(colors);
+      deepStrictEqual(result, []);
+    });
+
+    it('if one color, should return array with that color', () => {
+      const colors = new Set(['#000']);
+      const result = orderDarkToLight(colors);
+      deepStrictEqual(result, ['#000']);
+    });
+  });
+
+  describe('#closerMaterialColorTo(..)', () => {
+    it('should return the closest material color to the given color', () => {
+      const color = '#e24542';
+      const result = closerMaterialColorTo(color);
+      deepStrictEqual(result, materialPalette['red-600']);
+    });
+
+    it('should return the same color if it is already a material color', () => {
+      const color = materialPalette['indigo-500'];
+      const result = closerMaterialColorTo(color);
+      deepStrictEqual(result, color);
+    });
+
+    it('should throw an error if the given color is not valid', () => {
+      const color = 'bad-color';
+      throws(() => closerMaterialColorTo(color), {
+        message: 'The given color "bad-color" is not valid!',
+      });
+    });
+  });
+});
 
 describe('cloning: icon cloning', () => {
   describe('#getCloneData(..)', () => {
