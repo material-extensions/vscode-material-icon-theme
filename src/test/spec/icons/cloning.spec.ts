@@ -2,6 +2,7 @@ import {
   lightColorFileEnding,
   openedFolder,
   iconFolderPath,
+  clonesFolder,
 } from '../../../icons/generator/constants';
 import {
   getCloneData,
@@ -13,6 +14,7 @@ import { IconConfiguration } from '../../../models';
 import {
   FileIconClone,
   FolderIconClone,
+  IconJsonOptions,
 } from '../../../models/icons/iconJsonOptions';
 import assert, { deepStrictEqual, throws, equal } from 'assert';
 import { stub } from 'sinon';
@@ -32,6 +34,9 @@ import {
 } from '../../../icons/generator/clones/utils/color/materialPalette';
 import * as icon from './data/icons';
 import { INode, parseSync } from 'svgson';
+import { customClonesIcons } from '../../../icons/generator/clones/clonesGenerator';
+import { getFileConfigHash } from '../../../helpers/fileConfig';
+import merge from 'lodash.merge';
 
 describe('cloning: color manipulation', () => {
   describe('#orderDarkToLight(..)', () => {
@@ -627,3 +632,99 @@ function forEachColor(
 
   return colorCount;
 }
+
+describe('cloning: json config generation from user options', () => {
+  before(() => {
+    stub(fs, 'readFileSync').returns(icon.file);
+    stub(fs, 'writeFileSync').returns();
+  });
+
+  after(() => {
+    (fs.readFileSync as any).restore();
+    (fs.writeFileSync as any).restore();
+  });
+
+  const getDefinition = (hash: string, options: IconJsonOptions) => {
+    return {
+      iconDefinitions: {
+        foo: { iconPath: `./../icons/foo${hash}.svg` },
+        file: { iconPath: `./../icons/file${hash}.svg` },
+        'folder-foo': { iconPath: `./../icons/folder${hash}.svg` },
+        'folder-foo-open': { iconPath: `./../icons/folder-open${hash}.svg` },
+      },
+      fileNames: { 'foo.bar': 'foo' },
+      options,
+      file: 'file',
+    };
+  };
+
+  it('should generate the json config from the user options', () => {
+    const options: IconJsonOptions = {
+      files: {
+        customClones: [
+          {
+            base: 'foo',
+            name: 'foo-clone',
+            fileNames: ['bar.foo'],
+            fileExtensions: ['baz'],
+            color: 'green-400',
+            lightColor: 'green-800',
+          },
+        ],
+      },
+      folders: {
+        customClones: [
+          {
+            base: 'folder-foo',
+            name: 'folder-foo-clone',
+            folderNames: ['bar'],
+            color: 'green-400',
+            lightColor: 'green-800',
+          },
+        ],
+      },
+    };
+    const hash = getFileConfigHash(options);
+    const result = customClonesIcons(getDefinition(hash, options), options);
+
+    const expected = merge(new IconConfiguration(), {
+      iconDefinitions: {
+        'folder-foo-clone': {
+          iconPath: `./../icons/${clonesFolder}folder-foo-clone${hash}.svg`,
+        },
+        'folder-foo-clone-open': {
+          iconPath: `./../icons/${clonesFolder}folder-foo-clone${openedFolder}${hash}.svg`,
+        },
+        'folder-foo-clone_light': {
+          iconPath: `./../icons/${clonesFolder}folder-foo-clone${lightColorFileEnding}${hash}.svg`,
+        },
+        'folder-foo-clone-open_light': {
+          iconPath: `./../icons/${clonesFolder}folder-foo-clone${openedFolder}${lightColorFileEnding}${hash}.svg`,
+        },
+        'foo-clone': {
+          iconPath: `./../icons/${clonesFolder}foo-clone${hash}.svg`,
+        },
+        'foo-clone_light': {
+          iconPath: `./../icons/${clonesFolder}foo-clone${lightColorFileEnding}${hash}.svg`,
+        },
+      },
+      folderNames: { bar: 'folder-foo-clone' },
+      folderNamesExpanded: { bar: `folder-foo-clone${openedFolder}` },
+      fileExtensions: { baz: 'foo-clone' },
+      fileNames: { 'bar.foo': 'foo-clone' },
+      languageIds: {},
+      light: {
+        fileExtensions: { baz: `foo-clone${lightColorFileEnding}` },
+        fileNames: { 'bar.foo': `foo-clone${lightColorFileEnding}` },
+        folderNames: { bar: `folder-foo-clone${lightColorFileEnding}` },
+        folderNamesExpanded: {
+          bar: `folder-foo-clone${openedFolder}${lightColorFileEnding}`,
+        },
+      },
+      highContrast: { fileExtensions: {}, fileNames: {} },
+      options: {},
+    });
+
+    deepStrictEqual(result, expected);
+  });
+});
