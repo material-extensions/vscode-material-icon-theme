@@ -14,12 +14,24 @@ import {
   FileIconClone,
   FolderIconClone,
 } from '../../../models/icons/iconJsonOptions';
-import { deepStrictEqual, throws } from 'assert';
-import { orderDarkToLight } from '../../../icons/generator/clones/utils/color/colors';
+import assert, { deepStrictEqual, throws, equal } from 'assert';
+import { stub } from 'sinon';
+import fs from 'fs';
+import {
+  cloneIcon,
+  getStyle,
+  traverse,
+} from '../../../icons/generator/clones/utils/cloning';
+import {
+  isValidColor,
+  orderDarkToLight,
+} from '../../../icons/generator/clones/utils/color/colors';
 import {
   closerMaterialColorTo,
-  materialPalette,
+  materialPalette as palette,
 } from '../../../icons/generator/clones/utils/color/materialPalette';
+import * as icon from './data/icons';
+import { INode, parseSync } from 'svgson';
 
 describe('cloning: color manipulation', () => {
   describe('#orderDarkToLight(..)', () => {
@@ -46,11 +58,11 @@ describe('cloning: color manipulation', () => {
     it('should return the closest material color to the given color', () => {
       const color = '#e24542';
       const result = closerMaterialColorTo(color);
-      deepStrictEqual(result, materialPalette['red-600']);
+      deepStrictEqual(result, palette['red-600']);
     });
 
     it('should return the same color if it is already a material color', () => {
-      const color = materialPalette['indigo-500'];
+      const color = palette['indigo-500'];
       const result = closerMaterialColorTo(color);
       deepStrictEqual(result, color);
     });
@@ -450,4 +462,168 @@ describe('cloning: icon cloning', () => {
       });
     });
   });
+
+  describe('#cloneIcon(..)', () => {
+    const bluePalette = [
+      palette['blue-50'],
+      palette['blue-100'],
+      palette['blue-200'],
+      palette['blue-300'],
+      palette['blue-400'],
+      palette['blue-500'],
+      palette['blue-600'],
+      palette['blue-700'],
+      palette['blue-800'],
+      palette['blue-900'],
+      palette['blue-A100'],
+      palette['blue-A200'],
+      palette['blue-A400'],
+      palette['blue-A700'],
+    ];
+
+    afterEach(
+      () =>
+        // restore the fs.readFileSync method to its original state
+        (fs.readFileSync as any).restore && (fs.readFileSync as any).restore()
+    );
+
+    it('should replace the color with the given color', () => {
+      // stub the fs.readFileSync method to return the desired icon file
+      stub(fs, 'readFileSync').returns(icon.file);
+      const result = cloneIcon('fake/path/to/icon.svg', 'blue-600', '');
+
+      assert((fs.readFileSync as any).called);
+
+      const colorCount = forEachColor(parseSync(result), (color, loc) => {
+        equal(color, palette['blue-600']);
+        equal(loc, 'style:fill');
+      });
+
+      equal(colorCount, 1);
+    });
+
+    it('should replace the color with the given color if color is in fill attribute', () => {
+      // stub the fs.readFileSync method to return the desired icon file
+      stub(fs, 'readFileSync').returns(icon.fileFill);
+      const result = cloneIcon('fake/path/to/icon.svg', 'blue-600', '');
+
+      assert((fs.readFileSync as any).called);
+
+      const colorCount = forEachColor(parseSync(result), (color, loc) => {
+        equal(color, palette['blue-600']);
+        equal(loc, 'attr:fill');
+      });
+
+      equal(colorCount, 1);
+    });
+
+    it('should replace the color with the given color if color is in stop-color attribute', () => {
+      stub(fs, 'readFileSync').returns(icon.gradient);
+      const result = cloneIcon('fake/path/to/icon.svg', 'blue-600', '');
+
+      assert((fs.readFileSync as any).called);
+
+      const colorCount = forEachColor(parseSync(result), (color, loc) => {
+        assert(bluePalette.includes(color));
+        equal(loc, 'attr:stop-color');
+      });
+
+      equal(colorCount, 3);
+    });
+
+    it('should replace colors on icons with multiple nodes', () => {
+      stub(fs, 'readFileSync').returns(icon.folder);
+      const result = cloneIcon('fake/path/to/icon.svg', 'blue-600', '');
+
+      assert((fs.readFileSync as any).called);
+
+      const colors: string[] = [];
+      const colorCount = forEachColor(parseSync(result), (color, loc) => {
+        colors.push(color);
+        assert(bluePalette.includes(color));
+        equal(loc, 'style:fill');
+      });
+
+      // check that one of the colors is actually blue-600
+      assert(colors.includes(palette['blue-600']));
+
+      equal(colorCount, 2);
+    });
+
+    describe('`mit-no-recolor` attribute', () => {
+      afterEach(
+        () =>
+          // restore the fs.readFileSync method to its original state
+          (fs.readFileSync as any).restore && (fs.readFileSync as any).restore()
+      );
+
+      it('should not replace the color if the node has the `mit-no-recolor` attribute', () => {
+        stub(fs, 'readFileSync').returns(icon.folderIgnores);
+        const result = cloneIcon('fake/path/to/icon.svg', 'blue-600', '');
+
+        assert((fs.readFileSync as any).called);
+
+        const parsed = parseSync(result);
+        const changedNodeStyle = getStyle(parsed.children[0]);
+        const unchangedNodeStyle = getStyle(parsed.children[1]);
+
+        equal(changedNodeStyle.fill, palette['blue-600']);
+        equal(unchangedNodeStyle.fill, 'red');
+      });
+
+      it('should not replace the color of any child of a node with the `mit-no-recolor` attribute', () => {
+        stub(fs, 'readFileSync').returns(icon.gradientIgnore);
+        const result = cloneIcon('fake/path/to/icon.svg', 'blue-600', '');
+
+        assert((fs.readFileSync as any).called);
+
+        const colorCount = forEachColor(parseSync(result), (color, loc) => {
+          assert(['#00695c', '#26a69a', '#b2dfdb'].includes(color));
+          assert(!bluePalette.includes(color));
+          equal(loc, 'attr:stop-color');
+        });
+
+        equal(colorCount, 3);
+      });
+    });
+  });
 });
+
+/** helper function to traverse the svg tree and notify the colors found */
+function forEachColor(
+  node: INode,
+  callback: (color: string, loc?: string) => void
+) {
+  let colorCount = 0;
+
+  const notify = (color: string, loc: string) => {
+    colorCount++;
+    callback(color, loc);
+  };
+
+  traverse(
+    node,
+    (node) => {
+      // check colors in style attribute
+      const style = getStyle(node);
+      style?.fill &&
+        isValidColor(style.fill) &&
+        notify(style.fill, 'style:fill');
+      style?.stroke &&
+        isValidColor(style.stroke) &&
+        notify(style.stroke, 'style:stroke');
+      node.attributes?.fill &&
+        isValidColor(node.attributes.fill) &&
+        notify(node.attributes.fill, 'attr:fill');
+      node.attributes?.stroke &&
+        isValidColor(node.attributes.stroke) &&
+        notify(node.attributes.stroke, 'attr:stroke');
+      node.attributes?.['stop-color'] &&
+        isValidColor(node.attributes['stop-color']) &&
+        notify(node.attributes['stop-color'], 'attr:stop-color');
+    },
+    false // no filtering
+  );
+
+  return colorCount;
+}

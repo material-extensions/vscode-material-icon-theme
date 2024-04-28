@@ -7,12 +7,16 @@ import { getColorList, replacementMap } from './color/colors';
  * Recursively walks through an SVG node tree and its children,
  * calling a callback on each node.
  */
-export function traverse(node: INode, callback: (node: INode) => void) {
-  if (node.attributes['mit-no-recolor'] !== 'true') {
+export function traverse(
+  node: INode,
+  callback: (node: INode) => void,
+  filter = true
+) {
+  if (node.attributes['mit-no-recolor'] !== 'true' || !filter) {
     callback(node);
 
     if (node.children) {
-      node.children.forEach((child) => traverse(child, callback));
+      node.children.forEach((child) => traverse(child, callback, filter));
     }
   }
 }
