@@ -448,11 +448,11 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-ansible', folderNames: ['ansible'] },
       {
         name: 'folder-server',
-        folderNames: ['server', 'servers', 'backend', 'backends'],
+        folderNames: ['.server', 'server', 'servers', 'backend', 'backends'],
       },
       {
         name: 'folder-client',
-        folderNames: ['client', 'clients', 'frontend', 'frontends', 'pwa'],
+        folderNames: ['.client', 'client', 'clients', 'frontend', 'frontends', 'pwa'],
       },
       { name: 'folder-tasks', folderNames: ['tasks', 'tickets'] },
       { name: 'folder-android', folderNames: ['android'] },
