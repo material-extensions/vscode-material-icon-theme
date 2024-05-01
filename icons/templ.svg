@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg version="1.1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
- <path d="M12.89,3L14.85,3.4L11.11,21L9.15,20.6L12.89,3M19.59,12L16,8.41V5.58L22.42,12L16,18.41V15.58L19.59,12M1.58,12L8,5.58V8.41L4.41,12L8,15.58V18.41L1.58,12Z" fill="#ffd54f"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <path d="M8.125,24.313,1,16,8.125,7.687l3,2.625L6.25,16l4.875,5.688Z" style="fill: #ffd54f"/>
+  <path d="M24,7.687,31.125,16,24,24.313l-3-2.625L25.875,16,21,10.312Z" style="fill: #ffd54f"/>
+  <polygon points="16 4 12 28 16 28 20 4 16 4" style="fill: #ffd54f"/>
 </svg>

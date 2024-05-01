@@ -1,1 +1,12 @@
-<svg style="clip-rule:evenodd;fill-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><path d="M13.593 1.116a10.973 10.973 0 0 0-3.186 0L9.71 2.935a9.345 9.345 0 0 0-2.501 1.036L5.43 3.178A10.975 10.975 0 0 0 3.178 5.43l.793 1.779A9.345 9.345 0 0 0 2.935 9.71l-1.819.697a10.973 10.973 0 0 0 0 3.186l1.819.697a9.345 9.345 0 0 0 1.036 2.501l-.793 1.779a10.975 10.975 0 0 0 2.252 2.252l1.779-.793a9.345 9.345 0 0 0 2.501 1.036l.697 1.819c1.056.155 2.13.155 3.186 0l.697-1.819a9.345 9.345 0 0 0 2.501-1.036l1.779.793a10.975 10.975 0 0 0 2.252-2.252l-.793-1.779a9.345 9.345 0 0 0 1.036-2.501l1.819-.697c.155-1.056.155-2.13 0-3.186l-1.819-.697a9.345 9.345 0 0 0-1.036-2.501l.793-1.779a10.975 10.975 0 0 0-2.252-2.252l-1.779.793a9.345 9.345 0 0 0-2.501-1.036zM12 4.951c3.89 0 7.049 3.159 7.049 7.049S15.89 19.049 12 19.049 4.951 15.89 4.951 12 8.11 4.951 12 4.951z" style="fill:#0288d1" transform="translate(.655 .655) scale(.94546)"/><path d="M14.83 14.825A3.985 3.985 0 0 1 12 16c-2.208 0-4-1.792-4-4s1.792-4 4-4c1.105 0 2.106.449 2.83 1.175l-1.414 1.413a2 2 0 1 0 0 2.824z" style="fill:#0288d1" transform="translate(.655 .655) scale(.94546)"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect x="12" width="8" height="4" style="fill: #0288d1"/>
+  <path d="M16,5A11,11,0,1,1,5,16,11.01245,11.01245,0,0,1,16,5m0-3A14,14,0,1,0,30,16,14,14,0,0,0,16,2Z" style="fill: #0288d1"/>
+  <rect x="26" y="14" width="8" height="4" transform="translate(46 -14) rotate(90)" style="fill: #0288d1"/>
+  <rect x="22.15685" y="24.52082" width="8" height="3.27208" transform="translate(63.14823 26.15685) rotate(135)" style="fill: #0288d1"/>
+  <rect x="2.09315" y="23.91726" width="8" height="3.97918" transform="translate(-7.91726 48.53427) rotate(-135)" style="fill: #0288d1"/>
+  <rect x="12" y="28" width="8" height="4" style="fill: #0288d1"/>
+  <rect x="21.90685" y="4.10355" width="8" height="3.97918" transform="translate(39.91726 28.72056) rotate(-135)" style="fill: #0288d1"/>
+  <rect x="-2.5" y="14.5" width="8" height="3" transform="translate(17.5 14.5) rotate(90)" style="fill: #0288d1"/>
+  <rect x="2.09315" y="4.10355" width="8" height="3.97918" transform="translate(14.71016 6.09315) rotate(135)" style="fill: #0288d1"/>
+  <path d="M20,10H16a6,6,0,0,0,0,12h4V18H16a2,2,0,0,1,0-4h4V10Z" style="fill: #0288d1"/>
+</svg>

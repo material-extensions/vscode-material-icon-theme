@@ -1,1 +1,11 @@
-<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g style="fill:#f7a41d"><g style="fill:#f9a825"><path d="M0 10v80h19l6-10 12-10H20V30h15V10zm40 0v20h62V10zm91 0-6 10-12 10h17v40h-15v20h35V10zM48 70v20h62V70z" style="fill:#f9a825;shape-rendering:crispEdges" transform="translate(1.824 5.214) scale(.13568)"/><path d="M37 70 19 90V75zm76-40 18-20v15zM96.98 10.63 133.26.23 52.97 89.4 16.69 99.8z" style="fill:#f9a825" transform="translate(1.824 5.214) scale(.13568)"/></g></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect x="2" y="8" width="6" height="4" style="fill: #f9a825"/>
+  <rect x="10" y="8" width="12" height="4" style="fill: #f9a825"/>
+  <rect x="10" y="20" width="12" height="4" style="fill: #f9a825"/>
+  <rect x="24" y="20" width="2" height="4" style="fill: #f9a825"/>
+  <polygon points="8 20 5 24 2 24 2 12 6 12 6 20 8 20" style="fill: #f9a825"/>
+  <polygon points="22 12 16 12 10 20 16 20 22 12" style="fill: #f9a825"/>
+  <polyline points="16 20 10 20 4 28" style="fill: #f9a825"/>
+  <polyline points="16 12 22 12 28 4" style="fill: #f9a825"/>
+  <polygon points="30 8 30 24 26 24 26 12 24 12 27 8 30 8" style="fill: #f9a825"/>
+</svg>

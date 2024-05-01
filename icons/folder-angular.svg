@@ -1,1 +1,10 @@
-<svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414" version="1.1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><path d="M10 4H4c-1.11 0-2 .89-2 2v12c0 1.097.903 2 2 2h16c1.097 0 2-.903 2-2V8a2 2 0 0 0-2-2h-8l-2-2z" fill="#ff5252" fill-rule="nonzero"/><path d="m16.599 9.132-4.4079 2.0386 0.41501 6.5536zm2.7441 0 3.9929 8.5921 0.41501-6.5536zm-1.3721 3.2597-1.5783 3.8407h3.1591zm-2.402 5.7687-0.61371 1.4865 3.0157 1.7191 3.0157-1.7191-0.61371-1.4865z" fill="#ffcdd2" stroke-width=".64389"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <path d="M13.84376,7.53645l-1.28749-1.0729A2,2,0,0,0,11.27591,6H4A2,2,0,0,0,2,8V24a2,2,0,0,0,2,2H28a2,2,0,0,0,2-2V10a2,2,0,0,0-2-2H15.12412A2,2,0,0,1,13.84376,7.53645Z" style="fill: #ff5252"/>
+  <g>
+    <path d="M22,12l-6,2V24Zm4,0,6,12V14Z" style="fill: #ffcdd2;fill-rule: evenodd"/>
+    <g>
+      <polygon points="25.592 20 24 16.034 22.408 20 25.592 20" style="fill: #ffcdd2;fill-rule: evenodd"/>
+      <polygon points="20.803 24 20 26 24 28 28 26 27.197 24 20.803 24" style="fill: #ffcdd2;fill-rule: evenodd"/>
+    </g>
+  </g>
+</svg>
