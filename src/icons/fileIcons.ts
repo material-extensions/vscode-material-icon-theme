@@ -827,31 +827,55 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'angular-component',
+      clone: {
+        base: 'angular',
+        color: 'blue-700',
+      },
       fileExtensions: ['component.ts', 'component.js'],
       enabledFor: [IconPack.Angular, IconPack.Ngrx],
     },
     {
       name: 'angular-guard',
+      clone: {
+        base: 'angular',
+        color: 'green-600',
+      },
       fileExtensions: ['guard.ts', 'guard.js'],
       enabledFor: [IconPack.Angular, IconPack.Ngrx],
     },
     {
       name: 'angular-service',
+      clone: {
+        base: 'angular',
+        color: 'amber-400',
+      },
       fileExtensions: ['service.ts', 'service.js'],
       enabledFor: [IconPack.Angular, IconPack.Ngrx],
     },
     {
       name: 'angular-pipe',
+      clone: {
+        base: 'angular',
+        color: 'teal-600',
+      },
       fileExtensions: ['pipe.ts', 'pipe.js', 'filter.js'],
       enabledFor: [IconPack.Angular, IconPack.Ngrx],
     },
     {
       name: 'angular-directive',
+      clone: {
+        base: 'angular',
+        color: 'purple-400',
+      },
       fileExtensions: ['directive.ts', 'directive.js'],
       enabledFor: [IconPack.Angular, IconPack.Ngrx],
     },
     {
       name: 'angular-resolver',
+      clone: {
+        base: 'angular',
+        color: 'green-600',
+      },
       fileExtensions: ['resolver.ts', 'resolver.js'],
       enabledFor: [IconPack.Angular, IconPack.Ngrx],
     },
