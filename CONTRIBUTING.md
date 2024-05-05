@@ -356,6 +356,49 @@ You might have noticed that we are using aliases for the colors. These aliases c
 
 You can find a list of all available color aliases in the [materialPalette.ts](./src/icons/generator/clones/utils/color/materialPalette.ts) file.
 
+#### Preventing recoloring in cloned icons
+
+When cloning icons, recoloring works by replacing each color attribute in each path/shape of the SVG with a new color, which is determined by the selected color in the configuration.
+
+However, there are cases where you might want to prevent certain parts of the icon from being recolored.
+
+Let's see an example:
+
+![gitlab icon](./images/how-tos/cloned-icon-no-recolor.png)
+
+In this example, we have the `folder-gitlab` folder icon. If we were to clone it, we might want to prevent recoloring from happening over the gitlab logo and only allow recoloring of the folder shape itself.
+
+To do this, we need to set the attribute `mit-no-recolor="true"` to the paths, shapes, or groups we do not want to be recolored.
+
+```svg
+<svg ...>
+  <path d="M13...Z" style="fill: #757575"/>
+  <g mit-no-recolor="true"> <!-- prevent recolor of the gitlab logo -->
+    <path d="M31...Z" style="fill: #e53935"/>
+    <path d="M31...Z" style="fill: #ef6c00"/>
+    <path d="M19...Z" style="fill: #f9a825"/>
+    <path d="M17...Z" style="fill: #ef6c00"/>
+  </g>
+</svg>
+```
+
+Now if we create a clone of this icon, the paths, shapes, or groups marked with `mit-no-recolor="true"` will retain their original colors. Recoloring will only affect paths not marked with this attribute.
+
+```typescript
+{ name: 'folder-gitlab', folderNames: ['gitlab'] },
+{
+  name: 'folder-green-gitlab',
+  clone: {
+    base: 'folder-gitlab',
+    color: 'blue-300'
+  },
+}
+```
+
+Will result in:
+
+![result of cloning gitlab icon with selective recoloring](./images/how-tos/cloned-icon-no-recolor-result.png)
+
 ## Add translations
 
 This project offers translations into different languages. If you notice an error here, please help to fix it. You can do this as follows:
