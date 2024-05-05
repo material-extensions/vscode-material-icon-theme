@@ -16,6 +16,7 @@ import {
   lightColorFileEnding,
   openedFolder,
 } from './../../../icons';
+import { CloneOptions } from '../../../models/icons/cloneOptions';
 
 /**
  * Defines the folder where all icon files are located.
@@ -26,6 +27,12 @@ const folderPath = join('icons');
  * Defines an array with all icons that can be found in the file system.
  */
 const availableIcons: Record<string, string> = {};
+
+/**
+ * Utility type that represents a File or Folder icon that has a clone property
+ * defined.
+ */
+type CloneIcon = (FileIcon & FolderIcon) & { clone: CloneOptions };
 
 /**
  * Save the misconfigured icons.
@@ -82,11 +89,16 @@ const isIconAvailable = (
   iconColor: IconColor,
   hasOpenedFolder?: boolean
 ) => {
-  let iconName = `${icon.name}${hasOpenedFolder ? openedFolder : ''}`;
-  if (icon.light && iconColor === IconColor.light) {
+  const isClone = isCloneIcon(icon);
+
+  let iconName = isClone
+    ? getCloneBaseName(icon, iconType, hasOpenedFolder)
+    : `${icon.name}${hasOpenedFolder ? openedFolder : ''}`;
+
+  if (!isClone && icon.light && iconColor === IconColor.light) {
     iconName += lightColorFileEnding;
   }
-  if (icon.highContrast && iconColor === IconColor.highContrast) {
+  if (!isClone && icon.highContrast && iconColor === IconColor.highContrast) {
     iconName += highContrastColorFileEnding;
   }
 
@@ -96,6 +108,39 @@ const isIconAvailable = (
   ) {
     wrongIconNames[iconType].push(iconName);
   }
+};
+
+/**
+ * Type guard to check if the icon is a clone icon
+ */
+const isCloneIcon = (
+  icon: FileIcon | FolderIcon | DefaultIcon
+): icon is CloneIcon => {
+  return (
+    (icon as CloneIcon).clone &&
+    (icon as FileIcon | FolderIcon).clone?.base !== undefined
+  );
+};
+
+/**
+ * Get the base file name of a clone icon.
+ */
+const getCloneBaseName = (
+  icon: CloneIcon,
+  iconType: IconType,
+  hasOpenedFolder?: boolean
+) => {
+  const clone = icon.clone;
+  const folderBase =
+    iconType === IconType.folderIcons
+      ? clone.base === 'folder'
+        ? 'folder'
+        : clone.base.startsWith('folder-')
+        ? clone.base
+        : `folder-${clone?.base}`
+      : clone.base;
+
+  return `${folderBase}${hasOpenedFolder ? openedFolder : ''}`;
 };
 
 /**

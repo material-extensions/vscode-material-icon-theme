@@ -34,7 +34,7 @@ const fsReadAllIconFiles = (
 
   files.forEach((file) => {
     const fileName = file;
-    const iconName = parse(file).name;
+    const iconName = parse(file).name.replace('.clone', '');
     availableIcons[iconName] = fileName;
   });
 
