@@ -34,8 +34,21 @@ jobs:
           npm ci
           npm install --global @vscode/vsce
 
+      - name: Generate preview images 🖼️
+        run: |
+          npm run preview
+          git add images/fileIcons.png
+          git add images/folderIcons.png
+
+      - name: Generate contributors image 📸
+        run: |
+          npm run contributors
+          git add images/contributors.png
+
       - name: Optimize SVG files ⚡
-        run: npm run svgo
+        run: |
+          npm run svgo
+          git add icons/*.svg
 
       - name: Update version ↗
         run: |
