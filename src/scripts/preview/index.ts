@@ -9,10 +9,12 @@ const filterDuplicates = (icons: string[]) => {
 
 const basicFileIcons = filterDuplicates(
   fileIcons.icons
-    .map((i) => `${i.name}${i.clone ? '.clone' : ''}`)
+    // remove icons that are clones
+    .filter((i) => i.clone === undefined)
+    .map((i) => i.name)
     // merge language icons
     .concat(languageIcons.map((i) => i.icon.name))
-).map((i) => ({ iconName: i, label: i.replace('.clone', '') }));
+).map((i) => ({ iconName: i, label: i }));
 
 const folderThemes = filterDuplicates(
   folderIcons
@@ -20,16 +22,16 @@ const folderThemes = filterDuplicates(
       const folders = [];
       if (theme.icons && theme.icons.length > 0) {
         folders.push(
-          ...theme.icons.map((i) => `${i.name}${i.clone ? '.clone' : ''}`)
+          ...theme.icons
+            // remove icons that are clones
+            .filter((i) => i.clone === undefined)
+            .map((i) => i.name)
         );
       }
       return [...folders];
     })
     .reduce((a, b) => a.concat(b))
-).map((i) => ({
-  iconName: i,
-  label: i.replace('folder-', '').replace('.clone', ''),
-}));
+).map((i) => ({ iconName: i, label: i.replace('folder-', '') }));
 
 generatePreview('fileIcons', basicFileIcons, 5, [
   'virtual',
