@@ -15,6 +15,7 @@ Glad you're here and interested in expanding this project 🎉 In order to make 
   - [Unique assignment to file and folder names](#icon-assignments)
   - [Create icon packs](#icon-packs)
   - [Designing Pixel Perfect Icons](#pixel-perfect-icons)
+  - [Cloning existing icons](#icon-cloning)
 - [Add translations](#add-translations)
 - [Update API](#update-api)
 
