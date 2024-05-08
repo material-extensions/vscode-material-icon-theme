@@ -1,4 +1,5 @@
 import { RequireAtLeastOne } from '../../../helpers/types';
+import { CloneOptions } from '../cloneOptions';
 import { IconPack } from '../index';
 
 interface BasicFileIcon {
@@ -38,6 +39,11 @@ interface BasicFileIcon {
    * Defines a pack to which this icon belongs. A pack can be toggled and all icons inside this pack can be enabled or disabled together.
    */
   enabledFor?: IconPack[];
+
+  /**
+   * Options for generating an icon based on another icon.
+   */
+  clone?: CloneOptions;
 }
 
 /**

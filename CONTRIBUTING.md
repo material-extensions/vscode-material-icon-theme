@@ -15,6 +15,7 @@ Glad you're here and interested in expanding this project 🎉 In order to make 
   - [Unique assignment to file and folder names](#icon-assignments)
   - [Create icon packs](#icon-packs)
   - [Designing Pixel Perfect Icons](#pixel-perfect-icons)
+  - [Cloning existing icons](#icon-cloning)
 - [Add translations](#add-translations)
 - [Update API](#update-api)
 
@@ -33,6 +34,17 @@ A new icon for a file name, file extension or folder name is needed? Please crea
 
 It is always welcome to add new icons to the extension. However, there are a few things you should take into account so that the icon can be included in the extension.
 
+```mermaid
+flowchart LR
+    B{Shape already exists\nwith different colors?}
+    B ---->|No| E
+    B ---->|Yes| C
+    C[<a href="#cloning-workflow">Cloning Workflow</a>]
+    E[<a href="#creating-new-icons-workflow">Creating New Icons Workflow</a>]
+```
+
+### Creating New Icons Workflow
+
 **Checklist**
 
 1. [ ] Create icon as SVG ([how to](#create-icon-as-svg))
@@ -40,6 +52,16 @@ It is always welcome to add new icons to the extension. However, there are a few
 3. [ ] SVG has some space around the icon ([how to](#spacing))
 4. [ ] Unique assignment to file and folder names ([how to](#icon-assignments))
 5. [ ] Provide separate icons for color themes if necessary ([how to](#icons-for-color-themes))
+
+### Cloning Workflow
+
+There are times when we just need to create a variant of an existing icon.
+
+For example, we might want to create an icon using the shape of the `typescript` icon, but we want it to be green and associated with the `library.ts` file name. In that case, we don't need to create a new svg. This can be done by configuration.
+
+**Checklist**
+
+1. [ ] Clone the existing icon adjusting its color ([how to](#icon-cloning))
 
 ## How tos
 
@@ -132,6 +154,31 @@ Here's an example of how the SVG icon 'sample.svg' is assigned to file names and
 
 This will apply an icon for the files 'sample.js', 'sample.ts' and 'sample.html' as well as for files that end with 'sample' like 'another-file.sample'.
 
+##### Apply patterns
+
+It is also possible to use patterns for file names and extensions. This is useful when you want to assign an icon to a group of files that have a common pattern. Here's an example:
+
+```ts
+{
+  name: 'sample',
+  patterns: {
+    sample: ['ecmascript'],
+  }
+}
+```
+
+In case of this example the generated file names are "sample.js", "sample.mjs", "sample.cjs",
+sample.ts", "sample.mts" and "sample.cts". The pattern is defined in the [patterns.ts](src/icons/patterns/utils.ts) file.
+
+Allowed patterns are right now:
+
+| Pattern       | File extensions                                                                                            |
+| ------------- | ---------------------------------------------------------------------------------------------------------- |
+| ecmascript    | `js`, `mjs`, `cjs`, `ts`, `mts`, `cts`                                                                     |
+| configuration | `json`, `jsonc`, `json5`, `yaml`, `yml`, `toml`                                                            |
+| nodeEcosystem | Combination of ecmascript and configuration patterns                                                       |
+| cosmiconfig   | Similar to nodeEcosystem but in form of `.${fileName}rc`, `.config/${fileName}rc` and `${fileName}.config` |
+
 #### Folder icons
 
 Here's an example of how a folder icon can be assigned to folder icons:
@@ -144,6 +191,9 @@ Here's an example of how a folder icon can be assigned to folder icons:
 ```
 
 This will apply a folder icon for the folders 'sample' and 'samples'.
+
+> **Note**
+> The tool automatically creates generic "wildcard" variants of these folders, so only assign the base names.
 
 #### Language icons
 
@@ -270,6 +320,85 @@ The following are some tips to help you design nice and sharp-looking icons. The
   <img src="./images/how-tos/elephant-result.png" />
 
 - **Curves vs straight lines**: Let's face it, pixels are square, there's nothing we can do about it. And since pixels are square, drawing a curve actually involves drawing a series of... squares. Consequently, when rendering a curve, we're essentially asking the display to render a fraction of a pixel, which is impossible. As a result, curves tend to appear blurry. This is normal. However, it's perfectly fine to use curves, circles, and rounded edges in your icons. Just keep in mind these limitations if you're wondering why your icon doesn't look as sharp as you'd like.
+
+<h3 id="icon-cloning">Cloning existing icons</h3>
+
+The extension allows you to clone existing icons and adjust their colors through configuration. This enables you to create new color variants of an existing icon without having to create new SVG files.
+
+As we mentioned previously, icons are assigned to filenames, file extensions, and folder names in the following files:
+
+- [fileIcons.ts](src/icons/fileIcons.ts)
+- [folderIcons.ts](src/icons/folderIcons.ts)
+
+The following example demonstrates how the shapes of the `rust` file icon can be reused to create a clone of it, utilizing different colors and associated with different file names than the original icon.
+
+```ts
+{
+  name: 'rust-library',
+  fileNames: ['lib.rs'],
+  light: true, // needed if a `lightColor` is provided
+  clone: {
+    base: 'rust',
+    color: 'green-400',
+    lightColor: 'green-700', // optional
+  },
+},
+```
+
+This will generate a new icon assignment for the file name `lib.rs` with the same shape as the already existing `rust` icon but with a green color instead. Additionally, it will create a light theme variant of the icon with a darker green color for better contrast when using a light theme.
+
+That's it. We don't need to create a new SVG file. The extension will automatically adjust the colors of the existing icon.
+
+<img src="./images/how-tos/cloned-rust-icon-example.png" />
+
+The same technique can be applied to folder icons by using the `clone` attribute in the folder icon configuration.
+
+You might have noticed that we are using aliases for the colors. These aliases correspond to the Material Design color palette.
+
+You can find a list of all available color aliases in the [materialPalette.ts](./src/icons/generator/clones/utils/color/materialPalette.ts) file.
+
+#### Preventing recoloring in cloned icons
+
+When cloning icons, recoloring works by replacing each color attribute in each path/shape of the SVG with a new color, which is determined by the selected color in the configuration.
+
+However, there are cases where you might want to prevent certain parts of the icon from being recolored.
+
+Let's see an example:
+
+![gitlab icon](./images/how-tos/cloned-icon-no-recolor.png)
+
+In this example, we have the `folder-gitlab` folder icon. If we were to clone it, we might want to prevent recoloring from happening over the gitlab logo and only allow recoloring of the folder shape itself.
+
+To do this, we need to set the attribute `mit-no-recolor="true"` to the paths, shapes, or groups we do not want to be recolored.
+
+```svg
+<svg ...>
+  <path d="M13...Z" style="fill: #757575"/>
+  <g mit-no-recolor="true"> <!-- prevent recolor of the gitlab logo -->
+    <path d="M31...Z" style="fill: #e53935"/>
+    <path d="M31...Z" style="fill: #ef6c00"/>
+    <path d="M19...Z" style="fill: #f9a825"/>
+    <path d="M17...Z" style="fill: #ef6c00"/>
+  </g>
+</svg>
+```
+
+Now if we create a clone of this icon, the paths, shapes, or groups marked with `mit-no-recolor="true"` will retain their original colors. Recoloring will only affect paths not marked with this attribute.
+
+```typescript
+{ name: 'folder-gitlab', folderNames: ['gitlab'] },
+{
+  name: 'folder-green-gitlab',
+  clone: {
+    base: 'folder-gitlab',
+    color: 'blue-300'
+  },
+}
+```
+
+Will result in:
+
+![result of cloning gitlab icon with selective recoloring](./images/how-tos/cloned-icon-no-recolor-result.png)
 
 ## Add translations
 
