@@ -850,6 +850,10 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-seeders',
         folderNames: ['seeds', 'seeders', 'seed', 'seeding'],
       },
+      {
+        name: 'folder-cmake',
+        folderNames: ['cmake'],
+      },
     ],
   },
   {
