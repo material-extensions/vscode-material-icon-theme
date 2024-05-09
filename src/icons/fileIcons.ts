@@ -2356,7 +2356,7 @@ export const fileIcons: FileIcons = {
         'panda.config.cjs',
       ],
     },
-    { name: 'biome', fileNames: ['biome.json'] },
+    { name: 'biome', fileNames: ['biome.json', 'biome.jsonc'] },
     {
       name: 'esbuild',
       fileNames: [
