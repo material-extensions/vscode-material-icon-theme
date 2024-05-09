@@ -827,31 +827,55 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'angular-component',
+      clone: {
+        base: 'angular',
+        color: 'blue-700',
+      },
       fileExtensions: ['component.ts', 'component.js'],
       enabledFor: [IconPack.Angular, IconPack.Ngrx],
     },
     {
       name: 'angular-guard',
+      clone: {
+        base: 'angular',
+        color: 'green-600',
+      },
       fileExtensions: ['guard.ts', 'guard.js'],
       enabledFor: [IconPack.Angular, IconPack.Ngrx],
     },
     {
       name: 'angular-service',
+      clone: {
+        base: 'angular',
+        color: 'amber-400',
+      },
       fileExtensions: ['service.ts', 'service.js'],
       enabledFor: [IconPack.Angular, IconPack.Ngrx],
     },
     {
       name: 'angular-pipe',
+      clone: {
+        base: 'angular',
+        color: 'teal-600',
+      },
       fileExtensions: ['pipe.ts', 'pipe.js', 'filter.js'],
       enabledFor: [IconPack.Angular, IconPack.Ngrx],
     },
     {
       name: 'angular-directive',
+      clone: {
+        base: 'angular',
+        color: 'purple-400',
+      },
       fileExtensions: ['directive.ts', 'directive.js'],
       enabledFor: [IconPack.Angular, IconPack.Ngrx],
     },
     {
       name: 'angular-resolver',
+      clone: {
+        base: 'angular',
+        color: 'green-600',
+      },
       fileExtensions: ['resolver.ts', 'resolver.js'],
       enabledFor: [IconPack.Angular, IconPack.Ngrx],
     },
@@ -1640,51 +1664,91 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'nest-controller',
+      clone: {
+        base: 'nest',
+        color: 'light-blue-700',
+      },
       fileExtensions: ['controller.ts', 'controller.js'],
       enabledFor: [IconPack.Nest],
     },
     {
       name: 'nest-middleware',
+      clone: {
+        base: 'nest',
+        color: 'indigo-400',
+      },
       fileExtensions: ['middleware.ts', 'middleware.js'],
       enabledFor: [IconPack.Nest],
     },
     {
       name: 'nest-module',
+      clone: {
+        base: 'nest',
+        color: 'red-600',
+      },
       fileExtensions: ['module.ts', 'module.js'],
       enabledFor: [IconPack.Nest],
     },
     {
       name: 'nest-service',
+      clone: {
+        base: 'nest',
+        color: 'amber-400',
+      },
       fileExtensions: ['service.ts', 'service.js'],
       enabledFor: [IconPack.Nest],
     },
     {
       name: 'nest-decorator',
+      clone: {
+        base: 'nest',
+        color: 'purple-400',
+      },
       fileExtensions: ['decorator.ts', 'decorator.js'],
       enabledFor: [IconPack.Nest],
     },
     {
       name: 'nest-pipe',
+      clone: {
+        base: 'nest',
+        color: 'teal-600',
+      },
       fileExtensions: ['pipe.ts', 'pipe.js'],
       enabledFor: [IconPack.Nest],
     },
     {
       name: 'nest-filter',
+      clone: {
+        base: 'nest',
+        color: 'deep-orange-400',
+      },
       fileExtensions: ['filter.ts', 'filter.js'],
       enabledFor: [IconPack.Nest],
     },
     {
       name: 'nest-gateway',
+      clone: {
+        base: 'nest',
+        color: 'lime-700',
+      },
       fileExtensions: ['gateway.ts', 'gateway.js'],
       enabledFor: [IconPack.Nest],
     },
     {
       name: 'nest-guard',
+      clone: {
+        base: 'nest',
+        color: 'green-600',
+      },
       fileExtensions: ['guard.ts', 'guard.js'],
       enabledFor: [IconPack.Nest],
     },
     {
       name: 'nest-resolver',
+      clone: {
+        base: 'nest',
+        color: 'pink-400',
+      },
       fileExtensions: ['resolver.ts', 'resolver.js'],
       enabledFor: [IconPack.Nest],
     },
