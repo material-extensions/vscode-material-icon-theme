@@ -2405,10 +2405,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'snapcraft',
-      fileNames: [
-        'snapcraft.yaml',
-        'snapcraft.yml'
-      ]
-    }
+      fileNames: ['snapcraft.yaml', 'snapcraft.yml'],
+    },
   ]),
 };
