@@ -311,4 +311,59 @@ describe('file icons', () => {
 
     deepStrictEqual(iconDefinitions, expectedConfig);
   });
+
+  it('should allow interoperability between cloned and user custom associations', () => {
+    const fileIcons: FileIcons = {
+      defaultIcon: { name: 'file' },
+      icons: [
+        {
+          name: 'foo',
+          fileExtensions: ['foo'],
+        },
+        {
+          name: 'bar',
+          fileExtensions: ['bar'],
+          clone: {
+            base: 'foo',
+            color: 'green-500',
+            lightColor: 'green-100',
+          },
+        },
+      ],
+    };
+
+    const options = getDefaultIconOptions();
+    options.files.associations = {
+      '*.baz': 'bar', // assigned to the clone
+    };
+
+    const iconConfig = merge({}, new IconConfiguration(), { options });
+    const iconDefinitions = loadFileIconDefinitions(
+      fileIcons,
+      iconConfig,
+      options
+    );
+
+    expectedConfig.options = options;
+    expectedConfig.iconDefinitions = {
+      foo: {
+        iconPath: './../icons/foo.svg',
+      },
+      bar: {
+        iconPath: './../icons/bar.clone.svg',
+      },
+      file: {
+        iconPath: './../icons/file.svg',
+      },
+    };
+    expectedConfig.fileNames = {};
+    expectedConfig.fileExtensions = {
+      foo: 'foo',
+      bar: 'bar',
+      baz: 'bar',
+    };
+    expectedConfig.file = 'file';
+
+    deepStrictEqual(iconDefinitions, expectedConfig);
+  });
 });

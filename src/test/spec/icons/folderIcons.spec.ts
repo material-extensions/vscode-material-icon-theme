@@ -642,4 +642,89 @@ describe('folder icons', () => {
 
     deepStrictEqual(iconDefinitions, expectedConfig);
   });
+
+  it('should allow interoperability between cloned and user custom associations', () => {
+    const folderTheme: FolderTheme[] = [
+      {
+        name: 'specific',
+        defaultIcon: { name: 'folder' },
+        rootFolder: { name: 'folder-root' },
+        icons: [
+          { name: 'folder-foo', folderNames: ['foo'] },
+          {
+            name: 'folder-bar',
+            folderNames: ['bar'],
+            clone: {
+              base: 'foo',
+              color: 'green-500',
+            },
+          },
+        ],
+      },
+    ];
+
+    const options = getDefaultIconOptions();
+    options.folders.associations = {
+      baz: 'bar', // assigned to the clone
+    };
+
+    const iconConfig = merge({}, new IconConfiguration(), { options });
+    const iconDefinitions = loadFolderIconDefinitions(
+      folderTheme,
+      iconConfig,
+      options
+    );
+
+    expectedConfig.options = options;
+    expectedConfig.iconDefinitions = {
+      'folder-foo': { iconPath: './../icons/folder-foo.svg' },
+      'folder-foo-open': { iconPath: './../icons/folder-foo-open.svg' },
+      'folder-bar': { iconPath: './../icons/folder-bar.clone.svg' },
+      'folder-bar-open': { iconPath: './../icons/folder-bar-open.clone.svg' },
+      folder: { iconPath: './../icons/folder.svg' },
+      'folder-open': { iconPath: './../icons/folder-open.svg' },
+      'folder-root': { iconPath: './../icons/folder-root.svg' },
+      'folder-root-open': { iconPath: './../icons/folder-root-open.svg' },
+    };
+    expectedConfig.folder = 'folder';
+    expectedConfig.folderExpanded = 'folder-open';
+    expectedConfig.rootFolder = 'folder-root';
+    expectedConfig.rootFolderExpanded = 'folder-root-open';
+    expectedConfig.folderNames = {
+      '.bar': 'folder-bar',
+      '.baz': 'folder-bar',
+      '.foo': 'folder-foo',
+      __bar__: 'folder-bar',
+      __baz__: 'folder-bar',
+      __foo__: 'folder-foo',
+      _bar: 'folder-bar',
+      _baz: 'folder-bar',
+      _foo: 'folder-foo',
+      bar: 'folder-bar',
+      baz: 'folder-bar',
+      foo: 'folder-foo',
+    };
+    expectedConfig.folderNamesExpanded = {
+      '.bar': 'folder-bar-open',
+      '.baz': 'folder-bar-open',
+      '.foo': 'folder-foo-open',
+      __bar__: 'folder-bar-open',
+      __baz__: 'folder-bar-open',
+      __foo__: 'folder-foo-open',
+      _bar: 'folder-bar-open',
+      _baz: 'folder-bar-open',
+      _foo: 'folder-foo-open',
+      bar: 'folder-bar-open',
+      baz: 'folder-bar-open',
+      foo: 'folder-foo-open',
+    };
+
+    expectedConfig.light = {
+      fileExtensions: {},
+      fileNames: {},
+    };
+    expectedConfig.hidesExplorerArrows = false;
+
+    deepStrictEqual(iconDefinitions, expectedConfig);
+  });
 });

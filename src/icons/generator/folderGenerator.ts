@@ -210,14 +210,21 @@ const createIconDefinitions = (
   const fileConfigHash = getFileConfigHash(config.options ?? {});
   const configIconDefinitions = config.iconDefinitions;
   const ext = isClone ? cloneIconExtension : '.svg';
+  const key = `${iconName}${appendix}`;
+  const openedKey = `${iconName}${openedFolder}${appendix}`;
 
   if (configIconDefinitions) {
-    configIconDefinitions[iconName + appendix] = {
-      iconPath: `${iconFolderPath}${iconName}${appendix}${fileConfigHash}${ext}`,
-    };
-    configIconDefinitions[`${iconName}${openedFolder}${appendix}`] = {
-      iconPath: `${iconFolderPath}${iconName}${openedFolder}${appendix}${fileConfigHash}${ext}`,
-    };
+    if (!configIconDefinitions[key]) {
+      configIconDefinitions[key] = {
+        iconPath: `${iconFolderPath}${key}${fileConfigHash}${ext}`,
+      };
+    }
+
+    if (!configIconDefinitions[`${openedKey}`]) {
+      configIconDefinitions[`${openedKey}`] = {
+        iconPath: `${iconFolderPath}${openedKey}${fileConfigHash}${ext}`,
+      };
+    }
   }
   return config;
 };
