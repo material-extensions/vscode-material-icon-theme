@@ -10,7 +10,7 @@
 
   "privileged": true,
 
-  "onCreateCommand": {
+  "postCreateCommand": {
     // Install NPM dependencies in the dev container
     "install-node-packages": "npm install"
   },
