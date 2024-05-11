@@ -25,7 +25,8 @@
       "extensions": [
         // Define suggested extensions to preinstall in the dev container
         "dbaeumer.vscode-eslint",
-        "esbenp.prettier-vscode"
+        "esbenp.prettier-vscode",
+        "jock.svg"
       ]
     }
   }
