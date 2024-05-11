@@ -369,12 +369,12 @@ Let's see an example:
 
 In this example, we have the `folder-gitlab` folder icon. If we were to clone it, we might want to prevent recoloring from happening over the gitlab logo and only allow recoloring of the folder shape itself.
 
-To do this, we need to set the attribute `mit-no-recolor="true"` to the paths, shapes, or groups we do not want to be recolored.
+To do this, we need to set the attribute `data-mit-no-recolor="true"` to the paths, shapes, or groups we do not want to be recolored.
 
 ```svg
 <svg ...>
   <path d="M13...Z" style="fill: #757575"/>
-  <g mit-no-recolor="true"> <!-- prevent recolor of the gitlab logo -->
+  <g data-mit-no-recolor="true"> <!-- prevent recolor of the gitlab logo -->
     <path d="M31...Z" style="fill: #e53935"/>
     <path d="M31...Z" style="fill: #ef6c00"/>
     <path d="M19...Z" style="fill: #f9a825"/>
@@ -383,7 +383,7 @@ To do this, we need to set the attribute `mit-no-recolor="true"` to the paths, s
 </svg>
 ```
 
-Now if we create a clone of this icon, the paths, shapes, or groups marked with `mit-no-recolor="true"` will retain their original colors. Recoloring will only affect paths not marked with this attribute.
+Now if we create a clone of this icon, the paths, shapes, or groups marked with `data-mit-no-recolor="true"` will retain their original colors. Recoloring will only affect paths not marked with this attribute.
 
 ```typescript
 { name: 'folder-gitlab', folderNames: ['gitlab'] },

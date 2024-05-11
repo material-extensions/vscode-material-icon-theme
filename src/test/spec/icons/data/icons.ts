@@ -37,7 +37,7 @@ export const folder = `
 export const folderIgnores = `
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
   <polygon points="12 8 12 6 2 6 2 26 30 26 30 8 12 8" style="fill:#009688"/>
-  <path mit-no-recolor="true" d="M20,12v2h2V24a4,4,0,0,0,8,0V14h2V12Z" style="fill:red;fill-rule:evenodd"/>
+  <path data-mit-no-recolor="true" d="M20,12v2h2V24a4,4,0,0,0,8,0V14h2V12Z" style="fill:red;fill-rule:evenodd"/>
 </svg>
 `;
 
@@ -45,7 +45,7 @@ export const folderIgnores = `
 export const gradientIgnore = `
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32">
   <defs>
-    <linearGradient mit-no-recolor="true" id="a" x1="16" y1="25" x2="16" y2="6" gradientUnits="userSpaceOnUse">
+    <linearGradient data-mit-no-recolor="true" id="a" x1="16" y1="25" x2="16" y2="6" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#b2dfdb"/>
       <stop offset="0.5" stop-color="#26a69a"/>
       <stop offset="1" stop-color="#00695c"/>
