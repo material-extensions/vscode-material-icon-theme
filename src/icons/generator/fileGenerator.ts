@@ -201,9 +201,10 @@ const setIconDefinition = (
 ) => {
   const obj: Partial<IconConfiguration> = { iconDefinitions: {} };
   const ext = isClone ? cloneIconExtension : '.svg';
-  if (config.options) {
+  const key = `${iconName}${appendix}`;
+  if (config.options && !config.iconDefinitions![key]) {
     const fileConfigHash = getFileConfigHash(config.options);
-    obj.iconDefinitions![`${iconName}${appendix}`] = {
+    obj.iconDefinitions![key] = {
       iconPath: `${iconFolderPath}${iconName}${appendix}${fileConfigHash}${ext}`,
     };
   }
