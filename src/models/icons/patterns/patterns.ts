@@ -1,6 +1,6 @@
 import { FileIcon } from '..';
 
-export enum PatternType {
+export enum FileNamePattern {
   /** Adds the following extensions to the file name: `js`, `mjs`, `cjs`, `ts`, `mts`, `cts`. */
   Ecmascript = 'ecmascript',
 
@@ -14,5 +14,5 @@ export enum PatternType {
   Cosmiconfig = 'cosmiconfig',
 }
 
-export type Patterns = Record<string, PatternType>;
+export type Patterns = Record<string, FileNamePattern>;
 export type FileIconWithPatterns = (FileIcon & { patterns?: Patterns })[];

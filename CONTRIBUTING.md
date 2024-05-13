@@ -162,7 +162,7 @@ It is also possible to use patterns for file names and extensions. This is usefu
 {
   name: 'graphql',
   patterns: {
-    graphql: PatternType.Ecmascript,
+    graphql: FileNamePattern.Ecmascript,
   },
 }
 ```

@@ -2,7 +2,7 @@ import {
   FileIconWithPatterns,
   FileIcon,
   Patterns,
-  PatternType,
+  FileNamePattern,
 } from '../../models';
 
 /**
@@ -15,7 +15,7 @@ import {
 const mapPatterns = (patterns: Patterns): string[] => {
   return Object.entries(patterns).flatMap(([fileName, pattern]) => {
     switch (pattern) {
-      case PatternType.Ecmascript:
+      case FileNamePattern.Ecmascript:
         return [
           `${fileName}.js`,
           `${fileName}.mjs`,
@@ -25,7 +25,7 @@ const mapPatterns = (patterns: Patterns): string[] => {
           `${fileName}.cts`,
         ];
 
-      case PatternType.Configuration:
+      case FileNamePattern.Configuration:
         return [
           `${fileName}.json`,
           `${fileName}.jsonc`,
@@ -35,7 +35,7 @@ const mapPatterns = (patterns: Patterns): string[] => {
           `${fileName}.toml`,
         ];
 
-      case PatternType.NodeEcosystem:
+      case FileNamePattern.NodeEcosystem:
         return [
           `${fileName}.js`,
           `${fileName}.mjs`,
@@ -51,7 +51,7 @@ const mapPatterns = (patterns: Patterns): string[] => {
           `${fileName}.toml`,
         ];
 
-      case PatternType.Cosmiconfig:
+      case FileNamePattern.Cosmiconfig:
         return [
           `.${fileName}rc`,
           `.config/${fileName}rc`,
