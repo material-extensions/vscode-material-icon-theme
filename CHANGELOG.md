@@ -3,6 +3,17 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v5.3.0](https://github.com/PKief/vscode-material-icon-theme/compare/v5.2.0...v5.3.0) 
+
+> May 13, 2024 
+
+- feat: select default version change value [`190092bf`](https://github.com/PKief/vscode-material-icon-theme/commit/190092bf)
+- feat: ✨ .github/workflows folder icon [`#2324`](https://github.com/PKief/vscode-material-icon-theme/pull/2324)
+- fix: 🚑 interop between cloned icons and user associations [`#2323`](https://github.com/PKief/vscode-material-icon-theme/pull/2323)
+- feat: Rename custom attribute (use data prefix) [`#2322`](https://github.com/PKief/vscode-material-icon-theme/pull/2322)
+- Added `devcontainer.json` [`#2319`](https://github.com/PKief/vscode-material-icon-theme/pull/2319)
+- feat: update link in readme [`de998a76`](https://github.com/PKief/vscode-material-icon-theme/commit/de998a76)
+ 
 #### [v5.2.0](https://github.com/PKief/vscode-material-icon-theme/compare/v5.1.0...v5.2.0) 
 
 > May 9, 2024 

@@ -1,11 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <path d="M28.96692,12H9.44152a2,2,0,0,0-1.89737,1.36754L4,24V10H28a2,2,0,0,0-2-2H15.1241a2,2,0,0,1-1.28038-.46357L12.5563,6.46357A2,2,0,0,0,11.27592,6H4A2,2,0,0,0,2,8V24a2,2,0,0,0,2,2H26l4.80523-11.21213A2,2,0,0,0,28.96692,12Z" style="fill: #ff5722"/>
-  <g>
-    <rect x="14" y="24" width="12" height="4" rx="2" style="fill: #ffccbc"/>
-    <rect x="20" y="18" width="12" height="4" rx="2" style="fill: #ffccbc"/>
-    <rect x="14" y="12" width="12" height="4" rx="2" style="fill: #ffccbc"/>
-    <circle cx="30" cy="26" r="2" style="fill: #ffccbc"/>
-    <circle cx="16" cy="20" r="2" style="fill: #ffccbc"/>
-    <circle cx="30" cy="14" r="2" style="fill: #ffccbc"/>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="#ff5722" d="M28.967 12H9.442a2 2 0 0 0-1.898 1.368L4 24V10h24a2 2 0 0 0-2-2H15.124a2 2 0 0 1-1.28-.464l-1.288-1.072A2 2 0 0 0 11.276 6H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h22l4.805-11.212A2 2 0 0 0 28.967 12Z"/><rect width="12" height="4" x="14" y="24" fill="#ffccbc" rx="2"/><rect width="12" height="4" x="20" y="18" fill="#ffccbc" rx="2"/><rect width="12" height="4" x="14" y="12" fill="#ffccbc" rx="2"/><circle cx="30" cy="26" r="2" fill="#ffccbc"/><circle cx="16" cy="20" r="2" fill="#ffccbc"/><circle cx="30" cy="14" r="2" fill="#ffccbc"/></svg>
