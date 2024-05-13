@@ -160,24 +160,23 @@ It is also possible to use patterns for file names and extensions. This is usefu
 
 ```ts
 {
-  name: 'sample',
+  name: 'graphql',
   patterns: {
-    sample: ['ecmascript'],
-  }
+    graphql: PatternType.Ecmascript,
+  },
 }
 ```
 
-In case of this example the generated file names are "sample.js", "sample.mjs", "sample.cjs",
-sample.ts", "sample.mts" and "sample.cts". The pattern is defined in the [patterns.ts](src/icons/patterns/utils.ts) file.
+In case of this example the generated file names are "graphql.js", "graphql.mjs", "graphql.cjs", "graphql.ts", "graphql.mts" and "graphql.cts". The pattern is defined in the [patterns.ts](src/icons/patterns/patterns.ts) file.
 
-Allowed patterns are right now:
+Available patterns are right now:
 
 | Pattern       | File extensions                                                                                            |
 | ------------- | ---------------------------------------------------------------------------------------------------------- |
 | ecmascript    | `js`, `mjs`, `cjs`, `ts`, `mts`, `cts`                                                                     |
 | configuration | `json`, `jsonc`, `json5`, `yaml`, `yml`, `toml`                                                            |
 | nodeEcosystem | Combination of ecmascript and configuration patterns                                                       |
-| cosmiconfig   | Similar to nodeEcosystem but in form of `.${fileName}rc`, `.config/${fileName}rc` and `${fileName}.config` |
+| cosmiconfig   | `.${fileName}rc`, `.config/${fileName}rc` and `${fileName}.config` with file extensions of `nodeEcosystem` |
 
 #### Folder icons
 
