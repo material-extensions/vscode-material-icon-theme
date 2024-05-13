@@ -1,5 +1,5 @@
-import { FileIcons, IconPack, FileNamePattern } from '../models';
-import { parseByPattern } from './patterns/patterns';
+import { FileIcons, FileNamePattern, IconPack } from '../models';
+import { parseByPattern } from './patterns';
 
 /**
  * Defines file icons
