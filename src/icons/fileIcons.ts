@@ -2403,5 +2403,9 @@ export const fileIcons: FileIcons = {
         '.k8s.yaml',
       ],
     },
+    {
+      name: 'screwdriver',
+      fileNames: ['screwdriver.yaml', 'screwdriver.yml'],
+    },
   ]),
 };
