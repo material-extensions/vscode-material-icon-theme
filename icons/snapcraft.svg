@@ -1,1 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><svg width="800px" height="800px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><title>file_type_snapcraft</title><path d="M18.105,8.876l6.173,2.667-6.173,6ZM6.318,29,17.21,18.413,13.887,15.2ZM2,3,17.582,18.052V8.474Z" style="fill:#81C784;fill-rule:evenodd"/><path d="M27.436,8.473H18.464L30,13.457Z" style="fill:#FF6E40;fill-rule:evenodd"/></svg>
+<svg width="32" height="32" version="1.1" viewBox="0 0 1.28 1.28" xmlns="http://www.w3.org/2000/svg">
+ <path d="m0.76001 0.36002 0.24001 0.12-0.24001 0.24001zm-0.48 0.80001 0.44-0.40002-0.2-0.2zm-0.16-1.04 0.60003 0.60003v-0.36001z" fill="#81c784" stroke-width=".32501"/>
+ <path d="m1.1201 0.36002-0.36001-0.040002 0.40002 0.2z" fill="#ff6e40" stroke-width=".32501"/>
+</svg>
