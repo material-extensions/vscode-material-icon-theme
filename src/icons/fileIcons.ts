@@ -2407,5 +2407,9 @@ export const fileIcons: FileIcons = {
       name: 'screwdriver',
       fileNames: ['screwdriver.yaml', 'screwdriver.yml'],
     },
+    {
+      name: 'snapcraft',
+      fileNames: ['snapcraft.yaml', 'snapcraft.yml'],
+    },
   ]),
 };
