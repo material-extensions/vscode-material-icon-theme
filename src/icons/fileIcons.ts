@@ -2403,5 +2403,9 @@ export const fileIcons: FileIcons = {
         '.k8s.yaml',
       ],
     },
+    {
+      name: 'snapcraft',
+      fileNames: ['snapcraft.yaml', 'snapcraft.yml'],
+    },
   ]),
 };
