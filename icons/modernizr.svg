@@ -1,6 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <g>
-    <polygon points="10 10 10 14 6 14 6 18 2 18 2 22 14 22 14 10 10 10" style="fill: #e91e63"/>
-    <path d="M18,10V22H30A12,12,0,0,0,18,10Z" style="fill: #e91e63"/>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="#e91e63" d="M10 10v4H6v4H2v4h12V10h-4zm8 0v12h12a12 12 0 0 0-12-12Z"/></svg>

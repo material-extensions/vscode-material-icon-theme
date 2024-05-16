@@ -555,14 +555,14 @@ describe('cloning: icon cloning', () => {
       equal(colorCount, 2);
     });
 
-    describe('`mit-no-recolor` attribute', () => {
+    describe('`data-mit-no-recolor` attribute', () => {
       afterEach(
         () =>
           // restore the fs.readFileSync method to its original state
           (fs.readFileSync as any).restore && (fs.readFileSync as any).restore()
       );
 
-      it('should not replace the color if the node has the `mit-no-recolor` attribute', () => {
+      it('should not replace the color if the node has the `data-mit-no-recolor` attribute', () => {
         stub(fs, 'readFileSync').returns(icon.folderIgnores);
         const result = cloneIcon('fake/path/to/icon.svg', 'blue-600', '');
 
@@ -576,7 +576,7 @@ describe('cloning: icon cloning', () => {
         equal(unchangedNodeStyle.fill, 'red');
       });
 
-      it('should not replace the color of any child of a node with the `mit-no-recolor` attribute', () => {
+      it('should not replace the color of any child of a node with the `data-mit-no-recolor` attribute', () => {
         stub(fs, 'readFileSync').returns(icon.gradientIgnore);
         const result = cloneIcon('fake/path/to/icon.svg', 'blue-600', '');
 

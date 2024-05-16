@@ -3,6 +3,36 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v5.3.0](https://github.com/PKief/vscode-material-icon-theme/compare/v5.2.0...v5.3.0) 
+
+> May 13, 2024 
+
+- feat: select default version change value [`190092bf`](https://github.com/PKief/vscode-material-icon-theme/commit/190092bf)
+- feat: ✨ .github/workflows folder icon [`#2324`](https://github.com/PKief/vscode-material-icon-theme/pull/2324)
+- fix: 🚑 interop between cloned icons and user associations [`#2323`](https://github.com/PKief/vscode-material-icon-theme/pull/2323)
+- feat: Rename custom attribute (use data prefix) [`#2322`](https://github.com/PKief/vscode-material-icon-theme/pull/2322)
+- Added `devcontainer.json` [`#2319`](https://github.com/PKief/vscode-material-icon-theme/pull/2319)
+- feat: update link in readme [`de998a76`](https://github.com/PKief/vscode-material-icon-theme/commit/de998a76)
+ 
+#### [v5.2.0](https://github.com/PKief/vscode-material-icon-theme/compare/v5.1.0...v5.2.0) 
+
+> May 9, 2024 
+
+- Feat/update angular and nest icons [`#2314`](https://github.com/PKief/vscode-material-icon-theme/pull/2314)
+- feat: support biome.jsonc [`#2316`](https://github.com/PKief/vscode-material-icon-theme/pull/2316)
+- Modernize svgo config [`#2301`](https://github.com/PKief/vscode-material-icon-theme/pull/2301)
+- feat: ✨ clone and recolorize icons [`#2305`](https://github.com/PKief/vscode-material-icon-theme/pull/2305)
+- feat(i18n): Add missing japanese translate [`#2313`](https://github.com/PKief/vscode-material-icon-theme/pull/2313)
+- Add seeders folder icons [`#2298`](https://github.com/PKief/vscode-material-icon-theme/pull/2298)
+- Pseudo-wildcard support for folder icons [`#2292`](https://github.com/PKief/vscode-material-icon-theme/pull/2292)
+- Update CONTRIBUTING.md [`834e5aed`](https://github.com/PKief/vscode-material-icon-theme/commit/834e5aed)
+- feat: ✨ c-family icons improvements [`#2299`](https://github.com/PKief/vscode-material-icon-theme/pull/2299)
+- feat: slnx file extension [`#2302`](https://github.com/PKief/vscode-material-icon-theme/pull/2302)
+- feat(filenames): add patterns support [`#2289`](https://github.com/PKief/vscode-material-icon-theme/pull/2289)
+- Add some missed attribute options [`#2300`](https://github.com/PKief/vscode-material-icon-theme/pull/2300)
+- Add aliases for platform folders [`#2288`](https://github.com/PKief/vscode-material-icon-theme/pull/2288)
+- feat: Add `.editorconfig` and `.gitattributes` [`#2290`](https://github.com/PKief/vscode-material-icon-theme/pull/2290)
+ 
 #### [v5.1.0](https://github.com/PKief/vscode-material-icon-theme/compare/v5.0.0...v5.1.0) 
 
 > April 20, 2024 

@@ -12,7 +12,7 @@ export function traverse(
   callback: (node: INode) => void,
   filter = true
 ) {
-  if (node.attributes['mit-no-recolor'] !== 'true' || !filter) {
+  if (node.attributes['data-mit-no-recolor'] !== 'true' || !filter) {
     callback(node);
 
     if (node.children) {

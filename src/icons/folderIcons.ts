@@ -98,6 +98,7 @@ export const folderIcons: FolderTheme[] = [
           'articles',
         ],
       },
+      { name: 'folder-gh-workflows', folderNames: ['github/workflows'] },
       {
         name: 'folder-git',
         folderNames: ['git', 'patches', 'githooks', 'submodules'],
