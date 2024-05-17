@@ -2407,5 +2407,9 @@ export const fileIcons: FileIcons = {
       name: 'snapcraft',
       fileNames: ['snapcraft.yaml', 'snapcraft.yml'],
     },
+    {
+      name: 'container',
+      fileNames: ['devcontainer.json'],
+    },
   ]),
 };
