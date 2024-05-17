@@ -602,7 +602,15 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['glsl', 'hlsl', 'shader', 'shaders'],
       },
       { name: 'folder-stack', folderNames: ['stack', 'stacks'] },
-      { name: 'folder-template', folderNames: ['template', 'templates'] },
+      {
+        name: 'folder-template',
+        folderNames: [
+          'template',
+          'templates',
+          'github/ISSUE_TEMPLATE',
+          'github/PULL_REQUEST_TEMPLATE',
+        ],
+      },
       {
         name: 'folder-utils',
         folderNames: ['util', 'utils', 'utility', 'utilities'],
