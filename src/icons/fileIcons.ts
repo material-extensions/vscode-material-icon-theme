@@ -450,8 +450,19 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'key',
-      fileExtensions: ['pub', 'key', 'pem', 'asc', 'gpg', 'passwd'],
-      fileNames: ['.htpasswd'],
+      fileExtensions: [
+        'pub',
+        'key',
+        'pem',
+        'asc',
+        'gpg',
+        'passwd',
+        'shasum',
+        'sha256',
+        'sha256sum',
+        'sha256sums',
+      ],
+      fileNames: ['.htpasswd', 'sha256sums'],
     },
     {
       name: 'font',
