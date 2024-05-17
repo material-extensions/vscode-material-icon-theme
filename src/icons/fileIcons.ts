@@ -2409,7 +2409,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'container',
-      fileNames: ['devcontainer.json'],
+      fileNames: ['.devcontainer/devcontainer.json'],
     },
   ]),
 };
