@@ -449,8 +449,19 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'key',
-      fileExtensions: ['pub', 'key', 'pem', 'asc', 'gpg', 'passwd'],
-      fileNames: ['.htpasswd'],
+      fileExtensions: [
+        'pub',
+        'key',
+        'pem',
+        'asc',
+        'gpg',
+        'passwd',
+        'shasum',
+        'sha256',
+        'sha256sum',
+        'sha256sums',
+      ],
+      fileNames: ['.htpasswd', 'sha256sums'],
     },
     {
       name: 'font',
@@ -2401,6 +2412,14 @@ export const fileIcons: FileIcons = {
         '.k8s.yml',
         '.k8s.yaml',
       ],
+    },
+    {
+      name: 'snapcraft',
+      fileNames: ['snapcraft.yaml', 'snapcraft.yml'],
+    },
+    {
+      name: 'container',
+      fileNames: ['.devcontainer/devcontainer.json'],
     },
   ]),
 };
