@@ -1,6 +1,5 @@
-import { FileIcons, IconPack } from '../models/index';
-import { parseByPattern } from './patterns/libs';
-import { cosmiconfig, ecmascript } from './patterns/utils';
+import { FileIcons, FileNamePattern, IconPack } from '../models';
+import { parseByPattern } from './patterns';
 
 /**
  * Defines file icons
@@ -673,7 +672,7 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['graphql', 'gql'],
       fileNames: ['.graphqlconfig'],
       patterns: {
-        graphql: cosmiconfig,
+        graphql: FileNamePattern.Ecmascript,
       },
     },
     { name: 'rust', fileExtensions: ['rs', 'ron'] },
@@ -973,14 +972,14 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['pcss', 'sss'],
       fileNames: [],
       patterns: {
-        postcss: cosmiconfig,
+        postcss: FileNamePattern.Cosmiconfig,
       },
     },
     {
       name: 'posthtml',
       fileNames: [],
       patterns: {
-        posthtml: cosmiconfig,
+        posthtml: FileNamePattern.Cosmiconfig,
       },
     },
     {
@@ -1013,41 +1012,41 @@ export const fileIcons: FileIcons = {
       name: 'webpack',
       fileNames: ['webpack.config.coffee'],
       patterns: {
-        'webpack.base': ecmascript,
-        'webpack.client': ecmascript,
-        'webpack.common': ecmascript,
-        'webpack.config.babel': ecmascript,
-        'webpack.config.base.babel': ecmascript,
-        'webpack.config.base': ecmascript,
-        'webpack.config.client': ecmascript,
-        'webpack.config.common.babel': ecmascript,
-        'webpack.config.common': ecmascript,
-        'webpack.config.dev.babel': ecmascript,
-        'webpack.config.dev': ecmascript,
-        'webpack.config.main': ecmascript,
-        'webpack.config.prod.babel': ecmascript,
-        'webpack.config.prod': ecmascript,
-        'webpack.config.production.babel': ecmascript,
-        'webpack.config.production': ecmascript,
-        'webpack.config.renderer': ecmascript,
-        'webpack.config.server': ecmascript,
-        'webpack.config.staging.babel': ecmascript,
-        'webpack.config.staging': ecmascript,
-        'webpack.config.test': ecmascript,
-        'webpack.config.vendor.production': ecmascript,
-        'webpack.config.vendor': ecmascript,
-        'webpack.config': ecmascript,
-        'webpack.dev': ecmascript,
-        'webpack.development': ecmascript,
-        'webpack.dist': ecmascript,
-        'webpack.mix': ecmascript,
-        'webpack.prod.config': ecmascript,
-        'webpack.prod': ecmascript,
-        'webpack.production': ecmascript,
-        'webpack.server': ecmascript,
-        'webpack.test': ecmascript,
-        webpack: ecmascript,
-        webpackfile: ecmascript,
+        'webpack.base': FileNamePattern.Ecmascript,
+        'webpack.client': FileNamePattern.Ecmascript,
+        'webpack.common': FileNamePattern.Ecmascript,
+        'webpack.config.babel': FileNamePattern.Ecmascript,
+        'webpack.config.base.babel': FileNamePattern.Ecmascript,
+        'webpack.config.base': FileNamePattern.Ecmascript,
+        'webpack.config.client': FileNamePattern.Ecmascript,
+        'webpack.config.common.babel': FileNamePattern.Ecmascript,
+        'webpack.config.common': FileNamePattern.Ecmascript,
+        'webpack.config.dev.babel': FileNamePattern.Ecmascript,
+        'webpack.config.dev': FileNamePattern.Ecmascript,
+        'webpack.config.main': FileNamePattern.Ecmascript,
+        'webpack.config.prod.babel': FileNamePattern.Ecmascript,
+        'webpack.config.prod': FileNamePattern.Ecmascript,
+        'webpack.config.production.babel': FileNamePattern.Ecmascript,
+        'webpack.config.production': FileNamePattern.Ecmascript,
+        'webpack.config.renderer': FileNamePattern.Ecmascript,
+        'webpack.config.server': FileNamePattern.Ecmascript,
+        'webpack.config.staging.babel': FileNamePattern.Ecmascript,
+        'webpack.config.staging': FileNamePattern.Ecmascript,
+        'webpack.config.test': FileNamePattern.Ecmascript,
+        'webpack.config.vendor.production': FileNamePattern.Ecmascript,
+        'webpack.config.vendor': FileNamePattern.Ecmascript,
+        'webpack.config': FileNamePattern.Ecmascript,
+        'webpack.dev': FileNamePattern.Ecmascript,
+        'webpack.development': FileNamePattern.Ecmascript,
+        'webpack.dist': FileNamePattern.Ecmascript,
+        'webpack.mix': FileNamePattern.Ecmascript,
+        'webpack.prod.config': FileNamePattern.Ecmascript,
+        'webpack.prod': FileNamePattern.Ecmascript,
+        'webpack.production': FileNamePattern.Ecmascript,
+        'webpack.server': FileNamePattern.Ecmascript,
+        'webpack.test': FileNamePattern.Ecmascript,
+        webpack: FileNamePattern.Ecmascript,
+        webpackfile: FileNamePattern.Ecmascript,
       },
     },
     { name: 'ionic', fileNames: ['ionic.config.json', '.io-config.json'] },
@@ -1130,8 +1129,8 @@ export const fileIcons: FileIcons = {
       name: 'babel',
       fileNames: ['babel-transform.js'],
       patterns: {
-        babel: cosmiconfig,
-        'babel-plugin-macros': cosmiconfig,
+        babel: FileNamePattern.Cosmiconfig,
+        'babel-plugin-macros': FileNamePattern.Cosmiconfig,
       },
     },
     {
@@ -1244,12 +1243,10 @@ export const fileIcons: FileIcons = {
       fileNames: [
         '.eslintrc-md.js',
         '.eslintrc-jsdoc.js',
-        '.eslintignore',
-        '.eslintcache',
         '.eslintrc.base.json',
       ],
       patterns: {
-        eslint: cosmiconfig,
+        eslint: FileNamePattern.Cosmiconfig,
       },
     },
     {
@@ -1337,17 +1334,17 @@ export const fileIcons: FileIcons = {
     {
       name: 'stylelint',
       light: true,
-      fileNames: ['.stylelintignore', '.stylelintcache'],
+      fileNames: [],
       patterns: {
-        stylelint: cosmiconfig,
+        stylelint: FileNamePattern.Cosmiconfig,
       },
     },
     { name: 'code-climate', fileNames: ['.codeclimate.yml'], light: true },
     {
       name: 'prettier',
-      fileNames: ['.prettierignore'],
+      fileNames: [],
       patterns: {
-        prettier: cosmiconfig,
+        prettier: FileNamePattern.Cosmiconfig,
       },
     },
     {
@@ -1535,7 +1532,7 @@ export const fileIcons: FileIcons = {
       light: true,
       fileNames: [],
       patterns: {
-        release: cosmiconfig,
+        release: FileNamePattern.Cosmiconfig,
       },
     },
     {
@@ -1788,7 +1785,7 @@ export const fileIcons: FileIcons = {
       name: 'husky',
       fileNames: [],
       patterns: {
-        husky: cosmiconfig,
+        husky: FileNamePattern.Cosmiconfig,
       },
     },
     { name: 'coconut', fileExtensions: ['coco'] },
@@ -1815,7 +1812,7 @@ export const fileIcons: FileIcons = {
       name: 'commitlint',
       fileNames: ['.commitlint.yaml', '.commitlint.yml'],
       patterns: {
-        commitlint: cosmiconfig,
+        commitlint: FileNamePattern.Cosmiconfig,
       },
     },
     { name: 'buck', fileNames: ['.buckconfig'] },
@@ -2177,7 +2174,7 @@ export const fileIcons: FileIcons = {
       name: 'svgr',
       fileNames: [],
       patterns: {
-        svgr: cosmiconfig,
+        svgr: FileNamePattern.Cosmiconfig,
       },
     },
     { name: 'rome', fileNames: ['rome.json'] },
@@ -2284,7 +2281,7 @@ export const fileIcons: FileIcons = {
       name: 'craco',
       fileNames: [],
       patterns: {
-        craco: cosmiconfig,
+        craco: FileNamePattern.Cosmiconfig,
       },
     },
     {
@@ -2340,7 +2337,7 @@ export const fileIcons: FileIcons = {
       name: 'syncpack',
       fileNames: [],
       patterns: {
-        syncpack: cosmiconfig,
+        syncpack: FileNamePattern.Cosmiconfig,
       },
     },
     {
@@ -2394,7 +2391,7 @@ export const fileIcons: FileIcons = {
       name: 'puppeteer',
       fileNames: [],
       patterns: {
-        puppeteer: cosmiconfig,
+        puppeteer: FileNamePattern.Cosmiconfig,
       },
     },
     { name: 'apps-script', fileExtensions: ['gs'] },
