@@ -248,6 +248,7 @@ export const fileIcons: FileIcons = {
         'manifest.mf',
         '.clang-format',
         '.clang-tidy',
+        '.vscode/settings.json',
       ],
     },
     {
@@ -2420,6 +2421,10 @@ export const fileIcons: FileIcons = {
     {
       name: 'container',
       fileNames: ['.devcontainer/devcontainer.json'],
+    },
+    {
+      name: 'extension',
+      fileNames: ['.vscode/extensions.json'],
     },
   ]),
 };
