@@ -2355,7 +2355,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'docusaurus',
-      fileNames: ['docusaurus.config.js']
+      fileNames: ['docusaurus.config.js'],
     },
     {
       name: 'taskfile',
