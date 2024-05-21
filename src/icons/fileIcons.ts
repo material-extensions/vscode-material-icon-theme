@@ -2550,6 +2550,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'drizzle',
+      light: true,
       fileExtensions: [
         'drizzle.config.ts',
         'drizzle.config.js',
