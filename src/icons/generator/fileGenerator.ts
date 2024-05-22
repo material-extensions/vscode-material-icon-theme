@@ -8,11 +8,18 @@ import {
   IconJsonOptions,
 } from '../../models/index';
 import {
+  cloneIconExtension,
   highContrastColorFileEnding,
   iconFolderPath,
   lightColorFileEnding,
   wildcardPattern,
 } from './constants';
+import {
+  validateHEXColorCode,
+  writeSVGFiles,
+  getSVG,
+  getPath,
+} from './folderGenerator';
 
 /**
  * Get all file icons that can be used in this theme.
@@ -32,20 +39,26 @@ export const loadFileIconDefinitions = (
 
   allFileIcons.forEach((icon) => {
     if (icon.disabled) return;
-    config = merge({}, config, setIconDefinition(config, icon.name));
+    const isClone = icon.clone !== undefined;
+    config = merge({}, config, setIconDefinition(config, icon.name, isClone));
 
     if (icon.light) {
       config = merge(
         {},
         config,
-        setIconDefinition(config, icon.name, lightColorFileEnding)
+        setIconDefinition(config, icon.name, isClone, lightColorFileEnding)
       );
     }
     if (icon.highContrast) {
       config = merge(
         {},
         config,
-        setIconDefinition(config, icon.name, highContrastColorFileEnding)
+        setIconDefinition(
+          config,
+          icon.name,
+          isClone,
+          highContrastColorFileEnding
+        )
       );
     }
 
@@ -73,7 +86,7 @@ export const loadFileIconDefinitions = (
   config = merge(
     {},
     config,
-    setIconDefinition(config, fileIcons.defaultIcon.name)
+    setIconDefinition(config, fileIcons.defaultIcon.name, false)
   );
   config.file = fileIcons.defaultIcon.name;
 
@@ -84,6 +97,7 @@ export const loadFileIconDefinitions = (
       setIconDefinition(
         config,
         fileIcons.defaultIcon.name,
+        false,
         lightColorFileEnding
       )
     );
@@ -99,6 +113,7 @@ export const loadFileIconDefinitions = (
       setIconDefinition(
         config,
         fileIcons.defaultIcon.name,
+        false,
         highContrastColorFileEnding
       )
     );
@@ -181,16 +196,30 @@ const disableIconsByPack = (
 const setIconDefinition = (
   config: IconConfiguration,
   iconName: string,
+  isClone: boolean,
   appendix: string = ''
 ) => {
   const obj: Partial<IconConfiguration> = { iconDefinitions: {} };
-  if (config.options) {
+  const ext = isClone ? cloneIconExtension : '.svg';
+  const key = `${iconName}${appendix}`;
+  if (config.options && !config.iconDefinitions![key]) {
     const fileConfigHash = getFileConfigHash(config.options);
-    obj.iconDefinitions![`${iconName}${appendix}`] = {
-      iconPath: `${iconFolderPath}${iconName}${appendix}${fileConfigHash}.svg`,
+    obj.iconDefinitions![key] = {
+      iconPath: `${iconFolderPath}${iconName}${appendix}${fileConfigHash}${ext}`,
     };
   }
   return obj;
+};
+
+export const generateFileIcons = (color: string | undefined) => {
+  if (!color || !validateHEXColorCode(color)) {
+    return console.error('Invalid color code for file icons');
+  }
+
+  const fileIcon =
+    'M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m5 2H6v16h12v-9h-7V4z';
+
+  writeSVGFiles('file', getSVG(getPath(fileIcon, color), 24));
 };
 
 const getCustomIcons = (fileAssociations: IconAssociations | undefined) => {

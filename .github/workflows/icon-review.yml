@@ -1,0 +1,63 @@
+name: Icon Review
+
+on:
+  pull_request_target:
+    paths:
+      - 'icons/*.svg'
+
+jobs:
+  icon-review:
+    name: Icon Review
+    runs-on: ubuntu-latest
+    env:
+      TARGET_BRANCH: ${{ github.event.pull_request.base.ref }}
+    steps:
+      - name: Checkout Fork 🛎️
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          fetch-depth: 0
+          path: fork
+
+      - name: Checkout Original 🛎️
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          path: main
+
+      - name: Review SVG files 🔍
+        run: |
+          cd main
+          svgFiles=$(git diff --no-index ../main ../fork --diff-filter=ACMRTUX --name-only | grep '.svg$')
+          echo "SVG files changed: ${svgFiles}"
+          npx svg-icon-review --bigIcon ${svgFiles}
+
+      - name: Install jq ⚙️
+        run: sudo apt-get install jq
+
+      - name: Upload PNG ⬆️
+        env:
+          IMAGE_UPLOAD: ${{ secrets.IMAGE_UPLOAD }}
+        id: upload
+        run: |
+          IMAGE_URL=$(curl --location 'https://freeimage.host/json' --form 'source=@"./main/preview.png"' --form 'type="file"' --form 'action="upload"' --form 'auth_token="${{env.IMAGE_UPLOAD}}"' | jq -r '.image.url')
+          echo image_url=$IMAGE_URL >> $GITHUB_ENV
+        shell: bash
+
+      - name: Post review in PR ✍️
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const image_url = "${{ env.image_url }}";
+            console.log('URL: '+image_url);
+            const commentBody = '## Preview \n\nThank you for creating a pull request. This preview shows you how your changes will look on the different themes: \n\n ![Generated Preview](' + image_url + ') \n\n You can find more information how to contribute in the [contribution guidelines](https://github.com/PKief/vscode-material-icon-theme/blob/main/CONTRIBUTING.md).';
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: commentBody
+            })
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
