@@ -1,4 +1,4 @@
-import * as assert from 'assert';
+import { deepStrictEqual } from 'assert';
 import merge from 'lodash.merge';
 import {
   getDefaultIconOptions,
@@ -60,7 +60,7 @@ describe('file icons', () => {
       'filename.js': 'javascript',
     };
 
-    assert.deepStrictEqual(iconDefinitions, expectedConfig);
+    deepStrictEqual(iconDefinitions, expectedConfig);
   });
 
   it('should disable icon packs', () => {
@@ -108,7 +108,7 @@ describe('file icons', () => {
     // disable default icon pack by using empty string
     expectedConfig.options!.activeIconPack = '';
 
-    assert.deepStrictEqual(iconDefinitions, expectedConfig);
+    deepStrictEqual(iconDefinitions, expectedConfig);
   });
 
   it('should configure custom icon associations', () => {
@@ -165,7 +165,7 @@ describe('file icons', () => {
       'sample.js': 'javascript',
     };
 
-    assert.deepStrictEqual(iconDefinitions, expectedConfig);
+    deepStrictEqual(iconDefinitions, expectedConfig);
   });
 
   it('should configure language icons for light and high contrast', () => {
@@ -245,6 +245,125 @@ describe('file icons', () => {
       'filename.js': 'javascript',
     };
     /* eslint-enable camelcase */
-    assert.deepStrictEqual(iconDefinitions, expectedConfig);
+    deepStrictEqual(iconDefinitions, expectedConfig);
+  });
+
+  it('should generate cloned file icons config', () => {
+    const fileIcons: FileIcons = {
+      defaultIcon: { name: 'file' },
+      icons: [
+        {
+          name: 'foo',
+          fileNames: ['foo.bar'],
+        },
+        {
+          name: 'foo-clone',
+          fileNames: ['bar.foo'],
+          fileExtensions: ['baz'],
+          light: true,
+          clone: {
+            base: 'foo',
+            color: 'green-500',
+            lightColor: 'green-100',
+          },
+        },
+      ],
+    };
+
+    const options = getDefaultIconOptions();
+    const iconConfig = merge({}, new IconConfiguration(), { options });
+    const iconDefinitions = loadFileIconDefinitions(
+      fileIcons,
+      iconConfig,
+      options
+    );
+
+    expectedConfig.iconDefinitions = {
+      foo: {
+        iconPath: './../icons/foo.svg',
+      },
+      'foo-clone': {
+        iconPath: './../icons/foo-clone.clone.svg',
+      },
+      'foo-clone_light': {
+        iconPath: './../icons/foo-clone_light.clone.svg',
+      },
+      file: {
+        iconPath: './../icons/file.svg',
+      },
+    };
+    expectedConfig.light = {
+      fileExtensions: {
+        baz: 'foo-clone_light',
+      },
+      fileNames: {
+        'bar.foo': 'foo-clone_light',
+      },
+    };
+    expectedConfig.fileNames = {
+      'foo.bar': 'foo',
+      'bar.foo': 'foo-clone',
+    };
+    expectedConfig.fileExtensions = {
+      baz: 'foo-clone',
+    };
+    expectedConfig.file = 'file';
+
+    deepStrictEqual(iconDefinitions, expectedConfig);
+  });
+
+  it('should allow interoperability between cloned and user custom associations', () => {
+    const fileIcons: FileIcons = {
+      defaultIcon: { name: 'file' },
+      icons: [
+        {
+          name: 'foo',
+          fileExtensions: ['foo'],
+        },
+        {
+          name: 'bar',
+          fileExtensions: ['bar'],
+          clone: {
+            base: 'foo',
+            color: 'green-500',
+            lightColor: 'green-100',
+          },
+        },
+      ],
+    };
+
+    const options = getDefaultIconOptions();
+    options.files.associations = {
+      '*.baz': 'bar', // assigned to the clone
+    };
+
+    const iconConfig = merge({}, new IconConfiguration(), { options });
+    const iconDefinitions = loadFileIconDefinitions(
+      fileIcons,
+      iconConfig,
+      options
+    );
+
+    expectedConfig.options = options;
+    expectedConfig.iconDefinitions = {
+      foo: {
+        iconPath: './../icons/foo.svg',
+      },
+      bar: {
+        iconPath: './../icons/bar.clone.svg',
+      },
+      file: {
+        iconPath: './../icons/file.svg',
+      },
+    };
+    expectedConfig.fileNames = {};
+    expectedConfig.fileExtensions = {
+      foo: 'foo',
+      bar: 'bar',
+      baz: 'bar',
+    };
+    expectedConfig.file = 'file';
+
+    deepStrictEqual(iconDefinitions, expectedConfig);
   });
 });

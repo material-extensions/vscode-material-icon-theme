@@ -1,6 +1,7 @@
-import * as vscode from 'vscode';
+import { commands } from 'vscode';
 import { activateIcons } from './activate';
 import { toggleExplorerArrows } from './explorerArrows';
+import { changeFileColor } from './fileColor';
 import { changeFolderColor } from './folderColor';
 import { changeFolderTheme } from './folders';
 import { toggleGrayscale } from './grayscale';
@@ -9,11 +10,12 @@ import { changeOpacity } from './opacity';
 import { restoreDefaultConfig } from './restoreConfig';
 import { changeSaturation } from './saturation';
 
-const commands: { [commmand: string]: () => Promise<void> } = {
+const extensionCommands: { [commmand: string]: () => Promise<void> } = {
   activateIcons,
   toggleIconPacks,
   changeFolderTheme,
   changeFolderColor,
+  changeFileColor,
   restoreDefaultConfig,
   toggleExplorerArrows,
   changeOpacity,
@@ -21,9 +23,9 @@ const commands: { [commmand: string]: () => Promise<void> } = {
   changeSaturation,
 };
 
-export const registered = Object.keys(commands).map((commandName) => {
-  const callCommand = () => commands[commandName]();
-  return vscode.commands.registerCommand(
+export const registered = Object.keys(extensionCommands).map((commandName) => {
+  const callCommand = () => extensionCommands[commandName]();
+  return commands.registerCommand(
     `material-icon-theme.${commandName}`,
     callCommand
   );

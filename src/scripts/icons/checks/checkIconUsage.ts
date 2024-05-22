@@ -1,6 +1,7 @@
-import * as fs from 'fs';
-import * as path from 'path';
+import { readdir } from 'fs';
+import { join, parse } from 'path';
 import { DefaultIcon, FolderIcon, FolderTheme } from '../../../models/index';
+import { green, red } from '../../helpers/painter';
 import {
   fileIcons,
   folderIcons,
@@ -9,12 +10,11 @@ import {
   lightColorFileEnding,
   openedFolder,
 } from './../../../icons';
-import * as painter from './../../helpers/painter';
 
 /**
  * Defines the folder where all icon files are located.
  */
-const folderPath = path.join('icons');
+const folderPath = join('icons');
 
 /**
  * Defines an array with all icons that can be found in the file system.
@@ -34,7 +34,7 @@ const fsReadAllIconFiles = (
 
   files.forEach((file) => {
     const fileName = file;
-    const iconName = path.parse(file).name;
+    const iconName = parse(file).name.replace('.clone', '');
     availableIcons[iconName] = fileName;
   });
 
@@ -57,24 +57,20 @@ const checkUsageOfAllIcons = () => {
 const handleErrors = () => {
   const amountOfUnusedIcons = Object.keys(availableIcons).length;
   if (amountOfUnusedIcons === 0) {
-    console.log(
-      '> Material Icon Theme:',
-      painter.green('Passed icon usage checks!')
-    );
+    console.log('> Material Icon Theme:', green('Passed icon usage checks!'));
   } else {
     console.log(
-      '> Material Icon Theme: ' +
-        painter.red(`${amountOfUnusedIcons} unused icon(s):`)
+      '> Material Icon Theme: ' + red(`${amountOfUnusedIcons} unused icon(s):`)
     );
     Object.keys(availableIcons).forEach((icon) => {
-      console.log(painter.red(`- ${availableIcons[icon]}`));
+      console.log(red(`- ${availableIcons[icon]}`));
     });
     throw new Error('Found unused icon files!');
   }
 };
 
 // read from the file system
-export const check = () => fs.readdir(folderPath, fsReadAllIconFiles);
+export const check = () => readdir(folderPath, fsReadAllIconFiles);
 
 const getAllUsedFileIcons = (): string[] => {
   return [

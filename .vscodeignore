@@ -19,3 +19,4 @@ build/**
 svgo.config.js
 .eslintignore
 material-colors.yml
+changelog.config.json

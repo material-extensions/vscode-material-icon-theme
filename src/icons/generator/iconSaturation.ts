@@ -1,5 +1,5 @@
-import * as fs from 'fs';
-import * as path from 'path';
+import { lstatSync, readdirSync, readFileSync, writeFileSync } from 'fs';
+import { basename, join } from 'path';
 import { getCustomIconPaths } from '../../helpers/customIcons';
 import { IconJsonOptions } from '../../models';
 
@@ -19,22 +19,22 @@ export const setIconSaturation = (
   }
 
   let iconsPath = '';
-  if (path.basename(__dirname) === 'dist') {
-    iconsPath = path.join(__dirname, '..', 'icons');
+  if (basename(__dirname) === 'dist') {
+    iconsPath = join(__dirname, '..', 'icons');
   } else {
     // executed via script
-    iconsPath = path.join(__dirname, '..', '..', '..', 'icons');
+    iconsPath = join(__dirname, '..', '..', '..', 'icons');
   }
 
   const customIconPaths = getCustomIconPaths(options);
-  const iconFiles = fs.readdirSync(iconsPath);
+  const iconFiles = readdirSync(iconsPath);
 
   // read all icon files from the icons folder
   try {
     (fileNames || iconFiles).forEach(adjustSaturation(iconsPath, options));
 
     customIconPaths.forEach((iconPath) => {
-      const customIcons = fs.readdirSync(iconPath);
+      const customIcons = readdirSync(iconPath);
       customIcons.forEach(adjustSaturation(iconPath, options));
     });
   } catch (error) {
@@ -110,10 +110,13 @@ const adjustSaturation = (
   options: IconJsonOptions
 ): ((value: string, index: number, array: string[]) => void) => {
   return (iconFileName) => {
-    const svgFilePath = path.join(iconsPath, iconFileName);
+    const svgFilePath = join(iconsPath, iconFileName);
+    if (!lstatSync(svgFilePath).isFile()) {
+      return;
+    }
 
     // Read SVG file
-    const svg = fs.readFileSync(svgFilePath, 'utf-8');
+    const svg = readFileSync(svgFilePath, 'utf-8');
 
     // Get the root element of the SVG file
     const svgRootElement = getSVGRootElement(svg);
@@ -135,6 +138,6 @@ const adjustSaturation = (
       updatedSVG = removeFilterElement(updatedSVG);
     }
 
-    fs.writeFileSync(svgFilePath, updatedSVG);
+    writeFileSync(svgFilePath, updatedSVG);
   };
 };

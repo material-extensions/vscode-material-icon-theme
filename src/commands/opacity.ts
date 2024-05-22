@@ -1,7 +1,7 @@
-import * as vscode from 'vscode';
+import { window as codeWindow } from 'vscode';
+import { getMaterialIconsJSON, setThemeConfig } from '../helpers';
+import { translate } from '../i18n';
 import { getDefaultIconOptions, validateOpacityValue } from '../icons';
-import * as helpers from './../helpers';
-import * as i18n from './../i18n';
 
 /** Command to toggle the folder icons. */
 export const changeOpacity = async () => {
@@ -18,8 +18,8 @@ export const changeOpacity = async () => {
 
 /** Show input to enter the opacity value. */
 const showInput = (opacity: number) => {
-  return vscode.window.showInputBox({
-    placeHolder: i18n.translate('opacity.inputPlaceholder'),
+  return codeWindow.showInputBox({
+    placeHolder: translate('opacity.inputPlaceholder'),
     ignoreFocusOut: true,
     value: opacity.toString(),
     validateInput: validateOpacityInput,
@@ -29,7 +29,7 @@ const showInput = (opacity: number) => {
 /** Validate the opacity value which was inserted by the user. */
 const validateOpacityInput = (opacityInput: string) => {
   if (!validateOpacityValue(+opacityInput)) {
-    return i18n.translate('opacity.wrongValue');
+    return translate('opacity.wrongValue');
   }
   return undefined;
 };
@@ -37,10 +37,10 @@ const validateOpacityInput = (opacityInput: string) => {
 /** Get the current value of the opacity of the icons. */
 export const getCurrentOpacityValue = (): number => {
   const defaultOptions = getDefaultIconOptions();
-  const config = helpers.getMaterialIconsJSON();
+  const config = getMaterialIconsJSON();
   return config?.options?.opacity ?? defaultOptions.opacity;
 };
 
 const setOpacityConfig = (opacity: number) => {
-  return helpers.setThemeConfig('opacity', opacity, true);
+  return setThemeConfig('opacity', opacity, true);
 };

@@ -5,6 +5,7 @@ export const restoreDefaultConfig = async () => {
   await setThemeConfig('activeIconPack', undefined, true);
   await setThemeConfig('folders.theme', undefined, true);
   await setThemeConfig('folders.color', undefined, true);
+  await setThemeConfig('files.color', undefined, true);
   await setThemeConfig('hidesExplorerArrows', undefined, true);
   await setThemeConfig('opacity', undefined, true);
   await setThemeConfig('saturation', undefined, true);

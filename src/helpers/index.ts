@@ -1,19 +1,18 @@
-import * as fs from 'fs';
-import * as path from 'path';
-import * as vscode from 'vscode';
+import { readFileSync } from 'fs';
+import { join } from 'path';
+import { extensions, workspace } from 'vscode';
 import { iconJsonName } from '../icons/index';
 import { IconConfiguration } from '../models/index';
-import * as reloadMessages from './../messages/reload';
 
 /** Get configuration of vs code. */
 export const getConfig = (section?: string) => {
-  return vscode.workspace.getConfiguration(section);
+  return workspace.getConfiguration(section);
 };
 
 /** Get list of configuration entries of package.json */
 export const getConfigProperties = (): { [config: string]: unknown } => {
-  return vscode.extensions.getExtension('PKief.material-icon-theme')
-    ?.packageJSON?.contributes?.configuration?.properties;
+  return extensions.getExtension('PKief.material-icon-theme')?.packageJSON
+    ?.contributes?.configuration?.properties;
 };
 
 /** Update configuration of vs code. */
@@ -60,31 +59,20 @@ export const isThemeNotVisible = (): boolean => {
 };
 
 /** Return the path of the extension in the file system. */
-export const getExtensionPath = () =>
-  vscode.extensions.getExtension('PKief.material-icon-theme')?.extensionPath ??
-  '';
+const getExtensionPath = () =>
+  extensions.getExtension('PKief.material-icon-theme')?.extensionPath ?? '';
 
 /** Get the configuration of the icons as JSON Object */
 export const getMaterialIconsJSON = (): IconConfiguration => {
-  const iconJSONPath = path.join(getExtensionPath(), 'dist', iconJsonName);
+  const iconJSONPath = join(getExtensionPath(), 'dist', iconJsonName);
 
   try {
-    const data = fs.readFileSync(iconJSONPath, 'utf8');
+    const data = readFileSync(iconJSONPath, 'utf8');
     return JSON.parse(data);
   } catch (error) {
     console.error(error);
     return {};
   }
-};
-
-/** Reload vs code window */
-export const promptToReload = async () => {
-  const result = await reloadMessages.showConfirmToReloadMessage();
-  if (result) reloadWindow();
-};
-
-const reloadWindow = () => {
-  return vscode.commands.executeCommand('workbench.action.reloadWindow');
 };
 
 /** Capitalize the first letter of a string */

@@ -7,17 +7,34 @@ export interface IconJsonOptions {
     theme?: string;
     color?: string;
     associations?: IconAssociations;
+    customClones?: FolderIconClone[];
   };
   files?: {
+    color?: string;
     associations?: IconAssociations;
+    customClones?: FileIconClone[];
   };
   languages?: {
     associations?: IconAssociations;
   };
-  showWelcomeMessage?: boolean;
-  showUpdateMessage?: boolean;
 }
 
 export interface IconAssociations {
   [pattern: string]: string;
+}
+
+export interface CustomClone {
+  name: string;
+  base: string;
+  color: string;
+  lightColor?: string;
+}
+
+export interface FileIconClone extends CustomClone {
+  fileExtensions?: string[];
+  fileNames?: string[];
+}
+
+export interface FolderIconClone extends CustomClone {
+  folderNames: string[];
 }
