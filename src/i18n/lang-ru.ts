@@ -10,13 +10,15 @@ export const translation: Translation = {
   },
   folders: {
     toggleIcons: 'Выбрать тему папки',
-    color: 'Выбрать цвет папки',
-    hexCode: 'Вставить HEX-код цвета',
-    wrongHexCode: 'Неверный HEX-код цвета!',
     disabled: 'Нет иконок для папки',
     theme: {
       description: "Выбрать '%0' тему папки",
     },
+  },
+  colorSelect: {
+    color: 'Выберите цвет',
+    hexCode: 'Вставить HEX-код цвета',
+    wrongHexCode: 'Неверный HEX-код цвета!',
   },
   opacity: {
     inputPlaceholder: 'Значение непрозрачности (между 0 и 1)',

@@ -10,13 +10,15 @@ export const translation: Translation = {
   },
   folders: {
     toggleIcons: 'Escolha um tema para as pastas',
-    color: 'Escolha uma cor para as pastas',
-    hexCode: 'Insira um código de cor hexadecimal',
-    wrongHexCode: 'Código de cor hexadecimal inválido!',
     disabled: 'Nenhum ícone de pasta',
     theme: {
       description: "Selecionar o tema para pastas '%0'",
     },
+  },
+  colorSelect: {
+    color: 'Escolha uma cor',
+    hexCode: 'Insira um código de cor hexadecimal',
+    wrongHexCode: 'Código de cor hexadecimal inválido!',
   },
   opacity: {
     inputPlaceholder: 'Valor de opacidade (entre 0 e 1)',

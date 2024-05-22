@@ -1,12 +1,16 @@
-const { extendDefaultPlugins } = require('svgo');
-
 module.exports = {
+  multipass: true,
   precision: 2,
-  plugins: extendDefaultPlugins([
+  plugins: [
+    {
+      name: 'preset-default'
+    },
+    'convertStyleToAttrs',
     'removeDimensions',
     'removeOffCanvasPaths',
-    'removeStyleElement',
     'removeScriptElement',
+    'removeStyleElement',
     'reusePaths',
-  ])
+    'sortAttrs',
+  ]
 }

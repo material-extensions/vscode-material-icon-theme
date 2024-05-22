@@ -10,13 +10,15 @@ export const translation: Translation = {
   },
   folders: {
     toggleIcons: 'Wybierz motyw folderów',
-    color: 'Wybierz kolor folderów',
-    hexCode: 'Podaj kolor w formacie HEX',
-    wrongHexCode: 'Nieprawidłowy kolor HEX!',
     disabled: 'Brak ikon folderów',
     theme: {
       description: "Wybierz motyw folderów '%0'",
     },
+  },
+  colorSelect: {
+    color: 'Wybierz kolor',
+    hexCode: 'Podaj kolor w formacie HEX',
+    wrongHexCode: 'Nieprawidłowy kolor HEX!',
   },
   opacity: {
     inputPlaceholder: 'Wartość przezroczystości (pomiędzy 0 a 1)',

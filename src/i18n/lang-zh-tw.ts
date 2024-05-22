@@ -10,13 +10,15 @@ export const translation: Translation = {
   },
   folders: {
     toggleIcons: '切換文件夾圖標的顯示',
-    color: '選擇一個文件夾顏色',
-    hexCode: '插入HEX顏色代碼',
-    wrongHexCode: '無效的HEX顏色代碼！',
     disabled: '不顯示文件夾圖標',
     theme: {
       description: "'%0'主題的文件夾圖標",
     },
+  },
+  colorSelect: {
+    color: '选择颜色',
+    hexCode: '插入HEX顏色代碼',
+    wrongHexCode: '無效的HEX顏色代碼！',
   },
   opacity: {
     inputPlaceholder: '不透明度值（0和1之間）',

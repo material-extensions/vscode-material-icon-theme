@@ -10,13 +10,15 @@ export const translation: Translation = {
   },
   folders: {
     toggleIcons: 'Kies een folderthema',
-    color: 'Kies een folderkleur',
-    hexCode: 'Voeg een HEX kleurcode in',
-    wrongHexCode: 'Ongeldige HEX kleurcode!',
     disabled: 'Geen foldericons',
     theme: {
       description: "Selecteer het '%0' folderthema",
     },
+  },
+  colorSelect: {
+    color: 'Kies een kleur',
+    hexCode: 'Voeg een HEX kleurcode in',
+    wrongHexCode: 'Ongeldige HEX kleurcode!',
   },
   opacity: {
     inputPlaceholder: 'Doorzichtbaarheidswaarde (tussen 0 en 1)',

@@ -15,6 +15,7 @@
   "configuration.activeIconPack.angular_ngrx": "Angular和ngrx的图标。",
   "configuration.activeIconPack.react": "React的图标。",
   "configuration.activeIconPack.react_redux": "React和Redux的图标。",
+  "configuration.activeIconPack.qwik": "Qwik的图标。",
   "configuration.activeIconPack.vue": "Vue的图标。",
   "configuration.activeIconPack.vue_vuex": "Vue和Vuex的图标。",
   "configuration.activeIconPack.nest": "NestJS的图标。",

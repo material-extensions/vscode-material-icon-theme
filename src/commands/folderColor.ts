@@ -42,7 +42,7 @@ const showQuickPickItems = (currentColor: string) => {
   );
 
   return codeWindow.showQuickPick(options, {
-    placeHolder: translate('folders.color'),
+    placeHolder: translate('colorSelect.color'),
     ignoreFocusOut: false,
     matchOnDescription: true,
   });
@@ -53,7 +53,7 @@ const handleQuickPickActions = async (value: QuickPickItem) => {
   if (!value || !value.description) return;
   if (value.description === 'Custom Color') {
     const value = await codeWindow.showInputBox({
-      placeHolder: translate('folders.hexCode'),
+      placeHolder: translate('colorSelect.hexCode'),
       ignoreFocusOut: true,
       validateInput: validateColorInput,
     });
@@ -70,7 +70,7 @@ const handleQuickPickActions = async (value: QuickPickItem) => {
 
 const validateColorInput = (colorInput: string) => {
   if (!validateHEXColorCode(colorInput)) {
-    return translate('folders.wrongHexCode');
+    return translate('colorSelect.wrongHexCode');
   }
   return undefined;
 };
