@@ -14,6 +14,8 @@ Glad you're here and interested in expanding this project 🎉 In order to make 
   - [Icons for color themes](#icons-for-color-themes)
   - [Unique assignment to file and folder names](#icon-assignments)
   - [Create icon packs](#icon-packs)
+  - [Designing Pixel Perfect Icons](#pixel-perfect-icons)
+  - [Cloning existing icons](#icon-cloning)
 - [Add translations](#add-translations)
 - [Update API](#update-api)
 
@@ -32,6 +34,17 @@ A new icon for a file name, file extension or folder name is needed? Please crea
 
 It is always welcome to add new icons to the extension. However, there are a few things you should take into account so that the icon can be included in the extension.
 
+```mermaid
+flowchart LR
+    B{Shape already exists\nwith different colors?}
+    B ---->|No| E
+    B ---->|Yes| C
+    C[<a href="#cloning-workflow">Cloning Workflow</a>]
+    E[<a href="#creating-new-icons-workflow">Creating New Icons Workflow</a>]
+```
+
+### Creating New Icons Workflow
+
 **Checklist**
 
 1. [ ] Create icon as SVG ([how to](#create-icon-as-svg))
@@ -39,6 +52,16 @@ It is always welcome to add new icons to the extension. However, there are a few
 3. [ ] SVG has some space around the icon ([how to](#spacing))
 4. [ ] Unique assignment to file and folder names ([how to](#icon-assignments))
 5. [ ] Provide separate icons for color themes if necessary ([how to](#icons-for-color-themes))
+
+### Cloning Workflow
+
+There are times when we just need to create a variant of an existing icon.
+
+For example, we might want to create an icon using the shape of the `typescript` icon, but we want it to be green and associated with the `library.ts` file name. In that case, we don't need to create a new svg. This can be done by configuration.
+
+**Checklist**
+
+1. [ ] Clone the existing icon adjusting its color ([how to](#icon-cloning))
 
 ## How tos
 
@@ -71,6 +94,12 @@ An important success factor of this icon extension is the fact that all colors f
 
 Now it often happens that many programming languages already have icons with their own colors. To find the matching color from the Material Design color palette based on a known color, there is the [Material Color Converter](https://pkief.github.io/material-color-converter/). With its help any color can be converted into a Material Design color.
 
+You can check if your icon fits the Material Design color palette by running the following command:
+
+```sh
+npm run check-colors <path/to/svg>
+```
+
 Continue reading [here](#design-folder-icons) to find out about colors for the folder icons.
 
 | ✅                                                                | ❌                                                                    |
@@ -81,7 +110,7 @@ Continue reading [here](#design-folder-icons) to find out about colors for the f
 
 When designing folder icons there are also a few points to consider. A folder icon always consists of two icons - the folder in the background and a motive in the foreground:
 
-<img src="./images/how-tos/folder-icon-parts.png" width="300px" />
+<img src="./images/how-tos/folder-icon-parts.svg" width="300px" />
 
 For the motive, only colors from the second row in the [color palette](https://pkief.com/material-color-converter/) are allowed. For the background choose a slightly darker hue (mostly in rows 4-6 in the palette).
 
@@ -91,7 +120,7 @@ This uniform color selection makes the folder icons look more consistent and fit
 
 | ✅                                                                                   | ❌                                                                                 |
 | ------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------- |
-| <img src="./images/how-tos/svg-folder-icon-with-correct-colors.png" width="200px" /> | <img src="./images/how-tos/svg-folder-icon-with-wrong-colors.png" width="200px" /> |
+| <img src="./images/how-tos/svg-folder-icon-with-correct-colors.svg" width="200px" /> | <img src="./images/how-tos/svg-folder-icon-with-wrong-colors.svg" width="200px" /> |
 
 <h3 id="icon-spacing">Icon spacing</h3>
 
@@ -109,10 +138,7 @@ Icons are assigned to file names, folder names or registered languages of VS Cod
 - [folderIcons.ts](src/icons/folderIcons.ts)
 - [languageIcons.ts](src/icons/languageIcons.ts)
 
-> **Note**
-> It is very important that icons are only assigned to the file and folder names that really apply to them. This means that you should be careful which files and folders you assign icons to. There are many people with different projects all over the world and not everyone expects that e.g. a file name will have a special framework based icon even though the framework is not used at all by this one user.
->
-> A solution for this can be [icon packs](#icon-packs).
+Be careful when assigning icons to files and folders, as not everyone expects a file name to have a special icon based on a framework that is not used by them. A solution for this can be the usage of [Language icon definitions](#language-icons) or [icon packs](#icon-packs).
 
 #### File icons
 
@@ -128,6 +154,30 @@ Here's an example of how the SVG icon 'sample.svg' is assigned to file names and
 
 This will apply an icon for the files 'sample.js', 'sample.ts' and 'sample.html' as well as for files that end with 'sample' like 'another-file.sample'.
 
+##### Apply patterns
+
+It is also possible to use patterns for file names and extensions. This is useful when you want to assign an icon to a group of files that have a common pattern. Here's an example:
+
+```ts
+{
+  name: 'graphql',
+  patterns: {
+    graphql: FileNamePattern.Ecmascript,
+  },
+}
+```
+
+In case of this example the generated file names are "graphql.js", "graphql.mjs", "graphql.cjs", "graphql.ts", "graphql.mts" and "graphql.cts". The pattern is defined in the [patterns.ts](src/icons/patterns/patterns.ts) file.
+
+Available patterns are right now:
+
+| Pattern       | File extensions                                                                                            |
+| ------------- | ---------------------------------------------------------------------------------------------------------- |
+| ecmascript    | `js`, `mjs`, `cjs`, `ts`, `mts`, `cts`                                                                     |
+| configuration | `json`, `jsonc`, `json5`, `yaml`, `yml`, `toml`                                                            |
+| nodeEcosystem | Combination of ecmascript and configuration patterns                                                       |
+| cosmiconfig   | `.${fileName}rc`, `.config/${fileName}rc` and `${fileName}.config` with file extensions of `nodeEcosystem` |
+
 #### Folder icons
 
 Here's an example of how a folder icon can be assigned to folder icons:
@@ -140,6 +190,9 @@ Here's an example of how a folder icon can be assigned to folder icons:
 ```
 
 This will apply a folder icon for the folders 'sample' and 'samples'.
+
+> **Note**
+> The tool automatically creates generic "wildcard" variants of these folders, so only assign the base names.
 
 #### Language icons
 
@@ -210,6 +263,141 @@ To create an icon pack, the following steps have to be completed:
 2. Add translations to the package.nls.\*.json files under the section `configuration.activeIconPack` (at least to [package.nls.json](package.nls.json), the English translation file)
 3. Adjust [package.json](package.json) under `configuration.properties.material-icon-theme.activeIconPack`
 4. Use the icon pack inside the [fileIcons.ts](src/icons/fileIcons.ts),[folderIcons.ts](src/icons/folderIcons.ts) or [languageIcons.ts](src/icons/languageIcons.ts) files in the `enabledFor` attribute
+
+<h3 id="pixel-perfect-icons">Designing Pixel-Perfect Icons</h3>
+
+At 100% zoom, VS Code displays icons at 16x16 pixels. This means that ideally, the icons should be designed in a way that they look good at this size.
+
+A known issue is that the icons can appear blurry after resizing them, even to the point where they are no longer easily recognizable, depending on the case.
+
+To avoid blurry icons, it is recommended to design them using a 16x16 grid and trying to align the edges of the icon to it. This will help ensure that the icons look sharp and clear, even at smaller sizes.
+
+<img src="./images/how-tos/blurry-issue.png" width="300px" />
+
+<h4 id="pixel-perfect-tips">Tips for Designing Pixel-Perfect Icons</h4>
+
+The following are some tips to help you design nice and sharp-looking icons. These tips are not rules but rather guidelines to help you achieve the best results possible:
+
+- **Use a grid**: This is the most important tip. Try to use a 16x16 grid to design the icons and snap the edges of the icon to the grid. Blurriness is often caused by misalignment of the edges and vertices, resulting in the icon trying to fit a pixel in between two pixels. As this is physically impossible, the engine will create two pixels with different opacity to simulate the in-between pixel, causing the blurriness. When a path is aligned to the grid, each pixel will be a solid color, and the icon will look sharp.
+
+  The following example illustrates an icon with its paths aligned to a 16x16 grid:
+
+  <img src="./images/how-tos/pixel-perfect-icon.svg" width="300px" />
+
+  On the other hand, this other example illustrates an icon with its paths not aligned to a 16x16 grid:
+
+  <img src="./images/how-tos/missaligned-icon.svg" width="300px" />
+
+  Here is a comparison of both icons rendered at 16px:
+
+  <img src="./images/how-tos/aligned-vs-missaligned.png" />
+
+  As you can see, the misaligned icon (left) has blurry edges with "ghost pixels" that attempt to simulate "half a pixel". Additionally, the suitcase motif in it is slightly harder to recognize. On the other hand, the aligned icon (right) looks sharper and clearer.
+
+  So, even though the difference between the two icons was subtle, the impact on the final result is quite significant.
+
+- **Decimals are not your friends**: Related to the previous tip, when designing icons, it's important to try to avoid using decimal values for the positions of the vertices. This is because, as previously mentioned, pixels are square, and there's no such thing as a fractionated pixel. If you keep the vertices aligned to the grid, it will be easier to avoid decimal coordinates. In short, try to keep the vertices on whole numbers.
+
+- **Sometimes less is more**: Detail is valuable, but attempting to incorporate too much detail in 16 pixels or less can pose a significant challenge. It might even be counterproductive, resulting in an icon that is difficult to recognize. Icons are primarily about communicating a concept. To effectively communicate a concept, it must be easily recognizable.
+
+  Let's consider the following example:
+
+  <img src="./images/how-tos/elephant-too-much-detail.svg" width="100px" />
+
+  The icon is visually appealing, but it has some issues: the trunk, the tail and the negative space separating the ear from the body are too thin. Additionally, the eye is too small, and the shapes, in general, are somewhat complex. While this icon would look great if rendered at 24, 32, or 64 pixels, at 16 pixels, we lack sufficient resolution to effectively convey the concept.
+
+  Now, let's explore a minimalistic approach to communicating the same concept:
+
+  | Concept                                                             | Result                                                                |
+  | ------------------------------------------------------------------- | --------------------------------------------------------------------- |
+  | <img src="./images/how-tos/elephant-with-grid.svg" width="150px" /> | <img src="./images/how-tos/elephant-less-detail.svg" width="150px" /> |
+
+  Indeed, the minimalistic version may lack the level of detail present in the first icon, particularly when viewed at a larger size. However, on the other hand, we are still effectively communicating the concept. It's unmistakably an elephant. Furthermore, all edges and paths are aligned to the grid.
+
+  Now, let's examine both icons when rendered at 16px:
+
+  <img src="./images/how-tos/elephant-result.png" />
+
+- **Curves vs straight lines**: Let's face it, pixels are square, there's nothing we can do about it. And since pixels are square, drawing a curve actually involves drawing a series of... squares. Consequently, when rendering a curve, we're essentially asking the display to render a fraction of a pixel, which is impossible. As a result, curves tend to appear blurry. This is normal. However, it's perfectly fine to use curves, circles, and rounded edges in your icons. Just keep in mind these limitations if you're wondering why your icon doesn't look as sharp as you'd like.
+
+<h3 id="icon-cloning">Cloning existing icons</h3>
+
+The extension allows you to clone existing icons and adjust their colors through configuration. This enables you to create new color variants of an existing icon without having to create new SVG files.
+
+As we mentioned previously, icons are assigned to filenames, file extensions, and folder names in the following files:
+
+- [fileIcons.ts](src/icons/fileIcons.ts)
+- [folderIcons.ts](src/icons/folderIcons.ts)
+
+The following example demonstrates how the shapes of the `rust` file icon can be reused to create a clone of it, utilizing different colors and associated with different file names than the original icon.
+
+```ts
+{
+  name: 'rust-library',
+  fileNames: ['lib.rs'],
+  light: true, // needed if a `lightColor` is provided
+  clone: {
+    base: 'rust',
+    color: 'green-400',
+    lightColor: 'green-700', // optional
+  },
+},
+```
+
+This will generate a new icon assignment for the file name `lib.rs` with the same shape as the already existing `rust` icon but with a green color instead. Additionally, it will create a light theme variant of the icon with a darker green color for better contrast when using a light theme.
+
+That's it. We don't need to create a new SVG file. The extension will automatically adjust the colors of the existing icon.
+
+<img src="./images/how-tos/cloned-rust-icon-example.png" />
+
+The same technique can be applied to folder icons by using the `clone` attribute in the folder icon configuration.
+
+You might have noticed that we are using aliases for the colors. These aliases correspond to the Material Design color palette.
+
+You can find a list of all available color aliases in the [materialPalette.ts](./src/icons/generator/clones/utils/color/materialPalette.ts) file.
+
+#### Preventing recoloring in cloned icons
+
+When cloning icons, recoloring works by replacing each color attribute in each path/shape of the SVG with a new color, which is determined by the selected color in the configuration.
+
+However, there are cases where you might want to prevent certain parts of the icon from being recolored.
+
+Let's see an example:
+
+![gitlab icon](./images/how-tos/cloned-icon-no-recolor.png)
+
+In this example, we have the `folder-gitlab` folder icon. If we were to clone it, we might want to prevent recoloring from happening over the gitlab logo and only allow recoloring of the folder shape itself.
+
+To do this, we need to set the attribute `data-mit-no-recolor="true"` to the paths, shapes, or groups we do not want to be recolored.
+
+```svg
+<svg ...>
+  <path d="M13...Z" style="fill: #757575"/>
+  <g data-mit-no-recolor="true"> <!-- prevent recolor of the gitlab logo -->
+    <path d="M31...Z" style="fill: #e53935"/>
+    <path d="M31...Z" style="fill: #ef6c00"/>
+    <path d="M19...Z" style="fill: #f9a825"/>
+    <path d="M17...Z" style="fill: #ef6c00"/>
+  </g>
+</svg>
+```
+
+Now if we create a clone of this icon, the paths, shapes, or groups marked with `data-mit-no-recolor="true"` will retain their original colors. Recoloring will only affect paths not marked with this attribute.
+
+```typescript
+{ name: 'folder-gitlab', folderNames: ['gitlab'] },
+{
+  name: 'folder-green-gitlab',
+  clone: {
+    base: 'folder-gitlab',
+    color: 'blue-300'
+  },
+}
+```
+
+Will result in:
+
+![result of cloning gitlab icon with selective recoloring](./images/how-tos/cloned-icon-no-recolor-result.png)
 
 ## Add translations
 

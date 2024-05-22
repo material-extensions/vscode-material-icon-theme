@@ -1,0 +1,34 @@
+{
+  "name": "vscode-material-icon-theme",
+
+  // Use Microsoft's Ubuntu Base image for the dev container
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    // Use NodeJS features in the dev container
+    "ghcr.io/devcontainers/features/node:1": {}
+  },
+
+  "privileged": true,
+
+  "onCreateCommand": {
+    // Install NPM dependencies in the dev container
+    "install-node-packages": "npm install"
+  },
+
+  "customizations": {
+    "vscode": {
+      "settings": {
+        // Define suggested settings for the dev container
+        "resmon.show.battery": false,
+        "resmon.show.cpufreq": false
+      },
+      "extensions": [
+        // Define suggested extensions to preinstall in the dev container
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "jock.svg",
+        "EditorConfig.EditorConfig"
+      ]
+    }
+  }
+}

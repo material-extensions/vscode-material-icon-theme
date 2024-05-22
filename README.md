@@ -98,7 +98,7 @@ For example a custom SVG file called `sample.svg` can be placed in an `icons` fo
      ┗ sample.svg
 ```
 
-In the settings.json the icon can be associated to a file name or file extension like this:
+In the settings.json (User Settings only!) the icon can be associated to a file name or file extension like this:
 
 ```json
 "material-icon-theme.files.associations": {
@@ -107,6 +107,35 @@ In the settings.json the icon can be associated to a file name or file extension
 ```
 
 _Note: The custom file name must be configured in the settings without the file ending `.svg` as shown in the example above._
+
+#### Custom clones
+
+It's also possible to clone existing file icons and change their colors to create new icons that can be associated with file names or file extensions. The following example shows how to clone the `rust` icon:
+
+```json
+"material-icon-theme.files.customClones": [
+  {
+    "name": "rust-mod",
+    "base": "rust",
+    "color": "blue-400",
+    "fileNames": ["mod.rs"]
+  },
+  {
+    "name": "rust-lib",
+    "base": "rust",
+    "color": "light-green-300",
+    "lightColor": "light-green-600",
+    "fileNames": ["lib.rs"]
+  }
+]
+```
+
+This will create two new icons called `rust-mod` and `rust-lib` that are associated with the file names `mod.rs` and `lib.rs` respectively. The `base` property defines the icon that should be cloned (in this case the `rust` icon). The `color` property defines the color of the new icon. The `lightColor` property is optional and defines the color of the icon when Visual Studio Code is running with a light color theme. The `fileNames` property defines the file names that should be associated with the new icon. There's also a `fileExtensions` property, which can be used to associate the new icon with file extensions (`"fileExtensions": ["ext", "ext2"]`).
+
+<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/how-tos/cloned-file-icons-example.png" alt="cloned file icons">
+
+- Although you can use any `#RRGGBB` color for the `color` and `lightColor` properties, if you want to stick with colors from the material palette, you can check the full list of allowed aliases [here](https://github.com/PKief/vscode-material-icon-theme/blob/main/src/icons/generator/clones/utils/color/materialPalette.ts#L7).
+- You can check the full list of available icons to be used as the `base` [here](https://github.com/PKief/vscode-material-icon-theme/blob/main/src/icons/fileIcons.ts).
 
 ### Folder associations
 
@@ -133,13 +162,42 @@ In our example we place them into an `icons` folder inside of the `.vscode/exten
      ┗ folder-sample-open.svg
 ```
 
-In the settings.json the folder icons can be associated to a folder name (e.g. "src") like this:
+In the settings.json (User Settings only!) the folder icons can be associated to a folder name (e.g. "src") like this:
 
 ```json
 "material-icon-theme.folders.associations": {
     "src": "../../../../icons/folder-sample"
 }
 ```
+
+#### Custom clones
+
+It's also possible to clone existing folder icons and change their colors to create new icons that can be associated with folder names. The following example shows how to clone the `admin` folder icon:
+
+```json
+"material-icon-theme.folders.customClones": [
+  {
+    "name": "users-admin",
+    "base": "admin",
+    "color": "light-green-500",
+    "lightColor": "light-green-700",
+    "folderNames": ["users"]
+  },
+  {
+    "name": "roles-admin",
+    "base": "admin",
+    "color": "purple-400",
+    "folderNames": ["roles"]
+  }
+]
+```
+
+This will create two new icons called `users-admin` and `roles-admin` that are associated with the folder names `users` and `roles` respectively. The `base` property defines the icon that should be cloned (in this case the `admin` folder icon). The `color` property defines the color of the new icon. The `lightColor` property is optional and defines the color of the icon when Visual Studio Code is running with a light color theme. The `folderNames` property defines the folder names that should be associated with the new icon.
+
+<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/how-tos/cloned-folder-icons-example.png" alt="cloned folder icons">
+
+- Although you can use any `#RRGGBB` color for the `color` and `lightColor` properties, if you want to stick with colors from the material palette, you can check the full list of allowed aliases [here](https://github.com/PKief/vscode-material-icon-theme/tree/main/icons/generator/clones/utils/color/materialPalette.ts#L7).
+- You can check the full list of available icon to be used as the `base` [here](https://github.com/PKief/vscode-material-icon-theme/blob/main/src/icons/folderIcons.ts).
 
 ### Language associations
 
