@@ -1,4 +1,5 @@
 import { RequireAtLeastOne } from '../../../helpers/types';
+import { Patterns } from '../patterns';
 import { CloneOptions } from '../cloneOptions';
 import { IconPack } from '../index';
 
@@ -19,6 +20,11 @@ interface BasicFileIcon {
    * E.g. ['sample.js']
    */
   fileNames?: string[];
+
+  /**
+   * Define patterns for file names. Patterns are used to generate common file names and file extensions based on a key.
+   */
+  patterns?: Patterns;
 
   /**
    * Define if there is a light icon available.
