@@ -382,6 +382,7 @@ export const fileIcons: FileIcons = {
         'pylintrc',
         '.pylintrc',
         'pyproject.toml',
+        'py.typed',
       ],
     },
     { name: 'url', fileExtensions: ['url'] },
@@ -1243,8 +1244,6 @@ export const fileIcons: FileIcons = {
       fileNames: [
         '.eslintrc-md.js',
         '.eslintrc-jsdoc.js',
-        '.eslintignore',
-        '.eslintcache',
         '.eslintrc.base.json',
       ],
       patterns: {
@@ -1336,7 +1335,7 @@ export const fileIcons: FileIcons = {
     {
       name: 'stylelint',
       light: true,
-      fileNames: ['.stylelintignore', '.stylelintcache'],
+      fileNames: [],
       patterns: {
         stylelint: FileNamePattern.Cosmiconfig,
       },
@@ -1344,7 +1343,7 @@ export const fileIcons: FileIcons = {
     { name: 'code-climate', fileNames: ['.codeclimate.yml'], light: true },
     {
       name: 'prettier',
-      fileNames: ['.prettierignore'],
+      fileNames: [],
       patterns: {
         prettier: FileNamePattern.Cosmiconfig,
       },
