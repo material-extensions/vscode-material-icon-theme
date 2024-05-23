@@ -2426,5 +2426,13 @@ export const fileIcons: FileIcons = {
       name: 'extension',
       fileNames: ['.vscode/extensions.json'],
     },
+    {
+      name: 'tasks',
+      fileNames: ['.vscode/tasks.json'],
+    },
+    {
+      name: 'launch',
+      fileNames: ['.vscode/launch.json'],
+    },
   ]),
 };
