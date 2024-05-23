@@ -2421,5 +2421,10 @@ export const fileIcons: FileIcons = {
       name: 'container',
       fileNames: ['.devcontainer/devcontainer.json'],
     },
+    {
+      name: 'kcl',
+      fileNames: ['kcl.mod', 'kcl.yaml', 'kcl.yml'],
+      fileExtensions: ['k'],
+    },
   ]),
 };
