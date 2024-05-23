@@ -2423,7 +2423,6 @@ export const fileIcons: FileIcons = {
     {
       name: 'ansible',
       fileNames: ['ansible.cfg', 'galaxy.yaml', 'galaxy.yml'],
-      light: true,
     },
   ]),
 };
