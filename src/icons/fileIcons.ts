@@ -382,6 +382,7 @@ export const fileIcons: FileIcons = {
         'pylintrc',
         '.pylintrc',
         'pyproject.toml',
+        'py.typed',
       ],
     },
     { name: 'url', fileExtensions: ['url'] },
