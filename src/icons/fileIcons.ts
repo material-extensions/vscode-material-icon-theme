@@ -2421,5 +2421,10 @@ export const fileIcons: FileIcons = {
       name: 'container',
       fileNames: ['.devcontainer/devcontainer.json'],
     },
+    {
+      name: 'ansible',
+      fileNames: ['ansible.cfg', 'galaxy.yml', 'galaxy.yml'],
+      light: true,
+    },
   ]),
 };
