@@ -91,8 +91,6 @@ const mapPatterns = (patterns: Patterns): string[] => {
           `${fileName}.config.ts`,
           `${fileName}.config.mts`,
           `${fileName}.config.cts`,
-          `.${fileName}ignore`,
-          `.${fileName}cache`,
         ];
 
       default:

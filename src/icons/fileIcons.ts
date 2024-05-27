@@ -1245,6 +1245,8 @@ export const fileIcons: FileIcons = {
         '.eslintrc-md.js',
         '.eslintrc-jsdoc.js',
         '.eslintrc.base.json',
+        '.eslintignore',
+        '.eslintcache',
       ],
       patterns: {
         eslint: FileNamePattern.Cosmiconfig,
@@ -1335,7 +1337,7 @@ export const fileIcons: FileIcons = {
     {
       name: 'stylelint',
       light: true,
-      fileNames: [],
+      fileNames: ['.stylelintignore', '.stylelintcache'],
       patterns: {
         stylelint: FileNamePattern.Cosmiconfig,
       },
@@ -1343,7 +1345,7 @@ export const fileIcons: FileIcons = {
     { name: 'code-climate', fileNames: ['.codeclimate.yml'], light: true },
     {
       name: 'prettier',
-      fileNames: [],
+      fileNames: ['.prettierignore'],
       patterns: {
         prettier: FileNamePattern.Cosmiconfig,
       },
