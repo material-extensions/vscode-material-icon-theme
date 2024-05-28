@@ -1,10 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect x="2" y="14" width="10" height="2" style="fill: #00979c"/>
-  <rect x="24" y="10" width="2" height="10" style="fill: #00979c"/>
-  <rect x="20" y="14" width="10" height="2" style="fill: #00979c"/>
-  <path d="M2,5H6A10,10,0,0,1,16,15v0A10,10,0,0,0,26,25h4" style="fill: none;stroke: #00979c;stroke-width: 2px"/>
-  <g>
-    <path d="M11.64417,22A8.95276,8.95276,0,0,1,6,24H2v2H6a10.98213,10.98213,0,0,0,8.47858-4Z" style="fill: #00979c"/>
-    <path d="M26,4a10.98213,10.98213,0,0,0-8.47858,4h2.83417A8.95279,8.95279,0,0,1,26,6h4V4Z" style="fill: #00979c"/>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="#00979c" d="M2 14h10v2H2zm22-4h2v10h-2z"/><path fill="#00979c" d="M20 14h10v2H20z"/><path fill="none" stroke="#00979c" stroke-width="2" d="M2 5h4a10 10 0 0 1 10 10 10 10 0 0 0 10 10h4"/><path fill="#00979c" d="M11.644 22A8.953 8.953 0 0 1 6 24H2v2h4a10.982 10.982 0 0 0 8.479-4ZM26 4a10.982 10.982 0 0 0-8.479 4h2.835A8.953 8.953 0 0 1 26 6h4V4Z"/></svg>
