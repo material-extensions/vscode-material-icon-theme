@@ -761,6 +761,10 @@ export const fileIcons: FileIcons = {
       name: 'nuxt',
       fileNames: ['nuxt.config.js', 'nuxt.config.ts', '.nuxtignore'],
     },
+    {
+      name: 'harmonix',
+      fileNames: ['harmonix.config.js', 'harmonix.config.ts'],
+    },
     { name: 'ocaml', fileExtensions: ['ml', 'mli', 'cmx'] },
     { name: 'odin', fileExtensions: ['odin'] },
     {
