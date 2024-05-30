@@ -761,6 +761,10 @@ export const fileIcons: FileIcons = {
       name: 'nuxt',
       fileNames: ['nuxt.config.js', 'nuxt.config.ts', '.nuxtignore'],
     },
+    {
+      name: 'harmonix',
+      fileNames: ['harmonix.config.js', 'harmonix.config.ts'],
+    },
     { name: 'ocaml', fileExtensions: ['ml', 'mli', 'cmx'] },
     { name: 'odin', fileExtensions: ['odin'] },
     {
@@ -1245,6 +1249,8 @@ export const fileIcons: FileIcons = {
         '.eslintrc-md.js',
         '.eslintrc-jsdoc.js',
         '.eslintrc.base.json',
+        '.eslintignore',
+        '.eslintcache',
       ],
       patterns: {
         eslint: FileNamePattern.Cosmiconfig,
@@ -1335,7 +1341,7 @@ export const fileIcons: FileIcons = {
     {
       name: 'stylelint',
       light: true,
-      fileNames: [],
+      fileNames: ['.stylelintignore', '.stylelintcache'],
       patterns: {
         stylelint: FileNamePattern.Cosmiconfig,
       },
@@ -1343,7 +1349,7 @@ export const fileIcons: FileIcons = {
     { name: 'code-climate', fileNames: ['.codeclimate.yml'], light: true },
     {
       name: 'prettier',
-      fileNames: [],
+      fileNames: ['.prettierignore'],
       patterns: {
         prettier: FileNamePattern.Cosmiconfig,
       },
@@ -2423,6 +2429,10 @@ export const fileIcons: FileIcons = {
     {
       name: 'verified',
       fileExtensions: ['sigstore.json'],
+    },
+    {
+      name: 'bruno',
+      fileExtensions: ['bru'],
     },
   ]),
 };
