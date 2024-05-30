@@ -1,7 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <path d="M13.84376,7.53645l-1.28749-1.0729A2,2,0,0,0,11.27591,6H4A2,2,0,0,0,2,8V24a2,2,0,0,0,2,2H28a2,2,0,0,0,2-2V10a2,2,0,0,0-2-2H15.12412A2,2,0,0,1,13.84376,7.53645Z" style="fill: #fbc02d"/>
-  <g>
-    <path d="M14,15v4a1,1,0,0,0,1,1H31a1,1,0,0,0,1-1V15a1,1,0,0,0-1-1H15A1,1,0,0,0,14,15Zm6,3H16V16h4Zm4,0H22V16h2Z" style="fill: #fffde7;fill-rule: evenodd"/>
-    <path d="M14,23v4a1,1,0,0,0,1,1H31a1,1,0,0,0,1-1V23a1,1,0,0,0-1-1H15A1,1,0,0,0,14,23Zm6,3H16V24h4Zm4,0H22V24h2Z" style="fill: #fffde7;fill-rule: evenodd"/>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="#fbc02d" d="m13.844 7.536-1.288-1.072A2 2 0 0 0 11.276 6H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h24a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2H15.124a2 2 0 0 1-1.28-.464Z"/><path fill="#fffde7" fill-rule="evenodd" d="M14 15v4a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1H15a1 1 0 0 0-1 1Zm6 3h-4v-2h4Zm4 0h-2v-2h2Zm-10 5v4a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1H15a1 1 0 0 0-1 1Zm6 3h-4v-2h4Zm4 0h-2v-2h2Z"/></svg>
