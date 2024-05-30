@@ -382,6 +382,7 @@ export const fileIcons: FileIcons = {
         'pylintrc',
         '.pylintrc',
         'pyproject.toml',
+        'py.typed',
       ],
     },
     { name: 'url', fileExtensions: ['url'] },
@@ -759,6 +760,10 @@ export const fileIcons: FileIcons = {
     {
       name: 'nuxt',
       fileNames: ['nuxt.config.js', 'nuxt.config.ts', '.nuxtignore'],
+    },
+    {
+      name: 'harmonix',
+      fileNames: ['harmonix.config.js', 'harmonix.config.ts'],
     },
     { name: 'ocaml', fileExtensions: ['ml', 'mli', 'cmx'] },
     { name: 'odin', fileExtensions: ['odin'] },
@@ -1243,9 +1248,9 @@ export const fileIcons: FileIcons = {
       fileNames: [
         '.eslintrc-md.js',
         '.eslintrc-jsdoc.js',
+        '.eslintrc.base.json',
         '.eslintignore',
         '.eslintcache',
-        '.eslintrc.base.json',
       ],
       patterns: {
         eslint: FileNamePattern.Cosmiconfig,
@@ -2420,6 +2425,10 @@ export const fileIcons: FileIcons = {
     {
       name: 'container',
       fileNames: ['.devcontainer/devcontainer.json'],
+    },
+    {
+      name: 'bruno',
+      fileExtensions: ['bru'],
     },
   ]),
 };
