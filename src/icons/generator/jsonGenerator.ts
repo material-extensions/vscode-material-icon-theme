@@ -5,14 +5,18 @@ import {
   unlinkSync,
   writeFileSync,
 } from 'fs';
-import merge from 'lodash.merge';
 import { basename, join } from 'path';
+import merge from 'lodash.merge';
 import { getCustomIconPaths } from '../../helpers/customIcons';
 import { getFileConfigHash } from '../../helpers/fileConfig';
 import { IconConfiguration, IconJsonOptions } from '../../models/index';
 import { fileIcons } from '../fileIcons';
 import { folderIcons } from '../folderIcons';
 import { languageIcons } from '../languageIcons';
+import {
+  customClonesIcons,
+  generateConfiguredClones,
+} from './clones/clonesGenerator';
 import { iconJsonName } from './constants';
 import {
   generateFileIcons,
@@ -26,10 +30,6 @@ import {
   validateOpacityValue,
   validateSaturationValue,
 } from './index';
-import {
-  customClonesIcons,
-  generateConfiguredClones,
-} from './clones/clonesGenerator';
 
 /**
  * Generate the complete icon configuration object that can be written as JSON file.

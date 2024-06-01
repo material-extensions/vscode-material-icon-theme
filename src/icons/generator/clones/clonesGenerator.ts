@@ -1,3 +1,6 @@
+import { writeFileSync } from 'fs';
+import merge from 'lodash.merge';
+import { getFileConfigHash } from '../../../helpers/fileConfig';
 import {
   CustomClone,
   FileIconClone,
@@ -7,17 +10,14 @@ import {
   IconConfiguration,
   IconJsonOptions,
 } from '../../../models';
+import { cloneIconExtension, clonesFolder } from '../constants';
 import {
   Variant,
   clearCloneFolder,
   getCloneData,
   isFolder,
 } from './utils/cloneData';
-import merge from 'lodash.merge';
-import { getFileConfigHash } from '../../../helpers/fileConfig';
 import { cloneIcon, createCloneConfig } from './utils/cloning';
-import { writeFileSync } from 'fs';
-import { cloneIconExtension, clonesFolder } from '../constants';
 
 /**
  * Creates custom icons by cloning already existing icons and changing
@@ -78,7 +78,7 @@ export function generateConfiguredClones(
           fileNames: icon.fileNames,
           name: icon.name,
           ...icon.clone!,
-        } as FileIconClone)
+        }) as FileIconClone
     );
   }
 
@@ -156,10 +156,10 @@ function createIconClone(
             clone.variant === Variant.Base
               ? clonesConfig.folderNames!
               : clone.variant === Variant.Open
-              ? clonesConfig.folderNamesExpanded!
-              : clone.variant === Variant.Light
-              ? clonesConfig.light!.folderNames!
-              : clonesConfig.light!.folderNamesExpanded!;
+                ? clonesConfig.folderNamesExpanded!
+                : clone.variant === Variant.Light
+                  ? clonesConfig.light!.folderNames!
+                  : clonesConfig.light!.folderNamesExpanded!;
           folderNamesCfg[folderName] = clone.name;
         });
       } else {

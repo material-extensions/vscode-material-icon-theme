@@ -3,7 +3,7 @@ module.exports = {
   precision: 2,
   plugins: [
     {
-      name: 'preset-default'
+      name: 'preset-default',
     },
     'convertStyleToAttrs',
     'removeDimensions',
@@ -12,5 +12,5 @@ module.exports = {
     'removeStyleElement',
     'reusePaths',
     'sortAttrs',
-  ]
-}
+  ],
+};
