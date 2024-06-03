@@ -193,23 +193,26 @@ describe('file icons', () => {
       iconConfig,
       options
     );
-    /* eslint-disable camelcase */
     expectedConfig.iconDefinitions = {
       file: {
         iconPath: './../icons/file.svg',
       },
+      // biome-ignore lint/style/useNamingConvention:
       file_light: {
         iconPath: './../icons/file_light.svg',
       },
+      // biome-ignore lint/style/useNamingConvention:
       file_highContrast: {
         iconPath: './../icons/file_highContrast.svg',
       },
       javascript: {
         iconPath: './../icons/javascript.svg',
       },
+      // biome-ignore lint/style/useNamingConvention:
       javascript_light: {
         iconPath: './../icons/javascript_light.svg',
       },
+      // biome-ignore lint/style/useNamingConvention:
       javascript_highContrast: {
         iconPath: './../icons/javascript_highContrast.svg',
       },
@@ -244,7 +247,6 @@ describe('file icons', () => {
       'angular-cli.json': 'angular',
       'filename.js': 'javascript',
     };
-    /* eslint-enable camelcase */
     deepStrictEqual(iconDefinitions, expectedConfig);
   });
 

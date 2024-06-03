@@ -1,24 +1,16 @@
+import assert, { deepStrictEqual, equal, throws } from 'assert';
+import fs from 'fs';
+import merge from 'lodash.merge';
+import { stub } from 'sinon';
+import { INode, parseSync } from 'svgson';
+import { getFileConfigHash } from '../../../helpers/fileConfig';
+import { customClonesIcons } from '../../../icons/generator/clones/clonesGenerator';
 import {
-  lightColorFileEnding,
-  openedFolder,
-  iconFolderPath,
-  clonesFolder,
-} from '../../../icons/generator/constants';
-import {
-  getCloneData,
-  resolvePath,
   Type,
   Variant,
+  getCloneData,
+  resolvePath,
 } from '../../../icons/generator/clones/utils/cloneData';
-import { IconConfiguration } from '../../../models';
-import {
-  FileIconClone,
-  FolderIconClone,
-  IconJsonOptions,
-} from '../../../models/icons/iconJsonOptions';
-import assert, { deepStrictEqual, throws, equal } from 'assert';
-import { stub } from 'sinon';
-import fs from 'fs';
 import {
   cloneIcon,
   getStyle,
@@ -32,11 +24,19 @@ import {
   closerMaterialColorTo,
   materialPalette as palette,
 } from '../../../icons/generator/clones/utils/color/materialPalette';
+import {
+  clonesFolder,
+  iconFolderPath,
+  lightColorFileEnding,
+  openedFolder,
+} from '../../../icons/generator/constants';
+import { IconConfiguration } from '../../../models';
+import {
+  FileIconClone,
+  FolderIconClone,
+  IconJsonOptions,
+} from '../../../models/icons/iconJsonOptions';
 import * as icon from './data/icons';
-import { INode, parseSync } from 'svgson';
-import { customClonesIcons } from '../../../icons/generator/clones/clonesGenerator';
-import { getFileConfigHash } from '../../../helpers/fileConfig';
-import merge from 'lodash.merge';
 
 describe('cloning: color manipulation', () => {
   describe('#orderDarkToLight(..)', () => {
@@ -97,7 +97,7 @@ describe('cloning: icon cloning', () => {
           base2: {
             iconPath: 'icons/icon2.svg',
           },
-          // eslint-disable-next-line camelcase
+          // biome-ignore lint/style/useNamingConvention:
           base2_light: {
             iconPath: 'icons/icon2_light.svg',
           },

@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 export interface Contributor {
   login: string;
   id: number;
