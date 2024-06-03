@@ -4,27 +4,26 @@
   "description": "Material Design Icons for Visual Studio Code",
   "version": "5.3.0",
   "scripts": {
-    "build": "npm run compile:dev && npm run generateJson",
-    "check": "ts-node ./src/scripts/icons/checks",
+    "build": "npm run esbuild && npm run generateJson",
+    "changelog": "changelog-machine --config changelog.config.json",
     "check-colors": "svg-color-linter --colors material-colors.yml",
-    "compile": "webpack --config ./build/webpack.config.js --mode production",
-    "compile:dev": "webpack --config ./build/webpack.config.js --mode none",
-    "compile:watch": "webpack --config ./build/webpack.config.js --mode none --watch",
-    "compile-web": "webpack --config ./build/web-extension.webpack.config.js",
-    "watch-web": "webpack --watch --config ./build/web-extension.webpack.config.js",
-    "package-web": "webpack --mode production --devtool hidden-source-map --config ./build/web-extension.webpack.config.js",
+    "check": "ts-node ./src/scripts/icons/checks",
     "contributors": "ts-node ./src/scripts/contributors/index.ts",
+    "esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node",
+    "esbuild-watch": "npm run esbuild-base -- --sourcemap --watch",
+    "esbuild-web": "esbuild ./src/web/extension.ts --bundle --outfile=dist/web/extension.js --external:vscode --platform=browser",
+    "esbuild": "npm run esbuild-base -- --sourcemap",
     "generateJson": "ts-node ./src/scripts/icons/generateJson.ts",
     "lint": "npx @biomejs/biome check --apply ./src",
     "postcompile": "npm run generateJson && npm run check",
     "pretest": "npm run build && tsc -p ./",
+    "preversion": "npm run contributors && git add images/contributors.png && npm run preview && git add images/fileIcons.png && git add images/folderIcons.png && npm run svgo && git add icons/*.svg",
     "preview": "ts-node ./src/scripts/preview",
     "svgo": "svgo -i icons -o icons -q",
+    "test-compile": "tsc -p ./",
     "test": "node ./out/test/runTest.js",
-    "changelog": "changelog-machine --config changelog.config.json",
-    "preversion": "npm run contributors && git add images/contributors.png && npm run preview && git add images/fileIcons.png && git add images/folderIcons.png && npm run svgo && git add icons/*.svg",
     "version": "npm run changelog && git add CHANGELOG.md",
-    "vscode:prepublish": "npm run lint && npm run compile && npm run package-web"
+    "vscode:prepublish": "npm run lint && npm run esbuild-base -- --minify && npm run postcompile"
   },
   "publisher": "PKief",
   "author": {
@@ -52,20 +51,36 @@
     "color": "#1e1e1e",
     "theme": "dark"
   },
-  "categories": ["Themes"],
-  "keywords": ["icons", "theme", "material", "icon-theme", "customization"],
-  "extensionKind": ["ui", "workspace"],
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "icons",
+    "theme",
+    "material",
+    "icon-theme",
+    "customization"
+  ],
+  "extensionKind": [
+    "ui",
+    "workspace"
+  ],
   "capabilities": {
     "untrustedWorkspaces": {
       "supported": true
     },
     "virtualWorkspaces": true
   },
-  "activationEvents": ["onStartupFinished"],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
   "main": "./dist/extension",
   "browser": "./dist/web/extension.js",
   "sideEffects": false,
-  "files": ["icons", "dist/material-icons.json"],
+  "files": [
+    "icons",
+    "dist/material-icons.json"
+  ],
   "contributes": {
     "iconThemes": [
       {
@@ -257,7 +272,11 @@
             "%configuration.folders.theme.classic%",
             "%configuration.folders.theme.none%"
           ],
-          "enum": ["specific", "classic", "none"]
+          "enum": [
+            "specific",
+            "classic",
+            "none"
+          ]
         },
         "material-icon-theme.folders.color": {
           "type": "string",
@@ -311,6 +330,7 @@
     "@vscode/test-electron": "^2.3.9",
     "axios": "^1.4.0",
     "changelog-machine": "^1.0.2",
+    "esbuild": "^0.21.4",
     "glob": "^8.0.3",
     "mocha": "^10.0.0",
     "puppeteer": "^14.1.1",
@@ -320,8 +340,6 @@
     "svgo": "^2.8.0",
     "ts-loader": "^9.3.0",
     "ts-node": "^10.8.0",
-    "typescript": "^4.7.2",
-    "webpack": "^5.71.1",
-    "webpack-cli": "^4.9.2"
+    "typescript": "^4.7.2"
   }
 }
