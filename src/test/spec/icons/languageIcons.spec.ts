@@ -1,14 +1,15 @@
 import { deepStrictEqual } from 'assert';
 import merge from 'lodash.merge';
+import { beforeEach, describe, it } from 'mocha';
 import {
   getDefaultIconOptions,
   loadLanguageIconDefinitions,
-} from '../../../icons/index';
+} from '../../../icons';
 import {
   IconConfiguration,
   IconPack,
   LanguageIcon,
-} from '../../../models/index';
+} from '../../../models';
 
 describe('language icons', () => {
   let expectedConfig: IconConfiguration;

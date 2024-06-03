@@ -1,6 +1,7 @@
 import assert, { deepStrictEqual, equal, throws } from 'assert';
 import fs from 'node:fs';
 import merge from 'lodash.merge';
+import { before, describe, it } from 'mocha';
 import { stub } from 'sinon';
 import { INode, parseSync } from 'svgson';
 import { getFileConfigHash } from '../../../helpers/fileConfig';

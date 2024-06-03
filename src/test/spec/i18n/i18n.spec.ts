@@ -1,4 +1,5 @@
 import { equal } from 'assert';
+import { describe, it } from 'mocha';
 import { getObjectPropertyValue } from '../../../helpers/objects';
 import { getTranslationValue, initTranslations, replace } from '../../../i18n';
 import { Translation } from '../../../models';

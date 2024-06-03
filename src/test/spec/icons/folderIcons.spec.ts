@@ -1,5 +1,6 @@
 import { deepStrictEqual } from 'assert';
 import merge from 'lodash.merge';
+import { before, beforeEach, it, describe } from 'mocha';
 import {
   getDefaultIconOptions,
   loadFolderIconDefinitions,

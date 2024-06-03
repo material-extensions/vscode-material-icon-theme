@@ -1,4 +1,5 @@
 import { deepStrictEqual } from 'assert';
+import { describe, it } from 'mocha';
 import { parseByPattern } from '../../../icons/patterns';
 import {
   FileIcon,
