@@ -1,4 +1,4 @@
-import { readFileSync } from 'fs';
+import { readFileSync } from 'node:fs';
 import { INode, parseSync, stringify } from 'svgson';
 import { IconConfiguration } from '../../../../models';
 import { getColorList, replacementMap } from './color/colors';

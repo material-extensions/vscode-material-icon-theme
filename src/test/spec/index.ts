@@ -1,4 +1,4 @@
-import path from 'path';
+import path from 'node:path';
 import glob from 'glob';
 import Mocha from 'mocha';
 

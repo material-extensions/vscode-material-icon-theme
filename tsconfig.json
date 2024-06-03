@@ -20,5 +20,6 @@
     "src/**/*.ts",
     "./node_modules/vscode/vscode.d.ts",
     "./node_modules/vscode/lib/*"
-  ]
+  ],
+  "types": ["bun-types"]
 }

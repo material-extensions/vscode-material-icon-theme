@@ -1,5 +1,5 @@
-import { readdir } from 'fs';
-import { join, parse } from 'path';
+import { readdir } from 'node:fs';
+import { join, parse } from 'node:path';
 import { CloneOptions } from '../../../models/icons/cloneOptions';
 import {
   DefaultIcon,

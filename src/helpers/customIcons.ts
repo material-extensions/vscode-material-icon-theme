@@ -1,4 +1,4 @@
-import { dirname, join } from 'path';
+import { dirname, join } from 'node:path';
 import { IconJsonOptions } from '../models';
 
 export const getCustomIconPaths = (options: IconJsonOptions) => {

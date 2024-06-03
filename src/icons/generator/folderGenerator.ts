@@ -1,5 +1,5 @@
-import { writeFileSync } from 'fs';
-import { basename, join } from 'path';
+import { writeFileSync } from 'node:fs';
+import { basename, join } from 'node:path';
 import merge from 'lodash.merge';
 import { getFileConfigHash } from '../../helpers/fileConfig';
 import {

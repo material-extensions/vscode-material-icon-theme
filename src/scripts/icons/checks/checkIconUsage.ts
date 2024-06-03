@@ -1,5 +1,5 @@
-import { readdir } from 'fs';
-import { join, parse } from 'path';
+import { readdir } from 'node:fs';
+import { join, parse } from 'node:path';
 import { DefaultIcon, FolderIcon, FolderTheme } from '../../../models/index';
 import { green, red } from '../../helpers/painter';
 import {

@@ -1,4 +1,4 @@
-import { writeFileSync } from 'fs';
+import { writeFileSync } from 'node:fs';
 import merge from 'lodash.merge';
 import { getFileConfigHash } from '../../../helpers/fileConfig';
 import {

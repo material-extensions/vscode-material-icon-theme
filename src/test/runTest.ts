@@ -1,4 +1,4 @@
-import { resolve } from 'path';
+import { resolve } from 'node:path';
 import { runTests } from '@vscode/test-electron';
 
 const main = async () => {

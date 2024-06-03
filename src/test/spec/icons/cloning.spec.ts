@@ -1,5 +1,5 @@
 import assert, { deepStrictEqual, equal, throws } from 'assert';
-import fs from 'fs';
+import fs from 'node:fs';
 import merge from 'lodash.merge';
 import { stub } from 'sinon';
 import { INode, parseSync } from 'svgson';

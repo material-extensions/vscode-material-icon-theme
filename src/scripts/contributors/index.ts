@@ -1,5 +1,5 @@
-import { writeFileSync } from 'fs';
-import { join } from 'path';
+import { writeFileSync } from 'node:fs';
+import { join } from 'node:path';
 import axios, { AxiosRequestConfig } from 'axios';
 import { Contributor } from '../../models/scripts/contributors/contributor';
 import { green, red, yellow } from '../helpers/painter';
