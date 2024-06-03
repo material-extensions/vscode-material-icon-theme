@@ -340,7 +340,6 @@
     "svg-color-linter": "^1.3.0",
     "svgo": "^2.8.0",
     "ts-loader": "^9.3.0",
-    "bun": "^10.8.0",
     "typescript": "^4.7.2"
   }
 }
