@@ -10,4 +10,5 @@ export enum IconPack {
   Qwik = 'qwik',
   Vue = 'vue',
   Vuex = 'vue_vuex',
+  Pinia = 'vue_pinia',
 }
