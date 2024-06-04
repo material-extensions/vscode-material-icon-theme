@@ -1,4 +1,4 @@
-import { QuickPickItem, window as codeWindow } from 'vscode';
+import { type QuickPickItem, window as codeWindow } from 'vscode';
 import {
   capitalizeFirstLetter,
   getMaterialIconsJSON,
@@ -29,9 +29,9 @@ const showQuickPickItems = (activeTheme: string) => {
         theme.name === 'none'
           ? translate('folders.disabled')
           : translate(
-              'folders.theme.description',
-              capitalizeFirstLetter(theme.name)
-            ),
+            'folders.theme.description',
+            capitalizeFirstLetter(theme.name)
+          ),
       label: theme.name === activeTheme ? '\u2714' : '\u25FB',
     })
   );

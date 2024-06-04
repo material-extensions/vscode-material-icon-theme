@@ -1,15 +1,7 @@
-import { deepStrictEqual } from 'assert';
-import merge from 'lodash.merge';
-import { beforeEach, describe, it } from 'mocha';
-import {
-  getDefaultIconOptions,
-  loadLanguageIconDefinitions,
-} from '../../../icons';
-import {
-  IconConfiguration,
-  IconPack,
-  LanguageIcon,
-} from '../../../models';
+import { beforeEach, describe, expect, it } from "bun:test";
+import merge from "lodash.merge";
+import { getDefaultIconOptions, loadLanguageIconDefinitions } from "../../icons";
+import { IconConfiguration, IconPack, type LanguageIcon } from "../../models";
 
 describe('language icons', () => {
   let expectedConfig: IconConfiguration;
@@ -51,7 +43,7 @@ describe('language icons', () => {
       c: 'c',
       d: 'c',
     };
-    deepStrictEqual(iconDefinitions, expectedConfig);
+    expect(iconDefinitions).toStrictEqual(expectedConfig);
   });
 
   it('should disable icon definitions', () => {
@@ -75,7 +67,7 @@ describe('language icons', () => {
     expectedConfig.languageIds = {
       a: 'a',
     };
-    deepStrictEqual(iconDefinitions, expectedConfig);
+    expect(iconDefinitions).toStrictEqual(expectedConfig);
   });
 
   it('should disable icon packs', () => {
@@ -93,7 +85,7 @@ describe('language icons', () => {
 
     expectedConfig.iconDefinitions = {};
     expectedConfig.languageIds = {};
-    deepStrictEqual(iconDefinitions, expectedConfig);
+    expect(iconDefinitions).toStrictEqual(expectedConfig);
   });
 
   it('should configure language icons for light and high contrast', () => {
@@ -152,7 +144,7 @@ describe('language icons', () => {
         b: 'b_highContrast',
       },
     };
-    deepStrictEqual(iconDefinitions, expectedConfig);
+    expect(iconDefinitions).toStrictEqual(expectedConfig);
   });
 
   it('should configure custom icon associations', () => {
@@ -182,6 +174,6 @@ describe('language icons', () => {
     expectedConfig.options!.languages!.associations = {
       xml: 'json',
     };
-    deepStrictEqual(iconDefinitions, expectedConfig);
+    expect(iconDefinitions).toStrictEqual(expectedConfig);
   });
 });

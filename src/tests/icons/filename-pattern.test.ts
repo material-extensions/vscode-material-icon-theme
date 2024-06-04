@@ -1,11 +1,6 @@
-import { deepStrictEqual } from 'assert';
-import { describe, it } from 'mocha';
-import { parseByPattern } from '../../../icons/patterns';
-import {
-  FileIcon,
-  FileIconWithPatterns,
-  FileNamePattern,
-} from '../../../models';
+import { describe, expect, it } from "bun:test";
+import { parseByPattern } from "../../icons/patterns";
+import { type FileIcon, type FileIconWithPatterns, FileNamePattern } from "../../models";
 
 describe('File name patterns', () => {
   it('should add a pattern to the file names', () => {
@@ -35,7 +30,7 @@ describe('File name patterns', () => {
     ];
     const result = parseByPattern(fileIconsWithPatterns);
 
-    deepStrictEqual(result, expected);
+    expect(result).toStrictEqual(expected);
   });
 
   it('should return same file names if there is no pattern configured', () => {
@@ -54,7 +49,7 @@ describe('File name patterns', () => {
     ];
     const result = parseByPattern(fileIconsWithPatterns);
 
-    deepStrictEqual(result, expected);
+    expect(result).toStrictEqual(expected);
   });
 
   it('should add multiple patterns to the file names', () => {
@@ -91,6 +86,6 @@ describe('File name patterns', () => {
     ];
     const result = parseByPattern(fileIconsWithPatterns);
 
-    deepStrictEqual(result, expected);
+    expect(result).toStrictEqual(expected);
   });
 });

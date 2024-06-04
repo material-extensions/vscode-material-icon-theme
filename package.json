@@ -4,15 +4,12 @@
   "description": "Material Design Icons for Visual Studio Code",
   "version": "5.3.0",
   "scripts": {
-    "build": "bun run esbuild && bun run generateJson",
+    "build": "bun run ./scripts/build-with-esbuild.ts",
+    "watch": "bun run ./scripts/watch-with-esbuild.ts",
     "changelog": "changelog-machine --config changelog.config.json",
     "check-colors": "svg-color-linter --colors material-colors.yml",
     "check": "bun ./src/scripts/icons/checks",
     "contributors": "bun ./src/scripts/contributors/index.ts",
-    "esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node",
-    "esbuild-watch": "bun run esbuild-base -- --sourcemap --watch",
-    "esbuild-web": "esbuild ./src/web/extension.ts --bundle --outfile=dist/web/extension.js --external:vscode --platform=browser",
-    "esbuild": "bun run esbuild-base -- --sourcemap",
     "generateJson": "bun ./src/scripts/icons/generateJson.ts",
     "lint": "npx @biomejs/biome check --apply ./src",
     "postcompile": "bun run generateJson && bun run check",
@@ -23,7 +20,7 @@
     "test-compile": "tsc -p ./",
     "test": "bun ./out/test/runTest.js",
     "version": "bun run changelog && git add CHANGELOG.md",
-    "vscode:prepublish": "bun run lint && bun run esbuild-base -- --minify && bun run postcompile"
+    "vscode:prepublish": "bun run lint && bun run build && bun run postcompile"
   },
   "publisher": "PKief",
   "author": {
@@ -51,36 +48,20 @@
     "color": "#1e1e1e",
     "theme": "dark"
   },
-  "categories": [
-    "Themes"
-  ],
-  "keywords": [
-    "icons",
-    "theme",
-    "material",
-    "icon-theme",
-    "customization"
-  ],
-  "extensionKind": [
-    "ui",
-    "workspace"
-  ],
+  "categories": ["Themes"],
+  "keywords": ["icons", "theme", "material", "icon-theme", "customization"],
+  "extensionKind": ["ui", "workspace"],
   "capabilities": {
     "untrustedWorkspaces": {
       "supported": true
     },
     "virtualWorkspaces": true
   },
-  "activationEvents": [
-    "onStartupFinished"
-  ],
+  "activationEvents": ["onStartupFinished"],
   "main": "./dist/extension",
   "browser": "./dist/web/extension.js",
   "sideEffects": false,
-  "files": [
-    "icons",
-    "dist/material-icons.json"
-  ],
+  "files": ["icons", "dist/material-icons.json"],
   "contributes": {
     "iconThemes": [
       {
@@ -272,11 +253,7 @@
             "%configuration.folders.theme.classic%",
             "%configuration.folders.theme.none%"
           ],
-          "enum": [
-            "specific",
-            "classic",
-            "none"
-          ]
+          "enum": ["specific", "classic", "none"]
         },
         "material-icon-theme.folders.color": {
           "type": "string",
@@ -313,7 +290,6 @@
     }
   },
   "dependencies": {
-    "bun-types": "^1.1.12",
     "chroma-js": "^2.4.2",
     "lodash.merge": "4.6.2",
     "svgson": "^5.3.1"
@@ -324,19 +300,17 @@
     "@types/chroma-js": "^2.4.4",
     "@types/glob": "^7.2.0",
     "@types/lodash.merge": "^4.6.7",
-    "@types/mocha": "^9.1.1",
     "@types/puppeteer": "^5.4.6",
     "@types/sinon": "^17.0.3",
     "@types/vscode": "~1.51.0",
     "@vscode/test-electron": "^2.3.9",
     "axios": "^1.4.0",
+    "bun-types": "^1.1.12",
     "changelog-machine": "^1.0.2",
     "esbuild": "^0.21.4",
     "glob": "^8.0.3",
-    "mocha": "^10.0.0",
     "puppeteer": "^14.1.1",
     "rimraf": "^3.0.2",
-    "sinon": "^17.0.1",
     "svg-color-linter": "^1.3.0",
     "svgo": "^2.8.0",
     "ts-loader": "^9.3.0",

@@ -17,11 +17,6 @@ jobs:
         with:
           bun-version: latest
 
-      - name: Run display server 🖥
-        run: /usr/bin/Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 & echo "Started xvfb"
-        shell: bash
-        if: ${{ success() }}
-
       - name: Install dependencies 📦
         run: bun install --frozen-lockfile
 
@@ -41,5 +36,3 @@ jobs:
         run: |
           bun test
           bun run vscode:prepublish
-        env:
-          DISPLAY: ":99.0"

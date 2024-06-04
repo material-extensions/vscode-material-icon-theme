@@ -1,21 +1,14 @@
-import { deepStrictEqual } from 'assert';
-import merge from 'lodash.merge';
-import { before, beforeEach, it, describe } from 'mocha';
-import {
-  getDefaultIconOptions,
-  loadFolderIconDefinitions,
-} from '../../../icons/index';
-import {
-  FolderTheme,
-  IconConfiguration,
-  IconPack,
-} from '../../../models/index';
+import { beforeAll, beforeEach, describe, expect, it } from "bun:test";
+import merge from "lodash.merge";
+import { getDefaultIconOptions, loadFolderIconDefinitions } from "../../icons";
+import { type FolderTheme, IconConfiguration, IconPack } from "../../models";
+
 
 describe('folder icons', () => {
   let folderIcons: FolderTheme[];
   let expectedConfig: IconConfiguration;
 
-  before(() => {
+  beforeAll(() => {
     folderIcons = [
       {
         name: 'specific',
@@ -123,7 +116,7 @@ describe('folder icons', () => {
     };
     expectedConfig.hidesExplorerArrows = false;
 
-    deepStrictEqual(iconDefinitions, expectedConfig);
+    expect(iconDefinitions).toStrictEqual(expectedConfig);
   });
 
   it('should deactivate folder icons', () => {
@@ -142,7 +135,7 @@ describe('folder icons', () => {
     expectedConfig.hidesExplorerArrows = false;
     expectedConfig.options!.folders!.theme = 'none';
 
-    deepStrictEqual(iconDefinitions, expectedConfig);
+    expect(iconDefinitions).toStrictEqual(expectedConfig);
   });
 
   it('should enable folder theme', () => {
@@ -196,7 +189,7 @@ describe('folder icons', () => {
     expectedConfig.hidesExplorerArrows = false;
     expectedConfig.options!.folders!.theme = 'blue';
 
-    deepStrictEqual(iconDefinitions, expectedConfig);
+    expect(iconDefinitions).toStrictEqual(expectedConfig);
   });
 
   it('should configure custom icon associations', () => {
@@ -289,7 +282,7 @@ describe('folder icons', () => {
       sample: 'src',
     };
 
-    deepStrictEqual(iconDefinitions, expectedConfig);
+    expect(iconDefinitions).toStrictEqual(expectedConfig);
   });
 
   it('should disable icon packs', () => {
@@ -350,7 +343,7 @@ describe('folder icons', () => {
     // disable default icon pack by using empty string
     expectedConfig.options!.activeIconPack = '';
 
-    deepStrictEqual(iconDefinitions, expectedConfig);
+    expect(iconDefinitions).toStrictEqual(expectedConfig);
   });
 
   it('should configure folder icons for light and high contrast', () => {
@@ -515,7 +508,7 @@ describe('folder icons', () => {
       },
     };
     expectedConfig.hidesExplorerArrows = false;
-    deepStrictEqual(iconDefinitions, expectedConfig);
+    expect(iconDefinitions).toStrictEqual(expectedConfig);
   });
 
   it('should hide explorer arrows', () => {
@@ -528,7 +521,7 @@ describe('folder icons', () => {
       options
     );
 
-    deepStrictEqual(iconDefinitions.hidesExplorerArrows, true);
+    expect(iconDefinitions.hidesExplorerArrows).toBe(true);
   });
 
   it('should generate cloned folder icons config', () => {
@@ -641,7 +634,7 @@ describe('folder icons', () => {
     };
     expectedConfig.hidesExplorerArrows = false;
 
-    deepStrictEqual(iconDefinitions, expectedConfig);
+    expect(iconDefinitions).toStrictEqual(expectedConfig);
   });
 
   it('should allow interoperability between cloned and user custom associations', () => {
@@ -726,6 +719,6 @@ describe('folder icons', () => {
     };
     expectedConfig.hidesExplorerArrows = false;
 
-    deepStrictEqual(iconDefinitions, expectedConfig);
+    expect(iconDefinitions).toStrictEqual(expectedConfig);
   });
 });
