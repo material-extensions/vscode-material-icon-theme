@@ -107,23 +107,26 @@ describe('language icons', () => {
       iconConfig,
       options
     );
-    /* eslint-disable camelcase */
     expectedConfig.iconDefinitions = {
       a: {
         iconPath: './../icons/a.svg',
       },
+      // biome-ignore lint/style/useNamingConvention:
       a_light: {
         iconPath: './../icons/a_light.svg',
       },
+      // biome-ignore lint/style/useNamingConvention:
       a_highContrast: {
         iconPath: './../icons/a_highContrast.svg',
       },
       b: {
         iconPath: './../icons/b.svg',
       },
+      // biome-ignore lint/style/useNamingConvention:
       b_light: {
         iconPath: './../icons/b_light.svg',
       },
+      // biome-ignore lint/style/useNamingConvention:
       b_highContrast: {
         iconPath: './../icons/b_highContrast.svg',
       },
@@ -148,7 +151,6 @@ describe('language icons', () => {
         b: 'b_highContrast',
       },
     };
-    /* eslint-enable camelcase */
     deepStrictEqual(iconDefinitions, expectedConfig);
   });
 

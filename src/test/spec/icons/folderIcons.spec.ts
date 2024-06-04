@@ -375,7 +375,6 @@ describe('folder icons', () => {
       iconConfig,
       options
     );
-    /* eslint-disable camelcase */
     expectedConfig.iconDefinitions = {
       folder: {
         iconPath: './../icons/folder.svg',
@@ -383,12 +382,14 @@ describe('folder icons', () => {
       'folder-open': {
         iconPath: './../icons/folder-open.svg',
       },
+      // biome-ignore lint/style/useNamingConvention:
       folder_light: {
         iconPath: './../icons/folder_light.svg',
       },
       'folder-open_light': {
         iconPath: './../icons/folder-open_light.svg',
       },
+      // biome-ignore lint/style/useNamingConvention:
       folder_highContrast: {
         iconPath: './../icons/folder_highContrast.svg',
       },
@@ -513,7 +514,6 @@ describe('folder icons', () => {
       },
     };
     expectedConfig.hidesExplorerArrows = false;
-    /* eslint-enable camelcase */
     deepStrictEqual(iconDefinitions, expectedConfig);
   });
 

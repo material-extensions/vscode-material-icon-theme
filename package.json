@@ -15,7 +15,7 @@
     "package-web": "webpack --mode production --devtool hidden-source-map --config ./build/web-extension.webpack.config.js",
     "contributors": "ts-node ./src/scripts/contributors/index.ts",
     "generateJson": "ts-node ./src/scripts/icons/generateJson.ts",
-    "lint": "eslint -c .eslintrc.json --ext .ts ./src/**/*.ts",
+    "lint": "npx @biomejs/biome check --apply ./src",
     "postcompile": "npm run generateJson && npm run check",
     "pretest": "npm run build && tsc -p ./",
     "preview": "ts-node ./src/scripts/preview",
@@ -52,36 +52,20 @@
     "color": "#1e1e1e",
     "theme": "dark"
   },
-  "categories": [
-    "Themes"
-  ],
-  "keywords": [
-    "icons",
-    "theme",
-    "material",
-    "icon-theme",
-    "customization"
-  ],
-  "extensionKind": [
-    "ui",
-    "workspace"
-  ],
+  "categories": ["Themes"],
+  "keywords": ["icons", "theme", "material", "icon-theme", "customization"],
+  "extensionKind": ["ui", "workspace"],
   "capabilities": {
     "untrustedWorkspaces": {
       "supported": true
     },
     "virtualWorkspaces": true
   },
-  "activationEvents": [
-    "onStartupFinished"
-  ],
+  "activationEvents": ["onStartupFinished"],
   "main": "./dist/extension",
   "browser": "./dist/web/extension.js",
   "sideEffects": false,
-  "files": [
-    "icons",
-    "dist/material-icons.json"
-  ],
+  "files": ["icons", "dist/material-icons.json"],
   "contributes": {
     "iconThemes": [
       {
@@ -273,11 +257,7 @@
             "%configuration.folders.theme.classic%",
             "%configuration.folders.theme.none%"
           ],
-          "enum": [
-            "specific",
-            "classic",
-            "none"
-          ]
+          "enum": ["specific", "classic", "none"]
         },
         "material-icon-theme.folders.color": {
           "type": "string",
@@ -319,6 +299,7 @@
     "svgson": "^5.3.1"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.7.3",
     "@types/chroma-js": "^2.4.4",
     "@types/glob": "^7.2.0",
     "@types/lodash.merge": "^4.6.7",
@@ -327,17 +308,11 @@
     "@types/puppeteer": "^5.4.6",
     "@types/sinon": "^17.0.3",
     "@types/vscode": "~1.51.0",
-    "@typescript-eslint/eslint-plugin": "^5.26.0",
-    "@typescript-eslint/parser": "^5.26.0",
     "@vscode/test-electron": "^2.3.9",
     "axios": "^1.4.0",
     "changelog-machine": "^1.0.2",
-    "eslint": "^8.16.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.0.0",
     "glob": "^8.0.3",
     "mocha": "^10.0.0",
-    "prettier": "^2.6.2",
     "puppeteer": "^14.1.1",
     "rimraf": "^3.0.2",
     "sinon": "^17.0.1",
