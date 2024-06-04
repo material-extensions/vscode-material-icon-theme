@@ -1,8 +1,8 @@
 import {
-  FileIconWithPatterns,
   FileIcon,
-  Patterns,
+  FileIconWithPatterns,
   FileNamePattern,
+  Patterns,
 } from '../../models';
 
 /**

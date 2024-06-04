@@ -1,6 +1,6 @@
 import { writeFileSync } from 'fs';
-import merge from 'lodash.merge';
 import { basename, join } from 'path';
+import merge from 'lodash.merge';
 import { getFileConfigHash } from '../../helpers/fileConfig';
 import {
   DefaultIcon,
@@ -259,9 +259,8 @@ const setFolderNames = (
       obj.folderNames[name as keyof IconConfiguration] = iconName + appendix;
     }
     if (obj.folderNamesExpanded) {
-      obj.folderNamesExpanded[
-        name as keyof IconConfiguration
-      ] = `${iconName}${openedFolder}${appendix}`;
+      obj.folderNamesExpanded[name as keyof IconConfiguration] =
+        `${iconName}${openedFolder}${appendix}`;
     }
   });
   return obj;

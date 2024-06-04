@@ -1,3 +1,4 @@
+import { existsSync, mkdirSync, rmSync } from 'fs';
 import { basename, dirname, join } from 'path';
 import {
   CustomClone,
@@ -5,7 +6,6 @@ import {
   FolderIconClone,
   IconConfiguration,
 } from '../../../../models';
-import { existsSync, mkdirSync, rmSync } from 'fs';
 import {
   iconFolderPath,
   lightColorFileEnding,
@@ -154,8 +154,8 @@ function getFolderIconBaseData(
     clone.base === 'folder'
       ? 'folder'
       : clone.base.startsWith('folder-')
-      ? clone.base
-      : `folder-${clone.base}`;
+        ? clone.base
+        : `folder-${clone.base}`;
 
   const base = config.iconDefinitions?.[`${folderBase}`]?.iconPath;
   const open =
@@ -244,8 +244,8 @@ function getIconName(baseName: string, data: IconData): string {
       baseName === 'folder'
         ? ''
         : baseName.startsWith('folder-')
-        ? ''
-        : 'folder-';
+          ? ''
+          : 'folder-';
 
     switch (data.variant) {
       case Variant.Base:

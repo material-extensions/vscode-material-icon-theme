@@ -1,4 +1,4 @@
-import { lstatSync, readdirSync, readFileSync, writeFileSync } from 'fs';
+import { lstatSync, readFileSync, readdirSync, writeFileSync } from 'fs';
 import { basename, join } from 'path';
 import { getCustomIconPaths } from '../../helpers/customIcons';
 import { IconJsonOptions } from '../../models';

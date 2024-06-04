@@ -15,10 +15,10 @@ import {
   wildcardPattern,
 } from './constants';
 import {
+  getPath,
+  getSVG,
   validateHEXColorCode,
   writeSVGFiles,
-  getSVG,
-  getPath,
 } from './folderGenerator';
 
 /**
@@ -171,9 +171,8 @@ const mapSpecificFileIcons = (
       configLightMappingType[name] = `${icon.name}${lightColorFileEnding}`;
     }
     if (icon.highContrast) {
-      configHighContrastMappingType[
-        name
-      ] = `${icon.name}${highContrastColorFileEnding}`;
+      configHighContrastMappingType[name] =
+        `${icon.name}${highContrastColorFileEnding}`;
     }
   });
   return config;
