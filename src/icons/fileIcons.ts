@@ -1,4 +1,4 @@
-import { FileIcons, FileNamePattern, IconPack } from '../models';
+import { type FileIcons, FileNamePattern, IconPack } from '../models';
 import { parseByPattern } from './patterns';
 
 /**

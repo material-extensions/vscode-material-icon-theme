@@ -1,7 +1,10 @@
-import { beforeEach, describe, expect, it } from "bun:test";
-import merge from "lodash.merge";
-import { getDefaultIconOptions, loadLanguageIconDefinitions } from "../../icons";
-import { IconConfiguration, IconPack, type LanguageIcon } from "../../models";
+import { beforeEach, describe, expect, it } from 'bun:test';
+import merge from 'lodash.merge';
+import {
+  getDefaultIconOptions,
+  loadLanguageIconDefinitions,
+} from '../../icons';
+import { IconConfiguration, IconPack, type LanguageIcon } from '../../models';
 
 describe('language icons', () => {
   let expectedConfig: IconConfiguration;

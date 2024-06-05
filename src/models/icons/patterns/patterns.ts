@@ -1,4 +1,4 @@
-import { FileIcon } from '..';
+import { type FileIcon } from '..';
 
 export enum FileNamePattern {
   /** Adds the following extensions to the file name: `js`, `mjs`, `cjs`, `ts`, `mts`, `cts`. */

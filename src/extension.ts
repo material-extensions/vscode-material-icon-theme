@@ -1,6 +1,6 @@
 'use strict';
 
-import { ExtensionContext, window as codeWindow, workspace } from 'vscode';
+import { type ExtensionContext, window as codeWindow, workspace } from 'vscode';
 import { registered } from './commands';
 import { detectConfigChanges } from './helpers/changeDetection';
 import { initTranslations } from './i18n';
@@ -34,4 +34,4 @@ export const activate = async (context: ExtensionContext) => {
 };
 
 /** This method is called when the extension is deactivated */
-export const deactivate = () => {};
+export const deactivate = () => { };

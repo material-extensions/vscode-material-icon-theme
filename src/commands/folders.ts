@@ -29,9 +29,9 @@ const showQuickPickItems = (activeTheme: string) => {
         theme.name === 'none'
           ? translate('folders.disabled')
           : translate(
-            'folders.theme.description',
-            capitalizeFirstLetter(theme.name)
-          ),
+              'folders.theme.description',
+              capitalizeFirstLetter(theme.name)
+            ),
       label: theme.name === activeTheme ? '\u2714' : '\u25FB',
     })
   );

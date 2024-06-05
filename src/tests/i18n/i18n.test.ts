@@ -1,27 +1,31 @@
-import { describe, expect, it } from "bun:test";
-import { getObjectPropertyValue } from "../../helpers/objects";
-import { getTranslationValue, replace } from "../../i18n";
-import type { Translation } from "../../models";
+import { describe, expect, it } from 'bun:test';
+import { getObjectPropertyValue } from '../../helpers/objects';
+import { getTranslationValue, replace } from '../../i18n';
+import type { Translation } from '../../models';
 
 describe('i18n', () => {
-
   it('should translate key', () => {
-    const result = getTranslationValue('activate', { activate: 'b' } as Translation)
+    const result = getTranslationValue('activate', {
+      activate: 'b',
+    } as Translation);
     expect(result).toBe('b');
   });
 
   it('should return undefined if translation is not defined', () => {
-    const result = getTranslationValue('activate', {} as Translation, {} as Translation);
+    const result = getTranslationValue(
+      'activate',
+      {} as Translation,
+      {} as Translation
+    );
     expect(result).toBeUndefined();
   });
 
   it('should use fallback if translation is not defined', () => {
-    const result =
-      getTranslationValue(
-        'activate',
-        {} as Translation,
-        { activate: 'fb' } as Translation
-      );
+    const result = getTranslationValue(
+      'activate',
+      {} as Translation,
+      { activate: 'fb' } as Translation
+    );
     expect(result).toBe('fb');
   });
 
