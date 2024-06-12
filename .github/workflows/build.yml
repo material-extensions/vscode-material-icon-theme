@@ -35,4 +35,5 @@ jobs:
       - name: Test + Build 🚀
         run: |
           bun test
+          bun run preview
           bun run vscode:prepublish
