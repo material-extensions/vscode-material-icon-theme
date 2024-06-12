@@ -1,6 +1,10 @@
-import { describe, expect, it } from "bun:test";
-import { parseByPattern } from "../../icons/patterns";
-import { type FileIcon, type FileIconWithPatterns, FileNamePattern } from "../../models";
+import { describe, expect, it } from 'bun:test';
+import { parseByPattern } from '../../icons/patterns';
+import {
+  type FileIcon,
+  type FileIconWithPatterns,
+  FileNamePattern,
+} from '../../models';
 
 describe('File name patterns', () => {
   it('should add a pattern to the file names', () => {

@@ -2,13 +2,38 @@ import { beforeAll, describe, expect, it, mock } from 'bun:test';
 import merge from 'lodash.merge';
 import { type INode, parseSync } from 'svgson';
 import { getFileConfigHash } from '../../helpers/fileConfig';
-import { clonesFolder, iconFolderPath, lightColorFileEnding, openedFolder } from '../../icons';
+import {
+  clonesFolder,
+  iconFolderPath,
+  lightColorFileEnding,
+  openedFolder,
+} from '../../icons';
 import { customClonesIcons } from '../../icons/generator/clones/clonesGenerator';
-import { Type, Variant, getCloneData, resolvePath } from '../../icons/generator/clones/utils/cloneData';
-import { cloneIcon, getStyle, traverse } from '../../icons/generator/clones/utils/cloning';
-import { isValidColor, orderDarkToLight } from '../../icons/generator/clones/utils/color/colors';
-import { closerMaterialColorTo, materialPalette as palette } from '../../icons/generator/clones/utils/color/materialPalette';
-import { type FileIconClone, type FolderIconClone, IconConfiguration, type IconJsonOptions } from '../../models';
+import {
+  Type,
+  Variant,
+  getCloneData,
+  resolvePath,
+} from '../../icons/generator/clones/utils/cloneData';
+import {
+  cloneIcon,
+  getStyle,
+  traverse,
+} from '../../icons/generator/clones/utils/cloning';
+import {
+  isValidColor,
+  orderDarkToLight,
+} from '../../icons/generator/clones/utils/color/colors';
+import {
+  closerMaterialColorTo,
+  materialPalette as palette,
+} from '../../icons/generator/clones/utils/color/materialPalette';
+import {
+  type FileIconClone,
+  type FolderIconClone,
+  IconConfiguration,
+  type IconJsonOptions,
+} from '../../models';
 import * as icon from './data/icons';
 
 describe('cloning: color manipulation', () => {
@@ -460,15 +485,14 @@ describe('cloning: icon cloning', () => {
     ];
 
     it('should replace the color with the given color', () => {
-      mock.module("fs", () => {
+      mock.module('fs', () => {
         return {
-          readFileSync: () => icon.file
+          readFileSync: () => icon.file,
         };
       });
 
       // mock the fs.readFileSync method to return the desired icon file
       const result = cloneIcon('fake/path/to/icon.svg', 'blue-600', '');
-
 
       const colorCount = forEachColor(parseSync(result), (color, loc) => {
         expect(color).toBe(palette['blue-600']);
@@ -480,13 +504,12 @@ describe('cloning: icon cloning', () => {
 
     it('should replace the color with the given color if color is in fill attribute', () => {
       // mock the fs.readFileSync method to return the desired icon file
-      mock.module("fs", () => {
+      mock.module('fs', () => {
         return {
-          readFileSync: () => icon.fileFill
+          readFileSync: () => icon.fileFill,
         };
       });
       const result = cloneIcon('fake/path/to/icon.svg', 'blue-600', '');
-
 
       const colorCount = forEachColor(parseSync(result), (color, loc) => {
         expect(color).toBe(palette['blue-600']);
@@ -497,13 +520,12 @@ describe('cloning: icon cloning', () => {
     });
 
     it('should replace the color with the given color if color is in stop-color attribute', () => {
-      mock.module("fs", () => {
+      mock.module('fs', () => {
         return {
-          readFileSync: () => icon.gradient
+          readFileSync: () => icon.gradient,
         };
       });
       const result = cloneIcon('fake/path/to/icon.svg', 'blue-600', '');
-
 
       const colorCount = forEachColor(parseSync(result), (color, loc) => {
         expect(bluePalette).toContain(color);
@@ -514,13 +536,12 @@ describe('cloning: icon cloning', () => {
     });
 
     it('should replace colors on icons with multiple nodes', () => {
-      mock.module("fs", () => {
+      mock.module('fs', () => {
         return {
-          readFileSync: () => icon.folder
+          readFileSync: () => icon.folder,
         };
       });
       const result = cloneIcon('fake/path/to/icon.svg', 'blue-600', '');
-
 
       const colors: string[] = [];
       const colorCount = forEachColor(parseSync(result), (color, loc) => {
@@ -537,9 +558,9 @@ describe('cloning: icon cloning', () => {
 
     describe('`data-mit-no-recolor` attribute', () => {
       it('should not replace the color if the node has the `data-mit-no-recolor` attribute', () => {
-        mock.module("fs", () => {
+        mock.module('fs', () => {
           return {
-            readFileSync: () => icon.folderIgnores
+            readFileSync: () => icon.folderIgnores,
           };
         });
 
@@ -553,13 +574,12 @@ describe('cloning: icon cloning', () => {
       });
 
       it('should not replace the color of any child of a node with the `data-mit-no-recolor` attribute', () => {
-        mock.module("fs", () => {
+        mock.module('fs', () => {
           return {
-            readFileSync: () => icon.gradientIgnore
+            readFileSync: () => icon.gradientIgnore,
           };
         });
         const result = cloneIcon('fake/path/to/icon.svg', 'blue-600', '');
-
 
         const colorCount = forEachColor(parseSync(result), (color, loc) => {
           expect(['#00695c', '#26a69a', '#b2dfdb']).toContain(color);
@@ -614,10 +634,10 @@ function forEachColor(
 
 describe('cloning: json config generation from user options', () => {
   beforeAll(() => {
-    mock.module("fs", () => {
+    mock.module('fs', () => {
       return {
         readFileSync: () => icon.file,
-        writeFileSync: () => { }
+        writeFileSync: () => {},
       };
     });
   });

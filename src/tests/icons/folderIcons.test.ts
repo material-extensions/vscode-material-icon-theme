@@ -1,8 +1,7 @@
-import { beforeAll, beforeEach, describe, expect, it } from "bun:test";
-import merge from "lodash.merge";
-import { getDefaultIconOptions, loadFolderIconDefinitions } from "../../icons";
-import { type FolderTheme, IconConfiguration, IconPack } from "../../models";
-
+import { beforeAll, beforeEach, describe, expect, it } from 'bun:test';
+import merge from 'lodash.merge';
+import { getDefaultIconOptions, loadFolderIconDefinitions } from '../../icons';
+import { type FolderTheme, IconConfiguration, IconPack } from '../../models';
 
 describe('folder icons', () => {
   let folderIcons: FolderTheme[];

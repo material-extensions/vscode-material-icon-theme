@@ -9,6 +9,5 @@ export const vscodeApiMock = {
 
   env: {
     language: 'en',
-  }
-
-}
+  },
+};
