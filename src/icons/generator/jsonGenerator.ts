@@ -4,12 +4,12 @@ import {
   renameSync,
   unlinkSync,
   writeFileSync,
-} from 'fs';
-import { basename, join } from 'path';
+} from 'node:fs';
+import { basename, join } from 'node:path';
 import merge from 'lodash.merge';
 import { getCustomIconPaths } from '../../helpers/customIcons';
 import { getFileConfigHash } from '../../helpers/fileConfig';
-import { IconConfiguration, IconJsonOptions } from '../../models/index';
+import { IconConfiguration, type IconJsonOptions } from '../../models/index';
 import { fileIcons } from '../fileIcons';
 import { folderIcons } from '../folderIcons';
 import { languageIcons } from '../languageIcons';

@@ -1,14 +1,14 @@
-import { writeFileSync } from 'fs';
-import { basename, join } from 'path';
+import { writeFileSync } from 'node:fs';
+import { basename, join } from 'node:path';
 import merge from 'lodash.merge';
 import { getFileConfigHash } from '../../helpers/fileConfig';
 import {
-  DefaultIcon,
-  FolderIcon,
-  FolderTheme,
-  IconAssociations,
+  type DefaultIcon,
+  type FolderIcon,
+  type FolderTheme,
+  type IconAssociations,
   IconConfiguration,
-  IconJsonOptions,
+  type IconJsonOptions,
 } from '../../models/index';
 import {
   cloneIconExtension,
@@ -50,17 +50,17 @@ export const loadFolderIconDefinitions = (
     config = merge({}, config, setFolderNames(icon.name, folderNames));
     config.light = icon.light
       ? merge(
-          {},
-          config.light,
-          setFolderNames(icon.name, folderNames, lightColorFileEnding)
-        )
+        {},
+        config.light,
+        setFolderNames(icon.name, folderNames, lightColorFileEnding)
+      )
       : config.light;
     config.highContrast = icon.highContrast
       ? merge(
-          {},
-          config.highContrast,
-          setFolderNames(icon.name, folderNames, highContrastColorFileEnding)
-        )
+        {},
+        config.highContrast,
+        setFolderNames(icon.name, folderNames, highContrastColorFileEnding)
+      )
       : config.highContrast;
   });
 
@@ -88,25 +88,25 @@ const setDefaultFolderIcons = (
   );
   config.light = theme.defaultIcon.light
     ? merge(
-        {},
-        config.light,
-        createDefaultIconConfigObject(
-          hasFolderIcons,
-          theme,
-          lightColorFileEnding
-        )
+      {},
+      config.light,
+      createDefaultIconConfigObject(
+        hasFolderIcons,
+        theme,
+        lightColorFileEnding
       )
+    )
     : config.light;
   config.highContrast = theme.defaultIcon.highContrast
     ? merge(
-        {},
-        config.highContrast,
-        createDefaultIconConfigObject(
-          hasFolderIcons,
-          theme,
-          highContrastColorFileEnding
-        )
+      {},
+      config.highContrast,
+      createDefaultIconConfigObject(
+        hasFolderIcons,
+        theme,
+        highContrastColorFileEnding
       )
+    )
     : config.highContrast;
 
   config = merge(
@@ -118,25 +118,25 @@ const setDefaultFolderIcons = (
     config = setIconDefinitions(config, theme.rootFolder);
     config.light = theme.rootFolder.light
       ? merge(
-          {},
-          config.light,
-          createRootIconConfigObject(
-            hasFolderIcons,
-            theme,
-            lightColorFileEnding
-          )
+        {},
+        config.light,
+        createRootIconConfigObject(
+          hasFolderIcons,
+          theme,
+          lightColorFileEnding
         )
+      )
       : config.light;
     config.highContrast = theme.rootFolder.highContrast
       ? merge(
-          {},
-          config.highContrast,
-          createRootIconConfigObject(
-            hasFolderIcons,
-            theme,
-            highContrastColorFileEnding
-          )
+        {},
+        config.highContrast,
+        createRootIconConfigObject(
+          hasFolderIcons,
+          theme,
+          highContrastColorFileEnding
         )
+      )
       : config.highContrast;
   }
 

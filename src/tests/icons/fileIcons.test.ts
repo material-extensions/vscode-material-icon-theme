@@ -1,10 +1,7 @@
-import { deepStrictEqual } from 'assert';
+import { beforeEach, describe, expect, it } from 'bun:test';
 import merge from 'lodash.merge';
-import {
-  getDefaultIconOptions,
-  loadFileIconDefinitions,
-} from '../../../icons/index';
-import { FileIcons, IconConfiguration, IconPack } from '../../../models/index';
+import { getDefaultIconOptions, loadFileIconDefinitions } from '../../icons';
+import { type FileIcons, IconConfiguration, IconPack } from '../../models';
 
 describe('file icons', () => {
   let expectedConfig: IconConfiguration;
@@ -60,7 +57,7 @@ describe('file icons', () => {
       'filename.js': 'javascript',
     };
 
-    deepStrictEqual(iconDefinitions, expectedConfig);
+    expect(iconDefinitions).toStrictEqual(expectedConfig);
   });
 
   it('should disable icon packs', () => {
@@ -108,7 +105,7 @@ describe('file icons', () => {
     // disable default icon pack by using empty string
     expectedConfig.options!.activeIconPack = '';
 
-    deepStrictEqual(iconDefinitions, expectedConfig);
+    expect(iconDefinitions).toStrictEqual(expectedConfig);
   });
 
   it('should configure custom icon associations', () => {
@@ -165,7 +162,7 @@ describe('file icons', () => {
       'sample.js': 'javascript',
     };
 
-    deepStrictEqual(iconDefinitions, expectedConfig);
+    expect(iconDefinitions).toStrictEqual(expectedConfig);
   });
 
   it('should configure language icons for light and high contrast', () => {
@@ -247,7 +244,8 @@ describe('file icons', () => {
       'angular-cli.json': 'angular',
       'filename.js': 'javascript',
     };
-    deepStrictEqual(iconDefinitions, expectedConfig);
+
+    expect(iconDefinitions).toStrictEqual(expectedConfig);
   });
 
   it('should generate cloned file icons config', () => {
@@ -311,7 +309,7 @@ describe('file icons', () => {
     };
     expectedConfig.file = 'file';
 
-    deepStrictEqual(iconDefinitions, expectedConfig);
+    expect(iconDefinitions).toStrictEqual(expectedConfig);
   });
 
   it('should allow interoperability between cloned and user custom associations', () => {
@@ -366,6 +364,6 @@ describe('file icons', () => {
     };
     expectedConfig.file = 'file';
 
-    deepStrictEqual(iconDefinitions, expectedConfig);
+    expect(iconDefinitions).toStrictEqual(expectedConfig);
   });
 });

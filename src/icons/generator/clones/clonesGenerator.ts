@@ -1,14 +1,14 @@
-import { writeFileSync } from 'fs';
+import { writeFileSync } from 'node:fs';
 import merge from 'lodash.merge';
 import { getFileConfigHash } from '../../../helpers/fileConfig';
 import {
-  CustomClone,
-  FileIconClone,
-  FileIcons,
-  FolderIconClone,
-  FolderTheme,
+  type CustomClone,
+  type FileIconClone,
+  type FileIcons,
+  type FolderIconClone,
+  type FolderTheme,
   IconConfiguration,
-  IconJsonOptions,
+  type IconJsonOptions,
 } from '../../../models';
 import { cloneIconExtension, clonesFolder } from '../constants';
 import {

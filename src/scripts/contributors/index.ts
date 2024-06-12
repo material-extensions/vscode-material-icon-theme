@@ -1,7 +1,7 @@
-import { writeFileSync } from 'fs';
-import { join } from 'path';
-import axios, { AxiosRequestConfig } from 'axios';
-import { Contributor } from '../../models/scripts/contributors/contributor';
+import { writeFileSync } from 'node:fs';
+import { join } from 'node:path';
+import axios, { type AxiosRequestConfig } from 'axios';
+import { type Contributor } from '../../models/scripts/contributors/contributor';
 import { green, red, yellow } from '../helpers/painter';
 import { createScreenshot } from '../helpers/screenshots';
 
@@ -48,8 +48,7 @@ const fetchContributors = (
         console.log(
           '> Material Icon Theme:',
           yellow(
-            `[${page}/${
-              lastPage ? lastPage[1] : +prevPage[1] + 1
+            `[${page}/${lastPage ? lastPage[1] : +prevPage[1] + 1
             }] Loading contributors from GitHub...`
           )
         );

@@ -1,6 +1,6 @@
 import { env } from 'vscode';
 import { getObjectPropertyValue } from '../helpers/objects';
-import { Translation } from '../models';
+import type { Translation } from '../models';
 
 // Get current language of the vs code workspace
 export const getCurrentLanguage = (): string => env.language;

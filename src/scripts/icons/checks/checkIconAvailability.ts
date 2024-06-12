@@ -1,11 +1,11 @@
-import { readdir } from 'fs';
-import { join, parse } from 'path';
-import { CloneOptions } from '../../../models/icons/cloneOptions';
+import { readdir } from 'node:fs';
+import { join, parse } from 'node:path';
+import { type CloneOptions } from '../../../models/icons/cloneOptions';
 import {
-  DefaultIcon,
-  FileIcon,
-  FolderIcon,
-  FolderTheme,
+  type DefaultIcon,
+  type FileIcon,
+  type FolderIcon,
+  type FolderTheme,
 } from '../../../models/index';
 import { green, red } from '../../helpers/painter';
 import { similarity } from '../../helpers/similarity';
@@ -229,20 +229,20 @@ const logIconInformation = (wrongIcons: string[], title: string) => {
     const isWrongLightVersion = icon.endsWith(lightColorFileEnding);
     const isWrongLightVersionString = isWrongLightVersion
       ? ` (There is no light icon for ${green(
-          icon.slice(0, -6)
-        )}! Set the light option to false!)`
+        icon.slice(0, -6)
+      )}! Set the light option to false!)`
       : '';
     const isWrongHighContrastVersion = icon.endsWith(
       highContrastColorFileEnding
     );
     const isWrongHighContrastVersionString = isWrongHighContrastVersion
       ? ` (There is no high contrast icon for ${green(
-          icon.slice(0, -13)
-        )}! Set the highContrast option to false!)`
+        icon.slice(0, -13)
+      )}! Set the highContrast option to false!)`
       : '';
     console.log(
       red(`Icon not found: ${icon}.svg`) +
-        `${suggestionString}${isWrongLightVersionString}${isWrongHighContrastVersionString}`
+      `${suggestionString}${isWrongLightVersionString}${isWrongHighContrastVersionString}`
     );
   });
 };

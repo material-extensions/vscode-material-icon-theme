@@ -1,7 +1,7 @@
-import { RequireAtLeastOne } from '../../../helpers/types';
-import { CloneOptions } from '../cloneOptions';
+import { type RequireAtLeastOne } from '../../../helpers/types';
+import { type CloneOptions } from '../cloneOptions';
 import { IconPack } from '../index';
-import { Patterns } from '../patterns';
+import { type Patterns } from '../patterns';
 
 interface BasicFileIcon {
   /**
