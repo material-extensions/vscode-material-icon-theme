@@ -2,7 +2,7 @@
   "name": "material-icon-theme",
   "displayName": "Material Icon Theme",
   "description": "Material Design Icons for Visual Studio Code",
-  "version": "5.3.0",
+  "version": "5.4.0",
   "scripts": {
     "build": "bun run ./scripts/build-with-esbuild.ts",
     "watch": "bun run ./scripts/watch-with-esbuild.ts",
@@ -48,20 +48,36 @@
     "color": "#1e1e1e",
     "theme": "dark"
   },
-  "categories": ["Themes"],
-  "keywords": ["icons", "theme", "material", "icon-theme", "customization"],
-  "extensionKind": ["ui", "workspace"],
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "icons",
+    "theme",
+    "material",
+    "icon-theme",
+    "customization"
+  ],
+  "extensionKind": [
+    "ui",
+    "workspace"
+  ],
   "capabilities": {
     "untrustedWorkspaces": {
       "supported": true
     },
     "virtualWorkspaces": true
   },
-  "activationEvents": ["onStartupFinished"],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
   "main": "./dist/extension.cjs",
   "browser": "./dist/web/extension.cjs",
   "sideEffects": false,
-  "files": ["icons", "dist/material-icons.json"],
+  "files": [
+    "icons",
+    "dist/material-icons.json"
+  ],
   "contributes": {
     "iconThemes": [
       {
@@ -253,7 +269,11 @@
             "%configuration.folders.theme.classic%",
             "%configuration.folders.theme.none%"
           ],
-          "enum": ["specific", "classic", "none"]
+          "enum": [
+            "specific",
+            "classic",
+            "none"
+          ]
         },
         "material-icon-theme.folders.color": {
           "type": "string",

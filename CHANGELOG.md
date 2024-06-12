@@ -3,6 +3,28 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v5.4.0](https://github.com/PKief/vscode-material-icon-theme/compare/v5.3.0...v5.4.0) 
+
+> June 12, 2024 
+
+- feat: improve build performance [`#2359`](https://github.com/PKief/vscode-material-icon-theme/pull/2359)
+- fix: dead README.md link [`#2355`](https://github.com/PKief/vscode-material-icon-theme/pull/2355)
+- Clone Advpl icon files [`#2353`](https://github.com/PKief/vscode-material-icon-theme/pull/2353)
+- feat: Migrate from `prettier`/`eslint` to `biome` [`#2349`](https://github.com/PKief/vscode-material-icon-theme/pull/2349)
+- feat: Added `screwdriver` icon [`#2328`](https://github.com/PKief/vscode-material-icon-theme/pull/2328)
+- Add harmonix icon [`#2348`](https://github.com/PKief/vscode-material-icon-theme/pull/2348)
+- Add bruno icon [`#2345`](https://github.com/PKief/vscode-material-icon-theme/pull/2345)
+- feat: update patterns support [`d8bdd337`](https://github.com/PKief/vscode-material-icon-theme/commit/d8bdd337)
+- Added icon for `py.typed` file [`#2343`](https://github.com/PKief/vscode-material-icon-theme/pull/2343)
+- fix:  `pull_request_template.md` [`#2339`](https://github.com/PKief/vscode-material-icon-theme/pull/2339)
+- feat: ⚙️ Refactor pattern code structure [`#2326`](https://github.com/PKief/vscode-material-icon-theme/pull/2326)
+- Added icon for `devcontainer.json` [`#2332`](https://github.com/PKief/vscode-material-icon-theme/pull/2332)
+- Added icons for `.github/*_TEMPLATE` folders [`#2333`](https://github.com/PKief/vscode-material-icon-theme/pull/2333)
+- Added new filenames for `key` icon [`#2334`](https://github.com/PKief/vscode-material-icon-theme/pull/2334)
+- Added snapcraft icon [`#2318`](https://github.com/PKief/vscode-material-icon-theme/pull/2318)
+- Added `CODE_OF_CONDUCT.md` [`#2327`](https://github.com/PKief/vscode-material-icon-theme/pull/2327)
+- feat: update recommended extensions for development [`8af9bcdb`](https://github.com/PKief/vscode-material-icon-theme/commit/8af9bcdb)
+ 
 #### [v5.3.0](https://github.com/PKief/vscode-material-icon-theme/compare/v5.2.0...v5.3.0) 
 
 > May 13, 2024 

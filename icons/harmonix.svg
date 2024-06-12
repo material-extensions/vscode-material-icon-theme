@@ -1,3 +1,1 @@
-<svg version="1.1" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
- <path d="m27 13-11-11-11 11 8 8-6 6 3 3 6-6 6 6 3-3-6-6zm-17 0 6-6 6 6-6 6z" fill="#536dfe" stroke-width=".97562"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="#536dfe" d="M27 13 16 2 5 13l8 8-6 6 3 3 6-6 6 6 3-3-6-6zm-17 0 6-6 6 6-6 6z"/></svg>
