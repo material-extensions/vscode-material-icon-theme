@@ -1,5 +1,5 @@
-import { writeFileSync } from 'fs';
-import { join } from 'path';
+import { writeFileSync } from 'node:fs';
+import { join } from 'node:path';
 import { green, red } from '../helpers/painter';
 import { createScreenshot } from '../helpers/screenshots';
 import { toTitleCase } from './../helpers/titleCase';

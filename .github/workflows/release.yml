@@ -24,16 +24,15 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Node.js ⚙️
-        uses: actions/setup-node@v3
+      - name: Setup Platform 🛠
+        uses: oven-sh/setup-bun@v1
         with:
-          node-version: 'lts/*'
-          registry-url: 'https://registry.npmjs.org'
+          bun-version: latest
 
-      - name: Install node_modules 📦
+      - name: Install dependencies 📦
         run: |
-          npm ci
-          npm install --global @vscode/vsce
+          bun install --frozen-lockfile
+          bun add -g npm
 
       - name: Update version ↗
         run: |
@@ -52,7 +51,7 @@ jobs:
           echo DISPLAY_NAME=$NODE_DISPLAY_NAME >> $GITHUB_ENV
 
       - name: Build ⚒️
-        run: vsce package
+        run: bunx @vscode/vsce package
 
       - name: Push tags 📌
         run: git push

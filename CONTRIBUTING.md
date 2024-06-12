@@ -410,11 +410,11 @@ This project offers translations into different languages. If you notice an erro
 
 This icon extension consists not only of icons but also brings some code. This is necessary to simplify various things and enable multiple functionalities. If you want to change something here, the following steps are to be considered:
 
-1. Install [Node.js](https://nodejs.org/en/) on your machine
-2. Install node dependencies with `npm install`
+1. Install [Bun](https://bun.sh/docs/installation) on your machine
+2. Install dependencies with `bun install`
 3. Open project with VS Code
 4. Install required [VS Code extensions](.vscode/extensions.json)
 5. Press `F5` or run `Launch Extension` in the debug window
-6. Run tests with `Launch Tests`
+6. Run tests with `bun test`
 
 You will find more information about the official extension API in the [extension guides of VS Code](https://code.visualstudio.com/api/extension-guides/file-icon-theme).

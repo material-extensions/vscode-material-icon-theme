@@ -1,11 +1,11 @@
 import merge from 'lodash.merge';
 import { getFileConfigHash } from '../../helpers/fileConfig';
 import {
-  FileIcon,
-  FileIcons,
-  IconAssociations,
+  type FileIcon,
+  type FileIcons,
+  type IconAssociations,
   IconConfiguration,
-  IconJsonOptions,
+  type IconJsonOptions,
 } from '../../models/index';
 import {
   cloneIconExtension,

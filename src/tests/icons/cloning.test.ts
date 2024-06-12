@@ -1,41 +1,39 @@
-import assert, { deepStrictEqual, equal, throws } from 'assert';
-import fs from 'fs';
+import { beforeAll, describe, expect, it, mock } from 'bun:test';
 import merge from 'lodash.merge';
-import { stub } from 'sinon';
-import { INode, parseSync } from 'svgson';
-import { getFileConfigHash } from '../../../helpers/fileConfig';
-import { customClonesIcons } from '../../../icons/generator/clones/clonesGenerator';
-import {
-  Type,
-  Variant,
-  getCloneData,
-  resolvePath,
-} from '../../../icons/generator/clones/utils/cloneData';
-import {
-  cloneIcon,
-  getStyle,
-  traverse,
-} from '../../../icons/generator/clones/utils/cloning';
-import {
-  isValidColor,
-  orderDarkToLight,
-} from '../../../icons/generator/clones/utils/color/colors';
-import {
-  closerMaterialColorTo,
-  materialPalette as palette,
-} from '../../../icons/generator/clones/utils/color/materialPalette';
+import { type INode, parseSync } from 'svgson';
+import { getFileConfigHash } from '../../helpers/fileConfig';
 import {
   clonesFolder,
   iconFolderPath,
   lightColorFileEnding,
   openedFolder,
-} from '../../../icons/generator/constants';
-import { IconConfiguration } from '../../../models';
+} from '../../icons';
+import { customClonesIcons } from '../../icons/generator/clones/clonesGenerator';
 import {
-  FileIconClone,
-  FolderIconClone,
-  IconJsonOptions,
-} from '../../../models/icons/iconJsonOptions';
+  Type,
+  Variant,
+  getCloneData,
+  resolvePath,
+} from '../../icons/generator/clones/utils/cloneData';
+import {
+  cloneIcon,
+  getStyle,
+  traverse,
+} from '../../icons/generator/clones/utils/cloning';
+import {
+  isValidColor,
+  orderDarkToLight,
+} from '../../icons/generator/clones/utils/color/colors';
+import {
+  closerMaterialColorTo,
+  materialPalette as palette,
+} from '../../icons/generator/clones/utils/color/materialPalette';
+import {
+  type FileIconClone,
+  type FolderIconClone,
+  IconConfiguration,
+  type IconJsonOptions,
+} from '../../models';
 import * as icon from './data/icons';
 
 describe('cloning: color manipulation', () => {
@@ -43,19 +41,19 @@ describe('cloning: color manipulation', () => {
     it('should order colors from dark to light', () => {
       const colors = new Set(['#000', '#fff', '#f00', '#0f0', '#00f']);
       const result = orderDarkToLight(colors);
-      deepStrictEqual(result, ['#000', '#f00', '#0f0', '#00f', '#fff']);
+      expect(result).toStrictEqual(['#000', '#f00', '#0f0', '#00f', '#fff']);
     });
 
     it('if empty set, should return empty array', () => {
       const colors = new Set<string>();
       const result = orderDarkToLight(colors);
-      deepStrictEqual(result, []);
+      expect(result).toStrictEqual([]);
     });
 
     it('if one color, should return array with that color', () => {
       const colors = new Set(['#000']);
       const result = orderDarkToLight(colors);
-      deepStrictEqual(result, ['#000']);
+      expect(result).toStrictEqual(['#000']);
     });
   });
 
@@ -63,20 +61,20 @@ describe('cloning: color manipulation', () => {
     it('should return the closest material color to the given color', () => {
       const color = '#e24542';
       const result = closerMaterialColorTo(color);
-      deepStrictEqual(result, palette['red-600']);
+      expect(result).toStrictEqual(palette['red-600']);
     });
 
     it('should return the same color if it is already a material color', () => {
       const color = palette['indigo-500'];
       const result = closerMaterialColorTo(color);
-      deepStrictEqual(result, color);
+      expect(result).toStrictEqual(color);
     });
 
     it('should throw an error if the given color is not valid', () => {
       const color = 'bad-color';
-      throws(() => closerMaterialColorTo(color), {
-        message: 'The given color "bad-color" is not valid!',
-      });
+      expect(() => closerMaterialColorTo(color)).toThrowError(
+        'The given color "bad-color" is not valid!'
+      );
     });
   });
 });
@@ -88,7 +86,7 @@ describe('cloning: icon cloning', () => {
     const ext = '.ext';
     let config: Partial<IconConfiguration>;
 
-    before(() => {
+    beforeAll(() => {
       config = {
         iconDefinitions: {
           base: {
@@ -151,7 +149,7 @@ describe('cloning: icon cloning', () => {
           },
         ];
 
-        deepStrictEqual(result, expected);
+        expect(result).toStrictEqual(expected);
       });
 
       it('should create two clone objects if light version exists', () => {
@@ -196,7 +194,7 @@ describe('cloning: icon cloning', () => {
           },
         ];
 
-        deepStrictEqual(result, expected);
+        expect(result).toStrictEqual(expected);
       });
 
       it("should create two clone objects if light version is asked and base light doesn't exist", () => {
@@ -244,7 +242,7 @@ describe('cloning: icon cloning', () => {
           },
         ];
 
-        deepStrictEqual(result, expected);
+        expect(result).toStrictEqual(expected);
       });
     });
 
@@ -294,7 +292,7 @@ describe('cloning: icon cloning', () => {
           },
         ];
 
-        deepStrictEqual(result, expected);
+        expect(result).toStrictEqual(expected);
       });
 
       it('should create two clone objects if light version exists', () => {
@@ -376,7 +374,7 @@ describe('cloning: icon cloning', () => {
           },
         ];
 
-        deepStrictEqual(result, expected);
+        expect(result).toStrictEqual(expected);
       });
 
       it("should create two clone objects if light version is asked and base light doesn't exist", () => {
@@ -463,7 +461,7 @@ describe('cloning: icon cloning', () => {
           },
         ];
 
-        deepStrictEqual(result, expected);
+        expect(result).toStrictEqual(expected);
       });
     });
   });
@@ -486,109 +484,110 @@ describe('cloning: icon cloning', () => {
       palette['blue-A700'],
     ];
 
-    afterEach(
-      () =>
-        // restore the fs.readFileSync method to its original state
-        (fs.readFileSync as any).restore && (fs.readFileSync as any).restore()
-    );
-
     it('should replace the color with the given color', () => {
-      // stub the fs.readFileSync method to return the desired icon file
-      stub(fs, 'readFileSync').returns(icon.file);
-      const result = cloneIcon('fake/path/to/icon.svg', 'blue-600', '');
-
-      assert((fs.readFileSync as any).called);
-
-      const colorCount = forEachColor(parseSync(result), (color, loc) => {
-        equal(color, palette['blue-600']);
-        equal(loc, 'style:fill');
+      mock.module('fs', () => {
+        return {
+          readFileSync: () => icon.file,
+        };
       });
 
-      equal(colorCount, 1);
+      // mock the fs.readFileSync method to return the desired icon file
+      const result = cloneIcon('fake/path/to/icon.svg', 'blue-600', '');
+
+      const colorCount = forEachColor(parseSync(result), (color, loc) => {
+        expect(color).toBe(palette['blue-600']);
+        expect(loc).toBe('style:fill');
+      });
+
+      expect(colorCount).toBe(1);
     });
 
     it('should replace the color with the given color if color is in fill attribute', () => {
-      // stub the fs.readFileSync method to return the desired icon file
-      stub(fs, 'readFileSync').returns(icon.fileFill);
+      // mock the fs.readFileSync method to return the desired icon file
+      mock.module('fs', () => {
+        return {
+          readFileSync: () => icon.fileFill,
+        };
+      });
       const result = cloneIcon('fake/path/to/icon.svg', 'blue-600', '');
 
-      assert((fs.readFileSync as any).called);
-
       const colorCount = forEachColor(parseSync(result), (color, loc) => {
-        equal(color, palette['blue-600']);
-        equal(loc, 'attr:fill');
+        expect(color).toBe(palette['blue-600']);
+        expect(loc).toBe('attr:fill');
       });
 
-      equal(colorCount, 1);
+      expect(colorCount).toBe(1);
     });
 
     it('should replace the color with the given color if color is in stop-color attribute', () => {
-      stub(fs, 'readFileSync').returns(icon.gradient);
+      mock.module('fs', () => {
+        return {
+          readFileSync: () => icon.gradient,
+        };
+      });
       const result = cloneIcon('fake/path/to/icon.svg', 'blue-600', '');
 
-      assert((fs.readFileSync as any).called);
-
       const colorCount = forEachColor(parseSync(result), (color, loc) => {
-        assert(bluePalette.includes(color));
-        equal(loc, 'attr:stop-color');
+        expect(bluePalette).toContain(color);
+        expect(loc).toBe('attr:stop-color');
       });
 
-      equal(colorCount, 3);
+      expect(colorCount).toBe(3);
     });
 
     it('should replace colors on icons with multiple nodes', () => {
-      stub(fs, 'readFileSync').returns(icon.folder);
+      mock.module('fs', () => {
+        return {
+          readFileSync: () => icon.folder,
+        };
+      });
       const result = cloneIcon('fake/path/to/icon.svg', 'blue-600', '');
-
-      assert((fs.readFileSync as any).called);
 
       const colors: string[] = [];
       const colorCount = forEachColor(parseSync(result), (color, loc) => {
         colors.push(color);
-        assert(bluePalette.includes(color));
-        equal(loc, 'style:fill');
+        expect(bluePalette).toContain(color);
+        expect(loc).toBe('style:fill');
       });
 
       // check that one of the colors is actually blue-600
-      assert(colors.includes(palette['blue-600']));
+      expect(colors.includes(palette['blue-600'])).toBeTruthy();
 
-      equal(colorCount, 2);
+      expect(colorCount).toBe(2);
     });
 
     describe('`data-mit-no-recolor` attribute', () => {
-      afterEach(
-        () =>
-          // restore the fs.readFileSync method to its original state
-          (fs.readFileSync as any).restore && (fs.readFileSync as any).restore()
-      );
-
       it('should not replace the color if the node has the `data-mit-no-recolor` attribute', () => {
-        stub(fs, 'readFileSync').returns(icon.folderIgnores);
+        mock.module('fs', () => {
+          return {
+            readFileSync: () => icon.folderIgnores,
+          };
+        });
+
         const result = cloneIcon('fake/path/to/icon.svg', 'blue-600', '');
-
-        assert((fs.readFileSync as any).called);
-
         const parsed = parseSync(result);
         const changedNodeStyle = getStyle(parsed.children[0]);
         const unchangedNodeStyle = getStyle(parsed.children[1]);
 
-        equal(changedNodeStyle.fill, palette['blue-600']);
-        equal(unchangedNodeStyle.fill, 'red');
+        expect(changedNodeStyle.fill).toBe(palette['blue-600']);
+        expect(unchangedNodeStyle.fill).toBe('red');
       });
 
       it('should not replace the color of any child of a node with the `data-mit-no-recolor` attribute', () => {
-        stub(fs, 'readFileSync').returns(icon.gradientIgnore);
+        mock.module('fs', () => {
+          return {
+            readFileSync: () => icon.gradientIgnore,
+          };
+        });
         const result = cloneIcon('fake/path/to/icon.svg', 'blue-600', '');
 
-        assert((fs.readFileSync as any).called);
-
         const colorCount = forEachColor(parseSync(result), (color, loc) => {
-          assert(['#00695c', '#26a69a', '#b2dfdb'].includes(color));
-          assert(!bluePalette.includes(color));
-          equal(loc, 'attr:stop-color');
+          expect(['#00695c', '#26a69a', '#b2dfdb']).toContain(color);
+          expect(bluePalette).not.toContain(color);
+          expect(loc).toBe('attr:stop-color');
         });
 
-        equal(colorCount, 3);
+        expect(colorCount).toBe(3);
       });
     });
   });
@@ -634,14 +633,13 @@ function forEachColor(
 }
 
 describe('cloning: json config generation from user options', () => {
-  before(() => {
-    stub(fs, 'readFileSync').returns(icon.file);
-    stub(fs, 'writeFileSync').returns();
-  });
-
-  after(() => {
-    (fs.readFileSync as any).restore();
-    (fs.writeFileSync as any).restore();
+  beforeAll(() => {
+    mock.module('fs', () => {
+      return {
+        readFileSync: () => icon.file,
+        writeFileSync: () => {},
+      };
+    });
   });
 
   const getDefinition = (hash: string, options: IconJsonOptions) => {
@@ -725,6 +723,6 @@ describe('cloning: json config generation from user options', () => {
       options: {},
     });
 
-    deepStrictEqual(result, expected);
+    expect(result).toStrictEqual(expected);
   });
 });

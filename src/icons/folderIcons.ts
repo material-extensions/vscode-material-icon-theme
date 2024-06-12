@@ -1,4 +1,4 @@
-import { FolderTheme, IconPack } from '../models';
+import { type FolderTheme, IconPack } from '../models';
 
 /**
  * Defines folder icons

@@ -1,7 +1,7 @@
-import { lstatSync, readFileSync, readdirSync, writeFileSync } from 'fs';
-import { basename, join } from 'path';
+import { lstatSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
+import { basename, join } from 'node:path';
 import { getCustomIconPaths } from '../../helpers/customIcons';
-import { IconJsonOptions } from '../../models';
+import { type IconJsonOptions } from '../../models';
 
 /**
  * Changes the opacity of all icons in the set.

@@ -1,5 +1,5 @@
-import { existsSync, mkdirSync, rmSync } from 'fs';
-import { basename, dirname, join } from 'path';
+import { existsSync, mkdirSync, rmSync } from 'node:fs';
+import { basename, dirname, join } from 'node:path';
 import {
   CustomClone,
   FileIconClone,
