@@ -196,7 +196,7 @@ This will create two new icons called `users-admin` and `roles-admin` that are a
 
 <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/how-tos/cloned-folder-icons-example.png" alt="cloned folder icons">
 
-- Although you can use any `#RRGGBB` color for the `color` and `lightColor` properties, if you want to stick with colors from the material palette, you can check the full list of allowed aliases [here](https://github.com/PKief/vscode-material-icon-theme/tree/main/icons/generator/clones/utils/color/materialPalette.ts#L7).
+- Although you can use any `#RRGGBB` color for the `color` and `lightColor` properties, if you want to stick with colors from the material palette, you can check the full list of allowed aliases [here](https://github.com/PKief/vscode-material-icon-theme/blob/main/src/icons/generator/clones/utils/color/materialPalette.ts).
 - You can check the full list of available icon to be used as the `base` [here](https://github.com/PKief/vscode-material-icon-theme/blob/main/src/icons/folderIcons.ts).
 
 ### Language associations
