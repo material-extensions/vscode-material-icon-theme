@@ -13,10 +13,11 @@ jobs:
       TARGET_BRANCH: ${{ github.event.pull_request.base.ref }}
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v4
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
         with:
           fetch-depth: 0
-          
+          persist-credentials: false
+
       - name: Check colors 🎨
         run: |
           svgFiles=$(git diff origin/${{ env.TARGET_BRANCH }} --diff-filter=ACMRTUX  --name-only | grep '.svg$')
