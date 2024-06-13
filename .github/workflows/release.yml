@@ -18,6 +18,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       VERSION_CHANGE: ${{ github.event.inputs.versionChange }}
+    permissions:
+      id-token: write
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
@@ -80,4 +82,4 @@ jobs:
       - name: Publish to NPM Registry 🌐
         run: |
           npm set "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}"
-          npm publish
+          npm publish --provenance --access public
