@@ -3,6 +3,12 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v5.4.1](https://github.com/PKief/vscode-material-icon-theme/compare/v5.4.0...v5.4.1) 
+
+> June 13, 2024 
+
+- Fix #2360 Issue with translation loader [`f11d3e51`](https://github.com/PKief/vscode-material-icon-theme/commit/f11d3e51)
+ 
 #### [v5.4.0](https://github.com/PKief/vscode-material-icon-theme/compare/v5.3.0...v5.4.0) 
 
 > June 12, 2024 
