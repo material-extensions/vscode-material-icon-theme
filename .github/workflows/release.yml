@@ -78,6 +78,6 @@ jobs:
           extensionFile: ${{ env.NAME }}-${{ env.VERSION }}.vsix
 
       - name: Publish to NPM Registry 🌐
-        run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          npm set "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}"
+          npm publish
