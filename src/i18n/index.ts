@@ -46,7 +46,6 @@ const loadTranslation = async (language: string) => {
 
 /** Get the translation object of the separated translation files */
 const getTranslationObject = async (language: string): Promise<Translation> => {
-  console.log('Sprache: ' + language)
   switch (language) {
     case 'cs':
       return langCs;
