@@ -3,6 +3,13 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v5.4.2](https://github.com/PKief/vscode-material-icon-theme/compare/v5.4.1...v5.4.2) 
+
+> June 13, 2024 
+
+- Update action workflows [`314aba7b`](https://github.com/PKief/vscode-material-icon-theme/commit/314aba7b)
+- fix: remove log information from console (Fixes #2362) [`0c4c0821`](https://github.com/PKief/vscode-material-icon-theme/commit/0c4c0821)
+ 
 #### [v5.4.1](https://github.com/PKief/vscode-material-icon-theme/compare/v5.4.0...v5.4.1) 
 
 > June 13, 2024 
