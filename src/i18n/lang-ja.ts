@@ -1,4 +1,4 @@
-import { Translation } from '../models';
+import { type Translation } from '../models';
 
 export const translation: Translation = {
   activate: '有効化',
