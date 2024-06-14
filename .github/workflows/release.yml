@@ -47,14 +47,14 @@ jobs:
           git config --global push.followTags true
           npm version ${{ env.VERSION_CHANGE }} -m "Release %s"
 
-      - name: Get meta data 🔍
+      - name: Get metadata 🔍
         run: |
-          NODE_VERSION=$(node -p -e "require('./package.json').version")
-          echo VERSION=$NODE_VERSION >> $GITHUB_ENV
-          NODE_NAME=$(node -p -e "require('./package.json').name")
-          echo NAME=$NODE_NAME >> $GITHUB_ENV
-          NODE_DISPLAY_NAME=$(node -p -e "require('./package.json').displayName")
-          echo DISPLAY_NAME=$NODE_DISPLAY_NAME >> $GITHUB_ENV
+          VERSION=$(bun --print "(await import('./package.json')).version")
+          NAME=$(bun --print "(await import('./package.json')).name")
+          DISPLAY_NAME=$(bun --print "(await import('./package.json')).displayName")
+          echo VERSION=$VERSION >> $GITHUB_ENV
+          echo NAME=$NAME >> $GITHUB_ENV
+          echo DISPLAY_NAME=$DISPLAY_NAME >> $GITHUB_ENV
 
       - name: Build ⚒️
         run: bunx @vscode/vsce package
