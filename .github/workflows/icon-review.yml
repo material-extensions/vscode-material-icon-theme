@@ -5,12 +5,19 @@ on:
     paths:
       - 'icons/*.svg'
 
+permissions:
+  contents: read
+
 jobs:
   icon-review:
     name: Icon Review
     runs-on: ubuntu-latest
     env:
       TARGET_BRANCH: ${{ github.event.pull_request.base.ref }}
+
+    permissions:
+      pull-requests: write
+
     steps:
       - name: Checkout Fork 🛎️
         uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
