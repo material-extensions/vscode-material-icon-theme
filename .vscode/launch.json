@@ -6,26 +6,24 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Launch Extension",
+      "name": "Run Extension",
       "type": "extensionHost",
       "request": "launch",
-      "runtimeExecutable": "${execPath}",
       "args": ["--extensionDevelopmentPath=${workspaceFolder}"],
-      "outFiles": ["${workspaceFolder}/dist/**/*.js"],
-      "smartStep": true,
-      "preLaunchTask": "npm: build"
+      "outFiles": ["${workspaceFolder}/dist/**/*.cjs"],
+      "preLaunchTask": "${defaultBuildTask}"
     },
     {
-      "name": "Launch Tests",
-      "type": "extensionHost",
+      "name": "Run Web Extension in VS Code",
+      "type": "pwa-extensionHost",
+      "debugWebWorkerHost": true,
       "request": "launch",
-      "runtimeExecutable": "${execPath}",
       "args": [
         "--extensionDevelopmentPath=${workspaceFolder}",
-        "--extensionTestsPath=${workspaceFolder}/out/test/spec/index"
+        "--extensionDevelopmentKind=web"
       ],
-      "outFiles": ["${workspaceFolder}/out/test/**/*.js"],
-      "preLaunchTask": "npm: pretest"
+      "outFiles": ["${workspaceFolder}/dist/web/**/*.cjs"],
+      "preLaunchTask": "${defaultBuildTask}"
     }
   ]
 }

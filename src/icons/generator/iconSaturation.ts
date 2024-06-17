@@ -1,7 +1,7 @@
-import * as fs from 'fs';
-import * as path from 'path';
+import { lstatSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
+import { basename, join } from 'node:path';
 import { getCustomIconPaths } from '../../helpers/customIcons';
-import { IconJsonOptions } from '../../models';
+import { type IconJsonOptions } from '../../models';
 
 /**
  * Changes saturation of all icons in the set.
@@ -19,22 +19,22 @@ export const setIconSaturation = (
   }
 
   let iconsPath = '';
-  if (path.basename(__dirname) === 'dist') {
-    iconsPath = path.join(__dirname, '..', 'icons');
+  if (basename(__dirname) === 'dist') {
+    iconsPath = join(__dirname, '..', 'icons');
   } else {
     // executed via script
-    iconsPath = path.join(__dirname, '..', '..', '..', 'icons');
+    iconsPath = join(__dirname, '..', '..', '..', 'icons');
   }
 
   const customIconPaths = getCustomIconPaths(options);
-  const iconFiles = fs.readdirSync(iconsPath);
+  const iconFiles = readdirSync(iconsPath);
 
   // read all icon files from the icons folder
   try {
     (fileNames || iconFiles).forEach(adjustSaturation(iconsPath, options));
 
     customIconPaths.forEach((iconPath) => {
-      const customIcons = fs.readdirSync(iconPath);
+      const customIcons = readdirSync(iconPath);
       customIcons.forEach(adjustSaturation(iconPath, options));
     });
   } catch (error) {
@@ -101,7 +101,7 @@ const removeFilterElement = (svg: string) => {
  * Validate the saturation value.
  * @param saturation Saturation value
  */
-export const validateSaturationValue = (saturation: number) => {
+export const validateSaturationValue = (saturation: number | undefined) => {
   return saturation !== undefined && saturation <= 1 && saturation >= 0;
 };
 
@@ -110,10 +110,13 @@ const adjustSaturation = (
   options: IconJsonOptions
 ): ((value: string, index: number, array: string[]) => void) => {
   return (iconFileName) => {
-    const svgFilePath = path.join(iconsPath, iconFileName);
+    const svgFilePath = join(iconsPath, iconFileName);
+    if (!lstatSync(svgFilePath).isFile()) {
+      return;
+    }
 
     // Read SVG file
-    const svg = fs.readFileSync(svgFilePath, 'utf-8');
+    const svg = readFileSync(svgFilePath, 'utf-8');
 
     // Get the root element of the SVG file
     const svgRootElement = getSVGRootElement(svg);
@@ -121,7 +124,7 @@ const adjustSaturation = (
 
     let updatedRootElement: string;
 
-    if (options.saturation < 1) {
+    if (options.saturation !== undefined && options.saturation < 1) {
       updatedRootElement = addFilterAttribute(svgRootElement);
     } else {
       updatedRootElement = removeFilterAttribute(svgRootElement);
@@ -129,12 +132,12 @@ const adjustSaturation = (
 
     let updatedSVG = svg.replace(/<svg[^>]*>/, updatedRootElement);
 
-    if (options.saturation < 1) {
+    if (options.saturation !== undefined && options.saturation < 1) {
       updatedSVG = addFilterElement(updatedSVG, options.saturation);
     } else {
       updatedSVG = removeFilterElement(updatedSVG);
     }
 
-    fs.writeFileSync(svgFilePath, updatedSVG);
+    writeFileSync(svgFilePath, updatedSVG);
   };
 };

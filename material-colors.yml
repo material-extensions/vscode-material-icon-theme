@@ -1,0 +1,257 @@
+colors:
+  - '#FFEBEE' # red 50
+  - '#FFCDD2' # red 100
+  - '#EF9A9A' # red 200
+  - '#E57373' # red 300
+  - '#EF5350' # red 400
+  - '#F44336' # red 500
+  - '#E53935' # red 600
+  - '#D32F2F' # red 700
+  - '#C62828' # red 800
+  - '#B71C1C' # red 900
+  - '#FF8A80' # red A100
+  - '#FF5252' # red A200
+  - '#FF1744' # red A400
+  - '#D50000' # red A700
+  - '#FCE4EC' # pink 50
+  - '#F8BBD0' # pink 100
+  - '#F48FB1' # pink 200
+  - '#F06292' # pink 300
+  - '#EC407A' # pink 400
+  - '#E91E63' # pink 500
+  - '#D81B60' # pink 600
+  - '#C2185B' # pink 700
+  - '#AD1457' # pink 800
+  - '#880E4F' # pink 900
+  - '#FF80AB' # pink A100
+  - '#FF4081' # pink A200
+  - '#F50057' # pink A400
+  - '#C51162' # pink A700
+  - '#F3E5F5' # purple 50
+  - '#E1BEE7' # purple 100
+  - '#CE93D8' # purple 200
+  - '#BA68C8' # purple 300
+  - '#AB47BC' # purple 400
+  - '#9C27B0' # purple 500
+  - '#8E24AA' # purple 600
+  - '#7B1FA2' # purple 700
+  - '#6A1B9A' # purple 800
+  - '#4A148C' # purple 900
+  - '#EA80FC' # purple A100
+  - '#E040FB' # purple A200
+  - '#D500F9' # purple A400
+  - '#AA00FF' # purple A700
+  - '#EDE7F6' # deep purple 50
+  - '#D1C4E9' # deep purple 100
+  - '#B39DDB' # deep purple 200
+  - '#9575CD' # deep purple 300
+  - '#7E57C2' # deep purple 400
+  - '#673AB7' # deep purple 500
+  - '#5E35B1' # deep purple 600
+  - '#512DA8' # deep purple 700
+  - '#4527A0' # deep purple 800
+  - '#311B92' # deep purple 900
+  - '#B388FF' # deep purple A100
+  - '#7C4DFF' # deep purple A200
+  - '#651FFF' # deep purple A400
+  - '#6200EA' # deep purple A700
+  - '#E8EAF6' # indigo 50
+  - '#C5CAE9' # indigo 100
+  - '#9FA8DA' # indigo 200
+  - '#7986CB' # indigo 300
+  - '#5C6BC0' # indigo 400
+  - '#3F51B5' # indigo 500
+  - '#3949AB' # indigo 600
+  - '#303F9F' # indigo 700
+  - '#283593' # indigo 800
+  - '#1A237E' # indigo 900
+  - '#8C9EFF' # indigo A100
+  - '#536DFE' # indigo A200
+  - '#3D5AFE' # indigo A400
+  - '#304FFE' # indigo A700
+  - '#E3F2FD' # blue 50
+  - '#BBDEFB' # blue 100
+  - '#90CAF9' # blue 200
+  - '#64B5F6' # blue 300
+  - '#42A5F5' # blue 400
+  - '#2196F3' # blue 500
+  - '#1E88E5' # blue 600
+  - '#1976D2' # blue 700
+  - '#1565C0' # blue 800
+  - '#0D47A1' # blue 900
+  - '#82B1FF' # blue A100
+  - '#448AFF' # blue A200
+  - '#2979FF' # blue A400
+  - '#2962FF' # blue A700
+  - '#E1F5FE' # light blue 50
+  - '#B3E5FC' # light blue 100
+  - '#81D4FA' # light blue 200
+  - '#4FC3F7' # light blue 300
+  - '#29B6F6' # light blue 400
+  - '#03A9F4' # light blue 500
+  - '#039BE5' # light blue 600
+  - '#0288D1' # light blue 700
+  - '#0277BD' # light blue 800
+  - '#01579B' # light blue 900
+  - '#80D8FF' # light blue A100
+  - '#40C4FF' # light blue A200
+  - '#00B0FF' # light blue A400
+  - '#0091EA' # light blue A700
+  - '#E0F7FA' # cyan 50
+  - '#B2EBF2' # cyan 100
+  - '#80DEEA' # cyan 200
+  - '#4DD0E1' # cyan 300
+  - '#26C6DA' # cyan 400
+  - '#00BCD4' # cyan 500
+  - '#00ACC1' # cyan 600
+  - '#0097A7' # cyan 700
+  - '#00838F' # cyan 800
+  - '#006064' # cyan 900
+  - '#84FFFF' # cyan A100
+  - '#18FFFF' # cyan A200
+  - '#00E5FF' # cyan A400
+  - '#00B8D4' # cyan A700
+  - '#E0F2F1' # teal 50
+  - '#B2DFDB' # teal 100
+  - '#80CBC4' # teal 200
+  - '#4DB6AC' # teal 300
+  - '#26A69A' # teal 400
+  - '#009688' # teal 500
+  - '#00897B' # teal 600
+  - '#00796B' # teal 700
+  - '#00695C' # teal 800
+  - '#004D40' # teal 900
+  - '#A7FFEB' # teal A100
+  - '#64FFDA' # teal A200
+  - '#1DE9B6' # teal A400
+  - '#00BFA5' # teal A700
+  - '#E8F5E9' # green 50
+  - '#C8E6C9' # green 100
+  - '#A5D6A7' # green 200
+  - '#81C784' # green 300
+  - '#66BB6A' # green 400
+  - '#4CAF50' # green 500
+  - '#43A047' # green 600
+  - '#388E3C' # green 700
+  - '#2E7D32' # green 800
+  - '#1B5E20' # green 900
+  - '#B9F6CA' # green A100
+  - '#69F0AE' # green A200
+  - '#00E676' # green A400
+  - '#00C853' # green A700
+  - '#F1F8E9' # light green 50
+  - '#DCEDC8' # light green 100
+  - '#C5E1A5' # light green 200
+  - '#AED581' # light green 300
+  - '#9CCC65' # light green 400
+  - '#8BC34A' # light green 500
+  - '#7CB342' # light green 600
+  - '#689F38' # light green 700
+  - '#558B2F' # light green 800
+  - '#33691E' # light green 900
+  - '#CCFF90' # light green A100
+  - '#B2FF59' # light green A200
+  - '#76FF03' # light green A400
+  - '#64DD17' # light green A700
+  - '#F9FBE7' # lime 50
+  - '#F0F4C3' # lime 100
+  - '#E6EE9C' # lime 200
+  - '#DCE775' # lime 300
+  - '#D4E157' # lime 400
+  - '#CDDC39' # lime 500
+  - '#C0CA33' # lime 600
+  - '#AFB42B' # lime 700
+  - '#9E9D24' # lime 800
+  - '#827717' # lime 900
+  - '#F4FF81' # lime A100
+  - '#EEFF41' # lime A200
+  - '#C6FF00' # lime A400
+  - '#AEEA00' # lime A700
+  - '#FFFDE7' # yellow 50
+  - '#FFF9C4' # yellow 100
+  - '#FFF59D' # yellow 200
+  - '#FFF176' # yellow 300
+  - '#FFEE58' # yellow 400
+  - '#FFEB3B' # yellow 500
+  - '#FDD835' # yellow 600
+  - '#FBC02D' # yellow 700
+  - '#F9A825' # yellow 800
+  - '#F57F17' # yellow 900
+  - '#FFFF8D' # yellow A100
+  - '#FFFF00' # yellow A200
+  - '#FFEA00' # yellow A400
+  - '#FFD600' # yellow A700
+  - '#FFF8E1' # amber 50
+  - '#FFECB3' # amber 100
+  - '#FFE082' # amber 200
+  - '#FFD54F' # amber 300
+  - '#FFCA28' # amber 400
+  - '#FFC107' # amber 500
+  - '#FFB300' # amber 600
+  - '#FFA000' # amber 700
+  - '#FF8F00' # amber 800
+  - '#FF6F00' # amber 900
+  - '#FFE57F' # amber A100
+  - '#FFD740' # amber A200
+  - '#FFC400' # amber A400
+  - '#FFAB00' # amber A700
+  - '#FFF3E0' # orange 50
+  - '#FFE0B2' # orange 100
+  - '#FFCC80' # orange 200
+  - '#FFB74D' # orange 300
+  - '#FFA726' # orange 400
+  - '#FF9800' # orange 500
+  - '#FB8C00' # orange 600
+  - '#F57C00' # orange 700
+  - '#EF6C00' # orange 800
+  - '#E65100' # orange 900
+  - '#FFD180' # orange A100
+  - '#FFAB40' # orange A200
+  - '#FF9100' # orange A400
+  - '#FF6D00' # orange A700
+  - '#FBE9E7' # deep orange 50
+  - '#FFCCBC' # deep orange 100
+  - '#FFAB91' # deep orange 200
+  - '#FF8A65' # deep orange 300
+  - '#FF7043' # deep orange 400
+  - '#FF5722' # deep orange 500
+  - '#F4511E' # deep orange 600
+  - '#E64A19' # deep orange 700
+  - '#D84315' # deep orange 800
+  - '#BF360C' # deep orange 900
+  - '#FF9E80' # deep orange A100
+  - '#FF6E40' # deep orange A200
+  - '#FF3D00' # deep orange A400
+  - '#DD2C00' # deep orange A700
+  - '#EFEBE9' # brown 50
+  - '#D7CCC8' # brown 100
+  - '#BCAAA4' # brown 200
+  - '#A1887F' # brown 300
+  - '#8D6E63' # brown 400
+  - '#795548' # brown 500
+  - '#6D4C41' # brown 600
+  - '#5D4037' # brown 700
+  - '#4E342E' # brown 800
+  - '#3E2723' # brown 900
+  - '#FAFAFA' # gray 50
+  - '#F5F5F5' # gray 100
+  - '#EEEEEE' # gray 200
+  - '#E0E0E0' # gray 300
+  - '#BDBDBD' # gray 400
+  - '#9E9E9E' # gray 500
+  - '#757575' # gray 600
+  - '#616161' # gray 700
+  - '#424242' # gray 800
+  - '#212121' # gray 900
+  - '#ECEFF1' # blue gray 50
+  - '#CFD8DC' # blue gray 100
+  - '#B0BEC5' # blue gray 200
+  - '#90A4AE' # blue gray 300
+  - '#78909C' # blue gray 400
+  - '#607D8B' # blue gray 500
+  - '#546E7A' # blue gray 600
+  - '#455A64' # blue gray 700
+  - '#37474F' # blue gray 800
+  - '#263238' # blue gray 900
+  - '#000000' # black
+  - '#FFFFFF' # white

@@ -2,8 +2,36 @@
   "name": "material-icon-theme",
   "displayName": "Material Icon Theme",
   "description": "Material Design Icons for Visual Studio Code",
-  "version": "4.7.0",
+  "version": "5.4.2",
+  "scripts": {
+    "build": "bun run ./scripts/build-with-esbuild.ts",
+    "watch": "bun run ./scripts/watch-with-esbuild.ts",
+    "changelog": "changelog-machine --config changelog.config.json",
+    "check-colors": "svg-color-linter --colors material-colors.yml",
+    "check": "bun ./src/scripts/icons/checks",
+    "contributors": "bun ./src/scripts/contributors/index.ts",
+    "generateJson": "bun ./src/scripts/icons/generateJson.ts",
+    "lint": "npx @biomejs/biome check --apply ./src",
+    "postcompile": "bun run generateJson && bun run check",
+    "pretest": "bun run build && tsc -p ./",
+    "preversion": "bun run contributors && git add images/contributors.png && bun run preview && git add images/fileIcons.png && git add images/folderIcons.png && bun run svgo && git add icons/*.svg",
+    "preview": "bun ./src/scripts/preview",
+    "svgo": "svgo -i icons -o icons -q",
+    "test-compile": "tsc -p ./",
+    "test": "bun ./out/test/runTest.js",
+    "version": "bun run changelog && git add CHANGELOG.md",
+    "vscode:prepublish": "bun run lint && bun run build && bun run postcompile"
+  },
   "publisher": "PKief",
+  "author": {
+    "name": "Philipp Kief",
+    "email": "philipp.kief@gmx.de",
+    "url": "https://pkief.github.io"
+  },
+  "funding": "https://github.com/sponsors/PKief",
+  "sponsor": {
+    "url": "https://github.com/sponsors/PKief"
+  },
   "engines": {
     "vscode": "^1.51.0"
   },
@@ -41,9 +69,15 @@
     "virtualWorkspaces": true
   },
   "activationEvents": [
-    "*"
+    "onStartupFinished"
   ],
-  "main": "./dist/extension",
+  "main": "./dist/extension.cjs",
+  "browser": "./dist/web/extension.cjs",
+  "sideEffects": false,
+  "files": [
+    "icons",
+    "dist/material-icons.json"
+  ],
   "contributes": {
     "iconThemes": [
       {
@@ -56,60 +90,59 @@
     "commands": [
       {
         "command": "material-icon-theme.activateIcons",
-        "title": "%command.activateIcons%"
+        "title": "%command.activateIcons%",
+        "enablement": "!isWeb"
       },
       {
         "command": "material-icon-theme.toggleIconPacks",
-        "title": "%command.toggleIconPacks%"
+        "title": "%command.toggleIconPacks%",
+        "enablement": "!isWeb"
       },
       {
         "command": "material-icon-theme.changeFolderTheme",
-        "title": "%command.changeFolderTheme%"
+        "title": "%command.changeFolderTheme%",
+        "enablement": "!isWeb"
       },
       {
         "command": "material-icon-theme.changeFolderColor",
-        "title": "%command.changeFolderColor%"
+        "title": "%command.changeFolderColor%",
+        "enablement": "!isWeb"
+      },
+      {
+        "command": "material-icon-theme.changeFileColor",
+        "title": "%command.changeFileColor%",
+        "enablement": "!isWeb"
       },
       {
         "command": "material-icon-theme.restoreDefaultConfig",
-        "title": "%command.restoreDefaultConfig%"
+        "title": "%command.restoreDefaultConfig%",
+        "enablement": "!isWeb"
       },
       {
         "command": "material-icon-theme.toggleExplorerArrows",
-        "title": "%command.toggleExplorerArrows%"
+        "title": "%command.toggleExplorerArrows%",
+        "enablement": "!isWeb"
       },
       {
         "command": "material-icon-theme.changeOpacity",
-        "title": "%command.changeOpacity%"
+        "title": "%command.changeOpacity%",
+        "enablement": "!isWeb"
       },
       {
         "command": "material-icon-theme.toggleGrayscale",
-        "title": "%command.toggleGrayscale%"
+        "title": "%command.toggleGrayscale%",
+        "enablement": "!isWeb"
       },
       {
         "command": "material-icon-theme.changeSaturation",
-        "title": "%command.changeSaturation%"
+        "title": "%command.changeSaturation%",
+        "enablement": "!isWeb"
       }
     ],
     "configuration": {
       "type": "object",
       "title": "%configuration.title%",
       "properties": {
-        "material-icon-theme.showWelcomeMessage": {
-          "type": "boolean",
-          "default": true,
-          "description": "%configuration.showWelcomeMessage%"
-        },
-        "material-icon-theme.showUpdateMessage": {
-          "type": "boolean",
-          "default": false,
-          "description": "%configuration.showUpdateMessage%"
-        },
-        "material-icon-theme.showReloadMessage": {
-          "type": "boolean",
-          "default": true,
-          "description": "%configuration.showReloadMessage%"
-        },
         "material-icon-theme.activeIconPack": {
           "type": "string",
           "default": "angular",
@@ -119,6 +152,7 @@
             "%configuration.activeIconPack.angular_ngrx%",
             "%configuration.activeIconPack.react%",
             "%configuration.activeIconPack.react_redux%",
+            "%configuration.activeIconPack.qwik%",
             "%configuration.activeIconPack.vue%",
             "%configuration.activeIconPack.vue_vuex%",
             "%configuration.activeIconPack.nest%",
@@ -129,6 +163,7 @@
             "angular_ngrx",
             "react",
             "react_redux",
+            "qwik",
             "vue",
             "vue_vuex",
             "nest",
@@ -150,6 +185,81 @@
           "default": {},
           "description": "%configuration.languages.associations%"
         },
+        "material-icon-theme.files.customClones": {
+          "type": "array",
+          "default": [],
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "%configuration.customClones.name%"
+              },
+              "base": {
+                "type": "string",
+                "description": "%configuration.customClones.base%"
+              },
+              "color": {
+                "type": "string",
+                "description": "%configuration.customClones.color%"
+              },
+              "lightColor": {
+                "type": "string",
+                "description": "%configuration.customClones.lightColor%"
+              },
+              "fileNames": {
+                "type": "array",
+                "default": [],
+                "description": "%configuration.customClones.fileNames%",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "fileExtensions": {
+                "type": "array",
+                "default": [],
+                "description": "%configuration.customClones.fileExtensions%",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "description": "%configuration.customClones%"
+        },
+        "material-icon-theme.folders.customClones": {
+          "type": "array",
+          "default": [],
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "%configuration.customClones.name%"
+              },
+              "base": {
+                "type": "string",
+                "description": "%configuration.customClones.base%"
+              },
+              "color": {
+                "type": "string",
+                "description": "%configuration.customClones.color%"
+              },
+              "lightColor": {
+                "type": "string",
+                "description": "%configuration.customClones.lightColor%"
+              },
+              "folderNames": {
+                "type": "array",
+                "description": "%configuration.customClones.folderNames%",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "description": "%configuration.customClones%"
+        },
         "material-icon-theme.folders.theme": {
           "type": "string",
           "default": "specific",
@@ -170,6 +280,12 @@
           "default": "#90a4ae",
           "pattern": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
           "description": "%configuration.folders.color%"
+        },
+        "material-icon-theme.files.color": {
+          "type": "string",
+          "default": "#90a4ae",
+          "pattern": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+          "description": "%configuration.files.color%"
         },
         "material-icon-theme.opacity": {
           "type": "number",
@@ -193,47 +309,28 @@
       }
     }
   },
-  "scripts": {
-    "build": "npm run compile:dev && npm run postcompile",
-    "check": "ts-node ./src/scripts/icons/checks",
-    "compile": "webpack --mode production",
-    "compile:dev": "webpack --mode none",
-    "compile:watch": "webpack --mode none --watch",
-    "contributors": "ts-node ./src/scripts/contributors/index.ts",
-    "generateJson": "ts-node ./src/scripts/icons/generateJson.ts",
-    "lint": "eslint -c .eslintrc.json --ext .ts ./src/**/*.ts",
-    "postcompile": "npm run generateJson && npm run check",
-    "pretest": "npm run build && tsc -p ./",
-    "preview": "ts-node ./src/scripts/preview",
-    "test": "node ./out/test/runTest.js",
-    "vscode:prepublish": "npm run lint && npm run compile"
-  },
   "dependencies": {
+    "chroma-js": "^2.4.2",
     "lodash.merge": "4.6.2",
-    "semver": "7.3.4"
+    "svgson": "^5.3.1"
   },
   "devDependencies": {
-    "@types/glob": "^7.1.3",
-    "@types/lodash.merge": "^4.6.6",
-    "@types/mocha": "^8.2.2",
-    "@types/node": "^14.14.35",
-    "@types/puppeteer": "^5.4.3",
-    "@types/semver": "^7.3.4",
+    "@biomejs/biome": "1.7.3",
+    "@types/chroma-js": "^2.4.4",
+    "@types/glob": "^7.2.0",
+    "@types/lodash.merge": "^4.6.7",
+    "@types/puppeteer": "^5.4.6",
     "@types/vscode": "~1.51.0",
-    "@typescript-eslint/eslint-plugin": "^4.18.0",
-    "@typescript-eslint/parser": "^4.18.0",
-    "clean-webpack-plugin": "^3.0.0",
-    "eslint": "^7.22.0",
-    "eslint-config-prettier": "^8.1.0",
-    "glob": "^7.1.6",
-    "mocha": "^8.3.2",
-    "puppeteer": "^8.0.0",
+    "@vscode/test-electron": "^2.3.9",
+    "axios": "^1.4.0",
+    "bun-types": "^1.1.12",
+    "changelog-machine": "^1.0.2",
+    "esbuild": "^0.21.4",
+    "glob": "^8.0.3",
+    "puppeteer": "^22.11.0",
     "rimraf": "^3.0.2",
-    "ts-loader": "^8.0.18",
-    "ts-node": "^9.1.1",
-    "typescript": "^4.2.3",
-    "vscode-test": "^1.5.1",
-    "webpack": "^5.27.0",
-    "webpack-cli": "^4.5.0"
+    "svg-color-linter": "^1.3.0",
+    "svgo": "^2.8.0",
+    "typescript": "^4.7.2"
   }
 }
