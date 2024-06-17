@@ -1799,7 +1799,6 @@ export const fileIcons: FileIcons = {
     { name: 'codeowners', fileNames: ['codeowners', 'OWNERS'] },
     { name: 'gcp', fileNames: ['.gcloudignore'] },
     { name: 'amplify', fileNames: ['amplify.yml'] },
-    { name: 'disc', fileExtensions: ['iso'] },
     {
       name: 'disc',
       fileExtensions: ['iso', 'vmdk', 'hdd', 'qcow', 'qcow2', 'qed', 'dmg'],
