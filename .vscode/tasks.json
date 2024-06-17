@@ -3,10 +3,10 @@
   "tasks": [
     {
       "type": "bun",
-      "script": "bun run ./scripts/build-with-esbuild.ts",
+      "script": "bun run build; bun run postcompile",
       "problemMatcher": [],
       "label": "bun: build",
-      "detail": "bun run ./scripts/build-with-esbuild.ts - package.json",
+      "detail": "bun run build",
       "group": {
         "kind": "build",
         "isDefault": true
