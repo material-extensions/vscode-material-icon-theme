@@ -1,4 +1,4 @@
-import { LanguageIcon } from '../models';
+import { type LanguageIcon } from '../models';
 
 /**
  * Defines icons for language ids

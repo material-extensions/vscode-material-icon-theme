@@ -1,6 +1,10 @@
-import { readdir } from 'fs';
-import { join, parse } from 'path';
-import { DefaultIcon, FolderIcon, FolderTheme } from '../../../models/index';
+import { readdir } from 'node:fs';
+import { join, parse } from 'node:path';
+import {
+  type DefaultIcon,
+  type FolderIcon,
+  type FolderTheme,
+} from '../../../models/index';
 import { green, red } from '../../helpers/painter';
 import {
   fileIcons,
@@ -34,7 +38,7 @@ const fsReadAllIconFiles = (
 
   files.forEach((file) => {
     const fileName = file;
-    const iconName = parse(file).name;
+    const iconName = parse(file).name.replace('.clone', '');
     availableIcons[iconName] = fileName;
   });
 

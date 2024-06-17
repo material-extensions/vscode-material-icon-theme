@@ -1,8 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <g>
-    <polygon points="12 22 4 18 4 8 12 12 12 22" style="fill: #00e676;fill-rule: evenodd"/>
-    <polyline points="20 8 20 18 24 18 28 14" style="fill: #00e676;fill-rule: evenodd"/>
-    <polygon points="12 22 20 18 20 8 12 12 12 22" style="fill: #00c853;fill-rule: evenodd"/>
-    <polygon points="20 28 28 24 28 14 20 18 20 28" style="fill: #00c853;fill-rule: evenodd"/>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="#00e676" fill-rule="evenodd" d="m12 22-8-4V8l8 4v10zm8-14v10h4l4-4"/><path fill="#00c853" fill-rule="evenodd" d="m12 22 8-4V8l-8 4v10zm8 6 8-4V14l-8 4v10z"/></svg>
