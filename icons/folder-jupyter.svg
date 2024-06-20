@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
     <!-- Main folder icon -->
-    <path fill="#FFBA75" d="m13.844 7.536-1.288-1.072A2 2 0 0 0 11.276 6H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h24a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2H15.124a2 2 0 0 1-1.28-.464Z"/>
+    <path fill="#FFB74D" d="m13.844 7.536-1.288-1.072A2 2 0 0 0 11.276 6H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h24a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2H15.124a2 2 0 0 1-1.28-.464Z"/>
     
     <!-- Group containing the Jupyter logo elements, scaled down and positioned in the bottom right of the folder -->
     <g data-mit-no-recolor="true"> <!-- prevent recolor of the jupyter logo -->
