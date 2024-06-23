@@ -682,7 +682,7 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['anim', 'anims', 'animation', 'animations', 'animated'],
       },
       { name: 'folder-guard', folderNames: ['guard', 'guards'] },
-      { name: 'folder-prisma', folderNames: ['prisma'] },
+      { name: 'folder-prisma', folderNames: ['prisma', 'prisma/schema'] },
       { name: 'folder-pipe', folderNames: ['pipe', 'pipes'] },
       { name: 'folder-svg', folderNames: ['svg', 'svgs'] },
       {
