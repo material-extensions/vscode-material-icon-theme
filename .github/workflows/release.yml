@@ -34,7 +34,7 @@ jobs:
           persist-credentials: false
 
       - name: Setup Platform 🛠
-        uses: oven-sh/setup-bun@f4d14e03ff726c06358e5557344e1da148b56cf7 # v1.2.2
+        uses: oven-sh/setup-bun@123c6c4e2fea3eb7bffaa91a85eb6b3d505bf7af # v2
         with:
           bun-version: 1.1.13
 
