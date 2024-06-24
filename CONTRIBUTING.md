@@ -350,7 +350,7 @@ That's it. We don't need to create a new SVG file. The extension will automatica
 
 <img src="./images/how-tos/cloned-rust-icon-example.png" />
 
-The same technique can be applied to folder icons by using the `clone` attribute in the folder icon configuration.
+The same technique can be applied to folder icons using the `clone` attribute in the configuration.
 
 You might have noticed that we are using aliases for the colors. These aliases correspond to the Material Design color palette.
 
@@ -366,7 +366,7 @@ Let's see an example:
 
 ![gitlab icon](./images/how-tos/cloned-icon-no-recolor.png)
 
-In this example, we have the `folder-gitlab` folder icon. If we were to clone it, we might want to prevent recoloring from happening over the gitlab logo and only allow recoloring of the folder shape itself.
+In this example, we have the `folder-gitlab` folder icon. If we were to clone it, we should prevent recoloring from happening over the gitlab logo and only allow recoloring of the folder shape itself.
 
 To do this, we need to set the attribute `data-mit-no-recolor="true"` to the paths, shapes, or groups we do not want to be recolored.
 
@@ -395,9 +395,9 @@ Now if we create a clone of this icon, the paths, shapes, or groups marked with 
 }
 ```
 
-Will result in:
+This will result in the following:
 
-![result of cloning gitlab icon with selective recoloring](./images/how-tos/cloned-icon-no-recolor-result.png)
+![the result of cloning gitlab icon with selective recoloring](./images/how-tos/cloned-icon-no-recolor-result.png)
 
 ## Add translations
 
