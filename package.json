@@ -11,7 +11,7 @@
     "check": "bun ./src/scripts/icons/checks",
     "contributors": "bun ./src/scripts/contributors/index.ts",
     "generateJson": "bun ./src/scripts/icons/generateJson.ts",
-    "lint": "npx @biomejs/biome check --apply ./src",
+    "lint": "npx @biomejs/biome check --write ./src",
     "postcompile": "bun run generateJson && bun run check",
     "pretest": "bun run build && tsc -p ./",
     "preversion": "bun run contributors && git add images/contributors.png && bun run preview && git add images/fileIcons.png && git add images/folderIcons.png && bun run svgo && git add icons/*.svg",
@@ -35,49 +35,33 @@
   "engines": {
     "vscode": "^1.51.0"
   },
-  "homepage": "https://github.com/PKief/vscode-material-icon-theme/blob/main/README.md",
+  "homepage": "https://github.com/material-extensions/vscode-material-icon-theme/blob/main/README.md",
   "repository": {
     "type": "git",
-    "url": "https://github.com/PKief/vscode-material-icon-theme.git"
+    "url": "https://github.com/material-extensions/vscode-material-icon-theme.git"
   },
   "bugs": {
-    "url": "https://github.com/PKief/vscode-material-icon-theme/issues"
+    "url": "https://github.com/material-extensions/vscode-material-icon-theme/issues"
   },
   "icon": "logo.png",
   "galleryBanner": {
     "color": "#1e1e1e",
     "theme": "dark"
   },
-  "categories": [
-    "Themes"
-  ],
-  "keywords": [
-    "icons",
-    "theme",
-    "material",
-    "icon-theme",
-    "customization"
-  ],
-  "extensionKind": [
-    "ui",
-    "workspace"
-  ],
+  "categories": ["Themes"],
+  "keywords": ["icons", "theme", "material", "icon-theme", "customization"],
+  "extensionKind": ["ui", "workspace"],
   "capabilities": {
     "untrustedWorkspaces": {
       "supported": true
     },
     "virtualWorkspaces": true
   },
-  "activationEvents": [
-    "onStartupFinished"
-  ],
+  "activationEvents": ["onStartupFinished"],
   "main": "./dist/extension.cjs",
   "browser": "./dist/web/extension.cjs",
   "sideEffects": false,
-  "files": [
-    "icons",
-    "dist/material-icons.json"
-  ],
+  "files": ["icons", "dist/material-icons.json"],
   "contributes": {
     "iconThemes": [
       {
@@ -269,11 +253,7 @@
             "%configuration.folders.theme.classic%",
             "%configuration.folders.theme.none%"
           ],
-          "enum": [
-            "specific",
-            "classic",
-            "none"
-          ]
+          "enum": ["specific", "classic", "none"]
         },
         "material-icon-theme.folders.color": {
           "type": "string",
@@ -315,7 +295,7 @@
     "svgson": "^5.3.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.7.3",
+    "@biomejs/biome": "1.8.2",
     "@types/chroma-js": "^2.4.4",
     "@types/glob": "^7.2.0",
     "@types/lodash.merge": "^4.6.7",
