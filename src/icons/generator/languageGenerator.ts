@@ -1,11 +1,11 @@
 import merge from 'lodash.merge';
 import { getFileConfigHash } from '../../helpers/fileConfig';
 import {
-  DefaultIcon,
-  IconAssociations,
+  type DefaultIcon,
+  type IconAssociations,
   IconConfiguration,
-  IconJsonOptions,
-  LanguageIcon,
+  type IconJsonOptions,
+  type LanguageIcon,
 } from '../../models/index';
 import {
   highContrastColorFileEnding,
