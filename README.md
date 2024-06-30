@@ -134,8 +134,8 @@ This will create two new icons called `rust-mod` and `rust-lib` that are associa
 
 <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/how-tos/cloned-file-icons-example.png" alt="cloned file icons">
 
-- Although you can use any `#RRGGBB` color for the `color` and `lightColor` properties, if you want to stick with colors from the material palette, you can check the full list of allowed aliases [here](https://github.com/PKief/vscode-material-icon-theme/blob/main/src/icons/generator/clones/utils/color/materialPalette.ts#L7).
-- You can check the full list of available icons to be used as the `base` [here](https://github.com/PKief/vscode-material-icon-theme/blob/main/src/icons/fileIcons.ts).
+- Although you can use any `#RRGGBB` color for the `color` and `lightColor` properties, if you want to stick with colors from the material palette, you can check the full list of allowed aliases [here](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/icons/generator/clones/utils/color/materialPalette.ts#L7).
+- You can check the full list of available icons to be used as the `base` [here](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/icons/fileIcons.ts).
 
 ### Folder associations
 
@@ -196,8 +196,8 @@ This will create two new icons called `users-admin` and `roles-admin` that are a
 
 <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/how-tos/cloned-folder-icons-example.png" alt="cloned folder icons">
 
-- Although you can use any `#RRGGBB` color for the `color` and `lightColor` properties, if you want to stick with colors from the material palette, you can check the full list of allowed aliases [here](https://github.com/PKief/vscode-material-icon-theme/tree/main/icons/generator/clones/utils/color/materialPalette.ts#L7).
-- You can check the full list of available icon to be used as the `base` [here](https://github.com/PKief/vscode-material-icon-theme/blob/main/src/icons/folderIcons.ts).
+- Although you can use any `#RRGGBB` color for the `color` and `lightColor` properties, if you want to stick with colors from the material palette, you can check the full list of allowed aliases [here](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/icons/generator/clones/utils/color/materialPalette.ts).
+- You can check the full list of available icon to be used as the `base` [here](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/icons/folderIcons.ts).
 
 ### Language associations
 
@@ -239,13 +239,13 @@ Press `Ctrl-Shift-P` to open the command palette and type `Material Icons`.
 
 ## Contributors
 
-<a href="https://github.com/PKief/vscode-material-icon-theme/graphs/contributors">
+<a href="https://github.com/material-extensions/vscode-material-icon-theme/graphs/contributors">
     <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/contributors.png" alt="Contributors">
 </a>
 
 **Would you like to contribute?**
 
-Take a look at the [contribution guidelines](https://github.com/PKief/vscode-material-icon-theme/blob/main/CONTRIBUTING.md) and open a [new issue](https://github.com/PKief/vscode-material-icon-theme/issues) or [pull request](https://github.com/PKief/vscode-material-icon-theme/pulls) on GitHub.
+Take a look at the [contribution guidelines](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/CONTRIBUTING.md) and open a [new issue](https://github.com/material-extensions/vscode-material-icon-theme/issues) or [pull request](https://github.com/material-extensions/vscode-material-icon-theme/pulls) on GitHub.
 
 ## Related extensions
 

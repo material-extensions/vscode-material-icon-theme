@@ -1,4 +1,4 @@
-import { QuickPickItem, window as codeWindow } from 'vscode';
+import { type QuickPickItem, window as codeWindow } from 'vscode';
 import { getMaterialIconsJSON, setThemeConfig } from '../helpers';
 import { translate } from '../i18n';
 
