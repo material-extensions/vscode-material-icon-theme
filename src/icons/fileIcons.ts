@@ -2453,6 +2453,10 @@ export const fileIcons: FileIcons = {
       fileNames: ['.devcontainer/devcontainer.json'],
     },
     {
+      name: 'verified',
+      fileExtensions: ['sigstore.json'],
+    },
+    {
       name: 'bruno',
       fileExtensions: ['bru'],
     },
