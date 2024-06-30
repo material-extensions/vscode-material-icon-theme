@@ -2453,6 +2453,11 @@ export const fileIcons: FileIcons = {
       fileNames: ['.devcontainer/devcontainer.json'],
     },
     {
+      name: 'kcl',
+      fileNames: ['kcl.mod', 'kcl.yaml', 'kcl.yml'],
+      fileExtensions: ['k'],
+    },
+    {
       name: 'verified',
       fileExtensions: ['sigstore.json'],
     },
