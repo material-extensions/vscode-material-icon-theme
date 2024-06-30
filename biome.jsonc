@@ -1,0 +1,60 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.8.2/schema.json",
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": false,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineEnding": "lf",
+    "lineWidth": 80,
+    "attributePosition": "auto"
+  },
+  "organizeImports": { "enabled": true },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": false,
+      "complexity": { "useArrowFunction": "off" },
+      "correctness": { "noUnsafeFinally": "error" },
+      "security": { "noGlobalEval": "error" },
+      "style": {
+        "noVar": "error",
+        "useBlockStatements": "off",
+        "useConst": "error",
+        "useNamingConvention": {
+          "level": "error",
+          "options": { "strictCase": false }
+        }
+      },
+      "suspicious": {
+        "noDoubleEquals": "error",
+        "useNamespaceKeyword": "error"
+      }
+    }
+  },
+  "javascript": {
+    "formatter": {
+      "jsxQuoteStyle": "single",
+      "quoteProperties": "asNeeded",
+      "trailingCommas": "es5",
+      "semicolons": "always",
+      "arrowParentheses": "always",
+      "bracketSpacing": true,
+      "bracketSameLine": false,
+      "quoteStyle": "single",
+      "attributePosition": "auto"
+    }
+  },
+  "overrides": [
+    {
+      "include": ["src/models/scripts/contributors/contributor.ts"],
+      "linter": {
+        "rules": {
+          "style": {
+            "useNamingConvention": "off"
+          }
+        }
+      }
+    }
+  ]
+}

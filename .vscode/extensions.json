@@ -1,8 +1,8 @@
 {
   "recommendations": [
-    "dbaeumer.vscode-eslint",
-    "esbenp.prettier-vscode",
+    "biomejs.biome",
     "jock.svg",
-    "EditorConfig.EditorConfig"
+    "editorconfig.editorconfig",
+    "oven.bun-vscode"
   ]
 }

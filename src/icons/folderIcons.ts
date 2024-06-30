@@ -1,4 +1,4 @@
-import { FolderTheme, IconPack } from '../models';
+import { type FolderTheme, IconPack } from '../models';
 
 /**
  * Defines folder icons
@@ -682,7 +682,7 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['anim', 'anims', 'animation', 'animations', 'animated'],
       },
       { name: 'folder-guard', folderNames: ['guard', 'guards'] },
-      { name: 'folder-prisma', folderNames: ['prisma'] },
+      { name: 'folder-prisma', folderNames: ['prisma', 'prisma/schema'] },
       { name: 'folder-pipe', folderNames: ['pipe', 'pipes'] },
       { name: 'folder-svg', folderNames: ['svg', 'svgs'] },
       {
@@ -859,6 +859,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-seeders',
         folderNames: ['seeds', 'seeders', 'seed', 'seeding'],
       },
+      { name: 'folder-bicep', folderNames: ['bicep'] },
     ],
   },
   {

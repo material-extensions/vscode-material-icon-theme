@@ -1,4 +1,4 @@
-import { CloneOptions } from '../cloneOptions';
+import { type CloneOptions } from '../cloneOptions';
 import { IconPack } from '../index';
 
 export interface FolderIcon {

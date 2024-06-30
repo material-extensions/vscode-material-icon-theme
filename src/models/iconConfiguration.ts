@@ -1,4 +1,4 @@
-import { IconJsonOptions } from './';
+import { type IconJsonOptions } from './';
 
 export class IconConfiguration {
   file?: string;

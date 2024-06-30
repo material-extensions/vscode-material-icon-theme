@@ -1,5 +1,5 @@
-import { writeFileSync } from 'fs';
-import { join } from 'path';
+import { writeFileSync } from 'node:fs';
+import { join } from 'node:path';
 import { green, red } from '../helpers/painter';
 import { createScreenshot } from '../helpers/screenshots';
 import { toTitleCase } from './../helpers/titleCase';
@@ -29,8 +29,8 @@ const createHTMLTableBodyRows = (items: IconDefinition[][]) => {
         (icon) => `
             <td class="icon">
                 <img src="./../../../icons/${icon.iconName}.svg" alt="${
-          icon.label
-        }">
+                  icon.label
+                }">
             </td>
             <td class="iconName">${toTitleCase(icon.label)}</td>
         `

@@ -350,7 +350,7 @@ That's it. We don't need to create a new SVG file. The extension will automatica
 
 <img src="./images/how-tos/cloned-rust-icon-example.png" />
 
-The same technique can be applied to folder icons by using the `clone` attribute in the folder icon configuration.
+The same technique can be applied to folder icons using the `clone` attribute in the configuration.
 
 You might have noticed that we are using aliases for the colors. These aliases correspond to the Material Design color palette.
 
@@ -366,7 +366,7 @@ Let's see an example:
 
 ![gitlab icon](./images/how-tos/cloned-icon-no-recolor.png)
 
-In this example, we have the `folder-gitlab` folder icon. If we were to clone it, we might want to prevent recoloring from happening over the gitlab logo and only allow recoloring of the folder shape itself.
+In this example, we have the `folder-gitlab` folder icon. If we were to clone it, we should prevent recoloring from happening over the gitlab logo and only allow recoloring of the folder shape itself.
 
 To do this, we need to set the attribute `data-mit-no-recolor="true"` to the paths, shapes, or groups we do not want to be recolored.
 
@@ -395,9 +395,9 @@ Now if we create a clone of this icon, the paths, shapes, or groups marked with 
 }
 ```
 
-Will result in:
+This will result in the following:
 
-![result of cloning gitlab icon with selective recoloring](./images/how-tos/cloned-icon-no-recolor-result.png)
+![the result of cloning gitlab icon with selective recoloring](./images/how-tos/cloned-icon-no-recolor-result.png)
 
 ## Add translations
 
@@ -410,11 +410,11 @@ This project offers translations into different languages. If you notice an erro
 
 This icon extension consists not only of icons but also brings some code. This is necessary to simplify various things and enable multiple functionalities. If you want to change something here, the following steps are to be considered:
 
-1. Install [Node.js](https://nodejs.org/en/) on your machine
-2. Install node dependencies with `npm install`
+1. Install [Bun](https://bun.sh/docs/installation) on your machine
+2. Install dependencies with `bun install`
 3. Open project with VS Code
 4. Install required [VS Code extensions](.vscode/extensions.json)
 5. Press `F5` or run `Launch Extension` in the debug window
-6. Run tests with `Launch Tests`
+6. Run tests with `bun test`
 
 You will find more information about the official extension API in the [extension guides of VS Code](https://code.visualstudio.com/api/extension-guides/file-icon-theme).

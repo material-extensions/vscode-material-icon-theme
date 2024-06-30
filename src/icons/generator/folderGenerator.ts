@@ -1,14 +1,14 @@
-import { writeFileSync } from 'fs';
+import { writeFileSync } from 'node:fs';
+import { basename, join } from 'node:path';
 import merge from 'lodash.merge';
-import { basename, join } from 'path';
 import { getFileConfigHash } from '../../helpers/fileConfig';
 import {
-  DefaultIcon,
-  FolderIcon,
-  FolderTheme,
-  IconAssociations,
+  type DefaultIcon,
+  type FolderIcon,
+  type FolderTheme,
+  type IconAssociations,
   IconConfiguration,
-  IconJsonOptions,
+  type IconJsonOptions,
 } from '../../models/index';
 import {
   cloneIconExtension,
@@ -259,9 +259,8 @@ const setFolderNames = (
       obj.folderNames[name as keyof IconConfiguration] = iconName + appendix;
     }
     if (obj.folderNamesExpanded) {
-      obj.folderNamesExpanded[
-        name as keyof IconConfiguration
-      ] = `${iconName}${openedFolder}${appendix}`;
+      obj.folderNamesExpanded[name as keyof IconConfiguration] =
+        `${iconName}${openedFolder}${appendix}`;
     }
   });
   return obj;

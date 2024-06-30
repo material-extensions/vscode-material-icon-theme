@@ -1,4 +1,4 @@
-import { FileIcons, FileNamePattern, IconPack } from '../models';
+import { type FileIcons, FileNamePattern, IconPack } from '../models';
 import { parseByPattern } from './patterns';
 
 /**
@@ -1771,12 +1771,34 @@ export const fileIcons: FileIcons = {
     { name: 'moonscript', fileExtensions: ['moon'] },
     { name: 'percy', fileNames: ['.percy.yml'] },
     { name: 'gitpod', fileNames: ['.gitpod.yml'] },
-    { name: 'advpl_prw', fileExtensions: ['prw', 'prx'] },
-    { name: 'advpl_ptm', fileExtensions: ['ptm'] },
-    { name: 'advpl_tlpp', fileExtensions: ['tlpp'] },
-    { name: 'advpl_include', fileExtensions: ['ch'] },
+    { name: 'advpl', fileExtensions: ['prw', 'prx'] },
+    {
+      name: 'advpl-ptm',
+      clone: {
+        base: 'advpl',
+        color: 'red-400',
+      },
+      fileExtensions: ['ptm'],
+    },
+    {
+      name: 'advpl-tlpp',
+      clone: {
+        base: 'advpl',
+        color: 'yellow-700',
+      },
+      fileExtensions: ['tlpp'],
+    },
+    {
+      name: 'advpl-include',
+      clone: {
+        base: 'advpl',
+        color: 'cyan-500',
+      },
+      fileExtensions: ['ch'],
+    },
     { name: 'codeowners', fileNames: ['codeowners', 'OWNERS'] },
     { name: 'gcp', fileNames: ['.gcloudignore'] },
+    { name: 'amplify', fileNames: ['amplify.yml'] },
     {
       name: 'disc',
       fileExtensions: ['iso', 'vmdk', 'hdd', 'qcow', 'qcow2', 'qed', 'dmg'],
@@ -2417,6 +2439,10 @@ export const fileIcons: FileIcons = {
         '.k8s.yml',
         '.k8s.yaml',
       ],
+    },
+    {
+      name: 'screwdriver',
+      fileNames: ['screwdriver.yaml', 'screwdriver.yml'],
     },
     {
       name: 'snapcraft',

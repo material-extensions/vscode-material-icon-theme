@@ -1,11 +1,11 @@
 import merge from 'lodash.merge';
 import { getFileConfigHash } from '../../helpers/fileConfig';
 import {
-  FileIcon,
-  FileIcons,
-  IconAssociations,
+  type FileIcon,
+  type FileIcons,
+  type IconAssociations,
   IconConfiguration,
-  IconJsonOptions,
+  type IconJsonOptions,
 } from '../../models/index';
 import {
   cloneIconExtension,
@@ -15,10 +15,10 @@ import {
   wildcardPattern,
 } from './constants';
 import {
+  getPath,
+  getSVG,
   validateHEXColorCode,
   writeSVGFiles,
-  getSVG,
-  getPath,
 } from './folderGenerator';
 
 /**
@@ -171,9 +171,8 @@ const mapSpecificFileIcons = (
       configLightMappingType[name] = `${icon.name}${lightColorFileEnding}`;
     }
     if (icon.highContrast) {
-      configHighContrastMappingType[
-        name
-      ] = `${icon.name}${highContrastColorFileEnding}`;
+      configHighContrastMappingType[name] =
+        `${icon.name}${highContrastColorFileEnding}`;
     }
   });
   return config;
