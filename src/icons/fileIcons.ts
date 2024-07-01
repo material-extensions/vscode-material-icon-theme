@@ -2373,6 +2373,7 @@ export const fileIcons: FileIcons = {
       name: 'mojo',
       fileExtensions: ['mojo', '🔥'],
     },
+    { name: 'swcrc', fileNames: ['.swcrc'] },
     {
       name: 'werf',
       fileNames: [
