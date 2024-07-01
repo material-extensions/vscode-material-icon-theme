@@ -824,6 +824,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['unity'],
       },
       {
+        name: 'folder-internal',
+        folderNames: ['internal'],
+      },
+      {
         name: 'folder-pdf',
         folderNames: ['pdf', 'pdfs'],
       },
