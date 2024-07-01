@@ -1,10 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <g>
-    <path d="M2,4V20a2,2,0,0,0,2,2H8V20H4V4H20V8h2V4a2,2,0,0,0-2-2H4A2,2,0,0,0,2,4Z" style="fill: #42a5f5"/>
-    <path d="M10,12v4h2V12h4V10H12A2,2,0,0,0,10,12Z" style="fill: #42a5f5"/>
-    <path d="M24,10v2h4V28H12V24H10v4a2,2,0,0,0,2,2H28a2,2,0,0,0,2-2V12a2,2,0,0,0-2-2Z" style="fill: #42a5f5"/>
-    <polygon points="12 20 12 18 10 18 10 22 14 22 14 20 12 20" style="fill: #42a5f5"/>
-    <path d="M20,16v4H16v2h4a2,2,0,0,0,2-2V16Z" style="fill: #42a5f5"/>
-    <polygon points="18 10 18 12 20 12 20 14 22 14 22 10 18 10" style="fill: #42a5f5"/>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path fill="#42a5f5" d="M18 23H4c-1.1 0-2-.9-2-2V7h2v14h14v2zM14.5 7V5h-2v2h-2v2h2v2h2V9h2V7h-2zm2 6h-6v2h6v-2zM15 1H8c-1.1 0-1.99.9-1.99 2L6 17c0 1.1.89 2 1.99 2H19c1.1 0 2-.9 2-2V7l-6-6zm4 16H8V3h6.17L19 7.83V17z"/></svg>

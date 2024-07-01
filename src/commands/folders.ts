@@ -1,4 +1,4 @@
-import { QuickPickItem, window as codeWindow } from 'vscode';
+import { type QuickPickItem, window as codeWindow } from 'vscode';
 import {
   capitalizeFirstLetter,
   getMaterialIconsJSON,
