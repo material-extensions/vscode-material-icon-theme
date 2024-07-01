@@ -1416,6 +1416,23 @@ export const fileIcons: FileIcons = {
     { name: 'ejs', fileExtensions: ['ejs'] },
     { name: 'sequelize', fileNames: ['.sequelizerc'] },
     {
+      name: 'styled',
+      fileExtensions: [
+        'styled.ts',
+        'styled.js',
+        'styled.jsx',
+        'styled.tsx',
+        'styles.ts',
+        'styles.js',
+        'styles.jsx',
+        'styles.tsx',
+        'view.ts',
+        'view.js',
+        'view.jsx',
+        'view.tsx',
+      ],
+    },
+    {
       name: 'gatsby',
       fileNames: [
         'gatsby-config.js',
