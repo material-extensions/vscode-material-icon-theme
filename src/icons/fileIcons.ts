@@ -2415,6 +2415,15 @@ export const fileIcons: FileIcons = {
       name: 'abap',
       fileExtensions: ['abap', 'acds', 'asddls'],
     },
+    {
+      name: 'drizzle',
+      light: true,
+      fileExtensions: [
+        'drizzle.config.ts',
+        'drizzle.config.js',
+        'drizzle.config.json',
+      ],
+    },
     { name: 'lottie', fileExtensions: ['lottie'] },
     {
       name: 'puppeteer',
