@@ -84,6 +84,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-php', folderNames: ['php'] },
       { name: 'folder-phpmailer', folderNames: ['phpmailer'] },
       { name: 'folder-sublime', folderNames: ['sublime'] },
+      { name: 'folder-elixir', folderNames: ['elixir', '.elixir_ls'] },
       {
         name: 'folder-docs',
         folderNames: [
@@ -430,6 +431,8 @@ export const folderIcons: FolderTheme[] = [
           'addons',
           'module',
           'modules',
+          'dependencies',
+          'deps',
         ],
       },
       { name: 'folder-middleware', folderNames: ['middleware', 'middlewares'] },
