@@ -792,6 +792,17 @@ export const folderIcons: FolderTheme[] = [
         ],
       },
       {
+        name: 'folder-helm',
+        folderNames: [
+          'helm',
+          'helmchart',
+          'helmcharts',
+          '.helm',
+          '.helmchart',
+          '.helmcharts',
+        ],
+      },
+      {  
         name: 'folder-queue',
         folderNames: ['queue', 'queues', 'bull', 'mq'],
       },
