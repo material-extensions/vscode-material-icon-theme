@@ -458,6 +458,10 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-tasks', folderNames: ['tasks', 'tickets'] },
       { name: 'folder-android', folderNames: ['android'] },
       { name: 'folder-ios', folderNames: ['ios'] },
+      {
+        name: 'folder-ui',
+        folderNames: ['presentation', 'gui', 'ui', 'ux'],
+      },
       { name: 'folder-upload', folderNames: ['uploads', 'upload'] },
       { name: 'folder-download', folderNames: ['downloads', 'download'] },
       {
