@@ -800,6 +800,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['vercel', 'now'],
       },
       {
+        name: 'folder-codesandbox',
+        folderNames: ['.codesandbox'],
+      },
+      {
         name: 'folder-cypress',
         folderNames: ['cypress'],
       },
