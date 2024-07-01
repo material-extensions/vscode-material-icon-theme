@@ -22,6 +22,10 @@ export const fileIcons: FileIcons = {
     { name: 'sass', fileExtensions: ['scss', 'sass'] },
     { name: 'less', fileExtensions: ['less'] },
     {
+      name: 'dependencies-update',
+      fileExtensions: ['.ncurc.json', '.ncurc.yml', '.ncurc.js'],
+    },
+    {
       name: 'json',
       fileExtensions: [
         'json',
