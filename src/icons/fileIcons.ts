@@ -2383,6 +2383,8 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'roblox', fileExtensions: ['rbxl', 'rbxlx', 'rbxm', 'rbxmx'] },
+    { name: 'panda', fileNames: ['panda.config.ts', 'panda.config.js'] },
+    { name: 'formkit', fileNames: ['formkit.config.js', 'formkit.config.ts'] },
     {
       name: 'panda',
       fileNames: [
