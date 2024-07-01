@@ -2120,6 +2120,16 @@ export const fileIcons: FileIcons = {
       fileNames: ['supabase.js', 'supabase.py'],
     },
     {
+      name: 'alex',
+      fileNames: [
+        '.autorc',
+        '.alexrc.yml',
+        '.alexrc.yaml',
+        '.alexrc.js',
+        '.alexignore',
+      ],
+    },
+    {
       name: 'ember',
       fileNames: ['.ember-cli', '.ember-cli.js', 'ember-cli-builds.js'],
     },
