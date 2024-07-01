@@ -2217,6 +2217,12 @@ export const fileIcons: FileIcons = {
         'cypress.config.cjs',
         'cypress.config.mjs',
       ],
+      fileExtensions: [
+        '.cy.js',
+        '.cy.jsx',
+        '.cy.ts',
+        '.cy.tsx'
+      ]
     },
     { name: 'siyuan', fileExtensions: ['sy'] },
     { name: 'ndst', fileExtensions: ['ndst.yml', 'ndst.yaml', 'ndst.json'] },
