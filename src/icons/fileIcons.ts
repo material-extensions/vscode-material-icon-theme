@@ -1875,6 +1875,7 @@ export const fileIcons: FileIcons = {
     { name: 'drawio', fileExtensions: ['drawio', 'dio'] },
     { name: 'pascal', fileExtensions: ['pas'] },
     { name: 'shaderlab', fileExtensions: ['unity'] },
+    { name: 'quantum', fileExtensions: ['qtn'], light: true },
     {
       name: 'roadmap',
       fileNames: [
