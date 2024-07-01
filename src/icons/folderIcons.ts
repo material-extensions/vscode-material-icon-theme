@@ -523,6 +523,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-content', folderNames: ['content', 'contents'] },
       { name: 'folder-context', folderNames: ['context', 'contexts'] },
       { name: 'folder-core', folderNames: ['core'] },
+      { name: 'folder-crates', folderNames: ['crates'] },
       { name: 'folder-delta', folderNames: ['delta', 'deltas', 'changes'] },
       { name: 'folder-dump', folderNames: ['dump', 'dumps'] },
       {
