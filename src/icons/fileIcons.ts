@@ -1909,6 +1909,7 @@ export const fileIcons: FileIcons = {
         '.stryker.conf.mjs',
       ],
     },
+    { name: 'swlang', fileExtensions: ['sw', 'conf.sw'] },
     { name: 'denizenscript', fileExtensions: ['dsc'] },
     {
       name: 'modernizr',
