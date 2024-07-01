@@ -709,6 +709,11 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['components'],
         enabledFor: [IconPack.Vuex, IconPack.Vue],
       },
+      {
+        name: 'folder-pinia-stores',
+        folderNames: ['store', 'stores'],
+        enabledFor: [IconPack.Vue, IconPack.Pinia],
+      },
       { name: 'folder-terraform', folderNames: ['terraform'] },
       {
         name: 'folder-mobile',
