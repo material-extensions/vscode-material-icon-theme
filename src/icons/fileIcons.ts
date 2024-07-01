@@ -1612,6 +1612,7 @@ export const fileIcons: FileIcons = {
     },
     { name: 'edge', fileExtensions: ['edge'] },
     { name: 'scheme', fileExtensions: ['ss', 'scm'] },
+    { name: 'controller', fileExtensions: ['controller.js', 'controller.ts'] },
     { name: 'lisp', fileExtensions: ['lisp', 'lsp', 'cl', 'fast'] },
     {
       name: 'tailwindcss',
