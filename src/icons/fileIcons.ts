@@ -1054,6 +1054,26 @@ export const fileIcons: FileIcons = {
         webpackfile: FileNamePattern.Ecmascript,
       },
     },
+    {
+      name: 'rspack',
+      fileNames: [
+        'rspack.config.js',
+        'rspack.config.ts',
+        'rspack.config.cjs',
+        'rspack.config.mjs',
+      ],
+    },
+    {
+      name: 'rsbuild',
+      fileNames: [
+        'rsbuild.config.ts',
+        'rsbuild.config.js',
+        'rsbuild.config.mjs',
+        'rsbuild.config.cjs',
+        'rsbuild.config.mts',
+        'rsbuild.config.cts',
+      ],
+    },
     { name: 'ionic', fileNames: ['ionic.config.json', '.io-config.json'] },
     {
       name: 'gulp',
