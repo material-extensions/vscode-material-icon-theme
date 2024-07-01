@@ -2028,7 +2028,24 @@ export const fileIcons: FileIcons = {
     { name: 'vlang', fileExtensions: ['v'], fileNames: ['vpkg.json', 'v.mod'] },
     { name: 'chess', fileExtensions: ['pgn', 'fen'], light: true },
     { name: 'gemini', fileExtensions: ['gmi', 'gemini'] },
-    { name: 'sentry', fileNames: ['.sentryclirc'] },
+    {
+      name: 'sentry',
+      fileNames: [
+        '.sentryclirc',
+        'sentry.client.config.js',
+        'sentry.client.config.ts',
+        'sentry.client.config.mjs',
+        'sentry.client.config.mts',
+        'sentry.server.config.js',
+        'sentry.server.config.ts',
+        'sentry.server.config.mjs',
+        'sentry.server.config.mts',
+        'sentry.edge.config.js',
+        'sentry.edge.config.ts',
+        'sentry.edge.config.mjs',
+        'sentry.edge.config.mts',
+      ],
+    },
     {
       name: 'phpunit',
       fileNames: [
