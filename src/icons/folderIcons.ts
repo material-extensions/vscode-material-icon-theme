@@ -288,6 +288,11 @@ export const folderIcons: FolderTheme[] = [
         enabledFor: [IconPack.React, IconPack.Redux],
       },
       {
+        name: 'folder-astro',
+        folderNames: ['.astro'],
+        light: true,
+      },
+      {
         name: 'folder-database',
         folderNames: ['db', 'data', 'database', 'databases', 'sql'],
       },
