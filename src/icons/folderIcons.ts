@@ -848,6 +848,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['godot', 'godot-cpp'],
       },
       {
+        name: 'folder-swagger',
+        folderNames: ['swagger', '.swagger', 'Swagger'],
+      },
+      {
         name: 'folder-lottie',
         folderNames: ['lottie', 'lotties', 'lottiefiles'],
       },
