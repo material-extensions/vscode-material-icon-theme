@@ -117,6 +117,7 @@ export const languageIcons: LanguageIcon[] = [
   { icon: { name: 'lua' }, ids: ['lua'] },
   { icon: { name: 'lib' }, ids: ['bibtex', 'bibtex-style'] },
   { icon: { name: 'log' }, ids: ['log'] },
+  { icon: { name: 'lox' }, ids: ['lox'] },
   { icon: { name: 'jupyter' }, ids: ['jupyter'] },
   { icon: { name: 'document' }, ids: ['plaintext'] },
   { icon: { name: 'pdf' }, ids: ['pdf'] },
