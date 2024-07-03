@@ -100,6 +100,9 @@ You can check if your icon fits the Material Design color palette by running the
 npm run check-colors <path/to/svg>
 ```
 
+> **Note**
+> The colors black (`#000000`) and white (`#ffffff`) are not allowed in the icons. These colors have too much contrast and do not fit into the overall picture of the icons.
+
 Continue reading [here](#design-folder-icons) to find out about colors for the folder icons.
 
 | ✅                                                                | ❌                                                                    |
