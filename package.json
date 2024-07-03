@@ -4,14 +4,15 @@
   "description": "Material Design Icons for Visual Studio Code",
   "version": "5.4.2",
   "scripts": {
-    "build": "bun run ./scripts/build-with-esbuild.ts",
-    "watch": "bun run ./scripts/watch-with-esbuild.ts",
+    "build": "bun run ./build/build-with-esbuild.ts",
+    "watch": "bun run ./build/watch-with-esbuild.ts",
     "changelog": "changelog-machine --config changelog.config.json",
     "check-colors": "svg-color-linter --colors material-colors.yml",
     "check": "bun ./src/scripts/icons/checks",
     "contributors": "bun ./src/scripts/contributors/index.ts",
     "generateJson": "bun ./src/scripts/icons/generateJson.ts",
-    "lint": "npx @biomejs/biome check --write ./src",
+    "lint": "bunx @biomejs/biome check --write ./src",
+    "format": "bunx @biomejs/biome format --write ./src",
     "postcompile": "bun run generateJson && bun run check",
     "pretest": "bun run build && tsc -p ./",
     "preversion": "bun run contributors && git add images/contributors.png && bun run preview && git add images/fileIcons.png && git add images/folderIcons.png && bun run svgo && git add icons/*.svg",
@@ -26,7 +27,7 @@
   "author": {
     "name": "Philipp Kief",
     "email": "philipp.kief@gmx.de",
-    "url": "https://pkief.github.io"
+    "url": "https://pkief.com"
   },
   "funding": "https://github.com/sponsors/PKief",
   "sponsor": {
