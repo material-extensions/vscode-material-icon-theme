@@ -1,6 +1,21 @@
 import { env } from 'vscode';
 import { getObjectPropertyValue } from '../helpers/objects';
-import { Translation } from '../models';
+import type { Translation } from '../models';
+import { translation as langCs } from './lang-cs';
+import { translation as langDe } from './lang-de';
+import { translation as langEn } from './lang-en';
+import { translation as langEs } from './lang-es';
+import { translation as langFr } from './lang-fr';
+import { translation as langJa } from './lang-ja';
+import { translation as langKo } from './lang-ko';
+import { translation as langNl } from './lang-nl';
+import { translation as langPl } from './lang-pl';
+import { translation as langPtBr } from './lang-pt-br';
+import { translation as langPtPt } from './lang-pt-pt';
+import { translation as langRu } from './lang-ru';
+import { translation as langUk } from './lang-uk';
+import { translation as langZhCn } from './lang-zh-cn';
+import { translation as langZhTw } from './lang-zh-tw';
 
 // Get current language of the vs code workspace
 export const getCurrentLanguage = (): string => env.language;
@@ -31,8 +46,40 @@ const loadTranslation = async (language: string) => {
 
 /** Get the translation object of the separated translation files */
 const getTranslationObject = async (language: string): Promise<Translation> => {
-  const lang = await import(/* webpackMode: "eager" */ `./lang-${language}`);
-  return lang.translation as Translation;
+  switch (language) {
+    case 'cs':
+      return langCs;
+    case 'de':
+      return langDe;
+    case 'en':
+      return langEn;
+    case 'es':
+      return langEs;
+    case 'fr':
+      return langFr;
+    case 'ja':
+      return langJa;
+    case 'ko':
+      return langKo;
+    case 'nl':
+      return langNl;
+    case 'pl':
+      return langPl;
+    case 'pt-br':
+      return langPtBr;
+    case 'pt-pt':
+      return langPtPt;
+    case 'ru':
+      return langRu;
+    case 'uk':
+      return langUk;
+    case 'zh-cn':
+      return langZhCn;
+    case 'zh-tw':
+      return langZhTw;
+    default:
+      return langEn;
+  }
 };
 
 /**

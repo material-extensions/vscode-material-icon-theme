@@ -1,4 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <path d="M6,24H26a0,0,0,0,1,0,0v2a2,2,0,0,1-2,2H8a2,2,0,0,1-2-2V24A0,0,0,0,1,6,24Z" style="fill: #ffca28"/>
-  <polygon points="30 6 21 15 16 4 11 15 2 6 6 20 26 20 30 6" style="fill: #ffca28;fill-rule: evenodd"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="#ffca28" d="M6 24h20v2a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-2Z"/><path fill="#ffca28" fill-rule="evenodd" d="m30 6-9 9-5-11-5 11-9-9 4 14h20l4-14z"/></svg>

@@ -1,7 +1,7 @@
-import { readdirSync, readFileSync, writeFileSync } from 'fs';
-import { basename, join } from 'path';
+import { lstatSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
+import { basename, join } from 'node:path';
 import { getCustomIconPaths } from '../../helpers/customIcons';
-import { IconJsonOptions } from '../../models';
+import { type IconJsonOptions } from '../../models';
 
 /**
  * Changes saturation of all icons in the set.
@@ -111,6 +111,9 @@ const adjustSaturation = (
 ): ((value: string, index: number, array: string[]) => void) => {
   return (iconFileName) => {
     const svgFilePath = join(iconsPath, iconFileName);
+    if (!lstatSync(svgFilePath).isFile()) {
+      return;
+    }
 
     // Read SVG file
     const svg = readFileSync(svgFilePath, 'utf-8');

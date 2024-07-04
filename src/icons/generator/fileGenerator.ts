@@ -1,23 +1,24 @@
 import merge from 'lodash.merge';
 import { getFileConfigHash } from '../../helpers/fileConfig';
 import {
-  FileIcon,
-  FileIcons,
-  IconAssociations,
+  type FileIcon,
+  type FileIcons,
+  type IconAssociations,
   IconConfiguration,
-  IconJsonOptions,
+  type IconJsonOptions,
 } from '../../models/index';
 import {
+  cloneIconExtension,
   highContrastColorFileEnding,
   iconFolderPath,
   lightColorFileEnding,
   wildcardPattern,
 } from './constants';
 import {
+  getPath,
+  getSVG,
   validateHEXColorCode,
   writeSVGFiles,
-  getSVG,
-  getPath,
 } from './folderGenerator';
 
 /**
@@ -38,20 +39,26 @@ export const loadFileIconDefinitions = (
 
   allFileIcons.forEach((icon) => {
     if (icon.disabled) return;
-    config = merge({}, config, setIconDefinition(config, icon.name));
+    const isClone = icon.clone !== undefined;
+    config = merge({}, config, setIconDefinition(config, icon.name, isClone));
 
     if (icon.light) {
       config = merge(
         {},
         config,
-        setIconDefinition(config, icon.name, lightColorFileEnding)
+        setIconDefinition(config, icon.name, isClone, lightColorFileEnding)
       );
     }
     if (icon.highContrast) {
       config = merge(
         {},
         config,
-        setIconDefinition(config, icon.name, highContrastColorFileEnding)
+        setIconDefinition(
+          config,
+          icon.name,
+          isClone,
+          highContrastColorFileEnding
+        )
       );
     }
 
@@ -79,7 +86,7 @@ export const loadFileIconDefinitions = (
   config = merge(
     {},
     config,
-    setIconDefinition(config, fileIcons.defaultIcon.name)
+    setIconDefinition(config, fileIcons.defaultIcon.name, false)
   );
   config.file = fileIcons.defaultIcon.name;
 
@@ -90,6 +97,7 @@ export const loadFileIconDefinitions = (
       setIconDefinition(
         config,
         fileIcons.defaultIcon.name,
+        false,
         lightColorFileEnding
       )
     );
@@ -105,6 +113,7 @@ export const loadFileIconDefinitions = (
       setIconDefinition(
         config,
         fileIcons.defaultIcon.name,
+        false,
         highContrastColorFileEnding
       )
     );
@@ -162,9 +171,8 @@ const mapSpecificFileIcons = (
       configLightMappingType[name] = `${icon.name}${lightColorFileEnding}`;
     }
     if (icon.highContrast) {
-      configHighContrastMappingType[
-        name
-      ] = `${icon.name}${highContrastColorFileEnding}`;
+      configHighContrastMappingType[name] =
+        `${icon.name}${highContrastColorFileEnding}`;
     }
   });
   return config;
@@ -187,13 +195,16 @@ const disableIconsByPack = (
 const setIconDefinition = (
   config: IconConfiguration,
   iconName: string,
+  isClone: boolean,
   appendix: string = ''
 ) => {
   const obj: Partial<IconConfiguration> = { iconDefinitions: {} };
-  if (config.options) {
+  const ext = isClone ? cloneIconExtension : '.svg';
+  const key = `${iconName}${appendix}`;
+  if (config.options && !config.iconDefinitions![key]) {
     const fileConfigHash = getFileConfigHash(config.options);
-    obj.iconDefinitions![`${iconName}${appendix}`] = {
-      iconPath: `${iconFolderPath}${iconName}${appendix}${fileConfigHash}.svg`,
+    obj.iconDefinitions![key] = {
+      iconPath: `${iconFolderPath}${iconName}${appendix}${fileConfigHash}${ext}`,
     };
   }
   return obj;

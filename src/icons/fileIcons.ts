@@ -1,6 +1,5 @@
-import { FileIcons, IconPack } from '../models/index';
-import { parseByPattern } from './patterns/libs';
-import { cosmiconfig, ecmascript } from './patterns/utils';
+import { type FileIcons, FileNamePattern, IconPack } from '../models';
+import { parseByPattern } from './patterns';
 
 /**
  * Defines file icons
@@ -383,6 +382,7 @@ export const fileIcons: FileIcons = {
         'pylintrc',
         '.pylintrc',
         'pyproject.toml',
+        'py.typed',
       ],
     },
     { name: 'url', fileExtensions: ['url'] },
@@ -450,8 +450,19 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'key',
-      fileExtensions: ['pub', 'key', 'pem', 'asc', 'gpg', 'passwd'],
-      fileNames: ['.htpasswd'],
+      fileExtensions: [
+        'pub',
+        'key',
+        'pem',
+        'asc',
+        'gpg',
+        'passwd',
+        'shasum',
+        'sha256',
+        'sha256sum',
+        'sha256sums',
+      ],
+      fileNames: ['.htpasswd', 'sha256sums'],
     },
     {
       name: 'font',
@@ -662,7 +673,7 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['graphql', 'gql'],
       fileNames: ['.graphqlconfig'],
       patterns: {
-        graphql: cosmiconfig,
+        graphql: FileNamePattern.Ecmascript,
       },
     },
     { name: 'rust', fileExtensions: ['rs', 'ron'] },
@@ -750,6 +761,10 @@ export const fileIcons: FileIcons = {
       name: 'nuxt',
       fileNames: ['nuxt.config.js', 'nuxt.config.ts', '.nuxtignore'],
     },
+    {
+      name: 'harmonix',
+      fileNames: ['harmonix.config.js', 'harmonix.config.ts'],
+    },
     { name: 'ocaml', fileExtensions: ['ml', 'mli', 'cmx'] },
     { name: 'odin', fileExtensions: ['odin'] },
     {
@@ -827,31 +842,55 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'angular-component',
+      clone: {
+        base: 'angular',
+        color: 'blue-700',
+      },
       fileExtensions: ['component.ts', 'component.js'],
       enabledFor: [IconPack.Angular, IconPack.Ngrx],
     },
     {
       name: 'angular-guard',
+      clone: {
+        base: 'angular',
+        color: 'green-600',
+      },
       fileExtensions: ['guard.ts', 'guard.js'],
       enabledFor: [IconPack.Angular, IconPack.Ngrx],
     },
     {
       name: 'angular-service',
+      clone: {
+        base: 'angular',
+        color: 'amber-400',
+      },
       fileExtensions: ['service.ts', 'service.js'],
       enabledFor: [IconPack.Angular, IconPack.Ngrx],
     },
     {
       name: 'angular-pipe',
+      clone: {
+        base: 'angular',
+        color: 'teal-600',
+      },
       fileExtensions: ['pipe.ts', 'pipe.js', 'filter.js'],
       enabledFor: [IconPack.Angular, IconPack.Ngrx],
     },
     {
       name: 'angular-directive',
+      clone: {
+        base: 'angular',
+        color: 'purple-400',
+      },
       fileExtensions: ['directive.ts', 'directive.js'],
       enabledFor: [IconPack.Angular, IconPack.Ngrx],
     },
     {
       name: 'angular-resolver',
+      clone: {
+        base: 'angular',
+        color: 'green-600',
+      },
       fileExtensions: ['resolver.ts', 'resolver.js'],
       enabledFor: [IconPack.Angular, IconPack.Ngrx],
     },
@@ -938,14 +977,14 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['pcss', 'sss'],
       fileNames: [],
       patterns: {
-        postcss: cosmiconfig,
+        postcss: FileNamePattern.Cosmiconfig,
       },
     },
     {
       name: 'posthtml',
       fileNames: [],
       patterns: {
-        posthtml: cosmiconfig,
+        posthtml: FileNamePattern.Cosmiconfig,
       },
     },
     {
@@ -978,41 +1017,41 @@ export const fileIcons: FileIcons = {
       name: 'webpack',
       fileNames: ['webpack.config.coffee'],
       patterns: {
-        'webpack.base': ecmascript,
-        'webpack.client': ecmascript,
-        'webpack.common': ecmascript,
-        'webpack.config.babel': ecmascript,
-        'webpack.config.base.babel': ecmascript,
-        'webpack.config.base': ecmascript,
-        'webpack.config.client': ecmascript,
-        'webpack.config.common.babel': ecmascript,
-        'webpack.config.common': ecmascript,
-        'webpack.config.dev.babel': ecmascript,
-        'webpack.config.dev': ecmascript,
-        'webpack.config.main': ecmascript,
-        'webpack.config.prod.babel': ecmascript,
-        'webpack.config.prod': ecmascript,
-        'webpack.config.production.babel': ecmascript,
-        'webpack.config.production': ecmascript,
-        'webpack.config.renderer': ecmascript,
-        'webpack.config.server': ecmascript,
-        'webpack.config.staging.babel': ecmascript,
-        'webpack.config.staging': ecmascript,
-        'webpack.config.test': ecmascript,
-        'webpack.config.vendor.production': ecmascript,
-        'webpack.config.vendor': ecmascript,
-        'webpack.config': ecmascript,
-        'webpack.dev': ecmascript,
-        'webpack.development': ecmascript,
-        'webpack.dist': ecmascript,
-        'webpack.mix': ecmascript,
-        'webpack.prod.config': ecmascript,
-        'webpack.prod': ecmascript,
-        'webpack.production': ecmascript,
-        'webpack.server': ecmascript,
-        'webpack.test': ecmascript,
-        webpack: ecmascript,
-        webpackfile: ecmascript,
+        'webpack.base': FileNamePattern.Ecmascript,
+        'webpack.client': FileNamePattern.Ecmascript,
+        'webpack.common': FileNamePattern.Ecmascript,
+        'webpack.config.babel': FileNamePattern.Ecmascript,
+        'webpack.config.base.babel': FileNamePattern.Ecmascript,
+        'webpack.config.base': FileNamePattern.Ecmascript,
+        'webpack.config.client': FileNamePattern.Ecmascript,
+        'webpack.config.common.babel': FileNamePattern.Ecmascript,
+        'webpack.config.common': FileNamePattern.Ecmascript,
+        'webpack.config.dev.babel': FileNamePattern.Ecmascript,
+        'webpack.config.dev': FileNamePattern.Ecmascript,
+        'webpack.config.main': FileNamePattern.Ecmascript,
+        'webpack.config.prod.babel': FileNamePattern.Ecmascript,
+        'webpack.config.prod': FileNamePattern.Ecmascript,
+        'webpack.config.production.babel': FileNamePattern.Ecmascript,
+        'webpack.config.production': FileNamePattern.Ecmascript,
+        'webpack.config.renderer': FileNamePattern.Ecmascript,
+        'webpack.config.server': FileNamePattern.Ecmascript,
+        'webpack.config.staging.babel': FileNamePattern.Ecmascript,
+        'webpack.config.staging': FileNamePattern.Ecmascript,
+        'webpack.config.test': FileNamePattern.Ecmascript,
+        'webpack.config.vendor.production': FileNamePattern.Ecmascript,
+        'webpack.config.vendor': FileNamePattern.Ecmascript,
+        'webpack.config': FileNamePattern.Ecmascript,
+        'webpack.dev': FileNamePattern.Ecmascript,
+        'webpack.development': FileNamePattern.Ecmascript,
+        'webpack.dist': FileNamePattern.Ecmascript,
+        'webpack.mix': FileNamePattern.Ecmascript,
+        'webpack.prod.config': FileNamePattern.Ecmascript,
+        'webpack.prod': FileNamePattern.Ecmascript,
+        'webpack.production': FileNamePattern.Ecmascript,
+        'webpack.server': FileNamePattern.Ecmascript,
+        'webpack.test': FileNamePattern.Ecmascript,
+        webpack: FileNamePattern.Ecmascript,
+        webpackfile: FileNamePattern.Ecmascript,
       },
     },
     { name: 'ionic', fileNames: ['ionic.config.json', '.io-config.json'] },
@@ -1095,8 +1134,8 @@ export const fileIcons: FileIcons = {
       name: 'babel',
       fileNames: ['babel-transform.js'],
       patterns: {
-        babel: cosmiconfig,
-        'babel-plugin-macros': cosmiconfig,
+        babel: FileNamePattern.Cosmiconfig,
+        'babel-plugin-macros': FileNamePattern.Cosmiconfig,
       },
     },
     {
@@ -1209,12 +1248,12 @@ export const fileIcons: FileIcons = {
       fileNames: [
         '.eslintrc-md.js',
         '.eslintrc-jsdoc.js',
+        '.eslintrc.base.json',
         '.eslintignore',
         '.eslintcache',
-        '.eslintrc.base.json',
       ],
       patterns: {
-        eslint: cosmiconfig,
+        eslint: FileNamePattern.Cosmiconfig,
       },
     },
     {
@@ -1304,7 +1343,7 @@ export const fileIcons: FileIcons = {
       light: true,
       fileNames: ['.stylelintignore', '.stylelintcache'],
       patterns: {
-        stylelint: cosmiconfig,
+        stylelint: FileNamePattern.Cosmiconfig,
       },
     },
     { name: 'code-climate', fileNames: ['.codeclimate.yml'], light: true },
@@ -1312,7 +1351,7 @@ export const fileIcons: FileIcons = {
       name: 'prettier',
       fileNames: ['.prettierignore'],
       patterns: {
-        prettier: cosmiconfig,
+        prettier: FileNamePattern.Cosmiconfig,
       },
     },
     {
@@ -1500,7 +1539,7 @@ export const fileIcons: FileIcons = {
       light: true,
       fileNames: [],
       patterns: {
-        release: cosmiconfig,
+        release: FileNamePattern.Cosmiconfig,
       },
     },
     {
@@ -1640,51 +1679,91 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'nest-controller',
+      clone: {
+        base: 'nest',
+        color: 'light-blue-700',
+      },
       fileExtensions: ['controller.ts', 'controller.js'],
       enabledFor: [IconPack.Nest],
     },
     {
       name: 'nest-middleware',
+      clone: {
+        base: 'nest',
+        color: 'indigo-400',
+      },
       fileExtensions: ['middleware.ts', 'middleware.js'],
       enabledFor: [IconPack.Nest],
     },
     {
       name: 'nest-module',
+      clone: {
+        base: 'nest',
+        color: 'red-600',
+      },
       fileExtensions: ['module.ts', 'module.js'],
       enabledFor: [IconPack.Nest],
     },
     {
       name: 'nest-service',
+      clone: {
+        base: 'nest',
+        color: 'amber-400',
+      },
       fileExtensions: ['service.ts', 'service.js'],
       enabledFor: [IconPack.Nest],
     },
     {
       name: 'nest-decorator',
+      clone: {
+        base: 'nest',
+        color: 'purple-400',
+      },
       fileExtensions: ['decorator.ts', 'decorator.js'],
       enabledFor: [IconPack.Nest],
     },
     {
       name: 'nest-pipe',
+      clone: {
+        base: 'nest',
+        color: 'teal-600',
+      },
       fileExtensions: ['pipe.ts', 'pipe.js'],
       enabledFor: [IconPack.Nest],
     },
     {
       name: 'nest-filter',
+      clone: {
+        base: 'nest',
+        color: 'deep-orange-400',
+      },
       fileExtensions: ['filter.ts', 'filter.js'],
       enabledFor: [IconPack.Nest],
     },
     {
       name: 'nest-gateway',
+      clone: {
+        base: 'nest',
+        color: 'lime-700',
+      },
       fileExtensions: ['gateway.ts', 'gateway.js'],
       enabledFor: [IconPack.Nest],
     },
     {
       name: 'nest-guard',
+      clone: {
+        base: 'nest',
+        color: 'green-600',
+      },
       fileExtensions: ['guard.ts', 'guard.js'],
       enabledFor: [IconPack.Nest],
     },
     {
       name: 'nest-resolver',
+      clone: {
+        base: 'nest',
+        color: 'pink-400',
+      },
       fileExtensions: ['resolver.ts', 'resolver.js'],
       enabledFor: [IconPack.Nest],
     },
@@ -1692,12 +1771,34 @@ export const fileIcons: FileIcons = {
     { name: 'moonscript', fileExtensions: ['moon'] },
     { name: 'percy', fileNames: ['.percy.yml'] },
     { name: 'gitpod', fileNames: ['.gitpod.yml'] },
-    { name: 'advpl_prw', fileExtensions: ['prw', 'prx'] },
-    { name: 'advpl_ptm', fileExtensions: ['ptm'] },
-    { name: 'advpl_tlpp', fileExtensions: ['tlpp'] },
-    { name: 'advpl_include', fileExtensions: ['ch'] },
+    { name: 'advpl', fileExtensions: ['prw', 'prx'] },
+    {
+      name: 'advpl-ptm',
+      clone: {
+        base: 'advpl',
+        color: 'red-400',
+      },
+      fileExtensions: ['ptm'],
+    },
+    {
+      name: 'advpl-tlpp',
+      clone: {
+        base: 'advpl',
+        color: 'yellow-700',
+      },
+      fileExtensions: ['tlpp'],
+    },
+    {
+      name: 'advpl-include',
+      clone: {
+        base: 'advpl',
+        color: 'cyan-500',
+      },
+      fileExtensions: ['ch'],
+    },
     { name: 'codeowners', fileNames: ['codeowners', 'OWNERS'] },
     { name: 'gcp', fileNames: ['.gcloudignore'] },
+    { name: 'amplify', fileNames: ['amplify.yml'] },
     {
       name: 'disc',
       fileExtensions: ['iso', 'vmdk', 'hdd', 'qcow', 'qcow2', 'qed', 'dmg'],
@@ -1713,7 +1814,7 @@ export const fileIcons: FileIcons = {
       name: 'husky',
       fileNames: [],
       patterns: {
-        husky: cosmiconfig,
+        husky: FileNamePattern.Cosmiconfig,
       },
     },
     { name: 'coconut', fileExtensions: ['coco'] },
@@ -1740,7 +1841,7 @@ export const fileIcons: FileIcons = {
       name: 'commitlint',
       fileNames: ['.commitlint.yaml', '.commitlint.yml'],
       patterns: {
-        commitlint: cosmiconfig,
+        commitlint: FileNamePattern.Cosmiconfig,
       },
     },
     { name: 'buck', fileNames: ['.buckconfig'] },
@@ -2119,7 +2220,7 @@ export const fileIcons: FileIcons = {
       name: 'svgr',
       fileNames: [],
       patterns: {
-        svgr: cosmiconfig,
+        svgr: FileNamePattern.Cosmiconfig,
       },
     },
     { name: 'rome', fileNames: ['rome.json'] },
@@ -2226,7 +2327,7 @@ export const fileIcons: FileIcons = {
       name: 'craco',
       fileNames: [],
       patterns: {
-        craco: cosmiconfig,
+        craco: FileNamePattern.Cosmiconfig,
       },
     },
     {
@@ -2282,7 +2383,7 @@ export const fileIcons: FileIcons = {
       name: 'syncpack',
       fileNames: [],
       patterns: {
-        syncpack: cosmiconfig,
+        syncpack: FileNamePattern.Cosmiconfig,
       },
     },
     {
@@ -2309,7 +2410,7 @@ export const fileIcons: FileIcons = {
         'panda.config.cjs',
       ],
     },
-    { name: 'biome', fileNames: ['biome.json'] },
+    { name: 'biome', fileNames: ['biome.json', 'biome.jsonc'] },
     {
       name: 'esbuild',
       fileNames: [
@@ -2336,7 +2437,7 @@ export const fileIcons: FileIcons = {
       name: 'puppeteer',
       fileNames: [],
       patterns: {
-        puppeteer: cosmiconfig,
+        puppeteer: FileNamePattern.Cosmiconfig,
       },
     },
     { name: 'apps-script', fileExtensions: ['gs'] },
@@ -2355,6 +2456,31 @@ export const fileIcons: FileIcons = {
         '.k8s.yml',
         '.k8s.yaml',
       ],
+    },
+    {
+      name: 'screwdriver',
+      fileNames: ['screwdriver.yaml', 'screwdriver.yml'],
+    },
+    {
+      name: 'snapcraft',
+      fileNames: ['snapcraft.yaml', 'snapcraft.yml'],
+    },
+    {
+      name: 'container',
+      fileNames: ['.devcontainer/devcontainer.json'],
+    },
+    {
+      name: 'kcl',
+      fileNames: ['kcl.mod', 'kcl.yaml', 'kcl.yml'],
+      fileExtensions: ['k'],
+    },
+    {
+      name: 'verified',
+      fileExtensions: ['sigstore.json'],
+    },
+    {
+      name: 'bruno',
+      fileExtensions: ['bru'],
     },
   ]),
 };

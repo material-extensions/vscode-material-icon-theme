@@ -1,16 +1,17 @@
-import { writeFileSync } from 'fs';
+import { writeFileSync } from 'node:fs';
+import { basename, join } from 'node:path';
 import merge from 'lodash.merge';
-import { basename, join } from 'path';
 import { getFileConfigHash } from '../../helpers/fileConfig';
 import {
-  DefaultIcon,
-  FolderIcon,
-  FolderTheme,
-  IconAssociations,
+  type DefaultIcon,
+  type FolderIcon,
+  type FolderTheme,
+  type IconAssociations,
   IconConfiguration,
-  IconJsonOptions,
+  type IconJsonOptions,
 } from '../../models/index';
 import {
+  cloneIconExtension,
   highContrastColorFileEnding,
   iconFolderPath,
   lightColorFileEnding,
@@ -44,24 +45,21 @@ export const loadFolderIconDefinitions = (
 
   allIcons.forEach((icon) => {
     if (icon.disabled) return;
+    const folderNames = extendFolderNames(icon.folderNames);
     config = setIconDefinitions(config, icon);
-    config = merge({}, config, setFolderNames(icon.name, icon.folderNames));
+    config = merge({}, config, setFolderNames(icon.name, folderNames));
     config.light = icon.light
       ? merge(
           {},
           config.light,
-          setFolderNames(icon.name, icon.folderNames, lightColorFileEnding)
+          setFolderNames(icon.name, folderNames, lightColorFileEnding)
         )
       : config.light;
     config.highContrast = icon.highContrast
       ? merge(
           {},
           config.highContrast,
-          setFolderNames(
-            icon.name,
-            icon.folderNames,
-            highContrastColorFileEnding
-          )
+          setFolderNames(icon.name, folderNames, highContrastColorFileEnding)
         )
       : config.highContrast;
   });
@@ -176,20 +174,27 @@ const setIconDefinitions = (
   config: IconConfiguration,
   icon: FolderIcon | DefaultIcon
 ) => {
+  const isClone = (icon as FolderIcon).clone !== undefined;
   config = merge({}, config);
-  config = createIconDefinitions(config, icon.name);
+
+  config = createIconDefinitions(config, icon.name, '', isClone);
   if (icon.light) {
     config = merge(
       {},
       config,
-      createIconDefinitions(config, icon.name, lightColorFileEnding)
+      createIconDefinitions(config, icon.name, lightColorFileEnding, isClone)
     );
   }
   if (icon.highContrast) {
     config = merge(
       {},
       config,
-      createIconDefinitions(config, icon.name, highContrastColorFileEnding)
+      createIconDefinitions(
+        config,
+        icon.name,
+        highContrastColorFileEnding,
+        isClone
+      )
     );
   }
   return config;
@@ -198,20 +203,46 @@ const setIconDefinitions = (
 const createIconDefinitions = (
   config: IconConfiguration,
   iconName: string,
-  appendix: string = ''
+  appendix: string = '',
+  isClone = false
 ) => {
   config = merge({}, config);
   const fileConfigHash = getFileConfigHash(config.options ?? {});
   const configIconDefinitions = config.iconDefinitions;
+  const ext = isClone ? cloneIconExtension : '.svg';
+  const key = `${iconName}${appendix}`;
+  const openedKey = `${iconName}${openedFolder}${appendix}`;
+
   if (configIconDefinitions) {
-    configIconDefinitions[iconName + appendix] = {
-      iconPath: `${iconFolderPath}${iconName}${appendix}${fileConfigHash}.svg`,
-    };
-    configIconDefinitions[`${iconName}${openedFolder}${appendix}`] = {
-      iconPath: `${iconFolderPath}${iconName}${openedFolder}${appendix}${fileConfigHash}.svg`,
-    };
+    if (!configIconDefinitions[key]) {
+      configIconDefinitions[key] = {
+        iconPath: `${iconFolderPath}${key}${fileConfigHash}${ext}`,
+      };
+    }
+
+    if (!configIconDefinitions[`${openedKey}`]) {
+      configIconDefinitions[`${openedKey}`] = {
+        iconPath: `${iconFolderPath}${openedKey}${fileConfigHash}${ext}`,
+      };
+    }
   }
   return config;
+};
+
+const extendFolderNames = (folderNames: string[]) => {
+  const names: string[] = [];
+  const styles: [string, string][] = [
+    ['', ''],
+    ['.', ''],
+    ['_', ''],
+    ['__', '__'],
+  ];
+  folderNames.forEach((name) => {
+    styles.forEach((style) => {
+      names.push(`${style[0]}${name}${style[1]}`);
+    });
+  });
+  return names;
 };
 
 const setFolderNames = (
@@ -228,9 +259,8 @@ const setFolderNames = (
       obj.folderNames[name as keyof IconConfiguration] = iconName + appendix;
     }
     if (obj.folderNamesExpanded) {
-      obj.folderNamesExpanded[
-        name as keyof IconConfiguration
-      ] = `${iconName}${openedFolder}${appendix}`;
+      obj.folderNamesExpanded[name as keyof IconConfiguration] =
+        `${iconName}${openedFolder}${appendix}`;
     }
   });
   return obj;
