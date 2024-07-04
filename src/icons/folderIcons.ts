@@ -415,7 +415,7 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-moon', folderNames: ['moon'] },
       { name: 'folder-debug', folderNames: ['debug', 'debugging'] },
-      { name: 'folder-fastlane', folderNames: ['fastlane'] },
+      { name: 'folder-fastlane', folderNames: ['fastlane', '.fastlane'] },
       {
         name: 'folder-plugin',
         folderNames: [
