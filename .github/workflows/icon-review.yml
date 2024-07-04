@@ -38,9 +38,10 @@ jobs:
       - name: Review SVG files 🔍
         run: |
           cd main
-          svgFiles=$(git diff --no-index ../main ../fork --diff-filter=ACMRTUX --name-only | grep '.svg$')
-          echo "SVG files changed: ${svgFiles}"
-          npx svg-icon-review@1.1.0 --bigIcon ${svgFiles}
+          files=$(git diff --no-index ../main ../fork --diff-filter=ACMRTUX --name-only | grep '.svg$')
+          echo "SVG files changed: ${files}"
+          npx svg-icon-review@1.1.0 --bigIcon ${files}
+          echo svgFiles=$files >> $GITHUB_ENV
 
       - name: Install jq ⚙️
         run: sudo apt-get install jq
@@ -72,7 +73,11 @@ jobs:
 
             Thank you for creating a pull request. This preview shows you how your changes will look on the different themes:
 
-            ![Generated Preview](${{ env.image_url }})
+            <details${{ env.svgFiles < 10 && ' open' || '' }}>
+              <summary>Generated Preview</summary>
+
+              ![Generated Preview](${{ env.image_url }})
+            </details>
 
             You can find more information how to contribute in the [contribution guidelines](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/CONTRIBUTING.md).
           edit-mode: replace
