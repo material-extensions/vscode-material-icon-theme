@@ -975,14 +975,12 @@ export const fileIcons: FileIcons = {
     {
       name: 'postcss',
       fileExtensions: ['pcss', 'sss'],
-      fileNames: [],
       patterns: {
         postcss: FileNamePattern.Cosmiconfig,
       },
     },
     {
       name: 'posthtml',
-      fileNames: [],
       patterns: {
         posthtml: FileNamePattern.Cosmiconfig,
       },
@@ -1537,7 +1535,6 @@ export const fileIcons: FileIcons = {
     {
       name: 'semantic-release',
       light: true,
-      fileNames: [],
       patterns: {
         release: FileNamePattern.Cosmiconfig,
       },
@@ -1812,7 +1809,6 @@ export const fileIcons: FileIcons = {
     { name: 'prolog', fileExtensions: ['p', 'pro', 'pl'] },
     {
       name: 'husky',
-      fileNames: [],
       patterns: {
         husky: FileNamePattern.Cosmiconfig,
       },
@@ -1974,7 +1970,6 @@ export const fileIcons: FileIcons = {
     { name: 'pipeline', fileExtensions: ['pipeline'] },
     {
       name: 'vite',
-      fileNames: [],
       patterns: {
         'vite.config': FileNamePattern.Ecmascript,
       },
@@ -2205,7 +2200,6 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'svgr',
-      fileNames: [],
       patterns: {
         svgr: FileNamePattern.Cosmiconfig,
       },
@@ -2312,7 +2306,6 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'craco',
-      fileNames: [],
       patterns: {
         craco: FileNamePattern.Cosmiconfig,
       },
@@ -2368,7 +2361,6 @@ export const fileIcons: FileIcons = {
     { name: 'mermaid', fileExtensions: ['mmd', 'mermaid'] },
     {
       name: 'syncpack',
-      fileNames: [],
       patterns: {
         syncpack: FileNamePattern.Cosmiconfig,
       },
@@ -2422,7 +2414,6 @@ export const fileIcons: FileIcons = {
     { name: 'lottie', fileExtensions: ['lottie'] },
     {
       name: 'puppeteer',
-      fileNames: [],
       patterns: {
         puppeteer: FileNamePattern.Cosmiconfig,
       },
