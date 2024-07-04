@@ -1,5 +1,7 @@
-import { RequireAtLeastOne } from '../../../helpers/types';
+import { type RequireAtLeastOne } from '../../../helpers/types';
+import { type CloneOptions } from '../cloneOptions';
 import { IconPack } from '../index';
+import { type Patterns } from '../patterns';
 
 interface BasicFileIcon {
   /**
@@ -20,6 +22,11 @@ interface BasicFileIcon {
   fileNames?: string[];
 
   /**
+   * Define patterns for file names. Patterns are used to generate common file names and file extensions based on a key.
+   */
+  patterns?: Patterns;
+
+  /**
    * Define if there is a light icon available.
    */
   light?: boolean;
@@ -38,6 +45,11 @@ interface BasicFileIcon {
    * Defines a pack to which this icon belongs. A pack can be toggled and all icons inside this pack can be enabled or disabled together.
    */
   enabledFor?: IconPack[];
+
+  /**
+   * Options for generating an icon based on another icon.
+   */
+  clone?: CloneOptions;
 }
 
 /**
@@ -45,5 +57,5 @@ interface BasicFileIcon {
  */
 export type FileIcon = RequireAtLeastOne<
   BasicFileIcon,
-  'fileExtensions' | 'fileNames'
+  'fileExtensions' | 'fileNames' | 'patterns'
 >;

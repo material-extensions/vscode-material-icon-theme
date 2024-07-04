@@ -1,5 +1,5 @@
-import { DefaultIcon } from '../defaultIcon';
-import { FileIcon } from './index';
+import { type DefaultIcon } from '../defaultIcon';
+import { type FileIcon } from './index';
 
 export type FileIcons = {
   /**

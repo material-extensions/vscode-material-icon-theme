@@ -4,4 +4,4 @@
 
 ## Contribution Guidelines
 
-[ ] By creating this pull request, I acknowledge that I have read the [Contribution Guidelines](../../CONTRIBUTING.md) for this project.
+- [ ] By creating this pull request, I acknowledge that I have read the [Contribution Guidelines](../../CONTRIBUTING.md) for this project.

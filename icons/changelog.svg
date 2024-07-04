@@ -1,4 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <polyline points="16 8 16 17 22 22" style="fill: none;stroke: #8bc34a;stroke-miterlimit: 10;stroke-width: 4px"/>
-  <path d="M16.73682,2A13.95166,13.95166,0,0,0,4.76941,8.76941L2,6v8h8L6.93408,10.93408a11.04811,11.04811,0,1,1-.60144,8.75012H3.23792A13.99669,13.99669,0,1,0,16.73682,2Z" style="fill: #8bc34a"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="#8bc34a" d="M13 3a9 9 0 0 0-9 9H1l4 4 4-4H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.954 8.954 0 0 0 13 21a9 9 0 0 0 0-18zm-1 5v5l4.25 2.52.77-1.28-3.52-2.09V8z"/></svg>

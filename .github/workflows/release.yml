@@ -7,77 +7,85 @@ on:
         type: choice
         description: Select the version change
         required: true
+        default: 'minor'
         options:
           - major
           - minor
           - patch
+
+permissions:
+  contents: read
 
 jobs:
   release:
     runs-on: ubuntu-latest
     env:
       VERSION_CHANGE: ${{ github.event.inputs.versionChange }}
+
+    permissions:
+      contents: write
+      id-token: write
+
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v4
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
         with:
           fetch-depth: 0
-          
-      - name: Setup Node.js ⚙️
-        uses: actions/setup-node@v3
+
+      - name: Setup Platform 🛠
+        uses: oven-sh/setup-bun@123c6c4e2fea3eb7bffaa91a85eb6b3d505bf7af # v2
         with:
-          node-version: 'lts/*'
-          registry-url: 'https://registry.npmjs.org'
-          
-      - name: Install node_modules 📦
+          bun-version: 1.1.13
+
+      - name: Install dependencies 📦
         run: |
-          npm ci
-          npm install --global @vscode/vsce
-          
+          bun install --frozen-lockfile
+          bun add -g npm
+
       - name: Update version ↗
         run: |
           git config --global user.name 'Philipp Kief'
           git config --global user.email 'PKief@users.noreply.github.com'
           git config --global push.followTags true
           npm version ${{ env.VERSION_CHANGE }} -m "Release %s"
-          
-      - name: Get meta data 🔍
+
+      - name: Get metadata 🔍
         run: |
-          NODE_VERSION=$(node -p -e "require('./package.json').version")
-          echo VERSION=$NODE_VERSION >> $GITHUB_ENV
-          NODE_NAME=$(node -p -e "require('./package.json').name")
-          echo NAME=$NODE_NAME >> $GITHUB_ENV
-          NODE_DISPLAY_NAME=$(node -p -e "require('./package.json').displayName")
-          echo DISPLAY_NAME=$NODE_DISPLAY_NAME >> $GITHUB_ENV
-          
+          VERSION=$(bun --print "(await import('./package.json')).version")
+          NAME=$(bun --print "(await import('./package.json')).name")
+          DISPLAY_NAME=$(bun --print "(await import('./package.json')).displayName")
+          echo VERSION=$VERSION >> $GITHUB_ENV
+          echo NAME=$NAME >> $GITHUB_ENV
+          echo DISPLAY_NAME=$DISPLAY_NAME >> $GITHUB_ENV
+
       - name: Build ⚒️
-        run: vsce package
-        
+        run: bunx @vscode/vsce package
+
       - name: Push tags 📌
         run: git push
-        
+
       - name: Release ${{ env.VERSION }} 🔆
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@a74c6b72af54cfa997e81df42d94703d6313a2d0 # v2.0.6
         with:
           files: ${{ env.NAME }}-${{ env.VERSION }}.vsix
           tag_name: v${{ env.VERSION }}
           name: ${{ env.DISPLAY_NAME }} v${{ env.VERSION }}
           generate_release_notes: true
-          
+
       - name: Publish to Open VSX Registry 🌐
-        uses: HaaLeo/publish-vscode-extension@v1
+        uses: HaaLeo/publish-vscode-extension@28e2d3f5817fccf23c1f219eb0cecc903132d1a2 # v1.6.2
         with:
           pat: ${{ secrets.OPEN_VSX_TOKEN }}
           extensionFile: ${{ env.NAME }}-${{ env.VERSION }}.vsix
-          
+
       - name: Publish to Visual Studio Marketplace 🌐
-        uses: HaaLeo/publish-vscode-extension@v1
+        uses: HaaLeo/publish-vscode-extension@28e2d3f5817fccf23c1f219eb0cecc903132d1a2 # v1.6.2
         with:
           pat: ${{ secrets.VS_MARKETPLACE_TOKEN }}
           registryUrl: https://marketplace.visualstudio.com
           extensionFile: ${{ env.NAME }}-${{ env.VERSION }}.vsix
-          
+
       - name: Publish to NPM Registry 🌐
-        run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          npm set "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}"
+          npm publish --provenance --access public

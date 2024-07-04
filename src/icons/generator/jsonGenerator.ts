@@ -4,15 +4,19 @@ import {
   renameSync,
   unlinkSync,
   writeFileSync,
-} from 'fs';
+} from 'node:fs';
+import { basename, join } from 'node:path';
 import merge from 'lodash.merge';
-import { basename, join } from 'path';
 import { getCustomIconPaths } from '../../helpers/customIcons';
 import { getFileConfigHash } from '../../helpers/fileConfig';
-import { IconConfiguration, IconJsonOptions } from '../../models/index';
+import { IconConfiguration, type IconJsonOptions } from '../../models/index';
 import { fileIcons } from '../fileIcons';
 import { folderIcons } from '../folderIcons';
 import { languageIcons } from '../languageIcons';
+import {
+  customClonesIcons,
+  generateConfiguredClones,
+} from './clones/clonesGenerator';
 import { iconJsonName } from './constants';
 import {
   generateFileIcons,
@@ -73,7 +77,7 @@ export const createIconFile = (
     getDefaultIconOptions(),
     updatedJSONConfig
   );
-  const json = generateIconConfigurationObject(options);
+  let json = generateIconConfigurationObject(options);
 
   // make sure that the folder color, opacity and saturation values are entered correctly
   if (
@@ -131,6 +135,18 @@ export const createIconFile = (
       setIconSaturation(options);
     }
     renameIconFiles(iconJsonPath, options);
+
+    // create configured icon clones at build time
+    if (!updatedConfigs) {
+      console.log('Generating icon clones...');
+      generateConfiguredClones(folderIcons, json);
+      generateConfiguredClones(fileIcons, json);
+    }
+
+    // generate custom cloned icons set by the user via vscode options
+    // after opacity and saturation have been set so that those changes
+    // are also applied to the user defined clones
+    json = merge({}, json, customClonesIcons(json, options));
   } catch (error) {
     throw new Error('Failed to update icons: ' + error);
   }
@@ -193,7 +209,10 @@ const renameIconFiles = (iconJsonPath: string, options: IconJsonOptions) => {
         // append file config to file name
         const newFilePath = join(
           iconPath,
-          f.replace(/(^[^\.~]+)(.*)\.svg/, `$1${fileConfigHash}.svg`)
+          f.replace(
+            /(^[^\.~]+).*?(\.clone\.svg|\.svg)/,
+            `$1${fileConfigHash}$2`
+          )
         );
 
         // if generated files are already in place, do not overwrite them
