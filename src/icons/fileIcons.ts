@@ -266,7 +266,6 @@ export const fileIcons: FileIcons = {
         'astro.config.cts',
         'astro.config.mts',
       ],
-      light: true,
     },
     { name: 'pdf', fileExtensions: ['pdf'] },
     {
