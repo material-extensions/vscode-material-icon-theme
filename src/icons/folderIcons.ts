@@ -290,7 +290,6 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-astro',
         folderNames: ['.astro'],
-        light: true,
       },
       {
         name: 'folder-database',
