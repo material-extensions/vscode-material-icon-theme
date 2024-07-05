@@ -1,14 +1,25 @@
-import * as fs from 'fs';
+import {
+  existsSync,
+  readdirSync,
+  renameSync,
+  unlinkSync,
+  writeFileSync,
+} from 'node:fs';
+import { basename, join } from 'node:path';
 import merge from 'lodash.merge';
-import * as path from 'path';
 import { getCustomIconPaths } from '../../helpers/customIcons';
 import { getFileConfigHash } from '../../helpers/fileConfig';
-import { IconConfiguration, IconJsonOptions } from '../../models/index';
+import { IconConfiguration, type IconJsonOptions } from '../../models/index';
 import { fileIcons } from '../fileIcons';
 import { folderIcons } from '../folderIcons';
 import { languageIcons } from '../languageIcons';
+import {
+  customClonesIcons,
+  generateConfiguredClones,
+} from './clones/clonesGenerator';
 import { iconJsonName } from './constants';
 import {
+  generateFileIcons,
   generateFolderIcons,
   loadFileIconDefinitions,
   loadFolderIconDefinitions,
@@ -66,7 +77,7 @@ export const createIconFile = (
     getDefaultIconOptions(),
     updatedJSONConfig
   );
-  const json = generateIconConfigurationObject(options);
+  let json = generateIconConfigurationObject(options);
 
   // make sure that the folder color, opacity and saturation values are entered correctly
   if (
@@ -87,17 +98,29 @@ export const createIconFile = (
   ) {
     throw Error('Material Icons: Invalid folder color value!');
   }
+  if (
+    updatedConfigs?.files?.color &&
+    !validateHEXColorCode(updatedConfigs?.files?.color)
+  ) {
+    throw Error('Material Icons: Invalid file color value!');
+  }
 
   try {
     let iconJsonPath = __dirname;
     // if executed via script
-    if (path.basename(__dirname) !== 'dist') {
-      iconJsonPath = path.join(__dirname, '..', '..', '..', 'dist');
+    if (basename(__dirname) !== 'dist') {
+      iconJsonPath = join(__dirname, '..', '..', '..', 'dist');
+    }
+    if (!updatedConfigs || (updatedConfigs.files || {}).color) {
+      // if updatedConfigs do not exist (because of initial setup)
+      // or new config value was detected by the change detection
+      generateFileIcons(options.files?.color);
+      setIconOpacity(options, ['file.svg']);
     }
     if (!updatedConfigs || (updatedConfigs.folders || {}).color) {
       // if updatedConfigs do not exist (because of initial setup)
       // or new config value was detected by the change detection
-      generateFolderIcons(options.folders.color);
+      generateFolderIcons(options.folders?.color);
       setIconOpacity(options, [
         'folder.svg',
         'folder-open.svg',
@@ -112,23 +135,35 @@ export const createIconFile = (
       setIconSaturation(options);
     }
     renameIconFiles(iconJsonPath, options);
+
+    // create configured icon clones at build time
+    if (!updatedConfigs) {
+      console.log('Generating icon clones...');
+      generateConfiguredClones(folderIcons, json);
+      generateConfiguredClones(fileIcons, json);
+    }
+
+    // generate custom cloned icons set by the user via vscode options
+    // after opacity and saturation have been set so that those changes
+    // are also applied to the user defined clones
+    json = merge({}, json, customClonesIcons(json, options));
   } catch (error) {
-    throw Error(error);
+    throw new Error('Failed to update icons: ' + error);
   }
 
   try {
     let iconJsonPath = __dirname;
     // if executed via script
-    if (path.basename(__dirname) !== 'dist') {
-      iconJsonPath = path.join(__dirname, '..', '..', '..', 'dist');
+    if (basename(__dirname) !== 'dist') {
+      iconJsonPath = join(__dirname, '..', '..', '..', 'dist');
     }
-    fs.writeFileSync(
-      path.join(iconJsonPath, iconJsonName),
+    writeFileSync(
+      join(iconJsonPath, iconJsonName),
       JSON.stringify(json, undefined, 2),
       'utf-8'
     );
   } catch (error) {
-    throw Error(error);
+    throw new Error('Failed to create icon file: ' + error);
   }
 
   return iconJsonName;
@@ -137,7 +172,7 @@ export const createIconFile = (
 /**
  * The options control the generator and decide which icons are disabled or not.
  */
-export const getDefaultIconOptions = (): IconJsonOptions => ({
+export const getDefaultIconOptions = (): Required<IconJsonOptions> => ({
   folders: {
     theme: 'specific',
     color: '#90a4ae',
@@ -147,7 +182,10 @@ export const getDefaultIconOptions = (): IconJsonOptions => ({
   hidesExplorerArrows: false,
   opacity: 1,
   saturation: 1,
-  files: { associations: {} },
+  files: {
+    color: '#90a4ae',
+    associations: {},
+  },
   languages: { associations: {} },
 });
 
@@ -158,27 +196,30 @@ export const getDefaultIconOptions = (): IconJsonOptions => ({
  */
 const renameIconFiles = (iconJsonPath: string, options: IconJsonOptions) => {
   const customPaths = getCustomIconPaths(options);
-  const defaultIconPath = path.join(iconJsonPath, '..', 'icons');
+  const defaultIconPath = join(iconJsonPath, '..', 'icons');
   const iconPaths = [defaultIconPath, ...customPaths];
 
   iconPaths.forEach((iconPath) => {
-    fs.readdirSync(iconPath)
+    readdirSync(iconPath)
       .filter((f) => f.match(/\.svg/gi))
       .forEach((f) => {
-        const filePath = path.join(iconPath, f);
+        const filePath = join(iconPath, f);
         const fileConfigHash = getFileConfigHash(options);
 
         // append file config to file name
-        const newFilePath = path.join(
+        const newFilePath = join(
           iconPath,
-          f.replace(/(^[^\.~]+)(.*)\.svg/, `$1${fileConfigHash}.svg`)
+          f.replace(
+            /(^[^\.~]+).*?(\.clone\.svg|\.svg)/,
+            `$1${fileConfigHash}$2`
+          )
         );
 
         // if generated files are already in place, do not overwrite them
-        if (filePath !== newFilePath && fs.existsSync(newFilePath)) {
-          fs.unlinkSync(filePath);
+        if (filePath !== newFilePath && existsSync(newFilePath)) {
+          unlinkSync(filePath);
         } else {
-          fs.renameSync(filePath, newFilePath);
+          renameSync(filePath, newFilePath);
         }
       });
   });

@@ -1,11 +1,11 @@
-import * as fs from 'fs';
-import * as path from 'path';
+import { writeFileSync } from 'node:fs';
+import { join } from 'node:path';
+import { green, red } from '../helpers/painter';
 import { createScreenshot } from '../helpers/screenshots';
-import * as painter from './../helpers/painter';
 import { toTitleCase } from './../helpers/titleCase';
 
 const htmlDoctype = '<!DOCTYPE html>';
-const cssFilePath = path.join('style.css');
+const cssFilePath = 'style.css';
 const styling = `<link rel="stylesheet" href="${cssFilePath}">`;
 
 const createHTMLTableHeadRow = (amount: number) => {
@@ -29,8 +29,8 @@ const createHTMLTableBodyRows = (items: IconDefinition[][]) => {
         (icon) => `
             <td class="icon">
                 <img src="./../../../icons/${icon.iconName}.svg" alt="${
-          icon.label
-        }">
+                  icon.label
+                }">
             </td>
             <td class="iconName">${toTitleCase(icon.label)}</td>
         `
@@ -46,7 +46,7 @@ const createHTMLTableBodyRows = (items: IconDefinition[][]) => {
   return rows;
 };
 
-const createHTMLTable = (headRow, bodyRows) => `
+const createHTMLTable = (headRow: string, bodyRows: string) => `
     <table>
         ${headRow}
         ${bodyRows}
@@ -69,23 +69,21 @@ const savePreview = (
   size: number,
   icons: IconDefinition[][]
 ) => {
-  const filePath = path.join(__dirname, fileName + '.html');
+  const filePath = join(__dirname, fileName + '.html');
 
   // write the html file with the icon table
-  fs.writeFileSync(filePath, createPreviewTable(icons, size));
+  writeFileSync(filePath, createPreviewTable(icons, size));
 
   // create the image
   createScreenshot(filePath, fileName)
     .then(() => {
       console.log(
         '> Material Icon Theme:',
-        painter.green(`Successfully created ${fileName} preview image!`)
+        green(`Successfully created ${fileName} preview image!`)
       );
     })
     .catch(() => {
-      throw Error(
-        painter.red(`Error while creating ${fileName} preview image`)
-      );
+      throw Error(red(`Error while creating ${fileName} preview image`));
     });
 };
 

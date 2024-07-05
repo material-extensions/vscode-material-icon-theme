@@ -9,6 +9,8 @@ const filterDuplicates = (icons: string[]) => {
 
 const basicFileIcons = filterDuplicates(
   fileIcons.icons
+    // remove icons that are clones
+    .filter((i) => i.clone === undefined)
     .map((i) => i.name)
     // merge language icons
     .concat(languageIcons.map((i) => i.icon.name))
@@ -18,13 +20,15 @@ const folderThemes = filterDuplicates(
   folderIcons
     .map((theme) => {
       const folders = [];
-      if (theme.defaultIcon.name !== '') {
-        folders.push(theme.defaultIcon.name);
-      }
       if (theme.icons && theme.icons.length > 0) {
-        folders.push(...theme.icons.map((i) => i.name));
+        folders.push(
+          ...theme.icons
+            // remove icons that are clones
+            .filter((i) => i.clone === undefined)
+            .map((i) => i.name)
+        );
       }
-      return [].concat(...folders);
+      return [...folders];
     })
     .reduce((a, b) => a.concat(b))
 ).map((i) => ({ iconName: i, label: i.replace('folder-', '') }));

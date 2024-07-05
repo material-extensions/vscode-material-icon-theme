@@ -16,12 +16,22 @@ export const openedFolder: string = '-open';
 /**
  * File ending for light icons.
  */
-export const lightVersion: string = '_light';
+export const lightColorFileEnding: string = '_light';
 
 /**
  * File ending for high contrast icons.
  */
-export const highContrastVersion: string = '_highContrast';
+export const highContrastColorFileEnding: string = '_highContrast';
+
+/**
+ * Pattern to match the file icon definition.
+ */
+export const cloneIconExtension: string = '.clone.svg';
+
+/**
+ * User Defined Clones subfolder
+ */
+export const clonesFolder: string = 'clones/';
 
 /**
  * Pattern to match wildcards for custom file icon mappings.

@@ -1,14 +1,16 @@
-import * as vscode from 'vscode';
+import { window as codeWindow } from 'vscode';
+import { getMaterialIconsJSON, setThemeConfig } from '../helpers';
+import { translate } from '../i18n';
 import { getDefaultIconOptions, validateSaturationValue } from '../icons';
-import * as helpers from './../helpers';
-import * as i18n from './../i18n';
 
 /** Command to toggle the folder icons. */
 export const changeSaturation = async () => {
   try {
     const currentSaturationValue = getCurrentSaturationValue();
-    const response = Number(await showInput(currentSaturationValue));
-    setSaturationConfig(response);
+    const response = await showInput(currentSaturationValue);
+    if (response) {
+      await setSaturationConfig(+response);
+    }
   } catch (error) {
     console.error(error);
   }
@@ -16,10 +18,10 @@ export const changeSaturation = async () => {
 
 /** Show input to enter the saturation value. */
 const showInput = (saturation: number) => {
-  return vscode.window.showInputBox({
-    placeHolder: i18n.translate('saturation.inputPlaceholder'),
+  return codeWindow.showInputBox({
+    placeHolder: translate('saturation.inputPlaceholder'),
     ignoreFocusOut: true,
-    value: String(saturation),
+    value: saturation.toString(),
     validateInput: validateSaturationInput,
   });
 };
@@ -27,7 +29,7 @@ const showInput = (saturation: number) => {
 /** Validate the saturation value which was inserted by the user. */
 const validateSaturationInput = (saturationInput: string) => {
   if (!validateSaturationValue(+saturationInput)) {
-    return i18n.translate('saturation.wrongValue');
+    return translate('saturation.wrongValue');
   }
   return undefined;
 };
@@ -35,12 +37,10 @@ const validateSaturationInput = (saturationInput: string) => {
 /** Get the current value of the saturation of the icons. */
 export const getCurrentSaturationValue = (): number => {
   const defaultOptions = getDefaultIconOptions();
-  const config = helpers.getMaterialIconsJSON();
-  return config.options.saturation ?? defaultOptions.saturation;
+  const config = getMaterialIconsJSON();
+  return config?.options?.saturation ?? defaultOptions.saturation;
 };
 
 const setSaturationConfig = (saturation: number) => {
-  if (saturation !== undefined) {
-    return helpers.setThemeConfig('saturation', saturation, true);
-  }
+  return setThemeConfig('saturation', saturation, true);
 };

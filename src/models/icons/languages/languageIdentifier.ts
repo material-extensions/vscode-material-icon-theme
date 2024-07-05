@@ -1,4 +1,4 @@
-import { DefaultIcon, IconPack } from '../index';
+import { type DefaultIcon, IconPack } from '../index';
 
 export interface LanguageIcon {
   /**
