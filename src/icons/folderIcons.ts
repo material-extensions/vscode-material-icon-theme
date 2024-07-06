@@ -738,6 +738,14 @@ export const folderIcons: FolderTheme[] = [
           'moderators',
         ],
       },
+      {
+        name: 'folder-jupyter',
+        folderNames: [
+          'jupyter',
+          'notebook',
+          'notebooks',
+        ],
+      },
       { name: 'folder-scala', folderNames: ['scala'] },
       {
         name: 'folder-connection',
@@ -792,6 +800,17 @@ export const folderIcons: FolderTheme[] = [
         ],
       },
       {
+        name: 'folder-helm',
+        folderNames: [
+          'helm',
+          'helmchart',
+          'helmcharts',
+          '.helm',
+          '.helmchart',
+          '.helmcharts',
+        ],
+      },
+      {  
         name: 'folder-queue',
         folderNames: ['queue', 'queues', 'bull', 'mq'],
       },
