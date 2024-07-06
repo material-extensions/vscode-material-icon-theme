@@ -25,7 +25,8 @@
         "biomejs.biome",
         "jock.svg",
         "EditorConfig.EditorConfig",
-        "oven.bun-vscode"
+        "oven.bun-vscode",
+        "DavidAnson.vscode-markdownlint"
       ]
     }
   }
