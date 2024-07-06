@@ -40,9 +40,7 @@ jobs:
         run: |
           files=$(git diff --no-index ../main ../fork --diff-filter=ACMRTUX --name-only | grep '.svg$')
           filesCount=$(echo "$files" | wc -l)
-
           npx svg-icon-review@1.1.0 --bigIcon ${files}
-
           echo svg_files_count=$filesCount >> $GITHUB_ENV
 
       - name: Install jq ⚙️
