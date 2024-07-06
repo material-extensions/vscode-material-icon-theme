@@ -2460,5 +2460,9 @@ export const fileIcons: FileIcons = {
       name: 'bruno',
       fileExtensions: ['bru'],
     },
+    {
+      name: 'freemarker',
+      fileExtensions: ['ftl'],
+    },
   ]),
 };
