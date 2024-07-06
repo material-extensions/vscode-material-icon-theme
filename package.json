@@ -7,7 +7,7 @@
     "build": "bun run ./build/build-with-esbuild.ts",
     "watch": "bun run ./build/watch-with-esbuild.ts",
     "changelog": "changelog-machine --config changelog.config.json",
-    "check-colors": "svg-color-linter --colors material-colors.yml",
+    "check-colors": "bun run ./src/scripts/svg/checkSvgColors.ts",
     "check": "bun ./src/scripts/icons/checks",
     "contributors": "bun ./src/scripts/contributors/index.ts",
     "generateJson": "bun ./src/scripts/icons/generateJson.ts",
