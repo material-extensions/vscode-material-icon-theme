@@ -2464,5 +2464,9 @@ export const fileIcons: FileIcons = {
       name: 'gitbook',
       fileNames: ['.gitbook.yml', '.gitbook.yaml'],
     },
+    {
+      name: 'grafana-alloy',
+      fileExtensions: ['alloy'],
+    },
   ]),
 };

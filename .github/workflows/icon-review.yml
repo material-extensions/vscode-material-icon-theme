@@ -36,11 +36,12 @@ jobs:
           persist-credentials: false
 
       - name: Review SVG files 🔍
+        working-directory: main
         run: |
-          cd main
-          svgFiles=$(git diff --no-index ../main ../fork --diff-filter=ACMRTUX --name-only | grep '.svg$')
-          echo "SVG files changed: ${svgFiles}"
-          npx svg-icon-review@1.1.0 --bigIcon ${svgFiles}
+          files=$(git diff --no-index ../main ../fork --diff-filter=ACMRTUX --name-only | grep '.svg$')
+          filesCount=$(echo "$files" | wc -l)
+          npx svg-icon-review@1.1.0 --bigIcon ${files}
+          echo svg_files_count=$filesCount >> $GITHUB_ENV
 
       - name: Install jq ⚙️
         run: sudo apt-get install jq
@@ -52,21 +53,50 @@ jobs:
         run: |
           IMAGE_URL=$(curl --location 'https://freeimage.host/json' --form 'source=@"./main/preview.png"' --form 'type="file"' --form 'action="upload"' --form 'auth_token="${{env.IMAGE_UPLOAD}}"' | jq -r '.image.url')
           echo image_url=$IMAGE_URL >> $GITHUB_ENV
-        shell: bash
 
-      - name: Post review in PR ✍️
+      - name: Generate text 📃
         uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
-        with:
-          script: |
-            const image_url = "${{ env.image_url }}";
-            console.log('URL: '+image_url);
-            const commentBody = '## Preview \n\nThank you for creating a pull request. This preview shows you how your changes will look on the different themes: \n\n ![Generated Preview](' + image_url + ') \n\n You can find more information how to contribute in the [contribution guidelines](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/CONTRIBUTING.md).';
-
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: commentBody
-            })
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          script: |
+            const imageURL = "${{ env.image_url }}";
+            const image = `<img src="${imageURL}" alt="Generated preview" />`;
+
+            let preview = "";
+
+            if (parseInt("${{ env.svg_files_count }}") > 10) {
+              preview = `<details><summary>🏞️ <b>Generated preview</b></summary><br/>${image}</details>`;
+            } else {
+              preview = image;
+            }
+
+            const comment = `
+              ## Preview
+
+              Thank you for creating a pull request. This preview shows you how your changes will look on the different themes:
+
+              ${preview}
+
+              You can find more information on how to contribute in the [contribution guidelines](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/CONTRIBUTING.md).
+            `;
+
+            // write comment to environment variable
+            core.exportVariable('comment', comment);
+
+      - name: Find comment if exists 🕵️
+        uses: peter-evans/find-comment@3eae4d37986fb5a8592848f6a574fdf654e61f9e # v3.1.0
+        id: fc
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          comment-author: 'github-actions[bot]'
+          body-includes: This preview shows you how your changes will look on the different themes
+
+      - name: Post or update comment in PR ✍️
+        uses: peter-evans/create-or-update-comment@71345be0265236311c031f5c7866368bd1eff043 # v4.0.0
+        with:
+          comment-id: ${{ steps.fc.outputs.comment-id }}
+          issue-number: ${{ github.event.pull_request.number }}
+          body: |
+            ${{ env.comment }}
+          edit-mode: replace
