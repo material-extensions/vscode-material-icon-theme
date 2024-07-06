@@ -2314,10 +2314,6 @@ export const fileIcons: FileIcons = {
       name: 'gamemaker',
       fileExtensions: ['gml', 'yy', 'yyp', 'yyz'],
     },
-    {
-      name: 'funding',
-      fileNames: ['funding.json', 'funding.yml', 'funding.yaml'],
-    },
     { name: 'tldraw', fileExtensions: ['tldr'], light: true },
     {
       name: 'mercurial',
