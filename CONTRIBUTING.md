@@ -19,6 +19,7 @@ Glad you're here and interested in expanding this project 🎉 In order to make 
   - [Designing Pixel Perfect Icons](#pixel-perfect-icons)
   - [Cloning existing icons](#icon-cloning)
 - [Add translations](#add-translations)
+- [Debug extension](#debug-extension-locally)
 
 <!-- /TOC -->
 
