@@ -1,3 +1,5 @@
+<!-- markdownlint-disable no-inline-html -->
+
 <h1 align="center">
   <br>
     <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/logo.png" alt="logo" width="200">
@@ -91,7 +93,7 @@ It's possible to add custom icons by adding a path to an SVG file which is locat
 
 For example a custom SVG file called `sample.svg` can be placed in an `icons` folder inside of VS Code's `extensions` folder:
 
-```
+```text
 .vscode
  ┗ extensions
    ┗ icons
@@ -108,7 +110,7 @@ In the settings.json (User Settings only!) the icon can be associated to a file 
 
 _Note: The custom file name must be configured in the settings without the file ending `.svg` as shown in the example above._
 
-#### Custom clones
+#### Custom icon clones
 
 It's also possible to clone existing file icons and change their colors to create new icons that can be associated with file names or file extensions. The following example shows how to clone the `rust` icon:
 
@@ -154,7 +156,7 @@ Similar to the files, it is also possible to reference your own SVG icons for fo
 
 In our example we place them into an `icons` folder inside of the `.vscode/extensions` folder:
 
-```
+```text
 .vscode
  ┗ extensions
    ┗ icons
@@ -170,7 +172,7 @@ In the settings.json (User Settings only!) the folder icons can be associated to
 }
 ```
 
-#### Custom clones
+#### Custom folder clones
 
 It's also possible to clone existing folder icons and change their colors to create new icons that can be associated with folder names. The following example shows how to clone the `admin` folder icon:
 
