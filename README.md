@@ -110,7 +110,7 @@ In the settings.json (User Settings only!) the icon can be associated to a file 
 
 _Note: The custom file name must be configured in the settings without the file ending `.svg` as shown in the example above._
 
-#### Custom icon clones
+#### Custom file icon clones
 
 It's also possible to clone existing file icons and change their colors to create new icons that can be associated with file names or file extensions. The following example shows how to clone the `rust` icon:
 
