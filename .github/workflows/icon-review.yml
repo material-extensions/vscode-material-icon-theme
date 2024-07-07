@@ -43,9 +43,6 @@ jobs:
           npx svg-icon-review@1.1.0 --bigIcon ${files}
           echo svg_files_count=$filesCount >> $GITHUB_ENV
 
-      - name: Install jq ⚙️
-        run: sudo apt-get install jq
-
       - name: Upload PNG ⬆️
         env:
           IMAGE_UPLOAD: ${{ secrets.IMAGE_UPLOAD }}
@@ -66,7 +63,7 @@ jobs:
             let preview = "";
 
             if (parseInt("${{ env.svg_files_count }}") > 10) {
-              preview = `<details><summary>Generated preview</summary>${image}</details>`;
+              preview = `<details><summary>🏞️ <b>Generated preview</b></summary><br/>${image}</details>`;
             } else {
               preview = image;
             }
