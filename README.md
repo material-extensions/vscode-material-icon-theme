@@ -172,7 +172,7 @@ In the settings.json (User Settings only!) the folder icons can be associated to
 }
 ```
 
-#### Custom folder clones
+#### Custom folder icon clones
 
 It's also possible to clone existing folder icons and change their colors to create new icons that can be associated with folder names. The following example shows how to clone the `admin` folder icon:
 
