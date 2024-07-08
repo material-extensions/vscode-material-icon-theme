@@ -8,13 +8,16 @@ scripts/**
 **/*.map
 .gitignore
 tsconfig.json
-tslint.json
+biome.jsonc
 images/**
 vsc-extension-quickstart.md
 logo.svg
 node_modules
 package-lock.json
+bun.lockb
 yarn.lock
+bunfig.toml
+devcontainer/**
 build/**
 svgo.config.js
 .eslintignore
