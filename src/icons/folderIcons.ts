@@ -1,4 +1,4 @@
-import { FolderTheme, IconPack } from '../models';
+import { type FolderTheme, IconPack } from '../models';
 
 /**
  * Defines folder icons
@@ -225,7 +225,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-docker',
-        folderNames: ['docker', 'dockerfiles'],
+        folderNames: ['docker', 'dockerfiles', 'dockerhub'],
       },
       {
         name: 'folder-ngrx-effects',
@@ -458,6 +458,10 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-tasks', folderNames: ['tasks', 'tickets'] },
       { name: 'folder-android', folderNames: ['android'] },
       { name: 'folder-ios', folderNames: ['ios'] },
+      {
+        name: 'folder-ui',
+        folderNames: ['presentation', 'gui', 'ui', 'ux'],
+      },
       { name: 'folder-upload', folderNames: ['uploads', 'upload'] },
       { name: 'folder-download', folderNames: ['downloads', 'download'] },
       {
@@ -682,7 +686,7 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['anim', 'anims', 'animation', 'animations', 'animated'],
       },
       { name: 'folder-guard', folderNames: ['guard', 'guards'] },
-      { name: 'folder-prisma', folderNames: ['prisma'] },
+      { name: 'folder-prisma', folderNames: ['prisma', 'prisma/schema'] },
       { name: 'folder-pipe', folderNames: ['pipe', 'pipes'] },
       { name: 'folder-svg', folderNames: ['svg', 'svgs'] },
       {
@@ -733,6 +737,10 @@ export const folderIcons: FolderTheme[] = [
           'moderator',
           'moderators',
         ],
+      },
+      {
+        name: 'folder-jupyter',
+        folderNames: ['jupyter', 'notebook', 'notebooks'],
       },
       { name: 'folder-scala', folderNames: ['scala'] },
       {
@@ -785,6 +793,17 @@ export const folderIcons: FolderTheme[] = [
           'contract-testing',
           'contract-test',
           'contract-tests',
+        ],
+      },
+      {
+        name: 'folder-helm',
+        folderNames: [
+          'helm',
+          'helmchart',
+          'helmcharts',
+          '.helm',
+          '.helmchart',
+          '.helmcharts',
         ],
       },
       {
@@ -859,6 +878,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-seeders',
         folderNames: ['seeds', 'seeders', 'seed', 'seeding'],
       },
+      { name: 'folder-bicep', folderNames: ['bicep'] },
     ],
   },
   {

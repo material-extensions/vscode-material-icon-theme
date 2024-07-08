@@ -1,4 +1,4 @@
-import { FileIcons, FileNamePattern, IconPack } from '../models';
+import { type FileIcons, FileNamePattern, IconPack } from '../models';
 import { parseByPattern } from './patterns';
 
 /**
@@ -761,6 +761,10 @@ export const fileIcons: FileIcons = {
       name: 'nuxt',
       fileNames: ['nuxt.config.js', 'nuxt.config.ts', '.nuxtignore'],
     },
+    {
+      name: 'harmonix',
+      fileNames: ['harmonix.config.js', 'harmonix.config.ts'],
+    },
     { name: 'ocaml', fileExtensions: ['ml', 'mli', 'cmx'] },
     { name: 'odin', fileExtensions: ['odin'] },
     {
@@ -971,14 +975,12 @@ export const fileIcons: FileIcons = {
     {
       name: 'postcss',
       fileExtensions: ['pcss', 'sss'],
-      fileNames: [],
       patterns: {
         postcss: FileNamePattern.Cosmiconfig,
       },
     },
     {
       name: 'posthtml',
-      fileNames: [],
       patterns: {
         posthtml: FileNamePattern.Cosmiconfig,
       },
@@ -1533,7 +1535,6 @@ export const fileIcons: FileIcons = {
     {
       name: 'semantic-release',
       light: true,
-      fileNames: [],
       patterns: {
         release: FileNamePattern.Cosmiconfig,
       },
@@ -1767,12 +1768,34 @@ export const fileIcons: FileIcons = {
     { name: 'moonscript', fileExtensions: ['moon'] },
     { name: 'percy', fileNames: ['.percy.yml'] },
     { name: 'gitpod', fileNames: ['.gitpod.yml'] },
-    { name: 'advpl_prw', fileExtensions: ['prw', 'prx'] },
-    { name: 'advpl_ptm', fileExtensions: ['ptm'] },
-    { name: 'advpl_tlpp', fileExtensions: ['tlpp'] },
-    { name: 'advpl_include', fileExtensions: ['ch'] },
+    { name: 'advpl', fileExtensions: ['prw', 'prx'] },
+    {
+      name: 'advpl-ptm',
+      clone: {
+        base: 'advpl',
+        color: 'red-400',
+      },
+      fileExtensions: ['ptm'],
+    },
+    {
+      name: 'advpl-tlpp',
+      clone: {
+        base: 'advpl',
+        color: 'yellow-700',
+      },
+      fileExtensions: ['tlpp'],
+    },
+    {
+      name: 'advpl-include',
+      clone: {
+        base: 'advpl',
+        color: 'cyan-500',
+      },
+      fileExtensions: ['ch'],
+    },
     { name: 'codeowners', fileNames: ['codeowners', 'OWNERS'] },
     { name: 'gcp', fileNames: ['.gcloudignore'] },
+    { name: 'amplify', fileNames: ['amplify.yml'] },
     {
       name: 'disc',
       fileExtensions: ['iso', 'vmdk', 'hdd', 'qcow', 'qcow2', 'qed', 'dmg'],
@@ -1786,7 +1809,6 @@ export const fileIcons: FileIcons = {
     { name: 'prolog', fileExtensions: ['p', 'pro', 'pl'] },
     {
       name: 'husky',
-      fileNames: [],
       patterns: {
         husky: FileNamePattern.Cosmiconfig,
       },
@@ -1948,14 +1970,9 @@ export const fileIcons: FileIcons = {
     { name: 'pipeline', fileExtensions: ['pipeline'] },
     {
       name: 'vite',
-      fileNames: [
-        'vite.config.js',
-        'vite.config.mjs',
-        'vite.config.cjs',
-        'vite.config.ts',
-        'vite.config.cts',
-        'vite.config.mts',
-      ],
+      patterns: {
+        'vite.config': FileNamePattern.Ecmascript,
+      },
     },
     {
       name: 'vitest',
@@ -2002,7 +2019,15 @@ export const fileIcons: FileIcons = {
     { name: 'vlang', fileExtensions: ['v'], fileNames: ['vpkg.json', 'v.mod'] },
     { name: 'chess', fileExtensions: ['pgn', 'fen'], light: true },
     { name: 'gemini', fileExtensions: ['gmi', 'gemini'] },
-    { name: 'sentry', fileNames: ['.sentryclirc'] },
+    {
+      name: 'sentry',
+      fileNames: ['.sentryclirc'],
+      patterns: {
+        'sentry.client.config': FileNamePattern.Ecmascript,
+        'sentry.server.config': FileNamePattern.Ecmascript,
+        'sentry.edge.config': FileNamePattern.Ecmascript,
+      },
+    },
     {
       name: 'phpunit',
       fileNames: [
@@ -2175,7 +2200,6 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'svgr',
-      fileNames: [],
       patterns: {
         svgr: FileNamePattern.Cosmiconfig,
       },
@@ -2246,15 +2270,15 @@ export const fileIcons: FileIcons = {
       name: 'nano-staged',
       light: true,
       fileNames: [
-        `.nano-staged.js`,
-        `nano-staged.js`,
-        `.nano-staged.cjs`,
-        `nano-staged.cjs`,
-        `.nano-staged.mjs`,
-        `nano-staged.mjs`,
-        `.nano-staged.json`,
-        `nano-staged.json`,
-        `.nanostagedrc`,
+        '.nano-staged.js',
+        'nano-staged.js',
+        '.nano-staged.cjs',
+        'nano-staged.cjs',
+        '.nano-staged.mjs',
+        'nano-staged.mjs',
+        '.nano-staged.json',
+        'nano-staged.json',
+        '.nanostagedrc',
       ],
     },
     {
@@ -2282,7 +2306,6 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'craco',
-      fileNames: [],
       patterns: {
         craco: FileNamePattern.Cosmiconfig,
       },
@@ -2338,7 +2361,6 @@ export const fileIcons: FileIcons = {
     { name: 'mermaid', fileExtensions: ['mmd', 'mermaid'] },
     {
       name: 'syncpack',
-      fileNames: [],
       patterns: {
         syncpack: FileNamePattern.Cosmiconfig,
       },
@@ -2392,7 +2414,6 @@ export const fileIcons: FileIcons = {
     { name: 'lottie', fileExtensions: ['lottie'] },
     {
       name: 'puppeteer',
-      fileNames: [],
       patterns: {
         puppeteer: FileNamePattern.Cosmiconfig,
       },
@@ -2415,12 +2436,37 @@ export const fileIcons: FileIcons = {
       ],
     },
     {
+      name: 'screwdriver',
+      fileNames: ['screwdriver.yaml', 'screwdriver.yml'],
+    },
+    {
       name: 'snapcraft',
       fileNames: ['snapcraft.yaml', 'snapcraft.yml'],
     },
     {
       name: 'container',
       fileNames: ['.devcontainer/devcontainer.json'],
+    },
+    {
+      name: 'kcl',
+      fileNames: ['kcl.mod', 'kcl.yaml', 'kcl.yml'],
+      fileExtensions: ['k'],
+    },
+    {
+      name: 'verified',
+      fileExtensions: ['sigstore.json'],
+    },
+    {
+      name: 'bruno',
+      fileExtensions: ['bru'],
+    },
+    {
+      name: 'cairo',
+      fileExtensions: ['cairo'],
+    },
+    {
+      name: 'grafana-alloy',
+      fileExtensions: ['alloy'],
     },
   ]),
 };

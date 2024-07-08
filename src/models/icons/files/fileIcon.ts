@@ -1,7 +1,7 @@
-import { RequireAtLeastOne } from '../../../helpers/types';
-import { Patterns } from '../patterns';
-import { CloneOptions } from '../cloneOptions';
+import { type RequireAtLeastOne } from '../../../helpers/types';
+import { type CloneOptions } from '../cloneOptions';
 import { IconPack } from '../index';
+import { type Patterns } from '../patterns';
 
 interface BasicFileIcon {
   /**
@@ -57,5 +57,5 @@ interface BasicFileIcon {
  */
 export type FileIcon = RequireAtLeastOne<
   BasicFileIcon,
-  'fileExtensions' | 'fileNames'
+  'fileExtensions' | 'fileNames' | 'patterns'
 >;
