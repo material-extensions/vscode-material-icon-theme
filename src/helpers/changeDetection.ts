@@ -1,7 +1,7 @@
 import merge from 'lodash.merge';
 import { getConfigProperties, getMaterialIconsJSON, getThemeConfig } from '.';
 import { createIconFile } from '../icons/index';
-import { IconJsonOptions } from '../models';
+import type { IconJsonOptions } from '../models';
 import { getObjectPropertyValue, setObjectPropertyValue } from './objects';
 
 /** Compare the workspace and the user configurations with the current setup of the icons. */

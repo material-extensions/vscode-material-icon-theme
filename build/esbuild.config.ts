@@ -1,22 +1,26 @@
-import type { BuildOptions } from "esbuild";
+import type { BuildOptions } from 'esbuild';
 
 const config: BuildOptions = {
-  entryPoints: ["./src/extension.ts", "./src/web/extension.ts"],
+  entryPoints: [
+    './src/extension.ts',
+    './src/web/extension.ts',
+    './src/module.ts',
+  ],
   bundle: true,
-  platform: "node",
-  target: "node12",
-  outdir: "./dist",
-  outbase: "./src",
+  platform: 'node',
+  target: 'node12',
+  outdir: './dist',
+  outbase: './src',
   outExtension: {
-    ".js": ".cjs",
+    '.js': '.cjs',
   },
-  format: "cjs",
-  external: ["vscode"],
+  format: 'cjs',
+  external: ['vscode'],
   loader: {
-    ".ts": "ts",
-    ".js": "js",
+    '.ts': 'ts',
+    '.js': 'js',
   },
-  logLevel: "info",
+  logLevel: 'info',
 };
 
 export default config;
