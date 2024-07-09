@@ -5,7 +5,8 @@
   "version": "5.4.2",
   "scripts": {
     "compile": "tsc -p ./",
-    "build": "bun run compile && bun run ./build/build-with-esbuild.ts",
+    "compile:declarations": "tsc -p ./tsconfig.declarations.json",
+    "build": "bun run compile && bun run ./build/build-with-esbuild.ts && bun run compile:declarations",
     "watch": "bun run ./build/watch-with-esbuild.ts",
     "changelog": "changelog-machine --config changelog.config.json",
     "check-colors": "bun run ./src/scripts/svg/checkSvgColors.ts",
@@ -62,6 +63,7 @@
   "main": "./dist/extension.cjs",
   "browser": "./dist/web/extension.cjs",
   "module": "./dist/module.cjs",
+  "types": "./dist/types/module.d.ts",
   "sideEffects": false,
   "files": ["icons", "dist/material-icons.json", "dist/module.cjs"],
   "contributes": {
