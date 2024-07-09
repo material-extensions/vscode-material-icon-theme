@@ -2463,5 +2463,13 @@ export const fileIcons: FileIcons = {
       name: 'bruno',
       fileExtensions: ['bru'],
     },
+    {
+      name: 'cairo',
+      fileExtensions: ['cairo'],
+    },
+    {
+      name: 'grafana-alloy',
+      fileExtensions: ['alloy'],
+    },
   ]),
 };
