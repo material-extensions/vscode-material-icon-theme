@@ -1,9 +1,9 @@
 import { existsSync, mkdirSync, rmSync } from 'node:fs';
 import { basename, dirname, join } from 'node:path';
 import {
-  CustomClone,
-  FileIconClone,
-  FolderIconClone,
+  type CustomClone,
+  type FileIconClone,
+  type FolderIconClone,
   IconConfiguration,
 } from '../../../../models';
 import {

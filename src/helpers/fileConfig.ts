@@ -1,5 +1,5 @@
 import { getDefaultIconOptions } from '../icons';
-import { IconJsonOptions } from '../models';
+import { type IconJsonOptions } from '../models';
 
 /**
  * Generate a config hashed string that is appended to each icon file name.
