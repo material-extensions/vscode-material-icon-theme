@@ -1,5 +1,6 @@
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
+import merge from 'lodash.merge';
 import { extensions, workspace } from 'vscode';
 import { iconJsonName } from '../icons/index';
 import { IconConfiguration } from '../models/index';
@@ -24,8 +25,16 @@ export const setConfig = (
   return getConfig().update(section, value, global);
 };
 
+/** Get current configuration of the theme from the vscode config */
 export const getThemeConfig = (section: string) => {
-  return getConfig('material-icon-theme').inspect(section);
+  const themeConfig = getConfig('material-icon-theme').inspect(section);
+  return getConfigValue(
+    themeConfig as {
+      globalValue: unknown;
+      workspaceValue: unknown;
+      defaultValue: unknown;
+    }
+  );
 };
 
 /** Set the config of the theme. */
@@ -85,4 +94,35 @@ export const toTitleCase = (value: string) => {
     /\w\S*/g,
     (text) => text.charAt(0).toUpperCase() + text.substr(1).toLowerCase()
   );
+};
+
+/**
+ * Returns the value of a specific configuration by checking the workspace and the user configuration and fallback to the default value.
+ *
+ * @param themeConfig Theme configuration
+ * @returns Actual theme configuration value
+ */
+const getConfigValue = (themeConfig: {
+  globalValue: unknown;
+  workspaceValue: unknown;
+  defaultValue: unknown;
+}) => {
+  let configValue;
+  if (
+    typeof themeConfig.workspaceValue === 'object' &&
+    themeConfig.workspaceValue &&
+    themeConfig.globalValue
+  ) {
+    configValue = merge(
+      {},
+      themeConfig.workspaceValue,
+      themeConfig.globalValue
+    );
+  } else {
+    configValue =
+      themeConfig.workspaceValue ??
+      themeConfig.globalValue ??
+      themeConfig.defaultValue;
+  }
+  return configValue;
 };

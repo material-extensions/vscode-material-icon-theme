@@ -34,7 +34,7 @@ import {
 /**
  * Generate the complete icon configuration object that can be written as JSON file.
  */
-export const generateIconConfigurationObject = (
+const generateIconConfigurationObject = (
   options: IconJsonOptions
 ): IconConfiguration => {
   const iconConfig = merge({}, new IconConfiguration(), { options });
@@ -64,8 +64,11 @@ export const generateIconConfigurationObject = (
 
 /**
  * Create the JSON file that is responsible for the icons in the editor.
+ *
  * @param updatedConfigs Options that have been changed.
  * @param updatedJSONConfig New JSON options that already include the updatedConfigs.
+ *
+ * @returns Returns the name of the icon file.
  */
 export const createIconFile = (
   updatedConfigs?: IconJsonOptions,

@@ -2,7 +2,7 @@
   "name": "material-icon-theme",
   "displayName": "Material Icon Theme",
   "description": "Material Design Icons for Visual Studio Code",
-  "version": "5.4.2",
+  "version": "5.5.0-alpha.1",
   "scripts": {
     "compile": "tsc -p ./",
     "compile:declarations": "tsc -p ./tsconfig.declarations.json",
@@ -65,7 +65,12 @@
   "module": "./dist/module.cjs",
   "types": "./dist/types/module.d.ts",
   "sideEffects": false,
-  "files": ["icons", "dist/material-icons.json", "dist/module.cjs"],
+  "files": [
+    "icons",
+    "dist/material-icons.json",
+    "dist/module.cjs",
+    "dist/types"
+  ],
   "contributes": {
     "iconThemes": [
       {

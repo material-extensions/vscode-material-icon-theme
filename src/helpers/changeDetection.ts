@@ -37,19 +37,11 @@ const compareConfigs = (): {
   return configPropertyNames.reduce(
     (result, configName) => {
       try {
-        const themeConfig = getThemeConfig(configName) ?? {
+        const configValue = getThemeConfig(configName) ?? {
           globalValue: '',
           workspaceValue: '',
           defaultValue: '',
         };
-
-        const configValue = getConfigValue(
-          themeConfig as {
-            globalValue: unknown;
-            workspaceValue: unknown;
-            defaultValue: unknown;
-          }
-        );
 
         const currentState = getObjectPropertyValue(
           json.options ?? {},
@@ -75,35 +67,4 @@ const compareConfigs = (): {
       updatedJSONConfig: json.options as IconJsonOptions,
     }
   );
-};
-
-/**
- * Returns the value of a specific configuration by checking the workspace and the user configuration and fallback to the default value.
- *
- * @param themeConfig Theme configuration
- * @returns Actual theme configuration value
- */
-const getConfigValue = (themeConfig: {
-  globalValue: unknown;
-  workspaceValue: unknown;
-  defaultValue: unknown;
-}) => {
-  let configValue;
-  if (
-    typeof themeConfig.workspaceValue === 'object' &&
-    themeConfig.workspaceValue &&
-    themeConfig.globalValue
-  ) {
-    configValue = merge(
-      {},
-      themeConfig.workspaceValue,
-      themeConfig.globalValue
-    );
-  } else {
-    configValue =
-      themeConfig.workspaceValue ??
-      themeConfig.globalValue ??
-      themeConfig.defaultValue;
-  }
-  return configValue;
 };
