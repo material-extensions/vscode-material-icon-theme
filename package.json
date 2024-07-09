@@ -4,6 +4,7 @@
   "description": "Material Design Icons for Visual Studio Code",
   "version": "5.4.2",
   "scripts": {
+    "prebuild": "tsc -p ./",
     "build": "bun run ./build/build-with-esbuild.ts",
     "watch": "bun run ./build/watch-with-esbuild.ts",
     "changelog": "changelog-machine --config changelog.config.json",
@@ -18,7 +19,6 @@
     "preversion": "bun run contributors && git add images/contributors.png && bun run preview && git add images/fileIcons.png && git add images/folderIcons.png && bun run svgo && git add icons/*.svg",
     "preview": "bun ./src/scripts/preview",
     "svgo": "svgo -i icons -o icons -q",
-    "test-compile": "tsc -p ./",
     "test": "bun ./out/test/runTest.js",
     "version": "bun run changelog && git add CHANGELOG.md",
     "vscode:prepublish": "bun run lint && bun run build && bun run postcompile"
