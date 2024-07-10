@@ -19,7 +19,12 @@
     "strict": true,
     "noImplicitAny": true,
     "noFallthroughCasesInSwitch": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@core": ["core"],
+      "@icon-definitions": ["icons"]
+    }
   },
   "exclude": ["src/**/*.test.ts"]
 }

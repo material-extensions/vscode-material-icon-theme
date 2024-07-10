@@ -1,7 +1,9 @@
+import {
+  getDefaultConfiguration,
+  translate,
+  validateHEXColorCode,
+} from '@core';
 import { type QuickPickItem, window as codeWindow } from 'vscode';
-import { translate } from '../../i18n';
-import { getDefaultConfiguration } from '../../icons/generator/config/defaultConfig';
-import { validateHEXColorCode } from '../../icons/generator/shared';
 import { getThemeConfig, setThemeConfig } from '../shared/config';
 
 type FileColor = {

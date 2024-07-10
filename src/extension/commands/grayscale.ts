@@ -1,5 +1,5 @@
+import { translate } from 'core/i18n/translate';
 import { type QuickPickItem, window as codeWindow } from 'vscode';
-import { translate } from '../../i18n';
 import { getThemeConfig, setThemeConfig } from '../shared/config';
 
 /** Command to toggle grayscale. */

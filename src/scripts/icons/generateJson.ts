@@ -2,7 +2,7 @@
  * This file is meant to be executed exclusively by npm scripts.
  */
 
-import { generateManifest } from '../../icons';
+import { generateManifest } from '@core';
 
 try {
   const manifest = generateManifest();

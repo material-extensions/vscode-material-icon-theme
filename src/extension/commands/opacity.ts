@@ -1,7 +1,7 @@
+import { getDefaultConfiguration } from 'core/generator/config/defaultConfig';
+import { validateOpacityValue } from 'core/generator/iconOpacity';
+import { translate } from 'core/i18n/translate';
 import { window as codeWindow } from 'vscode';
-import { translate } from '../../i18n';
-import { validateOpacityValue } from '../../icons';
-import { getDefaultConfiguration } from '../../icons/generator/config/defaultConfig';
 import { getThemeConfig, setThemeConfig } from '../shared/config';
 
 /** Command to toggle the folder icons. */

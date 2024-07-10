@@ -1,5 +1,9 @@
-import { type FileIcons, FileNamePattern, IconPack } from '../models';
-import { parseByPattern } from './patterns';
+import {
+  type FileIcons,
+  FileNamePattern,
+  IconPack,
+  parseByPattern,
+} from '@core';
 
 /**
  * Defines file icons

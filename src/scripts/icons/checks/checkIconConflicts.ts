@@ -1,5 +1,5 @@
+import { fileIcons, folderIcons, languageIcons } from '@icon-definitions';
 import { green, red } from '../../helpers/painter';
-import { fileIcons, folderIcons, languageIcons } from './../../../icons';
 
 /**
  * Store all icons that are wrong configured

@@ -4,7 +4,7 @@
   "description": "Material Design Icons for Visual Studio Code",
   "version": "5.5.0-alpha.2",
   "scripts": {
-    "precompile": "rimraf dist",
+    "precompile": "rimraf dist && bun run verify",
     "compile": "tsc -p ./",
     "compile:declarations": "tsc -p ./tsconfig.declarations.json",
     "postcompile": "bun run compile:declarations && bun run generateJson && bun run generateClones && bun run check",
@@ -12,18 +12,19 @@
     "watch": "bun run ./build/watch-with-esbuild.ts",
     "changelog": "changelog-machine --config changelog.config.json",
     "check-colors": "bun run ./src/scripts/svg/checkSvgColors.ts",
-    "check": "bun ./src/scripts/icons/checks",
-    "contributors": "bun ./src/scripts/contributors/index.ts",
+    "check": "bun ./src/scripts/icons/checks/run.ts",
+    "contributors": "bun ./src/scripts/contributors/contributors.ts",
     "generateJson": "bun ./src/scripts/icons/generateJson.ts > dist/material-icons.json",
     "generateClones": "bun ./src/scripts/icons/generateClones.ts",
     "lint": "bunx @biomejs/biome check --write ./src",
     "format": "bunx @biomejs/biome format --write ./src",
     "preversion": "bun run contributors && git add images/contributors.png && bun run preview && git add images/fileIcons.png && git add images/folderIcons.png && bun run svgo && git add icons/*.svg",
-    "preview": "bun ./src/scripts/preview",
+    "preview": "bun ./src/scripts/preview/run.ts",
     "svgo": "svgo -i icons -o icons -q",
     "test": "bun test",
     "version": "bun run changelog && git add CHANGELOG.md",
-    "vscode:prepublish": "bun run lint && bun run build"
+    "vscode:prepublish": "bun run lint && bun run build",
+    "verify": "sheriff verify"
   },
   "publisher": "PKief",
   "author": {
@@ -61,7 +62,7 @@
     "virtualWorkspaces": true
   },
   "activationEvents": ["onStartupFinished"],
-  "main": "./dist/extension/extension.cjs",
+  "main": "./dist/extension/desktop/extension.cjs",
   "browser": "./dist/extension/web/extension.cjs",
   "module": "./dist/module.cjs",
   "types": "./dist/types/module.d.ts",
@@ -306,6 +307,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.8.2",
+    "@softarc/sheriff-core": "^0.15.1",
     "@types/chroma-js": "^2.4.4",
     "@types/glob": "^7.2.0",
     "@types/lodash-es": "^4.17.12",

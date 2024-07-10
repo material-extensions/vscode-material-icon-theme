@@ -1,5 +1,5 @@
-import { fileIcons, folderIcons, generateManifest } from '../../icons';
-import { generateConfiguredClones } from '../../icons/generator/clones/clonesGenerator';
+import { generateConfiguredClones, generateManifest } from '@core';
+import { fileIcons, folderIcons } from '@icon-definitions';
 
 /**
  * This file is meant to be executed exclusively by npm scripts.
