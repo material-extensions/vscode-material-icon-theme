@@ -1,15 +1,15 @@
 import { writeFileSync } from 'node:fs';
-import { getFileConfigHash } from 'core/helpers/configHash';
+import { merge } from 'lodash-es';
+import { getFileConfigHash } from '../../helpers/configHash';
 import type {
   Config,
   CustomClone,
   FileIconClone,
   FolderIconClone,
-} from 'core/models/icons/configuration';
-import type { FileIcons } from 'core/models/icons/files/fileTypes';
-import type { FolderTheme } from 'core/models/icons/folders/folderTheme';
-import type { Manifest } from 'core/models/manifest';
-import { merge } from 'lodash-es';
+} from '../../models/icons/configuration';
+import type { FileIcons } from '../../models/icons/files/fileTypes';
+import type { FolderTheme } from '../../models/icons/folders/folderTheme';
+import type { Manifest } from '../../models/manifest';
 import { cloneIconExtension, clonesFolder } from '../constants';
 import { Variant, getCloneData, isFolder } from './utils/cloneData';
 import { cloneIcon, createCloneConfig } from './utils/cloning';

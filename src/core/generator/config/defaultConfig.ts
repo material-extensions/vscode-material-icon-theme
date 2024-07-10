@@ -1,6 +1,6 @@
-import type { Config } from 'core/models/icons/configuration';
-import type { RecursivePartial } from 'core/types/recursivePartial';
 import { merge } from 'lodash-es';
+import type { Config } from '../../models/icons/configuration';
+import type { RecursivePartial } from '../../types/recursivePartial';
 
 /**
  * The options control the generator and decide which icons are disabled or not.

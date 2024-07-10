@@ -1,7 +1,7 @@
 import { lstatSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { resolvePath } from 'core/helpers/resolvePath';
-import { getCustomIconPaths } from 'extension/shared/config';
+import { getCustomIconPaths } from '../../extension/shared/config';
+import { resolvePath } from '../helpers/resolvePath';
 import { iconFolderPath } from './constants';
 
 /**

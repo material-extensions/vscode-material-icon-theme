@@ -1,8 +1,8 @@
 import { writeFileSync } from 'node:fs';
-import { resolvePath } from 'core/helpers/resolvePath';
-import { getCurrentOpacityValue } from 'extension/commands/opacity';
-import { getCurrentSaturationValue } from 'extension/commands/saturation';
 import { join } from 'lodash-es';
+import { getCurrentOpacityValue } from '../../../extension/commands/opacity';
+import { getCurrentSaturationValue } from '../../../extension/commands/saturation';
+import { resolvePath } from '../../helpers/resolvePath';
 import { iconFolderPath } from '../constants';
 import { updateSVGOpacity } from '../iconOpacity';
 import { adjustSVGSaturation } from '../iconSaturation';

@@ -1,4 +1,4 @@
-import type { RequireAtLeastOne } from 'core/types/requiredAtLeastOne';
+import type { RequireAtLeastOne } from '../../../types/requiredAtLeastOne';
 import type { CloneOptions } from '../cloneOptions';
 import type { IconPack } from '../iconPack';
 import type { Patterns } from '../patterns/patterns';

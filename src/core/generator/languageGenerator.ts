@@ -1,9 +1,9 @@
-import { getFileConfigHash } from 'core/helpers/configHash';
-import type { Config, IconAssociations } from 'core/models/icons/configuration';
-import type { DefaultIcon } from 'core/models/icons/defaultIcon';
-import type { LanguageIcon } from 'core/models/icons/languages/languageIdentifier';
-import type { Manifest } from 'core/models/manifest';
 import { merge } from 'lodash-es';
+import { getFileConfigHash } from '../helpers/configHash';
+import type { Config, IconAssociations } from '../models/icons/configuration';
+import type { DefaultIcon } from '../models/icons/defaultIcon';
+import type { LanguageIcon } from '../models/icons/languages/languageIdentifier';
+import type { Manifest } from '../models/manifest';
 import {
   highContrastColorFileEnding,
   iconFolderPath,

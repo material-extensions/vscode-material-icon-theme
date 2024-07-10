@@ -1,9 +1,9 @@
-import { getFileConfigHash } from 'core/helpers/configHash';
-import type { Config, IconAssociations } from 'core/models/icons/configuration';
-import type { FileIcon } from 'core/models/icons/files/fileIcon';
-import type { FileIcons } from 'core/models/icons/files/fileTypes';
-import type { Manifest } from 'core/models/manifest';
 import { merge } from 'lodash-es';
+import { getFileConfigHash } from '../helpers/configHash';
+import type { Config, IconAssociations } from '../models/icons/configuration';
+import type { FileIcon } from '../models/icons/files/fileIcon';
+import type { FileIcons } from '../models/icons/files/fileTypes';
+import type { Manifest } from '../models/manifest';
 import {
   cloneIconExtension,
   highContrastColorFileEnding,

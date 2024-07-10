@@ -1,4 +1,4 @@
-import type { Translation } from 'core/models/i18n/translation';
+import type { Translation } from '../../models/i18n/translation';
 
 export const translation: Translation = {
   activate: '有効化',

@@ -1,5 +1,5 @@
-import type { Translation } from 'core/models/i18n/translation';
 import { get } from 'lodash-es';
+import type { Translation } from '../models/i18n/translation';
 import { translation as langCs } from './translations/lang-cs';
 import { translation as langDe } from './translations/lang-de';
 import { translation as langEn } from './translations/lang-en';

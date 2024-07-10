@@ -1,10 +1,10 @@
-import { getFileConfigHash } from 'core/helpers/configHash';
-import type { Config, IconAssociations } from 'core/models/icons/configuration';
-import type { DefaultIcon } from 'core/models/icons/defaultIcon';
-import type { FolderIcon } from 'core/models/icons/folders/folderIcon';
-import type { FolderTheme } from 'core/models/icons/folders/folderTheme';
-import type { Manifest } from 'core/models/manifest';
 import { merge } from 'lodash-es';
+import { getFileConfigHash } from '../helpers/configHash';
+import type { Config, IconAssociations } from '../models/icons/configuration';
+import type { DefaultIcon } from '../models/icons/defaultIcon';
+import type { FolderIcon } from '../models/icons/folders/folderIcon';
+import type { FolderTheme } from '../models/icons/folders/folderTheme';
+import type { Manifest } from '../models/manifest';
 import {
   cloneIconExtension,
   highContrastColorFileEnding,

@@ -1,6 +1,6 @@
 import { readFileSync } from 'node:fs';
-import { Manifest } from 'core/models/manifest';
 import { type INode, parseSync, stringify } from 'svgson';
+import { Manifest } from '../../../models/manifest';
 import { getColorList, replacementMap } from './color/colors';
 
 /**

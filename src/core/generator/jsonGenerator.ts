@@ -1,12 +1,12 @@
 import { existsSync, readdirSync, renameSync, unlinkSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileIcons, folderIcons, languageIcons } from '@icon-definitions';
-import { getFileConfigHash } from 'core/helpers/configHash';
-import { resolvePath } from 'core/helpers/resolvePath';
-import type { Config } from 'core/models/icons/configuration';
-import { Manifest } from 'core/models/manifest';
-import { getCustomIconPaths } from 'extension/shared/config';
 import { merge } from 'lodash-es';
+import { getCustomIconPaths } from '../../extension/shared/config';
+import { getFileConfigHash } from '../helpers/configHash';
+import { resolvePath } from '../helpers/resolvePath';
+import type { Config } from '../models/icons/configuration';
+import { Manifest } from '../models/manifest';
 import { padWithDefaultConfig } from './config/defaultConfig';
 import { iconFolderPath } from './constants';
 import { generateFileIcons, loadFileIconDefinitions } from './fileGenerator';

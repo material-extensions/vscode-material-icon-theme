@@ -1,17 +1,17 @@
 import { existsSync, mkdirSync, rmSync } from 'node:fs';
 import { basename, dirname, join } from 'node:path';
-import {
-  iconFolderPath,
-  lightColorFileEnding,
-  openedFolder,
-} from 'core/generator/constants';
-import { resolvePath } from 'core/helpers/resolvePath';
+import { resolvePath } from '../../../helpers/resolvePath';
 import type {
   CustomClone,
   FileIconClone,
   FolderIconClone,
-} from 'core/models/icons/configuration';
-import type { Manifest } from 'core/models/manifest';
+} from '../../../models/icons/configuration';
+import type { Manifest } from '../../../models/manifest';
+import {
+  iconFolderPath,
+  lightColorFileEnding,
+  openedFolder,
+} from '../../constants';
 
 export enum Variant {
   Base,

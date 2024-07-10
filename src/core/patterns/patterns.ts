@@ -1,9 +1,9 @@
-import type { FileIcon } from 'core/models/icons/files/fileIcon';
+import type { FileIcon } from '../models/icons/files/fileIcon';
 import {
   type FileIconWithPatterns,
   FileNamePattern,
   type Patterns,
-} from 'core/models/icons/patterns/patterns';
+} from '../models/icons/patterns/patterns';
 
 /**
  * Maps the patterns to an array of strings.
