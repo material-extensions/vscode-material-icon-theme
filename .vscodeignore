@@ -8,6 +8,7 @@ scripts/**
 **/*.map
 .gitignore
 tsconfig.json
+tsconfig.**.json
 biome.jsonc
 images/**
 vsc-extension-quickstart.md
@@ -23,3 +24,6 @@ svgo.config.js
 .eslintignore
 material-colors.yml
 changelog.config.json
+dist/types/**
+dist/module.cjs
+

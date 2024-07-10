@@ -1,4 +1,4 @@
-export interface Contributor {
+export type Contributor = {
   login: string;
   id: number;
   node_id: string;
@@ -18,4 +18,4 @@ export interface Contributor {
   type: string;
   site_admin: boolean;
   contributions: number;
-}
+};

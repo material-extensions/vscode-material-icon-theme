@@ -1,22 +1,17 @@
 import { writeFileSync } from 'node:fs';
 import merge from 'lodash.merge';
-import { getFileConfigHash } from '../../../helpers/fileConfig';
+import { getFileConfigHash } from '../../../helpers/configHash';
 import {
+  type Config,
   type CustomClone,
   type FileIconClone,
   type FileIcons,
   type FolderIconClone,
   type FolderTheme,
-  IconConfiguration,
-  type IconJsonOptions,
+  Manifest,
 } from '../../../models';
 import { cloneIconExtension, clonesFolder } from '../constants';
-import {
-  Variant,
-  clearCloneFolder,
-  getCloneData,
-  isFolder,
-} from './utils/cloneData';
+import { Variant, getCloneData, isFolder } from './utils/cloneData';
 import { cloneIcon, createCloneConfig } from './utils/cloning';
 
 /**
@@ -24,27 +19,25 @@ import { cloneIcon, createCloneConfig } from './utils/cloning';
  * their colors, based on the user's provided configurations.
  */
 export function customClonesIcons(
-  config: IconConfiguration,
-  options: IconJsonOptions
-): IconConfiguration {
-  clearCloneFolder(hasCustomClones(options));
-
-  let clonedIconsConfig: IconConfiguration = new IconConfiguration();
-  const hash = getFileConfigHash(options);
+  manifest: Manifest,
+  config: Config
+): Manifest {
+  let clonedIconsManifest: Manifest = new Manifest();
+  const hash = getFileConfigHash(config);
 
   // create folder clones as specified by the user in the options
-  options.folders?.customClones?.forEach((clone) => {
-    const cloneCfg = createIconClone(clone, config, hash);
-    clonedIconsConfig = merge(clonedIconsConfig, cloneCfg);
+  config.folders?.customClones?.forEach((clone) => {
+    const cloneCfg = createIconClone(clone, manifest, hash);
+    clonedIconsManifest = merge(clonedIconsManifest, cloneCfg);
   });
 
   // create file clones as specified by the user in the options
-  options.files?.customClones?.forEach((clone) => {
-    const cloneCfg = createIconClone(clone, config, hash);
-    clonedIconsConfig = merge(clonedIconsConfig, cloneCfg);
+  config.files?.customClones?.forEach((clone) => {
+    const cloneCfg = createIconClone(clone, manifest, hash);
+    clonedIconsManifest = merge(clonedIconsManifest, cloneCfg);
   });
 
-  return clonedIconsConfig;
+  return clonedIconsManifest;
 }
 
 /**
@@ -54,7 +47,7 @@ export function customClonesIcons(
  */
 export function generateConfiguredClones(
   iconsList: FolderTheme[] | FileIcons,
-  config: IconConfiguration
+  manifest: Manifest
 ) {
   let iconsToClone: CustomClone[] = [];
 
@@ -83,7 +76,7 @@ export function generateConfiguredClones(
   }
 
   iconsToClone?.forEach((clone) => {
-    const clones = getCloneData(clone, config, '', '', cloneIconExtension);
+    const clones = getCloneData(clone, manifest, '', '', cloneIconExtension);
     if (!clones) {
       return;
     }
@@ -104,29 +97,29 @@ export function generateConfiguredClones(
 }
 
 /** Checks if there are any custom clones to be created */
-export function hasCustomClones(options: IconJsonOptions): boolean {
+export function hasCustomClones(config: Config): boolean {
   return (
-    (options.folders?.customClones?.length ?? 0) > 0 ||
-    (options.files?.customClones?.length ?? 0) > 0
+    (config.folders?.customClones?.length ?? 0) > 0 ||
+    (config.files?.customClones?.length ?? 0) > 0
   );
 }
 
 /**
  * Generates a clone of an icon.
  * @param cloneOpts options and configurations on how to clone the icon
- * @param config global icon configuration (used to get the base icon)
+ * @param manifest global icon configuration (used to get the base icon)
  * @param hash current hash being applied to the icons
  * @returns a partial icon configuration for the new icon
  */
 function createIconClone(
   cloneOpts: FolderIconClone | FileIconClone,
-  config: IconConfiguration,
+  manifest: Manifest,
   hash: string
-): IconConfiguration {
+): Manifest {
   // get clones to be created
-  const clones = getCloneData(cloneOpts, config, clonesFolder, hash);
+  const clones = getCloneData(cloneOpts, manifest, clonesFolder, hash);
   if (!clones) {
-    return {};
+    return new Manifest();
   }
 
   const clonesConfig = createCloneConfig();

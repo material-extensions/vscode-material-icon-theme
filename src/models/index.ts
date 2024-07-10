@@ -1,3 +1,3 @@
 export * from './i18n';
-export * from './iconConfiguration';
+export * from './manifest';
 export * from './icons';

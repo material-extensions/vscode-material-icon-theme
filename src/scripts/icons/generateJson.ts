@@ -1,11 +1,13 @@
 /**
  * This file is meant to be executed exclusively by npm scripts.
  */
-import { createIconFile } from './../../icons/index';
+
+import { generateManifest } from '../../icons';
 
 try {
-  createIconFile();
+  const manifest = generateManifest();
+  console.log(JSON.stringify(manifest, undefined, 2));
 } catch (error) {
   console.error(error);
-  throw Error('Could not create icon file!');
+  throw Error('An error while generating the manifest occurred!');
 }

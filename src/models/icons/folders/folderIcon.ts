@@ -1,7 +1,7 @@
 import { type CloneOptions } from '../cloneOptions';
 import { IconPack } from '../index';
 
-export interface FolderIcon {
+export type FolderIcon = {
   /**
    * Name of the icon, e.g. 'src'
    */
@@ -37,4 +37,4 @@ export interface FolderIcon {
    * Options for generating an icon based on another icon.
    */
   clone?: CloneOptions;
-}
+};

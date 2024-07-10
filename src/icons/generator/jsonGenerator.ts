@@ -1,23 +1,13 @@
-import {
-  existsSync,
-  readdirSync,
-  renameSync,
-  unlinkSync,
-  writeFileSync,
-} from 'node:fs';
-import { basename, join } from 'node:path';
+import { existsSync, readdirSync, renameSync, unlinkSync } from 'node:fs';
+import { join } from 'node:path';
 import merge from 'lodash.merge';
+import { getFileConfigHash } from '../../helpers/configHash';
 import { getCustomIconPaths } from '../../helpers/customIcons';
-import { getFileConfigHash } from '../../helpers/fileConfig';
-import { IconConfiguration, type IconJsonOptions } from '../../models/index';
+import { resolvePath } from '../../helpers/resolvePath';
+import { type Config, Manifest } from '../../models/index';
 import { fileIcons } from '../fileIcons';
 import { folderIcons } from '../folderIcons';
 import { languageIcons } from '../languageIcons';
-import {
-  customClonesIcons,
-  generateConfiguredClones,
-} from './clones/clonesGenerator';
-import { iconJsonName } from './constants';
 import {
   generateFileIcons,
   generateFolderIcons,
@@ -32,26 +22,18 @@ import {
 } from './index';
 
 /**
- * Generate the complete icon configuration object that can be written as JSON file.
+ * Generate the manifest that will be written as JSON file.
  */
-const generateIconConfigurationObject = (
-  options: IconJsonOptions
-): IconConfiguration => {
-  const iconConfig = merge({}, new IconConfiguration(), { options });
+export const generateManifest = (config?: Config): Manifest => {
+  const manifest = new Manifest(config);
   const languageIconDefinitions = loadLanguageIconDefinitions(
     languageIcons,
-    iconConfig,
-    options
+    manifest
   );
-  const fileIconDefinitions = loadFileIconDefinitions(
-    fileIcons,
-    iconConfig,
-    options
-  );
+  const fileIconDefinitions = loadFileIconDefinitions(fileIcons, manifest);
   const folderIconDefinitions = loadFolderIconDefinitions(
     folderIcons,
-    iconConfig,
-    options
+    manifest
   );
 
   return merge(
@@ -63,143 +45,43 @@ const generateIconConfigurationObject = (
 };
 
 /**
- * Create the JSON file that is responsible for the icons in the editor.
+ * Apply the configuration to the icons and generate the JSON file.
  *
- * @param updatedConfigs Options that have been changed.
- * @param updatedJSONConfig New JSON options that already include the updatedConfigs.
- *
- * @returns Returns the name of the icon file.
+ * @param config Configuration that customizes the icons and the manifest.
  */
-export const createIconFile = (
-  updatedConfigs?: IconJsonOptions,
-  updatedJSONConfig: IconJsonOptions = {}
-) => {
-  // override the default options with the new options
-  const options: IconJsonOptions = merge(
-    {},
-    getDefaultIconOptions(),
-    updatedJSONConfig
-  );
-  let json = generateIconConfigurationObject(options);
+export const applyConfigurationToIcons = (config: Config) => {
+  validateConfigValues(config);
 
-  // make sure that the folder color, opacity and saturation values are entered correctly
-  if (
-    updatedConfigs?.opacity &&
-    !validateOpacityValue(updatedConfigs?.opacity)
-  ) {
-    throw Error('Material Icons: Invalid opacity value!');
+  if (config.files?.color) {
+    generateFileIcons(config.files?.color);
+    setIconOpacity(config, ['file.svg']);
   }
-  if (
-    updatedConfigs?.saturation &&
-    !validateSaturationValue(updatedConfigs?.saturation)
-  ) {
-    throw Error('Material Icons: Invalid saturation value!');
+  if (config.folders?.color) {
+    generateFolderIcons(config.folders?.color);
+    setIconOpacity(config, [
+      'folder.svg',
+      'folder-open.svg',
+      'folder-root.svg',
+      'folder-root-open.svg',
+    ]);
   }
-  if (
-    updatedConfigs?.folders?.color &&
-    !validateHEXColorCode(updatedConfigs?.folders?.color)
-  ) {
-    throw Error('Material Icons: Invalid folder color value!');
+  if (config.opacity !== undefined) {
+    setIconOpacity(config);
   }
-  if (
-    updatedConfigs?.files?.color &&
-    !validateHEXColorCode(updatedConfigs?.files?.color)
-  ) {
-    throw Error('Material Icons: Invalid file color value!');
+  if (config.saturation !== undefined) {
+    setIconSaturation(config);
   }
 
-  try {
-    let iconJsonPath = __dirname;
-    // if executed via script
-    if (basename(__dirname) !== 'dist') {
-      iconJsonPath = join(__dirname, '..', '..', '..', 'dist');
-    }
-    if (!updatedConfigs || (updatedConfigs.files || {}).color) {
-      // if updatedConfigs do not exist (because of initial setup)
-      // or new config value was detected by the change detection
-      generateFileIcons(options.files?.color);
-      setIconOpacity(options, ['file.svg']);
-    }
-    if (!updatedConfigs || (updatedConfigs.folders || {}).color) {
-      // if updatedConfigs do not exist (because of initial setup)
-      // or new config value was detected by the change detection
-      generateFolderIcons(options.folders?.color);
-      setIconOpacity(options, [
-        'folder.svg',
-        'folder-open.svg',
-        'folder-root.svg',
-        'folder-root-open.svg',
-      ]);
-    }
-    if (!updatedConfigs || updatedConfigs.opacity !== undefined) {
-      setIconOpacity(options);
-    }
-    if (!updatedConfigs || updatedConfigs.saturation !== undefined) {
-      setIconSaturation(options);
-    }
-    renameIconFiles(iconJsonPath, options);
-
-    // create configured icon clones at build time
-    if (!updatedConfigs) {
-      console.log('Generating icon clones...');
-      generateConfiguredClones(folderIcons, json);
-      generateConfiguredClones(fileIcons, json);
-    }
-
-    // generate custom cloned icons set by the user via vscode options
-    // after opacity and saturation have been set so that those changes
-    // are also applied to the user defined clones
-    json = merge({}, json, customClonesIcons(json, options));
-  } catch (error) {
-    throw new Error('Failed to update icons: ' + error);
-  }
-
-  try {
-    let iconJsonPath = __dirname;
-    // if executed via script
-    if (basename(__dirname) !== 'dist') {
-      iconJsonPath = join(__dirname, '..', '..', '..', 'dist');
-    }
-    writeFileSync(
-      join(iconJsonPath, iconJsonName),
-      JSON.stringify(json, undefined, 2),
-      'utf-8'
-    );
-  } catch (error) {
-    throw new Error('Failed to create icon file: ' + error);
-  }
-
-  return iconJsonName;
+  renameIconFiles(config);
 };
 
 /**
- * The options control the generator and decide which icons are disabled or not.
- */
-export const getDefaultIconOptions = (): Required<IconJsonOptions> => ({
-  folders: {
-    theme: 'specific',
-    color: '#90a4ae',
-    associations: {},
-  },
-  activeIconPack: 'angular',
-  hidesExplorerArrows: false,
-  opacity: 1,
-  saturation: 1,
-  files: {
-    color: '#90a4ae',
-    associations: {},
-  },
-  languages: { associations: {} },
-});
-
-/**
  * Rename all icon files according their respective config
- * @param iconJsonPath Path of icon json folder
- * @param options Icon Json Options
+ * @param config Icon Json Options
  */
-const renameIconFiles = (iconJsonPath: string, options: IconJsonOptions) => {
-  const customPaths = getCustomIconPaths(options);
-  const defaultIconPath = join(iconJsonPath, '..', 'icons');
+const renameIconFiles = (config: Config) => {
+  const defaultIconPath = resolvePath('icons');
+  const customPaths = getCustomIconPaths(config);
   const iconPaths = [defaultIconPath, ...customPaths];
 
   iconPaths.forEach((iconPath) => {
@@ -207,7 +89,7 @@ const renameIconFiles = (iconJsonPath: string, options: IconJsonOptions) => {
       .filter((f) => f.match(/\.svg/gi))
       .forEach((f) => {
         const filePath = join(iconPath, f);
-        const fileConfigHash = getFileConfigHash(options);
+        const fileConfigHash = getFileConfigHash(config);
 
         // append file config to file name
         const newFilePath = join(
@@ -226,4 +108,19 @@ const renameIconFiles = (iconJsonPath: string, options: IconJsonOptions) => {
         }
       });
   });
+};
+
+const validateConfigValues = (config: Config) => {
+  if (!validateOpacityValue(config.opacity)) {
+    throw Error('Material Icons: Invalid opacity value!');
+  }
+  if (!validateSaturationValue(config.saturation)) {
+    throw Error('Material Icons: Invalid saturation value!');
+  }
+  if (!validateHEXColorCode(config.folders?.color)) {
+    throw Error('Material Icons: Invalid folder color value!');
+  }
+  if (!validateHEXColorCode(config.files?.color)) {
+    throw Error('Material Icons: Invalid file color value!');
+  }
 };

@@ -4,7 +4,7 @@ import {
   type CustomClone,
   type FileIconClone,
   type FolderIconClone,
-  IconConfiguration,
+  Manifest,
 } from '../../../../models';
 import {
   iconFolderPath,
@@ -24,18 +24,18 @@ export enum Type {
   File,
 }
 
-export interface IconData {
+export type IconData = {
   type: Type;
   path: string;
   variant: Variant;
-}
+};
 
-export interface CloneData extends IconData {
+export type CloneData = IconData & {
   name: string;
   color: string;
   inConfigPath: string;
   base: IconData;
-}
+};
 
 /** resolves the path of the icon depending on the caller */
 export function resolvePath(path: string): string {
@@ -59,19 +59,19 @@ const isDark = (daa: IconData) =>
 /**
  * get cloning information from configuration
  * @param cloneOpts the clone configuration
- * @param config the current configuration of the extension
+ * @param manifest the current configuration of the extension
  * @param hash the current hash being applied to the icons
  */
 export function getCloneData(
   cloneOpts: CustomClone,
-  config: IconConfiguration,
+  manifest: Manifest,
   subFolder: string,
   hash: string,
   ext?: string
 ): CloneData[] | undefined {
   const baseIcon = isFolder(cloneOpts)
-    ? getFolderIconBaseData(cloneOpts, config)
-    : getFileIconBaseData(cloneOpts, config);
+    ? getFolderIconBaseData(cloneOpts, manifest)
+    : getFileIconBaseData(cloneOpts, manifest);
 
   if (baseIcon) {
     return baseIcon.map((base) => {
@@ -97,12 +97,12 @@ export function getCloneData(
 /** returns path, type and variant for the base file icons to be cloned */
 function getFileIconBaseData(
   cloneOpts: FileIconClone,
-  config: IconConfiguration
+  manifest: Manifest
 ): IconData[] | undefined {
   const icons = [];
-  const base = config.iconDefinitions?.[`${cloneOpts.base}`]?.iconPath;
+  const base = manifest.iconDefinitions?.[`${cloneOpts.base}`]?.iconPath;
   let light =
-    config.iconDefinitions?.[`${cloneOpts.base}${lightColorFileEnding}`]
+    manifest.iconDefinitions?.[`${cloneOpts.base}${lightColorFileEnding}`]
       ?.iconPath;
 
   if (cloneOpts.lightColor && !light) {
@@ -147,7 +147,7 @@ function getFileIconCloneData(
 /** returns path, type and variant for the base folder icons to be cloned */
 function getFolderIconBaseData(
   clone: FolderIconClone,
-  config: IconConfiguration
+  manifest: Manifest
 ): IconData[] | undefined {
   const icons = [];
   const folderBase =
@@ -157,13 +157,14 @@ function getFolderIconBaseData(
         ? clone.base
         : `folder-${clone.base}`;
 
-  const base = config.iconDefinitions?.[`${folderBase}`]?.iconPath;
+  const base = manifest.iconDefinitions?.[`${folderBase}`]?.iconPath;
   const open =
-    config.iconDefinitions?.[`${folderBase}${openedFolder}`]?.iconPath;
+    manifest.iconDefinitions?.[`${folderBase}${openedFolder}`]?.iconPath;
   let light =
-    config.iconDefinitions?.[`${folderBase}${lightColorFileEnding}`]?.iconPath;
+    manifest.iconDefinitions?.[`${folderBase}${lightColorFileEnding}`]
+      ?.iconPath;
   let lightOpen =
-    config.iconDefinitions?.[
+    manifest.iconDefinitions?.[
       `${folderBase}${openedFolder}${lightColorFileEnding}`
     ]?.iconPath;
 

@@ -1,7 +1,7 @@
 import { beforeAll, describe, expect, it, mock } from 'bun:test';
 import merge from 'lodash.merge';
 import { type INode, parseSync } from 'svgson';
-import { getFileConfigHash } from '../../helpers/fileConfig';
+import { getFileConfigHash } from '../../helpers/configHash';
 import {
   clonesFolder,
   iconFolderPath,
@@ -28,11 +28,12 @@ import {
   closerMaterialColorTo,
   materialPalette as palette,
 } from '../../icons/generator/clones/utils/color/materialPalette';
+import { padWithDefaultConfig } from '../../icons/generator/config/defaultConfig';
 import {
+  type Config,
   type FileIconClone,
   type FolderIconClone,
-  IconConfiguration,
-  type IconJsonOptions,
+  Manifest,
 } from '../../models';
 import * as icon from './data/icons';
 
@@ -84,10 +85,10 @@ describe('cloning: icon cloning', () => {
     const subFolder = 'sub/';
     const hash = '~-fakehash123456789';
     const ext = '.ext';
-    let config: Partial<IconConfiguration>;
+    let manifest: Manifest;
 
     beforeAll(() => {
-      config = {
+      manifest = {
         iconDefinitions: {
           base: {
             iconPath: 'icons/icon.svg',
@@ -118,7 +119,7 @@ describe('cloning: icon cloning', () => {
             iconPath: 'icons/folder-base2_open_light.svg',
           },
         },
-      };
+      } as Partial<Manifest> as Manifest;
     });
 
     describe('clone data generation for file icons', () => {
@@ -131,12 +132,12 @@ describe('cloning: icon cloning', () => {
           fileNames: ['file.xyz'],
         };
 
-        const result = getCloneData(cloneOpts, config, subFolder, hash, ext);
+        const result = getCloneData(cloneOpts, manifest, subFolder, hash, ext);
 
         const expected = [
           {
             base: {
-              path: resolvePath(config.iconDefinitions!.base.iconPath),
+              path: resolvePath(manifest.iconDefinitions!.base.iconPath),
               type: Type.File,
               variant: Variant.Base,
             },
@@ -161,12 +162,12 @@ describe('cloning: icon cloning', () => {
           fileNames: ['file.xyz'],
         };
 
-        const result = getCloneData(cloneOpts, config, subFolder, hash, ext);
+        const result = getCloneData(cloneOpts, manifest, subFolder, hash, ext);
 
         const expected = [
           {
             base: {
-              path: resolvePath(config.iconDefinitions!.base2.iconPath),
+              path: resolvePath(manifest.iconDefinitions!.base2.iconPath),
               type: Type.File,
               variant: Variant.Base,
             },
@@ -179,7 +180,9 @@ describe('cloning: icon cloning', () => {
           },
           {
             base: {
-              path: resolvePath(config.iconDefinitions!.base2_light!.iconPath),
+              path: resolvePath(
+                manifest.iconDefinitions!.base2_light!.iconPath
+              ),
               type: Type.File,
               variant: Variant.Light,
             },
@@ -207,12 +210,12 @@ describe('cloning: icon cloning', () => {
           fileNames: ['file.xyz'],
         };
 
-        const result = getCloneData(cloneOpts, config, subFolder, hash, ext);
+        const result = getCloneData(cloneOpts, manifest, subFolder, hash, ext);
 
         const expected = [
           {
             base: {
-              path: resolvePath(config.iconDefinitions!.base.iconPath),
+              path: resolvePath(manifest.iconDefinitions!.base.iconPath),
               type: Type.File,
               variant: Variant.Base,
             },
@@ -227,7 +230,7 @@ describe('cloning: icon cloning', () => {
             base: {
               // since light version of icon base doesn't exist, the base icon is used as a base
               // to clone the light version
-              path: resolvePath(config.iconDefinitions!.base.iconPath),
+              path: resolvePath(manifest.iconDefinitions!.base.iconPath),
               type: Type.File,
               variant: Variant.Light,
             },
@@ -255,13 +258,13 @@ describe('cloning: icon cloning', () => {
           folderNames: ['bar'],
         };
 
-        const result = getCloneData(cloneOpts, config, subFolder, hash, ext);
+        const result = getCloneData(cloneOpts, manifest, subFolder, hash, ext);
 
         const expected = [
           {
             base: {
               path: resolvePath(
-                config.iconDefinitions!['folder-base'].iconPath
+                manifest.iconDefinitions!['folder-base'].iconPath
               ),
               type: Type.Folder,
               variant: Variant.Base,
@@ -276,7 +279,7 @@ describe('cloning: icon cloning', () => {
           {
             base: {
               path: resolvePath(
-                config.iconDefinitions!['folder-base-open'].iconPath
+                manifest.iconDefinitions!['folder-base-open'].iconPath
               ),
               type: Type.Folder,
               variant: Variant.Open,
@@ -303,13 +306,13 @@ describe('cloning: icon cloning', () => {
           folderNames: ['bar'],
         };
 
-        const result = getCloneData(cloneOpts, config, subFolder, hash, ext);
+        const result = getCloneData(cloneOpts, manifest, subFolder, hash, ext);
 
         const expected = [
           {
             base: {
               path: resolvePath(
-                config.iconDefinitions!['folder-base2'].iconPath
+                manifest.iconDefinitions!['folder-base2'].iconPath
               ),
               type: Type.Folder,
               variant: Variant.Base,
@@ -324,7 +327,7 @@ describe('cloning: icon cloning', () => {
           {
             base: {
               path: resolvePath(
-                config.iconDefinitions!['folder-base2-open'].iconPath
+                manifest.iconDefinitions!['folder-base2-open'].iconPath
               ),
               type: Type.Folder,
               variant: Variant.Open,
@@ -341,7 +344,7 @@ describe('cloning: icon cloning', () => {
           {
             base: {
               path: resolvePath(
-                config.iconDefinitions!['folder-base2_light']!.iconPath
+                manifest.iconDefinitions!['folder-base2_light']!.iconPath
               ),
               type: Type.Folder,
               variant: Variant.Light,
@@ -358,7 +361,7 @@ describe('cloning: icon cloning', () => {
           {
             base: {
               path: resolvePath(
-                config.iconDefinitions!['folder-base2-open_light']!.iconPath
+                manifest.iconDefinitions!['folder-base2-open_light']!.iconPath
               ),
               type: Type.Folder,
               variant: Variant.LightOpen,
@@ -386,13 +389,13 @@ describe('cloning: icon cloning', () => {
           folderNames: ['bar'],
         };
 
-        const result = getCloneData(cloneOpts, config, subFolder, hash, ext);
+        const result = getCloneData(cloneOpts, manifest, subFolder, hash, ext);
 
         const expected = [
           {
             base: {
               path: resolvePath(
-                config.iconDefinitions!['folder-base'].iconPath
+                manifest.iconDefinitions!['folder-base'].iconPath
               ),
               type: Type.Folder,
               variant: Variant.Base,
@@ -407,7 +410,7 @@ describe('cloning: icon cloning', () => {
           {
             base: {
               path: resolvePath(
-                config.iconDefinitions!['folder-base-open'].iconPath
+                manifest.iconDefinitions!['folder-base-open'].iconPath
               ),
               type: Type.Folder,
               variant: Variant.Open,
@@ -426,7 +429,7 @@ describe('cloning: icon cloning', () => {
               // since light version of icon base doesn't exist, the base icon is used as a base
               // to clone the light version
               path: resolvePath(
-                config.iconDefinitions!['folder-base'].iconPath
+                manifest.iconDefinitions!['folder-base'].iconPath
               ),
               type: Type.Folder,
               variant: Variant.Light,
@@ -445,7 +448,7 @@ describe('cloning: icon cloning', () => {
               // since light version of icon base doesn't exist, the base icon is used as a base
               // to clone the light version
               path: resolvePath(
-                config.iconDefinitions!['folder-base-open'].iconPath
+                manifest.iconDefinitions!['folder-base-open'].iconPath
               ),
               type: Type.Folder,
               variant: Variant.LightOpen,
@@ -642,7 +645,7 @@ describe('cloning: json config generation from user options', () => {
     });
   });
 
-  const getDefinition = (hash: string, options: IconJsonOptions) => {
+  const getDefinition = (hash: string, config: Config) => {
     return {
       iconDefinitions: {
         foo: { iconPath: `./../icons/foo${hash}.svg` },
@@ -651,13 +654,13 @@ describe('cloning: json config generation from user options', () => {
         'folder-foo-open': { iconPath: `./../icons/folder-open${hash}.svg` },
       },
       fileNames: { 'foo.bar': 'foo' },
-      options,
+      config,
       file: 'file',
-    };
+    } as Manifest;
   };
 
   it('should generate the json config from the user options', () => {
-    const options: IconJsonOptions = {
+    const config = padWithDefaultConfig({
       files: {
         customClones: [
           {
@@ -681,11 +684,11 @@ describe('cloning: json config generation from user options', () => {
           },
         ],
       },
-    };
-    const hash = getFileConfigHash(options);
-    const result = customClonesIcons(getDefinition(hash, options), options);
+    });
+    const hash = getFileConfigHash(config);
+    const result = customClonesIcons(getDefinition(hash, config), config);
 
-    const expected = merge(new IconConfiguration(), {
+    const expected = merge(new Manifest(), {
       iconDefinitions: {
         'folder-foo-clone': {
           iconPath: `./../icons/${clonesFolder}folder-foo-clone${hash}.svg`,
@@ -720,7 +723,7 @@ describe('cloning: json config generation from user options', () => {
         },
       },
       highContrast: { fileExtensions: {}, fileNames: {} },
-      options: {},
+      config: {},
     });
 
     expect(result).toStrictEqual(expected);

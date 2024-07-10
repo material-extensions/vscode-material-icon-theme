@@ -1,4 +1,4 @@
-export interface Translation {
+export type Translation = {
   activate: string;
   activated: string;
   iconPacks: {
@@ -40,4 +40,4 @@ export interface Translation {
     inputPlaceholder: string;
     wrongValue: string;
   };
-}
+};

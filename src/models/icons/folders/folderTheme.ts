@@ -1,6 +1,6 @@
 import { type DefaultIcon, type FolderIcon } from '../index';
 
-export interface FolderTheme {
+export type FolderTheme = {
   /**
    * Name of the theme
    */
@@ -20,4 +20,4 @@ export interface FolderTheme {
    * Defines folder icons for specific folder names.
    */
   icons?: FolderIcon[];
-}
+};

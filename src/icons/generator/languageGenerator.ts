@@ -1,11 +1,10 @@
 import merge from 'lodash.merge';
-import { getFileConfigHash } from '../../helpers/fileConfig';
+import { getFileConfigHash } from '../../helpers/configHash';
 import {
   type DefaultIcon,
   type IconAssociations,
-  IconConfiguration,
-  type IconJsonOptions,
   type LanguageIcon,
+  Manifest,
 } from '../../models/index';
 import {
   highContrastColorFileEnding,
@@ -17,86 +16,85 @@ import {
  * Get all file icons that can be used in this theme.
  */
 export const loadLanguageIconDefinitions = (
-  languages: LanguageIcon[],
-  config: IconConfiguration,
-  options: IconJsonOptions
-): IconConfiguration => {
-  config = merge({}, config);
+  languageIcons: LanguageIcon[],
+  manifest: Manifest
+): Manifest => {
+  manifest = merge({}, manifest);
   const enabledLanguages = disableLanguagesByPack(
-    languages,
-    options.activeIconPack
+    languageIcons,
+    manifest.config.activeIconPack
   );
-  const customIcons = getCustomIcons(options.languages?.associations);
+  const customIcons = getCustomIcons(manifest.config.languages?.associations);
   const allLanguageIcons = [...enabledLanguages, ...customIcons];
 
   allLanguageIcons.forEach((lang) => {
     if (lang.disabled) return;
-    config = setIconDefinitions(config, lang.icon);
-    config = merge(
+    manifest = setIconDefinitions(manifest, lang.icon);
+    manifest = merge(
       {},
-      config,
+      manifest,
       setLanguageIdentifiers(lang.icon.name, lang.ids)
     );
-    config.light = lang.icon.light
+    manifest.light = lang.icon.light
       ? merge(
           {},
-          config.light,
+          manifest.light,
           setLanguageIdentifiers(
             lang.icon.name + lightColorFileEnding,
             lang.ids
           )
         )
-      : config.light;
-    config.highContrast = lang.icon.highContrast
+      : manifest.light;
+    manifest.highContrast = lang.icon.highContrast
       ? merge(
           {},
-          config.highContrast,
+          manifest.highContrast,
           setLanguageIdentifiers(
             lang.icon.name + highContrastColorFileEnding,
             lang.ids
           )
         )
-      : config.highContrast;
+      : manifest.highContrast;
   });
 
-  return config;
+  return manifest;
 };
 
-const setIconDefinitions = (config: IconConfiguration, icon: DefaultIcon) => {
-  config = merge({}, config);
-  config = createIconDefinitions(config, icon.name);
-  config = merge(
+const setIconDefinitions = (manifest: Manifest, icon: DefaultIcon) => {
+  manifest = merge({}, manifest);
+  manifest = createIconDefinitions(manifest, icon.name);
+  manifest = merge(
     {},
-    config,
+    manifest,
     icon.light
-      ? createIconDefinitions(config, icon.name + lightColorFileEnding)
-      : config.light
+      ? createIconDefinitions(manifest, icon.name + lightColorFileEnding)
+      : manifest.light
   );
-  config = merge(
+  manifest = merge(
     {},
-    config,
+    manifest,
     icon.highContrast
-      ? createIconDefinitions(config, icon.name + highContrastColorFileEnding)
-      : config.highContrast
+      ? createIconDefinitions(manifest, icon.name + highContrastColorFileEnding)
+      : manifest.highContrast
   );
-  return config;
+  return manifest;
 };
 
-const createIconDefinitions = (config: IconConfiguration, iconName: string) => {
-  config = merge({}, config);
-  const fileConfigHash = getFileConfigHash(config.options ?? {});
-  if (config.iconDefinitions) {
-    config.iconDefinitions[iconName] = {
+const createIconDefinitions = (manifest: Manifest, iconName: string) => {
+  manifest = merge({}, manifest);
+  const fileConfigHash = getFileConfigHash(manifest.config);
+  if (manifest.iconDefinitions) {
+    manifest.iconDefinitions[iconName] = {
       iconPath: `${iconFolderPath}${iconName}${fileConfigHash}.svg`,
     };
   }
-  return config;
+  return manifest;
 };
 
 const setLanguageIdentifiers = (iconName: string, languageIds: string[]) => {
-  const obj: Partial<IconConfiguration> = { languageIds: {} };
+  const obj: Partial<Manifest> = { languageIds: {} };
   languageIds.forEach((id) => {
-    obj.languageIds![id as keyof IconConfiguration] = iconName;
+    obj.languageIds![id as keyof Manifest] = iconName;
   });
   return obj;
 };

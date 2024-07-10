@@ -1,9 +1,9 @@
-import { type RequireAtLeastOne } from '../../../helpers/types';
+import { type RequireAtLeastOne } from '../../../types';
 import { type CloneOptions } from '../cloneOptions';
 import { IconPack } from '../index';
 import { type Patterns } from '../patterns';
 
-interface BasicFileIcon {
+type BasicFileIcon = {
   /**
    * Name of the icon, e.g. 'javascript'
    */
@@ -50,7 +50,7 @@ interface BasicFileIcon {
    * Options for generating an icon based on another icon.
    */
   clone?: CloneOptions;
-}
+};
 
 /**
  * Type for a FileIcon. In addition to the `name` property, either a `fileExtensions` or `fileNames` property is required.

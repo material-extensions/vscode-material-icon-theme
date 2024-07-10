@@ -1,6 +1,7 @@
-import { type IconJsonOptions } from './';
+import { type Config } from '.';
+import { padWithDefaultConfig } from '../icons/generator/config/defaultConfig';
 
-export class IconConfiguration {
+export class Manifest {
   file?: string;
   folder?: string;
   folderExpanded?: string;
@@ -12,12 +13,12 @@ export class IconConfiguration {
   fileNames?: Record<string, string>;
   languageIds?: Record<string, string>;
   iconDefinitions?: Record<string, any>;
-  light?: IconConfiguration;
-  highContrast?: IconConfiguration;
-  options?: IconJsonOptions;
+  light?: Omit<Manifest, 'config'>;
+  highContrast?: Omit<Manifest, 'config'>;
+  config: Config;
   hidesExplorerArrows?: boolean;
 
-  constructor() {
+  constructor(config?: Partial<Config>) {
     this.iconDefinitions = {};
     this.folderNames = {};
     this.folderNamesExpanded = {};
@@ -32,6 +33,6 @@ export class IconConfiguration {
       fileExtensions: {},
       fileNames: {},
     };
-    this.options = {};
+    this.config = padWithDefaultConfig(config);
   }
 }

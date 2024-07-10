@@ -1,6 +1,6 @@
 import { type DefaultIcon, IconPack } from '../index';
 
-export interface LanguageIcon {
+export type LanguageIcon = {
   /**
    * Icon for the language identifier
    */
@@ -23,4 +23,4 @@ export interface LanguageIcon {
    * Defines a pack to which this icon belongs. A pack can be toggled and all icons inside this pack can be enabled or disabled together.
    */
   enabledFor?: IconPack[];
-}
+};

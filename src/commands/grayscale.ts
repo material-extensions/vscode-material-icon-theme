@@ -1,5 +1,5 @@
 import { type QuickPickItem, window as codeWindow } from 'vscode';
-import { getMaterialIconsJSON, setThemeConfig } from '../helpers';
+import { getManifestFile, setThemeConfig } from '../helpers';
 import { translate } from '../i18n';
 
 /** Command to toggle grayscale. */
@@ -51,5 +51,5 @@ const handleQuickPickActions = (value: QuickPickItem) => {
 
 /** Is grayscale icons enabled? */
 export const checkGrayscaleStatus = (): boolean => {
-  return getMaterialIconsJSON()?.options?.saturation === 0;
+  return getManifestFile()?.config?.saturation === 0;
 };

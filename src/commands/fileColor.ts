@@ -1,12 +1,13 @@
 import { type QuickPickItem, window as codeWindow } from 'vscode';
-import { getMaterialIconsJSON, setThemeConfig } from '../helpers';
+import { getManifestFile, setThemeConfig } from '../helpers';
 import { translate } from '../i18n';
-import { getDefaultIconOptions, validateHEXColorCode } from '../icons';
+import { validateHEXColorCode } from '../icons';
+import { getDefaultConfiguration } from '../icons/generator/config/defaultConfig';
 
-interface FileColor {
+type FileColor = {
   label: string;
   hex: string;
-}
+};
 
 const iconPalette: FileColor[] = [
   { label: 'Grey (Default)', hex: '#90a4ae' },
@@ -77,9 +78,9 @@ const validateColorInput = (colorInput: string) => {
 
 /** Check status of the file color */
 export const checkFileColorStatus = (): string => {
-  const defaultOptions = getDefaultIconOptions();
-  const config = getMaterialIconsJSON();
-  return config?.options?.files?.color ?? defaultOptions.files.color!;
+  const defaultConfig = getDefaultConfiguration();
+  const manifest = getManifestFile();
+  return manifest?.config?.files?.color ?? defaultConfig.files.color!;
 };
 
 const setColorConfig = (value: string) => {

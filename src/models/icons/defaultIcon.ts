@@ -1,4 +1,4 @@
-export interface DefaultIcon {
+export type DefaultIcon = {
   /**
    * Name of the icon, e.g. 'src'
    */
@@ -13,4 +13,4 @@ export interface DefaultIcon {
    * Define if there is a high contrast icon available.
    */
   highContrast?: boolean;
-}
+};

@@ -1,7 +1,7 @@
 import { type QuickPickItem, window as codeWindow } from 'vscode';
 import {
   capitalizeFirstLetter,
-  getMaterialIconsJSON,
+  getManifestFile,
   setThemeConfig,
 } from '../helpers';
 import { translate } from '../i18n';
@@ -51,5 +51,5 @@ const handleQuickPickActions = (value: QuickPickItem) => {
 
 /** Get the current folder theme. */
 export const getFolderIconTheme = (): string => {
-  return getMaterialIconsJSON()?.options?.folders?.theme ?? '';
+  return getManifestFile()?.config?.folders?.theme ?? '';
 };

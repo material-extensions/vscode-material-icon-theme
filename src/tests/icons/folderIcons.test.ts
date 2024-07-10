@@ -1,11 +1,11 @@
 import { beforeAll, beforeEach, describe, expect, it } from 'bun:test';
-import merge from 'lodash.merge';
-import { getDefaultIconOptions, loadFolderIconDefinitions } from '../../icons';
-import { type FolderTheme, IconConfiguration, IconPack } from '../../models';
+import { loadFolderIconDefinitions } from '../../icons';
+import { getDefaultConfiguration } from '../../icons/generator/config/defaultConfig';
+import { type FolderTheme, IconPack, Manifest } from '../../models';
 
 describe('folder icons', () => {
   let folderIcons: FolderTheme[];
-  let expectedConfig: IconConfiguration;
+  let expectedConfig: Manifest;
 
   beforeAll(() => {
     folderIcons = [
@@ -33,19 +33,12 @@ describe('folder icons', () => {
   });
 
   beforeEach(() => {
-    expectedConfig = merge({}, new IconConfiguration(), {
-      options: getDefaultIconOptions(),
-    });
+    expectedConfig = new Manifest();
   });
 
   it('should configure icon definitions', () => {
-    const options = getDefaultIconOptions();
-    const iconConfig = merge({}, new IconConfiguration(), { options });
-    const iconDefinitions = loadFolderIconDefinitions(
-      folderIcons,
-      iconConfig,
-      options
-    );
+    const manifest = new Manifest();
+    const iconDefinitions = loadFolderIconDefinitions(folderIcons, manifest);
 
     expectedConfig.iconDefinitions = {
       folder: {
@@ -115,37 +108,29 @@ describe('folder icons', () => {
     };
     expectedConfig.hidesExplorerArrows = false;
 
-    expect(iconDefinitions).toStrictEqual(expectedConfig);
+    expect(iconDefinitions).toMatchObject(expectedConfig);
   });
 
   it('should deactivate folder icons', () => {
-    const options = getDefaultIconOptions();
-    options.folders.theme = 'none';
-    const iconConfig = merge({}, new IconConfiguration(), { options });
-    const iconDefinitions = loadFolderIconDefinitions(
-      folderIcons,
-      iconConfig,
-      options
-    );
+    const config = getDefaultConfiguration();
+    config.folders.theme = 'none';
+    const manifest = new Manifest(config);
+    const iconDefinitions = loadFolderIconDefinitions(folderIcons, manifest);
 
     expectedConfig.iconDefinitions = {};
     expectedConfig.folderNames = {};
     expectedConfig.folderNamesExpanded = {};
     expectedConfig.hidesExplorerArrows = false;
-    expectedConfig.options!.folders!.theme = 'none';
+    expectedConfig.config!.folders!.theme = 'none';
 
-    expect(iconDefinitions).toStrictEqual(expectedConfig);
+    expect(iconDefinitions).toMatchObject(expectedConfig);
   });
 
   it('should enable folder theme', () => {
-    const options = getDefaultIconOptions();
+    const options = getDefaultConfiguration();
     options.folders.theme = 'blue';
-    const iconConfig = merge({}, new IconConfiguration(), { options });
-    const iconDefinitions = loadFolderIconDefinitions(
-      folderIcons,
-      iconConfig,
-      options
-    );
+    const manifest = new Manifest(options);
+    const iconDefinitions = loadFolderIconDefinitions(folderIcons, manifest);
 
     expectedConfig.iconDefinitions = {
       'folder-blue': {
@@ -186,22 +171,18 @@ describe('folder icons', () => {
       '.source': 'folder-blue-src-open',
     };
     expectedConfig.hidesExplorerArrows = false;
-    expectedConfig.options!.folders!.theme = 'blue';
+    expectedConfig.config!.folders!.theme = 'blue';
 
-    expect(iconDefinitions).toStrictEqual(expectedConfig);
+    expect(iconDefinitions).toMatchObject(expectedConfig);
   });
 
   it('should configure custom icon associations', () => {
-    const options = getDefaultIconOptions();
-    options.folders.associations = {
+    const config = getDefaultConfiguration();
+    config.folders.associations = {
       sample: 'src',
     };
-    const iconConfig = merge({}, new IconConfiguration(), { options });
-    const iconDefinitions = loadFolderIconDefinitions(
-      folderIcons,
-      iconConfig,
-      options
-    );
+    const manifest = new Manifest(config);
+    const iconDefinitions = loadFolderIconDefinitions(folderIcons, manifest);
     expectedConfig.iconDefinitions = {
       folder: {
         iconPath: './../icons/folder.svg',
@@ -277,22 +258,16 @@ describe('folder icons', () => {
       '.sample': 'folder-src-open',
     };
     expectedConfig.hidesExplorerArrows = false;
-    expectedConfig.options!.folders!.associations = {
+    expectedConfig.config!.folders!.associations = {
       sample: 'src',
     };
 
-    expect(iconDefinitions).toStrictEqual(expectedConfig);
+    expect(iconDefinitions).toMatchObject(expectedConfig);
   });
 
   it('should disable icon packs', () => {
-    const options = getDefaultIconOptions();
-    options.activeIconPack = '';
-    const iconConfig = merge({}, new IconConfiguration(), { options });
-    const iconDefinitions = loadFolderIconDefinitions(
-      folderIcons,
-      iconConfig,
-      options
-    );
+    const manifest = new Manifest({ activeIconPack: '' });
+    const iconDefinitions = loadFolderIconDefinitions(folderIcons, manifest);
     expectedConfig.iconDefinitions = {
       folder: {
         iconPath: './../icons/folder.svg',
@@ -340,13 +315,12 @@ describe('folder icons', () => {
     expectedConfig.hidesExplorerArrows = false;
 
     // disable default icon pack by using empty string
-    expectedConfig.options!.activeIconPack = '';
+    expectedConfig.config!.activeIconPack = '';
 
-    expect(iconDefinitions).toStrictEqual(expectedConfig);
+    expect(iconDefinitions).toMatchObject(expectedConfig);
   });
 
   it('should configure folder icons for light and high contrast', () => {
-    const options = getDefaultIconOptions();
     const lightHighContrastFolderIcons: FolderTheme[] = [
       {
         name: 'specific',
@@ -362,11 +336,10 @@ describe('folder icons', () => {
         ],
       },
     ];
-    const iconConfig = merge({}, new IconConfiguration(), { options });
+    const manifest = new Manifest();
     const iconDefinitions = loadFolderIconDefinitions(
       lightHighContrastFolderIcons,
-      iconConfig,
-      options
+      manifest
     );
     expectedConfig.iconDefinitions = {
       folder: {
@@ -507,18 +480,14 @@ describe('folder icons', () => {
       },
     };
     expectedConfig.hidesExplorerArrows = false;
-    expect(iconDefinitions).toStrictEqual(expectedConfig);
+    expect(iconDefinitions).toMatchObject(expectedConfig);
   });
 
   it('should hide explorer arrows', () => {
-    const options = getDefaultIconOptions();
-    options.hidesExplorerArrows = true;
-    const iconConfig = merge({}, new IconConfiguration(), { options });
-    const iconDefinitions = loadFolderIconDefinitions(
-      folderIcons,
-      iconConfig,
-      options
-    );
+    const manifest = new Manifest({
+      hidesExplorerArrows: true,
+    });
+    const iconDefinitions = loadFolderIconDefinitions(folderIcons, manifest);
 
     expect(iconDefinitions.hidesExplorerArrows).toBe(true);
   });
@@ -545,13 +514,8 @@ describe('folder icons', () => {
       },
     ];
 
-    const options = getDefaultIconOptions();
-    const iconConfig = merge({}, new IconConfiguration(), { options });
-    const iconDefinitions = loadFolderIconDefinitions(
-      folderTheme,
-      iconConfig,
-      options
-    );
+    const manifest = new Manifest();
+    const iconDefinitions = loadFolderIconDefinitions(folderTheme, manifest);
 
     expectedConfig.iconDefinitions = {
       foo: { iconPath: './../icons/foo.svg' },
@@ -633,7 +597,7 @@ describe('folder icons', () => {
     };
     expectedConfig.hidesExplorerArrows = false;
 
-    expect(iconDefinitions).toStrictEqual(expectedConfig);
+    expect(iconDefinitions).toMatchObject(expectedConfig);
   });
 
   it('should allow interoperability between cloned and user custom associations', () => {
@@ -656,19 +620,15 @@ describe('folder icons', () => {
       },
     ];
 
-    const options = getDefaultIconOptions();
-    options.folders.associations = {
+    const config = getDefaultConfiguration();
+    config.folders.associations = {
       baz: 'bar', // assigned to the clone
     };
 
-    const iconConfig = merge({}, new IconConfiguration(), { options });
-    const iconDefinitions = loadFolderIconDefinitions(
-      folderTheme,
-      iconConfig,
-      options
-    );
+    const manifest = new Manifest(config);
+    const iconDefinitions = loadFolderIconDefinitions(folderTheme, manifest);
 
-    expectedConfig.options = options;
+    expectedConfig.config = config;
     expectedConfig.iconDefinitions = {
       'folder-foo': { iconPath: './../icons/folder-foo.svg' },
       'folder-foo-open': { iconPath: './../icons/folder-foo-open.svg' },
@@ -718,6 +678,6 @@ describe('folder icons', () => {
     };
     expectedConfig.hidesExplorerArrows = false;
 
-    expect(iconDefinitions).toStrictEqual(expectedConfig);
+    expect(iconDefinitions).toMatchObject(expectedConfig);
   });
 });

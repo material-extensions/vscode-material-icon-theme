@@ -1,4 +1,3 @@
-import { env } from 'vscode';
 import { getObjectPropertyValue } from '../helpers/objects';
 import type { Translation } from '../models';
 import { translation as langCs } from './lang-cs';
@@ -17,18 +16,15 @@ import { translation as langUk } from './lang-uk';
 import { translation as langZhCn } from './lang-zh-cn';
 import { translation as langZhTw } from './lang-zh-tw';
 
-// Get current language of the vs code workspace
-export const getCurrentLanguage = (): string => env.language;
-
 let currentTranslation: Translation;
 let fallbackTranslation: Translation;
 
 const placeholder = '%';
 
 /** Initialize the translations */
-export const initTranslations = async () => {
+export const initTranslations = async (language: string) => {
   try {
-    currentTranslation = await loadTranslation(getCurrentLanguage());
+    currentTranslation = await loadTranslation(language);
     fallbackTranslation = await loadTranslation('en');
   } catch (error) {
     console.error(error);
@@ -39,7 +35,7 @@ export const initTranslations = async () => {
 const loadTranslation = async (language: string) => {
   try {
     return await getTranslationObject(language);
-  } catch (error) {
+  } catch {
     return await getTranslationObject('en');
   }
 };

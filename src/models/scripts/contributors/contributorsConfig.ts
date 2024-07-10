@@ -1,4 +1,4 @@
-export interface ContributorsConfig {
+export type ContributorsConfig = {
   /** Owner of the repository */
   owner: string;
 
@@ -7,4 +7,4 @@ export interface ContributorsConfig {
 
   /** Size of a contributor's profile image in pixels */
   imageSize: number;
-}
+};

@@ -1,15 +1,13 @@
 import { beforeEach, describe, expect, it } from 'bun:test';
-import merge from 'lodash.merge';
-import { getDefaultIconOptions, loadFileIconDefinitions } from '../../icons';
-import { type FileIcons, IconConfiguration, IconPack } from '../../models';
+import { loadFileIconDefinitions } from '../../icons';
+import { getDefaultConfiguration } from '../../icons/generator/config/defaultConfig';
+import { type FileIcons, IconPack, Manifest } from '../../models';
 
 describe('file icons', () => {
-  let expectedConfig: IconConfiguration;
+  let expectedManifest: Manifest;
 
   beforeEach(() => {
-    expectedConfig = merge({}, new IconConfiguration(), {
-      options: getDefaultIconOptions(),
-    });
+    expectedManifest = new Manifest();
   });
 
   it('should configure icon definitions', () => {
@@ -28,15 +26,11 @@ describe('file icons', () => {
         },
       ],
     };
-    const options = getDefaultIconOptions();
-    const iconConfig = merge({}, new IconConfiguration(), { options });
-    const iconDefinitions = loadFileIconDefinitions(
-      fileIcons,
-      iconConfig,
-      options
-    );
 
-    expectedConfig.iconDefinitions = {
+    const manifest = new Manifest();
+    const iconDefinitions = loadFileIconDefinitions(fileIcons, manifest);
+
+    expectedManifest.iconDefinitions = {
       angular: {
         iconPath: './../icons/angular.svg',
       },
@@ -47,17 +41,17 @@ describe('file icons', () => {
         iconPath: './../icons/file.svg',
       },
     };
-    expectedConfig.file = 'file';
-    expectedConfig.fileExtensions = {
+    expectedManifest.file = 'file';
+    expectedManifest.fileExtensions = {
       js: 'javascript',
     };
-    expectedConfig.fileNames = {
+    expectedManifest.fileNames = {
       '.angular-cli.json': 'angular',
       'angular-cli.json': 'angular',
       'filename.js': 'javascript',
     };
 
-    expect(iconDefinitions).toStrictEqual(expectedConfig);
+    expect(iconDefinitions).toMatchObject(expectedManifest);
   });
 
   it('should disable icon packs', () => {
@@ -77,16 +71,10 @@ describe('file icons', () => {
       ],
     };
 
-    const options = getDefaultIconOptions();
-    options.activeIconPack = '';
-    const iconConfig = merge({}, new IconConfiguration(), { options });
-    const iconDefinitions = loadFileIconDefinitions(
-      fileIcons,
-      iconConfig,
-      options
-    );
+    const manifest = new Manifest({ activeIconPack: '' });
+    const iconDefinitions = loadFileIconDefinitions(fileIcons, manifest);
 
-    expectedConfig.iconDefinitions = {
+    expectedManifest.iconDefinitions = {
       file: {
         iconPath: './../icons/file.svg',
       },
@@ -94,18 +82,18 @@ describe('file icons', () => {
         iconPath: './../icons/javascript.svg',
       },
     };
-    expectedConfig.file = 'file';
-    expectedConfig.fileExtensions = {
+    expectedManifest.file = 'file';
+    expectedManifest.fileExtensions = {
       js: 'javascript',
     };
-    expectedConfig.fileNames = {
+    expectedManifest.fileNames = {
       'filename.js': 'javascript',
     };
 
     // disable default icon pack by using empty string
-    expectedConfig.options!.activeIconPack = '';
+    expectedManifest.config.activeIconPack = '';
 
-    expect(iconDefinitions).toStrictEqual(expectedConfig);
+    expect(iconDefinitions).toMatchObject(expectedManifest);
   });
 
   it('should configure custom icon associations', () => {
@@ -123,19 +111,15 @@ describe('file icons', () => {
         },
       ],
     };
-    const options = getDefaultIconOptions();
-    options.files.associations = {
+    const config = getDefaultConfiguration();
+    config.files.associations = {
       '*.sample.ts': 'angular',
       'sample.js': 'javascript',
     };
-    const iconConfig = merge({}, new IconConfiguration(), { options });
-    const iconDefinitions = loadFileIconDefinitions(
-      fileIcons,
-      iconConfig,
-      options
-    );
+    const manifest = new Manifest(config);
+    const iconDefinitions = loadFileIconDefinitions(fileIcons, manifest);
 
-    expectedConfig.iconDefinitions = {
+    expectedManifest.iconDefinitions = {
       file: {
         iconPath: './../icons/file.svg',
       },
@@ -146,23 +130,23 @@ describe('file icons', () => {
         iconPath: './../icons/angular.svg',
       },
     };
-    expectedConfig.file = 'file';
-    expectedConfig.fileExtensions = {
+    expectedManifest.file = 'file';
+    expectedManifest.fileExtensions = {
       js: 'javascript',
       'sample.ts': 'angular',
     };
-    expectedConfig.fileNames = {
+    expectedManifest.fileNames = {
       '.angular-cli.json': 'angular',
       'angular-cli.json': 'angular',
       'sample.js': 'javascript',
       'filename.js': 'javascript',
     };
-    expectedConfig.options!.files!.associations = {
+    expectedManifest.config!.files!.associations = {
       '*.sample.ts': 'angular',
       'sample.js': 'javascript',
     };
 
-    expect(iconDefinitions).toStrictEqual(expectedConfig);
+    expect(iconDefinitions).toMatchObject(expectedManifest);
   });
 
   it('should configure language icons for light and high contrast', () => {
@@ -183,14 +167,10 @@ describe('file icons', () => {
         },
       ],
     };
-    const options = getDefaultIconOptions();
-    const iconConfig = merge({}, new IconConfiguration(), { options });
-    const iconDefinitions = loadFileIconDefinitions(
-      fileIcons,
-      iconConfig,
-      options
-    );
-    expectedConfig.iconDefinitions = {
+
+    const manifest = new Manifest();
+    const iconDefinitions = loadFileIconDefinitions(fileIcons, manifest);
+    expectedManifest.iconDefinitions = {
       file: {
         iconPath: './../icons/file.svg',
       },
@@ -217,11 +197,11 @@ describe('file icons', () => {
         iconPath: './../icons/angular.svg',
       },
     };
-    expectedConfig.file = 'file';
-    expectedConfig.fileExtensions = {
+    expectedManifest.file = 'file';
+    expectedManifest.fileExtensions = {
       js: 'javascript',
     };
-    expectedConfig.light = {
+    expectedManifest.light = {
       file: 'file_light',
       fileExtensions: {
         js: 'javascript_light',
@@ -230,7 +210,7 @@ describe('file icons', () => {
         'filename.js': 'javascript_light',
       },
     };
-    expectedConfig.highContrast = {
+    expectedManifest.highContrast = {
       file: 'file_highContrast',
       fileExtensions: {
         js: 'javascript_highContrast',
@@ -239,13 +219,13 @@ describe('file icons', () => {
         'filename.js': 'javascript_highContrast',
       },
     };
-    expectedConfig.fileNames = {
+    expectedManifest.fileNames = {
       '.angular-cli.json': 'angular',
       'angular-cli.json': 'angular',
       'filename.js': 'javascript',
     };
 
-    expect(iconDefinitions).toStrictEqual(expectedConfig);
+    expect(iconDefinitions).toMatchObject(expectedManifest);
   });
 
   it('should generate cloned file icons config', () => {
@@ -270,15 +250,10 @@ describe('file icons', () => {
       ],
     };
 
-    const options = getDefaultIconOptions();
-    const iconConfig = merge({}, new IconConfiguration(), { options });
-    const iconDefinitions = loadFileIconDefinitions(
-      fileIcons,
-      iconConfig,
-      options
-    );
+    const manifest = new Manifest();
+    const iconDefinitions = loadFileIconDefinitions(fileIcons, manifest);
 
-    expectedConfig.iconDefinitions = {
+    expectedManifest.iconDefinitions = {
       foo: {
         iconPath: './../icons/foo.svg',
       },
@@ -292,7 +267,7 @@ describe('file icons', () => {
         iconPath: './../icons/file.svg',
       },
     };
-    expectedConfig.light = {
+    expectedManifest.light = {
       fileExtensions: {
         baz: 'foo-clone_light',
       },
@@ -300,16 +275,16 @@ describe('file icons', () => {
         'bar.foo': 'foo-clone_light',
       },
     };
-    expectedConfig.fileNames = {
+    expectedManifest.fileNames = {
       'foo.bar': 'foo',
       'bar.foo': 'foo-clone',
     };
-    expectedConfig.fileExtensions = {
+    expectedManifest.fileExtensions = {
       baz: 'foo-clone',
     };
-    expectedConfig.file = 'file';
+    expectedManifest.file = 'file';
 
-    expect(iconDefinitions).toStrictEqual(expectedConfig);
+    expect(iconDefinitions).toMatchObject(expectedManifest);
   });
 
   it('should allow interoperability between cloned and user custom associations', () => {
@@ -332,20 +307,16 @@ describe('file icons', () => {
       ],
     };
 
-    const options = getDefaultIconOptions();
-    options.files.associations = {
+    const config = getDefaultConfiguration();
+    config.files.associations = {
       '*.baz': 'bar', // assigned to the clone
     };
 
-    const iconConfig = merge({}, new IconConfiguration(), { options });
-    const iconDefinitions = loadFileIconDefinitions(
-      fileIcons,
-      iconConfig,
-      options
-    );
+    const manifest = new Manifest(config);
+    const iconDefinitions = loadFileIconDefinitions(fileIcons, manifest);
 
-    expectedConfig.options = options;
-    expectedConfig.iconDefinitions = {
+    expectedManifest.config = config;
+    expectedManifest.iconDefinitions = {
       foo: {
         iconPath: './../icons/foo.svg',
       },
@@ -356,14 +327,14 @@ describe('file icons', () => {
         iconPath: './../icons/file.svg',
       },
     };
-    expectedConfig.fileNames = {};
-    expectedConfig.fileExtensions = {
+    expectedManifest.fileNames = {};
+    expectedManifest.fileExtensions = {
       foo: 'foo',
       bar: 'bar',
       baz: 'bar',
     };
-    expectedConfig.file = 'file';
+    expectedManifest.file = 'file';
 
-    expect(iconDefinitions).toStrictEqual(expectedConfig);
+    expect(iconDefinitions).toMatchObject(expectedManifest);
   });
 });

@@ -1,6 +1,6 @@
 import { readFileSync } from 'node:fs';
 import { type INode, parseSync, stringify } from 'svgson';
-import { IconConfiguration } from '../../../../models';
+import { Manifest } from '../../../../models';
 import { getColorList, replacementMap } from './color/colors';
 
 /**
@@ -25,7 +25,7 @@ export function traverse(
 export function readIcon(path: string, hash: string): string {
   try {
     return readFileSync(path, 'utf8');
-  } catch (error) {
+  } catch {
     const unhashedPath = path.replace(hash, '');
     return readFileSync(unhashedPath, 'utf8');
   }
@@ -107,13 +107,13 @@ export function replaceColors(node: INode, replacements: Map<string, string>) {
 
 /** Creates a clone configuration with empty light object. */
 export function createCloneConfig() {
-  const config = new IconConfiguration();
-  config.light = {
+  const manifest = new Manifest();
+  manifest.light = {
     fileExtensions: {},
     fileNames: {},
     folderNames: {},
     folderNamesExpanded: {},
   };
 
-  return config;
+  return manifest;
 }

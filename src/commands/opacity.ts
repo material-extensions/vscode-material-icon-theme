@@ -1,7 +1,8 @@
 import { window as codeWindow } from 'vscode';
-import { getMaterialIconsJSON, setThemeConfig } from '../helpers';
+import { getManifestFile, setThemeConfig } from '../helpers';
 import { translate } from '../i18n';
-import { getDefaultIconOptions, validateOpacityValue } from '../icons';
+import { validateOpacityValue } from '../icons';
+import { getDefaultConfiguration } from '../icons/generator/config/defaultConfig';
 
 /** Command to toggle the folder icons. */
 export const changeOpacity = async () => {
@@ -36,9 +37,9 @@ const validateOpacityInput = (opacityInput: string) => {
 
 /** Get the current value of the opacity of the icons. */
 export const getCurrentOpacityValue = (): number => {
-  const defaultOptions = getDefaultIconOptions();
-  const config = getMaterialIconsJSON();
-  return config?.options?.opacity ?? defaultOptions.opacity;
+  const defaultConfig = getDefaultConfiguration();
+  const manifest = getManifestFile();
+  return manifest?.config?.opacity ?? defaultConfig.opacity;
 };
 
 const setOpacityConfig = (opacity: number) => {

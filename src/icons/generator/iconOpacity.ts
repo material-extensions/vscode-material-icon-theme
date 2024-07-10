@@ -1,41 +1,32 @@
 import { lstatSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
-import { basename, join } from 'node:path';
+import { join } from 'node:path';
 import { getCustomIconPaths } from '../../helpers/customIcons';
-import { type IconJsonOptions } from '../../models';
+import { resolvePath } from '../../helpers/resolvePath';
+import { type Config } from '../../models';
 
 /**
  * Changes the opacity of all icons in the set.
- * @param options Icon JSON options which include the opacity value.
+ * @param config Icon JSON options which include the opacity value.
  * @param fileNames Only change the opacity of certain file names.
  */
-export const setIconOpacity = (
-  options: IconJsonOptions,
-  fileNames?: string[]
-) => {
-  if (!validateOpacityValue(options.opacity)) {
+export const setIconOpacity = (config: Config, fileNames?: string[]) => {
+  if (!validateOpacityValue(config.opacity)) {
     return console.error(
       'Invalid opacity value! Opacity must be a decimal number between 0 and 1!'
     );
   }
 
-  let iconsPath = '';
-  if (basename(__dirname) === 'dist') {
-    iconsPath = join(__dirname, '..', 'icons');
-  } else {
-    // executed via script
-    iconsPath = join(__dirname, '..', '..', '..', 'icons');
-  }
-
-  const customIconPaths = getCustomIconPaths(options);
+  const iconsPath = resolvePath('icons');
+  const customIconPaths = getCustomIconPaths(config);
   const iconFiles = readdirSync(iconsPath);
 
   try {
     // read all icon files from the icons folder
-    (fileNames || iconFiles).forEach(adjustOpacity(iconsPath, options));
+    (fileNames || iconFiles).forEach(adjustOpacity(iconsPath, config));
 
     customIconPaths.forEach((iconPath) => {
       const customIcons = readdirSync(iconPath);
-      customIcons.forEach(adjustOpacity(iconPath, options));
+      customIcons.forEach(adjustOpacity(iconPath, config));
     });
   } catch (error) {
     console.error(error);
@@ -85,7 +76,7 @@ const removeOpacityAttribute = (svgRoot: string) => {
 
 const adjustOpacity = (
   iconPath: string,
-  options: IconJsonOptions
+  config: Config
 ): ((value: string, index: number, array: string[]) => void) => {
   return (iconFileName) => {
     const svgFilePath = join(iconPath, iconFileName);
@@ -102,8 +93,8 @@ const adjustOpacity = (
 
     let updatedRootElement: string;
 
-    if (options.opacity !== undefined && options.opacity < 1) {
-      updatedRootElement = addOpacityAttribute(svgRootElement, options.opacity);
+    if (config.opacity !== undefined && config.opacity < 1) {
+      updatedRootElement = addOpacityAttribute(svgRootElement, config.opacity);
     } else {
       updatedRootElement = removeOpacityAttribute(svgRootElement);
     }

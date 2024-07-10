@@ -1,5 +1,5 @@
 import { type QuickPickItem, window as codeWindow } from 'vscode';
-import { getMaterialIconsJSON, setThemeConfig, toTitleCase } from '../helpers';
+import { getManifestFile, setThemeConfig, toTitleCase } from '../helpers';
 import { translate } from '../i18n';
 import { IconPack } from '../models';
 
@@ -51,7 +51,7 @@ const handleQuickPickActions = (value: QuickPickItem) => {
 };
 
 const getActiveIconPack = (): string => {
-  return getMaterialIconsJSON()?.options?.activeIconPack ?? '';
+  return getManifestFile()?.config?.activeIconPack ?? '';
 };
 
 /** Get all packs that can be used in this icon theme. */

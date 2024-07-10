@@ -1,19 +1,45 @@
+import { writeFileSync } from 'node:fs';
+import { join } from 'node:path';
 import merge from 'lodash.merge';
-import { getConfigProperties, getMaterialIconsJSON, getThemeConfig } from '.';
-import { createIconFile } from '../icons/index';
-import type { IconJsonOptions } from '../models';
+import {
+  getConfigProperties,
+  getManifestFile,
+  getThemeConfig,
+  resolvePath,
+} from '.';
+import { generateManifest, manifestName } from '../icons';
+import {
+  customClonesIcons,
+  hasCustomClones,
+} from '../icons/generator/clones/clonesGenerator';
+import { clearCloneFolder } from '../icons/generator/clones/utils/cloneData';
+import type { Config } from '../models';
 import { getObjectPropertyValue, setObjectPropertyValue } from './objects';
 
 /** Compare the workspace and the user configurations with the current setup of the icons. */
 export const detectConfigChanges = () => {
-  const changes = compareConfigs();
+  const config = compareConfigs();
 
-  // if there's nothing to update
-  if (Object.keys(changes.updatedConfigs).length === 0) return;
+  if (config === null) return;
 
   try {
-    // update icon json file with new options
-    createIconFile(changes.updatedConfigs, changes.updatedJSONConfig);
+    const manifest = generateManifest(config);
+
+    // clear the clone folder
+    clearCloneFolder(hasCustomClones(config));
+
+    const manifestWithClones = merge(
+      {},
+      manifest,
+      customClonesIcons(manifest, config)
+    );
+
+    const iconJsonPath = resolvePath('');
+    writeFileSync(
+      join(iconJsonPath, manifestName),
+      JSON.stringify(manifestWithClones, undefined, 2),
+      'utf-8'
+    );
   } catch (error) {
     console.error(error);
   }
@@ -22,49 +48,37 @@ export const detectConfigChanges = () => {
 /**
  * Compares a specific configuration in the settings with a current configuration state.
  * The current configuration state is read from the icons json file.
- * @returns List of configurations that needs to be updated.
+ *
+ * @returns Updated configurations
  */
-const compareConfigs = (): {
-  updatedConfigs: IconJsonOptions;
-  updatedJSONConfig: IconJsonOptions;
-} => {
-  const configPropertyNames = Object.keys(getConfigProperties())
-    .map((c) => c.split('.').slice(1).join('.'))
-    // remove configurable notification messages
-    .filter((c) => !/show(Welcome|Update|Reload)Message/g.test(c));
-
-  const json = getMaterialIconsJSON();
-  return configPropertyNames.reduce(
-    (result, configName) => {
-      try {
-        const configValue = getThemeConfig(configName) ?? {
-          globalValue: '',
-          workspaceValue: '',
-          defaultValue: '',
-        };
-
-        const currentState = getObjectPropertyValue(
-          json.options ?? {},
-          configName
-        );
-
-        if (JSON.stringify(configValue) !== JSON.stringify(currentState)) {
-          setObjectPropertyValue(json.options as {}, configName, configValue);
-          setObjectPropertyValue(
-            result.updatedConfigs,
-            configName,
-            configValue
-          );
-        }
-      } catch (error) {
-        console.error(error);
-      }
-
-      return result;
-    },
-    {
-      updatedConfigs: {} as IconJsonOptions,
-      updatedJSONConfig: json.options as IconJsonOptions,
-    }
+const compareConfigs = (): Config | null => {
+  const configPropertyNames = Object.keys(getConfigProperties()).map(
+    (property) =>
+      // remove the extension name from the config property
+      property
+        .split('.')
+        .slice(1)
+        .join('.')
   );
+
+  let updatedConfig: Config | null = null;
+  const json = getManifestFile();
+  return configPropertyNames.reduce((result, configName) => {
+    const configValue = getThemeConfig(configName) ?? {
+      globalValue: '',
+      workspaceValue: '',
+      defaultValue: '',
+    };
+
+    const currentState = getObjectPropertyValue(json.config ?? {}, configName);
+
+    if (JSON.stringify(configValue) !== JSON.stringify(currentState)) {
+      setObjectPropertyValue(result, configName, configValue);
+      if (!updatedConfig) {
+        updatedConfig = merge({}, result);
+      }
+    }
+
+    return result;
+  }, json.config as Config);
 };

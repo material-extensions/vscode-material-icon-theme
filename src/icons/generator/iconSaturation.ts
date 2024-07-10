@@ -1,41 +1,32 @@
 import { lstatSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
-import { basename, join } from 'node:path';
+import { join } from 'node:path';
 import { getCustomIconPaths } from '../../helpers/customIcons';
-import { type IconJsonOptions } from '../../models';
+import { resolvePath } from '../../helpers/resolvePath';
+import { type Config } from '../../models';
 
 /**
  * Changes saturation of all icons in the set.
- * @param options Icon JSON options which include the saturation value.
+ * @param config Icon JSON options which include the saturation value.
  * @param fileNames Only change the saturation of certain file names.
  */
-export const setIconSaturation = (
-  options: IconJsonOptions,
-  fileNames?: string[]
-) => {
-  if (!validateSaturationValue(options.saturation)) {
+export const setIconSaturation = (config: Config, fileNames?: string[]) => {
+  if (!validateSaturationValue(config.saturation)) {
     return console.error(
       'Invalid saturation value! Saturation must be a decimal number between 0 and 1!'
     );
   }
 
-  let iconsPath = '';
-  if (basename(__dirname) === 'dist') {
-    iconsPath = join(__dirname, '..', 'icons');
-  } else {
-    // executed via script
-    iconsPath = join(__dirname, '..', '..', '..', 'icons');
-  }
-
-  const customIconPaths = getCustomIconPaths(options);
+  const iconsPath = resolvePath('icons');
+  const customIconPaths = getCustomIconPaths(config);
   const iconFiles = readdirSync(iconsPath);
 
   // read all icon files from the icons folder
   try {
-    (fileNames || iconFiles).forEach(adjustSaturation(iconsPath, options));
+    (fileNames || iconFiles).forEach(adjustSaturation(iconsPath, config));
 
     customIconPaths.forEach((iconPath) => {
       const customIcons = readdirSync(iconPath);
-      customIcons.forEach(adjustSaturation(iconPath, options));
+      customIcons.forEach(adjustSaturation(iconPath, config));
     });
   } catch (error) {
     console.error(error);
@@ -107,7 +98,7 @@ export const validateSaturationValue = (saturation: number | undefined) => {
 
 const adjustSaturation = (
   iconsPath: any,
-  options: IconJsonOptions
+  config: Config
 ): ((value: string, index: number, array: string[]) => void) => {
   return (iconFileName) => {
     const svgFilePath = join(iconsPath, iconFileName);
@@ -124,7 +115,7 @@ const adjustSaturation = (
 
     let updatedRootElement: string;
 
-    if (options.saturation !== undefined && options.saturation < 1) {
+    if (config.saturation !== undefined && config.saturation < 1) {
       updatedRootElement = addFilterAttribute(svgRootElement);
     } else {
       updatedRootElement = removeFilterAttribute(svgRootElement);
@@ -132,8 +123,8 @@ const adjustSaturation = (
 
     let updatedSVG = svg.replace(/<svg[^>]*>/, updatedRootElement);
 
-    if (options.saturation !== undefined && options.saturation < 1) {
-      updatedSVG = addFilterElement(updatedSVG, options.saturation);
+    if (config.saturation !== undefined && config.saturation < 1) {
+      updatedSVG = addFilterElement(updatedSVG, config.saturation);
     } else {
       updatedSVG = removeFilterElement(updatedSVG);
     }

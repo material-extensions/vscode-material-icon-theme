@@ -1,11 +1,10 @@
 import merge from 'lodash.merge';
-import { getFileConfigHash } from '../../helpers/fileConfig';
+import { getFileConfigHash } from '../../helpers/configHash';
 import {
   type FileIcon,
   type FileIcons,
   type IconAssociations,
-  IconConfiguration,
-  type IconJsonOptions,
+  Manifest,
 } from '../../models/index';
 import {
   cloneIconExtension,
@@ -26,104 +25,85 @@ import {
  */
 export const loadFileIconDefinitions = (
   fileIcons: FileIcons,
-  config: IconConfiguration,
-  options: IconJsonOptions
-): IconConfiguration => {
-  config = merge({}, config);
+  manifest: Manifest
+): Manifest => {
+  manifest = merge({}, manifest);
   const enabledIcons = disableIconsByPack(
     fileIcons,
-    options.activeIconPack ?? ''
+    manifest.config.activeIconPack
   );
-  const customIcons = getCustomIcons(options.files?.associations);
+  const customIcons = getCustomIcons(manifest.config.files?.associations);
   const allFileIcons = [...enabledIcons, ...customIcons];
 
   allFileIcons.forEach((icon) => {
     if (icon.disabled) return;
     const isClone = icon.clone !== undefined;
-    config = merge({}, config, setIconDefinition(config, icon.name, isClone));
+    manifest = setIconDefinition(manifest, icon.name, isClone);
 
     if (icon.light) {
-      config = merge(
-        {},
-        config,
-        setIconDefinition(config, icon.name, isClone, lightColorFileEnding)
+      manifest = setIconDefinition(
+        manifest,
+        icon.name,
+        isClone,
+        lightColorFileEnding
       );
     }
     if (icon.highContrast) {
-      config = merge(
-        {},
-        config,
-        setIconDefinition(
-          config,
-          icon.name,
-          isClone,
-          highContrastColorFileEnding
-        )
+      manifest = setIconDefinition(
+        manifest,
+        icon.name,
+        isClone,
+        highContrastColorFileEnding
       );
     }
 
     if (icon.fileExtensions) {
-      config = merge(
-        {},
-        config,
-        mapSpecificFileIcons(icon, FileMappingType.FileExtensions)
+      manifest = mapSpecificFileIcons(
+        icon,
+        FileMappingType.FileExtensions,
+        manifest
       );
     }
     if (icon.fileNames) {
-      config = merge(
-        {},
-        config,
-        mapSpecificFileIcons(
-          icon,
-          FileMappingType.FileNames,
-          options.files?.associations
-        )
+      manifest = mapSpecificFileIcons(
+        icon,
+        FileMappingType.FileNames,
+        manifest,
+        manifest.config.files?.associations
       );
     }
   });
 
   // set default file icon
-  config = merge(
-    {},
-    config,
-    setIconDefinition(config, fileIcons.defaultIcon.name, false)
-  );
-  config.file = fileIcons.defaultIcon.name;
+  manifest = setIconDefinition(manifest, fileIcons.defaultIcon.name, false);
+  manifest.file = fileIcons.defaultIcon.name;
 
-  if (fileIcons.defaultIcon.light && config.light) {
-    config = merge(
-      {},
-      config,
-      setIconDefinition(
-        config,
-        fileIcons.defaultIcon.name,
-        false,
-        lightColorFileEnding
-      )
+  if (fileIcons.defaultIcon.light && manifest.light) {
+    manifest = setIconDefinition(
+      manifest,
+      fileIcons.defaultIcon.name,
+      false,
+      lightColorFileEnding
     );
-    if (config.light) {
-      config.light.file = fileIcons.defaultIcon.name + lightColorFileEnding;
+    if (manifest.light) {
+      manifest.light.file = fileIcons.defaultIcon.name + lightColorFileEnding;
     }
   }
 
   if (fileIcons.defaultIcon.highContrast) {
-    config = merge(
-      {},
-      config,
-      setIconDefinition(
-        config,
-        fileIcons.defaultIcon.name,
-        false,
-        highContrastColorFileEnding
-      )
+    manifest = setIconDefinition(
+      manifest,
+      fileIcons.defaultIcon.name,
+      false,
+      highContrastColorFileEnding
     );
-    if (config.highContrast) {
-      config.highContrast.file =
+    if (manifest.highContrast) {
+      manifest.highContrast.file =
         fileIcons.defaultIcon.name + highContrastColorFileEnding;
     }
   }
 
-  return config;
+  return manifest;
 };
 
 /**
@@ -132,12 +112,13 @@ export const loadFileIconDefinitions = (
 const mapSpecificFileIcons = (
   icon: FileIcon,
   mappingType: FileMappingType,
+  manifest: Manifest,
   customFileAssociation: IconAssociations = {}
 ) => {
-  const config = new IconConfiguration();
+  const manifestCopy = merge({}, manifest);
   const iconMappingType = icon[mappingType as keyof FileIcon] as string[];
   if (iconMappingType === undefined) {
-    return;
+    return manifestCopy;
   }
   iconMappingType.forEach((name) => {
     // if the custom file extension should also overwrite the file names
@@ -154,9 +135,10 @@ const mapSpecificFileIcons = (
     );
 
     // if overwrite is enabled then do not continue to set the icons for file names containing the file extension
-    const configMappingType = config[mappingType];
-    const configLightMappingType = config.light?.[mappingType];
-    const configHighContrastMappingType = config.highContrast?.[mappingType];
+    const configMappingType = manifestCopy[mappingType];
+    const configLightMappingType = manifestCopy.light?.[mappingType];
+    const configHighContrastMappingType =
+      manifestCopy.highContrast?.[mappingType];
 
     if (
       shouldOverwriteFileNames ||
@@ -175,7 +157,7 @@ const mapSpecificFileIcons = (
         `${icon.name}${highContrastColorFileEnding}`;
     }
   });
-  return config;
+  return manifestCopy;
 };
 
 /**
@@ -183,31 +165,32 @@ const mapSpecificFileIcons = (
  */
 const disableIconsByPack = (
   fileIcons: FileIcons,
-  activatedIconPack: string
+  activeIconPack: string
 ): FileIcon[] => {
   return fileIcons.icons.filter((icon) => {
     return !icon.enabledFor
       ? true
-      : icon.enabledFor.some((p) => p === activatedIconPack);
+      : icon.enabledFor.some((p) => p === activeIconPack);
   });
 };
 
 const setIconDefinition = (
-  config: IconConfiguration,
+  manifest: Manifest,
   iconName: string,
   isClone: boolean,
   appendix: string = ''
 ) => {
-  const obj: Partial<IconConfiguration> = { iconDefinitions: {} };
+  const manifestCopy = merge({}, manifest);
   const ext = isClone ? cloneIconExtension : '.svg';
   const key = `${iconName}${appendix}`;
-  if (config.options && !config.iconDefinitions![key]) {
-    const fileConfigHash = getFileConfigHash(config.options);
-    obj.iconDefinitions![key] = {
+  manifest.iconDefinitions ??= {};
+  if (!manifest.iconDefinitions![key]) {
+    const fileConfigHash = getFileConfigHash(manifest.config);
+    manifestCopy.iconDefinitions![key] = {
       iconPath: `${iconFolderPath}${iconName}${appendix}${fileConfigHash}${ext}`,
     };
   }
-  return obj;
+  return manifestCopy;
 };
 
 export const generateFileIcons = (color: string | undefined) => {

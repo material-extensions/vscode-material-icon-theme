@@ -1,6 +1,11 @@
 'use strict';
 
-import { type ExtensionContext, window as codeWindow, workspace } from 'vscode';
+import {
+  type ExtensionContext,
+  window as codeWindow,
+  env,
+  workspace,
+} from 'vscode';
 import { registered } from './commands';
 import { detectConfigChanges } from './helpers/changeDetection';
 import { initTranslations } from './i18n';
@@ -11,7 +16,7 @@ import { initTranslations } from './i18n';
  */
 export const activate = async (context: ExtensionContext) => {
   try {
-    await initTranslations();
+    await initTranslations(env.language);
 
     // Subscribe to the extension commands
     context.subscriptions.push(...registered);

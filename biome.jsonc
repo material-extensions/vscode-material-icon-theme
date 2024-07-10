@@ -15,7 +15,11 @@
     "rules": {
       "recommended": false,
       "complexity": { "useArrowFunction": "off" },
-      "correctness": { "noUnsafeFinally": "error" },
+      "correctness": {
+        "noUnsafeFinally": "error",
+        "noUnusedVariables": "error",
+        "noUnusedImports": "error"
+      },
       "security": { "noGlobalEval": "error" },
       "style": {
         "noVar": "error",

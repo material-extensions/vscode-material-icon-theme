@@ -1,12 +1,13 @@
 import { type QuickPickItem, window as codeWindow } from 'vscode';
-import { getMaterialIconsJSON, setThemeConfig } from '../helpers';
+import { getManifestFile, setThemeConfig } from '../helpers';
 import { translate } from '../i18n';
-import { getDefaultIconOptions, validateHEXColorCode } from '../icons';
+import { validateHEXColorCode } from '../icons';
+import { getDefaultConfiguration } from '../icons/generator/config/defaultConfig';
 
-interface FolderColor {
+type FolderColor = {
   label: string;
   hex: string;
-}
+};
 
 const iconPalette: FolderColor[] = [
   { label: 'Grey (Default)', hex: '#90a4ae' },
@@ -77,9 +78,9 @@ const validateColorInput = (colorInput: string) => {
 
 /** Check status of the folder color */
 export const checkFolderColorStatus = (): string => {
-  const defaultOptions = getDefaultIconOptions();
-  const config = getMaterialIconsJSON();
-  return config?.options?.folders?.color ?? defaultOptions.folders.color!;
+  const defaultConfig = getDefaultConfiguration();
+  const manifest = getManifestFile();
+  return manifest?.config?.folders?.color ?? defaultConfig.folders.color!;
 };
 
 const setColorConfig = (value: string) => {

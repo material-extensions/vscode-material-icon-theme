@@ -1,5 +1,5 @@
 import { type QuickPickItem, window as codeWindow } from 'vscode';
-import { getMaterialIconsJSON, setThemeConfig } from '../helpers';
+import { getManifestFile, setThemeConfig } from '../helpers';
 import { translate } from '../i18n';
 
 /** Command to toggle the explorer arrows. */
@@ -51,5 +51,5 @@ const handleQuickPickActions = (value: QuickPickItem | undefined) => {
 
 /** Check if arrows are enabled. */
 export const checkArrowStatus = (): boolean => {
-  return !!getMaterialIconsJSON()?.hidesExplorerArrows;
+  return !!getManifestFile()?.hidesExplorerArrows;
 };
