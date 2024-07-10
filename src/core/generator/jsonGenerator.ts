@@ -49,7 +49,7 @@ export const generateManifest = (config?: Partial<Config>): Manifest => {
 };
 
 /**
- * Apply the configuration to the icons and generate the JSON file.
+ * Apply the configuration to the icons.
  *
  * @param config Configuration that customizes the icons and the manifest.
  */
