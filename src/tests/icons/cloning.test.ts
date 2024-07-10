@@ -1,5 +1,5 @@
 import { beforeAll, describe, expect, it, mock } from 'bun:test';
-import merge from 'lodash.merge';
+import { merge } from 'lodash-es';
 import { type INode, parseSync } from 'svgson';
 import { getFileConfigHash } from '../../helpers/configHash';
 import {

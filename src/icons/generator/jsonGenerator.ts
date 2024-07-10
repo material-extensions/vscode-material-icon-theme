@@ -1,6 +1,6 @@
 import { existsSync, readdirSync, renameSync, unlinkSync } from 'node:fs';
 import { join } from 'node:path';
-import merge from 'lodash.merge';
+import { merge } from 'lodash-es';
 import { getFileConfigHash } from '../../helpers/configHash';
 import { getCustomIconPaths } from '../../helpers/customIcons';
 import { resolvePath } from '../../helpers/resolvePath';
@@ -8,31 +8,37 @@ import { type Config, Manifest } from '../../models/index';
 import { fileIcons } from '../fileIcons';
 import { folderIcons } from '../folderIcons';
 import { languageIcons } from '../languageIcons';
+import { padWithDefaultConfig } from './config/defaultConfig';
 import {
   generateFileIcons,
   generateFolderIcons,
+  iconFolderPath,
   loadFileIconDefinitions,
   loadFolderIconDefinitions,
   loadLanguageIconDefinitions,
   setIconOpacity,
   setIconSaturation,
-  validateHEXColorCode,
-  validateOpacityValue,
-  validateSaturationValue,
 } from './index';
 
 /**
  * Generate the manifest that will be written as JSON file.
  */
-export const generateManifest = (config?: Config): Manifest => {
-  const manifest = new Manifest(config);
+export const generateManifest = (config?: Partial<Config>): Manifest => {
+  const refinedConfig = padWithDefaultConfig(config);
+  const manifest = new Manifest();
   const languageIconDefinitions = loadLanguageIconDefinitions(
     languageIcons,
+    refinedConfig,
     manifest
   );
-  const fileIconDefinitions = loadFileIconDefinitions(fileIcons, manifest);
+  const fileIconDefinitions = loadFileIconDefinitions(
+    fileIcons,
+    refinedConfig,
+    manifest
+  );
   const folderIconDefinitions = loadFolderIconDefinitions(
     folderIcons,
+    refinedConfig,
     manifest
   );
 
@@ -49,27 +55,18 @@ export const generateManifest = (config?: Config): Manifest => {
  *
  * @param config Configuration that customizes the icons and the manifest.
  */
-export const applyConfigurationToIcons = (config: Config) => {
-  validateConfigValues(config);
-
+export const applyConfigurationToIcons = (config: Partial<Config>) => {
   if (config.files?.color) {
     generateFileIcons(config.files?.color);
-    setIconOpacity(config, ['file.svg']);
   }
   if (config.folders?.color) {
     generateFolderIcons(config.folders?.color);
-    setIconOpacity(config, [
-      'folder.svg',
-      'folder-open.svg',
-      'folder-root.svg',
-      'folder-root-open.svg',
-    ]);
   }
   if (config.opacity !== undefined) {
-    setIconOpacity(config);
+    setIconOpacity(config.opacity);
   }
   if (config.saturation !== undefined) {
-    setIconSaturation(config);
+    setIconSaturation(config.saturation);
   }
 
   renameIconFiles(config);
@@ -79,9 +76,9 @@ export const applyConfigurationToIcons = (config: Config) => {
  * Rename all icon files according their respective config
  * @param config Icon Json Options
  */
-const renameIconFiles = (config: Config) => {
-  const defaultIconPath = resolvePath('icons');
-  const customPaths = getCustomIconPaths(config);
+const renameIconFiles = (config: Partial<Config>) => {
+  const defaultIconPath = resolvePath(iconFolderPath);
+  const customPaths = getCustomIconPaths();
   const iconPaths = [defaultIconPath, ...customPaths];
 
   iconPaths.forEach((iconPath) => {
@@ -108,19 +105,4 @@ const renameIconFiles = (config: Config) => {
         }
       });
   });
-};
-
-const validateConfigValues = (config: Config) => {
-  if (!validateOpacityValue(config.opacity)) {
-    throw Error('Material Icons: Invalid opacity value!');
-  }
-  if (!validateSaturationValue(config.saturation)) {
-    throw Error('Material Icons: Invalid saturation value!');
-  }
-  if (!validateHEXColorCode(config.folders?.color)) {
-    throw Error('Material Icons: Invalid folder color value!');
-  }
-  if (!validateHEXColorCode(config.files?.color)) {
-    throw Error('Material Icons: Invalid file color value!');
-  }
 };

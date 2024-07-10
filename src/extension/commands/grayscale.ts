@@ -1,6 +1,6 @@
 import { type QuickPickItem, window as codeWindow } from 'vscode';
-import { getManifestFile, setThemeConfig } from '../helpers';
-import { translate } from '../i18n';
+import { translate } from '../../i18n';
+import { getThemeConfig, setThemeConfig } from '../shared/config';
 
 /** Command to toggle grayscale. */
 export const toggleGrayscale = async () => {
@@ -51,5 +51,5 @@ const handleQuickPickActions = (value: QuickPickItem) => {
 
 /** Is grayscale icons enabled? */
 export const checkGrayscaleStatus = (): boolean => {
-  return getManifestFile()?.config?.saturation === 0;
+  return getThemeConfig<number>('saturation') === 0;
 };

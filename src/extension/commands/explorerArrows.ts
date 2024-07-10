@@ -1,11 +1,11 @@
 import { type QuickPickItem, window as codeWindow } from 'vscode';
-import { getManifestFile, setThemeConfig } from '../helpers';
-import { translate } from '../i18n';
+import { translate } from '../../i18n';
+import { getThemeConfig, setThemeConfig } from '../shared/config';
 
 /** Command to toggle the explorer arrows. */
 export const toggleExplorerArrows = async () => {
   try {
-    const status = checkArrowStatus();
+    const status = areExplorerArrowsHidden();
     const response = await showQuickPickItems(status);
     return handleQuickPickActions(response);
   } catch (error) {
@@ -49,7 +49,6 @@ const handleQuickPickActions = (value: QuickPickItem | undefined) => {
   }
 };
 
-/** Check if arrows are enabled. */
-export const checkArrowStatus = (): boolean => {
-  return !!getManifestFile()?.hidesExplorerArrows;
+export const areExplorerArrowsHidden = (): boolean => {
+  return getThemeConfig('hidesExplorerArrows') === true;
 };

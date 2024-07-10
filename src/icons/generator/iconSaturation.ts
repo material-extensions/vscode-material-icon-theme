@@ -2,31 +2,35 @@ import { lstatSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { getCustomIconPaths } from '../../helpers/customIcons';
 import { resolvePath } from '../../helpers/resolvePath';
-import { type Config } from '../../models';
+import { iconFolderPath } from './constants';
 
 /**
  * Changes saturation of all icons in the set.
  * @param config Icon JSON options which include the saturation value.
  * @param fileNames Only change the saturation of certain file names.
  */
-export const setIconSaturation = (config: Config, fileNames?: string[]) => {
-  if (!validateSaturationValue(config.saturation)) {
+export const setIconSaturation = (saturation: number) => {
+  if (!validateSaturationValue(saturation)) {
     return console.error(
       'Invalid saturation value! Saturation must be a decimal number between 0 and 1!'
     );
   }
 
-  const iconsPath = resolvePath('icons');
-  const customIconPaths = getCustomIconPaths(config);
+  const iconsPath = resolvePath(iconFolderPath);
+  const customIconPaths = getCustomIconPaths();
   const iconFiles = readdirSync(iconsPath);
 
   // read all icon files from the icons folder
   try {
-    (fileNames || iconFiles).forEach(adjustSaturation(iconsPath, config));
+    iconFiles.forEach((iconFileName) =>
+      processSVGFileForSaturation(iconsPath, iconFileName, saturation)
+    );
 
     customIconPaths.forEach((iconPath) => {
       const customIcons = readdirSync(iconPath);
-      customIcons.forEach(adjustSaturation(iconPath, config));
+      customIcons.forEach((iconFileName) =>
+        processSVGFileForSaturation(iconPath, iconFileName, saturation)
+      );
     });
   } catch (error) {
     console.error(error);
@@ -69,9 +73,9 @@ const removeFilterAttribute = (svgRoot: string) => {
  * Add filter element to the SVG icon.
  * @param svg SVG file as string.
  */
-const addFilterElement = (svg: string, value: number) => {
+const addFilterElement = (svg: string, saturation: number) => {
   const pattern = new RegExp(/<filter id="saturation".+<\/filter>(.*<\/svg>)/);
-  const filterElement = `<filter id="saturation"><feColorMatrix type="saturate" values="${value}"/></filter>`;
+  const filterElement = `<filter id="saturation"><feColorMatrix type="saturate" values="${saturation}"/></filter>`;
   if (pattern.test(svg)) {
     return svg.replace(pattern, `${filterElement}$1`);
   } else {
@@ -96,39 +100,48 @@ export const validateSaturationValue = (saturation: number | undefined) => {
   return saturation !== undefined && saturation <= 1 && saturation >= 0;
 };
 
-const adjustSaturation = (
-  iconsPath: any,
-  config: Config
-): ((value: string, index: number, array: string[]) => void) => {
-  return (iconFileName) => {
-    const svgFilePath = join(iconsPath, iconFileName);
-    if (!lstatSync(svgFilePath).isFile()) {
-      return;
-    }
+/** Function to adjust the saturation of a given SVG string */
+export const adjustSVGSaturation = (
+  svg: string,
+  saturation: number
+): string => {
+  // Get the root element of the SVG
+  const svgRootElement = getSVGRootElement(svg);
+  if (!svgRootElement) return svg;
 
-    // Read SVG file
-    const svg = readFileSync(svgFilePath, 'utf-8');
+  let updatedRootElement: string;
 
-    // Get the root element of the SVG file
-    const svgRootElement = getSVGRootElement(svg);
-    if (!svgRootElement) return;
+  if (saturation < 1) {
+    updatedRootElement = addFilterAttribute(svgRootElement);
+  } else {
+    updatedRootElement = removeFilterAttribute(svgRootElement);
+  }
 
-    let updatedRootElement: string;
+  let updatedSVG = svg.replace(/<svg[^>]*>/, updatedRootElement);
 
-    if (config.saturation !== undefined && config.saturation < 1) {
-      updatedRootElement = addFilterAttribute(svgRootElement);
-    } else {
-      updatedRootElement = removeFilterAttribute(svgRootElement);
-    }
+  if (saturation < 1) {
+    updatedSVG = addFilterElement(updatedSVG, saturation);
+  } else {
+    updatedSVG = removeFilterElement(updatedSVG);
+  }
 
-    let updatedSVG = svg.replace(/<svg[^>]*>/, updatedRootElement);
+  return updatedSVG;
+};
 
-    if (config.saturation !== undefined && config.saturation < 1) {
-      updatedSVG = addFilterElement(updatedSVG, config.saturation);
-    } else {
-      updatedSVG = removeFilterElement(updatedSVG);
-    }
+/** Function to read an SVG file, adjust its saturation, and write it back */
+const processSVGFileForSaturation = (
+  iconPath: string,
+  iconFileName: string,
+  saturation: number
+): void => {
+  const svgFilePath = join(iconPath, iconFileName);
+  if (!lstatSync(svgFilePath).isFile()) {
+    return;
+  }
 
-    writeFileSync(svgFilePath, updatedSVG);
-  };
+  // Read SVG file
+  const svg = readFileSync(svgFilePath, 'utf-8');
+  const updatedSVG = adjustSVGSaturation(svg, saturation);
+
+  writeFileSync(svgFilePath, updatedSVG);
 };

@@ -1,6 +1,7 @@
-import merge from 'lodash.merge';
+import { merge } from 'lodash-es';
 import { getFileConfigHash } from '../../helpers/configHash';
 import {
+  type Config,
   type FileIcon,
   type FileIcons,
   type IconAssociations,
@@ -13,36 +14,30 @@ import {
   lightColorFileEnding,
   wildcardPattern,
 } from './constants';
-import {
-  getPath,
-  getSVG,
-  validateHEXColorCode,
-  writeSVGFiles,
-} from './folderGenerator';
+import { getPath, getSVG, validateHEXColorCode, writeSVGFiles } from './shared';
 
 /**
  * Get all file icons that can be used in this theme.
  */
 export const loadFileIconDefinitions = (
   fileIcons: FileIcons,
+  config: Config,
   manifest: Manifest
 ): Manifest => {
   manifest = merge({}, manifest);
-  const enabledIcons = disableIconsByPack(
-    fileIcons,
-    manifest.config.activeIconPack
-  );
-  const customIcons = getCustomIcons(manifest.config.files?.associations);
+  const enabledIcons = disableIconsByPack(fileIcons, config.activeIconPack);
+  const customIcons = getCustomIcons(config.files?.associations);
   const allFileIcons = [...enabledIcons, ...customIcons];
 
   allFileIcons.forEach((icon) => {
     if (icon.disabled) return;
     const isClone = icon.clone !== undefined;
-    manifest = setIconDefinition(manifest, icon.name, isClone);
+    manifest = setIconDefinition(manifest, config, icon.name, isClone);
 
     if (icon.light) {
       manifest = setIconDefinition(
         manifest,
+        config,
         icon.name,
         isClone,
         lightColorFileEnding
@@ -51,6 +46,7 @@ export const loadFileIconDefinitions = (
     if (icon.highContrast) {
       manifest = setIconDefinition(
         manifest,
+        config,
         icon.name,
         isClone,
         highContrastColorFileEnding
@@ -69,18 +65,24 @@ export const loadFileIconDefinitions = (
         icon,
         FileMappingType.FileNames,
         manifest,
-        manifest.config.files?.associations
+        config.files?.associations
       );
     }
   });
 
   // set default file icon
-  manifest = setIconDefinition(manifest, fileIcons.defaultIcon.name, false);
+  manifest = setIconDefinition(
+    manifest,
+    config,
+    fileIcons.defaultIcon.name,
+    false
+  );
   manifest.file = fileIcons.defaultIcon.name;
 
   if (fileIcons.defaultIcon.light && manifest.light) {
     manifest = setIconDefinition(
       manifest,
+      config,
       fileIcons.defaultIcon.name,
       false,
       lightColorFileEnding
@@ -93,6 +95,7 @@ export const loadFileIconDefinitions = (
   if (fileIcons.defaultIcon.highContrast) {
     manifest = setIconDefinition(
       manifest,
+      config,
       fileIcons.defaultIcon.name,
       false,
       highContrastColorFileEnding
@@ -176,6 +179,7 @@ const disableIconsByPack = (
 
 const setIconDefinition = (
   manifest: Manifest,
+  config: Config,
   iconName: string,
   isClone: boolean,
   appendix: string = ''
@@ -185,7 +189,7 @@ const setIconDefinition = (
   const key = `${iconName}${appendix}`;
   manifest.iconDefinitions ??= {};
   if (!manifest.iconDefinitions![key]) {
-    const fileConfigHash = getFileConfigHash(manifest.config);
+    const fileConfigHash = getFileConfigHash(config);
     manifestCopy.iconDefinitions![key] = {
       iconPath: `${iconFolderPath}${iconName}${appendix}${fileConfigHash}${ext}`,
     };

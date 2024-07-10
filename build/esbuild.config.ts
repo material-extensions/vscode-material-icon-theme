@@ -2,8 +2,8 @@ import type { BuildOptions } from 'esbuild';
 
 const config: BuildOptions = {
   entryPoints: [
-    './src/extension.ts',
-    './src/web/extension.ts',
+    './src/extension/extension.ts',
+    './src/extension/web/extension.ts',
     './src/module.ts',
   ],
   bundle: true,

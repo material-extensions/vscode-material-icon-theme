@@ -137,7 +137,10 @@ const handleErrors = () => {
   }
 };
 
-const printErrorMessage = (icons: any, definitionType: string) => {
+const printErrorMessage = (
+  icons: Record<string, string[]>,
+  definitionType: string
+) => {
   const keys = Object.keys(icons);
   keys.forEach((key) => {
     const conflictIcons = icons[key];

@@ -1,4 +1,9 @@
 /**
+ * Name of the VS Code extension.
+ */
+export const extensionName = 'material-icon-theme';
+
+/**
  * Path where the icons are located.
  */
 export const iconFolderPath: string = './../icons/';

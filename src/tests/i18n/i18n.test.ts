@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test';
-import { getObjectPropertyValue } from '../../helpers/objects';
+import { get } from 'lodash-es';
 import { getTranslationValue, replace } from '../../i18n';
 import type { Translation } from '../../models';
 
@@ -38,7 +38,7 @@ describe('i18n', () => {
       },
     };
 
-    const result = getObjectPropertyValue(translation, 'a.b.c');
+    const result = get(translation, 'a.b.c');
     expect(result).toBe('c');
   });
 

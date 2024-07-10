@@ -1,8 +1,8 @@
 import { window as codeWindow } from 'vscode';
-import { getManifestFile, setThemeConfig } from '../helpers';
-import { translate } from '../i18n';
-import { validateSaturationValue } from '../icons';
-import { getDefaultConfiguration } from '../icons/generator/config/defaultConfig';
+import { translate } from '../../i18n';
+import { validateSaturationValue } from '../../icons';
+import { getDefaultConfiguration } from '../../icons/generator/config/defaultConfig';
+import { getThemeConfig, setThemeConfig } from '../shared/config';
 
 /** Command to toggle the folder icons. */
 export const changeSaturation = async () => {
@@ -38,8 +38,7 @@ const validateSaturationInput = (saturationInput: string) => {
 /** Get the current value of the saturation of the icons. */
 export const getCurrentSaturationValue = (): number => {
   const defaultConfig = getDefaultConfiguration();
-  const manifest = getManifestFile();
-  return manifest?.config?.saturation ?? defaultConfig.saturation;
+  return getThemeConfig<number>('saturation') ?? defaultConfig.saturation;
 };
 
 const setSaturationConfig = (saturation: number) => {

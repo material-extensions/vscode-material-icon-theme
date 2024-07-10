@@ -1,43 +1,49 @@
 import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import merge from 'lodash.merge';
+import type { ConfigurationChangeEvent } from 'vscode';
 import {
   getConfigProperties,
-  getManifestFile,
   getThemeConfig,
-  resolvePath,
-} from '.';
-import { generateManifest, manifestName } from '../icons';
+} from '../extension/shared/config';
 import {
-  customClonesIcons,
-  hasCustomClones,
-} from '../icons/generator/clones/clonesGenerator';
-import { clearCloneFolder } from '../icons/generator/clones/utils/cloneData';
+  applyConfigurationToIcons,
+  extensionName,
+  generateManifest,
+  manifestName,
+} from '../icons';
 import type { Config } from '../models';
-import { getObjectPropertyValue, setObjectPropertyValue } from './objects';
+import { resolvePath } from './resolvePath';
 
 /** Compare the workspace and the user configurations with the current setup of the icons. */
-export const detectConfigChanges = () => {
-  const config = compareConfigs();
+export const detectConfigChanges = (event: ConfigurationChangeEvent) => {
+  if (!event.affectsConfiguration(extensionName)) return;
 
-  if (config === null) return;
+  const { affectedConfig, updatedConfig } = compareConfigs(event);
 
   try {
-    const manifest = generateManifest(config);
+    const startTime = performance.now();
+    applyConfigurationToIcons(affectedConfig);
+    const endTime = performance.now();
+    console.log('Time taken to generate manifest:', endTime - startTime);
+    const manifest = generateManifest(updatedConfig);
+
+    console.log('manifest', updatedConfig.activeIconPack);
 
     // clear the clone folder
-    clearCloneFolder(hasCustomClones(config));
+    // clearCloneFolder(hasCustomClones(config));
 
-    const manifestWithClones = merge(
-      {},
-      manifest,
-      customClonesIcons(manifest, config)
-    );
+    // const manifestWithClones = merge(
+    //   {},
+    //   manifest,
+    //   customClonesIcons(manifest, config)
+    // );
 
-    const iconJsonPath = resolvePath('');
+    const iconJsonPath = join(resolvePath(manifestName));
+    console.log('iconJsonPath', iconJsonPath);
+    console.log('active icon pack', updatedConfig.activeIconPack);
     writeFileSync(
-      join(iconJsonPath, manifestName),
-      JSON.stringify(manifestWithClones, undefined, 2),
+      iconJsonPath,
+      JSON.stringify(manifest, undefined, 2),
       'utf-8'
     );
   } catch (error) {
@@ -51,34 +57,42 @@ export const detectConfigChanges = () => {
  *
  * @returns Updated configurations
  */
-const compareConfigs = (): Config | null => {
-  const configPropertyNames = Object.keys(getConfigProperties()).map(
-    (property) =>
-      // remove the extension name from the config property
-      property
-        .split('.')
-        .slice(1)
-        .join('.')
+const compareConfigs = ({
+  affectsConfiguration,
+}: ConfigurationChangeEvent): {
+  affectedConfig: Partial<Config>;
+  updatedConfig: Config;
+} => {
+  const configPropertyNames = Object.keys(getConfigProperties());
+
+  // Initialize updatedConfig with all configurations upfront to avoid conditional checks inside the loop
+  const updatedConfig = configPropertyNames.reduce<Record<string, unknown>>(
+    (acc, configNameWithExtensionId) => {
+      const configName = configNameWithExtensionId.replace(
+        `${extensionName}.`,
+        ''
+      );
+      const configValue = getThemeConfig(configName) ?? null;
+      acc[configName] = configValue;
+      return acc;
+    },
+    {}
   );
 
-  let updatedConfig: Config | null = null;
-  const json = getManifestFile();
-  return configPropertyNames.reduce((result, configName) => {
-    const configValue = getThemeConfig(configName) ?? {
-      globalValue: '',
-      workspaceValue: '',
-      defaultValue: '',
-    };
-
-    const currentState = getObjectPropertyValue(json.config ?? {}, configName);
-
-    if (JSON.stringify(configValue) !== JSON.stringify(currentState)) {
-      setObjectPropertyValue(result, configName, configValue);
-      if (!updatedConfig) {
-        updatedConfig = merge({}, result);
+  // Filter out only the affected configurations to minimize calls to affectsConfiguration
+  const affectedConfig = configPropertyNames.reduce<Record<string, unknown>>(
+    (acc, configNameWithExtensionId) => {
+      if (affectsConfiguration(configNameWithExtensionId)) {
+        const configName = configNameWithExtensionId.replace(
+          `${extensionName}.`,
+          ''
+        );
+        acc[configName] = updatedConfig[configName];
       }
-    }
+      return acc;
+    },
+    {}
+  );
 
-    return result;
-  }, json.config as Config);
+  return { affectedConfig, updatedConfig: updatedConfig as Config };
 };

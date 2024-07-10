@@ -1,15 +1,15 @@
 import { type QuickPickItem, window as codeWindow } from 'vscode';
-import { getManifestFile, setThemeConfig } from '../helpers';
-import { translate } from '../i18n';
-import { validateHEXColorCode } from '../icons';
-import { getDefaultConfiguration } from '../icons/generator/config/defaultConfig';
+import { translate } from '../../i18n';
+import { getDefaultConfiguration } from '../../icons/generator/config/defaultConfig';
+import { validateHEXColorCode } from '../../icons/generator/shared';
+import { getThemeConfig, setThemeConfig } from '../shared/config';
 
-type FolderColor = {
+type FileColor = {
   label: string;
   hex: string;
 };
 
-const iconPalette: FolderColor[] = [
+const iconPalette: FileColor[] = [
   { label: 'Grey (Default)', hex: '#90a4ae' },
   { label: 'Blue', hex: '#42a5f5' },
   { label: 'Green', hex: '#7CB342' },
@@ -20,10 +20,10 @@ const iconPalette: FolderColor[] = [
   { label: 'Custom Color', hex: 'Custom HEX Code' },
 ];
 
-/** Command to toggle the folder icons. */
-export const changeFolderColor = async () => {
+/** Command to toggle the file icons. */
+export const changeFileColor = async () => {
   try {
-    const status = checkFolderColorStatus();
+    const status = checkFileColorStatus();
     const response = await showQuickPickItems(status);
     if (response) {
       handleQuickPickActions(response);
@@ -33,7 +33,7 @@ export const changeFolderColor = async () => {
   }
 };
 
-/** Show QuickPick items to select preferred color for the folder icons. */
+/** Show QuickPick items to select preferred color for the file icons. */
 const showQuickPickItems = (currentColor: string) => {
   const options = iconPalette.map(
     (color): QuickPickItem => ({
@@ -76,18 +76,17 @@ const validateColorInput = (colorInput: string) => {
   return undefined;
 };
 
-/** Check status of the folder color */
-export const checkFolderColorStatus = (): string => {
+/** Check status of the file color */
+export const checkFileColorStatus = (): string => {
   const defaultConfig = getDefaultConfiguration();
-  const manifest = getManifestFile();
-  return manifest?.config?.folders?.color ?? defaultConfig.folders.color!;
+  return getThemeConfig<string>('files.color') ?? defaultConfig.files.color;
 };
 
 const setColorConfig = (value: string) => {
-  setThemeConfig('folders.color', value.toLowerCase(), true);
+  setThemeConfig('files.color', value.toLowerCase(), true);
 };
 
-const isColorActive = (color: FolderColor, currentColor: string): boolean => {
+const isColorActive = (color: FileColor, currentColor: string): boolean => {
   if (color.label === 'Custom Color') {
     return !iconPalette.some(
       (c) => c.hex.toLowerCase() === currentColor.toLowerCase()

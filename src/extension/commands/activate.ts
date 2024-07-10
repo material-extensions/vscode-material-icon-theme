@@ -1,6 +1,6 @@
 import { window as codeWindow } from 'vscode';
-import { getConfig } from '../helpers';
-import { translate } from '../i18n';
+import { translate } from '../../i18n';
+import { getConfig } from '../shared/config';
 
 /** Activate the icon theme by changing the settings for the iconTheme. */
 export const activateIcons = () => {

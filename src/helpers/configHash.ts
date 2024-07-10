@@ -5,7 +5,7 @@ import { type Config } from '../models';
  * Generate a config hashed string that is appended to each icon file name.
  * @param config Icon Configuration object
  */
-export const getFileConfigHash = (config: Config): string => {
+export const getFileConfigHash = (config: Partial<Config>): string => {
   try {
     const defaults = getDefaultConfiguration();
     let fileConfigString = '';

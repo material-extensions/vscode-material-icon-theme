@@ -1,14 +1,9 @@
 'use strict';
 
-import {
-  type ExtensionContext,
-  window as codeWindow,
-  env,
-  workspace,
-} from 'vscode';
+import { type ExtensionContext, env, workspace } from 'vscode';
+import { detectConfigChanges } from '../helpers/changeDetection';
+import { initTranslations } from '../i18n';
 import { registered } from './commands';
-import { detectConfigChanges } from './helpers/changeDetection';
-import { initTranslations } from './i18n';
 
 /**
  * This method is called when the extension is activated.
@@ -22,17 +17,17 @@ export const activate = async (context: ExtensionContext) => {
     context.subscriptions.push(...registered);
 
     // Initially trigger the config change detection
-    detectConfigChanges();
+    // detectConfigChanges();
 
     // Observe changes in the config
     workspace.onDidChangeConfiguration(detectConfigChanges);
 
     // Observe if the window got focused to trigger config changes
-    codeWindow.onDidChangeWindowState((state) => {
-      if (state.focused) {
-        detectConfigChanges();
-      }
-    });
+    // codeWindow.onDidChangeWindowState((state) => {
+    //   if (state.focused) {
+    //     detectConfigChanges();
+    //   }
+    // });
   } catch (error) {
     console.error(error);
   }

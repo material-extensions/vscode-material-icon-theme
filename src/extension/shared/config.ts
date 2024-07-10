@@ -1,9 +1,6 @@
-import { readFileSync } from 'node:fs';
-import { join } from 'node:path';
-import merge from 'lodash.merge';
+import { dirname, join } from 'node:path';
+import { merge } from 'lodash-es';
 import { extensions, workspace } from 'vscode';
-import { manifestName } from '../icons';
-import { Manifest } from '../models';
 
 /** Get configuration of vs code. */
 export const getConfig = (section?: string) => {
@@ -19,28 +16,22 @@ export const getConfigProperties = (): { [config: string]: unknown } => {
 /** Update configuration of vs code. */
 export const setConfig = (
   section: string,
-  value: any,
+  value: unknown,
   global: boolean = false
 ) => {
   return getConfig().update(section, value, global);
 };
 
 /** Get current configuration of the theme from the vscode config */
-export const getThemeConfig = (section: string) => {
-  const themeConfig = getConfig('material-icon-theme').inspect(section);
-  return getConfigValue(
-    themeConfig as {
-      globalValue: unknown;
-      workspaceValue: unknown;
-      defaultValue: unknown;
-    }
-  );
+export const getThemeConfig = <T>(section: string): T | undefined => {
+  const themeConfig = getConfig('material-icon-theme').inspect<T>(section);
+  return getConfigValue<T | undefined>(themeConfig);
 };
 
 /** Set the config of the theme. */
 export const setThemeConfig = (
   section: string,
-  value: any,
+  value: unknown,
   global: boolean = false
 ) => {
   return getConfig('material-icon-theme').update(section, value, global);
@@ -67,47 +58,26 @@ export const isThemeNotVisible = (): boolean => {
   );
 };
 
-/** Return the path of the extension in the file system. */
-const getExtensionPath = () =>
-  extensions.getExtension('PKief.material-icon-theme')?.extensionPath ?? '';
-
-/** Get the configuration of the icons as JSON Object */
-export const getManifestFile = (): Manifest => {
-  const manifestPath = join(getExtensionPath(), 'dist', manifestName);
-
-  try {
-    const data = readFileSync(manifestPath, 'utf8');
-    return JSON.parse(data);
-  } catch (error) {
-    console.error(error);
-    return new Manifest();
-  }
-};
-
-/** Capitalize the first letter of a string */
-export const capitalizeFirstLetter = (name: string): string =>
-  name.charAt(0).toUpperCase() + name.slice(1);
-
-/** TitleCase all words in a string */
-export const toTitleCase = (value: string) => {
-  return value.replace(
-    /\w\S*/g,
-    (text) => text.charAt(0).toUpperCase() + text.substr(1).toLowerCase()
-  );
-};
-
 /**
  * Returns the value of a specific configuration by checking the workspace and the user configuration and fallback to the default value.
  *
  * @param themeConfig Theme configuration
  * @returns Actual theme configuration value
  */
-const getConfigValue = (themeConfig: {
-  globalValue: unknown;
-  workspaceValue: unknown;
-  defaultValue: unknown;
-}) => {
-  let configValue;
+const getConfigValue = <T>(
+  themeConfig: Partial<
+    | {
+        globalValue: T;
+        workspaceValue: T;
+        defaultValue: T;
+      }
+    | undefined
+  >
+) => {
+  let configValue: T | undefined;
+  if (themeConfig === undefined) {
+    return undefined;
+  }
   if (
     typeof themeConfig.workspaceValue === 'object' &&
     themeConfig.workspaceValue &&
@@ -125,4 +95,10 @@ const getConfigValue = (themeConfig: {
       themeConfig.defaultValue;
   }
   return configValue;
+};
+
+export const getCustomIconPaths = () => {
+  return Object.values(getThemeConfig('files.associations') ?? {})
+    .filter((v) => v.match(/^[.\/]+/)) // <- custom dirs have a relative path to the dist folder
+    .map((v) => dirname(join(__dirname, v)));
 };

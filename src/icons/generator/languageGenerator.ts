@@ -1,11 +1,12 @@
-import merge from 'lodash.merge';
+import { merge } from 'lodash-es';
 import { getFileConfigHash } from '../../helpers/configHash';
 import {
+  type Config,
   type DefaultIcon,
   type IconAssociations,
   type LanguageIcon,
   Manifest,
-} from '../../models/index';
+} from '../../models';
 import {
   highContrastColorFileEnding,
   iconFolderPath,
@@ -17,19 +18,20 @@ import {
  */
 export const loadLanguageIconDefinitions = (
   languageIcons: LanguageIcon[],
+  config: Config,
   manifest: Manifest
 ): Manifest => {
   manifest = merge({}, manifest);
   const enabledLanguages = disableLanguagesByPack(
     languageIcons,
-    manifest.config.activeIconPack
+    config.activeIconPack
   );
-  const customIcons = getCustomIcons(manifest.config.languages?.associations);
+  const customIcons = getCustomIcons(config.languages?.associations);
   const allLanguageIcons = [...enabledLanguages, ...customIcons];
 
   allLanguageIcons.forEach((lang) => {
     if (lang.disabled) return;
-    manifest = setIconDefinitions(manifest, lang.icon);
+    manifest = setIconDefinitions(manifest, config, lang.icon);
     manifest = merge(
       {},
       manifest,
@@ -60,29 +62,45 @@ export const loadLanguageIconDefinitions = (
   return manifest;
 };
 
-const setIconDefinitions = (manifest: Manifest, icon: DefaultIcon) => {
+const setIconDefinitions = (
+  manifest: Manifest,
+  config: Config,
+  icon: DefaultIcon
+) => {
   manifest = merge({}, manifest);
-  manifest = createIconDefinitions(manifest, icon.name);
+  manifest = createIconDefinitions(manifest, config, icon.name);
   manifest = merge(
     {},
     manifest,
     icon.light
-      ? createIconDefinitions(manifest, icon.name + lightColorFileEnding)
+      ? createIconDefinitions(
+          manifest,
+          config,
+          icon.name + lightColorFileEnding
+        )
       : manifest.light
   );
   manifest = merge(
     {},
     manifest,
     icon.highContrast
-      ? createIconDefinitions(manifest, icon.name + highContrastColorFileEnding)
+      ? createIconDefinitions(
+          manifest,
+          config,
+          icon.name + highContrastColorFileEnding
+        )
       : manifest.highContrast
   );
   return manifest;
 };
 
-const createIconDefinitions = (manifest: Manifest, iconName: string) => {
+const createIconDefinitions = (
+  manifest: Manifest,
+  config: Config,
+  iconName: string
+) => {
   manifest = merge({}, manifest);
-  const fileConfigHash = getFileConfigHash(manifest.config);
+  const fileConfigHash = getFileConfigHash(config);
   if (manifest.iconDefinitions) {
     manifest.iconDefinitions[iconName] = {
       iconPath: `${iconFolderPath}${iconName}${fileConfigHash}.svg`,

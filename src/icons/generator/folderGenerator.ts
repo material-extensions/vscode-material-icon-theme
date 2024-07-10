@@ -1,9 +1,7 @@
-import { writeFileSync } from 'node:fs';
-import { join } from 'node:path';
-import merge from 'lodash.merge';
+import { merge } from 'lodash-es';
 import { getFileConfigHash } from '../../helpers/configHash';
-import { resolvePath } from '../../helpers/resolvePath';
 import {
+  type Config,
   type DefaultIcon,
   type FolderIcon,
   type FolderTheme,
@@ -17,38 +15,34 @@ import {
   lightColorFileEnding,
   openedFolder,
 } from './constants';
+import { getPath, getSVG, validateHEXColorCode, writeSVGFiles } from './shared';
 
 /**
  * Get the folder icon definitions as object.
  */
 export const loadFolderIconDefinitions = (
   folderIcons: FolderTheme[],
+  config: Config,
   manifest: Manifest
 ): Manifest => {
   manifest = merge({}, manifest);
-  manifest.hidesExplorerArrows = manifest.config.hidesExplorerArrows;
-  const activeTheme = getEnabledFolderTheme(
-    folderIcons,
-    manifest.config.folders?.theme
-  );
+  manifest.hidesExplorerArrows = config.hidesExplorerArrows;
+  const activeTheme = getEnabledFolderTheme(folderIcons, config.folders?.theme);
   if (!activeTheme) {
-    return new Manifest();
+    return manifest;
   }
-  const enabledIcons = disableIconsByPack(
-    activeTheme,
-    manifest.config.activeIconPack
-  );
-  const customIcons = getCustomIcons(manifest.config.folders?.associations);
+  const enabledIcons = disableIconsByPack(activeTheme, config.activeIconPack);
+  const customIcons = getCustomIcons(config.folders?.associations);
   const allIcons = [...enabledIcons, ...customIcons];
 
-  if (manifest.config.folders?.theme === 'none') {
+  if (config.folders?.theme === 'none') {
     return manifest;
   }
 
   allIcons.forEach((icon) => {
     if (icon.disabled) return;
     const folderNames = extendFolderNames(icon.folderNames);
-    manifest = setIconDefinitions(manifest, icon);
+    manifest = setIconDefinitions(manifest, config, icon);
     manifest = merge({}, manifest, setFolderNames(icon.name, folderNames));
     manifest.light = icon.light
       ? merge(
@@ -66,7 +60,7 @@ export const loadFolderIconDefinitions = (
       : manifest.highContrast;
   });
 
-  manifest = setDefaultFolderIcons(activeTheme, manifest);
+  manifest = setDefaultFolderIcons(activeTheme, manifest, config);
   return manifest;
 };
 
@@ -75,13 +69,14 @@ export const loadFolderIconDefinitions = (
  */
 const setDefaultFolderIcons = (
   theme: FolderTheme,
-  manifest: Manifest
+  manifest: Manifest,
+  config: Config
 ): Manifest => {
   manifest = merge({}, manifest);
   const hasFolderIcons =
     !!theme.defaultIcon.name && theme.defaultIcon.name.length > 0;
   if (hasFolderIcons) {
-    manifest = setIconDefinitions(manifest, theme.defaultIcon);
+    manifest = setIconDefinitions(manifest, config, theme.defaultIcon);
   }
   manifest = merge(
     {},
@@ -117,7 +112,7 @@ const setDefaultFolderIcons = (
     createRootIconConfigObject(hasFolderIcons, theme, '')
   );
   if (theme.rootFolder) {
-    manifest = setIconDefinitions(manifest, theme.rootFolder);
+    manifest = setIconDefinitions(manifest, config, theme.rootFolder);
     manifest.light = theme.rootFolder.light
       ? merge(
           {},
@@ -174,17 +169,24 @@ const disableIconsByPack = (
 
 const setIconDefinitions = (
   manifest: Manifest,
+  config: Config,
   icon: FolderIcon | DefaultIcon
 ) => {
   const isClone = (icon as FolderIcon).clone !== undefined;
   manifest = merge({}, manifest);
 
-  manifest = createIconDefinitions(manifest, icon.name, '', isClone);
+  manifest = createIconDefinitions(manifest, config, icon.name, '', isClone);
   if (icon.light) {
     manifest = merge(
       {},
       manifest,
-      createIconDefinitions(manifest, icon.name, lightColorFileEnding, isClone)
+      createIconDefinitions(
+        manifest,
+        config,
+        icon.name,
+        lightColorFileEnding,
+        isClone
+      )
     );
   }
   if (icon.highContrast) {
@@ -193,6 +195,7 @@ const setIconDefinitions = (
       manifest,
       createIconDefinitions(
         manifest,
+        config,
         icon.name,
         highContrastColorFileEnding,
         isClone
@@ -204,12 +207,13 @@ const setIconDefinitions = (
 
 const createIconDefinitions = (
   manifest: Manifest,
+  config: Config,
   iconName: string,
   appendix: string = '',
   isClone = false
 ) => {
   manifest = merge({}, manifest);
-  const fileConfigHash = getFileConfigHash(manifest.config);
+  const fileConfigHash = getFileConfigHash(config);
   const configIconDefinitions = manifest.iconDefinitions;
   const ext = isClone ? cloneIconExtension : '.svg';
   const key = `${iconName}${appendix}`;
@@ -339,28 +343,4 @@ export const generateFolderIcons = (color: string | undefined) => {
   writeSVGFiles('folder-open', getSVG(getPath(folderIconOpen, color)));
   writeSVGFiles('folder-root', getSVG(getPath(rootFolderIcon, color)));
   writeSVGFiles('folder-root-open', getSVG(getPath(rootFolderIconOpen, color)));
-};
-
-export const getPath = (d: string, color: string) =>
-  `<path d="${d}" fill="${color}" />`;
-export const getSVG = (path: string, viewBoxSize = 32) =>
-  `<svg viewBox="0 0 ${viewBoxSize} ${viewBoxSize}" xmlns="http://www.w3.org/2000/svg">${path}</svg>`;
-
-export const writeSVGFiles = (iconName: string, svg: string) => {
-  const iconsPath = resolvePath('icons');
-  const iconsFolderPath = join(iconsPath, `${iconName}.svg`);
-  try {
-    writeFileSync(iconsFolderPath, svg);
-  } catch (error) {
-    console.error(error);
-  }
-};
-
-/**
- * Validate the HEX color code
- * @param color HEX code
- */
-export const validateHEXColorCode = (color: string = '') => {
-  const hexPattern = new RegExp(/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/);
-  return color.length > 0 && hexPattern.test(color);
 };

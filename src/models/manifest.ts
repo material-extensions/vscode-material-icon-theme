@@ -1,6 +1,3 @@
-import { type Config } from '.';
-import { padWithDefaultConfig } from '../icons/generator/config/defaultConfig';
-
 export class Manifest {
   file?: string;
   folder?: string;
@@ -13,12 +10,11 @@ export class Manifest {
   fileNames?: Record<string, string>;
   languageIds?: Record<string, string>;
   iconDefinitions?: Record<string, any>;
-  light?: Omit<Manifest, 'config'>;
-  highContrast?: Omit<Manifest, 'config'>;
-  config: Config;
+  light?: Manifest;
+  highContrast?: Manifest;
   hidesExplorerArrows?: boolean;
 
-  constructor(config?: Partial<Config>) {
+  constructor() {
     this.iconDefinitions = {};
     this.folderNames = {};
     this.folderNamesExpanded = {};
@@ -33,6 +29,5 @@ export class Manifest {
       fileExtensions: {},
       fileNames: {},
     };
-    this.config = padWithDefaultConfig(config);
   }
 }

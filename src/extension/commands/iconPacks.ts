@@ -1,7 +1,8 @@
 import { type QuickPickItem, window as codeWindow } from 'vscode';
-import { getManifestFile, setThemeConfig, toTitleCase } from '../helpers';
-import { translate } from '../i18n';
-import { IconPack } from '../models';
+import { toTitleCase } from '../../helpers';
+import { translate } from '../../i18n';
+import { IconPack } from '../../models';
+import { getThemeConfig, setThemeConfig } from '../shared/config';
 
 /** Command to toggle the icons packs */
 export const toggleIconPacks = async () => {
@@ -51,7 +52,7 @@ const handleQuickPickActions = (value: QuickPickItem) => {
 };
 
 const getActiveIconPack = (): string => {
-  return getManifestFile()?.config?.activeIconPack ?? '';
+  return getThemeConfig<string>('activeIconPack') ?? '';
 };
 
 /** Get all packs that can be used in this icon theme. */

@@ -1,4 +1,4 @@
-import { getObjectPropertyValue } from '../helpers/objects';
+import { get } from 'lodash-es';
 import type { Translation } from '../models';
 import { translation as langCs } from './lang-cs';
 import { translation as langDe } from './lang-de';
@@ -89,10 +89,7 @@ export const getTranslationValue = (
   translations = currentTranslation,
   fallback = fallbackTranslation
 ): string | undefined => {
-  return (
-    getObjectPropertyValue(translations, key) ??
-    getObjectPropertyValue(fallback, key)
-  );
+  return get(translations, key) ?? get(fallback, key);
 };
 
 /**

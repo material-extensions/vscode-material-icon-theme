@@ -1,4 +1,4 @@
-import merge from 'lodash.merge';
+import { merge } from 'lodash-es';
 import type { Config } from '../../../models';
 import type { RecursivePartial } from '../../../types';
 
