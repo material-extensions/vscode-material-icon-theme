@@ -6,6 +6,7 @@ const config: BuildOptions = {
     './src/extension/web/extension.ts',
     './src/module.ts',
   ],
+  minify: true,
   bundle: true,
   platform: 'node',
   target: 'node12',
