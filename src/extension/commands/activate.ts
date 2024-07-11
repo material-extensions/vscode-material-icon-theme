@@ -1,5 +1,5 @@
-import { translate } from '@core';
 import { window as codeWindow } from 'vscode';
+import { translate } from '../../core';
 import { getConfig } from '../shared/config';
 
 /** Activate the icon theme by changing the settings for the iconTheme. */

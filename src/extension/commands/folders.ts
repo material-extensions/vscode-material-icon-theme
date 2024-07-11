@@ -1,5 +1,5 @@
-import { capitalizeFirstLetter, folderIcons, translate } from '@core';
 import { type QuickPickItem, window as codeWindow } from 'vscode';
+import { capitalizeFirstLetter, folderIcons, translate } from '../../core';
 import { getThemeConfig, setThemeConfig } from '../shared/config';
 
 /** Command to toggle the folder icons. */

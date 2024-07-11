@@ -1,5 +1,5 @@
-import { IconPack, toTitleCase, translate } from '@core';
 import { type QuickPickItem, window as codeWindow } from 'vscode';
+import { IconPack, toTitleCase, translate } from '../../core';
 import { getThemeConfig, setThemeConfig } from '../shared/config';
 
 /** Command to toggle the icons packs */

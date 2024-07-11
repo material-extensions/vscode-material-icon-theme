@@ -38,4 +38,5 @@ export type { FolderTheme } from './models/icons/folders/folderTheme';
 export { IconPack } from './models/icons/iconPack';
 export type { LanguageIcon } from './models/icons/languages/languageIdentifier';
 export { FileNamePattern } from './models/icons/patterns/patterns';
+export { Manifest } from './models/manifest';
 export { parseByPattern } from './patterns/patterns';

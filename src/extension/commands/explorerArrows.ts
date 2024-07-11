@@ -1,5 +1,5 @@
-import { translate } from '@core';
 import { type QuickPickItem, window as codeWindow } from 'vscode';
+import { translate } from '../../core';
 import { getThemeConfig, setThemeConfig } from '../shared/config';
 
 /** Command to toggle the explorer arrows. */

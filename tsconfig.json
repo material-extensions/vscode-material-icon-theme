@@ -19,10 +19,7 @@
     "strict": true,
     "noImplicitAny": true,
     "noFallthroughCasesInSwitch": true,
-    "forceConsistentCasingInFileNames": true,
-    "paths": {
-      "@core": ["./src/core"]
-    }
+    "forceConsistentCasingInFileNames": true
   },
   "exclude": ["src/**/*.test.ts"]
 }

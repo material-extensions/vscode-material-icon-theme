@@ -7,7 +7,7 @@ import {
   generateFolderIcons,
   generateManifest,
   getDefaultConfiguration,
-} from '@core';
+} from '../../core';
 
 try {
   // Generate default file and folder icons

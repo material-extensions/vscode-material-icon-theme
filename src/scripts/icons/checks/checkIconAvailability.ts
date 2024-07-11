@@ -12,7 +12,7 @@ import {
   languageIcons,
   lightColorFileEnding,
   openedFolder,
-} from '@core';
+} from '../../../core';
 import { green, red } from '../../helpers/painter';
 import { similarity } from '../../helpers/similarity';
 

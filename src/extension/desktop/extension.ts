@@ -1,7 +1,7 @@
 'use strict';
 
-import { initTranslations } from '@core';
 import { type ExtensionContext, env, workspace } from 'vscode';
+import { initTranslations } from '../../core';
 import { detectConfigChanges } from '../tools/changeDetection';
 import { registered } from '../tools/registered';
 

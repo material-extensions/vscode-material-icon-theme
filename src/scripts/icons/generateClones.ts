@@ -3,7 +3,7 @@ import {
   folderIcons,
   generateConfiguredClones,
   generateManifest,
-} from '@core';
+} from '../../core';
 
 /**
  * This file is meant to be executed exclusively by npm scripts.

@@ -1,5 +1,6 @@
 import { readdir } from 'node:fs';
 import { join, parse } from 'node:path';
+
 import {
   type DefaultIcon,
   type FolderIcon,
@@ -10,7 +11,7 @@ import {
   languageIcons,
   lightColorFileEnding,
   openedFolder,
-} from '@core';
+} from '../../../core';
 import { green, red } from '../../helpers/painter';
 
 /**

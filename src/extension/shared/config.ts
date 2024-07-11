@@ -1,6 +1,6 @@
-import { type Config, extensionName } from '@core';
 import { merge, set } from 'lodash-es';
 import { extensions, workspace } from 'vscode';
+import { type Config, extensionName } from '../../core';
 
 /** Get configuration of vs code. */
 export const getConfig = (section?: string) => {

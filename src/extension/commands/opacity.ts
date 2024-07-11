@@ -1,9 +1,9 @@
+import { window as codeWindow } from 'vscode';
 import {
   getDefaultConfiguration,
   translate,
   validateOpacityValue,
-} from '@core';
-import { window as codeWindow } from 'vscode';
+} from '../../core';
 import { getThemeConfig, setThemeConfig } from '../shared/config';
 
 /** Command to toggle the folder icons. */
