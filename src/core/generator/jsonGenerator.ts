@@ -79,7 +79,9 @@ export const applyConfigurationToIcons = (
 };
 
 /**
- * Rename all icon files according their respective config
+ * Rename all icon files according their respective config.
+ *
+ * The rename triggers a change event in VS Code, which will update the icons in the UI.
  * @param config Icon Json Options
  */
 export const renameIconFiles = (config: Config) => {

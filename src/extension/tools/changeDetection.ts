@@ -19,7 +19,7 @@ import { configPropertyNames, getCurrentConfig } from '../shared/config';
 /** Compare the workspace and the user configurations with the current setup of the icons. */
 export const detectConfigChanges = (event?: ConfigurationChangeEvent) => {
   // if the changed config is not related to the extension
-  if (!event?.affectsConfiguration(extensionName) === false) return;
+  if (event?.affectsConfiguration(extensionName) === false) return;
 
   const config = getCurrentConfig();
   if (event) {
