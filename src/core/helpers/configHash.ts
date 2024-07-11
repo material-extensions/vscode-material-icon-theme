@@ -17,7 +17,14 @@ export const getFileConfigHash = (config: Partial<Config>): string => {
       (config.files?.customClones?.length ?? 0) > 0 ||
       (config.folders?.customClones?.length ?? 0) > 0
     ) {
-      fileConfigString += `~${getHash(JSON.stringify(config))}`;
+      fileConfigString += `~${getHash(
+        JSON.stringify({
+          saturation: config.saturation,
+          opacity: config.opacity,
+          foldersColor: config.folders?.color,
+          filesColor: config.files?.color,
+        })
+      )}`;
     }
     return fileConfigString;
   } catch (error) {
