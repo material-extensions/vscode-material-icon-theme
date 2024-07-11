@@ -1,4 +1,5 @@
 export {
+  customClonesIcons,
   generateConfiguredClones,
   hasCustomClones,
 } from './generator/clones/clonesGenerator';
@@ -11,6 +12,8 @@ export {
   manifestName,
   openedFolder,
 } from './generator/constants';
+export { generateFileIcons } from './generator/fileGenerator';
+export { generateFolderIcons } from './generator/folderGenerator';
 export { validateOpacityValue } from './generator/iconOpacity';
 export { validateSaturationValue } from './generator/iconSaturation';
 export {
@@ -36,4 +39,3 @@ export { IconPack } from './models/icons/iconPack';
 export type { LanguageIcon } from './models/icons/languages/languageIdentifier';
 export { FileNamePattern } from './models/icons/patterns/patterns';
 export { parseByPattern } from './patterns/patterns';
-export { customClonesIcons } from './generator/clones/clonesGenerator';
