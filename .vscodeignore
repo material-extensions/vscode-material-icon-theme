@@ -18,7 +18,8 @@ package-lock.json
 bun.lockb
 yarn.lock
 bunfig.toml
-devcontainer/**
+.devcontainer/**
+sheriff.config.ts
 build/**
 svgo.config.js
 .eslintignore
