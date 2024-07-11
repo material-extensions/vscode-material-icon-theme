@@ -6,12 +6,10 @@ export const sheriffConfig: SheriffConfig = {
   autoTagging: true,
   tagging: {
     'src/extension': 'extension',
-    'src/icons': 'icons',
     'src/core': 'core',
   },
   depRules: {
     root: ['core'],
     core: ['icons', 'core'],
-    icons: ['core'],
   },
 };

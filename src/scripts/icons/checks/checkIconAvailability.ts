@@ -6,11 +6,13 @@ import {
   type FileIcon,
   type FolderIcon,
   type FolderTheme,
+  fileIcons,
+  folderIcons,
   highContrastColorFileEnding,
+  languageIcons,
   lightColorFileEnding,
   openedFolder,
 } from '@core';
-import { fileIcons, folderIcons, languageIcons } from '@icon-definitions';
 import { green, red } from '../../helpers/painter';
 import { similarity } from '../../helpers/similarity';
 

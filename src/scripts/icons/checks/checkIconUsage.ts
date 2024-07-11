@@ -4,12 +4,14 @@ import {
   type DefaultIcon,
   type FolderIcon,
   type FolderTheme,
+  fileIcons,
+  folderIcons,
   highContrastColorFileEnding,
+  languageIcons,
   lightColorFileEnding,
   openedFolder,
 } from '@core';
-import { fileIcons, folderIcons, languageIcons } from '@icon-definitions';
-import { green, red } from 'scripts/helpers/painter';
+import { green, red } from '../../helpers/painter';
 
 /**
  * Defines the folder where all icon files are located.

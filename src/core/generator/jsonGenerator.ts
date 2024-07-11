@@ -1,10 +1,12 @@
 import { existsSync, readdirSync, renameSync, unlinkSync } from 'node:fs';
 import { join } from 'node:path';
-import { fileIcons, folderIcons, languageIcons } from '@icon-definitions';
 import { merge } from 'lodash-es';
 import { getFileConfigHash } from '../helpers/configHash';
 import { getCustomIconPaths } from '../helpers/customIconPaths';
 import { resolvePath } from '../helpers/resolvePath';
+import { fileIcons } from '../icons/fileIcons';
+import { folderIcons } from '../icons/folderIcons';
+import { languageIcons } from '../icons/languageIcons';
 import type { Config } from '../models/icons/configuration';
 import { Manifest } from '../models/manifest';
 import { padWithDefaultConfig } from './config/defaultConfig';
@@ -49,39 +51,38 @@ export const generateManifest = (config?: Partial<Config>): Manifest => {
 };
 
 /**
- * Apply the configuration to the icons.
+ * Apply the configuration to the icons. But only if the configuration has changed.
+ * If the affectedConfig is not set then all icons will be updated.
  *
  * @param config Configuration that customizes the icons and the manifest.
  */
 export const applyConfigurationToIcons = (
   config: Config,
-  affectedConfig: Partial<Config>
+  affectedConfig?: Set<string>
 ) => {
-  if (affectedConfig.files?.color) {
+  if (!affectedConfig || affectedConfig.has('files.color')) {
     generateFileIcons(config.files.color, config.opacity, config.saturation);
   }
-  if (affectedConfig.folders?.color) {
+  if (!affectedConfig || affectedConfig.has('folders.color')) {
     generateFolderIcons(
       config.folders.color,
       config.opacity,
       config.saturation
     );
   }
-  if (affectedConfig.opacity !== undefined) {
+  if (!affectedConfig || affectedConfig.has('opacity')) {
     setIconOpacity(config.opacity, config.files.associations);
   }
-  if (affectedConfig.saturation !== undefined) {
+  if (!affectedConfig || affectedConfig.has('saturation')) {
     setIconSaturation(config.saturation, config.files.associations);
   }
-
-  renameIconFiles(config);
 };
 
 /**
  * Rename all icon files according their respective config
  * @param config Icon Json Options
  */
-const renameIconFiles = (config: Config) => {
+export const renameIconFiles = (config: Config) => {
   const defaultIconPath = resolvePath(iconFolderPath);
   const customPaths = getCustomIconPaths(config.files.associations);
   const iconPaths = [defaultIconPath, ...customPaths];

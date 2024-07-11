@@ -3,93 +3,76 @@ import { join } from 'node:path';
 import {
   type Config,
   applyConfigurationToIcons,
+  clearCloneFolder,
+  customClonesIcons,
   extensionName,
   generateManifest,
+  hasCustomClones,
   manifestName,
+  renameIconFiles,
   resolvePath,
 } from '@core';
+import { merge } from 'lodash-es';
 import type { ConfigurationChangeEvent } from 'vscode';
-import { getConfigProperties, getThemeConfig } from '../shared/config';
+import { configPropertyNames, getCurrentConfig } from '../shared/config';
 
 /** Compare the workspace and the user configurations with the current setup of the icons. */
-export const detectConfigChanges = (event: ConfigurationChangeEvent) => {
-  if (!event.affectsConfiguration(extensionName)) return;
+export const detectConfigChanges = (event?: ConfigurationChangeEvent) => {
+  // if the changed config is not related to the extension
+  if (!event?.affectsConfiguration(extensionName) === false) return;
 
-  const { affectedConfig, updatedConfig } = compareConfigs(event);
-
-  try {
-    const startTime = performance.now();
-    applyConfigurationToIcons(updatedConfig, affectedConfig);
-    const endTime = performance.now();
-    console.log('Time taken to apply config to icons:', endTime - startTime);
-    const manifest = generateManifest(updatedConfig);
-
-    console.log('manifest', updatedConfig.activeIconPack);
-
-    // clear the clone folder
-    // clearCloneFolder(hasCustomClones(config));
-
-    // const manifestWithClones = merge(
-    //   {},
-    //   manifest,
-    //   customClonesIcons(manifest, config)
-    // );
-
-    const iconJsonPath = join(resolvePath(manifestName));
-    console.log('iconJsonPath', iconJsonPath);
-    console.log('active icon pack', updatedConfig.activeIconPack);
-    writeFileSync(
-      iconJsonPath,
-      JSON.stringify(manifest, undefined, 2),
-      'utf-8'
+  const config = getCurrentConfig();
+  if (event) {
+    const affectedConfigProperties = getAffectedConfigProperties(
+      event.affectsConfiguration
     );
-  } catch (error) {
-    console.error(error);
+    applyConfigurationToIcons(config, affectedConfigProperties);
+  } else {
+    applyConfigurationToIcons(config);
   }
+
+  renameIconFiles(config);
+  const manifest = generateManifest(config);
+
+  // clear the clone folder
+  clearCloneFolder(hasCustomClones(config));
+
+  const manifestWithClones = merge(
+    {},
+    manifest,
+    customClonesIcons(manifest, config)
+  );
+
+  const iconJsonPath = join(resolvePath(manifestName));
+  writeFileSync(
+    iconJsonPath,
+    JSON.stringify(manifestWithClones, undefined, 2),
+    'utf-8'
+  );
 };
 
 /**
- * Compares a specific configuration in the settings with a current configuration state.
- * The current configuration state is read from the icons json file.
+ * Get the affected configurations by the change event.
  *
  * @returns Updated configurations
  */
-const compareConfigs = ({
-  affectsConfiguration,
-}: ConfigurationChangeEvent): {
-  affectedConfig: Partial<Config>;
-  updatedConfig: Config;
-} => {
-  const configPropertyNames = Object.keys(getConfigProperties());
-
-  // Initialize updatedConfig with all configurations upfront to avoid conditional checks inside the loop
-  const updatedConfig = configPropertyNames.reduce<Record<string, unknown>>(
-    (acc, configNameWithExtensionId) => {
-      const configName = configNameWithExtensionId.replace(
-        `${extensionName}.`,
-        ''
-      );
-      const configValue = getThemeConfig(configName) ?? null;
-      acc[configName] = configValue;
-      return acc;
-    },
-    {}
-  );
-
+const getAffectedConfigProperties = (
+  affectsConfiguration: ConfigurationChangeEvent['affectsConfiguration']
+): Set<string> => {
   // Filter out only the affected configurations to minimize calls to affectsConfiguration
-  const affectedConfig = configPropertyNames.reduce<Record<string, unknown>>(
+  const affectedConfig = configPropertyNames.reduce<Set<string>>(
     (acc, configNameWithExtensionId) => {
       if (affectsConfiguration(configNameWithExtensionId)) {
         const configName = configNameWithExtensionId.replace(
           `${extensionName}.`,
           ''
-        );
-        acc[configName] = updatedConfig[configName];
+        ) as keyof Config;
+        acc.add(configName);
       }
       return acc;
     },
-    {}
+    new Set()
   );
 
-  return { affectedConfig, updatedConfig: updatedConfig as Config };
+  return affectedConfig;
 };

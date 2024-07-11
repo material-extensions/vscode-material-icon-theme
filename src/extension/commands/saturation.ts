@@ -1,6 +1,8 @@
-import { getDefaultConfiguration } from 'core/generator/config/defaultConfig';
-import { validateSaturationValue } from 'core/generator/iconSaturation';
-import { translate } from 'core/i18n/translate';
+import {
+  getDefaultConfiguration,
+  translate,
+  validateSaturationValue,
+} from '@core';
 import { window as codeWindow } from 'vscode';
 import { getThemeConfig, setThemeConfig } from '../shared/config';
 

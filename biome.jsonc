@@ -14,7 +14,7 @@
     "enabled": true,
     "rules": {
       "recommended": false,
-      "complexity": { "useArrowFunction": "off" },
+      "complexity": { "useArrowFunction": "error" },
       "correctness": {
         "noUnsafeFinally": "error",
         "noUnusedVariables": "error",

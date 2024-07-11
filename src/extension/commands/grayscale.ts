@@ -1,4 +1,4 @@
-import { translate } from 'core/i18n/translate';
+import { translate } from '@core';
 import { type QuickPickItem, window as codeWindow } from 'vscode';
 import { getThemeConfig, setThemeConfig } from '../shared/config';
 

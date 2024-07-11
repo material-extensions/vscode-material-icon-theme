@@ -1,6 +1,4 @@
-import { toTitleCase } from 'core/helpers/titlecase';
-import { translate } from 'core/i18n/translate';
-import { IconPack } from 'core/models/icons/iconPack';
+import { IconPack, toTitleCase, translate } from '@core';
 import { type QuickPickItem, window as codeWindow } from 'vscode';
 import { getThemeConfig, setThemeConfig } from '../shared/config';
 

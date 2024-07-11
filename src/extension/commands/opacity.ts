@@ -1,6 +1,8 @@
-import { getDefaultConfiguration } from 'core/generator/config/defaultConfig';
-import { validateOpacityValue } from 'core/generator/iconOpacity';
-import { translate } from 'core/i18n/translate';
+import {
+  getDefaultConfiguration,
+  translate,
+  validateOpacityValue,
+} from '@core';
 import { window as codeWindow } from 'vscode';
 import { getThemeConfig, setThemeConfig } from '../shared/config';
 

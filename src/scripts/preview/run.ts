@@ -1,6 +1,6 @@
-import { fileIcons } from '../../icons/fileIcons';
-import { folderIcons } from '../../icons/folderIcons';
-import { languageIcons } from '../../icons/languageIcons';
+import { fileIcons } from '../../core/icons/fileIcons';
+import { folderIcons } from '../../core/icons/folderIcons';
+import { languageIcons } from '../../core/icons/languageIcons';
 import { generatePreview } from './preview';
 
 const filterDuplicates = (icons: string[]) => {

@@ -1,8 +1,8 @@
 'use strict';
 
 import { initTranslations } from '@core';
-import { detectConfigChanges } from 'extension/tools/changeDetection';
 import { type ExtensionContext, env, workspace } from 'vscode';
+import { detectConfigChanges } from '../tools/changeDetection';
 import { registered } from '../tools/registered';
 
 /**
@@ -17,7 +17,7 @@ export const activate = async (context: ExtensionContext) => {
     context.subscriptions.push(...registered);
 
     // Initially trigger the config change detection
-    // detectConfigChanges();
+    detectConfigChanges();
 
     // Observe changes in the config
     workspace.onDidChangeConfiguration(detectConfigChanges);

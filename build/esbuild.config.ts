@@ -2,7 +2,7 @@ import type { BuildOptions } from 'esbuild';
 
 const config: BuildOptions = {
   entryPoints: [
-    './src/extension/extension.ts',
+    './src/extension/desktop/extension.ts',
     './src/extension/web/extension.ts',
     './src/module.ts',
   ],

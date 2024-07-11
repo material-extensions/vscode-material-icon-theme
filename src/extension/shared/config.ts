@@ -1,4 +1,5 @@
-import { merge } from 'lodash-es';
+import { type Config, extensionName } from '@core';
+import { merge, set } from 'lodash-es';
 import { extensions, workspace } from 'vscode';
 
 /** Get configuration of vs code. */
@@ -11,6 +12,9 @@ export const getConfigProperties = (): { [config: string]: unknown } => {
   return extensions.getExtension('PKief.material-icon-theme')?.packageJSON
     ?.contributes?.configuration?.properties;
 };
+
+/** Get list of all configration properties */
+export const configPropertyNames = Object.keys(getConfigProperties());
 
 /** Update configuration of vs code. */
 export const setConfig = (
@@ -94,4 +98,26 @@ const getConfigValue = <T>(
       themeConfig.defaultValue;
   }
   return configValue;
+};
+
+/**
+ * Get the current configuration of the theme.
+ *
+ * @returns Current configuration
+ */
+export const getCurrentConfig = (): Config => {
+  const updatedConfig = configPropertyNames.reduce<Record<string, unknown>>(
+    (acc, configNameWithExtensionId) => {
+      const configName = configNameWithExtensionId.replace(
+        `${extensionName}.`,
+        ''
+      );
+      const configValue = getThemeConfig(configName) ?? null;
+      set(acc, configName, configValue);
+      return acc;
+    },
+    {}
+  );
+
+  return updatedConfig as Config;
 };

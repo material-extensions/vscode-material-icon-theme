@@ -1,9 +1,9 @@
 import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import axios, { type AxiosRequestConfig } from 'axios';
-import type { Contributor } from 'scripts/models/scripts/contributors/contributor';
 import { green, red, yellow } from '../helpers/painter';
 import { createScreenshot } from '../helpers/screenshots';
+import type { Contributor } from '../models/scripts/contributors/contributor';
 
 /**
  * Parse link header

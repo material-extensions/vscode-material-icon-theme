@@ -16,6 +16,7 @@ export const writeSVGFiles = (
   const updatedSaturation = adjustSVGSaturation(updatedOpacity, saturation);
 
   const iconsPath = resolvePath(iconFolderPath);
+  console.log('iconsPath: ' + iconsPath);
   const iconsFolderPath = join(iconsPath, `${iconName}.svg`);
   try {
     writeFileSync(iconsFolderPath, updatedSaturation);

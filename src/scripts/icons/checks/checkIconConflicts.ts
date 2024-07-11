@@ -1,4 +1,4 @@
-import { fileIcons, folderIcons, languageIcons } from '@icon-definitions';
+import { fileIcons, folderIcons, languageIcons } from '@core';
 import { green, red } from '../../helpers/painter';
 
 /**

@@ -21,8 +21,7 @@
     "noFallthroughCasesInSwitch": true,
     "forceConsistentCasingInFileNames": true,
     "paths": {
-      "@core": ["./src/core"],
-      "@icon-definitions": ["./src/icons"]
+      "@core": ["./src/core"]
     }
   },
   "exclude": ["src/**/*.test.ts"]
