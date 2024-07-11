@@ -1,6 +1,6 @@
 import { lstatSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { getCustomIconPaths } from '../../extension/shared/config';
+import { getCustomIconPaths } from '../helpers/customIconPaths';
 import { resolvePath } from '../helpers/resolvePath';
 import { iconFolderPath } from './constants';
 
@@ -9,7 +9,10 @@ import { iconFolderPath } from './constants';
  * @param config Icon JSON options which include the saturation value.
  * @param fileNames Only change the saturation of certain file names.
  */
-export const setIconSaturation = (saturation: number) => {
+export const setIconSaturation = (
+  saturation: number,
+  filesAssociations: Record<string, string>
+) => {
   if (!validateSaturationValue(saturation)) {
     return console.error(
       'Invalid saturation value! Saturation must be a decimal number between 0 and 1!'
@@ -17,7 +20,7 @@ export const setIconSaturation = (saturation: number) => {
   }
 
   const iconsPath = resolvePath(iconFolderPath);
-  const customIconPaths = getCustomIconPaths();
+  const customIconPaths = getCustomIconPaths(filesAssociations);
   const iconFiles = readdirSync(iconsPath);
 
   // read all icon files from the icons folder

@@ -24,7 +24,7 @@
     "test": "bun test",
     "version": "bun run changelog && git add CHANGELOG.md",
     "vscode:prepublish": "bun run lint && bun run build",
-    "verify": "sheriff verify"
+    "verify": "bunx sheriff verify"
   },
   "publisher": "PKief",
   "author": {

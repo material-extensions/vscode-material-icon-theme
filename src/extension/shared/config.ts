@@ -1,4 +1,3 @@
-import { dirname, join } from 'node:path';
 import { merge } from 'lodash-es';
 import { extensions, workspace } from 'vscode';
 
@@ -95,10 +94,4 @@ const getConfigValue = <T>(
       themeConfig.defaultValue;
   }
   return configValue;
-};
-
-export const getCustomIconPaths = () => {
-  return Object.values(getThemeConfig('files.associations') ?? {})
-    .filter((v) => v.match(/^[.\/]+/)) // <- custom dirs have a relative path to the dist folder
-    .map((v) => dirname(join(__dirname, v)));
 };

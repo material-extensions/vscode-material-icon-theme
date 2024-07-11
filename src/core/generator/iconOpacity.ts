@@ -1,6 +1,6 @@
 import { lstatSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { getCustomIconPaths } from '../../extension/shared/config';
+import { getCustomIconPaths } from '../helpers/customIconPaths';
 import { resolvePath } from '../helpers/resolvePath';
 import { iconFolderPath } from './constants';
 
@@ -8,7 +8,10 @@ import { iconFolderPath } from './constants';
  * Changes the opacity of all icons in the set.
  * @param config Icon JSON options which include the opacity value.
  */
-export const setIconOpacity = (opacity: number) => {
+export const setIconOpacity = (
+  opacity: number,
+  filesAssociations: Record<string, string>
+) => {
   if (!validateOpacityValue(opacity)) {
     return console.error(
       'Invalid opacity value! Opacity must be a decimal number between 0 and 1!'
@@ -16,7 +19,7 @@ export const setIconOpacity = (opacity: number) => {
   }
 
   const iconsPath = resolvePath(iconFolderPath);
-  const customIconPaths = getCustomIconPaths();
+  const customIconPaths = getCustomIconPaths(filesAssociations);
   const iconFiles = readdirSync(iconsPath);
 
   try {

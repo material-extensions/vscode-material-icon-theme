@@ -19,9 +19,9 @@ export const detectConfigChanges = (event: ConfigurationChangeEvent) => {
 
   try {
     const startTime = performance.now();
-    applyConfigurationToIcons(affectedConfig);
+    applyConfigurationToIcons(updatedConfig, affectedConfig);
     const endTime = performance.now();
-    console.log('Time taken to generate manifest:', endTime - startTime);
+    console.log('Time taken to apply config to icons:', endTime - startTime);
     const manifest = generateManifest(updatedConfig);
 
     console.log('manifest', updatedConfig.activeIconPack);
