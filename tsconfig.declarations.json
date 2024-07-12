@@ -7,5 +7,5 @@
     "declarationDir": "./dist/types",
     "declarationMap": true
   },
-  "include": ["src/module.ts"]
+  "include": ["src/module/index.ts"]
 }

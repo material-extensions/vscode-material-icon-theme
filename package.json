@@ -2,7 +2,7 @@
   "name": "material-icon-theme",
   "displayName": "Material Icon Theme",
   "description": "Material Design Icons for Visual Studio Code",
-  "version": "5.5.0-alpha.3",
+  "version": "5.5.0-alpha.6",
   "scripts": {
     "precompile": "rimraf dist && bun run verify",
     "compile": "tsc -p ./",
@@ -24,7 +24,8 @@
     "test": "bun test",
     "version": "bun run changelog && git add CHANGELOG.md",
     "vscode:prepublish": "bun run lint && bun run build",
-    "verify": "bunx sheriff verify"
+    "verify": "bunx sheriff verify",
+    "prepublishOnly": "npm pkg set 'main'='./dist/module.cjs'"
   },
   "publisher": "PKief",
   "author": {
@@ -42,7 +43,7 @@
   "homepage": "https://github.com/material-extensions/vscode-material-icon-theme/blob/main/README.md",
   "repository": {
     "type": "git",
-    "url": "https://github.com/material-extensions/vscode-material-icon-theme.git"
+    "url": "git+https://github.com/material-extensions/vscode-material-icon-theme.git"
   },
   "bugs": {
     "url": "https://github.com/material-extensions/vscode-material-icon-theme/issues"
@@ -64,13 +65,13 @@
   "activationEvents": ["onStartupFinished"],
   "main": "./dist/extension/desktop/extension.cjs",
   "browser": "./dist/extension/web/extension.cjs",
-  "module": "./dist/module.cjs",
-  "types": "./dist/types/module.d.ts",
+  "module": "./dist/module/index.cjs",
+  "types": "./dist/types/module/index.d.ts",
   "sideEffects": false,
   "files": [
     "icons",
     "dist/material-icons.json",
-    "dist/module.cjs",
+    "dist/module/index.cjs",
     "dist/types"
   ],
   "contributes": {

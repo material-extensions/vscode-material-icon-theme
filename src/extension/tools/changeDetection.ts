@@ -1,6 +1,5 @@
 import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-
 import { merge } from 'lodash-es';
 import type { ConfigurationChangeEvent } from 'vscode';
 import {

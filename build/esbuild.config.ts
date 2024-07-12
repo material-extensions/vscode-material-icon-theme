@@ -4,8 +4,9 @@ const config: BuildOptions = {
   entryPoints: [
     './src/extension/desktop/extension.ts',
     './src/extension/web/extension.ts',
-    './src/module.ts',
+    './src/module/index.ts',
   ],
+  minify: true,
   bundle: true,
   platform: 'node',
   target: 'node12',
