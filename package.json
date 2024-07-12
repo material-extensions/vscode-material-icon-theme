@@ -2,7 +2,7 @@
   "name": "material-icon-theme",
   "displayName": "Material Icon Theme",
   "description": "Material Design Icons for Visual Studio Code",
-  "version": "5.5.0-alpha.6",
+  "version": "5.5.0-alpha.8",
   "scripts": {
     "precompile": "rimraf dist && bun run verify",
     "compile": "tsc -p ./",
@@ -25,7 +25,8 @@
     "version": "bun run changelog && git add CHANGELOG.md",
     "vscode:prepublish": "bun run lint && bun run build",
     "verify": "bunx sheriff verify",
-    "prepublishOnly": "npm pkg set main='./dist/module/index.cjs'"
+    "prepublishOnly": "npm pkg set main='./dist/module/index.cjs'",
+    "postpack": "git checkout package.json"
   },
   "publisher": "PKief",
   "author": {
