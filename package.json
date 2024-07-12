@@ -25,7 +25,7 @@
     "version": "bun run changelog && git add CHANGELOG.md",
     "vscode:prepublish": "bun run lint && bun run build",
     "verify": "bunx sheriff verify",
-    "prepublishOnly": "npm pkg set main='./dist/module/index.cjs'",
+    "prepublishOnly": "npm pkg set main=./dist/module/index.cjs",
     "postpack": "git checkout package.json"
   },
   "publisher": "PKief",
