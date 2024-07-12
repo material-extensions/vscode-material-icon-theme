@@ -10,7 +10,8 @@ export const sheriffConfig: SheriffConfig = {
     'src/module': 'module',
   },
   depRules: {
+    root: ['core'],
+    extension: ['core'],
     module: ['core'],
-    core: ['icons', 'core'],
   },
 };
