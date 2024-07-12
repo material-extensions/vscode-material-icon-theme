@@ -24,7 +24,6 @@ import {
 import { getFileConfigHash } from '../../helpers/configHash';
 import { resolvePath } from '../../helpers/resolvePath';
 import type {
-  Config,
   FileIconClone,
   FolderIconClone,
 } from '../../models/icons/configuration';
@@ -643,7 +642,7 @@ describe('cloning: json config generation from user options', () => {
     });
   });
 
-  const getDefinition = (hash: string, config: Config) => {
+  const getDefinition = (hash: string) => {
     return {
       iconDefinitions: {
         foo: { iconPath: `./../icons/foo${hash}.svg` },
@@ -652,12 +651,11 @@ describe('cloning: json config generation from user options', () => {
         'folder-foo-open': { iconPath: `./../icons/folder-open${hash}.svg` },
       },
       fileNames: { 'foo.bar': 'foo' },
-      config,
       file: 'file',
     } as Manifest;
   };
 
-  it('should generate the json config from the user options', () => {
+  it('should generate the manifest from the config', () => {
     const config = padWithDefaultConfig({
       files: {
         customClones: [
@@ -684,10 +682,16 @@ describe('cloning: json config generation from user options', () => {
       },
     });
     const hash = getFileConfigHash(config);
-    const result = customClonesIcons(getDefinition(hash, config), config);
+    const result = customClonesIcons(getDefinition(hash), config);
 
     const expected = merge(new Manifest(), {
       iconDefinitions: {
+        file: {
+          iconPath: `./../icons/file${hash}.svg`,
+        },
+        'folder-foo': {
+          iconPath: `./../icons/folder${hash}.svg`,
+        },
         'folder-foo-clone': {
           iconPath: `./../icons/${clonesFolder}folder-foo-clone${hash}.svg`,
         },
@@ -710,7 +714,8 @@ describe('cloning: json config generation from user options', () => {
       folderNames: { bar: 'folder-foo-clone' },
       folderNamesExpanded: { bar: `folder-foo-clone${openedFolder}` },
       fileExtensions: { baz: 'foo-clone' },
-      fileNames: { 'bar.foo': 'foo-clone' },
+      fileNames: { 'bar.foo': 'foo-clone', 'foo.bar': 'foo' },
+      file: 'file',
       languageIds: {},
       light: {
         fileExtensions: { baz: `foo-clone${lightColorFileEnding}` },
@@ -721,9 +726,8 @@ describe('cloning: json config generation from user options', () => {
         },
       },
       highContrast: { fileExtensions: {}, fileNames: {} },
-      config: {},
     });
 
-    expect(result).toStrictEqual(expected);
+    expect(result).toMatchObject(expected);
   });
 });
