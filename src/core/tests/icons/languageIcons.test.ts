@@ -1,12 +1,18 @@
 import { beforeEach, describe, expect, it } from 'bun:test';
-import { loadLanguageIconDefinitions } from '../../icons';
-import { IconPack, type LanguageIcon, Manifest } from '../../models';
+import type { Config } from '../../../module';
+import { getDefaultConfiguration } from '../../generator/config/defaultConfig';
+import { loadLanguageIconDefinitions } from '../../generator/languageGenerator';
+import { IconPack } from '../../models/icons/iconPack';
+import type { LanguageIcon } from '../../models/icons/languages/languageIdentifier';
+import { Manifest } from '../../models/manifest';
 
 describe('language icons', () => {
   let expectedManifest: Manifest;
+  let config: Config;
 
   beforeEach(() => {
     expectedManifest = new Manifest();
+    config = getDefaultConfiguration();
   });
 
   it('should configure icon definitions', () => {
@@ -18,6 +24,7 @@ describe('language icons', () => {
     const manifest = new Manifest();
     const iconDefinitions = loadLanguageIconDefinitions(
       languageIcons,
+      config,
       manifest
     );
 
@@ -49,6 +56,7 @@ describe('language icons', () => {
     const manifest = new Manifest();
     const iconDefinitions = loadLanguageIconDefinitions(
       languageIcons,
+      config,
       manifest
     );
 
@@ -69,15 +77,14 @@ describe('language icons', () => {
       { icon: { name: 'c' }, ids: ['c', 'd'], disabled: true },
     ];
 
-    const manifest = new Manifest({
-      activeIconPack: '',
-    });
+    config.activeIconPack = '';
+    const manifest = new Manifest();
     const iconDefinitions = loadLanguageIconDefinitions(
       languageIcons,
+      config,
       manifest
     );
 
-    expectedManifest.config.activeIconPack = '';
     expectedManifest.iconDefinitions = {};
     expectedManifest.languageIds = {};
     expect(iconDefinitions).toMatchObject(expectedManifest);
@@ -92,6 +99,7 @@ describe('language icons', () => {
     const manifest = new Manifest();
     const iconDefinitions = loadLanguageIconDefinitions(
       languageIcons,
+      config,
       manifest
     );
     expectedManifest.iconDefinitions = {
@@ -146,15 +154,15 @@ describe('language icons', () => {
       { icon: { name: 'json' }, ids: ['a'] },
     ];
 
-    const manifest = new Manifest({
-      languages: {
-        associations: {
-          xml: 'json',
-        },
+    const manifest = new Manifest();
+    config.languages = {
+      associations: {
+        xml: 'json',
       },
-    });
+    };
     const iconDefinitions = loadLanguageIconDefinitions(
       languageIcons,
+      config,
       manifest
     );
 
@@ -167,9 +175,7 @@ describe('language icons', () => {
       a: 'json',
       xml: 'json',
     };
-    expectedManifest.config!.languages!.associations = {
-      xml: 'json',
-    };
+
     expect(iconDefinitions).toMatchObject(expectedManifest);
   });
 });

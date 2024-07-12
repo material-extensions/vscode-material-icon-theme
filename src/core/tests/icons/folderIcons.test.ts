@@ -1,11 +1,15 @@
 import { beforeAll, beforeEach, describe, expect, it } from 'bun:test';
-import { loadFolderIconDefinitions } from '../../icons';
-import { getDefaultConfiguration } from '../../icons/generator/config/defaultConfig';
-import { type FolderTheme, IconPack, Manifest } from '../../models';
+import type { Config } from '../../../module';
+import { getDefaultConfiguration } from '../../generator/config/defaultConfig';
+import { loadFolderIconDefinitions } from '../../generator/folderGenerator';
+import type { FolderTheme } from '../../models/icons/folders/folderTheme';
+import { IconPack } from '../../models/icons/iconPack';
+import { Manifest } from '../../models/manifest';
 
 describe('folder icons', () => {
   let folderIcons: FolderTheme[];
-  let expectedConfig: Manifest;
+  let expectedManifest: Manifest;
+  let config: Config;
 
   beforeAll(() => {
     folderIcons = [
@@ -33,14 +37,19 @@ describe('folder icons', () => {
   });
 
   beforeEach(() => {
-    expectedConfig = new Manifest();
+    config = getDefaultConfiguration();
+    expectedManifest = new Manifest();
   });
 
   it('should configure icon definitions', () => {
     const manifest = new Manifest();
-    const iconDefinitions = loadFolderIconDefinitions(folderIcons, manifest);
+    const iconDefinitions = loadFolderIconDefinitions(
+      folderIcons,
+      config,
+      manifest
+    );
 
-    expectedConfig.iconDefinitions = {
+    expectedManifest.iconDefinitions = {
       folder: {
         iconPath: './../icons/folder.svg',
       },
@@ -66,11 +75,11 @@ describe('folder icons', () => {
         iconPath: './../icons/folder-angular-open.svg',
       },
     };
-    expectedConfig.folder = 'folder';
-    expectedConfig.folderExpanded = 'folder-open';
-    expectedConfig.rootFolder = 'folder-root';
-    expectedConfig.rootFolderExpanded = 'folder-root-open';
-    expectedConfig.folderNames = {
+    expectedManifest.folder = 'folder';
+    expectedManifest.folderExpanded = 'folder-open';
+    expectedManifest.rootFolder = 'folder-root';
+    expectedManifest.rootFolderExpanded = 'folder-root-open';
+    expectedManifest.folderNames = {
       src: 'folder-src',
       source: 'folder-src',
       angular: 'folder-angular',
@@ -88,7 +97,7 @@ describe('folder icons', () => {
       '.angular': 'folder-angular',
       '.ng': 'folder-angular',
     };
-    expectedConfig.folderNamesExpanded = {
+    expectedManifest.folderNamesExpanded = {
       src: 'folder-src-open',
       source: 'folder-src-open',
       angular: 'folder-angular-open',
@@ -106,33 +115,38 @@ describe('folder icons', () => {
       '.angular': 'folder-angular-open',
       '.ng': 'folder-angular-open',
     };
-    expectedConfig.hidesExplorerArrows = false;
+    expectedManifest.hidesExplorerArrows = false;
 
-    expect(iconDefinitions).toMatchObject(expectedConfig);
+    expect(iconDefinitions).toMatchObject(expectedManifest);
   });
 
   it('should deactivate folder icons', () => {
-    const config = getDefaultConfiguration();
     config.folders.theme = 'none';
-    const manifest = new Manifest(config);
-    const iconDefinitions = loadFolderIconDefinitions(folderIcons, manifest);
+    const manifest = new Manifest();
+    const iconDefinitions = loadFolderIconDefinitions(
+      folderIcons,
+      config,
+      manifest
+    );
 
-    expectedConfig.iconDefinitions = {};
-    expectedConfig.folderNames = {};
-    expectedConfig.folderNamesExpanded = {};
-    expectedConfig.hidesExplorerArrows = false;
-    expectedConfig.config!.folders!.theme = 'none';
+    expectedManifest.iconDefinitions = {};
+    expectedManifest.folderNames = {};
+    expectedManifest.folderNamesExpanded = {};
+    expectedManifest.hidesExplorerArrows = false;
 
-    expect(iconDefinitions).toMatchObject(expectedConfig);
+    expect(iconDefinitions).toMatchObject(expectedManifest);
   });
 
   it('should enable folder theme', () => {
-    const options = getDefaultConfiguration();
-    options.folders.theme = 'blue';
-    const manifest = new Manifest(options);
-    const iconDefinitions = loadFolderIconDefinitions(folderIcons, manifest);
+    config.folders.theme = 'blue';
+    const manifest = new Manifest();
+    const iconDefinitions = loadFolderIconDefinitions(
+      folderIcons,
+      config,
+      manifest
+    );
 
-    expectedConfig.iconDefinitions = {
+    expectedManifest.iconDefinitions = {
       'folder-blue': {
         iconPath: './../icons/folder-blue.svg',
       },
@@ -146,11 +160,11 @@ describe('folder icons', () => {
         iconPath: './../icons/folder-blue-src-open.svg',
       },
     };
-    expectedConfig.folder = 'folder-blue';
-    expectedConfig.folderExpanded = 'folder-blue-open';
-    expectedConfig.rootFolder = 'folder-blue';
-    expectedConfig.rootFolderExpanded = 'folder-blue-open';
-    expectedConfig.folderNames = {
+    expectedManifest.folder = 'folder-blue';
+    expectedManifest.folderExpanded = 'folder-blue-open';
+    expectedManifest.rootFolder = 'folder-blue';
+    expectedManifest.rootFolderExpanded = 'folder-blue-open';
+    expectedManifest.folderNames = {
       src: 'folder-blue-src',
       source: 'folder-blue-src',
       _src: 'folder-blue-src',
@@ -160,7 +174,7 @@ describe('folder icons', () => {
       '.src': 'folder-blue-src',
       '.source': 'folder-blue-src',
     };
-    expectedConfig.folderNamesExpanded = {
+    expectedManifest.folderNamesExpanded = {
       src: 'folder-blue-src-open',
       source: 'folder-blue-src-open',
       _src: 'folder-blue-src-open',
@@ -170,20 +184,22 @@ describe('folder icons', () => {
       '.src': 'folder-blue-src-open',
       '.source': 'folder-blue-src-open',
     };
-    expectedConfig.hidesExplorerArrows = false;
-    expectedConfig.config!.folders!.theme = 'blue';
+    expectedManifest.hidesExplorerArrows = false;
 
-    expect(iconDefinitions).toMatchObject(expectedConfig);
+    expect(iconDefinitions).toMatchObject(expectedManifest);
   });
 
   it('should configure custom icon associations', () => {
-    const config = getDefaultConfiguration();
     config.folders.associations = {
       sample: 'src',
     };
-    const manifest = new Manifest(config);
-    const iconDefinitions = loadFolderIconDefinitions(folderIcons, manifest);
-    expectedConfig.iconDefinitions = {
+    const manifest = new Manifest();
+    const iconDefinitions = loadFolderIconDefinitions(
+      folderIcons,
+      config,
+      manifest
+    );
+    expectedManifest.iconDefinitions = {
       folder: {
         iconPath: './../icons/folder.svg',
       },
@@ -209,11 +225,11 @@ describe('folder icons', () => {
         iconPath: './../icons/folder-angular-open.svg',
       },
     };
-    expectedConfig.folder = 'folder';
-    expectedConfig.folderExpanded = 'folder-open';
-    expectedConfig.rootFolder = 'folder-root';
-    expectedConfig.rootFolderExpanded = 'folder-root-open';
-    expectedConfig.folderNames = {
+    expectedManifest.folder = 'folder';
+    expectedManifest.folderExpanded = 'folder-open';
+    expectedManifest.rootFolder = 'folder-root';
+    expectedManifest.rootFolderExpanded = 'folder-root-open';
+    expectedManifest.folderNames = {
       src: 'folder-src',
       source: 'folder-src',
       angular: 'folder-angular',
@@ -235,7 +251,7 @@ describe('folder icons', () => {
       '.ng': 'folder-angular',
       '.sample': 'folder-src',
     };
-    expectedConfig.folderNamesExpanded = {
+    expectedManifest.folderNamesExpanded = {
       src: 'folder-src-open',
       source: 'folder-src-open',
       angular: 'folder-angular-open',
@@ -257,18 +273,20 @@ describe('folder icons', () => {
       '.ng': 'folder-angular-open',
       '.sample': 'folder-src-open',
     };
-    expectedConfig.hidesExplorerArrows = false;
-    expectedConfig.config!.folders!.associations = {
-      sample: 'src',
-    };
+    expectedManifest.hidesExplorerArrows = false;
 
-    expect(iconDefinitions).toMatchObject(expectedConfig);
+    expect(iconDefinitions).toMatchObject(expectedManifest);
   });
 
   it('should disable icon packs', () => {
-    const manifest = new Manifest({ activeIconPack: '' });
-    const iconDefinitions = loadFolderIconDefinitions(folderIcons, manifest);
-    expectedConfig.iconDefinitions = {
+    const manifest = new Manifest();
+    config.activeIconPack = '';
+    const iconDefinitions = loadFolderIconDefinitions(
+      folderIcons,
+      config,
+      manifest
+    );
+    expectedManifest.iconDefinitions = {
       folder: {
         iconPath: './../icons/folder.svg',
       },
@@ -288,11 +306,11 @@ describe('folder icons', () => {
         iconPath: './../icons/folder-src-open.svg',
       },
     };
-    expectedConfig.folder = 'folder';
-    expectedConfig.folderExpanded = 'folder-open';
-    expectedConfig.rootFolder = 'folder-root';
-    expectedConfig.rootFolderExpanded = 'folder-root-open';
-    expectedConfig.folderNames = {
+    expectedManifest.folder = 'folder';
+    expectedManifest.folderExpanded = 'folder-open';
+    expectedManifest.rootFolder = 'folder-root';
+    expectedManifest.rootFolderExpanded = 'folder-root-open';
+    expectedManifest.folderNames = {
       src: 'folder-src',
       source: 'folder-src',
       _src: 'folder-src',
@@ -302,7 +320,7 @@ describe('folder icons', () => {
       '.src': 'folder-src',
       '.source': 'folder-src',
     };
-    expectedConfig.folderNamesExpanded = {
+    expectedManifest.folderNamesExpanded = {
       src: 'folder-src-open',
       source: 'folder-src-open',
       _src: 'folder-src-open',
@@ -312,12 +330,9 @@ describe('folder icons', () => {
       '.src': 'folder-src-open',
       '.source': 'folder-src-open',
     };
-    expectedConfig.hidesExplorerArrows = false;
+    expectedManifest.hidesExplorerArrows = false;
 
-    // disable default icon pack by using empty string
-    expectedConfig.config!.activeIconPack = '';
-
-    expect(iconDefinitions).toMatchObject(expectedConfig);
+    expect(iconDefinitions).toMatchObject(expectedManifest);
   });
 
   it('should configure folder icons for light and high contrast', () => {
@@ -339,9 +354,10 @@ describe('folder icons', () => {
     const manifest = new Manifest();
     const iconDefinitions = loadFolderIconDefinitions(
       lightHighContrastFolderIcons,
+      config,
       manifest
     );
-    expectedConfig.iconDefinitions = {
+    expectedManifest.iconDefinitions = {
       folder: {
         iconPath: './../icons/folder.svg',
       },
@@ -399,11 +415,11 @@ describe('folder icons', () => {
         iconPath: './../icons/folder-src-open_highContrast.svg',
       },
     };
-    expectedConfig.folder = 'folder';
-    expectedConfig.folderExpanded = 'folder-open';
-    expectedConfig.rootFolder = 'folder-root';
-    expectedConfig.rootFolderExpanded = 'folder-root-open';
-    expectedConfig.folderNames = {
+    expectedManifest.folder = 'folder';
+    expectedManifest.folderExpanded = 'folder-open';
+    expectedManifest.rootFolder = 'folder-root';
+    expectedManifest.rootFolderExpanded = 'folder-root-open';
+    expectedManifest.folderNames = {
       src: 'folder-src',
       source: 'folder-src',
       _src: 'folder-src',
@@ -413,7 +429,7 @@ describe('folder icons', () => {
       '.src': 'folder-src',
       '.source': 'folder-src',
     };
-    expectedConfig.folderNamesExpanded = {
+    expectedManifest.folderNamesExpanded = {
       src: 'folder-src-open',
       source: 'folder-src-open',
       _src: 'folder-src-open',
@@ -423,7 +439,7 @@ describe('folder icons', () => {
       '.src': 'folder-src-open',
       '.source': 'folder-src-open',
     };
-    expectedConfig.light = {
+    expectedManifest.light = {
       fileExtensions: {},
       fileNames: {},
       folder: 'folder_light',
@@ -451,7 +467,7 @@ describe('folder icons', () => {
         '.source': 'folder-src-open_light',
       },
     };
-    expectedConfig.highContrast = {
+    expectedManifest.highContrast = {
       fileExtensions: {},
       fileNames: {},
       folder: 'folder_highContrast',
@@ -479,15 +495,18 @@ describe('folder icons', () => {
         '.source': 'folder-src-open_highContrast',
       },
     };
-    expectedConfig.hidesExplorerArrows = false;
-    expect(iconDefinitions).toMatchObject(expectedConfig);
+    expectedManifest.hidesExplorerArrows = false;
+    expect(iconDefinitions).toMatchObject(expectedManifest);
   });
 
   it('should hide explorer arrows', () => {
-    const manifest = new Manifest({
-      hidesExplorerArrows: true,
-    });
-    const iconDefinitions = loadFolderIconDefinitions(folderIcons, manifest);
+    const manifest = new Manifest();
+    config.hidesExplorerArrows = true;
+    const iconDefinitions = loadFolderIconDefinitions(
+      folderIcons,
+      config,
+      manifest
+    );
 
     expect(iconDefinitions.hidesExplorerArrows).toBe(true);
   });
@@ -515,9 +534,13 @@ describe('folder icons', () => {
     ];
 
     const manifest = new Manifest();
-    const iconDefinitions = loadFolderIconDefinitions(folderTheme, manifest);
+    const iconDefinitions = loadFolderIconDefinitions(
+      folderTheme,
+      config,
+      manifest
+    );
 
-    expectedConfig.iconDefinitions = {
+    expectedManifest.iconDefinitions = {
       foo: { iconPath: './../icons/foo.svg' },
       'foo-open': { iconPath: './../icons/foo-open.svg' },
       'foo-clone': { iconPath: './../icons/foo-clone.clone.svg' },
@@ -531,11 +554,11 @@ describe('folder icons', () => {
       'folder-root-open': { iconPath: './../icons/folder-root-open.svg' },
       folder: { iconPath: './../icons/folder.svg' },
     };
-    expectedConfig.folder = 'folder';
-    expectedConfig.folderExpanded = 'folder-open';
-    expectedConfig.rootFolder = 'folder-root';
-    expectedConfig.rootFolderExpanded = 'folder-root-open';
-    expectedConfig.folderNames = {
+    expectedManifest.folder = 'folder';
+    expectedManifest.folderExpanded = 'folder-open';
+    expectedManifest.rootFolder = 'folder-root';
+    expectedManifest.rootFolderExpanded = 'folder-root-open';
+    expectedManifest.folderNames = {
       foo: 'foo',
       '.foo': 'foo',
       _foo: 'foo',
@@ -553,7 +576,7 @@ describe('folder icons', () => {
       _qux: 'foo-clone',
       __qux__: 'foo-clone',
     };
-    expectedConfig.folderNamesExpanded = {
+    expectedManifest.folderNamesExpanded = {
       foo: 'foo-open',
       '.foo': 'foo-open',
       _foo: 'foo-open',
@@ -571,7 +594,7 @@ describe('folder icons', () => {
       _qux: 'foo-clone-open',
       __qux__: 'foo-clone-open',
     };
-    expectedConfig.light = {
+    expectedManifest.light = {
       fileExtensions: {},
       fileNames: {},
       folderNames: {
@@ -595,9 +618,9 @@ describe('folder icons', () => {
         __qux__: 'foo-clone-open_light',
       },
     };
-    expectedConfig.hidesExplorerArrows = false;
+    expectedManifest.hidesExplorerArrows = false;
 
-    expect(iconDefinitions).toMatchObject(expectedConfig);
+    expect(iconDefinitions).toMatchObject(expectedManifest);
   });
 
   it('should allow interoperability between cloned and user custom associations', () => {
@@ -620,16 +643,18 @@ describe('folder icons', () => {
       },
     ];
 
-    const config = getDefaultConfiguration();
     config.folders.associations = {
       baz: 'bar', // assigned to the clone
     };
 
-    const manifest = new Manifest(config);
-    const iconDefinitions = loadFolderIconDefinitions(folderTheme, manifest);
+    const manifest = new Manifest();
+    const iconDefinitions = loadFolderIconDefinitions(
+      folderTheme,
+      config,
+      manifest
+    );
 
-    expectedConfig.config = config;
-    expectedConfig.iconDefinitions = {
+    expectedManifest.iconDefinitions = {
       'folder-foo': { iconPath: './../icons/folder-foo.svg' },
       'folder-foo-open': { iconPath: './../icons/folder-foo-open.svg' },
       'folder-bar': { iconPath: './../icons/folder-bar.clone.svg' },
@@ -639,11 +664,11 @@ describe('folder icons', () => {
       'folder-root': { iconPath: './../icons/folder-root.svg' },
       'folder-root-open': { iconPath: './../icons/folder-root-open.svg' },
     };
-    expectedConfig.folder = 'folder';
-    expectedConfig.folderExpanded = 'folder-open';
-    expectedConfig.rootFolder = 'folder-root';
-    expectedConfig.rootFolderExpanded = 'folder-root-open';
-    expectedConfig.folderNames = {
+    expectedManifest.folder = 'folder';
+    expectedManifest.folderExpanded = 'folder-open';
+    expectedManifest.rootFolder = 'folder-root';
+    expectedManifest.rootFolderExpanded = 'folder-root-open';
+    expectedManifest.folderNames = {
       '.bar': 'folder-bar',
       '.baz': 'folder-bar',
       '.foo': 'folder-foo',
@@ -657,7 +682,7 @@ describe('folder icons', () => {
       baz: 'folder-bar',
       foo: 'folder-foo',
     };
-    expectedConfig.folderNamesExpanded = {
+    expectedManifest.folderNamesExpanded = {
       '.bar': 'folder-bar-open',
       '.baz': 'folder-bar-open',
       '.foo': 'folder-foo-open',
@@ -672,12 +697,12 @@ describe('folder icons', () => {
       foo: 'folder-foo-open',
     };
 
-    expectedConfig.light = {
+    expectedManifest.light = {
       fileExtensions: {},
       fileNames: {},
     };
-    expectedConfig.hidesExplorerArrows = false;
+    expectedManifest.hidesExplorerArrows = false;
 
-    expect(iconDefinitions).toMatchObject(expectedConfig);
+    expect(iconDefinitions).toMatchObject(expectedManifest);
   });
 });

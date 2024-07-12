@@ -1,12 +1,17 @@
 import { beforeEach, describe, expect, it } from 'bun:test';
-import { loadFileIconDefinitions } from '../../icons';
-import { getDefaultConfiguration } from '../../icons/generator/config/defaultConfig';
-import { type FileIcons, IconPack, Manifest } from '../../models';
+import type { Config } from '../../../module';
+import { getDefaultConfiguration } from '../../generator/config/defaultConfig';
+import { loadFileIconDefinitions } from '../../generator/fileGenerator';
+import type { FileIcons } from '../../models/icons/files/fileTypes';
+import { IconPack } from '../../models/icons/iconPack';
+import { Manifest } from '../../models/manifest';
 
 describe('file icons', () => {
   let expectedManifest: Manifest;
+  let config: Config;
 
   beforeEach(() => {
+    config = getDefaultConfiguration();
     expectedManifest = new Manifest();
   });
 
@@ -28,7 +33,11 @@ describe('file icons', () => {
     };
 
     const manifest = new Manifest();
-    const iconDefinitions = loadFileIconDefinitions(fileIcons, manifest);
+    const iconDefinitions = loadFileIconDefinitions(
+      fileIcons,
+      config,
+      manifest
+    );
 
     expectedManifest.iconDefinitions = {
       angular: {
@@ -71,8 +80,13 @@ describe('file icons', () => {
       ],
     };
 
-    const manifest = new Manifest({ activeIconPack: '' });
-    const iconDefinitions = loadFileIconDefinitions(fileIcons, manifest);
+    const manifest = new Manifest();
+    config.activeIconPack = '';
+    const iconDefinitions = loadFileIconDefinitions(
+      fileIcons,
+      config,
+      manifest
+    );
 
     expectedManifest.iconDefinitions = {
       file: {
@@ -89,9 +103,6 @@ describe('file icons', () => {
     expectedManifest.fileNames = {
       'filename.js': 'javascript',
     };
-
-    // disable default icon pack by using empty string
-    expectedManifest.config.activeIconPack = '';
 
     expect(iconDefinitions).toMatchObject(expectedManifest);
   });
@@ -116,8 +127,12 @@ describe('file icons', () => {
       '*.sample.ts': 'angular',
       'sample.js': 'javascript',
     };
-    const manifest = new Manifest(config);
-    const iconDefinitions = loadFileIconDefinitions(fileIcons, manifest);
+    const manifest = new Manifest();
+    const iconDefinitions = loadFileIconDefinitions(
+      fileIcons,
+      config,
+      manifest
+    );
 
     expectedManifest.iconDefinitions = {
       file: {
@@ -141,7 +156,8 @@ describe('file icons', () => {
       'sample.js': 'javascript',
       'filename.js': 'javascript',
     };
-    expectedManifest.config!.files!.associations = {
+
+    config.files.associations = {
       '*.sample.ts': 'angular',
       'sample.js': 'javascript',
     };
@@ -169,7 +185,11 @@ describe('file icons', () => {
     };
 
     const manifest = new Manifest();
-    const iconDefinitions = loadFileIconDefinitions(fileIcons, manifest);
+    const iconDefinitions = loadFileIconDefinitions(
+      fileIcons,
+      config,
+      manifest
+    );
     expectedManifest.iconDefinitions = {
       file: {
         iconPath: './../icons/file.svg',
@@ -251,7 +271,11 @@ describe('file icons', () => {
     };
 
     const manifest = new Manifest();
-    const iconDefinitions = loadFileIconDefinitions(fileIcons, manifest);
+    const iconDefinitions = loadFileIconDefinitions(
+      fileIcons,
+      config,
+      manifest
+    );
 
     expectedManifest.iconDefinitions = {
       foo: {
@@ -307,15 +331,17 @@ describe('file icons', () => {
       ],
     };
 
-    const config = getDefaultConfiguration();
     config.files.associations = {
       '*.baz': 'bar', // assigned to the clone
     };
 
-    const manifest = new Manifest(config);
-    const iconDefinitions = loadFileIconDefinitions(fileIcons, manifest);
+    const manifest = new Manifest();
+    const iconDefinitions = loadFileIconDefinitions(
+      fileIcons,
+      config,
+      manifest
+    );
 
-    expectedManifest.config = config;
     expectedManifest.iconDefinitions = {
       foo: {
         iconPath: './../icons/foo.svg',

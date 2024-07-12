@@ -1,40 +1,38 @@
 import { beforeAll, describe, expect, it, mock } from 'bun:test';
 import { merge } from 'lodash-es';
 import { type INode, parseSync } from 'svgson';
-import { getFileConfigHash } from '../../helpers/configHash';
+import { customClonesIcons } from '../../generator/clones/clonesGenerator';
+import {
+  Type,
+  Variant,
+  getCloneData,
+} from '../../generator/clones/utils/cloneData';
+import {
+  cloneIcon,
+  getStyle,
+  traverse,
+} from '../../generator/clones/utils/cloning';
+import { closerMaterialColorTo } from '../../generator/clones/utils/color/materialPalette';
+import { materialPalette as palette } from '../../generator/clones/utils/color/materialPalette';
+import { padWithDefaultConfig } from '../../generator/config/defaultConfig';
 import {
   clonesFolder,
   iconFolderPath,
   lightColorFileEnding,
   openedFolder,
-} from '../../icons';
-import { customClonesIcons } from '../../icons/generator/clones/clonesGenerator';
-import {
-  Type,
-  Variant,
-  getCloneData,
-  resolvePath,
-} from '../../icons/generator/clones/utils/cloneData';
-import {
-  cloneIcon,
-  getStyle,
-  traverse,
-} from '../../icons/generator/clones/utils/cloning';
+} from '../../generator/constants';
+import { getFileConfigHash } from '../../helpers/configHash';
+import { resolvePath } from '../../helpers/resolvePath';
+import type {
+  Config,
+  FileIconClone,
+  FolderIconClone,
+} from '../../models/icons/configuration';
+import { Manifest } from '../../models/manifest';
 import {
   isValidColor,
   orderDarkToLight,
-} from '../../icons/generator/clones/utils/color/colors';
-import {
-  closerMaterialColorTo,
-  materialPalette as palette,
-} from '../../icons/generator/clones/utils/color/materialPalette';
-import { padWithDefaultConfig } from '../../icons/generator/config/defaultConfig';
-import {
-  type Config,
-  type FileIconClone,
-  type FolderIconClone,
-  Manifest,
-} from '../../models';
+} from './../../generator/clones/utils/color/colors';
 import * as icon from './data/icons';
 
 describe('cloning: color manipulation', () => {

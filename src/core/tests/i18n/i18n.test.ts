@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'bun:test';
 import { get } from 'lodash-es';
-import { getTranslationValue, replace } from '../../i18n';
-import type { Translation } from '../../models';
+import { getTranslationValue, replace } from '../../i18n/translate';
+import type { Translation } from '../../models/i18n/translation';
 
 describe('i18n', () => {
   it('should translate key', () => {
