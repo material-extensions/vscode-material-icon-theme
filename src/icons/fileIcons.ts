@@ -930,6 +930,10 @@ export const fileIcons: FileIcons = {
       light: true,
     },
     {
+      name: 'liara',
+      fileNames: ['liara.json', '.liaraignore'],
+    },
+    {
       name: 'verdaccio',
       fileNames: ['verdaccio.yml'],
     },
