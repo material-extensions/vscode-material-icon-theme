@@ -788,6 +788,22 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['enum', 'enums'],
       },
       {
+        name: 'folder-dart',
+        folderNames: ['.dart_tool'],
+      },
+      {
+        name: 'folder-flutter',
+        folderNames: ['flutter_build'],
+      },
+      {
+        name: 'folder-feature',
+        folderNames: ['feature', 'features'],
+      },
+      {
+        name: 'folder-navigation',
+        folderNames: ['navigation', 'navigations'],
+      },
+      {
         name: 'folder-contract',
         folderNames: [
           'pact',

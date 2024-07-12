@@ -9,6 +9,15 @@ export const fileIcons: FileIcons = {
   icons: parseByPattern([
     { name: 'html', fileExtensions: ['htm', 'xhtml', 'html_vm', 'asp'] },
     {
+      name: 'metadata',
+      fileExtensions: ['metadata'],
+    },
+    {
+      name: 'flutter',
+      fileExtensions: ['flutter'],
+      fileNames: ['.flutter-plugins', '.flutter-plugins-dependencies'],
+    },
+    {
       name: 'pug',
       fileExtensions: ['jade', 'pug'],
       fileNames: ['.pug-lintrc', '.pug-lintrc.js', '.pug-lintrc.json'],
