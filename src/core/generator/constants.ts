@@ -6,37 +6,37 @@ export const extensionName = 'material-icon-theme';
 /**
  * Path where the icons are located.
  */
-export const iconFolderPath: string = './../icons/';
+export const iconFolderPath = './../icons/';
 
 /**
  * File name of the JSON file that will be generated to the out folder.
  */
-export const manifestName: string = 'material-icons.json';
+export const manifestName = 'material-icons.json';
 
 /**
  * File ending for opened folders.
  */
-export const openedFolder: string = '-open';
+export const openedFolder = '-open';
 
 /**
  * File ending for light icons.
  */
-export const lightColorFileEnding: string = '_light';
+export const lightColorFileEnding = '_light';
 
 /**
  * File ending for high contrast icons.
  */
-export const highContrastColorFileEnding: string = '_highContrast';
+export const highContrastColorFileEnding = '_highContrast';
 
 /**
  * Pattern to match the file icon definition.
  */
-export const cloneIconExtension: string = '.clone.svg';
+export const cloneIconExtension = '.clone.svg';
 
 /**
  * User Defined Clones subfolder
  */
-export const clonesFolder: string = 'clones/';
+export const clonesFolder = 'clones/';
 
 /**
  * Pattern to match wildcards for custom file icon mappings.
