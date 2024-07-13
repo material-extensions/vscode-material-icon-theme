@@ -34,7 +34,6 @@ export const fileIcons: FileIcons = {
       fileNames: [
         '.jscsrc',
         '.jshintrc',
-        'composer.lock',
         '.jsbeautifyrc',
         '.esformatter',
         'cdp.pid',
@@ -42,6 +41,7 @@ export const fileIcons: FileIcons = {
         '.whitesource',
       ],
     },
+    { name: 'composer', fileNames: ['composer.json', 'composer.lock'] },
     {
       name: 'hjson',
       fileExtensions: ['hjson'],
