@@ -2395,16 +2395,10 @@ export const fileIcons: FileIcons = {
     { name: 'biome', fileNames: ['biome.json', 'biome.jsonc'] },
     {
       name: 'esbuild',
-      fileNames: [
-        'esbuild.js',
-        'esbuild.ts',
-        'esbuild.cjs',
-        'esbuild.mjs',
-        'esbuild.config.js',
-        'esbuild.config.ts',
-        'esbuild.config.cjs',
-        'esbuild.config.mjs',
-      ],
+      patterns: {
+        esbuild: FileNamePattern.Ecmascript,
+        'esbuild.config': FileNamePattern.Ecmascript,
+      }
     },
     { name: 'spwn', fileExtensions: ['spwn'] },
     { name: 'templ', fileExtensions: ['templ'] },
