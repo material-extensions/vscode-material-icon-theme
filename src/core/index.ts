@@ -20,6 +20,7 @@ export {
   applyConfigurationToIcons,
   generateManifest,
   renameIconFiles,
+  type ManifestConfig,
 } from './generator/jsonGenerator';
 export { validateHEXColorCode } from './generator/shared/validation';
 export { availableIconPacks } from './helpers/iconPacks';
@@ -30,12 +31,15 @@ export { fileIcons } from './icons/fileIcons';
 export { folderIcons } from './icons/folderIcons';
 export { languageIcons } from './icons/languageIcons';
 export type { CloneOptions } from './models/icons/cloneOptions';
-export type { Config } from './models/icons/configuration';
+export type { Config, IconAssociations } from './models/icons/config';
 export type { DefaultIcon } from './models/icons/defaultIcon';
 export type { FileIcon } from './models/icons/files/fileIcon';
 export type { FileIcons } from './models/icons/files/fileTypes';
 export type { FolderIcon } from './models/icons/folders/folderIcon';
-export type { FolderTheme } from './models/icons/folders/folderTheme';
+export type {
+  FolderTheme,
+  FolderThemeName,
+} from './models/icons/folders/folderTheme';
 export { IconPack, type IconPackValue } from './models/icons/iconPack';
 export type { LanguageIcon } from './models/icons/languages/languageIdentifier';
 export { FileNamePattern } from './models/icons/patterns/patterns';

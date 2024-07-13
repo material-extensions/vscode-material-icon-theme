@@ -23,10 +23,7 @@ import {
 } from '../../generator/constants';
 import { getFileConfigHash } from '../../helpers/configHash';
 import { resolvePath } from '../../helpers/resolvePath';
-import type {
-  FileIconClone,
-  FolderIconClone,
-} from '../../models/icons/configuration';
+import type { FileIconClone, FolderIconClone } from '../../models/icons/config';
 import { Manifest } from '../../models/manifest';
 import {
   isValidColor,

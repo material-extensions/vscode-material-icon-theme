@@ -5,7 +5,7 @@ import type {
   CustomClone,
   FileIconClone,
   FolderIconClone,
-} from '../../../models/icons/configuration';
+} from '../../../models/icons/config';
 import type { Manifest } from '../../../models/manifest';
 import {
   iconFolderPath,

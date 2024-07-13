@@ -5,7 +5,7 @@ export type FolderTheme = {
   /**
    * Name of the theme
    */
-  name: string;
+  name: FolderThemeName;
 
   /**
    * Define the default icon for folders in a theme.
@@ -22,3 +22,5 @@ export type FolderTheme = {
    */
   icons?: FolderIcon[];
 };
+
+export type FolderThemeName = 'specific' | 'classic' | 'none';

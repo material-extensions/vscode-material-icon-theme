@@ -1,6 +1,6 @@
 import { merge } from 'lodash-es';
 import { getFileConfigHash } from '../helpers/configHash';
-import type { Config, IconAssociations } from '../models/icons/configuration';
+import type { Config, IconAssociations } from '../models/icons/config';
 import type { DefaultIcon } from '../models/icons/defaultIcon';
 import type { IconPackValue } from '../models/icons/iconPack';
 import type { LanguageIcon } from '../models/icons/languages/languageIdentifier';

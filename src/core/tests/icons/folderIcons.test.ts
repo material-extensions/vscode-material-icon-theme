@@ -1,7 +1,7 @@
 import { beforeAll, beforeEach, describe, expect, it } from 'bun:test';
-import type { Config } from '../../../module';
 import { getDefaultConfiguration } from '../../generator/config/defaultConfig';
 import { loadFolderIconDefinitions } from '../../generator/folderGenerator';
+import type { Config } from '../../models/icons/config';
 import type { FolderTheme } from '../../models/icons/folders/folderTheme';
 import { IconPack } from '../../models/icons/iconPack';
 import { Manifest } from '../../models/manifest';
@@ -25,11 +25,6 @@ describe('folder icons', () => {
             enabledFor: [IconPack.Angular, IconPack.Ngrx],
           },
         ],
-      },
-      {
-        name: 'blue',
-        defaultIcon: { name: 'folder-blue' },
-        icons: [{ name: 'folder-blue-src', folderNames: ['src', 'source'] }],
       },
       { name: 'classic', defaultIcon: { name: 'folder' } },
       { name: 'none', defaultIcon: { name: '' } },
@@ -137,8 +132,8 @@ describe('folder icons', () => {
     expect(iconDefinitions).toMatchObject(expectedManifest);
   });
 
-  it('should enable folder theme', () => {
-    config.folders.theme = 'blue';
+  it('should change folder theme', () => {
+    config.folders.theme = 'classic';
     const manifest = new Manifest();
     const iconDefinitions = loadFolderIconDefinitions(
       folderIcons,
@@ -146,44 +141,13 @@ describe('folder icons', () => {
       manifest
     );
 
-    expectedManifest.iconDefinitions = {
-      'folder-blue': {
-        iconPath: './../icons/folder-blue.svg',
-      },
-      'folder-blue-open': {
-        iconPath: './../icons/folder-blue-open.svg',
-      },
-      'folder-blue-src': {
-        iconPath: './../icons/folder-blue-src.svg',
-      },
-      'folder-blue-src-open': {
-        iconPath: './../icons/folder-blue-src-open.svg',
-      },
-    };
-    expectedManifest.folder = 'folder-blue';
-    expectedManifest.folderExpanded = 'folder-blue-open';
-    expectedManifest.rootFolder = 'folder-blue';
-    expectedManifest.rootFolderExpanded = 'folder-blue-open';
-    expectedManifest.folderNames = {
-      src: 'folder-blue-src',
-      source: 'folder-blue-src',
-      _src: 'folder-blue-src',
-      _source: 'folder-blue-src',
-      __src__: 'folder-blue-src',
-      __source__: 'folder-blue-src',
-      '.src': 'folder-blue-src',
-      '.source': 'folder-blue-src',
-    };
-    expectedManifest.folderNamesExpanded = {
-      src: 'folder-blue-src-open',
-      source: 'folder-blue-src-open',
-      _src: 'folder-blue-src-open',
-      _source: 'folder-blue-src-open',
-      __src__: 'folder-blue-src-open',
-      __source__: 'folder-blue-src-open',
-      '.src': 'folder-blue-src-open',
-      '.source': 'folder-blue-src-open',
-    };
+    expectedManifest.iconDefinitions = {};
+    expectedManifest.folder = 'folder';
+    expectedManifest.folderExpanded = 'folder-open';
+    expectedManifest.rootFolder = 'folder';
+    expectedManifest.rootFolderExpanded = 'folder-open';
+    expectedManifest.folderNames = {};
+    expectedManifest.folderNamesExpanded = {};
     expectedManifest.hidesExplorerArrows = false;
 
     expect(iconDefinitions).toMatchObject(expectedManifest);

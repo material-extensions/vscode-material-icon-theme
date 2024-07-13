@@ -18,7 +18,7 @@ export const toggleIconPacks = async () => {
 };
 
 /** Show QuickPick items to select preferred configuration for the icon packs. */
-const showQuickPickItems = (activePack: IconPackValue | '') => {
+const showQuickPickItems = (activePack: IconPackValue) => {
   const packs = [...availableIconPacks.sort(), 'none'] as (
     | IconPackValue
     | 'none'

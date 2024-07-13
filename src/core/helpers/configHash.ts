@@ -1,5 +1,5 @@
 import { getDefaultConfiguration } from '../generator/config/defaultConfig';
-import type { Config } from '../models/icons/configuration';
+import type { Config } from '../models/icons/config';
 
 /**
  * Generate a config hashed string that is appended to each icon file name.

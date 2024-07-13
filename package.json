@@ -25,8 +25,8 @@
     "version": "bun run changelog && git add CHANGELOG.md",
     "vscode:prepublish": "bun run lint && bun run build",
     "verify": "bunx sheriff verify",
-    "prepublishOnly": "npm pkg set main=./dist/module/index.cjs",
-    "postpack": "git checkout package.json"
+    "prepublishOnly": "npm pkg set main=./dist/module/index.cjs && cp ./src/module/README.md README.md",
+    "postpack": "git checkout package.json && git checkout README.md"
   },
   "publisher": "PKief",
   "author": {

@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it } from 'bun:test';
-import type { Config } from '../../../module';
 import { getDefaultConfiguration } from '../../generator/config/defaultConfig';
 import { loadLanguageIconDefinitions } from '../../generator/languageGenerator';
+import type { Config } from '../../models/icons/config';
 import { IconPack } from '../../models/icons/iconPack';
 import type { LanguageIcon } from '../../models/icons/languages/languageIdentifier';
 import { Manifest } from '../../models/manifest';

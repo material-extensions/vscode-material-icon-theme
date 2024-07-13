@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it } from 'bun:test';
-import type { Config } from '../../../module';
 import { getDefaultConfiguration } from '../../generator/config/defaultConfig';
 import { loadFileIconDefinitions } from '../../generator/fileGenerator';
+import type { Config } from '../../models/icons/config';
 import type { FileIcons } from '../../models/icons/files/fileTypes';
 import { IconPack } from '../../models/icons/iconPack';
 import { Manifest } from '../../models/manifest';

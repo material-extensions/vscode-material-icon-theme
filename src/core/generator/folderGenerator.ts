@@ -1,6 +1,6 @@
 import { merge } from 'lodash-es';
 import { getFileConfigHash } from '../helpers/configHash';
-import type { Config, IconAssociations } from '../models/icons/configuration';
+import type { Config, IconAssociations } from '../models/icons/config';
 import type { DefaultIcon } from '../models/icons/defaultIcon';
 import type { FolderIcon } from '../models/icons/folders/folderIcon';
 import type { FolderTheme } from '../models/icons/folders/folderTheme';

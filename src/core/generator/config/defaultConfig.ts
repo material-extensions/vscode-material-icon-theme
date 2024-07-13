@@ -1,5 +1,5 @@
 import { merge } from 'lodash-es';
-import type { Config } from '../../models/icons/configuration';
+import type { Config } from '../../models/icons/config';
 import type { RecursivePartial } from '../../types/recursivePartial';
 
 /**

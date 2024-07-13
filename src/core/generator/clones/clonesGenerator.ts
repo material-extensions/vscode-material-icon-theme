@@ -6,7 +6,7 @@ import type {
   CustomClone,
   FileIconClone,
   FolderIconClone,
-} from '../../models/icons/configuration';
+} from '../../models/icons/config';
 import type { FileIcons } from '../../models/icons/files/fileTypes';
 import type { FolderTheme } from '../../models/icons/folders/folderTheme';
 import type { Manifest } from '../../models/manifest';

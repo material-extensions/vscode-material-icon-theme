@@ -7,7 +7,7 @@ import { resolvePath } from '../helpers/resolvePath';
 import { fileIcons } from '../icons/fileIcons';
 import { folderIcons } from '../icons/folderIcons';
 import { languageIcons } from '../icons/languageIcons';
-import type { Config } from '../models/icons/configuration';
+import type { Config } from '../models/icons/config';
 import { Manifest } from '../models/manifest';
 import { padWithDefaultConfig } from './config/defaultConfig';
 import { iconFolderPath } from './constants';
@@ -20,10 +20,16 @@ import { setIconOpacity } from './iconOpacity';
 import { setIconSaturation } from './iconSaturation';
 import { loadLanguageIconDefinitions } from './languageGenerator';
 
+export type ManifestConfig = Partial<
+  Pick<Config, 'activeIconPack' | 'hidesExplorerArrows' | 'languages'>
+> & { files: Partial<Pick<Config['files'], 'associations'>> } & {
+  folders: Partial<Pick<Config['folders'], 'associations' | 'theme'>>;
+};
+
 /**
  * Generate the manifest that will be written as JSON file.
  */
-export const generateManifest = (config?: Partial<Config>): Manifest => {
+export const generateManifest = (config?: ManifestConfig): Manifest => {
   const refinedConfig = padWithDefaultConfig(config);
   const manifest = new Manifest();
   const languageIconDefinitions = loadLanguageIconDefinitions(
@@ -55,6 +61,7 @@ export const generateManifest = (config?: Partial<Config>): Manifest => {
  * If the affectedConfig is not set then all icons will be updated.
  *
  * @param config Configuration that customizes the icons and the manifest.
+ * @param affectedConfig Set of configuration keys that have changed so that not all functions need to be executed.
  */
 export const applyConfigurationToIcons = (
   config: Config,

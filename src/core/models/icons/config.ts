@@ -1,3 +1,4 @@
+import type { FolderThemeName } from './folders/folderTheme';
 import type { IconPackValue } from './iconPack';
 
 export type Config = {
@@ -6,7 +7,7 @@ export type Config = {
   opacity: number;
   saturation: number;
   folders: {
-    theme: string;
+    theme: FolderThemeName;
     color: string;
     associations: IconAssociations;
     customClones: FolderIconClone[];

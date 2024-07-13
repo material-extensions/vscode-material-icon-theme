@@ -1,5 +1,10 @@
 import { type QuickPickItem, window as codeWindow } from 'vscode';
-import { capitalizeFirstLetter, folderIcons, translate } from '../../core';
+import {
+  type FolderThemeName,
+  capitalizeFirstLetter,
+  folderIcons,
+  translate,
+} from '../../core';
 import { getThemeConfig, setThemeConfig } from '../shared/config';
 
 /** Command to toggle the folder icons. */
@@ -16,7 +21,7 @@ export const changeFolderTheme = async () => {
 };
 
 /** Show QuickPick items to select preferred configuration for the folder icons. */
-const showQuickPickItems = (activeTheme: string) => {
+const showQuickPickItems = (activeTheme: FolderThemeName) => {
   const options = folderIcons.map(
     (theme): QuickPickItem => ({
       description: capitalizeFirstLetter(theme.name),
@@ -45,6 +50,6 @@ const handleQuickPickActions = (value: QuickPickItem) => {
 };
 
 /** Get the current folder theme. */
-export const getFolderIconTheme = (): string => {
-  return getThemeConfig<string>('folders.theme') ?? '';
+export const getFolderIconTheme = () => {
+  return getThemeConfig<FolderThemeName>('folders.theme') ?? 'none';
 };
