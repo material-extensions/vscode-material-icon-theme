@@ -9,6 +9,7 @@ import { folderIcons } from '../icons/folderIcons';
 import { languageIcons } from '../icons/languageIcons';
 import type { Config } from '../models/icons/config';
 import { Manifest } from '../models/manifest';
+import type { RecursivePartial } from '../types/recursivePartial';
 import { padWithDefaultConfig } from './config/defaultConfig';
 import { iconFolderPath } from './constants';
 import { generateFileIcons, loadFileIconDefinitions } from './fileGenerator';
@@ -20,11 +21,16 @@ import { setIconOpacity } from './iconOpacity';
 import { setIconSaturation } from './iconSaturation';
 import { loadLanguageIconDefinitions } from './languageGenerator';
 
-export type ManifestConfig = Partial<
-  Pick<Config, 'activeIconPack' | 'hidesExplorerArrows' | 'languages'>
-> & { files: Partial<Pick<Config['files'], 'associations'>> } & {
-  folders: Partial<Pick<Config['folders'], 'associations' | 'theme'>>;
-};
+/**
+ * Configuration for the manifest. It contains the configuration which is used to generate the manifest.
+ */
+export type ManifestConfig = RecursivePartial<
+  Pick<Config, 'activeIconPack' | 'hidesExplorerArrows' | 'languages'> & {
+    files: Pick<Config['files'], 'associations'>;
+  } & {
+    folders: Pick<Config['folders'], 'associations' | 'theme'>;
+  }
+>;
 
 /**
  * Generate the manifest that will be written as JSON file.
