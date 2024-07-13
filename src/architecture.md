@@ -24,4 +24,4 @@ depRules: {
 
 ## Npm module
 
-The npm module exposes some of the functions so that the icon manifest can be generated programmatically. More information can be found in the [README.MODULE.md](../README.MODULE.md).
+The npm module exposes some of the functions so that the icon manifest can be generated programmatically. More information can be found in the [README.md](./module/README.md) of the module.
