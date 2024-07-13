@@ -2,6 +2,7 @@ import { merge } from 'lodash-es';
 import { getFileConfigHash } from '../helpers/configHash';
 import type { Config, IconAssociations } from '../models/icons/configuration';
 import type { DefaultIcon } from '../models/icons/defaultIcon';
+import type { IconPackValue } from '../models/icons/iconPack';
 import type { LanguageIcon } from '../models/icons/languages/languageIdentifier';
 import type { Manifest } from '../models/manifest';
 import {
@@ -130,7 +131,7 @@ const getCustomIcons = (languageAssociations: IconAssociations | undefined) => {
  */
 const disableLanguagesByPack = (
   languageIcons: LanguageIcon[],
-  activatedIconPack: string | undefined
+  activatedIconPack: IconPackValue | undefined
 ) => {
   return languageIcons.filter((language) => {
     return !language.enabledFor

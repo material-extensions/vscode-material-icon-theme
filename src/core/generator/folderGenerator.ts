@@ -4,6 +4,7 @@ import type { Config, IconAssociations } from '../models/icons/configuration';
 import type { DefaultIcon } from '../models/icons/defaultIcon';
 import type { FolderIcon } from '../models/icons/folders/folderIcon';
 import type { FolderTheme } from '../models/icons/folders/folderTheme';
+import type { IconPackValue } from '../models/icons/iconPack';
 import type { Manifest } from '../models/manifest';
 import {
   cloneIconExtension,
@@ -153,7 +154,7 @@ const getEnabledFolderTheme = (
  */
 const disableIconsByPack = (
   folderIcons: FolderTheme | undefined,
-  activatedIconPack: string | undefined
+  activatedIconPack: IconPackValue | undefined
 ): FolderIcon[] => {
   if (!folderIcons?.icons || folderIcons.icons.length === 0) {
     return [];

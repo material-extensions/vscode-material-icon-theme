@@ -1,5 +1,7 @@
 import { type QuickPickItem, window as codeWindow } from 'vscode';
-import { IconPack, toTitleCase, translate } from '../../core';
+import { toTitleCase, translate } from '../../core';
+import { availableIconPacks } from '../../core/helpers/iconPacks';
+import type { IconPackValue } from '../../core/models/icons/iconPack';
 import { getThemeConfig, setThemeConfig } from '../shared/config';
 
 /** Command to toggle the icons packs */
@@ -16,8 +18,11 @@ export const toggleIconPacks = async () => {
 };
 
 /** Show QuickPick items to select preferred configuration for the icon packs. */
-const showQuickPickItems = (activePack: string) => {
-  const packs = [...getAllIconPacks().sort(), 'none'];
+const showQuickPickItems = (activePack: IconPackValue | '') => {
+  const packs = [...availableIconPacks.sort(), 'none'] as (
+    | IconPackValue
+    | 'none'
+  )[];
   const options = packs.map((pack): QuickPickItem => {
     const packLabel = toTitleCase(pack.replace('_', ' + '));
     const active = isPackActive(activePack, pack);
@@ -44,18 +49,15 @@ const showQuickPickItems = (activePack: string) => {
 /** Handle the actions from the QuickPick. */
 const handleQuickPickActions = (value: QuickPickItem) => {
   if (!value || !value.description) return;
-  const decision = value.description.replace(' + ', '_').toLowerCase();
+  const decision = value.description.replace(' + ', '_').toLowerCase() as
+    | IconPackValue
+    | 'none';
 
   setThemeConfig('activeIconPack', decision === 'none' ? '' : decision, true);
 };
 
-const getActiveIconPack = (): string => {
-  return getThemeConfig<string>('activeIconPack') ?? '';
-};
-
-/** Get all packs that can be used in this icon theme. */
-export const getAllIconPacks = (): string[] => {
-  return Object.values(IconPack).map((p) => p.toLowerCase());
+const getActiveIconPack = () => {
+  return getThemeConfig<IconPackValue>('activeIconPack') ?? '';
 };
 
 const isPackActive = (activePack: string, pack: string) => {

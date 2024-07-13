@@ -11,3 +11,5 @@ export enum IconPack {
   Vue = 'vue',
   Vuex = 'vue_vuex',
 }
+
+export type IconPackValue = `${IconPack}`;

@@ -1,5 +1,7 @@
+import type { IconPackValue } from './iconPack';
+
 export type Config = {
-  activeIconPack: string;
+  activeIconPack: IconPackValue;
   hidesExplorerArrows: boolean;
   opacity: number;
   saturation: number;

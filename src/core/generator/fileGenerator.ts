@@ -3,6 +3,7 @@ import { getFileConfigHash } from '../helpers/configHash';
 import type { Config, IconAssociations } from '../models/icons/configuration';
 import type { FileIcon } from '../models/icons/files/fileIcon';
 import type { FileIcons } from '../models/icons/files/fileTypes';
+import type { IconPackValue } from '../models/icons/iconPack';
 import type { Manifest } from '../models/manifest';
 import {
   cloneIconExtension,
@@ -166,7 +167,7 @@ const mapSpecificFileIcons = (
  */
 const disableIconsByPack = (
   fileIcons: FileIcons,
-  activeIconPack: string
+  activeIconPack: IconPackValue
 ): FileIcon[] => {
   return fileIcons.icons.filter((icon) => {
     return !icon.enabledFor
