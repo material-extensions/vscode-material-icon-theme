@@ -1767,6 +1767,81 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['resolver.ts', 'resolver.js'],
       enabledFor: [IconPack.Nest],
     },
+    {
+      name: 'nest-schema',
+      fileExtensions: ['schema.ts', 'schema.js'],
+      enabledFor: [IconPack.Nest],
+    },
+    {
+      name: 'nest-dto',
+      fileExtensions: ['dto.ts', 'dto.js'],
+      enabledFor: [IconPack.Nest],
+    },
+    {
+      name: 'nest-strategy',
+      fileExtensions: ['strategy.ts', 'strategy.js'],
+      enabledFor: [IconPack.Nest],
+    },
+    {
+      name: 'nest-provider',
+      fileExtensions: ['provider.ts', 'provider.js'],
+      enabledFor: [IconPack.Nest],
+    },
+    {
+      name: 'nest-interceptor',
+      fileExtensions: ['interceptor.ts', 'interceptor.js'],
+      enabledFor: [IconPack.Nest],
+    },
+    {
+      name: 'nest-entity',
+      fileExtensions: ['entity.ts', 'entity.js'],
+      enabledFor: [IconPack.Nest],
+    },
+    {
+      name: 'nest-processor',
+      fileExtensions: ['processor.ts', 'processor.js'],
+      enabledFor: [IconPack.Nest],
+    },
+    {
+      name: 'nest-subscriber',
+      fileExtensions: ['subscriber.ts', 'subscriber.js'],
+      enabledFor: [IconPack.Nest],
+    },
+    {
+      name: 'nest-listener',
+      fileExtensions: ['listener.ts', 'listener.js'],
+      enabledFor: [IconPack.Nest],
+    },
+    {
+      name: 'nest-config',
+      fileExtensions: ['config.ts', 'config.js'],
+      enabledFor: [IconPack.Nest],
+    },
+    {
+      name: 'nest-interface',
+      fileExtensions: ['interface.ts', 'interface.js'],
+      enabledFor: [IconPack.Nest],
+    },
+    {
+      name: 'nest-enum',
+      fileExtensions: ['enum.ts', 'enum.js'],
+      enabledFor: [IconPack.Nest],
+    },
+    {
+      name: 'nest-type',
+      fileExtensions: ['type.ts', 'type.js'],
+      enabledFor: [IconPack.Nest],
+    },
+    {
+      name: 'nest-util',
+      fileExtensions: ['util.ts', 'util.js'],
+      enabledFor: [IconPack.Nest],
+    },
+    {
+      name: 'nest-repository',
+      fileExtensions: ['repository.ts', 'repository.js'],
+      enabledFor: [IconPack.Nest],
+    },
     { name: 'moon', fileNames: ['moon.yml'] },
     { name: 'moonscript', fileExtensions: ['moon'] },
     { name: 'percy', fileNames: ['.percy.yml'] },
