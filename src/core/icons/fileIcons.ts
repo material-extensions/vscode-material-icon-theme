@@ -260,6 +260,9 @@ export const fileIcons: FileIcons = {
     {
       name: 'astro',
       fileExtensions: ['astro'],
+    },
+    {
+      name: 'astro-config',
       fileNames: [
         'astro.config.js',
         'astro.config.mjs',
@@ -2461,6 +2464,10 @@ export const fileIcons: FileIcons = {
     {
       name: 'bruno',
       fileExtensions: ['bru'],
+    },
+    {
+      name: 'cairo',
+      fileExtensions: ['cairo'],
     },
     {
       name: 'grafana-alloy',

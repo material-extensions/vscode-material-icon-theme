@@ -7,11 +7,11 @@ assignees: ''
 
 ---
 
-**Describe the bug**
+### Describe the bug
 
 A clear and concise description of what the bug is.
 
-**To Reproduce**
+### To Reproduce
 
 Steps to reproduce the behavior:
 
@@ -20,15 +20,15 @@ Steps to reproduce the behavior:
 3. Scroll down to '....'
 4. See error
 
-**Expected behavior**
+### Expected behavior
 
 A clear and concise description of what you expected to happen.
 
-**Screenshots**
+### Screenshots
 
 If applicable, add screenshots to help explain your problem.
 
-**Computer information (please complete the following information):**
+### Computer information (please complete the following information)
 
 - OS edition: [e.g. Windows 10 Home]
 - OS build: [e.g. 19042.1165]
@@ -36,5 +36,6 @@ If applicable, add screenshots to help explain your problem.
 - Version [e.g. 22]
 - VSCode version [e.g. 1.59.1]
 
-**Additional context**
+### Additional context
+
 Add any other context about the problem here.
