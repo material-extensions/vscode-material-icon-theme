@@ -2471,5 +2471,9 @@ export const fileIcons: FileIcons = {
       name: 'grafana-alloy',
       fileExtensions: ['alloy'],
     },
+    {
+      name: 'markdownlint',
+      fileNames: ['.markdownlint.json'],
+    },
   ]),
 };
