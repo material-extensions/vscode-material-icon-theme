@@ -933,6 +933,7 @@ export const fileIcons: FileIcons = {
       name: 'verdaccio',
       fileNames: ['verdaccio.yml'],
     },
+    { name: 'hygen', fileNames: ['.hygen.js'] },
     {
       name: 'payload',
       fileNames: [
