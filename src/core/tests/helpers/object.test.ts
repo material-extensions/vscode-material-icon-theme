@@ -1,38 +1,38 @@
-import { describe, expect, test } from 'bun:test';
+import { describe, expect, it } from 'bun:test';
 import { merge, set } from '../../helpers/object';
 
-describe('set function tests', () => {
-  test('sets value at root level', () => {
+describe('set function its', () => {
+  it('should set value at root level', () => {
     const obj: { a: number; b: number; c?: number } = { a: 1, b: 2 };
     set(obj, 'c', 3);
     expect(obj).toEqual({ a: 1, b: 2, c: 3 });
   });
 
-  test('sets value in a nested object', () => {
+  it('should set value in a nested object', () => {
     const obj: { a: { b: number; c?: number } } = { a: { b: 2 } };
     set(obj, 'a.c', 3);
     expect(obj).toEqual({ a: { b: 2, c: 3 } });
   });
 
-  test('overrides existing value', () => {
+  it('should override existing value', () => {
     const obj = { a: 1 };
     set(obj, 'a', 2);
     expect(obj.a).toBe(2);
   });
 
-  test('sets value with array notation', () => {
+  it('should set value with array notation', () => {
     const obj = {};
     set(obj, ['a', 'b', 'c'], 3);
     expect(obj).toEqual({ a: { b: { c: 3 } } });
   });
 
-  test('creates nested structure if not exist', () => {
+  it('should create nested structure if not exist', () => {
     const obj = {};
     set(obj, 'a.b.c', 3);
     expect(obj).toEqual({ a: { b: { c: 3 } } });
   });
 
-  test('sets value with complex path', () => {
+  it('should set value with complex path', () => {
     const obj: { a: { b: { c: number; d?: { e?: number } } } } = {
       a: { b: { c: 1 } },
     };
@@ -40,45 +40,55 @@ describe('set function tests', () => {
     expect(obj).toEqual({ a: { b: { c: 1, d: { e: 2 } } } });
   });
 
-  test('sets value to null', () => {
+  it('should set value to null', () => {
     const obj: { a: number; b?: null } = { a: 1 };
     set(obj, 'b', null);
     expect(obj).toEqual({ a: 1, b: null });
   });
 
-  test('sets value to undefined', () => {
+  it('should set value to undefined', () => {
     const obj: { a: number; b?: undefined } = { a: 1 };
     set(obj, 'b', undefined);
     expect(obj).toEqual({ a: 1, b: undefined });
   });
 });
 
-describe('Helper function tests', () => {
-  test('merges objects with primitive values', () => {
+describe('merge function its', () => {
+  it('should merge objects with primitive values', () => {
     const obj1 = { a: 1, b: 'text' };
     const obj2 = { a: 2, c: true };
     const result = merge(obj1, obj2);
     expect(result).toEqual({ a: 2, b: 'text', c: true });
   });
 
-  test('merges objects with nested objects', () => {
+  it('should merge objects with nested objects', () => {
     const obj1 = { a: { x: 1 }, b: 'text' };
     const obj2 = { a: { y: 2 }, c: true };
     const result = merge(obj1, obj2);
     expect(result).toEqual({ a: { x: 1, y: 2 }, b: 'text', c: true });
   });
 
-  test('merges objects with arrays', () => {
+  it('should merge objects with arrays', () => {
     const obj1 = { a: [1, 2], b: 'text' };
     const obj2 = { a: [3, 4], c: true };
     const result = merge(obj1, obj2);
     expect(result).toEqual({ a: [1, 2, 3, 4], b: 'text', c: true });
   });
 
-  test('handles null and undefined correctly', () => {
+  it('should handle null and undefined correctly', () => {
     const obj1 = { a: null, b: undefined };
     const obj2 = { a: { x: 1 }, b: 'text' };
     const result = merge(obj1, obj2);
     expect(result).toEqual({ a: { x: 1 }, b: 'text' });
+  });
+
+  it('should prefer the truthy value when one value is undefined or null and the other is truthy', () => {
+    const obj1 = { key1: null, key2: 'value2', key3: undefined };
+    const obj2 = { key1: 'value1', key2: null, key3: 'value3' };
+
+    const expectedResult = { key1: 'value1', key2: 'value2', key3: 'value3' };
+    const result = merge(obj1, obj2);
+
+    expect(result).toEqual(expectedResult);
   });
 });

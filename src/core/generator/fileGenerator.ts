@@ -23,7 +23,6 @@ export const loadFileIconDefinitions = (
   config: Config,
   manifest: Manifest
 ): Manifest => {
-  manifest = merge({}, manifest);
   const enabledIcons = disableIconsByPack(fileIcons, config.activeIconPack);
   const customIcons = getCustomIcons(config.files?.associations);
   const allFileIcons = [...enabledIcons, ...customIcons];
@@ -183,17 +182,16 @@ const setIconDefinition = (
   isClone: boolean,
   appendix: string = ''
 ) => {
-  const manifestCopy = merge<Manifest>({}, manifest);
   const ext = isClone ? cloneIconExtension : '.svg';
   const key = `${iconName}${appendix}`;
   manifest.iconDefinitions ??= {};
   if (!manifest.iconDefinitions![key]) {
     const fileConfigHash = getFileConfigHash(config);
-    manifestCopy.iconDefinitions![key] = {
+    manifest.iconDefinitions![key] = {
       iconPath: `${iconFolderPath}${iconName}${appendix}${fileConfigHash}${ext}`,
     };
   }
-  return manifestCopy;
+  return manifest;
 };
 
 export const generateFileIcons = (

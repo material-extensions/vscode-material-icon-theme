@@ -718,7 +718,7 @@ describe('cloning: json config generation from user options', () => {
       folderNamesExpanded: { bar: `folder-foo-clone${openedFolder}` },
       fileExtensions: { baz: 'foo-clone' },
       fileNames: { 'bar.foo': 'foo-clone', 'foo.bar': 'foo' },
-      file: undefined,
+      file: 'file',
       languageIds: {},
       light: {
         fileExtensions: { baz: `foo-clone${lightColorFileEnding}` },

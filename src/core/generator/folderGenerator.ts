@@ -42,7 +42,7 @@ export const loadFolderIconDefinitions = (
     if (icon.disabled) return;
     const folderNames = extendFolderNames(icon.folderNames);
     manifest = setIconDefinitions(manifest, config, icon);
-    manifest = merge({}, manifest, setFolderNames(icon.name, folderNames));
+    manifest = merge(manifest, setFolderNames(icon.name, folderNames));
     manifest.light = icon.light
       ? merge(
           {},
@@ -71,7 +71,6 @@ const setDefaultFolderIcons = (
   manifest: Manifest,
   config: Config
 ): Manifest => {
-  manifest = merge({}, manifest);
   const hasFolderIcons =
     !!theme.defaultIcon.name && theme.defaultIcon.name.length > 0;
   if (hasFolderIcons) {
@@ -172,7 +171,6 @@ const setIconDefinitions = (
   icon: FolderIcon | DefaultIcon
 ) => {
   const isClone = (icon as FolderIcon).clone !== undefined;
-  manifest = merge({}, manifest);
 
   manifest = createIconDefinitions(manifest, config, icon.name, '', isClone);
   if (icon.light) {
@@ -211,7 +209,6 @@ const createIconDefinitions = (
   appendix: string = '',
   isClone = false
 ) => {
-  manifest = merge({}, manifest);
   const fileConfigHash = getFileConfigHash(config);
   const configIconDefinitions = manifest.iconDefinitions;
   const ext = isClone ? cloneIconExtension : '.svg';

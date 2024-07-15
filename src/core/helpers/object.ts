@@ -58,23 +58,35 @@ export const set = (
   }
 };
 
-export const merge = <T>(
-  // biome-ignore lint/suspicious/noExplicitAny: Multiple unknown types due to recursive function
-  ...objects: any[]
-): T => {
+/**
+ * Merges given objects recursively.
+ *
+ * @param objects Provide the objects that should be merged.
+ * @returns A new object that is the result of the merge.
+ */
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+export const merge = <T>(...objects: any[]): T => {
   return objects.reduce((acc, obj) => {
     Object.keys(obj).forEach((key) => {
-      if (Array.isArray(obj[key]) && Array.isArray(acc[key])) {
-        acc[key] = acc[key].concat(obj[key]);
+      const accValue = acc[key];
+      const objValue = obj[key];
+
+      // Check if one of the values is null or undefined and the other has a truthy value
+      if ((accValue === undefined || accValue === null) && objValue) {
+        acc[key] = objValue;
+      } else if ((objValue === undefined || objValue === null) && accValue) {
+        // No need to assign acc[key] to itself
+      } else if (Array.isArray(objValue) && Array.isArray(accValue)) {
+        acc[key] = accValue.concat(objValue);
       } else if (
-        typeof obj[key] === 'object' &&
-        obj[key] !== null &&
-        typeof acc[key] === 'object' &&
-        acc[key] !== null
+        typeof objValue === 'object' &&
+        objValue !== null &&
+        typeof accValue === 'object' &&
+        accValue !== null
       ) {
-        acc[key] = merge(acc[key], obj[key]);
+        acc[key] = merge(accValue, objValue);
       } else {
-        acc[key] = obj[key];
+        acc[key] = objValue;
       }
     });
     return acc;
