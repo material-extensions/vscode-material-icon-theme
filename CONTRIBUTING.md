@@ -51,7 +51,7 @@ flowchart LR
 
 1. [ ] Create icon as SVG ([how to](#create-icon-as-svg))
 2. [ ] Icon color fits to Material Design ([how to](#material-design-colors))
-3. [ ] SVG has some space around the icon ([how to](#spacing))
+3. [ ] SVG has some space around the icon ([how to](#icon-spacing))
 4. [ ] Unique assignment to file and folder names ([how to](#icon-assignments))
 5. [ ] Provide separate icons for color themes if necessary ([how to](#icons-for-color-themes))
 

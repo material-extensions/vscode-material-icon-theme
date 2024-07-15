@@ -1,7 +1,8 @@
+<!-- markdownlint-disable first-line-h1 no-space-in-emphasis no-bare-urls -->
+
 ### Changelog
 
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
-
 
 #### [v5.4.2](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.4.1...v5.4.2)
 
