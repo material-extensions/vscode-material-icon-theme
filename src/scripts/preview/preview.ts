@@ -136,10 +136,10 @@ export const generatePreview = (
   );
 };
 
-interface IconDefinition {
+type IconDefinition = {
   iconName: string;
   label: string;
-}
+};
 
 /**
  * Trim the list of icons into the matrix
