@@ -648,6 +648,8 @@ export const folderIcons: FolderTheme[] = [
           'certificate',
           'certificates',
           'ssl',
+          'cipher',
+          'cypher'
         ],
       },
       { name: 'folder-custom', folderNames: ['custom', 'customs'] },
