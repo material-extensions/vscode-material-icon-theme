@@ -1,6 +1,5 @@
 import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { merge } from 'lodash-es';
 import type { ConfigurationChangeEvent } from 'vscode';
 import {
   type Config,
@@ -14,6 +13,7 @@ import {
   renameIconFiles,
   resolvePath,
 } from '../../core';
+import { merge } from '../../core/helpers/object';
 import { configPropertyNames, getCurrentConfig } from '../shared/config';
 
 /** Compare the workspace and the user configurations with the current setup of the icons. */

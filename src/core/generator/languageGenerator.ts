@@ -1,5 +1,5 @@
-import { merge } from 'lodash-es';
 import { getFileConfigHash } from '../helpers/configHash';
+import { merge } from '../helpers/object';
 import type { Config, IconAssociations } from '../models/icons/config';
 import type { DefaultIcon } from '../models/icons/defaultIcon';
 import type { IconPackValue } from '../models/icons/iconPack';
@@ -19,7 +19,6 @@ export const loadLanguageIconDefinitions = (
   config: Config,
   manifest: Manifest
 ): Manifest => {
-  manifest = merge({}, manifest);
   const enabledLanguages = disableLanguagesByPack(
     languageIcons,
     config.activeIconPack
@@ -65,7 +64,6 @@ const setIconDefinitions = (
   config: Config,
   icon: DefaultIcon
 ) => {
-  manifest = merge({}, manifest);
   manifest = createIconDefinitions(manifest, config, icon.name);
   manifest = merge(
     {},
@@ -97,7 +95,6 @@ const createIconDefinitions = (
   config: Config,
   iconName: string
 ) => {
-  manifest = merge({}, manifest);
   const fileConfigHash = getFileConfigHash(config);
   if (manifest.iconDefinitions) {
     manifest.iconDefinitions[iconName] = {

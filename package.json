@@ -54,29 +54,16 @@
     "color": "#1e1e1e",
     "theme": "dark"
   },
-  "categories": [
-    "Themes"
-  ],
-  "keywords": [
-    "icons",
-    "theme",
-    "material",
-    "icon-theme",
-    "customization"
-  ],
-  "extensionKind": [
-    "ui",
-    "workspace"
-  ],
+  "categories": ["Themes"],
+  "keywords": ["icons", "theme", "material", "icon-theme", "customization"],
+  "extensionKind": ["ui", "workspace"],
   "capabilities": {
     "untrustedWorkspaces": {
       "supported": true
     },
     "virtualWorkspaces": true
   },
-  "activationEvents": [
-    "onStartupFinished"
-  ],
+  "activationEvents": ["onStartupFinished"],
   "main": "./dist/extension/desktop/extension.cjs",
   "browser": "./dist/extension/web/extension.cjs",
   "module": "./dist/module/index.cjs",
@@ -279,11 +266,7 @@
             "%configuration.folders.theme.classic%",
             "%configuration.folders.theme.none%"
           ],
-          "enum": [
-            "specific",
-            "classic",
-            "none"
-          ]
+          "enum": ["specific", "classic", "none"]
         },
         "material-icon-theme.folders.color": {
           "type": "string",
@@ -321,7 +304,6 @@
   },
   "dependencies": {
     "chroma-js": "^2.4.2",
-    "lodash-es": "^4.17.21",
     "svgson": "^5.3.1"
   },
   "devDependencies": {
@@ -329,7 +311,6 @@
     "@softarc/sheriff-core": "^0.15.1",
     "@types/chroma-js": "^2.4.4",
     "@types/glob": "^7.2.0",
-    "@types/lodash-es": "^4.17.12",
     "@types/puppeteer": "^5.4.6",
     "@types/vscode": "~1.51.0",
     "@vscode/test-electron": "^2.3.9",

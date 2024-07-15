@@ -1,8 +1,8 @@
 import { existsSync, readdirSync, renameSync, unlinkSync } from 'node:fs';
 import { join } from 'node:path';
-import { merge } from 'lodash-es';
 import { getFileConfigHash } from '../helpers/configHash';
 import { getCustomIconPaths } from '../helpers/customIconPaths';
+import { merge } from '../helpers/object';
 import { resolvePath } from '../helpers/resolvePath';
 import { fileIcons } from '../icons/fileIcons';
 import { folderIcons } from '../icons/folderIcons';
@@ -54,7 +54,7 @@ export const generateManifest = (config?: ManifestConfig): Manifest => {
     manifest
   );
 
-  return merge(
+  return merge<Manifest>(
     {},
     languageIconDefinitions,
     fileIconDefinitions,

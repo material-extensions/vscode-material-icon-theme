@@ -1,6 +1,6 @@
 import { writeFileSync } from 'node:fs';
-import { merge } from 'lodash-es';
 import { getFileConfigHash } from '../../helpers/configHash';
+import { merge } from '../../helpers/object';
 import type {
   Config,
   CustomClone,
@@ -22,7 +22,7 @@ export function customClonesIcons(
   manifest: Manifest,
   config: Config
 ): Manifest {
-  let clonedIconsManifest = merge({}, manifest);
+  let clonedIconsManifest = merge<Manifest>({}, manifest);
   const hash = getFileConfigHash(config);
 
   // create folder clones as specified by the user in the options
