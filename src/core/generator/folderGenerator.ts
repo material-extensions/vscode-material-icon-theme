@@ -1,5 +1,5 @@
-import { merge } from 'lodash-es';
 import { getFileConfigHash } from '../helpers/configHash';
+import { merge } from '../helpers/object';
 import type { Config, IconAssociations } from '../models/icons/config';
 import type { DefaultIcon } from '../models/icons/defaultIcon';
 import type { FolderIcon } from '../models/icons/folders/folderIcon';
@@ -24,7 +24,7 @@ export const loadFolderIconDefinitions = (
   config: Config,
   manifest: Manifest
 ): Manifest => {
-  manifest = merge({}, manifest);
+  manifest = merge<Manifest>({}, manifest);
   manifest.hidesExplorerArrows = config.hidesExplorerArrows;
   const activeTheme = getEnabledFolderTheme(folderIcons, config.folders?.theme);
   if (!activeTheme) {

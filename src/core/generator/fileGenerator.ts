@@ -1,5 +1,5 @@
-import { merge } from 'lodash-es';
 import { getFileConfigHash } from '../helpers/configHash';
+import { merge } from '../helpers/object';
 import type { Config, IconAssociations } from '../models/icons/config';
 import type { FileIcon } from '../models/icons/files/fileIcon';
 import type { FileIcons } from '../models/icons/files/fileTypes';
@@ -117,7 +117,7 @@ const mapSpecificFileIcons = (
   manifest: Manifest,
   customFileAssociation: IconAssociations = {}
 ) => {
-  const manifestCopy = merge({}, manifest);
+  const manifestCopy = merge<Manifest>({}, manifest);
   const iconMappingType = icon[mappingType as keyof FileIcon] as string[];
   if (iconMappingType === undefined) {
     return manifestCopy;
@@ -183,7 +183,7 @@ const setIconDefinition = (
   isClone: boolean,
   appendix: string = ''
 ) => {
-  const manifestCopy = merge({}, manifest);
+  const manifestCopy = merge<Manifest>({}, manifest);
   const ext = isClone ? cloneIconExtension : '.svg';
   const key = `${iconName}${appendix}`;
   manifest.iconDefinitions ??= {};
