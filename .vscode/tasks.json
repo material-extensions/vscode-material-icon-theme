@@ -3,7 +3,7 @@
   "tasks": [
     {
       "type": "bun",
-      "script": "bun run build; bun run postcompile",
+      "script": "bun run build",
       "problemMatcher": [],
       "label": "bun: build",
       "detail": "bun run build",
