@@ -2269,6 +2269,7 @@ export const fileIcons: FileIcons = {
     { name: 'antlr', fileExtensions: ['g4'] },
     { name: 'stylable', fileExtensions: ['st.css'] },
     { name: 'pinejs', fileExtensions: ['pine'] },
+    { name: 'barcelona', fileExtensions: ['bar', 'barcelona'] },
     {
       name: 'nano-staged',
       light: true,
