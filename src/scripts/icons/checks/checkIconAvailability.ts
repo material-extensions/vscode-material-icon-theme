@@ -1,22 +1,20 @@
 import { readdir } from 'node:fs';
 import { join, parse } from 'node:path';
-import { type CloneOptions } from '../../../models/icons/cloneOptions';
 import {
+  type CloneOptions,
   type DefaultIcon,
   type FileIcon,
   type FolderIcon,
   type FolderTheme,
-} from '../../../models/index';
-import { green, red } from '../../helpers/painter';
-import { similarity } from '../../helpers/similarity';
-import {
   fileIcons,
   folderIcons,
   highContrastColorFileEnding,
   languageIcons,
   lightColorFileEnding,
   openedFolder,
-} from './../../../icons';
+} from '../../../core';
+import { green, red } from '../../helpers/painter';
+import { similarity } from '../../helpers/similarity';
 
 /**
  * Defines the folder where all icon files are located.
