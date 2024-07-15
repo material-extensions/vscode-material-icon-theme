@@ -487,6 +487,7 @@ export const fileIcons: FileIcons = {
         'mrf',
       ],
     },
+    { name: 'forge', fileNames: ['forge.config.js'] },
     { name: 'lib', fileExtensions: ['lib', 'bib', 'a'] },
     { name: 'dll', fileExtensions: ['dll', 'ilk', 'so'] },
     {
