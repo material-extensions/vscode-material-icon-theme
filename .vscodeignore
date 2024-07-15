@@ -8,6 +8,7 @@ scripts/**
 **/*.map
 .gitignore
 tsconfig.json
+tsconfig.**.json
 biome.jsonc
 images/**
 vsc-extension-quickstart.md
@@ -17,9 +18,13 @@ package-lock.json
 bun.lockb
 yarn.lock
 bunfig.toml
-devcontainer/**
+.devcontainer/**
+sheriff.config.ts
 build/**
 svgo.config.js
 .eslintignore
 material-colors.yml
 changelog.config.json
+dist/types/**
+dist/module.cjs
+
