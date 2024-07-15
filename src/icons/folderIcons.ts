@@ -224,6 +224,13 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['inc', 'include', 'includes', 'partial', 'partials'],
       },
       {
+        name: 'folder-elixir',
+        folderNames: [
+          'elixir',
+          '.elixir_ls'
+        ]
+      },
+      {
         name: 'folder-docker',
         folderNames: ['docker', 'dockerfiles', 'dockerhub'],
       },
