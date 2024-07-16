@@ -1,5 +1,4 @@
 import { beforeAll, describe, expect, it, mock } from 'bun:test';
-import { merge } from 'lodash-es';
 import { type INode, parseSync } from 'svgson';
 import { customClonesIcons } from '../../generator/clones/clonesGenerator';
 import {
@@ -22,6 +21,7 @@ import {
   openedFolder,
 } from '../../generator/constants';
 import { getFileConfigHash } from '../../helpers/configHash';
+import { merge } from '../../helpers/object';
 import { resolvePath } from '../../helpers/resolvePath';
 import type { FileIconClone, FolderIconClone } from '../../models/icons/config';
 import { Manifest } from '../../models/manifest';
@@ -681,13 +681,19 @@ describe('cloning: json config generation from user options', () => {
     const hash = getFileConfigHash(config);
     const result = customClonesIcons(getDefinition(hash), config);
 
-    const expected = merge(new Manifest(), {
+    const expected = merge<Manifest>(new Manifest(), {
       iconDefinitions: {
         file: {
           iconPath: `./../icons/file${hash}.svg`,
         },
         'folder-foo': {
           iconPath: `./../icons/folder${hash}.svg`,
+        },
+        'folder-foo-open': {
+          iconPath: `./../icons/folder${openedFolder}${hash}.svg`,
+        },
+        foo: {
+          iconPath: `./../icons/foo${hash}.svg`,
         },
         'folder-foo-clone': {
           iconPath: `./../icons/${clonesFolder}folder-foo-clone${hash}.svg`,

@@ -1,4 +1,4 @@
-import { get } from 'lodash-es';
+import { get } from '../helpers/object';
 import type { Translation } from '../models/i18n/translation';
 import { translation as langCs } from './translations/lang-cs';
 import { translation as langDe } from './translations/lang-de';

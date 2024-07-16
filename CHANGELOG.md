@@ -3,6 +3,13 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v5.5.1](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.5.0...v5.5.1) 
+
+> July 15, 2024 
+
+- Remove lodash as dependency [`#2422`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2422)
+- Update tsconfig [`412da52e`](https://github.com/material-extensions/vscode-material-icon-theme/commit/412da52e)
+ 
 #### [v5.5.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.4.2...v5.5.0) 
 
 > July 15, 2024 
