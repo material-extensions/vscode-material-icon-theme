@@ -12,5 +12,5 @@
     }
   },
   "editor.defaultFormatter": "biomejs.biome",
-  "editor.formatOnSave": false
+  "editor.formatOnSave": true
 }
