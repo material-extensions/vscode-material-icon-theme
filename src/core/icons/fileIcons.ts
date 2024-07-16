@@ -2455,5 +2455,9 @@ export const fileIcons: FileIcons = {
       name: 'grafana-alloy',
       fileExtensions: ['alloy'],
     },
+    {
+      name: 'tsil',
+      fileExtensions: ['ц'],
+    },
   ]),
 };
