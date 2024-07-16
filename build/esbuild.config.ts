@@ -6,10 +6,10 @@ const config: BuildOptions = {
     './src/extension/web/extension.ts',
     './src/module/index.ts',
   ],
-  minify: true,
+  minify: false,
   bundle: true,
   platform: 'node',
-  target: 'node20',
+  target: 'node12',
   outdir: './dist',
   outbase: './src',
   outExtension: {
