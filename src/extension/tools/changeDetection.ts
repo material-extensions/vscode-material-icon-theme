@@ -38,7 +38,6 @@ export const detectConfigChanges = (event?: ConfigurationChangeEvent) => {
   clearCloneFolder(hasCustomClones(config));
 
   const manifestWithClones = merge(
-    {},
     manifest,
     customClonesIcons(manifest, config)
   );

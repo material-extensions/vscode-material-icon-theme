@@ -54,29 +54,16 @@
     "color": "#1e1e1e",
     "theme": "dark"
   },
-  "categories": [
-    "Themes"
-  ],
-  "keywords": [
-    "icons",
-    "theme",
-    "material",
-    "icon-theme",
-    "customization"
-  ],
-  "extensionKind": [
-    "ui",
-    "workspace"
-  ],
+  "categories": ["Themes"],
+  "keywords": ["icons", "theme", "material", "icon-theme", "customization"],
+  "extensionKind": ["ui", "workspace"],
   "capabilities": {
     "untrustedWorkspaces": {
       "supported": true
     },
     "virtualWorkspaces": true
   },
-  "activationEvents": [
-    "onStartupFinished"
-  ],
+  "activationEvents": ["onStartupFinished"],
   "main": "./dist/extension/desktop/extension.cjs",
   "browser": "./dist/extension/web/extension.cjs",
   "module": "./dist/module/index.cjs",
@@ -279,11 +266,7 @@
             "%configuration.folders.theme.classic%",
             "%configuration.folders.theme.none%"
           ],
-          "enum": [
-            "specific",
-            "classic",
-            "none"
-          ]
+          "enum": ["specific", "classic", "none"]
         },
         "material-icon-theme.folders.color": {
           "type": "string",
