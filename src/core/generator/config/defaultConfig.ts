@@ -33,11 +33,10 @@ export const getDefaultConfiguration = (): Required<Config> => ({
 export const padWithDefaultConfig = (
   config?: RecursivePartial<Config>
 ): Config => {
-  const withDefaultConfig: Config = merge(
-    {},
+  const withDefaultConfig = merge(
     getDefaultConfiguration(),
     config ?? {}
-  );
+  ) as Config;
 
   return withDefaultConfig;
 };

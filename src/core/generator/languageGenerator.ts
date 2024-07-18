@@ -30,13 +30,11 @@ export const loadLanguageIconDefinitions = (
     if (lang.disabled) return;
     manifest = setIconDefinitions(manifest, config, lang.icon);
     manifest = merge(
-      {},
       manifest,
       setLanguageIdentifiers(lang.icon.name, lang.ids)
     );
     manifest.light = lang.icon.light
       ? merge(
-          {},
           manifest.light,
           setLanguageIdentifiers(
             lang.icon.name + lightColorFileEnding,
@@ -46,7 +44,6 @@ export const loadLanguageIconDefinitions = (
       : manifest.light;
     manifest.highContrast = lang.icon.highContrast
       ? merge(
-          {},
           manifest.highContrast,
           setLanguageIdentifiers(
             lang.icon.name + highContrastColorFileEnding,
@@ -66,7 +63,6 @@ const setIconDefinitions = (
 ) => {
   manifest = createIconDefinitions(manifest, config, icon.name);
   manifest = merge(
-    {},
     manifest,
     icon.light
       ? createIconDefinitions(
@@ -77,7 +73,6 @@ const setIconDefinitions = (
       : manifest.light
   );
   manifest = merge(
-    {},
     manifest,
     icon.highContrast
       ? createIconDefinitions(
