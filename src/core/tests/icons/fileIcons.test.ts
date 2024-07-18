@@ -4,7 +4,7 @@ import { loadFileIconDefinitions } from '../../generator/fileGenerator';
 import type { Config } from '../../models/icons/config';
 import type { FileIcons } from '../../models/icons/files/fileTypes';
 import { IconPack } from '../../models/icons/iconPack';
-import { Manifest } from '../../models/manifest';
+import { type Manifest, createEmptyManifest } from '../../models/manifest';
 
 describe('file icons', () => {
   let expectedManifest: Manifest;
@@ -12,7 +12,7 @@ describe('file icons', () => {
 
   beforeEach(() => {
     config = getDefaultConfiguration();
-    expectedManifest = new Manifest();
+    expectedManifest = createEmptyManifest();
   });
 
   it('should configure icon definitions', () => {
@@ -32,7 +32,7 @@ describe('file icons', () => {
       ],
     };
 
-    const manifest = new Manifest();
+    const manifest = createEmptyManifest();
     const iconDefinitions = loadFileIconDefinitions(
       fileIcons,
       config,
@@ -80,7 +80,7 @@ describe('file icons', () => {
       ],
     };
 
-    const manifest = new Manifest();
+    const manifest = createEmptyManifest();
     config.activeIconPack = '';
     const iconDefinitions = loadFileIconDefinitions(
       fileIcons,
@@ -127,7 +127,7 @@ describe('file icons', () => {
       '*.sample.ts': 'angular',
       'sample.js': 'javascript',
     };
-    const manifest = new Manifest();
+    const manifest = createEmptyManifest();
     const iconDefinitions = loadFileIconDefinitions(
       fileIcons,
       config,
@@ -184,7 +184,7 @@ describe('file icons', () => {
       ],
     };
 
-    const manifest = new Manifest();
+    const manifest = createEmptyManifest();
     const iconDefinitions = loadFileIconDefinitions(
       fileIcons,
       config,
@@ -270,7 +270,7 @@ describe('file icons', () => {
       ],
     };
 
-    const manifest = new Manifest();
+    const manifest = createEmptyManifest();
     const iconDefinitions = loadFileIconDefinitions(
       fileIcons,
       config,
@@ -335,7 +335,7 @@ describe('file icons', () => {
       '*.baz': 'bar', // assigned to the clone
     };
 
-    const manifest = new Manifest();
+    const manifest = createEmptyManifest();
     const iconDefinitions = loadFileIconDefinitions(
       fileIcons,
       config,

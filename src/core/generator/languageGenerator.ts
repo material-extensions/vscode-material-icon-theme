@@ -1,5 +1,5 @@
-import { merge } from 'lodash-es';
 import { getFileConfigHash } from '../helpers/configHash';
+import { merge } from '../helpers/object';
 import type { Config, IconAssociations } from '../models/icons/config';
 import type { DefaultIcon } from '../models/icons/defaultIcon';
 import type { IconPackValue } from '../models/icons/iconPack';
@@ -19,7 +19,6 @@ export const loadLanguageIconDefinitions = (
   config: Config,
   manifest: Manifest
 ): Manifest => {
-  manifest = merge({}, manifest);
   const enabledLanguages = disableLanguagesByPack(
     languageIcons,
     config.activeIconPack
@@ -31,13 +30,11 @@ export const loadLanguageIconDefinitions = (
     if (lang.disabled) return;
     manifest = setIconDefinitions(manifest, config, lang.icon);
     manifest = merge(
-      {},
       manifest,
       setLanguageIdentifiers(lang.icon.name, lang.ids)
     );
     manifest.light = lang.icon.light
       ? merge(
-          {},
           manifest.light,
           setLanguageIdentifiers(
             lang.icon.name + lightColorFileEnding,
@@ -47,7 +44,6 @@ export const loadLanguageIconDefinitions = (
       : manifest.light;
     manifest.highContrast = lang.icon.highContrast
       ? merge(
-          {},
           manifest.highContrast,
           setLanguageIdentifiers(
             lang.icon.name + highContrastColorFileEnding,
@@ -65,10 +61,8 @@ const setIconDefinitions = (
   config: Config,
   icon: DefaultIcon
 ) => {
-  manifest = merge({}, manifest);
   manifest = createIconDefinitions(manifest, config, icon.name);
   manifest = merge(
-    {},
     manifest,
     icon.light
       ? createIconDefinitions(
@@ -79,7 +73,6 @@ const setIconDefinitions = (
       : manifest.light
   );
   manifest = merge(
-    {},
     manifest,
     icon.highContrast
       ? createIconDefinitions(
@@ -97,7 +90,6 @@ const createIconDefinitions = (
   config: Config,
   iconName: string
 ) => {
-  manifest = merge({}, manifest);
   const fileConfigHash = getFileConfigHash(config);
   if (manifest.iconDefinitions) {
     manifest.iconDefinitions[iconName] = {
