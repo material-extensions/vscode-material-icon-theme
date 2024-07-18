@@ -86,11 +86,7 @@ const getConfigValue = <T>(
     themeConfig.workspaceValue &&
     themeConfig.globalValue
   ) {
-    configValue = merge(
-      {},
-      themeConfig.workspaceValue,
-      themeConfig.globalValue
-    );
+    configValue = merge(themeConfig.workspaceValue, themeConfig.globalValue);
   } else {
     configValue =
       themeConfig.workspaceValue ??

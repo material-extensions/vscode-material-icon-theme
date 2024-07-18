@@ -1,6 +1,6 @@
 import { readFileSync } from 'node:fs';
 import { type INode, parseSync, stringify } from 'svgson';
-import { Manifest } from '../../../models/manifest';
+import { createEmptyManifest } from '../../../models/manifest';
 import { getColorList, replacementMap } from './color/colors';
 
 /**
@@ -107,7 +107,7 @@ export function replaceColors(node: INode, replacements: Map<string, string>) {
 
 /** Creates a clone configuration with empty light object. */
 export function createCloneConfig() {
-  const manifest = new Manifest();
+  const manifest = createEmptyManifest();
   manifest.light = {
     fileExtensions: {},
     fileNames: {},
