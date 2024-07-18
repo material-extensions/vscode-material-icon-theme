@@ -888,6 +888,7 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['seeds', 'seeders', 'seed', 'seeding'],
       },
       { name: 'folder-bicep', folderNames: ['bicep'] },
+      { name: 'folder-snapcraft', folderNames: ['snap', 'snapcraft'] },
     ],
   },
   {
