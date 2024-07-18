@@ -4,14 +4,14 @@ import { loadLanguageIconDefinitions } from '../../generator/languageGenerator';
 import type { Config } from '../../models/icons/config';
 import { IconPack } from '../../models/icons/iconPack';
 import type { LanguageIcon } from '../../models/icons/languages/languageIdentifier';
-import { Manifest } from '../../models/manifest';
+import { type Manifest, createEmptyManifest } from '../../models/manifest';
 
 describe('language icons', () => {
   let expectedManifest: Manifest;
   let config: Config;
 
   beforeEach(() => {
-    expectedManifest = new Manifest();
+    expectedManifest = createEmptyManifest();
     config = getDefaultConfiguration();
   });
 
@@ -21,7 +21,7 @@ describe('language icons', () => {
       { icon: { name: 'b' }, ids: ['b'] },
       { icon: { name: 'c' }, ids: ['c', 'd'] },
     ];
-    const manifest = new Manifest();
+    const manifest = createEmptyManifest();
     const iconDefinitions = loadLanguageIconDefinitions(
       languageIcons,
       config,
@@ -53,7 +53,7 @@ describe('language icons', () => {
       { icon: { name: 'a' }, ids: ['a'] },
       { icon: { name: 'c' }, ids: ['c', 'd'], disabled: true },
     ];
-    const manifest = new Manifest();
+    const manifest = createEmptyManifest();
     const iconDefinitions = loadLanguageIconDefinitions(
       languageIcons,
       config,
@@ -78,7 +78,7 @@ describe('language icons', () => {
     ];
 
     config.activeIconPack = '';
-    const manifest = new Manifest();
+    const manifest = createEmptyManifest();
     const iconDefinitions = loadLanguageIconDefinitions(
       languageIcons,
       config,
@@ -96,7 +96,7 @@ describe('language icons', () => {
       { icon: { name: 'b', light: true, highContrast: true }, ids: ['b'] },
     ];
 
-    const manifest = new Manifest();
+    const manifest = createEmptyManifest();
     const iconDefinitions = loadLanguageIconDefinitions(
       languageIcons,
       config,
@@ -154,7 +154,7 @@ describe('language icons', () => {
       { icon: { name: 'json' }, ids: ['a'] },
     ];
 
-    const manifest = new Manifest();
+    const manifest = createEmptyManifest();
     config.languages = {
       associations: {
         xml: 'json',

@@ -55,36 +55,48 @@ describe('set function its', () => {
 
 describe('merge function its', () => {
   it('should merge objects with primitive values', () => {
-    const obj1 = { a: 1, b: 'text' };
-    const obj2 = { a: 2, c: true };
+    type Obj = { a: number; b?: string; c?: boolean };
+    const obj1: Obj = { a: 1, b: 'text' };
+    const obj2: Obj = { a: 2, c: true };
     const result = merge(obj1, obj2);
     expect(result).toEqual({ a: 2, b: 'text', c: true });
   });
 
   it('should merge objects with nested objects', () => {
-    const obj1 = { a: { x: 1 }, b: 'text' };
-    const obj2 = { a: { y: 2 }, c: true };
+    type Obj = { a: { x?: number; y?: number }; b?: string; c?: boolean };
+    const obj1: Obj = { a: { x: 1 }, b: 'text' };
+    const obj2: Obj = { a: { y: 2 }, c: true };
     const result = merge(obj1, obj2);
     expect(result).toEqual({ a: { x: 1, y: 2 }, b: 'text', c: true });
   });
 
   it('should merge objects with arrays', () => {
-    const obj1 = { a: [1, 2], b: 'text' };
-    const obj2 = { a: [3, 4], c: true };
+    type Obj = { a: number[]; b?: string; c?: boolean };
+    const obj1: Obj = { a: [1, 2], b: 'text' };
+    const obj2: Obj = { a: [3, 4], c: true };
     const result = merge(obj1, obj2);
     expect(result).toEqual({ a: [1, 2, 3, 4], b: 'text', c: true });
   });
 
   it('should handle null and undefined correctly', () => {
-    const obj1 = { a: null, b: undefined };
-    const obj2 = { a: { x: 1 }, b: 'text' };
+    type Obj = {
+      a: { x: number } | null;
+      b: string | undefined;
+    };
+    const obj1: Obj = { a: null, b: undefined };
+    const obj2: Obj = { a: { x: 1 }, b: 'text' };
     const result = merge(obj1, obj2);
     expect(result).toEqual({ a: { x: 1 }, b: 'text' });
   });
 
   it('should prefer the truthy value when one value is undefined or null and the other is truthy', () => {
-    const obj1 = { key1: null, key2: 'value2', key3: undefined };
-    const obj2 = { key1: 'value1', key2: null, key3: 'value3' };
+    type Obj = {
+      key1?: string | null;
+      key2?: string | null;
+      key3?: string | null;
+    };
+    const obj1: Obj = { key1: null, key2: 'value2', key3: undefined };
+    const obj2: Obj = { key1: 'value1', key2: null, key3: 'value3' };
 
     const expectedResult = { key1: 'value1', key2: 'value2', key3: 'value3' };
     const result = merge(obj1, obj2);

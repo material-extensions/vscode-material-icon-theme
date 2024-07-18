@@ -24,7 +24,7 @@ import { getFileConfigHash } from '../../helpers/configHash';
 import { merge } from '../../helpers/object';
 import { resolvePath } from '../../helpers/resolvePath';
 import type { FileIconClone, FolderIconClone } from '../../models/icons/config';
-import { Manifest } from '../../models/manifest';
+import { type Manifest, createEmptyManifest } from '../../models/manifest';
 import {
   isValidColor,
   orderDarkToLight,
@@ -681,7 +681,7 @@ describe('cloning: json config generation from user options', () => {
     const hash = getFileConfigHash(config);
     const result = customClonesIcons(getDefinition(hash), config);
 
-    const expected = merge<Manifest>(new Manifest(), {
+    const expected = merge<Manifest>(createEmptyManifest(), {
       iconDefinitions: {
         file: {
           iconPath: `./../icons/file${hash}.svg`,
