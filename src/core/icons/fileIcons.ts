@@ -694,6 +694,10 @@ export const fileIcons: FileIcons = {
         'mist.jsx',
         'mist.tsx',
       ],
+      clone: {
+        base: 'rust',
+        color: 'blue-500',
+      },
     },
     { name: 'otne', fileExtensions: ['otne'] },
     {
