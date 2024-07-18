@@ -695,7 +695,7 @@ export const fileIcons: FileIcons = {
         'mist.tsx',
       ],
       clone: {
-        base: 'rust',
+        base: 'liquid',
         color: 'blue-500',
       },
     },
