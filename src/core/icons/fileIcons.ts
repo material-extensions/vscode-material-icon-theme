@@ -688,12 +688,7 @@ export const fileIcons: FileIcons = {
     { name: 'kotlin', fileExtensions: ['kt', 'kts'] },
     {
       name: 'mist',
-      fileExtensions: [
-        'mist.js',
-        'mist.ts',
-        'mist.jsx',
-        'mist.tsx',
-      ],
+      fileExtensions: ['mist.js', 'mist.ts', 'mist.jsx', 'mist.tsx'],
       clone: {
         base: 'liquid',
         color: 'blue-500',
