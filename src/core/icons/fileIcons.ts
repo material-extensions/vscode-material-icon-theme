@@ -688,12 +688,7 @@ export const fileIcons: FileIcons = {
     { name: 'kotlin', fileExtensions: ['kt', 'kts'] },
     {
       name: 'mist',
-      fileExtensions: [
-        'mist.js',
-        'mist.ts',
-        'mist.jsx',
-        'mist.tsx',
-      ],
+      fileExtensions: ['mist.js', 'mist.ts', 'mist.jsx', 'mist.tsx'],
       clone: {
         base: 'liquid',
         color: 'blue-500',
@@ -2413,8 +2408,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'drizzle',
-      light: true,
-      fileExtensions: [
+      fileNames: [
         'drizzle.config.ts',
         'drizzle.config.js',
         'drizzle.config.json',
