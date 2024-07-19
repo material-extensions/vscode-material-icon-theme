@@ -118,10 +118,12 @@ export const renameIconFiles = (config: Config) => {
         );
 
         // if generated files are already in place, do not overwrite them
-        if (filePath !== newFilePath && existsSync(newFilePath)) {
-          unlinkSync(filePath);
-        } else {
-          renameSync(filePath, newFilePath);
+        if (filePath !== newFilePath) {
+          if (existsSync(newFilePath)) {
+            unlinkSync(filePath);
+          } else {
+            renameSync(filePath, newFilePath);
+          }
         }
       });
   });
