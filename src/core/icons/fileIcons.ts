@@ -2432,6 +2432,10 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'container',
+      clone: {
+        base: '3d',
+        color: '#00b0ff',
+      },
       fileNames: ['.devcontainer/devcontainer.json'],
     },
     {
