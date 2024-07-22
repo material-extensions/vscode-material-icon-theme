@@ -2,7 +2,7 @@
   "name": "material-icon-theme",
   "displayName": "Material Icon Theme",
   "description": "Material Design Icons for Visual Studio Code",
-  "version": "5.5.1",
+  "version": "5.6.0",
   "scripts": {
     "precompile": "rimraf dist && bun run verify",
     "compile": "tsc -p ./",
@@ -54,40 +54,21 @@
     "color": "#1e1e1e",
     "theme": "dark"
   },
-  "categories": [
-    "Themes"
-  ],
-  "keywords": [
-    "icons",
-    "theme",
-    "material",
-    "icon-theme",
-    "customization"
-  ],
-  "extensionKind": [
-    "ui",
-    "workspace"
-  ],
+  "categories": ["Themes"],
+  "keywords": ["icons", "theme", "material", "icon-theme", "customization"],
+  "extensionKind": ["ui", "workspace"],
   "capabilities": {
     "untrustedWorkspaces": {
       "supported": true
     },
     "virtualWorkspaces": true
   },
-  "activationEvents": [
-    "onStartupFinished"
-  ],
+  "activationEvents": ["onStartupFinished"],
   "main": "./dist/extension/desktop/extension.cjs",
   "browser": "./dist/extension/web/extension.cjs",
   "module": "./dist/module/index.cjs",
   "types": "./dist/types/module/index.d.ts",
   "sideEffects": false,
-  "files": [
-    "icons",
-    "dist/material-icons.json",
-    "dist/module/index.cjs",
-    "dist/types"
-  ],
   "contributes": {
     "iconThemes": [
       {
@@ -279,11 +260,7 @@
             "%configuration.folders.theme.classic%",
             "%configuration.folders.theme.none%"
           ],
-          "enum": [
-            "specific",
-            "classic",
-            "none"
-          ]
+          "enum": ["specific", "classic", "none"]
         },
         "material-icon-theme.folders.color": {
           "type": "string",

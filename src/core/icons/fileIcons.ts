@@ -686,6 +686,14 @@ export const fileIcons: FileIcons = {
     { name: 'xaml', fileExtensions: ['xaml'] },
     { name: 'haskell', fileExtensions: ['hs'] },
     { name: 'kotlin', fileExtensions: ['kt', 'kts'] },
+    {
+      name: 'mist',
+      fileExtensions: ['mist.js', 'mist.ts', 'mist.jsx', 'mist.tsx'],
+      clone: {
+        base: 'liquid',
+        color: 'blue-500',
+      },
+    },
     { name: 'otne', fileExtensions: ['otne'] },
     {
       name: 'git',
@@ -930,6 +938,10 @@ export const fileIcons: FileIcons = {
       name: 'vercel',
       fileNames: ['vercel.json', '.vercelignore', 'now.json', '.nowignore'],
       light: true,
+    },
+    {
+      name: 'liara',
+      fileNames: ['liara.json', '.liaraignore'],
     },
     {
       name: 'verdaccio',
@@ -1222,7 +1234,15 @@ export const fileIcons: FileIcons = {
     },
     { name: 'appveyor', fileNames: ['.appveyor.yml', 'appveyor.yml'] },
     { name: 'travis', fileNames: ['.travis.yml'] },
-    { name: 'codecov', fileNames: ['.codecov.yml', 'codecov.yml'] },
+    {
+      name: 'codecov',
+      fileNames: [
+        '.codecov.yml',
+        'codecov.yml',
+        '.codecov.yaml',
+        'codecov.yaml',
+      ],
+    },
     {
       name: 'sonarcloud',
       fileNames: [
@@ -1535,7 +1555,7 @@ export const fileIcons: FileIcons = {
       fileNames: ['makefile', 'gnumakefile', 'kbuild'],
     },
     { name: 'foxpro', fileExtensions: ['fxp', 'prg'] },
-    { name: 'i18n', fileExtensions: ['pot', 'po', 'mo', 'lang'] },
+    { name: 'i18n', fileExtensions: ['pot', 'po', 'mo', 'lang', 'xlf'] },
     { name: 'webassembly', fileExtensions: ['wat', 'wasm'] },
     {
       name: 'semantic-release',
@@ -2432,6 +2452,10 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'container',
+      clone: {
+        base: '3d',
+        color: '#00b0ff',
+      },
       fileNames: ['.devcontainer/devcontainer.json'],
     },
     {
@@ -2458,6 +2482,10 @@ export const fileIcons: FileIcons = {
     {
       name: 'tsil',
       fileExtensions: ['ц'],
+    },
+    {
+      name: 'deepsource',
+      fileNames: ['.deepsource.toml'],
     },
   ]),
 };

@@ -3,6 +3,14 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v5.6.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.5.1...v5.6.0) 
+
+> July 16, 2024 
+
+- feat: ✨ update turbo repo file icon + .turbo folder icon [`#2425`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2425)
+- Revert esbuild config (Related to #2428) [`c66fa64d`](https://github.com/material-extensions/vscode-material-icon-theme/commit/c66fa64d)
+- feat: velite [`#2406`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2406)
+ 
 #### [v5.5.1](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.5.0...v5.5.1) 
 
 > July 15, 2024 
