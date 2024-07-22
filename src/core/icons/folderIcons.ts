@@ -290,7 +290,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-astro',
-        folderNames: ['.astro'],
+        folderNames: ['astro'],
       },
       {
         name: 'folder-database',
@@ -368,7 +368,7 @@ export const folderIcons: FolderTheme[] = [
         ],
       },
       { name: 'folder-lua', folderNames: ['lua'] },
-      { name: 'folder-turborepo', folderNames: ['.turbo'] },
+      { name: 'folder-turborepo', folderNames: ['turbo'] },
       {
         name: 'folder-typescript',
         folderNames: ['typescript', 'ts', 'typings', '@types', 'types'],
@@ -806,14 +806,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-helm',
-        folderNames: [
-          'helm',
-          'helmchart',
-          'helmcharts',
-          '.helm',
-          '.helmchart',
-          '.helmcharts',
-        ],
+        folderNames: ['helm', 'helmchart', 'helmcharts'],
       },
       {
         name: 'folder-queue',
