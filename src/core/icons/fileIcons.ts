@@ -942,6 +942,10 @@ export const fileIcons: FileIcons = {
       light: true,
     },
     {
+      name: 'liara',
+      fileNames: ['liara.json', '.liaraignore'],
+    },
+    {
       name: 'verdaccio',
       fileNames: ['verdaccio.yml'],
     },
@@ -2477,6 +2481,27 @@ export const fileIcons: FileIcons = {
     {
       name: 'grafana-alloy',
       fileExtensions: ['alloy'],
+    },
+    {
+      name: 'markdownlint',
+      fileNames: [
+        '.markdownlint.json',
+        '.markdownlint.jsonc',
+        '.markdownlint.yaml',
+        '.markdownlint.yml',
+        '.markdownlint-cli2.jsonc',
+        '.markdownlint-cli2.yaml',
+        '.markdownlint-cli2.cjs',
+        '.markdownlint-cli2.mjs',
+      ],
+    },
+    {
+      name: 'tsil',
+      fileExtensions: ['ц'],
+    },
+    {
+      name: 'deepsource',
+      fileNames: ['.deepsource.toml'],
     },
   ]),
 };
