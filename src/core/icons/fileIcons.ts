@@ -251,7 +251,7 @@ export const fileIcons: FileIcons = {
         'manifest.mf',
         '.clang-format',
         '.clang-tidy',
-        '.conf'
+        '.conf',
       ],
     },
     {
@@ -469,7 +469,7 @@ export const fileIcons: FileIcons = {
         'sha256sum',
         'sha256sums',
       ],
-      fileNames: ['.htpasswd', 'sha256sums'],
+      fileNames: ['.htpasswd', 'sha256sums', '.secrets'],
     },
     {
       name: 'font',
@@ -1137,7 +1137,6 @@ export const fileIcons: FileIcons = {
         '.env.test.local',
         '.env.uat',
         '.vars',
-        '.secrets',
       ],
     },
     {
