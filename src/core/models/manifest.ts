@@ -1,4 +1,4 @@
-export class Manifest {
+export type Manifest = {
   file?: string;
   folder?: string;
   folderExpanded?: string;
@@ -13,21 +13,21 @@ export class Manifest {
   light?: Manifest;
   highContrast?: Manifest;
   hidesExplorerArrows?: boolean;
+};
 
-  constructor() {
-    this.iconDefinitions = {};
-    this.folderNames = {};
-    this.folderNamesExpanded = {};
-    this.fileExtensions = {};
-    this.fileNames = {};
-    this.languageIds = {};
-    this.light = {
-      fileExtensions: {},
-      fileNames: {},
-    };
-    this.highContrast = {
-      fileExtensions: {},
-      fileNames: {},
-    };
-  }
-}
+export const createEmptyManifest = (): Manifest => ({
+  iconDefinitions: {},
+  folderNames: {},
+  folderNamesExpanded: {},
+  fileExtensions: {},
+  fileNames: {},
+  languageIds: {},
+  light: {
+    fileExtensions: {},
+    fileNames: {},
+  },
+  highContrast: {
+    fileExtensions: {},
+    fileNames: {},
+  },
+});

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'bun:test';
-import { get } from 'lodash-es';
+import { get } from '../../helpers/object';
 import { getTranslationValue, replace } from '../../i18n/translate';
 import type { Translation } from '../../models/i18n/translation';
 

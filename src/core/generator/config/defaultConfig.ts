@@ -1,4 +1,4 @@
-import { merge } from 'lodash-es';
+import { merge } from '../../helpers/object';
 import type { Config } from '../../models/icons/config';
 import type { RecursivePartial } from '../../types/recursivePartial';
 
@@ -33,11 +33,10 @@ export const getDefaultConfiguration = (): Required<Config> => ({
 export const padWithDefaultConfig = (
   config?: RecursivePartial<Config>
 ): Config => {
-  const withDefaultConfig: Config = merge(
-    {},
+  const withDefaultConfig = merge(
     getDefaultConfiguration(),
     config ?? {}
-  );
+  ) as Config;
 
   return withDefaultConfig;
 };

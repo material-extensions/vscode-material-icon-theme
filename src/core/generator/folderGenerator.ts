@@ -1,5 +1,5 @@
-import { merge } from 'lodash-es';
 import { getFileConfigHash } from '../helpers/configHash';
+import { merge } from '../helpers/object';
 import type { Config, IconAssociations } from '../models/icons/config';
 import type { DefaultIcon } from '../models/icons/defaultIcon';
 import type { FolderIcon } from '../models/icons/folders/folderIcon';
@@ -24,7 +24,6 @@ export const loadFolderIconDefinitions = (
   config: Config,
   manifest: Manifest
 ): Manifest => {
-  manifest = merge({}, manifest);
   manifest.hidesExplorerArrows = config.hidesExplorerArrows;
   const activeTheme = getEnabledFolderTheme(folderIcons, config.folders?.theme);
   if (!activeTheme) {
@@ -42,17 +41,15 @@ export const loadFolderIconDefinitions = (
     if (icon.disabled) return;
     const folderNames = extendFolderNames(icon.folderNames);
     manifest = setIconDefinitions(manifest, config, icon);
-    manifest = merge({}, manifest, setFolderNames(icon.name, folderNames));
+    manifest = merge(manifest, setFolderNames(icon.name, folderNames));
     manifest.light = icon.light
       ? merge(
-          {},
           manifest.light,
           setFolderNames(icon.name, folderNames, lightColorFileEnding)
         )
       : manifest.light;
     manifest.highContrast = icon.highContrast
       ? merge(
-          {},
           manifest.highContrast,
           setFolderNames(icon.name, folderNames, highContrastColorFileEnding)
         )
@@ -71,20 +68,17 @@ const setDefaultFolderIcons = (
   manifest: Manifest,
   config: Config
 ): Manifest => {
-  manifest = merge({}, manifest);
   const hasFolderIcons =
     !!theme.defaultIcon.name && theme.defaultIcon.name.length > 0;
   if (hasFolderIcons) {
     manifest = setIconDefinitions(manifest, config, theme.defaultIcon);
   }
   manifest = merge(
-    {},
     manifest,
     createDefaultIconConfigObject(hasFolderIcons, theme, '')
   );
   manifest.light = theme.defaultIcon.light
     ? merge(
-        {},
         manifest.light,
         createDefaultIconConfigObject(
           hasFolderIcons,
@@ -95,7 +89,6 @@ const setDefaultFolderIcons = (
     : manifest.light;
   manifest.highContrast = theme.defaultIcon.highContrast
     ? merge(
-        {},
         manifest.highContrast,
         createDefaultIconConfigObject(
           hasFolderIcons,
@@ -106,7 +99,6 @@ const setDefaultFolderIcons = (
     : manifest.highContrast;
 
   manifest = merge(
-    {},
     manifest,
     createRootIconConfigObject(hasFolderIcons, theme, '')
   );
@@ -114,7 +106,6 @@ const setDefaultFolderIcons = (
     manifest = setIconDefinitions(manifest, config, theme.rootFolder);
     manifest.light = theme.rootFolder.light
       ? merge(
-          {},
           manifest.light,
           createRootIconConfigObject(
             hasFolderIcons,
@@ -125,7 +116,6 @@ const setDefaultFolderIcons = (
       : manifest.light;
     manifest.highContrast = theme.rootFolder.highContrast
       ? merge(
-          {},
           manifest.highContrast,
           createRootIconConfigObject(
             hasFolderIcons,
@@ -172,12 +162,10 @@ const setIconDefinitions = (
   icon: FolderIcon | DefaultIcon
 ) => {
   const isClone = (icon as FolderIcon).clone !== undefined;
-  manifest = merge({}, manifest);
 
   manifest = createIconDefinitions(manifest, config, icon.name, '', isClone);
   if (icon.light) {
     manifest = merge(
-      {},
       manifest,
       createIconDefinitions(
         manifest,
@@ -190,7 +178,6 @@ const setIconDefinitions = (
   }
   if (icon.highContrast) {
     manifest = merge(
-      {},
       manifest,
       createIconDefinitions(
         manifest,
@@ -211,7 +198,6 @@ const createIconDefinitions = (
   appendix: string = '',
   isClone = false
 ) => {
-  manifest = merge({}, manifest);
   const fileConfigHash = getFileConfigHash(config);
   const configIconDefinitions = manifest.iconDefinitions;
   const ext = isClone ? cloneIconExtension : '.svg';

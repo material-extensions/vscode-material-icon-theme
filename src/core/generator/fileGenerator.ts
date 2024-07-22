@@ -1,4 +1,3 @@
-import { merge } from 'lodash-es';
 import { getFileConfigHash } from '../helpers/configHash';
 import type { Config, IconAssociations } from '../models/icons/config';
 import type { FileIcon } from '../models/icons/files/fileIcon';
@@ -23,7 +22,6 @@ export const loadFileIconDefinitions = (
   config: Config,
   manifest: Manifest
 ): Manifest => {
-  manifest = merge({}, manifest);
   const enabledIcons = disableIconsByPack(fileIcons, config.activeIconPack);
   const customIcons = getCustomIcons(config.files?.associations);
   const allFileIcons = [...enabledIcons, ...customIcons];
@@ -117,10 +115,9 @@ const mapSpecificFileIcons = (
   manifest: Manifest,
   customFileAssociation: IconAssociations = {}
 ) => {
-  const manifestCopy = merge({}, manifest);
   const iconMappingType = icon[mappingType as keyof FileIcon] as string[];
   if (iconMappingType === undefined) {
-    return manifestCopy;
+    return manifest;
   }
   iconMappingType.forEach((name) => {
     // if the custom file extension should also overwrite the file names
@@ -137,10 +134,9 @@ const mapSpecificFileIcons = (
     );
 
     // if overwrite is enabled then do not continue to set the icons for file names containing the file extension
-    const configMappingType = manifestCopy[mappingType];
-    const configLightMappingType = manifestCopy.light?.[mappingType];
-    const configHighContrastMappingType =
-      manifestCopy.highContrast?.[mappingType];
+    const configMappingType = manifest[mappingType];
+    const configLightMappingType = manifest.light?.[mappingType];
+    const configHighContrastMappingType = manifest.highContrast?.[mappingType];
 
     if (
       shouldOverwriteFileNames ||
@@ -159,7 +155,7 @@ const mapSpecificFileIcons = (
         `${icon.name}${highContrastColorFileEnding}`;
     }
   });
-  return manifestCopy;
+  return manifest;
 };
 
 /**
@@ -183,17 +179,16 @@ const setIconDefinition = (
   isClone: boolean,
   appendix: string = ''
 ) => {
-  const manifestCopy = merge({}, manifest);
   const ext = isClone ? cloneIconExtension : '.svg';
   const key = `${iconName}${appendix}`;
   manifest.iconDefinitions ??= {};
   if (!manifest.iconDefinitions![key]) {
     const fileConfigHash = getFileConfigHash(config);
-    manifestCopy.iconDefinitions![key] = {
+    manifest.iconDefinitions![key] = {
       iconPath: `${iconFolderPath}${iconName}${appendix}${fileConfigHash}${ext}`,
     };
   }
-  return manifestCopy;
+  return manifest;
 };
 
 export const generateFileIcons = (

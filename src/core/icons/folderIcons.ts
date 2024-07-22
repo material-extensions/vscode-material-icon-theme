@@ -368,6 +368,7 @@ export const folderIcons: FolderTheme[] = [
         ],
       },
       { name: 'folder-lua', folderNames: ['lua'] },
+      { name: 'folder-turborepo', folderNames: ['.turbo'] },
       {
         name: 'folder-typescript',
         folderNames: ['typescript', 'ts', 'typings', '@types', 'types'],
@@ -627,7 +628,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-supabase', folderNames: ['supabase'] },
       { name: 'folder-private', folderNames: ['private'] },
       { name: 'folder-linux', folderNames: ['linux', 'linuxbsd', 'unix'] },
-      { name: 'folder-windows', folderNames: ['windows', 'win'] },
+      { name: 'folder-windows', folderNames: ['windows', 'win', 'win32'] },
       {
         name: 'folder-macos',
         folderNames: ['macos', 'mac', 'osx', 'DS_Store'],
@@ -887,6 +888,7 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['seeds', 'seeders', 'seed', 'seeding'],
       },
       { name: 'folder-bicep', folderNames: ['bicep'] },
+      { name: 'folder-snapcraft', folderNames: ['snap', 'snapcraft'] },
     ],
   },
   {
