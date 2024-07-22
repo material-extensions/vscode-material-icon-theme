@@ -1543,7 +1543,7 @@ export const fileIcons: FileIcons = {
       fileNames: ['makefile', 'gnumakefile', 'kbuild'],
     },
     { name: 'foxpro', fileExtensions: ['fxp', 'prg'] },
-    { name: 'i18n', fileExtensions: ['pot', 'po', 'mo', 'lang'] },
+    { name: 'i18n', fileExtensions: ['pot', 'po', 'mo', 'lang', 'xlf'] },
     { name: 'webassembly', fileExtensions: ['wat', 'wasm'] },
     {
       name: 'semantic-release',
