@@ -241,6 +241,7 @@ export const fileIcons: FileIcons = {
         'sln.dotsettings',
         'sln.dotsettings.user',
         'cfg',
+        'cnf',
       ],
       fileNames: [
         '.jshintignore',
@@ -250,6 +251,7 @@ export const fileIcons: FileIcons = {
         'manifest.mf',
         '.clang-format',
         '.clang-tidy',
+        '.conf',
       ],
     },
     {
@@ -467,7 +469,7 @@ export const fileIcons: FileIcons = {
         'sha256sum',
         'sha256sums',
       ],
-      fileNames: ['.htpasswd', 'sha256sums'],
+      fileNames: ['.htpasswd', 'sha256sums', '.secrets'],
     },
     {
       name: 'font',
@@ -1138,6 +1140,7 @@ export const fileIcons: FileIcons = {
         '.env.staging.local',
         '.env.test.local',
         '.env.uat',
+        '.vars',
       ],
     },
     {
