@@ -65,7 +65,7 @@ jobs:
         run: git push
 
       - name: Release ${{ env.VERSION }} 🔆
-        uses: softprops/action-gh-release@a74c6b72af54cfa997e81df42d94703d6313a2d0 # v2.0.6
+        uses: softprops/action-gh-release@c062e08bd532815e2082a85e87e3ef29c3e6d191 # v2.0.8
         with:
           files: ${{ env.NAME }}-${{ env.VERSION }}.vsix
           tag_name: v${{ env.VERSION }}
