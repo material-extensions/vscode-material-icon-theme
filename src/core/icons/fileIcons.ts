@@ -2480,6 +2480,19 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['alloy'],
     },
     {
+      name: 'markdownlint',
+      fileNames: [
+        '.markdownlint.json',
+        '.markdownlint.jsonc',
+        '.markdownlint.yaml',
+        '.markdownlint.yml',
+        '.markdownlint-cli2.jsonc',
+        '.markdownlint-cli2.yaml',
+        '.markdownlint-cli2.cjs',
+        '.markdownlint-cli2.mjs',
+      ],
+    },
+    {
       name: 'tsil',
       fileExtensions: ['ц'],
     },
