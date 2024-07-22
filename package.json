@@ -2,34 +2,37 @@
   "name": "material-icon-theme",
   "displayName": "Material Icon Theme",
   "description": "Material Design Icons for Visual Studio Code",
-  "version": "4.29.0",
+  "version": "5.6.0",
   "scripts": {
-    "build": "npm run compile:dev && npm run generateJson",
-    "check": "ts-node ./src/scripts/icons/checks",
-    "compile": "webpack --config ./build/webpack.config.js --mode production",
-    "compile:dev": "webpack --config ./build/webpack.config.js --mode none",
-    "compile:watch": "webpack --config ./build/webpack.config.js --mode none --watch",
-    "compile-web": "webpack --config ./build/web-extension.webpack.config.js",
-    "watch-web": "webpack --watch --config ./build/web-extension.webpack.config.js",
-    "package-web": "webpack --mode production --devtool hidden-source-map --config ./build/web-extension.webpack.config.js",
-    "contributors": "ts-node ./src/scripts/contributors/index.ts",
-    "generateJson": "ts-node ./src/scripts/icons/generateJson.ts",
-    "lint": "eslint -c .eslintrc.json --ext .ts ./src/**/*.ts",
-    "postcompile": "npm run generateJson && npm run check",
-    "pretest": "npm run build && tsc -p ./",
-    "preview": "ts-node ./src/scripts/preview",
-    "svgo": "svgo -i icons -o icons -q",
-    "test": "node ./out/test/runTest.js",
+    "precompile": "rimraf dist && bun run verify",
+    "compile": "tsc -p ./",
+    "compile:declarations": "tsc -p ./tsconfig.declarations.json",
+    "postcompile": "bun run compile:declarations && bun run generateJson && bun run generateClones && bun run check",
+    "build": "bun run compile && bun run ./build/build-with-esbuild.ts",
+    "watch": "bun run ./build/watch-with-esbuild.ts",
     "changelog": "changelog-machine --config changelog.config.json",
-    "preversion": "npm run contributors && git add images/contributors.png && npm run preview && git add images/fileIcons.png && git add images/folderIcons.png",
-    "version": "npm run changelog && git add CHANGELOG.md",
-    "vscode:prepublish": "npm run lint && npm run compile && npm run package-web"
+    "check-colors": "bun run ./src/scripts/svg/checkSvgColors.ts",
+    "check": "bun ./src/scripts/icons/checks/run.ts",
+    "contributors": "bun ./src/scripts/contributors/contributors.ts",
+    "generateJson": "bun ./src/scripts/icons/generateJson.ts > dist/material-icons.json",
+    "generateClones": "bun ./src/scripts/icons/generateClones.ts",
+    "lint": "bunx @biomejs/biome check --write ./src",
+    "format": "bunx @biomejs/biome format --write ./src",
+    "preversion": "bun run contributors && git add images/contributors.png && bun run preview && git add images/fileIcons.png && git add images/folderIcons.png && bun run svgo && git add icons/*.svg",
+    "preview": "bun ./src/scripts/preview/run.ts",
+    "svgo": "svgo -i icons -o icons -q",
+    "test": "bun test",
+    "version": "bun run changelog && git add CHANGELOG.md",
+    "vscode:prepublish": "bun run lint && bun run build",
+    "verify": "bunx sheriff verify",
+    "prepublishOnly": "bun run ./src/scripts/module/prepare.ts",
+    "postpublish": "git checkout package.json && git checkout README.md"
   },
   "publisher": "PKief",
   "author": {
     "name": "Philipp Kief",
     "email": "philipp.kief@gmx.de",
-    "url": "https://pkief.github.io"
+    "url": "https://pkief.com"
   },
   "funding": "https://github.com/sponsors/PKief",
   "sponsor": {
@@ -38,49 +41,34 @@
   "engines": {
     "vscode": "^1.51.0"
   },
-  "homepage": "https://github.com/PKief/vscode-material-icon-theme/blob/main/README.md",
+  "homepage": "https://github.com/material-extensions/vscode-material-icon-theme/blob/main/README.md",
   "repository": {
     "type": "git",
-    "url": "https://github.com/PKief/vscode-material-icon-theme.git"
+    "url": "git+https://github.com/material-extensions/vscode-material-icon-theme.git"
   },
   "bugs": {
-    "url": "https://github.com/PKief/vscode-material-icon-theme/issues"
+    "url": "https://github.com/material-extensions/vscode-material-icon-theme/issues"
   },
   "icon": "logo.png",
   "galleryBanner": {
     "color": "#1e1e1e",
     "theme": "dark"
   },
-  "categories": [
-    "Themes"
-  ],
-  "keywords": [
-    "icons",
-    "theme",
-    "material",
-    "icon-theme",
-    "customization"
-  ],
-  "extensionKind": [
-    "ui",
-    "workspace"
-  ],
+  "categories": ["Themes"],
+  "keywords": ["icons", "theme", "material", "icon-theme", "customization"],
+  "extensionKind": ["ui", "workspace"],
   "capabilities": {
     "untrustedWorkspaces": {
       "supported": true
     },
     "virtualWorkspaces": true
   },
-  "activationEvents": [
-    "onStartupFinished"
-  ],
-  "main": "./dist/extension",
-  "browser": "./dist/web/extension.js",
+  "activationEvents": ["onStartupFinished"],
+  "main": "./dist/extension/desktop/extension.cjs",
+  "browser": "./dist/extension/web/extension.cjs",
+  "module": "./dist/module/index.cjs",
+  "types": "./dist/types/module/index.d.ts",
   "sideEffects": false,
-  "files": [
-    "icons",
-    "dist/material-icons.json"
-  ],
   "contributes": {
     "iconThemes": [
       {
@@ -188,6 +176,81 @@
           "default": {},
           "description": "%configuration.languages.associations%"
         },
+        "material-icon-theme.files.customClones": {
+          "type": "array",
+          "default": [],
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "%configuration.customClones.name%"
+              },
+              "base": {
+                "type": "string",
+                "description": "%configuration.customClones.base%"
+              },
+              "color": {
+                "type": "string",
+                "description": "%configuration.customClones.color%"
+              },
+              "lightColor": {
+                "type": "string",
+                "description": "%configuration.customClones.lightColor%"
+              },
+              "fileNames": {
+                "type": "array",
+                "default": [],
+                "description": "%configuration.customClones.fileNames%",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "fileExtensions": {
+                "type": "array",
+                "default": [],
+                "description": "%configuration.customClones.fileExtensions%",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "description": "%configuration.customClones%"
+        },
+        "material-icon-theme.folders.customClones": {
+          "type": "array",
+          "default": [],
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "%configuration.customClones.name%"
+              },
+              "base": {
+                "type": "string",
+                "description": "%configuration.customClones.base%"
+              },
+              "color": {
+                "type": "string",
+                "description": "%configuration.customClones.color%"
+              },
+              "lightColor": {
+                "type": "string",
+                "description": "%configuration.customClones.lightColor%"
+              },
+              "folderNames": {
+                "type": "array",
+                "description": "%configuration.customClones.folderNames%",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "description": "%configuration.customClones%"
+        },
         "material-icon-theme.folders.theme": {
           "type": "string",
           "default": "specific",
@@ -197,11 +260,7 @@
             "%configuration.folders.theme.classic%",
             "%configuration.folders.theme.none%"
           ],
-          "enum": [
-            "specific",
-            "classic",
-            "none"
-          ]
+          "enum": ["specific", "classic", "none"]
         },
         "material-icon-theme.folders.color": {
           "type": "string",
@@ -238,33 +297,26 @@
     }
   },
   "dependencies": {
-    "lodash.merge": "4.6.2"
+    "chroma-js": "^2.4.2",
+    "svgson": "^5.3.1"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.8.2",
+    "@softarc/sheriff-core": "^0.15.1",
+    "@types/chroma-js": "^2.4.4",
     "@types/glob": "^7.2.0",
-    "@types/lodash.merge": "^4.6.7",
-    "@types/mocha": "^9.1.1",
-    "@types/node": "^17.0.35",
     "@types/puppeteer": "^5.4.6",
     "@types/vscode": "~1.51.0",
-    "@typescript-eslint/eslint-plugin": "^5.26.0",
-    "@typescript-eslint/parser": "^5.26.0",
+    "@vscode/test-electron": "^2.3.9",
     "axios": "^1.4.0",
+    "bun-types": "^1.1.12",
     "changelog-machine": "^1.0.2",
-    "eslint": "^8.16.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.0.0",
+    "esbuild": "^0.21.4",
     "glob": "^8.0.3",
-    "mocha": "^10.0.0",
-    "prettier": "^2.6.2",
-    "puppeteer": "^14.1.1",
-    "rimraf": "^3.0.2",
+    "puppeteer": "^22.11.0",
+    "rimraf": "^6.0.0",
+    "svg-color-linter": "^1.3.0",
     "svgo": "^2.8.0",
-    "ts-loader": "^9.3.0",
-    "ts-node": "^10.8.0",
-    "typescript": "^4.7.2",
-    "vscode-test": "^1.6.1",
-    "webpack": "^5.71.1",
-    "webpack-cli": "^4.9.2"
+    "typescript": "^5.5.3"
   }
 }
