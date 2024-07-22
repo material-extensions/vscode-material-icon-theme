@@ -2480,6 +2480,10 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['alloy'],
     },
     {
+      name: 'tsil',
+      fileExtensions: ['ц'],
+    },
+    {
       name: 'deepsource',
       fileNames: ['.deepsource.toml'],
     },
