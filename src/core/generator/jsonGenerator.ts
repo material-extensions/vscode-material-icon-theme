@@ -1,14 +1,14 @@
 import { existsSync, readdirSync, renameSync, unlinkSync } from 'node:fs';
 import { join } from 'node:path';
-import { merge } from 'lodash-es';
 import { getFileConfigHash } from '../helpers/configHash';
 import { getCustomIconPaths } from '../helpers/customIconPaths';
+import { merge } from '../helpers/object';
 import { resolvePath } from '../helpers/resolvePath';
 import { fileIcons } from '../icons/fileIcons';
 import { folderIcons } from '../icons/folderIcons';
 import { languageIcons } from '../icons/languageIcons';
 import type { Config } from '../models/icons/config';
-import { Manifest } from '../models/manifest';
+import { type Manifest, createEmptyManifest } from '../models/manifest';
 import type { RecursivePartial } from '../types/recursivePartial';
 import { padWithDefaultConfig } from './config/defaultConfig';
 import { iconFolderPath } from './constants';
@@ -37,7 +37,7 @@ export type ManifestConfig = RecursivePartial<
  */
 export const generateManifest = (config?: ManifestConfig): Manifest => {
   const refinedConfig = padWithDefaultConfig(config);
-  const manifest = new Manifest();
+  const manifest = createEmptyManifest();
   const languageIconDefinitions = loadLanguageIconDefinitions(
     languageIcons,
     refinedConfig,
@@ -54,8 +54,7 @@ export const generateManifest = (config?: ManifestConfig): Manifest => {
     manifest
   );
 
-  return merge(
-    {},
+  return merge<Manifest>(
     languageIconDefinitions,
     fileIconDefinitions,
     folderIconDefinitions
@@ -119,10 +118,12 @@ export const renameIconFiles = (config: Config) => {
         );
 
         // if generated files are already in place, do not overwrite them
-        if (filePath !== newFilePath && existsSync(newFilePath)) {
-          unlinkSync(filePath);
-        } else {
-          renameSync(filePath, newFilePath);
+        if (filePath !== newFilePath) {
+          if (existsSync(newFilePath)) {
+            unlinkSync(filePath);
+          } else {
+            renameSync(filePath, newFilePath);
+          }
         }
       });
   });

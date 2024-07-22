@@ -2,7 +2,7 @@
   "name": "material-icon-theme",
   "displayName": "Material Icon Theme",
   "description": "Material Design Icons for Visual Studio Code",
-  "version": "5.4.2",
+  "version": "5.6.0",
   "scripts": {
     "precompile": "rimraf dist && bun run verify",
     "compile": "tsc -p ./",
@@ -69,12 +69,6 @@
   "module": "./dist/module/index.cjs",
   "types": "./dist/types/module/index.d.ts",
   "sideEffects": false,
-  "files": [
-    "icons",
-    "dist/material-icons.json",
-    "dist/module/index.cjs",
-    "dist/types"
-  ],
   "contributes": {
     "iconThemes": [
       {
@@ -304,7 +298,6 @@
   },
   "dependencies": {
     "chroma-js": "^2.4.2",
-    "lodash-es": "^4.17.21",
     "svgson": "^5.3.1"
   },
   "devDependencies": {
@@ -312,7 +305,6 @@
     "@softarc/sheriff-core": "^0.15.1",
     "@types/chroma-js": "^2.4.4",
     "@types/glob": "^7.2.0",
-    "@types/lodash-es": "^4.17.12",
     "@types/puppeteer": "^5.4.6",
     "@types/vscode": "~1.51.0",
     "@vscode/test-electron": "^2.3.9",
