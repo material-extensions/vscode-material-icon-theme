@@ -69,12 +69,6 @@
   "module": "./dist/module/index.cjs",
   "types": "./dist/types/module/index.d.ts",
   "sideEffects": false,
-  "files": [
-    "icons",
-    "dist/material-icons.json",
-    "dist/module/index.cjs",
-    "dist/types"
-  ],
   "contributes": {
     "iconThemes": [
       {
