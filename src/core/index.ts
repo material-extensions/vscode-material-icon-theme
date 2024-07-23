@@ -7,6 +7,7 @@ export { clearCloneFolder } from './generator/clones/utils/cloneData';
 export { getDefaultConfiguration } from './generator/config/defaultConfig';
 export {
   extensionName,
+  extensionPublisher,
   highContrastColorFileEnding,
   lightColorFileEnding,
   manifestName,

@@ -4,6 +4,11 @@
 export const extensionName = 'material-icon-theme';
 
 /**
+ * Name of the extension publisher.
+ */
+export const extensionPublisher = 'PKief';
+
+/**
  * Path where the icons are located.
  */
 export const iconFolderPath = './../icons/';
