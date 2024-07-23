@@ -19,6 +19,11 @@ jobs:
       pull-requests: write
 
     steps:
+      - name: Setup Platform 🛠
+        uses: oven-sh/setup-bun@4bc047ad259df6fc24a6c9b0f9a0cb08cf17fbe5 # v2
+        with:
+          bun-version: 1.1.20
+
       - name: Checkout Fork 🛎️
         uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
         with:
@@ -40,7 +45,7 @@ jobs:
         run: |
           files=$(git diff --no-index ../main ../fork --diff-filter=ACMRTUX --name-only | grep '.svg$')
           filesCount=$(echo "$files" | wc -l)
-          npx svg-icon-review@1.1.0 --bigIcon ${files}
+          bunx --bun svg-icon-review@2.1.0 --bigIcon ${files}
           echo svg_files_count=$filesCount >> $GITHUB_ENV
 
       - name: Upload PNG ⬆️
