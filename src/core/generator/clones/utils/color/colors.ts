@@ -7,7 +7,7 @@ import {
 } from './materialPalette';
 
 /** Get all the colors used in the SVG node as a `Set` list. **/
-export function getColorList(node: INode) {
+export const getColorList = (node: INode) => {
   const colors = new Set<string>();
 
   traverse(node, (node) => {
@@ -43,10 +43,10 @@ export function getColorList(node: INode) {
   });
 
   return colors;
-}
+};
 
 /** given a set of colors, orders them from dark to light. **/
-export function orderDarkToLight(colors: Set<string>) {
+export const orderDarkToLight = (colors: Set<string>) => {
   const colorArray = Array.from(colors);
   return colorArray.sort((a, b) => {
     // sort by lightness
@@ -61,19 +61,19 @@ export function orderDarkToLight(colors: Set<string>) {
       return 0;
     }
   });
-}
+};
 
 /** Lightens a color by a given percentage. **/
 const lighten = (color: Color, hslPercent: number) =>
   color.set('hsl.l', color.get('hsl.l') + hslPercent);
 
 /** checks if a string is a valid color. **/
-export function isValidColor(color: string | undefined): boolean {
+export const isValidColor = (color: string | undefined): boolean => {
   if (color === undefined) {
     return false;
   }
   return valid(color);
-}
+};
 
 /**
  * Creates a map of color replacements based on the base color and
@@ -84,7 +84,7 @@ export function isValidColor(color: string | undefined): boolean {
  * the material palette to find the most appropriate color for the rest
  * in the list.
  */
-export function replacementMap(baseColor: string, colors: Set<string>) {
+export const replacementMap = (baseColor: string, colors: Set<string>) => {
   if (!isValidColor(baseColor)) {
     // try to get it from the material palette by key
     const matCol = getMaterialColorByKey(baseColor);
@@ -126,4 +126,4 @@ export function replacementMap(baseColor: string, colors: Set<string>) {
   }
 
   return replacement;
-}
+};

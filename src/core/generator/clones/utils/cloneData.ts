@@ -1,4 +1,4 @@
-import { existsSync, mkdirSync, rmSync } from 'node:fs';
+import { exists, mkdir, rm } from 'node:fs/promises';
 import { basename, dirname, join } from 'node:path';
 import { resolvePath } from '../../../helpers/resolvePath';
 import type {
@@ -53,13 +53,13 @@ const isDark = (daa: IconData) =>
  * @param manifest the current configuration of the extension
  * @param hash the current hash being applied to the icons
  */
-export function getCloneData(
+export const getCloneData = (
   cloneOpts: CustomClone,
   manifest: Manifest,
   subFolder: string,
   hash: string,
   ext?: string
-): CloneData[] | undefined {
+): CloneData[] | undefined => {
   const baseIcon = isFolder(cloneOpts)
     ? getFolderIconBaseData(cloneOpts, manifest)
     : getFileIconBaseData(cloneOpts, manifest);
@@ -83,13 +83,13 @@ export function getCloneData(
       };
     });
   }
-}
+};
 
 /** returns path, type and variant for the base file icons to be cloned */
-function getFileIconBaseData(
+const getFileIconBaseData = (
   cloneOpts: FileIconClone,
   manifest: Manifest
-): IconData[] | undefined {
+): IconData[] | undefined => {
   const icons = [];
   const base = manifest.iconDefinitions?.[`${cloneOpts.base}`]?.iconPath;
   let light =
@@ -115,16 +115,16 @@ function getFileIconBaseData(
       });
     return icons;
   }
-}
+};
 
 /** creates and returns the path of the cloned file icon */
-function getFileIconCloneData(
+const getFileIconCloneData = (
   base: IconData,
   cloneOpts: FileIconClone,
   hash: string,
   subFolder: string,
   ext = '.svg'
-): IconData {
+): IconData => {
   const name = getIconName(cloneOpts.name, base);
   const clonePath = join(dirname(base.path), subFolder, `${name}${hash}${ext}`);
 
@@ -133,13 +133,13 @@ function getFileIconCloneData(
     type: base.type,
     path: clonePath,
   };
-}
+};
 
 /** returns path, type and variant for the base folder icons to be cloned */
-function getFolderIconBaseData(
+const getFolderIconBaseData = (
   clone: FolderIconClone,
   manifest: Manifest
-): IconData[] | undefined {
+): IconData[] | undefined => {
   const icons = [];
   const folderBase =
     clone.base === 'folder'
@@ -196,38 +196,38 @@ function getFolderIconBaseData(
 
     return icons;
   }
-}
+};
 
 /** creates and returns the path of the cloned folder icon */
-function getFolderIconCloneData(
+const getFolderIconCloneData = (
   base: IconData,
   cloneOpts: FolderIconClone,
   hash: string,
   subFolder: string,
   ext = '.svg'
-): IconData {
+): IconData => {
   const name = getIconName(cloneOpts.name, base);
   const path = join(dirname(base.path), subFolder, `${name}${hash}${ext}`);
   return { type: base.type, variant: base.variant, path };
-}
+};
 
 /**
  * removes the clones folder if it exists
  * and creates a new one if `keep` is true
  */
-export function clearCloneFolder(keep: boolean = true): void {
+export const clearCloneFolder = async (keep = true): Promise<void> => {
   const clonesFolderPath = resolvePath('./../icons/clones');
 
-  if (existsSync(clonesFolderPath)) {
-    rmSync(clonesFolderPath, { recursive: true });
+  if (await exists(clonesFolderPath)) {
+    await rm(clonesFolderPath, { recursive: true });
   }
 
   if (keep) {
-    mkdirSync(clonesFolderPath);
+    await mkdir(clonesFolderPath);
   }
-}
+};
 
-function getIconName(baseName: string, data: IconData): string {
+const getIconName = (baseName: string, data: IconData): string => {
   let prefix = '';
   let suffix = '';
 
@@ -257,4 +257,4 @@ function getIconName(baseName: string, data: IconData): string {
   }
 
   return `${prefix}${baseName}${suffix}`;
-}
+};

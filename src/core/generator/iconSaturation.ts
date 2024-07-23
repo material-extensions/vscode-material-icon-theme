@@ -1,7 +1,8 @@
-import { lstatSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
+import { lstat, readFile, readdir } from 'node:fs/promises';
 import { join } from 'node:path';
 import { getCustomIconPaths } from '../helpers/customIconPaths';
 import { resolvePath } from '../helpers/resolvePath';
+import { writeToFile } from '../helpers/writeFile';
 import { iconFolderPath } from './constants';
 
 /**
@@ -9,7 +10,7 @@ import { iconFolderPath } from './constants';
  * @param config Icon JSON options which include the saturation value.
  * @param fileNames Only change the saturation of certain file names.
  */
-export const setIconSaturation = (
+export const setIconSaturation = async (
   saturation: number,
   filesAssociations: Record<string, string>
 ) => {
@@ -21,20 +22,20 @@ export const setIconSaturation = (
 
   const iconsPath = resolvePath(iconFolderPath);
   const customIconPaths = getCustomIconPaths(filesAssociations);
-  const iconFiles = readdirSync(iconsPath);
+  const iconFiles = await readdir(iconsPath);
 
   // read all icon files from the icons folder
   try {
-    iconFiles.forEach((iconFileName) =>
-      processSVGFileForSaturation(iconsPath, iconFileName, saturation)
-    );
+    for (const iconFileName of iconFiles) {
+      await processSVGFileForSaturation(iconsPath, iconFileName, saturation);
+    }
 
-    customIconPaths.forEach((iconPath) => {
-      const customIcons = readdirSync(iconPath);
-      customIcons.forEach((iconFileName) =>
-        processSVGFileForSaturation(iconPath, iconFileName, saturation)
-      );
-    });
+    for (const iconPath of customIconPaths) {
+      const customIcons = await readdir(iconPath);
+      for (const iconFileName of customIcons) {
+        await processSVGFileForSaturation(iconPath, iconFileName, saturation);
+      }
+    }
   } catch (error) {
     console.error(error);
   }
@@ -132,19 +133,17 @@ export const adjustSVGSaturation = (
 };
 
 /** Function to read an SVG file, adjust its saturation, and write it back */
-const processSVGFileForSaturation = (
+const processSVGFileForSaturation = async (
   iconPath: string,
   iconFileName: string,
   saturation: number
-): void => {
+): Promise<void> => {
   const svgFilePath = join(iconPath, iconFileName);
-  if (!lstatSync(svgFilePath).isFile()) {
-    return;
-  }
+  if (!(await lstat(svgFilePath)).isFile()) return;
 
   // Read SVG file
-  const svg = readFileSync(svgFilePath, 'utf-8');
+  const svg = await readFile(svgFilePath, 'utf-8');
   const updatedSVG = adjustSVGSaturation(svg, saturation);
 
-  writeFileSync(svgFilePath, updatedSVG);
+  await writeToFile(svgFilePath, updatedSVG);
 };

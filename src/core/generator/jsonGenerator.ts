@@ -1,4 +1,4 @@
-import { existsSync, readdirSync, renameSync, unlinkSync } from 'node:fs';
+import { exists, readdir, rename, unlink } from 'node:fs/promises';
 import { join } from 'node:path';
 import { getFileConfigHash } from '../helpers/configHash';
 import { getCustomIconPaths } from '../helpers/customIconPaths';
@@ -68,25 +68,29 @@ export const generateManifest = (config?: ManifestConfig): Manifest => {
  * @param config Configuration that customizes the icons and the manifest.
  * @param affectedConfig Set of configuration keys that have changed so that not all functions need to be executed.
  */
-export const applyConfigurationToIcons = (
+export const applyConfigurationToIcons = async (
   config: Config,
   affectedConfig?: Set<string>
 ) => {
   if (!affectedConfig || affectedConfig.has('files.color')) {
-    generateFileIcons(config.files.color, config.opacity, config.saturation);
+    await generateFileIcons(
+      config.files.color,
+      config.opacity,
+      config.saturation
+    );
   }
   if (!affectedConfig || affectedConfig.has('folders.color')) {
-    generateFolderIcons(
+    await generateFolderIcons(
       config.folders.color,
       config.opacity,
       config.saturation
     );
   }
   if (!affectedConfig || affectedConfig.has('opacity')) {
-    setIconOpacity(config.opacity, config.files.associations);
+    await setIconOpacity(config.opacity, config.files.associations);
   }
   if (!affectedConfig || affectedConfig.has('saturation')) {
-    setIconSaturation(config.saturation, config.files.associations);
+    await setIconSaturation(config.saturation, config.files.associations);
   }
 };
 
@@ -96,35 +100,32 @@ export const applyConfigurationToIcons = (
  * The rename triggers a change event in VS Code, which will update the icons in the UI.
  * @param config Icon Json Options
  */
-export const renameIconFiles = (config: Config) => {
+export const renameIconFiles = async (config: Config) => {
   const defaultIconPath = resolvePath(iconFolderPath);
   const customPaths = getCustomIconPaths(config.files.associations);
   const iconPaths = [defaultIconPath, ...customPaths];
 
-  iconPaths.forEach((iconPath) => {
-    readdirSync(iconPath)
-      .filter((f) => f.match(/\.svg/gi))
-      .forEach((f) => {
-        const filePath = join(iconPath, f);
-        const fileConfigHash = getFileConfigHash(config);
+  for (const iconPath of iconPaths) {
+    const files = (await readdir(iconPath)).filter((f) => f.match(/\.svg/gi));
 
-        // append file config to file name
-        const newFilePath = join(
-          iconPath,
-          f.replace(
-            /(^[^\.~]+).*?(\.clone\.svg|\.svg)/,
-            `$1${fileConfigHash}$2`
-          )
-        );
+    for (const f of files) {
+      const filePath = join(iconPath, f);
+      const fileConfigHash = getFileConfigHash(config);
 
-        // if generated files are already in place, do not overwrite them
-        if (filePath !== newFilePath) {
-          if (existsSync(newFilePath)) {
-            unlinkSync(filePath);
-          } else {
-            renameSync(filePath, newFilePath);
-          }
+      // append file config to file name
+      const newFilePath = join(
+        iconPath,
+        f.replace(/(^[^\.~]+).*?(\.clone\.svg|\.svg)/, `$1${fileConfigHash}$2`)
+      );
+
+      // if generated files are already in place, do not overwrite them
+      if (filePath !== newFilePath) {
+        if (await exists(newFilePath)) {
+          await unlink(filePath);
+        } else {
+          await rename(filePath, newFilePath);
         }
-      });
-  });
+      }
+    }
+  }
 };

@@ -112,7 +112,7 @@ describe('folder icons', () => {
     };
     expectedManifest.hidesExplorerArrows = false;
 
-    expect(iconDefinitions).toMatchObject(expectedManifest);
+    expect(iconDefinitions).toStrictEqual(expectedManifest);
   });
 
   it('should deactivate folder icons', () => {
@@ -129,7 +129,7 @@ describe('folder icons', () => {
     expectedManifest.folderNamesExpanded = {};
     expectedManifest.hidesExplorerArrows = false;
 
-    expect(iconDefinitions).toMatchObject(expectedManifest);
+    expect(iconDefinitions).toStrictEqual(expectedManifest);
   });
 
   it('should change folder theme', () => {
@@ -141,7 +141,14 @@ describe('folder icons', () => {
       manifest
     );
 
-    expectedManifest.iconDefinitions = {};
+    expectedManifest.iconDefinitions = {
+      folder: {
+        iconPath: './../icons/folder.svg',
+      },
+      'folder-open': {
+        iconPath: './../icons/folder-open.svg',
+      },
+    };
     expectedManifest.folder = 'folder';
     expectedManifest.folderExpanded = 'folder-open';
     expectedManifest.rootFolder = 'folder';
@@ -150,7 +157,7 @@ describe('folder icons', () => {
     expectedManifest.folderNamesExpanded = {};
     expectedManifest.hidesExplorerArrows = false;
 
-    expect(iconDefinitions).toMatchObject(expectedManifest);
+    expect(iconDefinitions).toStrictEqual(expectedManifest);
   });
 
   it('should configure custom icon associations', () => {
@@ -239,7 +246,7 @@ describe('folder icons', () => {
     };
     expectedManifest.hidesExplorerArrows = false;
 
-    expect(iconDefinitions).toMatchObject(expectedManifest);
+    expect(iconDefinitions).toStrictEqual(expectedManifest);
   });
 
   it('should disable icon packs', () => {
@@ -296,7 +303,7 @@ describe('folder icons', () => {
     };
     expectedManifest.hidesExplorerArrows = false;
 
-    expect(iconDefinitions).toMatchObject(expectedManifest);
+    expect(iconDefinitions).toStrictEqual(expectedManifest);
   });
 
   it('should configure folder icons for light and high contrast', () => {
@@ -460,7 +467,7 @@ describe('folder icons', () => {
       },
     };
     expectedManifest.hidesExplorerArrows = false;
-    expect(iconDefinitions).toMatchObject(expectedManifest);
+    expect(iconDefinitions).toStrictEqual(expectedManifest);
   });
 
   it('should hide explorer arrows', () => {
@@ -584,7 +591,7 @@ describe('folder icons', () => {
     };
     expectedManifest.hidesExplorerArrows = false;
 
-    expect(iconDefinitions).toMatchObject(expectedManifest);
+    expect(iconDefinitions).toStrictEqual(expectedManifest);
   });
 
   it('should allow interoperability between cloned and user custom associations', () => {
@@ -667,6 +674,6 @@ describe('folder icons', () => {
     };
     expectedManifest.hidesExplorerArrows = false;
 
-    expect(iconDefinitions).toMatchObject(expectedManifest);
+    expect(iconDefinitions).toStrictEqual(expectedManifest);
   });
 });

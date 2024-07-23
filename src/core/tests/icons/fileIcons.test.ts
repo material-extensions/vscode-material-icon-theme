@@ -60,7 +60,7 @@ describe('file icons', () => {
       'filename.js': 'javascript',
     };
 
-    expect(iconDefinitions).toMatchObject(expectedManifest);
+    expect(iconDefinitions).toStrictEqual(expectedManifest);
   });
 
   it('should disable icon packs', () => {
@@ -104,7 +104,7 @@ describe('file icons', () => {
       'filename.js': 'javascript',
     };
 
-    expect(iconDefinitions).toMatchObject(expectedManifest);
+    expect(iconDefinitions).toStrictEqual(expectedManifest);
   });
 
   it('should configure custom icon associations', () => {
@@ -162,7 +162,7 @@ describe('file icons', () => {
       'sample.js': 'javascript',
     };
 
-    expect(iconDefinitions).toMatchObject(expectedManifest);
+    expect(iconDefinitions).toStrictEqual(expectedManifest);
   });
 
   it('should configure language icons for light and high contrast', () => {
@@ -245,7 +245,7 @@ describe('file icons', () => {
       'filename.js': 'javascript',
     };
 
-    expect(iconDefinitions).toMatchObject(expectedManifest);
+    expect(iconDefinitions).toStrictEqual(expectedManifest);
   });
 
   it('should generate cloned file icons config', () => {
@@ -308,7 +308,7 @@ describe('file icons', () => {
     };
     expectedManifest.file = 'file';
 
-    expect(iconDefinitions).toMatchObject(expectedManifest);
+    expect(iconDefinitions).toStrictEqual(expectedManifest);
   });
 
   it('should allow interoperability between cloned and user custom associations', () => {
@@ -361,6 +361,6 @@ describe('file icons', () => {
     };
     expectedManifest.file = 'file';
 
-    expect(iconDefinitions).toMatchObject(expectedManifest);
+    expect(iconDefinitions).toStrictEqual(expectedManifest);
   });
 });

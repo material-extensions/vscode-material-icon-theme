@@ -24,8 +24,10 @@ export {
 } from './generator/jsonGenerator';
 export { validateHEXColorCode } from './generator/shared/validation';
 export { availableIconPacks } from './helpers/iconPacks';
+export { merge } from './helpers/object';
 export { resolvePath } from './helpers/resolvePath';
 export { capitalizeFirstLetter, toTitleCase } from './helpers/titlecase';
+export { writeToFile } from './helpers/writeFile';
 export { initTranslations, translate } from './i18n/translate';
 export { fileIcons } from './icons/fileIcons';
 export { folderIcons } from './icons/folderIcons';

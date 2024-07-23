@@ -17,7 +17,7 @@ export const activate = async (context: ExtensionContext) => {
     context.subscriptions.push(...registered);
 
     // Initially trigger the config change detection
-    detectConfigChanges();
+    await detectConfigChanges();
 
     // Observe changes in the config
     workspace.onDidChangeConfiguration(detectConfigChanges);

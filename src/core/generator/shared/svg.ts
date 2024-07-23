@@ -1,11 +1,11 @@
-import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { resolvePath } from '../../helpers/resolvePath';
+import { writeToFile } from '../../helpers/writeFile';
 import { iconFolderPath } from '../constants';
 import { updateSVGOpacity } from '../iconOpacity';
 import { adjustSVGSaturation } from '../iconSaturation';
 
-export const writeSVGFiles = (
+export const writeSVGFiles = async (
   iconName: string,
   svg: string,
   opacity: number,
@@ -18,7 +18,7 @@ export const writeSVGFiles = (
   const iconsPath = resolvePath(iconFolderPath);
   const iconsFolderPath = join(iconsPath, `${iconName}.svg`);
   try {
-    writeFileSync(iconsFolderPath, updatedSaturation);
+    await writeToFile(iconsFolderPath, updatedSaturation);
   } catch (error) {
     console.error(error);
   }

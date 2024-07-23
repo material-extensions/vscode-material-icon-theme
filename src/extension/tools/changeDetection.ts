@@ -1,4 +1,3 @@
-import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import type { ConfigurationChangeEvent } from 'vscode';
 import {
@@ -10,14 +9,15 @@ import {
   generateManifest,
   hasCustomClones,
   manifestName,
+  merge,
   renameIconFiles,
   resolvePath,
+  writeToFile,
 } from '../../core';
-import { merge } from '../../core/helpers/object';
 import { configPropertyNames, getCurrentConfig } from '../shared/config';
 
 /** Compare the workspace and the user configurations with the current setup of the icons. */
-export const detectConfigChanges = (event?: ConfigurationChangeEvent) => {
+export const detectConfigChanges = async (event?: ConfigurationChangeEvent) => {
   // if the changed config is not related to the extension
   if (event?.affectsConfiguration(extensionName) === false) return;
 
@@ -26,24 +26,24 @@ export const detectConfigChanges = (event?: ConfigurationChangeEvent) => {
     const affectedConfigProperties = getAffectedConfigProperties(
       event.affectsConfiguration
     );
-    applyConfigurationToIcons(config, affectedConfigProperties);
+    await applyConfigurationToIcons(config, affectedConfigProperties);
   } else {
-    applyConfigurationToIcons(config);
+    await applyConfigurationToIcons(config);
   }
 
-  renameIconFiles(config);
+  await renameIconFiles(config);
   const manifest = generateManifest(config);
 
   // clear the clone folder
-  clearCloneFolder(hasCustomClones(config));
+  await clearCloneFolder(hasCustomClones(config));
 
   const manifestWithClones = merge(
     manifest,
-    customClonesIcons(manifest, config)
+    await customClonesIcons(manifest, config)
   );
 
   const iconJsonPath = join(resolvePath(manifestName));
-  writeFileSync(
+  await writeToFile(
     iconJsonPath,
     JSON.stringify(manifestWithClones, undefined, 2),
     'utf-8'
