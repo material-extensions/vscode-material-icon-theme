@@ -1,6 +1,7 @@
 import { window as codeWindow } from 'vscode';
 import {
   getDefaultConfiguration,
+  logger,
   translate,
   validateOpacityValue,
 } from '../../core';
@@ -15,7 +16,7 @@ export const changeOpacity = async () => {
       await setOpacityConfig(+response);
     }
   } catch (error) {
-    console.error(error);
+    logger.error(error);
   }
 };
 

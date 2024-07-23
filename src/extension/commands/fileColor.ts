@@ -1,6 +1,7 @@
 import { type QuickPickItem, window as codeWindow } from 'vscode';
 import {
   getDefaultConfiguration,
+  logger,
   translate,
   validateHEXColorCode,
 } from '../../core';
@@ -31,7 +32,7 @@ export const changeFileColor = async () => {
       handleQuickPickActions(response);
     }
   } catch (error) {
-    console.error(error);
+    logger.error(error);
   }
 };
 

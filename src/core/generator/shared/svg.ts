@@ -1,6 +1,7 @@
 import { join } from 'node:path';
 import { resolvePath } from '../../helpers/resolvePath';
 import { writeToFile } from '../../helpers/writeFile';
+import { logger } from '../../logging/logger';
 import { iconFolderPath } from '../constants';
 import { updateSVGOpacity } from '../iconOpacity';
 import { adjustSVGSaturation } from '../iconSaturation';
@@ -20,7 +21,7 @@ export const writeSVGFiles = async (
   try {
     await writeToFile(iconsFolderPath, updatedSaturation);
   } catch (error) {
-    console.error(error);
+    logger.error(error);
   }
 };
 

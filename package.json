@@ -309,6 +309,17 @@
           "minimum": 0,
           "maximum": 1,
           "description": "%configuration.saturation%"
+        },
+        "material-icon-theme.enableLogging": {
+          "type": "boolean",
+          "default": false,
+          "description": "%configuration.enableLogging%"
+        },
+        "material-icon-theme.logLevel": {
+          "type": "string",
+          "default": "info",
+          "enum": ["info", "error", "debug"],
+          "description": "%configuration.logLevel%"
         }
       }
     }
@@ -326,7 +337,7 @@
     "@types/vscode": "~1.51.0",
     "@vscode/test-electron": "^2.3.9",
     "axios": "^1.4.0",
-    "bun-types": "^1.1.12",
+    "bun-types": "^1.1.20",
     "changelog-machine": "^1.0.2",
     "esbuild": "^0.21.4",
     "glob": "^8.0.3",

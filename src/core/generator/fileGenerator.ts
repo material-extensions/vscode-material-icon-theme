@@ -1,4 +1,5 @@
 import { getFileConfigHash } from '../helpers/configHash';
+import { logger } from '../logging/logger';
 import type { Config, IconAssociations } from '../models/icons/config';
 import type { FileIcon } from '../models/icons/files/fileIcon';
 import type { FileIcons } from '../models/icons/files/fileTypes';
@@ -197,7 +198,7 @@ export const generateFileIcons = async (
   saturation: number
 ) => {
   if (!color || !validateHEXColorCode(color)) {
-    return console.error('Invalid color code for file icons');
+    return logger.error('Invalid color code for file icons');
   }
 
   const fileIcon =

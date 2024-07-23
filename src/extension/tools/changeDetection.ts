@@ -8,16 +8,21 @@ import {
   extensionName,
   generateManifest,
   hasCustomClones,
+  logger,
   manifestName,
   merge,
   renameIconFiles,
   resolvePath,
   writeToFile,
 } from '../../core';
+import { observeLogs } from '../logging/logger';
 import { configPropertyNames, getCurrentConfig } from '../shared/config';
 
 /** Compare the workspace and the user configurations with the current setup of the icons. */
 export const detectConfigChanges = async (event?: ConfigurationChangeEvent) => {
+  // observe log events
+  observeLogs();
+
   // if the changed config is not related to the extension
   if (event?.affectsConfiguration(extensionName) === false) return;
 
@@ -47,6 +52,13 @@ export const detectConfigChanges = async (event?: ConfigurationChangeEvent) => {
     iconJsonPath,
     JSON.stringify(manifestWithClones, undefined, 2),
     'utf-8'
+  );
+
+  logger.info(
+    'Configuration changes detected and applied! Manifest file updated.'
+  );
+  logger.debug(
+    'Applied configuration: ' + JSON.stringify(config, undefined, 2)
   );
 };
 

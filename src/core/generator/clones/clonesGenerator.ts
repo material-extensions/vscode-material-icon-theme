@@ -1,6 +1,7 @@
 import { getFileConfigHash } from '../../helpers/configHash';
 import { merge } from '../../helpers/object';
 import { writeToFile } from '../../helpers/writeFile';
+import { logger } from '../../logging/logger';
 import type {
   Config,
   CustomClone,
@@ -89,7 +90,7 @@ export const generateConfiguredClones = async (
         // write the new .svg file to the disk
         await writeToFile(clone.path, content);
       } catch (error) {
-        console.error(error);
+        logger.error(error);
         return;
       }
     }
@@ -133,7 +134,7 @@ const createIconClone = async (
         // write the new .svg file to the disk
         await writeToFile(clone.path, content);
       } catch (error) {
-        console.error(error);
+        logger.error(error);
         return manifest;
       }
 
@@ -176,7 +177,7 @@ const createIconClone = async (
         });
       }
     } catch (error) {
-      console.error(error);
+      logger.error(error);
     }
   }
 

@@ -3,6 +3,7 @@ import { join } from 'node:path';
 import { getCustomIconPaths } from '../helpers/customIconPaths';
 import { resolvePath } from '../helpers/resolvePath';
 import { writeToFile } from '../helpers/writeFile';
+import { logger } from '../logging/logger';
 import { iconFolderPath } from './constants';
 
 /**
@@ -14,7 +15,7 @@ export const setIconOpacity = async (
   filesAssociations: Record<string, string>
 ) => {
   if (!validateOpacityValue(opacity)) {
-    return console.error(
+    return logger.error(
       'Invalid opacity value! Opacity must be a decimal number between 0 and 1!'
     );
   }
@@ -36,7 +37,7 @@ export const setIconOpacity = async (
       }
     }
   } catch (error) {
-    console.error(error);
+    logger.error(error);
   }
 };
 

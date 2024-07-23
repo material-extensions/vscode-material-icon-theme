@@ -1,4 +1,5 @@
 import { getDefaultConfiguration } from '../generator/config/defaultConfig';
+import { logger } from '../logging/logger';
 import type { Config } from '../models/icons/config';
 
 /**
@@ -31,7 +32,7 @@ export const getFileConfigHash = (config: Partial<Config>): string => {
     }
     return fileConfigString;
   } catch (error) {
-    console.error(error);
+    logger.error(error);
     return '';
   }
 };

@@ -1,4 +1,5 @@
 import { writeFile } from 'node:fs/promises';
+import { logger } from '../logging/logger';
 
 /**
  * Write content to a file.
@@ -11,6 +12,10 @@ export const writeToFile = async (
   data: string,
   encoding?: BufferEncoding
 ) => {
-  if (!filePath || !data || data.trim().length === 0) return;
+  if (!filePath || !data || data.trim().length === 0) {
+    logger.error('Invalid file path or data to write! File path: ' + filePath);
+    return;
+  }
+  logger.debug('Writing to file: ' + filePath);
   await writeFile(filePath, data, encoding);
 };

@@ -1,7 +1,7 @@
 'use strict';
 
 import { type ExtensionContext, env, workspace } from 'vscode';
-import { initTranslations } from '../../core';
+import { initTranslations, logger } from '../../core';
 import { detectConfigChanges } from '../tools/changeDetection';
 import { registered } from '../tools/registered';
 
@@ -22,14 +22,10 @@ export const activate = async (context: ExtensionContext) => {
     // Observe changes in the config
     workspace.onDidChangeConfiguration(detectConfigChanges);
 
-    // Observe if the window got focused to trigger config changes
-    // codeWindow.onDidChangeWindowState((state) => {
-    //   if (state.focused) {
-    //     detectConfigChanges();
-    //   }
-    // });
+    logger.info('Extension activated!');
+    logger.debug('Debug mode is enabled.');
   } catch (error) {
-    console.error(error);
+    logger.error(error);
   }
 };
 

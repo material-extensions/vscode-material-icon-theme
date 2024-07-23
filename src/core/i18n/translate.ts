@@ -1,4 +1,5 @@
 import { get } from '../helpers/object';
+import { logger } from '../logging/logger';
 import type { Translation } from '../models/i18n/translation';
 import { translation as langCs } from './translations/lang-cs';
 import { translation as langDe } from './translations/lang-de';
@@ -27,7 +28,7 @@ export const initTranslations = async (language: string) => {
     currentTranslation = await loadTranslation(language);
     fallbackTranslation = await loadTranslation('en');
   } catch (error) {
-    console.error(error);
+    logger.error(error);
   }
 };
 

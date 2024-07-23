@@ -1,6 +1,7 @@
 import { window as codeWindow } from 'vscode';
 import {
   getDefaultConfiguration,
+  logger,
   translate,
   validateSaturationValue,
 } from '../../core';
@@ -15,7 +16,7 @@ export const changeSaturation = async () => {
       await setSaturationConfig(+response);
     }
   } catch (error) {
-    console.error(error);
+    logger.error(error);
   }
 };
 

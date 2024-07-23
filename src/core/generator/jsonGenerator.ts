@@ -1,4 +1,5 @@
-import { exists, readdir, rename, unlink } from 'node:fs/promises';
+import { existsSync } from 'node:fs';
+import { readdir, rename, unlink } from 'node:fs/promises';
 import { join } from 'node:path';
 import { getFileConfigHash } from '../helpers/configHash';
 import { getCustomIconPaths } from '../helpers/customIconPaths';
@@ -7,6 +8,7 @@ import { resolvePath } from '../helpers/resolvePath';
 import { fileIcons } from '../icons/fileIcons';
 import { folderIcons } from '../icons/folderIcons';
 import { languageIcons } from '../icons/languageIcons';
+import { logger } from '../logging/logger';
 import type { Config } from '../models/icons/config';
 import { type Manifest, createEmptyManifest } from '../models/manifest';
 import type { RecursivePartial } from '../types/recursivePartial';
@@ -120,9 +122,11 @@ export const renameIconFiles = async (config: Config) => {
 
       // if generated files are already in place, do not overwrite them
       if (filePath !== newFilePath) {
-        if (await exists(newFilePath)) {
+        if (existsSync(newFilePath)) {
+          logger.debug(`Deleting existing file: ${newFilePath}`);
           await unlink(filePath);
         } else {
+          logger.debug(`Renaming file: ${filePath} to ${newFilePath}`);
           await rename(filePath, newFilePath);
         }
       }

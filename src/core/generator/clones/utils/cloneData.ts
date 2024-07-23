@@ -1,4 +1,5 @@
-import { exists, mkdir, rm } from 'node:fs/promises';
+import { existsSync } from 'node:fs';
+import { mkdir, rm } from 'node:fs/promises';
 import { basename, dirname, join } from 'node:path';
 import { resolvePath } from '../../../helpers/resolvePath';
 import type {
@@ -218,7 +219,7 @@ const getFolderIconCloneData = (
 export const clearCloneFolder = async (keep = true): Promise<void> => {
   const clonesFolderPath = resolvePath('./../icons/clones');
 
-  if (await exists(clonesFolderPath)) {
+  if (existsSync(clonesFolderPath)) {
     await rm(clonesFolderPath, { recursive: true });
   }
 

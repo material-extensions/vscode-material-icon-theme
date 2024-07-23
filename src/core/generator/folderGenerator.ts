@@ -1,5 +1,6 @@
 import { getFileConfigHash } from '../helpers/configHash';
 import { merge } from '../helpers/object';
+import { logger } from '../logging/logger';
 import type { Config, IconAssociations } from '../models/icons/config';
 import type { DefaultIcon } from '../models/icons/defaultIcon';
 import type { FolderIcon } from '../models/icons/folders/folderIcon';
@@ -316,7 +317,7 @@ export const generateFolderIcons = async (
   saturation: number
 ) => {
   if (!color || !validateHEXColorCode(color)) {
-    return console.error('Invalid color code for folder icons');
+    return logger.error('Invalid color code for folder icons');
   }
 
   const folderIcon =

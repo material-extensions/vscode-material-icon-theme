@@ -10,6 +10,7 @@ export {
   extensionPublisher,
   highContrastColorFileEnding,
   lightColorFileEnding,
+  logEventKey,
   manifestName,
   openedFolder,
 } from './generator/constants';
@@ -33,6 +34,12 @@ export { initTranslations, translate } from './i18n/translate';
 export { fileIcons } from './icons/fileIcons';
 export { folderIcons } from './icons/folderIcons';
 export { languageIcons } from './icons/languageIcons';
+export {
+  createLoggingObserver,
+  logger,
+  type LogEvent,
+  type LogLevel,
+} from './logging/logger';
 export type { CloneOptions } from './models/icons/cloneOptions';
 export type { Config, IconAssociations } from './models/icons/config';
 export type { DefaultIcon } from './models/icons/defaultIcon';
