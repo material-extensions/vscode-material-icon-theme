@@ -15,14 +15,10 @@ import {
   resolvePath,
   writeToFile,
 } from '../../core';
-import { observeLogs } from '../logging/logger';
 import { configPropertyNames, getCurrentConfig } from '../shared/config';
 
 /** Compare the workspace and the user configurations with the current setup of the icons. */
 export const detectConfigChanges = async (event?: ConfigurationChangeEvent) => {
-  // observe log events
-  observeLogs();
-
   // if the changed config is not related to the extension
   if (event?.affectsConfiguration(extensionName) === false) return;
 
@@ -31,10 +27,15 @@ export const detectConfigChanges = async (event?: ConfigurationChangeEvent) => {
     const affectedConfigProperties = getAffectedConfigProperties(
       event.affectsConfiguration
     );
+    logger.debug('Affected configurations: ' + [...affectedConfigProperties]);
     await applyConfigurationToIcons(config, affectedConfigProperties);
   } else {
     await applyConfigurationToIcons(config);
   }
+
+  logger.info(
+    'Configuration changes detected and applied! Manifest file updated.'
+  );
 
   await renameIconFiles(config);
   const manifest = generateManifest(config);
@@ -54,9 +55,8 @@ export const detectConfigChanges = async (event?: ConfigurationChangeEvent) => {
     'utf-8'
   );
 
-  logger.info(
-    'Configuration changes detected and applied! Manifest file updated.'
-  );
+  logger.info('Updated the manifest file.');
+
   logger.debug(
     'Applied configuration: ' + JSON.stringify(config, undefined, 2)
   );

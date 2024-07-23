@@ -27,6 +27,7 @@ export const initTranslations = async (language: string) => {
   try {
     currentTranslation = await loadTranslation(language);
     fallbackTranslation = await loadTranslation('en');
+    logger.info('Translations initialized.');
   } catch (error) {
     logger.error(error);
   }

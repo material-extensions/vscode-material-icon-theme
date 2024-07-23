@@ -17,9 +17,6 @@ export const observeLogs = () => {
   const logLevel = getThemeConfig<LogLevel>('logLevel') ?? 'info';
   const isLoggingEnabled = getThemeConfig<boolean>('enableLogging') ?? false;
 
-  // Remove the previous event emitter
-  eventEmitter?.removeAllListeners();
-
   let outputChannel: OutputChannel | undefined;
 
   if (isLoggingEnabled) {
@@ -36,4 +33,10 @@ export const observeLogs = () => {
       console.log(event.message);
     }
   });
+};
+
+export const disableLogObserver = () => {
+  if (eventEmitter) {
+    eventEmitter.removeAllListeners();
+  }
 };
