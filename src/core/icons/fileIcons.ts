@@ -2508,5 +2508,9 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['tape'],
       clone: { base: 'video', color: 'purple-300' },
     },
+    {
+      name: 'hurl',
+      fileExtensions: ['hurl'],
+    },
   ]),
 };
