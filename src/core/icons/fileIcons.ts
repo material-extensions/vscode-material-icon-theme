@@ -981,7 +981,6 @@ export const fileIcons: FileIcons = {
         '.remarkrc.yml',
         '.remarkignore',
       ],
-      light: true,
     },
     {
       name: 'remix',
