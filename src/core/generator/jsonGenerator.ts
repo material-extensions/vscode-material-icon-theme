@@ -12,7 +12,10 @@ import { logger } from '../logging/logger';
 import type { Config } from '../models/icons/config';
 import { type Manifest, createEmptyManifest } from '../models/manifest';
 import type { RecursivePartial } from '../types/recursivePartial';
-import { padWithDefaultConfig } from './config/defaultConfig';
+import {
+  getDefaultConfiguration,
+  padWithDefaultConfig,
+} from './config/defaultConfig';
 import { iconFolderPath } from './constants';
 import { generateFileIcons, loadFileIconDefinitions } from './fileGenerator';
 import {
@@ -88,10 +91,18 @@ export const applyConfigurationToIcons = async (
       config.saturation
     );
   }
-  if (!affectedConfig || affectedConfig.has('opacity')) {
+
+  if (
+    affectedConfig?.has('opacity') ||
+    (!affectedConfig && config.opacity !== getDefaultConfiguration().opacity)
+  ) {
     await setIconOpacity(config.opacity, config.files.associations);
   }
-  if (!affectedConfig || affectedConfig.has('saturation')) {
+  if (
+    affectedConfig?.has('saturation') ||
+    (!affectedConfig &&
+      config.saturation !== getDefaultConfiguration().saturation)
+  ) {
     await setIconSaturation(config.saturation, config.files.associations);
   }
 };

@@ -20,6 +20,8 @@ export const setIconOpacity = async (
     );
   }
 
+  logger.info(`Setting opacity to ${opacity}...`);
+
   const iconsPath = resolvePath(iconFolderPath);
   const customIconPaths = getCustomIconPaths(filesAssociations);
   const iconFiles = await readdir(iconsPath);

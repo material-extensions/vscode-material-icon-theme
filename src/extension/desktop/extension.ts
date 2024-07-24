@@ -26,7 +26,6 @@ export const activate = async (context: ExtensionContext) => {
     workspace.onDidChangeConfiguration(detectConfigChanges);
 
     logger.info('Extension activated!');
-    logger.debug('Debug mode is enabled.');
   } catch (error) {
     logger.error(error);
   }

@@ -30,12 +30,11 @@ export const detectConfigChanges = async (event?: ConfigurationChangeEvent) => {
     logger.debug('Affected configurations: ' + [...affectedConfigProperties]);
     await applyConfigurationToIcons(config, affectedConfigProperties);
   } else {
+    logger.debug('Applying all configurations with current config.');
     await applyConfigurationToIcons(config);
   }
 
-  logger.info(
-    'Configuration changes detected and applied! Manifest file updated.'
-  );
+  logger.info('Configuration changes detected and applied!');
 
   await renameIconFiles(config);
   const manifest = generateManifest(config);

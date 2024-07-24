@@ -21,6 +21,8 @@ export const setIconSaturation = async (
     );
   }
 
+  logger.info(`Setting saturation to ${saturation}...`);
+
   const iconsPath = resolvePath(iconFolderPath);
   const customIconPaths = getCustomIconPaths(filesAssociations);
   const iconFiles = await readdir(iconsPath);
