@@ -23,9 +23,10 @@ export type LogEvent = {
  */
 const createLogger = () => {
   const emitLogEvent = (level: LogLevel, message: unknown) => {
+    const timestamp = new Date().toISOString();
     const logEvent: LogEvent = {
       level,
-      message: `[${level.toUpperCase()}] ${message}`,
+      message: `[${level.toUpperCase()}] ${timestamp} - ${message}`,
     };
     loggerEmitter.emit(logEventKey, logEvent);
   };
