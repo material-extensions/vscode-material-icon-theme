@@ -1,5 +1,4 @@
-import { existsSync } from 'node:fs';
-import { readdir, rename, unlink } from 'node:fs/promises';
+import { existsSync, readdirSync, renameSync, unlinkSync } from 'node:fs';
 import { join } from 'node:path';
 import { getFileConfigHash } from '../helpers/configHash';
 import { getCustomIconPaths } from '../helpers/customIconPaths';
@@ -14,14 +13,14 @@ import { iconFolderPath } from './constants';
  * The rename triggers a change event in VS Code, which will update the icons in the UI.
  * @param config Icon Json Options
  */
-export const renameIconFiles = async (config: Config) => {
+export const renameIconFiles = (config: Config) => {
   const defaultIconPath = resolvePath(iconFolderPath);
   const customPaths = getCustomIconPaths(config.files.associations);
   const iconPaths = [defaultIconPath, ...customPaths];
   const fileConfigHash = getFileConfigHash(config);
 
   for (const iconPath of iconPaths) {
-    const files = (await readdir(iconPath)).filter((f) => f.match(/\.svg/gi));
+    const files = readdirSync(iconPath).filter((f) => f.match(/\.svg/gi));
 
     for (const f of files) {
       const filePath = join(iconPath, f);
@@ -38,12 +37,12 @@ export const renameIconFiles = async (config: Config) => {
           if (existsSync(newFilePath)) {
             if (existsSync(filePath)) {
               logger.debug(`Deleting existing file: ${filePath}`);
-              await unlink(filePath);
+              unlinkSync(filePath);
             }
           } else {
             if (existsSync(filePath)) {
               logger.debug(`Renaming file: ${filePath} to ${newFilePath}`);
-              await rename(filePath, newFilePath);
+              renameSync(filePath, newFilePath);
             }
           }
         }
