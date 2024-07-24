@@ -18,13 +18,13 @@ export const renameIconFiles = async (config: Config) => {
   const defaultIconPath = resolvePath(iconFolderPath);
   const customPaths = getCustomIconPaths(config.files.associations);
   const iconPaths = [defaultIconPath, ...customPaths];
+  const fileConfigHash = getFileConfigHash(config);
 
   for (const iconPath of iconPaths) {
     const files = (await readdir(iconPath)).filter((f) => f.match(/\.svg/gi));
 
     for (const f of files) {
       const filePath = join(iconPath, f);
-      const fileConfigHash = getFileConfigHash(config);
 
       // append file config to file name
       const newFilePath = join(
@@ -32,15 +32,23 @@ export const renameIconFiles = async (config: Config) => {
         f.replace(/(^[^\.~]+).*?(\.clone\.svg|\.svg)/, `$1${fileConfigHash}$2`)
       );
 
-      // if generated files are already in place, do not overwrite them
-      if (filePath !== newFilePath) {
-        if (existsSync(newFilePath)) {
-          logger.debug(`Deleting existing file: ${newFilePath}`);
-          await unlink(filePath);
-        } else {
-          logger.debug(`Renaming file: ${filePath} to ${newFilePath}`);
-          await rename(filePath, newFilePath);
+      try {
+        // if generated files are already in place, do not overwrite them
+        if (filePath !== newFilePath) {
+          if (existsSync(newFilePath)) {
+            if (existsSync(filePath)) {
+              logger.debug(`Deleting existing file: ${filePath}`);
+              await unlink(filePath);
+            }
+          } else {
+            if (existsSync(filePath)) {
+              logger.debug(`Renaming file: ${filePath} to ${newFilePath}`);
+              await rename(filePath, newFilePath);
+            }
+          }
         }
+      } catch (error) {
+        logger.error(error);
       }
     }
   }
