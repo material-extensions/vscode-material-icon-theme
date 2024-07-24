@@ -1,5 +1,5 @@
 import { type QuickPickItem, window as codeWindow } from 'vscode';
-import { toTitleCase, translate } from '../../core';
+import { logger, toTitleCase, translate } from '../../core';
 import { availableIconPacks } from '../../core/helpers/iconPacks';
 import type { IconPackValue } from '../../core/models/icons/iconPack';
 import { getThemeConfig, setThemeConfig } from '../shared/config';
@@ -13,7 +13,7 @@ export const toggleIconPacks = async () => {
       handleQuickPickActions(response);
     }
   } catch (error) {
-    console.error(error);
+    logger.error(error);
   }
 };
 

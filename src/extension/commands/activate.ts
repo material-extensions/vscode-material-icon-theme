@@ -1,5 +1,5 @@
 import { window as codeWindow } from 'vscode';
-import { translate } from '../../core';
+import { extensionName, logger, translate } from '../../core';
 import { getConfig } from '../shared/config';
 
 /** Activate the icon theme by changing the settings for the iconTheme. */
@@ -11,18 +11,15 @@ export const activateIcons = () => {
 const setIconTheme = async () => {
   // global user config
   try {
-    await getConfig().update(
-      'workbench.iconTheme',
-      'material-icon-theme',
-      true
-    );
+    const section = 'workbench.iconTheme';
+    await getConfig().update(section, extensionName, true);
 
     // local workspace config
-    if (getConfig().inspect('workbench.iconTheme')?.workspaceValue) {
-      getConfig().update('workbench.iconTheme', 'material-icon-theme');
+    if (getConfig().inspect(section)?.workspaceValue) {
+      getConfig().update(section, extensionName);
     }
     codeWindow.showInformationMessage(translate('activated'));
   } catch (error) {
-    console.error(error);
+    logger.error(error);
   }
 };

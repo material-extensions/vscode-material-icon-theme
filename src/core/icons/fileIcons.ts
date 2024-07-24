@@ -774,7 +774,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'nuxt',
-      fileNames: ['nuxt.config.js', 'nuxt.config.ts', '.nuxtignore'],
+      fileNames: ['nuxt.config.js', 'nuxt.config.ts', '.nuxtignore', '.nuxtrc'],
     },
     {
       name: 'harmonix',

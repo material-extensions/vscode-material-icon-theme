@@ -1,5 +1,5 @@
 import { type QuickPickItem, window as codeWindow } from 'vscode';
-import { translate } from '../../core';
+import { logger, translate } from '../../core';
 import { getThemeConfig, setThemeConfig } from '../shared/config';
 
 /** Command to toggle the explorer arrows. */
@@ -9,7 +9,7 @@ export const toggleExplorerArrows = async () => {
     const response = await showQuickPickItems(status);
     return handleQuickPickActions(response);
   } catch (error) {
-    console.error(error);
+    logger.error(error);
   }
 };
 
