@@ -62,30 +62,36 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           script: |
+            const iconsCount = ${{ env.svg_files_count }}
             const imageURL = "${{ env.image_url }}";
             const image = `<img src="${imageURL}" alt="Generated preview" />`;
 
             let preview = "";
+            let plural = "";
 
-            if (parseInt("${{ env.svg_files_count }}") > 10) {
+            if (iconsCount > 10) {
               preview = `<details><summary>🏞️ <b>Generated preview</b></summary><br/>${image}</details>`;
             } else {
               preview = image;
             }
 
+            if (iconsCount > 1) {
+              plural = "s";
+            }
+
             const comment = `
               ## Preview
 
-              Thank you for creating a pull request. This preview shows you how your changes will look on the different themes:
+              Thank you for creating a pull request. This preview shows you how your icon${plural} will look on the different themes:
 
               ${preview}
 
-              Check how your icon fits in a 16x16 grid with our Pixel Perfect Checker by following [this link](https://pixp.lucode.ar/material-extensions/vscode-material-icon-theme/pull/${{ github.event.pull_request.number }}).
+              Check how your icon${plural} fits in a `16x16` grid with our **Pixel Perfect Checker** by following [this link](https://pixp.lucode.ar/material-extensions/vscode-material-icon-theme/pull/${{ github.event.pull_request.number }}).
 
               You can find more information on how to contribute in the [contribution guidelines](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/CONTRIBUTING.md).
             `;
 
-            // write comment to environment variable
+            // Write comment to environment variable
             core.exportVariable('comment', comment);
 
       - name: Find comment if exists 🕵️
