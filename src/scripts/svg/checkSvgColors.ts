@@ -3,7 +3,7 @@ import { spawn } from 'bun';
 /**
  * Check changed (not yet committed) SVG files for correct colors.
  */
-async function checkColors() {
+const checkColors = async () => {
   try {
     // Execute Git command to get list of modified SVG files
     const gitProcess = spawn([
@@ -38,6 +38,6 @@ async function checkColors() {
     console.error('Error checking colors:', error);
     process.exit(1);
   }
-}
+};
 
 checkColors();

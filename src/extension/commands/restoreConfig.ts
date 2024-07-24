@@ -2,7 +2,10 @@ import { getConfigProperties, setConfig } from '../shared/config';
 
 /** Restore all configurations to default. */
 export const restoreDefaultConfig = async () => {
-  for (const configProperty of Object.keys(getConfigProperties())) {
-    await setConfig(configProperty, undefined, true);
-  }
+  const configProperties = Object.keys(getConfigProperties());
+  await Promise.all(
+    configProperties.map((configProperty) =>
+      setConfig(configProperty, undefined, true)
+    )
+  );
 };

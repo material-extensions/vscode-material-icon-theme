@@ -425,3 +425,25 @@ This icon extension consists not only of icons but also brings some code. This i
 6. Run tests with `bun test`
 
 You will find more information about the official extension API in the [extension guides of VS Code](https://code.visualstudio.com/api/extension-guides/file-icon-theme).
+
+### Enable logging
+
+Logging can be enabled with the following settings:
+
+```json
+{
+  "material-icon-theme.enableLogging": true,
+  "material-icon-theme.logLevel": "debug",
+}
+```
+
+The available log levels are:
+
+- `error`: Only errors are logged
+- `info`: Only info logs are logged
+- `debug`: All logs are logged
+
+Per default the logging is disabled as it can slow down the extension. If logging is enabled, the logs can be found in the output panel of VS Code under "Material Icon Theme".
+
+> **Note**
+> Please restart the extension after changing the logging settings to apply the changes.

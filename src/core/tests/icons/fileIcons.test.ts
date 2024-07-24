@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it } from 'bun:test';
-import { getDefaultConfiguration } from '../../generator/config/defaultConfig';
+import { getDefaultConfig } from '../../generator/config/defaultConfig';
 import { loadFileIconDefinitions } from '../../generator/fileGenerator';
 import type { Config } from '../../models/icons/config';
 import type { FileIcons } from '../../models/icons/files/fileTypes';
@@ -11,7 +11,7 @@ describe('file icons', () => {
   let config: Config;
 
   beforeEach(() => {
-    config = getDefaultConfiguration();
+    config = getDefaultConfig();
     expectedManifest = createEmptyManifest();
   });
 
@@ -60,7 +60,7 @@ describe('file icons', () => {
       'filename.js': 'javascript',
     };
 
-    expect(iconDefinitions).toMatchObject(expectedManifest);
+    expect(iconDefinitions).toStrictEqual(expectedManifest);
   });
 
   it('should disable icon packs', () => {
@@ -104,7 +104,7 @@ describe('file icons', () => {
       'filename.js': 'javascript',
     };
 
-    expect(iconDefinitions).toMatchObject(expectedManifest);
+    expect(iconDefinitions).toStrictEqual(expectedManifest);
   });
 
   it('should configure custom icon associations', () => {
@@ -122,7 +122,7 @@ describe('file icons', () => {
         },
       ],
     };
-    const config = getDefaultConfiguration();
+    const config = getDefaultConfig();
     config.files.associations = {
       '*.sample.ts': 'angular',
       'sample.js': 'javascript',
@@ -162,7 +162,7 @@ describe('file icons', () => {
       'sample.js': 'javascript',
     };
 
-    expect(iconDefinitions).toMatchObject(expectedManifest);
+    expect(iconDefinitions).toStrictEqual(expectedManifest);
   });
 
   it('should configure language icons for light and high contrast', () => {
@@ -245,7 +245,7 @@ describe('file icons', () => {
       'filename.js': 'javascript',
     };
 
-    expect(iconDefinitions).toMatchObject(expectedManifest);
+    expect(iconDefinitions).toStrictEqual(expectedManifest);
   });
 
   it('should generate cloned file icons config', () => {
@@ -308,7 +308,7 @@ describe('file icons', () => {
     };
     expectedManifest.file = 'file';
 
-    expect(iconDefinitions).toMatchObject(expectedManifest);
+    expect(iconDefinitions).toStrictEqual(expectedManifest);
   });
 
   it('should allow interoperability between cloned and user custom associations', () => {
@@ -361,6 +361,6 @@ describe('file icons', () => {
     };
     expectedManifest.file = 'file';
 
-    expect(iconDefinitions).toMatchObject(expectedManifest);
+    expect(iconDefinitions).toStrictEqual(expectedManifest);
   });
 });

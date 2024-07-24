@@ -1,41 +1,45 @@
-import { lstatSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
+import { lstat, readFile, readdir } from 'node:fs/promises';
 import { join } from 'node:path';
 import { getCustomIconPaths } from '../helpers/customIconPaths';
 import { resolvePath } from '../helpers/resolvePath';
+import { writeToFile } from '../helpers/writeFile';
+import { logger } from '../logging/logger';
 import { iconFolderPath } from './constants';
 
 /**
  * Changes the opacity of all icons in the set.
  * @param config Icon JSON options which include the opacity value.
  */
-export const setIconOpacity = (
+export const setIconOpacity = async (
   opacity: number,
   filesAssociations: Record<string, string>
 ) => {
   if (!validateOpacityValue(opacity)) {
-    return console.error(
+    return logger.error(
       'Invalid opacity value! Opacity must be a decimal number between 0 and 1!'
     );
   }
 
+  logger.info(`Setting opacity to ${opacity}...`);
+
   const iconsPath = resolvePath(iconFolderPath);
   const customIconPaths = getCustomIconPaths(filesAssociations);
-  const iconFiles = readdirSync(iconsPath);
+  const iconFiles = await readdir(iconsPath);
 
   try {
     // read all icon files from the icons folder
-    iconFiles.forEach((iconFileName) =>
-      processSVGFile(iconsPath, iconFileName, opacity)
-    );
+    for (const iconFileName of iconFiles) {
+      await processSVGFile(iconsPath, iconFileName, opacity);
+    }
 
-    customIconPaths.forEach((iconPath) => {
-      const customIcons = readdirSync(iconPath);
-      customIcons.forEach((iconFileName) =>
-        processSVGFile(iconPath, iconFileName, opacity)
-      );
-    });
+    for (const iconPath of customIconPaths) {
+      const customIcons = await readdir(iconPath);
+      for (const iconFileName of customIcons) {
+        await processSVGFile(iconPath, iconFileName, opacity);
+      }
+    }
   } catch (error) {
-    console.error(error);
+    logger.error(error);
   }
 };
 
@@ -95,19 +99,20 @@ export const updateSVGOpacity = (svg: string, opacity: number): string => {
 };
 
 /** Function to read an SVG file, update its opacity, and write it back */
-const processSVGFile = (
+const processSVGFile = async (
   iconPath: string,
   iconFileName: string,
   opacity: number
-): void => {
+): Promise<void> => {
   const svgFilePath = join(iconPath, iconFileName);
-  if (!lstatSync(svgFilePath).isFile()) {
+  if (!(await lstat(svgFilePath)).isFile()) {
     return;
   }
 
   // Read SVG file
-  const svg = readFileSync(svgFilePath, 'utf-8');
+  const svg = await readFile(svgFilePath, 'utf-8');
   const updatedSVG = updateSVGOpacity(svg, opacity);
 
-  writeFileSync(svgFilePath, updatedSVG);
+  if (updatedSVG.trim().length === 0) return;
+  await writeToFile(svgFilePath, updatedSVG);
 };

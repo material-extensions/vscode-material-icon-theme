@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it } from 'bun:test';
-import { getDefaultConfiguration } from '../../generator/config/defaultConfig';
+import { getDefaultConfig } from '../../generator/config/defaultConfig';
 import { loadLanguageIconDefinitions } from '../../generator/languageGenerator';
 import type { Config } from '../../models/icons/config';
 import { IconPack } from '../../models/icons/iconPack';
@@ -12,7 +12,7 @@ describe('language icons', () => {
 
   beforeEach(() => {
     expectedManifest = createEmptyManifest();
-    config = getDefaultConfiguration();
+    config = getDefaultConfig();
   });
 
   it('should configure icon definitions', () => {
@@ -45,7 +45,7 @@ describe('language icons', () => {
       c: 'c',
       d: 'c',
     };
-    expect(iconDefinitions).toMatchObject(expectedManifest);
+    expect(iconDefinitions).toStrictEqual(expectedManifest);
   });
 
   it('should disable icon definitions', () => {
@@ -68,7 +68,7 @@ describe('language icons', () => {
     expectedManifest.languageIds = {
       a: 'a',
     };
-    expect(iconDefinitions).toMatchObject(expectedManifest);
+    expect(iconDefinitions).toStrictEqual(expectedManifest);
   });
 
   it('should disable icon packs', () => {
@@ -87,7 +87,7 @@ describe('language icons', () => {
 
     expectedManifest.iconDefinitions = {};
     expectedManifest.languageIds = {};
-    expect(iconDefinitions).toMatchObject(expectedManifest);
+    expect(iconDefinitions).toStrictEqual(expectedManifest);
   });
 
   it('should configure language icons for light and high contrast', () => {
@@ -146,7 +146,7 @@ describe('language icons', () => {
         b: 'b_highContrast',
       },
     };
-    expect(iconDefinitions).toMatchObject(expectedManifest);
+    expect(iconDefinitions).toStrictEqual(expectedManifest);
   });
 
   it('should configure custom icon associations', () => {
@@ -176,6 +176,6 @@ describe('language icons', () => {
       xml: 'json',
     };
 
-    expect(iconDefinitions).toMatchObject(expectedManifest);
+    expect(iconDefinitions).toStrictEqual(expectedManifest);
   });
 });

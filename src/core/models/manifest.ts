@@ -1,3 +1,17 @@
+import type { RecursivePartial } from '../types/recursivePartial';
+import type { Config } from './icons/config';
+
+/**
+ * Configuration for the manifest. It contains the configuration which is used to generate the manifest.
+ */
+export type ManifestConfig = RecursivePartial<
+  Pick<Config, 'activeIconPack' | 'hidesExplorerArrows' | 'languages'> & {
+    files: Pick<Config['files'], 'associations'>;
+  } & {
+    folders: Pick<Config['folders'], 'associations' | 'theme'>;
+  }
+>;
+
 export type Manifest = {
   file?: string;
   folder?: string;

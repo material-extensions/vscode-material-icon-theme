@@ -1,5 +1,6 @@
 import { getFileConfigHash } from '../helpers/configHash';
 import { merge } from '../helpers/object';
+import { logger } from '../logging/logger';
 import type { Config, IconAssociations } from '../models/icons/config';
 import type { DefaultIcon } from '../models/icons/defaultIcon';
 import type { FolderIcon } from '../models/icons/folders/folderIcon';
@@ -310,13 +311,13 @@ const getCustomIcons = (folderAssociations: IconAssociations | undefined) => {
   return icons;
 };
 
-export const generateFolderIcons = (
+export const generateFolderIcons = async (
   color: string,
   opacity: number,
   saturation: number
 ) => {
   if (!color || !validateHEXColorCode(color)) {
-    return console.error('Invalid color code for folder icons');
+    return logger.error('Invalid color code for folder icons');
   }
 
   const folderIcon =
@@ -328,25 +329,25 @@ export const generateFolderIcons = (
   const rootFolderIconOpen =
     'M16,5A11,11,0,1,1,5,16,11.01245,11.01245,0,0,1,16,5m0-3A14,14,0,1,0,30,16,14,14,0,0,0,16,2Z';
 
-  writeSVGFiles(
+  await writeSVGFiles(
     'folder',
     getSVG(getPath(folderIcon, color)),
     opacity,
     saturation
   );
-  writeSVGFiles(
+  await writeSVGFiles(
     'folder-open',
     getSVG(getPath(folderIconOpen, color)),
     opacity,
     saturation
   );
-  writeSVGFiles(
+  await writeSVGFiles(
     'folder-root',
     getSVG(getPath(rootFolderIcon, color)),
     opacity,
     saturation
   );
-  writeSVGFiles(
+  await writeSVGFiles(
     'folder-root-open',
     getSVG(getPath(rootFolderIconOpen, color)),
     opacity,
