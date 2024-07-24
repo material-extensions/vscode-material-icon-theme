@@ -39,7 +39,7 @@
     "url": "https://github.com/sponsors/PKief"
   },
   "engines": {
-    "vscode": "^1.51.0"
+    "vscode": "^1.55.0"
   },
   "homepage": "https://github.com/material-extensions/vscode-material-icon-theme/blob/main/README.md",
   "repository": {
@@ -334,7 +334,7 @@
     "@types/chroma-js": "^2.4.4",
     "@types/glob": "^7.2.0",
     "@types/puppeteer": "^5.4.6",
-    "@types/vscode": "~1.51.0",
+    "@types/vscode": "~1.55.0",
     "@vscode/test-electron": "^2.3.9",
     "axios": "^1.4.0",
     "bun-types": "^1.1.20",

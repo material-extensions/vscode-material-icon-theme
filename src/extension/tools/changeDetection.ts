@@ -28,6 +28,10 @@ export const detectConfigChanges = async (
 
   const oldConfig = getConfigFromStorage(context);
   const config = getCurrentConfig();
+
+  // if the configuration has not changed
+  if (JSON.stringify(oldConfig) === JSON.stringify(config)) return;
+
   await applyConfigToIcons(config, oldConfig);
 
   logger.info('Configuration changes detected and applied!');
@@ -60,10 +64,19 @@ export const detectConfigChanges = async (
 };
 
 const syncConfigWithStorage = (config: Config, context: ExtensionContext) => {
-  context.globalState.update('config', config);
+  context.globalState.update('config', {
+    version: context.extension.packageJSON.version,
+    config,
+  });
 };
 
 const getConfigFromStorage = (context: ExtensionContext): Config => {
-  const config = context.globalState.get<Config>('config');
-  return padWithDefaultConfig(config);
+  const config = context.globalState.get<{ version: string; config: Config }>(
+    'config'
+  );
+  if (context.extension.packageJSON.version === config?.version) {
+    return padWithDefaultConfig(config?.config);
+  } else {
+    return padWithDefaultConfig();
+  }
 };
