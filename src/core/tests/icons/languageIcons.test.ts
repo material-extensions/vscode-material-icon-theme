@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it } from 'bun:test';
-import { getDefaultConfiguration } from '../../generator/config/defaultConfig';
+import { getDefaultConfig } from '../../generator/config/defaultConfig';
 import { loadLanguageIconDefinitions } from '../../generator/languageGenerator';
 import type { Config } from '../../models/icons/config';
 import { IconPack } from '../../models/icons/iconPack';
@@ -12,7 +12,7 @@ describe('language icons', () => {
 
   beforeEach(() => {
     expectedManifest = createEmptyManifest();
-    config = getDefaultConfiguration();
+    config = getDefaultConfig();
   });
 
   it('should configure icon definitions', () => {

@@ -1,6 +1,6 @@
 import { window as codeWindow } from 'vscode';
 import {
-  getDefaultConfiguration,
+  getDefaultConfig,
   logger,
   translate,
   validateOpacityValue,
@@ -40,7 +40,7 @@ const validateOpacityInput = (opacityInput: string) => {
 
 /** Get the current value of the opacity of the icons. */
 export const getCurrentOpacityValue = (): number => {
-  const defaultConfig = getDefaultConfiguration();
+  const defaultConfig = getDefaultConfig();
   return getThemeConfig<number>('opacity') ?? defaultConfig.opacity;
 };
 

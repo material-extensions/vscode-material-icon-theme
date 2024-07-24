@@ -1,6 +1,6 @@
 import { type QuickPickItem, window as codeWindow } from 'vscode';
 import {
-  getDefaultConfiguration,
+  getDefaultConfig,
   logger,
   translate,
   validateHEXColorCode,
@@ -81,7 +81,7 @@ const validateColorInput = (colorInput: string) => {
 
 /** Check status of the folder color */
 export const checkFolderColorStatus = (): string => {
-  const defaultConfig = getDefaultConfiguration();
+  const defaultConfig = getDefaultConfig();
   const folderColorConfig = getThemeConfig<string>('folders.color');
   return folderColorConfig ?? defaultConfig.folders.color!;
 };

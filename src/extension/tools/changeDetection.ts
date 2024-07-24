@@ -2,7 +2,7 @@ import { join } from 'node:path';
 import type { ConfigurationChangeEvent } from 'vscode';
 import {
   type Config,
-  applyConfigurationToIcons,
+  applyConfigToIcons,
   clearCloneFolder,
   customClonesIcons,
   extensionName,
@@ -28,10 +28,10 @@ export const detectConfigChanges = async (event?: ConfigurationChangeEvent) => {
       event.affectsConfiguration
     );
     logger.debug('Affected configurations: ' + [...affectedConfigProperties]);
-    await applyConfigurationToIcons(config, affectedConfigProperties);
+    await applyConfigToIcons(config, affectedConfigProperties);
   } else {
     logger.debug('Applying all configurations with current config.');
-    await applyConfigurationToIcons(config);
+    await applyConfigToIcons(config);
   }
 
   logger.info('Configuration changes detected and applied!');

@@ -1,6 +1,6 @@
 import { type QuickPickItem, window as codeWindow } from 'vscode';
 import {
-  getDefaultConfiguration,
+  getDefaultConfig,
   logger,
   translate,
   validateHEXColorCode,
@@ -81,7 +81,7 @@ const validateColorInput = (colorInput: string) => {
 
 /** Check status of the file color */
 export const checkFileColorStatus = (): string => {
-  const defaultConfig = getDefaultConfiguration();
+  const defaultConfig = getDefaultConfig();
   return getThemeConfig<string>('files.color') ?? defaultConfig.files.color;
 };
 

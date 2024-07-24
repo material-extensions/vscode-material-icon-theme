@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it } from 'bun:test';
-import { getDefaultConfiguration } from '../../generator/config/defaultConfig';
+import { getDefaultConfig } from '../../generator/config/defaultConfig';
 import { loadFileIconDefinitions } from '../../generator/fileGenerator';
 import type { Config } from '../../models/icons/config';
 import type { FileIcons } from '../../models/icons/files/fileTypes';
@@ -11,7 +11,7 @@ describe('file icons', () => {
   let config: Config;
 
   beforeEach(() => {
-    config = getDefaultConfiguration();
+    config = getDefaultConfig();
     expectedManifest = createEmptyManifest();
   });
 
@@ -122,7 +122,7 @@ describe('file icons', () => {
         },
       ],
     };
-    const config = getDefaultConfiguration();
+    const config = getDefaultConfig();
     config.files.associations = {
       '*.sample.ts': 'angular',
       'sample.js': 'javascript',

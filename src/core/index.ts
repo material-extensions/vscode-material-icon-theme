@@ -1,10 +1,11 @@
+export { applyConfigToIcons } from './generator/applyConfigToIcons';
 export {
   customClonesIcons,
   generateConfiguredClones,
   hasCustomClones,
 } from './generator/clones/clonesGenerator';
 export { clearCloneFolder } from './generator/clones/utils/cloneData';
-export { getDefaultConfiguration } from './generator/config/defaultConfig';
+export { getDefaultConfig } from './generator/config/defaultConfig';
 export {
   extensionName,
   extensionPublisher,
@@ -16,14 +17,10 @@ export {
 } from './generator/constants';
 export { generateFileIcons } from './generator/fileGenerator';
 export { generateFolderIcons } from './generator/folderGenerator';
+export { generateManifest } from './generator/generateManifest';
 export { validateOpacityValue } from './generator/iconOpacity';
 export { validateSaturationValue } from './generator/iconSaturation';
-export {
-  applyConfigurationToIcons,
-  generateManifest,
-  renameIconFiles,
-  type ManifestConfig,
-} from './generator/jsonGenerator';
+export { renameIconFiles } from './generator/renameIconFiles';
 export { validateHEXColorCode } from './generator/shared/validation';
 export { availableIconPacks } from './helpers/iconPacks';
 export { merge } from './helpers/object';
@@ -53,5 +50,5 @@ export type {
 export { IconPack, type IconPackValue } from './models/icons/iconPack';
 export type { LanguageIcon } from './models/icons/languages/languageIdentifier';
 export { FileNamePattern } from './models/icons/patterns/patterns';
-export { type Manifest } from './models/manifest';
+export { type Manifest, type ManifestConfig } from './models/manifest';
 export { parseByPattern } from './patterns/patterns';

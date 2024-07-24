@@ -1,5 +1,5 @@
 import { beforeAll, beforeEach, describe, expect, it } from 'bun:test';
-import { getDefaultConfiguration } from '../../generator/config/defaultConfig';
+import { getDefaultConfig } from '../../generator/config/defaultConfig';
 import { loadFolderIconDefinitions } from '../../generator/folderGenerator';
 import type { Config } from '../../models/icons/config';
 import type { FolderTheme } from '../../models/icons/folders/folderTheme';
@@ -32,7 +32,7 @@ describe('folder icons', () => {
   });
 
   beforeEach(() => {
-    config = getDefaultConfiguration();
+    config = getDefaultConfig();
     expectedManifest = createEmptyManifest();
   });
 
