@@ -5,7 +5,10 @@ export {
   hasCustomClones,
 } from './generator/clones/clonesGenerator';
 export { clearCloneFolder } from './generator/clones/utils/cloneData';
-export { getDefaultConfig } from './generator/config/defaultConfig';
+export {
+  getDefaultConfig,
+  padWithDefaultConfig,
+} from './generator/config/defaultConfig';
 export {
   extensionName,
   extensionPublisher,
@@ -23,7 +26,7 @@ export { validateSaturationValue } from './generator/iconSaturation';
 export { renameIconFiles } from './generator/renameIconFiles';
 export { validateHEXColorCode } from './generator/shared/validation';
 export { availableIconPacks } from './helpers/iconPacks';
-export { merge } from './helpers/object';
+export { get, merge, set } from './helpers/object';
 export { resolvePath } from './helpers/resolvePath';
 export { capitalizeFirstLetter, toTitleCase } from './helpers/titlecase';
 export { writeToFile } from './helpers/writeFile';

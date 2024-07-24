@@ -14,10 +14,12 @@ import { setIconSaturation } from './iconSaturation';
  */
 export const applyConfigToIcons = async (
   config: Config,
-  affectedConfig?: Set<string>
+  affectedConfig?: Set<string>,
+  oldConfig?: Config
 ) => {
   if (
-    affectedConfig?.has('files.color') ||
+    (affectedConfig?.has('files.color') &&
+      config?.files.color !== oldConfig?.files.color) ||
     (!affectedConfig && config.files.color !== getDefaultConfig().files.color)
   ) {
     await generateFileIcons(
@@ -27,7 +29,8 @@ export const applyConfigToIcons = async (
     );
   }
   if (
-    affectedConfig?.has('folders.color') ||
+    (affectedConfig?.has('folders.color') &&
+      config.folders.color !== oldConfig?.files.color) ||
     (!affectedConfig &&
       config.folders.color !== getDefaultConfig().folders.color)
   ) {
@@ -39,13 +42,14 @@ export const applyConfigToIcons = async (
   }
 
   if (
-    affectedConfig?.has('opacity') ||
+    (affectedConfig?.has('opacity') && config.opacity !== oldConfig?.opacity) ||
     (!affectedConfig && config.opacity !== getDefaultConfig().opacity)
   ) {
     await setIconOpacity(config.opacity, config.files.associations);
   }
   if (
-    affectedConfig?.has('saturation') ||
+    (affectedConfig?.has('saturation') &&
+      config.saturation !== oldConfig?.saturation) ||
     (!affectedConfig && config.saturation !== getDefaultConfig().saturation)
   ) {
     await setIconSaturation(config.saturation, config.files.associations);
