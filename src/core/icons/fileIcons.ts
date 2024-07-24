@@ -2503,5 +2503,9 @@ export const fileIcons: FileIcons = {
       name: 'deepsource',
       fileNames: ['.deepsource.toml'],
     },
+    {
+      name: 'hurl',
+      fileExtensions: ['hurl'],
+    },
   ]),
 };
