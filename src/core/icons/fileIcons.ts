@@ -2503,5 +2503,10 @@ export const fileIcons: FileIcons = {
       name: 'deepsource',
       fileNames: ['.deepsource.toml'],
     },
+    {
+      name: 'tape',
+      fileExtensions: ['tape'],
+      clone: { base: 'video', color: 'purple-300' },
+    },
   ]),
 };
