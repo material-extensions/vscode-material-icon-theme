@@ -3,6 +3,7 @@
   "command.toggleIconPacks": "Material Icons: アイコンパックを設定",
   "command.changeFolderTheme": "Material Icons: フォルダーテーマを変更",
   "command.changeFolderColor": "Material Icons: フォルダーの色を変更",
+  "command.changeFileColor": "Material Icons: ファイルの色を変更",
   "command.restoreDefaultConfig": "Material Icons: 初期設定に戻す",
   "command.toggleExplorerArrows": "Material Icons: フォルダーの矢印を切り替え",
   "command.changeOpacity": "Material Icons: 不透明度を変更",
@@ -27,6 +28,7 @@
   "configuration.folders.theme.classic": "クラシックフォルダーアイコンを選択する。",
   "configuration.folders.theme.none": "フォルダーアイコンがありません。",
   "configuration.folders.color": "フォルダーアイコンの色を変更する。",
+  "configuration.files.color": "ファイルアイコンの色を変更する。",
   "configuration.hidesExplorerArrows": "フォルダーの横にある矢印を隠す。",
   "configuration.opacity": "アイコンの不透明度を変更する。",
   "configuration.saturation": "アイコンの彩度を変更する。"
