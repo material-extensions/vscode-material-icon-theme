@@ -23,8 +23,10 @@ export const activate = async (context: ExtensionContext) => {
     await detectConfigChanges(undefined, context);
 
     // Observe changes in the config
-    workspace.onDidChangeConfiguration(
-      async (event) => await detectConfigChanges(event, context)
+    context.subscriptions.push(
+      workspace.onDidChangeConfiguration(
+        async (event) => await detectConfigChanges(event, context)
+      )
     );
 
     logger.info('Extension activated!');
