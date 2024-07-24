@@ -1,4 +1,5 @@
 import { join } from 'node:path';
+import deepEqual from 'fast-deep-equal';
 import type { ConfigurationChangeEvent, ExtensionContext } from 'vscode';
 import {
   type Config,
@@ -30,7 +31,7 @@ export const detectConfigChanges = async (
   const config = getCurrentConfig();
 
   // if the configuration has not changed
-  if (JSON.stringify(oldConfig) === JSON.stringify(config)) return;
+  if (deepEqual(config, oldConfig)) return;
 
   await applyConfigToIcons(config, oldConfig);
 
