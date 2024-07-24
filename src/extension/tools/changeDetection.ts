@@ -16,7 +16,7 @@ import {
   resolvePath,
   writeToFile,
 } from '../../core';
-import { configPropertyNames, getCurrentConfig } from '../shared/config';
+import { getCurrentConfig } from '../shared/config';
 
 /** Compare the workspace and the user configurations with the current setup of the icons. */
 export const detectConfigChanges = async (
@@ -28,17 +28,7 @@ export const detectConfigChanges = async (
 
   const oldConfig = getConfigFromStorage(context);
   const config = getCurrentConfig();
-
-  if (event) {
-    const affectedConfigProperties = getAffectedConfigProperties(
-      event.affectsConfiguration
-    );
-    logger.debug('Affected configurations: ' + [...affectedConfigProperties]);
-    await applyConfigToIcons(config, affectedConfigProperties, oldConfig);
-  } else {
-    logger.debug('Applying all configurations with current config.');
-    await applyConfigToIcons(config);
-  }
+  await applyConfigToIcons(config, oldConfig);
 
   logger.info('Configuration changes detected and applied!');
 
@@ -67,32 +57,6 @@ export const detectConfigChanges = async (
   );
 
   syncConfigWithStorage(config, context);
-};
-
-/**
- * Get the affected configurations by the change event.
- *
- * @returns Updated configurations
- */
-const getAffectedConfigProperties = (
-  affectsConfiguration: ConfigurationChangeEvent['affectsConfiguration']
-): Set<string> => {
-  // Filter out only the affected configurations to minimize calls to affectsConfiguration
-  const affectedConfig = configPropertyNames.reduce<Set<string>>(
-    (acc, configNameWithExtensionId) => {
-      if (affectsConfiguration(configNameWithExtensionId)) {
-        const configName = configNameWithExtensionId.replace(
-          `${extensionName}.`,
-          ''
-        ) as keyof Config;
-        acc.add(configName);
-      }
-      return acc;
-    },
-    new Set()
-  );
-
-  return affectedConfig;
 };
 
 const syncConfigWithStorage = (config: Config, context: ExtensionContext) => {

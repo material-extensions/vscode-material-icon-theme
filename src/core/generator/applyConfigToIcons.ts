@@ -1,5 +1,4 @@
 import type { Config } from '../models/icons/config';
-import { getDefaultConfig } from './config/defaultConfig';
 import { generateFileIcons } from './fileGenerator';
 import { generateFolderIcons } from './folderGenerator';
 import { setIconOpacity } from './iconOpacity';
@@ -12,28 +11,15 @@ import { setIconSaturation } from './iconSaturation';
  * @param config Configuration that customizes the icons and the manifest.
  * @param affectedConfig Set of configuration keys that have changed so that not all functions need to be executed.
  */
-export const applyConfigToIcons = async (
-  config: Config,
-  affectedConfig?: Set<string>,
-  oldConfig?: Config
-) => {
-  if (
-    (affectedConfig?.has('files.color') &&
-      config?.files.color !== oldConfig?.files.color) ||
-    (!affectedConfig && config.files.color !== getDefaultConfig().files.color)
-  ) {
+export const applyConfigToIcons = async (config: Config, oldConfig: Config) => {
+  if (config.files.color !== oldConfig.files.color) {
     await generateFileIcons(
       config.files.color,
       config.opacity,
       config.saturation
     );
   }
-  if (
-    (affectedConfig?.has('folders.color') &&
-      config.folders.color !== oldConfig?.files.color) ||
-    (!affectedConfig &&
-      config.folders.color !== getDefaultConfig().folders.color)
-  ) {
+  if (config.folders.color !== oldConfig.folders.color) {
     await generateFolderIcons(
       config.folders.color,
       config.opacity,
@@ -41,17 +27,10 @@ export const applyConfigToIcons = async (
     );
   }
 
-  if (
-    (affectedConfig?.has('opacity') && config.opacity !== oldConfig?.opacity) ||
-    (!affectedConfig && config.opacity !== getDefaultConfig().opacity)
-  ) {
+  if (config.opacity !== oldConfig.opacity) {
     await setIconOpacity(config.opacity, config.files.associations);
   }
-  if (
-    (affectedConfig?.has('saturation') &&
-      config.saturation !== oldConfig?.saturation) ||
-    (!affectedConfig && config.saturation !== getDefaultConfig().saturation)
-  ) {
+  if (config.saturation !== oldConfig.saturation) {
     await setIconSaturation(config.saturation, config.files.associations);
   }
 };
