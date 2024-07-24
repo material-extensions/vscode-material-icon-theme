@@ -3,6 +3,18 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v5.8.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.7.0...v5.8.0) 
+
+> July 24, 2024 
+
+- feat: add remark support [`#2245`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2245)
+- Add tape icon [`#2469`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2469)
+- Added `hurl` icon [`#2465`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2465)
+- Improve core functionality (Logging, Config comparison, Code Quality) [`#2464`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2464)
+- Added alias for `.nuxtrc` [`#2466`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2466)
+- Updated `svg-icon-review` version (1.1.0 -> 2.1.0) [`#2459`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2459)
+- feat: adding icons to new configuration and envs files [`#2057`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2057)
+ 
 #### [v5.7.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.6.0...v5.7.0) 
 
 > July 22, 2024 

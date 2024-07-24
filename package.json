@@ -2,7 +2,7 @@
   "name": "material-icon-theme",
   "displayName": "Material Icon Theme",
   "description": "Material Design Icons for Visual Studio Code",
-  "version": "5.7.0",
+  "version": "5.8.0",
   "scripts": {
     "precompile": "rimraf dist && bun run verify",
     "compile": "tsc -p ./",
@@ -318,7 +318,11 @@
         "material-icon-theme.logLevel": {
           "type": "string",
           "default": "info",
-          "enum": ["info", "error", "debug"],
+          "enum": [
+            "info",
+            "error",
+            "debug"
+          ],
           "description": "%configuration.logLevel%"
         }
       }
