@@ -909,6 +909,15 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['resolver.ts', 'resolver.js'],
       enabledFor: [IconPack.Angular, IconPack.Ngrx],
     },
+    {
+      name: 'angular-interceptor',
+      clone: {
+        base: 'angular',
+        color: 'orange-500',
+      },
+      fileExtensions: ['interceptor.ts', 'interceptor.js'],
+      enabledFor: [IconPack.Angular, IconPack.Ngrx],
+    },
     { name: 'puppet', fileExtensions: ['pp'] },
     { name: 'elixir', fileExtensions: ['ex', 'exs', 'eex', 'leex', 'heex'] },
     { name: 'livescript', fileExtensions: ['ls'] },
