@@ -1,7 +1,6 @@
 # Files to include in the extension package
 # Documentation for this format:
 # https://code.visualstudio.com/api/working-with-extensions/publishing-extension#using-.vscodeignore
-!.npmignore
 !CHANGELOG.md
 !LICENSE.md
 !README.md
@@ -11,7 +10,6 @@
 !package.nls.*.json
 
 !dist/extension
-!dist/module
 !dist/material-icons.json
 
 !icons
