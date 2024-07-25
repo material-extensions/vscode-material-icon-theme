@@ -17,7 +17,7 @@ try {
 
   const manifest = generateManifest();
   // Print manifest to stdout so that scripts can consume it
-  console.log(JSON.stringify(manifest, undefined, 2));
+  console.log(JSON.stringify(manifest));
 } catch (error) {
   console.error(error);
   throw Error('An error while generating the manifest occurred!');
