@@ -1,22 +1,20 @@
-import { readdir } from 'fs';
-import { join, parse } from 'path';
+import { readdir } from 'node:fs';
+import { join, parse } from 'node:path';
 import {
-  DefaultIcon,
-  FileIcon,
-  FolderIcon,
-  FolderTheme,
-} from '../../../models/index';
-import { green, red } from '../../helpers/painter';
-import { similarity } from '../../helpers/similarity';
-import {
+  type CloneOptions,
+  type DefaultIcon,
+  type FileIcon,
+  type FolderIcon,
+  type FolderTheme,
   fileIcons,
   folderIcons,
   highContrastColorFileEnding,
   languageIcons,
   lightColorFileEnding,
   openedFolder,
-} from './../../../icons';
-import { CloneOptions } from '../../../models/icons/cloneOptions';
+} from '../../../core';
+import { green, red } from '../../helpers/painter';
+import { similarity } from '../../helpers/similarity';
 
 /**
  * Defines the folder where all icon files are located.
@@ -77,9 +75,9 @@ export const check = () => readdir(folderPath, fsReadAllIconFiles);
  */
 const checkFileIcons = () => {
   [...fileIcons.icons, fileIcons.defaultIcon].forEach((icon) => {
-    isIconAvailable(icon, IconType.fileIcons, IconColor.default);
-    isIconAvailable(icon, IconType.fileIcons, IconColor.light);
-    isIconAvailable(icon, IconType.fileIcons, IconColor.highContrast);
+    isIconAvailable(icon, IconType.FileIcons, IconColor.Default);
+    isIconAvailable(icon, IconType.FileIcons, IconColor.Light);
+    isIconAvailable(icon, IconType.FileIcons, IconColor.HighContrast);
   });
 };
 
@@ -95,10 +93,10 @@ const isIconAvailable = (
     ? getCloneBaseName(icon, iconType, hasOpenedFolder)
     : `${icon.name}${hasOpenedFolder ? openedFolder : ''}`;
 
-  if (!isClone && icon.light && iconColor === IconColor.light) {
+  if (!isClone && icon.light && iconColor === IconColor.Light) {
     iconName += lightColorFileEnding;
   }
-  if (!isClone && icon.highContrast && iconColor === IconColor.highContrast) {
+  if (!isClone && icon.highContrast && iconColor === IconColor.HighContrast) {
     iconName += highContrastColorFileEnding;
   }
 
@@ -132,12 +130,12 @@ const getCloneBaseName = (
 ) => {
   const clone = icon.clone;
   const folderBase =
-    iconType === IconType.folderIcons
+    iconType === IconType.FolderIcons
       ? clone.base === 'folder'
         ? 'folder'
         : clone.base.startsWith('folder-')
-        ? clone.base
-        : `folder-${clone?.base}`
+          ? clone.base
+          : `folder-${clone?.base}`
       : clone.base;
 
   return `${folderBase}${hasOpenedFolder ? openedFolder : ''}`;
@@ -152,15 +150,15 @@ const checkFolderIcons = () => {
     .reduce((a, b) => a.concat(b))
     .forEach((icon) => {
       if (icon) {
-        isIconAvailable(icon, IconType.folderIcons, IconColor.default);
-        isIconAvailable(icon, IconType.folderIcons, IconColor.default, true);
-        isIconAvailable(icon, IconType.folderIcons, IconColor.light);
-        isIconAvailable(icon, IconType.folderIcons, IconColor.light, true);
-        isIconAvailable(icon, IconType.folderIcons, IconColor.highContrast);
+        isIconAvailable(icon, IconType.FolderIcons, IconColor.Default);
+        isIconAvailable(icon, IconType.FolderIcons, IconColor.Default, true);
+        isIconAvailable(icon, IconType.FolderIcons, IconColor.Light);
+        isIconAvailable(icon, IconType.FolderIcons, IconColor.Light, true);
+        isIconAvailable(icon, IconType.FolderIcons, IconColor.HighContrast);
         isIconAvailable(
           icon,
-          IconType.folderIcons,
-          IconColor.highContrast,
+          IconType.FolderIcons,
+          IconColor.HighContrast,
           true
         );
       }
@@ -180,9 +178,9 @@ const getAllFolderIcons = (theme: FolderTheme) => {
 const checkLanguageIcons = () => {
   languageIcons.forEach((lang) => {
     const icon = lang.icon;
-    isIconAvailable(icon, IconType.languageIcons, IconColor.default);
-    isIconAvailable(icon, IconType.languageIcons, IconColor.light);
-    isIconAvailable(icon, IconType.languageIcons, IconColor.highContrast);
+    isIconAvailable(icon, IconType.LanguageIcons, IconColor.Default);
+    isIconAvailable(icon, IconType.LanguageIcons, IconColor.Light);
+    isIconAvailable(icon, IconType.LanguageIcons, IconColor.HighContrast);
   });
 };
 
@@ -248,13 +246,13 @@ const logIconInformation = (wrongIcons: string[], title: string) => {
 };
 
 enum IconType {
-  fileIcons = 'fileIcons',
-  folderIcons = 'folderIcons',
-  languageIcons = 'languageIcons',
+  FileIcons = 'fileIcons',
+  FolderIcons = 'folderIcons',
+  LanguageIcons = 'languageIcons',
 }
 
 enum IconColor {
-  default = 'default',
-  light = 'light',
-  highContrast = 'highContrast',
+  Default = 'default',
+  Light = 'light',
+  HighContrast = 'highContrast',
 }
