@@ -2459,7 +2459,10 @@ export const fileIcons: FileIcons = {
         base: '3d',
         color: '#00b0ff',
       },
-      fileNames: ['.devcontainer/devcontainer.json'],
+      fileNames: [
+        '.devcontainer/devcontainer.json',
+        '.devcontainer/devcontainer-lock.json',
+      ],
     },
     {
       name: 'kcl',
