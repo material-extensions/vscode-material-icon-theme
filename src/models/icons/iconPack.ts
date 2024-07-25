@@ -10,5 +10,4 @@ export enum IconPack {
   Qwik = 'qwik',
   Vue = 'vue',
   Vuex = 'vue_vuex',
-  Advpl = 'advpl',
 }
