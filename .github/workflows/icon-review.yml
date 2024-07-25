@@ -96,7 +96,7 @@ jobs:
         with:
           issue-number: ${{ github.event.pull_request.number }}
           comment-author: 'github-actions[bot]'
-          body-includes: This preview shows you how your changes will look on the different themes
+          body-includes: Thank you for creating a pull request. This preview shows you how your icon
 
       - name: Post or update comment in PR ✍️
         uses: peter-evans/create-or-update-comment@71345be0265236311c031f5c7866368bd1eff043 # v4.0.0
