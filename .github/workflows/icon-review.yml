@@ -62,7 +62,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           script: |
-            const iconsCount = ${{ env.svg_files_count }}
+            const iconsCount = parseInt("${{ env.svg_files_count }}")
             const imageURL = "${{ env.image_url }}";
             const image = `<img src="${imageURL}" alt="Generated preview" />`;
 
