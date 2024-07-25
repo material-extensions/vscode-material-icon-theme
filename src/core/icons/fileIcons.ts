@@ -2535,5 +2535,9 @@ export const fileIcons: FileIcons = {
       name: 'hurl',
       fileExtensions: ['hurl'],
     },
+    {
+      name: 'slint',
+      fileExtensions:['slint', '60']
+    }
   ]),
 };
