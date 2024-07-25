@@ -9,3 +9,4 @@ node_modules
 
 src/scripts/preview/*.html
 src/scripts/contributors/*.html
+!/Users/renanmalato/Desktop/My Business/dev/forks/vscode-material-icon-theme/icons/
