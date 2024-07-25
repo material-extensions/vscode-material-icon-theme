@@ -192,6 +192,7 @@ export const folderIcons: FolderTheme[] = [
           'vendor',
           'vendors',
           'third-party',
+          'lib64',
         ],
       },
       {
