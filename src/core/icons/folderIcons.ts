@@ -749,7 +749,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-jupyter',
-        folderNames: ['jupyter', 'notebook', 'notebooks'],
+        folderNames: ['jupyter', 'notebook', 'notebooks', 'ipynb'],
       },
       { name: 'folder-scala', folderNames: ['scala'] },
       {
