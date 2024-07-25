@@ -87,7 +87,7 @@ jobs:
               You can find more information on how to contribute in the [contribution guidelines](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/CONTRIBUTING.md).
             `;
 
-            // write comment to environment variable
+            // Write comment to environment variable
             core.exportVariable('comment', comment);
 
       - name: Find comment if exists 🕵️
