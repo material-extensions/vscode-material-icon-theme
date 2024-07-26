@@ -2509,6 +2509,10 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['alloy'],
     },
     {
+      name: 'clangd',
+      fileNames: ['.clangd'],
+    },
+    {
       name: 'markdownlint',
       fileNames: [
         '.markdownlint.json',
