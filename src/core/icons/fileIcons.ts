@@ -2540,7 +2540,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'slint',
-      fileExtensions:['slint', '60']
-    }
+      fileExtensions: ['slint', '60'],
+    },
   ]),
 };
