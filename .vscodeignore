@@ -1,30 +1,18 @@
-.vscode/**
-.github/**
-.vscode-test/**
-out/**
-test/**
-src/**
-scripts/**
-**/*.map
-.gitignore
-tsconfig.json
-tsconfig.**.json
-biome.jsonc
-images/**
-vsc-extension-quickstart.md
-logo.svg
-node_modules
-package-lock.json
-bun.lockb
-yarn.lock
-bunfig.toml
-.devcontainer/**
-sheriff.config.ts
-build/**
-svgo.config.js
-.eslintignore
-material-colors.yml
-changelog.config.json
-dist/types/**
-dist/module.cjs
+# Files to include in the extension package
+# Documentation for this format:
+# https://code.visualstudio.com/api/working-with-extensions/publishing-extension#using-.vscodeignore
+!CHANGELOG.md
+!LICENSE.md
+!README.md
+!logo.png
 
+!package.json
+!package.nls.*.json
+
+!dist/extension
+!dist/material-icons.json
+
+!icons
+
+# Exclude everything else
+**/*

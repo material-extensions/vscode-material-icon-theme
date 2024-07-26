@@ -264,19 +264,19 @@ export const materialPalette = {
  * Gets the material color from the material palette
  * @param key the key of the material color e.g. 'blue-grey-500'
  */
-export function getMaterialColorByKey(key: string): string | undefined {
+export const getMaterialColorByKey = (key: string): string | undefined => {
   if (key in materialPalette) {
     return materialPalette[key as keyof typeof materialPalette];
   }
 
   return undefined;
-}
+};
 
 /**
  * Given a color, returns the closest material color from the
  * material palette.
  */
-export function closerMaterialColorTo(color: string): string {
+export const closerMaterialColorTo = (color: string): string => {
   const palette = Object.values(materialPalette);
 
   if (!isValidColor(color)) {
@@ -294,4 +294,4 @@ export function closerMaterialColorTo(color: string): string {
     .sort((a, b) => a.distance - b.distance);
 
   return distances[0].color;
-}
+};

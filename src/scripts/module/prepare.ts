@@ -3,9 +3,11 @@ import { join } from 'node:path';
 import { spawn } from 'bun';
 
 /**
- * Check changed (not yet committed) SVG files for correct colors.
+ * Prepare the module for publishing.
+ *
+ * This script sets the main field in the package.json to the correct path and copies the README.md to the root directory.
  */
-async function prepareModule() {
+const prepareModule = async () => {
   try {
     const setMain = spawn([
       'npm',
@@ -23,6 +25,6 @@ async function prepareModule() {
     console.error('Error preparing the module:', error);
     process.exit(1);
   }
-}
+};
 
 prepareModule();

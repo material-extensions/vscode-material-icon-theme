@@ -1,5 +1,5 @@
 import { extensions, workspace } from 'vscode';
-import { type Config, extensionName } from '../../core';
+import { type Config, extensionName, extensionPublisher } from '../../core';
 import { merge, set } from '../../core/helpers/object';
 
 /** Get configuration of vs code. */
@@ -9,25 +9,21 @@ export const getConfig = (section?: string) => {
 
 /** Get list of configuration entries of package.json */
 export const getConfigProperties = (): { [config: string]: unknown } => {
-  return extensions.getExtension('PKief.material-icon-theme')?.packageJSON
-    ?.contributes?.configuration?.properties;
+  return extensions.getExtension(`${extensionPublisher}.${extensionName}`)
+    ?.packageJSON?.contributes?.configuration?.properties;
 };
 
 /** Get list of all configration properties */
 export const configPropertyNames = Object.keys(getConfigProperties());
 
 /** Update configuration of vs code. */
-export const setConfig = (
-  section: string,
-  value: unknown,
-  global: boolean = false
-) => {
+export const setConfig = (section: string, value: unknown, global = false) => {
   return getConfig().update(section, value, global);
 };
 
 /** Get current configuration of the theme from the vscode config */
 export const getThemeConfig = <T>(section: string): T | undefined => {
-  const themeConfig = getConfig('material-icon-theme').inspect<T>(section);
+  const themeConfig = getConfig(extensionName).inspect<T>(section);
   return getConfigValue<T | undefined>(themeConfig);
 };
 
@@ -35,21 +31,20 @@ export const getThemeConfig = <T>(section: string): T | undefined => {
 export const setThemeConfig = (
   section: string,
   value: unknown,
-  global: boolean = false
+  global = false
 ) => {
-  return getConfig('material-icon-theme').update(section, value, global);
+  return getConfig(extensionName).update(section, value, global);
 };
 
 /**
  * Checks if the theme is the active icon theme
  * @param{boolean} global false by default
  */
-export const isThemeActivated = (global: boolean = false): boolean => {
+export const isThemeActivated = (global = false): boolean => {
   return global
-    ? getConfig().inspect('workbench.iconTheme')?.globalValue ===
-        'material-icon-theme'
+    ? getConfig().inspect('workbench.iconTheme')?.globalValue === extensionName
     : getConfig().inspect('workbench.iconTheme')?.workspaceValue ===
-        'material-icon-theme';
+        extensionName;
 };
 
 /** Checks if the theme is not the active icon theme */

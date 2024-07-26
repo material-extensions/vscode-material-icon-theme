@@ -1,6 +1,6 @@
-import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import axios, { type AxiosRequestConfig } from 'axios';
+import { writeToFile } from '../../core';
 import { green, red, yellow } from '../helpers/painter';
 import { createScreenshot } from '../helpers/screenshots';
 import type { Contributor } from '../models/scripts/contributors/contributor';
@@ -62,7 +62,7 @@ const fetchContributors = (
   });
 };
 
-const createContributorsList = (contributors: Contributor[]) => {
+const createContributorsList = async (contributors: Contributor[]) => {
   const list = contributors
     .map((c) => {
       return `<li title="${c.login}"><img src="${c.avatar_url}" alt="${c.login}"/></li>`;
@@ -74,7 +74,7 @@ const createContributorsList = (contributors: Contributor[]) => {
   const generatedHtml = `${htmlDoctype}${styling}<ul>${list}</ul>`;
 
   const outputPath = join(__dirname, 'contributors.html');
-  writeFileSync(outputPath, generatedHtml);
+  await writeToFile(outputPath, generatedHtml);
   return outputPath;
 };
 
@@ -101,7 +101,7 @@ const init = async () => {
     );
     throw Error();
   }
-  const outputPath = createContributorsList(contributorsList);
+  const outputPath = await createContributorsList(contributorsList);
 
   // create the image
   console.log('> Material Icon Theme:', yellow('Creating image...'));
