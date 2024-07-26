@@ -223,7 +223,14 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-include',
-        folderNames: ['inc', 'include', 'includes', 'partial', 'partials'],
+        folderNames: [
+          'inc',
+          'include',
+          'includes',
+          'partial',
+          'partials',
+          'inc64',
+        ],
       },
       {
         name: 'folder-docker',
