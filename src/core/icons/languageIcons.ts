@@ -157,4 +157,5 @@ export const languageIcons: LanguageIcon[] = [
     icon: { name: 'concourse' },
     ids: ['concourse-pipeline-yaml', 'concourse-task-yaml'],
   },
+  { icon: { name: 'slint' }, ids: ['slint'] },
 ];

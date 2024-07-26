@@ -192,6 +192,7 @@ export const folderIcons: FolderTheme[] = [
           'vendor',
           'vendors',
           'third-party',
+          'lib64',
         ],
       },
       {
@@ -749,7 +750,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-jupyter',
-        folderNames: ['jupyter', 'notebook', 'notebooks'],
+        folderNames: ['jupyter', 'notebook', 'notebooks', 'ipynb'],
       },
       { name: 'folder-scala', folderNames: ['scala'] },
       {
