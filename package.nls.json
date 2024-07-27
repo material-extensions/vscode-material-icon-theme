@@ -21,6 +21,7 @@
   "configuration.customClones.fileNames": "File names to associate with the custom icon",
   "configuration.customClones.fileExtensions": "File extensions to associate with the custom icon",
   "configuration.customClones.folderNames": "Folder names to associate with the custom icon",
+  "configuration.customClones.activeForPack": "Only generate this clone when the active icon pack is one of these.",
   "configuration.activeIconPack": "Select an icon pack that enables specific icons.",
   "configuration.activeIconPack.angular": "Icons for Angular.",
   "configuration.activeIconPack.angular_ngrx": "Icons for Angular and ngrx.",
