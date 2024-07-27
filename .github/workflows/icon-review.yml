@@ -62,12 +62,14 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           script: |
+            const iconsCount = parseInt("${{ env.svg_files_count }}");
             const imageURL = "${{ env.image_url }}";
             const image = `<img src="${imageURL}" alt="Generated preview" />`;
+            const pluralS = iconsCount > 1 ? "s" : "";
 
             let preview = "";
 
-            if (parseInt("${{ env.svg_files_count }}") > 10) {
+            if (iconsCount > 10) {
               preview = `<details><summary>🏞️ <b>Generated preview</b></summary><br/>${image}</details>`;
             } else {
               preview = image;
@@ -76,16 +78,16 @@ jobs:
             const comment = `
               ## Preview
 
-              Thank you for creating a pull request. This preview shows you how your changes will look on the different themes:
+              Thank you for creating a pull request. This preview shows you how your icon${pluralS} will look on the different themes:
 
               ${preview}
 
-              Check how your icon fits in a 16x16 grid with our Pixel Perfect Checker by following [this link](https://pixp.lucode.ar/material-extensions/vscode-material-icon-theme/pull/${{ github.event.pull_request.number }}).
+              Check how your icon${pluralS} fit${!pluralS ? 's' : ''} in a 16x16 grid with our **Pixel Perfect Checker** by following [this link](https://pixp.lucode.ar/material-extensions/vscode-material-icon-theme/pull/${{ github.event.pull_request.number }}).
 
               You can find more information on how to contribute in the [contribution guidelines](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/CONTRIBUTING.md).
             `;
 
-            // write comment to environment variable
+            // Write comment to environment variable
             core.exportVariable('comment', comment);
 
       - name: Find comment if exists 🕵️
@@ -94,7 +96,7 @@ jobs:
         with:
           issue-number: ${{ github.event.pull_request.number }}
           comment-author: 'github-actions[bot]'
-          body-includes: This preview shows you how your changes will look on the different themes
+          body-includes: Thank you for creating a pull request. This preview shows you how your icon
 
       - name: Post or update comment in PR ✍️
         uses: peter-evans/create-or-update-comment@71345be0265236311c031f5c7866368bd1eff043 # v4.0.0

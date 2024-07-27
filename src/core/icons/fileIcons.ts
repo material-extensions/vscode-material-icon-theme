@@ -910,6 +910,15 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['resolver.ts', 'resolver.js'],
       enabledFor: [IconPack.Angular, IconPack.Ngrx],
     },
+    {
+      name: 'angular-interceptor',
+      clone: {
+        base: 'angular',
+        color: 'orange-500',
+      },
+      fileExtensions: ['interceptor.ts', 'interceptor.js'],
+      enabledFor: [IconPack.Angular, IconPack.Ngrx],
+    },
     { name: 'puppet', fileExtensions: ['pp'] },
     { name: 'elixir', fileExtensions: ['ex', 'exs', 'eex', 'leex', 'heex'] },
     { name: 'livescript', fileExtensions: ['ls'] },
@@ -2473,7 +2482,10 @@ export const fileIcons: FileIcons = {
         base: '3d',
         color: '#00b0ff',
       },
-      fileNames: ['.devcontainer/devcontainer.json'],
+      fileNames: [
+        '.devcontainer/devcontainer.json',
+        '.devcontainer/devcontainer-lock.json',
+      ],
     },
     {
       name: 'kcl',
@@ -2526,5 +2538,9 @@ export const fileIcons: FileIcons = {
       name: 'hurl',
       fileExtensions: ['hurl'],
     },
+    {
+      name: 'slint',
+      fileExtensions:['slint', '60']
+    }
   ]),
 };
