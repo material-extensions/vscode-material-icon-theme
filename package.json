@@ -214,10 +214,10 @@
                   "type": "string"
                 }
               },
-              "activeForPack": {
+              "activeForPacks": {
                 "type": "array",
                 "default": ["angular"],
-                "description": "%configuration.customClones.activeForPack%",
+                "description": "%configuration.customClones.activeForPacks%",
                 "items": {
                   "type": "string",
                   "enumDescriptions": [
