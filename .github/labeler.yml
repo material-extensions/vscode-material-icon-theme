@@ -1,0 +1,5 @@
+icons: ['icons/*', 'src/core/icons/*.ts']
+translations: ['package.nls*.json', 'src/core/i18n']
+docs: '*.md'
+workflows: ['.github/workflows/*', '.github/labeler.yml']
+devcontainers: '.devcontainer/*'
