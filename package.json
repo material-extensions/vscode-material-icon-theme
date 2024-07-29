@@ -3,6 +3,7 @@
   "displayName": "Material Icon Theme",
   "description": "Material Design Icons for Visual Studio Code",
   "version": "5.8.0",
+  "license": "MIT",
   "scripts": {
     "precompile": "rimraf dist && bun run verify",
     "compile": "tsc -p ./",
