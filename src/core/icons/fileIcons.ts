@@ -2546,5 +2546,9 @@ export const fileIcons: FileIcons = {
       name: 'slint',
       fileExtensions: ['slint', '60'],
     },
+    {
+      name: 'jsr',
+      fileNames: ['jsr.json'],
+    },
   ]),
 };
