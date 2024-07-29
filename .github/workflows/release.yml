@@ -14,7 +14,9 @@ on:
           - patch
 
 permissions:
+  id-token: write
   contents: read
+  attestations: write
 
 jobs:
   release:
@@ -65,7 +67,7 @@ jobs:
         uses: actions/attest@7305951e905fb742188aa16c1d23409b13565e26 # v1.3.3
         # Read: https://docs.github.com/en/actions/security-guides/using-artifact-attestations-to-establish-provenance-for-builds
         with:
-          subject-path: ${{ env.NAME }}-${{ env.VERSION }}.vsix
+          subject-path: '${{ env.NAME }}-${{ env.VERSION }}.vsix'
 
       - name: Push tags 📌
         run: git push
