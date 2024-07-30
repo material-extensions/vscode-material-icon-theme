@@ -192,6 +192,7 @@ export const folderIcons: FolderTheme[] = [
           'vendor',
           'vendors',
           'third-party',
+          'lib64',
         ],
       },
       {
@@ -222,7 +223,14 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-include',
-        folderNames: ['inc', 'include', 'includes', 'partial', 'partials'],
+        folderNames: [
+          'inc',
+          'include',
+          'includes',
+          'partial',
+          'partials',
+          'inc64',
+        ],
       },
       {
         name: 'folder-docker',
@@ -290,7 +298,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-astro',
-        folderNames: ['.astro'],
+        folderNames: ['astro'],
       },
       {
         name: 'folder-database',
@@ -368,7 +376,7 @@ export const folderIcons: FolderTheme[] = [
         ],
       },
       { name: 'folder-lua', folderNames: ['lua'] },
-      { name: 'folder-turborepo', folderNames: ['.turbo'] },
+      { name: 'folder-turborepo', folderNames: ['turbo'] },
       {
         name: 'folder-typescript',
         folderNames: ['typescript', 'ts', 'typings', '@types', 'types'],
@@ -628,7 +636,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-supabase', folderNames: ['supabase'] },
       { name: 'folder-private', folderNames: ['private'] },
       { name: 'folder-linux', folderNames: ['linux', 'linuxbsd', 'unix'] },
-      { name: 'folder-windows', folderNames: ['windows', 'win'] },
+      { name: 'folder-windows', folderNames: ['windows', 'win', 'win32'] },
       {
         name: 'folder-macos',
         folderNames: ['macos', 'mac', 'osx', 'DS_Store'],
@@ -749,7 +757,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-jupyter',
-        folderNames: ['jupyter', 'notebook', 'notebooks'],
+        folderNames: ['jupyter', 'notebook', 'notebooks', 'ipynb'],
       },
       { name: 'folder-scala', folderNames: ['scala'] },
       {
@@ -806,14 +814,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-helm',
-        folderNames: [
-          'helm',
-          'helmchart',
-          'helmcharts',
-          '.helm',
-          '.helmchart',
-          '.helmcharts',
-        ],
+        folderNames: ['helm', 'helmchart', 'helmcharts'],
       },
       {
         name: 'folder-queue',
@@ -888,6 +889,7 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['seeds', 'seeders', 'seed', 'seeding'],
       },
       { name: 'folder-bicep', folderNames: ['bicep'] },
+      { name: 'folder-snapcraft', folderNames: ['snap', 'snapcraft'] },
     ],
   },
   {

@@ -3,6 +3,7 @@ import {
   type FolderThemeName,
   capitalizeFirstLetter,
   folderIcons,
+  logger,
   translate,
 } from '../../core';
 import { getThemeConfig, setThemeConfig } from '../shared/config';
@@ -16,7 +17,7 @@ export const changeFolderTheme = async () => {
       handleQuickPickActions(response);
     }
   } catch (error) {
-    console.error(error);
+    logger.error(error);
   }
 };
 

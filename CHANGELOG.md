@@ -3,6 +3,41 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v5.8.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.7.0...v5.8.0) 
+
+> July 24, 2024 
+
+- feat: add remark support [`#2245`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2245)
+- Add tape icon [`#2469`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2469)
+- Added `hurl` icon [`#2465`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2465)
+- Improve core functionality (Logging, Config comparison, Code Quality) [`#2464`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2464)
+- Added alias for `.nuxtrc` [`#2466`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2466)
+- Updated `svg-icon-review` version (1.1.0 -> 2.1.0) [`#2459`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2459)
+- feat: adding icons to new configuration and envs files [`#2057`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2057)
+ 
+#### [v5.7.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.6.0...v5.7.0) 
+
+> July 22, 2024 
+
+- Added markdownlint icon [`#2415`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2415)
+- Use issue forms [`#2445`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2445)
+- Added `Ціль` icon [`#2424`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2424)
+- Added snap folder icon [`#2439`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2439)
+- Add liara cloud icon [`#2409`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2409)
+- Added deepsource icon [`#2413`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2413)
+- Added separate Buy Me a Coffee link in `FUNDING.yml` [`#2458`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2458)
+- Added aliases for codecov icon [`#2440`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2440)
+- Changed icon for `devcontainer.json` [`#2448`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2448)
+- Added icon for `xlf` files [`#2455`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2455)
+- Added `win32` folder icon [`#2456`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2456)
+- build(deps): bump softprops/action-gh-release from 2.0.6 to 2.0.8 [`#2453`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2453)
+- build(deps): bump oven-sh/setup-bun [`#2452`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2452)
+- Moved PR template [`#2438`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2438)
+- Allign with new requirements of vscode-vsce v2.31.0 [`b5552f41`](https://github.com/material-extensions/vscode-material-icon-theme/commit/b5552f41)
+- feat: mist file icon [`#2435`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2435)
+- Provide option to analyse bundle size [`6186d685`](https://github.com/material-extensions/vscode-material-icon-theme/commit/6186d685)
+- Improve stability of code [`58c90cf0`](https://github.com/material-extensions/vscode-material-icon-theme/commit/58c90cf0)
+ 
 #### [v5.6.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.5.1...v5.6.0) 
 
 > July 16, 2024 

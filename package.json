@@ -2,7 +2,8 @@
   "name": "material-icon-theme",
   "displayName": "Material Icon Theme",
   "description": "Material Design Icons for Visual Studio Code",
-  "version": "5.6.0",
+  "version": "5.8.0",
+  "license": "MIT",
   "scripts": {
     "precompile": "rimraf dist && bun run verify",
     "compile": "tsc -p ./",
@@ -39,7 +40,7 @@
     "url": "https://github.com/sponsors/PKief"
   },
   "engines": {
-    "vscode": "^1.51.0"
+    "vscode": "^1.55.0"
   },
   "homepage": "https://github.com/material-extensions/vscode-material-icon-theme/blob/main/README.md",
   "repository": {
@@ -69,12 +70,6 @@
   "module": "./dist/module/index.cjs",
   "types": "./dist/types/module/index.d.ts",
   "sideEffects": false,
-  "files": [
-    "icons",
-    "dist/material-icons.json",
-    "dist/module/index.cjs",
-    "dist/types"
-  ],
   "contributes": {
     "iconThemes": [
       {
@@ -219,6 +214,36 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "activeForPacks": {
+                "type": "array",
+                "default": ["angular"],
+                "description": "%configuration.customClones.activeForPacks%",
+                "items": {
+                  "type": "string",
+                  "enumDescriptions": [
+                    "%configuration.activeIconPack.angular%",
+                    "%configuration.activeIconPack.angular_ngrx%",
+                    "%configuration.activeIconPack.react%",
+                    "%configuration.activeIconPack.react_redux%",
+                    "%configuration.activeIconPack.qwik%",
+                    "%configuration.activeIconPack.vue%",
+                    "%configuration.activeIconPack.vue_vuex%",
+                    "%configuration.activeIconPack.nest%",
+                    "%configuration.activeIconPack.none%"
+                  ],
+                  "enum": [
+                    "angular",
+                    "angular_ngrx",
+                    "react",
+                    "react_redux",
+                    "qwik",
+                    "vue",
+                    "vue_vuex",
+                    "nest",
+                    "none"
+                  ]
+                }
               }
             }
           },
@@ -298,12 +323,24 @@
           "minimum": 0,
           "maximum": 1,
           "description": "%configuration.saturation%"
+        },
+        "material-icon-theme.enableLogging": {
+          "type": "boolean",
+          "default": false,
+          "description": "%configuration.enableLogging%"
+        },
+        "material-icon-theme.logLevel": {
+          "type": "string",
+          "default": "info",
+          "enum": ["info", "error", "debug"],
+          "description": "%configuration.logLevel%"
         }
       }
     }
   },
   "dependencies": {
     "chroma-js": "^2.4.2",
+    "fast-deep-equal": "^3.1.3",
     "svgson": "^5.3.1"
   },
   "devDependencies": {
@@ -311,18 +348,18 @@
     "@softarc/sheriff-core": "^0.15.1",
     "@types/chroma-js": "^2.4.4",
     "@types/glob": "^7.2.0",
-    "@types/puppeteer": "^5.4.6",
-    "@types/vscode": "~1.51.0",
-    "@vscode/test-electron": "^2.3.9",
-    "axios": "^1.4.0",
-    "bun-types": "^1.1.12",
-    "changelog-machine": "^1.0.2",
-    "esbuild": "^0.21.4",
-    "glob": "^8.0.3",
-    "puppeteer": "^22.11.0",
-    "rimraf": "^6.0.0",
-    "svg-color-linter": "^1.3.0",
+    "@types/puppeteer": "^5.4.7",
+    "@types/vscode": "~1.55.0",
+    "@vscode/test-electron": "^2.4.1",
+    "axios": "^1.7.2",
+    "bun-types": "^1.1.20",
+    "changelog-machine": "^1.1.0",
+    "esbuild": "^0.21.5",
+    "glob": "^8.1.0",
+    "puppeteer": "^22.13.1",
+    "rimraf": "^6.0.1",
+    "svg-color-linter": "^1.4.0",
     "svgo": "^2.8.0",
-    "typescript": "^5.5.3"
+    "typescript": "^5.5.4"
   }
 }

@@ -1,6 +1,7 @@
-import { writeFileSync } from 'node:fs';
 import { getFileConfigHash } from '../../helpers/configHash';
 import { merge } from '../../helpers/object';
+import { writeToFile } from '../../helpers/writeFile';
+import { logger } from '../../logging/logger';
 import type {
   Config,
   CustomClone,
@@ -18,37 +19,47 @@ import { cloneIcon, createCloneConfig } from './utils/cloning';
  * Creates custom icons by cloning already existing icons and changing
  * their colors, based on the user's provided configurations.
  */
-export function customClonesIcons(
+export const customClonesIcons = async (
   manifest: Manifest,
   config: Config
-): Manifest {
+): Promise<Manifest> => {
   let clonedIconsManifest = merge<Manifest>({}, manifest);
   const hash = getFileConfigHash(config);
 
   // create folder clones as specified by the user in the options
-  config.folders?.customClones?.forEach((clone) => {
-    const cloneCfg = createIconClone(clone, manifest, hash);
-    clonedIconsManifest = merge(clonedIconsManifest, cloneCfg);
-  });
+  for (const clone of config.folders?.customClones ?? []) {
+    if (
+      clone.activeForPacks === undefined ||
+      clone.activeForPacks.includes(config.activeIconPack)
+    ) {
+      const cloneCfg = await createIconClone(clone, manifest, hash);
+      clonedIconsManifest = merge(clonedIconsManifest, cloneCfg);
+    }
+  }
 
   // create file clones as specified by the user in the options
-  config.files?.customClones?.forEach((clone) => {
-    const cloneCfg = createIconClone(clone, manifest, hash);
-    clonedIconsManifest = merge(clonedIconsManifest, cloneCfg);
-  });
+  for (const clone of config.files?.customClones ?? []) {
+    if (
+      clone.activeForPacks === undefined ||
+      clone.activeForPacks.includes(config.activeIconPack)
+    ) {
+      const cloneCfg = await createIconClone(clone, manifest, hash);
+      clonedIconsManifest = merge(clonedIconsManifest, cloneCfg);
+    }
+  }
 
   return clonedIconsManifest;
-}
+};
 
 /**
  * Creates custom icons by cloning already existing icons and changing
  * their colors, based on the configurations provided by the extension.
  * (this is meant to be called at build time)
  */
-export function generateConfiguredClones(
+export const generateConfiguredClones = async (
   iconsList: FolderTheme[] | FileIcons,
   manifest: Manifest
-) {
+) => {
   let iconsToClone: CustomClone[] = [];
 
   if (Array.isArray(iconsList)) {
@@ -75,34 +86,34 @@ export function generateConfiguredClones(
     );
   }
 
-  iconsToClone?.forEach((clone) => {
-    const clones = getCloneData(clone, manifest, '', '', cloneIconExtension);
+  for (const icon of iconsToClone) {
+    const clones = getCloneData(icon, manifest, '', '', cloneIconExtension);
     if (!clones) {
       return;
     }
 
-    clones.forEach((clone) => {
+    for (const clone of clones) {
       try {
         // generates the new icon content (svg)
-        const content = cloneIcon(clone.base.path, clone.color);
+        const content = await cloneIcon(clone.base.path, clone.color);
 
         // write the new .svg file to the disk
-        writeFileSync(clone.path, content);
+        await writeToFile(clone.path, content);
       } catch (error) {
-        console.error(error);
+        logger.error(error);
         return;
       }
-    });
-  });
-}
+    }
+  }
+};
 
 /** Checks if there are any custom clones to be created */
-export function hasCustomClones(config: Config): boolean {
+export const hasCustomClones = (config: Config): boolean => {
   return (
     (config.folders?.customClones?.length ?? 0) > 0 ||
     (config.files?.customClones?.length ?? 0) > 0
   );
-}
+};
 
 /**
  * Generates a clone of an icon.
@@ -111,11 +122,11 @@ export function hasCustomClones(config: Config): boolean {
  * @param hash current hash being applied to the icons
  * @returns a partial icon configuration for the new icon
  */
-function createIconClone(
+const createIconClone = async (
   cloneOpts: FolderIconClone | FileIconClone,
   manifest: Manifest,
   hash: string
-): Manifest {
+): Promise<Manifest> => {
   // get clones to be created
   const clones = getCloneData(cloneOpts, manifest, clonesFolder, hash);
   if (!clones) {
@@ -124,17 +135,17 @@ function createIconClone(
 
   const clonesConfig = createCloneConfig();
 
-  clones.forEach((clone) => {
+  for (const clone of clones) {
     try {
       // generates the new icon content (svg)
-      const content = cloneIcon(clone.base.path, clone.color, hash);
+      const content = await cloneIcon(clone.base.path, clone.color, hash);
 
       try {
         // write the new .svg file to the disk
-        writeFileSync(clone.path, content);
+        await writeToFile(clone.path, content);
       } catch (error) {
-        console.error(error);
-        return;
+        logger.error(error);
+        return manifest;
       }
 
       // sets the icon path for the cloned icon in the configuration
@@ -176,9 +187,9 @@ function createIconClone(
         });
       }
     } catch (error) {
-      console.error(error);
+      logger.error(error);
     }
-  });
+  }
 
   return clonesConfig;
-}
+};

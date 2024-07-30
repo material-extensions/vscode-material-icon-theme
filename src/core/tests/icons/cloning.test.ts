@@ -1,5 +1,5 @@
 import { beforeAll, describe, expect, it, mock } from 'bun:test';
-import { type INode, parseSync } from 'svgson';
+import { type INode, parse } from 'svgson';
 import { customClonesIcons } from '../../generator/clones/clonesGenerator';
 import {
   Type,
@@ -11,8 +11,10 @@ import {
   getStyle,
   traverse,
 } from '../../generator/clones/utils/cloning';
-import { closerMaterialColorTo } from '../../generator/clones/utils/color/materialPalette';
-import { materialPalette as palette } from '../../generator/clones/utils/color/materialPalette';
+import {
+  closerMaterialColorTo,
+  materialPalette as palette,
+} from '../../generator/clones/utils/color/materialPalette';
 import { padWithDefaultConfig } from '../../generator/config/defaultConfig';
 import {
   clonesFolder,
@@ -481,17 +483,17 @@ describe('cloning: icon cloning', () => {
       palette['blue-A700'],
     ];
 
-    it('should replace the color with the given color', () => {
-      mock.module('fs', () => {
+    it('should replace the color with the given color', async () => {
+      mock.module('node:fs/promises', () => {
         return {
-          readFileSync: () => icon.file,
+          readFile: () => Promise.resolve(icon.file),
         };
       });
 
       // mock the fs.readFileSync method to return the desired icon file
-      const result = cloneIcon('fake/path/to/icon.svg', 'blue-600', '');
+      const result = await cloneIcon('fake/path/to/icon.svg', 'blue-600', '');
 
-      const colorCount = forEachColor(parseSync(result), (color, loc) => {
+      const colorCount = forEachColor(await parse(result), (color, loc) => {
         expect(color).toBe(palette['blue-600']);
         expect(loc).toBe('style:fill');
       });
@@ -499,16 +501,16 @@ describe('cloning: icon cloning', () => {
       expect(colorCount).toBe(1);
     });
 
-    it('should replace the color with the given color if color is in fill attribute', () => {
+    it('should replace the color with the given color if color is in fill attribute', async () => {
       // mock the fs.readFileSync method to return the desired icon file
-      mock.module('fs', () => {
+      mock.module('node:fs/promises', () => {
         return {
-          readFileSync: () => icon.fileFill,
+          readFile: () => Promise.resolve(icon.fileFill),
         };
       });
-      const result = cloneIcon('fake/path/to/icon.svg', 'blue-600', '');
+      const result = await cloneIcon('fake/path/to/icon.svg', 'blue-600', '');
 
-      const colorCount = forEachColor(parseSync(result), (color, loc) => {
+      const colorCount = forEachColor(await parse(result), (color, loc) => {
         expect(color).toBe(palette['blue-600']);
         expect(loc).toBe('attr:fill');
       });
@@ -516,15 +518,15 @@ describe('cloning: icon cloning', () => {
       expect(colorCount).toBe(1);
     });
 
-    it('should replace the color with the given color if color is in stop-color attribute', () => {
-      mock.module('fs', () => {
+    it('should replace the color with the given color if color is in stop-color attribute', async () => {
+      mock.module('node:fs/promises', () => {
         return {
-          readFileSync: () => icon.gradient,
+          readFile: () => Promise.resolve(icon.gradient),
         };
       });
-      const result = cloneIcon('fake/path/to/icon.svg', 'blue-600', '');
+      const result = await cloneIcon('fake/path/to/icon.svg', 'blue-600', '');
 
-      const colorCount = forEachColor(parseSync(result), (color, loc) => {
+      const colorCount = forEachColor(await parse(result), (color, loc) => {
         expect(bluePalette).toContain(color);
         expect(loc).toBe('attr:stop-color');
       });
@@ -532,16 +534,16 @@ describe('cloning: icon cloning', () => {
       expect(colorCount).toBe(3);
     });
 
-    it('should replace colors on icons with multiple nodes', () => {
-      mock.module('fs', () => {
+    it('should replace colors on icons with multiple nodes', async () => {
+      mock.module('node:fs/promises', () => {
         return {
-          readFileSync: () => icon.folder,
+          readFile: () => Promise.resolve(icon.folder),
         };
       });
-      const result = cloneIcon('fake/path/to/icon.svg', 'blue-600', '');
+      const result = await cloneIcon('fake/path/to/icon.svg', 'blue-600', '');
 
       const colors: string[] = [];
-      const colorCount = forEachColor(parseSync(result), (color, loc) => {
+      const colorCount = forEachColor(await parse(result), (color, loc) => {
         colors.push(color);
         expect(bluePalette).toContain(color);
         expect(loc).toBe('style:fill');
@@ -554,15 +556,15 @@ describe('cloning: icon cloning', () => {
     });
 
     describe('`data-mit-no-recolor` attribute', () => {
-      it('should not replace the color if the node has the `data-mit-no-recolor` attribute', () => {
-        mock.module('fs', () => {
+      it('should not replace the color if the node has the `data-mit-no-recolor` attribute', async () => {
+        mock.module('node:fs/promises', () => {
           return {
-            readFileSync: () => icon.folderIgnores,
+            readFile: () => Promise.resolve(icon.folderIgnores),
           };
         });
 
-        const result = cloneIcon('fake/path/to/icon.svg', 'blue-600', '');
-        const parsed = parseSync(result);
+        const result = await cloneIcon('fake/path/to/icon.svg', 'blue-600', '');
+        const parsed = await parse(result);
         const changedNodeStyle = getStyle(parsed.children[0]);
         const unchangedNodeStyle = getStyle(parsed.children[1]);
 
@@ -570,15 +572,15 @@ describe('cloning: icon cloning', () => {
         expect(unchangedNodeStyle.fill).toBe('red');
       });
 
-      it('should not replace the color of any child of a node with the `data-mit-no-recolor` attribute', () => {
-        mock.module('fs', () => {
+      it('should not replace the color of any child of a node with the `data-mit-no-recolor` attribute', async () => {
+        mock.module('node:fs/promises', () => {
           return {
-            readFileSync: () => icon.gradientIgnore,
+            readFile: () => Promise.resolve(icon.gradientIgnore),
           };
         });
-        const result = cloneIcon('fake/path/to/icon.svg', 'blue-600', '');
+        const result = await cloneIcon('fake/path/to/icon.svg', 'blue-600', '');
 
-        const colorCount = forEachColor(parseSync(result), (color, loc) => {
+        const colorCount = forEachColor(await parse(result), (color, loc) => {
           expect(['#00695c', '#26a69a', '#b2dfdb']).toContain(color);
           expect(bluePalette).not.toContain(color);
           expect(loc).toBe('attr:stop-color');
@@ -591,10 +593,10 @@ describe('cloning: icon cloning', () => {
 });
 
 /** helper function to traverse the svg tree and notify the colors found */
-function forEachColor(
+const forEachColor = (
   node: INode,
   callback: (color: string, loc?: string) => void
-) {
+) => {
   let colorCount = 0;
 
   const notify = (color: string, loc: string) => {
@@ -627,19 +629,19 @@ function forEachColor(
   );
 
   return colorCount;
-}
+};
 
 describe('cloning: json config generation from user options', () => {
   beforeAll(() => {
-    mock.module('fs', () => {
+    mock.module('node:fs/promises', () => {
       return {
-        readFileSync: () => icon.file,
-        writeFileSync: () => {},
+        readFile: () => Promise.resolve(icon.file),
+        writeFile: () => Promise.resolve(),
       };
     });
   });
 
-  const getDefinition = (hash: string) => {
+  const getManifest = (hash: string) => {
     return {
       iconDefinitions: {
         foo: { iconPath: `./../icons/foo${hash}.svg` },
@@ -647,12 +649,23 @@ describe('cloning: json config generation from user options', () => {
         'folder-foo': { iconPath: `./../icons/folder${hash}.svg` },
         'folder-foo-open': { iconPath: `./../icons/folder-open${hash}.svg` },
       },
+      folderNames: {},
+      folderNamesExpanded: {},
+      fileExtensions: {},
       fileNames: { 'foo.bar': 'foo' },
       file: 'file',
-    } as Manifest;
+      languageIds: {},
+      light: {
+        fileExtensions: {},
+        fileNames: {},
+        folderNames: {},
+        folderNamesExpanded: {},
+      },
+      highContrast: { fileExtensions: {}, fileNames: {} },
+    };
   };
 
-  it('should generate the manifest from the config', () => {
+  it('should generate the manifest from the config', async () => {
     const config = padWithDefaultConfig({
       files: {
         customClones: [
@@ -679,7 +692,7 @@ describe('cloning: json config generation from user options', () => {
       },
     });
     const hash = getFileConfigHash(config);
-    const result = customClonesIcons(getDefinition(hash), config);
+    const result = await customClonesIcons(getManifest(hash), config);
 
     const expected = merge<Manifest>(createEmptyManifest(), {
       iconDefinitions: {
@@ -731,6 +744,227 @@ describe('cloning: json config generation from user options', () => {
       highContrast: { fileExtensions: {}, fileNames: {} },
     });
 
-    expect(result).toMatchObject(expected);
+    expect(result).toStrictEqual(expected);
+  });
+
+  it('should not generate clones for icons not in the active pack', async () => {
+    const config = padWithDefaultConfig({
+      files: {
+        customClones: [
+          {
+            base: 'foo',
+            name: 'foo-clone',
+            fileNames: ['bar.foo'],
+            fileExtensions: ['baz'],
+            color: 'green-400',
+            lightColor: 'green-800',
+            activeForPacks: ['nest'],
+          },
+        ],
+      },
+      folders: {
+        customClones: [
+          {
+            base: 'folder-foo',
+            name: 'folder-foo-clone',
+            folderNames: ['bar'],
+            color: 'green-400',
+            lightColor: 'green-800',
+            activeForPacks: ['nest'],
+          },
+        ],
+      },
+    });
+    const hash = getFileConfigHash(config);
+    const result = await customClonesIcons(getManifest(hash), config);
+
+    const expected = merge<Manifest>(createEmptyManifest(), {
+      iconDefinitions: {
+        file: {
+          iconPath: `./../icons/file${hash}.svg`,
+        },
+        'folder-foo': {
+          iconPath: `./../icons/folder${hash}.svg`,
+        },
+        'folder-foo-open': {
+          iconPath: `./../icons/folder${openedFolder}${hash}.svg`,
+        },
+        foo: {
+          iconPath: `./../icons/foo${hash}.svg`,
+        },
+      },
+      folderNames: {},
+      folderNamesExpanded: {},
+      fileExtensions: {},
+      fileNames: { 'foo.bar': 'foo' },
+      file: 'file',
+      languageIds: {},
+      light: {
+        fileExtensions: {},
+        fileNames: {},
+        folderNames: {},
+        folderNamesExpanded: {},
+      },
+      highContrast: { fileExtensions: {}, fileNames: {} },
+    });
+
+    expect(result).toStrictEqual(expected);
+  });
+
+  it('should generate clones for icons in the active pack, or whose pack is unspecified', async () => {
+    const config = padWithDefaultConfig({
+      files: {
+        customClones: [
+          {
+            base: 'foo',
+            name: 'foo-clone',
+            fileNames: ['bar.foo'],
+            fileExtensions: ['baz'],
+            color: 'green-400',
+            lightColor: 'green-800',
+            activeForPacks: ['nest'],
+          },
+          {
+            base: 'foo',
+            name: 'foo-angular-clone',
+            fileNames: ['bar.foo.angular'],
+            fileExtensions: ['baz.angular'],
+            color: 'green-500',
+            lightColor: 'green-900',
+            activeForPacks: ['angular'],
+          },
+          {
+            base: 'foo',
+            name: 'foo-any-clone',
+            fileNames: ['bar.foo.any'],
+            fileExtensions: ['baz.any'],
+            color: 'green-600',
+            lightColor: 'green-100',
+          },
+        ],
+      },
+      folders: {
+        customClones: [
+          {
+            base: 'folder-foo',
+            name: 'folder-foo-clone',
+            folderNames: ['bar'],
+            color: 'green-400',
+            lightColor: 'green-800',
+            activeForPacks: ['nest'],
+          },
+          {
+            base: 'folder-foo',
+            name: 'folder-foo-angular-clone',
+            folderNames: ['bar.angular'],
+            color: 'green-500',
+            lightColor: 'green-900',
+            activeForPacks: ['angular'],
+          },
+          {
+            base: 'folder-foo',
+            name: 'folder-foo-any-clone',
+            folderNames: ['bar.any'],
+            color: 'green-600',
+            lightColor: 'green-100',
+          },
+        ],
+      },
+    });
+    const hash = getFileConfigHash(config);
+    const result = await customClonesIcons(getManifest(hash), config);
+
+    const expected = merge<Manifest>(createEmptyManifest(), {
+      iconDefinitions: {
+        file: {
+          iconPath: `./../icons/file${hash}.svg`,
+        },
+        'folder-foo': {
+          iconPath: `./../icons/folder${hash}.svg`,
+        },
+        'folder-foo-open': {
+          iconPath: `./../icons/folder${openedFolder}${hash}.svg`,
+        },
+        foo: {
+          iconPath: `./../icons/foo${hash}.svg`,
+        },
+        'folder-foo-angular-clone': {
+          iconPath: `./../icons/${clonesFolder}folder-foo-angular-clone${hash}.svg`,
+        },
+        'folder-foo-angular-clone-open': {
+          iconPath: `./../icons/${clonesFolder}folder-foo-angular-clone${openedFolder}${hash}.svg`,
+        },
+        'folder-foo-angular-clone_light': {
+          iconPath: `./../icons/${clonesFolder}folder-foo-angular-clone${lightColorFileEnding}${hash}.svg`,
+        },
+        'folder-foo-angular-clone-open_light': {
+          iconPath: `./../icons/${clonesFolder}folder-foo-angular-clone${openedFolder}${lightColorFileEnding}${hash}.svg`,
+        },
+        'folder-foo-any-clone': {
+          iconPath: `./../icons/${clonesFolder}folder-foo-any-clone${hash}.svg`,
+        },
+        'folder-foo-any-clone-open': {
+          iconPath: `./../icons/${clonesFolder}folder-foo-any-clone${openedFolder}${hash}.svg`,
+        },
+        'folder-foo-any-clone_light': {
+          iconPath: `./../icons/${clonesFolder}folder-foo-any-clone${lightColorFileEnding}${hash}.svg`,
+        },
+        'folder-foo-any-clone-open_light': {
+          iconPath: `./../icons/${clonesFolder}folder-foo-any-clone${openedFolder}${lightColorFileEnding}${hash}.svg`,
+        },
+        'foo-angular-clone': {
+          iconPath: `./../icons/${clonesFolder}foo-angular-clone${hash}.svg`,
+        },
+        'foo-angular-clone_light': {
+          iconPath: `./../icons/${clonesFolder}foo-angular-clone${lightColorFileEnding}${hash}.svg`,
+        },
+        'foo-any-clone': {
+          iconPath: `./../icons/${clonesFolder}foo-any-clone${hash}.svg`,
+        },
+        'foo-any-clone_light': {
+          iconPath: `./../icons/${clonesFolder}foo-any-clone${lightColorFileEnding}${hash}.svg`,
+        },
+      },
+      folderNames: {
+        'bar.angular': 'folder-foo-angular-clone',
+        'bar.any': 'folder-foo-any-clone',
+      },
+      folderNamesExpanded: {
+        'bar.angular': `folder-foo-angular-clone${openedFolder}`,
+        'bar.any': `folder-foo-any-clone${openedFolder}`,
+      },
+      fileExtensions: {
+        'baz.angular': 'foo-angular-clone',
+        'baz.any': 'foo-any-clone',
+      },
+      fileNames: {
+        'bar.foo.angular': 'foo-angular-clone',
+        'bar.foo.any': 'foo-any-clone',
+        'foo.bar': 'foo',
+      },
+      file: 'file',
+      languageIds: {},
+      light: {
+        fileExtensions: {
+          'baz.angular': `foo-angular-clone${lightColorFileEnding}`,
+          'baz.any': `foo-any-clone${lightColorFileEnding}`,
+        },
+        fileNames: {
+          'bar.foo.angular': `foo-angular-clone${lightColorFileEnding}`,
+          'bar.foo.any': `foo-any-clone${lightColorFileEnding}`,
+        },
+        folderNames: {
+          'bar.angular': `folder-foo-angular-clone${lightColorFileEnding}`,
+          'bar.any': `folder-foo-any-clone${lightColorFileEnding}`,
+        },
+        folderNamesExpanded: {
+          'bar.angular': `folder-foo-angular-clone${openedFolder}${lightColorFileEnding}`,
+          'bar.any': `folder-foo-any-clone${openedFolder}${lightColorFileEnding}`,
+        },
+      },
+      highContrast: { fileExtensions: {}, fileNames: {} },
+    });
+
+    expect(result).toStrictEqual(expected);
   });
 });
