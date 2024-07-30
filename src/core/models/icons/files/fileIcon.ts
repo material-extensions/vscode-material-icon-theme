@@ -5,19 +5,19 @@ import type { Patterns } from '../patterns/patterns';
 
 type BasicFileIcon = {
   /**
-   * Name of the icon, e.g. 'javascript'
+   * Name of the icon, e.g. `javascript`
    */
   name: string;
 
   /**
    * Define the file extensions that should use this icon.
-   * E.g. ['js']
+   * E.g. `['js']`
    */
   fileExtensions?: string[];
 
   /**
    * Define if there are some static file names that should apply this icon.
-   * E.g. ['sample.js']
+   * E.g. `['sample.js']`
    */
   fileNames?: string[];
 
@@ -53,7 +53,7 @@ type BasicFileIcon = {
 };
 
 /**
- * Type for a FileIcon. In addition to the `name` property, either a `fileExtensions` or `fileNames` property is required.
+ * Type for a `FileIcon`. In addition to the `name` property, either a `fileExtensions` or `fileNames` property is required.
  */
 export type FileIcon = RequireAtLeastOne<
   BasicFileIcon,

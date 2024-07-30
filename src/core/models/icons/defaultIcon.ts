@@ -1,6 +1,6 @@
 export type DefaultIcon = {
   /**
-   * Name of the icon, e.g. 'src'
+   * Name of the icon, e.g. `src`
    */
   name: string;
 
