@@ -6,7 +6,7 @@ const config: BuildOptions = {
     './src/extension/web/extension.ts',
     './src/module/index.ts',
   ],
-  minify: false,
+  minify: true,
   bundle: true,
   platform: 'node',
   metafile: false,
