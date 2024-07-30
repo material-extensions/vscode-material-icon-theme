@@ -43,7 +43,7 @@ jobs:
       - name: Review SVG files 🔍
         working-directory: main
         run: |
-          files=$(git diff --no-index ../main ../fork --diff-filter=ACMRTUX --name-only | grep '.svg$' | grep -v '^../main/')
+          files=$(git diff --no-index ../main ../fork --diff-filter=ACMRTUX --name-only | grep '^\.\./fork/icons/.*\.svg$')
           filesCount=$(echo "$files" | wc -l)
           bunx --bun svg-icon-review@2.1.0 --bigIcon ${files}
           echo svg_files_count=$filesCount >> $GITHUB_ENV
