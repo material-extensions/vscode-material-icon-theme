@@ -2549,6 +2549,7 @@ export const fileIcons: FileIcons = {
     {
       name: 'jsr',
       fileNames: ['jsr.json'],
+      light: true,
     },
   ]),
 };
