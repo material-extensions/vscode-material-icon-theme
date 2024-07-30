@@ -28,14 +28,24 @@ export const customClonesIcons = async (
 
   // create folder clones as specified by the user in the options
   for (const clone of config.folders?.customClones ?? []) {
-    const cloneCfg = await createIconClone(clone, manifest, hash);
-    clonedIconsManifest = merge(clonedIconsManifest, cloneCfg);
+    if (
+      clone.activeForPacks === undefined ||
+      clone.activeForPacks.includes(config.activeIconPack)
+    ) {
+      const cloneCfg = await createIconClone(clone, manifest, hash);
+      clonedIconsManifest = merge(clonedIconsManifest, cloneCfg);
+    }
   }
 
   // create file clones as specified by the user in the options
   for (const clone of config.files?.customClones ?? []) {
-    const cloneCfg = await createIconClone(clone, manifest, hash);
-    clonedIconsManifest = merge(clonedIconsManifest, cloneCfg);
+    if (
+      clone.activeForPacks === undefined ||
+      clone.activeForPacks.includes(config.activeIconPack)
+    ) {
+      const cloneCfg = await createIconClone(clone, manifest, hash);
+      clonedIconsManifest = merge(clonedIconsManifest, cloneCfg);
+    }
   }
 
   return clonedIconsManifest;
