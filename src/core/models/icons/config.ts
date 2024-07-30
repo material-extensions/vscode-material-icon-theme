@@ -34,6 +34,7 @@ export type CustomClone = {
   base: string;
   color: string;
   lightColor?: string;
+  activeForPacks?: IconPackValue[];
 };
 
 export type FileIconClone = CustomClone & {

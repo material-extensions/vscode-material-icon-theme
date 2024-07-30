@@ -55,29 +55,16 @@
     "color": "#1e1e1e",
     "theme": "dark"
   },
-  "categories": [
-    "Themes"
-  ],
-  "keywords": [
-    "icons",
-    "theme",
-    "material",
-    "icon-theme",
-    "customization"
-  ],
-  "extensionKind": [
-    "ui",
-    "workspace"
-  ],
+  "categories": ["Themes"],
+  "keywords": ["icons", "theme", "material", "icon-theme", "customization"],
+  "extensionKind": ["ui", "workspace"],
   "capabilities": {
     "untrustedWorkspaces": {
       "supported": true
     },
     "virtualWorkspaces": true
   },
-  "activationEvents": [
-    "onStartupFinished"
-  ],
+  "activationEvents": ["onStartupFinished"],
   "main": "./dist/extension/desktop/extension.cjs",
   "browser": "./dist/extension/web/extension.cjs",
   "module": "./dist/module/index.cjs",
@@ -227,6 +214,36 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "activeForPacks": {
+                "type": "array",
+                "default": ["angular"],
+                "description": "%configuration.customClones.activeForPacks%",
+                "items": {
+                  "type": "string",
+                  "enumDescriptions": [
+                    "%configuration.activeIconPack.angular%",
+                    "%configuration.activeIconPack.angular_ngrx%",
+                    "%configuration.activeIconPack.react%",
+                    "%configuration.activeIconPack.react_redux%",
+                    "%configuration.activeIconPack.qwik%",
+                    "%configuration.activeIconPack.vue%",
+                    "%configuration.activeIconPack.vue_vuex%",
+                    "%configuration.activeIconPack.nest%",
+                    "%configuration.activeIconPack.none%"
+                  ],
+                  "enum": [
+                    "angular",
+                    "angular_ngrx",
+                    "react",
+                    "react_redux",
+                    "qwik",
+                    "vue",
+                    "vue_vuex",
+                    "nest",
+                    "none"
+                  ]
+                }
               }
             }
           },
@@ -274,11 +291,7 @@
             "%configuration.folders.theme.classic%",
             "%configuration.folders.theme.none%"
           ],
-          "enum": [
-            "specific",
-            "classic",
-            "none"
-          ]
+          "enum": ["specific", "classic", "none"]
         },
         "material-icon-theme.folders.color": {
           "type": "string",
@@ -319,11 +332,7 @@
         "material-icon-theme.logLevel": {
           "type": "string",
           "default": "info",
-          "enum": [
-            "info",
-            "error",
-            "debug"
-          ],
+          "enum": ["info", "error", "debug"],
           "description": "%configuration.logLevel%"
         }
       }

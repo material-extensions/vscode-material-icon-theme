@@ -8,7 +8,7 @@ export type LanguageIcon = {
   icon: DefaultIcon;
 
   /**
-   * Language ID, e.g. 'javascript'
+   * Language ID, e.g. `javascript`
    *
    * According to official VS Code documentation:
    * https://code.visualstudio.com/docs/languages/identifiers
