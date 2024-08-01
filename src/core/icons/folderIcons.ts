@@ -898,6 +898,14 @@ export const folderIcons: FolderTheme[] = [
           color: 'light-blue-700',
         },
       },
+      {
+        name: 'folder-snippet',
+        folderNames: ['snippet', 'snippets'],
+        clone: {
+          base: 'folder-plugin',
+          color: 'yellow-800',
+        },
+      },
     ],
   },
   {
