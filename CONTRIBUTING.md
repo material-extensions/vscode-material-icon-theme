@@ -1,3 +1,5 @@
+<a href="https://www.phorm.ai/query?projectId=bebfbe39-2f45-4d49-88fd-3de89c49c301"><img src="https://stuff.charm.sh/misc/phorm-badge.svg" alt="phorm.ai"></a>
+
 <!-- markdownlint-disable no-inline-html no-duplicate-heading -->
 
 <h1>How to contribute</h1>
