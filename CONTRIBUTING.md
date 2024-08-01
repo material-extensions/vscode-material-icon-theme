@@ -119,7 +119,7 @@ When designing folder icons there are also a few points to consider. A folder ic
 
 <img src="./images/how-tos/folder-icon-parts.svg" alt="An example of a folder" width="300px" />
 
-For the motive, only colors from the second row in the [color palette](https://pkief.com/material-color-converter/) are allowed. For the background choose a slightly darker hue (mostly in rows 4-6 in the palette).
+For the motive, only colors from the second row in the [color palette](https://pkief.github.io/material-color-converter/) are allowed. For the background choose a slightly darker hue (mostly in rows 4-6 in the palette).
 
 <img src="./images/how-tos/pick-folder-colors.png" alt="Material color palette" width="500px" />
 
