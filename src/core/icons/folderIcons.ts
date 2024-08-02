@@ -890,6 +890,7 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-bicep', folderNames: ['bicep'] },
       { name: 'folder-snapcraft', folderNames: ['snap', 'snapcraft'] },
+      { name: 'folder-flutter', folderNames: ['flutter'] },
     ],
   },
   {
