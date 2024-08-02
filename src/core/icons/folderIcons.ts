@@ -890,6 +890,14 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-bicep', folderNames: ['bicep'] },
       { name: 'folder-snapcraft', folderNames: ['snap', 'snapcraft'] },
+      {
+        name: 'folder-development',
+        folderNames: ['dev', 'development'],
+        clone: {
+          base: 'folder-src',
+          color: 'light-blue-700',
+        },
+      },
     ],
   },
   {
