@@ -19,7 +19,7 @@ jobs:
       pull-requests: write
 
     steps:
-      - name: Setup Platform 🛠
+      - name: Setup Platform 🛠️
         uses: oven-sh/setup-bun@4bc047ad259df6fc24a6c9b0f9a0cb08cf17fbe5 # v2
         with:
           bun-version: 1.1.20
