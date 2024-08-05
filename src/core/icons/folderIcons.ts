@@ -888,6 +888,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['taskfile', 'taskfiles'],
       },
       {
+        name: 'folder-drizzle',
+        folderNames: ['drizzle'],
+      },
+      {
         name: 'folder-cloudflare',
         folderNames: ['cloudflare'],
       },
