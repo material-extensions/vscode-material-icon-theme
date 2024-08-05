@@ -898,6 +898,7 @@ export const folderIcons: FolderTheme[] = [
           color: 'light-blue-700',
         },
       },
+      { name: 'folder-flutter', folderNames: ['flutter'] },
     ],
   },
   {
