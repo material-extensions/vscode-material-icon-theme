@@ -161,6 +161,21 @@ export const fileIcons: FileIcons = {
     { name: 'react', fileExtensions: ['jsx'] },
     { name: 'react_ts', fileExtensions: ['tsx'] },
     {
+      name: 'rocket',
+      fileNames: [
+        '.release-it.json',
+        '.release-it.ts',
+        '.release-it.js',
+        '.release-it.cjs',
+        '.release-it.yaml',
+        '.release-it.yml',
+        '.release-it.toml',
+        'release.toml',
+        'release-plz.toml',
+        '.release-plz.toml',
+      ],
+    },
+    {
       name: 'routing',
       fileExtensions: [
         'routing.ts',
