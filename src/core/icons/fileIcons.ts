@@ -2551,6 +2551,10 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['hurl'],
     },
     {
+      name: 'cds',
+      fileExtensions: ['cds'],
+    },
+    {
       name: 'slint',
       fileExtensions: ['slint', '60'],
     },

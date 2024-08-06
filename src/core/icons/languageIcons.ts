@@ -154,6 +154,10 @@ export const languageIcons: LanguageIcon[] = [
   { icon: { name: 'hjson' }, ids: ['hjson'] },
   { icon: { name: 'huff' }, ids: ['huff'] },
   {
+    icon: { name: 'cds' },
+    ids: ['cds', 'capnb', 'cds-markdown-injection'],
+  },
+  {
     icon: { name: 'concourse' },
     ids: ['concourse-pipeline-yaml', 'concourse-task-yaml'],
   },
