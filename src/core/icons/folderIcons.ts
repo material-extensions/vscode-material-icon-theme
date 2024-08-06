@@ -915,6 +915,7 @@ export const folderIcons: FolderTheme[] = [
         },
       },
       { name: 'folder-flutter', folderNames: ['flutter'] },
+      { name: 'folder-snippet', folderNames: ['snippet', 'snippets'] },
     ],
   },
   {
