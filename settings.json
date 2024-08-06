@@ -1,0 +1,11 @@
+{
+  "workbench.iconTheme": "material-icon-theme",
+  "material-icon-theme.folders.associations": {
+    "profile": "profile",
+    "products": "products",
+    "orders": "orders",
+    "skeletons": "skeletons",
+    "favorites": "favorites",
+    "empties": "empties",
+  } 
+}
