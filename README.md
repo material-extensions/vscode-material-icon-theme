@@ -1,13 +1,13 @@
 <!-- markdownlint-disable no-inline-html -->
 
-<h1 align="center">
+<div align="center">
   <br>
     <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/logo.png" alt="logo" width="200">
   <br><br>
-  Material Icon Theme
+  <h1>Material Icon Theme</h1>
+  <p><a href="https://github.com/material-extensions/vscode-material-icon-theme/issues/new?assignees=&labels=icon-request&projects=&template=icon-request.yml&title=%5BIcon+Request%5D%3A+%3Cicon_name%3E"><b>Request icon</b></a> • <a href="https://github.com/material-extensions/vscode-material-icon-theme/blob/main/CONTRIBUTING.md"><b>Contribute</b></a></p>
   <br>
-  <br>
-</h1>
+</div>
 
 <h4 align="center">Get the Material Design icons into your VS Code.</h4>
 
