@@ -495,6 +495,7 @@ export const folderIcons: FolderTheme[] = [
           'toolbox',
           'toolboxes',
           'tooling',
+          'devtools',
         ],
       },
       { name: 'folder-helper', folderNames: ['helpers', 'helper'] },
