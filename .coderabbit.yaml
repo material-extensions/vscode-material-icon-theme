@@ -1,0 +1,29 @@
+# yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
+language: "en-US"
+early_access: false
+reviews:
+  profile: "chill"
+  request_changes_workflow: false
+  high_level_summary: false
+  poem: false
+  review_status: false
+  collapse_walkthrough: false
+  auto_review:
+    enabled: true
+    drafts: false
+  tools:
+    biome:
+      enabled: true
+    gitleaks:
+      enabled: true
+  path_instructions:
+    - path: "**/*.svg"
+      instructions: |
+        Ignore SVG files in the repository. There're already internal checks which ensure that SVG files are in a proper shape.
+    - path: "**/*.test.ts"
+      instructions: |
+        Review the following unit test code written using the Bun.js test library. Ensure that:
+        - The code adheres to best practices associated with Bun and Jest.
+        - Descriptive test names are used to clearly convey the intent of each test.
+chat:
+  auto_reply: true
