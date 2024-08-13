@@ -5,7 +5,6 @@ labels: ["icon-request"]
 
 body:
   - type: checkboxes
-    id: icon-type
     attributes:
       label: Icon Type
       options:
@@ -14,7 +13,6 @@ body:
           required: true
 
   - type: textarea
-    id: folder-names
     attributes:
       label: Folder names
       placeholder: |
@@ -25,7 +23,6 @@ body:
       required: false
 
   - type: textarea
-    id: file-names
     attributes:
       label: File names
       placeholder: |
@@ -45,7 +42,6 @@ body:
       required: false
 
   - type: textarea
-    id: additional-context
     attributes:
       label: Additional context
       description: Add any other context about the icons here.
