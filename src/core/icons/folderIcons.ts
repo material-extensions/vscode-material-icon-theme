@@ -775,6 +775,8 @@ export const folderIcons: FolderTheme[] = [
           'connections',
           'integration',
           'integrations',
+          'remote',
+          'remotes',
         ],
       },
       { name: 'folder-quasar', folderNames: ['quasar'] },
