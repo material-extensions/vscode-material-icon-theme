@@ -1850,10 +1850,8 @@ export const fileIcons: FileIcons = {
     { name: 'rescript-interface', fileExtensions: ['resi'] },
     {
       name: 'duc',
-      fileNames: [
-        'duc.json',
-      ],
-      fileExtensions: ['duc.json, duc'],
+      fileNames: ['duc.fbs'],
+      fileExtensions: ['duc'],
     },
     {
       name: 'snowpack',
