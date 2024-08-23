@@ -2578,5 +2578,9 @@ export const fileIcons: FileIcons = {
       fileNames: ['jsr.json', 'jsr.jsonc'],
       light: true,
     },
+    {
+      name: 'coderabbit-ai',
+      fileNames: ['.coderabbit.yml', '.coderabbit.yaml'],
+    },
   ]),
 };
