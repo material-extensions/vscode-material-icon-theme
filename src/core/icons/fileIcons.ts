@@ -2582,5 +2582,9 @@ export const fileIcons: FileIcons = {
       name: 'coderabbit-ai',
       fileNames: ['.coderabbit.yml', '.coderabbit.yaml'],
     },
+    {
+      name: 'gemini-ai',
+      fileNames: ['.aiexclude'],
+    },
   ]),
 };
