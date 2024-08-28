@@ -6,14 +6,12 @@ import type { LanguageIcon } from '../models/icons/languages/languageIdentifier'
 export const languageIcons: LanguageIcon[] = [
   { icon: { name: 'git' }, ids: ['git', 'git-commit', 'git-rebase', 'ignore'] },
   {
+    icon: { name: 'github-actions-workflow' },
+    ids: ['github-actions-workflow'],
+  },
+  {
     icon: { name: 'yaml' },
-    ids: [
-      'yaml',
-      'github-actions-workflow',
-      'spring-boot-properties-yaml',
-      'ansible',
-      'ansible-jinja',
-    ],
+    ids: ['yaml', 'spring-boot-properties-yaml', 'ansible', 'ansible-jinja'],
   },
   { icon: { name: 'xml' }, ids: ['xml', 'xquery', 'xsl'] },
   { icon: { name: 'matlab' }, ids: ['matlab'] },
