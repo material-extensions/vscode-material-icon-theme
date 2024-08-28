@@ -14,13 +14,13 @@ jobs:
     name: Build Material Icon Theme
 
     steps:
-      - name: Checkout 🛎
+      - name: Checkout 🛎️
         uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
         with:
           persist-credentials: false
 
-      - name: Setup Platform 🛠
-        uses: oven-sh/setup-bun@123c6c4e2fea3eb7bffaa91a85eb6b3d505bf7af # v2
+      - name: Setup Platform 🛠️
+        uses: oven-sh/setup-bun@4bc047ad259df6fc24a6c9b0f9a0cb08cf17fbe5 # v2
         with:
           bun-version: 1.1.18
 
