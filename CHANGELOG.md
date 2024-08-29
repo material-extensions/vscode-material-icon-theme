@@ -3,6 +3,27 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v5.10.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.9.0...v5.10.0) 
+
+> August 29, 2024 
+
+- feat: ✨ github actions workflow file icon [`#2559`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2559)
+- duc Binary file format [`#2212`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2212)
+- Add icon association for UNLICENSE files [`#2556`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2556)
+- build(deps): bump actions/attest-build-provenance [`#2554`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2554)
+- Update marketplace message capitalization [`#2553`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2553)
+- Added coderabbit icon [`#2549`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2549)
+- chore: Improve branch protection [`7112da93`](https://github.com/material-extensions/vscode-material-icon-theme/commit/7112da93)
+- Added `gemini-ai` icon [`#2548`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2548)
+- feat: ✨ gitea folder icon [`#2552`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2552)
+- Changed issue templates order [`#2546`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2546)
+- Add remote(s) folder icon association [`4a3c324f`](https://github.com/material-extensions/vscode-material-icon-theme/commit/4a3c324f)
+- Added emojis in issue template names [`#2532`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2532)
+- Collapse the walkthrough of coderabbit [`c61a8d1e`](https://github.com/material-extensions/vscode-material-icon-theme/commit/c61a8d1e)
+- Fixed pr template links [`#2531`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2531)
+- Add config for coderabbit [`baf6202f`](https://github.com/material-extensions/vscode-material-icon-theme/commit/baf6202f)
+- Remove unused dependencies [`b167604c`](https://github.com/material-extensions/vscode-material-icon-theme/commit/b167604c)
+ 
 #### [v5.9.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.8.0...v5.9.0) 
 
 > August 10, 2024 
