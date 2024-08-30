@@ -2553,6 +2553,7 @@ export const fileIcons: FileIcons = {
         '.markdownlint-cli2.yaml',
         '.markdownlint-cli2.cjs',
         '.markdownlint-cli2.mjs',
+        '.markdownlintignore',
       ],
     },
     {
