@@ -836,6 +836,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['vercel', 'now'],
       },
       {
+        name: 'folder-trigger',
+        folderNames: ['trigger'],
+      },
+      {
         name: 'folder-cypress',
         folderNames: ['cypress'],
       },
