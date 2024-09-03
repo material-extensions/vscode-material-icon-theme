@@ -14,6 +14,7 @@ on:
           - patch
 
 permissions:
+  id-token: write
   contents: read
 
 jobs:
@@ -25,15 +26,23 @@ jobs:
     permissions:
       contents: write
       id-token: write
+      attestations: write
 
     steps:
+      - uses: actions/create-github-app-token@31c86eb3b33c9b601a1f60f98dcbfd1d70f379b4 # v1.10.3
+        id: app-token
+        with:
+          app-id: ${{ vars.BOT_APP_ID }}
+          private-key: ${{ secrets.BOT_PRIVATE_KEY }}
+
       - name: Checkout 🛎️
         uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
         with:
           fetch-depth: 0
+          token: ${{ steps.app-token.outputs.token }}
 
-      - name: Setup Platform 🛠
-        uses: oven-sh/setup-bun@123c6c4e2fea3eb7bffaa91a85eb6b3d505bf7af # v2
+      - name: Setup Platform 🛠️
+        uses: oven-sh/setup-bun@4bc047ad259df6fc24a6c9b0f9a0cb08cf17fbe5 # v2
         with:
           bun-version: 1.1.18
 
@@ -61,11 +70,17 @@ jobs:
       - name: Build ⚒️
         run: bunx @vscode/vsce package
 
+      - name: Attest artifacts ✅
+        uses: actions/attest-build-provenance@6149ea5740be74af77f260b9db67e633f6b0a9a1 # v1.4.2
+        # Read: https://docs.github.com/en/actions/security-guides/using-artifact-attestations-to-establish-provenance-for-builds
+        with:
+          subject-path: '${{ env.NAME }}-${{ env.VERSION }}.vsix'
+
       - name: Push tags 📌
         run: git push
 
       - name: Release ${{ env.VERSION }} 🔆
-        uses: softprops/action-gh-release@a74c6b72af54cfa997e81df42d94703d6313a2d0 # v2.0.6
+        uses: softprops/action-gh-release@c062e08bd532815e2082a85e87e3ef29c3e6d191 # v2.0.8
         with:
           files: ${{ env.NAME }}-${{ env.VERSION }}.vsix
           tag_name: v${{ env.VERSION }}
