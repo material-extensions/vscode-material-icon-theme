@@ -1832,6 +1832,15 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['resolver.ts', 'resolver.js'],
       enabledFor: [IconPack.Nest],
     },
+    {
+      name: 'nest-interceptor',
+      clone: {
+        base: 'nest',
+        color: 'orange-500',
+      },
+      fileExtensions: ['interceptor.ts', 'interceptor.js'],
+      enabledFor: [IconPack.Nest],
+    },
     { name: 'moon', fileNames: ['moon.yml'] },
     { name: 'moonscript', fileExtensions: ['moon'] },
     { name: 'percy', fileNames: ['.percy.yml'] },
@@ -2541,6 +2550,10 @@ export const fileIcons: FileIcons = {
     {
       name: 'clangd',
       fileNames: ['.clangd'],
+    },
+    {
+      name: 'freemarker',
+      fileExtensions: ['ftl'],
     },
     {
       name: 'markdownlint',
