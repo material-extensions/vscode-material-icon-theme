@@ -1,5 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <path d="M8,4h8a0,0,0,0,1,0,0v8a0,0,0,0,1,0,0H8a2,2,0,0,1-2-2V6A2,2,0,0,1,8,4Z" style="fill: #ff6d00"/>
-  <path d="M16,12h8a2,2,0,0,1,2,2v4a2,2,0,0,1-2,2H16a0,0,0,0,1,0,0V12A0,0,0,0,1,16,12Z" style="fill: #ff6d00"/>
-  <path d="M8,20h8a0,0,0,0,1,0,0v8a0,0,0,0,1,0,0H8a2,2,0,0,1-2-2V22A2,2,0,0,1,8,20Z" style="fill: #ff6d00"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="#ff6d00" d="M8 4h8v8H8a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm8 8h8a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-8v-8Zm-8 8h8v8H8a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2Z"/></svg>

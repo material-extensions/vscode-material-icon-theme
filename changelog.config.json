@@ -1,4 +1,4 @@
 {
-  "repositoryUrl": "https://github.com/PKief/vscode-material-icon-theme",
+  "repositoryUrl": "https://github.com/material-extensions/vscode-material-icon-theme",
   "blacklistPattern": "^Release \\d+\\.\\d+\\.\\d+|^\\d+\\.\\d+\\.\\d+$"
 }

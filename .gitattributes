@@ -1,0 +1,6 @@
+# Normalize EOL for all files that Git considers text files
+* text=auto eol=lf
+
+# Explicit binary files for older Git versions (<2.10)
+*.png binary
+*.gif binary

@@ -1,0 +1,5 @@
+*
+!icons/*
+!dist/types/**/*
+!dist/material-icons.json
+!dist/module/index.cjs

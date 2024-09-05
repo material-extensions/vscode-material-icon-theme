@@ -1,0 +1,24 @@
+# Add 'icons' label to any file changes within 'icons' folder or 'src/core/icons' typescript files
+icons:
+- changed-files:
+  - any-glob-to-any-file: ['icons/*', 'src/core/icons/*.ts']
+
+# Add 'translations' label to any changes within 'package.nls*.json' files or 'src/core/i18n' folder
+translations:
+- changed-files:
+  - any-glob-to-any-file: ['package.nls*.json', 'src/core/i18n']
+
+# Add 'docs' label to any changes to markdown files
+docs:
+- changed-files:
+  - any-glob-to-any-file: '*.md'
+
+# Add 'workflows' label to any changes within '.github/workflows' folder or '.github/labeler.yml' file
+workflows:
+- changed-files:
+  - any-glob-to-any-file: ['.github/workflows/*', '.github/labeler.yml']
+
+# Add 'devcontainers' label to any changes within '.devcontainer' folder
+devcontainers:
+- changed-files:
+  - any-glob-to-any-file: '.devcontainer/*'

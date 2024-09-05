@@ -1,9 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <g>
-    <polygon points="14 9 6 17 6 9 14 1 14 9" style="fill: #607d8b"/>
-    <polygon points="26 21 16 31 16 23 26 13 26 21" style="fill: #607d8b"/>
-    <polyline points="6 20 14 12 14 20" style="fill: #ffa000"/>
-    <polyline points="6 30 14 22 6 22" style="fill: #607d8b"/>
-    <polyline points="16 20 26 10 16 10" style="fill: #eceff1"/>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="#607d8b" d="m14 9-8 8V9l8-8v8zm12 12L16 31v-8l10-10v8z"/><path fill="#ffa000" d="m6 20 8-8v8"/><path fill="#607d8b" d="m6 30 8-8H6"/><path fill="#eceff1" d="m16 20 10-10H16"/></svg>

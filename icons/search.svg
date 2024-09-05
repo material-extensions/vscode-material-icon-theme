@@ -1,7 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <path d="M17,17a4,4,0,1,1-4,4,4.00453,4.00453,0,0,1,4-4m0-3a7,7,0,1,0,7,7,7,7,0,0,0-7-7Z" style="fill: #42a5f5"/>
-  <rect x="20.79289" y="24.25736" width="4" height="5.07107" transform="translate(-12.26955 23.96447) rotate(-45)" style="fill: #42a5f5"/>
-  <path d="M10,26H6V4h9.17157L22,10.82843V12h2V10L16,2H6A2,2,0,0,0,4,4V26a2,2,0,0,0,2,2h4Z" style="fill: #42a5f5"/>
-  <polygon points="22 12 14 12 14 4 16 4 22 10 22 12" style="fill: #42a5f5"/>
-  <rect x="22" y="12" width="2" height="2" style="fill: #42a5f5"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="#42a5f5" d="M17 17a4 4 0 1 1-4 4 4.005 4.005 0 0 1 4-4m0-3a7 7 0 1 0 7 7 7 7 0 0 0-7-7Z"/><path fill="#42a5f5" d="m19.586 26.414 2.828-2.828L26 27.17 23.17 30zM10 26H6V4h9.172L22 10.828V12h2v-2l-8-8H6a2 2 0 0 0-2 2v22a2 2 0 0 0 2 2h4Z"/><path fill="#42a5f5" d="M22 12h-8V4h2l6 6v2zm0 0h2v2h-2z"/></svg>
