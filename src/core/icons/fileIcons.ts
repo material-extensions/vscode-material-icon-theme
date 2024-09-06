@@ -2613,5 +2613,9 @@ export const fileIcons: FileIcons = {
         'taze.config': FileNamePattern.Ecmascript,
       },
     },
+    {
+      name: 'sway',
+      fileExtensions: ['sw'],
+    },
   ]),
 };
