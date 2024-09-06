@@ -925,7 +925,7 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['src-tauri'],
       },
       {
-        name: 'folder-favicons',
+        name: 'folder-favicon',
         folderNames: ['favicon', 'favicons'],
       },
     ],
