@@ -2609,7 +2609,9 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'taze',
-      fileNames: ['taze.config.js'],
+      patterns: {
+        'taze.config': FileNamePattern.Ecmascript,
+      },
     },
   ]),
 };
