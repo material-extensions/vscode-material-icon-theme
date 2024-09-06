@@ -2552,6 +2552,10 @@ export const fileIcons: FileIcons = {
       fileNames: [".clangd"],
     },
     {
+      name: "freemarker",
+      fileExtensions: ["ftl"],
+    },
+    {
       name: "markdownlint",
       fileNames: [
         ".markdownlint.json",
@@ -2605,7 +2609,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: "sway",
-      fileNames: ["sw"],
+      fileExtensions: ["sw"],
     },
   ]),
 };
