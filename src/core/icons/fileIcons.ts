@@ -2607,5 +2607,9 @@ export const fileIcons: FileIcons = {
       name: 'gemini-ai',
       fileNames: ['.aiexclude'],
     },
+    {
+      name: 'sway',
+      fileExtensions: ['sw'],
+    },
   ]),
 };
