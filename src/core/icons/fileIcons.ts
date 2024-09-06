@@ -2608,6 +2608,12 @@ export const fileIcons: FileIcons = {
       fileNames: ['.aiexclude'],
     },
     {
+      name: 'taze',
+      patterns: {
+        'taze.config': FileNamePattern.Ecmascript,
+      },
+    },
+    {
       name: 'sway',
       fileExtensions: ['sw'],
     },
