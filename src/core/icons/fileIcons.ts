@@ -2615,6 +2615,12 @@ export const fileIcons: FileIcons = {
       },
     },
     {
+      name: 'wxt',
+      patterns: {
+        'wxt.config': FileNamePattern.Ecmascript,
+      },
+    },
+    {
       name: 'sway',
       fileExtensions: ['sw'],
     },
