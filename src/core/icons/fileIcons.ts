@@ -266,6 +266,7 @@ export const fileIcons: FileIcons = {
         '.yardopts',
         'manifest.mf',
         '.clang-format',
+        '.clang-format-ignore',
         '.clang-tidy',
         '.conf',
       ],
