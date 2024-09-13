@@ -928,6 +928,10 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-favicon',
         folderNames: ['favicon', 'favicons'],
       },
+      {
+        name: 'folder-internal',
+        folderNames: ['internal'],
+      },
     ],
   },
   {
