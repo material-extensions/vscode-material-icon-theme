@@ -161,6 +161,21 @@ export const fileIcons: FileIcons = {
     { name: 'react', fileExtensions: ['jsx'] },
     { name: 'react_ts', fileExtensions: ['tsx'] },
     {
+      name: 'rocket',
+      fileNames: [
+        '.release-it.json',
+        '.release-it.ts',
+        '.release-it.js',
+        '.release-it.cjs',
+        '.release-it.yaml',
+        '.release-it.yml',
+        '.release-it.toml',
+        'release.toml',
+        'release-plz.toml',
+        '.release-plz.toml',
+      ],
+    },
+    {
       name: 'routing',
       fileExtensions: [
         'routing.ts',
@@ -251,6 +266,7 @@ export const fileIcons: FileIcons = {
         '.yardopts',
         'manifest.mf',
         '.clang-format',
+        '.clang-format-ignore',
         '.clang-tidy',
         '.conf',
       ],
@@ -454,6 +470,8 @@ export const fileIcons: FileIcons = {
         'licence.md',
         'licence.rst',
         'licence.txt',
+        'unlicense',
+        'unlicense.txt',
       ],
     },
     {
@@ -910,6 +928,15 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['resolver.ts', 'resolver.js'],
       enabledFor: [IconPack.Angular, IconPack.Ngrx],
     },
+    {
+      name: 'angular-interceptor',
+      clone: {
+        base: 'angular',
+        color: 'orange-500',
+      },
+      fileExtensions: ['interceptor.ts', 'interceptor.js'],
+      enabledFor: [IconPack.Angular, IconPack.Ngrx],
+    },
     { name: 'puppet', fileExtensions: ['pp'] },
     { name: 'elixir', fileExtensions: ['ex', 'exs', 'eex', 'leex', 'heex'] },
     { name: 'livescript', fileExtensions: ['ls'] },
@@ -923,7 +950,7 @@ export const fileIcons: FileIcons = {
     { name: 'reason', fileExtensions: ['re', 'rei'] },
     { name: 'bucklescript', fileExtensions: ['cmj'] },
     { name: 'merlin', fileExtensions: ['merlin'] },
-    { name: 'verilog', fileExtensions: ['vhd', 'sv', 'svh'] },
+    { name: 'verilog', fileExtensions: ['vhd', 'sv', 'svh', 'vhdl'] },
     { name: 'mathematica', fileExtensions: ['nb'] },
     { name: 'wolframlanguage', fileExtensions: ['wl', 'wls'] },
     { name: 'nunjucks', fileExtensions: ['njk', 'nunjucks'] },
@@ -1806,6 +1833,15 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['resolver.ts', 'resolver.js'],
       enabledFor: [IconPack.Nest],
     },
+    {
+      name: 'nest-interceptor',
+      clone: {
+        base: 'nest',
+        color: 'orange-500',
+      },
+      fileExtensions: ['interceptor.ts', 'interceptor.js'],
+      enabledFor: [IconPack.Nest],
+    },
     { name: 'moon', fileNames: ['moon.yml'] },
     { name: 'moonscript', fileExtensions: ['moon'] },
     { name: 'percy', fileNames: ['.percy.yml'] },
@@ -1987,6 +2023,11 @@ export const fileIcons: FileIcons = {
     { name: 'replit', fileNames: ['.replit'] },
     { name: 'rescript', fileExtensions: ['res'] },
     { name: 'rescript-interface', fileExtensions: ['resi'] },
+    {
+      name: 'duc',
+      fileNames: ['duc.fbs'],
+      fileExtensions: ['duc'],
+    },
     {
       name: 'snowpack',
       fileNames: [
@@ -2435,6 +2476,14 @@ export const fileIcons: FileIcons = {
       name: 'abap',
       fileExtensions: ['abap', 'acds', 'asddls'],
     },
+    {
+      name: 'drizzle',
+      fileNames: [
+        'drizzle.config.ts',
+        'drizzle.config.js',
+        'drizzle.config.json',
+      ],
+    },
     { name: 'lottie', fileExtensions: ['lottie'] },
     {
       name: 'puppeteer',
@@ -2473,7 +2522,10 @@ export const fileIcons: FileIcons = {
         base: '3d',
         color: '#00b0ff',
       },
-      fileNames: ['.devcontainer/devcontainer.json'],
+      fileNames: [
+        '.devcontainer/devcontainer.json',
+        '.devcontainer/devcontainer-lock.json',
+      ],
     },
     {
       name: 'kcl',
@@ -2497,6 +2549,14 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['alloy'],
     },
     {
+      name: 'clangd',
+      fileNames: ['.clangd'],
+    },
+    {
+      name: 'freemarker',
+      fileExtensions: ['ftl'],
+    },
+    {
       name: 'markdownlint',
       fileNames: [
         '.markdownlint.json',
@@ -2507,6 +2567,7 @@ export const fileIcons: FileIcons = {
         '.markdownlint-cli2.yaml',
         '.markdownlint-cli2.cjs',
         '.markdownlint-cli2.mjs',
+        '.markdownlintignore',
       ],
     },
     {
@@ -2525,6 +2586,43 @@ export const fileIcons: FileIcons = {
     {
       name: 'hurl',
       fileExtensions: ['hurl'],
+    },
+    {
+      name: 'cds',
+      fileExtensions: ['cds'],
+    },
+    {
+      name: 'slint',
+      fileExtensions: ['slint', '60'],
+    },
+    {
+      name: 'jsr',
+      fileNames: ['jsr.json', 'jsr.jsonc'],
+      light: true,
+    },
+    {
+      name: 'coderabbit-ai',
+      fileNames: ['.coderabbit.yml', '.coderabbit.yaml'],
+    },
+    {
+      name: 'gemini-ai',
+      fileNames: ['.aiexclude'],
+    },
+    {
+      name: 'taze',
+      patterns: {
+        'taze.config': FileNamePattern.Ecmascript,
+      },
+    },
+    {
+      name: 'wxt',
+      patterns: {
+        'wxt.config': FileNamePattern.Ecmascript,
+      },
+    },
+    {
+      name: 'sway',
+      fileExtensions: ['sw'],
     },
   ]),
 };

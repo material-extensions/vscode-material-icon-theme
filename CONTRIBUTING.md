@@ -1,5 +1,7 @@
 <!-- markdownlint-disable no-inline-html no-duplicate-heading -->
 
+<a href="https://www.phorm.ai/query?projectId=bebfbe39-2f45-4d49-88fd-3de89c49c301"><img src="https://stuff.charm.sh/misc/phorm-badge.svg" alt="phorm.ai"></a>
+
 <h1>How to contribute</h1>
 
 Glad you're here and interested in expanding this project 🎉 In order to make this work in the best possible way, there are hints and tips for successful contributors on this page. Please read everything carefully and your contributions will be valuable and gratefully received.
@@ -119,7 +121,7 @@ When designing folder icons there are also a few points to consider. A folder ic
 
 <img src="./images/how-tos/folder-icon-parts.svg" alt="An example of a folder" width="300px" />
 
-For the motive, only colors from the second row in the [color palette](https://pkief.com/material-color-converter/) are allowed. For the background choose a slightly darker hue (mostly in rows 4-6 in the palette).
+For the motive, only colors from the second row in the [color palette](https://pkief.github.io/material-color-converter/) are allowed. For the background choose a slightly darker hue (mostly in rows 4-6 in the palette).
 
 <img src="./images/how-tos/pick-folder-colors.png" alt="Material color palette" width="500px" />
 
@@ -141,9 +143,9 @@ All icons have a small distance to the edge. This way they don't seem so pressed
 
 Icons are assigned to file names, folder names or registered languages of VS Code in these files:
 
-- [fileIcons.ts](src/icons/fileIcons.ts)
-- [folderIcons.ts](src/icons/folderIcons.ts)
-- [languageIcons.ts](src/icons/languageIcons.ts)
+- [fileIcons.ts](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/core/icons/fileIcons.ts)
+- [folderIcons.ts](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/core/icons/folderIcons.ts)
+- [languageIcons.ts](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/core/icons/languageIcons.ts)
 
 Be careful when assigning icons to files and folders, as not everyone expects a file name to have a special icon based on a framework that is not used by them. A solution for this can be the usage of [Language icon definitions](#language-icons) or [icon packs](#icon-packs).
 
@@ -174,7 +176,7 @@ It is also possible to use patterns for file names and extensions. This is usefu
 }
 ```
 
-In case of this example the generated file names are "graphql.js", "graphql.mjs", "graphql.cjs", "graphql.ts", "graphql.mts" and "graphql.cts". The pattern is defined in the [patterns.ts](src/icons/patterns/patterns.ts) file.
+In case of this example the generated file names are "graphql.js", "graphql.mjs", "graphql.cjs", "graphql.ts", "graphql.mts" and "graphql.cts". The pattern is defined in the [patterns.ts](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/core/patterns/patterns.ts) file.
 
 Available patterns are right now:
 
@@ -266,10 +268,10 @@ Here's an example that shows how two icons can be assigned to the same file name
 
 To create an icon pack, the following steps have to be completed:
 
-1. Add the name of the icon pack to the enum in [iconPack.ts](src/models/icons/iconPack.ts)
+1. Add the name of the icon pack to the enum in [iconPack.ts](https://github.com/material-extensions/vscode-material-icon-theme/blob/e21e6b1b57f2ce0b6e7306178b26d11c60e2ca0f/src/core/models/icons/iconPack.ts)
 2. Add translations to the package.nls.\*.json files under the section `configuration.activeIconPack` (at least to [package.nls.json](package.nls.json), the English translation file)
 3. Adjust [package.json](package.json) under `configuration.properties.material-icon-theme.activeIconPack`
-4. Use the icon pack inside the [fileIcons.ts](src/icons/fileIcons.ts),[folderIcons.ts](src/icons/folderIcons.ts) or [languageIcons.ts](src/icons/languageIcons.ts) files in the `enabledFor` attribute
+4. Use the icon pack inside the [fileIcons.ts](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/core/icons/fileIcons.ts),[folderIcons.ts](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/core/icons/folderIcons.ts) or [languageIcons.ts](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/core/icons/languageIcons.ts) files in the `enabledFor` attribute
 
 <h3 id="pixel-perfect-icons">Designing Pixel-Perfect Icons</h3>
 
@@ -333,8 +335,8 @@ The extension allows you to clone existing icons and adjust their colors through
 
 As we mentioned previously, icons are assigned to filenames, file extensions, and folder names in the following files:
 
-- [fileIcons.ts](src/icons/fileIcons.ts)
-- [folderIcons.ts](src/icons/folderIcons.ts)
+- [fileIcons.ts](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/core/icons/fileIcons.ts)
+- [folderIcons.ts](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/core/icons/folderIcons.ts)
 
 The following example demonstrates how the shapes of the `rust` file icon can be reused to create a clone of it, utilizing different colors and associated with different file names than the original icon.
 
@@ -361,7 +363,7 @@ The same technique can be applied to folder icons using the `clone` attribute in
 
 You might have noticed that we are using aliases for the colors. These aliases correspond to the Material Design color palette.
 
-You can find a list of all available color aliases in the [materialPalette.ts](./src/icons/generator/clones/utils/color/materialPalette.ts) file.
+You can find a list of all available color aliases in the [materialPalette.ts](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/core/generator/clones/utils/color/materialPalette.ts) file.
 
 #### Preventing recoloring in cloned icons
 

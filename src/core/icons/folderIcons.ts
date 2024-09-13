@@ -20,7 +20,15 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-dist',
-        folderNames: ['dist', 'out', 'build', 'release', 'bin'],
+        folderNames: [
+          'dist',
+          'out',
+          'output',
+          'build',
+          'release',
+          'bin',
+          'distribution',
+        ],
       },
       {
         name: 'folder-css',
@@ -105,6 +113,7 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['git', 'patches', 'githooks', 'submodules'],
       },
       { name: 'folder-github', folderNames: ['github'] },
+      { name: 'folder-gitea', folderNames: ['gitea'] },
       { name: 'folder-gitlab', folderNames: ['gitlab'] },
       { name: 'folder-vscode', folderNames: ['vscode', 'vscode-test'] },
       {
@@ -192,6 +201,7 @@ export const folderIcons: FolderTheme[] = [
           'vendor',
           'vendors',
           'third-party',
+          'lib64',
         ],
       },
       {
@@ -222,7 +232,14 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-include',
-        folderNames: ['inc', 'include', 'includes', 'partial', 'partials'],
+        folderNames: [
+          'inc',
+          'include',
+          'includes',
+          'partial',
+          'partials',
+          'inc64',
+        ],
       },
       {
         name: 'folder-docker',
@@ -479,6 +496,7 @@ export const folderIcons: FolderTheme[] = [
           'toolbox',
           'toolboxes',
           'tooling',
+          'devtools',
         ],
       },
       { name: 'folder-helper', folderNames: ['helpers', 'helper'] },
@@ -706,7 +724,6 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-nuxt',
         folderNames: ['nuxt'],
-        enabledFor: [IconPack.Vuex, IconPack.Vue],
       },
       {
         name: 'folder-vue-directives',
@@ -749,7 +766,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-jupyter',
-        folderNames: ['jupyter', 'notebook', 'notebooks'],
+        folderNames: ['jupyter', 'notebook', 'notebooks', 'ipynb'],
       },
       { name: 'folder-scala', folderNames: ['scala'] },
       {
@@ -759,6 +776,8 @@ export const folderIcons: FolderTheme[] = [
           'connections',
           'integration',
           'integrations',
+          'remote',
+          'remotes',
         ],
       },
       { name: 'folder-quasar', folderNames: ['quasar'] },
@@ -873,6 +892,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['taskfile', 'taskfiles'],
       },
       {
+        name: 'folder-drizzle',
+        folderNames: ['drizzle'],
+      },
+      {
         name: 'folder-cloudflare',
         folderNames: ['cloudflare'],
       },
@@ -880,8 +903,31 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-seeders',
         folderNames: ['seeds', 'seeders', 'seed', 'seeding'],
       },
+      {
+        name: 'folder-store',
+        folderNames: ['store', 'stores'],
+        enabledFor: [IconPack.Angular],
+      },
       { name: 'folder-bicep', folderNames: ['bicep'] },
       { name: 'folder-snapcraft', folderNames: ['snap', 'snapcraft'] },
+      {
+        name: 'folder-development',
+        folderNames: ['dev', 'development'],
+        clone: {
+          base: 'folder-src',
+          color: 'light-blue-700',
+        },
+      },
+      { name: 'folder-flutter', folderNames: ['flutter'] },
+      { name: 'folder-snippet', folderNames: ['snippet', 'snippets'] },
+      {
+        name: 'folder-src-tauri',
+        folderNames: ['src-tauri'],
+      },
+      {
+        name: 'folder-favicon',
+        folderNames: ['favicon', 'favicons'],
+      },
     ],
   },
   {

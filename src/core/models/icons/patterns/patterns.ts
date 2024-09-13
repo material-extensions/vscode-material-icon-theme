@@ -10,7 +10,7 @@ export enum FileNamePattern {
   /** Adds the following extensions to the file name: `js`, `mjs`, `cjs`, `ts`, `mts`, `cts`, `json`, `jsonc`, `json5`, `yaml`, `yml`, `toml`. */
   NodeEcosystem = 'nodeEcosystem',
 
-  /** It adjusts the name with the following patterns: '.fileNamerc', '.config/fileNamerc', 'fileName.config' and combines that with the pattern NodeEcosystem */
+  /** It adjusts the name with the following patterns: `.fileNamerc`, `.config/fileNamerc`, `fileName.config` and combines that with the pattern `NodeEcosystem` */
   Cosmiconfig = 'cosmiconfig',
 }
 
