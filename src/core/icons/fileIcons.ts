@@ -2048,7 +2048,7 @@ export const fileIcons: FileIcons = {
     { name: 'grain', fileExtensions: ['gr'] },
     { name: 'lolcode', fileExtensions: ['lol'] },
     { name: 'idris', fileExtensions: ['idr', 'ibc'] },
-    { name: 'quasar', fileNames: ['quasar.conf.js', 'quasar.config.js'] },
+    { name: 'quasar', fileNames: ['quasar.conf.js', 'quasar.config.js', 'quasar.conf.ts', 'quasar.config.ts', 'quasar.config.cjs'] },
     { name: 'dependabot', fileNames: ['dependabot.yml', 'dependabot.yaml'] },
     { name: 'pipeline', fileExtensions: ['pipeline'] },
     {
