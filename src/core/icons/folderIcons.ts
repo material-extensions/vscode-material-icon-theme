@@ -836,10 +836,6 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['vercel', 'now'],
       },
       {
-        name: 'folder-trigger',
-        folderNames: ['trigger'],
-      },
-      {
         name: 'folder-cypress',
         folderNames: ['cypress'],
       },
@@ -924,6 +920,10 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-flutter', folderNames: ['flutter'] },
       { name: 'folder-snippet', folderNames: ['snippet', 'snippets'] },
+      {
+        name: 'folder-trigger',
+        folderNames: ['trigger'],
+      },
       {
         name: 'folder-src-tauri',
         folderNames: ['src-tauri'],
