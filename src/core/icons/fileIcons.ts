@@ -249,6 +249,7 @@ export const fileIcons: FileIcons = {
         '.yardopts',
         'manifest.mf',
         '.clang-format',
+        '.clang-format-ignore',
         '.clang-tidy',
       ],
     },
@@ -1788,6 +1789,15 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['resolver.ts', 'resolver.js'],
       enabledFor: [IconPack.Nest],
     },
+    {
+      name: 'nest-interceptor',
+      clone: {
+        base: 'nest',
+        color: 'orange-500',
+      },
+      fileExtensions: ['interceptor.ts', 'interceptor.js'],
+      enabledFor: [IconPack.Nest],
+    },
     { name: 'moon', fileNames: ['moon.yml'] },
     { name: 'moonscript', fileExtensions: ['moon'] },
     { name: 'percy', fileNames: ['.percy.yml'] },
@@ -2473,6 +2483,82 @@ export const fileIcons: FileIcons = {
     {
       name: 'grafana-alloy',
       fileExtensions: ['alloy'],
+    },
+    {
+      name: 'clangd',
+      fileNames: ['.clangd'],
+    },
+    {
+      name: 'freemarker',
+      fileExtensions: ['ftl'],
+    },
+    {
+      name: 'markdownlint',
+      fileNames: [
+        '.markdownlint.json',
+        '.markdownlint.jsonc',
+        '.markdownlint.yaml',
+        '.markdownlint.yml',
+        '.markdownlint-cli2.jsonc',
+        '.markdownlint-cli2.yaml',
+        '.markdownlint-cli2.cjs',
+        '.markdownlint-cli2.mjs',
+        '.markdownlintignore',
+      ],
+    },
+    {
+      name: 'tsil',
+      fileExtensions: ['ц'],
+    },
+    {
+      name: 'deepsource',
+      fileNames: ['.deepsource.toml'],
+    },
+    {
+      name: 'tape',
+      fileExtensions: ['tape'],
+      clone: { base: 'video', color: 'purple-300' },
+    },
+    {
+      name: 'hurl',
+      fileExtensions: ['hurl'],
+    },
+    {
+      name: 'cds',
+      fileExtensions: ['cds'],
+    },
+    {
+      name: 'slint',
+      fileExtensions: ['slint', '60'],
+    },
+    {
+      name: 'jsr',
+      fileNames: ['jsr.json', 'jsr.jsonc'],
+      light: true,
+    },
+    {
+      name: 'coderabbit-ai',
+      fileNames: ['.coderabbit.yml', '.coderabbit.yaml'],
+    },
+    {
+      name: 'gemini-ai',
+      fileNames: ['.aiexclude'],
+    },
+    {
+      name: 'taze',
+      patterns: {
+        'taze.config': FileNamePattern.Ecmascript,
+      },
+    },
+    {
+      name: 'wxt',
+      patterns: {
+        'wxt.config': FileNamePattern.Ecmascript,
+      },
+    },
+    {
+      name: 'sway',
+      fileExtensions: ['sw'],
     },
   ]),
 };
