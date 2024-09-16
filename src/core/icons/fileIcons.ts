@@ -1728,7 +1728,9 @@ export const fileIcons: FileIcons = {
     {
       name: 'svelte',
       fileExtensions: ['svelte'],
-      fileNames: ['svelte.config.js', 'svelte.config.cjs'],
+      patterns: {
+        'svelte.config': FileNamePattern.Ecmascript,
+      },
     },
     {
       name: 'vim',
