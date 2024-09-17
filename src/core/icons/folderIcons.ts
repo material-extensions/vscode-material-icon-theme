@@ -928,6 +928,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-favicon',
         folderNames: ['favicon', 'favicons'],
       },
+      { name: 'folder-lefthook', folderNames: ['lefthook', 'lefthook-local'] },
     ],
   },
   {
