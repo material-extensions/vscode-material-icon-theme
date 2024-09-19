@@ -1733,6 +1733,22 @@ export const fileIcons: FileIcons = {
       },
     },
     {
+      name: 'svelte.js',
+      fileExtensions: ['svelte.js'],
+      clone: {
+        base: 'svelte',
+        color: 'yellow-700',
+      },
+    },
+    {
+      name: 'svelte.ts',
+      fileExtensions: ['svelte.ts'],
+      clone: {
+        base: 'svelte',
+        color: 'blue-700',
+      },
+    },
+    {
       name: 'vim',
       fileExtensions: ['vimrc', 'gvimrc', 'exrc', 'vim', 'viminfo'],
     },
