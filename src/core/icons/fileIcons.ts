@@ -1737,7 +1737,7 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['svelte.js'],
       clone: {
         base: 'svelte',
-        color: 'yellow-700',
+        color: 'amber-400',
       },
     },
     {
@@ -1745,7 +1745,7 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['svelte.ts'],
       clone: {
         base: 'svelte',
-        color: 'blue-700',
+        color: 'light-blue-700',
       },
     },
     {
@@ -2066,7 +2066,16 @@ export const fileIcons: FileIcons = {
     { name: 'grain', fileExtensions: ['gr'] },
     { name: 'lolcode', fileExtensions: ['lol'] },
     { name: 'idris', fileExtensions: ['idr', 'ibc'] },
-    { name: 'quasar', fileNames: ['quasar.conf.js', 'quasar.config.js', 'quasar.conf.ts', 'quasar.config.ts', 'quasar.config.cjs'] },
+    {
+      name: 'quasar',
+      fileNames: [
+        'quasar.conf.js',
+        'quasar.config.js',
+        'quasar.conf.ts',
+        'quasar.config.ts',
+        'quasar.config.cjs',
+      ],
+    },
     { name: 'dependabot', fileNames: ['dependabot.yml', 'dependabot.yaml'] },
     { name: 'pipeline', fileExtensions: ['pipeline'] },
     {
