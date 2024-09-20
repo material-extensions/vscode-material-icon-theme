@@ -1733,6 +1733,22 @@ export const fileIcons: FileIcons = {
       },
     },
     {
+      name: 'svelte.js',
+      fileExtensions: ['svelte.js'],
+      clone: {
+        base: 'svelte',
+        color: 'amber-400',
+      },
+    },
+    {
+      name: 'svelte.ts',
+      fileExtensions: ['svelte.ts'],
+      clone: {
+        base: 'svelte',
+        color: 'light-blue-700',
+      },
+    },
+    {
       name: 'vim',
       fileExtensions: ['vimrc', 'gvimrc', 'exrc', 'vim', 'viminfo'],
     },
@@ -2050,7 +2066,16 @@ export const fileIcons: FileIcons = {
     { name: 'grain', fileExtensions: ['gr'] },
     { name: 'lolcode', fileExtensions: ['lol'] },
     { name: 'idris', fileExtensions: ['idr', 'ibc'] },
-    { name: 'quasar', fileNames: ['quasar.conf.js', 'quasar.config.js', 'quasar.conf.ts', 'quasar.config.ts', 'quasar.config.cjs'] },
+    {
+      name: 'quasar',
+      fileNames: [
+        'quasar.conf.js',
+        'quasar.config.js',
+        'quasar.conf.ts',
+        'quasar.config.ts',
+        'quasar.config.cjs',
+      ],
+    },
     { name: 'dependabot', fileNames: ['dependabot.yml', 'dependabot.yaml'] },
     { name: 'pipeline', fileExtensions: ['pipeline'] },
     {
