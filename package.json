@@ -19,7 +19,7 @@
     "generateClones": "bun ./src/scripts/icons/generateClones.ts",
     "lint": "biome check --write ./src",
     "format": "biome format --write ./src",
-    "preversion": "bun run contributors && bun run preview && bun run svgo && git add images/{contributors,fileIcons,folderIcons}.png icons/*.svg",
+    "preversion": "bun run contributors && bun run preview && bun run svgo && git add images/fileIcons.png images/contributors.png images/folderIcons.png icons/*.svg",
     "preview": "bun ./src/scripts/preview/run.ts",
     "svgo": "svgo -i icons -o icons -q",
     "test": "bun test",
@@ -55,29 +55,16 @@
     "color": "#1e1e1e",
     "theme": "dark"
   },
-  "categories": [
-    "Themes"
-  ],
-  "keywords": [
-    "icons",
-    "theme",
-    "material",
-    "icon-theme",
-    "customization"
-  ],
-  "extensionKind": [
-    "ui",
-    "workspace"
-  ],
+  "categories": ["Themes"],
+  "keywords": ["icons", "theme", "material", "icon-theme", "customization"],
+  "extensionKind": ["ui", "workspace"],
   "capabilities": {
     "untrustedWorkspaces": {
       "supported": true
     },
     "virtualWorkspaces": true
   },
-  "activationEvents": [
-    "onStartupFinished"
-  ],
+  "activationEvents": ["onStartupFinished"],
   "main": "./dist/extension/desktop/extension.cjs",
   "browser": "./dist/extension/web/extension.cjs",
   "module": "./dist/module/index.cjs",
@@ -230,9 +217,7 @@
               },
               "activeForPacks": {
                 "type": "array",
-                "default": [
-                  "angular"
-                ],
+                "default": ["angular"],
                 "description": "%configuration.customClones.activeForPacks%",
                 "items": {
                   "type": "string",
@@ -306,11 +291,7 @@
             "%configuration.folders.theme.classic%",
             "%configuration.folders.theme.none%"
           ],
-          "enum": [
-            "specific",
-            "classic",
-            "none"
-          ]
+          "enum": ["specific", "classic", "none"]
         },
         "material-icon-theme.folders.color": {
           "type": "string",
@@ -351,11 +332,7 @@
         "material-icon-theme.logLevel": {
           "type": "string",
           "default": "info",
-          "enum": [
-            "info",
-            "error",
-            "debug"
-          ],
+          "enum": ["info", "error", "debug"],
           "description": "%configuration.logLevel%"
         }
       }
