@@ -19,15 +19,7 @@ const prepareModule = async () => {
     await setMain;
 
     // Remove vscode specific fields from package.json
-    const removeBrowser = spawn([
-      'npm',
-      'pkg',
-      'delete',
-      'browser',
-      'engines',
-      'galleryBanner',
-      'contributes',
-    ]);
+    const removeBrowser = spawn(['npm', 'pkg', 'delete', 'browser']);
     await removeBrowser;
 
     //copy readme into root directory
