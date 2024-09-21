@@ -3,6 +3,13 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v5.11.1](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.11.0...v5.11.1) 
+
+> September 21, 2024 
+
+- Fix issue with Svelte JS and TS icons (Closes #2603) [`be58bc47`](https://github.com/material-extensions/vscode-material-icon-theme/commit/be58bc47)
+- Update preversion script [`1c7a0847`](https://github.com/material-extensions/vscode-material-icon-theme/commit/1c7a0847)
+ 
 #### [v5.11.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.10.0...v5.11.0) 
 
 > September 20, 2024 
