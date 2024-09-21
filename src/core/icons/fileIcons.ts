@@ -1733,7 +1733,7 @@ export const fileIcons: FileIcons = {
       },
     },
     {
-      name: 'svelte.js',
+      name: 'svelte_js',
       fileExtensions: ['svelte.js'],
       clone: {
         base: 'svelte',
@@ -1741,7 +1741,7 @@ export const fileIcons: FileIcons = {
       },
     },
     {
-      name: 'svelte.ts',
+      name: 'svelte_ts',
       fileExtensions: ['svelte.ts'],
       clone: {
         base: 'svelte',
