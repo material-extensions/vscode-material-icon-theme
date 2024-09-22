@@ -266,6 +266,7 @@ export const fileIcons: FileIcons = {
         '.yardopts',
         'manifest.mf',
         '.clang-format',
+        '.clang-format-ignore',
         '.clang-tidy',
         '.conf',
       ],
@@ -1727,7 +1728,25 @@ export const fileIcons: FileIcons = {
     {
       name: 'svelte',
       fileExtensions: ['svelte'],
-      fileNames: ['svelte.config.js', 'svelte.config.cjs'],
+      patterns: {
+        'svelte.config': FileNamePattern.Ecmascript,
+      },
+    },
+    {
+      name: 'svelte_js',
+      fileExtensions: ['svelte.js'],
+      clone: {
+        base: 'svelte',
+        color: 'amber-400',
+      },
+    },
+    {
+      name: 'svelte_ts',
+      fileExtensions: ['svelte.ts'],
+      clone: {
+        base: 'svelte',
+        color: 'light-blue-700',
+      },
     },
     {
       name: 'vim',
@@ -2047,7 +2066,16 @@ export const fileIcons: FileIcons = {
     { name: 'grain', fileExtensions: ['gr'] },
     { name: 'lolcode', fileExtensions: ['lol'] },
     { name: 'idris', fileExtensions: ['idr', 'ibc'] },
-    { name: 'quasar', fileNames: ['quasar.conf.js', 'quasar.config.js'] },
+    {
+      name: 'quasar',
+      fileNames: [
+        'quasar.conf.js',
+        'quasar.config.js',
+        'quasar.conf.ts',
+        'quasar.config.ts',
+        'quasar.config.cjs',
+      ],
+    },
     { name: 'dependabot', fileNames: ['dependabot.yml', 'dependabot.yaml'] },
     { name: 'pipeline', fileExtensions: ['pipeline'] },
     {
@@ -2605,6 +2633,45 @@ export const fileIcons: FileIcons = {
     {
       name: 'gemini-ai',
       fileNames: ['.aiexclude'],
+    },
+    {
+      name: 'taze',
+      patterns: {
+        'taze.config': FileNamePattern.Ecmascript,
+      },
+    },
+    {
+      name: 'wxt',
+      patterns: {
+        'wxt.config': FileNamePattern.Ecmascript,
+      },
+    },
+    {
+      name: 'sway',
+      fileExtensions: ['sw'],
+    },
+    {
+      name: 'lefthook',
+      fileNames: [
+        '.lefthook-local.json',
+        '.lefthook-local.toml',
+        '.lefthook-local.yaml',
+        '.lefthook-local.yml',
+        '.lefthook.json',
+        '.lefthook.toml',
+        '.lefthook.yaml',
+        '.lefthook.yml',
+        '.lefthookrc',
+        'lefthook-local.json',
+        'lefthook-local.toml',
+        'lefthook-local.yaml',
+        'lefthook-local.yml',
+        'lefthook.json',
+        'lefthook.toml',
+        'lefthook.yaml',
+        'lefthook.yml',
+        'lefthookrc',
+      ],
     },
   ]),
 };

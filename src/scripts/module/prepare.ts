@@ -9,6 +9,7 @@ import { spawn } from 'bun';
  */
 const prepareModule = async () => {
   try {
+    // Set the main field in the package.json to the correct path
     const setMain = spawn([
       'npm',
       'pkg',
@@ -16,6 +17,10 @@ const prepareModule = async () => {
       'main=./dist/module/index.cjs',
     ]);
     await setMain;
+
+    // Remove vscode specific fields from package.json
+    const removeBrowser = spawn(['npm', 'pkg', 'delete', 'browser']);
+    await removeBrowser;
 
     //copy readme into root directory
     const readmePath = join(process.cwd(), 'src', 'module', 'README.md');

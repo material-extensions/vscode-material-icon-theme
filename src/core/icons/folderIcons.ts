@@ -920,6 +920,15 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-flutter', folderNames: ['flutter'] },
       { name: 'folder-snippet', folderNames: ['snippet', 'snippets'] },
+      {
+        name: 'folder-src-tauri',
+        folderNames: ['src-tauri'],
+      },
+      {
+        name: 'folder-favicon',
+        folderNames: ['favicon', 'favicons'],
+      },
+      { name: 'folder-lefthook', folderNames: ['lefthook', 'lefthook-local'] },
     ],
   },
   {

@@ -2,7 +2,7 @@
   "name": "material-icon-theme",
   "displayName": "Material Icon Theme",
   "description": "Material Design Icons for Visual Studio Code",
-  "version": "5.10.0",
+  "version": "5.11.1",
   "license": "MIT",
   "scripts": {
     "precompile": "rimraf dist && bun run verify",
@@ -19,7 +19,7 @@
     "generateClones": "bun ./src/scripts/icons/generateClones.ts",
     "lint": "biome check --write ./src",
     "format": "biome format --write ./src",
-    "preversion": "bun run contributors && bun run preview && bun run svgo && git add images/{contributors,fileIcons,folderIcons}.png icons/*.svg",
+    "preversion": "bun run contributors && bun run preview && bun run svgo && git add images/*.png icons/*.svg",
     "preview": "bun ./src/scripts/preview/run.ts",
     "svgo": "svgo -i icons -o icons -q",
     "test": "bun test",
