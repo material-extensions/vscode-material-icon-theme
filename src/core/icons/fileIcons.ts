@@ -2050,7 +2050,16 @@ export const fileIcons: FileIcons = {
     { name: 'grain', fileExtensions: ['gr'] },
     { name: 'lolcode', fileExtensions: ['lol'] },
     { name: 'idris', fileExtensions: ['idr', 'ibc'] },
-    { name: 'quasar', fileNames: ['quasar.conf.js', 'quasar.config.js', 'quasar.conf.ts', 'quasar.config.ts', 'quasar.config.cjs'] },
+    {
+      name: 'quasar',
+      fileNames: [
+        'quasar.conf.js',
+        'quasar.config.js',
+        'quasar.conf.ts',
+        'quasar.config.ts',
+        'quasar.config.cjs',
+      ],
+    },
     { name: 'dependabot', fileNames: ['dependabot.yml', 'dependabot.yaml'] },
     { name: 'pipeline', fileExtensions: ['pipeline'] },
     {
@@ -2648,6 +2657,10 @@ export const fileIcons: FileIcons = {
         'lefthook.yml',
         'lefthookrc',
       ],
+    },
+    {
+      name: 'label',
+      fileNames: ['.github/labeler.yml', '.github/labeler.yaml'],
     },
   ]),
 };
