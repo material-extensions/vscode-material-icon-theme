@@ -3,6 +3,39 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v5.11.1](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.11.0...v5.11.1) 
+
+> September 21, 2024 
+
+- Fix issue with Svelte JS and TS icons (Closes #2603) [`be58bc47`](https://github.com/material-extensions/vscode-material-icon-theme/commit/be58bc47)
+- Update preversion script [`1c7a0847`](https://github.com/material-extensions/vscode-material-icon-theme/commit/1c7a0847)
+ 
+#### [v5.11.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.10.0...v5.11.0) 
+
+> September 20, 2024 
+
+- Update preversion script [`12145f8e`](https://github.com/material-extensions/vscode-material-icon-theme/commit/12145f8e)
+- Add .svelte.js and .svelte.ts color variants [`#2600`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2600)
+- Remove vscode specific fields from module's package json [`#2602`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2602)
+- Fix icon request template [`#2596`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2596)
+- feat: ecmascript extension patterns for svelte.config [`#2595`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2595)
+- Add icons for Lefthook files and folders [`#2582`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2582)
+- build(deps): bump actions/create-github-app-token [`#2591`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2591)
+- Add `ts`, `cjs` ext for `quasar` [`#2590`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2590)
+- Added icon for `wxt.config.ts` file 🧩 [`#2576`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2576)
+- build(deps): bump the github-actions group with 2 updates [`#2583`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2583)
+- feat: ✨ .clang-format-ignore file icon [`#2580`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2580)
+- Added taze configuration file icon [`#2577`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2577)
+- added favicons folder icon [`#2578`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2578)
+- Feat: added sway icon [`#2573`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2573)
+- added src-tauri folder icon [`#2567`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2567)
+- refactor: ♻️ Improve scripts in `package.json` [`#2569`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2569)
+- Added freemarker icon [`#2396`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2396)
+- Add nest interceptor icon [`#2572`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2572)
+- Remove coderabbit config [`9f57e5cc`](https://github.com/material-extensions/vscode-material-icon-theme/commit/9f57e5cc)
+- feat: ✨ .markdownlintignore file icon [`#2565`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2565)
+- docs: 📝 fix broken links in pull_request_template [`#2566`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2566)
+ 
 #### [v5.10.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.9.0...v5.10.0) 
 
 > August 29, 2024 
