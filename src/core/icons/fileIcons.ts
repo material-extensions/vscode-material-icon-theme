@@ -2674,5 +2674,13 @@ export const fileIcons: FileIcons = {
         'lefthookrc',
       ],
     },
+    {
+      name: 'zeabur',
+      fileExtensions: ['zeabur'],
+      patterns: {
+        'zeabur': FileNamePattern.Configuration,
+      },
+      light: true,
+    },
   ]),
 };
