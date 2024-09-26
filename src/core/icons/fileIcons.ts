@@ -1733,6 +1733,22 @@ export const fileIcons: FileIcons = {
       },
     },
     {
+      name: 'svelte_js',
+      fileExtensions: ['svelte.js'],
+      clone: {
+        base: 'svelte',
+        color: 'amber-400',
+      },
+    },
+    {
+      name: 'svelte_ts',
+      fileExtensions: ['svelte.ts'],
+      clone: {
+        base: 'svelte',
+        color: 'light-blue-700',
+      },
+    },
+    {
       name: 'vim',
       fileExtensions: ['vimrc', 'gvimrc', 'exrc', 'vim', 'viminfo'],
     },
@@ -2661,6 +2677,14 @@ export const fileIcons: FileIcons = {
     {
       name: 'label',
       fileNames: ['.github/labeler.yml', '.github/labeler.yaml'],
+    },
+    {
+      name: 'zeabur',
+      fileExtensions: ['zeabur'],
+      patterns: {
+        'zeabur': FileNamePattern.Configuration,
+      },
+      light: true,
     },
   ]),
 };
