@@ -61,27 +61,19 @@ const setIconDefinitions = (
   config: Config,
   icon: DefaultIcon
 ) => {
-  manifest = createIconDefinitions(manifest, config, icon.name);
-  manifest = merge(
-    manifest,
-    icon.light
-      ? createIconDefinitions(
-          manifest,
-          config,
-          icon.name + lightColorFileEnding
-        )
-      : manifest.light
-  );
-  manifest = merge(
-    manifest,
-    icon.highContrast
-      ? createIconDefinitions(
-          manifest,
-          config,
-          icon.name + highContrastColorFileEnding
-        )
-      : manifest.highContrast
-  );
+  createIconDefinitions(manifest, config, icon.name);
+
+  if (icon.light) {
+    createIconDefinitions(manifest, config, icon.name + lightColorFileEnding);
+  }
+  if (icon.highContrast) {
+    createIconDefinitions(
+      manifest,
+      config,
+      icon.name + highContrastColorFileEnding
+    );
+  }
+
   return manifest;
 };
 
@@ -96,7 +88,6 @@ const createIconDefinitions = (
       iconPath: `${iconFolderPath}${iconName}${fileConfigHash}.svg`,
     };
   }
-  return manifest;
 };
 
 const setLanguageIdentifiers = (iconName: string, languageIds: string[]) => {
