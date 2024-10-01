@@ -1711,6 +1711,8 @@ export const fileIcons: FileIcons = {
         'vac',
         'vdp',
         'vox',
+        'gltf',
+        'glb',
       ],
     },
     { name: 'buildkite', fileNames: ['buildkite.yml', 'buildkite.yaml'] },
