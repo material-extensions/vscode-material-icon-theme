@@ -1866,6 +1866,7 @@ export const fileIcons: FileIcons = {
     { name: 'moonscript', fileExtensions: ['moon'] },
     { name: 'percy', fileNames: ['.percy.yml'] },
     { name: 'gitpod', fileNames: ['.gitpod.yml'] },
+    { name: 'stackblitz', fileNames: ['.stackblitzrc'] },
     { name: 'advpl', fileExtensions: ['prw', 'prx'] },
     {
       name: 'advpl-ptm',
@@ -2680,7 +2681,7 @@ export const fileIcons: FileIcons = {
       name: 'zeabur',
       fileExtensions: ['zeabur'],
       patterns: {
-        'zeabur': FileNamePattern.Configuration,
+        zeabur: FileNamePattern.Configuration,
       },
       light: true,
     },
