@@ -2682,6 +2682,10 @@ export const fileIcons: FileIcons = {
       ],
     },
     {
+      name: 'label',
+      fileNames: ['.github/labeler.yml', '.github/labeler.yaml'],
+    },
+    {
       name: 'zeabur',
       fileExtensions: ['zeabur'],
       patterns: {
