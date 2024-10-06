@@ -597,7 +597,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-hook',
-        folderNames: ['hook', 'hooks', 'trigger', 'triggers'],
+        folderNames: ['hook', 'hooks', 'triggers'],
       },
       { name: 'folder-job', folderNames: ['job', 'jobs'] },
       {
@@ -920,6 +920,10 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-flutter', folderNames: ['flutter'] },
       { name: 'folder-snippet', folderNames: ['snippet', 'snippets'] },
+      {
+        name: 'folder-trigger',
+        folderNames: ['trigger'],
+      },
       {
         name: 'folder-src-tauri',
         folderNames: ['src-tauri'],

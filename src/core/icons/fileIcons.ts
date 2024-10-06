@@ -2609,6 +2609,12 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['ц'],
     },
     {
+      name: 'trigger',
+      patterns: {
+        'trigger.config': FileNamePattern.Ecmascript,
+      },
+    },
+    {
       name: 'deepsource',
       fileNames: ['.deepsource.toml'],
     },
