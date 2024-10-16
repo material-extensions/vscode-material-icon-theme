@@ -2,31 +2,31 @@
   "name": "material-icon-theme",
   "displayName": "Material Icon Theme",
   "description": "Material Design Icons for Visual Studio Code",
-  "version": "5.8.0",
+  "version": "5.11.1",
   "license": "MIT",
   "scripts": {
     "precompile": "rimraf dist && bun run verify",
     "compile": "tsc -p ./",
     "compile:declarations": "tsc -p ./tsconfig.declarations.json",
     "postcompile": "bun run compile:declarations && bun run generateJson && bun run generateClones && bun run check",
-    "build": "bun run compile && bun run ./build/build-with-esbuild.ts",
-    "watch": "bun run ./build/watch-with-esbuild.ts",
-    "changelog": "changelog-machine --config changelog.config.json",
-    "check-colors": "bun run ./src/scripts/svg/checkSvgColors.ts",
+    "build": "bun run compile && bun ./build/build-with-esbuild.ts",
+    "watch": "bun ./build/watch-with-esbuild.ts",
+    "changelog": "changelog-machine --config ./changelog.config.json",
+    "check-colors": "bun ./src/scripts/svg/checkSvgColors.ts",
     "check": "bun ./src/scripts/icons/checks/run.ts",
     "contributors": "bun ./src/scripts/contributors/contributors.ts",
-    "generateJson": "bun ./src/scripts/icons/generateJson.ts > dist/material-icons.json",
+    "generateJson": "bun ./src/scripts/icons/generateJson.ts > ./dist/material-icons.json",
     "generateClones": "bun ./src/scripts/icons/generateClones.ts",
-    "lint": "bunx @biomejs/biome check --write ./src",
-    "format": "bunx @biomejs/biome format --write ./src",
-    "preversion": "bun run contributors && git add images/contributors.png && bun run preview && git add images/fileIcons.png && git add images/folderIcons.png && bun run svgo && git add icons/*.svg",
+    "lint": "biome check --write ./src",
+    "format": "biome format --write ./src",
+    "preversion": "bun run contributors && bun run preview && bun run svgo && git add images/*.png icons/*.svg",
     "preview": "bun ./src/scripts/preview/run.ts",
     "svgo": "svgo -i icons -o icons -q",
     "test": "bun test",
     "version": "bun run changelog && git add CHANGELOG.md",
     "vscode:prepublish": "bun run lint && bun run build",
-    "verify": "bunx sheriff verify",
-    "prepublishOnly": "bun run ./src/scripts/module/prepare.ts",
+    "verify": "sheriff verify",
+    "prepublishOnly": "bun ./src/scripts/module/prepare.ts",
     "postpublish": "git checkout package.json && git checkout README.md"
   },
   "publisher": "PKief",
@@ -55,16 +55,29 @@
     "color": "#1e1e1e",
     "theme": "dark"
   },
-  "categories": ["Themes"],
-  "keywords": ["icons", "theme", "material", "icon-theme", "customization"],
-  "extensionKind": ["ui", "workspace"],
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "icons",
+    "theme",
+    "material",
+    "icon-theme",
+    "customization"
+  ],
+  "extensionKind": [
+    "ui",
+    "workspace"
+  ],
   "capabilities": {
     "untrustedWorkspaces": {
       "supported": true
     },
     "virtualWorkspaces": true
   },
-  "activationEvents": ["onStartupFinished"],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
   "main": "./dist/extension/desktop/extension.cjs",
   "browser": "./dist/extension/web/extension.cjs",
   "module": "./dist/module/index.cjs",
@@ -217,7 +230,9 @@
               },
               "activeForPacks": {
                 "type": "array",
-                "default": ["angular"],
+                "default": [
+                  "angular"
+                ],
                 "description": "%configuration.customClones.activeForPacks%",
                 "items": {
                   "type": "string",
@@ -291,7 +306,11 @@
             "%configuration.folders.theme.classic%",
             "%configuration.folders.theme.none%"
           ],
-          "enum": ["specific", "classic", "none"]
+          "enum": [
+            "specific",
+            "classic",
+            "none"
+          ]
         },
         "material-icon-theme.folders.color": {
           "type": "string",
@@ -332,7 +351,11 @@
         "material-icon-theme.logLevel": {
           "type": "string",
           "default": "info",
-          "enum": ["info", "error", "debug"],
+          "enum": [
+            "info",
+            "error",
+            "debug"
+          ],
           "description": "%configuration.logLevel%"
         }
       }
@@ -347,15 +370,12 @@
     "@biomejs/biome": "1.8.2",
     "@softarc/sheriff-core": "^0.15.1",
     "@types/chroma-js": "^2.4.4",
-    "@types/glob": "^7.2.0",
     "@types/puppeteer": "^5.4.7",
     "@types/vscode": "~1.55.0",
-    "@vscode/test-electron": "^2.4.1",
     "axios": "^1.7.2",
     "bun-types": "^1.1.20",
     "changelog-machine": "^1.1.0",
     "esbuild": "^0.21.5",
-    "glob": "^8.1.0",
     "puppeteer": "^22.13.1",
     "rimraf": "^6.0.1",
     "svg-color-linter": "^1.4.0",

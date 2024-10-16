@@ -161,6 +161,21 @@ export const fileIcons: FileIcons = {
     { name: 'react', fileExtensions: ['jsx'] },
     { name: 'react_ts', fileExtensions: ['tsx'] },
     {
+      name: 'rocket',
+      fileNames: [
+        '.release-it.json',
+        '.release-it.ts',
+        '.release-it.js',
+        '.release-it.cjs',
+        '.release-it.yaml',
+        '.release-it.yml',
+        '.release-it.toml',
+        'release.toml',
+        'release-plz.toml',
+        '.release-plz.toml',
+      ],
+    },
+    {
       name: 'routing',
       fileExtensions: [
         'routing.ts',
@@ -251,6 +266,7 @@ export const fileIcons: FileIcons = {
         '.yardopts',
         'manifest.mf',
         '.clang-format',
+        '.clang-format-ignore',
         '.clang-tidy',
         '.conf',
       ],
@@ -454,6 +470,8 @@ export const fileIcons: FileIcons = {
         'licence.md',
         'licence.rst',
         'licence.txt',
+        'unlicense',
+        'unlicense.txt',
       ],
     },
     {
@@ -932,7 +950,7 @@ export const fileIcons: FileIcons = {
     { name: 'reason', fileExtensions: ['re', 'rei'] },
     { name: 'bucklescript', fileExtensions: ['cmj'] },
     { name: 'merlin', fileExtensions: ['merlin'] },
-    { name: 'verilog', fileExtensions: ['vhd', 'sv', 'svh'] },
+    { name: 'verilog', fileExtensions: ['vhd', 'sv', 'svh', 'vhdl'] },
     { name: 'mathematica', fileExtensions: ['nb'] },
     { name: 'wolframlanguage', fileExtensions: ['wl', 'wls'] },
     { name: 'nunjucks', fileExtensions: ['njk', 'nunjucks'] },
@@ -1152,14 +1170,18 @@ export const fileIcons: FileIcons = {
         '.env.dist',
         '.env.prod',
         '.env.production',
+        '.env.stg',
         '.env.stage',
         '.env.staging',
         '.env.preview',
         '.env.test',
         '.env.testing',
+        '.env.dev.local',
         '.env.development.local',
         '.env.qa.local',
+        '.env.prod.local',
         '.env.production.local',
+        '.env.stg.local',
         '.env.staging.local',
         '.env.test.local',
         '.env.uat',
@@ -1693,6 +1715,8 @@ export const fileIcons: FileIcons = {
         'vac',
         'vdp',
         'vox',
+        'gltf',
+        'glb',
       ],
     },
     { name: 'buildkite', fileNames: ['buildkite.yml', 'buildkite.yaml'] },
@@ -1710,7 +1734,25 @@ export const fileIcons: FileIcons = {
     {
       name: 'svelte',
       fileExtensions: ['svelte'],
-      fileNames: ['svelte.config.js', 'svelte.config.cjs'],
+      patterns: {
+        'svelte.config': FileNamePattern.Ecmascript,
+      },
+    },
+    {
+      name: 'svelte_js',
+      fileExtensions: ['svelte.js'],
+      clone: {
+        base: 'svelte',
+        color: 'amber-400',
+      },
+    },
+    {
+      name: 'svelte_ts',
+      fileExtensions: ['svelte.ts'],
+      clone: {
+        base: 'svelte',
+        color: 'light-blue-700',
+      },
     },
     {
       name: 'vim',
@@ -1815,10 +1857,20 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['resolver.ts', 'resolver.js'],
       enabledFor: [IconPack.Nest],
     },
+    {
+      name: 'nest-interceptor',
+      clone: {
+        base: 'nest',
+        color: 'orange-500',
+      },
+      fileExtensions: ['interceptor.ts', 'interceptor.js'],
+      enabledFor: [IconPack.Nest],
+    },
     { name: 'moon', fileNames: ['moon.yml'] },
     { name: 'moonscript', fileExtensions: ['moon'] },
     { name: 'percy', fileNames: ['.percy.yml'] },
     { name: 'gitpod', fileNames: ['.gitpod.yml'] },
+    { name: 'stackblitz', fileNames: ['.stackblitzrc'] },
     { name: 'advpl', fileExtensions: ['prw', 'prx'] },
     {
       name: 'advpl-ptm',
@@ -1997,6 +2049,11 @@ export const fileIcons: FileIcons = {
     { name: 'rescript', fileExtensions: ['res'] },
     { name: 'rescript-interface', fileExtensions: ['resi'] },
     {
+      name: 'duc',
+      fileNames: ['duc.fbs'],
+      fileExtensions: ['duc'],
+    },
+    {
       name: 'snowpack',
       fileNames: [
         'snowpack.config.js',
@@ -2016,7 +2073,16 @@ export const fileIcons: FileIcons = {
     { name: 'grain', fileExtensions: ['gr'] },
     { name: 'lolcode', fileExtensions: ['lol'] },
     { name: 'idris', fileExtensions: ['idr', 'ibc'] },
-    { name: 'quasar', fileNames: ['quasar.conf.js', 'quasar.config.js'] },
+    {
+      name: 'quasar',
+      fileNames: [
+        'quasar.conf.js',
+        'quasar.config.js',
+        'quasar.conf.ts',
+        'quasar.config.ts',
+        'quasar.config.cjs',
+      ],
+    },
     { name: 'dependabot', fileNames: ['dependabot.yml', 'dependabot.yaml'] },
     { name: 'pipeline', fileExtensions: ['pipeline'] },
     {
@@ -2444,6 +2510,14 @@ export const fileIcons: FileIcons = {
       name: 'abap',
       fileExtensions: ['abap', 'acds', 'asddls'],
     },
+    {
+      name: 'drizzle',
+      fileNames: [
+        'drizzle.config.ts',
+        'drizzle.config.js',
+        'drizzle.config.json',
+      ],
+    },
     { name: 'lottie', fileExtensions: ['lottie'] },
     {
       name: 'puppeteer',
@@ -2524,6 +2598,10 @@ export const fileIcons: FileIcons = {
       fileNames: ['.clangd'],
     },
     {
+      name: 'freemarker',
+      fileExtensions: ['ftl'],
+    },
+    {
       name: 'markdownlint',
       fileNames: [
         '.markdownlint.json',
@@ -2534,6 +2612,7 @@ export const fileIcons: FileIcons = {
         '.markdownlint-cli2.yaml',
         '.markdownlint-cli2.cjs',
         '.markdownlint-cli2.mjs',
+        '.markdownlintignore',
       ],
     },
     {
@@ -2554,12 +2633,71 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['hurl'],
     },
     {
+      name: 'cds',
+      fileExtensions: ['cds'],
+    },
+    {
       name: 'slint',
       fileExtensions: ['slint', '60'],
     },
     {
       name: 'jsr',
       fileNames: ['jsr.json', 'jsr.jsonc'],
+      light: true,
+    },
+    {
+      name: 'coderabbit-ai',
+      fileNames: ['.coderabbit.yml', '.coderabbit.yaml'],
+    },
+    {
+      name: 'gemini-ai',
+      fileNames: ['.aiexclude'],
+    },
+    {
+      name: 'taze',
+      patterns: {
+        'taze.config': FileNamePattern.Ecmascript,
+      },
+    },
+    {
+      name: 'wxt',
+      patterns: {
+        'wxt.config': FileNamePattern.Ecmascript,
+      },
+    },
+    {
+      name: 'sway',
+      fileExtensions: ['sw'],
+    },
+    {
+      name: 'lefthook',
+      fileNames: [
+        '.lefthook-local.json',
+        '.lefthook-local.toml',
+        '.lefthook-local.yaml',
+        '.lefthook-local.yml',
+        '.lefthook.json',
+        '.lefthook.toml',
+        '.lefthook.yaml',
+        '.lefthook.yml',
+        '.lefthookrc',
+        'lefthook-local.json',
+        'lefthook-local.toml',
+        'lefthook-local.yaml',
+        'lefthook-local.yml',
+        'lefthook.json',
+        'lefthook.toml',
+        'lefthook.yaml',
+        'lefthook.yml',
+        'lefthookrc',
+      ],
+    },
+    {
+      name: 'zeabur',
+      fileExtensions: ['zeabur'],
+      patterns: {
+        zeabur: FileNamePattern.Configuration,
+      },
       light: true,
     },
   ]),
