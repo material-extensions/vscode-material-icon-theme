@@ -2647,6 +2647,7 @@ export const fileIcons: FileIcons = {
       patterns: {
         'taze.config': FileNamePattern.Ecmascript,
       },
+      fileNames: ['.tazerc', '.tazerc.json'],
     },
     {
       name: 'wxt',
