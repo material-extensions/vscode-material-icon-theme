@@ -931,8 +931,10 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-lefthook', folderNames: ['lefthook', 'lefthook-local'] },
       {
         name: 'folder-powershell',
-        folderNames: ["powershell", "ps", "ps1"]
-      }
+        folderNames: ['powershell', 'ps', 'ps1'],
+      },
+      { name: 'folder-obsidian', folderNames: ['obsidian'] },
+      { name: 'folder-trash', folderNames: ['trash'] },
     ],
   },
   {
