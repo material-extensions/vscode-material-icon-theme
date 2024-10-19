@@ -2683,6 +2683,10 @@ export const fileIcons: FileIcons = {
       ],
     },
     {
+      name: 'debian-package',
+      fileExtensions: ['deb'],
+    },
+    {
       name: 'zeabur',
       fileExtensions: ['zeabur'],
       patterns: {
