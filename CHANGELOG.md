@@ -3,6 +3,26 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v5.12.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.11.1...v5.12.0) 
+
+> October 23, 2024 
+
+- Add `label` icon for `.github/labeler.yml` file [`#2607`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2607)
+- feat: add Copilot icon for `.github/copilot-instructions.md` file [`#2632`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2632)
+- Add events package in package.json [`#2630`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2630)
+- add Bahasa Indonesia (id) translation [`#2627`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2627)
+- feat: :sparkles: Add `.tazerc` and `.tazerc.json` filenames for `taze` icon [`#2628`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2628)
+- build(deps): bump actions/checkout in the github-actions group [`#2626`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2626)
+- Added env abbreviations on tune icon recognized names [`#2624`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2624)
+- Add stackblitz file icon [`#2621`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2621)
+- Add icon association for gltf and glb files [`#2622`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2622)
+- Add systemd icon [`#1472`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1472)
+- Fix light mode for language ids [`#2617`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2617)
+- build(deps): bump actions/checkout in the github-actions group [`#2618`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2618)
+- Add `zeabur` file icon for `zeabur` deploy config file [`#2611`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2611)
+- Add icon for PowerShell folders [`#2605`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2605)
+- Update prepare script [`377523e9`](https://github.com/material-extensions/vscode-material-icon-theme/commit/377523e9)
+ 
 #### [v5.11.1](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.11.0...v5.11.1) 
 
 > September 21, 2024 
