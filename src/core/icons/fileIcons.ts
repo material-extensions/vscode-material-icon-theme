@@ -2737,5 +2737,19 @@ export const fileIcons: FileIcons = {
       name: 'pre-commit',
       fileNames: ['.pre-commit-config.yaml', '.pre-commit-hooks.yaml'],
     },
+    {
+      name: 'controller',
+      fileExtensions: ['controller.js', 'controller.ts'],
+      enabledFor: [
+        // Not for Nest
+        IconPack.Angular,
+        IconPack.Ngrx,
+        IconPack.Qwik,
+        IconPack.React,
+        IconPack.Redux,
+        IconPack.Vue,
+        IconPack.Vuex,
+      ],
+    },
   ]),
 };
