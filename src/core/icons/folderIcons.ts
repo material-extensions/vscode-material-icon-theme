@@ -319,7 +319,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-temp',
         folderNames: ['temp', 'tmp', 'cached', 'cache'],
       },
-      { name: 'folder-aws', folderNames: ['aws'] },
+      { name: 'folder-aws', folderNames: ['aws', 'azure', 'gcp']},
       {
         name: 'folder-audio',
         folderNames: [
