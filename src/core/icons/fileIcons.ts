@@ -2733,5 +2733,9 @@ export const fileIcons: FileIcons = {
         'bench.mjs',
       ],
     },
+    {
+      name: 'pre-commit',
+      fileNames: ['.pre-commit-config.yaml', '.pre-commit-hooks.yaml'],
+    },
   ]),
 };
