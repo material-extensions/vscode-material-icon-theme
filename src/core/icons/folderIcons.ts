@@ -71,7 +71,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-scripts',
         folderNames: ['script', 'scripts', 'scripting'],
       },
-      { name: 'folder-node', folderNames: ['node_modules'] },
+      { name: 'folder-node', folderNames: ['node', 'nodejs', 'node_modules'] },
       {
         name: 'folder-javascript',
         folderNames: ['js', 'javascript', 'javascripts'],
