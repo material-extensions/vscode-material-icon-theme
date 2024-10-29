@@ -1,50 +1,33 @@
 name: Build + Test
 
-on: [push, pull_request]
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
 
 jobs:
-  test:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [windows-latest, ubuntu-latest]
-        node-version: [16.x]
+  build:
+    runs-on: [ubuntu-latest]
 
-    name: ${{ matrix.os }} (Node.js ${{ matrix.node-version }})
+    name: Build Material Icon Theme
 
     steps:
-      - name: Checkout 🛎
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js ${{ matrix.node-version }} ⚙
-        uses: actions/setup-node@v3
+      - name: Checkout 🛎️
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
-          node-version: ${{ matrix.node-version }}
+          persist-credentials: false
 
-      - name: Run display server 🖥
-        run: /usr/bin/Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 & echo "Started xvfb"
-        shell: bash
-        if: ${{ success() && matrix.os == 'ubuntu-latest' }}
-
-      - name: Install node_modules 📦
-        run: npm ci
-
-      - name: Cache node_modules 💾
-        uses: actions/cache@v3
-        env:
-          cache-name: cache-node-modules
+      - name: Setup Platform 🛠️
+        uses: oven-sh/setup-bun@4bc047ad259df6fc24a6c9b0f9a0cb08cf17fbe5 # v2
         with:
-          # npm cache files are stored in `~/.npm` on Linux/macOS
-          path: ~/.npm
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
+          bun-version: 1.1.18
+
+      - name: Install dependencies 📦
+        run: bun install --frozen-lockfile
 
       - name: Test + Build 🚀
         run: |
-          npm test
-          npm run vscode:prepublish
-        env:
-          DISPLAY: ':99.0'
+          bun test
+          bun run vscode:prepublish

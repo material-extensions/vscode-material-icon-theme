@@ -1,15 +1,18 @@
-import { readdir } from 'fs';
-import { join, parse } from 'path';
-import { DefaultIcon, FolderIcon, FolderTheme } from '../../../models/index';
-import { green, red } from '../../helpers/painter';
+import { readdir } from 'node:fs';
+import { join, parse } from 'node:path';
+
 import {
+  type DefaultIcon,
+  type FolderIcon,
+  type FolderTheme,
   fileIcons,
   folderIcons,
   highContrastColorFileEnding,
   languageIcons,
   lightColorFileEnding,
   openedFolder,
-} from './../../../icons';
+} from '../../../core';
+import { green, red } from '../../helpers/painter';
 
 /**
  * Defines the folder where all icon files are located.
@@ -34,7 +37,7 @@ const fsReadAllIconFiles = (
 
   files.forEach((file) => {
     const fileName = file;
-    const iconName = parse(file).name;
+    const iconName = parse(file).name.replace('.clone', '');
     availableIcons[iconName] = fileName;
   });
 
