@@ -6,10 +6,13 @@ node_modules
 .vscode-test/**
 *.vsix
 
+icons/file.svg
 icons/folder.svg
 icons/folder-open.svg
 icons/folder-root.svg
 icons/folder-root-open.svg
+icons/*.clone.svg
+icons/clones
 
 src/scripts/preview/*.html
 src/scripts/contributors/*.html
