@@ -1,8 +1,6 @@
 <!-- markdownlint-disable no-inline-html no-duplicate-heading -->
 
-<a href="https://www.phorm.ai/query?projectId=bebfbe39-2f45-4d49-88fd-3de89c49c301"><img src="https://stuff.charm.sh/misc/phorm-badge.svg" alt="phorm.ai"></a>
-
-<h1>How to contribute</h1>
+# How to contribute
 
 Glad you're here and interested in expanding this project 🎉 In order to make this work in the best possible way, there are hints and tips for successful contributors on this page. Please read everything carefully and your contributions will be valuable and gratefully received.
 
