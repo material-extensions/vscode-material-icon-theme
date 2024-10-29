@@ -2,18 +2,53 @@
   "name": "material-icon-theme",
   "displayName": "Material Icon Theme",
   "description": "Material Design Icons for Visual Studio Code",
-  "version": "4.4.0",
-  "publisher": "PKief",
-  "engines": {
-    "vscode": "^1.31.0"
+  "version": "5.12.0",
+  "license": "MIT",
+  "scripts": {
+    "precompile": "rimraf dist && bun run verify",
+    "compile": "tsc -p ./",
+    "compile:declarations": "tsc -p ./tsconfig.declarations.json",
+    "postcompile": "bun run compile:declarations && bun run generateJson && bun run generateClones && bun run check",
+    "build": "bun run compile && bun ./build/build-with-esbuild.ts",
+    "watch": "bun ./build/watch-with-esbuild.ts",
+    "changelog": "changelog-machine --config ./changelog.config.json",
+    "check-colors": "bun ./src/scripts/svg/checkSvgColors.ts",
+    "check": "bun ./src/scripts/icons/checks/run.ts",
+    "contributors": "bun ./src/scripts/contributors/contributors.ts",
+    "generateJson": "bun ./src/scripts/icons/generateJson.ts > ./dist/material-icons.json",
+    "generateClones": "bun ./src/scripts/icons/generateClones.ts",
+    "lint": "biome check --write ./src",
+    "format": "biome format --write ./src",
+    "preversion": "bun run contributors && bun run preview && bun run svgo && git add images/*.png icons/*.svg",
+    "preview": "bun ./src/scripts/preview/run.ts",
+    "svgo": "svgo -i icons -o icons -q",
+    "test": "bun test",
+    "version": "bun run changelog && git add CHANGELOG.md",
+    "vscode:prepublish": "bun run lint && bun run build",
+    "verify": "sheriff verify",
+    "prepublishOnly": "bun ./src/scripts/module/prepare.ts",
+    "postpublish": "git checkout package.json && git checkout README.md"
   },
-  "homepage": "https://github.com/PKief/vscode-material-icon-theme/blob/master/README.md",
+  "publisher": "PKief",
+  "author": {
+    "name": "Philipp Kief",
+    "email": "philipp.kief@gmx.de",
+    "url": "https://pkief.com"
+  },
+  "funding": "https://github.com/sponsors/PKief",
+  "sponsor": {
+    "url": "https://github.com/sponsors/PKief"
+  },
+  "engines": {
+    "vscode": "^1.55.0"
+  },
+  "homepage": "https://github.com/material-extensions/vscode-material-icon-theme/blob/main/README.md",
   "repository": {
     "type": "git",
-    "url": "https://github.com/PKief/vscode-material-icon-theme.git"
+    "url": "git+https://github.com/material-extensions/vscode-material-icon-theme.git"
   },
   "bugs": {
-    "url": "https://github.com/PKief/vscode-material-icon-theme/issues"
+    "url": "https://github.com/material-extensions/vscode-material-icon-theme/issues"
   },
   "icon": "logo.png",
   "galleryBanner": {
@@ -34,10 +69,20 @@
     "ui",
     "workspace"
   ],
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true
+    },
+    "virtualWorkspaces": true
+  },
   "activationEvents": [
-    "*"
+    "onStartupFinished"
   ],
-  "main": "./dist/extension",
+  "main": "./dist/extension/desktop/extension.cjs",
+  "browser": "./dist/extension/web/extension.cjs",
+  "module": "./dist/module/index.cjs",
+  "types": "./dist/types/module/index.d.ts",
+  "sideEffects": false,
   "contributes": {
     "iconThemes": [
       {
@@ -50,60 +95,59 @@
     "commands": [
       {
         "command": "material-icon-theme.activateIcons",
-        "title": "%command.activateIcons%"
+        "title": "%command.activateIcons%",
+        "enablement": "!isWeb"
       },
       {
         "command": "material-icon-theme.toggleIconPacks",
-        "title": "%command.toggleIconPacks%"
+        "title": "%command.toggleIconPacks%",
+        "enablement": "!isWeb"
       },
       {
         "command": "material-icon-theme.changeFolderTheme",
-        "title": "%command.changeFolderTheme%"
+        "title": "%command.changeFolderTheme%",
+        "enablement": "!isWeb"
       },
       {
         "command": "material-icon-theme.changeFolderColor",
-        "title": "%command.changeFolderColor%"
+        "title": "%command.changeFolderColor%",
+        "enablement": "!isWeb"
+      },
+      {
+        "command": "material-icon-theme.changeFileColor",
+        "title": "%command.changeFileColor%",
+        "enablement": "!isWeb"
       },
       {
         "command": "material-icon-theme.restoreDefaultConfig",
-        "title": "%command.restoreDefaultConfig%"
+        "title": "%command.restoreDefaultConfig%",
+        "enablement": "!isWeb"
       },
       {
         "command": "material-icon-theme.toggleExplorerArrows",
-        "title": "%command.toggleExplorerArrows%"
+        "title": "%command.toggleExplorerArrows%",
+        "enablement": "!isWeb"
       },
       {
         "command": "material-icon-theme.changeOpacity",
-        "title": "%command.changeOpacity%"
+        "title": "%command.changeOpacity%",
+        "enablement": "!isWeb"
       },
       {
         "command": "material-icon-theme.toggleGrayscale",
-        "title": "%command.toggleGrayscale%"
+        "title": "%command.toggleGrayscale%",
+        "enablement": "!isWeb"
       },
       {
         "command": "material-icon-theme.changeSaturation",
-        "title": "%command.changeSaturation%"
+        "title": "%command.changeSaturation%",
+        "enablement": "!isWeb"
       }
     ],
     "configuration": {
       "type": "object",
       "title": "%configuration.title%",
       "properties": {
-        "material-icon-theme.showWelcomeMessage": {
-          "type": "boolean",
-          "default": true,
-          "description": "%configuration.showWelcomeMessage%"
-        },
-        "material-icon-theme.showUpdateMessage": {
-          "type": "boolean",
-          "default": false,
-          "description": "%configuration.showUpdateMessage%"
-        },
-        "material-icon-theme.showReloadMessage": {
-          "type": "boolean",
-          "default": true,
-          "description": "%configuration.showReloadMessage%"
-        },
         "material-icon-theme.activeIconPack": {
           "type": "string",
           "default": "angular",
@@ -113,6 +157,7 @@
             "%configuration.activeIconPack.angular_ngrx%",
             "%configuration.activeIconPack.react%",
             "%configuration.activeIconPack.react_redux%",
+            "%configuration.activeIconPack.qwik%",
             "%configuration.activeIconPack.vue%",
             "%configuration.activeIconPack.vue_vuex%",
             "%configuration.activeIconPack.nest%",
@@ -123,6 +168,7 @@
             "angular_ngrx",
             "react",
             "react_redux",
+            "qwik",
             "vue",
             "vue_vuex",
             "nest",
@@ -143,6 +189,113 @@
           "type": "object",
           "default": {},
           "description": "%configuration.languages.associations%"
+        },
+        "material-icon-theme.files.customClones": {
+          "type": "array",
+          "default": [],
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "%configuration.customClones.name%"
+              },
+              "base": {
+                "type": "string",
+                "description": "%configuration.customClones.base%"
+              },
+              "color": {
+                "type": "string",
+                "description": "%configuration.customClones.color%"
+              },
+              "lightColor": {
+                "type": "string",
+                "description": "%configuration.customClones.lightColor%"
+              },
+              "fileNames": {
+                "type": "array",
+                "default": [],
+                "description": "%configuration.customClones.fileNames%",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "fileExtensions": {
+                "type": "array",
+                "default": [],
+                "description": "%configuration.customClones.fileExtensions%",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "activeForPacks": {
+                "type": "array",
+                "default": [
+                  "angular"
+                ],
+                "description": "%configuration.customClones.activeForPacks%",
+                "items": {
+                  "type": "string",
+                  "enumDescriptions": [
+                    "%configuration.activeIconPack.angular%",
+                    "%configuration.activeIconPack.angular_ngrx%",
+                    "%configuration.activeIconPack.react%",
+                    "%configuration.activeIconPack.react_redux%",
+                    "%configuration.activeIconPack.qwik%",
+                    "%configuration.activeIconPack.vue%",
+                    "%configuration.activeIconPack.vue_vuex%",
+                    "%configuration.activeIconPack.nest%",
+                    "%configuration.activeIconPack.none%"
+                  ],
+                  "enum": [
+                    "angular",
+                    "angular_ngrx",
+                    "react",
+                    "react_redux",
+                    "qwik",
+                    "vue",
+                    "vue_vuex",
+                    "nest",
+                    "none"
+                  ]
+                }
+              }
+            }
+          },
+          "description": "%configuration.customClones%"
+        },
+        "material-icon-theme.folders.customClones": {
+          "type": "array",
+          "default": [],
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "%configuration.customClones.name%"
+              },
+              "base": {
+                "type": "string",
+                "description": "%configuration.customClones.base%"
+              },
+              "color": {
+                "type": "string",
+                "description": "%configuration.customClones.color%"
+              },
+              "lightColor": {
+                "type": "string",
+                "description": "%configuration.customClones.lightColor%"
+              },
+              "folderNames": {
+                "type": "array",
+                "description": "%configuration.customClones.folderNames%",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "description": "%configuration.customClones%"
         },
         "material-icon-theme.folders.theme": {
           "type": "string",
@@ -165,6 +318,12 @@
           "pattern": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
           "description": "%configuration.folders.color%"
         },
+        "material-icon-theme.files.color": {
+          "type": "string",
+          "default": "#90a4ae",
+          "pattern": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+          "description": "%configuration.files.color%"
+        },
         "material-icon-theme.opacity": {
           "type": "number",
           "default": 1,
@@ -183,51 +342,45 @@
           "minimum": 0,
           "maximum": 1,
           "description": "%configuration.saturation%"
+        },
+        "material-icon-theme.enableLogging": {
+          "type": "boolean",
+          "default": false,
+          "description": "%configuration.enableLogging%"
+        },
+        "material-icon-theme.logLevel": {
+          "type": "string",
+          "default": "info",
+          "enum": [
+            "info",
+            "error",
+            "debug"
+          ],
+          "description": "%configuration.logLevel%"
         }
       }
     }
   },
-  "scripts": {
-    "build": "npm run compile:dev && npm run postcompile",
-    "check": "ts-node ./src/scripts/icons/checks",
-    "compile": "webpack --mode production",
-    "compile:dev": "webpack --mode none",
-    "compile:watch": "webpack --mode none --watch",
-    "contributors": "ts-node ./src/scripts/contributors/index.ts",
-    "generateJson": "ts-node ./src/scripts/icons/generateJson.ts",
-    "lint": "eslint -c .eslintrc.json --ext .ts ./src/**/*.ts",
-    "postcompile": "npm run generateJson && npm run check",
-    "pretest": "npm run build && tsc -p ./",
-    "preview": "ts-node ./src/scripts/preview",
-    "test": "node ./out/test/runTest.js",
-    "vscode:prepublish": "npm run lint && npm run compile"
-  },
   "dependencies": {
-    "lodash.merge": "4.6.2",
-    "semver": "7.3.2"
+    "chroma-js": "^2.4.2",
+    "fast-deep-equal": "^3.1.3",
+    "svgson": "^5.3.1",
+    "events": "^3.3.0"
   },
   "devDependencies": {
-    "@types/glob": "^7.1.3",
-    "@types/lodash.merge": "^4.6.6",
-    "@types/mocha": "^8.0.3",
-    "@types/node": "^14.14.6",
-    "@types/puppeteer": "^5.4.0",
-    "@types/semver": "^7.3.4",
-    "@types/vscode": "~1.31.0",
-    "@typescript-eslint/eslint-plugin": "^4.6.1",
-    "@typescript-eslint/parser": "^4.6.1",
-    "clean-webpack-plugin": "^3.0.0",
-    "eslint": "^7.13.0",
-    "eslint-config-prettier": "^6.15.0",
-    "glob": "^7.1.6",
-    "mocha": "^8.2.1",
-    "puppeteer": "^5.4.1",
-    "rimraf": "^3.0.2",
-    "ts-loader": "^8.0.10",
-    "ts-node": "^9.0.0",
-    "typescript": "^4.0.5",
-    "vscode-test": "^1.4.1",
-    "webpack": "^5.4.0",
-    "webpack-cli": "^4.2.0"
+    "@biomejs/biome": "1.8.2",
+    "@softarc/sheriff-core": "^0.15.1",
+    "@types/chroma-js": "^2.4.4",
+    "@types/puppeteer": "^5.4.7",
+    "@types/vscode": "~1.55.0",
+    "axios": "^1.7.2",
+    "bun-types": "^1.1.20",
+    "changelog-machine": "^1.1.0",
+    "esbuild": "^0.21.5",
+    "puppeteer": "^22.13.1",
+    "rimraf": "^6.0.1",
+    "svg-color-linter": "^1.4.0",
+    "svgo": "^2.8.0",
+    "typescript": "^5.5.4"
   }
 }
