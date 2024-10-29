@@ -2709,6 +2709,29 @@ export const fileIcons: FileIcons = {
       name: 'copilot',
       fileNames: ['.github/copilot-instructions.md'],
       light: true
-    }
+    },
+    {
+      name: 'bench-ts',
+      fileExtensions: [
+        'bench.ts',
+        'bench.cts',
+        'bench.mts',
+      ],
+    },
+    {
+      name: 'bench-jsx',
+      fileExtensions: [
+        'bench.jsx',
+        'bench.tsx',
+      ],
+    },
+    {
+      name: 'bench-js',
+      fileExtensions: [
+        'bench.js',
+        'bench.cjs',
+        'bench.mjs',
+      ],
+    },
   ]),
 };
