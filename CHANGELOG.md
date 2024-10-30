@@ -1,6 +1,6 @@
 # Changelog
 
-#### [v5.12.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.11.1...v5.12.0)
+### [v5.12.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.11.1...v5.12.0)
 
 > October 23, 2024
 
@@ -20,14 +20,14 @@
 - Add icon for PowerShell folders [`#2605`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2605)
 - Update prepare script [`377523e9`](https://github.com/material-extensions/vscode-material-icon-theme/commit/377523e9)
 
-#### [v5.11.1](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.11.0...v5.11.1)
+### [v5.11.1](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.11.0...v5.11.1)
 
 > September 21, 2024
 
 - Fix issue with Svelte JS and TS icons (Closes #2603) [`be58bc47`](https://github.com/material-extensions/vscode-material-icon-theme/commit/be58bc47)
 - Update preversion script [`1c7a0847`](https://github.com/material-extensions/vscode-material-icon-theme/commit/1c7a0847)
 
-#### [v5.11.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.10.0...v5.11.0)
+### [v5.11.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.10.0...v5.11.0)
 
 > September 20, 2024
 
@@ -53,7 +53,7 @@
 - feat: ✨ .markdownlintignore file icon [`#2565`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2565)
 - docs: 📝 fix broken links in pull_request_template [`#2566`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2566)
 
-#### [v5.10.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.9.0...v5.10.0)
+### [v5.10.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.9.0...v5.10.0)
 
 > August 29, 2024
 
@@ -74,7 +74,7 @@
 - Add config for coderabbit [`baf6202f`](https://github.com/material-extensions/vscode-material-icon-theme/commit/baf6202f)
 - Remove unused dependencies [`b167604c`](https://github.com/material-extensions/vscode-material-icon-theme/commit/b167604c)
 
-#### [v5.9.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.8.0...v5.9.0)
+### [v5.9.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.8.0...v5.9.0)
 
 > August 10, 2024
 
@@ -117,7 +117,7 @@
 - Add lib64 folder icon [`#2473`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2473)
 - feat: add Just icon [`#1950`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1950)
 
-#### [v5.8.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.7.0...v5.8.0)
+### [v5.8.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.7.0...v5.8.0)
 
 > July 24, 2024
 
@@ -129,7 +129,7 @@
 - Updated `svg-icon-review` version (1.1.0 -> 2.1.0) [`#2459`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2459)
 - feat: adding icons to new configuration and envs files [`#2057`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2057)
 
-#### [v5.7.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.6.0...v5.7.0)
+### [v5.7.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.6.0...v5.7.0)
 
 > July 22, 2024
 
@@ -152,7 +152,7 @@
 - Provide option to analyse bundle size [`6186d685`](https://github.com/material-extensions/vscode-material-icon-theme/commit/6186d685)
 - Improve stability of code [`58c90cf0`](https://github.com/material-extensions/vscode-material-icon-theme/commit/58c90cf0)
 
-#### [v5.6.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.5.1...v5.6.0)
+### [v5.6.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.5.1...v5.6.0)
 
 > July 16, 2024
 
@@ -160,14 +160,14 @@
 - Revert esbuild config (Related to #2428) [`c66fa64d`](https://github.com/material-extensions/vscode-material-icon-theme/commit/c66fa64d)
 - feat: velite [`#2406`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2406)
 
-#### [v5.5.1](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.5.0...v5.5.1)
+### [v5.5.1](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.5.0...v5.5.1)
 
 > July 15, 2024
 
 - Remove lodash as dependency [`#2422`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2422)
 - Update tsconfig [`412da52e`](https://github.com/material-extensions/vscode-material-icon-theme/commit/412da52e)
 
-#### [v5.5.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.4.2...v5.5.0)
+### [v5.5.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.4.2...v5.5.0)
 
 > July 15, 2024
 
@@ -211,20 +211,20 @@
 - Update task json to improve debugging [`b860c846`](https://github.com/material-extensions/vscode-material-icon-theme/commit/b860c846)
 - chore: provenance [`#2365`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2365)
 
-#### [v5.4.2](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.4.1...v5.4.2)
+### [v5.4.2](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.4.1...v5.4.2)
 
 > June 13, 2024
 
 - Update action workflows [`314aba7b`](https://github.com/material-extensions/vscode-material-icon-theme/commit/314aba7b)
 - fix: remove log information from console (Fixes #2362) [`0c4c0821`](https://github.com/material-extensions/vscode-material-icon-theme/commit/0c4c0821)
 
-#### [v5.4.1](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.4.0...v5.4.1)
+### [v5.4.1](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.4.0...v5.4.1)
 
 > June 13, 2024
 
 - Fix #2360 Issue with translation loader [`f11d3e51`](https://github.com/material-extensions/vscode-material-icon-theme/commit/f11d3e51)
 
-#### [v5.4.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.3.0...v5.4.0)
+### [v5.4.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.3.0...v5.4.0)
 
 > June 12, 2024
 
@@ -246,7 +246,7 @@
 - Added `CODE_OF_CONDUCT.md` [`#2327`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2327)
 - feat: update recommended extensions for development [`8af9bcdb`](https://github.com/material-extensions/vscode-material-icon-theme/commit/8af9bcdb)
 
-#### [v5.3.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.2.0...v5.3.0)
+### [v5.3.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.2.0...v5.3.0)
 
 > May 13, 2024
 
@@ -257,7 +257,7 @@
 - Added `devcontainer.json` [`#2319`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2319)
 - feat: update link in readme [`de998a76`](https://github.com/material-extensions/vscode-material-icon-theme/commit/de998a76)
 
-#### [v5.2.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.1.0...v5.2.0)
+### [v5.2.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.1.0...v5.2.0)
 
 > May 9, 2024
 
@@ -276,7 +276,7 @@
 - Add aliases for platform folders [`#2288`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2288)
 - feat: Add `.editorconfig` and `.gitattributes` [`#2290`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2290)
 
-#### [v5.1.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.0.0...v5.1.0)
+### [v5.1.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.0.0...v5.1.0)
 
 > April 20, 2024
 
@@ -285,7 +285,7 @@
 - feat: knip [`#2280`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2280)
 - Updated ES translation [`#2286`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2286)
 
-#### [v5.0.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.34.0...v5.0.0)
+### [v5.0.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.34.0...v5.0.0)
 
 > April 18, 2024
 
@@ -316,7 +316,7 @@
 - Feature/openapi file extensions [`#2229`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2229)
 - Pixel perfect icons at 16px [`#2226`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2226)
 
-#### [v4.34.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.33.0...v4.34.0)
+### [v4.34.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.33.0...v4.34.0)
 
 > February 19, 2024
 
@@ -335,7 +335,7 @@
 - feat: add Huff icon [`#2190`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2190)
 - build(deps-dev): bump follow-redirects from 1.15.2 to 1.15.4 [`#2187`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2187)
 
-#### [v4.33.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.32.0...v4.33.0)
+### [v4.33.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.32.0...v4.33.0)
 
 > January 9, 2024
 
@@ -358,7 +358,7 @@
 - Additions to folder icons [`#2140`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2140)
 - Update nuxt icons [`#2119`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2119)
 
-#### [v4.32.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.31.0...v4.32.0)
+### [v4.32.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.31.0...v4.32.0)
 
 > November 20, 2023
 
@@ -376,7 +376,7 @@
 - Associate .whitesource file name with json file [`04e6cce6`](https://github.com/material-extensions/vscode-material-icon-theme/commit/04e6cce6)
 - feat: add tailwind config esm [`#2112`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2112)
 
-#### [v4.31.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.30.1...v4.31.0)
+### [v4.31.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.30.1...v4.31.0)
 
 > October 6, 2023
 
@@ -394,13 +394,13 @@
 - feat: icons for desktop os [`#1635`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1635)
 - Added disc file extensions (vmdk, qcow2, etc.) [`#2069`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2069)
 
-#### [v4.30.1](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.30.0...v4.30.1)
+### [v4.30.1](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.30.0...v4.30.1)
 
 > August 28, 2023
 
 - Add missing language ids for yaml icon [`#2066`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2066)
 
-#### [v4.30.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.29.0...v4.30.0)
+### [v4.30.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.29.0...v4.30.0)
 
 > August 26, 2023
 
@@ -418,7 +418,7 @@
 - Add .taurignore [`#2033`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2033)
 - maint: `.containerfile` and `.containerignore` icon [`#2026`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2026)
 
-#### [v4.29.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.28.0...v4.29.0)
+### [v4.29.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.28.0...v4.29.0)
 
 > July 14, 2023
 
@@ -433,7 +433,7 @@
 - Use shields.io for marketplace badges in README [`#1996`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1996)
 - feat: introduce support for semgrep files [`#1991`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1991)
 
-#### [v4.28.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.27.0...v4.28.0)
+### [v4.28.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.27.0...v4.28.0)
 
 > May 31, 2023
 
@@ -446,7 +446,7 @@
 - feat: assign icons for electron process related configs [`#1963`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1963)
 - Add .gitmessage file name [`8e599fe7`](https://github.com/material-extensions/vscode-material-icon-theme/commit/8e599fe7)
 
-#### [v4.27.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.26.0...v4.27.0)
+### [v4.27.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.26.0...v4.27.0)
 
 > April 30, 2023
 
@@ -459,7 +459,7 @@
 - feat: enhance eslint flat config support [`#1935`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1935)
 - Additional docker compose filenames [`#1933`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1933)
 
-#### [v4.26.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.25.0...v4.26.0)
+### [v4.26.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.25.0...v4.26.0)
 
 > April 8, 2023
 
@@ -477,7 +477,7 @@
 - Add all possible stryker config filenames [`#1907`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1907)
 - Add support for all Serverless framework config extensions [`#1880`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1880)
 
-#### [v4.25.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.24.0...v4.25.0)
+### [v4.25.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.24.0...v4.25.0)
 
 > March 15, 2023
 
@@ -497,7 +497,7 @@
 - feat: add tldraw icon [`#1869`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1869)
 - Add tsconfig.doc.json icon association [`c03e18d9`](https://github.com/material-extensions/vscode-material-icon-theme/commit/c03e18d9)
 
-#### [v4.24.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.23.1...v4.24.0)
+### [v4.24.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.23.1...v4.24.0)
 
 > February 9, 2023
 
@@ -510,7 +510,7 @@
 - Add .cjs extension to `graphql.config` [`#1818`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1818)
 - Add Toolkit (Toolkits) and Toolbox (Toolboxes) [`#1809`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1809)
 
-#### [v4.23.1](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.23.0...v4.23.1)
+### [v4.23.1](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.23.0...v4.23.1)
 
 > December 23, 2022
 
@@ -521,7 +521,7 @@
 - Update badges in Readme [`#1796`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1796)
 - add filename .env.uat into tune icon [`#1801`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1801)
 
-#### [v4.23.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.22.0...v4.23.0)
+### [v4.23.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.22.0...v4.23.0)
 
 > December 15, 2022
 
@@ -535,7 +535,7 @@
 - Add tsconfig file names [`#1756`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1756)
 - feat: 🎨 add console icon for nushell [`#1761`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1761)
 
-#### [v4.22.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.21.0...v4.22.0)
+### [v4.22.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.21.0...v4.22.0)
 
 > November 5, 2022
 
@@ -569,7 +569,7 @@
 - Add browser folder icon association [`0ddc6f4b`](https://github.com/material-extensions/vscode-material-icon-theme/commit/0ddc6f4b)
 - Add .git-blame-ignore icon association [`14afac15`](https://github.com/material-extensions/vscode-material-icon-theme/commit/14afac15)
 
-#### [v4.21.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.20.0...v4.21.0)
+### [v4.21.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.20.0...v4.21.0)
 
 > October 7, 2022
 
@@ -589,7 +589,7 @@
 - Support Dart language [`#1663`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1663)
 - feat: support Svelte language [`#1662`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1662)
 
-#### [v4.20.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.19.0...v4.20.0)
+### [v4.20.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.19.0...v4.20.0)
 
 > August 20, 2022
 
@@ -611,7 +611,7 @@
 - fix: add tauri.conf.json file [`#1590`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1590)
 - Added `wgsl` extension [`#1592`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1592)
 
-#### [v4.19.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.18.1...v4.19.0)
+### [v4.19.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.18.1...v4.19.0)
 
 > July 2, 2022
 
@@ -623,7 +623,7 @@
 - Adds Cypress 10.x e2e extension [`#1573`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1573)
 - Fixing non-object workspace settings bug [`#1565`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1565)
 
-#### [v4.18.1](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.18.0...v4.18.1)
+### [v4.18.1](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.18.0...v4.18.1)
 
 > June 9, 2022
 
@@ -631,7 +631,7 @@
 - feat: introduce the icon for the config files of auto [`#1511`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1511)
 - Fix: Workspace settings override user settings [`#1553`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1553)
 
-#### [v4.18.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.17.0...v4.18.0)
+### [v4.18.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.17.0...v4.18.0)
 
 > June 5, 2022
 
@@ -650,7 +650,7 @@
 - feat: introduce support for the webpack config in mjs [`#1514`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1514)
 - feat: improve postcss config icon [`#1507`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1507)
 
-#### [v4.17.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.16.0...v4.17.0)
+### [v4.17.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.16.0...v4.17.0)
 
 > May 6, 2022
 
@@ -667,7 +667,7 @@
 - Add gulpfile.ts etc. as folder names [`#1479`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1479)
 - feat: verdaccio [`#1476`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1476)
 
-#### [v4.16.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.15.0...v4.16.0)
+### [v4.16.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.15.0...v4.16.0)
 
 > April 19, 2022
 
@@ -677,7 +677,7 @@
 - Add license names commonly used in multi-license projects [`#1463`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1463)
 - Associate pyproject.toml with python-misc file icon [`#1459`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1459)
 
-#### [v4.15.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.14.1...v4.15.0)
+### [v4.15.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.14.1...v4.15.0)
 
 > March 30, 2022
 
@@ -695,13 +695,13 @@
 - feat: support avif image file type [`#1424`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1424)
 - feat: fileicon for steadybit configuration files [`#1399`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1399)
 
-#### [v4.14.1](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.14.0...v4.14.1)
+### [v4.14.1](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.14.0...v4.14.1)
 
 > March 8, 2022
 
 - Hardhat icon is broken [`#1420`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1420)
 
-#### [v4.14.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.13.0...v4.14.0)
+### [v4.14.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.13.0...v4.14.0)
 
 > March 7, 2022
 
@@ -719,7 +719,7 @@
 - Add `pom.xml` to maven files [`#1398`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1398)
 - Add TS support for capacitor config file [`#1396`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1396)
 
-#### [v4.13.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.12.1...v4.13.0)
+### [v4.13.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.12.1...v4.13.0)
 
 > February 11, 2022
 
@@ -733,13 +733,13 @@
 - feat: integrations folder icon [`#1360`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1360)
 - Add Translation for Japanese [`#1379`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1379)
 
-#### [v4.12.1](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.12.0...v4.12.1)
+### [v4.12.1](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.12.0...v4.12.1)
 
 > January 23, 2022
 
 - Update release workflow [`6ed12b60`](https://github.com/material-extensions/vscode-material-icon-theme/commit/6ed12b60)
 
-#### [v4.12.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.11.0...v4.12.0)
+### [v4.12.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.11.0...v4.12.0)
 
 > January 23, 2022
 
@@ -763,7 +763,7 @@
 - Added Tauri icon [`#1312`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1312)
 - Add handlers folder icon (Closes #1323) [`#1325`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1325)
 
-#### [v4.11.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.10.0...v4.11.0)
+### [v4.11.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.10.0...v4.11.0)
 
 > November 25, 2021
 
@@ -798,7 +798,7 @@
 - feat: feat: add graphql config file names [`#1231`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1231)
 - Icon request template (Closes #1225) [`#1226`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1226)
 
-#### [v4.10.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.9.0...v4.10.0)
+### [v4.10.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.9.0...v4.10.0)
 
 > August 24, 2021
 
@@ -824,7 +824,7 @@
 - Minify SVG files [`40630458`](https://github.com/material-extensions/vscode-material-icon-theme/commit/40630458)
 - Bake transforms that SVGO cannot parse [`0e061aff`](https://github.com/material-extensions/vscode-material-icon-theme/commit/0e061aff)
 
-#### [v4.9.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.8.0...v4.9.0)
+### [v4.9.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.8.0...v4.9.0)
 
 > August 5, 2021
 
@@ -859,7 +859,7 @@
 - Add Jest and TSConfig from Nest template [`#1144`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1144)
 - Add support for git-hooks as console file icon [`#1138`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1138)
 
-#### [v4.8.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.7.0...v4.8.0)
+### [v4.8.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.7.0...v4.8.0)
 
 > July 4, 2021
 
@@ -906,7 +906,7 @@
 - Add Hex file icon [`#1062`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1062)
 - Add Java '.class' file icons [`#1060`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1060)
 
-#### [v4.7.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.6.0...v4.7.0)
+### [v4.7.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.6.0...v4.7.0)
 
 > May 24, 2021
 
@@ -952,7 +952,7 @@
 - Add sc file extension for scala file icon [`30ab89a9`](https://github.com/material-extensions/vscode-material-icon-theme/commit/30ab89a9)
 - Add scala file extension (Fixes #976) [`a5ec66bb`](https://github.com/material-extensions/vscode-material-icon-theme/commit/a5ec66bb)
 
-#### [v4.6.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.5.0...v4.6.0)
+### [v4.6.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.5.0...v4.6.0)
 
 > March 20, 2021
 
@@ -979,7 +979,7 @@
 - Update file associations documentation (References #928) [`f0dc2238`](https://github.com/material-extensions/vscode-material-icon-theme/commit/f0dc2238)
 - Add .sqlite3 and .db3 extensions [`#929`](https://github.com/material-extensions/vscode-material-icon-theme/pull/929)
 
-#### [v4.5.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.4.0...v4.5.0)
+### [v4.5.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.4.0...v4.5.0)
 
 > January 10, 2021
 
@@ -1012,7 +1012,7 @@
 - add schemes to classes [`#880`](https://github.com/material-extensions/vscode-material-icon-theme/pull/880)
 - Fix Typescript "hint" level warnings and trivial typing issue [`#877`](https://github.com/material-extensions/vscode-material-icon-theme/pull/877)
 
-#### [v4.4.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.3.0...v4.4.0)
+### [v4.4.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.3.0...v4.4.0)
 
 > November 1, 2020
 
@@ -1069,7 +1069,7 @@
 - Add rescript icon [`b7536eec`](https://github.com/material-extensions/vscode-material-icon-theme/commit/b7536eec)
 - add posthtml icon [`1dd5ac41`](https://github.com/material-extensions/vscode-material-icon-theme/commit/1dd5ac41)
 
-#### [v4.3.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.0.2...v4.3.0)
+### [v4.3.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.0.2...v4.3.0)
 
 > September 9, 2020
 
@@ -1084,7 +1084,7 @@
 - Fixed icon configuration in folderIcons.ts due to broken checks [`ac170754`](https://github.com/material-extensions/vscode-material-icon-theme/commit/ac170754)
 - Added Terraform Folder Icons [`6392bb4b`](https://github.com/material-extensions/vscode-material-icon-theme/commit/6392bb4b)
 
-#### [v4.0.2](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.2.0...v4.0.2)
+### [v4.0.2](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.2.0...v4.0.2)
 
 > September 2, 2020
 
@@ -1139,7 +1139,7 @@
 - Add additional Firebase filenames [`c8b8dab9`](https://github.com/material-extensions/vscode-material-icon-theme/commit/c8b8dab9)
 - feat: Add Tcl Icon [`e5aac1cd`](https://github.com/material-extensions/vscode-material-icon-theme/commit/e5aac1cd)
 
-#### [v4.2.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.1.0...v4.2.0)
+### [v4.2.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.1.0...v4.2.0)
 
 > June 17, 2020
 
@@ -1210,7 +1210,7 @@
 - Add icon for Tiltfile (https://tilt.dev/) [`84e8d8fb`](https://github.com/material-extensions/vscode-material-icon-theme/commit/84e8d8fb)
 - Add vala icon [`a4b535e4`](https://github.com/material-extensions/vscode-material-icon-theme/commit/a4b535e4)
 
-#### [v4.1.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.0.1...v4.1.0)
+### [v4.1.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.0.1...v4.1.0)
 
 > April 26, 2020
 
@@ -1268,13 +1268,13 @@
 - Remove comment [`3c52d453`](https://github.com/material-extensions/vscode-material-icon-theme/commit/3c52d453)
 - Add UML icon [`173e35ec`](https://github.com/material-extensions/vscode-material-icon-theme/commit/173e35ec)
 
-#### [v4.0.1](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.0.0...v4.0.1)
+### [v4.0.1](https://github.com/material-extensions/vscode-material-icon-theme/compare/v4.0.0...v4.0.1)
 
 > March 1, 2020
 
 - Do not ignore CHANGELOG.md [`0a6fcf55`](https://github.com/material-extensions/vscode-material-icon-theme/commit/0a6fcf55)
 
-#### [v4.0.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v3.9.3...v4.0.0)
+### [v4.0.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v3.9.3...v4.0.0)
 
 > March 1, 2020
 
@@ -1303,7 +1303,7 @@
 - Migrate from TSLint to ESLint [`cd9930f5`](https://github.com/material-extensions/vscode-material-icon-theme/commit/cd9930f5)
 - Add coconut icon (Closes #500) [`f76109ba`](https://github.com/material-extensions/vscode-material-icon-theme/commit/f76109ba)
 
-#### [v3.9.3](https://github.com/material-extensions/vscode-material-icon-theme/compare/v3.9.2...v3.9.3)
+### [v3.9.3](https://github.com/material-extensions/vscode-material-icon-theme/compare/v3.9.2...v3.9.3)
 
 > February 9, 2020
 
@@ -1330,7 +1330,7 @@
 - Add Shopify .liquid file icon [`aabfaaf6`](https://github.com/material-extensions/vscode-material-icon-theme/commit/aabfaaf6)
 - Update kl icon [`a0f013f9`](https://github.com/material-extensions/vscode-material-icon-theme/commit/a0f013f9)
 
-#### [v3.9.2](https://github.com/material-extensions/vscode-material-icon-theme/compare/v3.9.1...v3.9.2)
+### [v3.9.2](https://github.com/material-extensions/vscode-material-icon-theme/compare/v3.9.1...v3.9.2)
 
 > November 24, 2019
 
@@ -1357,7 +1357,7 @@
 - add codecov icon [`4eabe245`](https://github.com/material-extensions/vscode-material-icon-theme/commit/4eabe245)
 - added icons for advpl projects [`d9fd5426`](https://github.com/material-extensions/vscode-material-icon-theme/commit/d9fd5426)
 
-#### [v3.9.1](https://github.com/material-extensions/vscode-material-icon-theme/compare/v3.9.0...v3.9.1)
+### [v3.9.1](https://github.com/material-extensions/vscode-material-icon-theme/compare/v3.9.0...v3.9.1)
 
 > October 7, 2019
 
@@ -1370,7 +1370,7 @@
 - Add "databases" to "database" folder names [`3ee46c8c`](https://github.com/material-extensions/vscode-material-icon-theme/commit/3ee46c8c)
 - Add build.yml [`a4291642`](https://github.com/material-extensions/vscode-material-icon-theme/commit/a4291642)
 
-#### [v3.9.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v3.8.1...v3.9.0)
+### [v3.9.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v3.8.1...v3.9.0)
 
 > August 29, 2019
 
@@ -1408,7 +1408,7 @@
 - fix now light version [`f94d8d91`](https://github.com/material-extensions/vscode-material-icon-theme/commit/f94d8d91)
 - add now icon for `now.json` [`f96527d6`](https://github.com/material-extensions/vscode-material-icon-theme/commit/f96527d6)
 
-#### [v3.8.1](https://github.com/material-extensions/vscode-material-icon-theme/compare/v3.8.0...v3.8.1)
+### [v3.8.1](https://github.com/material-extensions/vscode-material-icon-theme/compare/v3.8.0...v3.8.1)
 
 > July 17, 2019
 
@@ -1450,7 +1450,7 @@
 - Add Vim icon [`fc4df5b0`](https://github.com/material-extensions/vscode-material-icon-theme/commit/fc4df5b0)
 - Add nodemon file name (nodemon-debug.json) [`dcb45130`](https://github.com/material-extensions/vscode-material-icon-theme/commit/dcb45130)
 
-#### [v3.8.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v3.7.0...v3.8.0)
+### [v3.8.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v3.7.0...v3.8.0)
 
 > May 25, 2019
 
@@ -1483,7 +1483,7 @@
 - Add vue and vuex_vuex theme [`fd6a171c`](https://github.com/material-extensions/vscode-material-icon-theme/commit/fd6a171c)
 - add netlify file icon [`8960ceac`](https://github.com/material-extensions/vscode-material-icon-theme/commit/8960ceac)
 
-#### [v3.7.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v3.6.3...v3.7.0)
+### [v3.7.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v3.6.3...v3.7.0)
 
 > March 24, 2019
 
@@ -1513,7 +1513,7 @@
 - Join gatsby filenames to the single array [`21faf349`](https://github.com/material-extensions/vscode-material-icon-theme/commit/21faf349)
 - Fix gatsby config fileName. Add gatsby-node fileName to existing gatsby icon [`79d8cda9`](https://github.com/material-extensions/vscode-material-icon-theme/commit/79d8cda9)
 
-#### [v3.6.3](https://github.com/material-extensions/vscode-material-icon-theme/compare/v3.6.2...v3.6.3)
+### [v3.6.3](https://github.com/material-extensions/vscode-material-icon-theme/compare/v3.6.2...v3.6.3)
 
 > February 8, 2019
 
@@ -1535,7 +1535,7 @@
 - Updated buildkite icon [`00271210`](https://github.com/material-extensions/vscode-material-icon-theme/commit/00271210)
 - add icon for Buildkite [`3e24d1b9`](https://github.com/material-extensions/vscode-material-icon-theme/commit/3e24d1b9)
 
-#### [v3.6.2](https://github.com/material-extensions/vscode-material-icon-theme/compare/v3.6.1...v3.6.2)
+### [v3.6.2](https://github.com/material-extensions/vscode-material-icon-theme/compare/v3.6.1...v3.6.2)
 
 > December 20, 2018
 
@@ -1567,7 +1567,7 @@
 - Add two new folder icon e2e for end to end test and custom [`95e6f7e4`](https://github.com/material-extensions/vscode-material-icon-theme/commit/95e6f7e4)
 - Added file prefix to puppeteer page link [`a95d4b2e`](https://github.com/material-extensions/vscode-material-icon-theme/commit/a95d4b2e)
 
-#### [v3.6.1](https://github.com/material-extensions/vscode-material-icon-theme/compare/v3.6.0...v3.6.1)
+### [v3.6.1](https://github.com/material-extensions/vscode-material-icon-theme/compare/v3.6.0...v3.6.1)
 
 > November 21, 2018
 
@@ -1615,7 +1615,7 @@
 - Added Azure icons (Closes #321) [`22be92e8`](https://github.com/material-extensions/vscode-material-icon-theme/commit/22be92e8)
 - Add Prisma folder and file icons [`37868e2c`](https://github.com/material-extensions/vscode-material-icon-theme/commit/37868e2c)
 
-#### [v3.6.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v3.5.3...v3.6.0)
+### [v3.6.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v3.5.3...v3.6.0)
 
 > September 10, 2018
 
@@ -1636,7 +1636,7 @@
 - Add `authors`, `authors.md`, and `authors.txt` to `credits` [`3de2107d`](https://github.com/material-extensions/vscode-material-icon-theme/commit/3de2107d)
 - Removed bithound config file [`7b1c3f6b`](https://github.com/material-extensions/vscode-material-icon-theme/commit/7b1c3f6b)
 
-#### [v3.5.3](https://github.com/material-extensions/vscode-material-icon-theme/compare/v3.5.2...v3.5.3)
+### [v3.5.3](https://github.com/material-extensions/vscode-material-icon-theme/compare/v3.5.2...v3.5.3)
 
 > August 19, 2018
 
@@ -1649,7 +1649,7 @@
 - Added docker-compose.prod.yml [`#294`](https://github.com/material-extensions/vscode-material-icon-theme/pull/294)
 - Added d icon (Closes #291) [`d24a9914`](https://github.com/material-extensions/vscode-material-icon-theme/commit/d24a9914)
 
-#### [v3.5.2](https://github.com/material-extensions/vscode-material-icon-theme/compare/v3.5.1...v3.5.2)
+### [v3.5.2](https://github.com/material-extensions/vscode-material-icon-theme/compare/v3.5.1...v3.5.2)
 
 > July 21, 2018
 
@@ -1668,7 +1668,7 @@
 - Added alternative node icon (Closes #262) [`0967da81`](https://github.com/material-extensions/vscode-material-icon-theme/commit/0967da81)
 - Updated translations [`7f7f716d`](https://github.com/material-extensions/vscode-material-icon-theme/commit/7f7f716d)
 
-#### [v3.5.1](https://github.com/material-extensions/vscode-material-icon-theme/compare/v3.5.0...v3.5.1)
+### [v3.5.1](https://github.com/material-extensions/vscode-material-icon-theme/compare/v3.5.0...v3.5.1)
 
 > June 28, 2018
 
@@ -1682,7 +1682,7 @@
 - Added san icon (Closes #260) [`97f97e70`](https://github.com/material-extensions/vscode-material-icon-theme/commit/97f97e70)
 - Update Dart logo to match the official logo changes [`#259`](https://github.com/material-extensions/vscode-material-icon-theme/pull/259)
 
-#### [v3.5.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v3.4.0...v3.5.0)
+### [v3.5.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v3.4.0...v3.5.0)
 
 > May 31, 2018
 
@@ -1713,7 +1713,7 @@
 - Adds docker-compose.yaml file association [`b6591416`](https://github.com/material-extensions/vscode-material-icon-theme/commit/b6591416)
 - Added angular.json - Closes #243 [`62aed590`](https://github.com/material-extensions/vscode-material-icon-theme/commit/62aed590)
 
-#### [v3.4.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v3.3.0...v3.4.0)
+### [v3.4.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v3.3.0...v3.4.0)
 
 > May 6, 2018
 
@@ -1731,7 +1731,7 @@
 - Added .cache folder mapping [`9728bd5d`](https://github.com/material-extensions/vscode-material-icon-theme/commit/9728bd5d)
 - Updated version [`bb106bc4`](https://github.com/material-extensions/vscode-material-icon-theme/commit/bb106bc4)
 
-#### [v3.3.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v3.2.6...v3.3.0)
+### [v3.3.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v3.2.6...v3.3.0)
 
 > April 8, 2018
 
@@ -1751,7 +1751,7 @@
 - Improved Vue.js logo [`6eeb80c6`](https://github.com/material-extensions/vscode-material-icon-theme/commit/6eeb80c6)
 - Fixes issue with config change detection References #225 [`50e40e8e`](https://github.com/material-extensions/vscode-material-icon-theme/commit/50e40e8e)
 
-#### [v3.2.6](https://github.com/material-extensions/vscode-material-icon-theme/compare/v3.2.4...v3.2.6)
+### [v3.2.6](https://github.com/material-extensions/vscode-material-icon-theme/compare/v3.2.4...v3.2.6)
 
 > March 17, 2018
 
@@ -1765,7 +1765,7 @@
 - Added benchmark folder icon [`ff7bec01`](https://github.com/material-extensions/vscode-material-icon-theme/commit/ff7bec01)
 - Fixed issue with wrong color of docker icon (Bugfix 3.2.5) [`cb8e074e`](https://github.com/material-extensions/vscode-material-icon-theme/commit/cb8e074e)
 
-#### [v3.2.4](https://github.com/material-extensions/vscode-material-icon-theme/compare/v3.2.3...v3.2.4)
+### [v3.2.4](https://github.com/material-extensions/vscode-material-icon-theme/compare/v3.2.3...v3.2.4)
 
 > March 10, 2018
 
@@ -1782,7 +1782,7 @@
 - Updated change detection [`30e9b3bf`](https://github.com/material-extensions/vscode-material-icon-theme/commit/30e9b3bf)
 - Optimized icons [`58476c52`](https://github.com/material-extensions/vscode-material-icon-theme/commit/58476c52)
 
-#### [v3.2.3](https://github.com/material-extensions/vscode-material-icon-theme/compare/v3.2.2...v3.2.3)
+### [v3.2.3](https://github.com/material-extensions/vscode-material-icon-theme/compare/v3.2.2...v3.2.3)
 
 > February 20, 2018
 
