@@ -70,7 +70,7 @@ jobs:
 
       - name: 📜 Generate changelog and release notes
         run: |
-          release_notes="$(bun run changelog)"
+          release_notes="$(bun run changelog --version ${{ env.VERSION }})"
           echo RELEASE_NOTES="$release_notes" >> $GITHUB_ENV
 
           git add CHANGELOG.md
