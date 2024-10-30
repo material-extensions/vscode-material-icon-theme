@@ -13,7 +13,7 @@ body:
     id: description
     attributes:
       label: Describe the bug
-      description: Describe the bug clearly
+      description: Provide a detailed description of the bug
     validations:
       required: true
 
@@ -34,7 +34,7 @@ body:
     id: expected
     attributes:
       label: Expected behavior
-      description: A clear and concise description of what you expected to happen
+      description: What you expected to happen
     validations:
       required: true
 
@@ -42,7 +42,7 @@ body:
     id: screenshots
     attributes:
       label: Screenshots
-      description: If applicable, add screenshots to help explain your problem
+      description: Add screenshots if applicable
     validations:
       required: false
 
@@ -64,7 +64,7 @@ body:
     id: additional-context
     attributes:
       label: Additional context
-      description: Add any other context about the problem here.
+      description: Additional context about the problem.
     validations:
       required: false
 
