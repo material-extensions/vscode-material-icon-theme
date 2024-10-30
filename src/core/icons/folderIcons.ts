@@ -71,7 +71,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-scripts',
         folderNames: ['script', 'scripts', 'scripting'],
       },
-      { name: 'folder-node', folderNames: ['node_modules'] },
+      { name: 'folder-node', folderNames: ['node', 'nodejs', 'node_modules'] },
       {
         name: 'folder-javascript',
         folderNames: ['js', 'javascript', 'javascripts'],
@@ -319,7 +319,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-temp',
         folderNames: ['temp', 'tmp', 'cached', 'cache'],
       },
-      { name: 'folder-aws', folderNames: ['aws'] },
+      { name: 'folder-aws', folderNames: ['aws', 'azure', 'gcp']},
       {
         name: 'folder-audio',
         folderNames: [
@@ -597,7 +597,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-hook',
-        folderNames: ['hook', 'hooks', 'triggers'],
+        folderNames: ['hook', 'hooks', 'trigger', 'triggers'],
       },
       { name: 'folder-job', folderNames: ['job', 'jobs'] },
       {
@@ -921,10 +921,6 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-flutter', folderNames: ['flutter'] },
       { name: 'folder-snippet', folderNames: ['snippet', 'snippets'] },
       {
-        name: 'folder-trigger',
-        folderNames: ['trigger'],
-      },
-      {
         name: 'folder-src-tauri',
         folderNames: ['src-tauri'],
       },
@@ -932,6 +928,11 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-favicon',
         folderNames: ['favicon', 'favicons'],
       },
+      { name: 'folder-lefthook', folderNames: ['lefthook', 'lefthook-local'] },
+      {
+        name: 'folder-powershell',
+        folderNames: ["powershell", "ps", "ps1"]
+      }
     ],
   },
   {
