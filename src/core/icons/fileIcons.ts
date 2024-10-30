@@ -2372,7 +2372,7 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['swagger.json', 'swagger.yml', 'swagger.yaml'],
       fileNames: ['swagger.json', 'swagger.yml', 'swagger.yaml'],
     },
-    { name: 'bun', fileNames: ['bun.lockb', 'bunfig.toml'], light: true },
+    { name: 'bun', fileNames: ['bun.lockb', 'bunfig.toml', ".bun-version"], light: true },
     { name: 'antlr', fileExtensions: ['g4'] },
     { name: 'stylable', fileExtensions: ['st.css'] },
     { name: 'pinejs', fileExtensions: ['pine'] },
