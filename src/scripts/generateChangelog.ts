@@ -21,16 +21,10 @@ async function generateChangelog() {
   );
   const newCommits = parseCommits(rawGitCommits, config);
 
-  /**
-   * Generate the changelog content
-   * @returns {string} The changelog in markdown format
-   */
+  /* Changelog */
   const changelog: string = await generateMarkDown(newCommits, config);
 
-  /**
-   * Get the release notes from the changelog without the header
-   * @returns {string} The release notes in markdown format without the header
-   */
+  /**  Release notes from the changelog without the header */
   const releaseNotes: string = changelog.split("\n").slice(3).join("\n");
 
   process.stdout.write(releaseNotes);
