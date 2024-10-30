@@ -1,18 +1,23 @@
 # Files to include in the extension package
 # Documentation for this format:
 # https://code.visualstudio.com/api/working-with-extensions/publishing-extension#using-.vscodeignore
+
+# Files for vscode extension
 !CHANGELOG.md
 !LICENSE.md
 !README.md
 !logo.png
 
+# Translation files
 !package.json
 !package.nls.json
 !package.nls.*.json
 
+# Extension code
 !dist/extension
 !dist/material-icons.json
 
+# Icons
 !icons
 
 # Exclude everything else
