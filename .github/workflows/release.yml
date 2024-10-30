@@ -41,10 +41,10 @@ jobs:
           fetch-depth: 0
           token: ${{ steps.app-token.outputs.token }}
 
-      - name: Setup Platform 🛠️
+      - name: Setup Bun 🛠️
         uses: oven-sh/setup-bun@4bc047ad259df6fc24a6c9b0f9a0cb08cf17fbe5 # v2
         with:
-          bun-version: 1.1.18
+          bun-version-file: ".bun-version"
 
       - name: Install dependencies 📦
         run: |
