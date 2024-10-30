@@ -159,5 +159,9 @@ export const languageIcons: LanguageIcon[] = [
     icon: { name: 'concourse' },
     ids: ['concourse-pipeline-yaml', 'concourse-task-yaml'],
   },
+  {
+    icon: { name: 'systemd', light: true },
+    ids: ['systemd-conf', 'systemd-unit-file'],
+  },
   { icon: { name: 'slint' }, ids: ['slint'] },
 ];
