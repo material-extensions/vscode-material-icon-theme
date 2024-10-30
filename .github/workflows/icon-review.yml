@@ -25,7 +25,7 @@ jobs:
           bun-version: 1.1.20
 
       - name: Checkout Fork 🛎️
-        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           ref: ${{ github.event.pull_request.head.ref }}
           repository: ${{ github.event.pull_request.head.repo.full_name }}
@@ -34,7 +34,7 @@ jobs:
           persist-credentials: false
 
       - name: Checkout Original 🛎️
-        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           fetch-depth: 0
           path: main
@@ -83,7 +83,7 @@ jobs:
 
               ${preview}
 
-              Check how your icon${pluralS} fit${!pluralS ? 's' : ''} in a 16x16 grid with our **Pixel Perfect Checker** by following [this link](https://pixp.lucode.ar/material-extensions/vscode-material-icon-theme/pull/${{ github.event.pull_request.number }}).
+              Check how your icon${pluralS} fit${!pluralS ? 's' : ''} in a 16x16 grid with our **Pixel Perfect Checker** by following [this link](https://pixp.pages.dev/material-extensions/vscode-material-icon-theme/pull/${{ github.event.pull_request.number }}).
 
               You can find more information on how to contribute in the [contribution guidelines](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/CONTRIBUTING.md).
             `;

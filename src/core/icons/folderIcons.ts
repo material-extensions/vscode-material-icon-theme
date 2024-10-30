@@ -71,7 +71,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-scripts',
         folderNames: ['script', 'scripts', 'scripting'],
       },
-      { name: 'folder-node', folderNames: ['node_modules'] },
+      { name: 'folder-node', folderNames: ['node', 'nodejs', 'node_modules'] },
       {
         name: 'folder-javascript',
         folderNames: ['js', 'javascript', 'javascripts'],
@@ -113,6 +113,7 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['git', 'patches', 'githooks', 'submodules'],
       },
       { name: 'folder-github', folderNames: ['github'] },
+      { name: 'folder-gitea', folderNames: ['gitea'] },
       { name: 'folder-gitlab', folderNames: ['gitlab'] },
       { name: 'folder-vscode', folderNames: ['vscode', 'vscode-test'] },
       {
@@ -318,7 +319,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-temp',
         folderNames: ['temp', 'tmp', 'cached', 'cache'],
       },
-      { name: 'folder-aws', folderNames: ['aws'] },
+      { name: 'folder-aws', folderNames: ['aws', 'azure', 'gcp']},
       {
         name: 'folder-audio',
         folderNames: [
@@ -495,6 +496,7 @@ export const folderIcons: FolderTheme[] = [
           'toolbox',
           'toolboxes',
           'tooling',
+          'devtools',
         ],
       },
       { name: 'folder-helper', folderNames: ['helpers', 'helper'] },
@@ -774,6 +776,8 @@ export const folderIcons: FolderTheme[] = [
           'connections',
           'integration',
           'integrations',
+          'remote',
+          'remotes',
         ],
       },
       { name: 'folder-quasar', folderNames: ['quasar'] },
@@ -917,6 +921,19 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-flutter', folderNames: ['flutter'] },
       { name: 'folder-snippet', folderNames: ['snippet', 'snippets'] },
       { name: 'folder-element', folderNames: ['element', 'elements'] },
+      {
+        name: 'folder-src-tauri',
+        folderNames: ['src-tauri'],
+      },
+      {
+        name: 'folder-favicon',
+        folderNames: ['favicon', 'favicons'],
+      },
+      { name: 'folder-lefthook', folderNames: ['lefthook', 'lefthook-local'] },
+      {
+        name: 'folder-powershell',
+        folderNames: ["powershell", "ps", "ps1"]
+      }
     ],
   },
   {
