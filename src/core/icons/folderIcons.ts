@@ -932,6 +932,10 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-powershell',
         folderNames: ["powershell", "ps", "ps1"]
+      },
+      {
+        name: 'folder-vitepress',
+        folderNames: ['.vitepress'],
       }
     ],
   },
