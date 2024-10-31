@@ -19,11 +19,6 @@ jobs:
       pull-requests: write
 
     steps:
-      - name: 🔧 Setup Bun
-        uses: oven-sh/setup-bun@4bc047ad259df6fc24a6c9b0f9a0cb08cf17fbe5 # v2
-        with:
-          bun-version-file: ".bun-version"
-
       - name: 📥 Checkout Fork
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
@@ -39,6 +34,11 @@ jobs:
           fetch-depth: 0
           path: main
           persist-credentials: false
+
+      - name: 🔧 Setup Bun
+        uses: oven-sh/setup-bun@4bc047ad259df6fc24a6c9b0f9a0cb08cf17fbe5 # v2
+        with:
+          bun-version-file: "main/.bun-version"
 
       - name: 🔍 Review SVG files
         working-directory: main
@@ -63,7 +63,7 @@ jobs:
         with:
           script: |
             const iconsCount = parseInt("${{ env.svg_files_count }}");
-            const imageURL = "${{ env.image_url }}");
+            const imageURL = "${{ env.image_url }}";
             const image = `<img src="${imageURL}" alt="Generated preview" />`;
             const pluralS = iconsCount > 1 ? "s" : "";
 
