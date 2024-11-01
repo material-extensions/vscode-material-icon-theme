@@ -2758,5 +2758,9 @@ export const fileIcons: FileIcons = {
         IconPack.Vuex,
       ],
     },
+    {
+      name: 'dependencies-update',
+      fileExtensions: ['.ncurc.json', '.ncurc.yml', '.ncurc.js'],
+    },
   ]),
 };
