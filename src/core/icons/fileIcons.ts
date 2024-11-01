@@ -2489,7 +2489,11 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'roblox', fileExtensions: ['rbxl', 'rbxlx', 'rbxm', 'rbxmx'] },
-    { name: 'luau', fileExtensions: ['luau'] },
+    {
+      name: 'luau',
+      fileExtensions: ['luau'],
+      fileNames: ['.luaurc'],
+    },
     {
       name: 'rojo',
       fileExtensions: ['project.json', 'model.json', 'meta.json'],
