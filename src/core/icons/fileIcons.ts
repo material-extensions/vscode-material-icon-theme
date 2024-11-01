@@ -2493,6 +2493,7 @@ export const fileIcons: FileIcons = {
     {
       name: 'rojo',
       fileExtensions: ['project.json', 'model.json', 'meta.json'],
+      enabledFor: [IconPack.Roblox]
     },
     { name: 'wally', fileNames: ['wally.toml'] },
     {
@@ -2764,6 +2765,7 @@ export const fileIcons: FileIcons = {
         IconPack.Qwik,
         IconPack.React,
         IconPack.Redux,
+        IconPack.Roblox,
         IconPack.Vue,
         IconPack.Vuex,
       ],
