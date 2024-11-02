@@ -2372,7 +2372,11 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['swagger.json', 'swagger.yml', 'swagger.yaml'],
       fileNames: ['swagger.json', 'swagger.yml', 'swagger.yaml'],
     },
-    { name: 'bun', fileNames: ['bun.lockb', 'bunfig.toml', ".bun-version"], light: true },
+    {
+      name: 'bun',
+      fileNames: ['bun.lockb', 'bunfig.toml', '.bun-version'],
+      light: true,
+    },
     { name: 'antlr', fileExtensions: ['g4'] },
     { name: 'stylable', fileExtensions: ['st.css'] },
     { name: 'pinejs', fileExtensions: ['pine'] },
@@ -2715,30 +2719,19 @@ export const fileIcons: FileIcons = {
     {
       name: 'copilot',
       fileNames: ['.github/copilot-instructions.md'],
-      light: true
+      light: true,
     },
     {
       name: 'bench-ts',
-      fileExtensions: [
-        'bench.ts',
-        'bench.cts',
-        'bench.mts',
-      ],
+      fileExtensions: ['bench.ts', 'bench.cts', 'bench.mts'],
     },
     {
       name: 'bench-jsx',
-      fileExtensions: [
-        'bench.jsx',
-        'bench.tsx',
-      ],
+      fileExtensions: ['bench.jsx', 'bench.tsx'],
     },
     {
       name: 'bench-js',
-      fileExtensions: [
-        'bench.js',
-        'bench.cjs',
-        'bench.mjs',
-      ],
+      fileExtensions: ['bench.js', 'bench.cjs', 'bench.mjs'],
     },
     {
       name: 'pre-commit',
@@ -2757,6 +2750,10 @@ export const fileIcons: FileIcons = {
         IconPack.Vue,
         IconPack.Vuex,
       ],
+    },
+    {
+      name: 'dependencies-update',
+      fileExtensions: ['.ncurc.json', '.ncurc.yml', '.ncurc.js'],
     },
   ]),
 };
