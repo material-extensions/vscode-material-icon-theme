@@ -51,7 +51,7 @@ async function generateChangelog() {
 
   let changelogMD: string;
   if (typeof config.output === 'string') {
-    // @ts-ignore
+    // @ts-expect-error
     changelogMD = await Bun.file(config.output, 'utf8').text();
   } else {
     console.error('Invalid output path in config');
