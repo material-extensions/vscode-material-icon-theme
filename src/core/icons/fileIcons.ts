@@ -2502,7 +2502,7 @@ export const fileIcons: FileIcons = {
     { name: 'wally', fileNames: ['wally.toml'] },
     {
       name: 'rbxmk',
-      fileExtensions: ['rbxmk.lua'],
+      fileExtensions: ['rbxmk.lua', 'rbxmk.luau'],
     },
     {
       name: 'panda',
