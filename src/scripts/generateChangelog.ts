@@ -1,3 +1,4 @@
+import fs from 'fs';
 import {
   generateMarkDown,
   getGitDiff,
@@ -73,8 +74,15 @@ async function generateChangelog(): Promise<void> {
   let changelogMD: string;
   const output: string = typeof config.output === 'string' ? config.output : '';
 
-  if (!output || !fs.existsSync(output) || !fs.accessSync(output, fs.constants.W_OK)) {
-    console.error('Invalid or non-writable output path in config');
+  if (!output || !fs.existsSync(output)) {
+    console.error('Invalid output path in config');
+    return;
+  }
+
+  try {
+    fs.accessSync(output, fs.constants.W_OK);
+  } catch {
+    console.error('Output path is not writable');
     return;
   }
 
