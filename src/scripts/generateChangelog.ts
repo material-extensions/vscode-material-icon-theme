@@ -1,6 +1,5 @@
 import {
   generateMarkDown,
-  getCurrentGitTag,
   getGitDiff,
   getLastGitTag,
   loadChangelogConfig,
@@ -47,17 +46,17 @@ async function generateChangelog(): Promise<void> {
     }
   }
 
-  const currentTag = getCurrentGitTag();
+  // const currentTag = getCurrentGitTag();
   const lastTag = await getLastGitTag();
 
   /** The changelog configuration */
   const config = await loadChangelogConfig(process.cwd(), {
     ...ChangelogenConfig,
-    from: currentTag,
+    // from: currentTag,
     ...(version && { newVersion: version }),
   });
 
-  const rawGitCommits = await getGitDiff(currentTag, lastTag);
+  const rawGitCommits = await getGitDiff(lastTag);
   const newCommits = parseCommits(rawGitCommits, config);
 
   /* Changelog */
