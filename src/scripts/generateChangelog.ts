@@ -73,13 +73,13 @@ async function generateChangelog(): Promise<void> {
   let changelogMD: string;
   const output: string = typeof config.output === 'string' ? config.output : '';
 
-  // Read the changelog file
-  if (config.output) {
-    changelogMD = await Bun.file(output).text();
-  } else {
-    console.error('Invalid output path in config');
+  if (!output || !fs.existsSync(output) || !fs.accessSync(output, fs.constants.W_OK)) {
+    console.error('Invalid or non-writable output path in config');
     return;
   }
+
+  // Read the changelog file
+  changelogMD = await Bun.file(output).text();
 
   // Update the changelog with the new release notes
 
