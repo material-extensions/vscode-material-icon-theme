@@ -104,11 +104,7 @@ async function generateChangelog(): Promise<void> {
       changelogMD.slice(headerIndex + changelogHeader.length);
   }
 
-  if (typeof config.output === 'string') {
-    await Bun.write(config.output, changelogMD);
-  } else {
-    console.error('Invalid output path in config');
-  }
+  await Bun.write(config.output, changelogMD);
 }
 
 // Run the changelog generation
