@@ -2497,6 +2497,21 @@ export const fileIcons: FileIcons = {
     },
     { name: 'roblox', fileExtensions: ['rbxl', 'rbxlx', 'rbxm', 'rbxmx'] },
     {
+      name: 'luau',
+      fileExtensions: ['luau'],
+      fileNames: ['.luaurc'],
+    },
+    {
+      name: 'rojo',
+      fileExtensions: ['project.json', 'model.json', 'meta.json'],
+      enabledFor: [IconPack.Roblox]
+    },
+    { name: 'wally', fileNames: ['wally.toml'] },
+    {
+      name: 'rbxmk',
+      fileExtensions: ['rbxmk.lua', 'rbxmk.luau'],
+    },
+    {
       name: 'panda',
       patterns: {
         'panda.config': FileNamePattern.Ecmascript,
@@ -2761,6 +2776,7 @@ export const fileIcons: FileIcons = {
         IconPack.Qwik,
         IconPack.React,
         IconPack.Redux,
+        IconPack.Roblox,
         IconPack.Vue,
         IconPack.Vuex,
       ],

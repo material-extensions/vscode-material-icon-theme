@@ -319,7 +319,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-temp',
         folderNames: ['temp', 'tmp', 'cached', 'cache'],
       },
-      { name: 'folder-aws', folderNames: ['aws', 'azure', 'gcp']},
+      { name: 'folder-aws', folderNames: ['aws', 'azure', 'gcp'] },
       {
         name: 'folder-audio',
         folderNames: [
@@ -622,7 +622,14 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-changesets', folderNames: ['changesets', 'changeset'] },
       {
         name: 'folder-packages',
-        folderNames: ['package', 'packages', 'pkg', 'pkgs'],
+        folderNames: [
+          'package',
+          'packages',
+          'pkg',
+          'pkgs',
+          'serverpackages',
+          'devpackages',
+        ],
       },
       { name: 'folder-shared', folderNames: ['shared', 'common'] },
       {
@@ -931,8 +938,12 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-lefthook', folderNames: ['lefthook', 'lefthook-local'] },
       {
         name: 'folder-powershell',
-        folderNames: ["powershell", "ps", "ps1"]
-      }
+        folderNames: ['powershell', 'ps', 'ps1'],
+      },
+      {
+        name: 'folder-luau',
+        folderNames: ['luau'],
+      },
     ],
   },
   {
