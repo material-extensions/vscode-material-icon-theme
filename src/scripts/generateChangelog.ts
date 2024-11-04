@@ -79,7 +79,12 @@ async function generateChangelog(): Promise<void> {
   }
 
   // Read the changelog file
-  changelogMD = await Bun.file(output).text();
+  try {
+    changelogMD = await Bun.file(output).text();
+  } catch (error) {
+    console.error('Error reading changelog file: ', error);
+    return;
+  }
 
   // Update the changelog with the new release notes
 
