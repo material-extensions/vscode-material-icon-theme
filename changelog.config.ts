@@ -13,10 +13,6 @@ const ChangelogenConfig: Partial<ChangelogConfig> = {
     },
   },
   output: 'CHANGELOG.md',
-  repo: {
-    provider: 'github',
-    repo: 'material-extensions/vscode-material-icon-theme',
-  },
 };
 
 export default ChangelogenConfig;
