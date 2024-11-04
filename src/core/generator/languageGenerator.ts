@@ -12,7 +12,12 @@ import {
 } from './constants';
 
 /**
- * Get all file icons that can be used in this theme.
+ * Get all language icons that can be used in this theme.
+ *
+ * @param {LanguageIcon[]} languageIcons - The language icons to be used in the theme.
+ * @param {Config} config - The configuration object for the icons.
+ * @param {Manifest} manifest - The manifest object to be updated with the language icons.
+ * @returns {Manifest} The updated manifest object with the language icons.
  */
 export const loadLanguageIconDefinitions = (
   languageIcons: LanguageIcon[],
@@ -56,6 +61,14 @@ export const loadLanguageIconDefinitions = (
   return manifest;
 };
 
+/**
+ * Set the icon definitions in the manifest.
+ *
+ * @param {Manifest} manifest - The manifest object to be updated.
+ * @param {Config} config - The configuration object for the icons.
+ * @param {DefaultIcon} icon - The icon to be set in the manifest.
+ * @returns {Manifest} The updated manifest object with the icon definitions.
+ */
 const setIconDefinitions = (
   manifest: Manifest,
   config: Config,
@@ -77,6 +90,14 @@ const setIconDefinitions = (
   return manifest;
 };
 
+/**
+ * Create the icon definitions in the manifest.
+ *
+ * @param {Manifest} manifest - The manifest object to be updated.
+ * @param {Config} config - The configuration object for the icons.
+ * @param {string} iconName - The name of the icon.
+ * @returns {Manifest} The updated manifest object with the icon definitions.
+ */
 const createIconDefinitions = (
   manifest: Manifest,
   config: Config,
@@ -90,6 +111,13 @@ const createIconDefinitions = (
   }
 };
 
+/**
+ * Set the language identifiers in the manifest.
+ *
+ * @param {string} iconName - The name of the icon.
+ * @param {string[]} languageIds - The language identifiers to be set in the manifest.
+ * @returns {Partial<Manifest>} The partial manifest object with the language identifiers.
+ */
 const setLanguageIdentifiers = (iconName: string, languageIds: string[]) => {
   const obj: Partial<Manifest> = { languageIds: {} };
   languageIds.forEach((id) => {
@@ -98,6 +126,12 @@ const setLanguageIdentifiers = (iconName: string, languageIds: string[]) => {
   return obj;
 };
 
+/**
+ * Get the custom icons based on the language associations.
+ *
+ * @param {IconAssociations} languageAssociations - The language associations to be considered.
+ * @returns {LanguageIcon[]} The custom icons based on the language associations.
+ */
 const getCustomIcons = (languageAssociations: IconAssociations | undefined) => {
   if (!languageAssociations) return [];
 
@@ -110,7 +144,11 @@ const getCustomIcons = (languageAssociations: IconAssociations | undefined) => {
 };
 
 /**
- * Disable all file icons that are in a pack which is disabled.
+ * Disable all language icons that are in a pack which is disabled.
+ *
+ * @param {LanguageIcon[]} languageIcons - The language icons to be filtered.
+ * @param {IconPackValue | undefined} activatedIconPack - The active icon pack to be considered.
+ * @returns {LanguageIcon[]} The filtered language icons that are enabled for the active icon pack.
  */
 const disableLanguagesByPack = (
   languageIcons: LanguageIcon[],

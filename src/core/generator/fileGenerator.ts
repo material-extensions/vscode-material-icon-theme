@@ -17,6 +17,11 @@ import { validateHEXColorCode } from './shared/validation';
 
 /**
  * Get all file icons that can be used in this theme.
+ *
+ * @param {FileIcons} fileIcons - The file icons to be used in the theme.
+ * @param {Config} config - The configuration object for the icons.
+ * @param {Manifest} manifest - The manifest object to be updated with the file icons.
+ * @returns {Manifest} The updated manifest object with the file icons.
  */
 export const loadFileIconDefinitions = (
   fileIcons: FileIcons,
@@ -109,6 +114,12 @@ export const loadFileIconDefinitions = (
 
 /**
  * Map the file extensions and the filenames to the related icons.
+ *
+ * @param {FileIcon} icon - The file icon to be mapped.
+ * @param {FileMappingType} mappingType - The type of mapping (file extensions or file names).
+ * @param {Manifest} manifest - The manifest object to be updated with the mappings.
+ * @param {IconAssociations} [customFileAssociation={}] - Custom file associations to be considered.
+ * @returns {Manifest} The updated manifest object with the mappings.
  */
 const mapSpecificFileIcons = (
   icon: FileIcon,
@@ -161,6 +172,10 @@ const mapSpecificFileIcons = (
 
 /**
  * Disable all file icons that are in a pack which is disabled.
+ *
+ * @param {FileIcons} fileIcons - The file icons to be filtered.
+ * @param {IconPackValue} activeIconPack - The active icon pack to be considered.
+ * @returns {FileIcon[]} The filtered file icons that are enabled for the active icon pack.
  */
 const disableIconsByPack = (
   fileIcons: FileIcons,
@@ -173,6 +188,16 @@ const disableIconsByPack = (
   });
 };
 
+/**
+ * Set the icon definition in the manifest.
+ *
+ * @param {Manifest} manifest - The manifest object to be updated.
+ * @param {Config} config - The configuration object for the icons.
+ * @param {string} iconName - The name of the icon.
+ * @param {boolean} isClone - Whether the icon is a clone.
+ * @param {string} [appendix=''] - The appendix to be added to the icon name.
+ * @returns {Manifest} The updated manifest object with the icon definition.
+ */
 const setIconDefinition = (
   manifest: Manifest,
   config: Config,
@@ -192,6 +217,13 @@ const setIconDefinition = (
   return manifest;
 };
 
+/**
+ * Generate the file icons with the specified color, opacity, and saturation.
+ *
+ * @param {string} color - The color of the file icons.
+ * @param {number} opacity - The opacity of the file icons.
+ * @param {number} saturation - The saturation of the file icons.
+ */
 export const generateFileIcons = async (
   color: string,
   opacity: number,
@@ -212,6 +244,12 @@ export const generateFileIcons = async (
   );
 };
 
+/**
+ * Get the custom icons based on the file associations.
+ *
+ * @param {IconAssociations} fileAssociations - The file associations to be considered.
+ * @returns {FileIcon[]} The custom icons based on the file associations.
+ */
 const getCustomIcons = (fileAssociations: IconAssociations | undefined) => {
   if (!fileAssociations) return [];
 
