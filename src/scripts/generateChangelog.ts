@@ -104,7 +104,7 @@ async function generateChangelog(): Promise<void> {
       changelogMD.slice(headerIndex + changelogHeader.length);
   }
 
-  await Bun.write(config.output, changelogMD);
+  await Bun.write(output, changelogMD);
 }
 
 // Run the changelog generation
