@@ -3,9 +3,9 @@
 To contribute effectively to this project, follow these guidelines:
 
 1. **Follow the Project Style**: Ensure all changes adhere to the existing code and documentation style. Review the [project's codebase](/) to understand the conventions used.
-2. **Use Material Design Colors**: When working with icons, use colors from the [Material Design color palette](/material-colors.yml). This ensures visual consistency across the project.
+2. **Use Material Design color palette**: When working with icons, use colors from the [Material Design color palette](/material-colors.yml). This ensures visual consistency across the project.
 3. **Adhere to the Project Architecture**: Familiarize yourself with the [project's architecture](/src/architecture.md). The core logic is separated from the extension logic. The core handles icon manifest generation, icon associations, and translation. The extension interacts with the VS Code API. Make sure to respect the dependency rules between modules.
-4. **Design Pixel-Perfect Icons**: Create icons that are sharp and clear at 16x16 pixels. Use a **16x16 grid** for alignment to avoid blurriness. More details are available in the [CONTRIBUTING.md](/CONTRIBUTING.md#pixel-perfect-icons).
+4. **Design Pixel-Perfect Icons**: Create icons that are sharp and clear at 16x16 pixels. Align icons to a **16x16 grid** to ensure sharpness and avoid blurriness. More details are available in the [CONTRIBUTING.md](/CONTRIBUTING.md#pixel-perfect-icons).
 5. **Write Clean, Modular, and Well-Documented Code**: Document your code thoroughly and ensure it is easy to understand and maintain.
 6. **Test Your Changes**: Always test your changes to ensure they do not break existing functionality.
 7. **Keep It Simple**: Aim for simplicity in your solutions and avoid unnecessary complexity.
