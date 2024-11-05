@@ -7,14 +7,14 @@ import { getColorList, replacementMap } from './color/colors';
  * Recursively walks through an SVG node tree and its children,
  * calling a callback on each node.
  *
- * @param {INode} node - The SVG node to traverse.
- * @param {function} callback - The callback function to call on each node.
- * @param {boolean} [filter=true] - Whether to filter nodes with 'data-mit-no-recolor' attribute.
+ * @param node - The SVG node to traverse.
+ * @param callback - The callback function to call on each node.
+ * @param filter - Whether to filter nodes with 'data-mit-no-recolor' attribute.
  */
 export const traverse = (
   node: INode,
   callback: (node: INode) => void,
-  filter = true
+  filter: boolean = true
 ) => {
   if (node.attributes['data-mit-no-recolor'] !== 'true' || !filter) {
     callback(node);
@@ -28,9 +28,9 @@ export const traverse = (
 /**
  * Reads an icon from the file system and returns its content.
  *
- * @param {string} path - The path to the icon file.
- * @param {string} hash - The hash to be replaced in the path if the file is not found.
- * @returns {Promise<string>} A promise that resolves to the content of the icon file.
+ * @param path - The path to the icon file.
+ * @param hash - The hash to be replaced in the path if the file is not found.
+ * @returns A promise that resolves to the content of the icon file.
  */
 export const readIcon = async (path: string, hash: string): Promise<string> => {
   try {
@@ -44,10 +44,10 @@ export const readIcon = async (path: string, hash: string): Promise<string> => {
 /**
  * Clones an icon and changes its colors according to the clone options.
  *
- * @param {string} path - The path to the icon file.
- * @param {string} color - The color to replace in the icon.
- * @param {string} [hash=''] - The hash to be replaced in the path if the file is not found.
- * @returns {Promise<string>} A promise that resolves to the content of the cloned icon.
+ * @param path - The path to the icon file.
+ * @param color - The color to replace in the icon.
+ * @param hash - The hash to be replaced in the path if the file is not found.
+ * @returns A promise that resolves to the content of the cloned icon.
  */
 export const cloneIcon = async (
   path: string,
@@ -64,8 +64,8 @@ export const cloneIcon = async (
 /**
  * Gets the style attribute of an SVG node if it exists.
  *
- * @param {INode} node - The SVG node to get the style attribute from.
- * @returns {Record<string, string>} The style attribute as an object.
+ * @param node - The SVG node to get the style attribute from.
+ * @returns The style attribute as an object.
  */
 export const getStyle = (node: INode) => {
   if (node && node.attributes && node.attributes.style) {
@@ -77,8 +77,8 @@ export const getStyle = (node: INode) => {
 /**
  * Parses the style attribute of an SVG node.
  *
- * @param {string} css - The style attribute as a string.
- * @returns {Record<string, string>} The style attribute as an object.
+ * @param css - The style attribute as a string.
+ * @returns The style attribute as an object.
  */
 const parseStyle = (css: string) => {
   const rules = css.split(';');
@@ -93,8 +93,8 @@ const parseStyle = (css: string) => {
 /**
  * Converts object to css style string.
  *
- * @param {Record<string, string>} css - The style attribute as an object.
- * @returns {string} The style attribute as a string.
+ * @param css - The style attribute as an object.
+ * @returns The style attribute as a string.
  */
 export const stringifyStyle = (css: Record<string, string>) => {
   return Object.entries(css)
@@ -105,8 +105,8 @@ export const stringifyStyle = (css: Record<string, string>) => {
 /**
  * Replaces colors in an SVG node using a replacement map.
  *
- * @param {INode} node - The SVG node to replace colors in.
- * @param {Map<string, string>} replacements - The map of colors to replace.
+ * @param node - The SVG node to replace colors in.
+ * @param replacements - The map of colors to replace.
  */
 export const replaceColors = (
   node: INode,
@@ -152,7 +152,7 @@ export const replaceColors = (
 /**
  * Creates a clone configuration with empty light object.
  *
- * @returns {Manifest} A manifest object with empty light object.
+ * @returns A manifest object with empty light object.
  */
 export const createCloneConfig = () => {
   const manifest = createEmptyManifest();

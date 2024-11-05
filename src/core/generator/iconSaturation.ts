@@ -8,8 +8,9 @@ import { iconFolderPath } from './constants';
 
 /**
  * Changes saturation of all icons in the set.
- * @param {number} saturation - The saturation value to be applied to the icons.
- * @param {Record<string, string>} filesAssociations - The file associations to be considered.
+ *
+ * @param saturation - The saturation value to be applied to the icons.
+ * @param filesAssociations - The file associations to be considered.
  */
 export const setIconSaturation = async (
   saturation: number,
@@ -46,20 +47,22 @@ export const setIconSaturation = async (
 
 /**
  * Get the SVG root element.
- * @param {string} svg - The SVG file as a string.
- * @returns {string | undefined} The root element of the SVG.
+ *
+ * @param svg - The SVG file as a string.
+ * @returns The root element of the SVG.
  */
-const getSVGRootElement = (svg: string) => {
+const getSVGRootElement = (svg: string): string | undefined => {
   const result = new RegExp(/<svg[^>]*>/).exec(svg);
   return result?.[0];
 };
 
 /**
  * Add an filter attribute to the SVG icon.
- * @param {string} svgRoot - The root element of the SVG icon.
- * @returns {string} The updated SVG root element with the filter attribute.
+ *
+ * @param svgRoot - The root element of the SVG icon.
+ * @returns The updated SVG root element with the filter attribute.
  */
-const addFilterAttribute = (svgRoot: string) => {
+const addFilterAttribute = (svgRoot: string): string => {
   const pattern = new RegExp(/\sfilter="[^"]+?"/);
   // if the filter attribute already exists
   if (pattern.test(svgRoot)) {
@@ -71,21 +74,23 @@ const addFilterAttribute = (svgRoot: string) => {
 
 /**
  * Remove the filter attribute of the SVG icon.
- * @param {string} svgRoot - The root element of the SVG icon.
- * @returns {string} The updated SVG root element without the filter attribute.
+ *
+ * @param svgRoot - The root element of the SVG icon.
+ * @returns The updated SVG root element without the filter attribute.
  */
-const removeFilterAttribute = (svgRoot: string) => {
+const removeFilterAttribute = (svgRoot: string): string => {
   const pattern = new RegExp(/\sfilter="[^"]+?"/);
   return svgRoot.replace(pattern, '');
 };
 
 /**
  * Add filter element to the SVG icon.
- * @param {string} svg - The SVG file as a string.
- * @param {number} saturation - The saturation value to be applied.
- * @returns {string} The updated SVG file with the filter element.
+ *
+ * @param svg - The SVG file as a string.
+ * @param saturation - The saturation value to be applied.
+ * @returns The updated SVG file with the filter element.
  */
-const addFilterElement = (svg: string, saturation: number) => {
+const addFilterElement = (svg: string, saturation: number): string => {
   const pattern = new RegExp(/<filter id="saturation".+<\/filter>(.*<\/svg>)/);
   const filterElement = `<filter id="saturation"><feColorMatrix type="saturate" values="${saturation}"/></filter>`;
   if (pattern.test(svg)) {
@@ -97,28 +102,33 @@ const addFilterElement = (svg: string, saturation: number) => {
 
 /**
  * Remove filter element from the SVG icon.
- * @param {string} svg - The SVG file as a string.
- * @returns {string} The updated SVG file without the filter element.
+ *
+ * @param svg - The SVG file as a string.
+ * @returns The updated SVG file without the filter element.
  */
-const removeFilterElement = (svg: string) => {
+const removeFilterElement = (svg: string): string => {
   const pattern = new RegExp(/<filter id="saturation".+<\/filter>(.*<\/svg>)/);
   return svg.replace(pattern, '$1');
 };
 
 /**
  * Validate the saturation value.
- * @param {number | undefined} saturation - The saturation value to be validated.
- * @returns {boolean} True if the saturation value is valid, false otherwise.
+ *
+ * @param saturation - The saturation value to be validated.
+ * @returns True if the saturation value is valid, false otherwise.
  */
-export const validateSaturationValue = (saturation: number | undefined) => {
+export const validateSaturationValue = (
+  saturation: number | undefined
+): boolean => {
   return saturation !== undefined && saturation <= 1 && saturation >= 0;
 };
 
 /**
  * Adjust the saturation of a given SVG string.
- * @param {string} svg - The SVG file as a string.
- * @param {number} saturation - The saturation value to be applied.
- * @returns {string} The updated SVG file with the applied saturation.
+ *
+ * @param svg - The SVG file as a string.
+ * @param saturation - The saturation value to be applied.
+ * @returns The updated SVG file with the applied saturation.
  */
 export const adjustSVGSaturation = (
   svg: string,
@@ -149,10 +159,11 @@ export const adjustSVGSaturation = (
 
 /**
  * Read an SVG file, adjust its saturation, and write it back.
- * @param {string} iconPath - The path to the icon file.
- * @param {string} iconFileName - The name of the icon file.
- * @param {number} saturation - The saturation value to be applied.
- * @returns {Promise<void>} A promise that resolves when the file has been processed.
+ *
+ * @param iconPath - The path to the icon file.
+ * @param iconFileName - The name of the icon file.
+ * @param saturation - The saturation value to be applied.
+ * @returns A promise that resolves when the file has been processed.
  */
 const processSVGFileForSaturation = async (
   iconPath: string,

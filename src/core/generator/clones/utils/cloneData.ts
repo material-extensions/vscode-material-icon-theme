@@ -50,11 +50,11 @@ const isDark = (daa: IconData) =>
 
 /**
  * get cloning information from configuration
- * @param cloneOpts the clone configuration
- * @param manifest the current configuration of the extension
- * @param subFolder the subfolder where the cloned icons will be stored
- * @param hash the current hash being applied to the icons
- * @param ext the file extension for the cloned icons
+ * @param cloneOpts - The clone configuration.
+ * @param manifest - The current configuration of the extension.
+ * @param subFolder - The subfolder where the cloned icons will be stored.
+ * @param hash - The current hash being applied to the icons.
+ * @param ext - The file extension for the cloned icons
  */
 export const getCloneData = (
   cloneOpts: CustomClone,
@@ -77,7 +77,7 @@ export const getCloneData = (
         name: getIconName(cloneOpts.name, base),
         color: isDark(base)
           ? cloneOpts.color
-          : cloneOpts.lightColor ?? cloneOpts.color,
+          : (cloneOpts.lightColor ?? cloneOpts.color),
         inConfigPath: `${iconFolderPath}${subFolder}${basename(
           cloneIcon.path
         )}`,
@@ -90,8 +90,8 @@ export const getCloneData = (
 
 /**
  * returns path, type and variant for the base file icons to be cloned
- * @param cloneOpts the clone configuration
- * @param manifest the current configuration of the extension
+ * @param cloneOpts - The clone configuration.
+ * @param manifest - The current configuration of the extension.
  */
 const getFileIconBaseData = (
   cloneOpts: FileIconClone,
@@ -125,12 +125,13 @@ const getFileIconBaseData = (
 };
 
 /**
- * creates and returns the path of the cloned file icon
- * @param base the base icon data
- * @param cloneOpts the clone configuration
- * @param hash the current hash being applied to the icons
- * @param subFolder the subfolder where the cloned icons will be stored
- * @param ext the file extension for the cloned icons
+ * Creates and returns the path of the cloned file icon
+ *
+ * @param base - The base icon data.
+ * @param cloneOpts - The clone configuration.
+ * @param hash - The current hash being applied to the icons.
+ * @param subFolder - The subfolder where the cloned icons will be stored.
+ * @param ext - The file extension for the cloned icons.
  */
 const getFileIconCloneData = (
   base: IconData,
@@ -151,8 +152,9 @@ const getFileIconCloneData = (
 
 /**
  * returns path, type and variant for the base folder icons to be cloned
- * @param clone the folder clone configuration
- * @param manifest the current configuration of the extension
+ *
+ * @param clone - The folder clone configuration.
+ * @param manifest - The current configuration of the extension.
  */
 const getFolderIconBaseData = (
   clone: FolderIconClone,
@@ -217,12 +219,13 @@ const getFolderIconBaseData = (
 };
 
 /**
- * creates and returns the path of the cloned folder icon
- * @param base the base icon data
- * @param cloneOpts the clone configuration
- * @param hash the current hash being applied to the icons
- * @param subFolder the subfolder where the cloned icons will be stored
- * @param ext the file extension for the cloned icons
+ * Creates and returns the path of the cloned folder icon
+ *
+ * @param base - The base icon data.
+ * @param cloneOpts - The clone configuration.
+ * @param hash - The current hash being applied to the icons.
+ * @param subFolder - The subfolder where the cloned icons will be stored.
+ * @param ext - The file extension for the cloned icons.
  */
 const getFolderIconCloneData = (
   base: IconData,
@@ -237,9 +240,10 @@ const getFolderIconCloneData = (
 };
 
 /**
- * removes the clones folder if it exists
+ * Removes the clones folder if it exists
  * and creates a new one if `keep` is true
- * @param keep whether to keep the folder after clearing it
+ *
+ * @param keep whether to keep the folder after clearing it.
  */
 export const clearCloneFolder = async (keep = true): Promise<void> => {
   const clonesFolderPath = resolvePath('./../icons/clones');

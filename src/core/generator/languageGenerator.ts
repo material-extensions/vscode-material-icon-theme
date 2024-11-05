@@ -14,10 +14,10 @@ import {
 /**
  * Get all language icons that can be used in this theme.
  *
- * @param {LanguageIcon[]} languageIcons - The language icons to be used in the theme.
- * @param {Config} config - The configuration object for the icons.
- * @param {Manifest} manifest - The manifest object to be updated with the language icons.
- * @returns {Manifest} The updated manifest object with the language icons.
+ * @param languageIcons - The language icons to be used in the theme.
+ * @param config - The configuration object for the icons.
+ * @param manifest - The manifest object to be updated with the language icons.
+ * @returns The updated manifest object with the language icons.
  */
 export const loadLanguageIconDefinitions = (
   languageIcons: LanguageIcon[],
@@ -64,16 +64,16 @@ export const loadLanguageIconDefinitions = (
 /**
  * Set the icon definitions in the manifest.
  *
- * @param {Manifest} manifest - The manifest object to be updated.
- * @param {Config} config - The configuration object for the icons.
- * @param {DefaultIcon} icon - The icon to be set in the manifest.
- * @returns {Manifest} The updated manifest object with the icon definitions.
+ * @param manifest - The manifest object to be updated.
+ * @param config - The configuration object for the icons.
+ * @param icon - The icon to be set in the manifest.
+ * @returns The updated manifest object with the icon definitions.
  */
 const setIconDefinitions = (
   manifest: Manifest,
   config: Config,
   icon: DefaultIcon
-) => {
+): Manifest => {
   createIconDefinitions(manifest, config, icon.name);
 
   if (icon.light) {
@@ -93,10 +93,9 @@ const setIconDefinitions = (
 /**
  * Create the icon definitions in the manifest.
  *
- * @param {Manifest} manifest - The manifest object to be updated.
- * @param {Config} config - The configuration object for the icons.
- * @param {string} iconName - The name of the icon.
- * @returns {Manifest} The updated manifest object with the icon definitions.
+ * @param manifest - The manifest object to be updated.
+ * @param config - The configuration object for the icons.
+ * @param iconName - The name of the icon.
  */
 const createIconDefinitions = (
   manifest: Manifest,
@@ -114,11 +113,14 @@ const createIconDefinitions = (
 /**
  * Set the language identifiers in the manifest.
  *
- * @param {string} iconName - The name of the icon.
- * @param {string[]} languageIds - The language identifiers to be set in the manifest.
- * @returns {Partial<Manifest>} The partial manifest object with the language identifiers.
+ * @param iconName - The name of the icon.
+ * @param languageIds - The language identifiers to be set in the manifest.
+ * @returns The partial manifest object with the language identifiers.
  */
-const setLanguageIdentifiers = (iconName: string, languageIds: string[]) => {
+const setLanguageIdentifiers = (
+  iconName: string,
+  languageIds: string[]
+): Partial<Manifest> => {
   const obj: Partial<Manifest> = { languageIds: {} };
   languageIds.forEach((id) => {
     obj.languageIds![id as keyof Manifest] = iconName;
@@ -129,10 +131,12 @@ const setLanguageIdentifiers = (iconName: string, languageIds: string[]) => {
 /**
  * Get the custom icons based on the language associations.
  *
- * @param {IconAssociations} languageAssociations - The language associations to be considered.
- * @returns {LanguageIcon[]} The custom icons based on the language associations.
+ * @param languageAssociations - The language associations to be considered.
+ * @returns The custom icons based on the language associations.
  */
-const getCustomIcons = (languageAssociations: IconAssociations | undefined) => {
+const getCustomIcons = (
+  languageAssociations: IconAssociations | undefined
+): LanguageIcon[] => {
   if (!languageAssociations) return [];
 
   const icons: LanguageIcon[] = Object.keys(languageAssociations).map((fa) => ({
@@ -146,14 +150,14 @@ const getCustomIcons = (languageAssociations: IconAssociations | undefined) => {
 /**
  * Disable all language icons that are in a pack which is disabled.
  *
- * @param {LanguageIcon[]} languageIcons - The language icons to be filtered.
- * @param {IconPackValue | undefined} activatedIconPack - The active icon pack to be considered.
- * @returns {LanguageIcon[]} The filtered language icons that are enabled for the active icon pack.
+ * @param languageIcons - The language icons to be filtered.
+ * @param activatedIconPack - The active icon pack to be considered.
+ * @returns The filtered language icons that are enabled for the active icon pack.
  */
 const disableLanguagesByPack = (
   languageIcons: LanguageIcon[],
   activatedIconPack: IconPackValue | undefined
-) => {
+): LanguageIcon[] => {
   return languageIcons.filter((language) => {
     return !language.enabledFor
       ? true

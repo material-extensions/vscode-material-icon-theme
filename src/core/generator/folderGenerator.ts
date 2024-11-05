@@ -20,10 +20,10 @@ import { validateHEXColorCode } from './shared/validation';
 /**
  * Get the folder icon definitions as object.
  *
- * @param {FolderTheme[]} folderIcons - The folder icons to be used in the theme.
- * @param {Config} config - The configuration object for the icons.
- * @param {Manifest} manifest - The manifest object to be updated with the folder icons.
- * @returns {Manifest} The updated manifest object with the folder icons.
+ * @param folderIcons - The folder icons to be used in the theme.
+ * @param config - The configuration object for the icons.
+ * @param manifest - The manifest object to be updated with the folder icons.
+ * @returns The updated manifest object with the folder icons.
  */
 export const loadFolderIconDefinitions = (
   folderIcons: FolderTheme[],
@@ -69,10 +69,10 @@ export const loadFolderIconDefinitions = (
 /**
  * Set the default folder icons for the theme.
  *
- * @param {FolderTheme} theme - The folder theme to be used.
- * @param {Manifest} manifest - The manifest object to be updated with the default folder icons.
- * @param {Config} config - The configuration object for the icons.
- * @returns {Manifest} The updated manifest object with the default folder icons.
+ * @param theme - The folder theme to be used.
+ * @param manifest - The manifest object to be updated with the default folder icons.
+ * @param config - The configuration object for the icons.
+ * @returns The updated manifest object with the default folder icons.
  */
 const setDefaultFolderIcons = (
   theme: FolderTheme,
@@ -143,9 +143,9 @@ const setDefaultFolderIcons = (
 /**
  * Get the object of the current enabled theme.
  *
- * @param {FolderTheme[]} themes - The list of available folder themes.
- * @param {string} enabledTheme - The name of the enabled theme.
- * @returns {FolderTheme | undefined} The enabled folder theme, or undefined if not found.
+ * @param themes - The list of available folder themes.
+ * @param enabledTheme - The name of the enabled theme.
+ * @returns The enabled folder theme, or undefined if not found.
  */
 const getEnabledFolderTheme = (
   themes: FolderTheme[],
@@ -157,9 +157,9 @@ const getEnabledFolderTheme = (
 /**
  * Disable all file icons that are in a pack which is disabled.
  *
- * @param {FolderTheme | undefined} folderIcons - The folder icons to be filtered.
- * @param {IconPackValue | undefined} activatedIconPack - The active icon pack to be considered.
- * @returns {FolderIcon[]} The filtered folder icons that are enabled for the active icon pack.
+ * @param folderIcons - The folder icons to be filtered.
+ * @param activatedIconPack - The active icon pack to be considered.
+ * @returns The filtered folder icons that are enabled for the active icon pack.
  */
 const disableIconsByPack = (
   folderIcons: FolderTheme | undefined,
@@ -178,21 +178,28 @@ const disableIconsByPack = (
 /**
  * Set the icon definitions in the manifest.
  *
- * @param {Manifest} manifest - The manifest object to be updated.
- * @param {Config} config - The configuration object for the icons.
- * @param {FolderIcon | DefaultIcon} icon - The icon to be set in the manifest.
- * @param {boolean} isClone - Whether the icon is a clone.
- * @param {string} [appendix=''] - The appendix to be added to the icon name.
- * @returns {Manifest} The updated manifest object with the icon definitions.
+ * @param manifest - The manifest object to be updated.
+ * @param config - The configuration object for the icons.
+ * @param icon - The icon to be set in the manifest.
+ * @param appendix - The appendix to be added to the icon name.
+ * @returns The updated manifest object with the icon definitions.
  */
 const setIconDefinitions = (
   manifest: Manifest,
   config: Config,
   icon: FolderIcon | DefaultIcon,
-  isClone = false,
   appendix: string = ''
 ) => {
-  manifest = createIconDefinitions(manifest, config, icon.name, appendix, isClone);
+  const isClone = (icon as FolderIcon).clone !== undefined;
+
+  manifest = createIconDefinitions(
+    manifest,
+    config,
+    icon.name,
+    appendix,
+    isClone
+  );
+
   if (icon.light) {
     manifest = merge(
       manifest,
@@ -223,12 +230,12 @@ const setIconDefinitions = (
 /**
  * Create the icon definitions in the manifest.
  *
- * @param {Manifest} manifest - The manifest object to be updated.
- * @param {Config} config - The configuration object for the icons.
- * @param {string} iconName - The name of the icon.
- * @param {string} [appendix=''] - The appendix to be added to the icon name.
- * @param {boolean} [isClone=false] - Whether the icon is a clone.
- * @returns {Manifest} The updated manifest object with the icon definitions.
+ * @param manifest - The manifest object to be updated.
+ * @param config - The configuration object for the icons.
+ * @param iconName - The name of the icon.
+ * @param appendix - The appendix to be added to the icon name.
+ * @param isClone - Whether the icon is a clone.
+ * @returns The updated manifest object with the icon definitions.
  */
 const createIconDefinitions = (
   manifest: Manifest,
@@ -236,7 +243,7 @@ const createIconDefinitions = (
   iconName: string,
   appendix: string = '',
   isClone = false
-) => {
+): Manifest => {
   const fileConfigHash = getFileConfigHash(config);
   const configIconDefinitions = manifest.iconDefinitions;
   const ext = isClone ? cloneIconExtension : '.svg';
@@ -262,8 +269,8 @@ const createIconDefinitions = (
 /**
  * Extend the folder names with additional styles.
  *
- * @param {string[]} folderNames - The folder names to be extended.
- * @returns {string[]} The extended folder names.
+ * @param folderNames - The folder names to be extended.
+ * @returns The extended folder names.
  */
 const extendFolderNames = (folderNames: string[]) => {
   const names: string[] = [];
@@ -284,16 +291,16 @@ const extendFolderNames = (folderNames: string[]) => {
 /**
  * Set the folder names in the manifest.
  *
- * @param {string} iconName - The name of the icon.
- * @param {string[]} folderNames - The folder names to be set in the manifest.
- * @param {string} [appendix=''] - The appendix to be added to the icon name.
- * @returns {Partial<Manifest>} The partial manifest object with the folder names.
+ * @param iconName - The name of the icon.
+ * @param folderNames - The folder names to be set in the manifest.
+ * @param appendix - The appendix to be added to the icon name.
+ * @returns The partial manifest object with the folder names.
  */
 const setFolderNames = (
   iconName: string,
   folderNames: string[],
   appendix: string = ''
-) => {
+): Partial<Manifest> => {
   const obj: Partial<Manifest> = {
     folderNames: {},
     folderNamesExpanded: {},
@@ -313,10 +320,10 @@ const setFolderNames = (
 /**
  * Create the default icon configuration object.
  *
- * @param {boolean} hasFolderIcons - Whether the theme has folder icons.
- * @param {FolderTheme} theme - The folder theme to be used.
- * @param {string} [appendix=''] - The appendix to be added to the icon name.
- * @returns {object} The default icon configuration object.
+ * @param hasFolderIcons - Whether the theme has folder icons.
+ * @param theme - The folder theme to be used.
+ * @param appendix - The appendix to be added to the icon name.
+ * @returns The default icon configuration object.
  */
 const createDefaultIconConfigObject = (
   hasFolderIcons: boolean,
@@ -337,10 +344,10 @@ const createDefaultIconConfigObject = (
 /**
  * Create the root icon configuration object.
  *
- * @param {boolean} hasFolderIcons - Whether the theme has folder icons.
- * @param {FolderTheme} theme - The folder theme to be used.
- * @param {string} [appendix=''] - The appendix to be added to the icon name.
- * @returns {object} The root icon configuration object.
+ * @param hasFolderIcons - Whether the theme has folder icons.
+ * @param theme - The folder theme to be used.
+ * @param appendix - The appendix to be added to the icon name.
+ * @returns The root icon configuration object.
  */
 const createRootIconConfigObject = (
   hasFolderIcons: boolean,
@@ -367,8 +374,8 @@ const createRootIconConfigObject = (
 /**
  * Get the custom icons based on the folder associations.
  *
- * @param {IconAssociations} folderAssociations - The folder associations to be considered.
- * @returns {FolderIcon[]} The custom icons based on the folder associations.
+ * @param folderAssociations - The folder associations to be considered.
+ * @returns The custom icons based on the folder associations.
  */
 const getCustomIcons = (folderAssociations: IconAssociations | undefined) => {
   if (!folderAssociations) return [];
@@ -388,9 +395,9 @@ const getCustomIcons = (folderAssociations: IconAssociations | undefined) => {
 /**
  * Generate the folder icons with the specified color, opacity, and saturation.
  *
- * @param {string} color - The color of the folder icons.
- * @param {number} opacity - The opacity of the folder icons.
- * @param {number} saturation - The saturation of the folder icons.
+ * @param color - The color of the folder icons.
+ * @param opacity - The opacity of the folder icons.
+ * @param saturation - The saturation of the folder icons.
  */
 export const generateFolderIcons = async (
   color: string,
