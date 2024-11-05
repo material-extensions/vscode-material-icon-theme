@@ -11,10 +11,10 @@ To contribute effectively to this project, follow these guidelines:
 7. **Keep it simple**: Aim for simplicity in your solutions and avoid unnecessary complexity.
 8. **Add new icons appropriately**:
 
-- Use colors from the [Material Design color palette](https://material.io/design/color/the-color-system.html).
-- Ensure icons have proper spacing (Read [CONTRIBUTING.md](/CONTRIBUTING.md#icon-spacing)).
-- Assign icons uniquely to file names, extensions, or folder names according to the [project guidelines](/CONTRIBUTING.md).
-- Provide separate icons for different color themes if necessary (Read [CONTRIBUTING.md](/CONTRIBUTING.md#icons-for-color-themes)).
+    - Use colors from the [Material Design color palette](https://material.io/design/color/the-color-system.html).
+    - Ensure icons have proper spacing (Read [CONTRIBUTING.md](/CONTRIBUTING.md#icon-spacing)).
+    - Assign icons uniquely to file names, extensions, or folder names according to the [project guidelines](/CONTRIBUTING.md).
+    - Provide separate icons for different color themes if necessary (Read [CONTRIBUTING.md](/CONTRIBUTING.md#icons-for-color-themes)).
 
 9. **Clone existing icons when possible**: If you need a variant of an existing icon with a different color, clone the icon through configuration without creating a new SVG (Read [CONTRIBUTING.md](/CONTRIBUTING.md#icon-cloning)).
 10. **Contribute to translations**: If you notice errors in translations, you can help fix them by editing the appropriate translation files (`package.nls*.json`).
