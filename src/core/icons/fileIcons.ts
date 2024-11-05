@@ -2789,7 +2789,7 @@ export const fileIcons: FileIcons = {
       name: 'histoire-config',
       patterns: {
         "histoire.config": FileNamePattern.Ecmascript,
-        ".historie": FileNamePattern.Ecmascript,
+        ".histoire": FileNamePattern.Ecmascript,
       },
     },
   ]),
