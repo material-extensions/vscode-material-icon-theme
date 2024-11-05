@@ -2781,5 +2781,14 @@ export const fileIcons: FileIcons = {
         '.histoire': FileNamePattern.Ecmascript,
       },
     },
+    {
+      name: 'installation',
+      fileNames: [
+        'installation',
+        'installation.md',
+        'installation.rst',
+        'installation.txt',
+      ],
+    },
   ]),
 };
