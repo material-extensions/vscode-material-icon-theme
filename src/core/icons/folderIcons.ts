@@ -882,7 +882,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-interface',
-        folderNames: ['interface', 'interfaces'],
+        folderNames: ['interface', 'interfaces', 'landing'],
       },
       { name: 'folder-netlify', folderNames: ['netlify'] },
       {
