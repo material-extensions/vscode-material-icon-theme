@@ -1,12 +1,22 @@
-const { extendDefaultPlugins } = require('svgo');
+/**
+ * @typedef {import('svgo').Config} SVGOConfig
+ * @typedef {import('svgo').PluginConfig} PluginConfig
+ */
 
-module.exports = {
+module.exports = /** @type {SVGOConfig} */ {
+  multipass: true,
   precision: 2,
-  plugins: extendDefaultPlugins([
+  /** @type {PluginConfig[]} */
+  plugins: [
+    {
+      name: 'preset-default',
+    },
+    'convertStyleToAttrs',
     'removeDimensions',
     'removeOffCanvasPaths',
-    'removeStyleElement',
     'removeScriptElement',
+    'removeStyleElement',
     'reusePaths',
-  ])
-}
+    'sortAttrs',
+  ],
+};
