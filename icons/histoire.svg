@@ -1,4 +1,3 @@
-<svg width="16" height="16" clip-rule="evenodd" stroke-linejoin="round" version="1.1" xmlns="http://www.w3.org/2000/svg">
- <path d="m9 1-6 8h5l0.66932-4.6852z" fill="#1de9b6"/>
- <path d="m7 15 6-8h-5z" fill="#1de9b6"/>
+<svg width="16" height="16" clip-rule="evenodd" version="1.1" xmlns="http://www.w3.org/2000/svg">
+ <path d="m8.8145 1.4688a0.18862 0.18862 0 0 0-0.16211 0.089844l-4.416 7.0645a0.24668 0.24668 0 0 0 0.20898 0.37695h3.5547v5.2969a0.20165 0.20165 0 0 0 0.37305 0.10742l4.4258-7.082a0.21117 0.21117 0 0 0-0.17969-0.32227h-3.6191v-5.3418a0.18862 0.18862 0 0 0-0.18555-0.18945z" fill="#1de9b6"/>
 </svg>
