@@ -1,9 +1,12 @@
-name: Check SVG icon colors
+name: 🎨 Check SVG icon colors
 
 on:
   pull_request:
     paths:
-      - 'icons/*.svg'
+      - "icons/*.svg"
+
+permissions:
+  contents: read
 
 jobs:
   color-check:
@@ -11,13 +14,15 @@ jobs:
     runs-on: ubuntu-latest
     env:
       TARGET_BRANCH: ${{ github.event.pull_request.base.ref }}
+
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v4
+      - name: 📥 Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           fetch-depth: 0
-          
-      - name: Check colors 🎨
+          persist-credentials: false
+
+      - name: 🎨 Check colors
         run: |
           svgFiles=$(git diff origin/${{ env.TARGET_BRANCH }} --diff-filter=ACMRTUX  --name-only | grep '.svg$')
           npx svg-color-linter --colors material-colors.yml ${svgFiles}
