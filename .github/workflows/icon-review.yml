@@ -89,7 +89,7 @@ jobs:
 
               ${preview}
 
-              Check how your icon${pluralS} fit${pluralS ? '' : 's'} in a 16x16 grid with our **Pixel Perfect Checker** by following [this link](https://pixp.pages.dev/material-extensions/vscode-material-icon-theme/pull/${{ github.event.pull_request.number }}).
+              Check how your icon${pluralS} fit${pluralS ? '' : 's'} into a 16x16 grid with our **Pixel Perfect Checker** by following [this link](https://pixp.pages.dev/material-extensions/vscode-material-icon-theme/pull/${{ github.event.pull_request.number }}).
 
               You can find more information on how to contribute in the [contribution guidelines](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/CONTRIBUTING.md).
             `;
