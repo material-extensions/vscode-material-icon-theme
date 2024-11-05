@@ -1,3 +1,5 @@
+<!-- markdownlint-disable no-inline-html -->
+
 <h1 align="center">
   <br>
     <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/logo.png" alt="logo" width="200">
@@ -91,7 +93,7 @@ It's possible to add custom icons by adding a path to an SVG file which is locat
 
 For example a custom SVG file called `sample.svg` can be placed in an `icons` folder inside of VS Code's `extensions` folder:
 
-```
+```text
 .vscode
  ┗ extensions
    ┗ icons
@@ -108,7 +110,7 @@ In the settings.json (User Settings only!) the icon can be associated to a file 
 
 _Note: The custom file name must be configured in the settings without the file ending `.svg` as shown in the example above._
 
-#### Custom clones
+#### Custom file icon clones
 
 It's also possible to clone existing file icons and change their colors to create new icons that can be associated with file names or file extensions. The following example shows how to clone the `rust` icon:
 
@@ -134,8 +136,8 @@ This will create two new icons called `rust-mod` and `rust-lib` that are associa
 
 <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/how-tos/cloned-file-icons-example.png" alt="cloned file icons">
 
-- Although you can use any `#RRGGBB` color for the `color` and `lightColor` properties, if you want to stick with colors from the material palette, you can check the full list of allowed aliases [here](https://github.com/PKief/vscode-material-icon-theme/blob/main/src/icons/generator/clones/utils/color/materialPalette.ts#L7).
-- You can check the full list of available icons to be used as the `base` [here](https://github.com/PKief/vscode-material-icon-theme/blob/main/src/icons/fileIcons.ts).
+- Although you can use any `#RRGGBB` color for the `color` and `lightColor` properties, if you want to stick with colors from the material palette, you can check the full list of allowed aliases [here](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/core/generator/clones/utils/color/materialPalette.ts).
+- You can check the full list of available icons to be used as the `base` [here](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/core/icons/fileIcons.ts).
 
 ### Folder associations
 
@@ -154,7 +156,7 @@ Similar to the files, it is also possible to reference your own SVG icons for fo
 
 In our example we place them into an `icons` folder inside of the `.vscode/extensions` folder:
 
-```
+```text
 .vscode
  ┗ extensions
    ┗ icons
@@ -170,7 +172,7 @@ In the settings.json (User Settings only!) the folder icons can be associated to
 }
 ```
 
-#### Custom clones
+#### Custom folder icon clones
 
 It's also possible to clone existing folder icons and change their colors to create new icons that can be associated with folder names. The following example shows how to clone the `admin` folder icon:
 
@@ -196,8 +198,8 @@ This will create two new icons called `users-admin` and `roles-admin` that are a
 
 <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/how-tos/cloned-folder-icons-example.png" alt="cloned folder icons">
 
-- Although you can use any `#RRGGBB` color for the `color` and `lightColor` properties, if you want to stick with colors from the material palette, you can check the full list of allowed aliases [here](https://github.com/PKief/vscode-material-icon-theme/tree/main/icons/generator/clones/utils/color/materialPalette.ts#L7).
-- You can check the full list of available icon to be used as the `base` [here](https://github.com/PKief/vscode-material-icon-theme/blob/main/src/icons/folderIcons.ts).
+- Although you can use any `#RRGGBB` color for the `color` and `lightColor` properties, if you want to stick with colors from the material palette, you can check the full list of allowed aliases [here](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/core/generator/clones/utils/color/materialPalette.ts).
+- You can check the full list of available icon to be used as the `base` [here](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/core/icons/folderIcons.ts).
 
 ### Language associations
 
@@ -239,14 +241,15 @@ Press `Ctrl-Shift-P` to open the command palette and type `Material Icons`.
 
 ## Contributors
 
-<a href="https://github.com/PKief/vscode-material-icon-theme/graphs/contributors">
+<a href="https://github.com/material-extensions/vscode-material-icon-theme/graphs/contributors">
     <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/contributors.png" alt="Contributors">
 </a>
 
 **Would you like to contribute?**
 
-Take a look at the [contribution guidelines](https://github.com/PKief/vscode-material-icon-theme/blob/main/CONTRIBUTING.md) and open a [new issue](https://github.com/PKief/vscode-material-icon-theme/issues) or [pull request](https://github.com/PKief/vscode-material-icon-theme/pulls) on GitHub.
+Take a look at the [contribution guidelines](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/CONTRIBUTING.md) and open a [new issue](https://github.com/material-extensions/vscode-material-icon-theme/issues) or [pull request](https://github.com/material-extensions/vscode-material-icon-theme/pulls) on GitHub.
 
 ## Related extensions
 
 - [Material Icons for GitHub](https://github.com/Claudiohbsantos/github-material-icons-extension)
+- [Material Product Icons](https://github.com/material-extensions/vscode-material-product-icons)

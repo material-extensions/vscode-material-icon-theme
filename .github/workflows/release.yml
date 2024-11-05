@@ -1,4 +1,4 @@
-name: Release + Publish
+name: 🚀 Release + Publish
 
 on:
   workflow_dispatch:
@@ -7,78 +7,100 @@ on:
         type: choice
         description: Select the version change
         required: true
-        default: 'minor'
+        default: "minor"
         options:
           - major
           - minor
           - patch
+
+permissions:
+  id-token: write
+  contents: read
 
 jobs:
   release:
     runs-on: ubuntu-latest
     env:
       VERSION_CHANGE: ${{ github.event.inputs.versionChange }}
+
+    permissions:
+      contents: write
+      id-token: write
+      attestations: write
+
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v4
+      - uses: actions/create-github-app-token@5d869da34e18e7287c1daad50e0b8ea0f506ce69 # v1.11.0
+        id: app-token
+        with:
+          app-id: ${{ vars.BOT_APP_ID }}
+          private-key: ${{ secrets.BOT_PRIVATE_KEY }}
+
+      - name: 📥 Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           fetch-depth: 0
+          token: ${{ steps.app-token.outputs.token }}
 
-      - name: Setup Node.js ⚙️
-        uses: actions/setup-node@v3
+      - name: 🔧 Setup Bun
+        uses: oven-sh/setup-bun@4bc047ad259df6fc24a6c9b0f9a0cb08cf17fbe5 # v2
         with:
-          node-version: 'lts/*'
-          registry-url: 'https://registry.npmjs.org'
+          bun-version-file: ".bun-version"
 
-      - name: Install node_modules 📦
+      - name: 📦 Install dependencies
         run: |
-          npm ci
-          npm install --global @vscode/vsce
+          bun install --frozen-lockfile
+          bun add -g npm
 
-      - name: Update version ↗
+      - name: 🔄 Update version
         run: |
           git config --global user.name 'Philipp Kief'
           git config --global user.email 'PKief@users.noreply.github.com'
           git config --global push.followTags true
           npm version ${{ env.VERSION_CHANGE }} -m "Release %s"
 
-      - name: Get meta data 🔍
+      - name: 📝 Get metadata
         run: |
-          NODE_VERSION=$(node -p -e "require('./package.json').version")
-          echo VERSION=$NODE_VERSION >> $GITHUB_ENV
-          NODE_NAME=$(node -p -e "require('./package.json').name")
-          echo NAME=$NODE_NAME >> $GITHUB_ENV
-          NODE_DISPLAY_NAME=$(node -p -e "require('./package.json').displayName")
-          echo DISPLAY_NAME=$NODE_DISPLAY_NAME >> $GITHUB_ENV
+          VERSION=$(bun --print "(await import('./package.json')).version")
+          NAME=$(bun --print "(await import('./package.json')).name")
+          DISPLAY_NAME=$(bun --print "(await import('./package.json')).displayName")
+          echo VERSION=$VERSION >> $GITHUB_ENV
+          echo NAME=$NAME >> $GITHUB_ENV
+          echo DISPLAY_NAME=$DISPLAY_NAME >> $GITHUB_ENV
 
-      - name: Build ⚒️
-        run: vsce package
+      - name: 🛠️ Build
+        run: bunx @vscode/vsce package
 
-      - name: Push tags 📌
+      - name: 🔒 Attest artifacts
+        uses: actions/attest-build-provenance@1c608d11d69870c2092266b3f9a6f3abbf17002c # v1.4.3
+        # Read: https://docs.github.com/en/actions/security-guides/using-artifact-attestations-to-establish-provenance-for-builds
+        with:
+          subject-path: "${{ env.NAME }}-${{ env.VERSION }}.vsix"
+
+      - name: 📌 Push tags
         run: git push
 
-      - name: Release ${{ env.VERSION }} 🔆
-        uses: softprops/action-gh-release@v1
+      - name: 🚀 Release ${{ env.VERSION }}
+        uses: softprops/action-gh-release@e7a8f85e1c67a31e6ed99a94b41bd0b71bbee6b8 # v2.0.9
         with:
           files: ${{ env.NAME }}-${{ env.VERSION }}.vsix
           tag_name: v${{ env.VERSION }}
           name: ${{ env.DISPLAY_NAME }} v${{ env.VERSION }}
           generate_release_notes: true
 
-      - name: Publish to Open VSX Registry 🌐
-        uses: HaaLeo/publish-vscode-extension@v1
+      - name: 🌐 Publish to Open VSX Registry
+        uses: HaaLeo/publish-vscode-extension@28e2d3f5817fccf23c1f219eb0cecc903132d1a2 # v1.6.2
         with:
           pat: ${{ secrets.OPEN_VSX_TOKEN }}
           extensionFile: ${{ env.NAME }}-${{ env.VERSION }}.vsix
 
-      - name: Publish to Visual Studio Marketplace 🌐
-        uses: HaaLeo/publish-vscode-extension@v1
+      - name: 🌐 Publish to Visual Studio Marketplace
+        uses: HaaLeo/publish-vscode-extension@28e2d3f5817fccf23c1f219eb0cecc903132d1a2 # v1.6.2
         with:
           pat: ${{ secrets.VS_MARKETPLACE_TOKEN }}
           registryUrl: https://marketplace.visualstudio.com
           extensionFile: ${{ env.NAME }}-${{ env.VERSION }}.vsix
 
-      - name: Publish to NPM Registry 🌐
-        run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: 📦 Publish to NPM Registry
+        run: |
+          npm set "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}"
+          npm publish --provenance --access public
