@@ -2787,12 +2787,10 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'histoire-config',
-      fileNames: [
-        'histoire.config.ts',
-        'histoire.config.js',
-        '.histoire.ts',
-        '.histoire.js',
-      ],
+      patterns: {
+        "histoire.config": FileNamePattern.Ecmascript,
+        ".historie": FileNamePattern.Ecmascript,
+      },
     },
   ]),
 };
