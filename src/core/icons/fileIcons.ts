@@ -2785,5 +2785,12 @@ export const fileIcons: FileIcons = {
       name: 'dependencies-update',
       fileExtensions: ['.ncurc.json', '.ncurc.yml', '.ncurc.js'],
     },
+    {
+      name: 'histoire-config',
+      patterns: {
+        "histoire.config": FileNamePattern.Ecmascript,
+        ".histoire": FileNamePattern.Ecmascript,
+      },
+    },
   ]),
 };
