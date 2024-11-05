@@ -1,15 +1,9 @@
-/**
- * @typedef {import('svgo').Config} SVGOConfig
- * @typedef {import('svgo').PluginConfig} PluginConfig
- */
-
-module.exports = /** @type {SVGOConfig} */ {
+module.exports = {
   multipass: true,
   precision: 2,
-  /** @type {PluginConfig[]} */
   plugins: [
     {
-      name: 'preset-default',
+      name: 'preset-default'
     },
     'convertStyleToAttrs',
     'removeDimensions',
@@ -18,5 +12,5 @@ module.exports = /** @type {SVGOConfig} */ {
     'removeStyleElement',
     'reusePaths',
     'sortAttrs',
-  ],
-};
+  ]
+}

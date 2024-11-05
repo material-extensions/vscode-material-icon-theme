@@ -4,14 +4,15 @@
   // Use Microsoft's Ubuntu Base image for the dev container
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "features": {
-    "ghcr.io/michidk/devcontainers-features/bun:1": {}
+    // Use NodeJS features in the dev container
+    "ghcr.io/devcontainers/features/node:1": {}
   },
 
   "privileged": true,
 
   "onCreateCommand": {
-    // Install dependencies in the dev container
-    "install-bun-packages": "bun install"
+    // Install NPM dependencies in the dev container
+    "install-node-packages": "npm install"
   },
 
   "customizations": {
@@ -22,11 +23,11 @@
         "resmon.show.cpufreq": false
       },
       "extensions": [
-        "biomejs.biome",
+        // Define suggested extensions to preinstall in the dev container
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
         "jock.svg",
-        "EditorConfig.EditorConfig",
-        "oven.bun-vscode",
-        "DavidAnson.vscode-markdownlint"
+        "EditorConfig.EditorConfig"
       ]
     }
   }

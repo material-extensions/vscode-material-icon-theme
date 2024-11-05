@@ -1,24 +1,11 @@
 /**
  * This file is meant to be executed exclusively by npm scripts.
  */
-
-import {
-  generateFileIcons,
-  generateFolderIcons,
-  generateManifest,
-  getDefaultConfig,
-} from '../../core';
+import { createIconFile } from './../../icons/index';
 
 try {
-  // Generate default file and folder icons
-  const config = getDefaultConfig();
-  generateFileIcons(config.files.color, config.opacity, config.saturation);
-  generateFolderIcons(config.folders.color, config.opacity, config.saturation);
-
-  const manifest = generateManifest();
-  // Print manifest to stdout so that scripts can consume it
-  console.log(JSON.stringify(manifest));
+  createIconFile();
 } catch (error) {
   console.error(error);
-  throw Error('An error while generating the manifest occurred!');
+  throw Error('Could not create icon file!');
 }

@@ -1,3 +1,0 @@
-[test]
-# Load these modules before running tests.
-preload = ["./src/core/tests/mocks"]

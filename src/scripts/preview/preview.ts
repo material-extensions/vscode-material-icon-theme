@@ -1,5 +1,5 @@
-import { join } from 'node:path';
-import { writeToFile } from '../../core';
+import { writeFileSync } from 'fs';
+import { join } from 'path';
 import { green, red } from '../helpers/painter';
 import { createScreenshot } from '../helpers/screenshots';
 import { toTitleCase } from './../helpers/titleCase';
@@ -29,8 +29,8 @@ const createHTMLTableBodyRows = (items: IconDefinition[][]) => {
         (icon) => `
             <td class="icon">
                 <img src="./../../../icons/${icon.iconName}.svg" alt="${
-                  icon.label
-                }">
+          icon.label
+        }">
             </td>
             <td class="iconName">${toTitleCase(icon.label)}</td>
         `
@@ -64,7 +64,7 @@ const createPreviewTable = (icons: IconDefinition[][], size: number) => {
   return table;
 };
 
-const savePreview = async (
+const savePreview = (
   fileName: string,
   size: number,
   icons: IconDefinition[][]
@@ -72,7 +72,7 @@ const savePreview = async (
   const filePath = join(__dirname, fileName + '.html');
 
   // write the html file with the icon table
-  await writeToFile(filePath, createPreviewTable(icons, size));
+  writeFileSync(filePath, createPreviewTable(icons, size));
 
   // create the image
   createScreenshot(filePath, fileName)
@@ -136,10 +136,10 @@ export const generatePreview = (
   );
 };
 
-type IconDefinition = {
+interface IconDefinition {
   iconName: string;
   label: string;
-};
+}
 
 /**
  * Trim the list of icons into the matrix

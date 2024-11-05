@@ -1,18 +1,15 @@
-import { readdir } from 'node:fs';
-import { join, parse } from 'node:path';
-
+import { readdir } from 'fs';
+import { join, parse } from 'path';
+import { DefaultIcon, FolderIcon, FolderTheme } from '../../../models/index';
+import { green, red } from '../../helpers/painter';
 import {
-  type DefaultIcon,
-  type FolderIcon,
-  type FolderTheme,
   fileIcons,
   folderIcons,
   highContrastColorFileEnding,
   languageIcons,
   lightColorFileEnding,
   openedFolder,
-} from '../../../core';
-import { green, red } from '../../helpers/painter';
+} from './../../../icons';
 
 /**
  * Defines the folder where all icon files are located.
