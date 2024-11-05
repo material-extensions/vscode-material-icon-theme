@@ -2785,5 +2785,9 @@ export const fileIcons: FileIcons = {
       name: 'dependencies-update',
       fileExtensions: ['.ncurc.json', '.ncurc.yml', '.ncurc.js'],
     },
+    {
+      name: 'igl',
+      fileNames: ['.igl', 'igl-lock.yaml', 'igl-workspaces.yml', 'iglconfig.toml'],
+    },
   ]),
 };
