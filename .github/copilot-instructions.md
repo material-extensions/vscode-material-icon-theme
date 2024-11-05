@@ -13,7 +13,7 @@ To contribute effectively to this project, follow these guidelines:
 
 - Use colors from the [Material Design color palette](https://material.io/design/color/the-color-system.html).
 - Ensure icons have proper spacing (Read [CONTRIBUTING.md](/CONTRIBUTING.md#icon-spacing)).
-- Assign icons uniquely to file names, extensions, or folder names according to the [project guidelines](/CONTRIBUTING.md)).
+- Assign icons uniquely to file names, extensions, or folder names according to the [project guidelines](/CONTRIBUTING.md).
 - Provide separate icons for different color themes if necessary (Read [CONTRIBUTING.md](/CONTRIBUTING.md#icons-for-color-themes)).
 
 9. **Clone Existing Icons When Possible**: If you need a variant of an existing icon with a different color, clone the icon through configuration without creating a new SVG (Read [CONTRIBUTING.md](/CONTRIBUTING.md#icon-cloning)).
