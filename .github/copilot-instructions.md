@@ -1,3 +1,5 @@
+# Copilot instructions
+
 To contribute effectively to this project, follow these guidelines:
 
 1. **Follow the Project Style**: Ensure all changes adhere to the existing code and documentation style. Review the [project's codebase](/) to understand the conventions used.
