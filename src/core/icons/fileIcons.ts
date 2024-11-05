@@ -1314,11 +1314,7 @@ export const fileIcons: FileIcons = {
     { name: 'heroku', fileNames: ['procfile', 'procfile.windows'] },
     {
       name: 'editorconfig',
-      fileNames: [
-        '.editorconfig',
-        '.editorconfig-checker.json',
-        '.ecrc',
-      ],
+      fileNames: ['.editorconfig', '.editorconfig-checker.json', '.ecrc'],
     },
     { name: 'gitlab', fileExtensions: ['gitlab-ci.yml'] },
     { name: 'bower', fileNames: ['.bowerrc', 'bower.json'] },
@@ -2379,7 +2375,11 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['swagger.json', 'swagger.yml', 'swagger.yaml'],
       fileNames: ['swagger.json', 'swagger.yml', 'swagger.yaml'],
     },
-    { name: 'bun', fileNames: ['bun.lockb', 'bunfig.toml', ".bun-version"], light: true },
+    {
+      name: 'bun',
+      fileNames: ['bun.lockb', 'bunfig.toml', '.bun-version'],
+      light: true,
+    },
     { name: 'antlr', fileExtensions: ['g4'] },
     { name: 'stylable', fileExtensions: ['st.css'] },
     { name: 'pinejs', fileExtensions: ['pine'] },
@@ -2504,7 +2504,7 @@ export const fileIcons: FileIcons = {
     {
       name: 'rojo',
       fileExtensions: ['project.json', 'model.json', 'meta.json'],
-      enabledFor: [IconPack.Roblox]
+      enabledFor: [IconPack.Roblox],
     },
     { name: 'wally', fileNames: ['wally.toml'] },
     {
@@ -2737,30 +2737,19 @@ export const fileIcons: FileIcons = {
     {
       name: 'copilot',
       fileNames: ['.github/copilot-instructions.md'],
-      light: true
+      light: true,
     },
     {
       name: 'bench-ts',
-      fileExtensions: [
-        'bench.ts',
-        'bench.cts',
-        'bench.mts',
-      ],
+      fileExtensions: ['bench.ts', 'bench.cts', 'bench.mts'],
     },
     {
       name: 'bench-jsx',
-      fileExtensions: [
-        'bench.jsx',
-        'bench.tsx',
-      ],
+      fileExtensions: ['bench.jsx', 'bench.tsx'],
     },
     {
       name: 'bench-js',
-      fileExtensions: [
-        'bench.js',
-        'bench.cjs',
-        'bench.mjs',
-      ],
+      fileExtensions: ['bench.js', 'bench.cjs', 'bench.mjs'],
     },
     {
       name: 'pre-commit',
@@ -2788,9 +2777,18 @@ export const fileIcons: FileIcons = {
     {
       name: 'histoire-config',
       patterns: {
-        "histoire.config": FileNamePattern.Ecmascript,
-        ".histoire": FileNamePattern.Ecmascript,
+        'histoire.config': FileNamePattern.Ecmascript,
+        '.histoire': FileNamePattern.Ecmascript,
       },
+    },
+    {
+      name: 'installation',
+      fileNames: [
+        'installation',
+        'installation.md',
+        'installation.rst',
+        'installation.txt',
+      ],
     },
   ]),
 };
