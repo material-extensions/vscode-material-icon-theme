@@ -1,10 +1,10 @@
 import { getFileConfigHash } from '../helpers/configHash';
 import { logger } from '../logging/logger';
-import type { Config, IconAssociations } from '../models/icons/config';
-import type { FileIcon } from '../models/icons/files/fileIcon';
-import type { FileIcons } from '../models/icons/files/fileTypes';
-import type { IconPackValue } from '../models/icons/iconPack';
-import type { Manifest } from '../models/manifest';
+import { Config, IconAssociations } from '../models/icons/config';
+import { FileIcon } from '../models/icons/files/fileIcon';
+import { FileIcons } from '../models/icons/files/fileTypes';
+import { IconPackValue } from '../models/icons/iconPack';
+import { Manifest } from '../models/manifest';
 import {
   cloneIconExtension,
   highContrastColorFileEnding,
@@ -17,6 +17,11 @@ import { validateHEXColorCode } from './shared/validation';
 
 /**
  * Get all file icons that can be used in this theme.
+ *
+ * @param fileIcons - The file icons to be used in the theme.
+ * @param config - The configuration object for the icons.
+ * @param manifest - The manifest object to be updated with the file icons.
+ * @returns The updated manifest object with the file icons.
  */
 export const loadFileIconDefinitions = (
   fileIcons: FileIcons,
@@ -109,6 +114,12 @@ export const loadFileIconDefinitions = (
 
 /**
  * Map the file extensions and the filenames to the related icons.
+ *
+ * @param icon - The file icon to be mapped.
+ * @param mappingType - The type of mapping (file extensions or file names).
+ * @param manifest - The manifest object to be updated with the mappings.
+ * @param customFileAssociation - Custom file associations to be considered.
+ * @returns The updated manifest object with the mappings.
  */
 const mapSpecificFileIcons = (
   icon: FileIcon,
@@ -161,6 +172,10 @@ const mapSpecificFileIcons = (
 
 /**
  * Disable all file icons that are in a pack which is disabled.
+ *
+ * @param fileIcons - The file icons to be filtered.
+ * @param activeIconPack - The active icon pack to be considered.
+ * @returns The filtered file icons that are enabled for the active icon pack.
  */
 const disableIconsByPack = (
   fileIcons: FileIcons,
@@ -173,6 +188,16 @@ const disableIconsByPack = (
   });
 };
 
+/**
+ * Set the icon definition in the manifest.
+ *
+ * @param manifest - The manifest object to be updated.
+ * @param config - The configuration object for the icons.
+ * @param iconName - The name of the icon.
+ * @param isClone - Whether the icon is a clone.
+ * @param appendix - The appendix to be added to the icon name.
+ * @returns The updated manifest object with the icon definition.
+ */
 const setIconDefinition = (
   manifest: Manifest,
   config: Config,
@@ -192,6 +217,13 @@ const setIconDefinition = (
   return manifest;
 };
 
+/**
+ * Generate the file icons with the specified color, opacity, and saturation.
+ *
+ * @param color - The color of the file icons.
+ * @param opacity - The opacity of the file icons.
+ * @param saturation - The saturation of the file icons.
+ */
 export const generateFileIcons = async (
   color: string,
   opacity: number,
@@ -212,6 +244,12 @@ export const generateFileIcons = async (
   );
 };
 
+/**
+ * Get the custom icons based on the file associations.
+ *
+ * @param fileAssociations - The file associations to be considered.
+ * @returns The custom icons based on the file associations.
+ */
 const getCustomIcons = (fileAssociations: IconAssociations | undefined) => {
   if (!fileAssociations) return [];
 
