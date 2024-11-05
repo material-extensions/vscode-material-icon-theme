@@ -2,7 +2,7 @@
   "name": "material-icon-theme",
   "displayName": "Material Icon Theme",
   "description": "Material Design Icons for Visual Studio Code",
-  "version": "5.12.0",
+  "version": "5.13.0",
   "license": "MIT",
   "scripts": {
     "precompile": "rimraf dist && bun run verify",
@@ -375,7 +375,7 @@
     "@softarc/sheriff-core": "^0.18.0",
     "@types/chroma-js": "^2.4.4",
     "@types/puppeteer": "^7.0.0",
-    "@types/vscode": "~1.95.0",
+    "@types/vscode": "~1.55.0",
     "axios": "^1.7.2",
     "bun-types": "^1.1.20",
     "changelog-machine": "^1.1.0",
