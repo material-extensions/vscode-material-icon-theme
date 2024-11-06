@@ -24,11 +24,4 @@ jobs:
         run: bun i @commitlint/config-conventional
 
       - name: 🔍 Check PR title with commitlint
-        run: echo "${{ github.event.pull_request.title }}" | bunx commitlint
-
-      - name: 🛑 Fail if PR title is incorrect
-        if: failure()
-        run: |
-          echo "Please make sure your PR title follows the Conventional Commit format."
-          echo "Examples: 'feat: add new feature', 'fix: correct bug', 'docs: update documentation'."
-          echo "For more information, see https://github.com/material-extensions/vscode-material-icon-theme/blob/main/CONTRIBUTING.md#conventional-pull-request-titles"
+        run: echo "${{ github.event.pull_request.title }}" | bunx commitlint --help-url https://github.com/material-extensions/vscode-material-icon-theme/blob/main/CONTRIBUTING.md#conventional-pull-request-titles
