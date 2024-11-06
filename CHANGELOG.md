@@ -3,6 +3,48 @@
  All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
  
+#### [v5.13.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.12.0...v5.13.0) 
+
+> November 5, 2024 
+
+- chore: Ignore dependency update for @types/vscode in renovate [`0ecabdde`](https://github.com/material-extensions/vscode-material-icon-theme/commit/0ecabdde)
+- chore: Use type of supported VS Code engine only [`f59fc994`](https://github.com/material-extensions/vscode-material-icon-theme/commit/f59fc994)
+- feat(docs): :memo: improve copilot instructions [`#2669`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2669)
+- feat: 🏞️ add additional file extensions for raw images and xml [`#2673`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2673)
+- feat: add `installation` icon [`#1760`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1760)
+- feat: add `histoire config` icon [`#1626`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1626)
+- chore(icons)!: update `kotlin` icon colors to latest version [`#2666`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2666)
+- feat: Add Luau and Roblox ecosystem icons [`#1560`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1560)
+- feat: ✨ `.editorconfig-checker.json` and `.ecrc` file icon [`#2665`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2665)
+- chore(deps): update dependency bun to v1.1.34 [`#2663`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2663)
+- feat: add `dependencies-update` icon [`#1505`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1505)
+- chore(deps): update bun to v1.1.33 [`#2656`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2656)
+- chore(deps): update bun packages (major) [`#2660`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2660)
+- chore(deps): update bun packages [`#2659`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2659)
+- chore(deps): update softprops/action-gh-release action to v2.0.9 [`#2657`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2657)
+- feat: :sparkles: replace dependabot with renovate [`#2652`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2652)
+- fix(workflows): :bug: fix failing `icon-review` workflow [`#2651`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2651)
+- fix: materialized `swc` icon [`#1975`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1975)
+- feat: :sparkles: add icon for `.bun-version` file [`#2649`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2649)
+- fix(workflows): rollback Bun version (`1.1.33` ⇢ `1.1.28`) [`#2648`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2648)
+- feat(workflows): add emojis to the names of workflows [`#2645`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2645)
+- feat(workflows): use Bun version from `.bun-version` file [`#2644`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2644)
+- chore(docs): add useful comments and update issue templates [`#2643`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2643)
+- feat: trigger [`#2570`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2570)
+- feat: add Copilot instructions [`#2640`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2640)
+- docs: :fire: Remove Phorm.ai badge [`#2641`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2641)
+- fix: 🚑 fix `swc` icon colors [`#2638`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2638)
+- feat: add `.swcrc` icon for SWC and rename `swc` to `adobe-swc` [`#2232`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2232)
+- feat: add `controller` icon [`#1634`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1634)
+- feat: add `pre-commit` configuration icon [`#1643`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1643)
+- feat: add benchmark icon for [`#2206`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2206)
+- feat: icon for all the cloud channels [`#1320`](https://github.com/material-extensions/vscode-material-icon-theme/pull/1320)
+- feat: use Perl's own logo instead copying Tor's [`#876`](https://github.com/material-extensions/vscode-material-icon-theme/pull/876)
+- feat: add garden file icon [`#2176`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2176)
+- build(deps): bump `actions/checkout` from `4.2.1` to `4.2.2` [`#2635`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2635)
+- feat: add `node` and `nodejs` to folderIcons.ts [`#2636`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2636)
+- ci: update pixp url in icon-review.yml [`#2633`](https://github.com/material-extensions/vscode-material-icon-theme/pull/2633)
+ 
 #### [v5.12.0](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.11.1...v5.12.0) 
 
 > October 23, 2024 
