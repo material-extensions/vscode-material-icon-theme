@@ -32,7 +32,7 @@ jobs:
 
       - name: 🔍 Get changed SVG files
         id: get_changed_files
-        uses: actions/github-script@v7.0.1
+        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
         with:
           script: |
             const { data: files } = await github.rest.pulls.listFiles({
@@ -67,7 +67,7 @@ jobs:
           echo "image_url=$IMAGE_URL" >> $GITHUB_ENV
 
       - name: ✍️ Post or update comment
-        uses: actions/github-script@v7.0.1
+        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
         env:
           changed_svg_files_count: ${{ steps.get_changed_files.outputs.changed_svg_files_count }}
           image_url: ${{ env.image_url }}
