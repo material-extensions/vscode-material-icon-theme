@@ -18,6 +18,7 @@
   "configuration.activeIconPack.angular_ngrx": "Ikony pro Angular a ngrx.",
   "configuration.activeIconPack.react": "Ikony pro React.",
   "configuration.activeIconPack.react_redux": "Ikony pro React a Redux.",
+  "configuration.activeIconPack.roblox": "Ikony pro Roblox.",
   "configuration.activeIconPack.qwik": "Ikony pro Qwik.",
   "configuration.activeIconPack.vue": "Ikony pro Vue.",
   "configuration.activeIconPack.vue_vuex": "Ikony pro Vue a Vuex.",
