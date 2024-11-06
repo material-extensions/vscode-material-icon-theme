@@ -20,7 +20,14 @@ jobs:
           # only fetch the config file from the repository
           sparse-checkout: commitlint.config.js
 
+      - name: 📦 Install dependencies
+        run: bun i @commitlint/config-conventional
+
       - name: 🔍 Check PR title with commitlint
+        run: echo "${{ github.event.pull_request.title }}" | bunx commitlint
+
+      - name: 🛑 Fail if PR title is incorrect
+        if: failure()
         run: |
-          bun i @commitlint/config-conventional
-          echo "${{ github.event.pull_request.title }}" | bunx commitlint
+          echo "Please make sure your PR title follows the Conventional Commit format."
+          echo "Examples: 'feat: add new feature', 'fix: correct bug', 'docs: update documentation'."
