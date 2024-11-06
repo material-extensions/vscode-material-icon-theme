@@ -1,6 +1,6 @@
+import { execSync } from 'node:child_process';
 import { copyFile } from 'node:fs/promises';
 import { join } from 'node:path';
-import { spawn } from 'bun';
 
 /**
  * Prepare the module for publishing.
@@ -10,19 +10,12 @@ import { spawn } from 'bun';
 const prepareModule = async () => {
   try {
     // Set the main field in the package.json to the correct path
-    const setMain = spawn([
-      'npm',
-      'pkg',
-      'set',
-      'main=./dist/module/index.cjs',
-    ]);
-    await setMain;
+    execSync('npm pkg set main=./dist/module/index.cjs');
 
     // Remove vscode specific fields from package.json
-    const removeBrowser = spawn(['npm', 'pkg', 'delete', 'browser']);
-    await removeBrowser;
+    execSync('npm pkg delete browser');
 
-    //copy readme into root directory
+    // Copy readme into root directory
     const readmePath = join(process.cwd(), 'src', 'module', 'README.md');
     console.log('Copying README.md to root directory...');
     await copyFile(readmePath, 'README.md');
