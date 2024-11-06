@@ -421,6 +421,7 @@ export const folderIcons: FolderTheme[] = [
           'measure',
           'measures',
           'measurement',
+          'calculations',
         ],
       },
       {
