@@ -8,8 +8,8 @@ import { setIconSaturation } from './iconSaturation';
  * Apply the configuration to the icons. But only if the configuration has changed.
  * If the affectedConfig is not set then all icons will be updated.
  *
- * @param config Configuration that customizes the icons and the manifest.
- * @param affectedConfig Set of configuration keys that have changed so that not all functions need to be executed.
+ * @param config - The new configuration that customizes the icons and the manifest.
+ * @param oldConfig - The previous configuration to compare changes.
  */
 export const applyConfigToIcons = async (config: Config, oldConfig: Config) => {
   if (config.files.color !== oldConfig.files.color) {

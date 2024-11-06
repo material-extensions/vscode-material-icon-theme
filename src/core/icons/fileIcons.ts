@@ -73,6 +73,7 @@ export const fileIcons: FileIcons = {
       name: 'sublime',
       fileExtensions: ['sublime-project', 'sublime-workspace'],
     },
+    { name: 'simulink', fileExtensions: ['slx'] },
     { name: 'twine', fileExtensions: ['tw', 'twee'] },
     {
       name: 'yaml',
@@ -2816,7 +2817,7 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['.ncurc.json', '.ncurc.yml', '.ncurc.js'],
     },
     {
-      name: 'histoire-config',
+      name: 'histoire',
       patterns: {
         'histoire.config': FileNamePattern.Ecmascript,
         '.histoire': FileNamePattern.Ecmascript,
