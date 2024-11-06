@@ -1,5 +1,6 @@
 import fs from 'fs';
 import {
+  type ResolvedChangelogConfig,
   generateMarkDown,
   getCurrentGitTag,
   getGitDiff,
@@ -10,31 +11,21 @@ import {
 import ChangelogenConfig from '../../changelog.config';
 
 /**
- * Generates a changelog based on git commits and updates the changelog file.
+ * Parses the command line arguments to extract the version string.
  *
- * This function performs the following steps:
- * 1. Parses command line arguments to get the version.
- * 2. Retrieves the current and last git tags.
- * 3. Loads the changelog configuration.
- * 4. Gets the git diff between the current and last tags.
- * 5. Parses the commits from the git diff.
- * 6. Generates the markdown for the changelog.
- * 7. Extracts the release notes from the changelog.
- * 8. Updates the changelog file with the new changelog entries.
+ * This function looks for the version specified in the command line arguments.
+ * It supports the following formats:
+ * - `--version <version>`
+ * - `-v <version>`
+ * - `--version=<version>`
+ * - `<version>` (as a standalone argument without any flag)
  *
- * Command line arguments:
- * - `--version` or `-v` followed by the version number to specify the new version.
- * - `--version=<version>` to specify the new version.
- * - If no version is specified, the version will be inferred from the arguments.
- *
- * @returns A promise that resolves when the changelog has been generated and the file has been updated.
- * @throws If the output path in the configuration is invalid.
+ * @returns The version string if found, otherwise `undefined`.
  */
-async function generateChangelog(): Promise<void> {
+function getVersionFromCLI(): string | undefined {
   // Parse command line arguments
   const args = process.argv.slice(2);
 
-  // Get the version from the command line arguments
   let version: string | undefined;
 
   for (let i = 0; i < args.length; i++) {
@@ -48,77 +39,165 @@ async function generateChangelog(): Promise<void> {
     }
   }
 
-  const currentTag = getCurrentGitTag();
-  const lastTag = await getLastGitTag();
+  return version;
+}
 
-  /** The changelog configuration */
-  const config = await loadChangelogConfig(process.cwd(), {
-    ...ChangelogenConfig,
-    // from: currentTag,
-    newVersion: version || currentTag.slice(1),
-  });
+/**
+ * Writes a given string to the standard output (stdout).
+ *
+ * @example
+ * ```bash
+ * changelog="$(bun ./src/scripts/generateChangelog.ts)"
+ * echo "$changelog"
+ *
+ * # ✨ Enhancements
+ * # - Add new feature
+ * # - Improve existing feature
+ * # - ...
+ * ```
+ *
+ * It's like `return` in a function, but for the console.
+ * @param string - The string to be written to stdout.
+ */
+function writeStringToStdout(string: string): void {
+  process.stdout.write(string);
+}
 
-  const rawGitCommits = await getGitDiff(lastTag);
-  const newCommits = parseCommits(rawGitCommits, config);
-
-  /* Changelog */
-  const changelog: string = await generateMarkDown(newCommits, config);
-
-  /** Release notes from the changelog without the header */
-  const releaseNotes: string = changelog.split('\n').slice(3).join('\n');
-
-  process.stdout.write(releaseNotes);
-
-  // Update changelog file
-  console.info(`Updating ${config.output}`);
-
-  let changelogMD: string;
+/**
+ * Updates the changelog file with the provided changelog content.
+ *
+ * @param changelog - The new changelog content to be added.
+ * @param config - The resolved configuration for the changelog.
+ * @returns A promise that resolves when the changelog file has been updated.
+ *
+ * @throws Will throw an error if the output path in the config is invalid or not writable.
+ * @throws Will throw an error if there is an issue reading the changelog file.
+ *
+ * @example
+ * ```typescript
+ * const changelog = `
+ * ## v1.0.1
+ * - Fixed bugs
+ * - Improved performance`;
+ *
+ * const config = {..., output: 'CHANGELOG.md'};
+ * await updateChangelogFile(changelog, config);
+ * ```
+ */
+async function updateChangelogFile(
+  changelog: string,
+  config: ResolvedChangelogConfig
+): Promise<void> {
+  /**
+   * The output path for the changelog
+   *
+   * @example 'CHANGELOG.md'
+   */
   const output: string = typeof config.output === 'string' ? config.output : '';
 
   if (!output || !fs.existsSync(output)) {
-    console.error('Invalid output path in config');
-    return;
+    throw new Error(`Invalid output path in config: ${output}`);
   }
 
+  // Check if the output path is writable
   try {
     fs.accessSync(output, fs.constants.W_OK);
   } catch {
-    console.error('Output path is not writable');
-    return;
+    throw new Error(`Output path is not writable: ${output}`);
   }
+
+  /** Markdown of the current changelog file */
+  let changelogMarkdown: string;
 
   // Read the changelog file
   try {
-    changelogMD = await Bun.file(output).text();
+    changelogMarkdown = await Bun.file(output).text();
   } catch (error) {
-    console.error('Error reading changelog file: ', error);
-    return;
+    throw new Error(`Error reading changelog file: ${error}`);
   }
 
   // Update the changelog with the new release notes
 
   /** The last version in the changelog */
-  const lastEntry = changelogMD.match(/^###?\s+.*$/m);
+  const lastEntry = changelogMarkdown.match(/^###?\s+.*$/m);
 
   if (lastEntry) {
-    changelogMD =
-      changelogMD.slice(0, lastEntry.index) +
+    // If there is a last version entry, add the new changelog on top of it
+    changelogMarkdown =
+      changelogMarkdown.slice(0, lastEntry.index) +
       changelog +
       '\n\n' +
-      changelogMD.slice(lastEntry.index);
+      changelogMarkdown.slice(lastEntry.index);
   } else {
-    // If there is no last entry, add the new changelog to the top
+    // If there is no last entry, just add the new changelog to the top
     const changelogHeader = '# Changelog';
-    const headerIndex = changelogMD.indexOf(changelogHeader);
+    const headerIndex = changelogMarkdown.indexOf(changelogHeader);
 
-    changelogMD =
-      changelogMD.slice(0, headerIndex + changelogHeader.length) +
+    changelogMarkdown =
+      changelogMarkdown.slice(0, headerIndex + changelogHeader.length) +
       '\n\n' +
       changelog +
-      changelogMD.slice(headerIndex + changelogHeader.length);
+      changelogMarkdown.slice(headerIndex + changelogHeader.length);
   }
 
-  await Bun.write(output, changelogMD);
+  // Write the updated changelog to the file
+  await Bun.write(output, changelogMarkdown);
+}
+
+/**
+ * Generates a changelog based on the git history using `changelogen` and updates the changelog file.
+ *
+ * This function performs the following steps:
+ * 1. Retrieves the version from the command line arguments.
+ * 2. Gets the current and last git tags.
+ * 3. Loads the changelog configuration.
+ * 4. Gets the git diff between the last and current tags.
+ * 5. Parses the git commits based on the changelog configuration.
+ * 6. Generates the markdown for the changelog.
+ * 7. Extracts the release notes from the generated changelog.
+ * 8. Writes the release notes to the standard output.
+ * 9. Updates the changelog file with the generated changelog.
+ *
+ * @returns A promise that resolves when the changelog generation is complete.
+ */
+async function generateChangelog(): Promise<void> {
+  // Get the version from the command line arguments
+  /** The version string specified in the command line arguments */
+  const version: string | undefined = getVersionFromCLI();
+
+  // Get the current and last git tags
+  const currentTag = getCurrentGitTag();
+  const lastTag = await getLastGitTag();
+
+  /** The changelogen configuration */
+  const config = await loadChangelogConfig(process.cwd(), {
+    ...ChangelogenConfig,
+    // from: currentTag,
+
+    // 'v1.2.3'.slice(1) => '1.2.3'
+    newVersion: version || currentTag.slice(1),
+  });
+
+  // Get the git diff between the last and current tags
+  const rawGitCommits = await getGitDiff(lastTag);
+  const newCommits = parseCommits(rawGitCommits, config);
+
+  /** Changelog */
+  const generatedChangelog: string = await generateMarkDown(newCommits, config);
+
+  /** Release notes from the changelog without the header */
+  const releaseNotes: string = generatedChangelog
+    .split('\n')
+    .slice(3)
+    .join('\n');
+
+  // Write the release notes to the standard output
+  writeStringToStdout(releaseNotes);
+
+  // Update changelog file
+  console.info(`Updating ${config.output}`);
+
+  updateChangelogFile(generatedChangelog, config);
 }
 
 // Run the changelog generation
