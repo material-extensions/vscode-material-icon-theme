@@ -4,6 +4,7 @@
     "config:base",
     "helpers:pinGitHubActionDigests"
   ],
+  "ignoreDeps": ["@types/vscode"],
   "packageRules": [
     {
       "matchManagers": ["github-actions"],
