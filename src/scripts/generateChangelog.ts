@@ -1,6 +1,7 @@
 import fs from 'fs';
 import {
   generateMarkDown,
+  getCurrentGitTag,
   getGitDiff,
   getLastGitTag,
   loadChangelogConfig,
@@ -47,14 +48,14 @@ async function generateChangelog(): Promise<void> {
     }
   }
 
-  // const currentTag = getCurrentGitTag();
+  const currentTag = getCurrentGitTag();
   const lastTag = await getLastGitTag();
 
   /** The changelog configuration */
   const config = await loadChangelogConfig(process.cwd(), {
     ...ChangelogenConfig,
     // from: currentTag,
-    ...(version && { newVersion: version }),
+    newVersion: version || currentTag.slice(1),
   });
 
   const rawGitCommits = await getGitDiff(lastTag);
