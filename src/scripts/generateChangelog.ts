@@ -140,7 +140,7 @@ async function generateChangelog(): Promise<void> {
     .slice(3)
     .join('\n');
 
-  // Print the release notes to the console
+  // Write the release notes to the standard output for further processing in the CI/CD pipeline
   process.stdout.write(releaseNotes);
 
   console.info(`Updating ${config.output}`);
