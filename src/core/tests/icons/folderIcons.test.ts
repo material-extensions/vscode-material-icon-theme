@@ -1,10 +1,10 @@
 import { beforeAll, beforeEach, describe, expect, it } from 'bun:test';
-import { getDefaultConfiguration } from '../../generator/config/defaultConfig';
+import { getDefaultConfig } from '../../generator/config/defaultConfig';
 import { loadFolderIconDefinitions } from '../../generator/folderGenerator';
 import type { Config } from '../../models/icons/config';
 import type { FolderTheme } from '../../models/icons/folders/folderTheme';
 import { IconPack } from '../../models/icons/iconPack';
-import { Manifest } from '../../models/manifest';
+import { type Manifest, createEmptyManifest } from '../../models/manifest';
 
 describe('folder icons', () => {
   let folderIcons: FolderTheme[];
@@ -32,12 +32,12 @@ describe('folder icons', () => {
   });
 
   beforeEach(() => {
-    config = getDefaultConfiguration();
-    expectedManifest = new Manifest();
+    config = getDefaultConfig();
+    expectedManifest = createEmptyManifest();
   });
 
   it('should configure icon definitions', () => {
-    const manifest = new Manifest();
+    const manifest = createEmptyManifest();
     const iconDefinitions = loadFolderIconDefinitions(
       folderIcons,
       config,
@@ -112,12 +112,12 @@ describe('folder icons', () => {
     };
     expectedManifest.hidesExplorerArrows = false;
 
-    expect(iconDefinitions).toMatchObject(expectedManifest);
+    expect(iconDefinitions).toStrictEqual(expectedManifest);
   });
 
   it('should deactivate folder icons', () => {
     config.folders.theme = 'none';
-    const manifest = new Manifest();
+    const manifest = createEmptyManifest();
     const iconDefinitions = loadFolderIconDefinitions(
       folderIcons,
       config,
@@ -129,19 +129,26 @@ describe('folder icons', () => {
     expectedManifest.folderNamesExpanded = {};
     expectedManifest.hidesExplorerArrows = false;
 
-    expect(iconDefinitions).toMatchObject(expectedManifest);
+    expect(iconDefinitions).toStrictEqual(expectedManifest);
   });
 
   it('should change folder theme', () => {
     config.folders.theme = 'classic';
-    const manifest = new Manifest();
+    const manifest = createEmptyManifest();
     const iconDefinitions = loadFolderIconDefinitions(
       folderIcons,
       config,
       manifest
     );
 
-    expectedManifest.iconDefinitions = {};
+    expectedManifest.iconDefinitions = {
+      folder: {
+        iconPath: './../icons/folder.svg',
+      },
+      'folder-open': {
+        iconPath: './../icons/folder-open.svg',
+      },
+    };
     expectedManifest.folder = 'folder';
     expectedManifest.folderExpanded = 'folder-open';
     expectedManifest.rootFolder = 'folder';
@@ -150,14 +157,14 @@ describe('folder icons', () => {
     expectedManifest.folderNamesExpanded = {};
     expectedManifest.hidesExplorerArrows = false;
 
-    expect(iconDefinitions).toMatchObject(expectedManifest);
+    expect(iconDefinitions).toStrictEqual(expectedManifest);
   });
 
   it('should configure custom icon associations', () => {
     config.folders.associations = {
       sample: 'src',
     };
-    const manifest = new Manifest();
+    const manifest = createEmptyManifest();
     const iconDefinitions = loadFolderIconDefinitions(
       folderIcons,
       config,
@@ -239,11 +246,11 @@ describe('folder icons', () => {
     };
     expectedManifest.hidesExplorerArrows = false;
 
-    expect(iconDefinitions).toMatchObject(expectedManifest);
+    expect(iconDefinitions).toStrictEqual(expectedManifest);
   });
 
   it('should disable icon packs', () => {
-    const manifest = new Manifest();
+    const manifest = createEmptyManifest();
     config.activeIconPack = '';
     const iconDefinitions = loadFolderIconDefinitions(
       folderIcons,
@@ -296,7 +303,7 @@ describe('folder icons', () => {
     };
     expectedManifest.hidesExplorerArrows = false;
 
-    expect(iconDefinitions).toMatchObject(expectedManifest);
+    expect(iconDefinitions).toStrictEqual(expectedManifest);
   });
 
   it('should configure folder icons for light and high contrast', () => {
@@ -315,7 +322,7 @@ describe('folder icons', () => {
         ],
       },
     ];
-    const manifest = new Manifest();
+    const manifest = createEmptyManifest();
     const iconDefinitions = loadFolderIconDefinitions(
       lightHighContrastFolderIcons,
       config,
@@ -460,11 +467,11 @@ describe('folder icons', () => {
       },
     };
     expectedManifest.hidesExplorerArrows = false;
-    expect(iconDefinitions).toMatchObject(expectedManifest);
+    expect(iconDefinitions).toStrictEqual(expectedManifest);
   });
 
   it('should hide explorer arrows', () => {
-    const manifest = new Manifest();
+    const manifest = createEmptyManifest();
     config.hidesExplorerArrows = true;
     const iconDefinitions = loadFolderIconDefinitions(
       folderIcons,
@@ -497,7 +504,7 @@ describe('folder icons', () => {
       },
     ];
 
-    const manifest = new Manifest();
+    const manifest = createEmptyManifest();
     const iconDefinitions = loadFolderIconDefinitions(
       folderTheme,
       config,
@@ -584,7 +591,7 @@ describe('folder icons', () => {
     };
     expectedManifest.hidesExplorerArrows = false;
 
-    expect(iconDefinitions).toMatchObject(expectedManifest);
+    expect(iconDefinitions).toStrictEqual(expectedManifest);
   });
 
   it('should allow interoperability between cloned and user custom associations', () => {
@@ -611,7 +618,7 @@ describe('folder icons', () => {
       baz: 'bar', // assigned to the clone
     };
 
-    const manifest = new Manifest();
+    const manifest = createEmptyManifest();
     const iconDefinitions = loadFolderIconDefinitions(
       folderTheme,
       config,
@@ -667,6 +674,6 @@ describe('folder icons', () => {
     };
     expectedManifest.hidesExplorerArrows = false;
 
-    expect(iconDefinitions).toMatchObject(expectedManifest);
+    expect(iconDefinitions).toStrictEqual(expectedManifest);
   });
 });

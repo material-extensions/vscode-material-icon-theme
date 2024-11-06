@@ -1,6 +1,6 @@
 <!-- markdownlint-disable no-inline-html no-duplicate-heading -->
 
-<h1>How to contribute</h1>
+# How to contribute
 
 Glad you're here and interested in expanding this project 🎉 In order to make this work in the best possible way, there are hints and tips for successful contributors on this page. Please read everything carefully and your contributions will be valuable and gratefully received.
 
@@ -8,6 +8,7 @@ Glad you're here and interested in expanding this project 🎉 In order to make 
 
 - [Icon Requests](#icon-requests)
 - [Add new icons](#add-new-icons)
+- [Conventional Pull Request Titles](#conventional-pull-request-titles)
 - [How-To's](#how-tos)
   - [Create icon as SVG](#create-icon-as-svg)
   - [Use Material Design colors](#material-design-colors)
@@ -44,6 +45,18 @@ flowchart LR
     C[<a href="#cloning-workflow">Cloning Workflow</a>]
     E[<a href="#creating-new-icons-workflow">Creating New Icons Workflow</a>]
 ```
+
+## Conventional Pull Request Titles
+
+The title of your pull request should follow the [conventional commit format](https://www.conventionalcommits.org/en/v1.0.0/). When a pull request is merged to the main branch, all changes are going to be squashed into a single commit. The message of this commit will be the title of the pull request. And for every release, the commit messages are used to generate the changelog.
+
+Here are some examples of conventional PR titles:
+
+- `feat: add new icons for Rust`
+- `fix: correct icon for .gitignore`
+- `ci: add GitHub Actions for automated testing`
+
+Generating the changelog based on the commit messages saves time and helps to keep the changelog up-to-date. It also helps to understand the changes in the project.
 
 ### Creating New Icons Workflow
 
@@ -119,7 +132,7 @@ When designing folder icons there are also a few points to consider. A folder ic
 
 <img src="./images/how-tos/folder-icon-parts.svg" alt="An example of a folder" width="300px" />
 
-For the motive, only colors from the second row in the [color palette](https://pkief.com/material-color-converter/) are allowed. For the background choose a slightly darker hue (mostly in rows 4-6 in the palette).
+For the motive, only colors from the second row in the [color palette](https://pkief.github.io/material-color-converter/) are allowed. For the background choose a slightly darker hue (mostly in rows 4-6 in the palette).
 
 <img src="./images/how-tos/pick-folder-colors.png" alt="Material color palette" width="500px" />
 
@@ -141,9 +154,9 @@ All icons have a small distance to the edge. This way they don't seem so pressed
 
 Icons are assigned to file names, folder names or registered languages of VS Code in these files:
 
-- [fileIcons.ts](src/icons/fileIcons.ts)
-- [folderIcons.ts](src/icons/folderIcons.ts)
-- [languageIcons.ts](src/icons/languageIcons.ts)
+- [fileIcons.ts](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/core/icons/fileIcons.ts)
+- [folderIcons.ts](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/core/icons/folderIcons.ts)
+- [languageIcons.ts](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/core/icons/languageIcons.ts)
 
 Be careful when assigning icons to files and folders, as not everyone expects a file name to have a special icon based on a framework that is not used by them. A solution for this can be the usage of [Language icon definitions](#language-icons) or [icon packs](#icon-packs).
 
@@ -174,7 +187,7 @@ It is also possible to use patterns for file names and extensions. This is usefu
 }
 ```
 
-In case of this example the generated file names are "graphql.js", "graphql.mjs", "graphql.cjs", "graphql.ts", "graphql.mts" and "graphql.cts". The pattern is defined in the [patterns.ts](src/icons/patterns/patterns.ts) file.
+In case of this example the generated file names are "graphql.js", "graphql.mjs", "graphql.cjs", "graphql.ts", "graphql.mts" and "graphql.cts". The pattern is defined in the [patterns.ts](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/core/patterns/patterns.ts) file.
 
 Available patterns are right now:
 
@@ -266,10 +279,10 @@ Here's an example that shows how two icons can be assigned to the same file name
 
 To create an icon pack, the following steps have to be completed:
 
-1. Add the name of the icon pack to the enum in [iconPack.ts](src/models/icons/iconPack.ts)
+1. Add the name of the icon pack to the enum in [iconPack.ts](https://github.com/material-extensions/vscode-material-icon-theme/blob/e21e6b1b57f2ce0b6e7306178b26d11c60e2ca0f/src/core/models/icons/iconPack.ts)
 2. Add translations to the package.nls.\*.json files under the section `configuration.activeIconPack` (at least to [package.nls.json](package.nls.json), the English translation file)
 3. Adjust [package.json](package.json) under `configuration.properties.material-icon-theme.activeIconPack`
-4. Use the icon pack inside the [fileIcons.ts](src/icons/fileIcons.ts),[folderIcons.ts](src/icons/folderIcons.ts) or [languageIcons.ts](src/icons/languageIcons.ts) files in the `enabledFor` attribute
+4. Use the icon pack inside the [fileIcons.ts](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/core/icons/fileIcons.ts),[folderIcons.ts](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/core/icons/folderIcons.ts) or [languageIcons.ts](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/core/icons/languageIcons.ts) files in the `enabledFor` attribute
 
 <h3 id="pixel-perfect-icons">Designing Pixel-Perfect Icons</h3>
 
@@ -333,8 +346,8 @@ The extension allows you to clone existing icons and adjust their colors through
 
 As we mentioned previously, icons are assigned to filenames, file extensions, and folder names in the following files:
 
-- [fileIcons.ts](src/icons/fileIcons.ts)
-- [folderIcons.ts](src/icons/folderIcons.ts)
+- [fileIcons.ts](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/core/icons/fileIcons.ts)
+- [folderIcons.ts](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/core/icons/folderIcons.ts)
 
 The following example demonstrates how the shapes of the `rust` file icon can be reused to create a clone of it, utilizing different colors and associated with different file names than the original icon.
 
@@ -361,7 +374,7 @@ The same technique can be applied to folder icons using the `clone` attribute in
 
 You might have noticed that we are using aliases for the colors. These aliases correspond to the Material Design color palette.
 
-You can find a list of all available color aliases in the [materialPalette.ts](./src/icons/generator/clones/utils/color/materialPalette.ts) file.
+You can find a list of all available color aliases in the [materialPalette.ts](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/core/generator/clones/utils/color/materialPalette.ts) file.
 
 #### Preventing recoloring in cloned icons
 
@@ -425,3 +438,25 @@ This icon extension consists not only of icons but also brings some code. This i
 6. Run tests with `bun test`
 
 You will find more information about the official extension API in the [extension guides of VS Code](https://code.visualstudio.com/api/extension-guides/file-icon-theme).
+
+### Enable logging
+
+Logging can be enabled with the following settings:
+
+```json
+{
+  "material-icon-theme.enableLogging": true,
+  "material-icon-theme.logLevel": "debug",
+}
+```
+
+The available log levels are:
+
+- `error`: Only errors are logged
+- `info`: Only info logs are logged
+- `debug`: All logs are logged
+
+Per default the logging is disabled as it can slow down the extension. If logging is enabled, the logs can be found in the output panel of VS Code under "Material Icon Theme".
+
+> **Note**
+> Please restart the extension after changing the logging settings to apply the changes.

@@ -1,4 +1,18 @@
-export class Manifest {
+import type { RecursivePartial } from '../types/recursivePartial';
+import type { Config } from './icons/config';
+
+/**
+ * Configuration for the manifest. It contains the configuration which is used to generate the manifest.
+ */
+export type ManifestConfig = RecursivePartial<
+  Pick<Config, 'activeIconPack' | 'hidesExplorerArrows' | 'languages'> & {
+    files: Pick<Config['files'], 'associations'>;
+  } & {
+    folders: Pick<Config['folders'], 'associations' | 'theme'>;
+  }
+>;
+
+export type Manifest = {
   file?: string;
   folder?: string;
   folderExpanded?: string;
@@ -13,21 +27,21 @@ export class Manifest {
   light?: Manifest;
   highContrast?: Manifest;
   hidesExplorerArrows?: boolean;
+};
 
-  constructor() {
-    this.iconDefinitions = {};
-    this.folderNames = {};
-    this.folderNamesExpanded = {};
-    this.fileExtensions = {};
-    this.fileNames = {};
-    this.languageIds = {};
-    this.light = {
-      fileExtensions: {},
-      fileNames: {},
-    };
-    this.highContrast = {
-      fileExtensions: {},
-      fileNames: {},
-    };
-  }
-}
+export const createEmptyManifest = (): Manifest => ({
+  iconDefinitions: {},
+  folderNames: {},
+  folderNamesExpanded: {},
+  fileExtensions: {},
+  fileNames: {},
+  languageIds: {},
+  light: {
+    fileExtensions: {},
+    fileNames: {},
+  },
+  highContrast: {
+    fileExtensions: {},
+    fileNames: {},
+  },
+});

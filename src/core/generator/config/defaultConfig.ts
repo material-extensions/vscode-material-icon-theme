@@ -5,7 +5,7 @@ import type { RecursivePartial } from '../../types/recursivePartial';
 /**
  * The options control the generator and decide which icons are disabled or not.
  */
-export const getDefaultConfiguration = (): Required<Config> => ({
+export const getDefaultConfig = (): Required<Config> => ({
   folders: {
     theme: 'specific',
     color: '#90a4ae',
@@ -22,6 +22,8 @@ export const getDefaultConfiguration = (): Required<Config> => ({
     customClones: [],
   },
   languages: { associations: {} },
+  enableLogging: false,
+  logLevel: 'info',
 });
 
 /**
@@ -33,11 +35,7 @@ export const getDefaultConfiguration = (): Required<Config> => ({
 export const padWithDefaultConfig = (
   config?: RecursivePartial<Config>
 ): Config => {
-  const withDefaultConfig: Config = merge(
-    {},
-    getDefaultConfiguration(),
-    config ?? {}
-  );
+  const withDefaultConfig = merge(getDefaultConfig(), config ?? {}) as Config;
 
   return withDefaultConfig;
 };

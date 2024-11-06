@@ -9,7 +9,8 @@ const config: BuildOptions = {
   minify: true,
   bundle: true,
   platform: 'node',
-  target: 'node20',
+  metafile: false,
+  target: 'node12',
   outdir: './dist',
   outbase: './src',
   outExtension: {

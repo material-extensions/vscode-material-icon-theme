@@ -4,6 +4,16 @@
 export const extensionName = 'material-icon-theme';
 
 /**
+ * Name of the extension publisher.
+ */
+export const extensionPublisher = 'PKief';
+
+/**
+ * Key to identify the log event.
+ */
+export const logEventKey = `${extensionName}-log-event`;
+
+/**
  * Path where the icons are located.
  */
 export const iconFolderPath = './../icons/';
