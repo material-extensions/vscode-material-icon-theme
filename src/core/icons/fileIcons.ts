@@ -2817,7 +2817,7 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['.ncurc.json', '.ncurc.yml', '.ncurc.js'],
     },
     {
-      name: 'histoire-config',
+      name: 'histoire',
       patterns: {
         'histoire.config': FileNamePattern.Ecmascript,
         '.histoire': FileNamePattern.Ecmascript,
