@@ -187,8 +187,7 @@ const disableIconsByPack = (
 const setIconDefinitions = (
   manifest: Manifest,
   config: Config,
-  icon: FolderIcon | DefaultIcon,
-  appendix: string = ''
+  icon: FolderIcon | DefaultIcon
 ) => {
   const isClone = (icon as FolderIcon).clone !== undefined;
 
@@ -196,7 +195,7 @@ const setIconDefinitions = (
     manifest,
     config,
     icon.name,
-    appendix,
+    '',
     isClone
   );
 
