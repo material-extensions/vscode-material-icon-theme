@@ -13,13 +13,6 @@ import ChangelogenConfig from '../../changelog.config';
 /**
  * Parses the command line arguments to extract the version string.
  *
- * This function looks for the version specified in the command line arguments.
- * It supports the following formats:
- * - `--version <version>`
- * - `-v <version>`
- * - `--version=<version>`
- * - `<version>` (as a standalone argument without any flag)
- *
  * @returns The version string if found, otherwise `undefined`.
  */
 function getVersionFromCLI(): string | undefined {
@@ -43,78 +36,24 @@ function getVersionFromCLI(): string | undefined {
 }
 
 /**
- * Writes a given string to the standard output (stdout).
- *
- * @example
- * ```bash
- * changelog="$(bun ./src/scripts/generateChangelog.ts)"
- * echo "$changelog"
- *
- * # ✨ Enhancements
- * # - Add new feature
- * # - Improve existing feature
- * # - ...
- * ```
- *
- * It's like `return` in a function, but for the console.
- * @param string - The string to be written to stdout.
- */
-function writeStringToStdout(string: string): void {
-  process.stdout.write(string);
-}
-
-/**
  * Updates the changelog file with the provided changelog content.
  *
  * @param changelog - The new changelog content to be added.
  * @param config - The resolved configuration for the changelog.
- * @returns A promise that resolves when the changelog file has been updated.
- *
- * @throws Will throw an error if the output path in the config is invalid or not writable.
- * @throws Will throw an error if there is an issue reading the changelog file.
- *
- * @example
- * ```typescript
- * const changelog = `
- * ## v1.0.1
- * - Fixed bugs
- * - Improved performance`;
- *
- * const config = {..., output: 'CHANGELOG.md'};
- * await updateChangelogFile(changelog, config);
- * ```
  */
 async function updateChangelogFile(
   changelog: string,
   config: ResolvedChangelogConfig
 ): Promise<void> {
-  /**
-   * The output path for the changelog
-   *
-   * @example 'CHANGELOG.md'
-   */
-  const output: string = typeof config.output === 'string' ? config.output : '';
+  const changelogFilePath: string =
+    typeof config.output === 'string' ? config.output : '';
 
-  if (!output || !fs.existsSync(output)) {
-    throw new Error(`Invalid output path in config: ${output}`);
+  if (!changelogFilePath || !fs.existsSync(changelogFilePath)) {
+    throw new Error(`Invalid output path in config: ${changelogFilePath}`);
   }
 
   // Check if the output path is writable
-  try {
-    fs.accessSync(output, fs.constants.W_OK);
-  } catch {
-    throw new Error(`Output path is not writable: ${output}`);
-  }
-
-  /** Markdown of the current changelog file */
-  let changelogMarkdown: string;
-
-  // Read the changelog file
-  try {
-    changelogMarkdown = await Bun.file(output).text();
-  } catch (error) {
-    throw new Error(`Error reading changelog file: ${error}`);
-  }
+  let changelogMarkdown: string = await loadChangelogFile(changelogFilePath);
 
   // Update the changelog with the new release notes
 
@@ -141,31 +80,42 @@ async function updateChangelogFile(
   }
 
   // Write the updated changelog to the file
-  await Bun.write(output, changelogMarkdown);
+  await Bun.write(changelogFilePath, changelogMarkdown);
+}
+
+/**
+ * Loads the changelog file and returns the markdown content.
+ *
+ * @param changelogFilePath - The path to the changelog file.
+ * @returns The markdown content of the changelog file.
+ */
+async function loadChangelogFile(changelogFilePath: string) {
+  try {
+    fs.accessSync(changelogFilePath, fs.constants.W_OK);
+  } catch {
+    throw new Error(`Output path is not writable: ${changelogFilePath}`);
+  }
+
+  /** Markdown of the current changelog file */
+  let changelogMarkdown: string;
+
+  // Read the changelog file
+  try {
+    changelogMarkdown = await Bun.file(changelogFilePath).text();
+  } catch (error) {
+    throw new Error(`Error reading changelog file: ${error}`);
+  }
+  return changelogMarkdown;
 }
 
 /**
  * Generates a changelog based on the git history using `changelogen` and updates the changelog file.
  *
- * This function performs the following steps:
- * 1. Retrieves the version from the command line arguments.
- * 2. Gets the current and last git tags.
- * 3. Loads the changelog configuration.
- * 4. Gets the git diff between the last and current tags.
- * 5. Parses the git commits based on the changelog configuration.
- * 6. Generates the markdown for the changelog.
- * 7. Extracts the release notes from the generated changelog.
- * 8. Writes the release notes to the standard output.
- * 9. Updates the changelog file with the generated changelog.
- *
  * @returns A promise that resolves when the changelog generation is complete.
  */
 async function generateChangelog(): Promise<void> {
-  // Get the version from the command line arguments
-  /** The version string specified in the command line arguments */
   const version: string | undefined = getVersionFromCLI();
 
-  // Get the current and last git tags
   const currentTag = getCurrentGitTag();
   const lastTag = await getLastGitTag();
 
@@ -182,7 +132,6 @@ async function generateChangelog(): Promise<void> {
   const rawGitCommits = await getGitDiff(lastTag);
   const newCommits = parseCommits(rawGitCommits, config);
 
-  /** Changelog */
   const generatedChangelog: string = await generateMarkDown(newCommits, config);
 
   /** Release notes from the changelog without the header */
@@ -191,12 +140,10 @@ async function generateChangelog(): Promise<void> {
     .slice(3)
     .join('\n');
 
-  // Write the release notes to the standard output
-  writeStringToStdout(releaseNotes);
+  // Print the release notes to the console
+  process.stdout.write(releaseNotes);
 
-  // Update changelog file
   console.info(`Updating ${config.output}`);
-
   updateChangelogFile(generatedChangelog, config);
 }
 
