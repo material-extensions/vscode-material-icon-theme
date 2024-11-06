@@ -21,7 +21,7 @@ jobs:
           sparse-checkout: commitlint.config.js
 
       - name: 📦 Install dependencies
-        run: bun i @commitlint/config-conventional
+        run: bun install --global @commitlint/config-conventional
 
       - name: 🔍 Check PR title with commitlint
         run: echo "${{ github.event.pull_request.title }}" | bunx commitlint --help-url https://github.com/material-extensions/vscode-material-icon-theme/blob/main/CONTRIBUTING.md#conventional-pull-request-titles
