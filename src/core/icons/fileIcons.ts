@@ -2832,5 +2832,9 @@ export const fileIcons: FileIcons = {
         'installation.txt',
       ],
     },
+    {
+      name: 'github-sponsors',
+      fileNames: ['.github/FUNDING.yml'],
+    },
   ]),
 };
