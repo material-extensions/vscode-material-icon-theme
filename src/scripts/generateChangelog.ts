@@ -121,7 +121,6 @@ async function generateChangelog(): Promise<void> {
   /** The changelogen configuration */
   const config = await loadChangelogConfig(process.cwd(), {
     ...ChangelogenConfig,
-    // from: currentTag,
 
     // 'v1.2.3'.slice(1) => '1.2.3'
     newVersion: version || currentTag.slice(1),
