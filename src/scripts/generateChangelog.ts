@@ -145,5 +145,4 @@ async function generateChangelog(): Promise<void> {
   updateChangelogFile(generatedChangelog, config);
 }
 
-// Run the changelog generation
 generateChangelog();
