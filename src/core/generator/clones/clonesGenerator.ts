@@ -18,6 +18,10 @@ import { cloneIcon, createCloneConfig } from './utils/cloning';
 /**
  * Creates custom icons by cloning already existing icons and changing
  * their colors, based on the user's provided configurations.
+ *
+ * @param manifest - The current configuration of the extension.
+ * @param config - The new configuration that customizes the icons and the manifest.
+ * @returns A promise that resolves to the updated manifest with custom clones.
  */
 export const customClonesIcons = async (
   manifest: Manifest,
@@ -55,6 +59,9 @@ export const customClonesIcons = async (
  * Creates custom icons by cloning already existing icons and changing
  * their colors, based on the configurations provided by the extension.
  * (this is meant to be called at build time)
+ *
+ * @param iconsList - The list of icons to be cloned.
+ * @param manifest - The current configuration of the extension.
  */
 export const generateConfiguredClones = async (
   iconsList: FolderTheme[] | FileIcons,
@@ -107,7 +114,12 @@ export const generateConfiguredClones = async (
   }
 };
 
-/** Checks if there are any custom clones to be created */
+/**
+ * Checks if there are any custom clones to be created.
+ *
+ * @param config - The new configuration that customizes the icons and the manifest.
+ * @returns True if there are custom clones to be created, false otherwise.
+ */
 export const hasCustomClones = (config: Config): boolean => {
   return (
     (config.folders?.customClones?.length ?? 0) > 0 ||
@@ -117,10 +129,10 @@ export const hasCustomClones = (config: Config): boolean => {
 
 /**
  * Generates a clone of an icon.
- * @param cloneOpts options and configurations on how to clone the icon
- * @param manifest global icon configuration (used to get the base icon)
- * @param hash current hash being applied to the icons
- * @returns a partial icon configuration for the new icon
+ * @param cloneOpts - Options and configurations on how to clone the icon.
+ * @param manifest - Global icon configuration (used to get the base icon).
+ * @param hash - Current hash being applied to the icons.
+ * @returns A promise that resolves to a partial icon configuration for the new icon.
  */
 const createIconClone = async (
   cloneOpts: FolderIconClone | FileIconClone,

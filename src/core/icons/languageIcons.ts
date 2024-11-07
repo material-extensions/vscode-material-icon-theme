@@ -165,4 +165,5 @@ export const languageIcons: LanguageIcon[] = [
     ids: ['systemd-conf', 'systemd-unit-file'],
   },
   { icon: { name: 'slint' }, ids: ['slint'] },
+  { icon: { name: 'luau' }, ids: ['luau'] },
 ];
