@@ -16,7 +16,6 @@ import ChangelogenConfig from '../../changelog.config';
  * @returns The version string if found, otherwise `undefined`.
  */
 function getVersionFromCLI(): string | undefined {
-  // Parse command line arguments
   const args = process.argv.slice(2);
 
   let version: string | undefined;
