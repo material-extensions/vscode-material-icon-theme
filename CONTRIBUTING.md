@@ -1,8 +1,6 @@
 <!-- markdownlint-disable no-inline-html no-duplicate-heading -->
 
-<a href="https://www.phorm.ai/query?projectId=bebfbe39-2f45-4d49-88fd-3de89c49c301"><img src="https://stuff.charm.sh/misc/phorm-badge.svg" alt="phorm.ai"></a>
-
-<h1>How to contribute</h1>
+# How to contribute
 
 Glad you're here and interested in expanding this project 🎉 In order to make this work in the best possible way, there are hints and tips for successful contributors on this page. Please read everything carefully and your contributions will be valuable and gratefully received.
 
@@ -10,6 +8,7 @@ Glad you're here and interested in expanding this project 🎉 In order to make 
 
 - [Icon Requests](#icon-requests)
 - [Add new icons](#add-new-icons)
+- [Conventional Pull Request Titles](#conventional-pull-request-titles)
 - [How-To's](#how-tos)
   - [Create icon as SVG](#create-icon-as-svg)
   - [Use Material Design colors](#material-design-colors)
@@ -46,6 +45,18 @@ flowchart LR
     C[<a href="#cloning-workflow">Cloning Workflow</a>]
     E[<a href="#creating-new-icons-workflow">Creating New Icons Workflow</a>]
 ```
+
+## Conventional Pull Request Titles
+
+The title of your pull request should follow the [conventional commit format](https://www.conventionalcommits.org/en/v1.0.0/). When a pull request is merged to the main branch, all changes are going to be squashed into a single commit. The message of this commit will be the title of the pull request. And for every release, the commit messages are used to generate the changelog.
+
+Here are some examples of conventional PR titles:
+
+- `feat: add new icons for Rust`
+- `fix: correct icon for .gitignore`
+- `ci: add GitHub Actions for automated testing`
+
+Generating the changelog based on the commit messages saves time and helps to keep the changelog up-to-date. It also helps to understand the changes in the project.
 
 ### Creating New Icons Workflow
 
