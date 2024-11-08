@@ -998,6 +998,7 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-flutter', folderNames: ['flutter'] },
       { name: 'folder-snippet', folderNames: ['snippet', 'snippets'] },
+      { name: 'folder-element', folderNames: ['element', 'elements'] },
       {
         name: 'folder-src-tauri',
         folderNames: ['src-tauri'],
