@@ -21,6 +21,10 @@ jobs:
         with:
           persist-credentials: false
 
+      - name: 🔄 Fetch target branch
+        run: |
+          git fetch origin ${{ env.TARGET_BRANCH }}
+
       - name: 🎨 Check colors
         run: |
           svgFiles=$(git diff origin/${{ env.TARGET_BRANCH }} --diff-filter=ACMRTUX  --name-only | grep '.svg$')
