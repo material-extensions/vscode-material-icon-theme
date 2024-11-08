@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 16 16"
+   version="1.1"
+   id="svg1"
+   width="16"
+   height="16"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <path
+     d="M 6.6000009,3 H 2.4000006 C 1.6230009,3 1,3.5562501 1,4.2500001 V 11.749999 A 1.4000001,1.2500001 0 0 0 2.4000006,13 H 13.599999 A 1.4000001,1.2500001 0 0 0 15,11.749999 V 5.5000002 C 15,4.8062502 14.37,4.2500001 13.599999,4.2500001 H 8.000001 Z"
+     id="path1"
+     style="fill:#f44336;fill-opacity:1;stroke-width:0.661438" />
+  <g
+     id="g16"
+     transform="matrix(1.2837208,0,0,1.2837208,14.714737,1.1627918)"
+     style="fill:#ffcdd2;fill-opacity:1">
+    <path
+       style="fill:#ffcdd2;fill-opacity:1;stroke-width:0.778986"
+       d="m -2.5042337,2.9891299 -1.1684784,1.5579712 h 2.3369568 z"
+       id="path6" />
+    <path
+       style="fill:#ffcdd2;fill-opacity:1;stroke-width:0.899502"
+       d="m -2.8937266,3.7681156 v 1.557971 h 0.7789856 v -1.557971 z"
+       id="path7" />
+    <path
+       style="fill:#ffcdd2;fill-opacity:1;stroke-width:0.899499"
+       d="m -3.6727122,6.1050722 h -1.557971 v 0.7789856 h 1.557971 z"
+       id="path8" />
+    <path
+       style="fill:#ffcdd2;fill-opacity:1;stroke-width:0.778986"
+       d="m -4.4516977,5.3260867 -1.5579712,1.1684784 1.5579712,1.1684783 z"
+       id="path9" />
+    <path
+       style="fill:#ffcdd2;fill-opacity:1;stroke-width:0.899499"
+       d="M -2.8937266,7.6630434 H -2.114741 V 9.2210146 H -2.8937266 Z"
+       id="path10" />
+    <path
+       style="fill:#ffcdd2;fill-opacity:1;stroke-width:0.778986"
+       d="M -3.6727121,8.442029 -2.5042337,10 -1.3357553,8.442029 Z"
+       id="path11" />
+    <path
+       style="fill:#ffcdd2;fill-opacity:1;stroke-width:0.899499"
+       d="M -1.3357554,6.1050722 V 6.8840578 H 0.22221577 V 6.1050722 Z"
+       id="path13" />
+    <path
+       style="fill:#ffcdd2;fill-opacity:1;stroke-width:0.778986"
+       d="M -0.55676974,5.3260867 1.0012014,6.4945651 -0.55676974,7.6630434 Z"
+       id="path14" />
+  </g>
+</svg>
