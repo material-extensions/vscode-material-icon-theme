@@ -199,6 +199,7 @@ export const fileIcons: FileIcons = {
         'x3f',
       ],
     },
+    { name: 'palette', fileExtensions: ['pal', 'gpl', 'act'] },
     { name: 'javascript', fileExtensions: ['esx', 'mjs'] },
     { name: 'react', fileExtensions: ['jsx'] },
     { name: 'react_ts', fileExtensions: ['tsx'] },
