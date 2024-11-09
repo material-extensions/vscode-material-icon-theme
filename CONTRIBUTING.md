@@ -6,21 +6,34 @@ Glad you're here and interested in expanding this project 🎉 In order to make 
 
 <!-- TOC -->
 
-- [Icon Requests](#icon-requests)
-- [Add new icons](#add-new-icons)
-- [Conventional Pull Request Titles](#conventional-pull-request-titles)
-- [How-To's](#how-tos)
-  - [Create icon as SVG](#create-icon-as-svg)
-  - [Use Material Design colors](#material-design-colors)
-  - [Design folder icons](#design-folder-icons)
-  - [Icon spacing](#icon-spacing)
-  - [Icons for color themes](#icons-for-color-themes)
-  - [Unique assignment to file and folder names](#icon-assignments)
-  - [Create icon packs](#icon-packs)
-  - [Designing Pixel Perfect Icons](#pixel-perfect-icons)
-  - [Cloning existing icons](#icon-cloning)
-- [Add translations](#add-translations)
-- [Debug extension](#debug-extension-locally)
+- [How to contribute](#how-to-contribute)
+  - [Icon Requests](#icon-requests)
+  - [Add new icons](#add-new-icons)
+  - [Conventional Pull Request Titles](#conventional-pull-request-titles)
+  - [Creating New Icons Workflow](#creating-new-icons-workflow)
+    - [Checklist](#checklist)
+    - [Cloning Workflow](#cloning-workflow)
+      - [Checklist](#checklist)
+  - [How tos](#how-tos)
+    - [Create icon as SVG](#create-icon-as-svg)
+    - [Known icon sources](#known-icon-sources)
+    - [Use Material Design colors](#use-material-design-colors)
+    - [Design folder icons](#design-folder-icons)
+    - [Icon spacing](#icon-spacing)
+    - [Assignment to file and folder names and language ids](#assignment-to-file-and-folder-names-and-language-ids)
+    - [File icons](#file-icons)
+      - [Apply patterns](#apply-patterns)
+    - [Folder icons](#folder-icons)
+    - [Language icons](#language-icons)
+    - [Icons for color themes](#icons-for-color-themes)
+    - [Create icon packs](#create-icon-packs)
+    - [Designing Pixel-Perfect Icons](#designing-pixel-perfect-icons)
+      - [Tips for Designing Pixel-Perfect Icons](#tips-for-designing-pixel-perfect-icons)
+    - [Cloning existing icons](#cloning-existing-icons)
+      - [Preventing recoloring in cloned icons](#preventing-recoloring-in-cloned-icons)
+  - [Add translations](#add-translations)
+  - [Debug extension locally](#debug-extension-locally)
+    - [Enable logging](#enable-logging)
 
 <!-- /TOC -->
 
@@ -58,14 +71,14 @@ Here are some examples of conventional PR titles:
 
 Generating the changelog based on the commit messages saves time and helps to keep the changelog up-to-date. It also helps to understand the changes in the project.
 
-### Creating New Icons Workflow
+## Creating New Icons Workflow
 
-#### Checklist
+### Checklist
 
 1. [ ] Create icon as SVG ([how to](#create-icon-as-svg))
-2. [ ] Icon color fits to Material Design ([how to](#material-design-colors))
-3. [ ] SVG has some space around the icon ([how to](#spacing))
-4. [ ] Unique assignment to file and folder names ([how to](#icon-assignments))
+2. [ ] Icon color fits to Material Design ([how to](#use-material-design-colors))
+3. [ ] SVG has some space around the icon ([how to](#icon-spacing))
+4. [ ] Unique assignment to file and folder names ([how to](#assignment-to-file-and-folder-names-and-language-ids))
 5. [ ] Provide separate icons for color themes if necessary ([how to](#icons-for-color-themes))
 
 ### Cloning Workflow
@@ -76,11 +89,11 @@ For example, we might want to create an icon using the shape of the `typescript`
 
 #### Checklist
 
-1. [ ] Clone the existing icon adjusting its color ([how to](#icon-cloning))
+1. [ ] Clone the existing icon adjusting its color ([how to](#cloning-existing-icons))
 
 ## How tos
 
-<h3 id="create-icon-as-svg">Create icon as SVG</h3>
+### Create icon as SVG
 
 These free tools are recommended to create or edit new SVG icons:
 
@@ -99,11 +112,12 @@ When you create a folder icon, please keep in mind that two SVG files are needed
 
 Of course, there is also the possibility to add existing SVGs. Mostly, however, the color has to be adjusted or the styling has to be changed, so that the other points from the above checklist are also fulfilled.
 
-<h4>Known icon sources</h4>
+### Known icon sources
 
 - [Material Design Icons](https://materialdesignicons.com/)
+- [Google Material Icons](https://fonts.google.com/icons)
 
-<h3 id="material-design-colors">Use Material Design colors</h3>
+### Use Material Design colors
 
 An important success factor of this icon extension is the fact that all colors fit together harmoniously. This is due to the fact that all icons exist only from colors of the [Material Design color palette](https://material.io/design/color/the-color-system.html#tools-for-picking-colors). This creates nice contrasts and the icons are easily recognizable.
 
@@ -126,7 +140,7 @@ Continue reading [here](#design-folder-icons) to find out about colors for the f
 | :-: | :-: |
 | <img src="./images/how-tos/svg-with-spacing.png" alt="Icon with right color" width="200px" /> | <img src="./images/how-tos/svg-with-wrong-color.png" alt="Icon with wrong color" width="200px" /> |
 
-<h3 id="design-folder-icons">Design folder icons</h3>
+### Design folder icons
 
 When designing folder icons there are also a few points to consider. A folder icon always consists of two icons - the folder in the background and a motive in the foreground:
 
@@ -142,7 +156,7 @@ This uniform color selection makes the folder icons look more consistent and fit
 | :-: | :-: |
 | <img src="./images/how-tos/svg-folder-icon-with-correct-colors.svg" width="200px" alt="Folder icon with right colors" /> | <img src="./images/how-tos/svg-folder-icon-with-wrong-colors.svg" alt="Folder icon with wrong colors" width="200px" /> |
 
-<h3 id="icon-spacing">Icon spacing</h3>
+### Icon spacing
 
 All icons have a small distance to the edge. This way they don't seem so pressed together and have a little more air. It is not defined how much margin you have to leave them, because this is always a bit different. Just make sure that there is a space to the outside.
 
@@ -150,7 +164,7 @@ All icons have a small distance to the edge. This way they don't seem so pressed
 | :-: | :-: |
 | <img src="./images/how-tos/svg-with-spacing.png" alt="Icon with a spacing around" width="200px" /> | <img src="./images/how-tos/svg-without-spacing.png" alt="Icon without spacing" width="200px" /> |
 
-<h3 id="icon-assignments">Assignment to file and folder names and language ids</h3>
+### Assignment to file and folder names and language ids
 
 Icons are assigned to file names, folder names or registered languages of VS Code in these files:
 
@@ -158,7 +172,7 @@ Icons are assigned to file names, folder names or registered languages of VS Cod
 - [folderIcons.ts](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/core/icons/folderIcons.ts)
 - [languageIcons.ts](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/core/icons/languageIcons.ts)
 
-Be careful when assigning icons to files and folders, as not everyone expects a file name to have a special icon based on a framework that is not used by them. A solution for this can be the usage of [Language icon definitions](#language-icons) or [icon packs](#icon-packs).
+Be careful when assigning icons to files and folders, as not everyone expects a file name to have a special icon based on a framework that is not used by them. A solution for this can be the usage of [Language icon definitions](#language-icons) or [icon packs](#create-icon-packs).
 
 ### File icons
 
@@ -198,7 +212,7 @@ Available patterns are right now:
 | nodeEcosystem | Combination of ecmascript and configuration patterns                                                       |
 | cosmiconfig   | `.${fileName}rc`, `.config/${fileName}rc` and `${fileName}.config` with file extensions of `nodeEcosystem` |
 
-#### Folder icons
+### Folder icons
 
 Here's an example of how a folder icon can be assigned to folder icons:
 
@@ -212,9 +226,9 @@ Here's an example of how a folder icon can be assigned to folder icons:
 This will apply a folder icon for the folders 'sample' and 'samples'.
 
 > **Note**
-> The tool automatically creates generic "wildcard" variants of these folders, so only assign the base names.
+> The tool automatically creates generic "wildcard" variants of these folders, so only assign the base names. The current wildcards are the following: `.sample`, `_sample`, `__sample__`.
 
-#### Language icons
+### Language icons
 
 Here's an example of how a file icon can be assigned to language ids:
 
@@ -224,7 +238,7 @@ Here's an example of how a file icon can be assigned to language ids:
 
 This will apply the sample.svg icon to all files which could be associated by VS Code with the CSS programming language.
 
-<h3 id="icons-for-color-themes">Icons for color themes</h3>
+### Icons for color themes
 
 VS Code can be customized so that the background color is either light or dark. This must also be considered for the icons, because a dark icon on a dark background does not provide the necessary contrast it needs to be recognizable.
 
@@ -258,7 +272,7 @@ If the `highContrast` attribute is set to `true`, it is necessary to provide two
 - sample.svg
 - sample_highContrast.svg
 
-<h3 id="icon-packs">Create icon packs</h3>
+### Create icon packs
 
 Sometimes it can happen that certain files or folders need an icon, but you cannot avoid that there could be different icons for them. An icon pack can bundle different icons and as an end user you can decide which icons to display.
 
@@ -284,7 +298,7 @@ To create an icon pack, the following steps have to be completed:
 3. Adjust [package.json](package.json) under `configuration.properties.material-icon-theme.activeIconPack`
 4. Use the icon pack inside the [fileIcons.ts](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/core/icons/fileIcons.ts),[folderIcons.ts](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/core/icons/folderIcons.ts) or [languageIcons.ts](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/core/icons/languageIcons.ts) files in the `enabledFor` attribute
 
-<h3 id="pixel-perfect-icons">Designing Pixel-Perfect Icons</h3>
+### Designing Pixel-Perfect Icons
 
 At 100% zoom, VS Code displays icons at 16x16 pixels. This means that ideally, the icons should be designed in a way that they look good at this size.
 
@@ -294,7 +308,7 @@ To avoid blurry icons, it is recommended to design them using a 16x16 grid and t
 
 <img src="./images/how-tos/blurry-issue.png" alt="An example of a pixel-perfect icon" width="300px" />
 
-<h4 id="pixel-perfect-tips">Tips for Designing Pixel-Perfect Icons</h4>
+#### Tips for Designing Pixel-Perfect Icons
 
 The following are some tips to help you design nice and sharp-looking icons. These tips are not rules but rather guidelines to help you achieve the best results possible:
 
@@ -340,7 +354,7 @@ The following are some tips to help you design nice and sharp-looking icons. The
 
 - **Curves vs straight lines**: Let's face it, pixels are square, there's nothing we can do about it. And since pixels are square, drawing a curve actually involves drawing a series of... squares. Consequently, when rendering a curve, we're essentially asking the display to render a fraction of a pixel, which is impossible. As a result, curves tend to appear blurry. This is normal. However, it's perfectly fine to use curves, circles, and rounded edges in your icons. Just keep in mind these limitations if you're wondering why your icon doesn't look as sharp as you'd like.
 
-<h3 id="icon-cloning">Cloning existing icons</h3>
+### Cloning existing icons
 
 The extension allows you to clone existing icons and adjust their colors through configuration. This enables you to create new color variants of an existing icon without having to create new SVG files.
 
