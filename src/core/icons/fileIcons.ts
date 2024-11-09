@@ -1371,6 +1371,7 @@ export const fileIcons: FileIcons = {
         'sonar-project.properties',
         '.sonarcloud.properties',
         'sonarcloud.yaml',
+        'SonarQube.Analysis.xml',
       ],
     },
     {
