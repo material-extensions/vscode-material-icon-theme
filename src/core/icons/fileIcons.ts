@@ -2869,5 +2869,9 @@ export const fileIcons: FileIcons = {
       name: 'github-sponsors',
       fileNames: ['.github/FUNDING.yml'],
     },
+    {
+      name: 'minecraft-fabric',
+      fileNames: ['fabric.mod.json'],
+    },
   ]),
 };
