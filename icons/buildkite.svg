@@ -1,9 +1,1 @@
-<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-  <defs />
-  <g transform="translate(1.956 5.304) scale(.06696)" data-name="Layer 2" fill-rule="evenodd" fill="none">
-    <g id="Mark">
-      <path class="cls-1" fill="#00E676" d="M100 49v100L0 100V0zM201 100V0l99 49z" />
-      <path class="cls-2" fill="#00C853" d="M100 49v100l101-49V0zM201 100v100l99-51V49z" />
-    </g>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="#00e676" d="m12 22-8-4V8l8 4zm8-14v10h4l4-4"/><path fill="#00c853" d="m12 22 8-4V8l-8 4zm8 6 8-4V14l-8 4z"/></svg>
