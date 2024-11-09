@@ -17,8 +17,9 @@ export const languageIcons: LanguageIcon[] = [
   { icon: { name: 'matlab' }, ids: ['matlab'] },
   {
     icon: { name: 'settings' },
-    ids: ['makefile', 'toml', 'ini', 'properties', 'spring-boot-properties'],
+    ids: ['makefile', 'ini', 'properties', 'spring-boot-properties'],
   },
+  { icon: { name: 'toml', light: true }, ids: ['toml'] },
   { icon: { name: 'shaderlab' }, ids: ['shaderlab'] },
   { icon: { name: 'diff' }, ids: ['diff'] },
   { icon: { name: 'json' }, ids: ['json', 'jsonc', 'json5'] },
