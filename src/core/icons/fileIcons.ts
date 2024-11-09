@@ -2272,6 +2272,7 @@ export const fileIcons: FileIcons = {
         'tsconfig.renderer.json',
         'tsconfig.server.json',
         'tsconfig.client.json',
+        'tsconfig.declaration.json',
       ],
       fileExtensions: ['tsconfig.json'],
     },
