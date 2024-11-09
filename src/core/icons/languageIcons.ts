@@ -102,6 +102,7 @@ export const languageIcons: LanguageIcon[] = [
   { icon: { name: 'cpp' }, ids: ['cpp'] },
   { icon: { name: 'objective-c' }, ids: ['objective-c'] },
   { icon: { name: 'objective-cpp' }, ids: ['objective-cpp'] },
+  { icon: { name: 'c3' }, ids: ['c3'] },
   { icon: { name: 'coffee' }, ids: ['coffeescript'] },
   { icon: { name: 'fsharp' }, ids: ['fsharp'] },
   { icon: { name: 'editorconfig' }, ids: ['editorconfig'] },

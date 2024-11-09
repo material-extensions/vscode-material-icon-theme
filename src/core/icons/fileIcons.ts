@@ -451,6 +451,7 @@ export const fileIcons: FileIcons = {
     { name: 'java', fileExtensions: ['java', 'jsp'] },
     { name: 'jar', fileExtensions: ['jar'] },
     { name: 'javaclass', fileExtensions: ['class'] },
+    { name: 'c3', fileExtensions: ['c3'] },
     { name: 'c', fileExtensions: ['c', 'i', 'mi'] },
     { name: 'h', fileExtensions: ['h'] },
     {
