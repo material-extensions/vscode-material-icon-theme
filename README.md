@@ -3,8 +3,10 @@
 <div align="center">
   <br>
     <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/logo.png" alt="logo" width="200">
-  <br><br>
-  <h1>Material Icon Theme</h1>
+  <h1>
+    Material Icon Theme
+    <br><br>
+</h1>
 </div>
 
 <h4 align="center">Get the Material Design icons into your VS Code.</h4>
