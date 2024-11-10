@@ -1,7 +1,1 @@
-<svg version="1.1" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
- <g transform="matrix(.91732 0 0 .91732 20.67 20.67)">
-  <path d="m250 254.35v233.43l-199.74-121.06v-233.44z" fill="#4db6ac"/>
-  <path d="m250 254.35v233.43l199.74-121.07v-233.43z" fill="#80cbc4"/>
-  <path d="M 250,254.35 50.26,133.28 250,12.22 449.74,133.29 250,254.36 Z" fill="#b2dfdb"/>
- </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="#4db6ac" d="M4 9v14l12 6V15z"/><path fill="#b2dfdb" d="M16 3 4 9l12 6 12-6z"/><path fill="#80cbc4" d="M16 15v14l12-6V9z"/></svg>

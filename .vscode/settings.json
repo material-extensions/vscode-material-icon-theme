@@ -5,10 +5,27 @@
   "search.exclude": {
     "out": true
   },
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
+  "[typescript]": {
+    "editor.codeActionsOnSave": {
+      "quickfix.biome": "explicit",
+      "source.organizeImports.biome": "explicit"
+    }
   },
-  "eslint.validate": ["typescript"],
-  "editor.formatOnSave": true
+  "editor.defaultFormatter": "biomejs.biome",
+  "editor.formatOnSave": true,
+
+  "github.copilot.chat.codeGeneration.instructions": [
+    {
+      "file": "/CONTRIBUTING.md"
+    },
+    {
+      "file": "/src/architecture.md"
+    }
+  ],
+  "github.copilot.chat.reviewSelection.instructions": [
+    {
+      "file": "/CONTRIBUTING.md"
+    }
+  ],
+  "github.copilot.chat.codeGeneration.useInstructionFiles": true
 }
