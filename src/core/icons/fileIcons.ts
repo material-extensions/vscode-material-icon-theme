@@ -2876,6 +2876,11 @@ export const fileIcons: FileIcons = {
       name: 'minecraft-fabric',
       fileNames: ['fabric.mod.json'],
     },
-    { name: 'umi', fileNames: ['.umirc.ts', '.umirc.js'] },
+    {
+      name: 'umi',
+      patterns: {
+        ".umirc": FileNamePattern.Ecmascript,
+      },
+    },
   ]),
 };
