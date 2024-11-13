@@ -47,6 +47,10 @@ jobs:
           git config user.email 'github-actions[bot]@users.noreply.github.com'
           git config --global push.followTags true
 
+      - name:  Create GitHub release notes
+        run: |
+          bunx changelogen github release --token ${{ secrets.GITHUB_TOKEN }}
+
       - name: 📜 Generate changelog and release notes
         run: |
           bunx changelogen --release --push
@@ -70,15 +74,6 @@ jobs:
         with:
           subject-path: "${{ env.NAME }}-${{ env.VERSION }}.vsix"
 
-      - name: 🚀 Release ${{ env.VERSION }}
-        uses: softprops/action-gh-release@01570a1f39cb168c169c802c3bceb9e93fb10974 # v2.1.0
-        with:
-          files: ${{ env.NAME }}-${{ env.VERSION }}.vsix
-          tag_name: v${{ env.VERSION }}
-          body_path: CHANGELOG.md
-          name: ${{ env.DISPLAY_NAME }} v${{ env.VERSION }}
-          generate_release_notes: false
-
       - name: 🌐 Publish to Open VSX Registry
         uses: HaaLeo/publish-vscode-extension@28e2d3f5817fccf23c1f219eb0cecc903132d1a2 # v1.6.2
         with:
@@ -96,3 +91,7 @@ jobs:
         run: |
           npm set "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}"
           npm publish --provenance --access public
+
+      - name: ⬆️ Upload VSIX to GitHub release
+        run: |
+          gh release upload v${{ env.VERSION }} ${{ env.NAME }}-${{ env.VERSION }}.vsix
