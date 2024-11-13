@@ -2,6 +2,20 @@
 
 # Changelog
 
+## v5.14.1
+
+[compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.14.0...v5.14.1)
+
+### 🩹 Fixes
+
+- Add changelog of v5.14.0 ([25fcdc1b](https://github.com/material-extensions/vscode-material-icon-theme/commit/25fcdc1b))
+- **workflows:** Ensure similar formatting with pipeline ([#2705](https://github.com/material-extensions/vscode-material-icon-theme/pull/2705))
+- **workflows:** Changelog generation in release process ([#2704](https://github.com/material-extensions/vscode-material-icon-theme/pull/2704))
+
+### ❤️ Contributors
+
+- Philipp Kief ([@PKief](http://github.com/PKief))
+
 ## v5.13.0...v5.14.0
 
 [compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.13.0...v5.14.0)
