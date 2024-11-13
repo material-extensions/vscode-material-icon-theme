@@ -2879,7 +2879,7 @@ export const fileIcons: FileIcons = {
     {
       name: 'umi',
       patterns: {
-        ".umirc": FileNamePattern.Ecmascript,
+        '.umirc': FileNamePattern.Ecmascript,
       },
     },
   ]),
