@@ -71,23 +71,23 @@ jobs:
         with:
           subject-path: "${{ env.NAME }}-${{ env.VERSION }}.vsix"
 
-      - name: 🌐 Publish to Open VSX Registry
-        uses: HaaLeo/publish-vscode-extension@28e2d3f5817fccf23c1f219eb0cecc903132d1a2 # v1.6.2
-        with:
-          pat: ${{ secrets.OPEN_VSX_TOKEN }}
-          extensionFile: ${{ env.NAME }}-${{ env.VERSION }}.vsix
+      # - name: 🌐 Publish to Open VSX Registry
+      #   uses: HaaLeo/publish-vscode-extension@28e2d3f5817fccf23c1f219eb0cecc903132d1a2 # v1.6.2
+      #   with:
+      #     pat: ${{ secrets.OPEN_VSX_TOKEN }}
+      #     extensionFile: ${{ env.NAME }}-${{ env.VERSION }}.vsix
 
-      - name: 🌐 Publish to Visual Studio Marketplace
-        uses: HaaLeo/publish-vscode-extension@28e2d3f5817fccf23c1f219eb0cecc903132d1a2 # v1.6.2
-        with:
-          pat: ${{ secrets.VS_MARKETPLACE_TOKEN }}
-          registryUrl: https://marketplace.visualstudio.com
-          extensionFile: ${{ env.NAME }}-${{ env.VERSION }}.vsix
+      # - name: 🌐 Publish to Visual Studio Marketplace
+      #   uses: HaaLeo/publish-vscode-extension@28e2d3f5817fccf23c1f219eb0cecc903132d1a2 # v1.6.2
+      #   with:
+      #     pat: ${{ secrets.VS_MARKETPLACE_TOKEN }}
+      #     registryUrl: https://marketplace.visualstudio.com
+      #     extensionFile: ${{ env.NAME }}-${{ env.VERSION }}.vsix
 
-      - name: 📦 Publish to NPM Registry
-        run: |
-          npm set "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}"
-          npm publish --provenance --access public
+      # - name: 📦 Publish to NPM Registry
+      #   run: |
+      #     npm set "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}"
+      #     npm publish --provenance --access public
 
       - name: ⬆️ Upload VSIX to GitHub release
         run: |
