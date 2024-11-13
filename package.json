@@ -2,7 +2,7 @@
   "name": "material-icon-theme",
   "displayName": "Material Icon Theme",
   "description": "Material Design Icons for Visual Studio Code",
-  "version": "5.13.0",
+  "version": "5.14.0",
   "license": "MIT",
   "scripts": {
     "precompile": "rimraf dist && bun run verify",
@@ -54,16 +54,29 @@
     "color": "#1e1e1e",
     "theme": "dark"
   },
-  "categories": ["Themes"],
-  "keywords": ["icons", "theme", "material", "icon-theme", "customization"],
-  "extensionKind": ["ui", "workspace"],
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "icons",
+    "theme",
+    "material",
+    "icon-theme",
+    "customization"
+  ],
+  "extensionKind": [
+    "ui",
+    "workspace"
+  ],
   "capabilities": {
     "untrustedWorkspaces": {
       "supported": true
     },
     "virtualWorkspaces": true
   },
-  "activationEvents": ["onStartupFinished"],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
   "main": "./dist/extension/desktop/extension.cjs",
   "browser": "./dist/extension/web/extension.cjs",
   "module": "./dist/module/index.cjs",
@@ -218,7 +231,9 @@
               },
               "activeForPacks": {
                 "type": "array",
-                "default": ["angular"],
+                "default": [
+                  "angular"
+                ],
                 "description": "%configuration.customClones.activeForPacks%",
                 "items": {
                   "type": "string",
@@ -293,7 +308,11 @@
             "%configuration.folders.theme.classic%",
             "%configuration.folders.theme.none%"
           ],
-          "enum": ["specific", "classic", "none"]
+          "enum": [
+            "specific",
+            "classic",
+            "none"
+          ]
         },
         "material-icon-theme.folders.color": {
           "type": "string",
@@ -334,7 +353,11 @@
         "material-icon-theme.logLevel": {
           "type": "string",
           "default": "info",
-          "enum": ["info", "error", "debug"],
+          "enum": [
+            "info",
+            "error",
+            "debug"
+          ],
           "description": "%configuration.logLevel%"
         }
       }
