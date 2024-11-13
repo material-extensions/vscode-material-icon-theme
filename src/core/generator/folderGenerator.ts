@@ -191,13 +191,7 @@ const setIconDefinitions = (
 ) => {
   const isClone = (icon as FolderIcon).clone !== undefined;
 
-  manifest = createIconDefinitions(
-    manifest,
-    config,
-    icon.name,
-    '',
-    isClone
-  );
+  manifest = createIconDefinitions(manifest, config, icon.name, '', isClone);
 
   if (icon.light) {
     manifest = merge(
