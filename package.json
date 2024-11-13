@@ -11,7 +11,6 @@
     "postcompile": "bun run compile:declarations && bun run generateJson && bun run generateClones && bun run check",
     "build": "bun run compile && bun ./build/build-with-esbuild.ts",
     "watch": "bun ./build/watch-with-esbuild.ts",
-    "changelog": "bun --bun ./src/scripts/generateChangelog.ts",
     "check-colors": "bun ./src/scripts/svg/checkSvgColors.ts",
     "check": "bun ./src/scripts/icons/checks/run.ts",
     "contributors": "bun ./src/scripts/contributors/contributors.ts",
