@@ -16,7 +16,7 @@
 
 - Philipp Kief ([@PKief](http://github.com/PKief))
 
-## v5.13.0...v5.14.0
+## v5.14.0
 
 [compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.13.0...v5.14.0)
 
