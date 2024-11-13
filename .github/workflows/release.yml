@@ -2,16 +2,6 @@ name: 🚀 Release + Publish
 
 on:
   workflow_dispatch:
-    inputs:
-      version:
-        type: choice
-        description: Select the release version
-        required: true
-        default: "minor"
-        options:
-          - major
-          - minor
-          - patch
 
 permissions:
   id-token: write
@@ -20,8 +10,6 @@ permissions:
 jobs:
   release:
     runs-on: ubuntu-latest
-    env:
-      VERSION: ${{ github.event.inputs.version }}
 
     permissions:
       contents: write
@@ -53,26 +41,25 @@ jobs:
           bun install --frozen-lockfile
           bun add -g npm
 
-      - name: 📜 Generate changelog and release notes
-        run: |
-          bun run changelog --version ${{ env.VERSION }}
-          git add CHANGELOG.md
-
-      - name: 🔄 Update version
+      - name: 🔧 Configure Git
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
-
           git config --global push.followTags true
-          npm version ${{ env.VERSION }} -m "Release %s"
+
+      - name: 📜 Generate changelog and release notes
+        run: |
+          bunx changelogen --release --push
 
       - name: 📝 Get metadata
         run: |
           NAME=$(jq -r '.name' package.json)
           DISPLAY_NAME=$(jq -r '.displayName' package.json)
+          VERSION=$(jq -r '.version' package.json)
 
           echo "NAME=$NAME"                   >> $GITHUB_ENV
           echo "DISPLAY_NAME=$DISPLAY_NAME"   >> $GITHUB_ENV
+          echo "VERSION=$VERSION"             >> $GITHUB_ENV
 
       - name: 🛠️ Build extension
         run: bunx @vscode/vsce package
@@ -82,9 +69,6 @@ jobs:
         # Read: https://docs.github.com/en/actions/security-guides/using-artifact-attestations-to-establish-provenance-for-builds
         with:
           subject-path: "${{ env.NAME }}-${{ env.VERSION }}.vsix"
-
-      - name: 📌 Push tags
-        run: git push
 
       - name: 🚀 Release ${{ env.VERSION }}
         uses: softprops/action-gh-release@01570a1f39cb168c169c802c3bceb9e93fb10974 # v2.1.0

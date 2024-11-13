@@ -11,7 +11,6 @@
     "postcompile": "bun run compile:declarations && bun run generateJson && bun run generateClones && bun run check",
     "build": "bun run compile && bun ./build/build-with-esbuild.ts",
     "watch": "bun ./build/watch-with-esbuild.ts",
-    "changelog": "bun --bun ./src/scripts/generateChangelog.ts",
     "check-colors": "bun ./src/scripts/svg/checkSvgColors.ts",
     "check": "bun ./src/scripts/icons/checks/run.ts",
     "contributors": "bun ./src/scripts/contributors/contributors.ts",
@@ -54,29 +53,16 @@
     "color": "#1e1e1e",
     "theme": "dark"
   },
-  "categories": [
-    "Themes"
-  ],
-  "keywords": [
-    "icons",
-    "theme",
-    "material",
-    "icon-theme",
-    "customization"
-  ],
-  "extensionKind": [
-    "ui",
-    "workspace"
-  ],
+  "categories": ["Themes"],
+  "keywords": ["icons", "theme", "material", "icon-theme", "customization"],
+  "extensionKind": ["ui", "workspace"],
   "capabilities": {
     "untrustedWorkspaces": {
       "supported": true
     },
     "virtualWorkspaces": true
   },
-  "activationEvents": [
-    "onStartupFinished"
-  ],
+  "activationEvents": ["onStartupFinished"],
   "main": "./dist/extension/desktop/extension.cjs",
   "browser": "./dist/extension/web/extension.cjs",
   "module": "./dist/module/index.cjs",
@@ -231,9 +217,7 @@
               },
               "activeForPacks": {
                 "type": "array",
-                "default": [
-                  "angular"
-                ],
+                "default": ["angular"],
                 "description": "%configuration.customClones.activeForPacks%",
                 "items": {
                   "type": "string",
@@ -308,11 +292,7 @@
             "%configuration.folders.theme.classic%",
             "%configuration.folders.theme.none%"
           ],
-          "enum": [
-            "specific",
-            "classic",
-            "none"
-          ]
+          "enum": ["specific", "classic", "none"]
         },
         "material-icon-theme.folders.color": {
           "type": "string",
@@ -353,11 +333,7 @@
         "material-icon-theme.logLevel": {
           "type": "string",
           "default": "info",
-          "enum": [
-            "info",
-            "error",
-            "debug"
-          ],
+          "enum": ["info", "error", "debug"],
           "description": "%configuration.logLevel%"
         }
       }
