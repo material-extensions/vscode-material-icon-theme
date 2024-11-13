@@ -2,6 +2,72 @@
 
 # Changelog
 
+## v5.13.0...v5.14.0
+
+[compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.13.0...v5.14.0)
+
+### ✨ Enhancements
+
+- ✨  add new folder icons associations ([#2675](https://github.com/material-extensions/vscode-material-icon-theme/pull/2675))
+- Add `simulink` icon ([#2678](https://github.com/material-extensions/vscode-material-icon-theme/pull/2678))
+- 🏞️ add `github-sponsors` icon ([#2682](https://github.com/material-extensions/vscode-material-icon-theme/pull/2682))
+- **workflows:** ✨ add descriptive name to `lint-pr-title` job ([8faa248e](https://github.com/material-extensions/vscode-material-icon-theme/commit/8faa248e))
+- **workflows:** ✨  Improved generation of release notes ([#2646](https://github.com/material-extensions/vscode-material-icon-theme/pull/2646))
+- Add folder icons for `element` and `elements` folders ([#2526](https://github.com/material-extensions/vscode-material-icon-theme/pull/2526))
+- Add file extensions for 7-zip archive formats ([#2694](https://github.com/material-extensions/vscode-material-icon-theme/pull/2694))
+- Add additional filename for sonarcloud ([#2695](https://github.com/material-extensions/vscode-material-icon-theme/pull/2695))
+- Add C3 image ([#2655](https://github.com/material-extensions/vscode-material-icon-theme/pull/2655))
+- Added minecraft fabric icon ([#2051](https://github.com/material-extensions/vscode-material-icon-theme/pull/2051))
+- Add icon for Palette files ([#1522](https://github.com/material-extensions/vscode-material-icon-theme/pull/1522))
+- Add tsconfig.{client,declaration}.json icon associations ([#2696](https://github.com/material-extensions/vscode-material-icon-theme/pull/2696))
+- Improve `README.md` structure ([#2524](https://github.com/material-extensions/vscode-material-icon-theme/pull/2524))
+- Show Haskell icon for `.lhs` files ([#2699](https://github.com/material-extensions/vscode-material-icon-theme/pull/2699))
+- Add `umi` icon ([#2203](https://github.com/material-extensions/vscode-material-icon-theme/pull/2203))
+- Add toml icon ([#1535](https://github.com/material-extensions/vscode-material-icon-theme/pull/1535))
+- 🩹 add comments to patch for changelogen ([#2701](https://github.com/material-extensions/vscode-material-icon-theme/pull/2701))
+- Add new icons for directive folder ([#2690](https://github.com/material-extensions/vscode-material-icon-theme/pull/2690))
+
+### 🔥 Performance
+
+- **workflows:** ⚡optimize checkout steps ([#2681](https://github.com/material-extensions/vscode-material-icon-theme/pull/2681))
+
+### 🩹 Fixes
+
+- Make `histoire` file icon pixel perfect and rename it ([#2674](https://github.com/material-extensions/vscode-material-icon-theme/pull/2674))
+- **workflows:** 🚑️  fix failing `lint-pr-title` workflow ([#2680](https://github.com/material-extensions/vscode-material-icon-theme/pull/2680))
+- **workflows:** Fetch target branch in color check workflow ([#2688](https://github.com/material-extensions/vscode-material-icon-theme/pull/2688))
+- Fix file extensions for `garden` icon ([#2693](https://github.com/material-extensions/vscode-material-icon-theme/pull/2693))
+
+### 📖 Documentation
+
+- Improve TSDoc comments throughout the project ([#2671](https://github.com/material-extensions/vscode-material-icon-theme/pull/2671))
+- Update contributing file ([#2698](https://github.com/material-extensions/vscode-material-icon-theme/pull/2698))
+
+### 🏡 Chore
+
+- Improve preparation of module in release workflow ([34ab1698](https://github.com/material-extensions/vscode-material-icon-theme/commit/34ab1698))
+- Bump `biome.jsonc` schema version to `1.9.4` ([#2691](https://github.com/material-extensions/vscode-material-icon-theme/pull/2691))
+
+### 🤖 CI
+
+- Add workflow to check PR title following conventional commit ([#2679](https://github.com/material-extensions/vscode-material-icon-theme/pull/2679))
+
+### ❤️ Contributors
+
+- Javier Hidalgo ([@javierhidalgodev](http://github.com/javierhidalgodev))
+- Okinea Dev ([@okineadev](http://github.com/okineadev))
+- Xinhe Wang ([@wxh06](http://github.com/wxh06))
+- Sakina ([@fz6m](http://github.com/fz6m))
+- Philipp Kief ([@PKief](http://github.com/PKief))
+- Flicky <lucasflicky@hotmail.com>
+- Usama Khan ([@UsamaKhan](http://github.com/UsamaKhan))
+- Stan Van Dijk ([@StandUp2001](http://github.com/StandUp2001))
+- Rowan Walsh ([@rowan-walsh](http://github.com/rowan-walsh))
+- Thaddeus Crews ([@Repiteo](http://github.com/Repiteo))
+- Kevin Castro <kevin@andersonopt.com>
+- Dev TtangKong ([@MTtankkeo](http://github.com/MTtankkeo))
+- Paul Gusmano ([@Gusmano-2-OSU](http://github.com/Gusmano-2-OSU))
+
 ## v5.13.0
 
 [compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.12.0...v5.13.0)
