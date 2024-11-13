@@ -57,13 +57,13 @@ jobs:
 
       - name: 📝 Get metadata
         run: |
+          VERSION=$(jq -r '.version' package.json)
           NAME=$(jq -r '.name' package.json)
           DISPLAY_NAME=$(jq -r '.displayName' package.json)
-          VERSION=$(jq -r '.version' package.json)
 
+          echo "VERSION=$VERSION"             >> $GITHUB_ENV
           echo "NAME=$NAME"                   >> $GITHUB_ENV
           echo "DISPLAY_NAME=$DISPLAY_NAME"   >> $GITHUB_ENV
-          echo "VERSION=$VERSION"             >> $GITHUB_ENV
 
       - name: 🛠️ Build extension
         run: bunx @vscode/vsce package
