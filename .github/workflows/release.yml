@@ -3,9 +3,9 @@ name: 🚀 Release + Publish
 on:
   workflow_dispatch:
     inputs:
-      versionChange:
+      version:
         type: choice
-        description: Select the version change
+        description: Select the release version
         required: true
         default: "minor"
         options:
@@ -21,7 +21,7 @@ jobs:
   release:
     runs-on: ubuntu-latest
     env:
-      VERSION_CHANGE: ${{ github.event.inputs.versionChange }}
+      VERSION: ${{ github.event.inputs.version }}
 
     permissions:
       contents: write
@@ -29,7 +29,8 @@ jobs:
       attestations: write
 
     steps:
-      - uses: actions/create-github-app-token@5d869da34e18e7287c1daad50e0b8ea0f506ce69 # v1.11.0
+      - name: ✅ Use App Token for the Bot which is allowed to create releases
+        uses: actions/create-github-app-token@5d869da34e18e7287c1daad50e0b8ea0f506ce69 # v1.11.0
         id: app-token
         with:
           app-id: ${{ vars.BOT_APP_ID }}
@@ -52,30 +53,26 @@ jobs:
           bun install --frozen-lockfile
           bun add -g npm
 
+      - name: 📜 Generate changelog and release notes
+        run: |
+          bun run changelog --version ${{ env.VERSION }}
+          git add CHANGELOG.md
+
       - name: 🔄 Update version
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
 
           git config --global push.followTags true
-          npm version ${{ env.VERSION_CHANGE }} -m "Release %s"
+          npm version ${{ env.VERSION }} -m "Release %s"
 
       - name: 📝 Get metadata
         run: |
-          VERSION=$(jq -r '.version' package.json)
           NAME=$(jq -r '.name' package.json)
           DISPLAY_NAME=$(jq -r '.displayName' package.json)
 
-          echo "VERSION=$VERSION"             >> $GITHUB_ENV
           echo "NAME=$NAME"                   >> $GITHUB_ENV
           echo "DISPLAY_NAME=$DISPLAY_NAME"   >> $GITHUB_ENV
-
-      - name: 📜 Generate changelog and release notes
-        run: |
-          release_notes="$(bun run changelog --version ${{ env.VERSION }})"
-          echo "RELEASE_NOTES=$release_notes" >> $GITHUB_ENV
-
-          git add CHANGELOG.md
 
       - name: 🛠️ Build extension
         run: bunx @vscode/vsce package
@@ -94,7 +91,7 @@ jobs:
         with:
           files: ${{ env.NAME }}-${{ env.VERSION }}.vsix
           tag_name: v${{ env.VERSION }}
-          body: ${{ env.RELEASE_NOTES }}
+          body_path: CHANGELOG.md
           name: ${{ env.DISPLAY_NAME }} v${{ env.VERSION }}
           generate_release_notes: false
 
