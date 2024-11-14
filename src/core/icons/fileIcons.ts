@@ -2516,6 +2516,7 @@ export const fileIcons: FileIcons = {
         '.hg',
         '.hgignore',
         '.hgflow',
+        '.hgtags',
         '.hgrc',
         'hgrc',
         'mercurial.ini',
