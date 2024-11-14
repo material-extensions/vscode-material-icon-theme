@@ -1,8 +1,1 @@
-<svg version="1.1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
- <g transform="matrix(.019531 0 0 .019531 2.0001 1.4462)">
-  <g transform="matrix(1.0295 0 0 1.0295 -15.109 -15.946)">
-   <rect x="125.55" y="98.701" width="331.24" height="883.32" style="fill:#1e88e5;stroke-width:.89894"/>
-   <path d="m125.55 816.4c0-607.28 772.91-607.28 772.91-607.28v331.24s-441.66 0-441.66 276.04v165.62h-331.24z" style="fill:#69f0ae;stroke-width:.89894"/>
-  </g>
- </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#1e88e5" d="M4.229 3.119h6.657v17.755H4.23z"/><path fill="#69f0ae" d="M4.229 17.545c0-12.207 15.535-12.207 15.535-12.207v6.658s-8.877 0-8.877 5.549v3.329H4.229z"/></svg>

@@ -1,15 +1,37 @@
+# See https://git-scm.com/docs/gitignore#_pattern_format for more about ignoring files.
+
+# Ignore build output directories
 out
 dist
 
+# Ignore node_modules directory
 node_modules
 
+# Ignore VS Code test files
 .vscode-test/**
 *.vsix
 
+# Ignore specific icon files and directories
+icons/file.svg
 icons/folder.svg
 icons/folder-open.svg
 icons/folder-root.svg
 icons/folder-root-open.svg
+icons/*.clone.svg
+icons/clones
 
+# Ignore specific HTML files in scripts directories
 src/scripts/preview/*.html
 src/scripts/contributors/*.html
+
+# Ignore cache directory
+.cache
+
+# Ignore log files
+*.log
+
+# Ignore optional eslint cache
+.eslintcache
+
+*.tgz
+*.tgz

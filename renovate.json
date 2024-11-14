@@ -1,0 +1,17 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:base", "helpers:pinGitHubActionDigests"],
+  "ignoreDeps": ["@types/vscode"],
+  "packageRules": [
+    {
+      "matchManagers": ["github-actions"],
+      "groupName": "GitHub Actions workflows",
+      "groupSlug": "github-actions"
+    },
+    {
+      "matchManagers": ["bun"],
+      "groupName": "Bun packages",
+      "groupSlug": "bun-packages"
+    }
+  ]
+}

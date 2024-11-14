@@ -1,17 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="24" height="24" style="isolation:isolate" version="1.1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
- <defs>
-  <clipPath id="_clipPath_ilmo2j9kcfsVlnyBvyj7X2ZVo9G9mI1W">
-   <rect width="24" height="24"/>
-  </clipPath>
- </defs>
- <g clip-path="url(#_clipPath_ilmo2j9kcfsVlnyBvyj7X2ZVo9G9mI1W)" fill="#616161">
-  <g id="Group" fill="#616161">
-   <path d="m3.508 5.5q5.031 0.62 8.625 0.616 3.537-4e-3 8.462-0.616v2.259q-4.925 0.612-8.462 0.616-3.594 4e-3 -8.625-0.616z"/>
-   <path d="m7.41 7.318-1.15 11.182 2.505-0.01 0.37-10.515z"/>
-   <path d="m16.405 7.307 1.119 11.172h-2.474l-0.37-10.515z"/>
-   <rect x="3.405" y="10.162" width="17.087" height="1.314"/>
-   <rect x="11.291" y="7.307" width="1.314" height="3.122"/>
-  </g>
- </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="#616161" d="M30 8V4a94.4 94.4 0 0 1-14 1A94.4 94.4 0 0 1 2 4v4s1.482.247 3.95.495L5.4 14H2v2h3.2L4 28h6V16h12v12h6l-1.2-12H30v-2h-3.4l-.55-5.505C28.517 8.247 30 8 30 8m-20 6V8.817c1.235.074 2.576.13 4 .16V14Zm12 0h-4V8.977a104 104 0 0 0 4-.16Z"/></svg>
