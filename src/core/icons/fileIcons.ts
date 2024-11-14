@@ -2883,5 +2883,9 @@ export const fileIcons: FileIcons = {
         '.umirc': FileNamePattern.Ecmascript,
       },
     },
+    {
+      name: 'pm2-ecosystem',
+      fileNames: ['ecosystem.config.js', 'ecosystem.config.cjs', 'ecosystem.config.mjs', 'ecosystem.config.ts', 'ecosystem.config.cts', 'ecosystem.config.mts'],
+    },
   ]),
 };
