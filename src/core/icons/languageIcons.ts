@@ -1,18 +1,25 @@
-import { LanguageIcon } from '../models';
+import type { LanguageIcon } from '../models/icons/languages/languageIdentifier';
 
 /**
  * Defines icons for language ids
  */
 export const languageIcons: LanguageIcon[] = [
   { icon: { name: 'git' }, ids: ['git', 'git-commit', 'git-rebase', 'ignore'] },
-  { icon: { name: 'c' }, ids: ['c', 'objective-c', 'objective-cpp'] },
-  { icon: { name: 'yaml' }, ids: ['yaml'] },
+  {
+    icon: { name: 'github-actions-workflow' },
+    ids: ['github-actions-workflow'],
+  },
+  {
+    icon: { name: 'yaml' },
+    ids: ['yaml', 'spring-boot-properties-yaml', 'ansible', 'ansible-jinja'],
+  },
   { icon: { name: 'xml' }, ids: ['xml', 'xquery', 'xsl'] },
   { icon: { name: 'matlab' }, ids: ['matlab'] },
   {
     icon: { name: 'settings' },
-    ids: ['makefile', 'toml', 'ini', 'properties'],
+    ids: ['makefile', 'ini', 'properties', 'spring-boot-properties'],
   },
+  { icon: { name: 'toml', light: true }, ids: ['toml'] },
   { icon: { name: 'shaderlab' }, ids: ['shaderlab'] },
   { icon: { name: 'diff' }, ids: ['diff'] },
   { icon: { name: 'json' }, ids: ['json', 'jsonc', 'json5'] },
@@ -20,6 +27,7 @@ export const languageIcons: LanguageIcon[] = [
   { icon: { name: 'java' }, ids: ['java'] },
   { icon: { name: 'razor' }, ids: ['razor', 'aspnetcorerazor'] },
   { icon: { name: 'python' }, ids: ['python'] },
+  { icon: { name: 'mojo' }, ids: ['mojo'] },
   { icon: { name: 'javascript' }, ids: ['javascript'] },
   { icon: { name: 'typescript' }, ids: ['typescript'] },
   { icon: { name: 'scala' }, ids: ['scala'] },
@@ -77,6 +85,7 @@ export const languageIcons: LanguageIcon[] = [
   { icon: { name: 'django' }, ids: ['django-html', 'django-txt'] },
   { icon: { name: 'html' }, ids: ['html'] },
   { icon: { name: 'godot' }, ids: ['gdscript'] },
+  { icon: { name: 'godot-assets' }, ids: ['gdresource', 'gdshader'] },
   { icon: { name: 'vim' }, ids: ['viml'] },
   { icon: { name: 'silverstripe' }, ids: [] },
   { icon: { name: 'prolog' }, ids: ['prolog'] },
@@ -86,11 +95,15 @@ export const languageIcons: LanguageIcon[] = [
   { icon: { name: 'tex' }, ids: ['tex', 'doctex', 'latex', 'latex-expl3'] },
   { icon: { name: 'salesforce' }, ids: ['apex'] },
   { icon: { name: 'sas' }, ids: ['sas'] },
-  { icon: { name: 'docker' }, ids: ['dockerfile'] },
-  { icon: { name: 'table' }, ids: ['csv', 'tsv'] },
+  { icon: { name: 'docker' }, ids: ['dockerfile', 'dockercompose'] },
+  { icon: { name: 'table' }, ids: ['csv', 'tsv', 'psv'] },
   { icon: { name: 'csharp' }, ids: ['csharp'] },
   { icon: { name: 'console' }, ids: ['bat', 'awk', 'shellscript'] },
+  { icon: { name: 'c' }, ids: ['c'] },
   { icon: { name: 'cpp' }, ids: ['cpp'] },
+  { icon: { name: 'objective-c' }, ids: ['objective-c'] },
+  { icon: { name: 'objective-cpp' }, ids: ['objective-cpp'] },
+  { icon: { name: 'c3' }, ids: ['c3'] },
   { icon: { name: 'coffee' }, ids: ['coffeescript'] },
   { icon: { name: 'fsharp' }, ids: ['fsharp'] },
   { icon: { name: 'editorconfig' }, ids: ['editorconfig'] },
@@ -120,6 +133,7 @@ export const languageIcons: LanguageIcon[] = [
   { icon: { name: 'search' }, ids: ['search-result'] },
   { icon: { name: 'minecraft' }, ids: ['mcfunction'] },
   { icon: { name: 'rescript' }, ids: ['rescript'] },
+  { icon: { name: 'otne' }, ids: ['otne'] },
   {
     icon: { name: 'twine' },
     ids: ['twee3', 'twee3-harlowe-3', 'twee3-chapbook-1', 'twee3-sugarcube-2'],
@@ -127,7 +141,31 @@ export const languageIcons: LanguageIcon[] = [
   { icon: { name: 'grain' }, ids: ['grain'] },
   { icon: { name: 'lolcode' }, ids: ['lolcode'] },
   { icon: { name: 'idris' }, ids: ['idris'] },
-  { icon: { name: 'hosts' }, ids: ['hosts'] },
   { icon: { name: 'chess' }, ids: ['pgn'] },
   { icon: { name: 'gemini' }, ids: ['gemini', 'text-gemini'] },
+  { icon: { name: 'vlang' }, ids: ['v'] },
+  { icon: { name: 'wolframlanguage' }, ids: ['wolfram'] },
+  { icon: { name: 'shader' }, ids: ['hlsl', 'glsl', 'wgsl'] },
+  { icon: { name: 'tree' }, ids: ['tree'] },
+  { icon: { name: 'svelte' }, ids: ['svelte'] },
+  { icon: { name: 'dart' }, ids: ['dart'] },
+  { icon: { name: 'cadence' }, ids: ['cadence'] },
+  { icon: { name: 'stylable' }, ids: ['stylable'] },
+  { icon: { name: 'hjson' }, ids: ['hjson'] },
+  { icon: { name: 'huff' }, ids: ['huff'] },
+  {
+    icon: { name: 'cds' },
+    ids: ['cds', 'capnb', 'cds-markdown-injection'],
+  },
+  {
+    icon: { name: 'concourse' },
+    ids: ['concourse-pipeline-yaml', 'concourse-task-yaml'],
+  },
+  {
+    icon: { name: 'systemd', light: true },
+    ids: ['systemd-conf', 'systemd-unit-file'],
+  },
+  { icon: { name: 'slint' }, ids: ['slint'] },
+  { icon: { name: 'luau' }, ids: ['luau'] },
+  { icon: { name: 'hosts' }, ids: ['hosts'] },
 ];
