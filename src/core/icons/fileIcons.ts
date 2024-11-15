@@ -2884,5 +2884,6 @@ export const fileIcons: FileIcons = {
         '.umirc': FileNamePattern.Ecmascript,
       },
     },
+    { name: 'hosts', fileNames: ['hosts'], light: true },
   ]),
 };
