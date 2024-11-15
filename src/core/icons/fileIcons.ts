@@ -1262,6 +1262,7 @@ export const fileIcons: FileIcons = {
         '.env.test.local',
         '.env.uat',
         '.vars',
+        '.dev.vars',
       ],
     },
     {
