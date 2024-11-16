@@ -2,16 +2,6 @@ name: 🚀 Release + Publish
 
 on:
   workflow_dispatch:
-    inputs:
-      versionChange:
-        type: choice
-        description: Select the version change
-        required: true
-        default: "minor"
-        options:
-          - major
-          - minor
-          - patch
 
 permissions:
   id-token: write
@@ -20,8 +10,6 @@ permissions:
 jobs:
   release:
     runs-on: ubuntu-latest
-    env:
-      VERSION_CHANGE: ${{ github.event.inputs.versionChange }}
 
     permissions:
       contents: write
@@ -29,7 +17,8 @@ jobs:
       attestations: write
 
     steps:
-      - uses: actions/create-github-app-token@5d869da34e18e7287c1daad50e0b8ea0f506ce69 # v1.11.0
+      - name: ✅ Use App Token for the Bot which is allowed to create releases
+        uses: actions/create-github-app-token@5d869da34e18e7287c1daad50e0b8ea0f506ce69 # v1.11.0
         id: app-token
         with:
           app-id: ${{ vars.BOT_APP_ID }}
@@ -52,13 +41,19 @@ jobs:
           bun install --frozen-lockfile
           bun add -g npm
 
-      - name: 🔄 Update version
+      - name: 🔧 Configure Git
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
-
           git config --global push.followTags true
-          npm version ${{ env.VERSION_CHANGE }} -m "Release %s"
+
+      - name: 🚀 Prepare release
+        run: bun run preversion
+
+      - name: 📜 Generate changelog and release notes
+        run: |
+          bunx changelogen --release --push
+          bunx changelogen github release --token ${{ secrets.GITHUB_TOKEN }}
 
       - name: 📝 Get metadata
         run: |
@@ -70,13 +65,6 @@ jobs:
           echo "NAME=$NAME"                   >> $GITHUB_ENV
           echo "DISPLAY_NAME=$DISPLAY_NAME"   >> $GITHUB_ENV
 
-      - name: 📜 Generate changelog and release notes
-        run: |
-          release_notes="$(bun run changelog --version ${{ env.VERSION }})"
-          echo "RELEASE_NOTES=$release_notes" >> $GITHUB_ENV
-
-          git add CHANGELOG.md
-
       - name: 🛠️ Build extension
         run: bunx @vscode/vsce package
 
@@ -85,18 +73,6 @@ jobs:
         # Read: https://docs.github.com/en/actions/security-guides/using-artifact-attestations-to-establish-provenance-for-builds
         with:
           subject-path: "${{ env.NAME }}-${{ env.VERSION }}.vsix"
-
-      - name: 📌 Push tags
-        run: git push
-
-      - name: 🚀 Release ${{ env.VERSION }}
-        uses: softprops/action-gh-release@01570a1f39cb168c169c802c3bceb9e93fb10974 # v2.1.0
-        with:
-          files: ${{ env.NAME }}-${{ env.VERSION }}.vsix
-          tag_name: v${{ env.VERSION }}
-          body: ${{ env.RELEASE_NOTES }}
-          name: ${{ env.DISPLAY_NAME }} v${{ env.VERSION }}
-          generate_release_notes: false
 
       - name: 🌐 Publish to Open VSX Registry
         uses: HaaLeo/publish-vscode-extension@28e2d3f5817fccf23c1f219eb0cecc903132d1a2 # v1.6.2
@@ -115,3 +91,9 @@ jobs:
         run: |
           npm set "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}"
           npm publish --provenance --access public
+
+      - name: ⬆️ Upload VSIX to GitHub release
+        run: |
+          gh release upload v${{ env.VERSION }} ${{ env.NAME }}-${{ env.VERSION }}.vsix
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
