@@ -2863,13 +2863,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'installation',
-      fileNames: [
-        'installation',
-        'installation.md',
-        'installation.rst',
-        'installation.txt',
-        'install',
-      ],
+      fileNames: ['install'],
     },
     {
       name: 'github-sponsors',
