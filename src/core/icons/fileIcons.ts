@@ -2869,9 +2869,6 @@ export const fileIcons: FileIcons = {
         'installation.rst',
         'installation.txt',
         'install',
-        'install.md',
-        'install.rst',
-        'install.txt',
       ],
     },
     {
