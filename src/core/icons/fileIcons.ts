@@ -2880,5 +2880,9 @@ export const fileIcons: FileIcons = {
       },
     },
     { name: 'hosts', fileNames: ['hosts'], light: true },
+    {
+      name: 'citation',
+      fileNames: ['citation.cff'],
+    },
   ]),
 };
