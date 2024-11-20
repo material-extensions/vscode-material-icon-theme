@@ -1,0 +1,1 @@
+bunx commitlint --help-url https://github.com/material-extensions/vscode-material-icon-theme/blob/main/CONTRIBUTING.md#conventional-pull-request-titles --edit
