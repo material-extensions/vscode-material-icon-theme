@@ -2884,5 +2884,9 @@ export const fileIcons: FileIcons = {
       name: 'citation',
       fileNames: ['citation.cff'],
     },
+    {
+      name: "xmake",
+      fileNames: ["xmake.lua", "xmake"],
+    }
   ]),
 };
