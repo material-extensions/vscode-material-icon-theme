@@ -17,8 +17,9 @@ export const languageIcons: LanguageIcon[] = [
   { icon: { name: 'matlab' }, ids: ['matlab'] },
   {
     icon: { name: 'settings' },
-    ids: ['makefile', 'toml', 'ini', 'properties', 'spring-boot-properties'],
+    ids: ['makefile', 'ini', 'properties', 'spring-boot-properties'],
   },
+  { icon: { name: 'toml', light: true }, ids: ['toml'] },
   { icon: { name: 'shaderlab' }, ids: ['shaderlab'] },
   { icon: { name: 'diff' }, ids: ['diff'] },
   { icon: { name: 'json' }, ids: ['json', 'jsonc', 'json5'] },
@@ -102,6 +103,7 @@ export const languageIcons: LanguageIcon[] = [
   { icon: { name: 'cpp' }, ids: ['cpp'] },
   { icon: { name: 'objective-c' }, ids: ['objective-c'] },
   { icon: { name: 'objective-cpp' }, ids: ['objective-cpp'] },
+  { icon: { name: 'c3' }, ids: ['c3'] },
   { icon: { name: 'coffee' }, ids: ['coffeescript'] },
   { icon: { name: 'fsharp' }, ids: ['fsharp'] },
   { icon: { name: 'editorconfig' }, ids: ['editorconfig'] },
@@ -159,5 +161,11 @@ export const languageIcons: LanguageIcon[] = [
     icon: { name: 'concourse' },
     ids: ['concourse-pipeline-yaml', 'concourse-task-yaml'],
   },
+  {
+    icon: { name: 'systemd', light: true },
+    ids: ['systemd-conf', 'systemd-unit-file'],
+  },
   { icon: { name: 'slint' }, ids: ['slint'] },
+  { icon: { name: 'luau' }, ids: ['luau'] },
+  { icon: { name: 'hosts' }, ids: ['hosts'] },
 ];

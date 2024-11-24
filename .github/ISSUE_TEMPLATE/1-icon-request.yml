@@ -37,7 +37,9 @@ body:
     id: graphic-ideas
     attributes:
       label: Graphic ideas
-      description: A clear description of the icon you would like. If the icons are separate for folder and files, please create separate issues.
+      description: |
+        A clear description of the icon you would like.
+        If the icons are separate for folder and files, please create separate issues.
       placeholder: Include a link to sample icons if possible
 
   - type: textarea

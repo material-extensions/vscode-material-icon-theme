@@ -6,6 +6,7 @@ import { translation as langDe } from './translations/lang-de';
 import { translation as langEn } from './translations/lang-en';
 import { translation as langEs } from './translations/lang-es';
 import { translation as langFr } from './translations/lang-fr';
+import { translation as langId } from './translations/lang-id';
 import { translation as langJa } from './translations/lang-ja';
 import { translation as langKo } from './translations/lang-ko';
 import { translation as langNl } from './translations/lang-nl';
@@ -55,6 +56,8 @@ const getTranslationObject = async (language: string): Promise<Translation> => {
       return langEs;
     case 'fr':
       return langFr;
+    case 'id':
+      return langId;
     case 'ja':
       return langJa;
     case 'ko':
