@@ -279,6 +279,12 @@ export const fileIcons: FileIcons = {
       enabledFor: [IconPack.Redux],
     },
     {
+      name: 'tanstack-router',
+      fileNames: [
+        'tsr.config.json',
+      ]
+    },
+    {
       name: 'redux-store',
       fileExtensions: ['store.js', 'store.ts'],
       fileNames: ['store.js', 'store.ts'],
