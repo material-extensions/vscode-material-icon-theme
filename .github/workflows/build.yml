@@ -2,6 +2,15 @@ name: 🛠️ Build + Test
 
 on:
   push:
+    paths:
+      - '*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}'
+      - 'build/'
+      - 'src/core'
+      - 'src/extension'
+      - 'src/module'
+      - 'bunfig.toml'
+      - 'package.json'
+
   pull_request:
 
 permissions:
