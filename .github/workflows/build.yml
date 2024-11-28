@@ -12,6 +12,14 @@ on:
       - 'package.json'
 
   pull_request:
+    paths:
+      - '*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}'
+      - 'build/'
+      - 'src/core'
+      - 'src/extension'
+      - 'src/module'
+      - 'bunfig.toml'
+      - 'package.json'
 
 permissions:
   contents: read
