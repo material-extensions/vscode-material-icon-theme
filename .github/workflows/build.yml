@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - '*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}'
+      - 'icons/*.svg'
       - 'build/'
       - 'src/core'
       - 'src/extension'
