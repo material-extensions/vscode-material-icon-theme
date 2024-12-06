@@ -2884,5 +2884,9 @@ export const fileIcons: FileIcons = {
       name: 'citation',
       fileNames: ['citation.cff'],
     },
+    {
+      name: 'conan',
+      fileNames: ['conanfile.py', 'conanfile.txt'],
+    }
   ]),
 };
