@@ -8,9 +8,9 @@ const checkColors = async () => {
     // Execute Git command to get list of modified SVG files
     const gitProcess = spawn([
       'git',
-      'ls-files',
-      '-mo',
-      '--exclude-standard',
+      'diff',
+      '--cached',
+      '--name-only',
       '--',
       '*.svg',
     ]);
@@ -27,10 +27,17 @@ const checkColors = async () => {
         ...svgFiles.split(' '),
       ];
       const linterProcess = spawn(command);
-      const { stdout } = await linterProcess;
-      const linterOutput = await new Response(stdout).text();
+      const linterResponse = new Response(linterProcess.stdout);
 
-      console.log('Colors check output:\n\n', linterOutput);
+      console.log('Colors check output:\n\n', await linterResponse.text());
+
+      // idk how it works but only with this line it correctly exit
+      // ⚠️⚠️⚠️⚠️⚠️⚠️⚠️ DON'T DELETE ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️
+      await linterProcess.exited;
+      // ==========================================================
+      // ==========================================================
+
+      process.exit(linterProcess.exitCode);
     } else {
       console.log('No SVG files to check.');
     }
