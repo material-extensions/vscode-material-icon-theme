@@ -1,21 +1,25 @@
-<h1 align="center">
-  <br>
-    <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/logo.png" alt="logo" width="200">
-  <br><br>
-  Material Icon Theme
-  <br>
-  <br>
-</h1>
+<!-- markdownlint-disable heading-start-left first-line-h1 -->
 
-<h4 align="center">Get the Material Design icons as NPM Module.</h4>
+<!-- markdownlint-capture -->
+<!-- markdownlint-disable no-inline-html heading-increment -->
+<br>
 
-<p align="center">
-    <a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"><img src="https://img.shields.io/visual-studio-marketplace/v/PKief.material-icon-theme?style=for-the-badge&colorA=252526&colorB=43A047&label=VERSION" alt="Version"></a>&nbsp;
-    <a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"><img src="https://img.shields.io/visual-studio-marketplace/r/PKief.material-icon-theme?style=for-the-badge&colorA=252526&colorB=43A047&label=Rating" alt="Rating"></a>&nbsp;
-    <a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"><img src="https://img.shields.io/visual-studio-marketplace/i/PKief.material-icon-theme?style=for-the-badge&colorA=252526&colorB=43A047&label=Installs" alt="Installs"></a>&nbsp;
-    <a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"><img src="https://img.shields.io/visual-studio-marketplace/d/PKief.material-icon-theme?style=for-the-badge&colorA=252526&colorB=43A047&label=Downloads" alt="Downloads"></a>
-</p>
+<div align="center">
+  <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/logo.png" alt="logo" width="200">
 
+  # Material Icon Theme <br><br>
+
+  #### Get the Material Design icons as NPM Module
+
+  [![Version](https://img.shields.io/visual-studio-marketplace/v/PKief.material-icon-theme?style=for-the-badge&colorA=252526&colorB=43A047&label=VERSION)](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)&nbsp;
+  [![Rating](https://img.shields.io/visual-studio-marketplace/r/PKief.material-icon-theme?style=for-the-badge&colorA=252526&colorB=43A047&label=Rating)](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)&nbsp;
+  [![Installs](https://img.shields.io/visual-studio-marketplace/i/PKief.material-icon-theme?style=for-the-badge&colorA=252526&colorB=43A047&label=Installs)](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)&nbsp;
+  [![Downloads](https://img.shields.io/visual-studio-marketplace/d/PKief.material-icon-theme?style=for-the-badge&colorA=252526&colorB=43A047&label=Downloads)](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
+</div>
+<!-- markdownlint-restore -->
+
+<!-- markdownlint-capture -->
+<!-- markdownlint-disable no-inline-html -->
 ## File icons
 
 <details><summary>🏞️ <b>Show all available file icons</b></summary><br/><img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/fileIcons.png" alt="file icons"></details>
@@ -23,6 +27,7 @@
 ## Folder icons
 
 <details><summary>🏞️ <b>Show all available folder icons</b></summary><br/><img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/folderIcons.png" alt="folder icons"></details>
+<!-- markdownlint-restore -->
 
 ## Description
 
