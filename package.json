@@ -379,7 +379,7 @@
     "bun-types": "^1.1.20",
     "changelogen": "^0.5.7",
     "esbuild": "^0.24.0",
-    "markdownlint-cli": "^0.42.0",
+    "markdownlint-cli": "^0.43.0",
     "puppeteer": "^23.0.0",
     "rimraf": "^6.0.1",
     "svg-color-linter": "^2.0.0",
