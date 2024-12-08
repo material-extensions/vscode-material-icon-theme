@@ -2884,5 +2884,9 @@ export const fileIcons: FileIcons = {
       name: 'citation',
       fileNames: ['citation.cff'],
     },
+    {
+      name: 'subtitles',
+      fileExtensions: ['srt', 'ssa', 'ttml', 'sbv', 'dfxp', 'vtt'],
+    },
   ]),
 };
