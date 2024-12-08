@@ -2879,6 +2879,12 @@ export const fileIcons: FileIcons = {
         '.umirc': FileNamePattern.Ecmascript,
       },
     },
+    {
+      name: 'pm2-ecosystem',
+      patterns: {
+        'ecosystem.config': FileNamePattern.Ecmascript,
+      },
+    },
     { name: 'hosts', fileNames: ['hosts'], light: true },
     {
       name: 'citation',
