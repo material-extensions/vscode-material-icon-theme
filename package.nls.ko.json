@@ -18,6 +18,7 @@
   "configuration.activeIconPack.angular_ngrx": "Angular 및 ngrx용 아이콘.",
   "configuration.activeIconPack.react": "React용 아이콘.",
   "configuration.activeIconPack.react_redux": "React 및 Redux용 아이콘.",
+  "configuration.activeIconPack.roblox": "Roblox용 아이콘.",
   "configuration.activeIconPack.qwik": "Qwik용 아이콘.",
   "configuration.activeIconPack.vue": "Vue용 아이콘.",
   "configuration.activeIconPack.vue_vuex": "Vue 및 Vuex용 아이콘.",

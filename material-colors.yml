@@ -1,3 +1,9 @@
+# This YAML file contains a list of color codes used in the VSCode Material Icon Theme.
+# Each color is represented by its hexadecimal code and is categorized by its color name and shade.
+
+# Note:
+# - Black (`#000000`) and White (`#FFFFFF`) cannot not be used.
+
 colors:
   - '#FFEBEE' # red 50
   - '#FFCDD2' # red 100
@@ -253,5 +259,5 @@ colors:
   - '#455A64' # blue gray 700
   - '#37474F' # blue gray 800
   - '#263238' # blue gray 900
-  - '#000000' # black
-  - '#FFFFFF' # white
+# - '#000000' # black must not be used
+# - '#FFFFFF' # white must not be used

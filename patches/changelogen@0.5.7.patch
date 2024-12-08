@@ -1,0 +1,22 @@
+diff --git a/dist/shared/changelogen.a79f5d5c.mjs b/dist/shared/changelogen.a79f5d5c.mjs
+index 901f6e360af4b6ea62758ebe28f0758d306a41f0..64a860f21d2ed46d046df0975b0784065eaf7d4f 100644
+--- a/dist/shared/changelogen.a79f5d5c.mjs
++++ b/dist/shared/changelogen.a79f5d5c.mjs
+@@ -338,12 +338,11 @@ async function generateMarkDown(commits, config) {
+       "### \u2764\uFE0F Contributors",
+       "",
+       ...authors.map((i) => {
+-        const _email = [...i.email].find(
+-          (e) => !e.includes("noreply.github.com")
+-        );
+-        const email = _email ? `<${_email}>` : "";
+-        const github = i.github ? `([@${i.github}](http://github.com/${i.github}))` : "";
+-        return `- ${i.name} ${github || email}`;
++        // Removed email output for contributor security
++        // Only GitHub handle will be displayed if available
++        // See https://github.com/material-extensions/vscode-material-icon-theme/pull/2646#issuecomment-2454916296
++        const github = i.github ? ` ([@${i.github}](http://github.com/${i.github}))` : "";
++        return `- ${i.name}${github}`;
+       })
+     );
+   }

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.7.3/schema.json",
+  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
   "formatter": {
     "enabled": true,
     "formatWithErrors": false,
@@ -9,13 +9,20 @@
     "lineWidth": 80,
     "attributePosition": "auto"
   },
+  "files": {
+    "ignore": ["dist", "node_modules", "package.json", "bun.lockb"]
+  },
   "organizeImports": { "enabled": true },
   "linter": {
     "enabled": true,
     "rules": {
       "recommended": false,
-      "complexity": { "useArrowFunction": "off" },
-      "correctness": { "noUnsafeFinally": "error" },
+      "complexity": { "useArrowFunction": "error" },
+      "correctness": {
+        "noUnsafeFinally": "error",
+        "noUnusedVariables": "error",
+        "noUnusedImports": "error"
+      },
       "security": { "noGlobalEval": "error" },
       "style": {
         "noVar": "error",
@@ -28,6 +35,7 @@
       },
       "suspicious": {
         "noDoubleEquals": "error",
+        "noExplicitAny": "error",
         "useNamespaceKeyword": "error"
       }
     }
@@ -36,7 +44,7 @@
     "formatter": {
       "jsxQuoteStyle": "single",
       "quoteProperties": "asNeeded",
-      "trailingComma": "es5",
+      "trailingCommas": "es5",
       "semicolons": "always",
       "arrowParentheses": "always",
       "bracketSpacing": true,

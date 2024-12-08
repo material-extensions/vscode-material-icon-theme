@@ -3,6 +3,8 @@
     "biomejs.biome",
     "jock.svg",
     "editorconfig.editorconfig",
-    "oven.bun-vscode"
+    "oven.bun-vscode",
+    "davidanson.vscode-markdownlint",
+    "huntertran.auto-markdown-toc"
   ]
 }
