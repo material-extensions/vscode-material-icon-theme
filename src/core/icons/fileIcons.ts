@@ -1262,6 +1262,7 @@ export const fileIcons: FileIcons = {
         '.env.test.local',
         '.env.uat',
         '.vars',
+        '.dev.vars',
       ],
     },
     {
@@ -2862,12 +2863,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'installation',
-      fileNames: [
-        'installation',
-        'installation.md',
-        'installation.rst',
-        'installation.txt',
-      ],
+      fileNames: ['install', 'installation'],
     },
     {
       name: 'github-sponsors',
@@ -2886,6 +2882,15 @@ export const fileIcons: FileIcons = {
     {
       name: 'pm2-ecosystem',
       fileNames: ['ecosystem.config.js', 'ecosystem.config.cjs', 'ecosystem.config.mjs', 'ecosystem.config.ts', 'ecosystem.config.cts', 'ecosystem.config.mts'],
+    },
+    { name: 'hosts', fileNames: ['hosts'], light: true },
+    {
+      name: 'citation',
+      fileNames: ['citation.cff'],
+    },
+    {
+      name: 'subtitles',
+      fileExtensions: ['srt', 'ssa', 'ttml', 'sbv', 'dfxp', 'vtt'],
     },
   ]),
 };
