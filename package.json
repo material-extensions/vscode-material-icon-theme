@@ -31,7 +31,7 @@
   },
   "lint-staged": {
     "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
-      "biome check"
+      "bun run lint"
     ],
     "*.{js,ts}": [
       "bun run test"
@@ -39,7 +39,7 @@
     "*.svg": [
       "bun run check",
       "bun run check-colors",
-      "svgo -q"
+      "bun run svgo"
     ],
     "*.md": [
       "bun run markdownlint"
