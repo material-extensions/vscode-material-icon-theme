@@ -94,6 +94,6 @@ jobs:
 
       - name: ⬆️ Upload VSIX to GitHub release
         run: |
-          gh release upload v${{ env.VERSION }} ${{ env.NAME }}-${{ env.VERSION }}.vsix
+          gh release upload v${VERSION} ${NAME}-${VERSION}.vsix
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

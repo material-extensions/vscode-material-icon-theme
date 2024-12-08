@@ -53,7 +53,7 @@ jobs:
           IMAGE_UPLOAD: ${{ secrets.IMAGE_UPLOAD }}
         id: upload
         run: |
-          IMAGE_URL=$(curl --location 'https://freeimage.host/json' --form 'source=@"./main/preview.png"' --form 'type="file"' --form 'action="upload"' --form 'auth_token="${{env.IMAGE_UPLOAD}}"' | jq -r '.image.url')
+          IMAGE_URL=$(curl --location 'https://freeimage.host/json' --form 'source=@"./main/preview.png"' --form 'type="file"' --form 'action="upload"' --form 'auth_token="${{ env.IMAGE_UPLOAD }}"' | jq -r '.image.url')
           echo image_url=$IMAGE_URL >> $GITHUB_ENV
 
       - name: 📃 Generate text
@@ -62,8 +62,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           script: |
-            const iconsCount = parseInt("${{ env.svg_files_count }}");
-            const imageURL = "${{ env.image_url }}";
+            const iconsCount = parseInt(process.env.svg_files_count);
+            const imageURL = process.env.image_url;
             const image = `<img src="${imageURL}" alt="Generated preview" />`;
             const pluralS = iconsCount > 1 ? "s" : "";
 

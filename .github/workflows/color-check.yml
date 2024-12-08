@@ -23,9 +23,9 @@ jobs:
 
       - name: 🔄 Fetch target branch
         run: |
-          git fetch origin ${{ env.TARGET_BRANCH }}
+          git fetch origin $TARGET_BRANCH
 
       - name: 🎨 Check colors
         run: |
-          svgFiles=$(git diff origin/${{ env.TARGET_BRANCH }} --diff-filter=ACMRTUX  --name-only | grep '.svg$')
+          svgFiles=$(git diff origin/$TARGET_BRANCH --diff-filter=ACMRTUX  --name-only | grep '.svg$')
           npx svg-color-linter --colors material-colors.yml ${svgFiles}
