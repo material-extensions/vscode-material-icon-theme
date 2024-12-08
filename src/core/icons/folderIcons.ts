@@ -1020,6 +1020,8 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-luau',
         folderNames: ['luau'],
       },
+      { name: 'folder-obsidian', folderNames: ['obsidian'] },
+      { name: 'folder-trash', folderNames: ['trash'] },
     ],
   },
   {
