@@ -3,10 +3,10 @@ name: 🛠️ Build + Test
 on:
   push:
     paths:
-      - 'build/'
+      - 'build/**'
       - 'icons/*.svg'
-      - 'patches/'
-      - 'src/'
+      - 'patches/**'
+      - 'src/**'
       - '.bun-version'
       - 'bunfig.toml'
       - 'package.json'
@@ -15,10 +15,10 @@ on:
 
   pull_request:
     paths:
-      - 'build/'
+      - 'build/**'
       - 'icons/*.svg'
-      - 'patches/'
-      - 'src/'
+      - 'patches/**'
+      - 'src/**'
       - '.bun-version'
       - 'bunfig.toml'
       - 'package.json'
