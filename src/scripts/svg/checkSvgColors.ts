@@ -27,16 +27,15 @@ const checkColors = async () => {
         ...svgFiles.split(' '),
       ];
       const linterProcess = spawn(command);
-      const linterResponse = new Response(linterProcess.stdout);
+      const { stdout } = await linterProcess;
+      const linterOutput = await new Response(stdout).text();
 
-      console.log('Colors check output:\n\n', await linterResponse.text());
+      console.log('Colors check output:\n\n', linterOutput);
 
-      // idk how it works but only with this line it correctly exit
-      // ⚠️⚠️⚠️⚠️⚠️⚠️⚠️ DON'T DELETE ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️
+      // Wait for the sub process to finish with an exit code
       await linterProcess.exited;
-      // ==========================================================
-      // ==========================================================
 
+      // Exit script with exit code (0 == no errors, 1 == errors)
       process.exit(linterProcess.exitCode);
     } else {
       console.log('No SVG files to check.');
