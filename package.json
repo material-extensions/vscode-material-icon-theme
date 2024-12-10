@@ -29,21 +29,6 @@
     "postpublish": "git checkout package.json && git checkout README.md",
     "prepare": "husky"
   },
-  "lint-staged": {
-    "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
-      "bun run lint"
-    ],
-    "*.{js,ts}": [
-      "bun run test"
-    ],
-    "icons/*.svg": [
-      "bun run check",
-      "bun run check-colors"
-    ],
-    "*.md": [
-      "bun run markdownlint"
-    ]
-  },
   "publisher": "PKief",
   "author": {
     "name": "Philipp Kief",
