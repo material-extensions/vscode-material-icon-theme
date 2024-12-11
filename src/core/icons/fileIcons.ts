@@ -2203,9 +2203,11 @@ export const fileIcons: FileIcons = {
       fileNames: [
         '.textlintrc',
         '.textlintrc.js',
+        '.textlintrc.cjs',
         '.textlintrc.json',
         '.textlintrc.yml',
         '.textlintrc.yaml',
+        '.textlintignore',
       ],
     },
     { name: 'scala', fileExtensions: ['scala', 'sc'] },
