@@ -1988,7 +1988,7 @@ export const fileIcons: FileIcons = {
       name: 'fortran',
       fileExtensions: ['f', 'f77', 'f90', 'f95', 'f03', 'f08'],
     },
-    { name: 'tcl', fileExtensions: ['tcl'] },
+    { name: 'tcl', fileExtensions: ['tcl', 'do'] },
     { name: 'liquid', fileExtensions: ['liquid'] },
     { name: 'prolog', fileExtensions: ['p', 'pro', 'pl'] },
     {
@@ -2203,9 +2203,11 @@ export const fileIcons: FileIcons = {
       fileNames: [
         '.textlintrc',
         '.textlintrc.js',
+        '.textlintrc.cjs',
         '.textlintrc.json',
         '.textlintrc.yml',
         '.textlintrc.yaml',
+        '.textlintignore',
       ],
     },
     { name: 'scala', fileExtensions: ['scala', 'sc'] },
@@ -2877,6 +2879,12 @@ export const fileIcons: FileIcons = {
       name: 'umi',
       patterns: {
         '.umirc': FileNamePattern.Ecmascript,
+      },
+    },
+    {
+      name: 'pm2-ecosystem',
+      patterns: {
+        'ecosystem.config': FileNamePattern.Ecmascript,
       },
     },
     { name: 'hosts', fileNames: ['hosts'], light: true },

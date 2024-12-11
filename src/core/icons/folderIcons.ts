@@ -722,6 +722,8 @@ export const folderIcons: FolderTheme[] = [
           'certificate',
           'certificates',
           'ssl',
+          'cipher',
+          'cypher',
           'tls',
         ],
       },
