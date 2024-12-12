@@ -319,6 +319,12 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['d.ts', 'd.cts', 'd.mts'],
     },
     { name: 'markdoc', fileExtensions: ['mdoc', 'markdoc', 'markdoc.md'] },
+    {
+      name: 'markdoc-config',
+      patterns: {
+        'markdoc.config': FileNamePattern.Ecmascript,
+      },
+    },
     { name: 'markojs', fileExtensions: ['marko'] },
     {
       name: 'astro',
