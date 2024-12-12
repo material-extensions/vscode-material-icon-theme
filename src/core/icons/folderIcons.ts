@@ -476,6 +476,8 @@ export const folderIcons: FolderTheme[] = [
           'extensions',
           'addon',
           'addons',
+          'addin',
+          'addins',
           'module',
           'modules',
         ],
