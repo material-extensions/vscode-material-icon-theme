@@ -318,7 +318,7 @@ export const fileIcons: FileIcons = {
       name: 'typescript-def',
       fileExtensions: ['d.ts', 'd.cts', 'd.mts'],
     },
-    { name: 'markdoc', fileExtensions: ['mdoc'] },
+    { name: 'markdoc', fileExtensions: ['mdoc', 'markdoc', 'markdoc.md'] },
     { name: 'markojs', fileExtensions: ['marko'] },
     {
       name: 'astro',
