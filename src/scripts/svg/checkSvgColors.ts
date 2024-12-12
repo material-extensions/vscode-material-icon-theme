@@ -22,7 +22,7 @@ const checkColors = async () => {
     if (svgFiles) {
       const command = [
         'svg-color-linter',
-        '--colors',
+        '--config',
         'material-colors.yml',
         ...svgFiles.split(' '),
       ];
