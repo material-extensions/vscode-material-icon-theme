@@ -769,6 +769,7 @@ export const fileIcons: FileIcons = {
     },
     { name: 'coffee', fileExtensions: ['coffee', 'cson', 'iced'] },
     { name: 'document', fileExtensions: ['txt'] },
+    { name: 'lyric', fileExtensions: ['lrc'] },
     {
       name: 'graphql',
       fileExtensions: ['graphql', 'gql'],
