@@ -318,6 +318,13 @@ export const fileIcons: FileIcons = {
       name: 'typescript-def',
       fileExtensions: ['d.ts', 'd.cts', 'd.mts'],
     },
+    { name: 'markdoc', fileExtensions: ['mdoc', 'markdoc', 'markdoc.md'] },
+    {
+      name: 'markdoc-config',
+      patterns: {
+        'markdoc.config': FileNamePattern.Ecmascript,
+      },
+    },
     { name: 'markojs', fileExtensions: ['marko'] },
     {
       name: 'astro',
@@ -564,6 +571,15 @@ export const fileIcons: FileIcons = {
         'sha256sums',
       ],
       fileNames: ['.htpasswd', 'sha256sums', '.secrets'],
+    },
+    {
+      name: 'keystatic',
+      fileNames: [
+        'keystatic.config.tsx',
+        'keystatic.config.ts',
+        'keystatic.config.jsx',
+        'keystatic.config.js',
+      ],
     },
     {
       name: 'font',
