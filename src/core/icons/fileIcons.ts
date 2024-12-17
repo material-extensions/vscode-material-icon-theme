@@ -645,6 +645,7 @@ export const fileIcons: FileIcons = {
         'dockerfile.testing',
         'dockerfile.ci',
         'dockerfile.web',
+        'dockerfile.windows',
         'dockerfile.worker',
 
         'docker-compose.yml',
