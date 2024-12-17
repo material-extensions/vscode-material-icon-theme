@@ -2475,7 +2475,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'bun',
-      fileNames: ['bun.lockb', 'bunfig.toml', '.bun-version'],
+      fileNames: ['bun.lockb', 'bunfig.toml', '.bun-version', 'bun.lock'],
       light: true,
     },
     { name: 'antlr', fileExtensions: ['g4'] },
