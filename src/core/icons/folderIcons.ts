@@ -1024,6 +1024,11 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-luau',
         folderNames: ['luau'],
       },
+      {
+        name: 'folder-angular-directive',
+        folderNames: ['directives'],
+        enabledFor: [IconPack.Angular],
+      },
     ],
   },
   {
