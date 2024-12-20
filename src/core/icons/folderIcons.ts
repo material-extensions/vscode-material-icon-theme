@@ -1024,6 +1024,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-luau',
         folderNames: ['luau'],
       },
+      { name: 'folder-liquibase', folderNames: ['liquibase'] },
     ],
   },
   {
