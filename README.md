@@ -1,36 +1,36 @@
-<!-- markdownlint-disable no-inline-html -->
+<!-- markdownlint-disable heading-start-left first-line-h1 -->
+
+<!-- markdownlint-capture -->
+<!-- markdownlint-disable no-inline-html heading-increment -->
+<br>
 
 <div align="center">
-  <br>
-    <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/logo.png" alt="logo" width="200">
-  <h1>
-    Material Icon Theme
-    <br><br>
-</h1>
+  <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/logo.png" alt="logo" width="200">
+
+  # Material Icon Theme <br><br>
+
+  #### Get the Material Design icons into your VS Code
+
+  [![Version](https://img.shields.io/visual-studio-marketplace/v/PKief.material-icon-theme?style=for-the-badge&colorA=252526&colorB=43A047&label=VERSION)](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)&nbsp;
+  [![Rating](https://img.shields.io/visual-studio-marketplace/r/PKief.material-icon-theme?style=for-the-badge&colorA=252526&colorB=43A047&label=Rating)](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)&nbsp;
+  [![Installs](https://img.shields.io/visual-studio-marketplace/i/PKief.material-icon-theme?style=for-the-badge&colorA=252526&colorB=43A047&label=Installs)](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)&nbsp;
+  [![Downloads](https://img.shields.io/visual-studio-marketplace/d/PKief.material-icon-theme?style=for-the-badge&colorA=252526&colorB=43A047&label=Downloads)](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
 </div>
-
-<h4 align="center">Get the Material Design icons into your VS Code.</h4>
-
-<p align="center">
-    <a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"><img src="https://img.shields.io/visual-studio-marketplace/v/PKief.material-icon-theme?style=for-the-badge&colorA=252526&colorB=43A047&label=VERSION" alt="Version"></a>&nbsp;
-    <a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"><img src="https://img.shields.io/visual-studio-marketplace/r/PKief.material-icon-theme?style=for-the-badge&colorA=252526&colorB=43A047&label=Rating" alt="Rating"></a>&nbsp;
-    <a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"><img src="https://img.shields.io/visual-studio-marketplace/i/PKief.material-icon-theme?style=for-the-badge&colorA=252526&colorB=43A047&label=Installs" alt="Installs"></a>&nbsp;
-    <a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"><img src="https://img.shields.io/visual-studio-marketplace/d/PKief.material-icon-theme?style=for-the-badge&colorA=252526&colorB=43A047&label=Downloads" alt="Downloads"></a>
-</p>
+<!-- markdownlint-restore -->
 
 ### File icons
 
-<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/fileIcons.png" alt="file icons">
+![file icons](https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/fileIcons.png)
 
 ### Folder icons
 
-<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/folderIcons.png" alt="folder icons">
+![folder icons](https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/folderIcons.png)
 
 #### Customize file & folder color
 
 You can change the color of the default file and folder icons using the command palette:
 
-<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/set-folder-color.gif" alt="custom folder colors">
+![custom folder colors](https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/set-folder-color.gif)
 
 or via user settings:
 
@@ -43,7 +43,7 @@ or via user settings:
 
 You can change the design of the folder icons using the command palette:
 
-<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/set-folder-theme.gif" alt="folder themes">
+![folder themes](https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/set-folder-theme.gif)
 
 or via user settings:
 
@@ -134,7 +134,7 @@ It's also possible to clone existing file icons and change their colors to creat
 
 This will create two new icons called `rust-mod` and `rust-lib` that are associated with the file names `mod.rs` and `lib.rs` respectively. The `base` property defines the icon that should be cloned (in this case the `rust` icon). The `color` property defines the color of the new icon. The `lightColor` property is optional and defines the color of the icon when Visual Studio Code is running with a light color theme. The `fileNames` property defines the file names that should be associated with the new icon. There's also a `fileExtensions` property, which can be used to associate the new icon with file extensions (`"fileExtensions": ["ext", "ext2"]`).
 
-<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/how-tos/cloned-file-icons-example.png" alt="cloned file icons">
+![cloned file icons](https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/how-tos/cloned-file-icons-example.png)
 
 - Although you can use any `#RRGGBB` color for the `color` and `lightColor` properties, if you want to stick with colors from the material palette, you can check the full list of allowed aliases [here](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/core/generator/clones/utils/color/materialPalette.ts).
 - You can check the full list of available icons to be used as the `base` [here](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/core/icons/fileIcons.ts).
@@ -196,7 +196,7 @@ It's also possible to clone existing folder icons and change their colors to cre
 
 This will create two new icons called `users-admin` and `roles-admin` that are associated with the folder names `users` and `roles` respectively. The `base` property defines the icon that should be cloned (in this case the `admin` folder icon). The `color` property defines the color of the new icon. The `lightColor` property is optional and defines the color of the icon when Visual Studio Code is running with a light color theme. The `folderNames` property defines the folder names that should be associated with the new icon.
 
-<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/how-tos/cloned-folder-icons-example.png" alt="cloned folder icons">
+![cloned folder icons](https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/how-tos/cloned-folder-icons-example.png)
 
 - Although you can use any `#RRGGBB` color for the `color` and `lightColor` properties, if you want to stick with colors from the material palette, you can check the full list of allowed aliases [here](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/core/generator/clones/utils/color/materialPalette.ts).
 - You can check the full list of available icon to be used as the `base` [here](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/core/icons/folderIcons.ts).
@@ -207,8 +207,8 @@ With the following configuration you can customize the language icons. It is als
 
 ```json
 "material-icon-theme.languages.associations": {
-    "languageId": "iconName",
-    "json": "json"
+  "languageId": "iconName",
+  "json": "json"
 }
 ```
 
@@ -218,9 +218,7 @@ You can see the available icon names in the overview above. See "[Known language
 
 Press `Ctrl-Shift-P` to open the command palette and type `Material Icons`.
 
-<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/commandPalette.png" alt="commands">
-
-<p></p>
+![commands](https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/commandPalette.png)
 
 | Command                           | Description                                                                         |
 | --------------------------------- | ----------------------------------------------------------------------------------- |
@@ -241,9 +239,7 @@ Press `Ctrl-Shift-P` to open the command palette and type `Material Icons`.
 
 ## Contributors
 
-<a href="https://github.com/material-extensions/vscode-material-icon-theme/graphs/contributors">
-    <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/contributors.png" alt="Contributors">
-</a>
+[![Contributors](https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/contributors.png)](https://github.com/material-extensions/vscode-material-icon-theme/graphs/contributors)
 
 **Would you like to contribute?**
 
