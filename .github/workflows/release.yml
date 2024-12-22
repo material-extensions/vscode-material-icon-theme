@@ -18,7 +18,7 @@ jobs:
 
     steps:
       - name: ✅ Use App Token for the Bot which is allowed to create releases
-        uses: actions/create-github-app-token@5d869da34e18e7287c1daad50e0b8ea0f506ce69 # v1.11.0
+        uses: actions/create-github-app-token@c1a285145b9d317df6ced56c09f525b5c2b6f755 # v1.11.1
         id: app-token
         with:
           app-id: ${{ vars.BOT_APP_ID }}
@@ -69,7 +69,7 @@ jobs:
         run: bunx @vscode/vsce package
 
       - name: 🔒 Attest artifacts
-        uses: actions/attest-build-provenance@ef244123eb79f2f7a7e75d99086184180e6d0018 # v1.4.4
+        uses: actions/attest-build-provenance@7668571508540a607bdfd90a87a560489fe372eb # v2.1.0
         # Read: https://docs.github.com/en/actions/security-guides/using-artifact-attestations-to-establish-provenance-for-builds
         with:
           subject-path: "${{ env.NAME }}-${{ env.VERSION }}.vsix"
@@ -94,6 +94,6 @@ jobs:
 
       - name: ⬆️ Upload VSIX to GitHub release
         run: |
-          gh release upload v${{ env.VERSION }} ${{ env.NAME }}-${{ env.VERSION }}.vsix
+          gh release upload v${VERSION} ${NAME}-${VERSION}.vsix
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

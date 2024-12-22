@@ -2,6 +2,30 @@
 
 # Changelog
 
+## v5.15.0
+
+[compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.14.1...v5.15.0)
+
+### 🚀 Enhancements
+
+- Add `.hgtags` icon ([#2706](https://github.com/material-extensions/vscode-material-icon-theme/pull/2706))
+- Add `.dev.vars` association to `env` file icon ([#2711](https://github.com/material-extensions/vscode-material-icon-theme/pull/2711))
+- Add `hosts` file icons ([#1015](https://github.com/material-extensions/vscode-material-icon-theme/pull/1015))
+- Update `installation` file icon associations ([#2713](https://github.com/material-extensions/vscode-material-icon-theme/pull/2713))
+- Add `CITATION.cff` icon and update fileIcons ([#2338](https://github.com/material-extensions/vscode-material-icon-theme/pull/2338))
+
+### 🩹 Fixes
+
+- Update headline in changelog ([5e2a44e6](https://github.com/material-extensions/vscode-material-icon-theme/commit/5e2a44e6))
+
+### ❤️ Contributors
+
+- Anselm Hahn ([@Anselmoo](http://github.com/Anselmoo))
+- Shreyas Minocha ([@shreyasminocha](http://github.com/shreyasminocha))
+- Lucas Colombo ([@lucas-labs](http://github.com/lucas-labs))
+- Frankie ([@toFrankie](http://github.com/toFrankie))
+- Philipp Kief ([@PKief](http://github.com/PKief))
+
 ## v5.14.1
 
 [compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.14.0...v5.14.1)
