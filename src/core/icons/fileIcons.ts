@@ -2887,6 +2887,6 @@ export const fileIcons: FileIcons = {
     {
       name: 'xmake',
       fileNames: ['xmake.lua', 'xmake'],
-    }
+    },
   ]),
 };
