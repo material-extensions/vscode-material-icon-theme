@@ -2,7 +2,28 @@ name: 🛠️ Build + Test
 
 on:
   push:
+    paths:
+      - 'build/**'
+      - 'icons/*.svg'
+      - 'patches/**'
+      - 'src/**'
+      - '.bun-version'
+      - 'bunfig.toml'
+      - 'package.json'
+      - 'sheriff.config.ts'
+      - '!*.md'
+
   pull_request:
+    paths:
+      - 'build/**'
+      - 'icons/*.svg'
+      - 'patches/**'
+      - 'src/**'
+      - '.bun-version'
+      - 'bunfig.toml'
+      - 'package.json'
+      - 'sheriff.config.ts'
+      - '!*.md'
 
 permissions:
   contents: read

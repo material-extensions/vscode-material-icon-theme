@@ -109,6 +109,7 @@ export const languageIcons: LanguageIcon[] = [
   { icon: { name: 'editorconfig' }, ids: ['editorconfig'] },
   { icon: { name: 'clojure' }, ids: ['clojure'] },
   { icon: { name: 'groovy' }, ids: ['groovy'] },
+  { icon: { name: 'markdoc' }, ids: ['markdoc'] },
   { icon: { name: 'markdown' }, ids: ['markdown'] },
   { icon: { name: 'jinja' }, ids: ['jinja'] },
   { icon: { name: 'proto' }, ids: ['proto'] },

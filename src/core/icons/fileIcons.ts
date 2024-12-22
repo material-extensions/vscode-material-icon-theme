@@ -301,6 +301,7 @@ export const fileIcons: FileIcons = {
         'sln.dotsettings.user',
         'cfg',
         'cnf',
+        '.tool-versions',
       ],
       fileNames: [
         '.jshintignore',
@@ -317,6 +318,13 @@ export const fileIcons: FileIcons = {
     {
       name: 'typescript-def',
       fileExtensions: ['d.ts', 'd.cts', 'd.mts'],
+    },
+    { name: 'markdoc', fileExtensions: ['mdoc', 'markdoc', 'markdoc.md'] },
+    {
+      name: 'markdoc-config',
+      patterns: {
+        'markdoc.config': FileNamePattern.Ecmascript,
+      },
     },
     { name: 'markojs', fileExtensions: ['marko'] },
     {
@@ -566,6 +574,15 @@ export const fileIcons: FileIcons = {
       fileNames: ['.htpasswd', 'sha256sums', '.secrets'],
     },
     {
+      name: 'keystatic',
+      fileNames: [
+        'keystatic.config.tsx',
+        'keystatic.config.ts',
+        'keystatic.config.jsx',
+        'keystatic.config.js',
+      ],
+    },
+    {
       name: 'font',
       fileExtensions: [
         'woff',
@@ -629,6 +646,7 @@ export const fileIcons: FileIcons = {
         'dockerfile.testing',
         'dockerfile.ci',
         'dockerfile.web',
+        'dockerfile.windows',
         'dockerfile.worker',
 
         'docker-compose.yml',
@@ -769,6 +787,7 @@ export const fileIcons: FileIcons = {
     },
     { name: 'coffee', fileExtensions: ['coffee', 'cson', 'iced'] },
     { name: 'document', fileExtensions: ['txt'] },
+    { name: 'lyric', fileExtensions: ['lrc'] },
     {
       name: 'graphql',
       fileExtensions: ['graphql', 'gql'],
@@ -1988,7 +2007,7 @@ export const fileIcons: FileIcons = {
       name: 'fortran',
       fileExtensions: ['f', 'f77', 'f90', 'f95', 'f03', 'f08'],
     },
-    { name: 'tcl', fileExtensions: ['tcl'] },
+    { name: 'tcl', fileExtensions: ['tcl', 'do'] },
     { name: 'liquid', fileExtensions: ['liquid'] },
     { name: 'prolog', fileExtensions: ['p', 'pro', 'pl'] },
     {
@@ -2203,9 +2222,11 @@ export const fileIcons: FileIcons = {
       fileNames: [
         '.textlintrc',
         '.textlintrc.js',
+        '.textlintrc.cjs',
         '.textlintrc.json',
         '.textlintrc.yml',
         '.textlintrc.yaml',
+        '.textlintignore',
       ],
     },
     { name: 'scala', fileExtensions: ['scala', 'sc'] },
@@ -2456,7 +2477,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'bun',
-      fileNames: ['bun.lockb', 'bunfig.toml', '.bun-version'],
+      fileNames: ['bun.lockb', 'bunfig.toml', '.bun-version', 'bun.lock'],
       light: true,
     },
     { name: 'antlr', fileExtensions: ['g4'] },
@@ -2879,10 +2900,20 @@ export const fileIcons: FileIcons = {
         '.umirc': FileNamePattern.Ecmascript,
       },
     },
+    {
+      name: 'pm2-ecosystem',
+      patterns: {
+        'ecosystem.config': FileNamePattern.Ecmascript,
+      },
+    },
     { name: 'hosts', fileNames: ['hosts'], light: true },
     {
       name: 'citation',
       fileNames: ['citation.cff'],
+    },
+    {
+      name: 'subtitles',
+      fileExtensions: ['srt', 'ssa', 'ttml', 'sbv', 'dfxp', 'vtt'],
     },
   ]),
 };

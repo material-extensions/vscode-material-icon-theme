@@ -2,12 +2,13 @@ name: ✅ Check PR Title
 
 on:
   pull_request:
-    types: [opened, edited, synchronize]
+    types: [opened, edited]
 
 jobs:
   lint-pr-title:
     name: Check PR Title
     runs-on: ubuntu-latest
+    if: ${{ github.event.action == 'opened' || github.event.changes.title != null }}
     steps:
       - name: 📥 Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
