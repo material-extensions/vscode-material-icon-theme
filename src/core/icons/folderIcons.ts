@@ -12,7 +12,7 @@ export const folderIcons: FolderTheme[] = [
     icons: [
       {
         name: 'folder-robot',
-        folderNames: ['bot', 'robot'],
+        folderNames: ['bot', 'bots', 'robot', 'robots'],
       },
       {
         name: 'folder-src',
@@ -25,6 +25,7 @@ export const folderIcons: FolderTheme[] = [
           'out',
           'output',
           'build',
+          'builds',
           'release',
           'bin',
           'distribution',
@@ -36,7 +37,7 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-sass', folderNames: ['sass', 'scss'] },
       { name: 'folder-television', folderNames: ['tv', 'television'] },
-      { name: 'folder-desktop', folderNames: ['desktop'] },
+      { name: 'folder-desktop', folderNames: ['desktop', 'display'] },
       { name: 'folder-console', folderNames: ['console'] },
       {
         name: 'folder-images',
@@ -71,7 +72,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-scripts',
         folderNames: ['script', 'scripts', 'scripting'],
       },
-      { name: 'folder-node', folderNames: ['node_modules'] },
+      { name: 'folder-node', folderNames: ['node', 'nodejs', 'node_modules'] },
       {
         name: 'folder-javascript',
         folderNames: ['js', 'javascript', 'javascripts'],
@@ -82,6 +83,10 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-test',
         folderNames: ['test', 'tests', 'testing', 'snapshots', 'spec', 'specs'],
+      },
+      {
+        name: 'folder-directive',
+        folderNames: ['directive, directives'],
       },
       {
         name: 'folder-jinja',
@@ -105,6 +110,8 @@ export const folderIcons: FolderTheme[] = [
           'posts',
           'article',
           'articles',
+          'wiki',
+          'news',
         ],
       },
       { name: 'folder-gh-workflows', folderNames: ['github/workflows'] },
@@ -148,6 +155,10 @@ export const folderIcons: FolderTheme[] = [
           'META-INF',
           'option',
           'options',
+          'pref',
+          'prefs',
+          'preference',
+          'preferences',
         ],
       },
       {
@@ -319,7 +330,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-temp',
         folderNames: ['temp', 'tmp', 'cached', 'cache'],
       },
-      { name: 'folder-aws', folderNames: ['aws'] },
+      { name: 'folder-aws', folderNames: ['aws', 'azure', 'gcp'] },
       {
         name: 'folder-audio',
         folderNames: [
@@ -330,11 +341,22 @@ export const folderIcons: FolderTheme[] = [
           'music',
           'sound',
           'sounds',
+          'voice',
+          'voices',
+          'recordings',
         ],
       },
       {
         name: 'folder-video',
-        folderNames: ['vid', 'vids', 'video', 'videos', 'movie', 'movies'],
+        folderNames: [
+          'vid',
+          'vids',
+          'video',
+          'videos',
+          'movie',
+          'movies',
+          'media',
+        ],
       },
       {
         name: 'folder-kubernetes',
@@ -399,6 +421,7 @@ export const folderIcons: FolderTheme[] = [
           'benchmark',
           'benchmarks',
           'performance',
+          'profiling',
           'measure',
           'measures',
           'measurement',
@@ -414,6 +437,8 @@ export const folderIcons: FolderTheme[] = [
           'chats',
           'conversation',
           'conversations',
+          'dialog',
+          'dialogs',
         ],
       },
       { name: 'folder-less', folderNames: ['less'] },
@@ -437,7 +462,7 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['mojo'],
       },
       { name: 'folder-moon', folderNames: ['moon'] },
-      { name: 'folder-debug', folderNames: ['debug', 'debugging'] },
+      { name: 'folder-debug', folderNames: ['debug', 'debugger', 'debugging'] },
       { name: 'folder-fastlane', folderNames: ['fastlane'] },
       {
         name: 'folder-plugin',
@@ -451,6 +476,8 @@ export const folderIcons: FolderTheme[] = [
           'extensions',
           'addon',
           'addons',
+          'addin',
+          'addins',
           'module',
           'modules',
         ],
@@ -461,6 +488,7 @@ export const folderIcons: FolderTheme[] = [
         folderNames: [
           'controller',
           'controllers',
+          'controls',
           'service',
           'services',
           'provider',
@@ -476,7 +504,14 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-client',
-        folderNames: ['client', 'clients', 'frontend', 'frontends', 'pwa'],
+        folderNames: [
+          'client',
+          'clients',
+          'frontend',
+          'frontends',
+          'pwa',
+          'spa',
+        ],
       },
       { name: 'folder-tasks', folderNames: ['tasks', 'tickets'] },
       { name: 'folder-android', folderNames: ['android'] },
@@ -486,7 +521,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['presentation', 'gui', 'ui', 'ux'],
       },
       { name: 'folder-upload', folderNames: ['uploads', 'upload'] },
-      { name: 'folder-download', folderNames: ['downloads', 'download'] },
+      {
+        name: 'folder-download',
+        folderNames: ['downloads', 'download', 'downloader', 'downloaders'],
+      },
       {
         name: 'folder-tools',
         folderNames: [
@@ -502,7 +540,10 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-helper', folderNames: ['helpers', 'helper'] },
       { name: 'folder-serverless', folderNames: ['serverless'] },
       { name: 'folder-api', folderNames: ['api', 'apis', 'restapi'] },
-      { name: 'folder-app', folderNames: ['app', 'apps'] },
+      {
+        name: 'folder-app',
+        folderNames: ['app', 'apps', 'application', 'applications'],
+      },
       {
         name: 'folder-apollo',
         folderNames: [
@@ -537,7 +578,14 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-cluster', folderNames: ['cluster', 'clusters'] },
       {
         name: 'folder-command',
-        folderNames: ['command', 'commands', 'cmd', 'cli', 'clis'],
+        folderNames: [
+          'command',
+          'commands',
+          'commandline',
+          'cmd',
+          'cli',
+          'clis',
+        ],
       },
       { name: 'folder-constant', folderNames: ['constant', 'constants'] },
       {
@@ -622,7 +670,15 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-changesets', folderNames: ['changesets', 'changeset'] },
       {
         name: 'folder-packages',
-        folderNames: ['package', 'packages', 'pkg', 'pkgs'],
+        folderNames: [
+          'package',
+          'packages',
+          'pkg',
+          'pkgs',
+          'serverpackages',
+          'devpackages',
+          'dependencies',
+        ],
       },
       { name: 'folder-shared', folderNames: ['shared', 'common'] },
       {
@@ -668,6 +724,9 @@ export const folderIcons: FolderTheme[] = [
           'certificate',
           'certificates',
           'ssl',
+          'cipher',
+          'cypher',
+          'tls',
         ],
       },
       { name: 'folder-custom', folderNames: ['custom', 'customs'] },
@@ -688,7 +747,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-syntax',
-        folderNames: ['syntax', 'syntaxes', 'spellcheck'],
+        folderNames: ['syntax', 'syntaxes', 'spellcheck', 'spellcheckers'],
       },
       { name: 'folder-vm', folderNames: ['vm', 'vms'] },
       { name: 'folder-stylus', folderNames: ['stylus'] },
@@ -706,11 +765,31 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-review',
-        folderNames: ['review', 'reviews', 'revisal', 'revisals', 'reviewed'],
+        folderNames: [
+          'review',
+          'reviews',
+          'revisal',
+          'revisals',
+          'reviewed',
+          'preview',
+          'previews',
+        ],
       },
       {
         name: 'folder-animation',
-        folderNames: ['anim', 'anims', 'animation', 'animations', 'animated'],
+        folderNames: [
+          'anim',
+          'anims',
+          'animation',
+          'animations',
+          'animated',
+          'motion',
+          'motions',
+          'transition',
+          'transitions',
+          'easing',
+          'easings',
+        ],
       },
       { name: 'folder-guard', folderNames: ['guard', 'guards'] },
       { name: 'folder-prisma', folderNames: ['prisma', 'prisma/schema'] },
@@ -738,7 +817,14 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-terraform', folderNames: ['terraform'] },
       {
         name: 'folder-mobile',
-        folderNames: ['mobile', 'mobiles', 'portable', 'portability'],
+        folderNames: [
+          'mobile',
+          'mobiles',
+          'portable',
+          'portability',
+          'phone',
+          'phones',
+        ],
       },
       { name: 'folder-stencil', folderNames: ['stencil'] },
       { name: 'folder-firebase', folderNames: ['firebase'] },
@@ -796,7 +882,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-home',
-        folderNames: ['home', 'start'],
+        folderNames: ['home', 'start', 'main', 'landing'],
       },
       {
         name: 'folder-project',
@@ -920,6 +1006,7 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-flutter', folderNames: ['flutter'] },
       { name: 'folder-snippet', folderNames: ['snippet', 'snippets'] },
+      { name: 'folder-element', folderNames: ['element', 'elements'] },
       {
         name: 'folder-src-tauri',
         folderNames: ['src-tauri'],
@@ -928,10 +1015,25 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-favicon',
         folderNames: ['favicon', 'favicons'],
       },
+<<<<<<< HEAD
       {
         name: 'folder-bloc',
         folderNames: ['bloc', 'cubit', 'blocs', 'cubits'],
       }
+=======
+      { name: 'folder-lefthook', folderNames: ['lefthook', 'lefthook-local'] },
+      {
+        name: 'folder-powershell',
+        folderNames: ['powershell', 'ps', 'ps1'],
+      },
+      {
+        name: 'folder-luau',
+        folderNames: ['luau'],
+      },
+      { name: 'folder-obsidian', folderNames: ['obsidian'] },
+      { name: 'folder-trash', folderNames: ['trash'] },
+      { name: 'folder-liquibase', folderNames: ['liquibase'] },
+>>>>>>> upstream/main
     ],
   },
   {

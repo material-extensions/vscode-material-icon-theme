@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.8.2/schema.json",
+  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
   "formatter": {
     "enabled": true,
     "formatWithErrors": false,
@@ -8,6 +8,9 @@
     "lineEnding": "lf",
     "lineWidth": 80,
     "attributePosition": "auto"
+  },
+  "files": {
+    "ignore": ["dist", "node_modules", "package.json", "bun.lockb"]
   },
   "organizeImports": { "enabled": true },
   "linter": {

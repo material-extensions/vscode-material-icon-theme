@@ -4,6 +4,7 @@
     "jock.svg",
     "editorconfig.editorconfig",
     "oven.bun-vscode",
-    "davidanson.vscode-markdownlint"
+    "davidanson.vscode-markdownlint",
+    "huntertran.auto-markdown-toc"
   ]
 }
