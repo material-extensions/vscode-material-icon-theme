@@ -1,4 +1,4 @@
-<svg width="16" height="16" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><defs><clipPath id="circlewrapper"><circle cx="32" cy="32" r="27"/></clipPath></defs><style type="text/css">
+<svg width="16" height="16" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><defs><clipPath id="circlewrapper"><circle cx="32" cy="32" r="30"/></clipPath></defs><style type="text/css">
         #background{
             fill:#FAFAFA;
         }
@@ -22,4 +22,4 @@
         #inside_layout{
             transform:translateY(5px);
         }
-</style><circle id="outside_g" cx="32" cy="32" r="30"/><g id="inside_w"><g id="inside_g"><g id="inside_layout"><polygon id="background" points="64,4 64,62 62,64 1,64 0,63 0,40 60,3" /><polygon id="midground" points="0,63 1,64 62,64 64,62 64,50 4,13 1,12.5 0,13" /><polygon id="foreground" points="64,4 64,62 62,64 1,64 0,63 0,40 60,3"/></g></g></g></svg>
+</style><circle id="outside_g" cx="32" cy="32" r="32"/><g id="inside_w"><g id="inside_g"><g id="inside_layout"><polygon id="background" points="64,4 64,62 62,64 1,64 0,63 0,40 60,3" /><polygon id="midground" points="0,63 1,64 62,64 64,62 64,50 4,13 1,12.5 0,13" /><polygon id="foreground" points="64,4 64,62 62,64 1,64 0,63 0,40 60,3"/></g></g></g></svg>
