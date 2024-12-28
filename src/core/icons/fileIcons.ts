@@ -313,6 +313,7 @@ export const fileIcons: FileIcons = {
         '.clang-format-ignore',
         '.clang-tidy',
         '.conf',
+        'compile_flags.txt',
       ],
     },
     {
