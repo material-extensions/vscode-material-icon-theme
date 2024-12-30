@@ -2913,6 +2913,10 @@ export const fileIcons: FileIcons = {
       fileNames: ['citation.cff'],
     },
     {
+      name: 'xmake',
+      fileNames: ['xmake.lua', 'xmake'],
+    },
+    {
       name: 'subtitles',
       fileExtensions: ['srt', 'ssa', 'ttml', 'sbv', 'dfxp', 'vtt'],
     },
