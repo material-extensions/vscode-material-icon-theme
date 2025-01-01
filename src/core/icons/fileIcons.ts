@@ -493,6 +493,10 @@ export const fileIcons: FileIcons = {
         'py.typed',
       ],
     },
+    {
+      name: 'ruff',
+      fileNames: ['ruff.toml', '.ruff.toml'],
+    },
     { name: 'url', fileExtensions: ['url'] },
     {
       name: 'console',
