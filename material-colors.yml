@@ -261,3 +261,22 @@ colors:
   - '#263238' # blue gray 900
 # - '#000000' # black must not be used
 # - '#FFFFFF' # white must not be used
+
+exclude:
+  - 'icons/coldfusion.svg'
+  - 'icons/folder-vue-directives.svg'
+  - 'icons/folder-vue-directives-open.svg'
+  - 'icons/folder-vue.svg'
+  - 'icons/folder-vue-open.svg'
+  - 'icons/folder-vuepress.svg'
+  - 'icons/folder-vuepress-open.svg'
+  - 'icons/folder-vuex-store.svg'
+  - 'icons/folder-vuex-store-open.svg'
+  - 'icons/grunt.svg'
+  - 'icons/jenkins.svg'
+  - 'icons/lyric.svg'
+  - 'icons/minecraft-fabric.svg'
+  - 'icons/travis.svg'
+  - 'icons/vue.svg'
+  - 'icons/vue-config.svg'
+  - 'icons/vuex-store.svg'
