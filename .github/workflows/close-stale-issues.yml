@@ -1,4 +1,4 @@
-# This workflow closes issues with the label "info-needed" or "invalid" that have been inactive for 14 days since being marked as stale.
+# This workflow closes issues with the labels "info-needed" or "invalid" that have been inactive for 14 days since being marked as stale.
 name: ❌ Close inactive issues
 on:
   schedule:
