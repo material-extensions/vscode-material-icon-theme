@@ -2249,6 +2249,15 @@ export const fileIcons: FileIcons = {
       },
     },
     {
+      name: 'contentlayer',
+      fileNames: [
+        'contentlayer.config.ts',
+        'contentlayer.config.js',
+        'contentlayer.config.mjs',
+        'contentlayer.config.mts',
+      ],
+    },
+    {
       name: 'phpunit',
       fileNames: [
         '.phpunit.result.cache',
