@@ -30,13 +30,14 @@ export const loadLanguageIconDefinitions = (
   );
   const customIcons = getCustomIcons(config.languages?.associations);
   const allLanguageIcons = [...languageIcons, ...customIcons];
+  const allEnabledLanguageIcons = [...enabledLanguages, ...customIcons];
 
   allLanguageIcons.forEach((lang) => {
     manifest = setIconDefinitions(manifest, config, lang.icon);
   });
 
   // Only map the specific language icons if they are enabled depending on the active icon pack
-  enabledLanguages.forEach((lang) => {
+  allEnabledLanguageIcons.forEach((lang) => {
     if (lang.disabled) return;
     manifest = merge(
       manifest,

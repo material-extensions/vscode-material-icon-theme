@@ -31,6 +31,7 @@ export const loadFileIconDefinitions = (
   const enabledIcons = disableIconsByPack(fileIcons, config.activeIconPack);
   const customIcons = getCustomIcons(config.files?.associations);
   const allFileIcons = [...fileIcons.icons, ...customIcons];
+  const allEnabledIcons = [...enabledIcons, ...customIcons];
 
   allFileIcons.forEach((icon) => {
     const isClone = icon.clone !== undefined;
@@ -57,7 +58,7 @@ export const loadFileIconDefinitions = (
   });
 
   // Only map the specific file icons if they are enabled depending on the active icon pack
-  enabledIcons.forEach((icon) => {
+  allEnabledIcons.forEach((icon) => {
     if (icon.disabled) return;
     if (icon.fileExtensions) {
       manifest = mapSpecificFileIcons(
