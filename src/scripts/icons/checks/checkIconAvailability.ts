@@ -176,8 +176,7 @@ const getAllFolderIcons = (theme: FolderTheme) => {
  * Check if the language icons from the configuration are available on the file system.
  */
 const checkLanguageIcons = () => {
-  languageIcons.forEach((lang) => {
-    const icon = lang.icon;
+  languageIcons.forEach((icon) => {
     isIconAvailable(icon, IconType.LanguageIcons, IconColor.Default);
     isIconAvailable(icon, IconType.LanguageIcons, IconColor.Light);
     isIconAvailable(icon, IconType.LanguageIcons, IconColor.HighContrast);

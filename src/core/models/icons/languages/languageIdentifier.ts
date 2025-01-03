@@ -1,12 +1,7 @@
 import type { DefaultIcon } from '../defaultIcon';
 import type { IconPack } from '../iconPack';
 
-export type LanguageIcon = {
-  /**
-   * Icon for the language identifier
-   */
-  icon: DefaultIcon;
-
+export type LanguageIcon = DefaultIcon & {
   /**
    * Language ID, e.g. `javascript`
    *
