@@ -258,39 +258,63 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['docker', 'dockerfiles', 'dockerhub'],
       },
       {
-        name: 'folder-ngrx-effects',
-        folderNames: ['effects'],
-        enabledFor: [IconPack.Ngrx],
-      },
-      {
         name: 'folder-ngrx-store',
         folderNames: ['store'],
         enabledFor: [IconPack.Ngrx],
       },
       {
+        name: 'folder-ngrx-effects',
+        folderNames: ['effects'],
+        enabledFor: [IconPack.Ngrx],
+        clone: {
+          base: 'folder-ngrx-store',
+          color: 'cyan-500',
+        },
+      },
+      {
         name: 'folder-ngrx-state',
         folderNames: ['states', 'state'],
         enabledFor: [IconPack.Ngrx],
+        clone: {
+          base: 'folder-ngrx-store',
+          color: 'lime-800',
+        },
       },
       {
         name: 'folder-ngrx-reducer',
         folderNames: ['reducers', 'reducer'],
         enabledFor: [IconPack.Ngrx],
+        clone: {
+          base: 'folder-ngrx-store',
+          color: 'red-400',
+        },
       },
       {
         name: 'folder-ngrx-actions',
         folderNames: ['actions'],
         enabledFor: [IconPack.Ngrx],
+        clone: {
+          base: 'folder-ngrx-store',
+          color: 'purple-400',
+        },
       },
       {
         name: 'folder-ngrx-entities',
         folderNames: ['entities'],
         enabledFor: [IconPack.Ngrx],
+        clone: {
+          base: 'folder-ngrx-store',
+          color: 'yellow-700',
+        },
       },
       {
         name: 'folder-ngrx-selectors',
         folderNames: ['selectors'],
         enabledFor: [IconPack.Ngrx],
+        clone: {
+          base: 'folder-ngrx-store',
+          color: 'deep-orange-A200',
+        },
       },
       {
         name: 'folder-redux-reducer',
