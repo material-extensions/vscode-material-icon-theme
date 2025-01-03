@@ -261,6 +261,12 @@ describe('folder icons', () => {
       folder: {
         iconPath: './../icons/folder.svg',
       },
+      'folder-angular': {
+        iconPath: './../icons/folder-angular.svg',
+      },
+      'folder-angular-open': {
+        iconPath: './../icons/folder-angular-open.svg',
+      },
       'folder-open': {
         iconPath: './../icons/folder-open.svg',
       },

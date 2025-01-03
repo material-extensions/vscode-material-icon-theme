@@ -64,6 +64,9 @@ describe('language icons', () => {
       a: {
         iconPath: './../icons/a.svg',
       },
+      c: {
+        iconPath: './../icons/c.svg',
+      },
     };
     expectedManifest.languageIds = {
       a: 'a',
@@ -85,7 +88,14 @@ describe('language icons', () => {
       manifest
     );
 
-    expectedManifest.iconDefinitions = {};
+    expectedManifest.iconDefinitions = {
+      a: {
+        iconPath: './../icons/a.svg',
+      },
+      c: {
+        iconPath: './../icons/c.svg',
+      },
+    };
     expectedManifest.languageIds = {};
     expect(iconDefinitions).toStrictEqual(expectedManifest);
   });
