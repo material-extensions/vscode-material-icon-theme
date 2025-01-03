@@ -2691,6 +2691,10 @@ export const fileIcons: FileIcons = {
       ],
     },
     {
+      name: 'phpstan',
+      fileNames: ['phpstan.neon', 'phpneon.neon.dist'],
+    },
+    {
       name: 'screwdriver',
       fileNames: ['screwdriver.yaml', 'screwdriver.yml'],
     },
