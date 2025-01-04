@@ -25,7 +25,11 @@ import {
 import { getFileConfigHash } from '../../helpers/configHash';
 import { merge } from '../../helpers/object';
 import { resolvePath } from '../../helpers/resolvePath';
-import type { FileIconClone, FolderIconClone } from '../../models/icons/config';
+import type {
+  FileIconClone,
+  FolderIconClone,
+  LanguageIconClone,
+} from '../../models/icons/config';
 import { type Manifest, createEmptyManifest } from '../../models/manifest';
 import {
   isValidColor,
@@ -463,6 +467,130 @@ describe('cloning: icon cloning', () => {
         expect(result).toStrictEqual(expected);
       });
     });
+
+    describe('clone data generation for language icons', () => {
+      it('should create a single clone object if not light version exists or asked', () => {
+        const cloneOpts: LanguageIconClone = {
+          name: 'foo',
+          base: 'base',
+          color: 'green-500',
+          ids: ['bar'],
+        };
+
+        const result = getCloneData(cloneOpts, manifest, subFolder, hash, ext);
+
+        const expected = [
+          {
+            base: {
+              path: resolvePath(manifest.iconDefinitions!.base.iconPath),
+              type: Type.File,
+              variant: Variant.Base,
+            },
+            color: 'green-500',
+            inConfigPath: `${iconFolderPath}${subFolder}foo${hash}${ext}`,
+            name: 'foo',
+            path: resolvePath(`./icons/${subFolder}foo${hash}${ext}`),
+            type: Type.File,
+            variant: Variant.Base,
+          },
+        ];
+
+        expect(result).toStrictEqual(expected);
+      });
+
+      it('should create two clone objects if light version exists', () => {
+        const cloneOpts: LanguageIconClone = {
+          name: 'foo',
+          base: 'base2',
+          color: 'green-500',
+          ids: ['bar'],
+        };
+
+        const result = getCloneData(cloneOpts, manifest, subFolder, hash, ext);
+
+        const expected = [
+          {
+            base: {
+              path: resolvePath(manifest.iconDefinitions!.base2.iconPath),
+              type: Type.File,
+              variant: Variant.Base,
+            },
+            color: 'green-500',
+            inConfigPath: `${iconFolderPath}${subFolder}foo${hash}${ext}`,
+            name: 'foo',
+            path: resolvePath(`./icons/${subFolder}foo${hash}${ext}`),
+            type: Type.File,
+            variant: Variant.Base,
+          },
+          {
+            base: {
+              path: resolvePath(
+                manifest.iconDefinitions!.base2_light!.iconPath
+              ),
+              type: Type.File,
+              variant: Variant.Light,
+            },
+            color: 'green-500',
+            inConfigPath: `${iconFolderPath}${subFolder}foo${lightColorFileEnding}${hash}${ext}`,
+            name: `foo${lightColorFileEnding}`,
+            path: resolvePath(
+              `./icons/${subFolder}foo${lightColorFileEnding}${hash}${ext}`
+            ),
+            type: Type.File,
+            variant: Variant.Light,
+          },
+        ];
+
+        expect(result).toStrictEqual(expected);
+      });
+
+      it("should create two clone objects if light version is asked and base light doesn't exist", () => {
+        const cloneOpts: LanguageIconClone = {
+          name: 'foo',
+          base: 'base',
+          color: 'green-500',
+          lightColor: 'green-800',
+          ids: ['bar'],
+        };
+
+        const result = getCloneData(cloneOpts, manifest, subFolder, hash, ext);
+
+        const expected = [
+          {
+            base: {
+              path: resolvePath(manifest.iconDefinitions!.base.iconPath),
+              type: Type.File,
+              variant: Variant.Base,
+            },
+            color: 'green-500',
+            inConfigPath: `${iconFolderPath}${subFolder}foo${hash}${ext}`,
+            name: 'foo',
+            path: resolvePath(`./icons/${subFolder}foo${hash}${ext}`),
+            type: Type.File,
+            variant: Variant.Base,
+          },
+          {
+            base: {
+              // since light version of icon base doesn't exist, the base icon is used as a base
+              // to clone the light version
+              path: resolvePath(manifest.iconDefinitions!.base.iconPath),
+              type: Type.File,
+              variant: Variant.Light,
+            },
+            color: 'green-800',
+            inConfigPath: `${iconFolderPath}${subFolder}foo${lightColorFileEnding}${hash}${ext}`,
+            name: `foo${lightColorFileEnding}`,
+            path: resolvePath(
+              `./icons/${subFolder}foo${lightColorFileEnding}${hash}${ext}`
+            ),
+            type: Type.File,
+            variant: Variant.Light,
+          },
+        ];
+
+        expect(result).toStrictEqual(expected);
+      });
+    });
   });
 
   describe('#cloneIcon(..)', () => {
@@ -654,7 +782,9 @@ describe('cloning: json config generation from user options', () => {
       fileExtensions: {},
       fileNames: { 'foo.bar': 'foo' },
       file: 'file',
-      languageIds: {},
+      languageIds: {
+        json: 'foo',
+      },
       light: {
         fileExtensions: {},
         fileNames: {},
@@ -685,6 +815,17 @@ describe('cloning: json config generation from user options', () => {
             base: 'folder-foo',
             name: 'folder-foo-clone',
             folderNames: ['bar'],
+            color: 'green-400',
+            lightColor: 'green-800',
+          },
+        ],
+      },
+      languages: {
+        customClones: [
+          {
+            base: 'foo',
+            name: 'foo-clone',
+            ids: ['json'],
             color: 'green-400',
             lightColor: 'green-800',
           },
@@ -732,7 +873,9 @@ describe('cloning: json config generation from user options', () => {
       fileExtensions: { baz: 'foo-clone' },
       fileNames: { 'bar.foo': 'foo-clone', 'foo.bar': 'foo' },
       file: 'file',
-      languageIds: {},
+      languageIds: {
+        json: 'foo-clone',
+      },
       light: {
         fileExtensions: { baz: `foo-clone${lightColorFileEnding}` },
         fileNames: { 'bar.foo': `foo-clone${lightColorFileEnding}` },
@@ -774,6 +917,18 @@ describe('cloning: json config generation from user options', () => {
           },
         ],
       },
+      languages: {
+        customClones: [
+          {
+            base: 'foo',
+            name: 'foo-clone',
+            ids: ['json'],
+            color: 'green-400',
+            lightColor: 'green-800',
+            activeForPacks: ['nest'],
+          },
+        ],
+      },
     });
     const hash = getFileConfigHash(config);
     const result = await customClonesIcons(getManifest(hash), config);
@@ -798,7 +953,9 @@ describe('cloning: json config generation from user options', () => {
       fileExtensions: {},
       fileNames: { 'foo.bar': 'foo' },
       file: 'file',
-      languageIds: {},
+      languageIds: {
+        json: 'foo',
+      },
       light: {
         fileExtensions: {},
         fileNames: {},
@@ -865,6 +1022,33 @@ describe('cloning: json config generation from user options', () => {
             base: 'folder-foo',
             name: 'folder-foo-any-clone',
             folderNames: ['bar.any'],
+            color: 'green-600',
+            lightColor: 'green-100',
+          },
+        ],
+      },
+      languages: {
+        customClones: [
+          {
+            base: 'foo',
+            name: 'foo-clone',
+            ids: ['json'],
+            color: 'green-400',
+            lightColor: 'green-800',
+            activeForPacks: ['nest'],
+          },
+          {
+            base: 'foo',
+            name: 'foo-angular-clone',
+            ids: ['json.angular'],
+            color: 'green-500',
+            lightColor: 'green-900',
+            activeForPacks: ['angular'],
+          },
+          {
+            base: 'foo',
+            name: 'foo-any-clone',
+            ids: ['json.any'],
             color: 'green-600',
             lightColor: 'green-100',
           },
@@ -943,7 +1127,11 @@ describe('cloning: json config generation from user options', () => {
         'foo.bar': 'foo',
       },
       file: 'file',
-      languageIds: {},
+      languageIds: {
+        json: 'foo',
+        'json.angular': 'foo-angular-clone',
+        'json.any': 'foo-any-clone',
+      },
       light: {
         fileExtensions: {
           'baz.angular': `foo-angular-clone${lightColorFileEnding}`,

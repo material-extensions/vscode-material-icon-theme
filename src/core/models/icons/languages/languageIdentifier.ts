@@ -1,3 +1,4 @@
+import type { CloneOptions } from '../cloneOptions';
 import type { DefaultIcon } from '../defaultIcon';
 import type { IconPack } from '../iconPack';
 
@@ -19,4 +20,9 @@ export type LanguageIcon = DefaultIcon & {
    * Defines a pack to which this icon belongs. A pack can be toggled and all icons inside this pack can be enabled or disabled together.
    */
   enabledFor?: IconPack[];
+
+  /**
+   * Options for generating an icon based on another icon.
+   */
+  clone?: CloneOptions;
 };

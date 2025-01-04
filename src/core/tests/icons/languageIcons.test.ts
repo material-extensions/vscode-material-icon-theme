@@ -163,10 +163,8 @@ describe('language icons', () => {
     const languageIcons: LanguageIcon[] = [{ name: 'json', ids: ['a'] }];
 
     const manifest = createEmptyManifest();
-    config.languages = {
-      associations: {
-        xml: 'json',
-      },
+    config.languages.associations = {
+      xml: 'json',
     };
     const iconDefinitions = loadLanguageIconDefinitions(
       languageIcons,

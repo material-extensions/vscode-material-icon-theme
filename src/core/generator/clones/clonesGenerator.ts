@@ -7,12 +7,14 @@ import type {
   CustomClone,
   FileIconClone,
   FolderIconClone,
+  LanguageIconClone,
 } from '../../models/icons/config';
 import type { FileIcons } from '../../models/icons/files/fileTypes';
 import type { FolderTheme } from '../../models/icons/folders/folderTheme';
+import type { LanguageIcon } from '../../models/icons/languages/languageIdentifier';
 import type { Manifest } from '../../models/manifest';
 import { cloneIconExtension, clonesFolder } from '../constants';
-import { Variant, getCloneData, isFolder } from './utils/cloneData';
+import { Variant, getCloneData, isFolder, isLanguage } from './utils/cloneData';
 import { cloneIcon, createCloneConfig } from './utils/cloning';
 
 /**
@@ -30,29 +32,79 @@ export const customClonesIcons = async (
   let clonedIconsManifest = merge<Manifest>({}, manifest);
   const hash = getFileConfigHash(config);
 
-  // create folder clones as specified by the user in the options
-  for (const clone of config.folders?.customClones ?? []) {
-    if (
-      clone.activeForPacks === undefined ||
-      clone.activeForPacks.includes(config.activeIconPack)
-    ) {
-      const cloneCfg = await createIconClone(clone, manifest, hash);
-      clonedIconsManifest = merge(clonedIconsManifest, cloneCfg);
+  // Helper function to process clones
+  const processClones = async (
+    clones?: FolderIconClone[] | FileIconClone[] | LanguageIconClone[]
+  ): Promise<void> => {
+    for (const clone of clones ?? []) {
+      if (
+        clone.activeForPacks === undefined ||
+        clone.activeForPacks.includes(config.activeIconPack)
+      ) {
+        const cloneCfg = await createIconClone(clone, manifest, hash);
+        clonedIconsManifest = merge(clonedIconsManifest, cloneCfg);
+      }
     }
-  }
+  };
 
-  // create file clones as specified by the user in the options
-  for (const clone of config.files?.customClones ?? []) {
-    if (
-      clone.activeForPacks === undefined ||
-      clone.activeForPacks.includes(config.activeIconPack)
-    ) {
-      const cloneCfg = await createIconClone(clone, manifest, hash);
-      clonedIconsManifest = merge(clonedIconsManifest, cloneCfg);
-    }
-  }
+  await processClones(config.folders?.customClones);
+  await processClones(config.files?.customClones);
+  await processClones(config.languages?.customClones);
 
   return clonedIconsManifest;
+};
+
+export const generateConfiguredFileIconClones = async (
+  iconsList: FileIcons,
+  manifest: Manifest
+) => {
+  const icons = iconsList.icons?.filter((icon) => icon.clone) ?? [];
+  const iconsToClone = icons.map(
+    (icon) =>
+      ({
+        fileExtensions: icon.fileExtensions,
+        fileNames: icon.fileNames,
+        name: icon.name,
+        ...icon.clone!,
+      }) as FileIconClone
+  );
+
+  await generateConfiguredClones(iconsToClone, manifest);
+};
+
+export const generateConfiguredFolderIconClones = async (
+  iconsList: FolderTheme[],
+  manifest: Manifest
+) => {
+  const iconsToClone = iconsList.reduce((acc, theme) => {
+    const icons = theme.icons?.filter((icon) => icon.clone) ?? [];
+    return acc.concat(
+      icons.map((icon) => ({
+        folderNames: icon.folderNames,
+        name: icon.name,
+        ...icon.clone!,
+      }))
+    );
+  }, [] as FolderIconClone[]);
+
+  await generateConfiguredClones(iconsToClone, manifest);
+};
+
+export const generateConfiguredLanguageIconClones = async (
+  iconsList: LanguageIcon[],
+  manifest: Manifest
+) => {
+  const icons = iconsList?.filter((icon) => icon.clone) ?? [];
+  const iconsToClone = icons.map(
+    (icon) =>
+      ({
+        ids: icon.ids,
+        name: icon.name,
+        ...icon.clone!,
+      }) as LanguageIconClone
+  );
+
+  await generateConfiguredClones(iconsToClone, manifest);
 };
 
 /**
@@ -60,39 +112,13 @@ export const customClonesIcons = async (
  * their colors, based on the configurations provided by the extension.
  * (this is meant to be called at build time)
  *
- * @param iconsList - The list of icons to be cloned.
- * @param manifest - The current configuration of the extension.
+ * @param iconsToClone List of icons to be cloned
+ * @param manifest Manifest
  */
-export const generateConfiguredClones = async (
-  iconsList: FolderTheme[] | FileIcons,
+const generateConfiguredClones = async (
+  iconsToClone: CustomClone[],
   manifest: Manifest
 ) => {
-  let iconsToClone: CustomClone[] = [];
-
-  if (Array.isArray(iconsList)) {
-    iconsToClone = iconsList.reduce((acc, theme) => {
-      const icons = theme.icons?.filter((icon) => icon.clone) ?? [];
-      return acc.concat(
-        icons.map((icon) => ({
-          folderNames: icon.folderNames,
-          name: icon.name,
-          ...icon.clone!,
-        }))
-      );
-    }, [] as FolderIconClone[]);
-  } else {
-    const icons = iconsList.icons?.filter((icon) => icon.clone) ?? [];
-    iconsToClone = icons.map(
-      (icon) =>
-        ({
-          fileExtensions: icon.fileExtensions,
-          fileNames: icon.fileNames,
-          name: icon.name,
-          ...icon.clone!,
-        }) as FileIconClone
-    );
-  }
-
   for (const icon of iconsToClone) {
     const clones = getCloneData(icon, manifest, '', '', cloneIconExtension);
     if (!clones) {
@@ -124,7 +150,8 @@ export const generateConfiguredClones = async (
 export const hasCustomClones = (config: Config): boolean => {
   return (
     (config.folders?.customClones?.length ?? 0) > 0 ||
-    (config.files?.customClones?.length ?? 0) > 0
+    (config.files?.customClones?.length ?? 0) > 0 ||
+    (config.languages?.customClones?.length ?? 0) > 0
   );
 };
 
@@ -136,7 +163,7 @@ export const hasCustomClones = (config: Config): boolean => {
  * @returns A promise that resolves to a partial icon configuration for the new icon.
  */
 const createIconClone = async (
-  cloneOpts: FolderIconClone | FileIconClone,
+  cloneOpts: FolderIconClone | FileIconClone | LanguageIconClone,
   manifest: Manifest,
   hash: string
 ): Promise<Manifest> => {
@@ -178,6 +205,16 @@ const createIconClone = async (
                   ? clonesConfig.light!.folderNames!
                   : clonesConfig.light!.folderNamesExpanded!;
           folderNamesCfg[folderName] = clone.name;
+        });
+      } else if (isLanguage(cloneOpts)) {
+        // sets the associated language ids for the cloned icon
+        cloneOpts.ids?.forEach((langId) => {
+          const languageIdCfg =
+            clone.variant === Variant.Base
+              ? clonesConfig.languageIds!
+              : clonesConfig.light!.languageIds!;
+
+          languageIdCfg[langId] = clone.name;
         });
       } else {
         // set associations for the cloned file icon in the configuration
