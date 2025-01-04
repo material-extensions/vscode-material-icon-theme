@@ -37,16 +37,21 @@ export const loadFolderIconDefinitions = (
   }
   const enabledIcons = disableIconsByPack(activeTheme, config.activeIconPack);
   const customIcons = getCustomIcons(config.folders?.associations);
-  const allIcons = [...enabledIcons, ...customIcons];
+  const allIcons = [...(activeTheme.icons ?? []), ...customIcons];
+  const allEnabledIcons = [...enabledIcons, ...customIcons];
 
   if (config.folders?.theme === 'none') {
     return manifest;
   }
 
   allIcons.forEach((icon) => {
+    manifest = setIconDefinitions(manifest, config, icon);
+  });
+
+  // Only map the specific folder icons if they are enabled depending on the active icon pack
+  allEnabledIcons.forEach((icon) => {
     if (icon.disabled) return;
     const folderNames = extendFolderNames(icon.folderNames);
-    manifest = setIconDefinitions(manifest, config, icon);
     manifest = merge(manifest, setFolderNames(icon.name, folderNames));
     manifest.light = icon.light
       ? merge(

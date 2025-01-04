@@ -325,16 +325,28 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-redux-actions',
         folderNames: ['actions'],
         enabledFor: [IconPack.Redux],
+        clone: {
+          base: 'folder-redux-reducer',
+          color: 'purple-400',
+        },
       },
       {
         name: 'folder-redux-selector',
         folderNames: ['selectors', 'selector'],
         enabledFor: [IconPack.Redux],
+        clone: {
+          base: 'folder-redux-reducer',
+          color: 'deep-orange-A200',
+        },
       },
       {
         name: 'folder-redux-store',
         folderNames: ['store', 'stores'],
         enabledFor: [IconPack.Redux],
+        clone: {
+          base: 'folder-redux-reducer',
+          color: 'light-green-500',
+        },
       },
       {
         name: 'folder-react-components',
@@ -818,7 +830,10 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-guard', folderNames: ['guard', 'guards'] },
       { name: 'folder-prisma', folderNames: ['prisma', 'prisma/schema'] },
-      { name: 'folder-pipe', folderNames: ['pipe', 'pipes'] },
+      {
+        name: 'folder-pipe',
+        folderNames: ['pipe', 'pipes', 'pipeline', 'pipelines'],
+      },
       { name: 'folder-svg', folderNames: ['svg', 'svgs'] },
       {
         name: 'folder-vuex-store',
