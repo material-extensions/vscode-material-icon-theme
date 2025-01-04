@@ -169,4 +169,12 @@ export const languageIcons: LanguageIcon[] = [
   { icon: { name: 'slint' }, ids: ['slint'] },
   { icon: { name: 'luau' }, ids: ['luau'] },
   { icon: { name: 'hosts' }, ids: ['hosts'] },
+  {
+    name: 'ahk2',
+    ids: ['ahk2'],
+    clone: {
+      base: 'autohotkey',
+      color: 'lime-700',
+    },
+  },
 ];
