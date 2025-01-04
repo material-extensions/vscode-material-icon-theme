@@ -6,6 +6,7 @@ import type { IconPackValue } from '../models/icons/iconPack';
 import type { LanguageIcon } from '../models/icons/languages/languageIdentifier';
 import type { Manifest } from '../models/manifest';
 import {
+  cloneIconExtension,
   highContrastColorFileEnding,
   iconFolderPath,
   lightColorFileEnding,
@@ -33,7 +34,8 @@ export const loadLanguageIconDefinitions = (
   const allEnabledLanguageIcons = [...enabledLanguages, ...customIcons];
 
   allLanguageIcons.forEach((icon) => {
-    manifest = setIconDefinitions(manifest, config, icon);
+    const isClone = icon.clone !== undefined;
+    manifest = setIconDefinitions(manifest, config, icon, isClone);
   });
 
   // Only map the specific language icons if they are enabled depending on the active icon pack
@@ -71,18 +73,26 @@ export const loadLanguageIconDefinitions = (
 const setIconDefinitions = (
   manifest: Manifest,
   config: Config,
-  icon: DefaultIcon
+  icon: DefaultIcon,
+  isClone: boolean
 ): Manifest => {
-  createIconDefinitions(manifest, config, icon.name);
+  const ext = isClone ? cloneIconExtension : '.svg';
+  createIconDefinitions(manifest, config, icon.name, ext);
 
   if (icon.light) {
-    createIconDefinitions(manifest, config, icon.name + lightColorFileEnding);
+    createIconDefinitions(
+      manifest,
+      config,
+      icon.name + lightColorFileEnding,
+      ext
+    );
   }
   if (icon.highContrast) {
     createIconDefinitions(
       manifest,
       config,
-      icon.name + highContrastColorFileEnding
+      icon.name + highContrastColorFileEnding,
+      ext
     );
   }
 
@@ -95,16 +105,18 @@ const setIconDefinitions = (
  * @param manifest - The manifest object to be updated.
  * @param config - The configuration object for the icons.
  * @param iconName - The name of the icon.
+ * @param ext - The file extension of the icon.
  */
 const createIconDefinitions = (
   manifest: Manifest,
   config: Config,
-  iconName: string
+  iconName: string,
+  ext: string
 ) => {
   const fileConfigHash = getFileConfigHash(config);
   if (manifest.iconDefinitions) {
     manifest.iconDefinitions[iconName] = {
-      iconPath: `${iconFolderPath}${iconName}${fileConfigHash}.svg`,
+      iconPath: `${iconFolderPath}${iconName}${fileConfigHash}${ext}`,
     };
   }
 };
