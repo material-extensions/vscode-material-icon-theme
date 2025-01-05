@@ -65,7 +65,7 @@ export const generateConfiguredFileIconClones = async (
         fileExtensions: icon.fileExtensions,
         fileNames: icon.fileNames,
         name: icon.name,
-        ...icon.clone!,
+        ...icon.clone,
       }) as FileIconClone
   );
 
