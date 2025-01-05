@@ -51,8 +51,8 @@ export const isLanguage = (clone: CustomClone): clone is LanguageIconClone => {
 };
 
 /** checks if the icon is a dark variant */
-const isDark = (daa: IconData) =>
-  daa.variant === Variant.Base || daa.variant === Variant.Open;
+const isDark = (iconData: IconData) =>
+  iconData.variant === Variant.Base || iconData.variant === Variant.Open;
 
 /**
  * get cloning information from configuration
