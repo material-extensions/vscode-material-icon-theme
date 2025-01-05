@@ -59,15 +59,12 @@ export const generateConfiguredFileIconClones = async (
   manifest: Manifest
 ) => {
   const icons = iconsList.icons?.filter((icon) => icon.clone) ?? [];
-  const iconsToClone = icons.map(
-    (icon) =>
-      ({
-        fileExtensions: icon.fileExtensions,
-        fileNames: icon.fileNames,
-        name: icon.name,
-        ...icon.clone,
-      }) as FileIconClone
-  );
+  const iconsToClone = icons.map((icon) => ({
+    fileExtensions: icon.fileExtensions,
+    fileNames: icon.fileNames,
+    name: icon.name,
+    ...icon.clone!,
+  }));
 
   await generateConfiguredClones(iconsToClone, manifest);
 };
@@ -95,14 +92,11 @@ export const generateConfiguredLanguageIconClones = async (
   manifest: Manifest
 ) => {
   const icons = iconsList?.filter((icon) => icon.clone) ?? [];
-  const iconsToClone = icons.map(
-    (icon) =>
-      ({
-        ids: icon.ids,
-        name: icon.name,
-        ...icon.clone!,
-      }) as LanguageIconClone
-  );
+  const iconsToClone = icons.map((icon) => ({
+    ids: icon.ids,
+    name: icon.name,
+    ...icon.clone!,
+  }));
 
   await generateConfiguredClones(iconsToClone, manifest);
 };
