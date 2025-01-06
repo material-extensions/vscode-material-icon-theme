@@ -14,6 +14,7 @@ label="$3"
 action="add-label" && [ "$status" == "success" ] && action="remove-label"
 
 # Add or remove label
+export GH_TOKEN="$GITHUB_TOKEN"
 gh pr edit "$pr_number" --$action "$label"
 
 [ "$action" == "add-label" ] && echo "✅ Added \"$label\" label to PR #$pr_number"
