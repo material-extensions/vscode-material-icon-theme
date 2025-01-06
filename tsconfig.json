@@ -20,6 +20,5 @@
     "noImplicitAny": true,
     "noFallthroughCasesInSwitch": true,
     "forceConsistentCasingInFileNames": true
-  },
-  "exclude": ["src/test/**/*.test.ts"]
+  }
 }

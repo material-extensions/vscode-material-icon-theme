@@ -1,18 +1,18 @@
 import { beforeEach, describe, expect, it } from 'bun:test';
-import { getDefaultConfiguration } from '../../generator/config/defaultConfig';
+import { getDefaultConfig } from '../../generator/config/defaultConfig';
 import { loadLanguageIconDefinitions } from '../../generator/languageGenerator';
 import type { Config } from '../../models/icons/config';
 import { IconPack } from '../../models/icons/iconPack';
 import type { LanguageIcon } from '../../models/icons/languages/languageIdentifier';
-import { Manifest } from '../../models/manifest';
+import { type Manifest, createEmptyManifest } from '../../models/manifest';
 
 describe('language icons', () => {
   let expectedManifest: Manifest;
   let config: Config;
 
   beforeEach(() => {
-    expectedManifest = new Manifest();
-    config = getDefaultConfiguration();
+    expectedManifest = createEmptyManifest();
+    config = getDefaultConfig();
   });
 
   it('should configure icon definitions', () => {
@@ -21,7 +21,7 @@ describe('language icons', () => {
       { icon: { name: 'b' }, ids: ['b'] },
       { icon: { name: 'c' }, ids: ['c', 'd'] },
     ];
-    const manifest = new Manifest();
+    const manifest = createEmptyManifest();
     const iconDefinitions = loadLanguageIconDefinitions(
       languageIcons,
       config,
@@ -45,7 +45,7 @@ describe('language icons', () => {
       c: 'c',
       d: 'c',
     };
-    expect(iconDefinitions).toMatchObject(expectedManifest);
+    expect(iconDefinitions).toStrictEqual(expectedManifest);
   });
 
   it('should disable icon definitions', () => {
@@ -53,7 +53,7 @@ describe('language icons', () => {
       { icon: { name: 'a' }, ids: ['a'] },
       { icon: { name: 'c' }, ids: ['c', 'd'], disabled: true },
     ];
-    const manifest = new Manifest();
+    const manifest = createEmptyManifest();
     const iconDefinitions = loadLanguageIconDefinitions(
       languageIcons,
       config,
@@ -64,11 +64,14 @@ describe('language icons', () => {
       a: {
         iconPath: './../icons/a.svg',
       },
+      c: {
+        iconPath: './../icons/c.svg',
+      },
     };
     expectedManifest.languageIds = {
       a: 'a',
     };
-    expect(iconDefinitions).toMatchObject(expectedManifest);
+    expect(iconDefinitions).toStrictEqual(expectedManifest);
   });
 
   it('should disable icon packs', () => {
@@ -78,16 +81,23 @@ describe('language icons', () => {
     ];
 
     config.activeIconPack = '';
-    const manifest = new Manifest();
+    const manifest = createEmptyManifest();
     const iconDefinitions = loadLanguageIconDefinitions(
       languageIcons,
       config,
       manifest
     );
 
-    expectedManifest.iconDefinitions = {};
+    expectedManifest.iconDefinitions = {
+      a: {
+        iconPath: './../icons/a.svg',
+      },
+      c: {
+        iconPath: './../icons/c.svg',
+      },
+    };
     expectedManifest.languageIds = {};
-    expect(iconDefinitions).toMatchObject(expectedManifest);
+    expect(iconDefinitions).toStrictEqual(expectedManifest);
   });
 
   it('should configure language icons for light and high contrast', () => {
@@ -96,7 +106,7 @@ describe('language icons', () => {
       { icon: { name: 'b', light: true, highContrast: true }, ids: ['b'] },
     ];
 
-    const manifest = new Manifest();
+    const manifest = createEmptyManifest();
     const iconDefinitions = loadLanguageIconDefinitions(
       languageIcons,
       config,
@@ -146,7 +156,7 @@ describe('language icons', () => {
         b: 'b_highContrast',
       },
     };
-    expect(iconDefinitions).toMatchObject(expectedManifest);
+    expect(iconDefinitions).toStrictEqual(expectedManifest);
   });
 
   it('should configure custom icon associations', () => {
@@ -154,7 +164,7 @@ describe('language icons', () => {
       { icon: { name: 'json' }, ids: ['a'] },
     ];
 
-    const manifest = new Manifest();
+    const manifest = createEmptyManifest();
     config.languages = {
       associations: {
         xml: 'json',
@@ -176,6 +186,6 @@ describe('language icons', () => {
       xml: 'json',
     };
 
-    expect(iconDefinitions).toMatchObject(expectedManifest);
+    expect(iconDefinitions).toStrictEqual(expectedManifest);
   });
 });

@@ -1,3 +1,4 @@
+import type { LogLevel } from '../../logging/logger';
 import type { FolderThemeName } from './folders/folderTheme';
 import type { IconPackValue } from './iconPack';
 
@@ -20,6 +21,8 @@ export type Config = {
   languages: {
     associations: IconAssociations;
   };
+  enableLogging: boolean;
+  logLevel: LogLevel;
 };
 
 export type IconAssociations = {
@@ -31,6 +34,7 @@ export type CustomClone = {
   base: string;
   color: string;
   lightColor?: string;
+  activeForPacks?: IconPackValue[];
 };
 
 export type FileIconClone = CustomClone & {

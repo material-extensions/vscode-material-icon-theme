@@ -3,14 +3,14 @@ import { spawn } from 'bun';
 /**
  * Check changed (not yet committed) SVG files for correct colors.
  */
-async function checkColors() {
+const checkColors = async () => {
   try {
     // Execute Git command to get list of modified SVG files
     const gitProcess = spawn([
       'git',
-      'ls-files',
-      '-mo',
-      '--exclude-standard',
+      'diff',
+      '--cached',
+      '--name-only',
       '--',
       '*.svg',
     ]);
@@ -22,7 +22,7 @@ async function checkColors() {
     if (svgFiles) {
       const command = [
         'svg-color-linter',
-        '--colors',
+        '--config',
         'material-colors.yml',
         ...svgFiles.split(' '),
       ];
@@ -31,6 +31,12 @@ async function checkColors() {
       const linterOutput = await new Response(stdout).text();
 
       console.log('Colors check output:\n\n', linterOutput);
+
+      // Wait for the sub process to finish with an exit code
+      await linterProcess.exited;
+
+      // Exit script with exit code (0 == no errors, 1 == errors)
+      process.exit(linterProcess.exitCode);
     } else {
       console.log('No SVG files to check.');
     }
@@ -38,6 +44,6 @@ async function checkColors() {
     console.error('Error checking colors:', error);
     process.exit(1);
   }
-}
+};
 
 checkColors();

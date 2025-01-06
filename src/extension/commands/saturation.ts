@@ -1,6 +1,7 @@
 import { window as codeWindow } from 'vscode';
 import {
-  getDefaultConfiguration,
+  getDefaultConfig,
+  logger,
   translate,
   validateSaturationValue,
 } from '../../core';
@@ -15,7 +16,7 @@ export const changeSaturation = async () => {
       await setSaturationConfig(+response);
     }
   } catch (error) {
-    console.error(error);
+    logger.error(error);
   }
 };
 
@@ -39,7 +40,7 @@ const validateSaturationInput = (saturationInput: string) => {
 
 /** Get the current value of the saturation of the icons. */
 export const getCurrentSaturationValue = (): number => {
-  const defaultConfig = getDefaultConfiguration();
+  const defaultConfig = getDefaultConfig();
   return getThemeConfig<number>('saturation') ?? defaultConfig.saturation;
 };
 

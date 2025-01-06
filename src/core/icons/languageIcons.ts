@@ -6,21 +6,20 @@ import type { LanguageIcon } from '../models/icons/languages/languageIdentifier'
 export const languageIcons: LanguageIcon[] = [
   { icon: { name: 'git' }, ids: ['git', 'git-commit', 'git-rebase', 'ignore'] },
   {
+    icon: { name: 'github-actions-workflow' },
+    ids: ['github-actions-workflow'],
+  },
+  {
     icon: { name: 'yaml' },
-    ids: [
-      'yaml',
-      'github-actions-workflow',
-      'spring-boot-properties-yaml',
-      'ansible',
-      'ansible-jinja',
-    ],
+    ids: ['yaml', 'spring-boot-properties-yaml', 'ansible', 'ansible-jinja'],
   },
   { icon: { name: 'xml' }, ids: ['xml', 'xquery', 'xsl'] },
   { icon: { name: 'matlab' }, ids: ['matlab'] },
   {
     icon: { name: 'settings' },
-    ids: ['makefile', 'toml', 'ini', 'properties', 'spring-boot-properties'],
+    ids: ['makefile', 'ini', 'properties', 'spring-boot-properties'],
   },
+  { icon: { name: 'toml', light: true }, ids: ['toml'] },
   { icon: { name: 'shaderlab' }, ids: ['shaderlab'] },
   { icon: { name: 'diff' }, ids: ['diff'] },
   { icon: { name: 'json' }, ids: ['json', 'jsonc', 'json5'] },
@@ -104,11 +103,13 @@ export const languageIcons: LanguageIcon[] = [
   { icon: { name: 'cpp' }, ids: ['cpp'] },
   { icon: { name: 'objective-c' }, ids: ['objective-c'] },
   { icon: { name: 'objective-cpp' }, ids: ['objective-cpp'] },
+  { icon: { name: 'c3' }, ids: ['c3'] },
   { icon: { name: 'coffee' }, ids: ['coffeescript'] },
   { icon: { name: 'fsharp' }, ids: ['fsharp'] },
   { icon: { name: 'editorconfig' }, ids: ['editorconfig'] },
   { icon: { name: 'clojure' }, ids: ['clojure'] },
   { icon: { name: 'groovy' }, ids: ['groovy'] },
+  { icon: { name: 'markdoc' }, ids: ['markdoc'] },
   { icon: { name: 'markdown' }, ids: ['markdown'] },
   { icon: { name: 'jinja' }, ids: ['jinja'] },
   { icon: { name: 'proto' }, ids: ['proto'] },
@@ -154,7 +155,18 @@ export const languageIcons: LanguageIcon[] = [
   { icon: { name: 'hjson' }, ids: ['hjson'] },
   { icon: { name: 'huff' }, ids: ['huff'] },
   {
+    icon: { name: 'cds' },
+    ids: ['cds', 'capnb', 'cds-markdown-injection'],
+  },
+  {
     icon: { name: 'concourse' },
     ids: ['concourse-pipeline-yaml', 'concourse-task-yaml'],
   },
+  {
+    icon: { name: 'systemd', light: true },
+    ids: ['systemd-conf', 'systemd-unit-file'],
+  },
+  { icon: { name: 'slint' }, ids: ['slint'] },
+  { icon: { name: 'luau' }, ids: ['luau'] },
+  { icon: { name: 'hosts' }, ids: ['hosts'] },
 ];

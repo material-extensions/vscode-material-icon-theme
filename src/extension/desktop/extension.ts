@@ -1,7 +1,8 @@
 'use strict';
 
 import { type ExtensionContext, env, workspace } from 'vscode';
-import { initTranslations } from '../../core';
+import { initTranslations, logger } from '../../core';
+import { disableLogObserver, observeLogs } from '../logging/logger';
 import { detectConfigChanges } from '../tools/changeDetection';
 import { registered } from '../tools/registered';
 
@@ -11,27 +12,30 @@ import { registered } from '../tools/registered';
  */
 export const activate = async (context: ExtensionContext) => {
   try {
+    observeLogs();
+
     await initTranslations(env.language);
 
     // Subscribe to the extension commands
     context.subscriptions.push(...registered);
 
     // Initially trigger the config change detection
-    detectConfigChanges();
+    await detectConfigChanges(undefined, context);
 
     // Observe changes in the config
-    workspace.onDidChangeConfiguration(detectConfigChanges);
+    context.subscriptions.push(
+      workspace.onDidChangeConfiguration(
+        async (event) => await detectConfigChanges(event, context)
+      )
+    );
 
-    // Observe if the window got focused to trigger config changes
-    // codeWindow.onDidChangeWindowState((state) => {
-    //   if (state.focused) {
-    //     detectConfigChanges();
-    //   }
-    // });
+    logger.info('Extension activated!');
   } catch (error) {
-    console.error(error);
+    logger.error(error);
   }
 };
 
 /** This method is called when the extension is deactivated */
-export const deactivate = () => {};
+export const deactivate = () => {
+  disableLogObserver();
+};

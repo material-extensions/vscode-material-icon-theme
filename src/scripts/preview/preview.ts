@@ -1,5 +1,5 @@
-import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { writeToFile } from '../../core';
 import { green, red } from '../helpers/painter';
 import { createScreenshot } from '../helpers/screenshots';
 import { toTitleCase } from './../helpers/titleCase';
@@ -64,7 +64,7 @@ const createPreviewTable = (icons: IconDefinition[][], size: number) => {
   return table;
 };
 
-const savePreview = (
+const savePreview = async (
   fileName: string,
   size: number,
   icons: IconDefinition[][]
@@ -72,7 +72,7 @@ const savePreview = (
   const filePath = join(__dirname, fileName + '.html');
 
   // write the html file with the icon table
-  writeFileSync(filePath, createPreviewTable(icons, size));
+  await writeToFile(filePath, createPreviewTable(icons, size));
 
   // create the image
   createScreenshot(filePath, fileName)

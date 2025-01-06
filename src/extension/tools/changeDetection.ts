@@ -1,78 +1,83 @@
-import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { merge } from 'lodash-es';
-import type { ConfigurationChangeEvent } from 'vscode';
+import deepEqual from 'fast-deep-equal';
+import type { ConfigurationChangeEvent, ExtensionContext } from 'vscode';
 import {
   type Config,
-  applyConfigurationToIcons,
+  applyConfigToIcons,
   clearCloneFolder,
   customClonesIcons,
   extensionName,
   generateManifest,
   hasCustomClones,
+  logger,
   manifestName,
+  merge,
+  padWithDefaultConfig,
   renameIconFiles,
   resolvePath,
+  writeToFile,
 } from '../../core';
-import { configPropertyNames, getCurrentConfig } from '../shared/config';
+import { getCurrentConfig } from '../shared/config';
 
 /** Compare the workspace and the user configurations with the current setup of the icons. */
-export const detectConfigChanges = (event?: ConfigurationChangeEvent) => {
+export const detectConfigChanges = async (
+  event: ConfigurationChangeEvent | undefined,
+  context: ExtensionContext
+) => {
   // if the changed config is not related to the extension
   if (event?.affectsConfiguration(extensionName) === false) return;
 
+  const oldConfig = getConfigFromStorage(context);
   const config = getCurrentConfig();
-  if (event) {
-    const affectedConfigProperties = getAffectedConfigProperties(
-      event.affectsConfiguration
-    );
-    applyConfigurationToIcons(config, affectedConfigProperties);
-  } else {
-    applyConfigurationToIcons(config);
-  }
 
-  renameIconFiles(config);
+  // if the configuration has not changed
+  if (deepEqual(config, oldConfig)) return;
+
+  await applyConfigToIcons(config, oldConfig);
+
+  logger.info('Configuration changes detected and applied!');
+
+  await renameIconFiles(config);
   const manifest = generateManifest(config);
 
   // clear the clone folder
-  clearCloneFolder(hasCustomClones(config));
+  await clearCloneFolder(hasCustomClones(config));
 
   const manifestWithClones = merge(
-    {},
     manifest,
-    customClonesIcons(manifest, config)
+    await customClonesIcons(manifest, config)
   );
 
   const iconJsonPath = join(resolvePath(manifestName));
-  writeFileSync(
+  await writeToFile(
     iconJsonPath,
     JSON.stringify(manifestWithClones, undefined, 2),
     'utf-8'
   );
-};
 
-/**
- * Get the affected configurations by the change event.
- *
- * @returns Updated configurations
- */
-const getAffectedConfigProperties = (
-  affectsConfiguration: ConfigurationChangeEvent['affectsConfiguration']
-): Set<string> => {
-  // Filter out only the affected configurations to minimize calls to affectsConfiguration
-  const affectedConfig = configPropertyNames.reduce<Set<string>>(
-    (acc, configNameWithExtensionId) => {
-      if (affectsConfiguration(configNameWithExtensionId)) {
-        const configName = configNameWithExtensionId.replace(
-          `${extensionName}.`,
-          ''
-        ) as keyof Config;
-        acc.add(configName);
-      }
-      return acc;
-    },
-    new Set()
+  logger.info('Updated the manifest file.');
+
+  logger.debug(
+    'Applied configuration: ' + JSON.stringify(config, undefined, 2)
   );
 
-  return affectedConfig;
+  syncConfigWithStorage(config, context);
+};
+
+const syncConfigWithStorage = (config: Config, context: ExtensionContext) => {
+  context.globalState.update('config', {
+    version: context.extension.packageJSON.version,
+    config,
+  });
+};
+
+const getConfigFromStorage = (context: ExtensionContext): Config => {
+  const config = context.globalState.get<{ version: string; config: Config }>(
+    'config'
+  );
+  if (context.extension.packageJSON.version === config?.version) {
+    return padWithDefaultConfig(config?.config);
+  } else {
+    return padWithDefaultConfig();
+  }
 };

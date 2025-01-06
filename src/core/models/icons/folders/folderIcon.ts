@@ -3,13 +3,13 @@ import type { IconPack } from '../iconPack';
 
 export type FolderIcon = {
   /**
-   * Name of the icon, e.g. 'src'
+   * Name of the icon, e.g. `src`
    */
   name: string;
 
   /**
    * Define the folder names that should apply the icon.
-   * E.g. ['src', 'source']
+   * E.g. `['src', 'source']`
    */
   folderNames: string[];
 

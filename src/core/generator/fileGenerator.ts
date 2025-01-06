@@ -1,5 +1,5 @@
-import { merge } from 'lodash-es';
 import { getFileConfigHash } from '../helpers/configHash';
+import { logger } from '../logging/logger';
 import type { Config, IconAssociations } from '../models/icons/config';
 import type { FileIcon } from '../models/icons/files/fileIcon';
 import type { FileIcons } from '../models/icons/files/fileTypes';
@@ -17,19 +17,23 @@ import { validateHEXColorCode } from './shared/validation';
 
 /**
  * Get all file icons that can be used in this theme.
+ *
+ * @param fileIcons - The file icons to be used in the theme.
+ * @param config - The configuration object for the icons.
+ * @param manifest - The manifest object to be updated with the file icons.
+ * @returns The updated manifest object with the file icons.
  */
 export const loadFileIconDefinitions = (
   fileIcons: FileIcons,
   config: Config,
   manifest: Manifest
 ): Manifest => {
-  manifest = merge({}, manifest);
   const enabledIcons = disableIconsByPack(fileIcons, config.activeIconPack);
   const customIcons = getCustomIcons(config.files?.associations);
-  const allFileIcons = [...enabledIcons, ...customIcons];
+  const allFileIcons = [...fileIcons.icons, ...customIcons];
+  const allEnabledIcons = [...enabledIcons, ...customIcons];
 
   allFileIcons.forEach((icon) => {
-    if (icon.disabled) return;
     const isClone = icon.clone !== undefined;
     manifest = setIconDefinition(manifest, config, icon.name, isClone);
 
@@ -51,7 +55,11 @@ export const loadFileIconDefinitions = (
         highContrastColorFileEnding
       );
     }
+  });
 
+  // Only map the specific file icons if they are enabled depending on the active icon pack
+  allEnabledIcons.forEach((icon) => {
+    if (icon.disabled) return;
     if (icon.fileExtensions) {
       manifest = mapSpecificFileIcons(
         icon,
@@ -110,17 +118,22 @@ export const loadFileIconDefinitions = (
 
 /**
  * Map the file extensions and the filenames to the related icons.
+ *
+ * @param icon - The file icon to be mapped.
+ * @param mappingType - The type of mapping (file extensions or file names).
+ * @param manifest - The manifest object to be updated with the mappings.
+ * @param customFileAssociation - Custom file associations to be considered.
+ * @returns The updated manifest object with the mappings.
  */
 const mapSpecificFileIcons = (
   icon: FileIcon,
   mappingType: FileMappingType,
   manifest: Manifest,
   customFileAssociation: IconAssociations = {}
-) => {
-  const manifestCopy = merge({}, manifest);
+): Manifest => {
   const iconMappingType = icon[mappingType as keyof FileIcon] as string[];
   if (iconMappingType === undefined) {
-    return manifestCopy;
+    return manifest;
   }
   iconMappingType.forEach((name) => {
     // if the custom file extension should also overwrite the file names
@@ -137,10 +150,9 @@ const mapSpecificFileIcons = (
     );
 
     // if overwrite is enabled then do not continue to set the icons for file names containing the file extension
-    const configMappingType = manifestCopy[mappingType];
-    const configLightMappingType = manifestCopy.light?.[mappingType];
-    const configHighContrastMappingType =
-      manifestCopy.highContrast?.[mappingType];
+    const configMappingType = manifest[mappingType];
+    const configLightMappingType = manifest.light?.[mappingType];
+    const configHighContrastMappingType = manifest.highContrast?.[mappingType];
 
     if (
       shouldOverwriteFileNames ||
@@ -159,11 +171,15 @@ const mapSpecificFileIcons = (
         `${icon.name}${highContrastColorFileEnding}`;
     }
   });
-  return manifestCopy;
+  return manifest;
 };
 
 /**
  * Disable all file icons that are in a pack which is disabled.
+ *
+ * @param fileIcons - The file icons to be filtered.
+ * @param activeIconPack - The active icon pack to be considered.
+ * @returns The filtered file icons that are enabled for the active icon pack.
  */
 const disableIconsByPack = (
   fileIcons: FileIcons,
@@ -176,39 +192,55 @@ const disableIconsByPack = (
   });
 };
 
+/**
+ * Set the icon definition in the manifest.
+ *
+ * @param manifest - The manifest object to be updated.
+ * @param config - The configuration object for the icons.
+ * @param iconName - The name of the icon.
+ * @param isClone - Whether the icon is a clone.
+ * @param appendix - The appendix to be added to the icon name.
+ * @returns The updated manifest object with the icon definition.
+ */
 const setIconDefinition = (
   manifest: Manifest,
   config: Config,
   iconName: string,
   isClone: boolean,
   appendix: string = ''
-) => {
-  const manifestCopy = merge({}, manifest);
+): Manifest => {
   const ext = isClone ? cloneIconExtension : '.svg';
   const key = `${iconName}${appendix}`;
   manifest.iconDefinitions ??= {};
   if (!manifest.iconDefinitions![key]) {
     const fileConfigHash = getFileConfigHash(config);
-    manifestCopy.iconDefinitions![key] = {
+    manifest.iconDefinitions![key] = {
       iconPath: `${iconFolderPath}${iconName}${appendix}${fileConfigHash}${ext}`,
     };
   }
-  return manifestCopy;
+  return manifest;
 };
 
-export const generateFileIcons = (
+/**
+ * Generate the file icons with the specified color, opacity, and saturation.
+ *
+ * @param color - The color of the file icons.
+ * @param opacity - The opacity of the file icons.
+ * @param saturation - The saturation of the file icons.
+ */
+export const generateFileIcons = async (
   color: string,
   opacity: number,
   saturation: number
 ) => {
   if (!color || !validateHEXColorCode(color)) {
-    return console.error('Invalid color code for file icons');
+    return logger.error('Invalid color code for file icons');
   }
 
   const fileIcon =
     'M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m5 2H6v16h12v-9h-7V4z';
 
-  writeSVGFiles(
+  await writeSVGFiles(
     'file',
     getSVG(getPath(fileIcon, color), 24),
     opacity,
@@ -216,6 +248,12 @@ export const generateFileIcons = (
   );
 };
 
+/**
+ * Get the custom icons based on the file associations.
+ *
+ * @param fileAssociations - The file associations to be considered.
+ * @returns The custom icons based on the file associations.
+ */
 const getCustomIcons = (fileAssociations: IconAssociations | undefined) => {
   if (!fileAssociations) return [];
 

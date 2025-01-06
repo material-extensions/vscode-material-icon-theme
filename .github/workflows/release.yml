@@ -1,91 +1,99 @@
-name: Release + Publish
+name: 🚀 Release + Publish
 
 on:
   workflow_dispatch:
-    inputs:
-      versionChange:
-        type: choice
-        description: Select the version change
-        required: true
-        default: 'minor'
-        options:
-          - major
-          - minor
-          - patch
 
 permissions:
+  id-token: write
   contents: read
 
 jobs:
   release:
     runs-on: ubuntu-latest
-    env:
-      VERSION_CHANGE: ${{ github.event.inputs.versionChange }}
 
     permissions:
       contents: write
       id-token: write
+      attestations: write
 
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+      - name: ✅ Use App Token for the Bot which is allowed to create releases
+        uses: actions/create-github-app-token@c1a285145b9d317df6ced56c09f525b5c2b6f755 # v1.11.1
+        id: app-token
         with:
+          app-id: ${{ vars.BOT_APP_ID }}
+          private-key: ${{ secrets.BOT_PRIVATE_KEY }}
+
+      - name: 📥 Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          # Required for fetching tags and generating release notes
           fetch-depth: 0
+          token: ${{ steps.app-token.outputs.token }}
 
-      - name: Setup Platform 🛠
-        uses: oven-sh/setup-bun@123c6c4e2fea3eb7bffaa91a85eb6b3d505bf7af # v2
+      - name: 🔧 Setup Bun
+        uses: oven-sh/setup-bun@4bc047ad259df6fc24a6c9b0f9a0cb08cf17fbe5 # v2
         with:
-          bun-version: 1.1.18
+          bun-version-file: ".bun-version"
 
-      - name: Install dependencies 📦
+      - name: 📦 Install dependencies
         run: |
           bun install --frozen-lockfile
           bun add -g npm
 
-      - name: Update version ↗
+      - name: 🔧 Configure Git
         run: |
-          git config --global user.name 'Philipp Kief'
-          git config --global user.email 'PKief@users.noreply.github.com'
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
           git config --global push.followTags true
-          npm version ${{ env.VERSION_CHANGE }} -m "Release %s"
 
-      - name: Get metadata 🔍
+      - name: 🚀 Prepare release
+        run: bun run preversion
+
+      - name: 📜 Generate changelog and release notes
         run: |
-          VERSION=$(bun --print "(await import('./package.json')).version")
-          NAME=$(bun --print "(await import('./package.json')).name")
-          DISPLAY_NAME=$(bun --print "(await import('./package.json')).displayName")
-          echo VERSION=$VERSION >> $GITHUB_ENV
-          echo NAME=$NAME >> $GITHUB_ENV
-          echo DISPLAY_NAME=$DISPLAY_NAME >> $GITHUB_ENV
+          bunx changelogen --release --push
+          bunx changelogen github release --token ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build ⚒️
+      - name: 📝 Get metadata
+        run: |
+          VERSION=$(jq -r '.version' package.json)
+          NAME=$(jq -r '.name' package.json)
+          DISPLAY_NAME=$(jq -r '.displayName' package.json)
+
+          echo "VERSION=$VERSION"             >> $GITHUB_ENV
+          echo "NAME=$NAME"                   >> $GITHUB_ENV
+          echo "DISPLAY_NAME=$DISPLAY_NAME"   >> $GITHUB_ENV
+
+      - name: 🛠️ Build extension
         run: bunx @vscode/vsce package
 
-      - name: Push tags 📌
-        run: git push
-
-      - name: Release ${{ env.VERSION }} 🔆
-        uses: softprops/action-gh-release@a74c6b72af54cfa997e81df42d94703d6313a2d0 # v2.0.6
+      - name: 🔒 Attest artifacts
+        uses: actions/attest-build-provenance@7668571508540a607bdfd90a87a560489fe372eb # v2.1.0
+        # Read: https://docs.github.com/en/actions/security-guides/using-artifact-attestations-to-establish-provenance-for-builds
         with:
-          files: ${{ env.NAME }}-${{ env.VERSION }}.vsix
-          tag_name: v${{ env.VERSION }}
-          name: ${{ env.DISPLAY_NAME }} v${{ env.VERSION }}
-          generate_release_notes: true
+          subject-path: "${{ env.NAME }}-${{ env.VERSION }}.vsix"
 
-      - name: Publish to Open VSX Registry 🌐
+      - name: 🌐 Publish to Open VSX Registry
         uses: HaaLeo/publish-vscode-extension@28e2d3f5817fccf23c1f219eb0cecc903132d1a2 # v1.6.2
         with:
           pat: ${{ secrets.OPEN_VSX_TOKEN }}
           extensionFile: ${{ env.NAME }}-${{ env.VERSION }}.vsix
 
-      - name: Publish to Visual Studio Marketplace 🌐
+      - name: 🌐 Publish to Visual Studio Marketplace
         uses: HaaLeo/publish-vscode-extension@28e2d3f5817fccf23c1f219eb0cecc903132d1a2 # v1.6.2
         with:
           pat: ${{ secrets.VS_MARKETPLACE_TOKEN }}
           registryUrl: https://marketplace.visualstudio.com
           extensionFile: ${{ env.NAME }}-${{ env.VERSION }}.vsix
 
-      - name: Publish to NPM Registry 🌐
+      - name: 📦 Publish to NPM Registry
         run: |
           npm set "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}"
           npm publish --provenance --access public
+
+      - name: ⬆️ Upload VSIX to GitHub release
+        run: |
+          gh release upload v${VERSION} ${NAME}-${VERSION}.vsix
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

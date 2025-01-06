@@ -1,9 +1,9 @@
-name: Check SVG icon colors
+name: 🎨 Check SVG icon colors
 
 on:
   pull_request:
     paths:
-      - 'icons/*.svg'
+      - "icons/*.svg"
 
 permissions:
   contents: read
@@ -16,13 +16,16 @@ jobs:
       TARGET_BRANCH: ${{ github.event.pull_request.base.ref }}
 
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+      - name: 📥 Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
-          fetch-depth: 0
           persist-credentials: false
 
-      - name: Check colors 🎨
+      - name: 🔄 Fetch target branch
         run: |
-          svgFiles=$(git diff origin/${{ env.TARGET_BRANCH }} --diff-filter=ACMRTUX  --name-only | grep '.svg$')
-          npx svg-color-linter --colors material-colors.yml ${svgFiles}
+          git fetch origin $TARGET_BRANCH
+
+      - name: 🎨 Check colors
+        run: |
+          svgFiles=$(git diff origin/$TARGET_BRANCH --diff-filter=ACMRTUX  --name-only | grep '.svg$')
+          npx svg-color-linter --config material-colors.yml ${svgFiles}

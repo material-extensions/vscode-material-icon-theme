@@ -1,10 +1,12 @@
-import { get } from 'lodash-es';
+import { get } from '../helpers/object';
+import { logger } from '../logging/logger';
 import type { Translation } from '../models/i18n/translation';
 import { translation as langCs } from './translations/lang-cs';
 import { translation as langDe } from './translations/lang-de';
 import { translation as langEn } from './translations/lang-en';
 import { translation as langEs } from './translations/lang-es';
 import { translation as langFr } from './translations/lang-fr';
+import { translation as langId } from './translations/lang-id';
 import { translation as langJa } from './translations/lang-ja';
 import { translation as langKo } from './translations/lang-ko';
 import { translation as langNl } from './translations/lang-nl';
@@ -26,8 +28,9 @@ export const initTranslations = async (language: string) => {
   try {
     currentTranslation = await loadTranslation(language);
     fallbackTranslation = await loadTranslation('en');
+    logger.info('Translations initialized.');
   } catch (error) {
-    console.error(error);
+    logger.error(error);
   }
 };
 
@@ -53,6 +56,8 @@ const getTranslationObject = async (language: string): Promise<Translation> => {
       return langEs;
     case 'fr':
       return langFr;
+    case 'id':
+      return langId;
     case 'ja':
       return langJa;
     case 'ko':
