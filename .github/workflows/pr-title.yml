@@ -4,17 +4,24 @@ on:
   pull_request:
     types: [opened, edited]
 
+permissions:
+  pull-requests: write
+
 jobs:
   lint-pr-title:
     name: Check PR Title
+
     runs-on: ubuntu-latest
+
     if: ${{ github.event.action == 'opened' || github.event.changes.title != null }}
     steps:
       - name: 📥 Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           # Only fetch the config file from the repository
-          sparse-checkout: commitlint.config.js
+          sparse-checkout: |
+            commitlint.config.js
+            .github/actions/update-status-label.sh
 
       - name: 📦 Install dependencies
         run: npm install --global @commitlint/config-conventional commitlint
