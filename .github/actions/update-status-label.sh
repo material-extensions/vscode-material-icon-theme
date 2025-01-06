@@ -14,4 +14,7 @@ label="$3"
 action="add-label" && [ "$status" == "success" ] && action="remove-label"
 
 # Add or remove label
-gh pr edit "$pr_number" --${action} "$label"
+gh pr edit "$pr_number" --$action "$label"
+
+[ "$action" == "add-label" ] && echo "✅ Added \"$label\" label to PR #$pr_number"
+[ "$action" == "remove-label" ] && echo "✅ Removed \"$label\" label from PR #$pr_number"
