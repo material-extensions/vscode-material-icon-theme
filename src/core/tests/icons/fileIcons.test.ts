@@ -89,6 +89,9 @@ describe('file icons', () => {
     );
 
     expectedManifest.iconDefinitions = {
+      angular: {
+        iconPath: './../icons/angular.svg',
+      },
       file: {
         iconPath: './../icons/file.svg',
       },

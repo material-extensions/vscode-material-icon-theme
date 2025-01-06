@@ -8,7 +8,9 @@ import { iconFolderPath } from './constants';
 
 /**
  * Changes the opacity of all icons in the set.
- * @param config Icon JSON options which include the opacity value.
+ *
+ * @param opacity - The opacity value to be applied to the icons.
+ * @param filesAssociations - The file associations to be considered.
  */
 export const setIconOpacity = async (
   opacity: number,
@@ -45,27 +47,33 @@ export const setIconOpacity = async (
 
 /**
  * Validate the opacity value.
- * @param opacity Opacity value
+ *
+ * @param opacity - The opacity value to be validated.
+ * @returns True if the opacity value is valid, false otherwise.
  */
-export const validateOpacityValue = (opacity: number | undefined) => {
+export const validateOpacityValue = (opacity: number | undefined): boolean => {
   return opacity !== undefined && opacity <= 1 && opacity >= 0;
 };
 
 /**
  * Get the SVG root element.
- * @param svg SVG file as string.
+ *
+ * @param svg - The SVG file as a string.
+ * @returns The root element of the SVG.
  */
-const getSVGRootElement = (svg: string) => {
+const getSVGRootElement = (svg: string): string | undefined => {
   const result = new RegExp(/<svg[^>]*>/).exec(svg);
   return result?.[0];
 };
 
 /**
  * Add an opacity attribute to the SVG icon to control the opacity of the icon.
- * @param svgRoot Root element of the SVG icon.
- * @param opacity Opacity value.
+ *
+ * @param svgRoot - The root element of the SVG icon.
+ * @param opacity - The opacity value to be added.
+ * @returns The updated SVG root element with the opacity attribute.
  */
-const addOpacityAttribute = (svgRoot: string, opacity: number) => {
+const addOpacityAttribute = (svgRoot: string, opacity: number): string => {
   const pattern = new RegExp(/\sopacity="[\d.]+"/);
   // if the opacity attribute already exists
   if (pattern.test(svgRoot)) {
@@ -77,14 +85,22 @@ const addOpacityAttribute = (svgRoot: string, opacity: number) => {
 
 /**
  * Remove the opacity attribute of the SVG icon.
- * @param svgRoot Root element of the SVG icon.
+ *
+ * @param svgRoot - The root element of the SVG icon.
+ * @returns The updated SVG root element without the opacity attribute.
  */
-const removeOpacityAttribute = (svgRoot: string) => {
+const removeOpacityAttribute = (svgRoot: string): string => {
   const pattern = new RegExp(/\sopacity="[\d.]+"/);
   return svgRoot.replace(pattern, '');
 };
 
-/** Function to add or remove opacity from a given SVG string */
+/**
+ * Add or remove opacity from a given SVG string.
+ *
+ * @param svg - The SVG file as a string.
+ * @param opacity - The opacity value to be applied.
+ * @returns The updated SVG file with the applied opacity.
+ */
 export const updateSVGOpacity = (svg: string, opacity: number): string => {
   const svgRootElement = getSVGRootElement(svg);
   if (!svgRootElement) return svg;
@@ -98,7 +114,14 @@ export const updateSVGOpacity = (svg: string, opacity: number): string => {
   return svg.replace(/<svg[^>]*>/, updatedRootElement);
 };
 
-/** Function to read an SVG file, update its opacity, and write it back */
+/**
+ * Read an SVG file, update its opacity, and write it back.
+ *
+ * @param iconPath - The path to the icon file.
+ * @param iconFileName - The name of the icon file.
+ * @param opacity - The opacity value to be applied.
+ * @returns A promise that resolves when the file has been processed.
+ */
 const processSVGFile = async (
   iconPath: string,
   iconFileName: string,

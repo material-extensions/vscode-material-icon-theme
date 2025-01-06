@@ -1,0 +1,6 @@
+{
+  "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx}": ["bun run lint"],
+  "*.{js,ts}": ["bun run test"],
+  "icons/*.svg": ["bun run check", "bun run check-colors"],
+  "*.md": ["bun run markdownlint"]
+}
