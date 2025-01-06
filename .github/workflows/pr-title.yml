@@ -26,7 +26,7 @@ jobs:
         run: echo "$PR_TITLE" | npx commitlint --help-url $HELP_URL
 
       - name: 🏷️ Manage label based on PR title check result
-        continue-on-error: true
+        if: ${{ always() }}
         run: |
           if [ "${{ steps.lint-pr-title.outcome }}" == "failure" ]; then
             gh pr edit ${{ github.event.pull_request.number }} --add-label "invalid-title"
