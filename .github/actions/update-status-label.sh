@@ -2,7 +2,7 @@
 
 # Only for GitHub Actions
 # Parameters: <pr_number> <status> <label>
-# Example: ./update-status-label.sh 1234 success "ready-for-review"
+# Example: ./update-status-label.sh 1234 failure "invalid-colors"
 
 # Exit on error
 set -e
