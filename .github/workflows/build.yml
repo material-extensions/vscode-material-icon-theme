@@ -57,11 +57,6 @@ jobs:
 
       - name: 🏷️ Manage label based on build result
         if: ${{ always() }}
-        run: |
-          if [ "${{ steps.build.outcome }}" == "failure" ]; then
-            gh pr edit ${{ github.event.pull_request.number }} --add-label "invalid-build"
-          else
-            gh pr edit ${{ github.event.pull_request.number }} --remove-label "invalid-build"
-          fi
+        run: ../actions/add-status-label.sh ${{ github.event.pull_request.number }} ${{ steps.build.outputs.status }} "failed-build"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
