@@ -22,7 +22,6 @@ jobs:
           persist-credentials: false
           sparse-checkout-cone-mode: false
           sparse-checkout: |
-            .github/actions/update-status-label.sh
             material-colors.yml
             icons/
 
