@@ -20,7 +20,14 @@ jobs:
         run: npm install --global @commitlint/config-conventional commitlint
 
       - name: 🔍 Check PR title with commitlint
+        id: title-check
         env:
           PR_TITLE: ${{ github.event.pull_request.title }}
           HELP_URL: https://github.com/material-extensions/vscode-material-icon-theme/blob/main/CONTRIBUTING.md#conventional-pull-request-titles
         run: echo "$PR_TITLE" | npx commitlint --help-url $HELP_URL
+
+      - name: 🏷️ Manage label based on PR title check result
+        if: ${{ always() }}
+        run: ../actions/add-status-label.sh ${{ github.event.pull_request.number }} ${{ steps.title-check.outputs.status }} "invalid title"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
