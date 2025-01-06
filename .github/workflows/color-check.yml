@@ -33,7 +33,7 @@ jobs:
           npx svg-color-linter --config material-colors.yml ${svgFiles}
 
       - name: 🏷️ Manage label based on color check result
-        if: ${{ always() }}
+        if: always()
         run: .github/actions/update-status-label.sh ${{ github.event.pull_request.number }} ${{ steps.color-check.outcome }} "🎨 invalid colors"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
