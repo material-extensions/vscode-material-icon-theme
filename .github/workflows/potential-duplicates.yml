@@ -1,4 +1,4 @@
-name: "🔍 Potential Duplicates"
+name: "🧐 Potential Duplicates"
 on:
   issues:
     types: [opened, edited] # edited means the issue title changed
@@ -15,8 +15,8 @@ jobs:
           filter: ''
           # Exclude keywords in title before detecting.
           exclude: ''
-          # Label to set, when potential duplicates are detected.
-          label: potential-duplicate
+            # Label to set, when potential duplicates are detected.
+            label: "🧐 potential-duplicate"
           # Get issues with state to compare. Supported state: 'all', 'closed', 'open'.
           state: all
           # If similarity is higher than this threshold([0,1]), issue will be marked as duplicate.
