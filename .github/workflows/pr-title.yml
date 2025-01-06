@@ -24,3 +24,14 @@ jobs:
           PR_TITLE: ${{ github.event.pull_request.title }}
           HELP_URL: https://github.com/material-extensions/vscode-material-icon-theme/blob/main/CONTRIBUTING.md#conventional-pull-request-titles
         run: echo "$PR_TITLE" | npx commitlint --help-url $HELP_URL
+
+      - name: 🏷️ Manage label based on PR title check result
+        continue-on-error: true
+        run: |
+          if [ "${{ steps.lint-pr-title.outcome }}" == "failure" ]; then
+            gh pr edit ${{ github.event.pull_request.number }} --add-label "invalid-title"
+          else
+            gh pr edit ${{ github.event.pull_request.number }} --remove-label "invalid-title"
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
