@@ -56,7 +56,7 @@ jobs:
           bun run vscode:prepublish
 
       - name: 🏷️ Manage label based on build result
-        continue-on-error: true
+        if: ${{ always() }}
         run: |
           if [ "${{ steps.build.outcome }}" == "failure" ]; then
             gh pr edit ${{ github.event.pull_request.number }} --add-label "invalid-build"
