@@ -33,7 +33,7 @@ jobs:
           npx svg-color-linter --config material-colors.yml ${svgFiles}
 
       - name: 🏷️ Manage label based on color check result
-        continue-on-error: true
+        if: ${{ always() }}
         run: |
           if [ "${{ steps.color-check.outcome }}" == "failure" ]; then
             gh pr edit ${{ github.event.pull_request.number }} --add-label "invalid-colors"
