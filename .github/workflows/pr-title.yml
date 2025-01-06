@@ -4,10 +4,15 @@ on:
   pull_request:
     types: [opened, edited]
 
+permissions:
+  pull-requests: write
+
 jobs:
   lint-pr-title:
     name: Check PR Title
+
     runs-on: ubuntu-latest
+
     if: ${{ github.event.action == 'opened' || github.event.changes.title != null }}
     steps:
       - name: 📥 Checkout
