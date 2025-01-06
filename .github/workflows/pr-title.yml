@@ -33,6 +33,6 @@ jobs:
 
       - name: 🏷️ Manage label based on PR title check result
         if: ${{ always() }}
-        run: .github/actions/update-status-label.sh ${{ github.event.pull_request.number }} ${{ steps.title-check.outputs.status }} "🔤 invalid title"
+        run: .github/actions/update-status-label.sh ${{ github.event.pull_request.number }} ${{ steps.title-check.outcome }} "🔤 invalid title"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
