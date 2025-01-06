@@ -1,7 +1,7 @@
 name: "🔍 Potential Duplicates"
 on:
   issues:
-    types: [opened, edited] #edited means the issue title changed
+    types: [opened, edited] # edited means the issue title changed
 jobs:
   run:
     runs-on: ubuntu-latest
