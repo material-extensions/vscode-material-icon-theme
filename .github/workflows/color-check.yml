@@ -34,6 +34,6 @@ jobs:
 
       - name: 🏷️ Manage label based on color check result
         if: ${{ always() }}
-        run: ../actions/add-status-label.sh ${{ github.event.pull_request.number }} ${{ steps.color-check.outputs.status }} "invalid colors"
+        run: ../actions/add-status-label.sh ${{ github.event.pull_request.number }} ${{ steps.color-check.outputs.status }} "🎨 invalid colors"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
