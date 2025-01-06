@@ -169,4 +169,5 @@ export const languageIcons: LanguageIcon[] = [
   { icon: { name: 'slint' }, ids: ['slint'] },
   { icon: { name: 'luau' }, ids: ['luau'] },
   { icon: { name: 'hosts' }, ids: ['hosts'] },
+  { icon: { name: 'beancount' }, ids: ['beancount'] },
 ];
