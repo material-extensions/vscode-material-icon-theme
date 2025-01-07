@@ -22,6 +22,7 @@ jobs:
           # Only fetch the config file from the repository
           sparse-checkout-cone-mode: false
           sparse-checkout: |
+            .github/scrips/update-status-label.sh
             commitlint.config.js
 
       - name: 📦 Install dependencies
@@ -36,6 +37,6 @@ jobs:
 
       - name: 🏷️ Manage label based on PR title check result
         if: always()
-        run: .github/actions/update-status-label.sh ${{ github.event.pull_request.number }} ${{ steps.title-check.outcome }} "🔤 invalid title"
+        run: .github/scrips/update-status-label.sh ${{ github.event.pull_request.number }} ${{ steps.title-check.outcome }} "🔤 invalid title"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
