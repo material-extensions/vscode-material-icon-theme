@@ -19,3 +19,6 @@ gh pr edit "$pr_number" --$action "$label"
 
 [ "$action" == "add-label" ] && echo "✅ Added \"$label\" label to PR #$pr_number"
 [ "$action" == "remove-label" ] && echo "✅ Removed \"$label\" label from PR #$pr_number"
+
+# 0 = success
+exit 0
