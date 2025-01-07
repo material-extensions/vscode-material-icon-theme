@@ -55,7 +55,7 @@ jobs:
           bun run vscode:prepublish
 
       - name: 🏷️ Manage label based on build result
-        if: ${{ github.event_name == 'pull_request' }}
+        if: ${{ always() && github.event_name == 'pull_request' }}
         run: .github/scripts/update-status-label.sh ${{ github.event.pull_request.number }} ${{ steps.build.outcome }} "❌ failed build"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
