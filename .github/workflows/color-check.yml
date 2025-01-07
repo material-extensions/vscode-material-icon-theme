@@ -23,7 +23,7 @@ jobs:
         with:
           sparse-checkout-cone-mode: false
           sparse-checkout: |
-            .github/scrips/update-status-label.sh
+            .github/scripts/update-status-label.sh
             material-colors.yml
             icons/
 
@@ -39,6 +39,6 @@ jobs:
 
       - name: 🏷️ Manage label based on color check result
         if: always()
-        run: .github/scrips/update-status-label.sh ${{ github.event.pull_request.number }} ${{ steps.color-check.outcome }} "🎨 invalid colors"
+        run: .github/scripts/update-status-label.sh ${{ github.event.pull_request.number }} ${{ steps.color-check.outcome }} "🎨 invalid colors"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
