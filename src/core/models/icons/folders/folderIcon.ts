@@ -1,40 +1,22 @@
-import { type CloneOptions } from '../cloneOptions';
+import type { DefaultIcon } from '../defaultIcon';
 import type { IconPack } from '../iconPack';
+import type { LightSettingsWithCloneOptions } from '../lightSettings';
 
-export type FolderIcon = {
-  /**
-   * Name of the icon, e.g. `src`
-   */
-  name: string;
+export type FolderIcon = DefaultIcon &
+  LightSettingsWithCloneOptions & {
+    /**
+     * Define the folder names that should apply the icon.
+     * E.g. `['src', 'source']`
+     */
+    folderNames: string[];
 
-  /**
-   * Define the folder names that should apply the icon.
-   * E.g. `['src', 'source']`
-   */
-  folderNames: string[];
+    /**
+     * Define if the icon should be disabled.
+     */
+    disabled?: boolean;
 
-  /**
-   * Define if there is a light icon available.
-   */
-  light?: boolean;
-
-  /**
-   * Define if there is a high contrast icon available.
-   */
-  highContrast?: boolean;
-
-  /**
-   * Define if the icon should be disabled.
-   */
-  disabled?: boolean;
-
-  /**
-   * Defines a pack to which this icon belongs. A pack can be toggled and all icons inside this pack can be enabled or disabled together.
-   */
-  enabledFor?: IconPack[];
-
-  /**
-   * Options for generating an icon based on another icon.
-   */
-  clone?: CloneOptions;
-};
+    /**
+     * Defines a pack to which this icon belongs. A pack can be toggled and all icons inside this pack can be enabled or disabled together.
+     */
+    enabledFor?: IconPack[];
+  };

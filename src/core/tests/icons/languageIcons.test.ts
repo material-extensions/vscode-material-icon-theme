@@ -17,9 +17,9 @@ describe('language icons', () => {
 
   it('should configure icon definitions', () => {
     const languageIcons: LanguageIcon[] = [
-      { icon: { name: 'a' }, ids: ['a'] },
-      { icon: { name: 'b' }, ids: ['b'] },
-      { icon: { name: 'c' }, ids: ['c', 'd'] },
+      { name: 'a', ids: ['a'] },
+      { name: 'b', ids: ['b'] },
+      { name: 'c', ids: ['c', 'd'] },
     ];
     const manifest = createEmptyManifest();
     const iconDefinitions = loadLanguageIconDefinitions(
@@ -50,8 +50,8 @@ describe('language icons', () => {
 
   it('should disable icon definitions', () => {
     const languageIcons: LanguageIcon[] = [
-      { icon: { name: 'a' }, ids: ['a'] },
-      { icon: { name: 'c' }, ids: ['c', 'd'], disabled: true },
+      { name: 'a', ids: ['a'] },
+      { name: 'c', ids: ['c', 'd'], disabled: true },
     ];
     const manifest = createEmptyManifest();
     const iconDefinitions = loadLanguageIconDefinitions(
@@ -64,6 +64,9 @@ describe('language icons', () => {
       a: {
         iconPath: './../icons/a.svg',
       },
+      c: {
+        iconPath: './../icons/c.svg',
+      },
     };
     expectedManifest.languageIds = {
       a: 'a',
@@ -73,8 +76,8 @@ describe('language icons', () => {
 
   it('should disable icon packs', () => {
     const languageIcons: LanguageIcon[] = [
-      { icon: { name: 'a' }, ids: ['a'], enabledFor: [IconPack.Angular] },
-      { icon: { name: 'c' }, ids: ['c', 'd'], disabled: true },
+      { name: 'a', ids: ['a'], enabledFor: [IconPack.Angular] },
+      { name: 'c', ids: ['c', 'd'], disabled: true },
     ];
 
     config.activeIconPack = '';
@@ -85,15 +88,22 @@ describe('language icons', () => {
       manifest
     );
 
-    expectedManifest.iconDefinitions = {};
+    expectedManifest.iconDefinitions = {
+      a: {
+        iconPath: './../icons/a.svg',
+      },
+      c: {
+        iconPath: './../icons/c.svg',
+      },
+    };
     expectedManifest.languageIds = {};
     expect(iconDefinitions).toStrictEqual(expectedManifest);
   });
 
   it('should configure language icons for light and high contrast', () => {
     const languageIcons: LanguageIcon[] = [
-      { icon: { name: 'a', light: true, highContrast: true }, ids: ['a'] },
-      { icon: { name: 'b', light: true, highContrast: true }, ids: ['b'] },
+      { name: 'a', light: true, highContrast: true, ids: ['a'] },
+      { name: 'b', light: true, highContrast: true, ids: ['b'] },
     ];
 
     const manifest = createEmptyManifest();
@@ -150,15 +160,11 @@ describe('language icons', () => {
   });
 
   it('should configure custom icon associations', () => {
-    const languageIcons: LanguageIcon[] = [
-      { icon: { name: 'json' }, ids: ['a'] },
-    ];
+    const languageIcons: LanguageIcon[] = [{ name: 'json', ids: ['a'] }];
 
     const manifest = createEmptyManifest();
-    config.languages = {
-      associations: {
-        xml: 'json',
-      },
+    config.languages.associations = {
+      xml: 'json',
     };
     const iconDefinitions = loadLanguageIconDefinitions(
       languageIcons,

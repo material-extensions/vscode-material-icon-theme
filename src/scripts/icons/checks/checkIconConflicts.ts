@@ -98,12 +98,12 @@ const checkLanguageIcons = () => {
       .map((id) => id.toLowerCase())
       .forEach((id) => {
         if (!icons[id]) {
-          icons[id] = langIcon.icon.name;
+          icons[id] = langIcon.name;
         } else {
           if (!allConflicts.languageIcons[id]) {
-            allConflicts.languageIcons[id] = [icons[id], langIcon.icon.name];
+            allConflicts.languageIcons[id] = [icons[id], langIcon.name];
           } else {
-            allConflicts.languageIcons[id].push(langIcon.icon.name);
+            allConflicts.languageIcons[id].push(langIcon.name);
           }
         }
       });
