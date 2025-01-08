@@ -178,7 +178,4 @@ export const languageIcons: LanguageIcon[] = [
       color: 'lime-700',
     },
   },
-  { name: 'slint', ids: ['slint'] },
-  { name: 'luau', ids: ['luau'] },
-  { name: 'hosts', ids: ['hosts'] },
 ];
