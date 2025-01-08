@@ -883,6 +883,9 @@ describe('cloning: json config generation from user options', () => {
         folderNamesExpanded: {
           bar: `folder-foo-clone${openedFolder}${lightColorFileEnding}`,
         },
+        languageIds: {
+          json: 'foo-clone_light',
+        },
       },
       highContrast: { fileExtensions: {}, fileNames: {} },
     });
@@ -1148,6 +1151,10 @@ describe('cloning: json config generation from user options', () => {
         folderNamesExpanded: {
           'bar.angular': `folder-foo-angular-clone${openedFolder}${lightColorFileEnding}`,
           'bar.any': `folder-foo-any-clone${openedFolder}${lightColorFileEnding}`,
+        },
+        languageIds: {
+          'json.angular': 'foo-angular-clone_light',
+          'json.any': 'foo-any-clone_light',
         },
       },
       highContrast: { fileExtensions: {}, fileNames: {} },
