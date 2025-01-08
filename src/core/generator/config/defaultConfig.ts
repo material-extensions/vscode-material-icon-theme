@@ -21,7 +21,7 @@ export const getDefaultConfig = (): Required<Config> => ({
     associations: {},
     customClones: [],
   },
-  languages: { associations: {} },
+  languages: { associations: {}, customClones: [] },
   enableLogging: false,
   logLevel: 'info',
 });
