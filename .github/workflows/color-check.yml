@@ -11,7 +11,9 @@ permissions:
 jobs:
   color-check:
     name: SVG Color Check
+
     runs-on: ubuntu-latest
+
     env:
       TARGET_BRANCH: ${{ github.event.pull_request.base.ref }}
 

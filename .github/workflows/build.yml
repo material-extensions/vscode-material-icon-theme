@@ -29,10 +29,10 @@ permissions:
   contents: read
 
 jobs:
-  build:
-    runs-on: [ubuntu-latest]
+  build-and-test:
+    name: Build & Test Extension
 
-    name: Build Material Icon Theme
+    runs-on: ubuntu-latest
 
     steps:
       - name: 📥 Checkout

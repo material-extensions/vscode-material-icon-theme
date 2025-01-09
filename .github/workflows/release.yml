@@ -1,20 +1,16 @@
 name: 🚀 Release + Publish
 
-on:
-  workflow_dispatch:
+on: [workflow_dispatch]
 
 permissions:
   id-token: write
-  contents: read
+  contents: write
+  attestations: write
+
 
 jobs:
   release:
     runs-on: ubuntu-latest
-
-    permissions:
-      contents: write
-      id-token: write
-      attestations: write
 
     steps:
       - name: ✅ Use App Token for the Bot which is allowed to create releases
