@@ -7,7 +7,6 @@ permissions:
   contents: write
   attestations: write
 
-
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -55,11 +54,11 @@ jobs:
         run: |
           VERSION=$(jq -r '.version' package.json)
           NAME=$(jq -r '.name' package.json)
-          DISPLAY_NAME=$(jq -r '.displayName' package.json)
 
-          echo "VERSION=$VERSION"             >> $GITHUB_ENV
-          echo "NAME=$NAME"                   >> $GITHUB_ENV
-          echo "DISPLAY_NAME=$DISPLAY_NAME"   >> $GITHUB_ENV
+          EXTENSION_FILE="${NAME}-${VERSION}.vsix"
+
+          echo "VERSION=$VERSION"                  >> $GITHUB_ENV
+          echo "EXTENSION_FILE=$EXTENSION_FILE"    >> $GITHUB_ENV
 
       - name: 🛠️ Build extension
         run: bunx @vscode/vsce package
@@ -68,20 +67,20 @@ jobs:
         uses: actions/attest-build-provenance@7668571508540a607bdfd90a87a560489fe372eb # v2.1.0
         # Read: https://docs.github.com/en/actions/security-guides/using-artifact-attestations-to-establish-provenance-for-builds
         with:
-          subject-path: "${{ env.NAME }}-${{ env.VERSION }}.vsix"
+          subject-path: ${{ env.EXTENSION_FILE }}
 
       - name: 🌐 Publish to Open VSX Registry
         uses: HaaLeo/publish-vscode-extension@28e2d3f5817fccf23c1f219eb0cecc903132d1a2 # v1.6.2
         with:
           pat: ${{ secrets.OPEN_VSX_TOKEN }}
-          extensionFile: ${{ env.NAME }}-${{ env.VERSION }}.vsix
+          extensionFile: ${{ env.EXTENSION_FILE }}
 
       - name: 🌐 Publish to Visual Studio Marketplace
         uses: HaaLeo/publish-vscode-extension@28e2d3f5817fccf23c1f219eb0cecc903132d1a2 # v1.6.2
         with:
           pat: ${{ secrets.VS_MARKETPLACE_TOKEN }}
           registryUrl: https://marketplace.visualstudio.com
-          extensionFile: ${{ env.NAME }}-${{ env.VERSION }}.vsix
+          extensionFile: ${{ env.EXTENSION_FILE }}
 
       - name: 📦 Publish to NPM Registry
         run: |
@@ -90,6 +89,6 @@ jobs:
 
       - name: ⬆️ Upload VSIX to GitHub release
         run: |
-          gh release upload v${VERSION} ${NAME}-${VERSION}.vsix
+          gh release upload v$VERSION $EXTENSION_FILE
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
