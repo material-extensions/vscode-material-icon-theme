@@ -2,10 +2,8 @@
 # paths that are modified in the pull request.
 
 name: 🔖 Labeler
-on:
-  pull_request_target:
-    paths:
-      - '**'
+
+on: [pull_request_target]
 
 permissions:
   contents: read
