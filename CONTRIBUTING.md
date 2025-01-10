@@ -114,7 +114,6 @@ Of course, there is also the possibility to add existing SVGs. Mostly, however, 
 
 ### Known icon sources
 
-- [Material Design Icons](https://materialdesignicons.com/)
 - [Google Material Icons](https://fonts.google.com/icons)
 
 ### Use Material Design colors
