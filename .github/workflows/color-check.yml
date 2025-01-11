@@ -7,11 +7,15 @@ on:
 
 permissions:
   contents: read
+  pull-requests: write
+  issues: write # Update issue labels
 
 jobs:
   color-check:
     name: SVG Color Check
+
     runs-on: ubuntu-latest
+
     env:
       TARGET_BRANCH: ${{ github.event.pull_request.base.ref }}
 
@@ -19,9 +23,9 @@ jobs:
       - name: 📥 Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
-          persist-credentials: false
           sparse-checkout-cone-mode: false
           sparse-checkout: |
+            .github/scripts/update-status-label.sh
             material-colors.yml
             icons/
 
@@ -30,6 +34,13 @@ jobs:
           git fetch origin $TARGET_BRANCH
 
       - name: 🎨 Check colors
+        id: color-check
         run: |
           svgFiles=$(git diff origin/$TARGET_BRANCH --diff-filter=ACMRTUX  --name-only | grep '.svg$')
           npx svg-color-linter --config material-colors.yml ${svgFiles}
+
+      - name: 🏷️ Manage label based on color check result
+        if: always()
+        run: .github/scripts/update-status-label.sh ${{ github.event.pull_request.number }} ${{ steps.color-check.outcome }} "🎨 invalid colors"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

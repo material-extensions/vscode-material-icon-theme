@@ -214,6 +214,29 @@ With the following configuration you can customize the language icons. It is als
 
 You can see the available icon names in the overview above. See "[Known language identifiers](https://code.visualstudio.com/docs/languages/identifiers#_known-language-identifiers)" in the VS Code documentation for a list of permitted values for `languageId`.
 
+#### Custom language icon clones
+
+It's also possible to clone existing language icons and change their colors to create new icons that can be associated with language ids. The following example shows how to clone the `autohotkey` language icon:
+
+```json
+"material-icon-theme.languages.customClones": [
+  {
+    "name": "ahk-clone",
+    "base": "autohotkey",
+    "color": "blue-400",
+    "lightColor": "grey-600",
+    "ids": ["ahk2"]
+  }
+]
+```
+
+This will create a new icon called `ahk-clone` which is associated with the language id `ahk2` respectively. The `base` property defines the icon that should be cloned (in this case the `autohotkey` language icon). The `color` property defines the color of the new icon. The `lightColor` property is optional and defines the color of the icon when Visual Studio Code is running with a light color theme. The `ids` property defines the language ids that should be associated with the new icon.
+
+![cloned language icons](https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/how-tos/cloned-language-icons-example.png)
+
+- Although you can use any `#RRGGBB` color for the `color` and `lightColor` properties, if you want to stick with colors from the material palette, you can check the full list of allowed aliases [here](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/core/generator/clones/utils/color/materialPalette.ts).
+- You can check the full list of available icons to be used as the `base` [here](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/core/icons/fileIcons.ts).
+
 ## Commands
 
 Press `Ctrl-Shift-P` to open the command palette and type `Material Icons`.

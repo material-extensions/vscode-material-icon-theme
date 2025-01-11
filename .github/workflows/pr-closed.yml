@@ -1,20 +1,19 @@
 name: 🎉 PR closed
 
 on:
-  pull_request_target:
+  pull_request:
     types:
       - closed
 
 permissions:
   contents: read
+  pull-requests: write
 
 jobs:
-  thank_you:
+  thank-you:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.merged == true
 
-    permissions:
-      pull-requests: write
+    if: github.event.pull_request.merged == true
 
     steps:
       - name: 🙏 Post Thank You Comment
@@ -25,7 +24,8 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `## Merge Successful
+              body: `
+              ## Merge Successful
 
               Thanks for your contribution! 🎉
 

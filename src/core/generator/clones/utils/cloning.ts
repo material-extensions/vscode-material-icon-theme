@@ -161,6 +161,7 @@ export const createCloneConfig = () => {
     fileNames: {},
     folderNames: {},
     folderNamesExpanded: {},
+    languageIds: {},
   };
 
   return manifest;
