@@ -1,10 +1,15 @@
 name: "🧐 Potential Duplicates"
+
 on:
   issues:
     types: [opened, edited] # edited means the issue title changed
+
 jobs:
   run:
+    name: Search Potential Duplicates
+
     runs-on: ubuntu-latest
+
     steps:
       - uses: wow-actions/potential-duplicates@4d4ea0352e0383859279938e255179dd1dbb67b5 # v1.1.0
         with:

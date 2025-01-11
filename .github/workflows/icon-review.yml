@@ -7,16 +7,16 @@ on:
 
 permissions:
   contents: read
+  pull-requests: write
 
 jobs:
   icon-review:
     name: Icon Review
+
     runs-on: ubuntu-latest
+
     env:
       TARGET_BRANCH: ${{ github.event.pull_request.base.ref }}
-
-    permissions:
-      pull-requests: write
 
     steps:
       - name: 📥 Checkout Fork
