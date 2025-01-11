@@ -26,7 +26,6 @@ jobs:
           repository: ${{ github.event.pull_request.head.repo.full_name }}
           fetch-depth: 0
           path: fork
-          persist-credentials: false
           sparse-checkout-cone-mode: false
           sparse-checkout: |
             icons/
@@ -36,7 +35,6 @@ jobs:
         with:
           fetch-depth: 0
           path: main
-          persist-credentials: false
           sparse-checkout-cone-mode: false
           sparse-checkout: |
             .bun-version
