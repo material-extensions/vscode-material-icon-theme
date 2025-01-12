@@ -96,7 +96,8 @@ export const generateConfiguredClones = async (
   for (const icon of iconsToClone) {
     const clones = getCloneData(icon, manifest, '', '', cloneIconExtension);
     if (!clones) {
-      return;
+      // no clones to be created and continue with the next icon
+      continue;
     }
 
     for (const clone of clones) {

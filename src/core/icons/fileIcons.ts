@@ -313,6 +313,7 @@ export const fileIcons: FileIcons = {
         '.clang-format-ignore',
         '.clang-tidy',
         '.conf',
+        'compile_flags.txt',
       ],
     },
     {
@@ -491,6 +492,10 @@ export const fileIcons: FileIcons = {
         'pyproject.toml',
         'py.typed',
       ],
+    },
+    {
+      name: 'ruff',
+      fileNames: ['ruff.toml', '.ruff.toml'],
     },
     { name: 'url', fileExtensions: ['url'] },
     {
@@ -2106,6 +2111,14 @@ export const fileIcons: FileIcons = {
         '.stryker.conf.js',
         '.stryker.conf.cjs',
         '.stryker.conf.mjs',
+        'stryker.config.json',
+        'stryker.config.js',
+        'stryker.config.mjs',
+        'stryker.config.cjs',
+        '.stryker.config.json',
+        '.stryker.config.js',
+        '.stryker.config.mjs',
+        '.stryker.config.cjs',
       ],
     },
     { name: 'denizenscript', fileExtensions: ['dsc'] },
@@ -2678,6 +2691,10 @@ export const fileIcons: FileIcons = {
       ],
     },
     {
+      name: 'phpstan',
+      fileNames: ['phpstan.neon', 'phpneon.neon.dist'],
+    },
+    {
       name: 'screwdriver',
       fileNames: ['screwdriver.yaml', 'screwdriver.yml'],
     },
@@ -2910,6 +2927,10 @@ export const fileIcons: FileIcons = {
     {
       name: 'citation',
       fileNames: ['citation.cff'],
+    },
+    {
+      name: 'xmake',
+      fileNames: ['xmake.lua', 'xmake'],
     },
     {
       name: 'subtitles',

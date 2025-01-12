@@ -122,6 +122,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-github', folderNames: ['github'] },
       { name: 'folder-gitea', folderNames: ['gitea'] },
       { name: 'folder-gitlab', folderNames: ['gitlab'] },
+      { name: 'folder-forgejo', folderNames: ['forgejo'] },
       { name: 'folder-vscode', folderNames: ['vscode', 'vscode-test'] },
       {
         name: 'folder-views',
@@ -257,39 +258,63 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['docker', 'dockerfiles', 'dockerhub'],
       },
       {
-        name: 'folder-ngrx-effects',
-        folderNames: ['effects'],
-        enabledFor: [IconPack.Ngrx],
-      },
-      {
         name: 'folder-ngrx-store',
         folderNames: ['store'],
         enabledFor: [IconPack.Ngrx],
       },
       {
+        name: 'folder-ngrx-effects',
+        folderNames: ['effects'],
+        enabledFor: [IconPack.Ngrx],
+        clone: {
+          base: 'folder-ngrx-store',
+          color: 'cyan-500',
+        },
+      },
+      {
         name: 'folder-ngrx-state',
         folderNames: ['states', 'state'],
         enabledFor: [IconPack.Ngrx],
+        clone: {
+          base: 'folder-ngrx-store',
+          color: 'lime-800',
+        },
       },
       {
         name: 'folder-ngrx-reducer',
         folderNames: ['reducers', 'reducer'],
         enabledFor: [IconPack.Ngrx],
+        clone: {
+          base: 'folder-ngrx-store',
+          color: 'red-400',
+        },
       },
       {
         name: 'folder-ngrx-actions',
         folderNames: ['actions'],
         enabledFor: [IconPack.Ngrx],
+        clone: {
+          base: 'folder-ngrx-store',
+          color: 'purple-400',
+        },
       },
       {
         name: 'folder-ngrx-entities',
         folderNames: ['entities'],
         enabledFor: [IconPack.Ngrx],
+        clone: {
+          base: 'folder-ngrx-store',
+          color: 'yellow-700',
+        },
       },
       {
         name: 'folder-ngrx-selectors',
         folderNames: ['selectors'],
         enabledFor: [IconPack.Ngrx],
+        clone: {
+          base: 'folder-ngrx-store',
+          color: 'deep-orange-A200',
+        },
       },
       {
         name: 'folder-redux-reducer',
@@ -300,16 +325,28 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-redux-actions',
         folderNames: ['actions'],
         enabledFor: [IconPack.Redux],
+        clone: {
+          base: 'folder-redux-reducer',
+          color: 'purple-400',
+        },
       },
       {
         name: 'folder-redux-selector',
         folderNames: ['selectors', 'selector'],
         enabledFor: [IconPack.Redux],
+        clone: {
+          base: 'folder-redux-reducer',
+          color: 'deep-orange-A200',
+        },
       },
       {
         name: 'folder-redux-store',
         folderNames: ['store', 'stores'],
         enabledFor: [IconPack.Redux],
+        clone: {
+          base: 'folder-redux-reducer',
+          color: 'light-green-500',
+        },
       },
       {
         name: 'folder-react-components',
@@ -793,7 +830,10 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-guard', folderNames: ['guard', 'guards'] },
       { name: 'folder-prisma', folderNames: ['prisma', 'prisma/schema'] },
-      { name: 'folder-pipe', folderNames: ['pipe', 'pipes'] },
+      {
+        name: 'folder-pipe',
+        folderNames: ['pipe', 'pipes', 'pipeline', 'pipelines'],
+      },
       { name: 'folder-svg', folderNames: ['svg', 'svgs'] },
       {
         name: 'folder-vuex-store',

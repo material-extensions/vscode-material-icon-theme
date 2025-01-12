@@ -10,7 +10,7 @@
     "attributePosition": "auto"
   },
   "files": {
-    "ignore": ["dist", "node_modules", "package.json", "bun.lockb"]
+    "ignore": ["dist", "node_modules", "package.json", "bun.lock"]
   },
   "organizeImports": { "enabled": true },
   "linter": {
