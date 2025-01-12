@@ -26,7 +26,13 @@ export const applyConfigToIcons = async (config: Config, oldConfig: Config) => {
       config.saturation
     );
   }
-
+  if (config.rootFolders.color !== oldConfig.rootFolders.color) {
+    await generateFolderIcons(
+      config.rootFolders.color,
+      config.opacity,
+      config.saturation
+    );
+  }
   if (config.opacity !== oldConfig.opacity) {
     await setIconOpacity(config.opacity, config.files.associations);
   }

@@ -14,8 +14,14 @@ import type { FolderTheme } from '../../models/icons/folders/folderTheme';
 import type { LanguageIcon } from '../../models/icons/languages/languageIdentifier';
 import type { Manifest } from '../../models/manifest';
 import { cloneIconExtension, clonesFolder } from '../constants';
-import { Variant, getCloneData, isFolder, isLanguage } from './utils/cloneData';
-import { cloneIcon, createCloneConfig } from './utils/cloning';
+import {
+  type CloneData,
+  Variant,
+  getCloneData,
+  isFolder,
+  isLanguage,
+} from './utils/cloneData';
+import { cloneIcon, createCloneManifest } from './utils/cloning';
 
 /**
  * Creates custom icons by cloning already existing icons and changing
@@ -76,11 +82,15 @@ export const generateConfiguredFolderIconClones = async (
   const iconsToClone = iconsList.reduce((acc, theme) => {
     const icons = theme.icons?.filter((icon) => icon.clone) ?? [];
     return acc.concat(
-      icons.map((icon) => ({
-        folderNames: icon.folderNames,
-        name: icon.name,
-        ...icon.clone!,
-      }))
+      icons.map(
+        (icon) =>
+          ({
+            folderNames: icon.folderNames,
+            rootFolderNames: icon.rootFolderNames,
+            name: icon.name,
+            ...icon.clone!,
+          }) as FolderIconClone
+      )
     );
   }, [] as FolderIconClone[]);
 
@@ -151,23 +161,23 @@ export const hasCustomClones = (config: Config): boolean => {
 
 /**
  * Generates a clone of an icon.
- * @param cloneOpts - Options and configurations on how to clone the icon.
+ * @param iconClone - The clone icon configuration.
  * @param manifest - Global icon configuration (used to get the base icon).
  * @param hash - Current hash being applied to the icons.
  * @returns A promise that resolves to a partial icon configuration for the new icon.
  */
 const createIconClone = async (
-  cloneOpts: FolderIconClone | FileIconClone | LanguageIconClone,
+  iconClone: FolderIconClone | FileIconClone | LanguageIconClone,
   manifest: Manifest,
   hash: string
 ): Promise<Manifest> => {
   // get clones to be created
-  const clones = getCloneData(cloneOpts, manifest, clonesFolder, hash);
+  const clones = getCloneData(iconClone, manifest, clonesFolder, hash);
   if (!clones) {
     return manifest;
   }
 
-  const clonesConfig = createCloneConfig();
+  const clonesManifest = createCloneManifest();
 
   for (const clone of clones) {
     try {
@@ -183,57 +193,132 @@ const createIconClone = async (
       }
 
       // sets the icon path for the cloned icon in the configuration
-      clonesConfig.iconDefinitions![clone.name] = {
+      clonesManifest.iconDefinitions![clone.name] = {
         iconPath: clone.inConfigPath,
       };
 
-      if (isFolder(cloneOpts)) {
-        // sets the associated folder names for the cloned icon
-        cloneOpts.folderNames?.forEach((folderName) => {
-          const folderNamesCfg =
-            clone.variant === Variant.Base
-              ? clonesConfig.folderNames!
-              : clone.variant === Variant.Open
-                ? clonesConfig.folderNamesExpanded!
-                : clone.variant === Variant.Light
-                  ? clonesConfig.light!.folderNames!
-                  : clonesConfig.light!.folderNamesExpanded!;
-          folderNamesCfg[folderName] = clone.name;
-        });
-      } else if (isLanguage(cloneOpts)) {
-        // sets the associated language ids for the cloned icon
-        cloneOpts.ids?.forEach((langId) => {
-          const languageIdCfg =
-            clone.variant === Variant.Base
-              ? clonesConfig.languageIds!
-              : clonesConfig.light!.languageIds!;
-
-          languageIdCfg[langId] = clone.name;
-        });
+      if (isFolder(iconClone)) {
+        assignFolderNames(
+          iconClone.folderNames,
+          clone.variant,
+          clonesManifest,
+          clone.name,
+          false
+        );
+        assignFolderNames(
+          iconClone.rootFolderNames,
+          clone.variant,
+          clonesManifest,
+          clone.name,
+          true
+        );
+      } else if (isLanguage(iconClone)) {
+        assignLanguageIds(iconClone, clone, clonesManifest);
       } else {
-        // set associations for the cloned file icon in the configuration
-        cloneOpts.fileNames?.forEach((fileName) => {
-          const fileNamesCfg =
-            clone.variant === Variant.Base
-              ? clonesConfig.fileNames!
-              : clonesConfig.light!.fileNames!;
-
-          fileNamesCfg[fileName] = clone.name;
-        });
-
-        cloneOpts.fileExtensions?.forEach((fileExtension) => {
-          const fileExtensionsCfg =
-            clone.variant === Variant.Base
-              ? clonesConfig.fileExtensions!
-              : clonesConfig.light!.fileExtensions!;
-
-          fileExtensionsCfg[fileExtension] = clone.name;
-        });
+        assignFileNamesAndFileExtensions(iconClone, clone, clonesManifest);
       }
     } catch (error) {
       logger.error(error);
     }
   }
 
-  return clonesConfig;
+  return clonesManifest;
 };
+
+/**
+ * Sets the folder configuration based on the clone variant.
+ *
+ * @param variant - The variant of the clone (Base, Open, Light, etc.).
+ * @param manifest - The clones configuration object.
+ * @param isRoot - Whether the configuration is for root folder names.
+ * @returns The appropriate configuration object for the folder names.
+ */
+const getFolderConfig = (
+  variant: Variant,
+  manifest: Manifest,
+  isRoot: boolean
+) => {
+  if (variant === Variant.Base) {
+    return isRoot ? manifest.rootFolderNames! : manifest.folderNames!;
+  }
+  if (variant === Variant.Open) {
+    return isRoot
+      ? manifest.rootFolderNamesExpanded!
+      : manifest.folderNamesExpanded!;
+  }
+  if (variant === Variant.Light) {
+    return isRoot
+      ? manifest.light!.rootFolderNames!
+      : manifest.light!.folderNames!;
+  }
+  return isRoot
+    ? manifest.light!.rootFolderNamesExpanded!
+    : manifest.light!.folderNamesExpanded!;
+};
+
+/**
+ * Assigns folder names to the appropriate configuration based on the clone variant.
+ *
+ * @param folderNames - The folder names to assign.
+ * @param variant - The variant of the clone.
+ * @param manifest - The clones configuration object.
+ * @param cloneName - The name of the clone.
+ * @param isRootFolder - Whether the names are for root folders.
+ */
+const assignFolderNames = (
+  folderNames: string[] | undefined,
+  variant: Variant,
+  manifest: Manifest,
+  cloneName: string,
+  isRootFolder: boolean
+) => {
+  const folderConfig = getFolderConfig(variant, manifest, isRootFolder);
+  folderNames?.forEach((name) => {
+    folderConfig[name] = cloneName;
+  });
+};
+
+/**
+ * Assigns language ids to the appropriate configuration based on the clone variant.
+ *
+ * @param iconClone - The clone options.
+ * @param clone - The clone data.
+ * @param clonesManifest - The clones manifest.
+ */
+const assignLanguageIds = (
+  iconClone: LanguageIconClone,
+  clone: CloneData,
+  clonesManifest: Manifest
+) => {
+  iconClone.ids?.forEach((langId) => {
+    const languageIdCfg =
+      clone.variant === Variant.Base
+        ? clonesManifest.languageIds!
+        : clonesManifest.light!.languageIds!;
+
+    languageIdCfg[langId] = clone.name;
+  });
+};
+function assignFileNamesAndFileExtensions(
+  iconClone: FileIconClone,
+  clone: CloneData,
+  clonesManifest: Manifest
+) {
+  iconClone.fileNames?.forEach((fileName) => {
+    const fileNamesCfg =
+      clone.variant === Variant.Base
+        ? clonesManifest.fileNames!
+        : clonesManifest.light!.fileNames!;
+
+    fileNamesCfg[fileName] = clone.name;
+  });
+
+  iconClone.fileExtensions?.forEach((fileExtension) => {
+    const fileExtensionsCfg =
+      clone.variant === Variant.Base
+        ? clonesManifest.fileExtensions!
+        : clonesManifest.light!.fileExtensions!;
+
+    fileExtensionsCfg[fileExtension] = clone.name;
+  });
+}

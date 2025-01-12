@@ -183,18 +183,20 @@ It's also possible to clone existing folder icons and change their colors to cre
     "base": "admin",
     "color": "light-green-500",
     "lightColor": "light-green-700",
-    "folderNames": ["users"]
+    "folderNames": ["users"],
+    "rootFolderNames": ["users"]
   },
   {
     "name": "roles-admin",
     "base": "admin",
     "color": "purple-400",
-    "folderNames": ["roles"]
+    "folderNames": ["roles"],
+    "rootFolderNames": ["users"]
   }
 ]
 ```
 
-This will create two new icons called `users-admin` and `roles-admin` that are associated with the folder names `users` and `roles` respectively. The `base` property defines the icon that should be cloned (in this case the `admin` folder icon). The `color` property defines the color of the new icon. The `lightColor` property is optional and defines the color of the icon when Visual Studio Code is running with a light color theme. The `folderNames` property defines the folder names that should be associated with the new icon.
+This will create two new icons called `users-admin` and `roles-admin` that are associated with the folder names `users` and `roles` respectively. The `base` property defines the icon that should be cloned (in this case the `admin` folder icon). The `color` property defines the color of the new icon. The `lightColor` property is optional and defines the color of the icon when Visual Studio Code is running with a light color theme. The `folderNames` property defines the folder names that should be associated with the new icon. The `rootFolderNames` property defines the root folder names that should be associated with the new icon.
 
 ![cloned folder icons](https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/how-tos/cloned-folder-icons-example.png)
 

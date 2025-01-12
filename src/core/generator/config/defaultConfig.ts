@@ -12,6 +12,10 @@ export const getDefaultConfig = (): Required<Config> => ({
     associations: {},
     customClones: [],
   },
+  rootFolders: {
+    color: '#90a4ae',
+    associations: {},
+  },
   activeIconPack: 'angular',
   hidesExplorerArrows: false,
   opacity: 1,

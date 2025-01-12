@@ -17,6 +17,10 @@ export type Config = {
     associations: IconAssociations;
     customClones: FolderIconClone[];
   };
+  rootFolders: {
+    color: string;
+    associations: IconAssociations;
+  };
   files: {
     color: string;
     associations: IconAssociations;
@@ -44,4 +48,5 @@ export type FileIconClone = CustomClone &
 
 export type LanguageIconClone = CustomClone & Pick<LanguageIcon, 'ids'>;
 
-export type FolderIconClone = CustomClone & Pick<FolderIcon, 'folderNames'>;
+export type FolderIconClone = CustomClone &
+  Pick<FolderIcon, 'folderNames' | 'rootFolderNames'>;

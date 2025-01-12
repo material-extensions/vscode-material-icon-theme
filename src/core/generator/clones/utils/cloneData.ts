@@ -42,7 +42,10 @@ export type CloneData = IconData & {
 
 /** checks if a `CustomClone` configuration is a `FolderIconClone` */
 export const isFolder = (clone: CustomClone): clone is FolderIconClone => {
-  return clone && (clone as FolderIconClone).folderNames !== undefined;
+  return (
+    (clone as FolderIconClone)?.folderNames !== undefined ||
+    (clone as FolderIconClone)?.rootFolderNames !== undefined
+  );
 };
 
 /** checks if a `CustomClone` configuration is a `LanguageIconClone` */
