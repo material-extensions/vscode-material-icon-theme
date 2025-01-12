@@ -1,6 +1,9 @@
 import type { Config } from '../models/icons/config';
 import { generateFileIcons } from './fileGenerator';
-import { generateFolderIcons } from './folderGenerator';
+import {
+  generateFolderIcons,
+  generateRootFolderIcons,
+} from './folderGenerator';
 import { setIconOpacity } from './iconOpacity';
 import { setIconSaturation } from './iconSaturation';
 
@@ -27,7 +30,7 @@ export const applyConfigToIcons = async (config: Config, oldConfig: Config) => {
     );
   }
   if (config.rootFolders.color !== oldConfig.rootFolders.color) {
-    await generateFolderIcons(
+    await generateRootFolderIcons(
       config.rootFolders.color,
       config.opacity,
       config.saturation
