@@ -1055,6 +1055,10 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-favicon',
         folderNames: ['favicon', 'favicons'],
       },
+      {
+        name: 'folder-bloc',
+        folderNames: ['bloc', 'cubit', 'blocs', 'cubits'],
+      },
       { name: 'folder-lefthook', folderNames: ['lefthook', 'lefthook-local'] },
       {
         name: 'folder-powershell',
