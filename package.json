@@ -31,13 +31,13 @@
   },
   "publisher": "PKief",
   "author": {
-    "name": "Philipp Kief",
-    "email": "philipp.kief@gmx.de",
-    "url": "https://pkief.com"
+    "name": "Material Extensions",
+    "email": "material-icons-extensions@googlegroups.com",
+    "url": "https://github.com/material-extensions"
   },
-  "funding": "https://github.com/sponsors/PKief",
+  "funding": "https://github.com/sponsors/material-extensions",
   "sponsor": {
-    "url": "https://github.com/sponsors/PKief"
+    "url": "https://github.com/sponsors/material-extensions"
   },
   "engines": {
     "vscode": "^1.55.0"
