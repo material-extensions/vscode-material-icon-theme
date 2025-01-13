@@ -10,8 +10,6 @@ permissions:
 
 jobs:
   lint-pr-title:
-    name: Check PR Title
-
     if: ${{ github.event.action == 'opened' || github.event.changes.title != null }}
 
     uses: material-extensions/workflows/.github/workflows/pr-title.yml@main

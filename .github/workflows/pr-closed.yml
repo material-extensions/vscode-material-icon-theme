@@ -11,7 +11,6 @@ permissions:
 
 jobs:
   thank-you:
-
     if: github.event.pull_request.merged == true
 
     uses: material-extensions/workflows/.github/workflows/pr-closed.yml@main
