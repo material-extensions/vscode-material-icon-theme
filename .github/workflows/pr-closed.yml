@@ -17,17 +17,11 @@ jobs:
 
     steps:
       - name: 🙏 Post Thank You Comment
-        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
+        uses: material-extensions/workflows/.github/workflows/pr-closed.yml@main
         with:
-          script: |
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: `
-              ## Merge Successful
+          comment: |
+            ## Merge Successful
 
-              Thanks for your contribution! 🎉
+            Thanks for your contribution! 🎉
 
-              The changes will be part of the upcoming update on the Marketplace.`
-            })
+            The changes will be part of the upcoming update on the Marketplace.`
