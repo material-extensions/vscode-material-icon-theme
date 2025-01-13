@@ -12,12 +12,8 @@ jobs:
   lint-pr-title:
     name: Check PR Title
 
-    runs-on: ubuntu-latest
-
     if: ${{ github.event.action == 'opened' || github.event.changes.title != null }}
 
-    steps:
-      - name: 🔍 Check PR title
-        uses: material-extensions/workflows/.github/workflows/pr-title.yml@main
-        with:
-          commitlint-help-url: https://github.com/material-extensions/vscode-material-icon-theme/blob/main/CONTRIBUTING.md#conventional-pull-request-titles
+    uses: material-extensions/workflows/.github/workflows/pr-title.yml@main
+    with:
+      commitlint-help-url: https://github.com/material-extensions/vscode-material-icon-theme/blob/main/CONTRIBUTING.md#conventional-pull-request-titles
