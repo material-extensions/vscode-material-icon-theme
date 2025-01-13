@@ -56,7 +56,7 @@ jobs:
 
       - name: 🏷️ Manage label based on build result
         if: ${{ always() && github.event_name == 'pull_request' }}
-        uses: okineadev/add-labels@v1
+        uses: okineadev/add-labels@v1.0.4
         with:
           labels: "❌ failed build"
           action: ${{ steps.build.outcome == 'failure' && 'add' || 'remove' }}
