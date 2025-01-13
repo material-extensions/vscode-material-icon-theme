@@ -22,7 +22,6 @@ icons/clones
 
 # Ignore specific HTML files in scripts directories
 src/scripts/preview/*.html
-src/scripts/contributors/*.html
 
 # Ignore cache directory
 .cache
