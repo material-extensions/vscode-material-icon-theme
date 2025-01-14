@@ -1,6 +1,12 @@
 name: 🚀 Release + Publish
 
-on: [workflow_dispatch]
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to release (e.g. 1.2.3)'
+        type: string
+        required: false
 
 permissions:
   id-token: write
@@ -34,7 +40,6 @@ jobs:
       - name: 📦 Install dependencies
         run: |
           bun install --frozen-lockfile
-          bun add -g npm
 
       - name: 🔧 Configure Git
         run: |
@@ -46,9 +51,13 @@ jobs:
         run: bun run preversion
 
       - name: 📜 Generate changelog and release notes
+        env:
+          RELEASE_VERSION: ${{ github.event.inputs.version }}
+          # Don't run husky on git commit
+          HUSKY: 0
         run: |
-          HUSKY=0 bunx changelogen --release --push
-          HUSKY=0 bunx changelogen github release --token ${{ secrets.GITHUB_TOKEN }}
+          bunx changelogen --release --push -r $RELEASE_VERSION
+          bunx changelogen github release --token ${{ secrets.GITHUB_TOKEN }} -r $RELEASE_VERSION
 
       - name: 📝 Get metadata
         run: |
