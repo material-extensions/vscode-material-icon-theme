@@ -40,7 +40,7 @@ jobs:
 
       - name: 🏷️ Manage label based on color check result
         if: always()
-        uses: okineadev/add-labels@v1.0.4
+        uses: material-extensions/add-labels@v1.0.4
         with:
           labels: "🎨 invalid colors"
           action: ${{ steps.color-check.outcome == 'failure' && 'add' || 'remove' }}
