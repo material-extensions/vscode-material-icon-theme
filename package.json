@@ -440,6 +440,8 @@
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@commitlint/config-conventional": "^19.5.0",
+    "@octokit/rest": "^21.1.0",
+    "@octokit/types": "^13.7.0",
     "@softarc/sheriff-core": "^0.18.0",
     "@types/chroma-js": "^2.4.4",
     "@types/puppeteer": "^7.0.0",
@@ -447,6 +449,7 @@
     "bun-types": "^1.1.20",
     "changelogen": "^0.5.7",
     "commitlint": "^19.5.0",
+    "contributors-table": "^1.0.1",
     "esbuild": "^0.24.0",
     "husky": "^9.1.6",
     "lint-staged": "^15.2.10",
