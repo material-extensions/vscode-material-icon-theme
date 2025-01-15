@@ -258,7 +258,8 @@ Press `Ctrl-Shift-P` to open the command palette and type `Material Icons`.
 
 ## Icon sources
 
-- [Material Design Icons](https://materialdesignicons.com/)
+- [Material Design Icons](https://pictogrammers.com/library/mdi/)
+- [Material Symbols](https://fonts.google.com/icons)
 
 ## Contributors
 
