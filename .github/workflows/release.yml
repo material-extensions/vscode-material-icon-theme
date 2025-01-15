@@ -1,12 +1,6 @@
 name: 🚀 Release + Publish
 
-on:
-  workflow_dispatch:
-    inputs:
-      version:
-        description: 'Version to release (e.g. 1.2.3)'
-        type: string
-        required: false
+on: [workflow_dispatch]
 
 permissions:
   id-token: write
@@ -52,12 +46,11 @@ jobs:
 
       - name: 📜 Generate changelog and release notes
         env:
-          RELEASE_VERSION: ${{ github.event.inputs.version }}
-          # Don't run husky on git commit
+          # Don't run husky on `git commit`
           HUSKY: 0
         run: |
-          bunx changelogen --release --push -r $RELEASE_VERSION
-          bunx changelogen github release --token ${{ secrets.GITHUB_TOKEN }} -r $RELEASE_VERSION
+          bunx changelogen --release --push
+          bunx changelogen github release --token ${{ secrets.GITHUB_TOKEN }}
 
       - name: 📝 Get metadata
         run: |
