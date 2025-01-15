@@ -231,7 +231,7 @@ This will apply a folder icon for the folders 'sample' and 'samples'.
 
 #### Root folder icons
 
-Additionally, it is possible to assign icons to the root folder of a workspace. This is done by using the `rootFolder` attribute:
+Additionally, it is possible to assign icons to the root folder of a workspace. This is done by using the `rootFolderNames` attribute:
 
 ```ts
 {
