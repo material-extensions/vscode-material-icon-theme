@@ -34,7 +34,6 @@ jobs:
       - name: 📦 Install dependencies
         run: |
           bun install --frozen-lockfile
-          bun add -g npm
 
       - name: 🔧 Configure Git
         run: |
@@ -46,9 +45,12 @@ jobs:
         run: bun run preversion
 
       - name: 📜 Generate changelog and release notes
+        env:
+          # Don't run husky on `git commit`
+          HUSKY: 0
         run: |
-          HUSKY=0 bunx changelogen --release --push
-          HUSKY=0 bunx changelogen github release --token ${{ secrets.GITHUB_TOKEN }}
+          bunx changelogen --release --push
+          bunx changelogen github release --token ${{ secrets.GITHUB_TOKEN }}
 
       - name: 📝 Get metadata
         run: |
