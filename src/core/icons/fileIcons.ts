@@ -1228,6 +1228,8 @@ export const fileIcons: FileIcons = {
       name: 'nodejs',
       fileNames: [
         'package.json',
+        'package.yaml',
+        'package.json5',
         'package-lock.json',
         '.nvmrc',
         '.esmrc',
