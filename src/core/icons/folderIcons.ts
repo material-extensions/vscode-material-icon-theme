@@ -1066,6 +1066,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['powershell', 'ps', 'ps1'],
       },
       {
+        name: 'folder-repository',
+        folderNames: ['repository', 'repositories', 'repo', 'repos'],
+      },
+      {
         name: 'folder-luau',
         folderNames: ['luau'],
       },
