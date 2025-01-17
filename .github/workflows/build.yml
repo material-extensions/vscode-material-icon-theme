@@ -56,6 +56,9 @@ jobs:
 
       - name: 🏷️ Manage label based on build result
         if: ${{ always() && github.event_name == 'pull_request' }}
-        run: .github/scripts/update-status-label.sh ${{ github.event.pull_request.number }} ${{ steps.build.outcome }} "❌ failed build"
+        uses: material-extensions/add-labels@60e0e247ae419e306ff73fff891bbf9bcf7d85c4 # v1.0.5
+        with:
+          labels: "❌ failed build"
+          action: ${{ steps.build.outcome == 'failure' && 'add' || 'remove' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

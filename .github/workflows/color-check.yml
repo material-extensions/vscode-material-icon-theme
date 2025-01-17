@@ -25,7 +25,6 @@ jobs:
         with:
           sparse-checkout-cone-mode: false
           sparse-checkout: |
-            .github/scripts/update-status-label.sh
             material-colors.yml
             icons/
 
@@ -41,6 +40,9 @@ jobs:
 
       - name: 🏷️ Manage label based on color check result
         if: always()
-        run: .github/scripts/update-status-label.sh ${{ github.event.pull_request.number }} ${{ steps.color-check.outcome }} "🎨 invalid colors"
+        uses: material-extensions/add-labels@60e0e247ae419e306ff73fff891bbf9bcf7d85c4 # v1.0.5
+        with:
+          labels: "🎨 invalid colors"
+          action: ${{ steps.color-check.outcome == 'failure' && 'add' || 'remove' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
