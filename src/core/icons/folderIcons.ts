@@ -10,6 +10,7 @@ export const folderIcons: FolderTheme[] = [
     defaultIcon: { name: 'folder' },
     rootFolder: { name: 'folder-root' },
     icons: [
+      { name: 'folder-rust', folderNames: ['rust'] },
       {
         name: 'folder-robot',
         folderNames: ['bot', 'bots', 'robot', 'robots'],
@@ -1055,10 +1056,18 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-favicon',
         folderNames: ['favicon', 'favicons'],
       },
+      {
+        name: 'folder-bloc',
+        folderNames: ['bloc', 'cubit', 'blocs', 'cubits'],
+      },
       { name: 'folder-lefthook', folderNames: ['lefthook', 'lefthook-local'] },
       {
         name: 'folder-powershell',
         folderNames: ['powershell', 'ps', 'ps1'],
+      },
+      {
+        name: 'folder-repository',
+        folderNames: ['repository', 'repositories', 'repo', 'repos'],
       },
       {
         name: 'folder-luau',

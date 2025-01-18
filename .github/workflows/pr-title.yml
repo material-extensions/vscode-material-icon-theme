@@ -4,23 +4,14 @@ on:
   pull_request:
     types: [opened, edited]
 
+permissions:
+  pull-requests: write
+  issues: write # Update issue labels
+
 jobs:
   lint-pr-title:
-    name: Check PR Title
-    runs-on: ubuntu-latest
     if: ${{ github.event.action == 'opened' || github.event.changes.title != null }}
-    steps:
-      - name: 📥 Checkout
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-        with:
-          # Only fetch the config file from the repository
-          sparse-checkout: commitlint.config.js
 
-      - name: 📦 Install dependencies
-        run: npm install --global @commitlint/config-conventional commitlint
-
-      - name: 🔍 Check PR title with commitlint
-        env:
-          PR_TITLE: ${{ github.event.pull_request.title }}
-          HELP_URL: https://github.com/material-extensions/vscode-material-icon-theme/blob/main/CONTRIBUTING.md#conventional-pull-request-titles
-        run: echo "$PR_TITLE" | npx commitlint --help-url $HELP_URL
+    uses: material-extensions/workflows/.github/workflows/pr-title.yml@main
+    with:
+      commitlint-help-url: https://github.com/material-extensions/vscode-material-icon-theme/blob/main/CONTRIBUTING.md#conventional-pull-request-titles

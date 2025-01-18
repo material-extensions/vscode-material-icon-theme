@@ -1,7 +1,9 @@
 export { applyConfigToIcons } from './generator/applyConfigToIcons';
 export {
   customClonesIcons,
-  generateConfiguredClones,
+  generateConfiguredFileIconClones,
+  generateConfiguredFolderIconClones,
+  generateConfiguredLanguageIconClones,
   hasCustomClones,
 } from './generator/clones/clonesGenerator';
 export { clearCloneFolder } from './generator/clones/utils/cloneData';

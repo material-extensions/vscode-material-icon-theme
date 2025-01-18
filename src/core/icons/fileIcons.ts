@@ -2945,5 +2945,10 @@ export const fileIcons: FileIcons = {
       name: 'subtitles',
       fileExtensions: ['srt', 'ssa', 'ttml', 'sbv', 'dfxp', 'vtt'],
     },
+    { name: 'beancount', fileExtensions: ['beancount', 'bean'] },
+    {
+      name: 'wrangler',
+      fileNames: ['wrangler.toml'],
+    },
   ]),
 };

@@ -7,16 +7,16 @@ on:
 
 permissions:
   contents: read
+  pull-requests: write
 
 jobs:
   icon-review:
     name: Icon Review
+
     runs-on: ubuntu-latest
+
     env:
       TARGET_BRANCH: ${{ github.event.pull_request.base.ref }}
-
-    permissions:
-      pull-requests: write
 
     steps:
       - name: 📥 Checkout Fork
@@ -26,14 +26,19 @@ jobs:
           repository: ${{ github.event.pull_request.head.repo.full_name }}
           fetch-depth: 0
           path: fork
-          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            icons/
 
       - name: 📥 Checkout Original
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           fetch-depth: 0
           path: main
-          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            .bun-version
+            icons/
 
       - name: 🔧 Setup Bun
         uses: oven-sh/setup-bun@4bc047ad259df6fc24a6c9b0f9a0cb08cf17fbe5 # v2
