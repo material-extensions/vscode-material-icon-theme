@@ -1,7 +1,7 @@
 name: ✅ Check PR Title
 
 on:
-  pull_request:
+  pull_request_target:
     types: [opened, edited]
 
 permissions:
