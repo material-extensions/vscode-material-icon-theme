@@ -114,6 +114,11 @@
         "enablement": "!isWeb"
       },
       {
+        "command": "material-icon-theme.changeRootFolderColor",
+        "title": "%command.changeRootFolderColor%",
+        "enablement": "!isWeb"
+      },
+      {
         "command": "material-icon-theme.changeFileColor",
         "title": "%command.changeFileColor%",
         "enablement": "!isWeb"
@@ -186,6 +191,11 @@
           "type": "object",
           "default": {},
           "description": "%configuration.folders.associations%"
+        },
+        "material-icon-theme.rootFolders.associations": {
+          "type": "object",
+          "default": {},
+          "description": "%configuration.rootFolders.associations%"
         },
         "material-icon-theme.languages.associations": {
           "type": "object",
@@ -362,6 +372,13 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "rootFolderNames": {
+                "type": "array",
+                "description": "%configuration.customClones.rootFolderNames%",
+                "items": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -387,6 +404,12 @@
           "default": "#90a4ae",
           "pattern": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
           "description": "%configuration.folders.color%"
+        },
+        "material-icon-theme.rootFolders.color": {
+          "type": "string",
+          "default": "#90a4ae",
+          "pattern": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+          "description": "%configuration.rootFolders.color%"
         },
         "material-icon-theme.files.color": {
           "type": "string",

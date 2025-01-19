@@ -21,10 +21,11 @@ Glad you're here and interested in expanding this project 🎉 In order to make 
     - [Design folder icons](#design-folder-icons)
     - [Icon spacing](#icon-spacing)
     - [Assignment to file and folder names and language ids](#assignment-to-file-and-folder-names-and-language-ids)
-    - [File icons](#file-icons)
+      - [File icons](#file-icons)
       - [Apply patterns](#apply-patterns)
-    - [Folder icons](#folder-icons)
-    - [Language icons](#language-icons)
+      - [Folder icons](#folder-icons)
+      - [Root folder icons](#root-folder-icons)
+      - [Language icons](#language-icons)
     - [Icons for color themes](#icons-for-color-themes)
     - [Create icon packs](#create-icon-packs)
     - [Designing Pixel-Perfect Icons](#designing-pixel-perfect-icons)
@@ -174,7 +175,7 @@ Icons are assigned to file names, folder names or registered languages of VS Cod
 
 Be careful when assigning icons to files and folders, as not everyone expects a file name to have a special icon based on a framework that is not used by them. A solution for this can be the usage of [Language icon definitions](#language-icons) or [icon packs](#create-icon-packs).
 
-### File icons
+#### File icons
 
 Here's an example of how the SVG icon `sample.svg` is assigned to file names and extensions:
 
@@ -212,7 +213,7 @@ Available patterns are right now:
 | nodeEcosystem | Combination of ecmascript and configuration patterns                                                       |
 | cosmiconfig   | `.${fileName}rc`, `.config/${fileName}rc` and `${fileName}.config` with file extensions of `nodeEcosystem` |
 
-### Folder icons
+#### Folder icons
 
 Here's an example of how a folder icon can be assigned to folder icons:
 
@@ -228,17 +229,38 @@ This will apply a folder icon for the folders 'sample' and 'samples'.
 > [!NOTE]
 > The tool automatically creates generic "wildcard" variants of these folders, so only assign the base names. The current wildcards are the following: `.sample`, `_sample`, `__sample__`.
 
-### Language icons
+#### Root folder icons
+
+Additionally, it is possible to assign icons to the root folder of a workspace. This is done by using the `rootFolderNames` attribute:
+
+```ts
+{
+  name: 'folder-sample',
+  rootFolderNames: ['sample', 'samples'],
+}
+```
+
+It can also be combined with the default folder names. The only requirement is that every folder icon must have at least a `folderNames` or `rootFolderNames` attribute.
+
+```ts
+{
+  name: 'folder-sample',
+  folderNames: ['sample', 'samples'],
+  rootFolderNames: ['sample', 'samples'],
+}
+```
+
+#### Language icons
 
 Here's an example of how a file icon can be assigned to language ids:
 
 ```ts
-{ icon: { name: 'sample' }, ids: ['css'] },
+{ name: 'sample', ids: ['css'] },
 ```
 
 This will apply the sample.svg icon to all files which could be associated by VS Code with the CSS programming language.
 
-### Icons for color themes
+#### Icons for color themes
 
 VS Code can be customized so that the background color is either light or dark. This must also be considered for the icons, because a dark icon on a dark background does not provide the necessary contrast it needs to be recognizable.
 

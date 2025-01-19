@@ -68,7 +68,11 @@ const checkFolderIcons = () => {
     if (!theme.icons) return;
     const icons: Record<string, string> = {};
     theme.icons.forEach((icon) => {
-      icon.folderNames
+      const folderNameList = [
+        ...(icon?.folderNames ?? []),
+        ...(icon?.rootFolderNames ?? []),
+      ];
+      folderNameList
         .map((f) => f.toLowerCase())
         .forEach((folderName) => {
           if (

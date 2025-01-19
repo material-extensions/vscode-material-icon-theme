@@ -256,6 +256,7 @@ describe('cloning: icon cloning', () => {
           base: 'base',
           color: 'green-500',
           folderNames: ['bar'],
+          rootFolderNames: ['baz'],
         };
 
         const result = getCloneData(cloneOpts, manifest, subFolder, hash, ext);
@@ -304,6 +305,7 @@ describe('cloning: icon cloning', () => {
           base: 'folder-base2',
           color: 'green-500',
           folderNames: ['bar'],
+          rootFolderNames: ['baz'],
         };
 
         const result = getCloneData(cloneOpts, manifest, subFolder, hash, ext);
@@ -387,6 +389,7 @@ describe('cloning: icon cloning', () => {
           color: 'green-500',
           lightColor: 'green-800',
           folderNames: ['bar'],
+          rootFolderNames: ['baz'],
         };
 
         const result = getCloneData(cloneOpts, manifest, subFolder, hash, ext);
@@ -470,14 +473,14 @@ describe('cloning: icon cloning', () => {
 
     describe('clone data generation for language icons', () => {
       it('should create a single clone object if not light version exists or asked', () => {
-        const cloneOpts: LanguageIconClone = {
+        const iconClone: LanguageIconClone = {
           name: 'foo',
           base: 'base',
           color: 'green-500',
           ids: ['bar'],
         };
 
-        const result = getCloneData(cloneOpts, manifest, subFolder, hash, ext);
+        const result = getCloneData(iconClone, manifest, subFolder, hash, ext);
 
         const expected = [
           {
@@ -769,7 +772,7 @@ describe('cloning: json config generation from user options', () => {
     });
   });
 
-  const getManifest = (hash: string) => {
+  const getManifest = (hash: string): Manifest => {
     return {
       iconDefinitions: {
         foo: { iconPath: `./../icons/foo${hash}.svg` },
@@ -779,6 +782,8 @@ describe('cloning: json config generation from user options', () => {
       },
       folderNames: {},
       folderNamesExpanded: {},
+      rootFolderNames: {},
+      rootFolderNamesExpanded: {},
       fileExtensions: {},
       fileNames: { 'foo.bar': 'foo' },
       file: 'file',
@@ -790,6 +795,8 @@ describe('cloning: json config generation from user options', () => {
         fileNames: {},
         folderNames: {},
         folderNamesExpanded: {},
+        rootFolderNames: {},
+        rootFolderNamesExpanded: {},
       },
       highContrast: { fileExtensions: {}, fileNames: {} },
     };
@@ -815,6 +822,7 @@ describe('cloning: json config generation from user options', () => {
             base: 'folder-foo',
             name: 'folder-foo-clone',
             folderNames: ['bar'],
+            rootFolderNames: ['baz'],
             color: 'green-400',
             lightColor: 'green-800',
           },
@@ -870,6 +878,8 @@ describe('cloning: json config generation from user options', () => {
       },
       folderNames: { bar: 'folder-foo-clone' },
       folderNamesExpanded: { bar: `folder-foo-clone${openedFolder}` },
+      rootFolderNames: { baz: 'folder-foo-clone' },
+      rootFolderNamesExpanded: { baz: `folder-foo-clone${openedFolder}` },
       fileExtensions: { baz: 'foo-clone' },
       fileNames: { 'bar.foo': 'foo-clone', 'foo.bar': 'foo' },
       file: 'file',
@@ -882,6 +892,10 @@ describe('cloning: json config generation from user options', () => {
         folderNames: { bar: `folder-foo-clone${lightColorFileEnding}` },
         folderNamesExpanded: {
           bar: `folder-foo-clone${openedFolder}${lightColorFileEnding}`,
+        },
+        rootFolderNames: { baz: `folder-foo-clone${lightColorFileEnding}` },
+        rootFolderNamesExpanded: {
+          baz: `folder-foo-clone${openedFolder}${lightColorFileEnding}`,
         },
         languageIds: {
           json: 'foo-clone_light',
@@ -914,6 +928,7 @@ describe('cloning: json config generation from user options', () => {
             base: 'folder-foo',
             name: 'folder-foo-clone',
             folderNames: ['bar'],
+            rootFolderNames: ['baz'],
             color: 'green-400',
             lightColor: 'green-800',
             activeForPacks: ['nest'],
@@ -953,6 +968,8 @@ describe('cloning: json config generation from user options', () => {
       },
       folderNames: {},
       folderNamesExpanded: {},
+      rootFolderNames: {},
+      rootFolderNamesExpanded: {},
       fileExtensions: {},
       fileNames: { 'foo.bar': 'foo' },
       file: 'file',
@@ -964,6 +981,8 @@ describe('cloning: json config generation from user options', () => {
         fileNames: {},
         folderNames: {},
         folderNamesExpanded: {},
+        rootFolderNames: {},
+        rootFolderNamesExpanded: {},
       },
       highContrast: { fileExtensions: {}, fileNames: {} },
     });
@@ -1009,6 +1028,7 @@ describe('cloning: json config generation from user options', () => {
             base: 'folder-foo',
             name: 'folder-foo-clone',
             folderNames: ['bar'],
+            rootFolderNames: ['baz'],
             color: 'green-400',
             lightColor: 'green-800',
             activeForPacks: ['nest'],
@@ -1017,6 +1037,7 @@ describe('cloning: json config generation from user options', () => {
             base: 'folder-foo',
             name: 'folder-foo-angular-clone',
             folderNames: ['bar.angular'],
+            rootFolderNames: ['baz.angular'],
             color: 'green-500',
             lightColor: 'green-900',
             activeForPacks: ['angular'],
@@ -1025,6 +1046,7 @@ describe('cloning: json config generation from user options', () => {
             base: 'folder-foo',
             name: 'folder-foo-any-clone',
             folderNames: ['bar.any'],
+            rootFolderNames: ['baz.any'],
             color: 'green-600',
             lightColor: 'green-100',
           },
@@ -1120,6 +1142,14 @@ describe('cloning: json config generation from user options', () => {
         'bar.angular': `folder-foo-angular-clone${openedFolder}`,
         'bar.any': `folder-foo-any-clone${openedFolder}`,
       },
+      rootFolderNames: {
+        'baz.angular': 'folder-foo-angular-clone',
+        'baz.any': 'folder-foo-any-clone',
+      },
+      rootFolderNamesExpanded: {
+        'baz.angular': `folder-foo-angular-clone${openedFolder}`,
+        'baz.any': `folder-foo-any-clone${openedFolder}`,
+      },
       fileExtensions: {
         'baz.angular': 'foo-angular-clone',
         'baz.any': 'foo-any-clone',
@@ -1151,6 +1181,14 @@ describe('cloning: json config generation from user options', () => {
         folderNamesExpanded: {
           'bar.angular': `folder-foo-angular-clone${openedFolder}${lightColorFileEnding}`,
           'bar.any': `folder-foo-any-clone${openedFolder}${lightColorFileEnding}`,
+        },
+        rootFolderNames: {
+          'baz.angular': `folder-foo-angular-clone${lightColorFileEnding}`,
+          'baz.any': `folder-foo-any-clone${lightColorFileEnding}`,
+        },
+        rootFolderNamesExpanded: {
+          'baz.angular': `folder-foo-angular-clone${openedFolder}${lightColorFileEnding}`,
+          'baz.any': `folder-foo-any-clone${openedFolder}${lightColorFileEnding}`,
         },
         languageIds: {
           'json.angular': 'foo-angular-clone_light',

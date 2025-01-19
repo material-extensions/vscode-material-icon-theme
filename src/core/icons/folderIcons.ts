@@ -73,7 +73,10 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-scripts',
         folderNames: ['script', 'scripts', 'scripting'],
       },
-      { name: 'folder-node', folderNames: ['node', 'nodejs', 'node_modules'] },
+      {
+        name: 'folder-node',
+        folderNames: ['node', 'nodejs', 'node_modules'],
+      },
       {
         name: 'folder-javascript',
         folderNames: ['js', 'javascript', 'javascripts'],
@@ -400,8 +403,14 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-kubernetes',
         folderNames: ['kubernetes', 'k8s'],
       },
-      { name: 'folder-import', folderNames: ['import', 'imports', 'imported'] },
-      { name: 'folder-export', folderNames: ['export', 'exports', 'exported'] },
+      {
+        name: 'folder-import',
+        folderNames: ['import', 'imports', 'imported'],
+      },
+      {
+        name: 'folder-export',
+        folderNames: ['export', 'exports', 'exported'],
+      },
       { name: 'folder-wakatime', folderNames: ['wakatime'] },
       { name: 'folder-circleci', folderNames: ['circleci'] },
       {
@@ -451,7 +460,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['typescript', 'ts', 'typings', '@types', 'types'],
       },
       { name: 'folder-graphql', folderNames: ['graphql', 'gql'] },
-      { name: 'folder-routes', folderNames: ['routes', 'router', 'routers'] },
+      {
+        name: 'folder-routes',
+        folderNames: ['routes', 'router', 'routers'],
+      },
       { name: 'folder-ci', folderNames: ['ci'] },
       {
         name: 'folder-benchmark',
@@ -500,7 +512,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['mojo'],
       },
       { name: 'folder-moon', folderNames: ['moon'] },
-      { name: 'folder-debug', folderNames: ['debug', 'debugger', 'debugging'] },
+      {
+        name: 'folder-debug',
+        folderNames: ['debug', 'debugger', 'debugging'],
+      },
       { name: 'folder-fastlane', folderNames: ['fastlane'] },
       {
         name: 'folder-plugin',
@@ -520,7 +535,10 @@ export const folderIcons: FolderTheme[] = [
           'modules',
         ],
       },
-      { name: 'folder-middleware', folderNames: ['middleware', 'middlewares'] },
+      {
+        name: 'folder-middleware',
+        folderNames: ['middleware', 'middlewares'],
+      },
       {
         name: 'folder-controller',
         folderNames: [
@@ -705,7 +723,10 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-mappings', folderNames: ['mappings', 'mapping'] },
       { name: 'folder-meta', folderNames: ['meta'] },
-      { name: 'folder-changesets', folderNames: ['changesets', 'changeset'] },
+      {
+        name: 'folder-changesets',
+        folderNames: ['changesets', 'changeset'],
+      },
       {
         name: 'folder-packages',
         folderNames: [
@@ -1057,10 +1078,13 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['favicon', 'favicons'],
       },
       {
+        name: 'folder-lefthook',
+        folderNames: ['lefthook', 'lefthook-local'],
+      },
+      {
         name: 'folder-bloc',
         folderNames: ['bloc', 'cubit', 'blocs', 'cubits'],
       },
-      { name: 'folder-lefthook', folderNames: ['lefthook', 'lefthook-local'] },
       {
         name: 'folder-powershell',
         folderNames: ['powershell', 'ps', 'ps1'],
