@@ -509,6 +509,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['python', 'pycache', 'pytest_cache'],
       },
       {
+        name: 'folder-scons',
+        folderNames: ['scons', 'sconf_temp', 'scons_cache'],
+      },
+      {
         name: 'folder-mojo',
         folderNames: ['mojo'],
       },
