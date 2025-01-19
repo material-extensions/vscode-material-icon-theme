@@ -241,6 +241,7 @@ export const folderIcons: FolderTheme[] = [
           'wwwroot',
           'web',
           'website',
+          'websites',
           'site',
           'browser',
           'browsers',
