@@ -1,0 +1,28 @@
+name: 🔖 Add status labels
+
+on:
+  workflow_run:
+    workflows:
+      - 🛠️ Build + Test
+      - 🎨 Check SVG icon colors
+      - ✅ Check PR Title
+    types: [completed]
+
+jobs:
+  add-labels:
+    runs-on: ubuntu-latest
+
+    if: github.event.workflow_run.event == 'pull_request'
+
+    steps:
+      - name: 🏷️ Manage label based on workflow result
+        uses: material-extensions/add-labels@60e0e247ae419e306ff73fff891bbf9bcf7d85c4 # v1.0.5
+        with:
+          labels: |
+            ${{ github.event.workflow_run.name == '🛠️ Build + Test'          && '❌ build failed'   ||
+                github.event.workflow_run.name == '🎨 Check SVG icon colors' && '🎨 wrong colors' ||
+                github.event.workflow_run.name == '✅ Check PR Title'        && '📝 invalid title'  }}
+
+          action: ${{ github.event.workflow_run.conclusion == 'failure' && 'add' || 'remove' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -32,7 +32,6 @@ jobs:
           git fetch origin $TARGET_BRANCH
 
       - name: 🎨 Check colors
-        id: color-check
         run: |
           svgFiles=$(git diff origin/$TARGET_BRANCH --diff-filter=ACMRTUX  --name-only | grep '.svg$')
           npx svg-color-linter --config material-colors.yml ${svgFiles}

@@ -48,7 +48,6 @@ jobs:
         run: bun install --frozen-lockfile
 
       - name: 🚀 Test + Build
-        id: build
         run: |
           bun test
           bun run vscode:prepublish
