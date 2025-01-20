@@ -13,7 +13,7 @@ jobs:
   icon-review:
     name: Icon Review
 
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
 
     env:
       TARGET_BRANCH: ${{ github.event.pull_request.base.ref }}
