@@ -8,6 +8,10 @@ on:
       - ✅ Check PR Title
     types: [completed]
 
+permissions:
+  contents: read
+  pull-requests: write
+
 jobs:
   add-labels:
     runs-on: ubuntu-latest
