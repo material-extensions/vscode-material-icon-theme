@@ -2947,5 +2947,9 @@ export const fileIcons: FileIcons = {
       name: 'wrangler',
       fileNames: ['wrangler.toml'],
     },
+    {
+      name: 'mail',
+      fileExtensions: ['eml', 'msg'],
+    },
   ]),
 };
