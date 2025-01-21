@@ -6,7 +6,6 @@ on:
       - closed
 
 permissions:
-  contents: read
   pull-requests: write
 
 jobs:
