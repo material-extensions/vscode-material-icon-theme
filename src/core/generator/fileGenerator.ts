@@ -238,11 +238,11 @@ export const generateFileIcons = async (
   }
 
   const fileIcon =
-    'M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m5 2H6v16h12v-9h-7V4z';
+    'M9 2v3h3Zm4 2.5V14q0 1-1 1H4q-1 0-1-1V2q0-1 1-1h5.5ZM8 2H4v12h8V6H8Z';
 
   await writeSVGFiles(
     'file',
-    getSVG(getPath(fileIcon, color), 24),
+    getSVG(getPath(fileIcon, color)),
     opacity,
     saturation
   );
