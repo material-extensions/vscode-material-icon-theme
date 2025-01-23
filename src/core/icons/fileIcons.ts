@@ -2583,7 +2583,7 @@ export const fileIcons: FileIcons = {
         'plastic.workspaces',
       ],
     },
-    { name: 'typst', fileExtensions: ['typ'] },
+    { name: 'typst', fileNames: ['typst.toml'], fileExtensions: ['typ'] },
     {
       name: 'unocss',
       fileNames: [
