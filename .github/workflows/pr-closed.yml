@@ -1,7 +1,7 @@
 name: 🎉 PR closed
 
 on:
-  pull_request:
+  pull_request_target:
     types:
       - closed
 
@@ -12,7 +12,6 @@ permissions:
 jobs:
   thank-you:
     runs-on: ubuntu-latest
-
     if: github.event.pull_request.merged == true
 
     steps:
