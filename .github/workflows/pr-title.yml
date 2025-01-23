@@ -13,7 +13,7 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    if: ${{ github.event.action == 'opened' || github.event.changes.title != null }}
+    if: ${{ (github.event.action == 'opened' && github.actor != 'renovate[bot]') || github.event.changes.title != null }}
 
     steps:
       - name: 📥 Checkout

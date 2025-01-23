@@ -13,7 +13,7 @@ jobs:
   thank-you:
     runs-on: ubuntu-latest
 
-    if: github.event.pull_request.merged == true
+    if: ${{ github.event.pull_request.merged == true && github.actor != 'renovate[bot]' }}
 
     steps:
       - name: 🙏 Post Thank You Comment
