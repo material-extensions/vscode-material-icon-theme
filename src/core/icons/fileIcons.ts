@@ -497,6 +497,11 @@ export const fileIcons: FileIcons = {
       name: 'ruff',
       fileNames: ['ruff.toml', '.ruff.toml'],
     },
+    {
+      name: 'scons',
+      light: true,
+      fileNames: ['sconstruct', 'sconscript', 'scsub'],
+    },
     { name: 'url', fileExtensions: ['url'] },
     {
       name: 'console',
