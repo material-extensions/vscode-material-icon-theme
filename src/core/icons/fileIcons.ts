@@ -2083,7 +2083,7 @@ export const fileIcons: FileIcons = {
     { name: 'imba', fileExtensions: ['imba'] },
     { name: 'drawio', fileExtensions: ['drawio', 'dio'] },
     { name: 'pascal', fileExtensions: ['pas'] },
-    { name: 'shaderlab', fileExtensions: ['unity'] },
+    { name: 'unity', fileExtensions: ['unity', 'unitypackage'] },
     {
       name: 'roadmap',
       fileNames: [
