@@ -7,7 +7,10 @@ import Puppeteer from 'puppeteer';
  * @param fileName Name of the output image
  */
 export const createScreenshot = async (filePath: string, fileName: string) => {
-  const browser = await Puppeteer.launch();
+  const browser = await Puppeteer.launch({
+    headless: true,
+    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+  });
   const htmlFilePath = join('file:', filePath);
 
   try {
