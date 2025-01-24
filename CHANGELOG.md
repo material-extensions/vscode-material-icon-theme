@@ -2,6 +2,74 @@
 
 # Changelog
 
+## v5.18.0
+
+[compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.17.0...v5.18.0)
+
+### 🚀 Enhancements
+
+- Implement cloning functionality for language icons ([#2780](https://github.com/material-extensions/vscode-material-icon-theme/pull/2780))
+- Add icon for Autohotkey v2 ([#2781](https://github.com/material-extensions/vscode-material-icon-theme/pull/2781))
+- Add wrangler icon ([#2802](https://github.com/material-extensions/vscode-material-icon-theme/pull/2802))
+- **ci:** 🔖 add appropriate labels to PRs with failed checks ([#2793](https://github.com/material-extensions/vscode-material-icon-theme/pull/2793))
+- Add beancount icon ([#2784](https://github.com/material-extensions/vscode-material-icon-theme/pull/2784))
+- Add BLoC folder icon ([#2806](https://github.com/material-extensions/vscode-material-icon-theme/pull/2806))
+- Make `github-sponsors` icon more materialized ([#2815](https://github.com/material-extensions/vscode-material-icon-theme/pull/2815))
+- Add repository folder icons ([#2813](https://github.com/material-extensions/vscode-material-icon-theme/pull/2813))
+- Add Rust folder icons ([#2805](https://github.com/material-extensions/vscode-material-icon-theme/pull/2805))
+- Add contentlayer icon ([#2407](https://github.com/material-extensions/vscode-material-icon-theme/pull/2407))
+- ✨ Customize workspace folder icons ([#2807](https://github.com/material-extensions/vscode-material-icon-theme/pull/2807))
+- Add `websites` folder icon ([#2825](https://github.com/material-extensions/vscode-material-icon-theme/pull/2825))
+- Add epub icon ([#2838](https://github.com/material-extensions/vscode-material-icon-theme/pull/2838))
+- Add `scons` icons ([#2826](https://github.com/material-extensions/vscode-material-icon-theme/pull/2826))
+- Add Typst manifest file ([#2841](https://github.com/material-extensions/vscode-material-icon-theme/pull/2841))
+- Update unity icon ([#2827](https://github.com/material-extensions/vscode-material-icon-theme/pull/2827))
+- Add `kits` folder name for `tools` folder icon ([#2831](https://github.com/material-extensions/vscode-material-icon-theme/pull/2831))
+
+### 🩹 Fixes
+
+- Remove duplicated changelog entry for v5.16.0 ([8a06ff6f](https://github.com/material-extensions/vscode-material-icon-theme/commit/8a06ff6f))
+- Undo changes from sparse-checkout for workflow script ([31b2c47f](https://github.com/material-extensions/vscode-material-icon-theme/commit/31b2c47f))
+- **ci:** Fix pr-closed.yml ([#2821](https://github.com/material-extensions/vscode-material-icon-theme/pull/2821))
+- **ci:** Fix icon review pipeline ([93c5e10c](https://github.com/material-extensions/vscode-material-icon-theme/commit/93c5e10c))
+- **ci:** Fix failing pr closed pipeline ([bd82624d](https://github.com/material-extensions/vscode-material-icon-theme/commit/bd82624d))
+- **ci:** Optimized contributors workflow ([8550247c](https://github.com/material-extensions/vscode-material-icon-theme/commit/8550247c))
+
+### 💅 Refactors
+
+- **ci:** ♻️ organize the structure of workflows ([#2799](https://github.com/material-extensions/vscode-material-icon-theme/pull/2799))
+- **ci:** ♻️ use `HUSKY: 0` in env according to the DRY ([#2812](https://github.com/material-extensions/vscode-material-icon-theme/pull/2812))
+- **ci:** ♻️ use reusable workflows ([#2811](https://github.com/material-extensions/vscode-material-icon-theme/pull/2811))
+- **ci:** Remove potential duplicate workflow ([549d0aeb](https://github.com/material-extensions/vscode-material-icon-theme/commit/549d0aeb))
+- **ci:** Use `material-extensions/add-labels` action ([#2810](https://github.com/material-extensions/vscode-material-icon-theme/pull/2810))
+
+### 📖 Documentation
+
+- 📝 update links to icon sources ([#2803](https://github.com/material-extensions/vscode-material-icon-theme/pull/2803))
+- 📝 fixed newline in schema and improved formatting ([#2817](https://github.com/material-extensions/vscode-material-icon-theme/pull/2817))
+
+### 🏡 Chore
+
+- 🔒 make `bun.lock` readonly ([#2801](https://github.com/material-extensions/vscode-material-icon-theme/pull/2801))
+- **devcontainer:** ⏫ update preinstalled extensions list ([#2800](https://github.com/material-extensions/vscode-material-icon-theme/pull/2800))
+- Update author information ([78af3e30](https://github.com/material-extensions/vscode-material-icon-theme/commit/78af3e30))
+- 💵 update funding links ([#2808](https://github.com/material-extensions/vscode-material-icon-theme/pull/2808))
+- Add security policy ([#2819](https://github.com/material-extensions/vscode-material-icon-theme/pull/2819))
+- **ci:** Fix failing pipelines ([8ee04ccb](https://github.com/material-extensions/vscode-material-icon-theme/commit/8ee04ccb))
+- ✨ use emojis in icon request template for better recognition ([#2830](https://github.com/material-extensions/vscode-material-icon-theme/pull/2830))
+
+### ❤️ Contributors
+
+- Okinea Dev ([@okineadev](http://github.com/okineadev))
+- Philipp Kief ([@PKief](http://github.com/PKief))
+- Thaddeus Crews ([@Repiteo](http://github.com/Repiteo))
+- 3w36zj6 ([@3w36zj6](http://github.com/3w36zj6))
+- Rowan Walsh ([@rowan-walsh](http://github.com/rowan-walsh))
+- 루밀LuMir ([@lumirlumir](http://github.com/lumirlumir))
+- Bartłomiej Krakowski ([@bart-krakowski](http://github.com/bart-krakowski))
+- Jeevan ([@JeevanMahesha](http://github.com/JeevanMahesha))
+- Darío ([@nulkode](http://github.com/nulkode))
+
 ## v5.17.0
 
 [compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.16.0...v5.17.0)
