@@ -2953,5 +2953,6 @@ export const fileIcons: FileIcons = {
       fileNames: ['wrangler.toml'],
     },
     { name: 'epub', fileExtensions: ['epub'] },
+    { name: 'regedit', fileExtensions: ['reg'] },
   ]),
 };
