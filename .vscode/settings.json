@@ -21,6 +21,9 @@
   "[markdown]": {
     "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
   },
+  "[svg]": {
+    "editor.defaultFormatter": "jock.svg"
+  },
 
   "github.copilot.chat.codeGeneration.instructions": [
     {
