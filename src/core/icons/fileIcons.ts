@@ -790,7 +790,25 @@ export const fileIcons: FileIcons = {
     },
     { name: 'virtual', fileExtensions: ['vdi', 'vbox', 'vbox-prev'] },
     { name: 'vedic', fileExtensions: ['ved', 'veda', 'vedic'] },
-    { name: 'email', fileExtensions: ['ics'], fileNames: ['.mailmap'] },
+    {
+      name: 'email',
+      fileExtensions: [
+        'edb',
+        'eml',
+        'emlx',
+        'ics',
+        'mbox',
+        'msg',
+        'oft',
+        'olm',
+        'ost',
+        'p7s',
+        'pst',
+        'rpmsg',
+        'tnef',
+      ],
+      fileNames: ['.mailmap'],
+    },
     {
       name: 'audio',
       fileExtensions: [
