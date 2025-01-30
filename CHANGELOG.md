@@ -2,6 +2,23 @@
 
 # Changelog
 
+## v5.19.0
+
+[compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.18.0...v5.19.0)
+
+### 🚀 Enhancements
+
+- ✨ regedit file icon ([#2845](https://github.com/material-extensions/vscode-material-icon-theme/pull/2845))
+
+### 🩹 Fixes
+
+- 🚑️  Fixes rendering of icons due to invalid hash in file names ([c33f73cf](https://github.com/material-extensions/vscode-material-icon-theme/commit/c33f73cf))
+
+### ❤️ Contributors
+
+- Philipp Kief ([@PKief](http://github.com/PKief))
+- Lucas Colombo ([@lucas-labs](http://github.com/lucas-labs))
+
 ## v5.18.0
 
 [compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.17.0...v5.18.0)
