@@ -3033,5 +3033,6 @@ export const fileIcons: FileIcons = {
     },
     { name: 'epub', fileExtensions: ['epub'] },
     { name: 'regedit', fileExtensions: ['reg'] },
+    { name: 'gnuplot', fileExtensions: ['gnu'] },
   ]),
 };

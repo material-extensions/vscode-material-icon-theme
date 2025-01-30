@@ -1,4 +1,4 @@
-import chroma, { deltaE } from 'chroma-js';
+import chroma from 'chroma-js';
 import { isValidColor } from './colors';
 
 export const materialPalette = {
@@ -288,7 +288,7 @@ export const closerMaterialColorTo = (color: string): string => {
   const distances = palette
     .map((paletteColor) => ({
       // calculate the distance between the color and the palette color
-      distance: deltaE(paletteColor, color),
+      distance: chroma.deltaE(paletteColor, color),
       color: paletteColor,
     }))
     .sort((a, b) => a.distance - b.distance);
