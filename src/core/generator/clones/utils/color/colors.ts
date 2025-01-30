@@ -1,4 +1,4 @@
-import chroma, { type Color, valid } from 'chroma-js';
+import chroma, { type Color } from 'chroma-js';
 import { type INode } from 'svgson';
 import { getStyle, traverse } from '../cloning';
 import {
@@ -72,7 +72,7 @@ export const isValidColor = (color?: string): boolean => {
   if (color === undefined) {
     return false;
   }
-  return valid(color);
+  return chroma.valid(color);
 };
 
 /**
