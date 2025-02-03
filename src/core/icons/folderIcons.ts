@@ -1113,6 +1113,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-obsidian', folderNames: ['obsidian'] },
       { name: 'folder-trash', folderNames: ['trash'] },
       { name: 'folder-liquibase', folderNames: ['liquibase'] },
+      { name: 'folder-storage', folderNames: ['storage'] },
     ],
   },
   {
