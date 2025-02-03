@@ -3034,5 +3034,17 @@ export const fileIcons: FileIcons = {
     { name: 'epub', fileExtensions: ['epub'] },
     { name: 'regedit', fileExtensions: ['reg'] },
     { name: 'gnuplot', fileExtensions: ['gnu'] },
+    {
+      name: 'vanilla-extract',
+      // https://github.com/vanilla-extract-css/vanilla-extract/blob/0051ddbca235a75ea8eaaae8191d885818b5ba84/packages/integration/src/filters.ts#L3
+      fileExtensions: [
+        'css.js',
+        'css.cjs',
+        'css.mjs',
+        'css.jsx',
+        'css.ts',
+        'css.tsx',
+      ],
+    },
   ]),
 };
