@@ -1117,6 +1117,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-obsidian', folderNames: ['obsidian'] },
       { name: 'folder-trash', folderNames: ['trash'] },
       { name: 'folder-liquibase', folderNames: ['liquibase'] },
+      { name: 'folder-dart', folderNames: ['dart', 'dart_tool', 'dart_tools'] },
     ],
   },
   {
