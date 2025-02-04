@@ -1118,6 +1118,8 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-trash', folderNames: ['trash'] },
       { name: 'folder-liquibase', folderNames: ['liquibase'] },
       { name: 'folder-dart', folderNames: ['dart', 'dart_tool', 'dart_tools'] },
+      { name: 'folder-shopify', folderNames: ['shopify'] },
+      { name: 'folder-sections', folderNames: ['section', 'sections'] },
     ],
   },
   {
