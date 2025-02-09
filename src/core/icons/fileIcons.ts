@@ -2126,6 +2126,20 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['wrap'],
     },
     {
+      name: 'commitizen',
+      fileNames: [
+        '.czrc',
+        '.cz.json',
+        '.cz.toml',
+        '.cz.yaml',
+        '.cz.yml',
+        'cz.json',
+        'cz.toml',
+        'cz.yaml',
+        'cz.yml',
+      ],
+    },
+    {
       name: 'commitlint',
       fileNames: ['.commitlint.yaml', '.commitlint.yml'],
       patterns: {
