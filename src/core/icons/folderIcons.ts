@@ -90,7 +90,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-directive',
-        folderNames: ['directive, directives'],
+        folderNames: ['directive', 'directives'],
       },
       {
         name: 'folder-jinja',
