@@ -1025,6 +1025,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['unity'],
       },
       {
+        name: 'folder-quantum',
+        folderNames: ['qtn', 'quantum'],
+      },
+      {
         name: 'folder-pdf',
         folderNames: ['pdf', 'pdfs'],
       },
