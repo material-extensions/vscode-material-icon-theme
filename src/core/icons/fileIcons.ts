@@ -882,7 +882,7 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['graphql', 'gql'],
       fileNames: ['.graphqlconfig'],
       patterns: {
-        graphql: FileNamePattern.Ecmascript,
+        graphql: FileNamePattern.Cosmiconfig,
       },
     },
     { name: 'rust', fileExtensions: ['rs', 'ron'] },
