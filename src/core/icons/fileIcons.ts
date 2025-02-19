@@ -3038,7 +3038,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'subtitles',
-      fileExtensions: ['srt', 'ssa', 'ttml', 'sbv', 'dfxp', 'vtt'],
+      fileExtensions: ['srt', 'ssa', 'ttml', 'sbv', 'dfxp', 'vtt', 'sub'],
     },
     { name: 'beancount', fileExtensions: ['beancount', 'bean'] },
     {
