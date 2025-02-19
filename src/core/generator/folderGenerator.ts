@@ -19,6 +19,11 @@ import { validateHEXColorCode } from './shared/validation';
 
 /**
  * Get the folder icon definitions as object.
+ *
+ * @param folderIcons - The folder icons to be used in the theme.
+ * @param config - The configuration object for the icons.
+ * @param manifest - The manifest object to be updated with the folder icons.
+ * @returns The updated manifest object with the folder icons.
  */
 export const loadFolderIconDefinitions = (
   folderIcons: FolderTheme[],
@@ -31,28 +36,50 @@ export const loadFolderIconDefinitions = (
     return manifest;
   }
   const enabledIcons = disableIconsByPack(activeTheme, config.activeIconPack);
-  const customIcons = getCustomIcons(config.folders?.associations);
-  const allIcons = [...enabledIcons, ...customIcons];
+  const customIcons = [
+    ...getCustomIcons(config.folders?.associations, false),
+    ...getCustomIcons(config.rootFolders?.associations, true),
+  ];
+  const allIcons = [...(activeTheme.icons ?? []), ...customIcons];
+  const allEnabledIcons = [...enabledIcons, ...customIcons];
 
   if (config.folders?.theme === 'none') {
     return manifest;
   }
 
   allIcons.forEach((icon) => {
-    if (icon.disabled) return;
-    const folderNames = extendFolderNames(icon.folderNames);
     manifest = setIconDefinitions(manifest, config, icon);
-    manifest = merge(manifest, setFolderNames(icon.name, folderNames));
+  });
+
+  // Only map the specific folder icons if they are enabled depending on the active icon pack
+  allEnabledIcons.forEach((icon) => {
+    if (icon.disabled) return;
+    const folderNames = extendFolderNames(icon?.folderNames ?? []);
+    const rootFolderNames = extendFolderNames(icon?.rootFolderNames ?? []);
+    manifest = merge(
+      manifest,
+      setFolderNames(icon.name, folderNames, rootFolderNames)
+    );
     manifest.light = icon.light
       ? merge(
           manifest.light,
-          setFolderNames(icon.name, folderNames, lightColorFileEnding)
+          setFolderNames(
+            icon.name,
+            folderNames,
+            rootFolderNames,
+            lightColorFileEnding
+          )
         )
       : manifest.light;
     manifest.highContrast = icon.highContrast
       ? merge(
           manifest.highContrast,
-          setFolderNames(icon.name, folderNames, highContrastColorFileEnding)
+          setFolderNames(
+            icon.name,
+            folderNames,
+            rootFolderNames,
+            highContrastColorFileEnding
+          )
         )
       : manifest.highContrast;
   });
@@ -63,6 +90,11 @@ export const loadFolderIconDefinitions = (
 
 /**
  * Set the default folder icons for the theme.
+ *
+ * @param theme - The folder theme to be used.
+ * @param manifest - The manifest object to be updated with the default folder icons.
+ * @param config - The configuration object for the icons.
+ * @returns The updated manifest object with the default folder icons.
  */
 const setDefaultFolderIcons = (
   theme: FolderTheme,
@@ -132,20 +164,28 @@ const setDefaultFolderIcons = (
 
 /**
  * Get the object of the current enabled theme.
+ *
+ * @param themes - The list of available folder themes.
+ * @param enabledTheme - The name of the enabled theme.
+ * @returns The enabled folder theme, or undefined if not found.
  */
 const getEnabledFolderTheme = (
   themes: FolderTheme[],
-  enabledTheme: string | undefined
+  enabledTheme?: string
 ): FolderTheme | undefined => {
   return themes.find((theme) => theme.name === enabledTheme);
 };
 
 /**
  * Disable all file icons that are in a pack which is disabled.
+ *
+ * @param folderIcons - The folder icons to be filtered.
+ * @param activatedIconPack - The active icon pack to be considered.
+ * @returns The filtered folder icons that are enabled for the active icon pack.
  */
 const disableIconsByPack = (
-  folderIcons: FolderTheme | undefined,
-  activatedIconPack: IconPackValue | undefined
+  folderIcons?: FolderTheme,
+  activatedIconPack?: IconPackValue
 ): FolderIcon[] => {
   if (!folderIcons?.icons || folderIcons.icons.length === 0) {
     return [];
@@ -157,6 +197,15 @@ const disableIconsByPack = (
   });
 };
 
+/**
+ * Set the icon definitions in the manifest.
+ *
+ * @param manifest - The manifest object to be updated.
+ * @param config - The configuration object for the icons.
+ * @param icon - The icon to be set in the manifest.
+ * @param appendix - The appendix to be added to the icon name.
+ * @returns The updated manifest object with the icon definitions.
+ */
 const setIconDefinitions = (
   manifest: Manifest,
   config: Config,
@@ -165,6 +214,7 @@ const setIconDefinitions = (
   const isClone = (icon as FolderIcon).clone !== undefined;
 
   manifest = createIconDefinitions(manifest, config, icon.name, '', isClone);
+
   if (icon.light) {
     manifest = merge(
       manifest,
@@ -192,13 +242,23 @@ const setIconDefinitions = (
   return manifest;
 };
 
+/**
+ * Create the icon definitions in the manifest.
+ *
+ * @param manifest - The manifest object to be updated.
+ * @param config - The configuration object for the icons.
+ * @param iconName - The name of the icon.
+ * @param appendix - The appendix to be added to the icon name.
+ * @param isClone - Whether the icon is a clone.
+ * @returns The updated manifest object with the icon definitions.
+ */
 const createIconDefinitions = (
   manifest: Manifest,
   config: Config,
   iconName: string,
   appendix: string = '',
   isClone = false
-) => {
+): Manifest => {
   const fileConfigHash = getFileConfigHash(config);
   const configIconDefinitions = manifest.iconDefinitions;
   const ext = isClone ? cloneIconExtension : '.svg';
@@ -221,43 +281,85 @@ const createIconDefinitions = (
   return manifest;
 };
 
+/**
+ * Extend the folder names with additional patterns.
+ *
+ * @param folderNames - The folder names to be extended.
+ * @returns The extended folder names.
+ */
 const extendFolderNames = (folderNames: string[]) => {
   const names: string[] = [];
-  const styles: [string, string][] = [
+  const patterns: [string, string][] = [
     ['', ''],
     ['.', ''],
     ['_', ''],
     ['__', '__'],
   ];
   folderNames.forEach((name) => {
-    styles.forEach((style) => {
+    patterns.forEach((style) => {
       names.push(`${style[0]}${name}${style[1]}`);
     });
   });
   return names;
 };
 
+/**
+ * Set the folder names in the manifest.
+ *
+ * @param iconName - The name of the icon.
+ * @param folderNames - The folder names to be set in the manifest.
+ * @param rootFolderNames - The root folder names to be set in the manifest.
+ * @param appendix - The appendix to be added to the icon name.
+ * @returns The partial manifest object with the folder names.
+ */
 const setFolderNames = (
   iconName: string,
   folderNames: string[],
+  rootFolderNames: string[],
   appendix: string = ''
-) => {
-  const obj: Partial<Manifest> = {
-    folderNames: {},
-    folderNamesExpanded: {},
+): Required<
+  Pick<
+    Manifest,
+    | 'folderNames'
+    | 'folderNamesExpanded'
+    | 'rootFolderNames'
+    | 'rootFolderNamesExpanded'
+  >
+> => {
+  // Helper function to populate folder-related properties
+  const createEntries = (names: string[]) => {
+    const regular: Record<string, string> = {};
+    const expanded: Record<string, string> = {};
+
+    names.forEach((name) => {
+      regular[name] = iconName + appendix;
+      expanded[name] = `${iconName}${openedFolder}${appendix}`;
+    });
+
+    return { regular, expanded };
   };
-  folderNames.forEach((name) => {
-    if (obj.folderNames) {
-      obj.folderNames[name as keyof Manifest] = iconName + appendix;
-    }
-    if (obj.folderNamesExpanded) {
-      obj.folderNamesExpanded[name as keyof Manifest] =
-        `${iconName}${openedFolder}${appendix}`;
-    }
-  });
-  return obj;
+
+  // Create folder entries
+  const folderEntries = createEntries(folderNames);
+  const rootFolderEntries = createEntries(rootFolderNames);
+
+  // Return the structured object
+  return {
+    folderNames: folderEntries.regular,
+    folderNamesExpanded: folderEntries.expanded,
+    rootFolderNames: rootFolderEntries.regular,
+    rootFolderNamesExpanded: rootFolderEntries.expanded,
+  };
 };
 
+/**
+ * Create the default icon configuration object.
+ *
+ * @param hasFolderIcons - Whether the theme has folder icons.
+ * @param theme - The folder theme to be used.
+ * @param appendix - The appendix to be added to the icon name.
+ * @returns The default icon configuration object.
+ */
 const createDefaultIconConfigObject = (
   hasFolderIcons: boolean,
   theme: FolderTheme,
@@ -274,6 +376,14 @@ const createDefaultIconConfigObject = (
   return obj;
 };
 
+/**
+ * Create the root icon configuration object.
+ *
+ * @param hasFolderIcons - Whether the theme has folder icons.
+ * @param theme - The folder theme to be used.
+ * @param appendix - The appendix to be added to the icon name.
+ * @returns The root icon configuration object.
+ */
 const createRootIconConfigObject = (
   hasFolderIcons: boolean,
   theme: FolderTheme,
@@ -296,21 +406,40 @@ const createRootIconConfigObject = (
   return obj;
 };
 
-const getCustomIcons = (folderAssociations: IconAssociations | undefined) => {
+/**
+ * Get the custom icons based on the folder associations.
+ *
+ * @param folderAssociations - The folder associations to be considered.
+ * @param isRootFolder - Determines whether the icons are for root folders.
+ * @returns The custom icons based on the folder associations.
+ */
+const getCustomIcons = (
+  folderAssociations: IconAssociations | undefined,
+  isRootFolder: boolean
+): FolderIcon[] => {
   if (!folderAssociations) return [];
 
-  const icons: FolderIcon[] = Object.keys(folderAssociations).map((fa) => ({
-    // use default folder if icon name is empty
-    name:
-      folderAssociations[fa].length > 0
-        ? 'folder-' + folderAssociations[fa].toLowerCase()
-        : 'folder',
-    folderNames: [fa.toLowerCase()],
-  }));
+  return Object.entries(folderAssociations).map(([folderName, iconName]) => {
+    const iconConfig: FolderIcon = {
+      name: iconName ? `folder-${iconName.toLowerCase()}` : 'folder', // Default folder if icon name is empty
+      folderNames: [],
+      rootFolderNames: [],
+    };
 
-  return icons;
+    const targetKey = isRootFolder ? 'rootFolderNames' : 'folderNames';
+    iconConfig[targetKey] = [folderName.toLowerCase()];
+
+    return iconConfig;
+  });
 };
 
+/**
+ * Generate the folder icons with the specified color, opacity, and saturation.
+ *
+ * @param color - The color of the folder icons.
+ * @param opacity - The opacity of the folder icons.
+ * @param saturation - The saturation of the folder icons.
+ */
 export const generateFolderIcons = async (
   color: string,
   opacity: number,
@@ -324,10 +453,6 @@ export const generateFolderIcons = async (
     'M13.84376,7.53645l-1.28749-1.0729A2,2,0,0,0,11.27591,6H4A2,2,0,0,0,2,8V24a2,2,0,0,0,2,2H28a2,2,0,0,0,2-2V10a2,2,0,0,0-2-2H15.12412A2,2,0,0,1,13.84376,7.53645Z';
   const folderIconOpen =
     'M28.96692,12H9.44152a2,2,0,0,0-1.89737,1.36754L4,24V10H28a2,2,0,0,0-2-2H15.1241a2,2,0,0,1-1.28038-.46357L12.5563,6.46357A2,2,0,0,0,11.27592,6H4A2,2,0,0,0,2,8V24a2,2,0,0,0,2,2H26l4.80523-11.21213A2,2,0,0,0,28.96692,12Z';
-  const rootFolderIcon =
-    'M16,5A11,11,0,1,1,5,16,11.01245,11.01245,0,0,1,16,5m0-3A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,8a6,6,0,1,0,6,6A6,6,0,0,0,16,10Z';
-  const rootFolderIconOpen =
-    'M16,5A11,11,0,1,1,5,16,11.01245,11.01245,0,0,1,16,5m0-3A14,14,0,1,0,30,16,14,14,0,0,0,16,2Z';
 
   await writeSVGFiles(
     'folder',
@@ -341,6 +466,29 @@ export const generateFolderIcons = async (
     opacity,
     saturation
   );
+};
+
+/**
+ * Generate the folder icons with the specified color, opacity, and saturation.
+ *
+ * @param color - The color of the root folder icons.
+ * @param opacity - The opacity of the root folder icons.
+ * @param saturation - The saturation of the root folder icons.
+ */
+export const generateRootFolderIcons = async (
+  color: string,
+  opacity: number,
+  saturation: number
+) => {
+  if (!color || !validateHEXColorCode(color)) {
+    return logger.error('Invalid color code for root folder icons');
+  }
+
+  const rootFolderIcon =
+    'M16,5A11,11,0,1,1,5,16,11.01245,11.01245,0,0,1,16,5m0-3A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,8a6,6,0,1,0,6,6A6,6,0,0,0,16,10Z';
+  const rootFolderIconOpen =
+    'M16,5A11,11,0,1,1,5,16,11.01245,11.01245,0,0,1,16,5m0-3A14,14,0,1,0,30,16,14,14,0,0,0,16,2Z';
+
   await writeSVGFiles(
     'folder-root',
     getSVG(getPath(rootFolderIcon, color)),

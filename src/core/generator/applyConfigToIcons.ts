@@ -1,6 +1,9 @@
 import type { Config } from '../models/icons/config';
 import { generateFileIcons } from './fileGenerator';
-import { generateFolderIcons } from './folderGenerator';
+import {
+  generateFolderIcons,
+  generateRootFolderIcons,
+} from './folderGenerator';
 import { setIconOpacity } from './iconOpacity';
 import { setIconSaturation } from './iconSaturation';
 
@@ -8,8 +11,8 @@ import { setIconSaturation } from './iconSaturation';
  * Apply the configuration to the icons. But only if the configuration has changed.
  * If the affectedConfig is not set then all icons will be updated.
  *
- * @param config Configuration that customizes the icons and the manifest.
- * @param affectedConfig Set of configuration keys that have changed so that not all functions need to be executed.
+ * @param config - The new configuration that customizes the icons and the manifest.
+ * @param oldConfig - The previous configuration to compare changes.
  */
 export const applyConfigToIcons = async (config: Config, oldConfig: Config) => {
   if (config.files.color !== oldConfig.files.color) {
@@ -26,7 +29,13 @@ export const applyConfigToIcons = async (config: Config, oldConfig: Config) => {
       config.saturation
     );
   }
-
+  if (config.rootFolders.color !== oldConfig.rootFolders.color) {
+    await generateRootFolderIcons(
+      config.rootFolders.color,
+      config.opacity,
+      config.saturation
+    );
+  }
   if (config.opacity !== oldConfig.opacity) {
     await setIconOpacity(config.opacity, config.files.associations);
   }

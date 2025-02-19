@@ -27,6 +27,7 @@
   "configuration.activeIconPack.angular_ngrx": "Ikon untuk Angular dan ngrx.",
   "configuration.activeIconPack.react": "Ikon untuk React.",
   "configuration.activeIconPack.react_redux": "Ikon untuk React dan Redux.",
+  "configuration.activeIconPack.roblox": "Ikon untuk Roblox.",
   "configuration.activeIconPack.qwik": "Ikon untuk Qwik.",
   "configuration.activeIconPack.vue": "Ikon untuk Vue.",
   "configuration.activeIconPack.vue_vuex": "Ikon untuk Vue dan Vuex.",

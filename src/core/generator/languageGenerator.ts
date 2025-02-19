@@ -6,13 +6,19 @@ import type { IconPackValue } from '../models/icons/iconPack';
 import type { LanguageIcon } from '../models/icons/languages/languageIdentifier';
 import type { Manifest } from '../models/manifest';
 import {
+  cloneIconExtension,
   highContrastColorFileEnding,
   iconFolderPath,
   lightColorFileEnding,
 } from './constants';
 
 /**
- * Get all file icons that can be used in this theme.
+ * Get all language icons that can be used in this theme.
+ *
+ * @param languageIcons - The language icons to be used in the theme.
+ * @param config - The configuration object for the icons.
+ * @param manifest - The manifest object to be updated with the language icons.
+ * @returns The updated manifest object with the language icons.
  */
 export const loadLanguageIconDefinitions = (
   languageIcons: LanguageIcon[],
@@ -24,30 +30,30 @@ export const loadLanguageIconDefinitions = (
     config.activeIconPack
   );
   const customIcons = getCustomIcons(config.languages?.associations);
-  const allLanguageIcons = [...enabledLanguages, ...customIcons];
+  const allLanguageIcons = [...languageIcons, ...customIcons];
+  const allEnabledLanguageIcons = [...enabledLanguages, ...customIcons];
 
-  allLanguageIcons.forEach((lang) => {
-    if (lang.disabled) return;
-    manifest = setIconDefinitions(manifest, config, lang.icon);
-    manifest = merge(
-      manifest,
-      setLanguageIdentifiers(lang.icon.name, lang.ids)
-    );
-    manifest.light = lang.icon.light
+  allLanguageIcons.forEach((icon) => {
+    const isClone = icon.clone !== undefined;
+    manifest = setIconDefinitions(manifest, config, icon, isClone);
+  });
+
+  // Only map the specific language icons if they are enabled depending on the active icon pack
+  allEnabledLanguageIcons.forEach((icon) => {
+    if (icon.disabled) return;
+    manifest = merge(manifest, setLanguageIdentifiers(icon.name, icon.ids));
+    manifest.light = icon.light
       ? merge(
           manifest.light,
-          setLanguageIdentifiers(
-            lang.icon.name + lightColorFileEnding,
-            lang.ids
-          )
+          setLanguageIdentifiers(icon.name + lightColorFileEnding, icon.ids)
         )
       : manifest.light;
-    manifest.highContrast = lang.icon.highContrast
+    manifest.highContrast = icon.highContrast
       ? merge(
           manifest.highContrast,
           setLanguageIdentifiers(
-            lang.icon.name + highContrastColorFileEnding,
-            lang.ids
+            icon.name + highContrastColorFileEnding,
+            icon.ids
           )
         )
       : manifest.highContrast;
@@ -56,41 +62,76 @@ export const loadLanguageIconDefinitions = (
   return manifest;
 };
 
+/**
+ * Set the icon definitions in the manifest.
+ *
+ * @param manifest - The manifest object to be updated.
+ * @param config - The configuration object for the icons.
+ * @param icon - The icon to be set in the manifest.
+ * @returns The updated manifest object with the icon definitions.
+ */
 const setIconDefinitions = (
   manifest: Manifest,
   config: Config,
-  icon: DefaultIcon
-) => {
-  createIconDefinitions(manifest, config, icon.name);
+  icon: DefaultIcon,
+  isClone: boolean
+): Manifest => {
+  const ext = isClone ? cloneIconExtension : '.svg';
+  createIconDefinitions(manifest, config, icon.name, ext);
 
   if (icon.light) {
-    createIconDefinitions(manifest, config, icon.name + lightColorFileEnding);
+    createIconDefinitions(
+      manifest,
+      config,
+      icon.name + lightColorFileEnding,
+      ext
+    );
   }
   if (icon.highContrast) {
     createIconDefinitions(
       manifest,
       config,
-      icon.name + highContrastColorFileEnding
+      icon.name + highContrastColorFileEnding,
+      ext
     );
   }
 
   return manifest;
 };
 
+/**
+ * Create the icon definitions in the manifest.
+ *
+ * @param manifest - The manifest object to be updated.
+ * @param config - The configuration object for the icons.
+ * @param iconName - The name of the icon.
+ * @param ext - The file extension of the icon.
+ */
 const createIconDefinitions = (
   manifest: Manifest,
   config: Config,
-  iconName: string
+  iconName: string,
+  ext: string
 ) => {
   const fileConfigHash = getFileConfigHash(config);
   if (manifest.iconDefinitions) {
     manifest.iconDefinitions[iconName] = {
-      iconPath: `${iconFolderPath}${iconName}${fileConfigHash}.svg`,
+      iconPath: `${iconFolderPath}${iconName}${fileConfigHash}${ext}`,
     };
   }
 };
 
-const setLanguageIdentifiers = (iconName: string, languageIds: string[]) => {
+/**
+ * Set the language identifiers in the manifest.
+ *
+ * @param iconName - The name of the icon.
+ * @param languageIds - The language identifiers to be set in the manifest.
+ * @returns The partial manifest object with the language identifiers.
+ */
+const setLanguageIdentifiers = (
+  iconName: string,
+  languageIds: string[]
+): Partial<Manifest> => {
   const obj: Partial<Manifest> = { languageIds: {} };
   languageIds.forEach((id) => {
     obj.languageIds![id as keyof Manifest] = iconName;
@@ -98,11 +139,19 @@ const setLanguageIdentifiers = (iconName: string, languageIds: string[]) => {
   return obj;
 };
 
-const getCustomIcons = (languageAssociations: IconAssociations | undefined) => {
+/**
+ * Get the custom icons based on the language associations.
+ *
+ * @param languageAssociations - The language associations to be considered.
+ * @returns The custom icons based on the language associations.
+ */
+const getCustomIcons = (
+  languageAssociations: IconAssociations | undefined
+): LanguageIcon[] => {
   if (!languageAssociations) return [];
 
   const icons: LanguageIcon[] = Object.keys(languageAssociations).map((fa) => ({
-    icon: { name: languageAssociations[fa].toLowerCase() },
+    name: languageAssociations[fa].toLowerCase(),
     ids: [fa.toLowerCase()],
   }));
 
@@ -110,15 +159,19 @@ const getCustomIcons = (languageAssociations: IconAssociations | undefined) => {
 };
 
 /**
- * Disable all file icons that are in a pack which is disabled.
+ * Disable all language icons that are in a pack which is disabled.
+ *
+ * @param languageIcons - The language icons to be filtered.
+ * @param activatedIconPack - The active icon pack to be considered.
+ * @returns The filtered language icons that are enabled for the active icon pack.
  */
 const disableLanguagesByPack = (
   languageIcons: LanguageIcon[],
   activatedIconPack: IconPackValue | undefined
-) => {
-  return languageIcons.filter((language) => {
-    return !language.enabledFor
+): LanguageIcon[] => {
+  return languageIcons.filter((icon) => {
+    return !icon.enabledFor
       ? true
-      : language.enabledFor.some((p) => p === activatedIconPack);
+      : icon.enabledFor.some((p) => p === activatedIconPack);
   });
 };
