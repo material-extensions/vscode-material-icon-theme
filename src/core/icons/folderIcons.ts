@@ -1119,6 +1119,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-cline', folderNames: ['cline_docs'] },
       { name: 'folder-liquibase', folderNames: ['liquibase'] },
       { name: 'folder-dart', folderNames: ['dart', 'dart_tool', 'dart_tools'] },
+      { name: 'folder-crossplane', folderNames: ['crossplane'] },
     ],
   },
   {
