@@ -301,7 +301,7 @@ export const fileIcons: FileIcons = {
         'sln.dotsettings.user',
         'cfg',
         'cnf',
-        '.tool-versions',
+        'tool-versions',
       ],
       fileNames: [
         '.jshintignore',
