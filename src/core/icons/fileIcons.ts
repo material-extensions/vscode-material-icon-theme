@@ -396,6 +396,7 @@ export const fileIcons: FileIcons = {
         'dblite',
         'dblite3',
         'debugsymbols',
+        'odb',
       ],
     },
     { name: 'kusto', fileExtensions: ['kql'] },
