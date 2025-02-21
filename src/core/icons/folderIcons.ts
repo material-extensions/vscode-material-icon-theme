@@ -1120,6 +1120,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-liquibase', folderNames: ['liquibase'] },
       { name: 'folder-dart', folderNames: ['dart', 'dart_tool', 'dart_tools'] },
       { name: 'folder-crossplane', folderNames: ['crossplane'] },
+      { name: 'folder-zeabur', folderNames: ['zeabur'] },
     ],
   },
   {
