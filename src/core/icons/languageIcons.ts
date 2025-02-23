@@ -178,4 +178,5 @@ export const languageIcons: LanguageIcon[] = [
       color: 'lime-700',
     },
   },
+  { name: 'gnuplot', ids: ['gnuplot'] },
 ];
