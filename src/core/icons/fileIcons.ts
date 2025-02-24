@@ -2638,6 +2638,8 @@ export const fileIcons: FileIcons = {
         'taskfile.yaml',
         'taskfile.dist.yml',
         'taskfile.dist.yaml',
+        '.taskrc.yml',
+        '.taskrc.yaml',
       ],
     },
     {
