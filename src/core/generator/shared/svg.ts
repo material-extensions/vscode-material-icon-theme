@@ -28,5 +28,5 @@ export const writeSVGFiles = async (
 export const getPath = (d: string, color: string) =>
   `<path d="${d}" fill="${color}" />`;
 
-export const getSVG = (path: string, viewBoxSize = 32) =>
+export const getSVG = (path: string, viewBoxSize = 16) =>
   `<svg viewBox="0 0 ${viewBoxSize} ${viewBoxSize}" xmlns="http://www.w3.org/2000/svg">${path}</svg>`;
