@@ -480,8 +480,5 @@
     "svg-color-linter": "^3.0.0",
     "svgo": "^3.0.0",
     "typescript": "^5.5.4"
-  },
-  "patchedDependencies": {
-    "changelogen@0.5.7": "patches/changelogen@0.5.7.patch"
   }
 }
