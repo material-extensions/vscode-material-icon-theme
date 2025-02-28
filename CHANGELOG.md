@@ -2,6 +2,58 @@
 
 # Changelog
 
+## v5.20.0
+
+[compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.19.0...v5.20.0)
+
+### 🚀 Enhancements
+
+- Expand the list of file extensions for the `audio` icon ([#2839](https://github.com/material-extensions/vscode-material-icon-theme/pull/2839))
+- Expand the list of file extensions for the `email` icon ([#2834](https://github.com/material-extensions/vscode-material-icon-theme/pull/2834))
+- Add gnuplot icon ([#2859](https://github.com/material-extensions/vscode-material-icon-theme/pull/2859))
+- Map react-components folder name to folder icon ([78c2d300](https://github.com/material-extensions/vscode-material-icon-theme/commit/78c2d300))
+- Add wrangler icon for wrangler.json and wrangler.jsonc ([#2871](https://github.com/material-extensions/vscode-material-icon-theme/pull/2871))
+- Add folder icon for sandbox ([#2862](https://github.com/material-extensions/vscode-material-icon-theme/pull/2862))
+- Add folder icons for about dart ([#2869](https://github.com/material-extensions/vscode-material-icon-theme/pull/2869))
+- Add cline icons ([#2879](https://github.com/material-extensions/vscode-material-icon-theme/pull/2879))
+- Update typescript icons ([#2878](https://github.com/material-extensions/vscode-material-icon-theme/pull/2878))
+- Add icon for `commitizen` ([#2874](https://github.com/material-extensions/vscode-material-icon-theme/pull/2874))
+- Enhance GraphQL Config files ([#2890](https://github.com/material-extensions/vscode-material-icon-theme/pull/2890))
+- Add `.sub` extension to subtitle files ([#2894](https://github.com/material-extensions/vscode-material-icon-theme/pull/2894))
+- Add uv icon ([#2898](https://github.com/material-extensions/vscode-material-icon-theme/pull/2898))
+- Add folder icon for zeabur ([#2897](https://github.com/material-extensions/vscode-material-icon-theme/pull/2897))
+- Update JS and CSS icons to be more pixel perfect ([#2895](https://github.com/material-extensions/vscode-material-icon-theme/pull/2895))
+- Update database file extensions ([#2899](https://github.com/material-extensions/vscode-material-icon-theme/pull/2899))
+- .taskrc.yml files ([#2903](https://github.com/material-extensions/vscode-material-icon-theme/pull/2903))
+- Update prettier icon ([#2904](https://github.com/material-extensions/vscode-material-icon-theme/pull/2904))
+
+### 🩹 Fixes
+
+- Filter clone language icons for fileIcons.png ([#2858](https://github.com/material-extensions/vscode-material-icon-theme/pull/2858))
+- **ci:** Update labels ([ba5e9b48](https://github.com/material-extensions/vscode-material-icon-theme/commit/ba5e9b48))
+- Wrong mapping in folderIcons.ts ([#2892](https://github.com/material-extensions/vscode-material-icon-theme/pull/2892))
+- Wrong mappings in `fileIcons.ts` ([#2893](https://github.com/material-extensions/vscode-material-icon-theme/pull/2893))
+
+### 🏡 Chore
+
+- Integrate minor `.vscode/` tweaks ([#2857](https://github.com/material-extensions/vscode-material-icon-theme/pull/2857))
+- Update code of conduct ([0d4d75ac](https://github.com/material-extensions/vscode-material-icon-theme/commit/0d4d75ac))
+
+### ❤️ Contributors
+
+- Rowan Walsh ([@rowan-walsh](https://github.com/rowan-walsh))
+- Pete Davison <pd93.uk@outlook.com>
+- Firecrafter28 ([@Firecrafter28](https://github.com/Firecrafter28))
+- Philipp Kief ([@PKief](https://github.com/PKief))
+- Yen Cheng Lin ([@ridemountainpig](https://github.com/ridemountainpig))
+- 3w36zj6 ([@3w36zj6](https://github.com/3w36zj6))
+- Julio L. Muller ([@juliolmuller](https://github.com/juliolmuller))
+- Dev TtangKong ([@MTtankkeo](https://github.com/MTtankkeo))
+- Murat ([@Murateba](https://github.com/Murateba))
+- Emiliano Córdoba ([@emicba](https://github.com/emicba))
+- Thaddeus Crews ([@Repiteo](https://github.com/Repiteo))
+- Okinea Dev ([@okineadev](https://github.com/okineadev))
+
 ## v5.19.0
 
 [compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.18.0...v5.19.0)
