@@ -9,6 +9,7 @@ import { toggleGrayscale } from '../commands/grayscale';
 import { toggleIconPacks } from '../commands/iconPacks';
 import { changeOpacity } from '../commands/opacity';
 import { restoreDefaultConfig } from '../commands/restoreConfig';
+import { changeRootFolderColor } from '../commands/rootFolderColor';
 import { changeSaturation } from '../commands/saturation';
 
 const extensionCommands: { [commmand: string]: () => Promise<void> } = {
@@ -16,6 +17,7 @@ const extensionCommands: { [commmand: string]: () => Promise<void> } = {
   toggleIconPacks,
   changeFolderTheme,
   changeFolderColor,
+  changeRootFolderColor,
   changeFileColor,
   restoreDefaultConfig,
   toggleExplorerArrows,

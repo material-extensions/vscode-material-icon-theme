@@ -1,24 +1,19 @@
 name: 🚀 Release + Publish
 
-on:
-  workflow_dispatch:
+on: [workflow_dispatch]
 
 permissions:
   id-token: write
-  contents: read
+  contents: write
+  attestations: write
 
 jobs:
   release:
     runs-on: ubuntu-latest
 
-    permissions:
-      contents: write
-      id-token: write
-      attestations: write
-
     steps:
       - name: ✅ Use App Token for the Bot which is allowed to create releases
-        uses: actions/create-github-app-token@5d869da34e18e7287c1daad50e0b8ea0f506ce69 # v1.11.0
+        uses: actions/create-github-app-token@0d564482f06ca65fa9e77e2510873638c82206f2 # v1.11.5
         id: app-token
         with:
           app-id: ${{ vars.BOT_APP_ID }}
@@ -39,7 +34,6 @@ jobs:
       - name: 📦 Install dependencies
         run: |
           bun install --frozen-lockfile
-          bun add -g npm
 
       - name: 🔧 Configure Git
         run: |
@@ -51,41 +45,44 @@ jobs:
         run: bun run preversion
 
       - name: 📜 Generate changelog and release notes
+        env:
+          # Don't run husky on `git commit`
+          HUSKY: 0
         run: |
-          bunx changelogen --release --push
+          bunx changelogen --hideAuthorEmail --release --push
           bunx changelogen github release --token ${{ secrets.GITHUB_TOKEN }}
 
       - name: 📝 Get metadata
         run: |
           VERSION=$(jq -r '.version' package.json)
           NAME=$(jq -r '.name' package.json)
-          DISPLAY_NAME=$(jq -r '.displayName' package.json)
 
-          echo "VERSION=$VERSION"             >> $GITHUB_ENV
-          echo "NAME=$NAME"                   >> $GITHUB_ENV
-          echo "DISPLAY_NAME=$DISPLAY_NAME"   >> $GITHUB_ENV
+          EXTENSION_FILE="${NAME}-${VERSION}.vsix"
+
+          echo "VERSION=$VERSION"                  >> $GITHUB_ENV
+          echo "EXTENSION_FILE=$EXTENSION_FILE"    >> $GITHUB_ENV
 
       - name: 🛠️ Build extension
         run: bunx @vscode/vsce package
 
       - name: 🔒 Attest artifacts
-        uses: actions/attest-build-provenance@ef244123eb79f2f7a7e75d99086184180e6d0018 # v1.4.4
+        uses: actions/attest-build-provenance@bd77c077858b8d561b7a36cbe48ef4cc642ca39d # v2.2.2
         # Read: https://docs.github.com/en/actions/security-guides/using-artifact-attestations-to-establish-provenance-for-builds
         with:
-          subject-path: "${{ env.NAME }}-${{ env.VERSION }}.vsix"
+          subject-path: ${{ env.EXTENSION_FILE }}
 
       - name: 🌐 Publish to Open VSX Registry
-        uses: HaaLeo/publish-vscode-extension@28e2d3f5817fccf23c1f219eb0cecc903132d1a2 # v1.6.2
+        uses: HaaLeo/publish-vscode-extension@ca5561daa085dee804bf9f37fe0165785a9b14db # v2.0.0
         with:
           pat: ${{ secrets.OPEN_VSX_TOKEN }}
-          extensionFile: ${{ env.NAME }}-${{ env.VERSION }}.vsix
+          extensionFile: ${{ env.EXTENSION_FILE }}
 
       - name: 🌐 Publish to Visual Studio Marketplace
-        uses: HaaLeo/publish-vscode-extension@28e2d3f5817fccf23c1f219eb0cecc903132d1a2 # v1.6.2
+        uses: HaaLeo/publish-vscode-extension@ca5561daa085dee804bf9f37fe0165785a9b14db # v2.0.0
         with:
           pat: ${{ secrets.VS_MARKETPLACE_TOKEN }}
           registryUrl: https://marketplace.visualstudio.com
-          extensionFile: ${{ env.NAME }}-${{ env.VERSION }}.vsix
+          extensionFile: ${{ env.EXTENSION_FILE }}
 
       - name: 📦 Publish to NPM Registry
         run: |
@@ -94,6 +91,6 @@ jobs:
 
       - name: ⬆️ Upload VSIX to GitHub release
         run: |
-          gh release upload v${{ env.VERSION }} ${{ env.NAME }}-${{ env.VERSION }}.vsix
+          gh release upload v$VERSION $EXTENSION_FILE
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

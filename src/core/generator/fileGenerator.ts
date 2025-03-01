@@ -30,15 +30,15 @@ export const loadFileIconDefinitions = (
 ): Manifest => {
   const enabledIcons = disableIconsByPack(fileIcons, config.activeIconPack);
   const customIcons = getCustomIcons(config.files?.associations);
-  const allFileIcons = [...enabledIcons, ...customIcons];
+  const allFileIcons = [...fileIcons.icons, ...customIcons];
+  const allEnabledIcons = [...enabledIcons, ...customIcons];
 
   allFileIcons.forEach((icon) => {
-    if (icon.disabled) return;
     const isClone = icon.clone !== undefined;
-    manifest = setIconDefinition(manifest, config, icon.name, isClone);
+    manifest = setIconDefinitions(manifest, config, icon.name, isClone);
 
     if (icon.light) {
-      manifest = setIconDefinition(
+      manifest = setIconDefinitions(
         manifest,
         config,
         icon.name,
@@ -47,7 +47,7 @@ export const loadFileIconDefinitions = (
       );
     }
     if (icon.highContrast) {
-      manifest = setIconDefinition(
+      manifest = setIconDefinitions(
         manifest,
         config,
         icon.name,
@@ -55,7 +55,11 @@ export const loadFileIconDefinitions = (
         highContrastColorFileEnding
       );
     }
+  });
 
+  // Only map the specific file icons if they are enabled depending on the active icon pack
+  allEnabledIcons.forEach((icon) => {
+    if (icon.disabled) return;
     if (icon.fileExtensions) {
       manifest = mapSpecificFileIcons(
         icon,
@@ -74,7 +78,7 @@ export const loadFileIconDefinitions = (
   });
 
   // set default file icon
-  manifest = setIconDefinition(
+  manifest = setIconDefinitions(
     manifest,
     config,
     fileIcons.defaultIcon.name,
@@ -83,7 +87,7 @@ export const loadFileIconDefinitions = (
   manifest.file = fileIcons.defaultIcon.name;
 
   if (fileIcons.defaultIcon.light && manifest.light) {
-    manifest = setIconDefinition(
+    manifest = setIconDefinitions(
       manifest,
       config,
       fileIcons.defaultIcon.name,
@@ -96,7 +100,7 @@ export const loadFileIconDefinitions = (
   }
 
   if (fileIcons.defaultIcon.highContrast) {
-    manifest = setIconDefinition(
+    manifest = setIconDefinitions(
       manifest,
       config,
       fileIcons.defaultIcon.name,
@@ -198,7 +202,7 @@ const disableIconsByPack = (
  * @param appendix - The appendix to be added to the icon name.
  * @returns The updated manifest object with the icon definition.
  */
-const setIconDefinition = (
+const setIconDefinitions = (
   manifest: Manifest,
   config: Config,
   iconName: string,
@@ -208,9 +212,9 @@ const setIconDefinition = (
   const ext = isClone ? cloneIconExtension : '.svg';
   const key = `${iconName}${appendix}`;
   manifest.iconDefinitions ??= {};
-  if (!manifest.iconDefinitions![key]) {
+  if (!manifest.iconDefinitions[key]) {
     const fileConfigHash = getFileConfigHash(config);
-    manifest.iconDefinitions![key] = {
+    manifest.iconDefinitions[key] = {
       iconPath: `${iconFolderPath}${iconName}${appendix}${fileConfigHash}${ext}`,
     };
   }

@@ -89,6 +89,9 @@ describe('file icons', () => {
     );
 
     expectedManifest.iconDefinitions = {
+      angular: {
+        iconPath: './../icons/angular.svg',
+      },
       file: {
         iconPath: './../icons/file.svg',
       },
@@ -322,6 +325,7 @@ describe('file icons', () => {
         {
           name: 'bar',
           fileExtensions: ['bar'],
+          light: true,
           clone: {
             base: 'foo',
             color: 'green-500',
@@ -349,6 +353,10 @@ describe('file icons', () => {
       bar: {
         iconPath: './../icons/bar.clone.svg',
       },
+      // biome-ignore lint/style/useNamingConvention: _light is our naming convention for icons in light color themes
+      bar_light: {
+        iconPath: './../icons/bar_light.clone.svg',
+      },
       file: {
         iconPath: './../icons/file.svg',
       },
@@ -358,6 +366,12 @@ describe('file icons', () => {
       foo: 'foo',
       bar: 'bar',
       baz: 'bar',
+    };
+    expectedManifest.light = {
+      fileExtensions: {
+        bar: 'bar_light',
+      },
+      fileNames: {},
     };
     expectedManifest.file = 'file';
 

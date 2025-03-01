@@ -10,6 +10,7 @@ export const folderIcons: FolderTheme[] = [
     defaultIcon: { name: 'folder' },
     rootFolder: { name: 'folder-root' },
     icons: [
+      { name: 'folder-rust', folderNames: ['rust'] },
       {
         name: 'folder-robot',
         folderNames: ['bot', 'bots', 'robot', 'robots'],
@@ -72,7 +73,10 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-scripts',
         folderNames: ['script', 'scripts', 'scripting'],
       },
-      { name: 'folder-node', folderNames: ['node', 'nodejs', 'node_modules'] },
+      {
+        name: 'folder-node',
+        folderNames: ['node', 'nodejs', 'node_modules'],
+      },
       {
         name: 'folder-javascript',
         folderNames: ['js', 'javascript', 'javascripts'],
@@ -86,7 +90,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-directive',
-        folderNames: ['directive, directives'],
+        folderNames: ['directive', 'directives'],
       },
       {
         name: 'folder-jinja',
@@ -122,6 +126,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-github', folderNames: ['github'] },
       { name: 'folder-gitea', folderNames: ['gitea'] },
       { name: 'folder-gitlab', folderNames: ['gitlab'] },
+      { name: 'folder-forgejo', folderNames: ['forgejo'] },
       { name: 'folder-vscode', folderNames: ['vscode', 'vscode-test'] },
       {
         name: 'folder-views',
@@ -236,6 +241,7 @@ export const folderIcons: FolderTheme[] = [
           'wwwroot',
           'web',
           'website',
+          'websites',
           'site',
           'browser',
           'browsers',
@@ -257,39 +263,63 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['docker', 'dockerfiles', 'dockerhub'],
       },
       {
-        name: 'folder-ngrx-effects',
-        folderNames: ['effects'],
-        enabledFor: [IconPack.Ngrx],
-      },
-      {
         name: 'folder-ngrx-store',
         folderNames: ['store'],
         enabledFor: [IconPack.Ngrx],
       },
       {
+        name: 'folder-ngrx-effects',
+        folderNames: ['effects'],
+        enabledFor: [IconPack.Ngrx],
+        clone: {
+          base: 'folder-ngrx-store',
+          color: 'cyan-500',
+        },
+      },
+      {
         name: 'folder-ngrx-state',
         folderNames: ['states', 'state'],
         enabledFor: [IconPack.Ngrx],
+        clone: {
+          base: 'folder-ngrx-store',
+          color: 'lime-800',
+        },
       },
       {
         name: 'folder-ngrx-reducer',
         folderNames: ['reducers', 'reducer'],
         enabledFor: [IconPack.Ngrx],
+        clone: {
+          base: 'folder-ngrx-store',
+          color: 'red-400',
+        },
       },
       {
         name: 'folder-ngrx-actions',
         folderNames: ['actions'],
         enabledFor: [IconPack.Ngrx],
+        clone: {
+          base: 'folder-ngrx-store',
+          color: 'purple-400',
+        },
       },
       {
         name: 'folder-ngrx-entities',
         folderNames: ['entities'],
         enabledFor: [IconPack.Ngrx],
+        clone: {
+          base: 'folder-ngrx-store',
+          color: 'yellow-700',
+        },
       },
       {
         name: 'folder-ngrx-selectors',
         folderNames: ['selectors'],
         enabledFor: [IconPack.Ngrx],
+        clone: {
+          base: 'folder-ngrx-store',
+          color: 'deep-orange-A200',
+        },
       },
       {
         name: 'folder-redux-reducer',
@@ -300,20 +330,38 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-redux-actions',
         folderNames: ['actions'],
         enabledFor: [IconPack.Redux],
+        clone: {
+          base: 'folder-redux-reducer',
+          color: 'purple-400',
+        },
       },
       {
         name: 'folder-redux-selector',
         folderNames: ['selectors', 'selector'],
         enabledFor: [IconPack.Redux],
+        clone: {
+          base: 'folder-redux-reducer',
+          color: 'deep-orange-A200',
+        },
       },
       {
         name: 'folder-redux-store',
         folderNames: ['store', 'stores'],
         enabledFor: [IconPack.Redux],
+        clone: {
+          base: 'folder-redux-reducer',
+          color: 'light-green-500',
+        },
       },
       {
         name: 'folder-react-components',
-        folderNames: ['components', 'react', 'jsx', 'reactjs'],
+        folderNames: [
+          'components',
+          'react',
+          'jsx',
+          'reactjs',
+          'react-components',
+        ],
         enabledFor: [IconPack.React, IconPack.Redux],
       },
       {
@@ -362,8 +410,14 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-kubernetes',
         folderNames: ['kubernetes', 'k8s'],
       },
-      { name: 'folder-import', folderNames: ['import', 'imports', 'imported'] },
-      { name: 'folder-export', folderNames: ['export', 'exports', 'exported'] },
+      {
+        name: 'folder-import',
+        folderNames: ['import', 'imports', 'imported'],
+      },
+      {
+        name: 'folder-export',
+        folderNames: ['export', 'exports', 'exported'],
+      },
       { name: 'folder-wakatime', folderNames: ['wakatime'] },
       { name: 'folder-circleci', folderNames: ['circleci'] },
       {
@@ -413,7 +467,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['typescript', 'ts', 'typings', '@types', 'types'],
       },
       { name: 'folder-graphql', folderNames: ['graphql', 'gql'] },
-      { name: 'folder-routes', folderNames: ['routes', 'router', 'routers'] },
+      {
+        name: 'folder-routes',
+        folderNames: ['routes', 'router', 'routers'],
+      },
       { name: 'folder-ci', folderNames: ['ci'] },
       {
         name: 'folder-benchmark',
@@ -458,11 +515,22 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['python', 'pycache', 'pytest_cache'],
       },
       {
+        name: 'folder-sandbox',
+        folderNames: ['sandbox', 'playground'],
+      },
+      {
+        name: 'folder-scons',
+        folderNames: ['scons', 'sconf_temp', 'scons_cache'],
+      },
+      {
         name: 'folder-mojo',
         folderNames: ['mojo'],
       },
       { name: 'folder-moon', folderNames: ['moon'] },
-      { name: 'folder-debug', folderNames: ['debug', 'debugger', 'debugging'] },
+      {
+        name: 'folder-debug',
+        folderNames: ['debug', 'debugger', 'debugging'],
+      },
       { name: 'folder-fastlane', folderNames: ['fastlane'] },
       {
         name: 'folder-plugin',
@@ -476,11 +544,16 @@ export const folderIcons: FolderTheme[] = [
           'extensions',
           'addon',
           'addons',
+          'addin',
+          'addins',
           'module',
           'modules',
         ],
       },
-      { name: 'folder-middleware', folderNames: ['middleware', 'middlewares'] },
+      {
+        name: 'folder-middleware',
+        folderNames: ['middleware', 'middlewares'],
+      },
       {
         name: 'folder-controller',
         folderNames: [
@@ -533,6 +606,8 @@ export const folderIcons: FolderTheme[] = [
           'toolboxes',
           'tooling',
           'devtools',
+          'kit',
+          'kits',
         ],
       },
       { name: 'folder-helper', folderNames: ['helpers', 'helper'] },
@@ -665,7 +740,10 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-mappings', folderNames: ['mappings', 'mapping'] },
       { name: 'folder-meta', folderNames: ['meta'] },
-      { name: 'folder-changesets', folderNames: ['changesets', 'changeset'] },
+      {
+        name: 'folder-changesets',
+        folderNames: ['changesets', 'changeset'],
+      },
       {
         name: 'folder-packages',
         folderNames: [
@@ -722,6 +800,8 @@ export const folderIcons: FolderTheme[] = [
           'certificate',
           'certificates',
           'ssl',
+          'cipher',
+          'cypher',
           'tls',
         ],
       },
@@ -789,7 +869,10 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-guard', folderNames: ['guard', 'guards'] },
       { name: 'folder-prisma', folderNames: ['prisma', 'prisma/schema'] },
-      { name: 'folder-pipe', folderNames: ['pipe', 'pipes'] },
+      {
+        name: 'folder-pipe',
+        folderNames: ['pipe', 'pipes', 'pipeline', 'pipelines'],
+      },
       { name: 'folder-svg', folderNames: ['svg', 'svgs'] },
       {
         name: 'folder-vuex-store',
@@ -1011,15 +1094,32 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-favicon',
         folderNames: ['favicon', 'favicons'],
       },
-      { name: 'folder-lefthook', folderNames: ['lefthook', 'lefthook-local'] },
+      {
+        name: 'folder-lefthook',
+        folderNames: ['lefthook', 'lefthook-local'],
+      },
+      {
+        name: 'folder-bloc',
+        folderNames: ['bloc', 'cubit', 'blocs', 'cubits'],
+      },
       {
         name: 'folder-powershell',
         folderNames: ['powershell', 'ps', 'ps1'],
       },
       {
+        name: 'folder-repository',
+        folderNames: ['repository', 'repositories', 'repo', 'repos'],
+      },
+      {
         name: 'folder-luau',
         folderNames: ['luau'],
       },
+      { name: 'folder-obsidian', folderNames: ['obsidian'] },
+      { name: 'folder-trash', folderNames: ['trash'] },
+      { name: 'folder-cline', folderNames: ['cline_docs'] },
+      { name: 'folder-liquibase', folderNames: ['liquibase'] },
+      { name: 'folder-dart', folderNames: ['dart', 'dart_tool', 'dart_tools'] },
+      { name: 'folder-zeabur', folderNames: ['zeabur'] },
     ],
   },
   {

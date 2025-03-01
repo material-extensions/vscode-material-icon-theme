@@ -11,6 +11,17 @@
         "kind": "build",
         "isDefault": true
       }
+    },
+    {
+      "type": "bun",
+      "script": "bun run test",
+      "problemMatcher": [],
+      "label": "bun: test",
+      "detail": "bun run test",
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      }
     }
   ]
 }

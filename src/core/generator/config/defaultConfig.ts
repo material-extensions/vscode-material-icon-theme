@@ -2,26 +2,32 @@ import { merge } from '../../helpers/object';
 import type { Config } from '../../models/icons/config';
 import type { RecursivePartial } from '../../types/recursivePartial';
 
+const defaultColor = '#90a4ae'; // blue-gray-300
+
 /**
  * The options control the generator and decide which icons are disabled or not.
  */
 export const getDefaultConfig = (): Required<Config> => ({
   folders: {
     theme: 'specific',
-    color: '#90a4ae',
+    color: defaultColor,
     associations: {},
     customClones: [],
+  },
+  rootFolders: {
+    color: defaultColor,
+    associations: {},
   },
   activeIconPack: 'angular',
   hidesExplorerArrows: false,
   opacity: 1,
   saturation: 1,
   files: {
-    color: '#90a4ae',
+    color: defaultColor,
     associations: {},
     customClones: [],
   },
-  languages: { associations: {} },
+  languages: { associations: {}, customClones: [] },
   enableLogging: false,
   logLevel: 'info',
 });

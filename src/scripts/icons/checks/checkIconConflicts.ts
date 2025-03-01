@@ -68,7 +68,11 @@ const checkFolderIcons = () => {
     if (!theme.icons) return;
     const icons: Record<string, string> = {};
     theme.icons.forEach((icon) => {
-      icon.folderNames
+      const folderNameList = [
+        ...(icon?.folderNames ?? []),
+        ...(icon?.rootFolderNames ?? []),
+      ];
+      folderNameList
         .map((f) => f.toLowerCase())
         .forEach((folderName) => {
           if (
@@ -98,12 +102,12 @@ const checkLanguageIcons = () => {
       .map((id) => id.toLowerCase())
       .forEach((id) => {
         if (!icons[id]) {
-          icons[id] = langIcon.icon.name;
+          icons[id] = langIcon.name;
         } else {
           if (!allConflicts.languageIcons[id]) {
-            allConflicts.languageIcons[id] = [icons[id], langIcon.icon.name];
+            allConflicts.languageIcons[id] = [icons[id], langIcon.name];
           } else {
-            allConflicts.languageIcons[id].push(langIcon.icon.name);
+            allConflicts.languageIcons[id].push(langIcon.name);
           }
         }
       });

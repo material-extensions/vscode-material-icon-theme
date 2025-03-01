@@ -6,6 +6,7 @@ import type {
   CustomClone,
   FileIconClone,
   FolderIconClone,
+  LanguageIconClone,
 } from '../../../models/icons/config';
 import type { Manifest } from '../../../models/manifest';
 import {
@@ -41,12 +42,20 @@ export type CloneData = IconData & {
 
 /** checks if a `CustomClone` configuration is a `FolderIconClone` */
 export const isFolder = (clone: CustomClone): clone is FolderIconClone => {
-  return clone && (clone as FolderIconClone).folderNames !== undefined;
+  return (
+    (clone as FolderIconClone)?.folderNames !== undefined ||
+    (clone as FolderIconClone)?.rootFolderNames !== undefined
+  );
+};
+
+/** checks if a `CustomClone` configuration is a `LanguageIconClone` */
+export const isLanguage = (clone: CustomClone): clone is LanguageIconClone => {
+  return clone && (clone as LanguageIconClone).ids !== undefined;
 };
 
 /** checks if the icon is a dark variant */
-const isDark = (daa: IconData) =>
-  daa.variant === Variant.Base || daa.variant === Variant.Open;
+const isDark = (iconData: IconData) =>
+  iconData.variant === Variant.Base || iconData.variant === Variant.Open;
 
 /**
  * get cloning information from configuration

@@ -27,9 +27,9 @@ const iconPalette: FolderColor[] = [
 export const changeFolderColor = async () => {
   try {
     const status = checkFolderColorStatus();
-    const response = await showQuickPickItems(status);
+    const response = await showFolderColorQuickPickItems(status);
     if (response) {
-      handleQuickPickActions(response);
+      handleFolderColorQuickPickActions(response, 'folders.color');
     }
   } catch (error) {
     logger.error(error);
@@ -37,7 +37,7 @@ export const changeFolderColor = async () => {
 };
 
 /** Show QuickPick items to select preferred color for the folder icons. */
-const showQuickPickItems = (currentColor: string) => {
+export const showFolderColorQuickPickItems = (currentColor: string) => {
   const options = iconPalette.map(
     (color): QuickPickItem => ({
       description: color.label,
@@ -53,7 +53,10 @@ const showQuickPickItems = (currentColor: string) => {
 };
 
 /** Handle the actions from the QuickPick. */
-const handleQuickPickActions = async (value: QuickPickItem) => {
+export const handleFolderColorQuickPickActions = async (
+  value: QuickPickItem,
+  configSection: string
+) => {
   if (!value || !value.description) return;
   if (value.description === 'Custom Color') {
     const value = await codeWindow.showInputBox({
@@ -62,12 +65,12 @@ const handleQuickPickActions = async (value: QuickPickItem) => {
       validateInput: validateColorInput,
     });
     if (value) {
-      setColorConfig(value);
+      setColorConfig(value, configSection);
     }
   } else {
     const hexCode = iconPalette.find((c) => c.label === value.description)?.hex;
     if (hexCode) {
-      setColorConfig(hexCode);
+      setColorConfig(hexCode, configSection);
     }
   }
 };
@@ -86,8 +89,8 @@ export const checkFolderColorStatus = (): string => {
   return folderColorConfig ?? defaultConfig.folders.color!;
 };
 
-const setColorConfig = (value: string) => {
-  setThemeConfig('folders.color', value.toLowerCase(), true);
+const setColorConfig = (value: string, configSection: string) => {
+  setThemeConfig(configSection, value.toLowerCase(), true);
 };
 
 const isColorActive = (color: FolderColor, currentColor: string): boolean => {

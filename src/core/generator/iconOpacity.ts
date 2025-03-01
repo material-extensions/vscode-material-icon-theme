@@ -51,7 +51,7 @@ export const setIconOpacity = async (
  * @param opacity - The opacity value to be validated.
  * @returns True if the opacity value is valid, false otherwise.
  */
-export const validateOpacityValue = (opacity: number | undefined): boolean => {
+export const validateOpacityValue = (opacity?: number): boolean => {
   return opacity !== undefined && opacity <= 1 && opacity >= 0;
 };
 

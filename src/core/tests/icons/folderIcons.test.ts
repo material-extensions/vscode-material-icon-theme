@@ -18,10 +18,15 @@ describe('folder icons', () => {
         defaultIcon: { name: 'folder' },
         rootFolder: { name: 'folder-root' },
         icons: [
-          { name: 'folder-src', folderNames: ['src', 'source'] },
+          {
+            name: 'folder-src',
+            folderNames: ['src', 'source'],
+            rootFolderNames: ['src'],
+          },
           {
             name: 'folder-angular',
             folderNames: ['angular', 'ng'],
+            rootFolderNames: ['angular'],
             enabledFor: [IconPack.Angular, IconPack.Ngrx],
           },
         ],
@@ -110,6 +115,26 @@ describe('folder icons', () => {
       '.angular': 'folder-angular-open',
       '.ng': 'folder-angular-open',
     };
+    expectedManifest.rootFolderNames = {
+      src: 'folder-src',
+      angular: 'folder-angular',
+      _src: 'folder-src',
+      _angular: 'folder-angular',
+      __src__: 'folder-src',
+      __angular__: 'folder-angular',
+      '.src': 'folder-src',
+      '.angular': 'folder-angular',
+    };
+    expectedManifest.rootFolderNamesExpanded = {
+      src: 'folder-src-open',
+      angular: 'folder-angular-open',
+      _src: 'folder-src-open',
+      _angular: 'folder-angular-open',
+      __src__: 'folder-src-open',
+      __angular__: 'folder-angular-open',
+      '.src': 'folder-src-open',
+      '.angular': 'folder-angular-open',
+    };
     expectedManifest.hidesExplorerArrows = false;
 
     expect(iconDefinitions).toStrictEqual(expectedManifest);
@@ -127,6 +152,8 @@ describe('folder icons', () => {
     expectedManifest.iconDefinitions = {};
     expectedManifest.folderNames = {};
     expectedManifest.folderNamesExpanded = {};
+    expectedManifest.rootFolderNames = {};
+    expectedManifest.rootFolderNamesExpanded = {};
     expectedManifest.hidesExplorerArrows = false;
 
     expect(iconDefinitions).toStrictEqual(expectedManifest);
@@ -155,6 +182,8 @@ describe('folder icons', () => {
     expectedManifest.rootFolderExpanded = 'folder-open';
     expectedManifest.folderNames = {};
     expectedManifest.folderNamesExpanded = {};
+    expectedManifest.rootFolderNames = {};
+    expectedManifest.rootFolderNamesExpanded = {};
     expectedManifest.hidesExplorerArrows = false;
 
     expect(iconDefinitions).toStrictEqual(expectedManifest);
@@ -162,6 +191,9 @@ describe('folder icons', () => {
 
   it('should configure custom icon associations', () => {
     config.folders.associations = {
+      sample: 'src',
+    };
+    config.rootFolders.associations = {
       sample: 'src',
     };
     const manifest = createEmptyManifest();
@@ -244,6 +276,34 @@ describe('folder icons', () => {
       '.ng': 'folder-angular-open',
       '.sample': 'folder-src-open',
     };
+    expectedManifest.rootFolderNames = {
+      src: 'folder-src',
+      angular: 'folder-angular',
+      sample: 'folder-src',
+      _src: 'folder-src',
+      _angular: 'folder-angular',
+      _sample: 'folder-src',
+      __src__: 'folder-src',
+      __angular__: 'folder-angular',
+      __sample__: 'folder-src',
+      '.src': 'folder-src',
+      '.angular': 'folder-angular',
+      '.sample': 'folder-src',
+    };
+    expectedManifest.rootFolderNamesExpanded = {
+      src: 'folder-src-open',
+      angular: 'folder-angular-open',
+      sample: 'folder-src-open',
+      _src: 'folder-src-open',
+      _angular: 'folder-angular-open',
+      _sample: 'folder-src-open',
+      __src__: 'folder-src-open',
+      __angular__: 'folder-angular-open',
+      __sample__: 'folder-src-open',
+      '.src': 'folder-src-open',
+      '.angular': 'folder-angular-open',
+      '.sample': 'folder-src-open',
+    };
     expectedManifest.hidesExplorerArrows = false;
 
     expect(iconDefinitions).toStrictEqual(expectedManifest);
@@ -260,6 +320,12 @@ describe('folder icons', () => {
     expectedManifest.iconDefinitions = {
       folder: {
         iconPath: './../icons/folder.svg',
+      },
+      'folder-angular': {
+        iconPath: './../icons/folder-angular.svg',
+      },
+      'folder-angular-open': {
+        iconPath: './../icons/folder-angular-open.svg',
       },
       'folder-open': {
         iconPath: './../icons/folder-open.svg',
@@ -301,6 +367,18 @@ describe('folder icons', () => {
       '.src': 'folder-src-open',
       '.source': 'folder-src-open',
     };
+    expectedManifest.rootFolderNames = {
+      src: 'folder-src',
+      _src: 'folder-src',
+      __src__: 'folder-src',
+      '.src': 'folder-src',
+    };
+    expectedManifest.rootFolderNamesExpanded = {
+      src: 'folder-src-open',
+      _src: 'folder-src-open',
+      __src__: 'folder-src-open',
+      '.src': 'folder-src-open',
+    };
     expectedManifest.hidesExplorerArrows = false;
 
     expect(iconDefinitions).toStrictEqual(expectedManifest);
@@ -316,6 +394,7 @@ describe('folder icons', () => {
           {
             name: 'folder-src',
             folderNames: ['src', 'source'],
+            rootFolderNames: ['src'],
             light: true,
             highContrast: true,
           },
@@ -410,6 +489,18 @@ describe('folder icons', () => {
       '.src': 'folder-src-open',
       '.source': 'folder-src-open',
     };
+    expectedManifest.rootFolderNames = {
+      src: 'folder-src',
+      _src: 'folder-src',
+      __src__: 'folder-src',
+      '.src': 'folder-src',
+    };
+    expectedManifest.rootFolderNamesExpanded = {
+      src: 'folder-src-open',
+      _src: 'folder-src-open',
+      __src__: 'folder-src-open',
+      '.src': 'folder-src-open',
+    };
     expectedManifest.light = {
       fileExtensions: {},
       fileNames: {},
@@ -436,6 +527,18 @@ describe('folder icons', () => {
         __source__: 'folder-src-open_light',
         '.src': 'folder-src-open_light',
         '.source': 'folder-src-open_light',
+      },
+      rootFolderNames: {
+        src: 'folder-src_light',
+        _src: 'folder-src_light',
+        __src__: 'folder-src_light',
+        '.src': 'folder-src_light',
+      },
+      rootFolderNamesExpanded: {
+        src: 'folder-src-open_light',
+        _src: 'folder-src-open_light',
+        __src__: 'folder-src-open_light',
+        '.src': 'folder-src-open_light',
       },
     };
     expectedManifest.highContrast = {
@@ -465,6 +568,18 @@ describe('folder icons', () => {
         '.src': 'folder-src-open_highContrast',
         '.source': 'folder-src-open_highContrast',
       },
+      rootFolderNames: {
+        src: 'folder-src_highContrast',
+        _src: 'folder-src_highContrast',
+        __src__: 'folder-src_highContrast',
+        '.src': 'folder-src_highContrast',
+      },
+      rootFolderNamesExpanded: {
+        src: 'folder-src-open_highContrast',
+        _src: 'folder-src-open_highContrast',
+        __src__: 'folder-src-open_highContrast',
+        '.src': 'folder-src-open_highContrast',
+      },
     };
     expectedManifest.hidesExplorerArrows = false;
     expect(iconDefinitions).toStrictEqual(expectedManifest);
@@ -493,6 +608,7 @@ describe('folder icons', () => {
           {
             name: 'foo-clone',
             folderNames: ['baz', 'qux'],
+            rootFolderNames: ['baz'],
             light: true,
             clone: {
               base: 'foo',
@@ -565,6 +681,18 @@ describe('folder icons', () => {
       _qux: 'foo-clone-open',
       __qux__: 'foo-clone-open',
     };
+    expectedManifest.rootFolderNames = {
+      baz: 'foo-clone',
+      '.baz': 'foo-clone',
+      _baz: 'foo-clone',
+      __baz__: 'foo-clone',
+    };
+    expectedManifest.rootFolderNamesExpanded = {
+      baz: 'foo-clone-open',
+      '.baz': 'foo-clone-open',
+      _baz: 'foo-clone-open',
+      __baz__: 'foo-clone-open',
+    };
     expectedManifest.light = {
       fileExtensions: {},
       fileNames: {},
@@ -587,6 +715,18 @@ describe('folder icons', () => {
         '.qux': 'foo-clone-open_light',
         _qux: 'foo-clone-open_light',
         __qux__: 'foo-clone-open_light',
+      },
+      rootFolderNames: {
+        baz: 'foo-clone_light',
+        '.baz': 'foo-clone_light',
+        _baz: 'foo-clone_light',
+        __baz__: 'foo-clone_light',
+      },
+      rootFolderNamesExpanded: {
+        baz: 'foo-clone-open_light',
+        '.baz': 'foo-clone-open_light',
+        _baz: 'foo-clone-open_light',
+        __baz__: 'foo-clone-open_light',
       },
     };
     expectedManifest.hidesExplorerArrows = false;
@@ -615,6 +755,9 @@ describe('folder icons', () => {
     ];
 
     config.folders.associations = {
+      baz: 'bar', // assigned to the clone
+    };
+    config.rootFolders.associations = {
       baz: 'bar', // assigned to the clone
     };
 
@@ -666,6 +809,18 @@ describe('folder icons', () => {
       bar: 'folder-bar-open',
       baz: 'folder-bar-open',
       foo: 'folder-foo-open',
+    };
+    expectedManifest.rootFolderNames = {
+      '.baz': 'folder-bar',
+      __baz__: 'folder-bar',
+      _baz: 'folder-bar',
+      baz: 'folder-bar',
+    };
+    expectedManifest.rootFolderNamesExpanded = {
+      '.baz': 'folder-bar-open',
+      __baz__: 'folder-bar-open',
+      _baz: 'folder-bar-open',
+      baz: 'folder-bar-open',
     };
 
     expectedManifest.light = {
