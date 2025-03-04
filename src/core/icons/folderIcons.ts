@@ -928,7 +928,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-firebase', folderNames: ['firebase'] },
       {
         name: 'folder-firestore',
-        folderNames: ['firestore', 'cloud-firestore'],
+        folderNames: ['firestore', 'cloud-firestore', 'firebase-firestore'],
       },
       {
         name: 'folder-cloud-functions',
