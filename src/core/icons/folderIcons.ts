@@ -930,6 +930,15 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-firestore',
         folderNames: ['firestore', 'cloud-firestore'],
       },
+      {
+        name: 'folder-cloud-functions',
+        folderNames: [
+          'cloud-functions',
+          'cloudfunctions',
+          'firebase-cloud-functions',
+          'firebase-cloudfunctions',
+        ],
+      },
       { name: 'folder-svelte', folderNames: ['svelte', 'svelte-kit'] },
       {
         name: 'folder-update',
