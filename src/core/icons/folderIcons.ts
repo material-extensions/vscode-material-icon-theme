@@ -781,7 +781,19 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-windows', folderNames: ['windows', 'win', 'win32'] },
       {
         name: 'folder-macos',
-        folderNames: ['macos', 'mac', 'osx', 'DS_Store', 'iPhone', 'iPad', 'iPod', 'macbook', 'macbook-air', 'macosx', 'apple'],
+        folderNames: [
+          'macos',
+          'mac',
+          'osx',
+          'DS_Store',
+          'iPhone',
+          'iPad',
+          'iPod',
+          'macbook',
+          'macbook-air',
+          'macosx',
+          'apple'
+        ],
       },
       {
         name: 'folder-error',
