@@ -792,7 +792,7 @@ export const folderIcons: FolderTheme[] = [
           'macbook',
           'macbook-air',
           'macosx',
-          'apple'
+          'apple',
         ],
       },
       {
