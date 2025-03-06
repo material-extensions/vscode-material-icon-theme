@@ -450,9 +450,9 @@ export const generateFolderIcons = async (
   }
 
   const folderIcon =
-    'M13.84376,7.53645l-1.28749-1.0729A2,2,0,0,0,11.27591,6H4A2,2,0,0,0,2,8V24a2,2,0,0,0,2,2H28a2,2,0,0,0,2-2V10a2,2,0,0,0-2-2H15.12412A2,2,0,0,1,13.84376,7.53645Z';
+    'm6.922 3.768-.644-.536A1 1 0 0 0 5.638 3H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H7.562a1 1 0 0 1-.64-.232';
   const folderIconOpen =
-    'M28.96692,12H9.44152a2,2,0,0,0-1.89737,1.36754L4,24V10H28a2,2,0,0,0-2-2H15.1241a2,2,0,0,1-1.28038-.46357L12.5563,6.46357A2,2,0,0,0,11.27592,6H4A2,2,0,0,0,2,8V24a2,2,0,0,0,2,2H26l4.80523-11.21213A2,2,0,0,0,28.96692,12Z';
+    'M14.483 6H4.721a1 1 0 0 0-.949.684L2 12V5h12a1 1 0 0 0-1-1H7.562a1 1 0 0 1-.64-.232l-.644-.536A1 1 0 0 0 5.638 3H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h11l2.403-5.606A1 1 0 0 0 14.483 6';
 
   await writeSVGFiles(
     'folder',
@@ -484,20 +484,18 @@ export const generateRootFolderIcons = async (
     return logger.error('Invalid color code for root folder icons');
   }
 
-  const rootFolderIcon =
-    'M16,5A11,11,0,1,1,5,16,11.01245,11.01245,0,0,1,16,5m0-3A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,8a6,6,0,1,0,6,6A6,6,0,0,0,16,10Z';
-  const rootFolderIconOpen =
-    'M16,5A11,11,0,1,1,5,16,11.01245,11.01245,0,0,1,16,5m0-3A14,14,0,1,0,30,16,14,14,0,0,0,16,2Z';
+  const rootFolderIconOuter = `<circle cx="8" cy="8" r="6" fill="none" stroke="${color}" stroke-width="2"/>`;
+  const rootFolderIconInner = `<circle cx="8" cy="8" r="3" fill="${color}"/>`;
 
   await writeSVGFiles(
     'folder-root',
-    getSVG(getPath(rootFolderIcon, color)),
+    getSVG(rootFolderIconOuter + rootFolderIconInner),
     opacity,
     saturation
   );
   await writeSVGFiles(
     'folder-root-open',
-    getSVG(getPath(rootFolderIconOpen, color)),
+    getSVG(rootFolderIconOuter),
     opacity,
     saturation
   );
