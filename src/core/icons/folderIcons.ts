@@ -471,6 +471,21 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-routes',
         folderNames: ['routes', 'router', 'routers'],
       },
+      {
+        name: 'folder-navigation',
+        folderNames: [
+          'navigation',
+          'navigations',
+          'nav',
+          'navs',
+          'navbar',
+          'navbars',
+          'menu',
+          'menus',
+          'sidebar',
+          'sidebars',
+        ],
+      },
       { name: 'folder-ci', folderNames: ['ci'] },
       {
         name: 'folder-benchmark',
