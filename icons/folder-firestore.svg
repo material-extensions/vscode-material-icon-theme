@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <path d="M13.844,7.536L12.556,6.464C12.197,6.164 11.744,6 11.276,6L4,6C2.903,6 2,6.903 2,8L2,24C2,25.097 2.903,26 4,26L28,26C29.097,26 30,25.097 30,24L30,10C30,8.903 29.097,8 28,8L15.124,8C14.656,8 14.203,7.836 13.844,7.536" style="fill:rgb(251,192,45);fill-rule:nonzero;"/>
+    <g id="Curves" transform="matrix(0.777778,0,0,0.777778,15.6667,10.4444)">
+        <path d="M18.1,17.712L19.875,18.5L12,22L12,18L15.37,16.502L18.1,17.712ZM3,6L12,2L12,6L3,10L3,6ZM21,6L12,2L12,6L21,10L21,6ZM3,13L12,9L12,13L3,17L3,13ZM21,13L12,9L12,13L21,17L21,13Z" style="fill:rgb(255,249,196);"/>
+    </g>
+</svg>
