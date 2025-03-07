@@ -1,18 +1,29 @@
 {
+  "files.readonlyInclude": {
+    "bun.lock": true
+  },
   "files.exclude": {
     "out": false
   },
   "search.exclude": {
     "out": true
   },
+
+  "editor.defaultFormatter": "biomejs.biome",
+  "editor.formatOnSave": true,
+
   "[typescript]": {
     "editor.codeActionsOnSave": {
       "quickfix.biome": "explicit",
       "source.organizeImports.biome": "explicit"
     }
   },
-  "editor.defaultFormatter": "biomejs.biome",
-  "editor.formatOnSave": true,
+  "[markdown]": {
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+  },
+  "[svg]": {
+    "editor.defaultFormatter": "jock.svg"
+  },
 
   "github.copilot.chat.codeGeneration.instructions": [
     {
@@ -27,8 +38,5 @@
       "file": "/CONTRIBUTING.md"
     }
   ],
-  "github.copilot.chat.codeGeneration.useInstructionFiles": true,
-  "[markdown]": {
-    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
-  }
+  "github.copilot.chat.codeGeneration.useInstructionFiles": true
 }

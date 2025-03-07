@@ -10,8 +10,8 @@ body:
       label: Icon Type
       description: What type of icon are you requesting?
       options:
-        - label: Folder
-        - label: File
+        - label: 📁 Folder
+        - label: 📄 File
 
   - type: textarea
     id: folder-names

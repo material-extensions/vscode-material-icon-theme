@@ -1,40 +1,38 @@
-import { type CloneOptions } from '../cloneOptions';
+import type { RequireAtLeastOne } from '../../../types/requiredAtLeastOne';
+import type { DefaultIcon } from '../defaultIcon';
 import type { IconPack } from '../iconPack';
+import type { LightSettingsWithCloneOptions } from '../lightSettings';
 
-export type FolderIcon = {
-  /**
-   * Name of the icon, e.g. `src`
-   */
-  name: string;
+type BasicFolderIcon = DefaultIcon &
+  LightSettingsWithCloneOptions & {
+    /**
+     * Define the folder names that should apply the icon.
+     * E.g. `['src', 'source']`
+     */
+    folderNames: string[];
 
-  /**
-   * Define the folder names that should apply the icon.
-   * E.g. `['src', 'source']`
-   */
-  folderNames: string[];
+    /**
+     * Define the workspace (root) folder names that should apply the icon.
+     * E.g. `['database']`
+     */
+    rootFolderNames?: string[];
 
-  /**
-   * Define if there is a light icon available.
-   */
-  light?: boolean;
+    /**
+     * Define if the icon should be disabled.
+     */
+    disabled?: boolean;
 
-  /**
-   * Define if there is a high contrast icon available.
-   */
-  highContrast?: boolean;
+    /**
+     * Defines a pack to which this icon belongs. A pack can be toggled and all icons inside this pack can be enabled or disabled together.
+     */
+    enabledFor?: IconPack[];
+  };
 
-  /**
-   * Define if the icon should be disabled.
-   */
-  disabled?: boolean;
+type RequireAtLeastOneFolderIcon<T> = T extends BasicFolderIcon
+  ? RequireAtLeastOne<T, 'folderNames' | 'rootFolderNames'>
+  : never;
 
-  /**
-   * Defines a pack to which this icon belongs. A pack can be toggled and all icons inside this pack can be enabled or disabled together.
-   */
-  enabledFor?: IconPack[];
-
-  /**
-   * Options for generating an icon based on another icon.
-   */
-  clone?: CloneOptions;
-};
+/**
+ * Type for a `FileIcon`. In addition to the `name` property, either a `fileExtensions`, `fileNames`, or `patterns` property is required.
+ */
+export type FolderIcon = RequireAtLeastOneFolderIcon<BasicFolderIcon>;

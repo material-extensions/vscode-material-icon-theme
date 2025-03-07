@@ -6,6 +6,7 @@ import {
   type FileIcon,
   type FolderIcon,
   type FolderTheme,
+  type LanguageIcon,
   fileIcons,
   folderIcons,
   highContrastColorFileEnding,
@@ -82,7 +83,7 @@ const checkFileIcons = () => {
 };
 
 const isIconAvailable = (
-  icon: FileIcon | FolderIcon | DefaultIcon,
+  icon: DefaultIcon,
   iconType: IconType,
   iconColor: IconColor,
   hasOpenedFolder?: boolean
@@ -111,12 +112,10 @@ const isIconAvailable = (
 /**
  * Type guard to check if the icon is a clone icon
  */
-const isCloneIcon = (
-  icon: FileIcon | FolderIcon | DefaultIcon
-): icon is CloneIcon => {
+const isCloneIcon = (icon: DefaultIcon): icon is CloneIcon => {
   return (
     (icon as CloneIcon).clone &&
-    (icon as FileIcon | FolderIcon).clone?.base !== undefined
+    (icon as FileIcon | FolderIcon | LanguageIcon).clone?.base !== undefined
   );
 };
 
@@ -167,17 +166,18 @@ const checkFolderIcons = () => {
 
 const getAllFolderIcons = (theme: FolderTheme) => {
   const icons = theme.icons ? theme.icons : [];
+
+  // filter undefined root folder icons
   return [theme.defaultIcon, theme.rootFolder, ...icons].filter(
     (icon) => icon !== undefined
-  ); // filter undefined root folder icons
+  );
 };
 
 /**
  * Check if the language icons from the configuration are available on the file system.
  */
 const checkLanguageIcons = () => {
-  languageIcons.forEach((lang) => {
-    const icon = lang.icon;
+  languageIcons.forEach((icon) => {
     isIconAvailable(icon, IconType.LanguageIcons, IconColor.Default);
     isIconAvailable(icon, IconType.LanguageIcons, IconColor.Light);
     isIconAvailable(icon, IconType.LanguageIcons, IconColor.HighContrast);

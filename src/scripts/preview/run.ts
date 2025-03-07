@@ -8,12 +8,10 @@ const filterDuplicates = (icons: string[]) => {
 };
 
 const basicFileIcons = filterDuplicates(
-  fileIcons.icons
+  [...fileIcons.icons, ...languageIcons]
     // remove icons that are clones
     .filter((i) => i.clone === undefined)
     .map((i) => i.name)
-    // merge language icons
-    .concat(languageIcons.map((i) => i.icon.name))
 ).map((i) => ({ iconName: i, label: i }));
 
 const folderThemes = filterDuplicates(

@@ -13,10 +13,12 @@ export const getFileConfigHash = (config: Partial<Config>): string => {
     if (
       config.saturation !== defaults.saturation ||
       config.opacity !== defaults.opacity ||
-      config.folders?.color !== defaults.folders.color ||
       config.files?.color !== defaults.files.color ||
+      config.folders?.color !== defaults.folders.color ||
+      config.rootFolders?.color !== defaults.rootFolders.color ||
       (config.files?.customClones?.length ?? 0) > 0 ||
-      (config.folders?.customClones?.length ?? 0) > 0
+      (config.folders?.customClones?.length ?? 0) > 0 ||
+      (config.languages?.customClones?.length ?? 0) > 0
     ) {
       // Any changes that are hashed will trigger a refresh of the icon in the VS Code UI
       fileConfigString += `~${getHash(
@@ -24,6 +26,7 @@ export const getFileConfigHash = (config: Partial<Config>): string => {
           saturation: config.saturation,
           opacity: config.opacity,
           foldersColor: config.folders?.color,
+          rootFoldersColor: config.rootFolders?.color,
           filesColor: config.files?.color,
           fileClones: config.files?.customClones,
           folderClones: config.folders?.customClones,

@@ -24,6 +24,8 @@ community include:
   and learning from the experience
 * Focusing on what is best not just for us as individuals, but for the
   overall community
+* Refraining from spamming or excessively demanding others' time and attention
+  for non-essential matters
 
 Examples of unacceptable behavior include:
 
@@ -89,7 +91,7 @@ interaction with the people involved, including unsolicited interaction with
 those enforcing the Code of Conduct, for a specified period of time. This
 includes avoiding interactions in community spaces as well as external channels
 like social media. Violating these terms may lead to a temporary or
-permanent ban.
+permanent ban depending on the severity of the violation.
 
 ### 3. Temporary Ban
 

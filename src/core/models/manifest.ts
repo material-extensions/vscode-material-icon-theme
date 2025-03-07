@@ -18,6 +18,8 @@ export type Manifest = {
   folderExpanded?: string;
   folderNames?: Record<string, string>;
   folderNamesExpanded?: Record<string, string>;
+  rootFolderNames?: Record<string, string>;
+  rootFolderNamesExpanded?: Record<string, string>;
   rootFolder?: string;
   rootFolderExpanded?: string;
   fileExtensions?: Record<string, string>;
@@ -33,6 +35,8 @@ export const createEmptyManifest = (): Manifest => ({
   iconDefinitions: {},
   folderNames: {},
   folderNamesExpanded: {},
+  rootFolderNames: {},
+  rootFolderNamesExpanded: {},
   fileExtensions: {},
   fileNames: {},
   languageIds: {},

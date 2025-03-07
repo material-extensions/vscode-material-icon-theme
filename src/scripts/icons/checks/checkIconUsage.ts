@@ -126,15 +126,12 @@ const getAllFolderIcons = (
   return allFolderIcons;
 };
 
-const getAllUsedLanguageIcons = (): string[] => {
-  const icons = [
-    ...languageIcons.map((lang) => lang.icon.name),
-    ...languageIcons
-      .filter((lang) => lang.icon.light)
-      .map((lang) => lang.icon.name + lightColorFileEnding),
-    ...languageIcons
-      .filter((lang) => lang.icon.highContrast)
-      .map((lang) => lang.icon.name + highContrastColorFileEnding),
-  ];
-  return icons;
-};
+const getAllUsedLanguageIcons = (): string[] => [
+  ...languageIcons.map((icon) => icon.name),
+  ...languageIcons
+    .filter((icon) => icon.light)
+    .map((icon) => icon.name + lightColorFileEnding),
+  ...languageIcons
+    .filter((icon) => icon.highContrast)
+    .map((icon) => icon.name + highContrastColorFileEnding),
+];

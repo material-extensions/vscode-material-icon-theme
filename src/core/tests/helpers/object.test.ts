@@ -81,7 +81,7 @@ describe('merge function its', () => {
   it('should handle null and undefined correctly', () => {
     type Obj = {
       a: { x: number } | null;
-      b: string | undefined;
+      b?: string;
     };
     const obj1: Obj = { a: null, b: undefined };
     const obj2: Obj = { a: { x: 1 }, b: 'text' };

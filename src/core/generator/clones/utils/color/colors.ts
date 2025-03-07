@@ -1,4 +1,4 @@
-import chroma, { type Color, valid } from 'chroma-js';
+import chroma, { type Color } from 'chroma-js';
 import { type INode } from 'svgson';
 import { getStyle, traverse } from '../cloning';
 import {
@@ -68,11 +68,11 @@ const lighten = (color: Color, hslPercent: number) =>
   color.set('hsl.l', color.get('hsl.l') + hslPercent);
 
 /** checks if a string is a valid color. **/
-export const isValidColor = (color: string | undefined): boolean => {
+export const isValidColor = (color?: string): boolean => {
   if (color === undefined) {
     return false;
   }
-  return valid(color);
+  return chroma.valid(color);
 };
 
 /**

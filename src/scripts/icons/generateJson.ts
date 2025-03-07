@@ -6,6 +6,7 @@ import {
   generateFileIcons,
   generateFolderIcons,
   generateManifest,
+  generateRootFolderIcons,
   getDefaultConfig,
 } from '../../core';
 
@@ -14,6 +15,11 @@ try {
   const config = getDefaultConfig();
   generateFileIcons(config.files.color, config.opacity, config.saturation);
   generateFolderIcons(config.folders.color, config.opacity, config.saturation);
+  generateRootFolderIcons(
+    config.rootFolders.color,
+    config.opacity,
+    config.saturation
+  );
 
   const manifest = generateManifest();
   // Print manifest to stdout so that scripts can consume it

@@ -150,17 +150,20 @@ export const replaceColors = (
 };
 
 /**
- * Creates a clone configuration with empty light object.
+ * Creates a clone manifest with empty light object.
  *
  * @returns A manifest object with empty light object.
  */
-export const createCloneConfig = () => {
+export const createCloneManifest = () => {
   const manifest = createEmptyManifest();
   manifest.light = {
     fileExtensions: {},
     fileNames: {},
     folderNames: {},
     folderNamesExpanded: {},
+    rootFolderNames: {},
+    rootFolderNamesExpanded: {},
+    languageIds: {},
   };
 
   return manifest;

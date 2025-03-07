@@ -1,7 +1,9 @@
 export { applyConfigToIcons } from './generator/applyConfigToIcons';
 export {
   customClonesIcons,
-  generateConfiguredClones,
+  generateConfiguredFileIconClones,
+  generateConfiguredFolderIconClones,
+  generateConfiguredLanguageIconClones,
   hasCustomClones,
 } from './generator/clones/clonesGenerator';
 export { clearCloneFolder } from './generator/clones/utils/cloneData';
@@ -19,7 +21,10 @@ export {
   openedFolder,
 } from './generator/constants';
 export { generateFileIcons } from './generator/fileGenerator';
-export { generateFolderIcons } from './generator/folderGenerator';
+export {
+  generateFolderIcons,
+  generateRootFolderIcons,
+} from './generator/folderGenerator';
 export { generateManifest } from './generator/generateManifest';
 export { validateOpacityValue } from './generator/iconOpacity';
 export { validateSaturationValue } from './generator/iconSaturation';

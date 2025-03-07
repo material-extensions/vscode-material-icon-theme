@@ -35,10 +35,10 @@ export const loadFileIconDefinitions = (
 
   allFileIcons.forEach((icon) => {
     const isClone = icon.clone !== undefined;
-    manifest = setIconDefinition(manifest, config, icon.name, isClone);
+    manifest = setIconDefinitions(manifest, config, icon.name, isClone);
 
     if (icon.light) {
-      manifest = setIconDefinition(
+      manifest = setIconDefinitions(
         manifest,
         config,
         icon.name,
@@ -47,7 +47,7 @@ export const loadFileIconDefinitions = (
       );
     }
     if (icon.highContrast) {
-      manifest = setIconDefinition(
+      manifest = setIconDefinitions(
         manifest,
         config,
         icon.name,
@@ -78,7 +78,7 @@ export const loadFileIconDefinitions = (
   });
 
   // set default file icon
-  manifest = setIconDefinition(
+  manifest = setIconDefinitions(
     manifest,
     config,
     fileIcons.defaultIcon.name,
@@ -87,7 +87,7 @@ export const loadFileIconDefinitions = (
   manifest.file = fileIcons.defaultIcon.name;
 
   if (fileIcons.defaultIcon.light && manifest.light) {
-    manifest = setIconDefinition(
+    manifest = setIconDefinitions(
       manifest,
       config,
       fileIcons.defaultIcon.name,
@@ -100,7 +100,7 @@ export const loadFileIconDefinitions = (
   }
 
   if (fileIcons.defaultIcon.highContrast) {
-    manifest = setIconDefinition(
+    manifest = setIconDefinitions(
       manifest,
       config,
       fileIcons.defaultIcon.name,
@@ -202,7 +202,7 @@ const disableIconsByPack = (
  * @param appendix - The appendix to be added to the icon name.
  * @returns The updated manifest object with the icon definition.
  */
-const setIconDefinition = (
+const setIconDefinitions = (
   manifest: Manifest,
   config: Config,
   iconName: string,
@@ -212,9 +212,9 @@ const setIconDefinition = (
   const ext = isClone ? cloneIconExtension : '.svg';
   const key = `${iconName}${appendix}`;
   manifest.iconDefinitions ??= {};
-  if (!manifest.iconDefinitions![key]) {
+  if (!manifest.iconDefinitions[key]) {
     const fileConfigHash = getFileConfigHash(config);
-    manifest.iconDefinitions![key] = {
+    manifest.iconDefinitions[key] = {
       iconPath: `${iconFolderPath}${iconName}${appendix}${fileConfigHash}${ext}`,
     };
   }

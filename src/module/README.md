@@ -22,11 +22,11 @@
 <!-- markdownlint-disable no-inline-html -->
 ## File icons
 
-<details><summary>🏞️ <b>Show all available file icons</b></summary><br/><img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/fileIcons.png" alt="file icons"></details>
+<details><summary>🏞️ <b>Show all available file icons</b></summary><br/><img src="https://raw.githubusercontent.com/material-extensions/vscode-material-icon-theme/main/images/fileIcons.png" alt="file icons"></details>
 
 ## Folder icons
 
-<details><summary>🏞️ <b>Show all available folder icons</b></summary><br/><img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/folderIcons.png" alt="folder icons"></details>
+<details><summary>🏞️ <b>Show all available folder icons</b></summary><br/><img src="https://raw.githubusercontent.com/material-extensions/vscode-material-icon-theme/main/images/folderIcons.png" alt="folder icons"></details>
 <!-- markdownlint-restore -->
 
 ## Description

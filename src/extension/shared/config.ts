@@ -1,5 +1,10 @@
 import { extensions, workspace } from 'vscode';
-import { type Config, extensionName, extensionPublisher } from '../../core';
+import {
+  type Config,
+  extensionName,
+  extensionPublisher,
+  padWithDefaultConfig,
+} from '../../core';
 import { merge, set } from '../../core/helpers/object';
 
 /** Get configuration of vs code. */
@@ -110,5 +115,5 @@ export const getCurrentConfig = (): Config => {
     {}
   );
 
-  return updatedConfig as Config;
+  return padWithDefaultConfig(updatedConfig);
 };
