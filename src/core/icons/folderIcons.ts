@@ -1130,6 +1130,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-trash', folderNames: ['trash'] },
       { name: 'folder-cline', folderNames: ['cline_docs'] },
       { name: 'folder-liquibase', folderNames: ['liquibase'] },
+      { name: 'folder-storage', folderNames: ['storage'] },
       { name: 'folder-dart', folderNames: ['dart', 'dart_tool', 'dart_tools'] },
       { name: 'folder-zeabur', folderNames: ['zeabur'] },
     ],
