@@ -109,6 +109,16 @@ export const replacementMap = (baseColor: string, colors: Set<string>) => {
     const color = chroma(orderedColors[i]);
     let newColor = color.set('hsl.h', baseHue);
 
+    // if it's a simple, 2-color icon, we also retain the saturation
+    // from the base color. This helps us better adhere to the
+    // same-palette rule in the extension's guidelines; keeping both
+    // colors within the same "color column" of the material palette.
+    // This mainly affects folder icons, which usually have 2-color
+    // designs.
+    if (orderedColors.length === 2) {
+      newColor = newColor.set('hsl.s', baseColorChroma.get('hsl.s'));
+    }
+
     // the idea is to keep the paths with the same relative darkness
     // as the original icon, but with different hues. So if the
     // new color results in a darker color (as we are looping from
