@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - name: ✅ Use App Token for the Bot which is allowed to create releases
-        uses: actions/create-github-app-token@67e27a7eb7db372a1c61a7f9bdab8699e9ee57f7 # v1.11.3
+        uses: actions/create-github-app-token@21cfef2b496dd8ef5b904c159339626a10ad380e # v1.11.6
         id: app-token
         with:
           app-id: ${{ vars.BOT_APP_ID }}
@@ -49,7 +49,7 @@ jobs:
           # Don't run husky on `git commit`
           HUSKY: 0
         run: |
-          bunx changelogen --release --push
+          bunx changelogen --hideAuthorEmail --release --push
           bunx changelogen github release --token ${{ secrets.GITHUB_TOKEN }}
 
       - name: 📝 Get metadata
@@ -66,19 +66,19 @@ jobs:
         run: bunx @vscode/vsce package
 
       - name: 🔒 Attest artifacts
-        uses: actions/attest-build-provenance@520d128f165991a6c774bcb264f323e3d70747f4 # v2.2.0
+        uses: actions/attest-build-provenance@c074443f1aee8d4aeeae555aebba3282517141b2 # v2.2.3
         # Read: https://docs.github.com/en/actions/security-guides/using-artifact-attestations-to-establish-provenance-for-builds
         with:
           subject-path: ${{ env.EXTENSION_FILE }}
 
       - name: 🌐 Publish to Open VSX Registry
-        uses: HaaLeo/publish-vscode-extension@28e2d3f5817fccf23c1f219eb0cecc903132d1a2 # v1.6.2
+        uses: HaaLeo/publish-vscode-extension@ca5561daa085dee804bf9f37fe0165785a9b14db # v2.0.0
         with:
           pat: ${{ secrets.OPEN_VSX_TOKEN }}
           extensionFile: ${{ env.EXTENSION_FILE }}
 
       - name: 🌐 Publish to Visual Studio Marketplace
-        uses: HaaLeo/publish-vscode-extension@28e2d3f5817fccf23c1f219eb0cecc903132d1a2 # v1.6.2
+        uses: HaaLeo/publish-vscode-extension@ca5561daa085dee804bf9f37fe0165785a9b14db # v2.0.0
         with:
           pat: ${{ secrets.VS_MARKETPLACE_TOKEN }}
           registryUrl: https://marketplace.visualstudio.com

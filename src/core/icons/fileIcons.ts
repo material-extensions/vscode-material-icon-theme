@@ -301,7 +301,7 @@ export const fileIcons: FileIcons = {
         'sln.dotsettings.user',
         'cfg',
         'cnf',
-        '.tool-versions',
+        'tool-versions',
       ],
       fileNames: [
         '.jshintignore',
@@ -396,6 +396,7 @@ export const fileIcons: FileIcons = {
         'dblite',
         'dblite3',
         'debugsymbols',
+        'odb',
       ],
     },
     { name: 'kusto', fileExtensions: ['kql'] },
@@ -497,6 +498,7 @@ export const fileIcons: FileIcons = {
       name: 'ruff',
       fileNames: ['ruff.toml', '.ruff.toml'],
     },
+    { name: 'uv', fileNames: ['uv.toml', '.uv.toml'] },
     {
       name: 'scons',
       light: true,
@@ -882,7 +884,7 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['graphql', 'gql'],
       fileNames: ['.graphqlconfig'],
       patterns: {
-        graphql: FileNamePattern.Ecmascript,
+        graphql: FileNamePattern.Cosmiconfig,
       },
     },
     { name: 'rust', fileExtensions: ['rs', 'ron'] },
@@ -2126,6 +2128,20 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['wrap'],
     },
     {
+      name: 'commitizen',
+      fileNames: [
+        '.czrc',
+        '.cz.json',
+        '.cz.toml',
+        '.cz.yaml',
+        '.cz.yml',
+        'cz.json',
+        'cz.toml',
+        'cz.yaml',
+        'cz.yml',
+      ],
+    },
+    {
       name: 'commitlint',
       fileNames: ['.commitlint.yaml', '.commitlint.yml'],
       patterns: {
@@ -2622,6 +2638,8 @@ export const fileIcons: FileIcons = {
         'taskfile.yaml',
         'taskfile.dist.yml',
         'taskfile.dist.yaml',
+        '.taskrc.yml',
+        '.taskrc.yaml',
       ],
     },
     {
@@ -3024,7 +3042,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'subtitles',
-      fileExtensions: ['srt', 'ssa', 'ttml', 'sbv', 'dfxp', 'vtt'],
+      fileExtensions: ['srt', 'ssa', 'ttml', 'sbv', 'dfxp', 'vtt', 'sub'],
     },
     { name: 'beancount', fileExtensions: ['beancount', 'bean'] },
     {
@@ -3033,6 +3051,7 @@ export const fileIcons: FileIcons = {
     },
     { name: 'epub', fileExtensions: ['epub'] },
     { name: 'regedit', fileExtensions: ['reg'] },
+    { name: 'cline', fileNames: ['.clinerules'] },
     { name: 'gnuplot', fileExtensions: ['gnu'] },
   ]),
 };
