@@ -469,7 +469,14 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-graphql', folderNames: ['graphql', 'gql'] },
       {
         name: 'folder-routes',
-        folderNames: ['routes', 'router', 'routers'],
+        folderNames: [
+          'routes',
+          'router',
+          'routers',
+          'navigation',
+          'navigations',
+          'routing',
+        ],
       },
       { name: 'folder-ci', folderNames: ['ci'] },
       {
@@ -781,7 +788,19 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-windows', folderNames: ['windows', 'win', 'win32'] },
       {
         name: 'folder-macos',
-        folderNames: ['macos', 'mac', 'osx', 'DS_Store'],
+        folderNames: [
+          'macos',
+          'mac',
+          'osx',
+          'DS_Store',
+          'iPhone',
+          'iPad',
+          'iPod',
+          'macbook',
+          'macbook-air',
+          'macosx',
+          'apple',
+        ],
       },
       {
         name: 'folder-error',

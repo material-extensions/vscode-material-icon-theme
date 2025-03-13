@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - name: ✅ Use App Token for the Bot which is allowed to create releases
-        uses: actions/create-github-app-token@0d564482f06ca65fa9e77e2510873638c82206f2 # v1.11.5
+        uses: actions/create-github-app-token@21cfef2b496dd8ef5b904c159339626a10ad380e # v1.11.6
         id: app-token
         with:
           app-id: ${{ vars.BOT_APP_ID }}
@@ -66,7 +66,7 @@ jobs:
         run: bunx @vscode/vsce package
 
       - name: 🔒 Attest artifacts
-        uses: actions/attest-build-provenance@bd77c077858b8d561b7a36cbe48ef4cc642ca39d # v2.2.2
+        uses: actions/attest-build-provenance@c074443f1aee8d4aeeae555aebba3282517141b2 # v2.2.3
         # Read: https://docs.github.com/en/actions/security-guides/using-artifact-attestations-to-establish-provenance-for-builds
         with:
           subject-path: ${{ env.EXTENSION_FILE }}
