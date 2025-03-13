@@ -90,7 +90,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-directive',
-        folderNames: ['directive, directives'],
+        folderNames: ['directive', 'directives'],
       },
       {
         name: 'folder-jinja',
@@ -355,7 +355,13 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-react-components',
-        folderNames: ['components', 'react', 'jsx', 'reactjs'],
+        folderNames: [
+          'components',
+          'react',
+          'jsx',
+          'reactjs',
+          'react-components',
+        ],
         enabledFor: [IconPack.React, IconPack.Redux],
       },
       {
@@ -463,7 +469,14 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-graphql', folderNames: ['graphql', 'gql'] },
       {
         name: 'folder-routes',
-        folderNames: ['routes', 'router', 'routers'],
+        folderNames: [
+          'routes',
+          'router',
+          'routers',
+          'navigation',
+          'navigations',
+          'routing',
+        ],
       },
       { name: 'folder-ci', folderNames: ['ci'] },
       {
@@ -507,6 +520,10 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-python',
         folderNames: ['python', 'pycache', 'pytest_cache'],
+      },
+      {
+        name: 'folder-sandbox',
+        folderNames: ['sandbox', 'playground'],
       },
       {
         name: 'folder-scons',
@@ -771,7 +788,19 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-windows', folderNames: ['windows', 'win', 'win32'] },
       {
         name: 'folder-macos',
-        folderNames: ['macos', 'mac', 'osx', 'DS_Store'],
+        folderNames: [
+          'macos',
+          'mac',
+          'osx',
+          'DS_Store',
+          'iPhone',
+          'iPad',
+          'iPod',
+          'macbook',
+          'macbook-air',
+          'macosx',
+          'apple',
+        ],
       },
       {
         name: 'folder-error',
@@ -1106,7 +1135,10 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-obsidian', folderNames: ['obsidian'] },
       { name: 'folder-trash', folderNames: ['trash'] },
+      { name: 'folder-cline', folderNames: ['cline_docs'] },
       { name: 'folder-liquibase', folderNames: ['liquibase'] },
+      { name: 'folder-dart', folderNames: ['dart', 'dart_tool', 'dart_tools'] },
+      { name: 'folder-zeabur', folderNames: ['zeabur'] },
     ],
   },
   {
