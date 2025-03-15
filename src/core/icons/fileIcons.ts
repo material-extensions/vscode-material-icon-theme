@@ -1929,7 +1929,8 @@ export const fileIcons: FileIcons = {
       ],
       light: true,
     },
-    { name: 'svg', fileExtensions: ['svg', 'ai', 'ait'] },
+    { name: 'svg', fileExtensions: ['svg'] },
+    { name: 'adobe-illustrator', fileExtensions: ['ai', 'ait'], light: true },
     {
       name: 'svelte',
       fileExtensions: ['svelte'],
