@@ -113,8 +113,6 @@ export const fileIcons: FileIcons = {
         'ico',
         'tif',
         'tiff',
-        'psd',
-        'psb',
         'ami',
         'apx',
         'avif',
@@ -1930,6 +1928,11 @@ export const fileIcons: FileIcons = {
       light: true,
     },
     { name: 'svg', fileExtensions: ['svg'] },
+    {
+      name: 'adobe-photoshop',
+      fileExtensions: ['psd', 'psb', 'psdt'],
+      light: true,
+    },
     {
       name: 'svelte',
       fileExtensions: ['svelte'],
