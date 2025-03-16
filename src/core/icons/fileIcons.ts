@@ -3062,7 +3062,7 @@ export const fileIcons: FileIcons = {
         'dfxp',
         'vtt',
         'sub',
-        'ass'
+        'ass',
       ],
     },
     { name: 'beancount', fileExtensions: ['beancount', 'bean'] },
