@@ -1151,6 +1151,8 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-cline', folderNames: ['cline_docs'] },
       { name: 'folder-liquibase', folderNames: ['liquibase'] },
       { name: 'folder-dart', folderNames: ['dart', 'dart_tool', 'dart_tools'] },
+      { name: 'folder-shopify', folderNames: ['shopify'] },
+      { name: 'folder-sections', folderNames: ['section', 'sections'] },
       { name: 'folder-zeabur', folderNames: ['zeabur'] },
       { name: 'folder-kusto', folderNames: ['kusto', 'kql'] },
     ],
