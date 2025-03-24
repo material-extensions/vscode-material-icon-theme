@@ -113,8 +113,6 @@ export const fileIcons: FileIcons = {
         'ico',
         'tif',
         'tiff',
-        'psd',
-        'psb',
         'ami',
         'apx',
         'avif',
@@ -1930,6 +1928,12 @@ export const fileIcons: FileIcons = {
       light: true,
     },
     { name: 'svg', fileExtensions: ['svg'] },
+    { name: 'adobe-illustrator', fileExtensions: ['ai', 'ait'], light: true },
+    {
+      name: 'adobe-photoshop',
+      fileExtensions: ['psd', 'psb', 'psdt'],
+      light: true,
+    },
     {
       name: 'svelte',
       fileExtensions: ['svelte'],
@@ -3050,7 +3054,16 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'subtitles',
-      fileExtensions: ['srt', 'ssa', 'ttml', 'sbv', 'dfxp', 'vtt', 'sub'],
+      fileExtensions: [
+        'srt',
+        'ssa',
+        'ttml',
+        'sbv',
+        'dfxp',
+        'vtt',
+        'sub',
+        'ass',
+      ],
     },
     { name: 'beancount', fileExtensions: ['beancount', 'bean'] },
     {
