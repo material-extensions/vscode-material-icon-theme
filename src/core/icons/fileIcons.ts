@@ -3083,6 +3083,7 @@ export const fileIcons: FileIcons = {
         'packship.config.ts',
         'packship.config.mts',
       ],
+      light: true,
     },
   ]),
 };
