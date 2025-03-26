@@ -3078,10 +3078,14 @@ export const fileIcons: FileIcons = {
       name: 'packship',
       fileNames: [
         '.packshiprc',
+        '.packshiprc.json',
+        '.packshiprc.js',
+        '.packshiprc.ts',
         'packship.config.js',
-        'packship.config.mjs',
         'packship.config.ts',
+        'packship.config.mjs',
         'packship.config.mts',
+        'packship.config.json'
       ],
       light: true,
     },
