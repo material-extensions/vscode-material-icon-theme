@@ -488,7 +488,7 @@ export const fileIcons: FileIcons = {
     { name: 'python', fileExtensions: ['py'] },
     {
       name: 'python-misc',
-      fileExtensions: ['pyc', 'whl'],
+      fileExtensions: ['pyc', 'whl', 'egg'],
       fileNames: [
         'requirements.txt',
         'pipfile',
@@ -498,6 +498,11 @@ export const fileIcons: FileIcons = {
         '.pylintrc',
         'pyproject.toml',
         'py.typed',
+        '.coveragerc',
+        '.coverage',
+        '.scrapy',
+        'celerybeat-schedule',
+        'celerybeat.pid',
       ],
     },
     {
