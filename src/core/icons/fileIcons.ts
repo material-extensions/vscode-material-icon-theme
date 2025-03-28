@@ -498,6 +498,11 @@ export const fileIcons: FileIcons = {
         '.pylintrc',
         'pyproject.toml',
         'py.typed',
+        '.coveragerc',
+        '.coverage',
+        '.scrapy',
+        'celerybeat-schedule',
+        'celerybeat.pid',
       ],
     },
     {
