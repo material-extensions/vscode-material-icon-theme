@@ -3085,7 +3085,7 @@ export const fileIcons: FileIcons = {
         'packship.config.ts',
         'packship.config.mjs',
         'packship.config.mts',
-        'packship.config.json'
+        'packship.config.json',
       ],
       light: true,
     },
