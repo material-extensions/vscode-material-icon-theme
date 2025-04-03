@@ -2,6 +2,18 @@
 
 # Changelog
 
+## v5.21.1
+
+[compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.21.0...v5.21.1)
+
+### 🩹 Fixes
+
+- **#2956:** 🚑 firebase icon not working ([#2957](https://github.com/material-extensions/vscode-material-icon-theme/pull/2957))
+
+### ❤️ Contributors
+
+- Lucas Colombo ([@lucas-labs](https://github.com/lucas-labs))
+
 ## v5.21.0
 
 [compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.20.0...v5.21.0)
