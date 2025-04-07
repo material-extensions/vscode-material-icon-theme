@@ -2,6 +2,51 @@
 
 # Changelog
 
+## v5.21.1
+
+[compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.21.0...v5.21.1)
+
+### 🩹 Fixes
+
+- **#2956:** 🚑 firebase icon not working ([#2957](https://github.com/material-extensions/vscode-material-icon-theme/pull/2957))
+
+### ❤️ Contributors
+
+- Lucas Colombo ([@lucas-labs](https://github.com/lucas-labs))
+
+## v5.21.0
+
+[compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.20.0...v5.21.0)
+
+### 🚀 Enhancements
+
+- Apple related associations for the apple folder icon ([#2918](https://github.com/material-extensions/vscode-material-icon-theme/pull/2918))
+- ✨ enhance cloning so two-color icons adhere to same-palette rule ([#2932](https://github.com/material-extensions/vscode-material-icon-theme/pull/2932))
+- Add navigation folder icon ([#2927](https://github.com/material-extensions/vscode-material-icon-theme/pull/2927))
+- Add routing icon support for `*.route.ts` and `*.route.tsx` ([#2917](https://github.com/material-extensions/vscode-material-icon-theme/pull/2917))
+- Generate icons as 16×16 ([#2837](https://github.com/material-extensions/vscode-material-icon-theme/pull/2837))
+- Add icons for firestore & cloud-functions ([#2924](https://github.com/material-extensions/vscode-material-icon-theme/pull/2924))
+- Add file icon for photoshop ([#2940](https://github.com/material-extensions/vscode-material-icon-theme/pull/2940))
+- Add file icon for Adobe Illustrator files ([#2933](https://github.com/material-extensions/vscode-material-icon-theme/pull/2933))
+- Add the subtitle icon to `.ass` files ([#2944](https://github.com/material-extensions/vscode-material-icon-theme/pull/2944))
+- Add folder icons for kusto ([#2936](https://github.com/material-extensions/vscode-material-icon-theme/pull/2936))
+- Add support for more Python-adjacent file types ([#2954](https://github.com/material-extensions/vscode-material-icon-theme/pull/2954))
+
+### 🩹 Fixes
+
+- **ci:** Pr title workflow should be executed on updates ([34b85492](https://github.com/material-extensions/vscode-material-icon-theme/commit/34b85492))
+
+### ❤️ Contributors
+
+- Gabriel Mitelman Tkacz ([@gtkacz](https://github.com/gtkacz))
+- Cameron Cowen <cameronc94@gmail.com>
+- Firecrafter28 ([@Firecrafter28](https://github.com/Firecrafter28))
+- Philipp Kief ([@PKief](https://github.com/PKief))
+- Philipp Bauer <ciriousjoker@gmail.com>
+- Thaddeus Crews ([@Repiteo](https://github.com/Repiteo))
+- Vaibhav Naik ([@Vaibhav-Naik-26](https://github.com/Vaibhav-Naik-26))
+- Lucas Colombo ([@lucas-labs](https://github.com/lucas-labs))
+
 ## v5.20.0
 
 [compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.19.0...v5.20.0)
