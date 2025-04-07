@@ -1153,6 +1153,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-dart', folderNames: ['dart', 'dart_tool', 'dart_tools'] },
       { name: 'folder-zeabur', folderNames: ['zeabur'] },
       { name: 'folder-kusto', folderNames: ['kusto', 'kql'] },
+      { name: 'folder-policy', folderNames: ['policy', 'policies'] },
     ],
   },
   {
