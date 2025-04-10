@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1.9,1.06581e-14,-27)">
+        <path d="M17,26.053l0,2.894c0,0.581 -0.896,1.053 -2,1.053c-1.104,-0 -2,-0.472 -2,-1.053l0,-2.894c0,-0.581 0.896,-1.053 2,-1.053c1.104,-0 2,0.472 2,1.053Z" style="fill:#ffd180;"/>
+        <clipPath id="_clip1">
+            <path d="M17,26.053l0,2.894c0,0.581 -0.896,1.053 -2,1.053c-1.104,-0 -2,-0.472 -2,-1.053l0,-2.894c0,-0.581 0.896,-1.053 2,-1.053c1.104,-0 2,0.472 2,1.053Z"/>
+        </clipPath>
+        <g clip-path="url(#_clip1)">
+            <g transform="matrix(1,0,0,0.526316,-2.99664,13.1579)">
+                <path d="M20,30l-4,-4l0,-4l4,0l0,8Z" style="fill:#ffb74d;"/>
+            </g>
+        </g>
+    </g>
+    <g transform="matrix(1.75,0,0,2.18452,-4.24328,-29.6755)">
+        <path d="M14.996,17.696l0,5.021c0,1.023 -1.039,1.854 -2.32,1.854l-3.36,-0c-1.28,-0 -2.32,-0.831 -2.32,-1.854l0,-5.021c0,-1.963 1.936,-3.196 4,-3.196c0.001,-0 0.001,0 0.002,0c1.97,0 3.998,1.217 3.998,3.196Z" style="fill:#ffca28;"/>
+        <clipPath id="_clip2">
+            <path d="M14.996,17.696l0,5.021c0,1.023 -1.039,1.854 -2.32,1.854l-3.36,-0c-1.28,-0 -2.32,-0.831 -2.32,-1.854l0,-5.021c0,-1.963 1.936,-3.196 4,-3.196c0.001,-0 0.001,0 0.002,0c1.97,0 3.998,1.217 3.998,3.196Z"/>
+        </clipPath>
+        <g clip-path="url(#_clip2)">
+            <g transform="matrix(0.571429,0,0,0.457767,2.42473,13.5845)">
+                <path d="M8,16l13,-13l-9,-3l-8,11l4,5Z" style="fill:#ff8a80;"/>
+            </g>
+            <g transform="matrix(0.571429,0,0,0.457767,2.42473,13.5845)">
+                <path d="M22,13l-11,11l1,2l11,0l0,-12l-1,-1Z" style="fill:#00bfa5;"/>
+            </g>
+        </g>
+    </g>
+</svg>
