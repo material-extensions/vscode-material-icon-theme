@@ -28,7 +28,7 @@ export const languageIcons: LanguageIcon[] = [
   { name: 'python', ids: ['python'] },
   { name: 'mojo', ids: ['mojo'] },
   { name: 'javascript', ids: ['javascript'] },
-  { name: 'typescript', ids: ['typescript'] },
+  { name: 'typescript', ids: ['typescript', 'ets'] },
   { name: 'scala', ids: ['scala'] },
   { name: 'handlebars', ids: ['handlebars'] },
   { name: 'perl', ids: ['perl', 'perl6'] },
