@@ -387,6 +387,8 @@ export const folderIcons: FolderTheme[] = [
           'audio',
           'audios',
           'music',
+          'song',
+          'songs',
           'sound',
           'sounds',
           'voice',
