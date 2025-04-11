@@ -523,7 +523,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-sandbox',
-        folderNames: ['sandbox', 'playground'],
+        folderNames: ['sandbox', 'sandboxes', 'playground', 'playgrounds'],
       },
       {
         name: 'folder-scons',
