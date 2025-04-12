@@ -2469,7 +2469,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'supabase',
-      fileNames: ['supabase.js', 'supabase.py'],
+      fileNames: ['supabase.js', 'supabase.ts', 'supabase.py'],
     },
     {
       name: 'ember',
