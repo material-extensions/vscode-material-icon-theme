@@ -3079,5 +3079,19 @@ export const fileIcons: FileIcons = {
     { name: 'regedit', fileExtensions: ['reg'] },
     { name: 'cline', fileNames: ['.clinerules'] },
     { name: 'gnuplot', fileExtensions: ['gnu'] },
+    {
+      name: 'packship',
+      fileNames: [
+        '.packshiprc',
+        '.packshiprc.json',
+        '.packshiprc.js',
+        '.packshiprc.ts',
+        'packship.config.js',
+        'packship.config.ts',
+        'packship.config.mjs',
+        'packship.config.mts',
+        'packship.config.json',
+      ],
+    },
   ]),
 };
