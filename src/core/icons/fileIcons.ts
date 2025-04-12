@@ -324,7 +324,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'typescript-def',
-      fileExtensions: ['d.ts', 'd.cts', 'd.mts'],
+      fileExtensions: ['d.ts', 'd.cts', 'd.mts', 'd.ets'],
     },
     { name: 'markdoc', fileExtensions: ['mdoc', 'markdoc', 'markdoc.md'] },
     {
@@ -488,7 +488,7 @@ export const fileIcons: FileIcons = {
     { name: 'python', fileExtensions: ['py'] },
     {
       name: 'python-misc',
-      fileExtensions: ['pyc', 'whl'],
+      fileExtensions: ['pyc', 'whl', 'egg'],
       fileNames: [
         'requirements.txt',
         'pipfile',
@@ -498,6 +498,11 @@ export const fileIcons: FileIcons = {
         '.pylintrc',
         'pyproject.toml',
         'py.typed',
+        '.coveragerc',
+        '.coverage',
+        '.scrapy',
+        'celerybeat-schedule',
+        'celerybeat.pid',
       ],
     },
     {
@@ -1384,7 +1389,7 @@ export const fileIcons: FileIcons = {
     {
       name: 'turborepo',
       light: true,
-      fileNames: ['turbo.json'],
+      fileNames: ['turbo.json', 'turbo.jsonc'],
     },
     {
       name: 'babel',
@@ -3074,5 +3079,19 @@ export const fileIcons: FileIcons = {
     { name: 'regedit', fileExtensions: ['reg'] },
     { name: 'cline', fileNames: ['.clinerules'] },
     { name: 'gnuplot', fileExtensions: ['gnu'] },
+    {
+      name: 'packship',
+      fileNames: [
+        '.packshiprc',
+        '.packshiprc.json',
+        '.packshiprc.js',
+        '.packshiprc.ts',
+        'packship.config.js',
+        'packship.config.ts',
+        'packship.config.mjs',
+        'packship.config.mts',
+        'packship.config.json',
+      ],
+    },
   ]),
 };

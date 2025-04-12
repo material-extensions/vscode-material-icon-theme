@@ -387,6 +387,8 @@ export const folderIcons: FolderTheme[] = [
           'audio',
           'audios',
           'music',
+          'song',
+          'songs',
           'sound',
           'sounds',
           'voice',
@@ -484,7 +486,9 @@ export const folderIcons: FolderTheme[] = [
         folderNames: [
           'benchmark',
           'benchmarks',
+          'bench',
           'performance',
+          'perf',
           'profiling',
           'measure',
           'measures',
@@ -523,7 +527,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-sandbox',
-        folderNames: ['sandbox', 'playground'],
+        folderNames: ['sandbox', 'sandboxes', 'playground', 'playgrounds'],
       },
       {
         name: 'folder-scons',
@@ -1153,6 +1157,8 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-dart', folderNames: ['dart', 'dart_tool', 'dart_tools'] },
       { name: 'folder-zeabur', folderNames: ['zeabur'] },
       { name: 'folder-storage', folderNames: ['storage'] },
+      { name: 'folder-kusto', folderNames: ['kusto', 'kql'] },
+      { name: 'folder-policy', folderNames: ['policy', 'policies'] },
     ],
   },
   {
