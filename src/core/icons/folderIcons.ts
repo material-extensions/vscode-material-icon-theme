@@ -671,7 +671,10 @@ export const folderIcons: FolderTheme[] = [
           'clis',
         ],
       },
-      { name: 'folder-constant', folderNames: ['constant', 'constants'] },
+      {
+        name: 'folder-constant',
+        folderNames: ['constant', 'constants', 'const', 'consts'],
+      },
       {
         name: 'folder-container',
         folderNames: ['container', 'containers', 'devcontainer'],
