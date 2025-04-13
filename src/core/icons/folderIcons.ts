@@ -229,6 +229,8 @@ export const folderIcons: FolderTheme[] = [
           'colors',
           'design',
           'designs',
+          'palette',
+          'palettes',
         ],
       },
       { name: 'folder-webpack', folderNames: ['webpack'] },
