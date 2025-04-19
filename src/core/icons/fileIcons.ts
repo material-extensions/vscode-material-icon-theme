@@ -3093,5 +3093,17 @@ export const fileIcons: FileIcons = {
         'packship.config.json',
       ],
     },
+    {
+      name: 'tsdown',
+      fileNames: [
+        'tsdown.config.ts',
+        'tsdown.config.cts',
+        'tsdown.config.mts',
+        'tsdown.config.js',
+        'tsdown.config.cjs',
+        'tsdown.config.mjs',
+        'tsdown.config.json',
+      ]
+    }
   ]),
 };
