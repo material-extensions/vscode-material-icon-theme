@@ -3103,6 +3103,7 @@ export const fileIcons: FileIcons = {
         'tsdown.config.cjs',
         'tsdown.config.mjs',
         'tsdown.config.json',
+        'tsdown.config',
       ],
     },
   ]),
