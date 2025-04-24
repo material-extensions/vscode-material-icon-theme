@@ -3096,7 +3096,7 @@ export const fileIcons: FileIcons = {
     {
       name: 'snakemake',
       fileExtensions: ['smk', 'snakemake'],
-      fileNames: ["Snakefile"],
+      fileNames: ['Snakefile'],
     },
   ]),
 };
