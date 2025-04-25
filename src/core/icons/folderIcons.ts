@@ -734,7 +734,11 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-hook',
-        folderNames: ['hook', 'hooks', 'trigger', 'triggers'],
+        folderNames: ['hook', 'hooks'],
+      },
+      {
+        name: 'folder-trigger',
+        folderNames: ['trigger', 'triggers'],
       },
       { name: 'folder-job', folderNames: ['job', 'jobs'] },
       {
