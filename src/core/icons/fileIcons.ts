@@ -625,7 +625,8 @@ export const fileIcons: FileIcons = {
         'mrf',
       ],
     },
-    { name: 'lib', fileExtensions: ['lib', 'bib', 'a'] },
+    { name: 'lib', fileExtensions: ['lib', 'a'] },
+    { name: 'bookshelf', fileExtensions: ['bib'] },
     { name: 'dll', fileExtensions: ['dll', 'ilk', 'so'] },
     {
       name: 'ruby',
