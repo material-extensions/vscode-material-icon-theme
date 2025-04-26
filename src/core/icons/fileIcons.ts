@@ -3093,5 +3093,10 @@ export const fileIcons: FileIcons = {
         'packship.config.json',
       ],
     },
+    {
+      name: 'snakemake',
+      fileExtensions: ['smk', 'snakemake'],
+      fileNames: ['Snakefile'],
+    },
   ]),
 };
