@@ -3098,5 +3098,14 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['smk', 'snakemake'],
       fileNames: ['Snakefile'],
     },
+    {
+      name: 'hadolint',
+      fileNames: [
+        '.hadolint.yaml',
+        '.hadolint.yml',
+        'hadolint.yaml',
+        'hadolint.yml',
+      ],
+    },
   ]),
 };
