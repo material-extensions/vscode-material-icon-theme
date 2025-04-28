@@ -12,6 +12,9 @@ export enum FileNamePattern {
 
   /** It adjusts the name with the following patterns: `.fileNamerc`, `.config/fileNamerc`, `fileName.config` and combines that with the pattern `NodeEcosystem` */
   Cosmiconfig = 'cosmiconfig',
+
+  /** Adds the following extensions to the file name: `yaml`, `yml`. */
+  Yaml = 'yaml',
 }
 
 export type Patterns = Record<string, FileNamePattern>;

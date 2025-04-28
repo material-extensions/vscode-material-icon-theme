@@ -3098,5 +3098,12 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['smk', 'snakemake'],
       fileNames: ['Snakefile'],
     },
+    {
+      name: 'hadolint',
+      patterns: {
+        '.hadolint': FileNamePattern.Yaml,
+        hadolint: FileNamePattern.Yaml,
+      },
+    },
   ]),
 };
