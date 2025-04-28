@@ -641,12 +641,11 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-archive',
+        folderNames: ['arc', 'arcs', 'archive', 'archives', 'archival'],
+      },
+      {
+        name: 'folder-backup',
         folderNames: [
-          'arc',
-          'arcs',
-          'archive',
-          'archives',
-          'archival',
           'bkp',
           'bkps',
           'bak',
