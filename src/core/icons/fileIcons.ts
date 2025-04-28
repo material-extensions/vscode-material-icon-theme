@@ -3100,12 +3100,10 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'hadolint',
-      fileNames: [
-        '.hadolint.yaml',
-        '.hadolint.yml',
-        'hadolint.yaml',
-        'hadolint.yml',
-      ],
+      patterns: {
+        '.hadolint': FileNamePattern.Yaml,
+        hadolint: FileNamePattern.Yaml,
+      },
     },
   ]),
 };
