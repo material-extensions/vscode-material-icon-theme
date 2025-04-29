@@ -539,6 +539,10 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['ps1', 'psm1', 'psd1', 'ps1xml', 'psc1', 'pssc'],
     },
     {
+      name: 'excalidraw',
+      fileExtensions: ['.json', '.svg', '.png']
+    },
+    {
       name: 'gradle',
       fileExtensions: ['gradle'],
       fileNames: ['gradle.properties', 'gradlew', 'gradle-wrapper.properties'],
