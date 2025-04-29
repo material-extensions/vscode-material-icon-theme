@@ -540,7 +540,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'excalidraw',
-      fileNames: ['excalidraw.json', 'excalidraw.svg', 'excalidraw.png'],
+      fileExtensions: ['excalidraw.json', 'excalidraw.svg', 'excalidraw.png'],
     },
     {
       name: 'gradle',
