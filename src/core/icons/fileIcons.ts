@@ -760,6 +760,9 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'tex', fileExtensions: ['tex', 'sty', 'dtx', 'ltx'] },
+    { name: 'bbx', fileExtensions: ['bbx'] },
+    { name: 'cbx', fileExtensions: ['cbx'] },
+    { name: 'lbx', fileExtensions: ['lbx'] },
     {
       name: 'powerpoint',
       fileExtensions: [
