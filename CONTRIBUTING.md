@@ -213,6 +213,7 @@ Available patterns are right now:
 | nodeEcosystem | Combination of ecmascript and configuration patterns                                                       |
 | cosmiconfig   | `.${fileName}rc`, `.config/${fileName}rc` and `${fileName}.config` with file extensions of `nodeEcosystem` |
 | yaml          | `yaml`, `yml`                                                                                              |
+| dotfile       | `.${fileName}`, `${fileName}`                                                                              |
 
 #### Folder icons
 
