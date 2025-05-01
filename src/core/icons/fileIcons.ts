@@ -778,6 +778,7 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['dtx'],
       clone: { base: 'tex', color: 'blue-gray-300' },
     },
+    { name: 'latexmk', patterns: { latexmkrc: FileNamePattern.Dotfile } },
     {
       name: 'powerpoint',
       fileExtensions: [
