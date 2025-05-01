@@ -1171,6 +1171,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-bibliography',
         folderNames: ['bibliography', 'bibliographies', 'book', 'books'],
       },
+      { name: 'folder-link', folderNames: ['link', 'links'] },
     ],
   },
   {
