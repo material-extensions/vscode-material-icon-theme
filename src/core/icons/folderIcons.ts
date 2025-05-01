@@ -1167,6 +1167,10 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-kusto', folderNames: ['kusto', 'kql'] },
       { name: 'folder-policy', folderNames: ['policy', 'policies'] },
       { name: 'folder-attachment', folderNames: ['attachment', 'attachments'] },
+      {
+        name: 'folder-bibliography',
+        folderNames: ['bibliography', 'bibliographies', 'book', 'books'],
+      },
     ],
   },
   {
