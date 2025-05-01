@@ -630,7 +630,9 @@ export const fileIcons: FileIcons = {
         'mrf',
       ],
     },
-    { name: 'lib', fileExtensions: ['lib', 'bib', 'a'] },
+    { name: 'lib', fileExtensions: ['lib', 'a'] },
+    { name: 'bibliography', fileExtensions: ['bib'] },
+    { name: 'bibtex-style', fileExtensions: ['bst'] },
     { name: 'dll', fileExtensions: ['dll', 'ilk', 'so'] },
     {
       name: 'ruby',
@@ -762,6 +764,9 @@ export const fileIcons: FileIcons = {
         'compose.worker.yml',
       ],
     },
+    { name: 'bbx', fileExtensions: ['bbx'] },
+    { name: 'cbx', fileExtensions: ['cbx'] },
+    { name: 'lbx', fileExtensions: ['lbx'] },
     { name: 'tex', fileExtensions: ['tex'] },
     {
       name: 'sty',
