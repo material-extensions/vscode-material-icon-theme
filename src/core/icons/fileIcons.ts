@@ -539,6 +539,11 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['ps1', 'psm1', 'psd1', 'ps1xml', 'psc1', 'pssc'],
     },
     {
+      name: 'excalidraw',
+      fileNames: ['excalidraw.json', 'excalidraw.svg', 'excalidraw.png'],
+      fileExtensions: ['excalidraw.json', 'excalidraw.svg', 'excalidraw.png'],
+    },
+    {
       name: 'gradle',
       fileExtensions: ['gradle'],
       fileNames: ['gradle.properties', 'gradlew', 'gradle-wrapper.properties'],
@@ -759,10 +764,31 @@ export const fileIcons: FileIcons = {
         'compose.worker.yml',
       ],
     },
-    { name: 'tex', fileExtensions: ['tex', 'sty', 'dtx', 'ltx'] },
     { name: 'bbx', fileExtensions: ['bbx'] },
     { name: 'cbx', fileExtensions: ['cbx'] },
     { name: 'lbx', fileExtensions: ['lbx'] },
+    { name: 'tex', fileExtensions: ['tex'] },
+    {
+      name: 'sty',
+      fileExtensions: ['sty'],
+      clone: { base: 'tex', color: 'deep-purple-A200' },
+    },
+    {
+      name: 'cls',
+      fileExtensions: ['cls'],
+      clone: { base: 'tex', color: 'pink-A200' },
+    },
+    {
+      name: 'ltx',
+      fileExtensions: ['ltx'],
+      clone: { base: 'tex', color: 'teal-400' },
+    },
+    {
+      name: 'dtx',
+      fileExtensions: ['dtx'],
+      clone: { base: 'tex', color: 'blue-gray-300' },
+    },
+    { name: 'latexmk', patterns: { latexmkrc: FileNamePattern.Dotfile } },
     {
       name: 'powerpoint',
       fileExtensions: [

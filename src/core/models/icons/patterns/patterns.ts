@@ -15,6 +15,9 @@ export enum FileNamePattern {
 
   /** Adds the following extensions to the file name: `yaml`, `yml`. */
   Yaml = 'yaml',
+
+  /** It adjusts the name with the following patterns: `.${fileName}`, `${fileName}`. */
+  Dotfile = 'dotfile',
 }
 
 export type Patterns = Record<string, FileNamePattern>;

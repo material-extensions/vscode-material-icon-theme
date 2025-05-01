@@ -91,7 +91,17 @@ export const languageIcons: LanguageIcon[] = [
   { name: 'pawn', ids: ['pawn'] },
   { name: 'reason', ids: ['reason', 'reason_lisp'] },
   { name: 'sml', ids: ['sml'] },
-  { name: 'tex', ids: ['tex', 'doctex', 'latex', 'latex-expl3'] },
+  { name: 'tex', ids: ['tex'] },
+  {
+    name: 'latex',
+    ids: ['latex', 'latex-expl3'],
+    clone: { base: 'tex', color: 'teal-400' },
+  },
+  {
+    name: 'doctex',
+    ids: ['doctex'],
+    clone: { base: 'tex', color: 'blue-gray-300' },
+  },
   { name: 'salesforce', ids: ['apex'] },
   { name: 'sas', ids: ['sas'] },
   { name: 'docker', ids: ['dockerfile', 'dockercompose', 'dockerbake'] },
