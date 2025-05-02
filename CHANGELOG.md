@@ -2,6 +2,57 @@
 
 # Changelog
 
+## v5.22.0
+
+[compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.21.1...v5.22.0)
+
+### 🚀 Enhancements
+
+- Add new icons for CSS ([#2710](https://github.com/material-extensions/vscode-material-icon-theme/pull/2710))
+- **icons:** Add support for `turbo.jsonc` file in turborepo icon ([#2963](https://github.com/material-extensions/vscode-material-icon-theme/pull/2963))
+- Associate the `.ets` and `.d.ets` extensions to typescript icon to support the ArkTS language ([#2966](https://github.com/material-extensions/vscode-material-icon-theme/pull/2966))
+- Add plural folder names for folder-sandbox icon ([#2965](https://github.com/material-extensions/vscode-material-icon-theme/pull/2965))
+- **icons:** Add PackShip package builder icon ([#2947](https://github.com/material-extensions/vscode-material-icon-theme/pull/2947))
+- Add song and songs to audio folder icon ([#2967](https://github.com/material-extensions/vscode-material-icon-theme/pull/2967))
+- Add policy folder ([#2960](https://github.com/material-extensions/vscode-material-icon-theme/pull/2960))
+- Add bench and perf to benchmark folder icon ([#2968](https://github.com/material-extensions/vscode-material-icon-theme/pull/2968))
+- Add `supabase.ts` to list of supabase icons ([#2970](https://github.com/material-extensions/vscode-material-icon-theme/pull/2970))
+- Add const and consts to constant folder icon ([#2972](https://github.com/material-extensions/vscode-material-icon-theme/pull/2972))
+- Add palette and palettes to theme folder icon ([#2973](https://github.com/material-extensions/vscode-material-icon-theme/pull/2973))
+- Associate Docker icon to `dockerbake` language ID ([#2982](https://github.com/material-extensions/vscode-material-icon-theme/pull/2982))
+- **icons:** Add Snakemake icon ([#2980](https://github.com/material-extensions/vscode-material-icon-theme/pull/2980))
+- Associate archive folder to a new icon ([#2989](https://github.com/material-extensions/vscode-material-icon-theme/pull/2989))
+- Add icon for hadolint configuration files ([#2984](https://github.com/material-extensions/vscode-material-icon-theme/pull/2984))
+- Add icon for attachments folder ([#2988](https://github.com/material-extensions/vscode-material-icon-theme/pull/2988))
+- Recreate different icons for hooks and triggers folders ([#2985](https://github.com/material-extensions/vscode-material-icon-theme/pull/2985))
+- Add icon for links folder ([#2987](https://github.com/material-extensions/vscode-material-icon-theme/pull/2987))
+- **icons:** Add Excalidraw icon ([#2995](https://github.com/material-extensions/vscode-material-icon-theme/pull/2995))
+- Add new icons for TeX/LaTeX related files ([#2997](https://github.com/material-extensions/vscode-material-icon-theme/pull/2997))
+- Add icons for `*.bib` files and BibTeX language IDs ([#2986](https://github.com/material-extensions/vscode-material-icon-theme/pull/2986))
+
+### 🩹 Fixes
+
+- **icons:** Fix `react-components` folder icons ([#2961](https://github.com/material-extensions/vscode-material-icon-theme/pull/2961))
+
+### 💅 Refactors
+
+- Update citation icon to match rounded style ([#2990](https://github.com/material-extensions/vscode-material-icon-theme/pull/2990))
+
+### ❤️ Contributors
+
+- Marlon Luís De Col <marlondecol@proton.me>
+- Sawyer Nicastro ([@SawyerNic](https://github.com/SawyerNic))
+- Marlon De Col <marlondecol@proton.me>
+- Chuanyi Zhang ([@ChuanyiZ](https://github.com/ChuanyiZ))
+- Navid Talebian ([@Navidtm](https://github.com/Navidtm))
+- Tom ([@ImDarkTom](https://github.com/ImDarkTom))
+- Vortex ([@Vortex2Oblivion](https://github.com/Vortex2Oblivion))
+- Hatem Soliman ([@CodeNKoffee](https://github.com/CodeNKoffee))
+- Zero ([@Groupguanfang](https://github.com/Groupguanfang))
+- 魔王少年 ([@maou-shonen](https://github.com/maou-shonen))
+- Karlos ([@aixegorri](https://github.com/aixegorri))
+- Crocodilo 🐊 <cappuccino5353@gmail.com>
+
 ## v5.21.1
 
 [compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.21.0...v5.21.1)
