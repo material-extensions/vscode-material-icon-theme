@@ -40,7 +40,7 @@
 
 ### ❤️ Contributors
 
-- Marlon Luís De Col ([@marlondecol](https://github.com/marlondecol))
+- Marlon Luís de Col ([@marlondecol](https://github.com/marlondecol))
 - Sawyer Nicastro ([@SawyerNic](https://github.com/SawyerNic))
 - Chuanyi Zhang ([@ChuanyiZ](https://github.com/ChuanyiZ))
 - Navid Talebian ([@Navidtm](https://github.com/Navidtm))
