@@ -3131,5 +3131,9 @@ export const fileIcons: FileIcons = {
         hadolint: FileNamePattern.Yaml,
       },
     },
+    {
+      name: 'coloredpetrinets',
+      fileExtensions: ['cpn', 'pnml'],
+    },
   ]),
 };
