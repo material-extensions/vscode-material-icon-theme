@@ -3138,7 +3138,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'coloredpetrinets',
-      fileExtensions: ['.cpn', 'pnml'],
+      fileExtensions: ['cpn', 'pnml'],
     },
   ]),
 };
