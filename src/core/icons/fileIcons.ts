@@ -774,11 +774,6 @@ export const fileIcons: FileIcons = {
       clone: { base: 'tex', color: 'deep-purple-A200' },
     },
     {
-      name: 'cls',
-      fileExtensions: ['cls'],
-      clone: { base: 'tex', color: 'pink-A200' },
-    },
-    {
       name: 'ltx',
       fileExtensions: ['ltx'],
       clone: { base: 'tex', color: 'teal-400' },
