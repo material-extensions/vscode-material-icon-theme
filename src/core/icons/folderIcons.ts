@@ -1172,7 +1172,7 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['bibliography', 'bibliographies', 'book', 'books'],
       },
       { name: 'folder-link', folderNames: ['link', 'links'] },
-      { name: 'folder-pytorch', folderNames: ['pytorch', 'torch']},
+      { name: 'folder-pytorch', folderNames: ['pytorch', 'torch'] },
     ],
   },
   {
