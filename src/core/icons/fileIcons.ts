@@ -3136,5 +3136,9 @@ export const fileIcons: FileIcons = {
       name: 'coloredpetrinets',
       fileExtensions: ['cpn', 'pnml'],
     },
+     {
+      name: 'pytorch',
+      fileExtensions: ['pt', 'pth', 'pwf'],
+    },
   ]),
 };
