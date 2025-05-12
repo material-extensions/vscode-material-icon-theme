@@ -190,4 +190,5 @@ export const languageIcons: LanguageIcon[] = [
     },
   },
   { name: 'gnuplot', ids: ['gnuplot'] },
+  { name: 'pyret', ids: ['pyret'] }
 ];
