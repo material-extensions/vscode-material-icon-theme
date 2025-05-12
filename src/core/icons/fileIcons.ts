@@ -531,7 +531,7 @@ export const fileIcons: FileIcons = {
         'fish',
         'exp',
         'nu',
-        'xsh'
+        'xsh',
       ],
       fileNames: ['commit-msg', 'pre-commit', 'pre-push', 'post-merge'],
     },
