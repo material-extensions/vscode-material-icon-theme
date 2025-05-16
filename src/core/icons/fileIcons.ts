@@ -2223,6 +2223,7 @@ export const fileIcons: FileIcons = {
     { name: 'drawio', fileExtensions: ['drawio', 'dio'] },
     { name: 'pascal', fileExtensions: ['pas'] },
     { name: 'unity', fileExtensions: ['unity', 'unitypackage'] },
+    { name: 'quantum', fileExtensions: ['qtn'], light: true },
     {
       name: 'roadmap',
       fileNames: [
