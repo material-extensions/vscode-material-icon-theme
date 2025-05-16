@@ -2,6 +2,27 @@
 
 # Changelog
 
+## v5.23.0
+
+[compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.22.0...v5.23.0)
+
+### 🚀 Enhancements
+
+- Add cpn icon ([#3005](https://github.com/material-extensions/vscode-material-icon-theme/pull/3005))
+- Add .xsh to console icon ([#3012](https://github.com/material-extensions/vscode-material-icon-theme/pull/3012))
+
+### 🩹 Fixes
+
+- Update changelog (replace emails with usernames) ([12df8f5a](https://github.com/material-extensions/vscode-material-icon-theme/commit/12df8f5a))
+- Update username in changelog ([8d79f38c](https://github.com/material-extensions/vscode-material-icon-theme/commit/8d79f38c))
+- Icon "*.cls" Apex Salesforce not found ([faa509b6](https://github.com/material-extensions/vscode-material-icon-theme/commit/faa509b6))
+
+### ❤️ Contributors
+
+- Kgruiz <kgruiz08@gmail.com>
+- Murilo De Souza Neves <murilogrilosn@gmail.com>
+- Philipp Kief <philipp.kief@gmx.de>
+
 ## v5.22.0
 
 [compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.21.1...v5.22.0)
