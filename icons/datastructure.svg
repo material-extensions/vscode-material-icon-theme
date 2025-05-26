@@ -1,0 +1,21 @@
+<svg width="284" height="151" viewBox="0 0 284 151" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="284" height="151" fill="#1E1E1E"/>
+<ellipse cx="141.5" cy="17" rx="55.5" ry="17" fill="white"/>
+<ellipse cx="141.5" cy="134" rx="55.5" ry="17" fill="white"/>
+<ellipse cx="141.5" cy="56" rx="55.5" ry="17" fill="white"/>
+<ellipse cx="141.5" cy="97" rx="55.5" ry="17" fill="white"/>
+<line x1="197" y1="77" x2="268" y2="77" stroke="white" stroke-width="2"/>
+<line x1="16" y1="77" x2="87" y2="77" stroke="white" stroke-width="2"/>
+<path d="M197 50L243.158 50L263 28" stroke="white" stroke-width="2"/>
+<path d="M86.6158 103.847L40.4577 103.847L20.6158 125.847" stroke="white" stroke-width="2"/>
+<path d="M86.6158 50L40.4577 50L20.6158 28" stroke="white" stroke-width="2"/>
+<path d="M198 106.847L244.158 106.847L264 128.847" stroke="white" stroke-width="2"/>
+<rect x="268" y="71" width="16" height="16" fill="white"/>
+<rect y="71" width="16" height="16" fill="white"/>
+<circle cx="16" cy="23" r="7" fill="white"/>
+<circle cx="269" cy="132" r="7" fill="white"/>
+<circle cx="16" cy="132" r="7" fill="white"/>
+<circle cx="269" cy="24" r="7" fill="white"/>
+<line x1="87.5" y1="18" x2="87.5" y2="133" stroke="white" stroke-width="3"/>
+<path d="M196 18L196 133" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
