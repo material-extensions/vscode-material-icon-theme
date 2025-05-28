@@ -1894,10 +1894,10 @@ export const fileIcons: FileIcons = {
       fileNames: ['vagrantfile'],
       fileExtensions: ['vagrantfile'],
     },
-    { 
-      name: 'prisma', 
-      fileNames: [ 'prisma.yml', 'prisma.config.ts'], 
-      fileExtensions: ['prisma'], 
+    {
+      name: 'prisma',
+      fileNames: [ 'prisma.yml', 'prisma.config.ts'],
+      fileExtensions: ['prisma'],
     },
     { name: 'razor', fileExtensions: ['cshtml', 'vbhtml'] },
     { name: 'abc', fileExtensions: ['abc'] },
