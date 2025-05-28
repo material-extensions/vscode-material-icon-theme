@@ -1896,10 +1896,7 @@ export const fileIcons: FileIcons = {
     },
     { 
       name: 'prisma', 
-      fileNames: [
-        'prisma.yml',
-        'prisma.config.ts',
-      ], 
+      fileNames: [ 'prisma.yml', 'prisma.config.ts'], 
       fileExtensions: ['prisma'], 
     },
     { name: 'razor', fileExtensions: ['cshtml', 'vbhtml'] },
