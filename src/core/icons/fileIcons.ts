@@ -772,17 +772,17 @@ export const fileIcons: FileIcons = {
     {
       name: 'sty',
       fileExtensions: ['sty'],
-      clone: { base: 'tex', color: 'deep-purple-A200' },
+      clone: { base: 'tex', color: 'deep-purple-A100' },
     },
     {
       name: 'ltx',
       fileExtensions: ['ltx'],
-      clone: { base: 'tex', color: 'teal-400' },
+      clone: { base: 'tex', color: 'teal-A700' },
     },
     {
       name: 'dtx',
       fileExtensions: ['dtx'],
-      clone: { base: 'tex', color: 'blue-gray-300' },
+      clone: { base: 'tex', color: 'yellow-900' },
     },
     { name: 'latexmk', patterns: { latexmkrc: FileNamePattern.Dotfile } },
     {
