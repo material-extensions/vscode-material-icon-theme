@@ -93,6 +93,12 @@ const mapPatterns = (patterns: Patterns): string[] => {
           `${fileName}.config.cts`,
         ];
 
+      case FileNamePattern.Yaml:
+        return [`${fileName}.yaml`, `${fileName}.yml`];
+
+      case FileNamePattern.Dotfile:
+        return [`.${fileName}`, fileName];
+
       default:
         // Check if all potential pattern cases are handled
         const exhaustiveCheck: never = pattern;

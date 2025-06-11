@@ -324,7 +324,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'typescript-def',
-      fileExtensions: ['d.ts', 'd.cts', 'd.mts'],
+      fileExtensions: ['d.ts', 'd.cts', 'd.mts', 'd.ets'],
     },
     { name: 'markdoc', fileExtensions: ['mdoc', 'markdoc', 'markdoc.md'] },
     {
@@ -488,7 +488,7 @@ export const fileIcons: FileIcons = {
     { name: 'python', fileExtensions: ['py'] },
     {
       name: 'python-misc',
-      fileExtensions: ['pyc', 'whl'],
+      fileExtensions: ['pyc', 'whl', 'egg'],
       fileNames: [
         'requirements.txt',
         'pipfile',
@@ -498,6 +498,11 @@ export const fileIcons: FileIcons = {
         '.pylintrc',
         'pyproject.toml',
         'py.typed',
+        '.coveragerc',
+        '.coverage',
+        '.scrapy',
+        'celerybeat-schedule',
+        'celerybeat.pid',
       ],
     },
     {
@@ -526,12 +531,18 @@ export const fileIcons: FileIcons = {
         'fish',
         'exp',
         'nu',
+        'xsh',
       ],
       fileNames: ['commit-msg', 'pre-commit', 'pre-push', 'post-merge'],
     },
     {
       name: 'powershell',
       fileExtensions: ['ps1', 'psm1', 'psd1', 'ps1xml', 'psc1', 'pssc'],
+    },
+    {
+      name: 'excalidraw',
+      fileNames: ['excalidraw.json', 'excalidraw.svg', 'excalidraw.png'],
+      fileExtensions: ['excalidraw.json', 'excalidraw.svg', 'excalidraw.png'],
     },
     {
       name: 'gradle',
@@ -620,7 +631,9 @@ export const fileIcons: FileIcons = {
         'mrf',
       ],
     },
-    { name: 'lib', fileExtensions: ['lib', 'bib', 'a'] },
+    { name: 'lib', fileExtensions: ['lib', 'a'] },
+    { name: 'bibliography', fileExtensions: ['bib'] },
+    { name: 'bibtex-style', fileExtensions: ['bst'] },
     { name: 'dll', fileExtensions: ['dll', 'ilk', 'so'] },
     {
       name: 'ruby',
@@ -752,7 +765,26 @@ export const fileIcons: FileIcons = {
         'compose.worker.yml',
       ],
     },
-    { name: 'tex', fileExtensions: ['tex', 'sty', 'dtx', 'ltx'] },
+    { name: 'bbx', fileExtensions: ['bbx'] },
+    { name: 'cbx', fileExtensions: ['cbx'] },
+    { name: 'lbx', fileExtensions: ['lbx'] },
+    { name: 'tex', fileExtensions: ['tex'] },
+    {
+      name: 'sty',
+      fileExtensions: ['sty'],
+      clone: { base: 'tex', color: 'deep-purple-A100' },
+    },
+    {
+      name: 'ltx',
+      fileExtensions: ['ltx'],
+      clone: { base: 'tex', color: 'teal-A700' },
+    },
+    {
+      name: 'dtx',
+      fileExtensions: ['dtx'],
+      clone: { base: 'tex', color: 'yellow-900' },
+    },
+    { name: 'latexmk', patterns: { latexmkrc: FileNamePattern.Dotfile } },
     {
       name: 'powerpoint',
       fileExtensions: [
@@ -1384,7 +1416,7 @@ export const fileIcons: FileIcons = {
     {
       name: 'turborepo',
       light: true,
-      fileNames: ['turbo.json'],
+      fileNames: ['turbo.json', 'turbo.jsonc'],
     },
     {
       name: 'babel',
@@ -1555,6 +1587,7 @@ export const fileIcons: FileIcons = {
         '.mocharc.yml',
         '.mocharc.yaml',
         '.mocharc.js',
+        '.mocharc.cjs',
         '.mocharc.json',
         '.mocharc.jsonc',
       ],
@@ -1862,7 +1895,11 @@ export const fileIcons: FileIcons = {
       fileNames: ['vagrantfile'],
       fileExtensions: ['vagrantfile'],
     },
-    { name: 'prisma', fileNames: ['prisma.yml'], fileExtensions: ['prisma'] },
+    {
+      name: 'prisma',
+      fileNames: ['prisma.yml', 'prisma.config.ts'],
+      fileExtensions: ['prisma'],
+    },
     { name: 'razor', fileExtensions: ['cshtml', 'vbhtml'] },
     { name: 'abc', fileExtensions: ['abc'] },
     { name: 'asciidoc', fileExtensions: ['ad', 'adoc', 'asciidoc'] },
@@ -1874,6 +1911,7 @@ export const fileIcons: FileIcons = {
         '.nycrc.yaml',
         '.nycrc.yml',
         'nyc.config.js',
+        'nyc.config.cjs',
         '.istanbul.yml',
       ],
     },
@@ -2464,7 +2502,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'supabase',
-      fileNames: ['supabase.js', 'supabase.py'],
+      fileNames: ['supabase.js', 'supabase.ts', 'supabase.py'],
     },
     {
       name: 'ember',
@@ -3074,5 +3112,39 @@ export const fileIcons: FileIcons = {
     { name: 'regedit', fileExtensions: ['reg'] },
     { name: 'cline', fileNames: ['.clinerules'] },
     { name: 'gnuplot', fileExtensions: ['gnu'] },
+    {
+      name: 'packship',
+      fileNames: [
+        '.packshiprc',
+        '.packshiprc.json',
+        '.packshiprc.js',
+        '.packshiprc.ts',
+        'packship.config.js',
+        'packship.config.ts',
+        'packship.config.mjs',
+        'packship.config.mts',
+        'packship.config.json',
+      ],
+    },
+    {
+      name: 'snakemake',
+      fileExtensions: ['smk', 'snakemake'],
+      fileNames: ['Snakefile'],
+    },
+    {
+      name: 'hadolint',
+      patterns: {
+        '.hadolint': FileNamePattern.Yaml,
+        hadolint: FileNamePattern.Yaml,
+      },
+    },
+    {
+      name: 'coloredpetrinets',
+      fileExtensions: ['cpn', 'pnml'],
+    },
+    {
+      name: 'pytorch',
+      fileExtensions: ['pt', 'pth', 'pwf'],
+    },
   ]),
 };

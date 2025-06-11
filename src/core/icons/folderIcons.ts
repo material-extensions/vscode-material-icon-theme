@@ -229,6 +229,8 @@ export const folderIcons: FolderTheme[] = [
           'colors',
           'design',
           'designs',
+          'palette',
+          'palettes',
         ],
       },
       { name: 'folder-webpack', folderNames: ['webpack'] },
@@ -387,6 +389,8 @@ export const folderIcons: FolderTheme[] = [
           'audio',
           'audios',
           'music',
+          'song',
+          'songs',
           'sound',
           'sounds',
           'voice',
@@ -484,7 +488,9 @@ export const folderIcons: FolderTheme[] = [
         folderNames: [
           'benchmark',
           'benchmarks',
+          'bench',
           'performance',
+          'perf',
           'profiling',
           'measure',
           'measures',
@@ -523,7 +529,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-sandbox',
-        folderNames: ['sandbox', 'playground'],
+        folderNames: ['sandbox', 'sandboxes', 'playground', 'playgrounds'],
       },
       {
         name: 'folder-scons',
@@ -635,12 +641,11 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-archive',
+        folderNames: ['arc', 'arcs', 'archive', 'archives', 'archival'],
+      },
+      {
+        name: 'folder-backup',
         folderNames: [
-          'arc',
-          'arcs',
-          'archive',
-          'archives',
-          'archival',
           'bkp',
           'bkps',
           'bak',
@@ -667,7 +672,10 @@ export const folderIcons: FolderTheme[] = [
           'clis',
         ],
       },
-      { name: 'folder-constant', folderNames: ['constant', 'constants'] },
+      {
+        name: 'folder-constant',
+        folderNames: ['constant', 'constants', 'const', 'consts'],
+      },
       {
         name: 'folder-container',
         folderNames: ['container', 'containers', 'devcontainer'],
@@ -725,7 +733,11 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-hook',
-        folderNames: ['hook', 'hooks', 'trigger', 'triggers'],
+        folderNames: ['hook', 'hooks'],
+      },
+      {
+        name: 'folder-trigger',
+        folderNames: ['trigger', 'triggers'],
       },
       { name: 'folder-job', folderNames: ['job', 'jobs'] },
       {
@@ -1152,6 +1164,15 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-liquibase', folderNames: ['liquibase'] },
       { name: 'folder-dart', folderNames: ['dart', 'dart_tool', 'dart_tools'] },
       { name: 'folder-zeabur', folderNames: ['zeabur'] },
+      { name: 'folder-kusto', folderNames: ['kusto', 'kql'] },
+      { name: 'folder-policy', folderNames: ['policy', 'policies'] },
+      { name: 'folder-attachment', folderNames: ['attachment', 'attachments'] },
+      {
+        name: 'folder-bibliography',
+        folderNames: ['bibliography', 'bibliographies', 'book', 'books'],
+      },
+      { name: 'folder-link', folderNames: ['link', 'links'] },
+      { name: 'folder-pytorch', folderNames: ['pytorch', 'torch'] },
     ],
   },
   {
