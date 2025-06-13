@@ -978,7 +978,7 @@ export const fileIcons: FileIcons = {
     {
       name: 'cmake',
       fileExtensions: ['cmake'],
-      fileNames: ['cmakelists.txt', 'cmakecache.txt'],
+      fileNames: ['cmakelists.txt', 'cmakecache.txt', 'CMakePresets.json'],
     },
     {
       name: 'assembly',
