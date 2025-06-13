@@ -1173,6 +1173,16 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-link', folderNames: ['link', 'links'] },
       { name: 'folder-pytorch', folderNames: ['pytorch', 'torch'] },
+      {
+        name: 'folder-blender',
+        folderNames: [
+          'blender',
+          'blender-assets',
+          'blender-files',
+          'blender-project',
+          'blender-models',
+        ],
+      },
     ],
   },
   {
