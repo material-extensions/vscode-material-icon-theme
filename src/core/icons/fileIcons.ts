@@ -1162,7 +1162,10 @@ export const fileIcons: FileIcons = {
       enabledFor: [IconPack.Angular, IconPack.Ngrx],
     },
     { name: 'puppet', fileExtensions: ['pp'] },
-    { name: 'elixir', fileExtensions: ['ex', 'exs', 'eex', 'leex', 'heex'] },
+    {
+      name: 'elixir',
+      fileExtensions: ['ex', 'exs', 'eex', 'leex', 'heex'],
+    },
     { name: 'livescript', fileExtensions: ['ls'] },
     { name: 'erlang', fileExtensions: ['erl'] },
     { name: 'twig', fileExtensions: ['twig'] },
@@ -1174,7 +1177,10 @@ export const fileIcons: FileIcons = {
     { name: 'reason', fileExtensions: ['re', 'rei'] },
     { name: 'bucklescript', fileExtensions: ['cmj'] },
     { name: 'merlin', fileExtensions: ['merlin'] },
-    { name: 'verilog', fileExtensions: ['vhd', 'vhdx', 'sv', 'svh', 'vhdl'] },
+    {
+      name: 'verilog',
+      fileExtensions: ['vhd', 'vhdx', 'sv', 'svh', 'vhdl'],
+    },
     { name: 'mathematica', fileExtensions: ['nb'] },
     { name: 'wolframlanguage', fileExtensions: ['wl', 'wls'] },
     { name: 'nunjucks', fileExtensions: ['njk', 'nunjucks'] },
@@ -1286,7 +1292,11 @@ export const fileIcons: FileIcons = {
     },
     { name: 'nix', fileExtensions: ['nix'] },
     { name: 'slim', fileExtensions: ['slim'] },
-    { name: 'http', fileExtensions: ['http', 'rest'], fileNames: ['CNAME'] },
+    {
+      name: 'http',
+      fileExtensions: ['http', 'rest'],
+      fileNames: ['CNAME'],
+    },
     { name: 'restql', fileExtensions: ['rql', 'restql'] },
     { name: 'kivy', fileExtensions: ['kv'] },
     {
@@ -1638,7 +1648,10 @@ export const fileIcons: FileIcons = {
     },
     { name: 'hack', fileNames: ['.hhconfig'] },
     { name: 'huff', fileExtensions: ['huff'], light: true },
-    { name: 'hardhat', fileNames: ['hardhat.config.js', 'hardhat.config.ts'] },
+    {
+      name: 'hardhat',
+      fileNames: ['hardhat.config.js', 'hardhat.config.ts'],
+    },
     {
       name: 'stylelint',
       light: true,
@@ -1825,7 +1838,10 @@ export const fileIcons: FileIcons = {
     },
     { name: 'wallaby', fileNames: ['wallaby.js', 'wallaby.conf.js'] },
     { name: 'django', fileExtensions: ['djt'] },
-    { name: 'stencil', fileNames: ['stencil.config.js', 'stencil.config.ts'] },
+    {
+      name: 'stencil',
+      fileNames: ['stencil.config.js', 'stencil.config.ts'],
+    },
     { name: 'red', fileExtensions: ['red'] },
     {
       name: 'makefile',
@@ -1936,6 +1952,7 @@ export const fileIcons: FileIcons = {
       fileExtensions: [
         'stl',
         'stp',
+        'step',
         'obj',
         'o',
         'ac',
@@ -1952,6 +1969,12 @@ export const fileIcons: FileIcons = {
         'vox',
         'gltf',
         'glb',
+        '3ds',
+        'dae',
+        'ply',
+        'wrl',
+        'usd',
+        'usdz',
       ],
     },
     { name: 'buildkite', fileNames: ['buildkite.yml', 'buildkite.yaml'] },
@@ -1966,7 +1989,11 @@ export const fileIcons: FileIcons = {
       light: true,
     },
     { name: 'svg', fileExtensions: ['svg'] },
-    { name: 'adobe-illustrator', fileExtensions: ['ai', 'ait'], light: true },
+    {
+      name: 'adobe-illustrator',
+      fileExtensions: ['ai', 'ait'],
+      light: true,
+    },
     {
       name: 'adobe-photoshop',
       fileExtensions: ['psd', 'psb', 'psdt'],
@@ -2346,7 +2373,10 @@ export const fileIcons: FileIcons = {
         'quasar.config.cjs',
       ],
     },
-    { name: 'dependabot', fileNames: ['dependabot.yml', 'dependabot.yaml'] },
+    {
+      name: 'dependabot',
+      fileNames: ['dependabot.yml', 'dependabot.yaml'],
+    },
     { name: 'pipeline', fileExtensions: ['pipeline'] },
     {
       name: 'vite',
@@ -2394,7 +2424,11 @@ export const fileIcons: FileIcons = {
     },
     { name: 'scala', fileExtensions: ['scala', 'sc'] },
     { name: 'lilypond', fileExtensions: ['ly'] },
-    { name: 'vlang', fileExtensions: ['v'], fileNames: ['vpkg.json', 'v.mod'] },
+    {
+      name: 'vlang',
+      fileExtensions: ['v'],
+      fileNames: ['vpkg.json', 'v.mod'],
+    },
     { name: 'chess', fileExtensions: ['pgn', 'fen'], light: true },
     { name: 'gemini', fileExtensions: ['gmi', 'gemini'] },
     {
@@ -2599,7 +2633,10 @@ export const fileIcons: FileIcons = {
       },
     },
     { name: 'siyuan', fileExtensions: ['sy'] },
-    { name: 'ndst', fileExtensions: ['ndst.yml', 'ndst.yaml', 'ndst.json'] },
+    {
+      name: 'ndst',
+      fileExtensions: ['ndst.yml', 'ndst.yaml', 'ndst.json'],
+    },
     {
       name: 'plop',
       fileNames: ['plopfile.js', 'plopfile.cjs', 'plopfile.mjs', 'plopfile.ts'],
