@@ -978,7 +978,7 @@ export const fileIcons: FileIcons = {
     {
       name: 'cmake',
       fileExtensions: ['cmake'],
-      fileNames: ['cmakelists.txt', 'cmakecache.txt'],
+      fileNames: ['cmakelists.txt', 'cmakecache.txt', 'CMakePresets.json'],
     },
     {
       name: 'assembly',
@@ -1936,6 +1936,7 @@ export const fileIcons: FileIcons = {
       fileExtensions: [
         'stl',
         'stp',
+        'step',
         'obj',
         'o',
         'ac',
@@ -1951,6 +1952,12 @@ export const fileIcons: FileIcons = {
         'vox',
         'gltf',
         'glb',
+        '3ds',
+        'dae',
+        'ply',
+        'wrl',
+        'usd',
+        'usdz',
       ],
     },
     { name: 'buildkite', fileNames: ['buildkite.yml', 'buildkite.yaml'] },
