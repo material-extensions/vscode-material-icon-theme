@@ -1940,7 +1940,6 @@ export const fileIcons: FileIcons = {
         'obj',
         'o',
         'ac',
-        'blend',
         'dxf',
         'fbx',
         'mesh',
@@ -3153,5 +3152,6 @@ export const fileIcons: FileIcons = {
       name: 'pytorch',
       fileExtensions: ['pt', 'pth', 'pwf'],
     },
+    { name: 'blender', fileExtensions: ['blend', 'blend1', 'blend2'] },
   ]),
 };
