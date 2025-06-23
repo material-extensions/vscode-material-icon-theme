@@ -381,6 +381,7 @@ export const fileIcons: FileIcons = {
         'vcxproj',
         'vcxproj.filters',
       ],
+      fileNames: ['.vsconfig'],
     },
     {
       name: 'database',
@@ -404,7 +405,6 @@ export const fileIcons: FileIcons = {
         'debugsymbols',
         'odb',
       ],
-      fileNames: ['.vsconfig'],
     },
     { name: 'kusto', fileExtensions: ['kql'] },
     { name: 'csharp', fileExtensions: ['cs', 'csx', 'csharp'] },
@@ -2477,7 +2477,6 @@ export const fileIcons: FileIcons = {
         'tsconfig.server.json',
         'tsconfig.client.json',
         'tsconfig.declaration.json',
-        'tsdoc.json',
       ],
       fileExtensions: ['tsconfig.json'],
     },
