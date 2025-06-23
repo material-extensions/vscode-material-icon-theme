@@ -3159,5 +3159,6 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['pt', 'pth', 'pwf'],
     },
     { name: 'blender', fileExtensions: ['blend', 'blend1', 'blend2'] },
+    { name: 'tsdoc', fileNames: ['tsdoc.json'] },
   ]),
 };
