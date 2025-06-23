@@ -103,6 +103,26 @@ export const fileIcons: FileIcons = {
       fileNames: ['.htaccess'],
     },
     { name: 'toml', fileExtensions: ['toml'], light: true },
+    { 
+      name: 'nocra',
+      fileNames: [
+        "nocra.config.js",
+        "nocra.config.mjs",
+        "nocra.config.cjs",
+        "nocra.config.jsx",
+        "nocra.config.ts",
+        "nocra.config.mts",
+        "nocra.config.cts",
+        "nocra.config.tsx",
+        "nocra.config.json",
+        "nocra.config.jsonc",
+        "nocra.config.json5",
+        "nocra.config.yaml",
+        "nocra.config.yml",
+        "nocra.config.toml"
+      ],
+      light: true
+    },
     {
       name: 'image',
       fileExtensions: [
