@@ -2,6 +2,32 @@
 
 # Changelog
 
+## v5.24.0
+
+[compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.23.0...v5.24.0)
+
+### 🚀 Enhancements
+
+- Add PyTorch file and folder icons ([#3014](https://github.com/material-extensions/vscode-material-icon-theme/pull/3014))
+- Add new config file for Prisma ([#3035](https://github.com/material-extensions/vscode-material-icon-theme/pull/3035))
+- Add new icons for TeX/LaTeX related files and set better colors ([#3042](https://github.com/material-extensions/vscode-material-icon-theme/pull/3042))
+- Add CMake icon to CMakePresets.json ([#3045](https://github.com/material-extensions/vscode-material-icon-theme/pull/3045))
+- Add additional common 3d file extensions ([#3047](https://github.com/material-extensions/vscode-material-icon-theme/pull/3047))
+- Update vscode icon ([#3049](https://github.com/material-extensions/vscode-material-icon-theme/pull/3049))
+- Add Blender file and folder icons ([#3046](https://github.com/material-extensions/vscode-material-icon-theme/pull/3046))
+
+### 🩹 Fixes
+
+- **icons:** `.mocharc.cjs` and `nyc.config.cjs` are valid names for those config files ([#3039](https://github.com/material-extensions/vscode-material-icon-theme/pull/3039))
+
+### ❤️ Contributors
+
+- Kgruiz <kgruiz08@gmail.com>
+- Firecrafter28 ([@Firecrafter28](https://github.com/Firecrafter28))
+- Marlon Luís De Col <marlondecol@proton.me>
+- G'lek Tarssza <robloxianmany@gmail.com>
+- Julio L. Muller ([@juliolmuller](https://github.com/juliolmuller))
+
 ## v5.23.0
 
 [compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.22.0...v5.23.0)
