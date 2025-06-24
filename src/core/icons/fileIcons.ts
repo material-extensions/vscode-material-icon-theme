@@ -381,6 +381,7 @@ export const fileIcons: FileIcons = {
         'vcxproj',
         'vcxproj.filters',
       ],
+      fileNames: ['.vsconfig'],
     },
     {
       name: 'database',
@@ -547,7 +548,12 @@ export const fileIcons: FileIcons = {
     {
       name: 'gradle',
       fileExtensions: ['gradle'],
-      fileNames: ['gradle.properties', 'gradlew', 'gradle-wrapper.properties'],
+      fileNames: [
+        'gradle.properties',
+        'gradlew',
+        'gradle-wrapper.properties',
+        'gradlew.bat',
+      ],
     },
     { name: 'word', fileExtensions: ['doc', 'docx', 'rtf', 'odt'] },
     {
@@ -3153,5 +3159,6 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['pt', 'pth', 'pwf'],
     },
     { name: 'blender', fileExtensions: ['blend', 'blend1', 'blend2'] },
+    { name: 'tsdoc', fileNames: ['tsdoc.json'] },
   ]),
 };
