@@ -59,14 +59,23 @@ export const fileIcons: FileIcons = {
       name: 'playwright',
       fileNames: [
         'playwright.config.js',
+        'playwright.config.cjs',
         'playwright.config.mjs',
         'playwright.config.ts',
+        'playwright.config.cts',
+        'playwright.config.mts',
         'playwright.config.base.js',
+        'playwright.config.base.cjs',
         'playwright.config.base.mjs',
         'playwright.config.base.ts',
+        'playwright.config.base.cts',
+        'playwright.config.base.mts',
         'playwright-ct.config.js',
+        'playwright-ct.config.cjs',
         'playwright-ct.config.mjs',
         'playwright-ct.config.ts',
+        'playwright-ct.config.cts',
+        'playwright-ct.config.mts',
       ],
     },
     {
@@ -654,7 +663,11 @@ export const fileIcons: FileIcons = {
     },
     { name: 'rspec', fileNames: ['.rspec'] },
     { name: 'fsharp', fileExtensions: ['fs', 'fsx', 'fsi', 'fsproj'] },
-    { name: 'swift', fileExtensions: ['swift'] },
+    {
+      name: 'swift',
+      fileExtensions: ['swift'],
+      fileNames: ['.swift-format', '.swift-version'],
+    },
     { name: 'arduino', fileExtensions: ['ino'] },
     {
       name: 'docker',
@@ -933,7 +946,7 @@ export const fileIcons: FileIcons = {
     },
     { name: 'rust', fileExtensions: ['rs', 'ron'] },
     { name: 'raml', fileExtensions: ['raml'] },
-    { name: 'xaml', fileExtensions: ['xaml'] },
+    { name: 'xaml', fileExtensions: ['xaml'], fileNames: ['XamlStyler.json'] },
     { name: 'haskell', fileExtensions: ['hs', 'lhs'] },
     { name: 'kotlin', fileExtensions: ['kt', 'kts'] },
     {
@@ -1352,6 +1365,7 @@ export const fileIcons: FileIcons = {
         'gulpfile.cts',
         'gulpfile.mts',
         'gulpfile.babel.js',
+        'gulpfile.cjs',
       ],
     },
     {
