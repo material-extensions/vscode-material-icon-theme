@@ -2856,7 +2856,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'phpstan',
-      fileNames: ['phpstan.neon', 'phpneon.neon.dist'],
+      fileNames: ['phpstan.neon', 'phpstan.neon.dist', 'phpstan.dist.neon'],
     },
     {
       name: 'screwdriver',
