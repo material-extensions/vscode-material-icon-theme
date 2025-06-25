@@ -618,8 +618,6 @@ export const folderIcons: FolderTheme[] = [
           'servers',
           'backend',
           'backends',
-          'internal',
-          'internals',
         ],
       },
       {
