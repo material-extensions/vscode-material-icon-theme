@@ -613,12 +613,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-ansible', folderNames: ['ansible'] },
       {
         name: 'folder-server',
-        folderNames: [
-          'server',
-          'servers',
-          'backend',
-          'backends',
-        ],
+        folderNames: ['server', 'servers', 'backend', 'backends'],
       },
       {
         name: 'folder-client',
