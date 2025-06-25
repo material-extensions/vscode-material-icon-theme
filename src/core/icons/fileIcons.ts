@@ -781,25 +781,19 @@ export const fileIcons: FileIcons = {
         'compose.worker.yml',
       ],
     },
-    { name: 'bbx', fileExtensions: ['bbx'] },
-    { name: 'cbx', fileExtensions: ['cbx'] },
-    { name: 'lbx', fileExtensions: ['lbx'] },
-    { name: 'tex', fileExtensions: ['tex'] },
     {
       name: 'sty',
       fileExtensions: ['sty'],
       clone: { base: 'tex', color: 'deep-purple-A100' },
     },
     {
-      name: 'ltx',
-      fileExtensions: ['ltx'],
-      clone: { base: 'tex', color: 'teal-A700' },
-    },
-    {
       name: 'dtx',
       fileExtensions: ['dtx'],
       clone: { base: 'tex', color: 'yellow-900' },
     },
+    { name: 'bbx', fileExtensions: ['bbx'] },
+    { name: 'cbx', fileExtensions: ['cbx'] },
+    { name: 'lbx', fileExtensions: ['lbx'] },
     { name: 'latexmk', patterns: { latexmkrc: FileNamePattern.Dotfile } },
     {
       name: 'powerpoint',
