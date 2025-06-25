@@ -551,8 +551,18 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'excalidraw',
-      fileNames: ['excalidraw.json', 'excalidraw.svg', 'excalidraw.png'],
-      fileExtensions: ['excalidraw.json', 'excalidraw.svg', 'excalidraw.png'],
+      fileNames: [
+        'excalidraw',
+        'excalidraw.json',
+        'excalidraw.svg',
+        'excalidraw.png',
+      ],
+      fileExtensions: [
+        'excalidraw',
+        'excalidraw.json',
+        'excalidraw.svg',
+        'excalidraw.png',
+      ],
     },
     {
       name: 'gradle',
@@ -784,25 +794,19 @@ export const fileIcons: FileIcons = {
         'compose.worker.yml',
       ],
     },
-    { name: 'bbx', fileExtensions: ['bbx'] },
-    { name: 'cbx', fileExtensions: ['cbx'] },
-    { name: 'lbx', fileExtensions: ['lbx'] },
-    { name: 'tex', fileExtensions: ['tex'] },
     {
       name: 'sty',
       fileExtensions: ['sty'],
       clone: { base: 'tex', color: 'deep-purple-A100' },
     },
     {
-      name: 'ltx',
-      fileExtensions: ['ltx'],
-      clone: { base: 'tex', color: 'teal-A700' },
-    },
-    {
       name: 'dtx',
       fileExtensions: ['dtx'],
       clone: { base: 'tex', color: 'yellow-900' },
     },
+    { name: 'bbx', fileExtensions: ['bbx'] },
+    { name: 'cbx', fileExtensions: ['cbx'] },
+    { name: 'lbx', fileExtensions: ['lbx'] },
     { name: 'latexmk', patterns: { latexmkrc: FileNamePattern.Dotfile } },
     {
       name: 'powerpoint',
@@ -2876,7 +2880,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'phpstan',
-      fileNames: ['phpstan.neon', 'phpneon.neon.dist'],
+      fileNames: ['phpstan.neon', 'phpstan.neon.dist', 'phpstan.dist.neon'],
     },
     {
       name: 'screwdriver',
