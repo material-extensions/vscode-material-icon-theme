@@ -99,7 +99,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-json', folderNames: ['json', 'jsons', 'jsonc', 'jsonl'] },
       {
         name: 'folder-font',
-        folderNames: ['font', 'fonts', 'typeface', 'typesaces'],
+        folderNames: ['font', 'fonts', 'typeface', 'typefaces'],
       },
       { name: 'folder-bower', folderNames: ['bower_components'] },
       {
