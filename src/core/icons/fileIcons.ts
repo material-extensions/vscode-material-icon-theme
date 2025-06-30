@@ -804,6 +804,10 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['dtx'],
       clone: { base: 'tex', color: 'yellow-900' },
     },
+    {
+      name: 'doctex-installer',
+      fileExtensions: ['ins'],
+    },
     { name: 'bbx', fileExtensions: ['bbx'] },
     { name: 'cbx', fileExtensions: ['cbx'] },
     { name: 'lbx', fileExtensions: ['lbx'] },
