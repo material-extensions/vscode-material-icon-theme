@@ -1,4 +1,4 @@
-import { type QuickPickItem, window as codeWindow } from 'vscode';
+import { window as codeWindow, type QuickPickItem } from 'vscode';
 import {
   getDefaultConfig,
   logger,

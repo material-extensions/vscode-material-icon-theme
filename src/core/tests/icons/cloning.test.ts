@@ -2,15 +2,19 @@ import { beforeAll, describe, expect, it, mock } from 'bun:test';
 import { type INode, parse } from 'svgson';
 import { customClonesIcons } from '../../generator/clones/clonesGenerator';
 import {
+  getCloneData,
   Type,
   Variant,
-  getCloneData,
 } from '../../generator/clones/utils/cloneData';
 import {
   cloneIcon,
   getStyle,
   traverse,
 } from '../../generator/clones/utils/cloning';
+import {
+  isValidColor,
+  orderDarkToLight,
+} from './../../generator/clones/utils/color/colors';
 import {
   closerMaterialColorTo,
   materialPalette as palette,
@@ -30,11 +34,7 @@ import type {
   FolderIconClone,
   LanguageIconClone,
 } from '../../models/icons/config';
-import { type Manifest, createEmptyManifest } from '../../models/manifest';
-import {
-  isValidColor,
-  orderDarkToLight,
-} from './../../generator/clones/utils/color/colors';
+import { createEmptyManifest, type Manifest } from '../../models/manifest';
 import * as icon from './data/icons';
 
 describe('cloning: color manipulation', () => {
@@ -96,7 +96,7 @@ describe('cloning: icon cloning', () => {
           base2: {
             iconPath: 'icons/icon2.svg',
           },
-          // biome-ignore lint/style/useNamingConvention:
+          // biome-ignore lint/style/useNamingConvention: naming convention
           base2_light: {
             iconPath: 'icons/icon2_light.svg',
           },

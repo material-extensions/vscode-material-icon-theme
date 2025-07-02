@@ -1,4 +1,4 @@
-import { type QuickPickItem, window as codeWindow } from 'vscode';
+import { window as codeWindow, type QuickPickItem } from 'vscode';
 import { logger, toTitleCase, translate } from '../../core';
 import { availableIconPacks } from '../../core/helpers/iconPacks';
 import type { IconPackValue } from '../../core/models/icons/iconPack';

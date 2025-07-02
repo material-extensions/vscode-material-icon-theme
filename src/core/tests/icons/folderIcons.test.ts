@@ -4,7 +4,7 @@ import { loadFolderIconDefinitions } from '../../generator/folderGenerator';
 import type { Config } from '../../models/icons/config';
 import type { FolderTheme } from '../../models/icons/folders/folderTheme';
 import { IconPack } from '../../models/icons/iconPack';
-import { type Manifest, createEmptyManifest } from '../../models/manifest';
+import { createEmptyManifest, type Manifest } from '../../models/manifest';
 
 describe('folder icons', () => {
   let folderIcons: FolderTheme[];
@@ -414,14 +414,14 @@ describe('folder icons', () => {
       'folder-open': {
         iconPath: './../icons/folder-open.svg',
       },
-      // biome-ignore lint/style/useNamingConvention:
+      // biome-ignore lint/style/useNamingConvention: naming convention
       folder_light: {
         iconPath: './../icons/folder_light.svg',
       },
       'folder-open_light': {
         iconPath: './../icons/folder-open_light.svg',
       },
-      // biome-ignore lint/style/useNamingConvention:
+      // biome-ignore lint/style/useNamingConvention: naming convention
       folder_highContrast: {
         iconPath: './../icons/folder_highContrast.svg',
       },
