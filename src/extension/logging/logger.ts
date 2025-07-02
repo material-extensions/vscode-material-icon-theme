@@ -1,9 +1,9 @@
 import { EventEmitter } from 'node:events';
 import { type OutputChannel, window } from 'vscode';
 import {
-  type LogLevel,
   createLoggingObserver,
   extensionName,
+  type LogLevel,
   toTitleCase,
 } from '../../core';
 import { getThemeConfig } from '../shared/config';

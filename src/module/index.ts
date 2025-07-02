@@ -1,10 +1,10 @@
 // Everything that is exported from this file will be exported to an npm package
 export {
   availableIconPacks,
-  generateManifest,
   type FolderThemeName,
+  generateManifest,
   type IconAssociations,
   type IconPackValue,
-  type ManifestConfig,
   type Manifest,
+  type ManifestConfig,
 } from '../core';
