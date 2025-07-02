@@ -799,10 +799,15 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['sty'],
       clone: { base: 'tex', color: 'deep-purple-A100' },
     },
+    { name: 'context', fileExtensions: ['ctx'] },
     {
       name: 'dtx',
       fileExtensions: ['dtx'],
       clone: { base: 'tex', color: 'yellow-900' },
+    },
+    {
+      name: 'doctex-installer',
+      fileExtensions: ['ins'],
     },
     { name: 'bbx', fileExtensions: ['bbx'] },
     { name: 'cbx', fileExtensions: ['cbx'] },
