@@ -59,14 +59,23 @@ export const fileIcons: FileIcons = {
       name: 'playwright',
       fileNames: [
         'playwright.config.js',
+        'playwright.config.cjs',
         'playwright.config.mjs',
         'playwright.config.ts',
+        'playwright.config.cts',
+        'playwright.config.mts',
         'playwright.config.base.js',
+        'playwright.config.base.cjs',
         'playwright.config.base.mjs',
         'playwright.config.base.ts',
+        'playwright.config.base.cts',
+        'playwright.config.base.mts',
         'playwright-ct.config.js',
+        'playwright-ct.config.cjs',
         'playwright-ct.config.mjs',
         'playwright-ct.config.ts',
+        'playwright-ct.config.cts',
+        'playwright-ct.config.mts',
       ],
     },
     {
@@ -401,6 +410,7 @@ export const fileIcons: FileIcons = {
         'vcxproj',
         'vcxproj.filters',
       ],
+      fileNames: ['.vsconfig'],
     },
     {
       name: 'database',
@@ -561,13 +571,28 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'excalidraw',
-      fileNames: ['excalidraw.json', 'excalidraw.svg', 'excalidraw.png'],
-      fileExtensions: ['excalidraw.json', 'excalidraw.svg', 'excalidraw.png'],
+      fileNames: [
+        'excalidraw',
+        'excalidraw.json',
+        'excalidraw.svg',
+        'excalidraw.png',
+      ],
+      fileExtensions: [
+        'excalidraw',
+        'excalidraw.json',
+        'excalidraw.svg',
+        'excalidraw.png',
+      ],
     },
     {
       name: 'gradle',
       fileExtensions: ['gradle'],
-      fileNames: ['gradle.properties', 'gradlew', 'gradle-wrapper.properties'],
+      fileNames: [
+        'gradle.properties',
+        'gradlew',
+        'gradle-wrapper.properties',
+        'gradlew.bat',
+      ],
     },
     { name: 'word', fileExtensions: ['doc', 'docx', 'rtf', 'odt'] },
     {
@@ -668,7 +693,11 @@ export const fileIcons: FileIcons = {
     },
     { name: 'rspec', fileNames: ['.rspec'] },
     { name: 'fsharp', fileExtensions: ['fs', 'fsx', 'fsi', 'fsproj'] },
-    { name: 'swift', fileExtensions: ['swift'] },
+    {
+      name: 'swift',
+      fileExtensions: ['swift'],
+      fileNames: ['.swift-format', '.swift-version'],
+    },
     { name: 'arduino', fileExtensions: ['ino'] },
     {
       name: 'docker',
@@ -785,25 +814,24 @@ export const fileIcons: FileIcons = {
         'compose.worker.yml',
       ],
     },
-    { name: 'bbx', fileExtensions: ['bbx'] },
-    { name: 'cbx', fileExtensions: ['cbx'] },
-    { name: 'lbx', fileExtensions: ['lbx'] },
-    { name: 'tex', fileExtensions: ['tex'] },
     {
       name: 'sty',
       fileExtensions: ['sty'],
       clone: { base: 'tex', color: 'deep-purple-A100' },
     },
-    {
-      name: 'ltx',
-      fileExtensions: ['ltx'],
-      clone: { base: 'tex', color: 'teal-A700' },
-    },
+    { name: 'context', fileExtensions: ['ctx'] },
     {
       name: 'dtx',
       fileExtensions: ['dtx'],
       clone: { base: 'tex', color: 'yellow-900' },
     },
+    {
+      name: 'doctex-installer',
+      fileExtensions: ['ins'],
+    },
+    { name: 'bbx', fileExtensions: ['bbx'] },
+    { name: 'cbx', fileExtensions: ['cbx'] },
+    { name: 'lbx', fileExtensions: ['lbx'] },
     { name: 'latexmk', patterns: { latexmkrc: FileNamePattern.Dotfile } },
     {
       name: 'powerpoint',
@@ -947,7 +975,7 @@ export const fileIcons: FileIcons = {
     },
     { name: 'rust', fileExtensions: ['rs', 'ron'] },
     { name: 'raml', fileExtensions: ['raml'] },
-    { name: 'xaml', fileExtensions: ['xaml'] },
+    { name: 'xaml', fileExtensions: ['xaml'], fileNames: ['XamlStyler.json'] },
     { name: 'haskell', fileExtensions: ['hs', 'lhs'] },
     { name: 'kotlin', fileExtensions: ['kt', 'kts'] },
     {
@@ -1366,6 +1394,7 @@ export const fileIcons: FileIcons = {
         'gulpfile.cts',
         'gulpfile.mts',
         'gulpfile.babel.js',
+        'gulpfile.cjs',
       ],
     },
     {
@@ -2876,7 +2905,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'phpstan',
-      fileNames: ['phpstan.neon', 'phpneon.neon.dist'],
+      fileNames: ['phpstan.neon', 'phpstan.neon.dist', 'phpstan.dist.neon'],
     },
     {
       name: 'screwdriver',
@@ -3173,5 +3202,6 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['pt', 'pth', 'pwf'],
     },
     { name: 'blender', fileExtensions: ['blend', 'blend1', 'blend2'] },
+    { name: 'tsdoc', fileNames: ['tsdoc.json'] },
   ]),
 };

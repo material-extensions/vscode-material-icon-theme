@@ -41,9 +41,8 @@ export { folderIcons } from './icons/folderIcons';
 export { languageIcons } from './icons/languageIcons';
 export {
   createLoggingObserver,
-  logger,
-  type LogEvent,
   type LogLevel,
+  logger,
 } from './logging/logger';
 export type { CloneOptions } from './models/icons/cloneOptions';
 export type { Config, IconAssociations } from './models/icons/config';

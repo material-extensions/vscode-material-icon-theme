@@ -16,10 +16,10 @@ import type { Manifest } from '../../models/manifest';
 import { cloneIconExtension, clonesFolder } from '../constants';
 import {
   type CloneData,
-  Variant,
   getCloneData,
   isFolder,
   isLanguage,
+  Variant,
 } from './utils/cloneData';
 import { cloneIcon, createCloneManifest } from './utils/cloning';
 
