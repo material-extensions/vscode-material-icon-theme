@@ -2779,7 +2779,7 @@ export const fileIcons: FileIcons = {
         'unocss.config.mts',
       ],
     },
-    { name: 'ifanr-cloud', fileNames: ['.mincloudrc'] },
+    { name: 'ifanr-cloud', fileNames: ['.mincloudrc', '.qa-mincloudrc'] },
     { name: 'concourse', fileNames: ['concourse.yml'] },
     { name: 'qwik', fileExtensions: ['tsx'], enabledFor: [IconPack.Qwik] },
     { name: 'mermaid', fileExtensions: ['mmd', 'mermaid'] },
