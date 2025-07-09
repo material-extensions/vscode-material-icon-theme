@@ -104,7 +104,15 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-bower', folderNames: ['bower_components'] },
       {
         name: 'folder-test',
-        folderNames: ['test', 'tests', 'testing', 'snapshots', 'spec', 'specs'],
+        folderNames: [
+          'test',
+          'tests',
+          'testing',
+          'snapshots',
+          'spec',
+          'specs',
+          'testfiles',
+        ],
       },
       {
         name: 'folder-directive',
