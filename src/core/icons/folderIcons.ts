@@ -882,6 +882,18 @@ export const folderIcons: FolderTheme[] = [
         ],
       },
       {
+        name: 'folder-darwin',
+        folderNames: ['puredarwin', 'darwin'],
+      },
+      {
+        name: 'folder-freebsd',
+        folderNames: ['freebsd', 'bsd'],
+      },
+      {
+        name: 'folder-netbsd',
+        folderNames: ['netbsd'],
+      },
+      {
         name: 'folder-error',
         folderNames: ['error', 'errors', 'err', 'errs', 'crash', 'crashes'],
       },
