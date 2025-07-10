@@ -1250,6 +1250,18 @@ export const folderIcons: FolderTheme[] = [
           'blender-models',
         ],
       },
+      {
+        name: 'folder-atom',
+        folderNames: ['atoms', 'atom'],
+      },
+      {
+        name: 'folder-molecule',
+        folderNames: ['molecules', 'molecule'],
+      },
+      {
+        name: 'folder-organism',
+        folderNames: ['organisms', 'organism'],
+      },
     ],
   },
   {
