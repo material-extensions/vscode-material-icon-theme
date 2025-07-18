@@ -12,6 +12,13 @@
       "matchManagers": ["bun"],
       "groupName": "Bun packages",
       "groupSlug": "bun-packages"
+    },
+    {
+      "matchPackageNames": ["@biomejs/biome"],
+      "postUpgradeTasks": {
+        "commands": ["bun biome migrate --write"],
+        "fileFilters": ["**/*"]
+      }
     }
   ]
 }
