@@ -9,38 +9,49 @@
 <p align="center"><em>Material Design icons for Visual Studio Code</em></p>
 
 <p align="center">
-  <a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"><img src="https://img.shields.io/visual-studio-marketplace/v/PKief.material-icon-theme?style=for-the-badge&colorA=252526&colorB=43A047&label=VERSION" alt="Version"></a>
-  <a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"><img src="https://img.shields.io/visual-studio-marketplace/r/PKief.material-icon-theme?style=for-the-badge&colorA=252526&colorB=43A047&label=Rating" alt="Rating"></a>
-  <a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"><img src="https://img.shields.io/visual-studio-marketplace/i/PKief.material-icon-theme?style=for-the-badge&colorA=252526&colorB=43A047&label=Installs" alt="Installs"></a>
-  <a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"><img src="https://img.shields.io/visual-studio-marketplace/d/PKief.material-icon-theme?style=for-the-badge&colorA=252526&colorB=43A047&label=Downloads" alt="Downloads"></a>
-  <a href="https://github.com/sponsors/material-extensions"><img src="https://img.shields.io/badge/Sponsor-GitHub-blue?logo=github-sponsors&style=for-the-badge" alt="Sponsor"></a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"><img src="https://img.shields.io/visual-studio-marketplace/v/PKief.material-icon-theme?style=for-the-badge&colorA=263238&colorB=4CAF50&label=VERSION" alt="Version"></a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"><img src="https://img.shields.io/visual-studio-marketplace/r/PKief.material-icon-theme?style=for-the-badge&colorA=263238&colorB=4CAF50&label=Rating" alt="Rating"></a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"><img src="https://img.shields.io/visual-studio-marketplace/i/PKief.material-icon-theme?style=for-the-badge&colorA=263238&colorB=4CAF50&label=Installs" alt="Installs"></a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"><img src="https://img.shields.io/visual-studio-marketplace/d/PKief.material-icon-theme?style=for-the-badge&colorA=263238&colorB=4CAF50&label=Downloads" alt="Downloads"></a>
 </p>
 
-<!-- markdownlint-enable -->
+<br />
 
----
 
-## 💖 Sponsor this Project
+<p align="center">Enjoying Material Icon Theme? Support the project by starring it or becoming a sponsor!</p>
 
-If you find Material Icon Theme useful, please consider supporting its development: [GitHub Sponsors](https://github.com/sponsors/material-extensions)
+<p align="center">
+  <a href="https://github.com/sponsors/material-extensions">
+    <img src="https://img.shields.io/badge/Sponsor-GitHub-blue?logo=github-sponsors&style=for-the-badge&colorA=263238&colorB=EC407A" alt="Sponsor on GitHub">
+  </a>
+  <a href="https://github.com/material-extensions/vscode-material-icon-theme">
+    <img src="https://img.shields.io/github/stars/material-extensions/vscode-material-icon-theme?style=for-the-badge&label=Star%20on%20GitHub&colorA=263238&colorB=1976D2" alt="Star on GitHub">
+  </a>
+</p>
 
----
+<br />
+
+### File icons
+
+<details><summary>🏞️ <b>Show all available file icons</b></summary><br/><img src="https://raw.githubusercontent.com/material-extensions/vscode-material-icon-theme/main/images/fileIcons.png" alt="file icons"></details>
+
+### Folder icons
+
+<details><summary>🏞️ <b>Show all available folder icons</b></summary><br/><img src="https://raw.githubusercontent.com/material-extensions/vscode-material-icon-theme/main/images/folderIcons.png" alt="folder icons"></details>
+
+<br /><br />
+<!-- markdownlint-restore -->
 
 ## Table of Contents
 
 - [Features](#features)
 - [Getting Started](#getting-started)
-- [Icon Gallery](#icon-gallery)
 - [Customization](#customization)
-  - [Color & Theme](#customize-file--folder-color)
-  - [Opacity & Saturation](#custom-icon-opacity)
-  - [Associations & Clones](#custom-icon-associations)
 - [Commands](#commands)
-- [Icon Sources](#icon-sources)
-- [Contributors & Contributing](#contributors)
-- [Related Extensions](#related-extensions)
-
----
+- [Icon sources](#icon-sources)
+- [Contributors](#contributors)
+- [Contributing](#contributing)
+- [Related extensions](#related-extensions)
 
 ## Features
 
@@ -50,27 +61,11 @@ If you find Material Icon Theme useful, please consider supporting its developme
 - Custom icon associations and clones
 - Easy to use, modern, and actively maintained
 
----
-
 ## Getting Started
 
 1. Install from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme).
 2. Activate via the command palette: `Material Icons: Activate Icon Theme`.
 3. Enjoy beautiful, customizable icons in your editor!
-
----
-
-## Icon Gallery
-
-### File icons
-
-![file icons](https://raw.githubusercontent.com/material-extensions/vscode-material-icon-theme/main/images/fileIcons.png)
-
-### Folder icons
-
-![folder icons](https://raw.githubusercontent.com/material-extensions/vscode-material-icon-theme/main/images/folderIcons.png)
-
----
 
 ## Customization
 
@@ -184,8 +179,8 @@ This will create two new icons called `rust-mod` and `rust-lib` that are associa
 
 ![cloned file icons](https://raw.githubusercontent.com/material-extensions/vscode-material-icon-theme/main/images/how-tos/cloned-file-icons-example.png)
 
-- Although you can use any `#RRGGBB` color for the `color` and `lightColor` properties, if you want to stick with colors from the material palette, you can check the full list of allowed aliases [here](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/core/generator/clones/utils/color/materialPalette.ts).
-- You can check the full list of available icons to be used as the `base` [here](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/core/icons/fileIcons.ts).
+- Although you can use any `#RRGGBB` color for the `color` and `lightColor` properties, if you want to stick with colors from the material palette, you can check the full list of allowed aliases in the [materialPalette.ts](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/core/generator/clones/utils/color/materialPalette.ts).
+- You can check the full list of available icons to be used as the `base` in the [fileIcons.ts](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/core/icons/fileIcons.ts).
 
 #### Folder associations
 
@@ -248,8 +243,8 @@ This will create two new icons called `users-admin` and `roles-admin` that are a
 
 ![cloned folder icons](https://raw.githubusercontent.com/material-extensions/vscode-material-icon-theme/main/images/how-tos/cloned-folder-icons-example.png)
 
-- Although you can use any `#RRGGBB` color for the `color` and `lightColor` properties, if you want to stick with colors from the material palette, you can check the full list of allowed aliases [here](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/core/generator/clones/utils/color/materialPalette.ts).
-- You can check the full list of available icon to be used as the `base` [here](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/core/icons/folderIcons.ts).
+- Although you can use any `#RRGGBB` color for the `color` and `lightColor` properties, if you want to stick with colors from the material palette, you can check the full list of allowed aliases in the [materialPalette.ts](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/core/generator/clones/utils/color/materialPalette.ts).
+- You can check the full list of available icons to be used as the `base` in the [folderIcons.ts](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/core/icons/folderIcons.ts).
 
 #### Language associations
 
@@ -284,10 +279,8 @@ This will create a new icon called `ahk-clone` which is associated with the lang
 
 ![cloned language icons](https://raw.githubusercontent.com/material-extensions/vscode-material-icon-theme/main/images/how-tos/cloned-language-icons-example.png)
 
-- Although you can use any `#RRGGBB` color for the `color` and `lightColor` properties, if you want to stick with colors from the material palette, you can check the full list of allowed aliases [here](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/core/generator/clones/utils/color/materialPalette.ts).
-- You can check the full list of available icons to be used as the `base` [here](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/core/icons/fileIcons.ts).
-
----
+- Although you can use any `#RRGGBB` color for the `color` and `lightColor` properties, if you want to stick with colors from the material palette, you can check the full list of allowed aliases in the [materialPalette.ts](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/core/generator/clones/utils/color/materialPalette.ts).
+- You can check the full list of available icons to be used as the `base` in the [fileIcons.ts](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/src/core/icons/fileIcons.ts).
 
 ## Commands
 
@@ -295,39 +288,73 @@ Press `Ctrl-Shift-P` to open the command palette and type `Material Icons`.
 
 ![commands](https://raw.githubusercontent.com/material-extensions/vscode-material-icon-theme/main/images/commandPalette.png)
 
-| Command                           | Description                                                                         |
-| --------------------------------- | ----------------------------------------------------------------------------------- |
-| **Activate Icon Theme**           | Activate the icon theme.                                                            |
-| **Change File Color**             | Change the color of the file icons.                                                 |
-| **Change Folder Color**           | Change the color of the folder icons.                                               |
-| **Change Folder Theme**           | Change the design of the folder icons.                                              |
-| **Change Opacity**                | Change the opacity of the icons.                                                    |
-| **Change Saturation**             | Change the saturation value of the icons.                                           |
-| **Configure Icon Packs**          | Selects an icon pack that enables additional icons (e.g. for Angular, React, Ngrx). |
-| **Toggle Explorer Arrows**        | Show or hide the arrows next to the folder icons.                                   |
-| **Restore Default Configuration** | Reset to the default configuration.                                                 |
-| **Toggle Grayscale**              | Set icon saturation to `0` (grayscale), or `1` (color).                             |
+### Command List
 
----
+| Command                           | Description                                                                         |
+|------------------------------------|-------------------------------------------------------------------------------------|
+| **Activate Icon Theme**            | Activate the icon theme.                                                            |
+| **Change File Color**              | Change the color of the file icons.                                                 |
+| **Change Folder Color**            | Change the color of the folder icons.                                               |
+| **Change Folder Theme**            | Change the design of the folder icons.                                              |
+| **Change Opacity**                 | Change the opacity of the icons.                                                    |
+| **Change Root Folder Color**       | Change the color of the root folder icons.                                          |
+| **Change Saturation**              | Change the saturation value of the icons.                                           |
+| **Configure Icon Packs**           | Selects an icon pack that enables additional icons (e.g. for Angular, React, Ngrx). |
+| **Restore Default Configuration**  | Reset to the default configuration.                                                 |
+| **Toggle Explorer Arrows**         | Show or hide the arrows next to the folder icons.                                   |
+| **Toggle Grayscale**               | Set icon saturation to `0` (grayscale), or `1` (color).                             |
 
 ## Icon sources
 
 - [Material Design Icons](https://pictogrammers.com/library/mdi/)
 - [Material Symbols](https://fonts.google.com/icons)
 
----
-
 ## Contributors
+
+Thank you to all our amazing contributors!
+Your support helps make Material Icon Theme better for everyone.
 
 [![Contributors](https://raw.githubusercontent.com/material-extensions/vscode-material-icon-theme/main/images/contributors.png)](https://github.com/material-extensions/vscode-material-icon-theme/graphs/contributors)
 
-**Would you like to contribute?**
+## Contributing
 
-Take a look at the [contribution guidelines](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/CONTRIBUTING.md) and open a [new issue](https://github.com/material-extensions/vscode-material-icon-theme/issues) or [pull request](https://github.com/material-extensions/vscode-material-icon-theme/pulls) on GitHub.
+We welcome contributions of all kinds! Whether you want to add new icons, improve documentation, fix bugs, or help with translations, your input is appreciated.
 
----
+**How to get involved:**
+
+- 📖 **Read the [Contribution Guidelines](https://github.com/material-extensions/vscode-material-icon-theme/blob/main/CONTRIBUTING.md)**
+  Learn about our coding standards, icon design tips, and workflow.
+
+- 🐛 **Report Issues**
+  Found a bug or have an icon request? [Open an issue](https://github.com/material-extensions/vscode-material-icon-theme/issues).
+
+- 💡 **Submit Pull Requests**
+  Ready to contribute code or icons? [Create a pull request](https://github.com/material-extensions/vscode-material-icon-theme/pulls).
+
+- 🌍 **Help with Translations**
+  Improve or add translations by editing the files in `src/i18n` and `package.nls.*.json`.
 
 ## Related extensions
 
 - [Material Icons for GitHub](https://github.com/material-extensions/material-icons-browser-extension)
 - [Material Product Icons](https://github.com/material-extensions/vscode-material-product-icons)
+- [Material Icons NPM Package](https://www.npmjs.com/package/material-icon-theme)
+
+<!-- markdownlint-disable -->
+<br />
+
+
+---
+
+<p align="center">
+  <a href="https://github.com/sponsors/material-extensions">
+    <img src="https://img.shields.io/badge/Sponsor-GitHub-blue?logo=github-sponsors&style=for-the-badge&colorA=263238&colorB=EC407A" alt="Sponsor on GitHub">
+  </a>
+  <a href="https://github.com/material-extensions/vscode-material-icon-theme">
+    <img src="https://img.shields.io/github/stars/material-extensions/vscode-material-icon-theme?style=for-the-badge&label=Star%20on%20GitHub&colorA=263238&colorB=1976D2" alt="Star on GitHub">
+  </a>
+</p>
+<p align="center">
+  <em>Enjoying Material Icon Theme? Support the project by starring it or becoming a sponsor!</em>
+</p>
+<!-- markdownlint-restore -->
