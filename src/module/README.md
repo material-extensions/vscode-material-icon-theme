@@ -21,14 +21,8 @@
 <p align="center">Enjoying Material Icon Theme? Support the project by starring it or becoming a sponsor!</p>
 
 <p align="center">
-  <a href="https://github.com/sponsors/material-extensions">
-    <img src="https://img.shields.io/badge/Sponsor-GitHub-blue?logo=github-sponsors&style=for-the-badge&colorA=263238&colorB=EC407A" alt="Sponsor on GitHub">
-  </a>
-</p>
-<p align="center">
-  <a href="https://github.com/material-extensions/vscode-material-icon-theme">
-    <img src="https://img.shields.io/github/stars/material-extensions/vscode-material-icon-theme?style=for-the-badge&label=Star%20on%20GitHub&colorA=263238&colorB=1976D2" alt="Star on GitHub">
-  </a>
+  <a href="https://github.com/sponsors/material-extensions"><img src="https://img.shields.io/badge/Sponsor-GitHub-blue?logo=github-sponsors&style=for-the-badge&colorA=263238&colorB=EC407A" alt="Sponsor on GitHub"></a>
+  <a href="https://github.com/material-extensions/vscode-material-icon-theme"><img src="https://img.shields.io/github/stars/material-extensions/vscode-material-icon-theme?style=for-the-badge&label=Star%20on%20GitHub&colorA=263238&colorB=1976D2" alt="Star on GitHub"></a>
 </p>
 
 <br />
@@ -150,12 +144,8 @@ We welcome contributions of all kinds! Whether you want to add new icons, improv
 ---
 
 <p align="center">
-  <a href="https://github.com/sponsors/material-extensions">
-    <img src="https://img.shields.io/badge/Sponsor-GitHub-blue?logo=github-sponsors&style=for-the-badge&colorA=263238&colorB=EC407A" alt="Sponsor on GitHub">
-  </a>
-  <a href="https://github.com/material-extensions/vscode-material-icon-theme">
-    <img src="https://img.shields.io/github/stars/material-extensions/vscode-material-icon-theme?style=for-the-badge&label=Star%20on%20GitHub&colorA=263238&colorB=1976D2" alt="Star on GitHub">
-  </a>
+  <a href="https://github.com/sponsors/material-extensions"><img src="https://img.shields.io/badge/Sponsor-GitHub-blue?logo=github-sponsors&style=for-the-badge&colorA=263238&colorB=EC407A" alt="Sponsor on GitHub"></a>
+  <a href="https://github.com/material-extensions/vscode-material-icon-theme"><img src="https://img.shields.io/github/stars/material-extensions/vscode-material-icon-theme?style=for-the-badge&label=Star%20on%20GitHub&colorA=263238&colorB=1976D2" alt="Star on GitHub"></a>
 </p>
 <p align="center">
   <em>Enjoying Material Icon Theme? Support the project by starring it or becoming a sponsor!</em>
