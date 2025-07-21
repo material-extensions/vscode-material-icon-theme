@@ -22,10 +22,10 @@
 
 ### ❤️ Contributors
 
-- Kgruiz <kgruiz08@gmail.com>
+- Kaden Gruizenga ([Kgruiz](https://github.com/kgruiz))
 - Firecrafter28 ([@Firecrafter28](https://github.com/Firecrafter28))
-- Marlon Luís De Col <marlondecol@proton.me>
-- G'lek Tarssza <robloxianmany@gmail.com>
+- Marlon Luís de Col ([@marlondecol](https://github.com/marlondecol))
+- G'lek Tarssza ([@glektarssza](https://github.com/glektarssza))
 - Julio L. Muller ([@juliolmuller](https://github.com/juliolmuller))
 
 ## v5.23.0
@@ -45,9 +45,9 @@
 
 ### ❤️ Contributors
 
-- Kgruiz <kgruiz08@gmail.com>
-- Murilo De Souza Neves <murilogrilosn@gmail.com>
-- Philipp Kief <philipp.kief@gmx.de>
+- Kaden Gruizenga ([Kgruiz](https://github.com/kgruiz))
+- Murilo De Souza Neves ([muNeves3](https://github.com/muNeves3))
+- Philipp Kief ([PKief](https://github.com/PKief))
 
 ## v5.22.0
 
