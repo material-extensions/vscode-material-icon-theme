@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.1.2/schema.json",
   "formatter": {
     "enabled": true,
     "formatWithErrors": false,
@@ -10,9 +10,15 @@
     "attributePosition": "auto"
   },
   "files": {
-    "ignore": ["dist", "node_modules", "package.json", "bun.lock"]
+    "includes": [
+      "**",
+      "!**/dist",
+      "!**/node_modules",
+      "!**/package.json",
+      "!**/bun.lock"
+    ]
   },
-  "organizeImports": { "enabled": true },
+  "assist": { "actions": { "source": { "organizeImports": "on" } } },
   "linter": {
     "enabled": true,
     "rules": {
@@ -25,7 +31,6 @@
       },
       "security": { "noGlobalEval": "error" },
       "style": {
-        "noVar": "error",
         "useBlockStatements": "off",
         "useConst": "error",
         "useNamingConvention": {
@@ -36,7 +41,8 @@
       "suspicious": {
         "noDoubleEquals": "error",
         "noExplicitAny": "error",
-        "useNamespaceKeyword": "error"
+        "useNamespaceKeyword": "error",
+        "noVar": "error"
       }
     }
   },
@@ -55,7 +61,7 @@
   },
   "overrides": [
     {
-      "include": ["src/models/scripts/contributors/contributor.ts"],
+      "includes": ["**/src/models/scripts/contributors/contributor.ts"],
       "linter": {
         "rules": {
           "style": {

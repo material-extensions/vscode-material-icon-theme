@@ -3,9 +3,9 @@ import { fileIcons } from '../icons/fileIcons';
 import { folderIcons } from '../icons/folderIcons';
 import { languageIcons } from '../icons/languageIcons';
 import {
+  createEmptyManifest,
   type Manifest,
   type ManifestConfig,
-  createEmptyManifest,
 } from '../models/manifest';
 import { padWithDefaultConfig } from './config/defaultConfig';
 import { loadFileIconDefinitions } from './fileGenerator';
