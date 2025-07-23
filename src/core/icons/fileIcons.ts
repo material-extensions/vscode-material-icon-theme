@@ -1064,7 +1064,11 @@ export const fileIcons: FileIcons = {
       fileNames: ['security.md', 'security.txt', 'security'],
     },
     { name: 'handlebars', fileExtensions: ['hbs', 'mustache'] },
-    { name: 'perl', fileExtensions: ['pm', 'raku'] },
+    { name: 'perl', fileExtensions: ['pm'] },
+    {
+      name: 'raku',
+      fileExtensions: ['raku', 'rakumod', 'rakutest', '.rakudoc', '.nqp'],
+    },
     { name: 'haxe', fileExtensions: ['hx'] },
     {
       name: 'test-ts',
