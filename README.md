@@ -58,8 +58,7 @@
 ## Getting Started
 
 1. **Install the extension**<br>
-  Either navigate to [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme) or click on this button for direct installation:<br><br>
-  [![Install in VS Code](https://img.shields.io/badge/Install%20in%20VS%20Code-Click%20to%20Install-4CAF50?style=for-the-badge&logo=visualstudiocode&logoColor=white&colorA=263238&colorB=4CAF50)](vscode:extension/PKief.material-icon-theme)
+  [![Install in VS Code](https://img.shields.io/badge/Install%20in%20VS%20Code-Click%20to%20Install-4CAF50?style=for-the-badge&logo=visualstudiocode&logoColor=white&colorA=263238&colorB=4CAF50)](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
 
 2. **Activate the icon theme**<br>
   Open the command palette (`Ctrl+Shift+P` or `Cmd+Shift+P` on macOS), type `Material Icons: Activate Icon Theme`, and select it.
