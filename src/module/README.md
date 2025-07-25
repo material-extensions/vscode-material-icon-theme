@@ -10,12 +10,8 @@
 
 <p align="center">
   <a href="https://www.npmjs.com/package/material-icon-theme"><img src="https://img.shields.io/npm/v/material-icon-theme?style=for-the-badge&colorA=263238&colorB=4CAF50&label=VERSION" alt="NPM Version"></a>
-  <a href="https://www.npmjs.com/package/material-icon-theme">
-    <img src="https://img.shields.io/npm/dm/material-icon-theme?style=for-the-badge&colorA=263238&colorB=4CAF50&label=DOWNLOADS" alt="NPM Downloads">
-  </a>
-   <a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme">
-    <img src="https://img.shields.io/visual-studio-marketplace/r/PKief.material-icon-theme?style=for-the-badge&colorA=263238&colorB=43A047&label=Rating" alt="Rating">
-  </a>
+  <a href="https://www.npmjs.com/package/material-icon-theme"><img src="https://img.shields.io/npm/dm/material-icon-theme?style=for-the-badge&colorA=263238&colorB=4CAF50&label=DOWNLOADS" alt="NPM Downloads"></a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"><img src="https://img.shields.io/visual-studio-marketplace/r/PKief.material-icon-theme?style=for-the-badge&colorA=263238&colorB=43A047&label=Rating" alt="Rating"></a>
 </p>
 
 <br />
