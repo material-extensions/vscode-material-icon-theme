@@ -52,7 +52,7 @@
   },
   "icon": "logo.png",
   "galleryBanner": {
-    "color": "#1e1e1e",
+    "color": "#282c34",
     "theme": "dark"
   },
   "categories": [
