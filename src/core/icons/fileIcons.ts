@@ -2454,7 +2454,7 @@ export const fileIcons: FileIcons = {
     { name: 'gemini', fileExtensions: ['gmi', 'gemini'] },
     {
       name: 'sentry',
-      fileNames: ['.sentryclirc'],
+      fileNames: ['.sentryclirc', '.env.sentry-build-plugin'],
       patterns: {
         'sentry.client.config': FileNamePattern.Ecmascript,
         'sentry.server.config': FileNamePattern.Ecmascript,
