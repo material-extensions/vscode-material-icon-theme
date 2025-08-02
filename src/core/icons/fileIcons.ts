@@ -3067,7 +3067,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'copilot',
-      fileNames: ['.github/copilot-instructions.md', './github/instructions/copilot-instructions.md'],
+      fileNames: ['copilot-instructions.md'],
       light: true,
     },
     {
