@@ -34,7 +34,7 @@
 
 <details><summary>🏞️ <b>Show all available folder icons</b></summary><br/><img src="https://raw.githubusercontent.com/material-extensions/vscode-material-icon-theme/main/images/folderIcons.png" alt="folder icons"></details>
 
-<br /><br />
+<br />
 
 ## Table of Contents
 
