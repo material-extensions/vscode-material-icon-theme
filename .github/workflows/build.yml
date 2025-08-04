@@ -10,6 +10,7 @@ on:
       - '.bun-version'
       - 'bunfig.toml'
       - 'package.json'
+      - 'bun.lock'
       - 'sheriff.config.ts'
       - '!*.md'
 
@@ -22,6 +23,7 @@ on:
       - '.bun-version'
       - 'bunfig.toml'
       - 'package.json'
+      - 'bun.lock'
       - 'sheriff.config.ts'
       - '!*.md'
 
