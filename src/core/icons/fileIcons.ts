@@ -2865,7 +2865,6 @@ export const fileIcons: FileIcons = {
       fileNames: [
         'drizzle.config.ts',
         'drizzle.config.dev.ts',
-        'drizzle.config.dev.ts',
         'drizzle.config.prod.ts',
         'drizzle.config.js',
         'drizzle.config.dev.js',
