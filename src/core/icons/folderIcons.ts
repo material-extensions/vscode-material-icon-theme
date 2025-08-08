@@ -255,6 +255,8 @@ export const folderIcons: FolderTheme[] = [
           'theme',
           'color',
           'colors',
+          'colour',
+          'colours',
           'design',
           'designs',
           'palette',
