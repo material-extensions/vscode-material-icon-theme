@@ -2864,8 +2864,14 @@ export const fileIcons: FileIcons = {
       name: 'drizzle',
       fileNames: [
         'drizzle.config.ts',
+        'drizzle.config.dev.ts',
+        'drizzle.config.prod.ts',
         'drizzle.config.js',
+        'drizzle.config.dev.js',
+        'drizzle.config.prod.js',
         'drizzle.config.json',
+        'drizzle.config.dev.json',
+        'drizzle.config.prod.json',
       ],
     },
     { name: 'lottie', fileExtensions: ['lottie'] },
@@ -3204,5 +3210,16 @@ export const fileIcons: FileIcons = {
     { name: 'blender', fileExtensions: ['blend', 'blend1', 'blend2'] },
     { name: 'tsdoc', fileNames: ['tsdoc.json'] },
     { name: 'oxlint', fileNames: ['.oxlintrc.json'] },
+    {
+      name: 'vanilla-extract',
+      fileExtensions: [
+        'css.ts',
+        'css.js',
+        'css.cjs',
+        'css.mjs',
+        'css.tsx',
+        'css.jsx',
+      ],
+    },
   ]),
 };
