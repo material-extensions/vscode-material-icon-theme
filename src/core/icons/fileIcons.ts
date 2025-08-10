@@ -3221,6 +3221,6 @@ export const fileIcons: FileIcons = {
         'css.jsx',
       ],
     },
-    { name: 'components', fileNames: ['components.json'] },
+    { name: 'components', fileNames: ['components.json'], light: true },
   ]),
 };
