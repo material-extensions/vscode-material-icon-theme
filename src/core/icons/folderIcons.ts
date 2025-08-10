@@ -1256,6 +1256,7 @@ export const folderIcons: FolderTheme[] = [
           'blender-models',
         ],
       },
+      { name: 'folder-trpc', folderNames: ['trpc'] },
       {
         name: 'folder-atom',
         folderNames: ['atoms', 'atom'],
