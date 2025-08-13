@@ -1,0 +1,15 @@
+<svg version="1.1" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="#29a5f4" stroke-linecap="round" stroke-linejoin="round">
+        <g transform="matrix(2.0039 0 0 1.998 .0063843 .028461)" stroke-width="1.3333">
+            <rect x="1.6607" y="1.6667" width="2.6727" height="2.6612"/>
+            <rect x="1.6607" y="6.6667" width="2.6727" height="2.6612"/>
+            <rect x="1.6607" y="11.672" width="2.6727" height="2.6612"/>
+        </g>
+        <path d="m13.135 3.0254h15.815" stroke-width="2.0999"/>
+        <path d="m13.142 7.0214h13.792" stroke-width="2.1064"/>
+        <path d="m13.148 13.03h15.802" stroke-width="2.0991"/>
+        <path d="m13.156 17.026h13.779" stroke-width="2.1054"/>
+        <path d="m13.148 22.991h15.802" stroke-width="2.0991"/>
+        <path d="m13.156 26.987h13.779" stroke-width="2.1054"/>
+    </g>
+</svg>
