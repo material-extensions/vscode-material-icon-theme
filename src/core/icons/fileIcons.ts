@@ -392,6 +392,7 @@ export const fileIcons: FileIcons = {
       ],
       fileNames: ['.vsconfig'],
     },
+    { name: 'varnish', fileExtensions: ['vcl'] },
     {
       name: 'database',
       fileExtensions: [
