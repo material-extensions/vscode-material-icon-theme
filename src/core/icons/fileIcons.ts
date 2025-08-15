@@ -55,6 +55,7 @@ export const fileIcons: FileIcons = {
       light: true,
     },
     { name: 'proto', fileExtensions: ['proto'] },
+    { name: 'prompt', fileExtensions: ['prompt.md', 'prompts.md'] },
     {
       name: 'playwright',
       fileNames: [
@@ -392,6 +393,7 @@ export const fileIcons: FileIcons = {
       ],
       fileNames: ['.vsconfig'],
     },
+    { name: 'varnish', fileExtensions: ['vcl'] },
     {
       name: 'database',
       fileExtensions: [
