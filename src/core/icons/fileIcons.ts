@@ -3227,5 +3227,9 @@ export const fileIcons: FileIcons = {
       name: 'claude',
       fileNames: ['CLAUDE.md', 'CLAUDE.local.md'],
     },
+    {
+      name: 'toc',
+      fileNames: ['toc'],
+    },
   ]),
 };
