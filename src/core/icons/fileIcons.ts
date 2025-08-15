@@ -55,6 +55,7 @@ export const fileIcons: FileIcons = {
       light: true,
     },
     { name: 'proto', fileExtensions: ['proto'] },
+    { name: 'prompt', fileExtensions: ['prompt.md', 'prompts.md'] },
     {
       name: 'playwright',
       fileNames: [
@@ -3220,6 +3221,10 @@ export const fileIcons: FileIcons = {
         'css.tsx',
         'css.jsx',
       ],
+    },
+    {
+      name: 'claude',
+      fileNames: ['CLAUDE.md', 'CLAUDE.local.md'],
     },
   ]),
 };

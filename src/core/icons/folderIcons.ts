@@ -1085,6 +1085,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['project', 'projects'],
       },
       {
+        name: 'folder-prompts',
+        folderNames: ['prompt', 'prompts'],
+      },
+      {
         name: 'folder-interface',
         folderNames: ['interface', 'interfaces'],
       },
@@ -1271,6 +1275,10 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-cogs',
         folderNames: ['cogs', 'cog'],
+      },
+      {
+        name: 'folder-claude',
+        folderNames: ['.claude'],
       },
     ],
   },
