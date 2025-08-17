@@ -2,6 +2,56 @@
 
 # Changelog
 
+## v5.25.0
+
+[compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.24.0...v5.25.0)
+
+### 🚀 Enhancements
+
+- Update fileIcons.ts ([#3054](https://github.com/material-extensions/vscode-material-icon-theme/pull/3054))
+- Enhance excalidraw file icon support with additional file names ([#3064](https://github.com/material-extensions/vscode-material-icon-theme/pull/3064))
+- Update fileicons.ts and folderIcons.ts ([#3062](https://github.com/material-extensions/vscode-material-icon-theme/pull/3062))
+- Associate `context` icon with `.ctx` file extension ([#3068](https://github.com/material-extensions/vscode-material-icon-theme/pull/3068))
+- Associate `doctex-installer` icon with `.ins` file extension ([#3067](https://github.com/material-extensions/vscode-material-icon-theme/pull/3067))
+- Add .qa-mincloudrc icon ([#3070](https://github.com/material-extensions/vscode-material-icon-theme/pull/3070))
+- Associate `folder-test` icon with `testfiles` folder ([#3072](https://github.com/material-extensions/vscode-material-icon-theme/pull/3072))
+- ✨ atomic design methodology folder icons ([#3075](https://github.com/material-extensions/vscode-material-icon-theme/pull/3075))
+- Add helm language icon association ([#3081](https://github.com/material-extensions/vscode-material-icon-theme/pull/3081))
+- **fileIcons:** Add binary and engine-specific DB extensions ([#3086](https://github.com/material-extensions/vscode-material-icon-theme/pull/3086))
+- Added oxlintrc icon ([#3088](https://github.com/material-extensions/vscode-material-icon-theme/pull/3088))
+- Update readme with additional details ([dfa1071c](https://github.com/material-extensions/vscode-material-icon-theme/commit/dfa1071c))
+- **fileIcons:** Add .env.sentry-build-plugin to sentry icon ([#3090](https://github.com/material-extensions/vscode-material-icon-theme/pull/3090))
+- Update copilot icon filenames ([#3105](https://github.com/material-extensions/vscode-material-icon-theme/pull/3105))
+
+### 🩹 Fixes
+
+- Correct phpstan icon file patterns ([#3063](https://github.com/material-extensions/vscode-material-icon-theme/pull/3063))
+- Update markdown linting command in .lintstagedrc ([c628fdf2](https://github.com/material-extensions/vscode-material-icon-theme/commit/c628fdf2))
+- 🚑 wrong biome json schema in `biome.jsonc` ([#3074](https://github.com/material-extensions/vscode-material-icon-theme/pull/3074))
+
+### 💅 Refactors
+
+- Remove icons for `tex` and `ltx` file extensions ([#3065](https://github.com/material-extensions/vscode-material-icon-theme/pull/3065))
+
+### 🏡 Chore
+
+- Update contributor names in changelog with GitHub links ([f81dceaa](https://github.com/material-extensions/vscode-material-icon-theme/commit/f81dceaa))
+- **deps-dev:** Bump form-data from 4.0.0 to 4.0.4 ([#3095](https://github.com/material-extensions/vscode-material-icon-theme/pull/3095))
+
+### ❤️ Contributors
+
+- Raphaël Balet ([@rbalet](https://github.com/rbalet))
+- Kaden Gruizenga ([@kgruiz](https://github.com/kgruiz))
+- Philipp Kief ([@PKief](https://github.com/PKief))
+- Jan Schmidt
+- Albaraa Hasan ([@Null78](https://github.com/Null78))
+- Lucas Colombo ([@lucas-labs](https://github.com/lucas-labs))
+- Marlon Luís De Col
+- Frankie ([@toFrankie](https://github.com/toFrankie))
+- Firecrafter28 ([@Firecrafter28](https://github.com/Firecrafter28))
+- Asispts ([@asispts](https://github.com/asispts))
+- Girish Kumar ([@Girish4489](https://github.com/Girish4489))
+
 ## v5.24.0
 
 [compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.23.0...v5.24.0)

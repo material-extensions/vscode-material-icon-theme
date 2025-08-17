@@ -55,6 +55,7 @@ export const fileIcons: FileIcons = {
       light: true,
     },
     { name: 'proto', fileExtensions: ['proto'] },
+    { name: 'prompt', fileExtensions: ['prompt.md', 'prompts.md'] },
     {
       name: 'playwright',
       fileNames: [
@@ -392,6 +393,7 @@ export const fileIcons: FileIcons = {
       ],
       fileNames: ['.vsconfig'],
     },
+    { name: 'varnish', fileExtensions: ['vcl'] },
     {
       name: 'database',
       fileExtensions: [
@@ -413,6 +415,26 @@ export const fileIcons: FileIcons = {
         'dblite3',
         'debugsymbols',
         'odb',
+        'accde',
+        'adp',
+        'bak',
+        'bdb',
+        'dbf',
+        'fdb',
+        'feather',
+        'gdb',
+        'ibd',
+        'mdf',
+        'mde',
+        'myd',
+        'myi',
+        'ndf',
+        'orc',
+        'parquet',
+        'sdf',
+        'ldf',
+        'frm',
+        'kdbx',
       ],
     },
     { name: 'kusto', fileExtensions: ['kql'] },
@@ -2434,7 +2456,7 @@ export const fileIcons: FileIcons = {
     { name: 'gemini', fileExtensions: ['gmi', 'gemini'] },
     {
       name: 'sentry',
-      fileNames: ['.sentryclirc'],
+      fileNames: ['.sentryclirc', '.env.sentry-build-plugin'],
       patterns: {
         'sentry.client.config': FileNamePattern.Ecmascript,
         'sentry.server.config': FileNamePattern.Ecmascript,
@@ -2844,8 +2866,14 @@ export const fileIcons: FileIcons = {
       name: 'drizzle',
       fileNames: [
         'drizzle.config.ts',
+        'drizzle.config.dev.ts',
+        'drizzle.config.prod.ts',
         'drizzle.config.js',
+        'drizzle.config.dev.js',
+        'drizzle.config.prod.js',
         'drizzle.config.json',
+        'drizzle.config.dev.json',
+        'drizzle.config.prod.json',
       ],
     },
     { name: 'lottie', fileExtensions: ['lottie'] },
@@ -3047,7 +3075,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'copilot',
-      fileNames: ['.github/copilot-instructions.md'],
+      fileNames: ['copilot-instructions.md'],
       light: true,
     },
     {
@@ -3183,5 +3211,21 @@ export const fileIcons: FileIcons = {
     },
     { name: 'blender', fileExtensions: ['blend', 'blend1', 'blend2'] },
     { name: 'tsdoc', fileNames: ['tsdoc.json'] },
+    { name: 'oxlint', fileNames: ['.oxlintrc.json'] },
+    {
+      name: 'vanilla-extract',
+      fileExtensions: [
+        'css.ts',
+        'css.js',
+        'css.cjs',
+        'css.mjs',
+        'css.tsx',
+        'css.jsx',
+      ],
+    },
+    {
+      name: 'claude',
+      fileNames: ['CLAUDE.md', 'CLAUDE.local.md'],
+    },
   ]),
 };

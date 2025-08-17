@@ -24,19 +24,5 @@
   "[svg]": {
     "editor.defaultFormatter": "jock.svg"
   },
-
-  "github.copilot.chat.codeGeneration.instructions": [
-    {
-      "file": "/CONTRIBUTING.md"
-    },
-    {
-      "file": "/src/architecture.md"
-    }
-  ],
-  "github.copilot.chat.reviewSelection.instructions": [
-    {
-      "file": "/CONTRIBUTING.md"
-    }
-  ],
   "github.copilot.chat.codeGeneration.useInstructionFiles": true
 }
