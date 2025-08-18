@@ -3227,5 +3227,17 @@ export const fileIcons: FileIcons = {
       name: 'claude',
       fileNames: ['CLAUDE.md', 'CLAUDE.local.md'],
     },
+    {
+      name: 'cursor',
+      fileNames: [
+        '.cursorignore',
+        '.cursorindexingignore',
+        '.cursorrules',
+        '.cursor',
+        '.cursor.json',
+        '.cursorrc',
+      ],
+      light: true,
+    },
   ]),
 };
