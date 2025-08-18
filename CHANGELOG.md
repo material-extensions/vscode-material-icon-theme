@@ -2,6 +2,41 @@
 
 # Changelog
 
+## v5.26.0
+
+[compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.25.0...v5.26.0)
+
+### 🚀 Enhancements
+
+- Dev and prod for drizzle config ([#3118](https://github.com/material-extensions/vscode-material-icon-theme/pull/3118))
+- Add vanilla extract icon ([#3113](https://github.com/material-extensions/vscode-material-icon-theme/pull/3113))
+- Add 'colour' and 'colours' to folder icons ([a303d9bf](https://github.com/material-extensions/vscode-material-icon-theme/commit/a303d9bf))
+- **folderIcons:** Add angular interceptor icon ([#3106](https://github.com/material-extensions/vscode-material-icon-theme/pull/3106))
+- Add new icons Claude Code ([#3134](https://github.com/material-extensions/vscode-material-icon-theme/pull/3134))
+- ✨ prompt folder and file icons ([#3141](https://github.com/material-extensions/vscode-material-icon-theme/pull/3141))
+- **icon:** Added `varnish` icon ([#3142](https://github.com/material-extensions/vscode-material-icon-theme/pull/3142))
+- Apply `meta` folder icon to `metadata` folder ([#3145](https://github.com/material-extensions/vscode-material-icon-theme/pull/3145))
+- Add lintstaged icons ([#2794](https://github.com/material-extensions/vscode-material-icon-theme/pull/2794))
+
+### 🩹 Fixes
+
+- **docs:** Remove unnecessary line break ([e8c25991](https://github.com/material-extensions/vscode-material-icon-theme/commit/e8c25991))
+
+### 🏡 Chore
+
+- Update dependencies and devDependencies ([afa019fb](https://github.com/material-extensions/vscode-material-icon-theme/commit/afa019fb))
+
+### ❤️ Contributors
+
+- Philipp Kief ([@PKief](https://github.com/PKief))
+- Roman
+- RVG ([@Lory](https://github.com/Lory))
+- Lucas Colombo ([@lucas-labs](https://github.com/lucas-labs))
+- Writedev ([@writedev](https://github.com/writedev))
+- Raphaël Balet ([@rbalet](https://github.com/rbalet))
+- TurboK ([@turbokadi](https://github.com/turbokadi))
+- Akshay.L.Aradhya
+
 ## v5.25.0
 
 [compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.24.0...v5.25.0)
