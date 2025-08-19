@@ -41,7 +41,6 @@ export const fileIcons: FileIcons = {
         '.jsbeautifyrc',
         '.esformatter',
         'cdp.pid',
-        '.lintstagedrc',
         '.whitesource',
       ],
     },
@@ -393,6 +392,7 @@ export const fileIcons: FileIcons = {
       ],
       fileNames: ['.vsconfig'],
     },
+    { name: 'varnish', fileExtensions: ['vcl'] },
     {
       name: 'database',
       fileExtensions: [
@@ -3111,6 +3111,21 @@ export const fileIcons: FileIcons = {
     {
       name: 'dependencies-update',
       fileExtensions: ['.ncurc.json', '.ncurc.yml', '.ncurc.js'],
+    },
+    {
+      name: 'lintstaged',
+      fileNames: [
+        '.lintstagedrc',
+        '.lintstagedrc.json',
+        '.lintstagedrc.yaml',
+        '.lintstagedrc.yml',
+        '.lintstagedrc.mjs',
+        '.lintstagedrc.cjs',
+        'lint-staged.config.mjs',
+        'lint-staged.config.cjs',
+        'lint-staged.config.js',
+        '.lintstagedrc.js',
+      ],
     },
     {
       name: 'histoire',
