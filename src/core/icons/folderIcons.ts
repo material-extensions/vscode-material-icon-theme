@@ -1277,7 +1277,7 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['.claude'],
       },
       {
-        name: 'cursor',
+        name: 'folder-cursor',
         folderNames: ['.cursor'],
         light: true,
       },
