@@ -255,6 +255,8 @@ export const folderIcons: FolderTheme[] = [
           'theme',
           'color',
           'colors',
+          'colour',
+          'colours',
           'design',
           'designs',
           'palette',
@@ -795,7 +797,7 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['mail', 'mails', 'email', 'emails', 'smtp', 'mailers'],
       },
       { name: 'folder-mappings', folderNames: ['mappings', 'mapping'] },
-      { name: 'folder-meta', folderNames: ['meta'] },
+      { name: 'folder-meta', folderNames: ['meta', 'metadata'] },
       {
         name: 'folder-changesets',
         folderNames: ['changesets', 'changeset'],
@@ -971,6 +973,10 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-pipe',
         folderNames: ['pipe', 'pipes', 'pipeline', 'pipelines'],
       },
+      {
+        name: 'folder-interceptor',
+        folderNames: ['interceptor', 'interceptors'],
+      },
       { name: 'folder-svg', folderNames: ['svg', 'svgs'] },
       {
         name: 'folder-vuex-store',
@@ -1077,6 +1083,10 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-project',
         folderNames: ['project', 'projects'],
+      },
+      {
+        name: 'folder-prompts',
+        folderNames: ['prompt', 'prompts'],
       },
       {
         name: 'folder-interface',
@@ -1261,6 +1271,10 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-organism',
         folderNames: ['organisms', 'organism'],
+      },
+      {
+        name: 'folder-claude',
+        folderNames: ['.claude'],
       },
     ],
   },
