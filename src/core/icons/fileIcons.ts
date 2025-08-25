@@ -1601,10 +1601,7 @@ export const fileIcons: FileIcons = {
         '.eslintrc.base.json',
         '.eslintignore',
         '.eslintcache',
-        'eslint.config.js',
-        'eslint.config.mjs',
-        'eslint.config.cjs',
-        'eslint.config.ts',
+        'eslint',
         'eslint-options.js',
       ],
       patterns: {
