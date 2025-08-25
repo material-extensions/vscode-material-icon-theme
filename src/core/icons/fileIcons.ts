@@ -83,6 +83,7 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['sublime-project', 'sublime-workspace'],
     },
     { name: 'simulink', fileExtensions: ['slx'] },
+    { name: 'quarto', fileExtensions: ['qmd'] },
     { name: 'twine', fileExtensions: ['tw', 'twee'] },
     {
       name: 'yaml',
