@@ -1602,6 +1602,7 @@ export const fileIcons: FileIcons = {
         '.eslintrc.base.json',
         '.eslintignore',
         '.eslintcache',
+        'eslint-options.js',
       ],
       patterns: {
         eslint: FileNamePattern.Cosmiconfig,
