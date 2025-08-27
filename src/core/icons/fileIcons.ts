@@ -83,6 +83,7 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['sublime-project', 'sublime-workspace'],
     },
     { name: 'simulink', fileExtensions: ['slx'] },
+    { name: 'quarto', fileExtensions: ['qmd'] },
     { name: 'twine', fileExtensions: ['tw', 'twee'] },
     {
       name: 'yaml',
@@ -3241,6 +3242,18 @@ export const fileIcons: FileIcons = {
     {
       name: 'claude',
       fileNames: ['CLAUDE.md', 'CLAUDE.local.md'],
+    },
+    {
+      name: 'cursor',
+      fileNames: [
+        '.cursorignore',
+        '.cursorindexingignore',
+        '.cursorrules',
+        '.cursor',
+        '.cursor.json',
+        '.cursorrc',
+      ],
+      light: true,
     },
     {
       name: 'toc',

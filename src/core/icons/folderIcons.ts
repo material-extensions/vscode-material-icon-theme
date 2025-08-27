@@ -1277,6 +1277,11 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['.claude'],
       },
       {
+        name: 'folder-cursor',
+        folderNames: ['.cursor'],
+        light: true,
+      },
+      {
         name: 'folder-toc',
         folderNames: ['toc', 'table-of-contents'],
       },
