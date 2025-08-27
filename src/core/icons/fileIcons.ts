@@ -3255,5 +3255,9 @@ export const fileIcons: FileIcons = {
       ],
       light: true,
     },
+    {
+      name: 'toc',
+      fileNames: ['toc'],
+    },
   ]),
 };
