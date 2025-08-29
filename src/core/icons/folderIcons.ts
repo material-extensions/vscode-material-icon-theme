@@ -1285,6 +1285,10 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-input',
         folderNames: ['input', 'inputs', 'output', 'outputs', 'io'],
       },
+      {
+        name: 'folder-simulations',
+        folderNames: ['simulations', 'simulation', 'sim', 'sims'],
+      },
     ],
   },
   {
