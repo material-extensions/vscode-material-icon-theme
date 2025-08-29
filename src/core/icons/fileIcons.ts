@@ -1652,6 +1652,7 @@ export const fileIcons: FileIcons = {
     {
       name: 'firebase',
       fileNames: [
+        'firebase.config.js',
         'firebase.json',
         '.firebaserc',
         'firestore.rules',
@@ -3254,6 +3255,13 @@ export const fileIcons: FileIcons = {
         '.cursorrc',
       ],
       light: true,
+    },
+    {
+      name: 'metro',
+      fileNames: ['.metro.config.js', '.metro.config.json'],
+      patterns: {
+        metro: FileNamePattern.Cosmiconfig,
+      },
     },
   ]),
 };
