@@ -114,6 +114,14 @@ export const fileIcons: FileIcons = {
     },
     { name: 'toml', fileExtensions: ['toml'], light: true },
     {
+      name: 'nocra',
+      patterns: {
+        'nocra.config': FileNamePattern.NodeEcosystem,
+      },
+      fileNames: ['nocra.config.jsx', 'nocra.config.tsx'],
+      light: true,
+    },
+    {
       name: 'image',
       fileExtensions: [
         'png',
