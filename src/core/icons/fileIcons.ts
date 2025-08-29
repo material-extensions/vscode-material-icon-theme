@@ -1652,6 +1652,7 @@ export const fileIcons: FileIcons = {
     {
       name: 'firebase',
       fileNames: [
+        'firebase.config.js',
         'firebase.json',
         '.firebaserc',
         'firestore.rules',
