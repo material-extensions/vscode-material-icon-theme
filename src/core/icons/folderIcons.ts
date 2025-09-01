@@ -1283,7 +1283,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-metro',
-        folderNames: ['.metro'],
+        folderNames: ['metro'],
       },
     ],
   },
