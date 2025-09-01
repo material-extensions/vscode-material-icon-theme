@@ -3258,10 +3258,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'metro',
-      fileNames: ['.metro.config.js', '.metro.config.json'],
-      patterns: {
-        metro: FileNamePattern.Cosmiconfig,
-      },
+      fileNames: ['metro.config.js', 'metro.config.json'],
     },
   ]),
 };
