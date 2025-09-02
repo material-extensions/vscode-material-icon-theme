@@ -35,3 +35,6 @@ src/scripts/contributors/*.html
 
 # Package archives
 *.tgz
+
+# macOS metadata
+.DS_Store
