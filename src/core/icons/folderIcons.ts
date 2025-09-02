@@ -1282,9 +1282,14 @@ export const folderIcons: FolderTheme[] = [
         light: true,
       },
       {
+        name: 'folder-metro',
+        folderNames: ['metro'],
+      },
+      { 
         name: 'folder-toc',
         folderNames: ['toc', 'table-of-contents'],
       },
+      }
     ],
   },
   {
