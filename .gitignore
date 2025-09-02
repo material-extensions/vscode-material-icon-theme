@@ -33,5 +33,5 @@ src/scripts/contributors/*.html
 # Ignore optional eslint cache
 .eslintcache
 
-*.tgz
+# Package archives
 *.tgz
