@@ -41,7 +41,6 @@ export const fileIcons: FileIcons = {
         '.jsbeautifyrc',
         '.esformatter',
         'cdp.pid',
-        '.lintstagedrc',
         '.whitesource',
       ],
     },
@@ -84,6 +83,7 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['sublime-project', 'sublime-workspace'],
     },
     { name: 'simulink', fileExtensions: ['slx'] },
+    { name: 'quarto', fileExtensions: ['qmd'] },
     { name: 'twine', fileExtensions: ['tw', 'twee'] },
     {
       name: 'yaml',
@@ -1602,6 +1602,7 @@ export const fileIcons: FileIcons = {
         '.eslintrc.base.json',
         '.eslintignore',
         '.eslintcache',
+        'eslint-options.js',
       ],
       patterns: {
         eslint: FileNamePattern.Cosmiconfig,
@@ -1651,6 +1652,7 @@ export const fileIcons: FileIcons = {
     {
       name: 'firebase',
       fileNames: [
+        'firebase.config.js',
         'firebase.json',
         '.firebaserc',
         'firestore.rules',
@@ -2595,12 +2597,24 @@ export const fileIcons: FileIcons = {
         'geom',
         'frag',
         'comp',
+        'rgen',
+        'rint',
+        'rahit',
+        'rchit',
+        'rmiss',
+        'rcall',
         'vert.glsl',
         'tesc.glsl',
         'tese.glsl',
         'geom.glsl',
         'frag.glsl',
         'comp.glsl',
+        'rgen.glsl',
+        'rint.glsl',
+        'rahit.glsl',
+        'rchit.glsl',
+        'rmiss.glsl',
+        'rcall.glsl',
         'vertex.glsl',
         'geometry.glsl',
         'fragment.glsl',
@@ -2624,6 +2638,8 @@ export const fileIcons: FileIcons = {
         'comp.hlsl',
         'tess.hlsl',
         'wgsl',
+        'spv',
+        'slang',
       ],
     },
     {
@@ -3114,6 +3130,21 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['.ncurc.json', '.ncurc.yml', '.ncurc.js'],
     },
     {
+      name: 'lintstaged',
+      fileNames: [
+        '.lintstagedrc',
+        '.lintstagedrc.json',
+        '.lintstagedrc.yaml',
+        '.lintstagedrc.yml',
+        '.lintstagedrc.mjs',
+        '.lintstagedrc.cjs',
+        'lint-staged.config.mjs',
+        'lint-staged.config.cjs',
+        'lint-staged.config.js',
+        '.lintstagedrc.js',
+      ],
+    },
+    {
       name: 'histoire',
       patterns: {
         'histoire.config': FileNamePattern.Ecmascript,
@@ -3226,6 +3257,22 @@ export const fileIcons: FileIcons = {
     {
       name: 'claude',
       fileNames: ['CLAUDE.md', 'CLAUDE.local.md'],
+    },
+    {
+      name: 'cursor',
+      fileNames: [
+        '.cursorignore',
+        '.cursorindexingignore',
+        '.cursorrules',
+        '.cursor',
+        '.cursor.json',
+        '.cursorrc',
+      ],
+      light: true,
+    },
+    {
+      name: 'metro',
+      fileNames: ['metro.config.js', 'metro.config.json'],
     },
   ]),
 };

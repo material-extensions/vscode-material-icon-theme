@@ -797,7 +797,7 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['mail', 'mails', 'email', 'emails', 'smtp', 'mailers'],
       },
       { name: 'folder-mappings', folderNames: ['mappings', 'mapping'] },
-      { name: 'folder-meta', folderNames: ['meta'] },
+      { name: 'folder-meta', folderNames: ['meta', 'metadata'] },
       {
         name: 'folder-changesets',
         folderNames: ['changesets', 'changeset'],
@@ -1275,6 +1275,15 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-claude',
         folderNames: ['.claude'],
+      },
+      {
+        name: 'folder-cursor',
+        folderNames: ['.cursor'],
+        light: true,
+      },
+      {
+        name: 'folder-metro',
+        folderNames: ['metro'],
       },
     ],
   },
