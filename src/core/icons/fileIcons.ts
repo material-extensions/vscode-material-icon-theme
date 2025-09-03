@@ -3051,6 +3051,11 @@ export const fileIcons: FileIcons = {
       },
     },
     {
+      name: 'verse',
+      light: true,
+      fileExtensions: ['verse'],
+    },
+    {
       name: 'sway',
       fileExtensions: ['sw'],
     },
