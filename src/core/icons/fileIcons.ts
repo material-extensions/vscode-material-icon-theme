@@ -3279,5 +3279,41 @@ export const fileIcons: FileIcons = {
       name: 'metro',
       fileNames: ['metro.config.js', 'metro.config.json'],
     },
+    {
+      name: 'bashly',
+      patterns: {
+        bashly: FileNamePattern.Yaml,
+      },
+    },
+    {
+      name: 'bashly-settings',
+      clone: {
+        base: 'bashly',
+        color: 'gray-300',
+        lightColor: 'gray-800',
+      },
+      patterns: {
+        'bashly-settings': FileNamePattern.Yaml,
+      },
+      light: true,
+    },
+    {
+      name: 'bashly-settings',
+      clone: {
+        base: 'bashly',
+        color: 'gray-300',
+        lightColor: 'gray-800',
+      },
+      patterns: {
+        settings: FileNamePattern.Yaml,
+      },
+      light: true,
+      enabledFor: [IconPack.Bashly],
+    },
+    {
+      name: 'bashly-hook',
+      fileNames: ['initialize.sh', 'before.sh', 'after.sh'],
+      enabledFor: [IconPack.Bashly],
+    },
   ]),
 };
