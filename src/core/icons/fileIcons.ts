@@ -631,6 +631,10 @@ export const fileIcons: FileIcons = {
         'licence.txt',
         'unlicense',
         'unlicense.txt',
+        'notice',
+        'notice.txt',
+        'notice.md',
+        'notice.rst',
       ],
     },
     {
