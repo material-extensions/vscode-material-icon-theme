@@ -3282,7 +3282,7 @@ export const fileIcons: FileIcons = {
     {
       name: 'bashly',
       patterns: {
-        bashly: FileNamePattern.Yaml,
+        'src/bashly': FileNamePattern.Yaml,
       },
     },
     {
@@ -3312,7 +3312,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'bashly-hook',
-      fileNames: ['initialize.sh', 'before.sh', 'after.sh'],
+      fileNames: ['src/initialize.sh', 'src/before.sh', 'src/after.sh'],
       enabledFor: [IconPack.Bashly],
     },
   ]),
