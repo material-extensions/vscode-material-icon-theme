@@ -3285,5 +3285,9 @@ export const fileIcons: FileIcons = {
       name: 'metro',
       fileNames: ['metro.config.js', 'metro.config.json'],
     },
+    {
+      name: 'toc',
+      fileNames: ['toc'],
+    },
   ]),
 };
