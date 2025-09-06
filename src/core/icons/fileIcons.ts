@@ -1295,6 +1295,11 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['tf', 'tf.json', 'tfvars', 'tfstate', 'tfbackend'],
     },
     {
+      name: 'opentofu',
+      fileExtensions: ['tofu'],
+      light: true,
+    },
+    {
       name: 'laravel',
       fileExtensions: ['blade.php', 'inky.php'],
       fileNames: ['artisan'],
