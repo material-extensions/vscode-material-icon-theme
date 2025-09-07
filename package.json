@@ -467,7 +467,7 @@
     "events": "^3.3.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.1.4",
+    "@biomejs/biome": "2.2.3",
     "@commitlint/config-conventional": "^19.8.1",
     "@softarc/sheriff-core": "^0.19.1",
     "@types/chroma-js": "^3.1.1",

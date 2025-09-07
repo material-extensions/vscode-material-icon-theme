@@ -1075,6 +1075,7 @@ export const fileIcons: FileIcons = {
     },
     { name: 'ocaml', fileExtensions: ['ml', 'mli', 'cmx'] },
     { name: 'odin', fileExtensions: ['odin'] },
+    { name: 'onnx', fileExtensions: ['onnx'] },
     {
       name: 'javascript-map',
       fileExtensions: ['js.map', 'mjs.map', 'cjs.map'],
@@ -1292,6 +1293,11 @@ export const fileIcons: FileIcons = {
     {
       name: 'terraform',
       fileExtensions: ['tf', 'tf.json', 'tfvars', 'tfstate', 'tfbackend'],
+    },
+    {
+      name: 'opentofu',
+      fileExtensions: ['tofu'],
+      light: true,
     },
     {
       name: 'laravel',
