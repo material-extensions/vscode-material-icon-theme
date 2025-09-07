@@ -1079,6 +1079,7 @@ export const fileIcons: FileIcons = {
     },
     { name: 'ocaml', fileExtensions: ['ml', 'mli', 'cmx'] },
     { name: 'odin', fileExtensions: ['odin'] },
+    { name: 'onnx', fileExtensions: ['onnx'] },
     {
       name: 'javascript-map',
       fileExtensions: ['js.map', 'mjs.map', 'cjs.map'],
@@ -1296,6 +1297,11 @@ export const fileIcons: FileIcons = {
     {
       name: 'terraform',
       fileExtensions: ['tf', 'tf.json', 'tfvars', 'tfstate', 'tfbackend'],
+    },
+    {
+      name: 'opentofu',
+      fileExtensions: ['tofu'],
+      light: true,
     },
     {
       name: 'laravel',
@@ -3282,6 +3288,42 @@ export const fileIcons: FileIcons = {
     {
       name: 'metro',
       fileNames: ['metro.config.js', 'metro.config.json'],
+    },
+    {
+      name: 'bashly',
+      patterns: {
+        'src/bashly': FileNamePattern.Yaml,
+      },
+    },
+    {
+      name: 'bashly-settings',
+      clone: {
+        base: 'bashly',
+        color: 'gray-300',
+        lightColor: 'gray-800',
+      },
+      patterns: {
+        'bashly-settings': FileNamePattern.Yaml,
+      },
+      light: true,
+    },
+    {
+      name: 'bashly-settings',
+      clone: {
+        base: 'bashly',
+        color: 'gray-300',
+        lightColor: 'gray-800',
+      },
+      patterns: {
+        settings: FileNamePattern.Yaml,
+      },
+      light: true,
+      enabledFor: [IconPack.Bashly],
+    },
+    {
+      name: 'bashly-hook',
+      fileNames: ['src/initialize.sh', 'src/before.sh', 'src/after.sh'],
+      enabledFor: [IconPack.Bashly],
     },
   ]),
 };
