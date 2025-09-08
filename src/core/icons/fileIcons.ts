@@ -3258,7 +3258,16 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'metro',
-      fileNames: ['metro.config.js', 'metro.config.json'],
+      fileNames: [
+        'metro.config.js',
+        'metro.config.cjs',
+        'metro.config.mjs',
+        'metro.config.json',
+      ],
+    },
+    {
+      name: 'google',
+      fileNames: ['google-services.json', 'GoogleService-Info.plist'],
     },
   ]),
 };
