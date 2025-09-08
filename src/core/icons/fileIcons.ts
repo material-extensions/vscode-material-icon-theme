@@ -3282,7 +3282,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'toc',
-      fileNames: ['toc'],
+      fileExtensions: ['toc'],
     },
   ]),
 };
