@@ -1285,6 +1285,10 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-metro',
         folderNames: ['metro'],
       },
+      {
+        name: 'folder-filter',
+        folderNames: ['filter', 'filters'],
+      },
     ],
   },
   {
