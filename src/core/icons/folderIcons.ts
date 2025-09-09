@@ -1289,6 +1289,10 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-filter',
         folderNames: ['filter', 'filters'],
       },
+      {
+        name: 'folder-toc',
+        folderNames: ['toc', 'table-of-contents'],
+      },
     ],
   },
   {
