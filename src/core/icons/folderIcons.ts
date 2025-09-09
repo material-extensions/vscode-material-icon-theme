@@ -1289,6 +1289,18 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-filter',
         folderNames: ['filter', 'filters'],
       },
+      {
+        name: 'folder-eas',
+        folderNames: ['eas'],
+      },
+      {
+        name: 'folder-eas-workflows',
+        folderNames: ['eas/workflows'],
+        clone: {
+          base: 'folder-gh-workflows',
+          color: 'gray-700'
+        }
+      }
     ],
   },
   {
