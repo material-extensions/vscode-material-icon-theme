@@ -3330,5 +3330,9 @@ export const fileIcons: FileIcons = {
       name: 'google',
       fileNames: ['google-services.json', 'GoogleService-Info.plist'],
     },
+    {
+      name: 'toc',
+      fileExtensions: ['toc'],
+    },
   ]),
 };

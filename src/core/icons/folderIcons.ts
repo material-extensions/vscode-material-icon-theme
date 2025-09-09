@@ -1300,7 +1300,11 @@ export const folderIcons: FolderTheme[] = [
           base: 'folder-gh-workflows',
           color: 'gray-700'
         }
-      }
+      },
+      {
+        name: 'folder-toc',
+        folderNames: ['toc', 'table-of-contents'],
+      },
     ],
   },
   {
