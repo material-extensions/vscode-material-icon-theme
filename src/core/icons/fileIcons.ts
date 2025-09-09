@@ -3321,5 +3321,9 @@ export const fileIcons: FileIcons = {
       fileNames: ['src/initialize.sh', 'src/before.sh', 'src/after.sh'],
       enabledFor: [IconPack.Bashly],
     },
+    {
+      name: 'toc',
+      fileExtensions: ['toc'],
+    },
   ]),
 };
