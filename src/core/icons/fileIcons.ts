@@ -646,6 +646,7 @@ export const fileIcons: FileIcons = {
         'sha256',
         'sha256sum',
         'sha256sums',
+        'secret',
       ],
       fileNames: ['.htpasswd', 'sha256sums', '.secrets'],
     },
