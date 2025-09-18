@@ -646,6 +646,7 @@ export const fileIcons: FileIcons = {
         'sha256',
         'sha256sum',
         'sha256sums',
+        'secret',
       ],
       fileNames: ['.htpasswd', 'sha256sums', '.secrets'],
     },
@@ -3283,7 +3284,12 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'metro',
-      fileNames: ['metro.config.js', 'metro.config.json'],
+      fileNames: [
+        'metro.config.js',
+        'metro.config.cjs',
+        'metro.config.mjs',
+        'metro.config.json',
+      ],
     },
     {
       name: 'bashly',
@@ -3320,6 +3326,10 @@ export const fileIcons: FileIcons = {
       name: 'bashly-hook',
       fileNames: ['src/initialize.sh', 'src/before.sh', 'src/after.sh'],
       enabledFor: [IconPack.Bashly],
+    },
+    {
+      name: 'google',
+      fileNames: ['google-services.json', 'GoogleService-Info.plist'],
     },
     {
       name: 'toc',
