@@ -1280,6 +1280,23 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-claude',
         folderNames: ['.claude'],
       },
+      {
+        name: 'folder-cursor',
+        folderNames: ['.cursor'],
+        light: true,
+      },
+      {
+        name: 'folder-metro',
+        folderNames: ['metro'],
+      },
+      {
+        name: 'folder-filter',
+        folderNames: ['filter', 'filters'],
+      },
+      {
+        name: 'folder-toc',
+        folderNames: ['toc', 'table-of-contents'],
+      },
     ],
   },
   {

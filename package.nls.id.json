@@ -32,6 +32,7 @@
   "configuration.activeIconPack.vue": "Ikon untuk Vue.",
   "configuration.activeIconPack.vue_vuex": "Ikon untuk Vue dan Vuex.",
   "configuration.activeIconPack.nest": "Ikon untuk NestJS.",
+  "configuration.activeIconPack.bashly": "Ikon untuk Bashly.",
   "configuration.activeIconPack.none": "Tidak ada paket ikon yang diaktifkan.",
   "configuration.folders.theme": "Tetapkan jenis untuk ikon folder.",
   "configuration.folders.theme.specific": "Pilih ikon folder spesifik.",
