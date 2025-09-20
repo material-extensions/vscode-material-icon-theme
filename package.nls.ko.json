@@ -23,6 +23,7 @@
   "configuration.activeIconPack.vue": "Vue용 아이콘.",
   "configuration.activeIconPack.vue_vuex": "Vue 및 Vuex용 아이콘.",
   "configuration.activeIconPack.nest": "NestJS용 아이콘.",
+  "configuration.activeIconPack.bashly": "Bashly용 아이콘.",
   "configuration.activeIconPack.none": "아이콘 팩 비활성화.",
   "configuration.folders.theme": "폴더 아이콘의 유형 설정.",
   "configuration.folders.theme.specific": "특정 폴더 아이콘 선택.",

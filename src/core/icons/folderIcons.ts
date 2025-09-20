@@ -1289,6 +1289,18 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-simulations',
         folderNames: ['simulations', 'simulation', 'sim', 'sims'],
       },
+      {
+        name: 'folder-metro',
+        folderNames: ['metro'],
+      },
+      {
+        name: 'folder-filter',
+        folderNames: ['filter', 'filters'],
+      },
+      {
+        name: 'folder-toc',
+        folderNames: ['toc', 'table-of-contents'],
+      },
     ],
   },
   {

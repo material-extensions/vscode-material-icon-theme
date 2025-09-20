@@ -646,6 +646,7 @@ export const fileIcons: FileIcons = {
         'sha256',
         'sha256sum',
         'sha256sums',
+        'secret',
       ],
       fileNames: ['.htpasswd', 'sha256sums', '.secrets'],
     },
@@ -1075,6 +1076,7 @@ export const fileIcons: FileIcons = {
     },
     { name: 'ocaml', fileExtensions: ['ml', 'mli', 'cmx'] },
     { name: 'odin', fileExtensions: ['odin'] },
+    { name: 'onnx', fileExtensions: ['onnx'] },
     {
       name: 'javascript-map',
       fileExtensions: ['js.map', 'mjs.map', 'cjs.map'],
@@ -1292,6 +1294,11 @@ export const fileIcons: FileIcons = {
     {
       name: 'terraform',
       fileExtensions: ['tf', 'tf.json', 'tfvars', 'tfstate', 'tfbackend'],
+    },
+    {
+      name: 'opentofu',
+      fileExtensions: ['tofu'],
+      light: true,
     },
     {
       name: 'laravel',
@@ -1652,6 +1659,7 @@ export const fileIcons: FileIcons = {
     {
       name: 'firebase',
       fileNames: [
+        'firebase.config.js',
         'firebase.json',
         '.firebaserc',
         'firestore.rules',
@@ -2596,12 +2604,24 @@ export const fileIcons: FileIcons = {
         'geom',
         'frag',
         'comp',
+        'rgen',
+        'rint',
+        'rahit',
+        'rchit',
+        'rmiss',
+        'rcall',
         'vert.glsl',
         'tesc.glsl',
         'tese.glsl',
         'geom.glsl',
         'frag.glsl',
         'comp.glsl',
+        'rgen.glsl',
+        'rint.glsl',
+        'rahit.glsl',
+        'rchit.glsl',
+        'rmiss.glsl',
+        'rcall.glsl',
         'vertex.glsl',
         'geometry.glsl',
         'fragment.glsl',
@@ -2625,6 +2645,8 @@ export const fileIcons: FileIcons = {
         'comp.hlsl',
         'tess.hlsl',
         'wgsl',
+        'spv',
+        'slang',
       ],
     },
     {
@@ -3036,6 +3058,11 @@ export const fileIcons: FileIcons = {
       },
     },
     {
+      name: 'verse',
+      light: true,
+      fileExtensions: ['verse'],
+    },
+    {
       name: 'sway',
       fileExtensions: ['sw'],
     },
@@ -3254,6 +3281,59 @@ export const fileIcons: FileIcons = {
         '.cursorrc',
       ],
       light: true,
+    },
+    {
+      name: 'metro',
+      fileNames: [
+        'metro.config.js',
+        'metro.config.cjs',
+        'metro.config.mjs',
+        'metro.config.json',
+      ],
+    },
+    {
+      name: 'bashly',
+      patterns: {
+        'src/bashly': FileNamePattern.Yaml,
+      },
+    },
+    {
+      name: 'bashly-settings',
+      clone: {
+        base: 'bashly',
+        color: 'gray-300',
+        lightColor: 'gray-800',
+      },
+      patterns: {
+        'bashly-settings': FileNamePattern.Yaml,
+      },
+      light: true,
+    },
+    {
+      name: 'bashly-settings',
+      clone: {
+        base: 'bashly',
+        color: 'gray-300',
+        lightColor: 'gray-800',
+      },
+      patterns: {
+        settings: FileNamePattern.Yaml,
+      },
+      light: true,
+      enabledFor: [IconPack.Bashly],
+    },
+    {
+      name: 'bashly-hook',
+      fileNames: ['src/initialize.sh', 'src/before.sh', 'src/after.sh'],
+      enabledFor: [IconPack.Bashly],
+    },
+    {
+      name: 'google',
+      fileNames: ['google-services.json', 'GoogleService-Info.plist'],
+    },
+    {
+      name: 'toc',
+      fileExtensions: ['toc'],
     },
   ]),
 };
