@@ -23,8 +23,6 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-dist',
         folderNames: [
           'dist',
-          'out',
-          'output',
           'build',
           'builds',
           'release',
@@ -1283,7 +1281,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-input',
-        folderNames: ['input', 'inputs', 'output', 'outputs', 'io'],
+        folderNames: ['input', 'inputs', 'output', 'outputs', 'io', 'in', 'out'],
       },
       {
         name: 'folder-simulations',
