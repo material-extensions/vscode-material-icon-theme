@@ -2240,7 +2240,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'meson',
-      fileNames: ['meson.build', 'meson_options.txt'],
+      fileNames: ['meson.build', 'meson_options.txt', 'meson.options'],
       fileExtensions: ['wrap'],
     },
     {
