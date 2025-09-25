@@ -1282,13 +1282,13 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-input',
         folderNames: [
-          'input', 
-          'inputs', 
-          'output', 
-          'outputs', 
-          'io', 
-          'in', 
-          'out'
+          'input',
+          'inputs',
+          'output',
+          'outputs',
+          'io',
+          'in',
+          'out',
         ],
       },
       {
