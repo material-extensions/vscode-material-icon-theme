@@ -23,8 +23,6 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-dist',
         folderNames: [
           'dist',
-          'out',
-          'output',
           'build',
           'builds',
           'release',
@@ -1280,6 +1278,22 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-cursor',
         folderNames: ['.cursor'],
         light: true,
+      },
+      {
+        name: 'folder-input',
+        folderNames: [
+          'input',
+          'inputs',
+          'output',
+          'outputs',
+          'io',
+          'in',
+          'out',
+        ],
+      },
+      {
+        name: 'folder-simulations',
+        folderNames: ['simulations', 'simulation', 'sim', 'sims'],
       },
       {
         name: 'folder-metro',
