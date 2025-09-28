@@ -977,7 +977,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-interceptor',
         folderNames: ['interceptor', 'interceptors'],
       },
-      { name: 'folder-svg', folderNames: ['svg', 'svgs'] },
+      { name: 'folder-svg', folderNames: ['svg', 'svgs', 'vector'] },
       {
         name: 'folder-vuex-store',
         folderNames: ['store', 'stores'],
