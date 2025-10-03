@@ -2,7 +2,7 @@
   "name": "material-icon-theme",
   "displayName": "Material Icon Theme",
   "description": "Material Design Icons for Visual Studio Code",
-  "version": "5.26.0",
+  "version": "5.27.0",
   "license": "MIT",
   "scripts": {
     "precompile": "rimraf dist && bun run verify",
@@ -167,6 +167,7 @@
             "%configuration.activeIconPack.vue%",
             "%configuration.activeIconPack.vue_vuex%",
             "%configuration.activeIconPack.nest%",
+            "%configuration.activeIconPack.bashly%",
             "%configuration.activeIconPack.none%"
           ],
           "enum": [
@@ -179,6 +180,7 @@
             "vue",
             "vue_vuex",
             "nest",
+            "bashly",
             "none"
           ]
         },
@@ -258,6 +260,7 @@
                     "%configuration.activeIconPack.vue%",
                     "%configuration.activeIconPack.vue_vuex%",
                     "%configuration.activeIconPack.nest%",
+                    "%configuration.activeIconPack.bashly%",
                     "%configuration.activeIconPack.none%"
                   ],
                   "enum": [
@@ -269,6 +272,7 @@
                     "vue",
                     "vue_vuex",
                     "nest",
+                    "bashly",
                     "none"
                   ]
                 }
@@ -325,6 +329,7 @@
                     "%configuration.activeIconPack.vue%",
                     "%configuration.activeIconPack.vue_vuex%",
                     "%configuration.activeIconPack.nest%",
+                    "%configuration.activeIconPack.bashly%",
                     "%configuration.activeIconPack.none%"
                   ],
                   "enum": [
@@ -336,6 +341,7 @@
                     "vue",
                     "vue_vuex",
                     "nest",
+                    "bashly",
                     "none"
                   ]
                 }
@@ -461,8 +467,8 @@
     "events": "^3.3.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.2.3",
-    "@commitlint/config-conventional": "^19.8.1",
+    "@biomejs/biome": "2.2.5",
+    "@commitlint/config-conventional": "^20.0.0",
     "@softarc/sheriff-core": "^0.19.1",
     "@types/chroma-js": "^3.1.1",
     "@types/puppeteer": "^7.0.4",
@@ -470,7 +476,7 @@
     "axios": "^1.11.0",
     "bun-types": "^1.2.20",
     "changelogen": "^0.6.2",
-    "commitlint": "^19.8.1",
+    "commitlint": "^20.0.0",
     "esbuild": "^0.25.8",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.5",

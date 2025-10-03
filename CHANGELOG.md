@@ -2,6 +2,48 @@
 
 # Changelog
 
+## v5.27.0
+
+[compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.26.0...v5.27.0)
+
+### 🚀 Enhancements
+
+- **icons:** Add files compatible with eslint ([#3156](https://github.com/material-extensions/vscode-material-icon-theme/pull/3156))
+- Add icon for quarto ([#3151](https://github.com/material-extensions/vscode-material-icon-theme/pull/3151))
+- Cursor icons ([#3146](https://github.com/material-extensions/vscode-material-icon-theme/pull/3146))
+- Add file and folder icons for metro bundler ([#3161](https://github.com/material-extensions/vscode-material-icon-theme/pull/3161))
+- Shader icon for GLSL raytracing, SPIR-V and Slang files ([#3166](https://github.com/material-extensions/vscode-material-icon-theme/pull/3166))
+- **icons:** Add icon for Verse programming language ([#3144](https://github.com/material-extensions/vscode-material-icon-theme/pull/3144))
+- Add onnx icon ([#3160](https://github.com/material-extensions/vscode-material-icon-theme/pull/3160))
+- ✨ add nginx to language icons config ([#3178](https://github.com/material-extensions/vscode-material-icon-theme/pull/3178))
+- Add new icons for opentofu ([#3177](https://github.com/material-extensions/vscode-material-icon-theme/pull/3177))
+- Add icons for Bashly files and folders ([#3174](https://github.com/material-extensions/vscode-material-icon-theme/pull/3174))
+
+### 🩹 Fixes
+
+- **check-colors:** Ignore deleted SVGs when linting staged files ([#3147](https://github.com/material-extensions/vscode-material-icon-theme/pull/3147))
+
+### 💅 Refactors
+
+- Update `console` icon for a pixel-perfect alignment ([#3175](https://github.com/material-extensions/vscode-material-icon-theme/pull/3175))
+
+### 🏡 Chore
+
+- **gitignore:** Dedupe *.tgz and add .DS_Store ([#3168](https://github.com/material-extensions/vscode-material-icon-theme/pull/3168))
+
+### ❤️ Contributors
+
+- Marlon Luís De Col
+- Moulick Aggarwal ([@Moulick](https://github.com/Moulick))
+- Lucas Colombo ([@lucas-labs](https://github.com/lucas-labs))
+- Icedsoda ([@1cedsoda](https://github.com/1cedsoda))
+- Philipp Kief ([@PKief](https://github.com/PKief))
+- Kaden Gruizenga ([@kgruiz](https://github.com/kgruiz))
+- AFCMS ([@AFCMS](https://github.com/AFCMS))
+- Vinicius Celestino De Oliveira Pereira ([@ViniDevBR](https://github.com/ViniDevBR))
+- Paul Gusmano ([@pm-gusmano](https://github.com/pm-gusmano))
+- Huuya
+
 ## v5.26.0
 
 [compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.25.0...v5.26.0)
