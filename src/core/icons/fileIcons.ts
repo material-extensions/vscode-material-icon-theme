@@ -2244,7 +2244,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'meson',
-      fileNames: ['meson.build', 'meson_options.txt'],
+      fileNames: ['meson.build', 'meson_options.txt', 'meson.options'],
       fileExtensions: ['wrap'],
     },
     {
@@ -2849,6 +2849,9 @@ export const fileIcons: FileIcons = {
         'werf.yml',
         'werf-giterminism.yaml',
         'werf-giterminism.yml',
+        'werf-includes.lock',
+        'werf-includes.yaml',
+        'werf-includes.yml',
       ],
     },
     { name: 'roblox', fileExtensions: ['rbxl', 'rbxlx', 'rbxm', 'rbxmx'] },
