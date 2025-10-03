@@ -980,6 +980,7 @@ export const fileIcons: FileIcons = {
     { name: 'raml', fileExtensions: ['raml'] },
     { name: 'xaml', fileExtensions: ['xaml'], fileNames: ['XamlStyler.json'] },
     { name: 'haskell', fileExtensions: ['hs', 'lhs'] },
+    { name: 'happo', fileNames: ['.happo.js', '.happo.mjs', '.happo.cjs'] },
     { name: 'kotlin', fileExtensions: ['kt', 'kts'] },
     {
       name: 'mist',
