@@ -1394,7 +1394,7 @@ export const fileIcons: FileIcons = {
         webpackfile: FileNamePattern.Ecmascript,
       },
     },
-	{
+    {
       name: 'rstack',
       fileNames: [
         'rspack.config.js',
