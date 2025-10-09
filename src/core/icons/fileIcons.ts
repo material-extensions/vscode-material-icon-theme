@@ -3342,6 +3342,18 @@ export const fileIcons: FileIcons = {
       enabledFor: [IconPack.Bashly],
     },
     {
+      name: 'bashly-strings',
+      clone: {
+        base: 'bashly-hook',
+        color: 'gray-300',
+        lightColor: 'gray-800',
+      },
+      patterns: {
+        'src/bashly-strings': FileNamePattern.Yaml,
+      },
+      light: true,
+    },
+    {
       name: 'google',
       fileNames: ['google-services.json', 'GoogleService-Info.plist'],
     },
