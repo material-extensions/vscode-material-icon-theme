@@ -3351,5 +3351,12 @@ export const fileIcons: FileIcons = {
       name: 'toc',
       fileExtensions: ['toc'],
     },
+    {
+      name: 'shellcheck',
+      patterns: {
+        shellcheckrc: FileNamePattern.Dotfile,
+      },
+      light: true,
+    },
   ]),
 };
