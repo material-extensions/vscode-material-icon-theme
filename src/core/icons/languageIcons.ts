@@ -205,4 +205,5 @@ export const languageIcons: LanguageIcon[] = [
   { name: 'gnuplot', ids: ['gnuplot'] },
   { name: 'helm', ids: ['helm'] },
   { name: 'nginx', ids: ['nginx'] },
+  { name: 'cue', ids: ['cue'] },
 ];

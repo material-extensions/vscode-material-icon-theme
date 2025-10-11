@@ -3351,5 +3351,9 @@ export const fileIcons: FileIcons = {
       name: 'toc',
       fileExtensions: ['toc'],
     },
+    {
+      name: 'cue',
+      fileExtensions: ['cue'],
+    },
   ]),
 };
