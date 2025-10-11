@@ -23,6 +23,8 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-dist',
         folderNames: [
           'dist',
+          'output',
+          'out',
           'build',
           'builds',
           'release',
@@ -30,8 +32,6 @@ export const folderIcons: FolderTheme[] = [
           'distribution',
           'built',
           'compiled',
-          'output',
-          'out',
         ],
       },
       {
