@@ -30,6 +30,8 @@ export const folderIcons: FolderTheme[] = [
           'distribution',
           'built',
           'compiled',
+          'output',
+          'out',
         ],
       },
       {
@@ -1288,11 +1290,8 @@ export const folderIcons: FolderTheme[] = [
         folderNames: [
           'input',
           'inputs',
-          'output',
-          'outputs',
           'io',
           'in',
-          'out',
         ],
       },
       {
