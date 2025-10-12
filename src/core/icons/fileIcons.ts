@@ -977,6 +977,16 @@ export const fileIcons: FileIcons = {
       },
     },
     { name: 'rust', fileExtensions: ['rs', 'ron'] },
+    {
+      name: 'rstack',
+      fileNames: ['rspress.config.ts', 'rslint.json', 'rslint.jsonc'],
+      patterns: {
+        'rspack.config': FileNamePattern.Ecmascript,
+        'rsbuild.config': FileNamePattern.Ecmascript,
+        'rslib.config': FileNamePattern.Ecmascript,
+        'rstest.config': FileNamePattern.Ecmascript,
+      },
+    },
     { name: 'raml', fileExtensions: ['raml'] },
     { name: 'xaml', fileExtensions: ['xaml'], fileNames: ['XamlStyler.json'] },
     { name: 'haskell', fileExtensions: ['hs', 'lhs'] },
