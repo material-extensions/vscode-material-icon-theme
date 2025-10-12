@@ -3357,9 +3357,9 @@ export const fileIcons: FileIcons = {
       patterns: {
         shellcheckrc: FileNamePattern.Dotfile,
       },
+      light: true,
     },
     {
-      light: true,
       name: 'cue',
       fileExtensions: ['cue'],
     },
