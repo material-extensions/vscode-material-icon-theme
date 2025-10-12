@@ -981,6 +981,7 @@ export const fileIcons: FileIcons = {
     { name: 'xaml', fileExtensions: ['xaml'], fileNames: ['XamlStyler.json'] },
     { name: 'haskell', fileExtensions: ['hs', 'lhs'] },
     { name: 'happo', fileNames: ['.happo.js', '.happo.mjs', '.happo.cjs'] },
+    { name: 'chromatic', fileNames: ['chromatic.config.json'] },
     { name: 'kotlin', fileExtensions: ['kt', 'kts'] },
     {
       name: 'mist',
