@@ -3363,5 +3363,9 @@ export const fileIcons: FileIcons = {
       name: 'cue',
       fileExtensions: ['cue'],
     },
+    {
+      name: 'allcontributors',
+      fileExtensions: ['allcontributorsrc'],
+    },
   ]),
 };
