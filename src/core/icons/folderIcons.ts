@@ -522,6 +522,16 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-ci', folderNames: ['ci'] },
       {
+        name: 'folder-eslint',
+        folderNames: [
+          'eslint',
+          'eslint-plugin',
+          'eslint-plugins',
+          'eslint-config',
+          'eslint-configs',
+        ],
+      },
+      {
         name: 'folder-benchmark',
         folderNames: [
           'benchmark',
