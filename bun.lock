@@ -18,7 +18,7 @@
         "@types/vscode": "~1.55.0",
         "axios": "^1.11.0",
         "bun-types": "^1.2.20",
-        "changelogen": "^0.6.2",
+        "changelogen": "0.6.2",
         "commitlint": "^20.0.0",
         "esbuild": "^0.25.8",
         "husky": "^9.1.7",
@@ -31,6 +31,9 @@
         "typescript": "^5.9.2",
       },
     },
+  },
+  "patchedDependencies": {
+    "changelogen@0.6.2": "patches/changelogen@0.6.2.patch",
   },
   "packages": {
     "@babel/code-frame": ["@babel/code-frame@7.27.1", "", { "dependencies": { "@babel/helper-validator-identifier": "^7.27.1", "js-tokens": "^4.0.0", "picocolors": "^1.1.1" } }, "sha512-cjQ7ZlQ0Mv3b47hABuTevyTuYN4i+loJKGeV9flcCgIK37cCXRh+L1bd3iBHlynerhQ7BhCkn2BPbQUL+rGqFg=="],
