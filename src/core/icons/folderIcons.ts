@@ -142,6 +142,7 @@ export const folderIcons: FolderTheme[] = [
           'articles',
           'wiki',
           'news',
+          'blog',
         ],
       },
       { name: 'folder-gh-workflows', folderNames: ['github/workflows'] },
