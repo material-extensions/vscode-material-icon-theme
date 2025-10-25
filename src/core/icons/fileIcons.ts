@@ -1405,6 +1405,12 @@ export const fileIcons: FileIcons = {
         'rstest.config': FileNamePattern.Ecmascript,
       },
     },
+    {
+      name: 'lynx',
+      patterns: {
+        'lynx.config': FileNamePattern.Ecmascript,
+      },
+    },
     { name: 'ionic', fileNames: ['ionic.config.json', '.io-config.json'] },
     {
       name: 'gulp',
