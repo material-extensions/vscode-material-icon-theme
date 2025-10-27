@@ -3057,7 +3057,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'gemini-ai',
-      fileNames: ['.aiexclude'],
+      fileNames: ['.aiexclude', 'GEMINI.md'],
     },
     {
       name: 'taze',
