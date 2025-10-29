@@ -3379,5 +3379,9 @@ export const fileIcons: FileIcons = {
       name: 'cue',
       fileExtensions: ['cue'],
     },
+    {
+      name: 'agents',
+      fileNames: ['agents.md'],
+    },
   ]),
 };
