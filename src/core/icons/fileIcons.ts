@@ -206,6 +206,8 @@ export const fileIcons: FileIcons = {
         'srf',
         'srw',
         'x3f',
+        'ktx',
+        'ktx2',
       ],
     },
     { name: 'palette', fileExtensions: ['pal', 'gpl', 'act'] },
