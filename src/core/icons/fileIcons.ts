@@ -3381,5 +3381,10 @@ export const fileIcons: FileIcons = {
       name: 'cue',
       fileExtensions: ['cue'],
     },
+    {
+      name: 'warp',
+      fileNames: ['warp.md'],
+      light: true,
+    },
   ]),
 };
