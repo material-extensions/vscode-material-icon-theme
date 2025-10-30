@@ -1321,7 +1321,7 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['cue', 'cues'],
       },
       {
-        name: 'folder-certificate',
+        name: 'folder-license',
         folderNames: ['license', 'licenses'],
       },
     ],
