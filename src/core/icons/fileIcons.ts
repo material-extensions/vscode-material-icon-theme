@@ -206,6 +206,8 @@ export const fileIcons: FileIcons = {
         'srf',
         'srw',
         'x3f',
+        'ktx',
+        'ktx2',
       ],
     },
     { name: 'palette', fileExtensions: ['pal', 'gpl', 'act'] },
@@ -3378,6 +3380,11 @@ export const fileIcons: FileIcons = {
     {
       name: 'cue',
       fileExtensions: ['cue'],
+    },
+    {
+      name: 'warp',
+      fileNames: ['warp.md'],
+      light: true,
     },
   ]),
 };
