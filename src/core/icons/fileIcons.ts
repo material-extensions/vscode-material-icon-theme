@@ -3389,6 +3389,6 @@ export const fileIcons: FileIcons = {
     {
       name: 'mcp',
       fileNames: ['mcp.json'],
-    }
+    },
   ]),
 };
