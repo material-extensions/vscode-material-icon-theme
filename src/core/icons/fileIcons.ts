@@ -206,6 +206,8 @@ export const fileIcons: FileIcons = {
         'srf',
         'srw',
         'x3f',
+        'ktx',
+        'ktx2',
       ],
     },
     { name: 'palette', fileExtensions: ['pal', 'gpl', 'act'] },
@@ -698,8 +700,15 @@ export const fileIcons: FileIcons = {
     { name: 'fsharp', fileExtensions: ['fs', 'fsx', 'fsi', 'fsproj'] },
     {
       name: 'swift',
-      fileExtensions: ['swift'],
-      fileNames: ['.swift-format', '.swift-version'],
+      fileExtensions: [
+        'swift',
+        'xcplayground',
+        'swiftdeps',
+        'swiftdoc',
+        'swiftmodule',
+        'swiftsourceinfo',
+      ],
+      fileNames: ['.swift-format', '.swift-version', '.swiftformat'],
     },
     { name: 'arduino', fileExtensions: ['ino'] },
     {
@@ -2443,6 +2452,8 @@ export const fileIcons: FileIcons = {
       patterns: {
         'vitest.workspace': FileNamePattern.Ecmascript,
         'vitest.config': FileNamePattern.Ecmascript,
+        'vitest.unit.config': FileNamePattern.Ecmascript,
+        'vitest.e2e.config': FileNamePattern.Ecmascript,
       },
     },
     {
@@ -3382,6 +3393,10 @@ export const fileIcons: FileIcons = {
     {
       name: 'agents',
       fileNames: ['agents.md'],
+    },
+    {
+      name: 'warp',
+      fileNames: ['warp.md'],
       light: true,
     },
   ]),
