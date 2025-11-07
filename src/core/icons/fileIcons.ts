@@ -3393,6 +3393,7 @@ export const fileIcons: FileIcons = {
     {
       name: 'agents',
       fileNames: ['agents.md'],
+      light: true,
     },
     {
       name: 'warp',
