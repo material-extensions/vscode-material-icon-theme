@@ -700,8 +700,15 @@ export const fileIcons: FileIcons = {
     { name: 'fsharp', fileExtensions: ['fs', 'fsx', 'fsi', 'fsproj'] },
     {
       name: 'swift',
-      fileExtensions: ['swift'],
-      fileNames: ['.swift-format', '.swift-version'],
+      fileExtensions: [
+        'swift',
+        'xcplayground',
+        'swiftdeps',
+        'swiftdoc',
+        'swiftmodule',
+        'swiftsourceinfo',
+      ],
+      fileNames: ['.swift-format', '.swift-version', '.swiftformat'],
     },
     { name: 'arduino', fileExtensions: ['ino'] },
     {
@@ -2445,6 +2452,8 @@ export const fileIcons: FileIcons = {
       patterns: {
         'vitest.workspace': FileNamePattern.Ecmascript,
         'vitest.config': FileNamePattern.Ecmascript,
+        'vitest.unit.config': FileNamePattern.Ecmascript,
+        'vitest.e2e.config': FileNamePattern.Ecmascript,
       },
     },
     {
