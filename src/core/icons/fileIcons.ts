@@ -602,6 +602,9 @@ export const fileIcons: FileIcons = {
     {
       name: 'certificate',
       fileExtensions: ['cer', 'cert', 'crt'],
+    },
+    {
+      name: 'license',
       fileNames: [
         'copying',
         'copying.md',
@@ -631,9 +634,11 @@ export const fileIcons: FileIcons = {
         'licence.md',
         'licence.rst',
         'licence.txt',
-        'unlicense',
-        'unlicense.txt',
       ],
+    },
+    {
+      name: 'unlicense',
+      fileNames: ['unlicense', 'unlicense.txt'],
     },
     {
       name: 'key',
