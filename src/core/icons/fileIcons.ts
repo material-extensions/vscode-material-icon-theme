@@ -3396,6 +3396,11 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['cue'],
     },
     {
+      name: 'agents',
+      fileNames: ['agents.md'],
+      light: true,
+    },
+    {
       name: 'warp',
       fileNames: ['warp.md'],
       light: true,
