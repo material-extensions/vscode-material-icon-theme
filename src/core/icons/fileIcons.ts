@@ -3291,7 +3291,7 @@ export const fileIcons: FileIcons = {
     },
     { name: 'blender', fileExtensions: ['blend', 'blend1', 'blend2'] },
     { name: 'tsdoc', fileNames: ['tsdoc.json'] },
-    { name: 'oxlint', fileNames: ['.oxlintrc.json'] },
+    { name: 'oxc', fileNames: ['.oxlintrc.json', '.oxlintrc.jsonc', '.oxfmtrc.json', '.oxfmtrc.jsonc'] },
     {
       name: 'vanilla-extract',
       fileExtensions: [
