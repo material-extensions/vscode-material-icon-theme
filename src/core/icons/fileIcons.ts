@@ -3408,5 +3408,9 @@ export const fileIcons: FileIcons = {
       fileNames: ['warp.md'],
       light: true,
     },
+    {
+      name: 'dom',
+      fileExtensions: ['dom'],
+    },
   ]),
 };
