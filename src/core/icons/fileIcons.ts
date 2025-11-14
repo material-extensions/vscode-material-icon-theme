@@ -3404,6 +3404,11 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['cue'],
     },
     {
+      name: 'lean',
+      fileExtensions: ['lean'],
+      light: true,
+    },
+    {
       name: 'warp',
       fileNames: ['warp.md'],
       light: true,
