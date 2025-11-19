@@ -3398,7 +3398,6 @@ export const fileIcons: FileIcons = {
     {
       name: 'lean',
       fileExtensions: ['lean'],
-      light: true,
     },
     {
       name: 'warp',
