@@ -1235,6 +1235,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['favicon', 'favicons'],
       },
       {
+        name: 'folder-features',
+        folderNames: ['feature', 'features', 'feat', 'feats'],
+      },
+      {
         name: 'folder-lefthook',
         folderNames: ['lefthook', 'lefthook-local'],
       },
