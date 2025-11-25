@@ -384,6 +384,7 @@ export const fileIcons: FileIcons = {
         'csproj',
         'ruleset',
         'sln',
+        'slnf',
         'slnx',
         'suo',
         'vb',
