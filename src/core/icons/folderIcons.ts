@@ -142,6 +142,7 @@ export const folderIcons: FolderTheme[] = [
           'articles',
           'wiki',
           'news',
+          'blog',
         ],
       },
       { name: 'folder-gh-workflows', folderNames: ['github/workflows'] },
@@ -522,6 +523,16 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-ci', folderNames: ['ci'] },
       {
+        name: 'folder-eslint',
+        folderNames: [
+          'eslint',
+          'eslint-plugin',
+          'eslint-plugins',
+          'eslint-config',
+          'eslint-configs',
+        ],
+      },
+      {
         name: 'folder-benchmark',
         folderNames: [
           'benchmark',
@@ -797,7 +808,7 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['mail', 'mails', 'email', 'emails', 'smtp', 'mailers'],
       },
       { name: 'folder-mappings', folderNames: ['mappings', 'mapping'] },
-      { name: 'folder-meta', folderNames: ['meta'] },
+      { name: 'folder-meta', folderNames: ['meta', 'metadata'] },
       {
         name: 'folder-changesets',
         folderNames: ['changesets', 'changeset'],
@@ -977,7 +988,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-interceptor',
         folderNames: ['interceptor', 'interceptors'],
       },
-      { name: 'folder-svg', folderNames: ['svg', 'svgs'] },
+      { name: 'folder-svg', folderNames: ['svg', 'svgs', 'vector', 'vectors'] },
       {
         name: 'folder-vuex-store',
         folderNames: ['store', 'stores'],
@@ -1064,6 +1075,10 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-quasar', folderNames: ['quasar'] },
       { name: 'folder-next', folderNames: ['next'] },
+      {
+        name: 'folder-dal',
+        folderNames: ['dal', 'data-access', 'data-access-layer'],
+      },
       { name: 'folder-cobol', folderNames: ['cobol'] },
       { name: 'folder-yarn', folderNames: ['yarn'] },
       { name: 'folder-husky', folderNames: ['husky'] },
@@ -1216,6 +1231,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['favicon', 'favicons'],
       },
       {
+        name: 'folder-features',
+        folderNames: ['feature', 'features', 'feat', 'feats'],
+      },
+      {
         name: 'folder-lefthook',
         folderNames: ['lefthook', 'lefthook-local'],
       },
@@ -1275,6 +1294,39 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-claude',
         folderNames: ['.claude'],
+      },
+      {
+        name: 'folder-cursor',
+        folderNames: ['.cursor'],
+        light: true,
+      },
+      {
+        name: 'folder-input',
+        folderNames: ['input', 'inputs', 'io', 'in'],
+      },
+      {
+        name: 'folder-simulations',
+        folderNames: ['simulations', 'simulation', 'sim', 'sims'],
+      },
+      {
+        name: 'folder-metro',
+        folderNames: ['metro'],
+      },
+      {
+        name: 'folder-filter',
+        folderNames: ['filter', 'filters'],
+      },
+      {
+        name: 'folder-toc',
+        folderNames: ['toc', 'table-of-contents'],
+      },
+      {
+        name: 'folder-cue',
+        folderNames: ['cue', 'cues'],
+      },
+      {
+        name: 'folder-license',
+        folderNames: ['license', 'licenses'],
       },
     ],
   },

@@ -1,3 +1,4 @@
+import { existsSync } from 'node:fs';
 import { spawn } from 'bun';
 
 /**
@@ -16,7 +17,13 @@ const checkColors = async () => {
     ]);
     const { stdout } = await gitProcess;
     const output = await new Response(stdout).text();
-    const svgFiles = output.trim().split('\n').join(' ');
+    const svgFiles = output
+      .trim()
+      .split('\n')
+      .map((s) => s.trim())
+      .filter(Boolean)
+      .filter((p) => existsSync(p))
+      .join(' ');
     console.log('SVG files to check:', svgFiles);
 
     if (svgFiles) {
