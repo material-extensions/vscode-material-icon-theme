@@ -3409,6 +3409,10 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['lean'],
     },
     {
+      name: 'salt',
+      fileExtensions: ['sls'],
+    },
+    {
       name: 'warp',
       fileNames: ['warp.md'],
       light: true,

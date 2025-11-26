@@ -1306,6 +1306,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['input', 'inputs', 'io', 'in'],
       },
       {
+        name: 'folder-salt',
+        folderNames: ['salt', 'saltstack'],
+      },
+      {
         name: 'folder-simulations',
         folderNames: ['simulations', 'simulation', 'sim', 'sims'],
       },
