@@ -384,6 +384,7 @@ export const fileIcons: FileIcons = {
         'csproj',
         'ruleset',
         'sln',
+        'slnf',
         'slnx',
         'suo',
         'vb',
@@ -507,7 +508,7 @@ export const fileIcons: FileIcons = {
     { name: 'h', fileExtensions: ['h'] },
     {
       name: 'cpp',
-      fileExtensions: ['cc', 'cpp', 'cxx', 'c++', 'cp', 'mii', 'ii'],
+      fileExtensions: ['cc', 'cpp', 'cxx', 'c++', 'cp', 'mii', 'ii', 'cppm'],
     },
     {
       name: 'hpp',
@@ -602,6 +603,9 @@ export const fileIcons: FileIcons = {
     {
       name: 'certificate',
       fileExtensions: ['cer', 'cert', 'crt'],
+    },
+    {
+      name: 'license',
       fileNames: [
         'copying',
         'copying.md',
@@ -631,9 +635,11 @@ export const fileIcons: FileIcons = {
         'licence.md',
         'licence.rst',
         'licence.txt',
-        'unlicense',
-        'unlicense.txt',
       ],
+    },
+    {
+      name: 'unlicense',
+      fileNames: ['unlicense', 'unlicense.txt'],
     },
     {
       name: 'key',
@@ -3286,7 +3292,15 @@ export const fileIcons: FileIcons = {
     },
     { name: 'blender', fileExtensions: ['blend', 'blend1', 'blend2'] },
     { name: 'tsdoc', fileNames: ['tsdoc.json'] },
-    { name: 'oxlint', fileNames: ['.oxlintrc.json'] },
+    {
+      name: 'oxc',
+      fileNames: [
+        '.oxlintrc.json',
+        '.oxlintrc.jsonc',
+        '.oxfmtrc.json',
+        '.oxfmtrc.jsonc',
+      ],
+    },
     {
       name: 'vanilla-extract',
       fileExtensions: [
@@ -3389,6 +3403,14 @@ export const fileIcons: FileIcons = {
     {
       name: 'cue',
       fileExtensions: ['cue'],
+    },
+    {
+      name: 'lean',
+      fileExtensions: ['lean'],
+    },
+    {
+      name: 'salt',
+      fileExtensions: ['sls'],
     },
     {
       name: 'warp',

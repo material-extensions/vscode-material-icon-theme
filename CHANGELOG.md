@@ -2,6 +2,48 @@
 
 # Changelog
 
+## v5.29.0
+
+[compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.28.0...v5.29.0)
+
+### 🚀 Enhancements
+
+- Add icon for licenses folder ([#3233](https://github.com/material-extensions/vscode-material-icon-theme/pull/3233))
+- Apply `gemini-ai` icon to `GEMINI.md` file ([#3237](https://github.com/material-extensions/vscode-material-icon-theme/pull/3237))
+- Add lynx icon ([#3234](https://github.com/material-extensions/vscode-material-icon-theme/pull/3234))
+- Image icon for KTX and KTX2 files ([#3246](https://github.com/material-extensions/vscode-material-icon-theme/pull/3246))
+- Add warp.md icon with light and dark theme ([#3244](https://github.com/material-extensions/vscode-material-icon-theme/pull/3244))
+- Add support for `vitest.unit.config` and `vitest.e2e.config` file patterns ([#3252](https://github.com/material-extensions/vscode-material-icon-theme/pull/3252))
+- **swift:** Extend Swift file icon mappings ([#3253](https://github.com/material-extensions/vscode-material-icon-theme/pull/3253))
+- Add dedicated icons for license files ([#3239](https://github.com/material-extensions/vscode-material-icon-theme/pull/3239))
+- Oxc for .oxlintrc.json and .oxfmtrc.json ([#3258](https://github.com/material-extensions/vscode-material-icon-theme/pull/3258))
+- Update quarto icon SVG for improved resolution ([4785179e](https://github.com/material-extensions/vscode-material-icon-theme/commit/4785179e))
+- Add 'cppm' file extension to cpp icon mapping ([4d4a9b6b](https://github.com/material-extensions/vscode-material-icon-theme/commit/4d4a9b6b))
+- Add feature folder icon ([#3260](https://github.com/material-extensions/vscode-material-icon-theme/pull/3260))
+- Add icon for Lean proof assistant language (.lean) ([#3256](https://github.com/material-extensions/vscode-material-icon-theme/pull/3256))
+
+### 🩹 Fixes
+
+- Add 'jsonl' to languageIcons ([#3232](https://github.com/material-extensions/vscode-material-icon-theme/pull/3232))
+
+### 💅 Refactors
+
+- Improve `certificate` icon design ([#3245](https://github.com/material-extensions/vscode-material-icon-theme/pull/3245))
+
+### ❤️ Contributors
+
+- Lazar Milikic ([@Lemmy00](https://github.com/Lemmy00))
+- HeeJae Yu ([@uheej0625](https://github.com/uheej0625))
+- Philipp Kief ([@PKief](https://github.com/PKief))
+- Théo LUDWIG ([@theoludwig](https://github.com/theoludwig))
+- Marlon Luís De Col ([@marlondecol](https://github.com/marlondecol))
+- Kaden Gruizenga ([@kgruiz](https://github.com/kgruiz))
+- AFCMS ([@AFCMS](https://github.com/AFCMS))
+- Writedev ([@writedev](https://github.com/writedev))
+- Ray ([@zoolsher](https://github.com/zoolsher))
+- E6nlaq ([@e6nlaq](https://github.com/e6nlaq))
+- P1xel1ze ([@P1xel1ze](https://github.com/P1xel1ze))
+
 ## v5.28.0
 
 [compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.27.0...v5.28.0)

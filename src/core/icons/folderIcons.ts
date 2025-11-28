@@ -405,6 +405,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-database',
         folderNames: ['db', 'data', 'database', 'databases', 'sql'],
       },
+      { name: 'folder-migrations', folderNames: ['migrations', 'migration'] },
       { name: 'folder-log', folderNames: ['log', 'logs', 'logging'] },
       { name: 'folder-target', folderNames: ['target'] },
       {
@@ -1231,6 +1232,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['favicon', 'favicons'],
       },
       {
+        name: 'folder-features',
+        folderNames: ['feature', 'features', 'feat', 'feats'],
+      },
+      {
         name: 'folder-lefthook',
         folderNames: ['lefthook', 'lefthook-local'],
       },
@@ -1301,6 +1306,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['input', 'inputs', 'io', 'in'],
       },
       {
+        name: 'folder-salt',
+        folderNames: ['salt', 'saltstack'],
+      },
+      {
         name: 'folder-simulations',
         folderNames: ['simulations', 'simulation', 'sim', 'sims'],
       },
@@ -1321,7 +1330,7 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['cue', 'cues'],
       },
       {
-        name: 'folder-certificate',
+        name: 'folder-license',
         folderNames: ['license', 'licenses'],
       },
     ],
