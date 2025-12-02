@@ -2913,6 +2913,10 @@ export const fileIcons: FileIcons = {
       patterns: {
         esbuild: FileNamePattern.Ecmascript,
         'esbuild.config': FileNamePattern.Ecmascript,
+        'esbuild.dev': FileNamePattern.Ecmascript,
+        'esbuild.stage': FileNamePattern.Ecmascript,
+        'esbuild.prod': FileNamePattern.Ecmascript,
+        'esbuild.test': FileNamePattern.Ecmascript,
       },
     },
     { name: 'spwn', fileExtensions: ['spwn'] },
