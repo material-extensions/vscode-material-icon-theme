@@ -18,6 +18,17 @@ export enum FileNamePattern {
 
   /** It adjusts the name with the following patterns: `.${fileName}`, `${fileName}`. */
   Dotfile = 'dotfile',
+
+  /**
+   * @description
+   * It adjusts the name with the following patterns: `.config/${fileName}`, `${fileName}`.
+   *
+   * This is to support the proposed standard for configuration files to be placed in a `.config` directory.
+   * See the following links for more information:
+   * @see {@link https://github.com/pi0/config-dir}
+   * @see {@link https://www.prisma.io/docs/orm/reference/prisma-config-reference#supported-file-extensions}
+   * */
+  DotConfigDirectory = 'dotConfigDirectory',
 }
 
 export type Patterns = Record<string, FileNamePattern>;
