@@ -1109,7 +1109,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-project',
-        folderNames: ['project', 'projects'],
+        folderNames: ['project', 'projects', 'proj', 'projs'],
       },
       {
         name: 'folder-prompts',
