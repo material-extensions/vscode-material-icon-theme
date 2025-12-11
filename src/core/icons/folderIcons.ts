@@ -645,6 +645,7 @@ export const folderIcons: FolderTheme[] = [
           'backends',
           'inventory',
           'inventories',
+          'infrastructure',
           'infra',
         ],
       },
