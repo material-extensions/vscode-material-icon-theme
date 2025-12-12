@@ -143,6 +143,7 @@ export const folderIcons: FolderTheme[] = [
           'wiki',
           'news',
           'blog',
+          'knowledge',
           'diary',
           'note',
           'notes',
@@ -431,6 +432,8 @@ export const folderIcons: FolderTheme[] = [
           'voice',
           'voices',
           'recordings',
+          'playlist',
+          'playlists',
         ],
       },
       {
@@ -638,7 +641,16 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-ansible', folderNames: ['ansible'] },
       {
         name: 'folder-server',
-        folderNames: ['server', 'servers', 'backend', 'backends'],
+        folderNames: [
+          'server',
+          'servers',
+          'backend',
+          'backends',
+          'inventory',
+          'inventories',
+          'infrastructure',
+          'infra',
+        ],
       },
       {
         name: 'folder-client',
@@ -1101,7 +1113,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-project',
-        folderNames: ['project', 'projects'],
+        folderNames: ['project', 'projects', 'proj', 'projs'],
       },
       {
         name: 'folder-prompts',
