@@ -3421,5 +3421,9 @@ export const fileIcons: FileIcons = {
       fileNames: ['warp.md'],
       light: true,
     },
+    {
+      name: 'convex',
+      fileNames: ['convex.config.ts', 'convex.json'],
+    },
   ]),
 };
