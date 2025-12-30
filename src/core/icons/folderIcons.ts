@@ -42,7 +42,10 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-cpp',
         folderNames: ['cpp', 'cplusplus', 'c++'],
       },
-
+      {
+        name: 'folder-csharp',
+        folderNames: ['csharp', 'c#', 'cs'],
+      },
       {
         name: 'folder-c',
         folderNames: ['c'],
