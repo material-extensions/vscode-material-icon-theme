@@ -2,7 +2,7 @@
   "name": "material-icon-theme",
   "displayName": "Material Icon Theme",
   "description": "Material Design Icons for Visual Studio Code",
-  "version": "5.27.0",
+  "version": "5.30.0",
   "license": "MIT",
   "scripts": {
     "precompile": "rimraf dist && bun run verify",
@@ -467,17 +467,17 @@
     "events": "^3.3.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.2.3",
-    "@commitlint/config-conventional": "^19.8.1",
+    "@biomejs/biome": "2.3.4",
+    "@commitlint/config-conventional": "^20.0.0",
     "@softarc/sheriff-core": "^0.19.1",
     "@types/chroma-js": "^3.1.1",
     "@types/puppeteer": "^7.0.4",
     "@types/vscode": "~1.55.0",
     "axios": "^1.11.0",
     "bun-types": "^1.2.20",
-    "changelogen": "^0.6.2",
-    "commitlint": "^19.8.1",
-    "esbuild": "^0.25.8",
+    "changelogen": "0.6.2",
+    "commitlint": "^20.0.0",
+    "esbuild": "^0.27.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.5",
     "markdownlint-cli": "^0.45.0",
@@ -486,5 +486,8 @@
     "svg-color-linter": "^3.0.0",
     "svgo": "^4.0.0",
     "typescript": "^5.9.2"
+  },
+  "patchedDependencies": {
+    "changelogen@0.6.2": "patches/changelogen@0.6.2.patch"
   }
 }
