@@ -1310,7 +1310,14 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'terraform',
-      fileExtensions: ['tf', 'tf.json', 'tfvars', 'tfstate', 'tfbackend'],
+      fileExtensions: [
+        'tf',
+        'tf.json',
+        'tfvars',
+        'tfstate',
+        'tfbackend',
+        'terraformignore',
+      ],
     },
     {
       name: 'opentofu',
