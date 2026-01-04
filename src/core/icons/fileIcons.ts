@@ -3428,5 +3428,6 @@ export const fileIcons: FileIcons = {
       fileNames: ['warp.md'],
       light: true,
     },
+    { name: 'umbral', fileExtensions: ['um'] },
   ]),
 };
