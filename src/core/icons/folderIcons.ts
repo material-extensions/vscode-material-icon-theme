@@ -1319,6 +1319,10 @@ export const folderIcons: FolderTheme[] = [
         light: true,
       },
       {
+        name: 'folder-gemini-ai',
+        folderNames: ['.gemini'],
+      },
+      {
         name: 'folder-input',
         folderNames: ['input', 'inputs', 'io', 'in'],
       },
