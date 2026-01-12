@@ -143,6 +143,10 @@ export const folderIcons: FolderTheme[] = [
           'wiki',
           'news',
           'blog',
+          'knowledge',
+          'diary',
+          'note',
+          'notes',
         ],
       },
       { name: 'folder-gh-workflows', folderNames: ['github/workflows'] },
@@ -428,6 +432,8 @@ export const folderIcons: FolderTheme[] = [
           'voice',
           'voices',
           'recordings',
+          'playlist',
+          'playlists',
         ],
       },
       {
@@ -635,7 +641,16 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-ansible', folderNames: ['ansible'] },
       {
         name: 'folder-server',
-        folderNames: ['server', 'servers', 'backend', 'backends'],
+        folderNames: [
+          'server',
+          'servers',
+          'backend',
+          'backends',
+          'inventory',
+          'inventories',
+          'infrastructure',
+          'infra',
+        ],
       },
       {
         name: 'folder-client',
@@ -768,6 +783,8 @@ export const folderIcons: FolderTheme[] = [
           'calcs',
           'calculation',
           'calculations',
+          'composable',
+          'composables',
         ],
       },
       {
@@ -1098,7 +1115,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-project',
-        folderNames: ['project', 'projects'],
+        folderNames: ['project', 'projects', 'proj', 'projs'],
       },
       {
         name: 'folder-prompts',
@@ -1300,6 +1317,10 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-cursor',
         folderNames: ['.cursor'],
         light: true,
+      },
+      {
+        name: 'folder-gemini-ai',
+        folderNames: ['.gemini'],
       },
       {
         name: 'folder-input',
