@@ -2,6 +2,28 @@
 
 # Changelog
 
+## v5.31.0
+
+[compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.30.0...v5.31.0)
+
+### 🚀 Enhancements
+
+- Add 'terraformignore' file extension to terraform icon configuration ([#3305](https://github.com/material-extensions/vscode-material-icon-theme/pull/3305))
+- Add folder icon for gemini ai ([#3313](https://github.com/material-extensions/vscode-material-icon-theme/pull/3313))
+
+### 🩹 Fixes
+
+- Bring claude icons into 16x16 grid ([2821c2ac](https://github.com/material-extensions/vscode-material-icon-theme/commit/2821c2ac))
+- Update Blender logo ([#3285](https://github.com/material-extensions/vscode-material-icon-theme/pull/3285))
+- Add 'uv.lock' to uv file icon recognition (Fixes #3316) ([#3317](https://github.com/material-extensions/vscode-material-icon-theme/pull/3317), [#3316](https://github.com/material-extensions/vscode-material-icon-theme/issues/3316))
+
+### ❤️ Contributors
+
+- Philipp Kief ([@PKief](https://github.com/PKief))
+- Danny McGrath ([@mcgrathd](https://github.com/mcgrathd))
+- Yen Cheng Lin ([@ridemountainpig](https://github.com/ridemountainpig))
+- Anselm Hahn ([@Anselmoo](https://github.com/Anselmoo))
+
 ## v5.30.0
 
 [compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.29.0...v5.30.0)
