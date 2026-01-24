@@ -353,7 +353,7 @@ We welcome contributions of all kinds! Whether you want to add new icons, improv
   Ready to contribute code or icons? [Create a pull request](https://github.com/material-extensions/vscode-material-icon-theme/pulls).
 
 - 🌍 **Help with Translations**
-  Improve or add translations by editing the files in `src/i18n` and `package.nls.*.json`.
+  Improve or add translations by editing the files in `src/core/i18n/translations/` and `package.nls.*.json`.
 
 ## Related extensions
 
