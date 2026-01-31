@@ -25,6 +25,7 @@ export const folderIcons: FolderTheme[] = [
           'dist',
           'out',
           'output',
+          'outputs',
           'build',
           'builds',
           'release',

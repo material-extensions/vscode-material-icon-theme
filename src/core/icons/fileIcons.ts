@@ -545,7 +545,7 @@ export const fileIcons: FileIcons = {
       name: 'ruff',
       fileNames: ['ruff.toml', '.ruff.toml'],
     },
-    { name: 'uv', fileNames: ['uv.toml', '.uv.toml'] },
+    { name: 'uv', fileNames: ['uv.toml', '.uv.toml', 'uv.lock'] },
     {
       name: 'scons',
       light: true,
