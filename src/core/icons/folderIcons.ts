@@ -361,12 +361,12 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-redux-reducer',
-        folderNames: ['reducers', 'reducer'],
+        folderNames: ['reducers', 'reducer', 'redux-reducer', 'redux-reducers'],
         enabledFor: [IconPack.Redux],
       },
       {
         name: 'folder-redux-actions',
-        folderNames: ['actions'],
+        folderNames: ['actions', 'redux', 'redux-toolkit'],
         enabledFor: [IconPack.Redux],
         clone: {
           base: 'folder-redux-reducer',
