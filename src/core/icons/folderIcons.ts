@@ -13,7 +13,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-rust', folderNames: ['rust'] },
       {
         name: 'folder-robot',
-        folderNames: ['bot', 'bots', 'robot', 'robots'],
+        folderNames: ['bot', 'bots', 'robot', 'robots', 'agent', 'agents',],
       },
       {
         name: 'folder-src',
