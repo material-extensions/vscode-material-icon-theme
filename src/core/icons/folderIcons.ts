@@ -13,7 +13,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-rust', folderNames: ['rust'] },
       {
         name: 'folder-robot',
-        folderNames: ['bot', 'bots', 'robot', 'robots'],
+        folderNames: ['bot', 'bots', 'robot', 'robots', 'agent', 'agents'],
       },
       {
         name: 'folder-src',
@@ -25,6 +25,7 @@ export const folderIcons: FolderTheme[] = [
           'dist',
           'out',
           'output',
+          'outputs',
           'build',
           'builds',
           'release',
@@ -1320,7 +1321,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-gemini-ai',
-        folderNames: ['.gemini'],
+        folderNames: ['.gemini', 'gemini', 'gemini-ai', 'geminiai'],
       },
       {
         name: 'folder-input',
