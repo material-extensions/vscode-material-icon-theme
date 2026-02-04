@@ -7,6 +7,9 @@ dist
 # Ignore node_modules directory
 node_modules
 
+# Ignore user .vscode settings
+.vscode/*
+
 # Ignore VS Code test files
 .vscode-test/**
 *.vsix
