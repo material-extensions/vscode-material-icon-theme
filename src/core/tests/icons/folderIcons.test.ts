@@ -96,6 +96,10 @@ describe('folder icons', () => {
       '.source': 'folder-src',
       '.angular': 'folder-angular',
       '.ng': 'folder-angular',
+      '-src': 'folder-src',
+      '-source': 'folder-src',
+      '-angular': 'folder-angular',
+      '-ng': 'folder-angular',
     };
     expectedManifest.folderNamesExpanded = {
       src: 'folder-src-open',
@@ -114,6 +118,10 @@ describe('folder icons', () => {
       '.source': 'folder-src-open',
       '.angular': 'folder-angular-open',
       '.ng': 'folder-angular-open',
+      '-src': 'folder-src-open',
+      '-source': 'folder-src-open',
+      '-angular': 'folder-angular-open',
+      '-ng': 'folder-angular-open',
     };
     expectedManifest.rootFolderNames = {
       src: 'folder-src',
@@ -124,6 +132,8 @@ describe('folder icons', () => {
       __angular__: 'folder-angular',
       '.src': 'folder-src',
       '.angular': 'folder-angular',
+      '-src': 'folder-src',
+      '-angular': 'folder-angular',
     };
     expectedManifest.rootFolderNamesExpanded = {
       src: 'folder-src-open',
@@ -134,6 +144,8 @@ describe('folder icons', () => {
       __angular__: 'folder-angular-open',
       '.src': 'folder-src-open',
       '.angular': 'folder-angular-open',
+      '-src': 'folder-src-open',
+      '-angular': 'folder-angular-open',
     };
     expectedManifest.hidesExplorerArrows = false;
 
@@ -253,6 +265,11 @@ describe('folder icons', () => {
       '.angular': 'folder-angular',
       '.ng': 'folder-angular',
       '.sample': 'folder-src',
+      '-src': 'folder-src',
+      '-source': 'folder-src',
+      '-angular': 'folder-angular',
+      '-ng': 'folder-angular',
+      '-sample': 'folder-src',
     };
     expectedManifest.folderNamesExpanded = {
       src: 'folder-src-open',
@@ -275,6 +292,11 @@ describe('folder icons', () => {
       '.angular': 'folder-angular-open',
       '.ng': 'folder-angular-open',
       '.sample': 'folder-src-open',
+      '-src': 'folder-src-open',
+      '-source': 'folder-src-open',
+      '-angular': 'folder-angular-open',
+      '-ng': 'folder-angular-open',
+      '-sample': 'folder-src-open',
     };
     expectedManifest.rootFolderNames = {
       src: 'folder-src',
@@ -289,6 +311,9 @@ describe('folder icons', () => {
       '.src': 'folder-src',
       '.angular': 'folder-angular',
       '.sample': 'folder-src',
+      '-src': 'folder-src',
+      '-angular': 'folder-angular',
+      '-sample': 'folder-src',
     };
     expectedManifest.rootFolderNamesExpanded = {
       src: 'folder-src-open',
@@ -303,6 +328,9 @@ describe('folder icons', () => {
       '.src': 'folder-src-open',
       '.angular': 'folder-angular-open',
       '.sample': 'folder-src-open',
+      '-src': 'folder-src-open',
+      '-angular': 'folder-angular-open',
+      '-sample': 'folder-src-open',
     };
     expectedManifest.hidesExplorerArrows = false;
 
@@ -356,6 +384,8 @@ describe('folder icons', () => {
       __source__: 'folder-src',
       '.src': 'folder-src',
       '.source': 'folder-src',
+      '-src': 'folder-src',
+      '-source': 'folder-src',
     };
     expectedManifest.folderNamesExpanded = {
       src: 'folder-src-open',
@@ -366,18 +396,22 @@ describe('folder icons', () => {
       __source__: 'folder-src-open',
       '.src': 'folder-src-open',
       '.source': 'folder-src-open',
+      '-src': 'folder-src-open',
+      '-source': 'folder-src-open',
     };
     expectedManifest.rootFolderNames = {
       src: 'folder-src',
       _src: 'folder-src',
       __src__: 'folder-src',
       '.src': 'folder-src',
+      '-src': 'folder-src',
     };
     expectedManifest.rootFolderNamesExpanded = {
       src: 'folder-src-open',
       _src: 'folder-src-open',
       __src__: 'folder-src-open',
       '.src': 'folder-src-open',
+      '-src': 'folder-src-open',
     };
     expectedManifest.hidesExplorerArrows = false;
 
@@ -478,6 +512,8 @@ describe('folder icons', () => {
       __source__: 'folder-src',
       '.src': 'folder-src',
       '.source': 'folder-src',
+      '-src': 'folder-src',
+      '-source': 'folder-src',
     };
     expectedManifest.folderNamesExpanded = {
       src: 'folder-src-open',
@@ -488,18 +524,22 @@ describe('folder icons', () => {
       __source__: 'folder-src-open',
       '.src': 'folder-src-open',
       '.source': 'folder-src-open',
+      '-src': 'folder-src-open',
+      '-source': 'folder-src-open',
     };
     expectedManifest.rootFolderNames = {
       src: 'folder-src',
       _src: 'folder-src',
       __src__: 'folder-src',
       '.src': 'folder-src',
+      '-src': 'folder-src',
     };
     expectedManifest.rootFolderNamesExpanded = {
       src: 'folder-src-open',
       _src: 'folder-src-open',
       __src__: 'folder-src-open',
       '.src': 'folder-src-open',
+      '-src': 'folder-src-open',
     };
     expectedManifest.light = {
       fileExtensions: {},
@@ -517,6 +557,8 @@ describe('folder icons', () => {
         __source__: 'folder-src_light',
         '.src': 'folder-src_light',
         '.source': 'folder-src_light',
+        '-src': 'folder-src_light',
+        '-source': 'folder-src_light',
       },
       folderNamesExpanded: {
         src: 'folder-src-open_light',
@@ -527,18 +569,22 @@ describe('folder icons', () => {
         __source__: 'folder-src-open_light',
         '.src': 'folder-src-open_light',
         '.source': 'folder-src-open_light',
+        '-src': 'folder-src-open_light',
+        '-source': 'folder-src-open_light',
       },
       rootFolderNames: {
         src: 'folder-src_light',
         _src: 'folder-src_light',
         __src__: 'folder-src_light',
         '.src': 'folder-src_light',
+        '-src': 'folder-src_light',
       },
       rootFolderNamesExpanded: {
         src: 'folder-src-open_light',
         _src: 'folder-src-open_light',
         __src__: 'folder-src-open_light',
         '.src': 'folder-src-open_light',
+        '-src': 'folder-src-open_light',
       },
     };
     expectedManifest.highContrast = {
@@ -557,6 +603,8 @@ describe('folder icons', () => {
         __source__: 'folder-src_highContrast',
         '.src': 'folder-src_highContrast',
         '.source': 'folder-src_highContrast',
+        '-src': 'folder-src_highContrast',
+        '-source': 'folder-src_highContrast',
       },
       folderNamesExpanded: {
         src: 'folder-src-open_highContrast',
@@ -567,18 +615,22 @@ describe('folder icons', () => {
         __source__: 'folder-src-open_highContrast',
         '.src': 'folder-src-open_highContrast',
         '.source': 'folder-src-open_highContrast',
+        '-src': 'folder-src-open_highContrast',
+        '-source': 'folder-src-open_highContrast',
       },
       rootFolderNames: {
         src: 'folder-src_highContrast',
         _src: 'folder-src_highContrast',
         __src__: 'folder-src_highContrast',
         '.src': 'folder-src_highContrast',
+        '-src': 'folder-src_highContrast',
       },
       rootFolderNamesExpanded: {
         src: 'folder-src-open_highContrast',
         _src: 'folder-src-open_highContrast',
         __src__: 'folder-src-open_highContrast',
         '.src': 'folder-src-open_highContrast',
+        '-src': 'folder-src-open_highContrast',
       },
     };
     expectedManifest.hidesExplorerArrows = false;
@@ -654,14 +706,18 @@ describe('folder icons', () => {
       '.bar': 'foo',
       _bar: 'foo',
       __bar__: 'foo',
+      '-foo': 'foo',
+      '-bar': 'foo',
       baz: 'foo-clone',
       '.baz': 'foo-clone',
       _baz: 'foo-clone',
       __baz__: 'foo-clone',
+      '-baz': 'foo-clone',
       qux: 'foo-clone',
       '.qux': 'foo-clone',
       _qux: 'foo-clone',
       __qux__: 'foo-clone',
+      '-qux': 'foo-clone',
     };
     expectedManifest.folderNamesExpanded = {
       foo: 'foo-open',
@@ -672,26 +728,32 @@ describe('folder icons', () => {
       '.bar': 'foo-open',
       _bar: 'foo-open',
       __bar__: 'foo-open',
+      '-foo': 'foo-open',
+      '-bar': 'foo-open',
       baz: 'foo-clone-open',
       '.baz': 'foo-clone-open',
       _baz: 'foo-clone-open',
       __baz__: 'foo-clone-open',
+      '-baz': 'foo-clone-open',
       qux: 'foo-clone-open',
       '.qux': 'foo-clone-open',
       _qux: 'foo-clone-open',
       __qux__: 'foo-clone-open',
+      '-qux': 'foo-clone-open',
     };
     expectedManifest.rootFolderNames = {
       baz: 'foo-clone',
       '.baz': 'foo-clone',
       _baz: 'foo-clone',
       __baz__: 'foo-clone',
+      '-baz': 'foo-clone',
     };
     expectedManifest.rootFolderNamesExpanded = {
       baz: 'foo-clone-open',
       '.baz': 'foo-clone-open',
       _baz: 'foo-clone-open',
       __baz__: 'foo-clone-open',
+      '-baz': 'foo-clone-open',
     };
     expectedManifest.light = {
       fileExtensions: {},
@@ -701,32 +763,38 @@ describe('folder icons', () => {
         '.baz': 'foo-clone_light',
         _baz: 'foo-clone_light',
         __baz__: 'foo-clone_light',
+        '-baz': 'foo-clone_light',
         qux: 'foo-clone_light',
         '.qux': 'foo-clone_light',
         _qux: 'foo-clone_light',
         __qux__: 'foo-clone_light',
+        '-qux': 'foo-clone_light',
       },
       folderNamesExpanded: {
         baz: 'foo-clone-open_light',
         '.baz': 'foo-clone-open_light',
         _baz: 'foo-clone-open_light',
         __baz__: 'foo-clone-open_light',
+        '-baz': 'foo-clone-open_light',
         qux: 'foo-clone-open_light',
         '.qux': 'foo-clone-open_light',
         _qux: 'foo-clone-open_light',
         __qux__: 'foo-clone-open_light',
+        '-qux': 'foo-clone-open_light',
       },
       rootFolderNames: {
         baz: 'foo-clone_light',
         '.baz': 'foo-clone_light',
         _baz: 'foo-clone_light',
         __baz__: 'foo-clone_light',
+        '-baz': 'foo-clone_light',
       },
       rootFolderNamesExpanded: {
         baz: 'foo-clone-open_light',
         '.baz': 'foo-clone-open_light',
         _baz: 'foo-clone-open_light',
         __baz__: 'foo-clone-open_light',
+        '-baz': 'foo-clone-open_light',
       },
     };
     expectedManifest.hidesExplorerArrows = false;
@@ -795,6 +863,9 @@ describe('folder icons', () => {
       bar: 'folder-bar',
       baz: 'folder-bar',
       foo: 'folder-foo',
+      '-bar': 'folder-bar',
+      '-baz': 'folder-bar',
+      '-foo': 'folder-foo',
     };
     expectedManifest.folderNamesExpanded = {
       '.bar': 'folder-bar-open',
@@ -809,18 +880,23 @@ describe('folder icons', () => {
       bar: 'folder-bar-open',
       baz: 'folder-bar-open',
       foo: 'folder-foo-open',
+      '-bar': 'folder-bar-open',
+      '-baz': 'folder-bar-open',
+      '-foo': 'folder-foo-open',
     };
     expectedManifest.rootFolderNames = {
       '.baz': 'folder-bar',
       __baz__: 'folder-bar',
       _baz: 'folder-bar',
       baz: 'folder-bar',
+      '-baz': 'folder-bar',
     };
     expectedManifest.rootFolderNamesExpanded = {
       '.baz': 'folder-bar-open',
       __baz__: 'folder-bar-open',
       _baz: 'folder-bar-open',
       baz: 'folder-bar-open',
+      '-baz': 'folder-bar-open',
     };
 
     expectedManifest.light = {
