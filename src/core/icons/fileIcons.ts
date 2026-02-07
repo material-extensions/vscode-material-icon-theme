@@ -3429,5 +3429,6 @@ export const fileIcons: FileIcons = {
       fileNames: ['warp.md'],
       light: true,
     },
+    { name: 'macaulay2', fileExtensions: ['m2'] },
   ]),
 };
