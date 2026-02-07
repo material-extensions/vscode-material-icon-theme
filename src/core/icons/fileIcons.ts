@@ -1913,6 +1913,7 @@ export const fileIcons: FileIcons = {
         'story.tsx',
         'stories.svelte',
         'story.mdx',
+        'stories.vue',
       ],
     },
     { name: 'wepy', fileExtensions: ['wpy'] },
