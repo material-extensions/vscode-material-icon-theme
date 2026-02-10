@@ -1,0 +1,112 @@
+<svg
+	xmlns="http://www.w3.org/2000/svg"
+	viewBox="0 0 32 32"
+>
+	<path
+		fill="#8b3901"
+		d="M28.967 12H9.442a2 2 0 0 0-1.898 1.368L4 24V10h24a2 2 0 0 0-2-2H15.124a2 2 0 0 1-1.28-.464l-1.288-1.072A2 2 0 0 0 11.276 6H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h22l4.805-11.212A2 2 0 0 0 28.967 12"
+	/>
+	<g transform="translate(16,12)">
+		<g id="page">
+			<path
+				id="page_outline"
+				d="M 10,0.5 H 0.5 v 15 h 12 v -7.5 -5 z"
+				style="fill:#cc5500;stroke:#ffe0b2;stroke-width:0.5;stroke-dasharray:none;stroke-opacity:1"
+			/>
+			<polygon
+				id="page_fold"
+				points="10,0.5 10,3 12.5,3"
+				style="fill:none;stroke:#ffe0b2;stroke-width:0.2;stroke-dasharray:none;stroke-opacity:1"
+			/>
+		</g>
+		<g id="title">
+			<line
+				id="title_line"
+				x1="4.5" y1="1.875"
+				x2="8.5" y2="1.875"
+				style="fill:none;stroke:#ffe0b2;stroke-width:0.5;stroke-dasharray:none;stroke-opacity:1"
+			/>
+		</g>
+		<g id="checkboxes">
+			<rect
+				id="checkbox_1"
+				x="1.5" y="3.25"
+				width="2" height="2"
+				style="fill:none;stroke:#ffe0b2;stroke-width:0.3;stroke-dasharray:none;stroke-opacity:1"
+			/>
+			<rect
+				id="checkbox_2"
+				x="1.5" y="6.25"
+				width="2" height="2"
+				style="fill:none;stroke:#ffe0b2;stroke-width:0.3;stroke-dasharray:none;stroke-opacity:1"
+			/>
+			<rect
+				id="checkbox_3"
+				x="1.5" y="9.25"
+				width="2" height="2"
+				style="fill:none;stroke:#ffe0b2;stroke-width:0.3;stroke-dasharray:none;stroke-opacity:1"
+			/>
+			<rect
+				id="checkbox_4"
+				x="1.5" y="12.25"
+				width="2" height="2"
+				style="fill:none;stroke:#ffe0b2;stroke-width:0.3;stroke-dasharray:none;stroke-opacity:1"
+			/>
+		</g>
+		<g id="details">
+			<line
+				id="line_1_1"
+				x1="4.375" y1="3.75"
+				x2="9.375" y2="3.75"
+				style="fill:none;stroke:#ffe0b2;stroke-width:0.15;stroke-dasharray:none;stroke-opacity:1"
+			/>
+			<path
+				id="line_1_2"
+				d="m 4.375,4.75 h 6.875 z"
+				style="fill:none;stroke:#ffe0b2;stroke-width:0.15;stroke-dasharray:none;stroke-opacity:1"
+			/>
+
+			<line
+				id="line_2_1"
+				x1="4.375" y1="6.75"
+				x2="11.25" y2="6.75"
+				style="fill:none;stroke:#ffe0b2;stroke-width:0.15;stroke-dasharray:none;stroke-opacity:1"
+			/>
+			<path
+				id="line_2_2"
+				d="m 4.375,7.75 h 6.875 z"
+				style="fill:none;stroke:#ffe0b2;stroke-width:0.15;stroke-dasharray:none;stroke-opacity:1"
+			/>
+
+			<line
+				id="line_3_1"
+				x1="4.375" y1="9.75"
+				x2="10.5" y2="9.75"
+				style="fill:none;stroke:#ffe0b2;stroke-width:0.15;stroke-dasharray:none;stroke-opacity:1"
+			/>
+			<path
+				id="line_3_2"
+				d="m 4.375,10.75 h 5.5 z"
+				style="fill:none;stroke:#ffe0b2;stroke-width:0.15;stroke-dasharray:none;stroke-opacity:1"
+			/>
+
+			<line
+				id="line_4_1"
+				x1="4.375" y1="12.75"
+				x2="9.375" y2="12.75"
+				style="fill:none;stroke:#ffe0b2;stroke-width:0.15;stroke-dasharray:none;stroke-opacity:1"
+			/>
+		</g>
+		<g id="pencil">
+			<path
+				id="pencil_outline"
+				d="m 9.875,12.875 v -1.5 l 4.625,-8 0.5,-0.125 0.75,0.375 0.125,0.5 -4.625,8 z"
+				style="fill:#ffbf00;stroke:#ffe0b2;stroke-width:0.15;stroke-dasharray:none;stroke-opacity:1"
+			/>
+			<polygon
+				points="9.875,11.375 11.25,12.125 15.3125,5.125 13.875,4.375"
+				style="fill:#8B0000;stroke:#ffe0b2;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1"
+			/>
+		</g>
+	</g>
+</svg>
