@@ -3311,6 +3311,7 @@ export const fileIcons: FileIcons = {
         '.oxlintrc.jsonc',
         '.oxfmtrc.json',
         '.oxfmtrc.jsonc',
+        'oxlint.config.ts',
       ],
     },
     {
