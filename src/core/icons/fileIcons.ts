@@ -1912,6 +1912,7 @@ export const fileIcons: FileIcons = {
         'story.tsx',
         'stories.svelte',
         'story.mdx',
+        'stories.vue',
       ],
     },
     { name: 'wepy', fileExtensions: ['wpy'] },
@@ -3310,6 +3311,7 @@ export const fileIcons: FileIcons = {
         '.oxlintrc.jsonc',
         '.oxfmtrc.json',
         '.oxfmtrc.jsonc',
+        'oxlint.config.ts',
       ],
     },
     {
