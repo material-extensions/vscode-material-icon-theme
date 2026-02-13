@@ -555,6 +555,7 @@ export const folderIcons: FolderTheme[] = [
           'benchmark',
           'benchmarks',
           'bench',
+          'benches',
           'performance',
           'perf',
           'profiling',
@@ -1372,4 +1373,5 @@ export const folderIcons: FolderTheme[] = [
     rootFolder: { name: 'folder-root' },
   },
   { name: 'none', defaultIcon: { name: '' } },
+
 ];
