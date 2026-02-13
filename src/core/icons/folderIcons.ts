@@ -1364,6 +1364,11 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-license',
         folderNames: ['license', 'licenses'],
       },
+      {
+        name: 'folder-convex',
+        folderNames: ['convex'],
+        light: true,
+      },
     ],
   },
   {
