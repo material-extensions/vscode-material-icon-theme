@@ -555,6 +555,7 @@ export const folderIcons: FolderTheme[] = [
           'benchmark',
           'benchmarks',
           'bench',
+          'benches',
           'performance',
           'perf',
           'profiling',
