@@ -1373,5 +1373,4 @@ export const folderIcons: FolderTheme[] = [
     rootFolder: { name: 'folder-root' },
   },
   { name: 'none', defaultIcon: { name: '' } },
-
 ];
