@@ -3430,5 +3430,18 @@ export const fileIcons: FileIcons = {
       fileNames: ['warp.md'],
       light: true,
     },
+    {
+      name: 'tsdown',
+      fileNames: [
+        'tsdown.config.ts',
+        'tsdown.config.mts',
+        'tsdown.config.cts',
+        'tsdown.config.js',
+        'tsdown.config.mjs',
+        'tsdown.config.cjs',
+        'tsdown.config.json',
+        'tsdown.config',
+      ],
+    },
   ]),
 };
