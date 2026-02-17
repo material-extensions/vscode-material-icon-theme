@@ -1,23 +1,23 @@
 <svg width="289" height="289" viewBox="0 0 289 289" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="127" y="23" width="18" height="207" fill="#D50000"/>
-<rect x="19" y="23" width="18" height="207" fill="#D50000"/>
-<rect x="37" y="41" width="18" height="18" fill="#D50000"/>
-<rect x="109" y="41" width="18" height="18" fill="#D50000"/>
-<rect x="55" y="59" width="18" height="18" fill="#D50000"/>
-<rect x="91" y="59" width="18" height="18" fill="#D50000"/>
-<rect x="163" y="194" width="18" height="18" fill="#D50000"/>
-<rect x="253" y="59" width="18" height="63" fill="#D50000"/>
-<rect x="235" y="122" width="18" height="18" fill="#D50000"/>
-<rect x="235" y="41" width="18" height="18" fill="#D50000"/>
-<rect x="199" y="23" width="36" height="18" fill="#D50000"/>
-<path d="M217 140H235V158H217V140Z" fill="#D50000"/>
-<path d="M217 140H235V158H217V140Z" fill="#D50000"/>
-<path d="M163 59H181V95H163V59Z" fill="#D50000"/>
-<path d="M163 59H181V95H163V59Z" fill="#D50000"/>
-<rect x="181" y="41" width="18" height="18" fill="#D50000"/>
-<rect x="199" y="158" width="18" height="18" fill="#D50000"/>
-<rect x="181" y="176" width="18" height="18" fill="#D50000"/>
-<rect x="73" y="77" width="18" height="18" fill="#D50000"/>
-<rect x="163" y="212" width="108" height="18" fill="#D50000"/>
-<rect width="252" height="22" transform="matrix(-1 0 0 1 270 243)" fill="#FFD600"/>
+<rect x="126" y="18" width="18" height="216" fill="#D50000"/>
+<rect x="18" y="18" width="18" height="216" fill="#D50000"/>
+<rect x="36" y="36" width="18" height="18" fill="#D50000"/>
+<rect x="108" y="36" width="18" height="18" fill="#D50000"/>
+<rect x="54" y="54" width="18" height="18" fill="#D50000"/>
+<rect x="90" y="54" width="18" height="18" fill="#D50000"/>
+<rect x="162" y="198" width="18" height="18" fill="#D50000"/>
+<rect x="252" y="54" width="18" height="72" fill="#D50000"/>
+<rect x="234" y="126" width="18" height="18" fill="#D50000"/>
+<rect x="234" y="36" width="18" height="18" fill="#D50000"/>
+<rect x="198" y="18" width="36" height="18" fill="#D50000"/>
+<path d="M216 144H234V162H216V144Z" fill="#D50000"/>
+<path d="M216 144H234V162H216V144Z" fill="#D50000"/>
+<path d="M162 54H180V90H162V54Z" fill="#D50000"/>
+<path d="M162 54H180V90H162V54Z" fill="#D50000"/>
+<rect x="180" y="36" width="18" height="18" fill="#D50000"/>
+<rect x="198" y="162" width="18" height="18" fill="#D50000"/>
+<rect x="180" y="180" width="18" height="18" fill="#D50000"/>
+<rect x="72" y="72" width="18" height="18" fill="#D50000"/>
+<rect x="162" y="216" width="108" height="18" fill="#D50000"/>
+<rect width="252" height="18" transform="matrix(-1 0 0 1 270 252)" fill="#FFD600"/>
 </svg>
