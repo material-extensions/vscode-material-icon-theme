@@ -340,7 +340,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'typedoc',
-      fileNames: ['typedoc.js', 'typedoc.json']
+      fileNames: ['typedoc.js', 'typedoc.json'],
     },
     { name: 'markdoc', fileExtensions: ['mdoc', 'markdoc', 'markdoc.md'] },
     {
