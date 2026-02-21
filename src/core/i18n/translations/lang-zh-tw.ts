@@ -1,45 +1,45 @@
 import type { Translation } from '../../models/i18n/translation';
 
 export const translation: Translation = {
-  activate: '激活',
-  activated: 'Material主題圖標已激活',
+  activate: '啟用',
+  activated: 'Material Icon Theme 已啟用。',
   iconPacks: {
-    selectPack: '選擇圖標包',
-    description: '選擇％0符號',
-    disabled: '禁用圖標包',
+    selectPack: '選取圖示套件',
+    description: '選取「%0」圖示套件',
+    disabled: '停用圖示套件',
   },
   folders: {
-    toggleIcons: '切換文件夾圖標的顯示',
-    disabled: '不顯示文件夾圖標',
+    toggleIcons: '選取資料夾佈景主題',
+    disabled: '無資料夾圖示',
     theme: {
-      description: "'%0'主題的文件夾圖標",
+      description: '選取「%0」資料夾佈景主題',
     },
   },
   colorSelect: {
-    color: '选择颜色',
-    hexCode: '插入HEX顏色代碼',
-    wrongHexCode: '無效的HEX顏色代碼！',
+    color: '選擇色彩',
+    hexCode: '插入十六進位色彩代碼',
+    wrongHexCode: '無效的十六進位色彩代碼!',
   },
   opacity: {
-    inputPlaceholder: '不透明度值（0和1之間）',
-    wrongValue: '該值必須介於0和1之間！',
+    inputPlaceholder: '不透明度值 (介於 0 到 1 之間)',
+    wrongValue: '請輸入介於 0 到 1 之間的浮點數。',
   },
   toggleSwitch: {
-    on: 'ON',
-    off: 'OFF',
+    on: '開啟',
+    off: '關閉',
   },
   explorerArrows: {
-    toggle: '切換文件夾箭頭',
-    enable: '顯示文件夾箭頭',
-    disable: '隱藏文件夾箭頭',
+    toggle: '切換檔案總管中的資料夾箭頭圖示',
+    enable: '顯示檔案總管中的資料夾箭頭圖示',
+    disable: '隱藏檔案總管中的資料夾箭頭圖示',
   },
   grayscale: {
-    toggle: '切換灰度圖標',
-    enable: '啟用灰度圖標',
-    disable: '禁用灰度圖標',
+    toggle: '切換灰階圖示',
+    enable: '啟用灰階圖示',
+    disable: '停用灰階圖示',
   },
   saturation: {
-    inputPlaceholder: '飽和度值（在0和1之間）。',
-    wrongValue: '該值必須在0和1之間!',
+    inputPlaceholder: '飽和度值 (介於 0 到 1 之間)',
+    wrongValue: '請輸入介於 0 到 1 之間的浮點數。',
   },
 };
