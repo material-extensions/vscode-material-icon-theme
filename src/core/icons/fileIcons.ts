@@ -338,6 +338,10 @@ export const fileIcons: FileIcons = {
       name: 'typescript-def',
       fileExtensions: ['d.ts', 'd.cts', 'd.mts', 'd.ets'],
     },
+    {
+      name: 'typedoc',
+      fileNames: ['typedoc.js', 'typedoc.json'],
+    },
     { name: 'markdoc', fileExtensions: ['mdoc', 'markdoc', 'markdoc.md'] },
     {
       name: 'markdoc-config',
@@ -3431,5 +3435,6 @@ export const fileIcons: FileIcons = {
       fileNames: ['warp.md'],
       light: true,
     },
+    { name: 'macaulay2', fileExtensions: ['m2'] },
   ]),
 };
