@@ -3441,6 +3441,6 @@ export const fileIcons: FileIcons = {
       fileNames: ['skill.md'],
       fileExtensions: ['skill.md', 'skills.md'],
       light: true,
-    }
+    },
   ]),
 };

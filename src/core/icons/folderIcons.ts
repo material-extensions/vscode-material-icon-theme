@@ -1369,7 +1369,7 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-skills',
         folderNames: ['skill', 'skills'],
-      }
+      },
     ],
   },
   {
