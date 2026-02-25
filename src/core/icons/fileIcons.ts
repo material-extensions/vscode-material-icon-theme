@@ -2276,6 +2276,7 @@ export const fileIcons: FileIcons = {
       fileNames: ['capacitor.config.json', 'capacitor.config.ts'],
     },
     { name: 'sketch', fileExtensions: ['sketch'] },
+    { name: 'aura', fileExtensions: ['aura',['ora'],['oa']},
     { name: 'pawn', fileExtensions: ['pwn', 'amx'] },
     { name: 'adonis', fileNames: ['.adonisrc.json', 'ace'] },
     { name: 'forth', fileExtensions: ['4th', 'fth', 'frt'] },
