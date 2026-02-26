@@ -467,7 +467,7 @@
     "events": "^3.3.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.3.4",
+    "@biomejs/biome": "2.4.4",
     "@commitlint/config-conventional": "^20.0.0",
     "@softarc/sheriff-core": "^0.19.1",
     "@types/chroma-js": "^3.1.1",
@@ -480,7 +480,7 @@
     "esbuild": "^0.27.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.5",
-    "markdownlint-cli": "^0.45.0",
+    "markdownlint-cli": "^0.47.0",
     "puppeteer": "^24.16.1",
     "rimraf": "^6.0.1",
     "svg-color-linter": "^3.0.0",
