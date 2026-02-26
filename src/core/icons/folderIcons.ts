@@ -1369,7 +1369,6 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-form',
         folderNames: ['form', 'forms'],
-        light: true,
       },
     ],
   },
