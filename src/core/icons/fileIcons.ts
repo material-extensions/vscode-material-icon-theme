@@ -2640,7 +2640,7 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['bubble', 'html.bubble', 'php.bubble'],
     },
     { name: 'teal', fileExtensions: ['tl'] },
-    { name: 'template', fileExtensions: ['template'] },
+    { name: 'template', fileExtensions: ['template', 'temp', 'tmp'] },
     { name: 'astyle', fileNames: ['.astylerc'] },
     {
       name: 'shader',
