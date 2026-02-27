@@ -302,6 +302,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['docker', 'dockerfiles', 'dockerhub'],
       },
       {
+        name: 'folder-dooor',
+        folderNames: ['dooor'],
+      },
+      {
         name: 'folder-ngrx-store',
         folderNames: ['store'],
         enabledFor: [IconPack.Ngrx],
