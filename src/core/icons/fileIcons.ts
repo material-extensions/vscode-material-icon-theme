@@ -3436,5 +3436,11 @@ export const fileIcons: FileIcons = {
       light: true,
     },
     { name: 'macaulay2', fileExtensions: ['m2'] },
+    {
+      name: 'skill',
+      fileNames: ['skill.md'],
+      fileExtensions: ['skill.md', 'skills.md'],
+      light: true,
+    },
   ]),
 };
