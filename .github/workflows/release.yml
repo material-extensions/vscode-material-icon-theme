@@ -13,21 +13,21 @@ jobs:
 
     steps:
       - name: ✅ Use App Token for the Bot which is allowed to create releases
-        uses: actions/create-github-app-token@7e473efe3cb98aa54f8d4bac15400b15fad77d94 # v2.2.0
+        uses: actions/create-github-app-token@29824e69f54612133e76f7eaac726eef6c875baf # v2.2.1
         id: app-token
         with:
           app-id: ${{ vars.BOT_APP_ID }}
           private-key: ${{ secrets.BOT_PRIVATE_KEY }}
 
       - name: 📥 Checkout
-        uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           # Required for fetching tags and generating release notes
           fetch-depth: 0
           token: ${{ steps.app-token.outputs.token }}
 
       - name: 🔧 Setup Bun
-        uses: oven-sh/setup-bun@735343b667d3e6f658f44d0eca948eb6282f2b76 # v2
+        uses: oven-sh/setup-bun@3d267786b128fe76c2f16a390aa2448b815359f3 # v2
         with:
           bun-version-file: ".bun-version"
 
@@ -66,7 +66,7 @@ jobs:
         run: bunx @vscode/vsce package
 
       - name: 🔒 Attest artifacts
-        uses: actions/attest-build-provenance@977bb373ede98d70efdf65b84cb5f73e068dcc2a # v3.0.0
+        uses: actions/attest-build-provenance@a2bbfa25375fe432b6a289bc6b6cd05ecd0c4c32 # v4.1.0
         # Read: https://docs.github.com/en/actions/security-guides/using-artifact-attestations-to-establish-provenance-for-builds
         with:
           subject-path: ${{ env.EXTENSION_FILE }}

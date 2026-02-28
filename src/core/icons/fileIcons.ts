@@ -113,6 +113,7 @@ export const fileIcons: FileIcons = {
       fileNames: ['.htaccess'],
     },
     { name: 'toml', fileExtensions: ['toml'], light: true },
+    { name: 'toon', fileExtensions: ['toon'] },
     {
       name: 'image',
       fileExtensions: [
@@ -338,6 +339,10 @@ export const fileIcons: FileIcons = {
       name: 'typescript-def',
       fileExtensions: ['d.ts', 'd.cts', 'd.mts', 'd.ets'],
     },
+    {
+      name: 'typedoc',
+      fileNames: ['typedoc.js', 'typedoc.json'],
+    },
     { name: 'markdoc', fileExtensions: ['mdoc', 'markdoc', 'markdoc.md'] },
     {
       name: 'markdoc-config',
@@ -544,7 +549,7 @@ export const fileIcons: FileIcons = {
       name: 'ruff',
       fileNames: ['ruff.toml', '.ruff.toml'],
     },
-    { name: 'uv', fileNames: ['uv.toml', '.uv.toml'] },
+    { name: 'uv', fileNames: ['uv.toml', '.uv.toml', 'uv.lock'] },
     {
       name: 'scons',
       light: true,
@@ -1310,7 +1315,14 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'terraform',
-      fileExtensions: ['tf', 'tf.json', 'tfvars', 'tfstate', 'tfbackend'],
+      fileExtensions: [
+        'tf',
+        'tf.json',
+        'tfvars',
+        'tfstate',
+        'tfbackend',
+        'terraformignore',
+      ],
     },
     {
       name: 'opentofu',
@@ -1905,6 +1917,7 @@ export const fileIcons: FileIcons = {
         'story.tsx',
         'stories.svelte',
         'story.mdx',
+        'stories.vue',
       ],
     },
     { name: 'wepy', fileExtensions: ['wpy'] },
@@ -2913,6 +2926,10 @@ export const fileIcons: FileIcons = {
       patterns: {
         esbuild: FileNamePattern.Ecmascript,
         'esbuild.config': FileNamePattern.Ecmascript,
+        'esbuild.dev': FileNamePattern.Ecmascript,
+        'esbuild.stage': FileNamePattern.Ecmascript,
+        'esbuild.prod': FileNamePattern.Ecmascript,
+        'esbuild.test': FileNamePattern.Ecmascript,
       },
     },
     { name: 'spwn', fileExtensions: ['spwn'] },
@@ -3299,6 +3316,7 @@ export const fileIcons: FileIcons = {
         '.oxlintrc.jsonc',
         '.oxfmtrc.json',
         '.oxfmtrc.jsonc',
+        'oxlint.config.ts',
       ],
     },
     {
@@ -3421,5 +3439,6 @@ export const fileIcons: FileIcons = {
       name: 'allcontributors',
       fileNames: ['.all-contributorsrc'],
     },
+    { name: 'macaulay2', fileExtensions: ['m2'] },
   ]),
 };

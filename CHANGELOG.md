@@ -2,6 +2,55 @@
 
 # Changelog
 
+## v5.31.0
+
+[compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.30.0...v5.31.0)
+
+### 🚀 Enhancements
+
+- Add 'terraformignore' file extension to terraform icon configuration ([#3305](https://github.com/material-extensions/vscode-material-icon-theme/pull/3305))
+- Add folder icon for gemini ai ([#3313](https://github.com/material-extensions/vscode-material-icon-theme/pull/3313))
+
+### 🩹 Fixes
+
+- Bring claude icons into 16x16 grid ([2821c2ac](https://github.com/material-extensions/vscode-material-icon-theme/commit/2821c2ac))
+- Update Blender logo ([#3285](https://github.com/material-extensions/vscode-material-icon-theme/pull/3285))
+- Add 'uv.lock' to uv file icon recognition (Fixes #3316) ([#3317](https://github.com/material-extensions/vscode-material-icon-theme/pull/3317), [#3316](https://github.com/material-extensions/vscode-material-icon-theme/issues/3316))
+
+### ❤️ Contributors
+
+- Philipp Kief ([@PKief](https://github.com/PKief))
+- Danny McGrath ([@mcgrathd](https://github.com/mcgrathd))
+- Yen Cheng Lin ([@ridemountainpig](https://github.com/ridemountainpig))
+- Anselm Hahn ([@Anselmoo](https://github.com/Anselmoo))
+
+## v5.30.0
+
+[compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.29.0...v5.30.0)
+
+### 🚀 Enhancements
+
+- Give Visual Studio icon to Solution Filter files ([#3272](https://github.com/material-extensions/vscode-material-icon-theme/pull/3272))
+- Migrations folder ([#3187](https://github.com/material-extensions/vscode-material-icon-theme/pull/3187))
+- Add salt file and folder icons ([#3275](https://github.com/material-extensions/vscode-material-icon-theme/pull/3275))
+- Add additional esbuild file patterns ([5801a121](https://github.com/material-extensions/vscode-material-icon-theme/commit/5801a121))
+- Apply folder-docs to diary and notes ([#3292](https://github.com/material-extensions/vscode-material-icon-theme/pull/3292))
+- Added some folder names ([#3293](https://github.com/material-extensions/vscode-material-icon-theme/pull/3293))
+- Extended folder-functions to include composables folders ([#3301](https://github.com/material-extensions/vscode-material-icon-theme/pull/3301))
+
+### 🩹 Fixes
+
+- Update Deno logo to new version ([#3278](https://github.com/material-extensions/vscode-material-icon-theme/pull/3278))
+
+### ❤️ Contributors
+
+- Goncalo Espinha ([@gespinha](https://github.com/gespinha))
+- Motte ([@dmotte](https://github.com/dmotte))
+- Roman ([@GameRoMan](https://github.com/GameRoMan))
+- Philipp Kief ([@PKief](https://github.com/PKief))
+- Lindsey ([@lindseystead](https://github.com/lindseystead))
+- Firecrafter28 ([@Firecrafter28](https://github.com/Firecrafter28))
+
 ## v5.29.0
 
 [compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.28.0...v5.29.0)
