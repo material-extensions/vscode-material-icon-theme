@@ -2920,7 +2920,10 @@ export const fileIcons: FileIcons = {
         'panda.config': FileNamePattern.Ecmascript,
       },
     },
-    { name: 'biome', fileNames: ['biome.json', 'biome.jsonc'] },
+    {
+      name: 'biome',
+      fileNames: ['biome.json', 'biome.jsonc', '.biome.json', '.biome.jsonc'],
+    },
     {
       name: 'esbuild',
       patterns: {
