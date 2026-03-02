@@ -2,6 +2,53 @@
 
 # Changelog
 
+## v5.32.0
+
+[compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.31.0...v5.32.0)
+
+### 🚀 Enhancements
+
+- Italian translations ([#3329](https://github.com/material-extensions/vscode-material-icon-theme/pull/3329))
+- **icons:** Extend Gemini folder icon mapping to gemini and gemini-ai ([#3334](https://github.com/material-extensions/vscode-material-icon-theme/pull/3334))
+- Include `agent`,`agents` folder in `folder_robot` in name ([#3336](https://github.com/material-extensions/vscode-material-icon-theme/pull/3336))
+- **icons:** Add redux and redux-reducer folder icon support ([#3335](https://github.com/material-extensions/vscode-material-icon-theme/pull/3335))
+- Update oxc, vite and vitest new icons ([#3320](https://github.com/material-extensions/vscode-material-icon-theme/pull/3320))
+- **-components:** As components ([#3338](https://github.com/material-extensions/vscode-material-icon-theme/pull/3338))
+- Assign Storybook icon to `.stories.vue` file extensions ([#3341](https://github.com/material-extensions/vscode-material-icon-theme/pull/3341))
+- Enhance oxlint config support ([#3353](https://github.com/material-extensions/vscode-material-icon-theme/pull/3353))
+- Include `benches` folder in the `folder-benchmark` for Rust's conventional benchmark directory ([#3356](https://github.com/material-extensions/vscode-material-icon-theme/pull/3356))
+- Update Traditional Chinese translations ([#3363](https://github.com/material-extensions/vscode-material-icon-theme/pull/3363))
+- **icon:** Add macaulay2 icon ([#3349](https://github.com/material-extensions/vscode-material-icon-theme/pull/3349))
+- **icon:** Add `typedoc` icon ([#3360](https://github.com/material-extensions/vscode-material-icon-theme/pull/3360))
+- Add the `proxy` folder name setting ([#3355](https://github.com/material-extensions/vscode-material-icon-theme/pull/3355))
+- Add icon for .toon files ([#3365](https://github.com/material-extensions/vscode-material-icon-theme/pull/3365))
+- **icon:** Add form-folder icon ([#3352](https://github.com/material-extensions/vscode-material-icon-theme/pull/3352))
+- Support icons for hidden biome config files ([#3372](https://github.com/material-extensions/vscode-material-icon-theme/pull/3372))
+
+### 🩹 Fixes
+
+- **feat:** Include `outputs` folder in `folder_dist` name ([#3322](https://github.com/material-extensions/vscode-material-icon-theme/pull/3322))
+- **tasks:** Change task type from 'bun' to 'shell' for build and test commands ([036a3a4e](https://github.com/material-extensions/vscode-material-icon-theme/commit/036a3a4e))
+
+### ❤️ Contributors
+
+- Maikel Van Dort ([@Netail](https://github.com/Netail))
+- Sayan Shankhari ([@SayanShankhari](https://github.com/SayanShankhari))
+- TiranSpierer ([@TiranSpierer](https://github.com/TiranSpierer))
+- Philipp Kief ([@PKief](https://github.com/PKief))
+- K.Ø ([@DogFortune](https://github.com/DogFortune))
+- Hazel ([@chiptumor](https://github.com/chiptumor))
+- Sepehr Akbari ([@SepehrAkbari](https://github.com/SepehrAkbari))
+- Chiahong ([@ChiahongHong](https://github.com/ChiahongHong))
+- Tymon Marek ([@TymonMarek](https://github.com/TymonMarek))
+- Ntnyq ([@ntnyq](https://github.com/ntnyq))
+- Jacob Janisz ([@JoJk0](https://github.com/JoJk0))
+- Raphaël Balet ([@rbalet](https://github.com/rbalet))
+- Luis Miguel Navarro ([@vircoding](https://github.com/vircoding))
+- Anil Sahu ([@infoanilsahu](https://github.com/infoanilsahu))
+- Tiziano ([@T1xx1](https://github.com/T1xx1))
+- Paul Gusmano ([@pm-gusmano](https://github.com/pm-gusmano))
+
 ## v5.31.0
 
 [compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.30.0...v5.31.0)
