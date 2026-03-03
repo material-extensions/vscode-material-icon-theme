@@ -2360,7 +2360,7 @@ export const fileIcons: FileIcons = {
     {
       name: 'nuget',
       fileNames: ['nuget.config', '.nuspec', 'nuget.exe'],
-      fileExtensions: ['nupkg'],
+      fileExtensions: ['nupkg', 'nuspec'],
     },
     { name: 'command', fileExtensions: ['command'] },
     {
@@ -2921,7 +2921,10 @@ export const fileIcons: FileIcons = {
         'panda.config': FileNamePattern.Ecmascript,
       },
     },
-    { name: 'biome', fileNames: ['biome.json', 'biome.jsonc'] },
+    {
+      name: 'biome',
+      fileNames: ['biome.json', 'biome.jsonc', '.biome.json', '.biome.jsonc'],
+    },
     {
       name: 'esbuild',
       patterns: {
@@ -3147,7 +3150,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'label',
-      fileNames: ['.github/labeler.yml', '.github/labeler.yaml'],
+      fileNames: ['.github/labeler.yml', '.github/labeler.yaml', 'tags'],
     },
     {
       name: 'zeabur',
