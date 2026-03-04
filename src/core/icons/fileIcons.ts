@@ -44,6 +44,7 @@ export const fileIcons: FileIcons = {
         '.whitesource',
       ],
     },
+    { name: 'json_schema', fileExtensions: ['schema.json'] },
     {
       name: 'hjson',
       fileExtensions: ['hjson'],
@@ -2359,7 +2360,7 @@ export const fileIcons: FileIcons = {
     {
       name: 'nuget',
       fileNames: ['nuget.config', '.nuspec', 'nuget.exe'],
-      fileExtensions: ['nupkg', 'nuspec'],
+      fileExtensions: ['nupkg'],
     },
     { name: 'command', fileExtensions: ['command'] },
     {
