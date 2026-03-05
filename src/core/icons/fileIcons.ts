@@ -399,6 +399,7 @@ export const fileIcons: FileIcons = {
         'vcxitems.filters',
         'vcxproj',
         'vcxproj.filters',
+        'wixproj',
       ],
       fileNames: ['.vsconfig'],
     },
