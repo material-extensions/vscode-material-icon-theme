@@ -1367,7 +1367,22 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['license', 'licenses'],
       },
       { name: 'folder-form', folderNames: ['form', 'forms'] },
-      { name: 'folder-scrap', folderNames: ['deprecated', 'scrap'] },
+      {
+        name: 'folder-deprecated',
+        folderNames: ['deprecated'],
+        clone: {
+          base: 'folder-archive',
+          color: 'dark-gray-700',
+        },
+      },
+      {
+        name: 'folder-scrap',
+        folderNames: ['scrap'],
+        clone: {
+          base: 'folder-trash',
+          color: 'dark-gray-700',
+        },
+      },
     ],
   },
   {
