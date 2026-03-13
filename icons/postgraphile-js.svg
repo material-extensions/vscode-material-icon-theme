@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xml:space="preserve" viewBox="0 0 16 16" version="1.1" id="svg1" xmlns="http://www.w3.org/2000/svg"
+  xmlns:svg="http://www.w3.org/2000/svg">
+  <g style="stroke-width:0;shape-rendering:geometricPrecision" id="g1"
+    transform="matrix(0.01229036,0,0,0.01229036,0.625784,0.85622855)">
+    <g class="ears" id="g10">
+      <path fill="#dcaa33" d="M 100,615 25,360 260,25 715,615 Z" class="seg1" id="path1-9" />
+      <path fill="#fec949" d="M 25,360 260,25 600,130 715,615 Z" class="seg2" id="path2" />
+      <path fill="#dcaa33" d="M 260,25 600,130 940,25 715,615 Z" class="seg1" id="path3" />
+      <path fill="#dcaa33" d="M 600,130 940,25 1175,360 715,615 Z" class="seg1" id="path4" />
+      <path fill="#fec949" d="m 940,25 235,335 -75,255 H 715 Z" class="seg2" id="path5" />
+      <path fill="#dcaa33" d="M 1175,360 1100,615 600,1055 715,615 Z" class="seg1" id="path6" />
+      <path fill="#dcaa33" d="M 1100,615 600,1055 100,615 h 615 z" class="seg1" id="path7" />
+      <path fill="#dcaa33" d="M 600,1055 100,615 25,360 715,615 Z" class="seg1" id="path8" />
+      <path fill="#dcaa33" d="M 100,615 25,360 715,615 Z" class="seg1" id="path9" />
+      <path fill="none" stroke="#473302" stroke-linejoin="round" stroke-width="15"
+        d="M 25,360 260,25 v 0 l 340,105 v 0 L 940,25 v 0 l 235,335 v 0 l -75,255 v 0 l -500,440 v 0 L 100,615 v 0 z"
+        class="heart-outline" id="path10" />
+    </g>
+    <g class="face" id="g26">
+      <path fill="#feffff" stroke="#473302" stroke-linejoin="round" stroke-width="15" d="m 375,740 85,55 -135,105 z"
+        class="tusk left-tusk" id="path11" />
+      <path fill="#feffff" stroke="#473302" stroke-linejoin="round" stroke-width="15" d="m 825,740 -85,55 135,105 z"
+        class="tusk right-tusk" id="path12" />
+      <path fill="#feffff" stroke="#473302" stroke-linejoin="round" stroke-width="15" d="M 365,730 470,805 285,950 Z"
+        class="tusk left-tusk" id="path13" />
+      <path fill="#feffff" stroke="#473302" stroke-linejoin="round" stroke-width="15" d="M 835,730 730,805 915,950 Z"
+        class="tusk right-tusk" id="path14" />
+      <path fill="#fec949" d="M 325,300 490,96 H 710 L 600,450 Z" class="seg2 forehead-left" id="path15" />
+      <path fill="#dcaa33" d="M 490,96 H 710 L 875,300 600,450 Z" class="seg1 forehead-top" id="path16" />
+      <path fill="#cb8c06" d="M 710,96 875,300 V 725 L 600,450 Z" class="seg3 forehead-right no-stroke" id="path17" />
+      <path fill="#875c00" d="M 875,300 V 725 L 710,835 600,450 Z" class="seg4 right-eye-area no-stroke" id="path18" />
+      <path fill="#654904" d="M 875,725 710,835 600,1130 V 450 Z" class="seg5 face-bottom-right no-stroke"
+        id="path19" />
+      <path fill="#cb8c06" d="m 710,835 v 240 L 600,1130 490,835 600,450 Z" class="seg3 no-stroke trunk-highlight-right"
+        id="path20" />
+      <path fill="#fec949" d="M 600,1130 490,1075 V 835 L 325,725 600,450 Z" class="seg2 no-stroke trunk-highlight-left"
+        id="path21" />
+      <path fill="#cb8c06" d="M 490,835 325,725 V 300 l 275,150 z" class="seg3 face-bottom-left no-stroke"
+        id="path22" />
+      <path fill="#dcaa33" d="M 325,725 V 300 l 275,150 z" class="seg1 left-eye-area no-stroke" id="path23" />
+      <path fill="none" stroke="#473302" stroke-linejoin="round" stroke-width="30"
+        d="M 490,96 H 710 L 875,300 V 725 L 710,835 v 240 l -110,55 -110,-55 V 835 L 325,725 V 300 Z"
+        class="entire-face stroke-only" id="path24" />
+      <path fill="#feffff" stroke="#feffff" stroke-width="20" d="m 385,415 130,40 -130,50 z" class="eye left-eye"
+        id="path25" />
+      <path fill="#feffff" stroke="#feffff" stroke-width="20" d="m 815,415 -130,40 130,50 z" class="eye right-eye"
+        id="path26" />
+    </g>
+  </g>
+</svg>
