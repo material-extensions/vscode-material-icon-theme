@@ -1377,7 +1377,7 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['deprecated'],
         clone: {
           base: 'folder-archive',
-          color: 'dark-gray-700',
+          color: 'gray-700',
         },
       },
       {
@@ -1385,7 +1385,7 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['scrap'],
         clone: {
           base: 'folder-trash',
-          color: 'dark-gray-700',
+          color: 'gray-700',
         },
       },
     ],
