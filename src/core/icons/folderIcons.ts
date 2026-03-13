@@ -301,6 +301,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-docker',
         folderNames: ['docker', 'dockerfiles', 'dockerhub'],
       },
+      { name: 'folder-nginx', folderNames: ['nginx'] },
       {
         name: 'folder-ngrx-store',
         folderNames: ['store'],
@@ -595,6 +596,10 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-python',
         folderNames: ['python', 'pycache', 'pytest_cache'],
+      },
+      {
+        name: 'folder-r',
+        folderNames: ['r'],
       },
       {
         name: 'folder-sandbox',
