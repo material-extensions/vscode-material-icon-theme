@@ -598,6 +598,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['python', 'pycache', 'pytest_cache'],
       },
       {
+        name: 'folder-r',
+        folderNames: ['r'],
+      },
+      {
         name: 'folder-sandbox',
         folderNames: ['sandbox', 'sandboxes', 'playground', 'playgrounds'],
       },
