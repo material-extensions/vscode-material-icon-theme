@@ -1372,6 +1372,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['license', 'licenses'],
       },
       {
+        name: 'folder-skills',
+        folderNames: ['skill', 'skills'],
+      },
+      {
         name: 'folder-form',
         folderNames: ['form', 'forms'],
       },
