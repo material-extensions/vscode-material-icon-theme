@@ -44,6 +44,7 @@ export const fileIcons: FileIcons = {
         '.whitesource',
       ],
     },
+    { name: 'json_schema', fileExtensions: ['schema.json'] },
     {
       name: 'hjson',
       fileExtensions: ['hjson'],
