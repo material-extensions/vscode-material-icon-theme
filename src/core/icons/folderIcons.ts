@@ -524,6 +524,7 @@ export const folderIcons: FolderTheme[] = [
           'typings',
           '@types',
           'types',
+          'type',
           'cts',
           'mts',
         ],
