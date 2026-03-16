@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - name: ✅ Use App Token for the Bot which is allowed to create releases
-        uses: actions/create-github-app-token@29824e69f54612133e76f7eaac726eef6c875baf # v2.2.1
+        uses: actions/create-github-app-token@fee1f7d63c2ff003460e3d139729b119787bc349 # v2.2.2
         id: app-token
         with:
           app-id: ${{ vars.BOT_APP_ID }}
@@ -27,7 +27,7 @@ jobs:
           token: ${{ steps.app-token.outputs.token }}
 
       - name: 🔧 Setup Bun
-        uses: oven-sh/setup-bun@ecf28ddc73e819eb6fa29df6b34ef8921c743461 # v2
+        uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2
         with:
           bun-version-file: ".bun-version"
 
