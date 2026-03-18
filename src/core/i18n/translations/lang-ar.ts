@@ -42,5 +42,4 @@ export const translation: Translation = {
     inputPlaceholder: 'قيمة التشبع (بين 0 و 1)',
     wrongValue: 'يرجى إدخال رقم عشري بين 0 و 1.',
   },
-
 };
