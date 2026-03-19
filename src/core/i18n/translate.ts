@@ -20,7 +20,6 @@ import { translation as langUk } from './translations/lang-uk';
 import { translation as langZhCn } from './translations/lang-zh-cn';
 import { translation as langZhTw } from './translations/lang-zh-tw';
 
-
 let currentTranslation: Translation;
 let fallbackTranslation: Translation;
 
