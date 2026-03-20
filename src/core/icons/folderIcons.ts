@@ -598,6 +598,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['python', 'pycache', 'pytest_cache'],
       },
       {
+        name: 'folder-r',
+        folderNames: ['r'],
+      },
+      {
         name: 'folder-sandbox',
         folderNames: ['sandbox', 'sandboxes', 'playground', 'playgrounds'],
       },
@@ -1367,13 +1371,26 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-license',
         folderNames: ['license', 'licenses'],
       },
+      { name: 'folder-form', folderNames: ['form', 'forms'] },
+      {
+        name: 'folder-deprecated',
+        folderNames: ['deprecated'],
+        clone: {
+          base: 'folder-archive',
+          color: 'gray-700',
+        },
+      },
+      {
+        name: 'folder-scrap',
+        folderNames: ['scrap'],
+        clone: {
+          base: 'folder-trash',
+          color: 'gray-700',
+        },
+      },
       {
         name: 'folder-skills',
         folderNames: ['skill', 'skills'],
-      },
-      {
-        name: 'folder-form',
-        folderNames: ['form', 'forms'],
       },
     ],
   },
