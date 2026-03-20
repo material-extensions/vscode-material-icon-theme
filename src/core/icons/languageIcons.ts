@@ -210,6 +210,6 @@ export const languageIcons: LanguageIcon[] = [
   {
     name: 'skill',
     light: true,
-    ids: ['skill']
+    ids: ['skill'],
   },
 ];
