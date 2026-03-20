@@ -207,4 +207,9 @@ export const languageIcons: LanguageIcon[] = [
   { name: 'nginx', ids: ['nginx'] },
   { name: 'cue', ids: ['cue'] },
   { name: 'lean', ids: ['lean'] },
+  {
+    name: 'skill',
+    light: true,
+    ids: ['skill']
+  },
 ];
