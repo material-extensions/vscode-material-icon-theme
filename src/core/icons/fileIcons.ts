@@ -449,6 +449,7 @@ export const fileIcons: FileIcons = {
     },
     { name: 'kusto', fileExtensions: ['kql'] },
     { name: 'csharp', fileExtensions: ['cs', 'csx', 'csharp'] },
+    { name: 'aspire', fileNames: ['apphost.cs', 'apphost.ts'] },
     { name: 'qsharp', fileExtensions: ['qs'] },
     {
       name: 'zip',
