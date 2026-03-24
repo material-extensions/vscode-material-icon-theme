@@ -1392,6 +1392,14 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-skills',
         folderNames: ['skill', 'skills'],
       },
+      {
+        name: 'folder-instructions',
+        folderNames: ['instruction', 'instructions'],
+        clone: {
+          base: 'folder-meta',
+          color: 'cyan-A700',
+        },
+      },
     ],
   },
   {

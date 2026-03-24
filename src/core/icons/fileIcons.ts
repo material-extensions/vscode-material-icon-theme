@@ -3448,7 +3448,12 @@ export const fileIcons: FileIcons = {
       name: 'skill',
       fileNames: ['skill.md'],
       fileExtensions: ['skill.md', 'skills.md'],
-      light: true,
+    },
+    {
+      name: 'instructions',
+      fileNames: ['instructions.md', 'instruction.md'],
+      fileExtensions: ['instructions.md', 'instruction.md'],
+      clone: { base: 'lib', color: 'cyan-A700' },
     },
   ]),
 };

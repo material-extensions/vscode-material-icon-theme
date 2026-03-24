@@ -207,9 +207,10 @@ export const languageIcons: LanguageIcon[] = [
   { name: 'nginx', ids: ['nginx'] },
   { name: 'cue', ids: ['cue'] },
   { name: 'lean', ids: ['lean'] },
+  { name: 'skill', ids: ['skill'] },
   {
-    name: 'skill',
-    light: true,
-    ids: ['skill'],
+    name: 'instructions',
+    ids: ['instructions'],
+    clone: { base: 'lib', color: 'cyan-A700' },
   },
 ];
