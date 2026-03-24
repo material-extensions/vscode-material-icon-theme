@@ -44,6 +44,7 @@ export const fileIcons: FileIcons = {
         '.whitesource',
       ],
     },
+    { name: 'json_schema', fileExtensions: ['schema.json'] },
     {
       name: 'hjson',
       fileExtensions: ['hjson'],
@@ -1498,6 +1499,8 @@ export const fileIcons: FileIcons = {
         '.env.dist',
         '.env.prod',
         '.env.production',
+        '.env.prod.example',
+        '.env.production.example',
         '.env.stg',
         '.env.stage',
         '.env.staging',
@@ -3321,6 +3324,7 @@ export const fileIcons: FileIcons = {
         '.oxfmtrc.json',
         '.oxfmtrc.jsonc',
         'oxlint.config.ts',
+        'oxfmt.config.ts',
       ],
     },
     {
