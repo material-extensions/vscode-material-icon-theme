@@ -2485,6 +2485,12 @@ export const fileIcons: FileIcons = {
         'velite.config': FileNamePattern.Ecmascript,
       },
     },
+    {
+      name: 'rolldown',
+      patterns: {
+        'rolldown.config': FileNamePattern.Ecmascript,
+      },
+    },
     { name: 'opa', fileExtensions: ['rego'] },
     { name: 'lerna', fileNames: ['lerna.json'] },
     {
