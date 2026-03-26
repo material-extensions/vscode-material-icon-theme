@@ -485,7 +485,7 @@
     "rimraf": "^6.0.1",
     "svg-color-linter": "^3.0.0",
     "svgo": "^4.0.0",
-    "typescript": "^5.9.2"
+    "typescript": "^6.0.0"
   },
   "patchedDependencies": {
     "changelogen@0.6.2": "patches/changelogen@0.6.2.patch"
