@@ -1388,6 +1388,7 @@ export const folderIcons: FolderTheme[] = [
           color: 'gray-700',
         },
       },
+      { name: 'folder-go', folderNames: ['go'] },
     ],
   },
   {
