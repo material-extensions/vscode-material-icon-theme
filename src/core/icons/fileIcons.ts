@@ -3452,5 +3452,6 @@ export const fileIcons: FileIcons = {
       light: true,
     },
     { name: 'macaulay2', fileExtensions: ['m2'] },
+    { name: 'uiua', fileExtensions: ['ua'] },
   ]),
 };
