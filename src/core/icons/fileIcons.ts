@@ -2790,6 +2790,8 @@ export const fileIcons: FileIcons = {
       light: true,
     },
     { name: 'antlr', fileExtensions: ['g4'] },
+    { name: 'bison', fileExtensions: ['y', 'yy', 'ypp', 'bison'] },
+    { name: 'flex', fileExtensions: ['l', 'll', 'lex', 'flex'] },
     { name: 'stylable', fileExtensions: ['st.css'] },
     { name: 'pinejs', fileExtensions: ['pine'] },
     {
