@@ -1388,6 +1388,7 @@ export const folderIcons: FolderTheme[] = [
           color: 'gray-700',
         },
       },
+      { name: 'folder-appwrite', folderNames: ['appwrite'] },
     ],
   },
   {
