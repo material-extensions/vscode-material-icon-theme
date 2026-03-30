@@ -2,6 +2,18 @@
 
 # Changelog
 
+## v5.33.1
+
+[compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.33.0...v5.33.1)
+
+### 🩹 Fixes
+
+- **workflows:** Release to npm ([0e16f306](https://github.com/material-extensions/vscode-material-icon-theme/commit/0e16f306))
+
+### ❤️ Contributors
+
+- Philipp Kief ([@PKief](https://github.com/PKief))
+
 ## v5.33.0
 
 [compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.32.0...v5.33.0)
