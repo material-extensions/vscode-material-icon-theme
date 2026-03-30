@@ -85,9 +85,7 @@ jobs:
           extensionFile: ${{ env.EXTENSION_FILE }}
 
       - name: 📦 Publish to NPM Registry
-        run: |
-          npm set "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}"
-          npm publish --provenance --access public
+        run: npm publish --provenance --access public
 
       - name: ⬆️ Upload VSIX to GitHub release
         run: |
