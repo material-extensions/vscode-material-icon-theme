@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
 	<path
 		id="folder"
-		fill="#0091EA" stroke="none"
+		fill="#00B8D4" stroke="none"
 		d="M 6.922,3.768 6.278,3.232 A 1,1 0 0 0 5.638,3 H 2 A 1,1 0 0 0 1,4 v 8 a 1,1 0 0 0 1,1 h 12 a 1,1 0 0 0 1,-1 V 5 A 1,1 0 0 0 14,4 H 7.562 A 1,1 0 0 1 6.922,3.768"
 	/>
 	<path
