@@ -3372,6 +3372,19 @@ export const fileIcons: FileIcons = {
       ],
     },
     {
+      name: 'postgraphile',
+      fileNames: ['graphile.config.ts', 'postgraphile.config.ts'],
+    },
+    {
+      name: 'postgraphile-js',
+      fileNames: [
+        'graphile.config.js',
+        'graphile.config.mjs',
+        'postgraphile.config.js',
+        'postgraphile.config.mjs',
+      ],
+    },
+    {
       name: 'bashly',
       patterns: {
         'src/bashly': FileNamePattern.Yaml,
