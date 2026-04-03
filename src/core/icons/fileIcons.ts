@@ -1427,12 +1427,14 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'rstack',
-      fileNames: ['rspress.config.ts', 'rslint.json', 'rslint.jsonc'],
+      fileNames: ['rslint.json', 'rslint.jsonc'],
       patterns: {
         'rspack.config': FileNamePattern.Ecmascript,
         'rsbuild.config': FileNamePattern.Ecmascript,
         'rslib.config': FileNamePattern.Ecmascript,
         'rstest.config': FileNamePattern.Ecmascript,
+        'rspress.config': FileNamePattern.Ecmascript,
+        'rslint.config': FileNamePattern.Ecmascript,
       },
     },
     {
@@ -2486,6 +2488,12 @@ export const fileIcons: FileIcons = {
         'velite.config': FileNamePattern.Ecmascript,
       },
     },
+    {
+      name: 'rolldown',
+      patterns: {
+        'rolldown.config': FileNamePattern.Ecmascript,
+      },
+    },
     { name: 'opa', fileExtensions: ['rego'] },
     { name: 'lerna', fileNames: ['lerna.json'] },
     {
@@ -3445,5 +3453,16 @@ export const fileIcons: FileIcons = {
       light: true,
     },
     { name: 'macaulay2', fileExtensions: ['m2'] },
+    {
+      name: 'skill',
+      fileNames: ['skill.md'],
+      fileExtensions: ['skill.md', 'skills.md'],
+    },
+    {
+      name: 'instructions',
+      fileNames: ['instructions.md', 'instruction.md'],
+      fileExtensions: ['instructions.md', 'instruction.md'],
+      clone: { base: 'lib', color: 'cyan-A700' },
+    },
   ]),
 };
