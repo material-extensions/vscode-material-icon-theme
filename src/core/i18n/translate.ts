@@ -1,6 +1,7 @@
 import { get } from '../helpers/object';
 import { logger } from '../logging/logger';
 import type { Translation } from '../models/i18n/translation';
+import { translation as langAr } from './translations/lang-ar';
 import { translation as langCs } from './translations/lang-cs';
 import { translation as langDe } from './translations/lang-de';
 import { translation as langEn } from './translations/lang-en';
@@ -47,6 +48,8 @@ const loadTranslation = async (language: string) => {
 /** Get the translation object of the separated translation files */
 const getTranslationObject = async (language: string): Promise<Translation> => {
   switch (language) {
+    case 'ar':
+      return langAr;
     case 'cs':
       return langCs;
     case 'de':
