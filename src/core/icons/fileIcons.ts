@@ -19,6 +19,12 @@ export const fileIcons: FileIcons = {
       name: 'markdown',
       fileExtensions: ['md', 'markdown', 'rst'],
     },
+    { name: 'ferret_icon', fileExtensions: ['fer', 'ferret'] },
+    { name: 'ferret_manifest', fileNames: ['fer.ret'] },
+    {
+      name: 'ferret_lockfile',
+      fileNames: ['ferret.lock'],
+    },
     { name: 'blink', fileExtensions: ['blink'], light: true },
     { name: 'css', fileExtensions: ['css'] },
     { name: 'sass', fileExtensions: ['scss', 'sass'] },
