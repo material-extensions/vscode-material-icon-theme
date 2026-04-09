@@ -2,8 +2,8 @@ import { join } from 'node:path';
 import deepEqual from 'fast-deep-equal';
 import type { ConfigurationChangeEvent, ExtensionContext } from 'vscode';
 import {
-  type Config,
   applyConfigToIcons,
+  type Config,
   clearCloneFolder,
   customClonesIcons,
   extensionName,

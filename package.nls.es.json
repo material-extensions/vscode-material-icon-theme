@@ -31,6 +31,7 @@
   "configuration.activeIconPack.vue": "Iconos de Vue.",
   "configuration.activeIconPack.vue_vuex": "Iconos de Vue y Vuex.",
   "configuration.activeIconPack.nest": "Iconos de NestJS.",
+  "configuration.activeIconPack.bashly": "Iconos de Bashly.",
   "configuration.activeIconPack.none": "No hay ningún paquete de iconos activo.",
   "configuration.folders.theme": "Seleccionar el tipo de iconos de carpeta.",
   "configuration.folders.theme.specific": "Seleccionar iconos de carpeta específicos.",

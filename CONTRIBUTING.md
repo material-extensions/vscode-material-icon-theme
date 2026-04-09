@@ -13,7 +13,7 @@ Glad you're here and interested in expanding this project 🎉 In order to make 
   - [Creating New Icons Workflow](#creating-new-icons-workflow)
     - [Checklist](#checklist)
     - [Cloning Workflow](#cloning-workflow)
-      - [Checklist](#checklist)
+      - [Checklist](#checklist-1)
   - [How tos](#how-tos)
     - [Create icon as SVG](#create-icon-as-svg)
     - [Known icon sources](#known-icon-sources)
@@ -26,7 +26,7 @@ Glad you're here and interested in expanding this project 🎉 In order to make 
       - [Folder icons](#folder-icons)
       - [Root folder icons](#root-folder-icons)
       - [Language icons](#language-icons)
-    - [Icons for color themes](#icons-for-color-themes)
+      - [Icons for color themes](#icons-for-color-themes)
     - [Create icon packs](#create-icon-packs)
     - [Designing Pixel-Perfect Icons](#designing-pixel-perfect-icons)
       - [Tips for Designing Pixel-Perfect Icons](#tips-for-designing-pixel-perfect-icons)
@@ -135,7 +135,7 @@ Installation of the dependencies is necessary before running the command, see [D
 > [!NOTE]
 > The colors black (`#000000`) and white (`#ffffff`) are not allowed in the icons. These colors have too much contrast and do not fit into the overall picture of the icons.
 
-Continue reading [here](#design-folder-icons) to find out about colors for the folder icons.
+Continue reading [the design folder icons section](#design-folder-icons) to find out about colors for the folder icons.
 
 | ✅ | ❌ |
 | :-: | :-: |
@@ -212,6 +212,8 @@ Available patterns are right now:
 | configuration | `json`, `jsonc`, `json5`, `yaml`, `yml`, `toml`                                                            |
 | nodeEcosystem | Combination of ecmascript and configuration patterns                                                       |
 | cosmiconfig   | `.${fileName}rc`, `.config/${fileName}rc` and `${fileName}.config` with file extensions of `nodeEcosystem` |
+| yaml          | `yaml`, `yml`                                                                                              |
+| dotfile       | `.${fileName}`, `${fileName}`                                                                              |
 
 #### Folder icons
 

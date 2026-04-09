@@ -4,7 +4,7 @@ import { loadLanguageIconDefinitions } from '../../generator/languageGenerator';
 import type { Config } from '../../models/icons/config';
 import { IconPack } from '../../models/icons/iconPack';
 import type { LanguageIcon } from '../../models/icons/languages/languageIdentifier';
-import { type Manifest, createEmptyManifest } from '../../models/manifest';
+import { createEmptyManifest, type Manifest } from '../../models/manifest';
 
 describe('language icons', () => {
   let expectedManifest: Manifest;
@@ -116,22 +116,22 @@ describe('language icons', () => {
       a: {
         iconPath: './../icons/a.svg',
       },
-      // biome-ignore lint/style/useNamingConvention:
+      // biome-ignore lint/style/useNamingConvention: naming convention
       a_light: {
         iconPath: './../icons/a_light.svg',
       },
-      // biome-ignore lint/style/useNamingConvention:
+      // biome-ignore lint/style/useNamingConvention: naming convention
       a_highContrast: {
         iconPath: './../icons/a_highContrast.svg',
       },
       b: {
         iconPath: './../icons/b.svg',
       },
-      // biome-ignore lint/style/useNamingConvention:
+      // biome-ignore lint/style/useNamingConvention: naming convention
       b_light: {
         iconPath: './../icons/b_light.svg',
       },
-      // biome-ignore lint/style/useNamingConvention:
+      // biome-ignore lint/style/useNamingConvention: naming convention
       b_highContrast: {
         iconPath: './../icons/b_highContrast.svg',
       },
