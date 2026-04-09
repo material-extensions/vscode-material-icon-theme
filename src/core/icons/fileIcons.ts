@@ -3463,5 +3463,10 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['instructions.md', 'instruction.md'],
       clone: { base: 'lib', color: 'cyan-A700' },
     },
+    {
+      name: 'eas',
+      fileNames: ['eas.json', '.easignore'],
+      light: true,
+    },
   ]),
 };
