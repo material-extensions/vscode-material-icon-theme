@@ -1400,6 +1400,10 @@ export const folderIcons: FolderTheme[] = [
           color: 'cyan-A700',
         },
       },
+      {
+        name: 'folder-eas',
+        folderNames: ['eas', '.eas'],
+      },
     ],
   },
   {
