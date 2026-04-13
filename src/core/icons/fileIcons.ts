@@ -3463,5 +3463,18 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['instructions.md', 'instruction.md'],
       clone: { base: 'lib', color: 'cyan-A700' },
     },
+    {
+      name: 'tsdown',
+      fileNames: [
+        'tsdown.config.ts',
+        'tsdown.config.mts',
+        'tsdown.config.cts',
+        'tsdown.config.js',
+        'tsdown.config.mjs',
+        'tsdown.config.cjs',
+        'tsdown.config.json',
+        'tsdown.config',
+      ],
+    },
   ]),
 };
