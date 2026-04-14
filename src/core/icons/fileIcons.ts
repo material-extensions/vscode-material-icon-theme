@@ -3463,5 +3463,9 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['instructions.md', 'instruction.md'],
       clone: { base: 'lib', color: 'cyan-A700' },
     },
+    {
+      name: 'appwrite',
+      fileNames: ['appwrite.json', 'appwrite.js', 'appwrite.ts'],
+    },
   ]),
 };
