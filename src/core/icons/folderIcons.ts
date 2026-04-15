@@ -1400,6 +1400,7 @@ export const folderIcons: FolderTheme[] = [
           color: 'cyan-A700',
         },
       },
+      { name: 'folder-appwrite', folderNames: ['appwrite'] },
       { name: 'folder-go', folderNames: ['go', 'golang'] },
     ],
   },
