@@ -3468,7 +3468,7 @@ export const fileIcons: FileIcons = {
       fileNames: ['appwrite.json', 'appwrite.js', 'appwrite.ts'],
     },
     {
-      name: 'eas',
+      name: 'expo',
       fileNames: ['eas.json', '.easignore'],
       light: true,
     },
