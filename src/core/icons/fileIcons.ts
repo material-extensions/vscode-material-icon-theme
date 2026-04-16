@@ -3464,9 +3464,8 @@ export const fileIcons: FileIcons = {
       clone: { base: 'lib', color: 'cyan-A700' },
     },
     {
-      name: 'eas',
-      fileNames: ['eas.json', '.easignore'],
-      light: true,
+      name: 'appwrite',
+      fileNames: ['appwrite.json', 'appwrite.js', 'appwrite.ts'],
     },
   ]),
 };
