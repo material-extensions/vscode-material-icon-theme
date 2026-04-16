@@ -1401,6 +1401,14 @@ export const folderIcons: FolderTheme[] = [
         },
       },
       { name: 'folder-appwrite', folderNames: ['appwrite'] },
+      {
+        name: 'folder-eas',
+        folderNames: ['eas', '.eas'],
+        clone: {
+          base: 'folder-expo',
+          color: 'gray-800',
+        },
+      },
     ],
   },
   {
