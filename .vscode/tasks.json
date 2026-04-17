@@ -2,8 +2,8 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "type": "bun",
-      "script": "bun run build",
+      "type": "shell",
+      "command": "bun run build",
       "problemMatcher": [],
       "label": "bun: build",
       "detail": "bun run build",
@@ -13,8 +13,8 @@
       }
     },
     {
-      "type": "bun",
-      "script": "bun run test",
+      "type": "shell",
+      "command": "bun run test",
       "problemMatcher": [],
       "label": "bun: test",
       "detail": "bun run test",
