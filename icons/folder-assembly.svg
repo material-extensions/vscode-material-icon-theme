@@ -1,15 +1,10 @@
-<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
 	<path
-		id="folder"
-		fill="#F44336"
+		stroke="none" fill="#FF6E40"
 		d="m6.922 3.768-.644-.536A1 1 0 0 0 5.638 3H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H7.562a1 1 0 0 1-.64-.232"
 	/>
 	<path
-		id="motive"
-		transform="translate(1,1)"
-		fill="none" stroke="#FFCDD2" stroke-width="1"
-		d="M 1.5,13 v -4 m 0.5,-0.5 h 2 m 0.5,0.5 v 4 m 0,-2.5 h -3
-			M 9,8.5 h -2.5 v 2 h 2 v 2 h -2.5
-			M 10.5,13 v -4 m 0.5,-0.5 h 1 m 0.5,0.5 v 4 m 0.5,-4.5 h 1 m 0.5,0.5 v 4"
+		stroke="none" fill="#FFCCBC"
+		d="m 9,6 c 0,1 0,1 -1,1 v 1 h 1 v 2 h 1 v -4 z m 3,0 a 1,1 0 0 0 -1,1 v 2 a 1,1 0 0 0 1,1 h 1 a 1,1 0 0 0 1,-1 v -2 a 1,1 0 0 0 -1,-1 z m 0,1 h 1 v 2 h -1 z m -3,4 a 1,1 0 0 0 -1,1 v 2 a 1,1 0 0 0 1,1 h 1 a 1,1 0 0 0 1,-1 v -2 a 1,1 0 0 0 -1,-1 z m 4,0 c 0,1 0,1 -1,1 v 1 h 1 v 2 h 1 v -4 z m -4,1 h 1 v 2 h -1 z"
 	/>
 </svg>
