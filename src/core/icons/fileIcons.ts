@@ -77,6 +77,26 @@ export const fileIcons: FileIcons = {
         'playwright-ct.config.ts',
         'playwright-ct.config.cts',
         'playwright-ct.config.mts',
+
+        // support for .config/[name].[ext] proposal
+        'playwright.config.js',
+        'playwright.config.cjs',
+        'playwright.config.mjs',
+        'playwright.config.ts',
+        'playwright.config.cts',
+        'playwright.config.mts',
+        'playwright.config.base.js',
+        'playwright.config.base.cjs',
+        'playwright.config.base.mjs',
+        'playwright.config.base.ts',
+        'playwright.config.base.cts',
+        'playwright.config.base.mts',
+        'playwright-ct.config.js',
+        'playwright-ct.config.cjs',
+        'playwright-ct.config.mjs',
+        'playwright-ct.config.ts',
+        'playwright-ct.config.cts',
+        'playwright-ct.config.mts',
       ],
     },
     {
@@ -359,6 +379,14 @@ export const fileIcons: FileIcons = {
     {
       name: 'astro-config',
       fileNames: [
+        'astro.config.js',
+        'astro.config.mjs',
+        'astro.config.cjs',
+        'astro.config.ts',
+        'astro.config.cts',
+        'astro.config.mts',
+
+        // support for .config/[name].[ext] proposal
         'astro.config.js',
         'astro.config.mjs',
         'astro.config.cjs',
@@ -672,6 +700,8 @@ export const fileIcons: FileIcons = {
         'keystatic.config.ts',
         'keystatic.config.jsx',
         'keystatic.config.js',
+
+        // support for .config/[name].[ext] proposal
       ],
     },
     {
@@ -2011,6 +2041,9 @@ export const fileIcons: FileIcons = {
       name: 'prisma',
       fileNames: ['prisma.yml', 'prisma.config.ts'],
       fileExtensions: ['prisma'],
+      patterns: {
+        prisma: FileNamePattern.DotConfigDirectory,
+      }
     },
     { name: 'razor', fileExtensions: ['cshtml', 'vbhtml'] },
     { name: 'abc', fileExtensions: ['abc'] },
