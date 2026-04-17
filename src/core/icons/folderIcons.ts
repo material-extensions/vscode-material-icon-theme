@@ -1388,6 +1388,19 @@ export const folderIcons: FolderTheme[] = [
           color: 'gray-700',
         },
       },
+      {
+        name: 'folder-skills',
+        folderNames: ['skill', 'skills'],
+      },
+      {
+        name: 'folder-instructions',
+        folderNames: ['instruction', 'instructions'],
+        clone: {
+          base: 'folder-meta',
+          color: 'cyan-A700',
+        },
+      },
+      { name: 'folder-appwrite', folderNames: ['appwrite'] },
       { name: 'folder-assembly', folderNames: ['assembly', 'asm'] },
     ],
   },
