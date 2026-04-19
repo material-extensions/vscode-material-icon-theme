@@ -152,6 +152,14 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-gh-workflows', folderNames: ['github/workflows'] },
       {
+        name: 'folder-gitea-workflows',
+        folderNames: ['gitea/workflows'],
+        clone: {
+          base: 'folder-gh-workflows',
+          color: 'light-green-700',
+        },
+      },
+      {
         name: 'folder-git',
         folderNames: ['git', 'patches', 'githooks', 'submodules'],
       },
@@ -1405,6 +1413,8 @@ export const folderIcons: FolderTheme[] = [
         },
       },
       { name: 'folder-appwrite', folderNames: ['appwrite'] },
+      { name: 'folder-assembly', folderNames: ['assembly', 'asm'] },
+      { name: 'folder-go', folderNames: ['go', 'golang'] },
     ],
   },
   {
