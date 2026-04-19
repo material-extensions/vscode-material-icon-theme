@@ -151,7 +151,7 @@ export const folderIcons: FolderTheme[] = [
         ],
       },
       { name: 'folder-gh-workflows', folderNames: ['github/workflows'] },
-      {  
+      {
         name: 'folder-gitea-workflows',
         folderNames: ['gitea/workflows'],
         clone: {
