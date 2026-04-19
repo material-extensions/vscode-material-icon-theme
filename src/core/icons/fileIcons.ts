@@ -3288,6 +3288,7 @@ export const fileIcons: FileIcons = {
     { name: 'regedit', fileExtensions: ['reg'] },
     { name: 'cline', fileNames: ['.clinerules'] },
     { name: 'gnuplot', fileExtensions: ['gnu'] },
+    { name: 'crossplane', fileNames: ['crossplane.yaml', 'crossplane.yml'] },
     {
       name: 'packship',
       fileNames: [
