@@ -1401,6 +1401,7 @@ export const folderIcons: FolderTheme[] = [
         },
       },
       { name: 'folder-appwrite', folderNames: ['appwrite'] },
+      { name: 'folder-go', folderNames: ['go', 'golang'] },
     ],
   },
   {
