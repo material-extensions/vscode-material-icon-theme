@@ -1258,6 +1258,7 @@ export const fileIcons: FileIcons = {
     { name: 'solidity', fileExtensions: ['sol'] },
     { name: 'autoit', fileExtensions: ['au3'] },
     { name: 'haml', fileExtensions: ['haml'] },
+    { name: 'tapl-lang', fileExtensions: ['tim'] },
     { name: 'yang', fileExtensions: ['yang'] },
     {
       name: 'mjml',
