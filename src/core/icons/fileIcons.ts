@@ -3476,5 +3476,9 @@ export const fileIcons: FileIcons = {
         'tsdown.config',
       ],
     },
+    {
+      name: 'appwrite',
+      fileNames: ['appwrite.json', 'appwrite.js', 'appwrite.ts'],
+    },
   ]),
 };
