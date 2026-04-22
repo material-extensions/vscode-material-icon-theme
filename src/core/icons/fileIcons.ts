@@ -1294,7 +1294,7 @@ export const fileIcons: FileIcons = {
         'next.config.mjs',
         'next.config.ts',
         'next.config.mts',
-        'next.env.d.ts'
+        'next.env.d.ts',
       ],
       light: true,
     },
