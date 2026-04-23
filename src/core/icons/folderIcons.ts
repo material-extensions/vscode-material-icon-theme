@@ -1418,6 +1418,17 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-appwrite', folderNames: ['appwrite'] },
       { name: 'folder-assembly', folderNames: ['assembly', 'asm'] },
       { name: 'folder-go', folderNames: ['go', 'golang'] },
+      { 
+        name: 'folder-cmake',
+        folderNames: [
+          'cmake',
+          'cmake-build', 'cmake-builds', 'cmake_build', 'cmake_builds', 
+          'cmake-builds-debug', 'cmake-build-debug', 'cmake_build_debug', 'cmake_builds_debug',
+          'cmake-build-release', 'cmake-builds-release', 'cmake_build_release', 'cmake_builds_release',
+          'cmake-cache', 'cmake_cache',
+          'cmake-presets', 'cmake-preset', 'cmake_presets', 'cmake_preset',
+         ],
+      }
     ],
   },
   {
