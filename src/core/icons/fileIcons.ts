@@ -44,6 +44,7 @@ export const fileIcons: FileIcons = {
         '.whitesource',
       ],
     },
+    { name: 'json_schema', fileExtensions: ['schema.json'] },
     {
       name: 'hjson',
       fileExtensions: ['hjson'],
@@ -113,6 +114,7 @@ export const fileIcons: FileIcons = {
       fileNames: ['.htaccess'],
     },
     { name: 'toml', fileExtensions: ['toml'], light: true },
+    { name: 'toon', fileExtensions: ['toon'] },
     {
       name: 'image',
       fileExtensions: [
@@ -338,6 +340,10 @@ export const fileIcons: FileIcons = {
       name: 'typescript-def',
       fileExtensions: ['d.ts', 'd.cts', 'd.mts', 'd.ets'],
     },
+    {
+      name: 'typedoc',
+      fileNames: ['typedoc.js', 'typedoc.json'],
+    },
     { name: 'markdoc', fileExtensions: ['mdoc', 'markdoc', 'markdoc.md'] },
     {
       name: 'markdoc-config',
@@ -384,6 +390,7 @@ export const fileIcons: FileIcons = {
         'csproj',
         'ruleset',
         'sln',
+        'slnf',
         'slnx',
         'suo',
         'vb',
@@ -392,6 +399,7 @@ export const fileIcons: FileIcons = {
         'vcxitems.filters',
         'vcxproj',
         'vcxproj.filters',
+        'wixproj',
       ],
       fileNames: ['.vsconfig'],
     },
@@ -507,7 +515,7 @@ export const fileIcons: FileIcons = {
     { name: 'h', fileExtensions: ['h'] },
     {
       name: 'cpp',
-      fileExtensions: ['cc', 'cpp', 'cxx', 'c++', 'cp', 'mii', 'ii'],
+      fileExtensions: ['cc', 'cpp', 'cxx', 'c++', 'cp', 'mii', 'ii', 'cppm'],
     },
     {
       name: 'hpp',
@@ -543,7 +551,7 @@ export const fileIcons: FileIcons = {
       name: 'ruff',
       fileNames: ['ruff.toml', '.ruff.toml'],
     },
-    { name: 'uv', fileNames: ['uv.toml', '.uv.toml'] },
+    { name: 'uv', fileNames: ['uv.toml', '.uv.toml', 'uv.lock'] },
     {
       name: 'scons',
       light: true,
@@ -602,6 +610,9 @@ export const fileIcons: FileIcons = {
     {
       name: 'certificate',
       fileExtensions: ['cer', 'cert', 'crt'],
+    },
+    {
+      name: 'license',
       fileNames: [
         'copying',
         'copying.md',
@@ -631,9 +642,11 @@ export const fileIcons: FileIcons = {
         'licence.md',
         'licence.rst',
         'licence.txt',
-        'unlicense',
-        'unlicense.txt',
       ],
+    },
+    {
+      name: 'unlicense',
+      fileNames: ['unlicense', 'unlicense.txt'],
     },
     {
       name: 'key',
@@ -700,8 +713,15 @@ export const fileIcons: FileIcons = {
     { name: 'fsharp', fileExtensions: ['fs', 'fsx', 'fsi', 'fsproj'] },
     {
       name: 'swift',
-      fileExtensions: ['swift'],
-      fileNames: ['.swift-format', '.swift-version'],
+      fileExtensions: [
+        'swift',
+        'xcplayground',
+        'swiftdeps',
+        'swiftdoc',
+        'swiftmodule',
+        'swiftsourceinfo',
+      ],
+      fileNames: ['.swift-format', '.swift-version', '.swiftformat'],
     },
     { name: 'arduino', fileExtensions: ['ino'] },
     {
@@ -1297,7 +1317,14 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'terraform',
-      fileExtensions: ['tf', 'tf.json', 'tfvars', 'tfstate', 'tfbackend'],
+      fileExtensions: [
+        'tf',
+        'tf.json',
+        'tfvars',
+        'tfstate',
+        'tfbackend',
+        'terraformignore',
+      ],
     },
     {
       name: 'opentofu',
@@ -1399,12 +1426,14 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'rstack',
-      fileNames: ['rspress.config.ts', 'rslint.json', 'rslint.jsonc'],
+      fileNames: ['rslint.json', 'rslint.jsonc'],
       patterns: {
         'rspack.config': FileNamePattern.Ecmascript,
         'rsbuild.config': FileNamePattern.Ecmascript,
         'rslib.config': FileNamePattern.Ecmascript,
         'rstest.config': FileNamePattern.Ecmascript,
+        'rspress.config': FileNamePattern.Ecmascript,
+        'rslint.config': FileNamePattern.Ecmascript,
       },
     },
     {
@@ -1472,6 +1501,8 @@ export const fileIcons: FileIcons = {
         '.env.dist',
         '.env.prod',
         '.env.production',
+        '.env.prod.example',
+        '.env.production.example',
         '.env.stg',
         '.env.stage',
         '.env.staging',
@@ -1892,6 +1923,7 @@ export const fileIcons: FileIcons = {
         'story.tsx',
         'stories.svelte',
         'story.mdx',
+        'stories.vue',
       ],
     },
     { name: 'wepy', fileExtensions: ['wpy'] },
@@ -2358,7 +2390,7 @@ export const fileIcons: FileIcons = {
     {
       name: 'nuget',
       fileNames: ['nuget.config', '.nuspec', 'nuget.exe'],
-      fileExtensions: ['nupkg'],
+      fileExtensions: ['nupkg', 'nuspec'],
     },
     { name: 'command', fileExtensions: ['command'] },
     {
@@ -2478,6 +2510,12 @@ export const fileIcons: FileIcons = {
       name: 'velite',
       patterns: {
         'velite.config': FileNamePattern.Ecmascript,
+      },
+    },
+    {
+      name: 'rolldown',
+      patterns: {
+        'rolldown.config': FileNamePattern.Ecmascript,
       },
     },
     { name: 'opa', fileExtensions: ['rego'] },
@@ -2919,12 +2957,19 @@ export const fileIcons: FileIcons = {
         'panda.config': FileNamePattern.Ecmascript,
       },
     },
-    { name: 'biome', fileNames: ['biome.json', 'biome.jsonc'] },
+    {
+      name: 'biome',
+      fileNames: ['biome.json', 'biome.jsonc', '.biome.json', '.biome.jsonc'],
+    },
     {
       name: 'esbuild',
       patterns: {
         esbuild: FileNamePattern.Ecmascript,
         'esbuild.config': FileNamePattern.Ecmascript,
+        'esbuild.dev': FileNamePattern.Ecmascript,
+        'esbuild.stage': FileNamePattern.Ecmascript,
+        'esbuild.prod': FileNamePattern.Ecmascript,
+        'esbuild.test': FileNamePattern.Ecmascript,
       },
     },
     { name: 'spwn', fileExtensions: ['spwn'] },
@@ -3141,7 +3186,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'label',
-      fileNames: ['.github/labeler.yml', '.github/labeler.yaml'],
+      fileNames: ['.github/labeler.yml', '.github/labeler.yaml', 'tags'],
     },
     {
       name: 'zeabur',
@@ -3304,7 +3349,17 @@ export const fileIcons: FileIcons = {
     },
     { name: 'blender', fileExtensions: ['blend', 'blend1', 'blend2'] },
     { name: 'tsdoc', fileNames: ['tsdoc.json'] },
-    { name: 'oxlint', fileNames: ['.oxlintrc.json'] },
+    {
+      name: 'oxc',
+      fileNames: [
+        '.oxlintrc.json',
+        '.oxlintrc.jsonc',
+        '.oxfmtrc.json',
+        '.oxfmtrc.jsonc',
+        'oxlint.config.ts',
+        'oxfmt.config.ts',
+      ],
+    },
     {
       name: 'vanilla-extract',
       fileExtensions: [
@@ -3409,8 +3464,37 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['cue'],
     },
     {
+      name: 'lean',
+      fileExtensions: ['lean'],
+    },
+    {
+      name: 'salt',
+      fileExtensions: ['sls'],
+    },
+    {
       name: 'warp',
       fileNames: ['warp.md'],
+      light: true,
+    },
+    { name: 'macaulay2', fileExtensions: ['m2'] },
+    {
+      name: 'skill',
+      fileNames: ['skill.md'],
+      fileExtensions: ['skill.md', 'skills.md'],
+    },
+    {
+      name: 'instructions',
+      fileNames: ['instructions.md', 'instruction.md'],
+      fileExtensions: ['instructions.md', 'instruction.md'],
+      clone: { base: 'lib', color: 'cyan-A700' },
+    },
+    {
+      name: 'appwrite',
+      fileNames: ['appwrite.json', 'appwrite.js', 'appwrite.ts'],
+    },
+    {
+      name: 'expo',
+      fileNames: ['eas.json', '.easignore'],
       light: true,
     },
   ]),

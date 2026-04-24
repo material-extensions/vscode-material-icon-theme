@@ -13,7 +13,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-rust', folderNames: ['rust'] },
       {
         name: 'folder-robot',
-        folderNames: ['bot', 'bots', 'robot', 'robots'],
+        folderNames: ['bot', 'bots', 'robot', 'robots', 'agent', 'agents'],
       },
       {
         name: 'folder-src',
@@ -25,6 +25,7 @@ export const folderIcons: FolderTheme[] = [
           'dist',
           'out',
           'output',
+          'outputs',
           'build',
           'builds',
           'release',
@@ -143,9 +144,21 @@ export const folderIcons: FolderTheme[] = [
           'wiki',
           'news',
           'blog',
+          'knowledge',
+          'diary',
+          'note',
+          'notes',
         ],
       },
       { name: 'folder-gh-workflows', folderNames: ['github/workflows'] },
+      {
+        name: 'folder-gitea-workflows',
+        folderNames: ['gitea/workflows'],
+        clone: {
+          base: 'folder-gh-workflows',
+          color: 'light-green-700',
+        },
+      },
       {
         name: 'folder-git',
         folderNames: ['git', 'patches', 'githooks', 'submodules'],
@@ -245,8 +258,11 @@ export const folderIcons: FolderTheme[] = [
           'libraries',
           'vendor',
           'vendors',
+          'thirdparty',
           'third-party',
           'lib64',
+          'external',
+          'externals',
         ],
       },
       {
@@ -278,6 +294,7 @@ export const folderIcons: FolderTheme[] = [
           'site',
           'browser',
           'browsers',
+          'proxy',
         ],
       },
       {
@@ -295,6 +312,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-docker',
         folderNames: ['docker', 'dockerfiles', 'dockerhub'],
       },
+      { name: 'folder-nginx', folderNames: ['nginx'] },
       {
         name: 'folder-ngrx-store',
         folderNames: ['store'],
@@ -356,7 +374,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-redux-reducer',
-        folderNames: ['reducers', 'reducer'],
+        folderNames: ['reducers', 'reducer', 'redux-reducer', 'redux-reducers'],
         enabledFor: [IconPack.Redux],
       },
       {
@@ -366,6 +384,15 @@ export const folderIcons: FolderTheme[] = [
         clone: {
           base: 'folder-redux-reducer',
           color: 'purple-400',
+        },
+      },
+      {
+        name: 'folder-redux-toolkit',
+        folderNames: ['redux', 'redux-toolkit'],
+        enabledFor: [IconPack.Redux],
+        clone: {
+          base: 'folder-redux-reducer',
+          color: 'purple-300',
         },
       },
       {
@@ -405,6 +432,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-database',
         folderNames: ['db', 'data', 'database', 'databases', 'sql'],
       },
+      { name: 'folder-migrations', folderNames: ['migrations', 'migration'] },
       { name: 'folder-log', folderNames: ['log', 'logs', 'logging'] },
       { name: 'folder-target', folderNames: ['target'] },
       {
@@ -427,6 +455,8 @@ export const folderIcons: FolderTheme[] = [
           'voice',
           'voices',
           'recordings',
+          'playlist',
+          'playlists',
         ],
       },
       {
@@ -538,6 +568,7 @@ export const folderIcons: FolderTheme[] = [
           'benchmark',
           'benchmarks',
           'bench',
+          'benches',
           'performance',
           'perf',
           'profiling',
@@ -576,6 +607,10 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-python',
         folderNames: ['python', 'pycache', 'pytest_cache'],
+      },
+      {
+        name: 'folder-r',
+        folderNames: ['r'],
       },
       {
         name: 'folder-sandbox',
@@ -634,7 +669,16 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-ansible', folderNames: ['ansible'] },
       {
         name: 'folder-server',
-        folderNames: ['server', 'servers', 'backend', 'backends'],
+        folderNames: [
+          'server',
+          'servers',
+          'backend',
+          'backends',
+          'inventory',
+          'inventories',
+          'infrastructure',
+          'infra',
+        ],
       },
       {
         name: 'folder-client',
@@ -767,6 +811,8 @@ export const folderIcons: FolderTheme[] = [
           'calcs',
           'calculation',
           'calculations',
+          'composable',
+          'composables',
         ],
       },
       {
@@ -1097,7 +1143,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-project',
-        folderNames: ['project', 'projects'],
+        folderNames: ['project', 'projects', 'proj', 'projs'],
       },
       {
         name: 'folder-prompts',
@@ -1231,6 +1277,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['favicon', 'favicons'],
       },
       {
+        name: 'folder-features',
+        folderNames: ['feature', 'features', 'feat', 'feats'],
+      },
+      {
         name: 'folder-lefthook',
         folderNames: ['lefthook', 'lefthook-local'],
       },
@@ -1297,8 +1347,16 @@ export const folderIcons: FolderTheme[] = [
         light: true,
       },
       {
+        name: 'folder-gemini-ai',
+        folderNames: ['.gemini', 'gemini', 'gemini-ai', 'geminiai'],
+      },
+      {
         name: 'folder-input',
         folderNames: ['input', 'inputs', 'io', 'in'],
+      },
+      {
+        name: 'folder-salt',
+        folderNames: ['salt', 'saltstack'],
       },
       {
         name: 'folder-simulations',
@@ -1321,9 +1379,54 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['cue', 'cues'],
       },
       {
-        name: 'folder-certificate',
+        name: 'folder-license',
         folderNames: ['license', 'licenses'],
       },
+      { name: 'folder-form', folderNames: ['form', 'forms'] },
+      {
+        name: 'folder-deprecated',
+        folderNames: ['deprecated'],
+        clone: {
+          base: 'folder-archive',
+          color: 'gray-700',
+        },
+      },
+      {
+        name: 'folder-scrap',
+        folderNames: ['scrap'],
+        clone: {
+          base: 'folder-trash',
+          color: 'gray-700',
+        },
+      },
+      {
+        name: 'folder-postman',
+        folderNames: ['postman'],
+      },
+      {
+        name: 'folder-skills',
+        folderNames: ['skill', 'skills'],
+      },
+      {
+        name: 'folder-instructions',
+        folderNames: ['instruction', 'instructions'],
+        clone: {
+          base: 'folder-meta',
+          color: 'cyan-A700',
+        },
+      },
+      { name: 'folder-appwrite', folderNames: ['appwrite'] },
+      { name: 'folder-assembly', folderNames: ['assembly', 'asm'] },
+      { name: 'folder-go', folderNames: ['go', 'golang'] },
+      {
+        name: 'folder-eas',
+        folderNames: ['eas'],
+        clone: {
+          base: 'folder-expo',
+          color: 'gray-800',
+        },
+      },
+      { name: 'folder-kotlin', folderNames: ['kotlin'] },
     ],
   },
   {
