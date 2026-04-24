@@ -1418,6 +1418,14 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-appwrite', folderNames: ['appwrite'] },
       { name: 'folder-assembly', folderNames: ['assembly', 'asm'] },
       { name: 'folder-go', folderNames: ['go', 'golang'] },
+      {
+        name: 'folder-eas',
+        folderNames: ['eas'],
+        clone: {
+          base: 'folder-expo',
+          color: 'gray-800',
+        },
+      },
       { name: 'folder-kotlin', folderNames: ['kotlin'] },
     ],
   },
