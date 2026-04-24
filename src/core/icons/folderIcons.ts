@@ -1420,7 +1420,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-go', folderNames: ['go', 'golang'] },
       {
         name: 'folder-eas',
-        folderNames: ['eas', '.eas'],
+        folderNames: ['eas'],
         clone: {
           base: 'folder-expo',
           color: 'gray-800',
