@@ -152,6 +152,14 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-gh-workflows', folderNames: ['github/workflows'] },
       {
+        name: 'folder-gitea-workflows',
+        folderNames: ['gitea/workflows'],
+        clone: {
+          base: 'folder-gh-workflows',
+          color: 'light-green-700',
+        },
+      },
+      {
         name: 'folder-git',
         folderNames: ['git', 'patches', 'githooks', 'submodules'],
       },
@@ -250,8 +258,11 @@ export const folderIcons: FolderTheme[] = [
           'libraries',
           'vendor',
           'vendors',
+          'thirdparty',
           'third-party',
           'lib64',
+          'external',
+          'externals',
         ],
       },
       {
@@ -1389,6 +1400,10 @@ export const folderIcons: FolderTheme[] = [
         },
       },
       {
+        name: 'folder-postman',
+        folderNames: ['postman'],
+      },
+      {
         name: 'folder-skills',
         folderNames: ['skill', 'skills'],
       },
@@ -1401,6 +1416,18 @@ export const folderIcons: FolderTheme[] = [
         },
       },
       { name: 'folder-zed', folderNames: ['zed'] },
+      { name: 'folder-appwrite', folderNames: ['appwrite'] },
+      { name: 'folder-assembly', folderNames: ['assembly', 'asm'] },
+      { name: 'folder-go', folderNames: ['go', 'golang'] },
+      {
+        name: 'folder-eas',
+        folderNames: ['eas'],
+        clone: {
+          base: 'folder-expo',
+          color: 'gray-800',
+        },
+      },
+      { name: 'folder-kotlin', folderNames: ['kotlin'] },
     ],
   },
   {
