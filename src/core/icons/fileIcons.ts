@@ -3474,7 +3474,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'agent',
-      fileNames: ['agents.md']
+      fileNames: ['agents.md'],
     },
   ]),
 };
