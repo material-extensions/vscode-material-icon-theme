@@ -1426,6 +1426,7 @@ export const folderIcons: FolderTheme[] = [
           color: 'gray-800',
         },
       },
+      { name: 'folder-kotlin', folderNames: ['kotlin'] },
     ],
   },
   {
