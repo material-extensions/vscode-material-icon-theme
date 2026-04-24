@@ -1419,6 +1419,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-assembly', folderNames: ['assembly', 'asm'] },
       { name: 'folder-go', folderNames: ['go', 'golang'] },
       { name: 'folder-internal', folderNames: ['internal'] },
+      { name: 'folder-kotlin', folderNames: ['kotlin'] },
     ],
   },
   {
