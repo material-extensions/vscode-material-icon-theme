@@ -3472,5 +3472,9 @@ export const fileIcons: FileIcons = {
       fileNames: ['eas.json', '.easignore'],
       light: true,
     },
+    {
+      name: 'agent',
+      fileNames: ['agents.md'],
+    },
   ]),
 };
