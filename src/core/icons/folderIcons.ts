@@ -424,6 +424,7 @@ export const folderIcons: FolderTheme[] = [
         ],
         enabledFor: [IconPack.React, IconPack.Redux],
       },
+
       {
         name: 'folder-astro',
         folderNames: ['astro'],
@@ -1087,6 +1088,11 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['update', 'updates', 'upgrade', 'upgrades'],
       },
       { name: 'folder-intellij', folderNames: ['idea'], light: true },
+
+      {
+        name: 'folder-ai',
+        folderNames: ['ai', '.ai', 'artificial-intelligence'],
+      },
       {
         name: 'folder-azure-pipelines',
         folderNames: ['azure-pipelines', 'azure-pipelines-ci'],
