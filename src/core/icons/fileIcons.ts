@@ -3464,6 +3464,19 @@ export const fileIcons: FileIcons = {
       clone: { base: 'lib', color: 'cyan-A700' },
     },
     {
+      name: 'tsdown',
+      fileNames: [
+        'tsdown.config.ts',
+        'tsdown.config.mts',
+        'tsdown.config.cts',
+        'tsdown.config.js',
+        'tsdown.config.mjs',
+        'tsdown.config.cjs',
+        'tsdown.config.json',
+        'tsdown.config',
+      ],
+    },
+    {
       name: 'appwrite',
       fileNames: ['appwrite.json', 'appwrite.js', 'appwrite.ts'],
     },
