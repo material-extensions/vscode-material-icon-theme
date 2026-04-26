@@ -314,6 +314,10 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-nginx', folderNames: ['nginx'] },
       {
+        name: 'folder-dooor',
+        folderNames: ['dooor'],
+      },
+      {
         name: 'folder-ngrx-store',
         folderNames: ['store'],
         enabledFor: [IconPack.Ngrx],
