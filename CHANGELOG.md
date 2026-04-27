@@ -2,6 +2,29 @@
 
 # Changelog
 
+## v5.34.0
+
+[compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.33.1...v5.34.0)
+
+### 🚀 Enhancements
+
+- **icon:** Add appwrite icons ([#3392](https://github.com/material-extensions/vscode-material-icon-theme/pull/3392))
+- **icon:** Add go-lang folder icon ([#3391](https://github.com/material-extensions/vscode-material-icon-theme/pull/3391))
+- **icon:** Assembly file/folder icons ([#3397](https://github.com/material-extensions/vscode-material-icon-theme/pull/3397))
+- Added gitea workflows icon ([#3427](https://github.com/material-extensions/vscode-material-icon-theme/pull/3427))
+- Add Postman Folder ([#3376](https://github.com/material-extensions/vscode-material-icon-theme/pull/3376))
+- Add external, externals and thirdparty to folder-lib icons ([#3434](https://github.com/material-extensions/vscode-material-icon-theme/pull/3434))
+- **icon:** Add kotlin folder icon ([#3431](https://github.com/material-extensions/vscode-material-icon-theme/pull/3431))
+- New icons for eas files ([#3425](https://github.com/material-extensions/vscode-material-icon-theme/pull/3425))
+
+### ❤️ Contributors
+
+- Vinicius Celestino De Oliveira Pereira ([@ViniDevBR](https://github.com/ViniDevBR))
+- Sayan Shankhari ([@SayanShankhari](https://github.com/SayanShankhari))
+- Vortex ([@Vortex2Oblivion](https://github.com/Vortex2Oblivion))
+- Cameron Cowen ([@milkyware](https://github.com/milkyware))
+- Aura Herrero Ruiz ([@AuraHerreroRuiz](https://github.com/AuraHerreroRuiz))
+
 ## v5.33.1
 
 [compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.33.0...v5.33.1)
