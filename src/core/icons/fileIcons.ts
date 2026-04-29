@@ -1266,7 +1266,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'vercel',
-      fileNames: ['vercel.json', "vercel.ts", '.vercelignore', 'now.json', '.nowignore'],
+      fileNames: ['vercel.json', 'vercel.ts', '.vercelignore', 'now.json', '.nowignore'],
       light: true,
     },
     {
