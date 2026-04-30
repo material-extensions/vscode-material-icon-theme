@@ -1928,6 +1928,19 @@ export const fileIcons: FileIcons = {
     },
     { name: 'wepy', fileExtensions: ['wpy'] },
     { name: 'fastlane', fileNames: ['fastfile', 'appfile'] },
+    {
+      name: 'fileonix',
+      fileNames: [
+        'fileonix.config.json',
+        'fileonix.config.ts',
+        'fileonix.config.js',
+        '.fileonixrc',
+      ],
+      patterns: {
+        fileonix: FileNamePattern.NodeEcosystem,
+      },
+    },
+
     { name: 'hcl', fileExtensions: ['hcl'], light: true },
     { name: 'helm', fileNames: ['.helmignore'] },
     { name: 'san', fileExtensions: ['san'] },
