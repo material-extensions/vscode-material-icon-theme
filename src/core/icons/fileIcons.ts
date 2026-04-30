@@ -140,6 +140,7 @@ export const fileIcons: FileIcons = {
         'jbig2',
         'jb2',
         'jng',
+        'jxl',
         'jxr',
         'pgf',
         'pic',
