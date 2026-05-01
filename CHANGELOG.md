@@ -2,6 +2,76 @@
 
 # Changelog
 
+## v5.34.0
+
+[compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.33.1...v5.34.0)
+
+### 🚀 Enhancements
+
+- **icon:** Add appwrite icons ([#3392](https://github.com/material-extensions/vscode-material-icon-theme/pull/3392))
+- **icon:** Add go-lang folder icon ([#3391](https://github.com/material-extensions/vscode-material-icon-theme/pull/3391))
+- **icon:** Assembly file/folder icons ([#3397](https://github.com/material-extensions/vscode-material-icon-theme/pull/3397))
+- Added gitea workflows icon ([#3427](https://github.com/material-extensions/vscode-material-icon-theme/pull/3427))
+- Add Postman Folder ([#3376](https://github.com/material-extensions/vscode-material-icon-theme/pull/3376))
+- Add external, externals and thirdparty to folder-lib icons ([#3434](https://github.com/material-extensions/vscode-material-icon-theme/pull/3434))
+- **icon:** Add kotlin folder icon ([#3431](https://github.com/material-extensions/vscode-material-icon-theme/pull/3431))
+- New icons for eas files ([#3425](https://github.com/material-extensions/vscode-material-icon-theme/pull/3425))
+
+### ❤️ Contributors
+
+- Vinicius Celestino De Oliveira Pereira ([@ViniDevBR](https://github.com/ViniDevBR))
+- Sayan Shankhari ([@SayanShankhari](https://github.com/SayanShankhari))
+- Vortex ([@Vortex2Oblivion](https://github.com/Vortex2Oblivion))
+- Cameron Cowen ([@milkyware](https://github.com/milkyware))
+- Aura Herrero Ruiz ([@AuraHerreroRuiz](https://github.com/AuraHerreroRuiz))
+
+## v5.33.1
+
+[compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.33.0...v5.33.1)
+
+### 🩹 Fixes
+
+- **workflows:** Release to npm ([0e16f306](https://github.com/material-extensions/vscode-material-icon-theme/commit/0e16f306))
+
+### ❤️ Contributors
+
+- Philipp Kief ([@PKief](https://github.com/PKief))
+
+## v5.33.0
+
+[compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.32.0...v5.33.0)
+
+### 🚀 Enhancements
+
+- Add `tags` file icon ([#3375](https://github.com/material-extensions/vscode-material-icon-theme/pull/3375))
+- **icon:** Nginx folder icon ([#3197](https://github.com/material-extensions/vscode-material-icon-theme/pull/3197))
+- **icon:** Add R language folder icon ([#3387](https://github.com/material-extensions/vscode-material-icon-theme/pull/3387))
+- **icon:** Add json_schema file icon ([#3380](https://github.com/material-extensions/vscode-material-icon-theme/pull/3380))
+- **icon:** Add deprecated/scrap folder icon ([#3384](https://github.com/material-extensions/vscode-material-icon-theme/pull/3384))
+- Add `oxfmt.config.ts` to icons ([#3398](https://github.com/material-extensions/vscode-material-icon-theme/pull/3398))
+- **i18n:** Add Arabic translation ([#3401](https://github.com/material-extensions/vscode-material-icon-theme/pull/3401))
+- Add additional env icon file names ([f7de1c32](https://github.com/material-extensions/vscode-material-icon-theme/commit/f7de1c32))
+- Add rolldown icon ([#3411](https://github.com/material-extensions/vscode-material-icon-theme/pull/3411))
+- Update file icon patterns for Rspress and Rslint ([#3414](https://github.com/material-extensions/vscode-material-icon-theme/pull/3414))
+- Add folder and icon for skills ([#3367](https://github.com/material-extensions/vscode-material-icon-theme/pull/3367))
+
+### 🩹 Fixes
+
+- Add nuspec to nuget file extensions ([#3377](https://github.com/material-extensions/vscode-material-icon-theme/pull/3377))
+- Add wixproj to visualstudio file extensions ([#3383](https://github.com/material-extensions/vscode-material-icon-theme/pull/3383))
+
+### ❤️ Contributors
+
+- Vinicius Celestino De Oliveira Pereira ([@ViniDevBR](https://github.com/ViniDevBR))
+- Neverland ([@vant-ui](https://github.com/vant-ui))
+- Philipp Kief ([@PKief](https://github.com/PKief))
+- FireMoonStudio ([@FireMoonStudio](https://github.com/FireMoonStudio))
+- Roman ([@gameroman](https://github.com/gameroman))
+- Sayan Shankhari ([@SayanShankhari](https://github.com/SayanShankhari))
+- Hugo Sant'Anna ([@hugosantanna](https://github.com/hugosantanna))
+- LoryPelli ([@lorypelli](https://github.com/lorypelli))
+- Sean Fausett ([@gitfool](https://github.com/gitfool))
+
 ## v5.32.0
 
 [compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.31.0...v5.32.0)
