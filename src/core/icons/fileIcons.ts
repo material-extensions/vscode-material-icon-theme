@@ -140,6 +140,7 @@ export const fileIcons: FileIcons = {
         'jbig2',
         'jb2',
         'jng',
+        'jxl',
         'jxr',
         'pgf',
         'pic',
@@ -1266,7 +1267,13 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'vercel',
-      fileNames: ['vercel.json', '.vercelignore', 'now.json', '.nowignore'],
+      fileNames: [
+        'vercel.json',
+        'vercel.ts',
+        '.vercelignore',
+        'now.json',
+        '.nowignore',
+      ],
       light: true,
     },
     {
