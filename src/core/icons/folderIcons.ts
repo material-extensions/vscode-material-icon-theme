@@ -87,7 +87,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-scripts',
-        folderNames: ['script', 'scripts', 'scripting'],
+        folderNames: ['script', 'scripts', 'scripting', 'xtask'],
       },
       {
         name: 'folder-node',
@@ -263,6 +263,7 @@ export const folderIcons: FolderTheme[] = [
           'lib64',
           'external',
           'externals',
+          'crates',
         ],
       },
       {
