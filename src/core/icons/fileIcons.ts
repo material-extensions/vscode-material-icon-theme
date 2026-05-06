@@ -17,7 +17,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'markdown',
-      fileExtensions: ['md', 'markdown', 'rst'],
+      fileExtensions: ['rst'],
     },
     { name: 'blink', fileExtensions: ['blink'], light: true },
     { name: 'css', fileExtensions: ['css'] },
