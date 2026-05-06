@@ -1431,7 +1431,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-kotlin', folderNames: ['kotlin'] },
       {
         name: 'folder-redis',
-        folderNames: ['redis', 'redis-db'],
+        folderNames: ['redis', 'redis-db', 'redislabs'],
         clone: { base: 'folder-database', color: '#EF5350' },
       },
     ],
