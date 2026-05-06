@@ -1416,6 +1416,7 @@ export const folderIcons: FolderTheme[] = [
           color: 'cyan-A700',
         },
       },
+      { name: 'folder-zed', folderNames: ['zed'] },
       { name: 'folder-appwrite', folderNames: ['appwrite'] },
       { name: 'folder-assembly', folderNames: ['assembly', 'asm'] },
       { name: 'folder-go', folderNames: ['go', 'golang'] },
