@@ -140,6 +140,7 @@ export const fileIcons: FileIcons = {
         'jbig2',
         'jb2',
         'jng',
+        'jxl',
         'jxr',
         'pgf',
         'pic',
@@ -1266,7 +1267,13 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'vercel',
-      fileNames: ['vercel.json', '.vercelignore', 'now.json', '.nowignore'],
+      fileNames: [
+        'vercel.json',
+        'vercel.ts',
+        '.vercelignore',
+        'now.json',
+        '.nowignore',
+      ],
       light: true,
     },
     {
@@ -3477,6 +3484,7 @@ export const fileIcons: FileIcons = {
       light: true,
     },
     { name: 'macaulay2', fileExtensions: ['m2'] },
+    { name: 'uiua', fileExtensions: ['ua'] },
     {
       name: 'skill',
       fileNames: ['skill.md'],
@@ -3487,6 +3495,19 @@ export const fileIcons: FileIcons = {
       fileNames: ['instructions.md', 'instruction.md'],
       fileExtensions: ['instructions.md', 'instruction.md'],
       clone: { base: 'lib', color: 'cyan-A700' },
+    },
+    {
+      name: 'tsdown',
+      fileNames: [
+        'tsdown.config.ts',
+        'tsdown.config.mts',
+        'tsdown.config.cts',
+        'tsdown.config.js',
+        'tsdown.config.mjs',
+        'tsdown.config.cjs',
+        'tsdown.config.json',
+        'tsdown.config',
+      ],
     },
     {
       name: 'appwrite',
@@ -3500,6 +3521,10 @@ export const fileIcons: FileIcons = {
     {
       name: 'agent',
       fileNames: ['agents.md'],
+    },
+    {
+      name: 'mrpack',
+      fileExtensions: ['mrpack'],
     },
   ]),
 };
