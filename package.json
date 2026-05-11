@@ -468,7 +468,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.4.15",
-    "@commitlint/config-conventional": "^20.0.0",
+    "@commitlint/config-conventional": "^21.0.0",
     "@softarc/sheriff-core": "^0.19.1",
     "@types/chroma-js": "^3.1.1",
     "@types/puppeteer": "^7.0.4",
@@ -476,16 +476,16 @@
     "axios": "^1.11.0",
     "bun-types": "^1.2.20",
     "changelogen": "0.6.2",
-    "commitlint": "^20.0.0",
+    "commitlint": "^21.0.0",
     "esbuild": "^0.28.0",
     "husky": "^9.1.7",
-    "lint-staged": "^16.1.5",
+    "lint-staged": "^17.0.0",
     "markdownlint-cli": "^0.48.0",
     "puppeteer": "^24.16.1",
     "rimraf": "^6.0.1",
     "svg-color-linter": "^3.0.0",
     "svgo": "^4.0.0",
-    "typescript": "^5.9.2"
+    "typescript": "^6.0.0"
   },
   "patchedDependencies": {
     "changelogen@0.6.2": "patches/changelogen@0.6.2.patch"
