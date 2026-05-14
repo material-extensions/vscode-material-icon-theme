@@ -1,8 +1,7 @@
 import { join } from 'node:path';
-import { writeToFile } from '../../core';
+import { toTitleCase, writeToFile } from '../../core';
 import { green, red } from '../helpers/painter';
 import { createScreenshot } from '../helpers/screenshots';
-import { toTitleCase } from './../helpers/titleCase';
 
 const htmlDoctype = '<!DOCTYPE html>';
 const cssFilePath = 'style.css';
