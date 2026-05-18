@@ -1,1 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="#4caf50" d="M28.967 12H9.442a2 2 0 0 0-1.898 1.368L4 24V10h24a2 2 0 0 0-2-2H15.124a2 2 0 0 1-1.28-.464l-1.288-1.072A2 2 0 0 0 11.276 6H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h22l4.805-11.212A2 2 0 0 0 28.967 12"/><path fill="#c8e6c9" d="m20 24-6-2v-6l6 2zm10-2h-4v-6l6 4z"/><path fill="#a5d6a7" d="m20 24 6-2v-6l-6 2zm6 4 6-2v-6l-6 2z"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+<path id="folder" fill="#4caf50" d="M14.483 6H4.721a1 1 0 0 0-.949.684L2 12V5h12a1 1 0 0 0-1-1H7.562a1 1 0 0 1-.64-.232l-.644-.536A1 1 0 0 0 5.638 3H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h11l2.403-5.606A1 1 0 0 0 14.483 6" />
+<g id="motive">
+<path fill="#c8e6c9" d="M 10,12 7,11 V 8 l 3,1 z m 5,-1 H 13 V 8 l 3,2 z" />
+<path fill="#a5d6a7" d="m 10,12 3,-1 V 8 l -3,1 z m 3,2 3,-1 v -3 l -3,1 z" />
+</g>
+</svg>
