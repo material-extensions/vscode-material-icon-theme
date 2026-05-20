@@ -1,5 +1,9 @@
 import chroma, { type Color } from 'chroma-js';
 import { collectColors } from '../../../../helpers/svg';
+import {
+  closerMaterialColorTo,
+  getMaterialColorByKey,
+} from './materialPalette';
 
 /** Get all the colors used in an SVG string as a `Set` list. */
 export const getColorList = async (svg: string) => {
@@ -98,9 +102,3 @@ export const replacementMap = (baseColor: string, colors: Set<string>) => {
 
   return replacement;
 };
-
-// Re-export from materialPalette for backwards compatibility
-import {
-  closerMaterialColorTo,
-  getMaterialColorByKey,
-} from './materialPalette';
