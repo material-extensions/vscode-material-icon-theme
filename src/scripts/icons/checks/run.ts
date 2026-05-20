@@ -5,7 +5,7 @@ import { check as checkIconConflicts } from './checkIconConflicts';
 import { check as checkIconUsage } from './checkIconUsage';
 
 console.log('> Material Icon Theme:', yellow('Running icon checks...'));
-checkAvailability();
-checkIconUsage();
-checkIconConflicts();
+await checkAvailability();
+await checkIconUsage();
+await checkIconConflicts();
 await checkFolderIconStructure();
