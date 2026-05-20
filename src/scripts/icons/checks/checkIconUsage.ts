@@ -1,4 +1,4 @@
-import { readdir } from 'node:fs';
+import { readdir } from 'node:fs/promises';
 import { join, parse } from 'node:path';
 
 import {
@@ -19,45 +19,25 @@ import { green, red } from '../../helpers/painter';
  */
 const folderPath = join('icons');
 
-/**
- * Defines an array with all icons that can be found in the file system.
- */
-const availableIcons: { [s: string]: string } = {};
+export const check = async () => {
+  const files = await readdir(folderPath);
 
-/**
- * Get all icon file names from the file system.
- */
-const fsReadAllIconFiles = (
-  error: NodeJS.ErrnoException | null,
-  files: string[]
-) => {
-  if (error) {
-    throw Error(error.message);
+  const availableIcons: Record<string, string> = {};
+  for (const file of files) {
+    const iconName = parse(file).name.replace('.clone', '');
+    availableIcons[iconName] = file;
   }
 
-  files.forEach((file) => {
-    const fileName = file;
-    const iconName = parse(file).name.replace('.clone', '');
-    availableIcons[iconName] = fileName;
-  });
-
-  checkUsageOfAllIcons();
-  handleErrors();
-};
-
-const checkUsageOfAllIcons = () => {
-  const usedFileIcons: string[] = getAllUsedFileIcons();
-  const usedFolderIcons: string[] = getAllUsedFolderIcons();
-  const usedLanguageIcons: string[] = getAllUsedLanguageIcons();
+  const usedFileIcons = getAllUsedFileIcons();
+  const usedFolderIcons = getAllUsedFolderIcons();
+  const usedLanguageIcons = getAllUsedLanguageIcons();
 
   [...usedFileIcons, ...usedFolderIcons, ...usedLanguageIcons].forEach(
     (icon) => {
       delete availableIcons[icon];
     }
   );
-};
 
-const handleErrors = () => {
   const amountOfUnusedIcons = Object.keys(availableIcons).length;
   if (amountOfUnusedIcons === 0) {
     console.log('> Material Icon Theme:', green('Passed icon usage checks!'));
@@ -71,9 +51,6 @@ const handleErrors = () => {
     throw new Error('Found unused icon files!');
   }
 };
-
-// read from the file system
-export const check = () => readdir(folderPath, fsReadAllIconFiles);
 
 const getAllUsedFileIcons = (): string[] => {
   return [

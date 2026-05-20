@@ -20,7 +20,7 @@ const allConflicts: {
   languageIcons: {},
 };
 
-export const check = () => {
+export const check = async () => {
   checkFolderIcons();
   checkFileIcons();
   checkLanguageIcons();
