@@ -19,35 +19,57 @@ import { green, red } from '../../helpers/painter';
  */
 const folderPath = join('icons');
 
+/**
+ * Given a set of icon names on disk and a set of used icon names,
+ * returns the list of icons that exist on disk but are not used.
+ */
+export function findUnusedIcons(
+  iconsOnDisk: string[],
+  usedIcons: Set<string>
+): string[] {
+  return iconsOnDisk.filter((icon) => !usedIcons.has(icon));
+}
+
+/**
+ * Collects all icon names that are referenced by the icon configuration.
+ */
+export function collectUsedIconNames(): Set<string> {
+  const used = new Set<string>();
+
+  // File icons
+  for (const name of getAllUsedFileIcons()) {
+    if (name) used.add(name);
+  }
+
+  // Folder icons
+  for (const name of getAllUsedFolderIcons()) {
+    if (name) used.add(name);
+  }
+
+  // Language icons
+  for (const name of getAllUsedLanguageIcons()) {
+    if (name) used.add(name);
+  }
+
+  return used;
+}
+
 export const check = async () => {
   const files = await readdir(folderPath);
 
-  const availableIcons: Record<string, string> = {};
-  for (const file of files) {
-    const iconName = parse(file).name.replace('.clone', '');
-    availableIcons[iconName] = file;
-  }
+  const iconsOnDisk = files.map((f) => parse(f).name.replace('.clone', ''));
+  const usedIcons = collectUsedIconNames();
+  const unused = findUnusedIcons(iconsOnDisk, usedIcons);
 
-  const usedFileIcons = getAllUsedFileIcons();
-  const usedFolderIcons = getAllUsedFolderIcons();
-  const usedLanguageIcons = getAllUsedLanguageIcons();
-
-  [...usedFileIcons, ...usedFolderIcons, ...usedLanguageIcons].forEach(
-    (icon) => {
-      delete availableIcons[icon];
-    }
-  );
-
-  const amountOfUnusedIcons = Object.keys(availableIcons).length;
-  if (amountOfUnusedIcons === 0) {
+  if (unused.length === 0) {
     console.log('> Material Icon Theme:', green('Passed icon usage checks!'));
   } else {
     console.log(
-      '> Material Icon Theme: ' + red(`${amountOfUnusedIcons} unused icon(s):`)
+      '> Material Icon Theme: ' + red(`${unused.length} unused icon(s):`)
     );
-    Object.keys(availableIcons).forEach((icon) => {
-      console.log(red(`- ${availableIcons[icon]}`));
-    });
+    for (const icon of unused) {
+      console.log(red(`- ${icon}`));
+    }
     throw new Error('Found unused icon files!');
   }
 };

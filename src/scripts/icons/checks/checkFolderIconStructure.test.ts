@@ -1,83 +1,8 @@
 import { describe, expect, it } from 'bun:test';
-import {
-  countElements,
-  getAttribute,
-  getElements,
-  hasAttributeMatching,
-  hasElementMatching,
-} from '../../../core/helpers/svg';
-
-/**
- * Tests for the folder icon structure check logic.
- * Validates that folder SVGs are correctly identified as valid or invalid.
- */
+import { validateFolderSvg } from './checkFolderIconStructure';
 
 const CLOSED_FOLDER_PATH =
   'm6.922 3.768-.644-.536A1 1 0 0 0 5.638 3H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H7.562a1 1 0 0 1-.64-.232';
-
-/** Helper that replicates the validation logic from checkFolderIconStructure */
-async function validateFolderSvg(content: string): Promise<string[]> {
-  const errors: string[] = [];
-
-  if (content.startsWith('<?xml')) {
-    errors.push('Contains XML declaration');
-  }
-
-  const [viewBox] = await getAttribute(content, 'svg', 'viewBox');
-  if (viewBox !== '0 0 16 16') {
-    errors.push(`viewBox must be "0 0 16 16", found "${viewBox || 'none'}"`);
-  }
-
-  const folderCount = await countElements(content, '#folder');
-  if (folderCount === 0) {
-    errors.push('Missing element with id="folder"');
-  } else if (folderCount > 1) {
-    errors.push(`Found ${folderCount} elements with id="folder"`);
-  } else {
-    const [folder] = await getElements(content, '#folder');
-    if (folder.tagName !== 'path') {
-      errors.push(
-        `Element with id="folder" must be a <path>, found <${folder.tagName}>`
-      );
-    } else {
-      const d = (folder.attributes.d || '').replace(/\s+/g, ' ').trim();
-      if (d !== CLOSED_FOLDER_PATH) {
-        errors.push('Incorrect folder path data');
-      }
-    }
-  }
-
-  const motiveCount = await countElements(content, '#motive');
-  if (motiveCount === 0) {
-    errors.push('Missing element with id="motive"');
-  } else if (motiveCount > 1) {
-    errors.push(`Found ${motiveCount} elements with id="motive"`);
-  }
-
-  const hasInkscapeAttrs = await hasAttributeMatching(
-    content,
-    '*',
-    (name) =>
-      name.startsWith('inkscape:') ||
-      name.startsWith('sodipodi:') ||
-      name.startsWith('xmlns:inkscape') ||
-      name.startsWith('xmlns:sodipodi')
-  );
-  if (hasInkscapeAttrs) {
-    errors.push('Contains Inkscape/Sodipodi metadata');
-  }
-
-  const hasInkscapeElements = await hasElementMatching(
-    content,
-    '*',
-    (tagName) => tagName.includes('sodipodi') || tagName.includes('inkscape')
-  );
-  if (hasInkscapeElements) {
-    errors.push('Contains Inkscape/Sodipodi elements');
-  }
-
-  return errors;
-}
 
 describe('folder icon structure validation', () => {
   describe('valid folder icons', () => {
@@ -132,7 +57,9 @@ describe('folder icon structure validation', () => {
     it('should fail when folder path data is wrong', async () => {
       const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path id="folder" fill="#4caf50" d="M0 0h16v16H0z"/><path id="motive" fill="#c8e6c9" d="M7 8"/></svg>`;
       const errors = await validateFolderSvg(svg);
-      expect(errors).toContain('Incorrect folder path data');
+      expect(errors).toContain(
+        'Element with id="folder" has incorrect path data (must use the canonical closed folder path)'
+      );
     });
 
     it('should fail when there are multiple folder elements', async () => {
@@ -160,13 +87,17 @@ describe('folder icon structure validation', () => {
     it('should fail when Inkscape namespace attributes are present', async () => {
       const svg = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" viewBox="0 0 16 16"><path id="folder" fill="#4caf50" d="${CLOSED_FOLDER_PATH}"/><path id="motive" fill="#c8e6c9" d="M7 8"/></svg>`;
       const errors = await validateFolderSvg(svg);
-      expect(errors).toContain('Contains Inkscape/Sodipodi metadata');
+      expect(errors).toContain(
+        'Contains Inkscape/Sodipodi metadata (please clean with SVGO or remove manually)'
+      );
     });
 
     it('should fail when sodipodi elements are present', async () => {
       const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><sodipodi:namedview id="nv"/><path id="folder" fill="#4caf50" d="${CLOSED_FOLDER_PATH}"/><path id="motive" fill="#c8e6c9" d="M7 8"/></svg>`;
       const errors = await validateFolderSvg(svg);
-      expect(errors).toContain('Contains Inkscape/Sodipodi elements');
+      expect(errors).toContain(
+        'Contains Inkscape/Sodipodi elements (please remove manually)'
+      );
     });
   });
 
@@ -174,7 +105,9 @@ describe('folder icon structure validation', () => {
     it('should fail when XML declaration is present', async () => {
       const svg = `<?xml version="1.0"?><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path id="folder" fill="#4caf50" d="${CLOSED_FOLDER_PATH}"/><path id="motive" fill="#c8e6c9" d="M7 8"/></svg>`;
       const errors = await validateFolderSvg(svg);
-      expect(errors).toContain('Contains XML declaration');
+      expect(errors).toContain(
+        'Contains XML declaration (<?xml ...?>), which should be removed'
+      );
     });
   });
 
@@ -189,121 +122,5 @@ describe('folder icon structure validation', () => {
       expect(errors).toContain('Missing element with id="folder"');
       expect(errors).toContain('Missing element with id="motive"');
     });
-  });
-});
-
-describe('icon availability validation', () => {
-  it('should detect icons referenced in config but missing from filesystem', async () => {
-    // This tests the core logic: given a list of files and config,
-    // identify missing icons
-    const availableFiles = ['folder-src.svg', 'folder-git.svg', 'rust.svg'];
-    const referencedIcons = [
-      'folder-src',
-      'folder-git',
-      'folder-missing',
-      'rust',
-    ];
-
-    const available = new Set(availableFiles.map((f) => f.replace('.svg', '')));
-    const missing = referencedIcons.filter((icon) => !available.has(icon));
-
-    expect(missing).toEqual(['folder-missing']);
-  });
-});
-
-describe('icon usage validation', () => {
-  it('should detect files on disk that are not referenced by any config', () => {
-    const filesOnDisk = ['folder-src.svg', 'folder-old.svg', 'rust.svg'];
-    const usedIcons = new Set(['folder-src', 'rust']);
-
-    const unused = filesOnDisk
-      .map((f) => f.replace('.svg', ''))
-      .filter((icon) => !usedIcons.has(icon));
-
-    expect(unused).toEqual(['folder-old']);
-  });
-});
-
-describe('icon conflict validation', () => {
-  it('should detect duplicate file extension assignments', () => {
-    const assignments: { extension: string; icon: string }[] = [
-      { extension: 'ts', icon: 'typescript' },
-      { extension: 'js', icon: 'javascript' },
-      { extension: 'ts', icon: 'typescript-alt' },
-    ];
-
-    const seen: Record<string, string> = {};
-    const conflicts: Record<string, string[]> = {};
-
-    for (const { extension, icon } of assignments) {
-      if (!seen[extension]) {
-        seen[extension] = icon;
-      } else {
-        if (!conflicts[extension]) {
-          conflicts[extension] = [seen[extension], icon];
-        } else {
-          conflicts[extension].push(icon);
-        }
-      }
-    }
-
-    expect(conflicts).toEqual({
-      ts: ['typescript', 'typescript-alt'],
-    });
-  });
-
-  it('should detect duplicate folder name assignments', () => {
-    const assignments: { folder: string; icon: string }[] = [
-      { folder: 'src', icon: 'folder-src' },
-      { folder: 'lib', icon: 'folder-lib' },
-      { folder: 'src', icon: 'folder-source' },
-    ];
-
-    const seen: Record<string, string> = {};
-    const conflicts: Record<string, string[]> = {};
-
-    for (const { folder, icon } of assignments) {
-      if (!seen[folder]) {
-        seen[folder] = icon;
-      } else {
-        if (!conflicts[folder]) {
-          conflicts[folder] = [seen[folder], icon];
-        } else {
-          conflicts[folder].push(icon);
-        }
-      }
-    }
-
-    expect(conflicts).toEqual({
-      src: ['folder-src', 'folder-source'],
-    });
-  });
-
-  it('should not flag icon pack overrides as conflicts', () => {
-    const assignments: {
-      extension: string;
-      icon: string;
-      enabledFor?: string[];
-    }[] = [
-      { extension: 'ts', icon: 'typescript' },
-      { extension: 'ts', icon: 'typescript-angular', enabledFor: ['angular'] },
-    ];
-
-    const seen: Record<string, string> = {};
-    const conflicts: Record<string, string[]> = {};
-
-    for (const { extension, icon, enabledFor } of assignments) {
-      if (!seen[extension] || (enabledFor && enabledFor.length > 0)) {
-        seen[extension] = icon;
-      } else {
-        if (!conflicts[extension]) {
-          conflicts[extension] = [seen[extension], icon];
-        } else {
-          conflicts[extension].push(icon);
-        }
-      }
-    }
-
-    expect(conflicts).toEqual({});
   });
 });

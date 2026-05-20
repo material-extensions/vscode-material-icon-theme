@@ -58,92 +58,83 @@ function shouldValidate(fileName: string): boolean {
 }
 
 /**
- * Validate a single folder SVG file.
+ * Validate a folder SVG's content against the structural requirements.
+ * Returns an array of error messages (empty if valid).
  */
-async function validateFile(filePath: string): Promise<string[]> {
+export async function validateFolderSvg(content: string): Promise<string[]> {
   const errors: string[] = [];
 
-  try {
-    const content = await readFile(filePath, 'utf8');
+  // 1. Check for XML declaration
+  if (content.startsWith('<?xml')) {
+    errors.push(
+      'Contains XML declaration (<?xml ...?>), which should be removed'
+    );
+  }
 
-    // 1. Check for XML declaration
-    if (content.startsWith('<?xml')) {
+  // 2. Check viewBox
+  const [viewBox] = await getAttribute(content, 'svg', 'viewBox');
+  if (viewBox !== '0 0 16 16') {
+    errors.push(`viewBox must be "0 0 16 16", found "${viewBox || 'none'}"`);
+  }
+
+  // 3. Check for exactly one element with id="folder"
+  const folderCount = await countElements(content, '#folder');
+  if (folderCount === 0) {
+    errors.push('Missing element with id="folder"');
+  } else if (folderCount > 1) {
+    errors.push(
+      `Found ${folderCount} elements with id="folder", expected exactly 1`
+    );
+  } else {
+    // 4. Verify the folder element is a path with correct d
+    const [folder] = await getElements(content, '#folder');
+    if (folder.tagName !== 'path') {
       errors.push(
-        'Contains XML declaration (<?xml ...?>), which should be removed'
-      );
-    }
-
-    // 2. Check viewBox
-    const [viewBox] = await getAttribute(content, 'svg', 'viewBox');
-    if (viewBox !== '0 0 16 16') {
-      errors.push(`viewBox must be "0 0 16 16", found "${viewBox || 'none'}"`);
-    }
-
-    // 3. Check for exactly one element with id="folder"
-    const folderCount = await countElements(content, '#folder');
-    if (folderCount === 0) {
-      errors.push('Missing element with id="folder"');
-    } else if (folderCount > 1) {
-      errors.push(
-        `Found ${folderCount} elements with id="folder", expected exactly 1`
+        `Element with id="folder" must be a <path>, found <${folder.tagName}>`
       );
     } else {
-      // 4. Verify the folder element is a path with correct d
-      const [folder] = await getElements(content, '#folder');
-      if (folder.tagName !== 'path') {
+      const d = (folder.attributes.d || '').replace(/\s+/g, ' ').trim();
+      if (d !== CLOSED_FOLDER_PATH) {
         errors.push(
-          `Element with id="folder" must be a <path>, found <${folder.tagName}>`
+          'Element with id="folder" has incorrect path data (must use the canonical closed folder path)'
         );
-      } else {
-        const d = (folder.attributes.d || '').replace(/\s+/g, ' ').trim();
-        if (d !== CLOSED_FOLDER_PATH) {
-          errors.push(
-            'Element with id="folder" has incorrect path data (must use the canonical closed folder path)'
-          );
-        }
       }
     }
+  }
 
-    // 5. Check for at least one element with id="motive"
-    const motiveCount = await countElements(content, '#motive');
-    if (motiveCount === 0) {
-      errors.push('Missing element with id="motive"');
-    } else if (motiveCount > 1) {
-      errors.push(
-        `Found ${motiveCount} elements with id="motive", expected exactly 1`
-      );
-    }
-
-    // 6. Check for Inkscape metadata
-    const hasInkscapeAttrs = await hasAttributeMatching(
-      content,
-      '*',
-      (name) =>
-        name.startsWith('inkscape:') ||
-        name.startsWith('sodipodi:') ||
-        name.startsWith('xmlns:inkscape') ||
-        name.startsWith('xmlns:sodipodi')
-    );
-    if (hasInkscapeAttrs) {
-      errors.push(
-        'Contains Inkscape/Sodipodi metadata (please clean with SVGO or remove manually)'
-      );
-    }
-
-    const hasInkscapeElements = await hasElementMatching(
-      content,
-      '*',
-      (tagName) => tagName.includes('sodipodi') || tagName.includes('inkscape')
-    );
-    if (hasInkscapeElements) {
-      errors.push(
-        'Contains Inkscape/Sodipodi elements (please remove manually)'
-      );
-    }
-  } catch (err) {
+  // 5. Check for at least one element with id="motive"
+  const motiveCount = await countElements(content, '#motive');
+  if (motiveCount === 0) {
+    errors.push('Missing element with id="motive"');
+  } else if (motiveCount > 1) {
     errors.push(
-      `Failed to parse: ${err instanceof Error ? err.message : String(err)}`
+      `Found ${motiveCount} elements with id="motive", expected exactly 1`
     );
+  }
+
+  // 6. Check for Inkscape metadata
+  const hasInkscapeAttrs = await hasAttributeMatching(
+    content,
+    '*',
+    (name) =>
+      name.startsWith('inkscape:') ||
+      name.startsWith('sodipodi:') ||
+      name.startsWith('xmlns:inkscape') ||
+      name.startsWith('xmlns:sodipodi')
+  );
+  if (hasInkscapeAttrs) {
+    errors.push(
+      'Contains Inkscape/Sodipodi metadata (please clean with SVGO or remove manually)'
+    );
+  }
+
+  const hasInkscapeElements = await hasElementMatching(
+    content,
+    '*',
+    (tagName) => tagName.includes('sodipodi') || tagName.includes('inkscape')
+  );
+  if (hasInkscapeElements) {
+    errors.push('Contains Inkscape/Sodipodi elements (please remove manually)');
   }
 
   return errors;
@@ -160,7 +151,8 @@ export async function check(): Promise<void> {
 
   for (const file of folderSvgs) {
     const filePath = join(ICONS_DIR, file);
-    const errors = await validateFile(filePath);
+    const content = await readFile(filePath, 'utf8');
+    const errors = await validateFolderSvg(content);
     if (errors.length > 0) {
       validationErrors.push({ file, errors });
     }
