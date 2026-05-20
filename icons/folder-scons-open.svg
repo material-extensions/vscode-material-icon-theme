@@ -1,4 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-<path id="folder" fill="#ef5350" d="M14.483 6H4.721a1 1 0 0 0-.949.684L2 12V5h12a1 1 0 0 0-1-1H7.562a1 1 0 0 1-.64-.232l-.644-.536A1 1 0 0 0 5.638 3H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h11l2.403-5.606A1 1 0 0 0 14.483 6" />
-<path id="motive" fill="#ffcdd2" d="m 6,12 h 4 v 2 H 6 Z m 6,0 h 4 v 2 H 12 Z M 6,9 h 2 v 2 H 6 Z m 8,0 h 2 v 2 H 14 Z M 9,5 h 4 V 7 H 9 Z m 2,7 -2,-2 h 1 V 8 h 2 v 2 h 1 z" />
-</svg>

@@ -1,41 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg
-   viewBox="0 0 32 32"
-   version="1.1"
-   id="svg2"
-   sodipodi:docname="folder-supabase.svg"
-   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-  <defs
-     id="defs2" />
-  <sodipodi:namedview
-     id="namedview2"
-     pagecolor="#505050"
-     bordercolor="#ffffff"
-     borderopacity="1"
-     inkscape:showpageshadow="0"
-     inkscape:pageopacity="0"
-     inkscape:pagecheckerboard="1"
-     inkscape:deskcolor="#505050"
-     inkscape:zoom="24.8125"
-     inkscape:cx="16"
-     inkscape:cy="16"
-     inkscape:window-width="1920"
-     inkscape:window-height="1000"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="svg2" />
-  <path
-     fill="#66bb6a"
-     d="m13.844 7.536-1.288-1.072A2 2 0 0 0 11.276 6H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h24a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2H15.124a2 2 0 0 1-1.28-.464"
-     id="path1" />
-  <path
-     fill="#c8e6c9"
-     d="m 15.000001,8.9996946 h -3 v -3.249681 a 0.25,0.2500139 0 0 0 -0.45,-0.150008 l -3.1500008,4.200233 a 0.74999999,0.75004171 0 0 0 0.6,1.2000674 h 3.0000008 v 3.249681 a 0.25,0.2500139 0 0 0 0.45,0.150008 l 3.15,-4.200234 a 0.74999999,0.75004171 0 0 0 -0.6,-1.2000664"
-     id="path2"
-     style="stroke-width:0.500015" />
+<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+<path fill="#66bb6a" d="m6.922 3.768-.644-.536A1 1 0 0 0 5.638 3H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H7.562a1 1 0 0 1-.64-.232" id="folder"/>
+<path fill="#c8e6c9" d="m 7.5,4.499847 h -1.5 v -1.62484 a 0.125,0.125007 0 0 0 -0.225,-0.075004 l -1.575,2.100116 a 0.375,0.375021 0 0 0 0.3,0.600034 h 1.5 v 1.62484 a 0.125,0.125007 0 0 0 0.225,0.075004 l 1.575,-2.100117 a 0.375,0.375021 0 0 0 -0.3,-0.600033" style="stroke-width:0.250007" id="motive"/>
 </svg>
