@@ -16,6 +16,10 @@ export const fileIcons: FileIcons = {
       fileNames: ['.pug-lintrc', '.pug-lintrc.js', '.pug-lintrc.json'],
     },
     {
+      name: 'fplusplus',
+      fileExtensions: ['fpp'],
+    },
+    {
       name: 'markdown',
       fileExtensions: ['md', 'markdown', 'rst'],
     },
