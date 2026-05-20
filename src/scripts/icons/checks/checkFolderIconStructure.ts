@@ -13,7 +13,13 @@
 
 import { readdir, readFile } from 'node:fs/promises';
 import { join } from 'node:path';
-import { type INode, parse } from 'svgson';
+import {
+  countElements,
+  getAttribute,
+  getElements,
+  hasAttributeMatching,
+  hasElementMatching,
+} from '../../../core/helpers/svg';
 import { green, red } from '../../helpers/painter';
 
 const ICONS_DIR = join(process.cwd(), 'icons');
@@ -52,94 +58,44 @@ function shouldValidate(fileName: string): boolean {
 }
 
 /**
- * Find all elements with a given id in the SVG tree.
- */
-function findElementsById(node: INode, id: string): INode[] {
-  const results: INode[] = [];
-
-  if (node.attributes?.id === id) {
-    results.push(node);
-  }
-
-  if (node.children) {
-    for (const child of node.children) {
-      results.push(...findElementsById(child, id));
-    }
-  }
-
-  return results;
-}
-
-/**
- * Check for Inkscape/Sodipodi metadata in the SVG tree.
- */
-function hasInkscapeMetadata(node: INode): boolean {
-  // Check attributes
-  for (const key of Object.keys(node.attributes || {})) {
-    if (
-      key.startsWith('inkscape:') ||
-      key.startsWith('sodipodi:') ||
-      key.startsWith('xmlns:inkscape') ||
-      key.startsWith('xmlns:sodipodi')
-    ) {
-      return true;
-    }
-  }
-
-  // Check for sodipodi elements
-  if (node.name === 'sodipodi:namedview' || node.name.startsWith('inkscape:')) {
-    return true;
-  }
-
-  // Check children
-  if (node.children) {
-    for (const child of node.children) {
-      if (hasInkscapeMetadata(child)) {
-        return true;
-      }
-    }
-  }
-
-  return false;
-}
-
-/**
  * Validate a single folder SVG file.
  */
-async function validateFile(
-  filePath: string,
-  fileName: string
-): Promise<string[]> {
+async function validateFile(filePath: string): Promise<string[]> {
   const errors: string[] = [];
 
   try {
     const content = await readFile(filePath, 'utf8');
-    const svg = await parse(content);
 
-    // 1. Check viewBox
-    if (svg.attributes.viewBox !== '0 0 16 16') {
+    // 1. Check for XML declaration
+    if (content.startsWith('<?xml')) {
       errors.push(
-        `viewBox must be "0 0 16 16", found "${svg.attributes.viewBox || 'none'}"`
+        'Contains XML declaration (<?xml ...?>), which should be removed'
       );
     }
 
-    // 2. Check for exactly one element with id="folder"
-    const folderElements = findElementsById(svg, 'folder');
-    if (folderElements.length === 0) {
+    // 2. Check viewBox
+    const [viewBox] = await getAttribute(content, 'svg', 'viewBox');
+    if (viewBox !== '0 0 16 16') {
+      errors.push(`viewBox must be "0 0 16 16", found "${viewBox || 'none'}"`);
+    }
+
+    // 3. Check for exactly one element with id="folder"
+    const folderCount = await countElements(content, '#folder');
+    if (folderCount === 0) {
       errors.push('Missing element with id="folder"');
-    } else if (folderElements.length > 1) {
+    } else if (folderCount > 1) {
       errors.push(
-        `Found ${folderElements.length} elements with id="folder", expected exactly 1`
+        `Found ${folderCount} elements with id="folder", expected exactly 1`
       );
     } else {
-      // 3. Verify the folder path is correct
-      const folderEl = folderElements[0];
-      if (folderEl.name !== 'path') {
+      // 4. Verify the folder element is a path with correct d
+      const [folder] = await getElements(content, '#folder');
+      if (folder.tagName !== 'path') {
         errors.push(
-          `Element with id="folder" must be a <path>, found <${folderEl.name}>`
+          `Element with id="folder" must be a <path>, found <${folder.tagName}>`
         );
       } else {
-        const d = (folderEl.attributes.d || '').replace(/\s+/g, ' ').trim();
+        const d = (folder.attributes.d || '').replace(/\s+/g, ' ').trim();
         if (d !== CLOSED_FOLDER_PATH) {
           errors.push(
             'Element with id="folder" has incorrect path data (must use the canonical closed folder path)'
@@ -148,27 +104,40 @@ async function validateFile(
       }
     }
 
-    // 4. Check for at least one element with id="motive"
-    const motiveElements = findElementsById(svg, 'motive');
-    if (motiveElements.length === 0) {
+    // 5. Check for at least one element with id="motive"
+    const motiveCount = await countElements(content, '#motive');
+    if (motiveCount === 0) {
       errors.push('Missing element with id="motive"');
-    } else if (motiveElements.length > 1) {
+    } else if (motiveCount > 1) {
       errors.push(
-        `Found ${motiveElements.length} elements with id="motive", expected exactly 1`
+        `Found ${motiveCount} elements with id="motive", expected exactly 1`
       );
     }
 
-    // 5. Check for Inkscape metadata
-    if (hasInkscapeMetadata(svg)) {
+    // 6. Check for Inkscape metadata
+    const hasInkscapeAttrs = await hasAttributeMatching(
+      content,
+      '*',
+      (name) =>
+        name.startsWith('inkscape:') ||
+        name.startsWith('sodipodi:') ||
+        name.startsWith('xmlns:inkscape') ||
+        name.startsWith('xmlns:sodipodi')
+    );
+    if (hasInkscapeAttrs) {
       errors.push(
         'Contains Inkscape/Sodipodi metadata (please clean with SVGO or remove manually)'
       );
     }
 
-    // 6. Check for xml declaration (not needed for SVG in this project)
-    if (content.startsWith('<?xml')) {
+    const hasInkscapeElements = await hasElementMatching(
+      content,
+      '*',
+      (tagName) => tagName.includes('sodipodi') || tagName.includes('inkscape')
+    );
+    if (hasInkscapeElements) {
       errors.push(
-        'Contains XML declaration (<?xml ...?>), which should be removed'
+        'Contains Inkscape/Sodipodi elements (please remove manually)'
       );
     }
   } catch (err) {
@@ -191,7 +160,7 @@ export async function check(): Promise<void> {
 
   for (const file of folderSvgs) {
     const filePath = join(ICONS_DIR, file);
-    const errors = await validateFile(filePath, file);
+    const errors = await validateFile(filePath);
     if (errors.length > 0) {
       validationErrors.push({ file, errors });
     }
@@ -234,7 +203,7 @@ export async function check(): Promise<void> {
 
 // Allow running directly
 if (import.meta.path === Bun.main) {
-  check().catch((err) => {
+  check().catch(() => {
     process.exit(1);
   });
 }

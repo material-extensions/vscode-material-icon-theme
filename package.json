@@ -465,8 +465,7 @@
     "biome": "^0.3.3",
     "chroma-js": "^3.1.2",
     "events": "^3.3.0",
-    "fast-deep-equal": "^3.1.3",
-    "svgson": "^5.3.1"
+    "fast-deep-equal": "^3.1.3"
   },
   "devDependencies": {
     "@biomejs/biome": "2.4.15",

@@ -1,48 +1,9 @@
 import chroma, { type Color } from 'chroma-js';
-import { type INode } from 'svgson';
-import { getStyle, traverse } from '../cloning';
-import {
-  closerMaterialColorTo,
-  getMaterialColorByKey,
-} from './materialPalette';
+import { collectColors } from '../../../../helpers/svg';
 
-/** Get all the colors used in the SVG node as a `Set` list. **/
-export const getColorList = (node: INode) => {
-  const colors = new Set<string>();
-
-  traverse(node, (node) => {
-    // check colors in style attribute
-    const style = getStyle(node);
-    if (style) {
-      if (style.fill && isValidColor(style.fill)) {
-        colors.add(style.fill);
-      }
-
-      if (style.stroke && isValidColor(style.stroke)) {
-        colors.add(style.stroke);
-      }
-    }
-
-    // check colors in svg attributes
-    if (node.attributes) {
-      if (node.attributes.fill && isValidColor(node.attributes.fill)) {
-        colors.add(node.attributes.fill);
-      }
-
-      if (node.attributes.stroke && isValidColor(node.attributes.stroke)) {
-        colors.add(node.attributes.stroke);
-      }
-
-      if (
-        node.attributes['stop-color'] &&
-        isValidColor(node.attributes['stop-color'])
-      ) {
-        colors.add(node.attributes['stop-color']);
-      }
-    }
-  });
-
-  return colors;
+/** Get all the colors used in an SVG string as a `Set` list. */
+export const getColorList = async (svg: string) => {
+  return collectColors(svg);
 };
 
 /** given a set of colors, orders them from dark to light. **/
@@ -137,3 +98,9 @@ export const replacementMap = (baseColor: string, colors: Set<string>) => {
 
   return replacement;
 };
+
+// Re-export from materialPalette for backwards compatibility
+import {
+  closerMaterialColorTo,
+  getMaterialColorByKey,
+} from './materialPalette';

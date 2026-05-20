@@ -11,7 +11,7 @@
 
 import { readdir, readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
-import { type INode, parse } from 'svgson';
+import { getAttribute, replaceAttribute } from '../../core/helpers/svg';
 
 const ICONS_DIR = join(process.cwd(), 'icons');
 
@@ -49,7 +49,6 @@ function isClosedFolderSvg(fileName: string): boolean {
  *   folder-git_highContrast.svg -> folder-git-open_highContrast.svg
  */
 function getOpenFileName(closedFileName: string): string {
-  // Handle _light and _highContrast suffixes
   const suffixMatch = closedFileName.match(
     /^(folder-.+?)(_(light|highContrast))?\.svg$/
   );
@@ -63,66 +62,6 @@ function getOpenFileName(closedFileName: string): string {
 }
 
 /**
- * Find the element with id="folder" in the SVG tree.
- */
-function findFolderElement(svg: INode): INode | null {
-  for (const child of svg.children) {
-    if (child.attributes?.id === 'folder') {
-      return child;
-    }
-  }
-  return null;
-}
-
-/**
- * Stringify a single node to SVG string.
- */
-function stringifyNode(node: INode): string {
-  if (node.type === 'text') {
-    return node.value || '';
-  }
-
-  const attrs = Object.entries(node.attributes)
-    .filter(([_, v]) => v !== undefined && v !== '')
-    .map(([k, v]) => `${k}="${escapeXml(v)}"`)
-    .join(' ');
-
-  const openTag = attrs ? `<${node.name} ${attrs}` : `<${node.name}`;
-
-  if (!node.children || node.children.length === 0) {
-    return `${openTag}/>`;
-  }
-
-  const childrenStr = node.children.map(stringifyNode).join('');
-  return `${openTag}>${childrenStr}</${node.name}>`;
-}
-
-function escapeXml(str: string): string {
-  return str.replace(/&/g, '&amp;').replace(/"/g, '&quot;');
-}
-
-/**
- * Format SVG output to match the project convention.
- */
-function formatSvgOutput(svg: INode): string {
-  const lines: string[] = [];
-
-  // Build opening tag
-  const attrs = Object.entries(svg.attributes)
-    .map(([k, v]) => `${k}="${v}"`)
-    .join(' ');
-  lines.push(`<svg ${attrs}>`);
-
-  // Serialize children
-  for (const child of svg.children) {
-    lines.push(stringifyNode(child));
-  }
-
-  lines.push('</svg>');
-  return lines.join('\n');
-}
-
-/**
  * Generate the open variant of a closed folder SVG.
  */
 async function generateOpenVariant(
@@ -131,18 +70,18 @@ async function generateOpenVariant(
 ): Promise<{ success: boolean; error?: string }> {
   try {
     const content = await readFile(closedFilePath, 'utf8');
-    const svg = await parse(content);
 
     // Verify structure
-    if (svg.attributes.viewBox !== '0 0 16 16') {
+    const [viewBox] = await getAttribute(content, 'svg', 'viewBox');
+    if (viewBox !== '0 0 16 16') {
       return {
         success: false,
-        error: `Unexpected viewBox: ${svg.attributes.viewBox}`,
+        error: `Unexpected viewBox: ${viewBox}`,
       };
     }
 
-    const folderElement = findFolderElement(svg);
-    if (!folderElement) {
+    const [folderD] = await getAttribute(content, '#folder', 'd');
+    if (!folderD) {
       return {
         success: false,
         error: 'No element with id="folder" found',
@@ -150,11 +89,13 @@ async function generateOpenVariant(
     }
 
     // Replace the folder path with the open variant
-    folderElement.attributes.d = OPEN_FOLDER_PATH;
-
-    // Write the open variant
-    const output = formatSvgOutput(svg);
-    await writeFile(openFilePath, output + '\n', 'utf8');
+    const output = await replaceAttribute(
+      content,
+      '#folder',
+      'd',
+      OPEN_FOLDER_PATH
+    );
+    await writeFile(openFilePath, output, 'utf8');
 
     return { success: true };
   } catch (err) {
