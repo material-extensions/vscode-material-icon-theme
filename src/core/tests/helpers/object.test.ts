@@ -1,59 +1,102 @@
 import { describe, expect, it } from 'bun:test';
-import { merge, set } from '../../helpers/object';
+import { get, merge, set } from '../../helpers/object';
 
-describe('set function its', () => {
-  it('should set value at root level', () => {
-    const obj: { a: number; b: number; c?: number } = { a: 1, b: 2 };
+describe('get', () => {
+  it('should get a value at the root level', () => {
+    const obj = { a: 1, b: 'hello' };
+    expect(get<number>(obj, 'a')).toBe(1);
+    expect(get<string>(obj, 'b')).toBe('hello');
+  });
+
+  it('should get a nested value', () => {
+    const obj = { a: { b: { c: 42 } } };
+    expect(get<number>(obj, 'a.b.c')).toBe(42);
+  });
+
+  it('should return undefined for a non-existent path', () => {
+    const obj = { a: { b: 1 } };
+    expect(get<number>(obj, 'a.c')).toBeUndefined();
+  });
+
+  it('should return undefined for a deeply non-existent path', () => {
+    const obj = { a: 1 };
+    expect(get<number>(obj, 'a.b.c.d')).toBeUndefined();
+  });
+
+  it('should return undefined for an empty path', () => {
+    const obj = { a: 1, b: 2 };
+    expect(get<number>(obj, '')).toBeUndefined();
+  });
+
+  it('should handle array bracket notation', () => {
+    const obj = { a: [{ b: 'x' }, { b: 'y' }] };
+    expect(get<string>(obj, 'a[0].b')).toBe('x');
+    expect(get<string>(obj, 'a[1].b')).toBe('y');
+  });
+
+  it('should return undefined when traversing into a primitive', () => {
+    const obj = { a: { b: 1 } };
+    expect(get<number>(obj, 'a.b.c')).toBeUndefined();
+  });
+});
+
+describe('set', () => {
+  it('should set a value at root level', () => {
+    const obj: Record<string, unknown> = { a: 1, b: 2 };
     set(obj, 'c', 3);
     expect(obj).toEqual({ a: 1, b: 2, c: 3 });
   });
 
-  it('should set value in a nested object', () => {
-    const obj: { a: { b: number; c?: number } } = { a: { b: 2 } };
+  it('should set a value in an existing nested object', () => {
+    const obj: Record<string, unknown> = { a: { b: 2 } };
     set(obj, 'a.c', 3);
     expect(obj).toEqual({ a: { b: 2, c: 3 } });
   });
 
-  it('should override existing value', () => {
+  it('should override an existing value', () => {
     const obj = { a: 1 };
     set(obj, 'a', 2);
     expect(obj.a).toBe(2);
   });
 
-  it('should set value with array notation', () => {
-    const obj = {};
+  it('should set a value with array notation', () => {
+    const obj: Record<string, unknown> = {};
     set(obj, ['a', 'b', 'c'], 3);
     expect(obj).toEqual({ a: { b: { c: 3 } } });
   });
 
-  it('should create nested structure if not exist', () => {
-    const obj = {};
+  it('should create a nested structure if it does not exist', () => {
+    const obj: Record<string, unknown> = {};
     set(obj, 'a.b.c', 3);
     expect(obj).toEqual({ a: { b: { c: 3 } } });
   });
 
-  it('should set value with complex path', () => {
-    const obj: { a: { b: { c: number; d?: { e?: number } } } } = {
-      a: { b: { c: 1 } },
-    };
+  it('should set a deeply nested value by replacing intermediates', () => {
+    const obj: Record<string, unknown> = { a: { b: { c: 1 } } };
     set(obj, 'a.b.d.e', 2);
     expect(obj).toEqual({ a: { b: { c: 1, d: { e: 2 } } } });
   });
 
-  it('should set value to null', () => {
-    const obj: { a: number; b?: null } = { a: 1 };
+  it('should set a value to null', () => {
+    const obj: Record<string, unknown> = { a: 1, b: null };
     set(obj, 'b', null);
     expect(obj).toEqual({ a: 1, b: null });
   });
 
-  it('should set value to undefined', () => {
-    const obj: { a: number; b?: undefined } = { a: 1 };
+  it('should set a value to undefined', () => {
+    const obj: Record<string, unknown> = { a: 1, b: undefined };
     set(obj, 'b', undefined);
     expect(obj).toEqual({ a: 1, b: undefined });
   });
+
+  it('should replace an existing nested object when setting a primitive', () => {
+    const obj: Record<string, unknown> = { a: { b: 1 } };
+    set(obj, 'a', 2);
+    expect(obj).toEqual({ a: 2 });
+  });
 });
 
-describe('merge function its', () => {
+describe('merge', () => {
   it('should merge objects with primitive values', () => {
     type Obj = { a: number; b?: string; c?: boolean };
     const obj1: Obj = { a: 1, b: 'text' };
@@ -70,12 +113,20 @@ describe('merge function its', () => {
     expect(result).toEqual({ a: { x: 1, y: 2 }, b: 'text', c: true });
   });
 
-  it('should merge objects with arrays', () => {
+  it('should merge objects with arrays by concatenating and deduplicating', () => {
     type Obj = { a: number[]; b?: string; c?: boolean };
     const obj1: Obj = { a: [1, 2], b: 'text' };
     const obj2: Obj = { a: [3, 4], c: true };
     const result = merge(obj1, obj2);
     expect(result).toEqual({ a: [1, 2, 3, 4], b: 'text', c: true });
+  });
+
+  it('should merge arrays with duplicates', () => {
+    type Obj = { items: number[] };
+    const obj1: Obj = { items: [1, 2, 3] };
+    const obj2: Obj = { items: [2, 3, 4] };
+    const result = merge(obj1, obj2);
+    expect(result).toEqual({ items: [1, 2, 3, 4] });
   });
 
   it('should handle null and undefined correctly', () => {
@@ -102,5 +153,24 @@ describe('merge function its', () => {
     const result = merge(obj1, obj2);
 
     expect(result).toEqual(expectedResult);
+  });
+
+  it('should return an empty object when called with no arguments', () => {
+    const result = merge();
+    expect(result).toEqual({});
+  });
+
+  it('should handle undefined and null arguments', () => {
+    type Obj = { a: number };
+    const result = merge(undefined, null, { a: 1 } as Obj);
+    expect(result).toEqual({ a: 1 });
+  });
+
+  it('should replace a nested object with a primitive when types conflict', () => {
+    type Obj = { a: number | { x: number } };
+    const obj1: Obj = { a: { x: 1 } };
+    const obj2: Obj = { a: 42 };
+    const result = merge(obj1, obj2);
+    expect(result).toEqual({ a: 42 });
   });
 });

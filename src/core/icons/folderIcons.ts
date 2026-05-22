@@ -87,7 +87,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-scripts',
-        folderNames: ['script', 'scripts', 'scripting'],
+        folderNames: ['script', 'scripts', 'scripting', 'xtask'],
       },
       {
         name: 'folder-node',
@@ -263,6 +263,7 @@ export const folderIcons: FolderTheme[] = [
           'lib64',
           'external',
           'externals',
+          'crates',
         ],
       },
       {
@@ -1415,6 +1416,7 @@ export const folderIcons: FolderTheme[] = [
           color: 'cyan-A700',
         },
       },
+      { name: 'folder-zed', folderNames: ['zed'] },
       { name: 'folder-appwrite', folderNames: ['appwrite'] },
       { name: 'folder-assembly', folderNames: ['assembly', 'asm'] },
       { name: 'folder-go', folderNames: ['go', 'golang'] },
@@ -1429,6 +1431,20 @@ export const folderIcons: FolderTheme[] = [
           'cmake-presets', 'cmake-preset', 'cmake_presets', 'cmake_preset',
          ],
       }
+      {
+        name: 'folder-eas',
+        folderNames: ['eas'],
+        clone: {
+          base: 'folder-expo',
+          color: 'gray-800',
+        },
+      },
+      { name: 'folder-kotlin', folderNames: ['kotlin'] },
+      {
+        name: 'folder-redis',
+        folderNames: ['redis', 'redis-db', 'redislabs'],
+        clone: { base: 'folder-database', color: '#EF5350' },
+      },
     ],
   },
   {

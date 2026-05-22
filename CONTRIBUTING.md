@@ -268,7 +268,7 @@ VS Code can be customized so that the background color is either light or dark. 
 
 | ✅ | ❌ |
 | :-: | :-: |
-| <img src="./images/how-tos/svg-with-light-color.png" alt="Icon with good contrast" width="200px" /> | <img src="./images/how-tos/svg-with-too-dark-color.png" alt="Icon with bad constrast" width="200px" /> |
+| <img src="./images/how-tos/svg-with-light-color.png" alt="Icon with good contrast" width="200px" /> | <img src="./images/how-tos/svg-with-too-dark-color.png" alt="Icon with bad contrast" width="200px" /> |
 
 Preferably, the icon has a color that looks good on both backgrounds. If this is ever not possible because it would otherwise no longer match the icon's branding, different icons can be provided for the respective color scheme.
 
@@ -344,11 +344,11 @@ The following are some tips to help you design nice and sharp-looking icons. The
 
   On the other hand, this other example illustrates an icon with its paths not aligned to a 16x16 grid:
 
-  <img src="./images/how-tos/missaligned-icon.svg" alt="An example of a missaligned folder icon" width="300px" />
+  <img src="./images/how-tos/misaligned-icon.svg" alt="An example of a misaligned folder icon" width="300px" />
 
   Here is a comparison of both icons rendered at 16px:
 
-  <img src="./images/how-tos/aligned-vs-missaligned.png" alt="Comparison of the correctly positioned icon and the incorrect one"/>
+  <img src="./images/how-tos/aligned-vs-misaligned.png" alt="Comparison of the correctly positioned icon and the incorrect one"/>
 
   As you can see, the misaligned icon (left) has blurry edges with "ghost pixels" that attempt to simulate "half a pixel". Additionally, the suitcase motif in it is slightly harder to recognize. On the other hand, the aligned icon (right) looks sharper and clearer.
 
