@@ -18,6 +18,16 @@ import { green, red } from '../../helpers/painter';
 import { similarity } from '../../helpers/similarity';
 
 /**
+ * Pattern matching generated open folder icon names.
+ * These are generated at build time from their closed variants and are
+ * gitignored, so they may not exist on disk during pre-commit checks.
+ *
+ * A generated open folder icon is considered "virtually available" if the
+ * corresponding closed variant exists on disk.
+ */
+const GENERATED_OPEN_FOLDER_RE = /^folder-.+-open(_light|_highContrast)?$/;
+
+/**
  * Defines the folder where all icon files are located.
  */
 const folderPath = join('icons');
@@ -126,6 +136,29 @@ const getAllFolderIcons = (theme: FolderTheme) => {
   );
 };
 
+/**
+ * Determines the closed variant name for a generated open folder icon.
+ * E.g. "folder-src-open" -> "folder-src", "folder-git-open_light" -> "folder-git_light"
+ */
+function getClosedVariant(openIconName: string): string {
+  return openIconName.replace(/-open(_light|_highContrast)?$/, (_, suffix) =>
+    suffix ? suffix : ''
+  );
+}
+
+/**
+ * Returns true if the icon is a generated open folder icon whose closed
+ * variant exists on disk (meaning it will be generated at build time).
+ */
+function isVirtuallyAvailable(
+  iconName: string,
+  availableIcons: Set<string>
+): boolean {
+  if (!GENERATED_OPEN_FOLDER_RE.test(iconName)) return false;
+  const closedVariant = getClosedVariant(iconName);
+  return availableIcons.has(closedVariant);
+}
+
 export const check = async () => {
   const files = await readdir(folderPath);
   const availableIcons = new Set(files.map((f) => parse(f).name));
@@ -175,7 +208,9 @@ export const check = async () => {
     }
   }
 
-  const missing = findMissingIcons(availableIcons, expectedIcons);
+  const missing = findMissingIcons(availableIcons, expectedIcons).filter(
+    (icon) => !isVirtuallyAvailable(icon, availableIcons)
+  );
 
   if (missing.length > 0) {
     console.log(
