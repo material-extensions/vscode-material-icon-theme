@@ -1,4 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-<path id="folder" fill="#039be5" d="m6.922 3.768-.644-.536A1 1 0 0 0 5.638 3H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H7.562a1 1 0 0 1-.64-.232" />
-<path id="motive" fill="#b3e5fc" d="M 12,8 V 7 H 10.5 A 0.5,0.5 0 0 0 10,7.5 v 5 A 0.5,0.5 0 0 0 10.5,13 H 12 V 12 H 11 V 8 Z M 16,7 V 6 H 13.5 A 0.5,0.5 0 0 0 13,6.5 v 7 A 0.5,0.5 0 0 0 13.5,14 H 16 V 13 H 14 V 7 Z M 8,8 h 1 v 4 H 8 Z" />
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path id="folder" fill="#039be5" d="m6.922 3.768-.644-.536A1 1 0 0 0 5.638 3H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H7.562a1 1 0 0 1-.64-.232"/><path id="motive" fill="#b3e5fc" d="M12 8V7h-1.5a.5.5 0 0 0-.5.5v5a.5.5 0 0 0 .5.5H12v-1h-1V8Zm4-1V6h-2.5a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .5.5H16v-1h-2V7ZM8 8h1v4H8Z"/></svg>
