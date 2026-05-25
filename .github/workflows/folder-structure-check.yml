@@ -1,0 +1,30 @@
+name: 📁 Check folder icon structure
+
+on:
+  pull_request:
+    paths:
+      - "icons/folder-*.svg"
+
+permissions:
+  contents: read
+
+jobs:
+  folder-structure-check:
+    name: Folder Icon Structure Check
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: 🔧 Setup Bun
+        uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2
+        with:
+          bun-version-file: ".bun-version"
+
+      - name: 📦 Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: 📁 Check folder icon structure
+        run: bun ./src/scripts/icons/checks/checkFolderIconStructure.ts

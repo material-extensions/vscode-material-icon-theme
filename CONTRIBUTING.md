@@ -104,12 +104,43 @@ These free tools are recommended to create or edit new SVG icons:
 > [!NOTE]
 > It's important to produce fully _vectorized_ graphic (don't include a base64 image string in the svg).
 
-When you create a folder icon, please keep in mind that two SVG files are needed here: one that represents the folder closed and another that represents it open.
+When you create a folder icon, you only need to provide the **closed** variant. The open variant is automatically generated at build time.
 
 ```text
 📁 folder-example.svg
-📂 folder-example-open.svg
 ```
+
+The folder SVG must follow this exact structure:
+
+```svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <path id="folder" fill="#COLOR" d="m6.922 3.768-.644-.536A1 1 0 0 0 5.638 3H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H7.562a1 1 0 0 1-.64-.232"/>
+  <path id="motive" fill="#MOTIVE_COLOR" d="...your motive path..."/>
+</svg>
+```
+
+Requirements:
+
+- **viewBox** must be `0 0 16 16`
+- **First element** must be a `<path>` with `id="folder"` using the exact canonical folder path shown above (only the `fill` color changes)
+- **Motive** must have `id="motive"` — either a single `<path>` or a `<g>` wrapping multiple paths
+- **No `-open.svg` file** — do not commit open variants; they are generated automatically
+- **No Inkscape/Sodipodi metadata** — clean your SVGs before committing
+
+If your motive requires multiple paths or elements, wrap them in a group:
+
+```svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <path id="folder" fill="#COLOR" d="m6.922 3.768-.644-.536A1 1 0 0 0 5.638 3H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H7.562a1 1 0 0 1-.64-.232"/>
+  <g id="motive">
+    <path fill="#MOTIVE_COLOR" d="..."/>
+    <path fill="#ANOTHER_COLOR" d="..."/>
+  </g>
+</svg>
+```
+
+> [!NOTE]
+> A CI check will validate the structure of all folder icons on every PR. Run `bun run check` locally to verify your icon passes before submitting.
 
 Of course, there is also the possibility to add existing SVGs. Mostly, however, the color has to be adjusted or the styling has to be changed, so that the other points from the above checklist are also fulfilled.
 
@@ -143,9 +174,11 @@ Continue reading [the design folder icons section](#design-folder-icons) to find
 
 ### Design folder icons
 
-When designing folder icons there are also a few points to consider. A folder icon always consists of two icons - the folder in the background and a motive in the foreground:
+When designing folder icons there are also a few points to consider. A folder icon always consists of two parts - the folder shape in the background and a motive in the foreground:
 
 <img src="./images/how-tos/folder-icon-parts.svg" alt="An example of a folder" width="300px" />
+
+The folder shape (`id="folder"`) uses the canonical path and must not be modified — only change its `fill` color. The motive (`id="motive"`) is the distinctive part of your icon.
 
 For the motive, only colors from the second row in the [color palette](https://pkief.github.io/material-color-converter/) are allowed. For the background choose a slightly darker hue (mostly in rows 4-6 in the palette).
 
