@@ -3630,6 +3630,10 @@ export const fileIcons: FileIcons = {
       fileNames: ['CLAUDE.md', 'CLAUDE.local.md'],
     },
     {
+      name: 'codex',
+      fileNames: ['AGENTS.md', 'AGENTS.override.md'],
+    },
+    {
       name: 'cursor',
       fileNames: [
         '.cursorignore',
