@@ -868,7 +868,7 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'lib', fileExtensions: ['lib', 'a'] },
-    { name: 'bibliography', fileExtensions: ['bib'] },
+    { name: 'bibliography', fileExtensions: ['bib', 'bbl', 'bcf', 'blg'] },
     { name: 'bibtex-style', fileExtensions: ['bst'] },
     { name: 'dll', fileExtensions: ['dll', 'ilk', 'so'] },
     {
@@ -1047,7 +1047,20 @@ export const fileIcons: FileIcons = {
         'compose.worker.yml',
       ],
     },
-    { name: 'tex', fileExtensions: ['tex', 'ltx', 'cls'] },
+    {
+      name: 'tex',
+      fileExtensions: [
+        'tex',
+        'ltx',
+        'cls',
+        'clo',
+        'latex',
+        'aux',
+        'tikz',
+        'synctex',
+        'synctex.gz',
+      ],
+    },
     {
       name: 'sty',
       fileExtensions: ['sty'],
