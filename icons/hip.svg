@@ -2,7 +2,7 @@
 	<title>AMD_Logo-svg</title>
 	<style>
 		tspan { white-space:pre }
-		.shp0 { fill: #ED1C24 }
+		.shp0 { fill: #E53935 }
 	</style>
 	<path id="Layer" class="shp0" d="M431.35 416.39L15.28 0L1530 0L1530 1515.66L1113.92 1099.32L1113.92 416.39L431.35 416.39ZM430.87 499.83L2.49 928.44L2.49 1528.41L602.04 1528.41L1030.39 1099.81L430.87 1099.81L430.87 499.83Z" />
 </svg>
