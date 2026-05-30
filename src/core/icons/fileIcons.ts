@@ -1311,6 +1311,8 @@ export const fileIcons: FileIcons = {
       name: 'vue-config',
       fileNames: [
         'vue.config.js',
+        'vue.config.cjs',
+        'vue.config.mjs',
         'vue.config.ts',
         'vetur.config.js',
         'vetur.config.ts',
