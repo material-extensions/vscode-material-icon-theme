@@ -5,6 +5,13 @@ module.exports = {
   plugins: [
     {
       name: 'preset-default',
+      params: {
+        overrides: {
+          cleanupIds: {
+            preserve: ['folder', 'motive'],
+          },
+        },
+      },
     },
     'convertStyleToAttrs',
     'removeDimensions',
