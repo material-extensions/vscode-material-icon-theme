@@ -10,6 +10,10 @@ export const fileIcons: FileIcons = {
   defaultIcon: { name: 'file' },
   icons: parseByPattern([
     {
+      name: 'eucode',
+      fileNames: ['.eucodeignore'],
+    },
+    {
       name: 'html',
       fileExtensions: [
         'htm',
