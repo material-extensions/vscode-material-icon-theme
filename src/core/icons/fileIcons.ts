@@ -616,6 +616,7 @@ export const fileIcons: FileIcons = {
     { name: 'c3', fileExtensions: ['c3'] },
     { name: 'c', fileExtensions: ['c', 'i', 'mi'] },
     { name: 'h', fileExtensions: ['h'] },
+    { name: 'hip', fileExtensions: ['hip'] },
     {
       name: 'cpp',
       fileExtensions: [
@@ -868,7 +869,7 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'lib', fileExtensions: ['lib', 'a'] },
-    { name: 'bibliography', fileExtensions: ['bib'] },
+    { name: 'bibliography', fileExtensions: ['bib', 'bbl', 'bcf', 'blg'] },
     { name: 'bibtex-style', fileExtensions: ['bst'] },
     { name: 'dll', fileExtensions: ['dll', 'ilk', 'so'] },
     {
@@ -1047,7 +1048,20 @@ export const fileIcons: FileIcons = {
         'compose.worker.yml',
       ],
     },
-    { name: 'tex', fileExtensions: ['tex', 'ltx', 'cls'] },
+    {
+      name: 'tex',
+      fileExtensions: [
+        'tex',
+        'ltx',
+        'cls',
+        'clo',
+        'latex',
+        'aux',
+        'tikz',
+        'synctex',
+        'synctex.gz',
+      ],
+    },
     {
       name: 'sty',
       fileExtensions: ['sty'],
@@ -1298,6 +1312,8 @@ export const fileIcons: FileIcons = {
       name: 'vue-config',
       fileNames: [
         'vue.config.js',
+        'vue.config.cjs',
+        'vue.config.mjs',
         'vue.config.ts',
         'vetur.config.js',
         'vetur.config.ts',
