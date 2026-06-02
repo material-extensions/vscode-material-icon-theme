@@ -3468,6 +3468,11 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['bench.js', 'bench.cjs', 'bench.mjs'],
     },
     {
+      name: 'bench-md',
+      fileNames: ['benchmark.md', 'benchmarks.md'],
+      fileExtensions: ['bench.md'],
+    },
+    {
       name: 'pre-commit',
       fileNames: ['.pre-commit-config.yaml', '.pre-commit-hooks.yaml'],
     },
