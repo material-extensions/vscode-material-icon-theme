@@ -693,6 +693,7 @@ export const folderIcons: FolderTheme[] = [
         ],
       },
       { name: 'folder-tasks', folderNames: ['tasks', 'tickets'] },
+      { name: 'folder-roadmap', folderNames: ['roadmap', 'roadmaps'] },
       { name: 'folder-android', folderNames: ['android'] },
       { name: 'folder-ios', folderNames: ['ios'] },
       {
