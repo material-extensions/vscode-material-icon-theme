@@ -620,6 +620,7 @@ export const fileIcons: FileIcons = {
     { name: 'c3', fileExtensions: ['c3'] },
     { name: 'c', fileExtensions: ['c', 'i', 'mi'] },
     { name: 'h', fileExtensions: ['h'] },
+    { name: 'hip', fileExtensions: ['hip'] },
     {
       name: 'cpp',
       fileExtensions: [
