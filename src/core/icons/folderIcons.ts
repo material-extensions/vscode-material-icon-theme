@@ -1352,6 +1352,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['.gemini', 'gemini', 'gemini-ai', 'geminiai'],
       },
       {
+        name: 'folder-ocode',
+        folderNames: ['opencode', '.opencode'],
+      },
+      {
         name: 'folder-input',
         folderNames: ['input', 'inputs', 'io', 'in'],
       },
