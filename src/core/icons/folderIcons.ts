@@ -1354,7 +1354,6 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-ocode',
         folderNames: ['opencode', '.opencode'],
-        light: true,
       },
       {
         name: 'folder-input',
