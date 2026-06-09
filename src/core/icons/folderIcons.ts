@@ -878,7 +878,6 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['glsl', 'hlsl', 'shader', 'shaders'],
       },
       { name: 'folder-stack', folderNames: ['stack', 'stacks'] },
-      { name: 'folder-collectors', folderNames: ['collector', 'collectors'] },
       {
         name: 'folder-template',
         folderNames: [
