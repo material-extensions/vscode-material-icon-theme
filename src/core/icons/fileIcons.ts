@@ -2069,6 +2069,11 @@ export const fileIcons: FileIcons = {
       light: true,
     },
     { name: 'cuda', fileExtensions: ['cu', 'cuh'] },
+    {
+      name: 'opencode',
+      fileNames: ['opencode.json', 'opencode.jsonc'],
+      light: true,
+    },
     { name: 'log', fileExtensions: ['log'] },
     { name: 'dotjs', fileExtensions: ['def', 'dot', 'jst'] },
     { name: 'ejs', fileExtensions: ['ejs'] },
