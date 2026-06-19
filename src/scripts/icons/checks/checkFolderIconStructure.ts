@@ -192,10 +192,3 @@ export async function check(): Promise<void> {
     `Found structural errors in ${validationErrors.length} folder icon(s).`
   );
 }
-
-// Allow running directly
-if (import.meta.path === Bun.main) {
-  check().catch(() => {
-    process.exit(1);
-  });
-}
