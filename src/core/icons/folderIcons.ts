@@ -1339,6 +1339,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['organisms', 'organism'],
       },
       {
+        name: 'folder-cogs',
+        folderNames: ['cogs', 'cog'],
+      },
+      {
         name: 'folder-claude',
         folderNames: ['claude'],
       },
