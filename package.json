@@ -28,7 +28,7 @@
     "verify": "sheriff verify",
     "prepublishOnly": "bun ./src/scripts/module/prepare.ts",
     "postpublish": "git checkout package.json && git checkout README.md",
-    "prepare": "husky"
+    "prepare": "husky || true"
   },
   "publisher": "PKief",
   "author": {
