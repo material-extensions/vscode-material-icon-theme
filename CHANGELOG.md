@@ -2,6 +2,19 @@
 
 # Changelog
 
+## v5.36.1
+
+[compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.36.0...v5.36.1)
+
+### 🩹 Fixes
+
+- **ci:** Release script failure due to husky ([3dd1e258](https://github.com/material-extensions/vscode-material-icon-theme/commit/3dd1e258))
+- Cloning issue (Closes #3502) ([#3502](https://github.com/material-extensions/vscode-material-icon-theme/issues/3502))
+
+### ❤️ Contributors
+
+- Philipp Kief ([@PKief](https://github.com/PKief))
+
 ## v5.36.0
 
 [compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.35.0...v5.36.0)
