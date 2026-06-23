@@ -21,7 +21,7 @@ import {
 import { getFileConfigHash } from '../../helpers/configHash';
 import { merge } from '../../helpers/object';
 import { resolvePath } from '../../helpers/resolvePath';
-import { collectColors } from '../../helpers/svg';
+import { collectColors } from '../../helpers/svgColor';
 import type {
   FileIconClone,
   FolderIconClone,

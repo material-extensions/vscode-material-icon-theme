@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.4.15/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.5.0/schema.json",
   "formatter": {
     "enabled": true,
     "formatWithErrors": false,
@@ -15,14 +15,15 @@
       "!**/dist",
       "!**/node_modules",
       "!**/package.json",
-      "!**/bun.lock"
+      "!**/bun.lock",
+      "!**/images/**/*.svg"
     ]
   },
   "assist": { "actions": { "source": { "organizeImports": "on" } } },
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": false,
+      "preset": "none",
       "complexity": { "useArrowFunction": "error" },
       "correctness": {
         "noUnsafeFinally": "error",

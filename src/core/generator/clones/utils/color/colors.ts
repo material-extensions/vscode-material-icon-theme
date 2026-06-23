@@ -1,12 +1,12 @@
 import chroma, { type Color } from 'chroma-js';
-import { collectColors } from '../../../../helpers/svg';
+import { collectColors } from '../../../../helpers/svgColor';
 import {
   closerMaterialColorTo,
   getMaterialColorByKey,
 } from './materialPalette';
 
 /** Get all the colors used in an SVG string as a `Set` list. */
-export const getColorList = async (svg: string) => {
+export const getColorList = (svg: string) => {
   return collectColors(svg);
 };
 

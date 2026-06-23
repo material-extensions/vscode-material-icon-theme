@@ -1,5 +1,5 @@
 import { readFile } from 'node:fs/promises';
-import { replaceColors as replaceColorsInSvg } from '../../../helpers/svg';
+import { replaceColors as replaceColorsInSvg } from '../../../helpers/svgColor';
 import { createEmptyManifest } from '../../../models/manifest';
 import { getColorList, replacementMap } from './color/colors';
 
@@ -33,7 +33,7 @@ export const cloneIcon = async (
   hash = ''
 ): Promise<string> => {
   const baseContent = await readIcon(path, hash);
-  const colors = await getColorList(baseContent);
+  const colors = getColorList(baseContent);
   const replacements = replacementMap(color, colors);
   return replaceColorsInSvg(baseContent, replacements);
 };

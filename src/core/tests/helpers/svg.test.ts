@@ -1,20 +1,14 @@
 import { describe, expect, it } from 'bun:test';
 import {
-  collectColors,
   countElements,
   getAttribute,
   getElements,
   hasAttributeMatching,
   hasElementMatching,
   replaceAttribute,
-  replaceColors,
 } from '../../helpers/svg';
 
 const SIMPLE_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path id="folder" fill="#4caf50" d="m6.922 3.768"/><path id="motive" fill="#c8e6c9" d="M7 8h2v2H7z"/></svg>`;
-
-const GROUPED_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path id="folder" fill="#757575" d="m6.922 3.768"/><g id="motive" data-mit-no-recolor="true"><path fill="#e53935" d="M1 1"/><path fill="#ef6c00" d="M2 2"/></g></svg>`;
-
-const STYLE_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><polygon style="fill:#4caf50" points="12 8 12 6"/><polygon style="fill:#c8e6c9;stroke:#000" points="20 12"/></svg>`;
 
 const INKSCAPE_SVG = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" viewBox="0 0 16 16"><sodipodi:namedview id="nv"/><path id="folder" fill="#4caf50" d="test"/></svg>`;
 
@@ -133,101 +127,6 @@ describe('SVG helpers', () => {
         tagName.includes('sodipodi')
       );
       expect(result).toBe(false);
-    });
-  });
-
-  describe('collectColors', () => {
-    it('should collect colors from fill attributes', async () => {
-      const colors = await collectColors(SIMPLE_SVG);
-      expect(colors.has('#4caf50')).toBe(true);
-      expect(colors.has('#c8e6c9')).toBe(true);
-      expect(colors.size).toBe(2);
-    });
-
-    it('should collect colors from inline styles', async () => {
-      const colors = await collectColors(STYLE_SVG);
-      expect(colors.has('#4caf50')).toBe(true);
-      expect(colors.has('#c8e6c9')).toBe(true);
-      expect(colors.has('#000')).toBe(true);
-    });
-
-    it('should respect data-mit-no-recolor by default', async () => {
-      const colors = await collectColors(GROUPED_SVG);
-      expect(colors.has('#757575')).toBe(true);
-      expect(colors.has('#e53935')).toBe(false);
-      expect(colors.has('#ef6c00')).toBe(false);
-    });
-
-    it('should collect all colors when respectNoRecolor is false', async () => {
-      const colors = await collectColors(GROUPED_SVG, {
-        respectNoRecolor: false,
-      });
-      expect(colors.has('#757575')).toBe(true);
-      expect(colors.has('#e53935')).toBe(true);
-      expect(colors.has('#ef6c00')).toBe(true);
-    });
-
-    it('should handle self-closing elements with data-mit-no-recolor', async () => {
-      const svg = `<svg><path fill="#aaa" d="ok"/><path data-mit-no-recolor="true" fill="#bbb" d="skip"/><path fill="#ccc" d="ok2"/></svg>`;
-      const colors = await collectColors(svg);
-      expect(colors.has('#aaa')).toBe(true);
-      expect(colors.has('#bbb')).toBe(false);
-      expect(colors.has('#ccc')).toBe(true);
-    });
-
-    it('should collect stop-color from gradient stops', async () => {
-      const svg = `<svg><defs><linearGradient><stop stop-color="#ff0000"/><stop stop-color="#00ff00"/></linearGradient></defs></svg>`;
-      const colors = await collectColors(svg);
-      expect(colors.has('#ff0000')).toBe(true);
-      expect(colors.has('#00ff00')).toBe(true);
-    });
-  });
-
-  describe('replaceColors', () => {
-    it('should replace fill attribute colors', async () => {
-      const replacements = new Map([
-        ['#4caf50', '#2196f3'],
-        ['#c8e6c9', '#bbdefb'],
-      ]);
-      const result = await replaceColors(SIMPLE_SVG, replacements);
-      expect(result).toContain('fill="#2196f3"');
-      expect(result).toContain('fill="#bbdefb"');
-      expect(result).not.toContain('#4caf50');
-      expect(result).not.toContain('#c8e6c9');
-    });
-
-    it('should replace colors in inline styles', async () => {
-      const replacements = new Map([['#4caf50', '#2196f3']]);
-      const result = await replaceColors(STYLE_SVG, replacements);
-      expect(result).toContain('#2196f3');
-      expect(result).not.toContain('#4caf50');
-    });
-
-    it('should respect data-mit-no-recolor', async () => {
-      const replacements = new Map([
-        ['#757575', '#2196f3'],
-        ['#e53935', '#0000ff'],
-      ]);
-      const result = await replaceColors(GROUPED_SVG, replacements);
-      expect(result).toContain('#2196f3');
-      // Colors inside no-recolor group should be unchanged
-      expect(result).toContain('#e53935');
-      expect(result).toContain('#ef6c00');
-    });
-
-    it('should handle self-closing elements with data-mit-no-recolor', async () => {
-      const svg = `<svg><path fill="#aaa" d="ok"/><path data-mit-no-recolor="true" fill="#aaa" d="skip"/></svg>`;
-      const replacements = new Map([['#aaa', '#bbb']]);
-      const result = await replaceColors(svg, replacements);
-      // First path should be replaced, second should not
-      expect(result).toContain('fill="#bbb"');
-      expect(result).toContain('fill="#aaa"');
-    });
-
-    it('should not modify colors that are not in the replacement map', async () => {
-      const replacements = new Map([['#4caf50', '#2196f3']]);
-      const result = await replaceColors(SIMPLE_SVG, replacements);
-      expect(result).toContain('#c8e6c9'); // unchanged
     });
   });
 });
