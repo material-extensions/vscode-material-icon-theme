@@ -1,4 +1,4 @@
-import { beforeAll, describe, expect, it, mock } from 'bun:test';
+import { beforeAll, describe, expect, it, vi } from 'vitest';
 import { customClonesIcons } from '../../generator/clones/clonesGenerator';
 import {
   getCloneData,
@@ -29,6 +29,13 @@ import type {
 } from '../../models/icons/config';
 import { createEmptyManifest, type Manifest } from '../../models/manifest';
 import * as icon from './data/icons';
+
+vi.mock('node:fs/promises', () => ({
+  readFile: vi.fn(),
+  writeFile: vi.fn(() => Promise.resolve()),
+}));
+
+import { readFile, writeFile } from 'node:fs/promises';
 
 describe('cloning: color manipulation', () => {
   describe('#orderDarkToLight(..)', () => {
@@ -608,11 +615,7 @@ describe('cloning: icon cloning', () => {
     ];
 
     it('should replace the color with the given color', async () => {
-      mock.module('node:fs/promises', () => {
-        return {
-          readFile: () => Promise.resolve(icon.file),
-        };
-      });
+      vi.mocked(readFile).mockImplementation(() => Promise.resolve(icon.file));
 
       const result = await cloneIcon('fake/path/to/icon.svg', 'blue-600', '');
       const colors = await collectColors(result, { respectNoRecolor: false });
@@ -622,11 +625,10 @@ describe('cloning: icon cloning', () => {
     });
 
     it('should replace the color with the given color if color is in fill attribute', async () => {
-      mock.module('node:fs/promises', () => {
-        return {
-          readFile: () => Promise.resolve(icon.fileFill),
-        };
-      });
+      vi.mocked(readFile).mockImplementation(() =>
+        Promise.resolve(icon.fileFill)
+      );
+
       const result = await cloneIcon('fake/path/to/icon.svg', 'blue-600', '');
       const colors = await collectColors(result, { respectNoRecolor: false });
 
@@ -635,11 +637,10 @@ describe('cloning: icon cloning', () => {
     });
 
     it('should replace the color with the given color if color is in stop-color attribute', async () => {
-      mock.module('node:fs/promises', () => {
-        return {
-          readFile: () => Promise.resolve(icon.gradient),
-        };
-      });
+      vi.mocked(readFile).mockImplementation(() =>
+        Promise.resolve(icon.gradient)
+      );
+
       const result = await cloneIcon('fake/path/to/icon.svg', 'blue-600', '');
       const colors = await collectColors(result, { respectNoRecolor: false });
 
@@ -650,11 +651,10 @@ describe('cloning: icon cloning', () => {
     });
 
     it('should replace colors on icons with multiple nodes', async () => {
-      mock.module('node:fs/promises', () => {
-        return {
-          readFile: () => Promise.resolve(icon.folder),
-        };
-      });
+      vi.mocked(readFile).mockImplementation(() =>
+        Promise.resolve(icon.folder)
+      );
+
       const result = await cloneIcon('fake/path/to/icon.svg', 'blue-600', '');
       const colors = await collectColors(result, { respectNoRecolor: false });
 
@@ -668,11 +668,9 @@ describe('cloning: icon cloning', () => {
 
     describe('`data-mit-no-recolor` attribute', () => {
       it('should not replace the color if the node has the `data-mit-no-recolor` attribute', async () => {
-        mock.module('node:fs/promises', () => {
-          return {
-            readFile: () => Promise.resolve(icon.folderIgnores),
-          };
-        });
+        vi.mocked(readFile).mockImplementation(() =>
+          Promise.resolve(icon.folderIgnores)
+        );
 
         const result = await cloneIcon('fake/path/to/icon.svg', 'blue-600', '');
 
@@ -687,11 +685,10 @@ describe('cloning: icon cloning', () => {
       });
 
       it('should not replace the color of any child of a node with the `data-mit-no-recolor` attribute', async () => {
-        mock.module('node:fs/promises', () => {
-          return {
-            readFile: () => Promise.resolve(icon.gradientIgnore),
-          };
-        });
+        vi.mocked(readFile).mockImplementation(() =>
+          Promise.resolve(icon.gradientIgnore)
+        );
+
         const result = await cloneIcon('fake/path/to/icon.svg', 'blue-600', '');
 
         // All colors should remain unchanged (all are inside no-recolor)
@@ -709,12 +706,8 @@ describe('cloning: icon cloning', () => {
 
 describe('cloning: json config generation from user options', () => {
   beforeAll(() => {
-    mock.module('node:fs/promises', () => {
-      return {
-        readFile: () => Promise.resolve(icon.file),
-        writeFile: () => Promise.resolve(),
-      };
-    });
+    vi.mocked(readFile).mockImplementation(() => Promise.resolve(icon.file));
+    vi.mocked(writeFile).mockImplementation(() => Promise.resolve());
   });
 
   const getManifest = (hash: string): Manifest => {

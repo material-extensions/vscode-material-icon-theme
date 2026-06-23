@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'bun:test';
+import { describe, expect, it } from 'vitest';
 import { get } from '../../helpers/object';
 import { getTranslationValue, replace } from '../../i18n/translate';
 import type { Translation } from '../../models/i18n/translation';

@@ -1,11 +1,13 @@
-import { beforeEach, describe, expect, it, mock } from 'bun:test';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
+
+vi.mock('node:fs/promises', () => ({
+  writeFile: vi.fn(() => Promise.resolve()),
+}));
+
+import { writeFile } from 'node:fs/promises';
 import { writeToFile } from '../../helpers/writeFile';
 
-const writeFileMock = mock(() => Promise.resolve());
-
-mock.module('node:fs/promises', () => ({
-  writeFile: writeFileMock,
-}));
+const writeFileMock = vi.mocked(writeFile);
 
 describe('writeToFile', () => {
   beforeEach(() => {

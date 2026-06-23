@@ -23,6 +23,9 @@ const config: BuildOptions = {
     '.js': 'js',
   },
   logLevel: 'info',
+  logOverride: {
+    'empty-import-meta': 'silent',
+  },
 };
 
 export default config;

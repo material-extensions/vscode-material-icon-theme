@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'bun:test';
+import { describe, expect, it } from 'vitest';
 import { validateFolderSvg } from './checkFolderIconStructure';
 
 const CLOSED_FOLDER_PATH =

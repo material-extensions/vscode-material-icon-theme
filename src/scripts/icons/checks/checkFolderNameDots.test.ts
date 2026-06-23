@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'bun:test';
+import { describe, expect, it } from 'vitest';
 import { findDotPrefixedFolderNames } from './checkFolderNameDots';
 
 describe('folder name dot prefix validation', () => {

@@ -4,14 +4,16 @@
   // Use Microsoft's Ubuntu Base image for the dev container
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "features": {
-    "ghcr.io/michidk/devcontainers-features/bun:1": {}
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "24"
+    }
   },
 
   "privileged": true,
 
   "onCreateCommand": {
     // Install dependencies in the dev container
-    "install-bun-packages": "bun install"
+    "install-packages": "npm ci"
   },
 
   "customizations": {
@@ -25,7 +27,6 @@
         "biomejs.biome",
         "jock.svg",
         "editorconfig.editorconfig",
-        "oven.bun-vscode",
         "davidanson.vscode-markdownlint",
         "huntertran.auto-markdown-toc"
       ]

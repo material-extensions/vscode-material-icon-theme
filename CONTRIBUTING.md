@@ -140,7 +140,7 @@ If your motive requires multiple paths or elements, wrap them in a group:
 ```
 
 > [!NOTE]
-> A CI check will validate the structure of all folder icons on every PR. Run `bun run check` locally to verify your icon passes before submitting.
+> A CI check will validate the structure of all folder icons on every PR. Run `npm run check` locally to verify your icon passes before submitting.
 
 Of course, there is also the possibility to add existing SVGs. Mostly, however, the color has to be adjusted or the styling has to be changed, so that the other points from the above checklist are also fulfilled.
 
@@ -158,7 +158,7 @@ Now it often happens that many programming languages already have icons with the
 You can check if your changed (i.e. not yet committed) icon fits the Material Design color palette by running the following command:
 
 ```sh
-bun run check-colors
+npm run check-colors
 ```
 
 Installation of the dependencies is necessary before running the command, see [Debug extension locally](#debug-extension-locally).
@@ -501,12 +501,12 @@ This project offers translations into different languages. If you notice an erro
 
 This icon extension consists not only of icons but also brings some code. This is necessary to simplify various things and enable multiple functionalities. If you want to change something here, the following steps are to be considered:
 
-1. Install [Bun](https://bun.sh/docs/installation) on your machine
-2. Install dependencies with `bun install`
+1. Install [Node.js](https://nodejs.org/) (v24 or later) on your machine
+2. Install dependencies with `npm install`
 3. Open project with VS Code
 4. Install required [VS Code extensions](.vscode/extensions.json)
 5. Press `F5` or run `Launch Extension` in the debug window
-6. Run tests with `bun test`
+6. Run tests with `npm test`
 
 You will find more information about the official extension API in the [extension guides of VS Code](https://code.visualstudio.com/api/extension-guides/file-icon-theme).
 

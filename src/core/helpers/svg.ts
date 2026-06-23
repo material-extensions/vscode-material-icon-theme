@@ -1,19 +1,10 @@
-/**
- * SVG manipulation helpers built on top of Bun's HTMLRewriter.
- *
- * Provides a simple API for reading, modifying, and querying SVG files
- * without external dependencies.
- */
-
-// ─── Types ───────────────────────────────────────────────────────────────────
+import * as cheerio from 'cheerio';
 
 /** Collected information about an SVG element during rewriting. */
 export interface SvgElementInfo {
   tagName: string;
   attributes: Record<string, string>;
 }
-
-// ─── Core Helpers ────────────────────────────────────────────────────────────
 
 /**
  * Replace an attribute value on elements matching a CSS selector.
@@ -29,12 +20,9 @@ export async function replaceAttribute(
   attribute: string,
   newValue: string
 ): Promise<string> {
-  const rewriter = new HTMLRewriter().on(selector, {
-    element(el) {
-      el.setAttribute(attribute, newValue);
-    },
-  });
-  return rewriter.transform(new Response(svg)).text();
+  const $ = cheerio.load(svg, { xmlMode: true });
+  $(selector).attr(attribute, newValue);
+  return $.xml();
 }
 
 /**
@@ -52,16 +40,14 @@ export async function getAttribute(
   selector: string,
   attribute: string
 ): Promise<string[]> {
+  const $ = cheerio.load(svg, { xmlMode: true });
   const values: string[] = [];
-  const rewriter = new HTMLRewriter().on(selector, {
-    element(el) {
-      const val = el.getAttribute(attribute);
-      if (val !== null) {
-        values.push(val);
-      }
-    },
+  $(selector).each((_, el) => {
+    const val = $(el).attr(attribute);
+    if (val !== undefined && val !== null) {
+      values.push(val);
+    }
   });
-  await rewriter.transform(new Response(svg)).text();
   return values;
 }
 
@@ -78,14 +64,8 @@ export async function countElements(
   svg: string,
   selector: string
 ): Promise<number> {
-  let count = 0;
-  const rewriter = new HTMLRewriter().on(selector, {
-    element() {
-      count++;
-    },
-  });
-  await rewriter.transform(new Response(svg)).text();
-  return count;
+  const $ = cheerio.load(svg, { xmlMode: true });
+  return $(selector).length;
 }
 
 /**
@@ -102,17 +82,17 @@ export async function getElements(
   svg: string,
   selector: string
 ): Promise<SvgElementInfo[]> {
+  const $ = cheerio.load(svg, { xmlMode: true });
   const elements: SvgElementInfo[] = [];
-  const rewriter = new HTMLRewriter().on(selector, {
-    element(el) {
-      const attributes: Record<string, string> = {};
-      for (const [name, value] of el.attributes) {
+  $(selector).each((_, el) => {
+    const attributes: Record<string, string> = {};
+    if ('attribs' in el) {
+      for (const [name, value] of Object.entries(el.attribs)) {
         attributes[name] = value;
       }
-      elements.push({ tagName: el.tagName, attributes });
-    },
+    }
+    elements.push({ tagName: el.type === 'tag' ? el.name : '', attributes });
   });
-  await rewriter.transform(new Response(svg)).text();
   return elements;
 }
 
@@ -132,19 +112,19 @@ export async function hasAttributeMatching(
   selector: string,
   predicate: (attrName: string, attrValue: string) => boolean
 ): Promise<boolean> {
+  const $ = cheerio.load(svg, { xmlMode: true });
   let found = false;
-  const rewriter = new HTMLRewriter().on(selector, {
-    element(el) {
-      if (found) return;
-      for (const [name, value] of el.attributes) {
+  $(selector).each((_, el) => {
+    if (found) return false;
+    if ('attribs' in el) {
+      for (const [name, value] of Object.entries(el.attribs)) {
         if (predicate(name, value)) {
           found = true;
-          return;
+          return false;
         }
       }
-    },
+    }
   });
-  await rewriter.transform(new Response(svg)).text();
   return found;
 }
 
@@ -156,15 +136,14 @@ export async function hasElementMatching(
   selector: string,
   predicate: (tagName: string) => boolean
 ): Promise<boolean> {
+  const $ = cheerio.load(svg, { xmlMode: true });
   let found = false;
-  const rewriter = new HTMLRewriter().on(selector, {
-    element(el) {
-      if (found) return;
-      if (predicate(el.tagName)) {
-        found = true;
-      }
-    },
+  $(selector).each((_, el) => {
+    if (found) return false;
+    if (el.type === 'tag' && predicate(el.name)) {
+      found = true;
+      return false;
+    }
   });
-  await rewriter.transform(new Response(svg)).text();
   return found;
 }
