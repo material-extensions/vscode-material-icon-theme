@@ -1,7 +1,7 @@
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 import deepEqual from 'fast-deep-equal';
-import type { ConfigurationChangeEvent, ExtensionContext } from 'vscode';
+import { workspace, type ConfigurationChangeEvent, type ExtensionContext } from 'vscode';
 import {
   applyConfigToIcons,
   type Config,
@@ -19,6 +19,7 @@ import {
   writeToFile,
 } from '../../core';
 import { getCurrentConfig } from '../shared/config';
+import { normalizeCustomIconConfigPaths } from './customIconPaths';
 
 /** Compare the workspace and the user configurations with the current setup of the icons. */
 export const detectConfigChanges = async (
@@ -29,7 +30,14 @@ export const detectConfigChanges = async (
   if (event?.affectsConfiguration(extensionName) === false) return;
 
   const oldConfig = getConfigFromStorage(context);
-  const config = getCurrentConfig();
+  const config = normalizeCustomIconConfigPaths(getCurrentConfig(), {
+    extensionPath: context.extension.extensionPath,
+    workspaceFolders:
+      workspace.workspaceFolders?.map((folder) => ({
+        name: folder.name,
+        path: folder.uri.fsPath,
+      })) ?? [],
+  });
 
   // if the configuration has not changed
   if (deepEqual(config, oldConfig)) {
@@ -88,7 +96,7 @@ const syncConfigWithStorage = (config: Config, context: ExtensionContext) => {
 };
 
 const getConfigFromStorage = (context: ExtensionContext): Config => {
-  const config = context.globalState.get<{ version: string; config: Config }>(
+  const config = context.globalState.get<{ version: string; config: Config; }>(
     'config'
   );
   if (context.extension.packageJSON.version === config?.version) {
