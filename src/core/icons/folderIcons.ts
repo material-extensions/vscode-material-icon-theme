@@ -10,7 +10,7 @@ export const folderIcons: FolderTheme[] = [
     defaultIcon: { name: 'folder' },
     rootFolder: { name: 'folder-root' },
     icons: [
-      { name: 'folder-rust', folderNames: ['rust'] },
+      { name: 'folder-rust', folderNames: ['rust', 'cargo'] },
       {
         name: 'folder-robot',
         folderNames: ['bot', 'bots', 'robot', 'robots', 'agent', 'agents'],
@@ -1340,16 +1340,20 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-claude',
-        folderNames: ['.claude'],
+        folderNames: ['claude'],
       },
       {
         name: 'folder-cursor',
-        folderNames: ['.cursor'],
+        folderNames: ['cursor'],
         light: true,
       },
       {
         name: 'folder-gemini-ai',
-        folderNames: ['.gemini', 'gemini', 'gemini-ai', 'geminiai'],
+        folderNames: ['gemini', 'gemini-ai', 'geminiai'],
+      },
+      {
+        name: 'folder-opencode',
+        folderNames: ['opencode'],
       },
       {
         name: 'folder-input',

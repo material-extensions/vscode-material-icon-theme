@@ -27,20 +27,20 @@ jobs:
           private-key: ${{ secrets.BOT_PRIVATE_KEY }}
 
       - name: 📥 Checkout
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
         with:
           # Required for fetching tags and generating release notes
           fetch-depth: 0
           token: ${{ steps.app-token.outputs.token }}
 
-      - name: 🔧 Setup Bun
-        uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
-          bun-version-file: ".bun-version"
+          node-version-file: '.node-version'
+          cache: 'npm'
 
       - name: 📦 Install dependencies
-        run: |
-          bun install --frozen-lockfile
+        run: npm ci
 
       - name: 🔧 Configure Git
         run: |
@@ -49,15 +49,15 @@ jobs:
           git config --global push.followTags true
 
       - name: 🚀 Prepare release
-        run: bun run preversion
+        run: npm run preversion
 
       - name: 📜 Generate changelog and release notes
         env:
           # Don't run husky on `git commit`
           HUSKY: 0
         run: |
-          bunx changelogen --hideAuthorEmail --release --push
-          bunx changelogen github release --token ${{ secrets.GITHUB_TOKEN }}
+          npx changelogen --hideAuthorEmail --release --push
+          npx changelogen github release --token ${{ secrets.GITHUB_TOKEN }}
 
       - name: 📝 Get metadata
         id: metadata
@@ -71,10 +71,10 @@ jobs:
           echo "extension-file=$EXTENSION_FILE"  >> $GITHUB_OUTPUT
 
       - name: 🛠️ Build extension
-        run: bunx @vscode/vsce package
+        run: npx @vscode/vsce package
 
       - name: 🔒 Attest artifacts
-        uses: actions/attest-build-provenance@a2bbfa25375fe432b6a289bc6b6cd05ecd0c4c32 # v4.1.0
+        uses: actions/attest-build-provenance@0f67c3f4856b2e3261c31976d6725780e5e4c373 # v4.1.1
         # Read: https://docs.github.com/en/actions/security-guides/using-artifact-attestations-to-establish-provenance-for-builds
         with:
           subject-path: ${{ steps.metadata.outputs.extension-file }}
@@ -136,21 +136,18 @@ jobs:
 
     permissions:
       id-token: write
+      contents: read
 
     steps:
       - name: 📥 Checkout
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
         with:
           ref: v${{ needs.release.outputs.version }}
-
-      - name: 🔧 Setup Bun
-        uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2
-        with:
-          bun-version-file: ".bun-version"
 
       - name: 🔧 Setup Node.js
         uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
+          node-version-file: '.node-version'
           registry-url: 'https://registry.npmjs.org'
 
       - name: 📦 Publish to NPM Registry

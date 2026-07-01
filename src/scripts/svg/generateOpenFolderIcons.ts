@@ -35,7 +35,7 @@ function isClosedFolderSvg(fileName: string): boolean {
   return (
     fileName.startsWith('folder-') &&
     fileName.endsWith('.svg') &&
-    !fileName.includes('-open') &&
+    !/-open([_.])/.test(fileName) &&
     !fileName.endsWith('.clone.svg') &&
     !EXCLUDED_FILES.has(fileName)
   );

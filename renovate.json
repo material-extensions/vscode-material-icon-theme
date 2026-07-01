@@ -9,14 +9,14 @@
       "groupSlug": "github-actions"
     },
     {
-      "matchManagers": ["bun"],
-      "groupName": "Bun packages",
-      "groupSlug": "bun-packages"
+      "matchManagers": ["npm"],
+      "groupName": "npm packages",
+      "groupSlug": "npm-packages"
     },
     {
       "matchPackageNames": ["@biomejs/biome"],
       "postUpgradeTasks": {
-        "commands": ["bun biome migrate --write"],
+        "commands": ["npx @biomejs/biome migrate --write"],
         "fileFilters": ["**/*"]
       }
     }

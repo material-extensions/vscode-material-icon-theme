@@ -2,6 +2,50 @@
 
 # Changelog
 
+## v5.36.1
+
+[compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.36.0...v5.36.1)
+
+### 🩹 Fixes
+
+- **ci:** Release script failure due to husky ([3dd1e258](https://github.com/material-extensions/vscode-material-icon-theme/commit/3dd1e258))
+- Cloning issue (Closes #3502) ([#3502](https://github.com/material-extensions/vscode-material-icon-theme/issues/3502))
+
+### ❤️ Contributors
+
+- Philipp Kief ([@PKief](https://github.com/PKief))
+
+## v5.36.0
+
+[compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.35.0...v5.36.0)
+
+### 🚀 Enhancements
+
+- Add support for metro.config.ts icon ([#3467](https://github.com/material-extensions/vscode-material-icon-theme/pull/3467))
+- Generate open folder icons ([#3468](https://github.com/material-extensions/vscode-material-icon-theme/pull/3468))
+- Add latex file extensions ([#3474](https://github.com/material-extensions/vscode-material-icon-theme/pull/3474))
+- Add `.cjs` and `.mjs` support for vue.config file ([#3479](https://github.com/material-extensions/vscode-material-icon-theme/pull/3479))
+- Add hip file extension icon mapping ([#3476](https://github.com/material-extensions/vscode-material-icon-theme/pull/3476))
+- Add `.cargo` folder icon mapping ([#3491](https://github.com/material-extensions/vscode-material-icon-theme/pull/3491))
+- **icon:** Add opencode folder icon ([#3492](https://github.com/material-extensions/vscode-material-icon-theme/pull/3492))
+- Add check to disallow dot-prefixed folder names ([0cadc1bf](https://github.com/material-extensions/vscode-material-icon-theme/commit/0cadc1bf))
+
+### 🩹 Fixes
+
+- **ci:** Missing bun installation step ([937f0758](https://github.com/material-extensions/vscode-material-icon-theme/commit/937f0758))
+- **icon:** Normalize folder icons ([#3462](https://github.com/material-extensions/vscode-material-icon-theme/pull/3462))
+- Avoid false positive in open folder filter for names containing 'open' ([69d80496](https://github.com/material-extensions/vscode-material-icon-theme/commit/69d80496))
+
+### ❤️ Contributors
+
+- Philipp Kief ([@PKief](https://github.com/PKief))
+- Harsh Thakur ([@devharshthakur](https://github.com/devharshthakur))
+- Tymon Marek ([@TymonMarek](https://github.com/TymonMarek))
+- Young ([@NTIHS-IT](https://github.com/NTIHS-IT))
+- Muhammad Naufal Kateni ([@NaufalK25](https://github.com/NaufalK25))
+- Ridwan Ikhsan ([@rdnsan](https://github.com/rdnsan))
+- Sayan Shankhari ([@SayanShankhari](https://github.com/SayanShankhari))
+
 ## v5.35.0
 
 [compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.34.0...v5.35.0)

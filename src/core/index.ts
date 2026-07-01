@@ -41,6 +41,7 @@ export { folderIcons } from './icons/folderIcons';
 export { languageIcons } from './icons/languageIcons';
 export {
   createLoggingObserver,
+  type LoggingObserver,
   type LogLevel,
   logger,
 } from './logging/logger';

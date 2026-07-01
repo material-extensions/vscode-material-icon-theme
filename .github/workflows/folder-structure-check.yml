@@ -16,15 +16,16 @@ jobs:
 
     steps:
       - name: 📥 Checkout
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
 
-      - name: 🔧 Setup Bun
-        uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
-          bun-version-file: ".bun-version"
+          node-version-file: '.node-version'
+          cache: 'npm'
 
       - name: 📦 Install dependencies
-        run: bun install --frozen-lockfile
+        run: npm ci
 
       - name: 📁 Check folder icon structure
-        run: bun ./src/scripts/icons/checks/checkFolderIconStructure.ts
+        run: npx tsx ./src/scripts/icons/checks/checkFolderIconStructure.ts
