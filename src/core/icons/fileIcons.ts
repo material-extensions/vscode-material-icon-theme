@@ -550,6 +550,7 @@ export const fileIcons: FileIcons = {
         'dsql',
       ],
     },
+    { name: 'dbt-bouncer', fileNames: ['dbt-bouncer.yml', 'dbt-bouncer.toml'] },
     { name: 'kusto', fileExtensions: ['kql'] },
     { name: 'csharp', fileExtensions: ['cs', 'csx', 'csharp'] },
     { name: 'qsharp', fileExtensions: ['qs'] },
