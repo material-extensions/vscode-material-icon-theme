@@ -49,7 +49,7 @@ jobs:
         run: |
           files=$(git diff --no-index ../main ../fork --diff-filter=ACMRTUX --name-only | grep '^\.\./fork/icons/.*\.svg$')
           filesCount=$(echo "$files" | wc -l)
-          npx svg-icon-review@2.2.0 --noSandbox --bigIcon ${files}
+          npx svg-icon-review@3.0.1 --noSandbox --bigIcon ${files}
           echo svg_files_count=$filesCount >> $GITHUB_ENV
 
       - name: ⬆️ Upload PNG
