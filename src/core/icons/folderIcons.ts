@@ -838,6 +838,10 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-job', folderNames: ['job', 'jobs'] },
       {
+        name: 'folder-cronjobs',
+        folderNames: ['cronjobs', 'cronjob', 'crons', 'cron'],
+      },
+      {
         name: 'folder-keys',
         folderNames: [
           'key',
