@@ -1,6 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base", "helpers:pinGitHubActionDigests"],
+  "extends": ["config:base", "helpers:pinGitHubActionDigests", "customManagers:biomeVersions"],
   "ignoreDeps": ["@types/vscode"],
   "packageRules": [
     {
@@ -12,13 +12,6 @@
       "matchManagers": ["npm"],
       "groupName": "npm packages",
       "groupSlug": "npm-packages"
-    },
-    {
-      "matchPackageNames": ["@biomejs/biome"],
-      "postUpgradeTasks": {
-        "commands": ["npx @biomejs/biome migrate --write"],
-        "fileFilters": ["**/*"]
-      }
     }
   ]
 }
