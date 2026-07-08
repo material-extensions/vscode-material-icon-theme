@@ -1,21 +1,21 @@
 {
-	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
-	"extends": [
-		"config:base",
-		"helpers:pinGitHubActionDigests",
-		"customManagers:biomeVersions"
-	],
-	"ignoreDeps": ["@types/vscode"],
-	"packageRules": [
-		{
-			"matchManagers": ["github-actions"],
-			"groupName": "GitHub Actions workflows",
-			"groupSlug": "github-actions"
-		},
-		{
-			"matchManagers": ["npm"],
-			"groupName": "npm packages",
-			"groupSlug": "npm-packages"
-		}
-	]
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base",
+    "helpers:pinGitHubActionDigests",
+    "customManagers:biomeVersions"
+  ],
+  "ignoreDeps": ["@types/vscode"],
+  "packageRules": [
+    {
+      "matchManagers": ["github-actions"],
+      "groupName": "GitHub Actions workflows",
+      "groupSlug": "github-actions"
+    },
+    {
+      "matchManagers": ["npm"],
+      "groupName": "npm packages",
+      "groupSlug": "npm-packages"
+    }
+  ]
 }
