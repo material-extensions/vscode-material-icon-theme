@@ -16,6 +16,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['bot', 'bots', 'robot', 'robots', 'agent', 'agents'],
       },
       {
+        name: 'folder-eucode',
+        folderNames: ['.eucode', 'eucode'],
+      },
+      {
         name: 'folder-src',
         folderNames: ['src', 'srcs', 'source', 'sources', 'code'],
       },
