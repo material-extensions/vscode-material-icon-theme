@@ -1424,6 +1424,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-appwrite', folderNames: ['appwrite'] },
       { name: 'folder-assembly', folderNames: ['assembly', 'asm'] },
       { name: 'folder-go', folderNames: ['go', 'golang'] },
+      { name: 'folder-kotlin', folderNames: ['kotlin'] },
       {
         name: 'folder-eas',
         folderNames: ['eas'],
@@ -1432,12 +1433,12 @@ export const folderIcons: FolderTheme[] = [
           color: 'gray-800',
         },
       },
-      { name: 'folder-kotlin', folderNames: ['kotlin'] },
       {
         name: 'folder-redis',
         folderNames: ['redis', 'redis-db', 'redislabs'],
         clone: { base: 'folder-database', color: '#EF5350' },
       },
+      { name: 'folder-internal', folderNames: ['internal'] },
     ],
   },
   {
