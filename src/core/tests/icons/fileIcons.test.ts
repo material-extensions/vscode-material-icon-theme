@@ -168,6 +168,40 @@ describe('file icons', () => {
     expect(iconDefinitions).toStrictEqual(expectedManifest);
   });
 
+  it('should keep normalized custom SVG paths in the manifest', () => {
+    const fileIcons: FileIcons = {
+      defaultIcon: { name: 'file' },
+      icons: [],
+    };
+
+    config.files.associations = {
+      'sample.ts': '../../../../workspace/icons/sample',
+    };
+
+    const manifest = createEmptyManifest();
+    const iconDefinitions = loadFileIconDefinitions(
+      fileIcons,
+      config,
+      manifest
+    );
+
+    expectedManifest.iconDefinitions = {
+      '../../../../workspace/icons/sample': {
+        iconPath: './../icons/../../../../workspace/icons/sample.svg',
+      },
+      file: {
+        iconPath: './../icons/file.svg',
+      },
+    };
+    expectedManifest.file = 'file';
+    expectedManifest.fileExtensions = {};
+    expectedManifest.fileNames = {
+      'sample.ts': '../../../../workspace/icons/sample',
+    };
+
+    expect(iconDefinitions).toStrictEqual(expectedManifest);
+  });
+
   it('should configure language icons for light and high contrast', () => {
     const fileIcons: FileIcons = {
       defaultIcon: { name: 'file', light: true, highContrast: true },
