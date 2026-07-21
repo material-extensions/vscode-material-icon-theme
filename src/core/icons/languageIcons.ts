@@ -213,4 +213,5 @@ export const languageIcons: LanguageIcon[] = [
     ids: ['instructions'],
     clone: { base: 'lib', color: 'cyan-A700' },
   },
+  { name: 'plix', ids: ['plix'] },
 ];
