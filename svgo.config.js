@@ -1,5 +1,5 @@
 /** @type {import('svgo').Config} */
-module.exports = {
+export default {
   multipass: true,
   precision: 2,
   plugins: [
