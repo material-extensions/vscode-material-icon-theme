@@ -3073,6 +3073,7 @@ export const fileIcons: FileIcons = {
       fileNames: ['bun.lockb', 'bunfig.toml', '.bun-version', 'bun.lock'],
       light: true,
     },
+    { name: 'ocx', fileNames: ['ocx.toml', 'ocx.lock'] },
     { name: 'antlr', fileExtensions: ['g4'] },
     { name: 'stylable', fileExtensions: ['st.css'] },
     { name: 'pinejs', fileExtensions: ['pine'] },
