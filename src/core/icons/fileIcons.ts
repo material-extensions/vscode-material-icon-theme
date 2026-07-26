@@ -3607,6 +3607,10 @@ export const fileIcons: FileIcons = {
       name: 'pytorch',
       fileExtensions: ['pt', 'pth', 'pwf'],
     },
+    {
+      name: 'keras',
+      fileExtensions: ['keras', 'h5', 'hdf5', 'weights.h5'],
+    },
     { name: 'blender', fileExtensions: ['blend', 'blend1', 'blend2'] },
     { name: 'tsdoc', fileNames: ['tsdoc.json'] },
     {
