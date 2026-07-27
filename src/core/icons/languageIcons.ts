@@ -201,6 +201,7 @@ export const languageIcons: LanguageIcon[] = [
       base: 'autohotkey',
       color: 'lime-700',
     },
+    
   },
   { name: 'gnuplot', ids: ['gnuplot'] },
   { name: 'helm', ids: ['helm'] },
