@@ -2,6 +2,34 @@
 
 # Changelog
 
+## v5.37.0
+
+[compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.36.1...v5.37.0)
+
+### 🚀 Enhancements
+
+- Migrate config file ([c2ebdd35](https://github.com/material-extensions/vscode-material-icon-theme/commit/c2ebdd35))
+
+### 🩹 Fixes
+
+- **ci:** Add contents read permission to publish-npm job ([07a49322](https://github.com/material-extensions/vscode-material-icon-theme/commit/07a49322))
+- Resolves error with merge conflict (Closes #3502) ([#3502](https://github.com/material-extensions/vscode-material-icon-theme/issues/3502))
+- **ci:** Update version of svg-icon-review ([f4d0cdcb](https://github.com/material-extensions/vscode-material-icon-theme/commit/f4d0cdcb))
+- Correct supabase folder icon design ([#3516](https://github.com/material-extensions/vscode-material-icon-theme/pull/3516))
+
+### 🏡 Chore
+
+- Migrate from Bun to Node for better VS Code compatibility ([3fd30b6d](https://github.com/material-extensions/vscode-material-icon-theme/commit/3fd30b6d))
+- **ci:** Remove pr closed workflow ([007e8401](https://github.com/material-extensions/vscode-material-icon-theme/commit/007e8401))
+- Add custom manager for biome versions in renovate config ([4621b7f1](https://github.com/material-extensions/vscode-material-icon-theme/commit/4621b7f1))
+- Fix formatting of renovate.json ([9fd9483e](https://github.com/material-extensions/vscode-material-icon-theme/commit/9fd9483e))
+- Update renovate.json ([7185b66a](https://github.com/material-extensions/vscode-material-icon-theme/commit/7185b66a))
+
+### ❤️ Contributors
+
+- Philipp Kief ([@PKief](https://github.com/PKief))
+- Andrin Haldner ([@AHaldner](https://github.com/AHaldner))
+
 ## v5.36.1
 
 [compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.36.0...v5.36.1)
