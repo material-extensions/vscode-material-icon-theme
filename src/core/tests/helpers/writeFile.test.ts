@@ -19,16 +19,19 @@ describe('writeToFile', () => {
       { filePath: '/path.txt', data: 'hello', encoding: undefined },
       { filePath: '/path.txt', data: 'hello', encoding: 'utf-8' },
       { filePath: '/path.txt', data: '  spaces  ', encoding: 'utf-8' },
-    ])('should write path=$filePath data="$data" encoding=$encoding', async ({
-      filePath,
-      data,
-      encoding,
-    }) => {
-      await writeToFile(filePath, data, encoding as BufferEncoding | undefined);
+    ])(
+      'should write path=$filePath data="$data" encoding=$encoding',
+      async ({ filePath, data, encoding }) => {
+        await writeToFile(
+          filePath,
+          data,
+          encoding as BufferEncoding | undefined
+        );
 
-      expect(writeFileMock).toHaveBeenCalledTimes(1);
-      expect(writeFileMock).toHaveBeenCalledWith(filePath, data, encoding);
-    });
+        expect(writeFileMock).toHaveBeenCalledTimes(1);
+        expect(writeFileMock).toHaveBeenCalledWith(filePath, data, encoding);
+      }
+    );
   });
 
   describe('validation', () => {
