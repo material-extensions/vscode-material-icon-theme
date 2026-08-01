@@ -3779,6 +3779,10 @@ export const fileIcons: FileIcons = {
       light: true,
     },
     {
+      name: 'agent',
+      fileNames: ['agents.md'],
+    },
+    {
       name: 'mrpack',
       fileExtensions: ['mrpack'],
     },
