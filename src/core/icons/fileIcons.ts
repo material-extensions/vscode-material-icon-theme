@@ -500,7 +500,6 @@ export const fileIcons: FileIcons = {
         'vcxproj.filters',
         'wixproj',
         'bas',
-        'brs',
         'vba',
       ],
       fileNames: ['.vsconfig'],
