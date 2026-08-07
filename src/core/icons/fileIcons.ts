@@ -10,6 +10,15 @@ export const fileIcons: FileIcons = {
   defaultIcon: { name: 'file' },
   icons: parseByPattern([
     {
+      name: 'subatom',
+      fileNames: [
+        'subatom.config.js',
+        'subatom.config.ts',
+        'subatom.config.mjs',
+        'subatom.config.cjs',
+      ],
+    },
+    {
       name: 'html',
       fileExtensions: [
         'htm',
