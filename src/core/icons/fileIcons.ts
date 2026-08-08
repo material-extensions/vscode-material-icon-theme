@@ -505,7 +505,6 @@ export const fileIcons: FileIcons = {
         'vcxproj.filters',
         'wixproj',
         'bas',
-        'brs',
         'vba',
       ],
       fileNames: ['.vsconfig'],
@@ -3509,6 +3508,7 @@ export const fileIcons: FileIcons = {
         '.lintstagedrc.yml',
         '.lintstagedrc.mjs',
         '.lintstagedrc.cjs',
+        'lint-staged.config.ts',
         'lint-staged.config.mjs',
         'lint-staged.config.cjs',
         'lint-staged.config.js',
@@ -3777,6 +3777,10 @@ export const fileIcons: FileIcons = {
       name: 'expo',
       fileNames: ['eas.json', '.easignore'],
       light: true,
+    },
+    {
+      name: 'agent',
+      fileNames: ['agents.md'],
     },
     {
       name: 'mrpack',
