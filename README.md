@@ -133,22 +133,24 @@ If there's no leading `*` it will be automatically configured as filename and no
 
 #### Custom SVG icons
 
-It's possible to add custom icons by adding a path to an SVG file which is located relative to the extension's dist folder. However, the restriction applies that the directory in which the custom icons are located must be within the `extensions` directory of the `.vscode` folder in the user directory.
+It's possible to add custom icons by adding a path to an SVG file. You can either keep using a path that is relative to the extension's dist folder, or reference a file inside the current workspace with `${workspaceFolder}`. In multi-root workspaces you can target a specific folder with `${workspaceFolder:workspaceName}`.
 
-For example a custom SVG file called `sample.svg` can be placed in an `icons` folder inside of VS Code's `extensions` folder:
+For example a custom SVG file called `sample.svg` can be placed in an `icons` folder at the root of your workspace:
 
 ```text
-.vscode
- ┗ extensions
-   ┗ icons
-     ┗ sample.svg
+your-workspace
+ ┣ icons
+ ┃ ┗ sample.svg
+ ┗ src
 ```
 
-In the settings.json (User Settings only!) the icon can be associated to a file name or file extension like this:
+If you prefer to keep custom icons inside VS Code's `extensions` directory, relative paths such as `../../icons/sample` continue to work as before.
+
+In the settings.json the icon can be associated to a file name or file extension like this:
 
 ```json
 "material-icon-theme.files.associations": {
-    "fileName.ts": "../../icons/sample"
+  "fileName.ts": "${workspaceFolder}/icons/sample"
 }
 ```
 
@@ -212,7 +214,7 @@ In the settings.json (User Settings only!) the folder icons can be associated to
 
 ```json
 "material-icon-theme.folders.associations": {
-    "src": "../../../../icons/folder-sample"
+  "src": "../../../../icons/folder-sample"
 }
 ```
 
