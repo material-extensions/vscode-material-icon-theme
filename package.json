@@ -487,7 +487,7 @@
     "svg-color-linter": "^3.0.0",
     "svgo": "^4.0.1",
     "tsx": "^4.22.4",
-    "typescript": "^6.0.3",
+    "typescript": "^7.0.0",
     "vitest": "^4.1.9"
   },
   "patchedDependencies": {
