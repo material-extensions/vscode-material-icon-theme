@@ -2,6 +2,18 @@
 
 # Changelog
 
+## v5.38.1
+
+[compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.38.0...v5.38.1)
+
+### 🩹 Fixes
+
+- Add build step to release workflow in npm publishing part ([c67556cc](https://github.com/material-extensions/vscode-material-icon-theme/commit/c67556cc))
+
+### ❤️ Contributors
+
+- Philipp Kief ([@PKief](https://github.com/PKief))
+
 ## v5.38.0
 
 [compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.37.0...v5.38.0)
