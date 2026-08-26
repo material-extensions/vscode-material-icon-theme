@@ -2,6 +2,54 @@
 
 # Changelog
 
+## v5.38.1
+
+[compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.38.0...v5.38.1)
+
+### 🩹 Fixes
+
+- Add build step to release workflow in npm publishing part ([c67556cc](https://github.com/material-extensions/vscode-material-icon-theme/commit/c67556cc))
+
+### ❤️ Contributors
+
+- Philipp Kief ([@PKief](https://github.com/PKief))
+
+## v5.38.0
+
+[compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.37.0...v5.38.0)
+
+### 🚀 Enhancements
+
+- Support lint-staged.config.ts ([#3541](https://github.com/material-extensions/vscode-material-icon-theme/pull/3541))
+- Added `AGENTS.md` file icon ([#3437](https://github.com/material-extensions/vscode-material-icon-theme/pull/3437))
+- **fileIcons:** Add .env.preprod to tune icon ([#3558](https://github.com/material-extensions/vscode-material-icon-theme/pull/3558))
+- Associate .xcode-version with swift icon ([#3568](https://github.com/material-extensions/vscode-material-icon-theme/pull/3568))
+- Add deepEqual utility and update change detection ([b3f9bbaa](https://github.com/material-extensions/vscode-material-icon-theme/commit/b3f9bbaa))
+
+### 🩹 Fixes
+
+- **ci:** Add npm ci to the release workflow ([957d82b4](https://github.com/material-extensions/vscode-material-icon-theme/commit/957d82b4))
+- Change Renovate config to use recommended preset ([a440d8ec](https://github.com/material-extensions/vscode-material-icon-theme/commit/a440d8ec))
+- Remove 'brs' from file icon list (Closes #3554) ([#3554](https://github.com/material-extensions/vscode-material-icon-theme/issues/3554))
+- Resolve TypeScript indexing error in deepEqual ([7f109357](https://github.com/material-extensions/vscode-material-icon-theme/commit/7f109357))
+
+### 🏡 Chore
+
+- **deps-dev:** Bump linkify-it from 5.0.1 to 5.0.2 ([#3544](https://github.com/material-extensions/vscode-material-icon-theme/pull/3544))
+- **deps-dev:** Bump svgo from 4.0.1 to 4.0.2 ([#3542](https://github.com/material-extensions/vscode-material-icon-theme/pull/3542))
+- **deps-dev:** Bump postcss from 8.5.15 to 8.5.24 ([#3551](https://github.com/material-extensions/vscode-material-icon-theme/pull/3551))
+- **deps-dev:** Bump fast-uri from 3.1.2 to 3.1.4 ([#3545](https://github.com/material-extensions/vscode-material-icon-theme/pull/3545))
+- **deps-dev:** Bump fast-uri from 3.1.4 to 3.1.5 ([#3557](https://github.com/material-extensions/vscode-material-icon-theme/pull/3557))
+- **deps-dev:** Bump undici from 7.28.0 to 7.29.0 ([#3555](https://github.com/material-extensions/vscode-material-icon-theme/pull/3555))
+
+### ❤️ Contributors
+
+- Philipp Kief ([@PKief](https://github.com/PKief))
+- Soham Mondal ([@sohammondal](https://github.com/sohammondal))
+- Guillaume Valmont ([@gvalmont](https://github.com/gvalmont))
+- Cameron Cowen
+- Kangkangovo12138
+
 ## v5.37.0
 
 [compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.36.1...v5.37.0)
