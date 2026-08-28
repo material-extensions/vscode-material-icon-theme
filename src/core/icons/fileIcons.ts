@@ -1678,6 +1678,7 @@ export const fileIcons: FileIcons = {
       name: 'rstack',
       fileNames: ['rslint.json', 'rslint.jsonc'],
       patterns: {
+        'rstack.config': FileNamePattern.Ecmascript,
         'rspack.config': FileNamePattern.Ecmascript,
         'rsbuild.config': FileNamePattern.Ecmascript,
         'rslib.config': FileNamePattern.Ecmascript,
