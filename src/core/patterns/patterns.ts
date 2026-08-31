@@ -99,6 +99,22 @@ const mapPatterns = (patterns: Patterns): string[] => {
       case FileNamePattern.Dotfile:
         return [`.${fileName}`, fileName];
 
+      case FileNamePattern.DotConfigDirectory:
+        return [
+          `.config/${fileName}.json`,
+          `.config/${fileName}.jsonc`,
+          `.config/${fileName}.json5`,
+          `.config/${fileName}.yaml`,
+          `.config/${fileName}.yml`,
+          `.config/${fileName}.toml`,
+          `.config/${fileName}.js`,
+          `.config/${fileName}.mjs`,
+          `.config/${fileName}.cjs`,
+          `.config/${fileName}.ts`,
+          `.config/${fileName}.mts`,
+          `.config/${fileName}.cts`,
+        ];
+
       default:
         // Check if all potential pattern cases are handled
         const exhaustiveCheck: never = pattern;
