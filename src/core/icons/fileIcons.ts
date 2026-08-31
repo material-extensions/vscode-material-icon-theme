@@ -1734,6 +1734,7 @@ export const fileIcons: FileIcons = {
       fileNames: ['androidmanifest.xml'],
       fileExtensions: ['apk', 'smali', 'dex'],
     },
+    { name: 'androidscript', fileExtensions: ['aab', 'androidscript'] },
     {
       name: 'tune',
       fileExtensions: ['env'],
