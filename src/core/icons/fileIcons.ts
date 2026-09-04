@@ -473,6 +473,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'vscode',
+      fileNames: ['.vscode-test.js', '.vscode-test.mjs', '.vscode-test.cjs'],
       fileExtensions: [
         'vscodeignore',
         'vsixmanifest',
