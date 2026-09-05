@@ -3049,6 +3049,10 @@ export const fileIcons: FileIcons = {
       fileNames: ['pnpm-lock.yaml', 'pnpm-workspace.yaml', '.pnpmfile.cjs'],
     },
     {
+      name: 'aube',
+      fileNames: ['aube-lock.yaml', 'aube-workspace.yaml'],
+    },
+    {
       name: 'gridsome',
       fileNames: ['gridsome.config.js', 'gridsome.server.js'],
     },
