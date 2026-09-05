@@ -488,7 +488,7 @@
     "svgo": "^4.0.2",
     "tsx": "^4.23.12",
     "typescript": "npm:@typescript/typescript6@^6.0.2",
-    "vitest": "^4.1.11"
+    "vitest": "^5.0.0"
   },
   "patchedDependencies": {
     "changelogen@0.6.2": "patches/changelogen@0.6.2.patch"
