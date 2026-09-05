@@ -314,6 +314,7 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['docker', 'dockerfiles', 'dockerhub'],
       },
       { name: 'folder-nginx', folderNames: ['nginx'] },
+      { name: 'folder-nika', folderNames: ['nika'] },
       {
         name: 'folder-ngrx-store',
         folderNames: ['store'],
