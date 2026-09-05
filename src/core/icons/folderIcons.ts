@@ -1317,6 +1317,7 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-link', folderNames: ['link', 'links'] },
       { name: 'folder-pytorch', folderNames: ['pytorch', 'torch'] },
+      { name: 'folder-tensorflow', folderNames: ['tensorflow'] },
       {
         name: 'folder-blender',
         folderNames: [
