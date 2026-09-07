@@ -1,0 +1,6 @@
+export default {
+  '*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx}': ['npm run lint'],
+  'src/core/**/*.{js,ts}': () => 'npm run test',
+  'icons/*.svg': ['npm run check', 'npm run check-colors'],
+  '*.md': ['markdownlint'],
+};
