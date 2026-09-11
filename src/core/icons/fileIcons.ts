@@ -1336,6 +1336,12 @@ export const fileIcons: FileIcons = {
       fileNames: ['nuxt.config.js', 'nuxt.config.ts', '.nuxtignore', '.nuxtrc'],
     },
     {
+      name: 'weapp-vite',
+      patterns: {
+        'weapp-vite.config': FileNamePattern.Ecmascript,
+      },
+    },
+    {
       name: 'harmonix',
       fileNames: ['harmonix.config.js', 'harmonix.config.ts'],
     },
