@@ -10,6 +10,11 @@ export const fileIcons: FileIcons = {
   defaultIcon: { name: 'file' },
   icons: parseByPattern([
     {
+      name: 'canopy',
+      fileNames: ['canopy.json'],
+      light: true,
+    },
+    {
       name: 'html',
       fileExtensions: [
         'htm',
