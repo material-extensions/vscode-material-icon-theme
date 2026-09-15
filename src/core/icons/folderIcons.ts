@@ -183,6 +183,7 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-vue', folderNames: ['vue'] },
       { name: 'folder-vuepress', folderNames: ['vuepress'] },
+      { name: 'folder-weapp-vite', folderNames: ['weapp-vite'] },
       { name: 'folder-expo', folderNames: ['expo', 'expo-shared'] },
       {
         name: 'folder-config',
