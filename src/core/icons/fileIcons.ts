@@ -138,6 +138,10 @@ export const fileIcons: FileIcons = {
       ],
     },
     {
+      name: 'nika',
+      fileExtensions: ['nika.yaml', 'nika.yml'],
+    },
+    {
       name: 'xml',
       fileExtensions: [
         'xml',
