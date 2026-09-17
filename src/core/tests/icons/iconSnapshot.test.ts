@@ -1,0 +1,584 @@
+import { execFile, fork } from 'node:child_process';
+import {
+  cpSync,
+  existsSync,
+  mkdirSync,
+  mkdtempSync,
+  readdirSync,
+  readFileSync,
+  rmSync,
+  unlinkSync,
+  writeFileSync,
+} from 'node:fs';
+import { tmpdir } from 'node:os';
+import { basename, dirname, join, resolve, sep } from 'node:path';
+import { promisify } from 'node:util';
+import { build } from 'esbuild';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+} from 'vitest';
+import {
+  generateConfiguredFileIconClones,
+  generateConfiguredFolderIconClones,
+  generateConfiguredLanguageIconClones,
+} from '../../generator/clones/clonesGenerator';
+import { padWithDefaultConfig } from '../../generator/config/defaultConfig';
+import { generateFileIcons } from '../../generator/fileGenerator';
+import {
+  generateFolderIcons,
+  generateRootFolderIcons,
+} from '../../generator/folderGenerator';
+import {
+  generateIconSnapshot,
+  isIconSnapshotCurrent,
+} from '../../generator/generateIconSnapshot';
+import { generateManifest } from '../../generator/generateManifest';
+import { withIconRoot } from '../../helpers/resolvePath';
+import { fileIcons } from '../../icons/fileIcons';
+import { folderIcons } from '../../icons/folderIcons';
+import { languageIcons } from '../../icons/languageIcons';
+import type { Manifest } from '../../models/manifest';
+
+const version = 'snapshot-test-version';
+let fixture: string;
+let manifestPath: string;
+let packageFixture: string;
+
+const readManifest = (): Manifest =>
+  JSON.parse(readFileSync(manifestPath, 'utf8'));
+const assetPath = (manifest: Manifest, id: string) =>
+  resolve(dirname(manifestPath), manifest.iconDefinitions![id].iconPath);
+const readAsset = (manifest: Manifest, id: string) =>
+  readFileSync(assetPath(manifest, id), 'utf8');
+const allAssets = (manifest: Manifest) =>
+  new Map(
+    Object.keys(manifest.iconDefinitions!).map((id) => [
+      assetPath(manifest, id),
+      readAsset(manifest, id),
+    ])
+  );
+
+beforeAll(async () => {
+  packageFixture = mkdtempSync(join(tmpdir(), 'material-snapshot-package-'));
+  const icons = join(packageFixture, 'icons');
+  const sourceIcons = resolve('icons');
+  // Rebuild ignored assets even if a developer has run the build previously.
+  // CI runs the tests before building, so no generated repository files may leak in.
+  cpSync(sourceIcons, icons, {
+    recursive: true,
+    filter: (source) => {
+      if (source === sourceIcons) return true;
+      const name = basename(source);
+      return (
+        name.endsWith('.svg') &&
+        !name.includes('~') &&
+        !name.endsWith('.clone.svg') &&
+        !/^(file|folder|folder-open|folder-root|folder-root-open)\.svg$/.test(
+          name
+        ) &&
+        !/^folder-.*-open(?:_light|_highContrast)?\.svg$/.test(name)
+      );
+    },
+  });
+  const base = join(packageFixture, 'dist');
+  mkdirSync(base);
+  const defaults = padWithDefaultConfig();
+  await withIconRoot(base, async () => {
+    await generateFileIcons(
+      defaults.files.color,
+      defaults.opacity,
+      defaults.saturation
+    );
+    await generateFolderIcons(
+      defaults.folders.color,
+      defaults.opacity,
+      defaults.saturation
+    );
+    await generateRootFolderIcons(
+      defaults.rootFolders.color,
+      defaults.opacity,
+      defaults.saturation
+    );
+  });
+  const openGenerator = join(packageFixture, 'generate-open-folders.cjs');
+  await build({
+    entryPoints: [resolve('src/scripts/svg/generateOpenFolderIcons.ts')],
+    outfile: openGenerator,
+    bundle: true,
+    platform: 'node',
+    format: 'cjs',
+    logLevel: 'silent',
+  });
+  await promisify(execFile)(process.execPath, [openGenerator], {
+    cwd: packageFixture,
+    timeout: 30000,
+  });
+  const manifest = generateManifest();
+  await withIconRoot(base, async () => {
+    await generateConfiguredFileIconClones(fileIcons, manifest);
+    await generateConfiguredFolderIconClones(folderIcons, manifest);
+    await generateConfiguredLanguageIconClones(languageIcons, manifest);
+  });
+  for (const definition of Object.values(manifest.iconDefinitions!))
+    expect(
+      existsSync(resolve(base, definition.iconPath)),
+      definition.iconPath
+    ).toBe(true);
+}, 60000);
+
+afterAll(() => {
+  if (!packageFixture.startsWith(join(tmpdir(), 'material-snapshot-package-')))
+    throw new Error('Unsafe package fixture path');
+  rmSync(packageFixture, { recursive: true, force: true });
+});
+
+beforeEach(() => {
+  fixture = mkdtempSync(join(tmpdir(), 'material-snapshot-test-'));
+  mkdirSync(join(fixture, 'dist'));
+  manifestPath = join(fixture, 'dist', 'material-icons.json');
+  cpSync(join(packageFixture, 'icons'), join(fixture, 'icons'), {
+    recursive: true,
+  });
+  writeFileSync(manifestPath, JSON.stringify(generateManifest()));
+});
+
+afterEach(() => {
+  if (!fixture.startsWith(join(tmpdir(), 'material-snapshot-test-')))
+    throw new Error('Unsafe snapshot fixture path');
+  rmSync(fixture, { recursive: true, force: true });
+});
+
+describe('immutable icon snapshots', { timeout: 60000 }, () => {
+  it('preserves originals and previously published assets across configuration changes', async () => {
+    const originals = allAssets(readManifest());
+    const first = padWithDefaultConfig({
+      opacity: 0.5,
+      saturation: 0.4,
+      folders: { color: '#ff0000' },
+      rootFolders: { color: '#00ff00' },
+      files: { color: '#0000ff' },
+    });
+    await generateIconSnapshot(first, manifestPath, version);
+    const firstManifest = readManifest();
+    const previous = allAssets(firstManifest);
+    expect(readAsset(firstManifest, 'typescript')).toContain('opacity="0.5"');
+    expect(readAsset(firstManifest, 'typescript')).toContain('values="0.4"');
+    expect(readAsset(firstManifest, 'folder')).toContain('#ff0000');
+    expect(readAsset(firstManifest, 'folder-root')).toContain('#00ff00');
+    expect(readAsset(firstManifest, 'file')).toContain('#0000ff');
+
+    await generateIconSnapshot(padWithDefaultConfig(), manifestPath, version);
+    const next = readManifest();
+    expect(readAsset(next, 'typescript')).not.toContain('opacity="0.5"');
+    expect(readAsset(next, 'typescript')).not.toContain('values="0.4"');
+    expect(readAsset(next, 'folder')).toContain('#90a4ae');
+    expect(readAsset(next, 'folder-root')).toContain('#90a4ae');
+    expect(readAsset(next, 'file')).toContain('#90a4ae');
+    for (const [path, content] of [...originals, ...previous])
+      expect(readFileSync(path, 'utf8')).toBe(content);
+  });
+
+  it('checks configuration, version and referenced assets instead of trusting saved state', async () => {
+    const config = padWithDefaultConfig({
+      hidesExplorerArrows: true,
+      folders: { associations: { src: 'admin' } },
+      files: { associations: { '*.snapshot': 'typescript' } },
+    });
+    await generateIconSnapshot(config, manifestPath, version);
+    expect(await isIconSnapshotCurrent(config, manifestPath, version)).toBe(
+      true
+    );
+    const manifest = readManifest();
+    expect(manifest.hidesExplorerArrows).toBe(true);
+    expect(manifest.folderNames?.src).toBe('folder-admin');
+    expect(manifest.fileExtensions?.snapshot).toBe('typescript');
+    expect(
+      await isIconSnapshotCurrent(padWithDefaultConfig(), manifestPath, version)
+    ).toBe(false);
+    expect(await isIconSnapshotCurrent(config, manifestPath, 'next')).toBe(
+      false
+    );
+
+    unlinkSync(assetPath(manifest, 'typescript'));
+    expect(await isIconSnapshotCurrent(config, manifestPath, version)).toBe(
+      false
+    );
+    await generateIconSnapshot(config, manifestPath, version);
+    expect(await isIconSnapshotCurrent(config, manifestPath, version)).toBe(
+      true
+    );
+    allAssets(readManifest());
+
+    writeFileSync(manifestPath, '{');
+    expect(await isIconSnapshotCurrent(config, manifestPath, version)).toBe(
+      false
+    );
+    await generateIconSnapshot(config, manifestPath, version);
+    expect(await isIconSnapshotCurrent(config, manifestPath, version)).toBe(
+      true
+    );
+    unlinkSync(manifestPath);
+    expect(await isIconSnapshotCurrent(config, manifestPath, version)).toBe(
+      false
+    );
+    await generateIconSnapshot(config, manifestPath, version);
+    expect(await isIconSnapshotCurrent(config, manifestPath, version)).toBe(
+      true
+    );
+  });
+
+  it('generates file, language and all folder clone variants and repairs a missing clone', async () => {
+    const config = padWithDefaultConfig({
+      opacity: 0.65,
+      files: {
+        customClones: [
+          {
+            name: 'snapshot-file',
+            base: 'rust',
+            color: '#42a5f5',
+            lightColor: '#ef5350',
+            fileNames: ['snapshot.rs'],
+          },
+        ],
+      },
+      languages: {
+        customClones: [
+          {
+            name: 'snapshot-language',
+            base: 'typescript',
+            color: '#42a5f5',
+            lightColor: '#ef5350',
+            ids: ['typescript'],
+          },
+        ],
+      },
+      folders: {
+        customClones: [
+          {
+            name: 'snapshot-folder',
+            base: 'folder',
+            color: '#42a5f5',
+            lightColor: '#ef5350',
+            folderNames: ['snapshots'],
+          },
+        ],
+      },
+    });
+    await generateIconSnapshot(config, manifestPath, version);
+    const manifest = readManifest();
+    expect(manifest.fileNames?.['snapshot.rs']).toBe('snapshot-file');
+    expect(manifest.light?.fileNames?.['snapshot.rs']).toBe(
+      'snapshot-file_light'
+    );
+    expect(manifest.languageIds?.typescript).toBe('snapshot-language');
+    expect(manifest.light?.languageIds?.typescript).toBe(
+      'snapshot-language_light'
+    );
+    expect(manifest.folderNames?.snapshots).toBe('folder-snapshot-folder');
+    expect(manifest.folderNamesExpanded?.snapshots).toBe(
+      'folder-snapshot-folder-open'
+    );
+    expect(manifest.light?.folderNames?.snapshots).toBe(
+      'folder-snapshot-folder_light'
+    );
+    expect(manifest.light?.folderNamesExpanded?.snapshots).toBe(
+      'folder-snapshot-folder-open_light'
+    );
+    const clones = Object.keys(manifest.iconDefinitions!).filter((id) =>
+      id.includes('snapshot-')
+    );
+    expect(clones).toHaveLength(8);
+    for (const id of clones) {
+      expect(readAsset(manifest, id)).toContain('opacity="0.65"');
+      expect(readAsset(manifest, id)).toContain(
+        id.endsWith('_light') ? '#ef5350' : '#42a5f5'
+      );
+    }
+    unlinkSync(assetPath(manifest, 'snapshot-language_light'));
+    expect(await isIconSnapshotCurrent(config, manifestPath, version)).toBe(
+      false
+    );
+    await generateIconSnapshot(config, manifestPath, version);
+    expect(await isIconSnapshotCurrent(config, manifestPath, version)).toBe(
+      true
+    );
+    allAssets(readManifest());
+  });
+
+  it('copies referenced external file and folder SVGs without changing their sources', async () => {
+    const config = padWithDefaultConfig({
+      files: { associations: { '*.external': '../custom/sample' } },
+      folders: { associations: { external: '../../../custom/folder-sample' } },
+    });
+    const sourceManifest = generateManifest(config);
+    const ids = [
+      '../custom/sample',
+      'folder-../../../custom/folder-sample',
+      'folder-../../../custom/folder-sample-open',
+    ];
+    const svg =
+      '<svg xmlns="http://www.w3.org/2000/svg"><path fill="#123456" d="M0 0h16v16H0z"/></svg>';
+    const sources = ids.map((id) => assetPath(sourceManifest, id));
+    for (const path of sources) {
+      expect(path.startsWith(`${fixture}${sep}`)).toBe(true);
+      mkdirSync(dirname(path), { recursive: true });
+      writeFileSync(path, svg);
+    }
+    config.opacity = 0.45;
+    await generateIconSnapshot(config, manifestPath, version);
+    const manifest = readManifest();
+    for (const [index, id] of ids.entries()) {
+      expect(assetPath(manifest, id)).not.toBe(sources[index]);
+      expect(readAsset(manifest, id)).toContain('opacity="0.45"');
+      expect(readAsset(manifest, id)).toContain('#123456');
+      expect(readFileSync(sources[index], 'utf8')).toBe(svg);
+    }
+    expect(await isIconSnapshotCurrent(config, manifestPath, version)).toBe(
+      true
+    );
+  });
+
+  it('resolves associations to active custom clones and clones that override their own base', async () => {
+    const config = padWithDefaultConfig({
+      activeIconPack: 'react',
+      files: {
+        associations: { '*.alias': 'snapshot-file' },
+        customClones: [
+          {
+            name: 'snapshot-file',
+            base: 'typescript',
+            color: '#42a5f5',
+            fileNames: ['clone.ts'],
+            activeForPacks: ['react'],
+          },
+          {
+            name: 'rust',
+            base: 'rust',
+            color: '#ef5350',
+            fileNames: ['override.rs'],
+          },
+        ],
+      },
+      folders: {
+        associations: { aliases: 'snapshot-folder' },
+        customClones: [
+          {
+            name: 'snapshot-folder',
+            base: 'folder',
+            color: '#42a5f5',
+            folderNames: ['clones'],
+            activeForPacks: ['react'],
+          },
+        ],
+      },
+      languages: {
+        associations: { 'alias-language': 'snapshot-language' },
+        customClones: [
+          {
+            name: 'snapshot-language',
+            base: 'typescript',
+            color: '#42a5f5',
+            ids: ['clone-language'],
+            activeForPacks: ['react'],
+          },
+        ],
+      },
+    });
+    expect(existsSync(join(fixture, 'icons', 'snapshot-file.svg'))).toBe(false);
+    expect(
+      existsSync(join(fixture, 'icons', 'folder-snapshot-folder.svg'))
+    ).toBe(false);
+    expect(existsSync(join(fixture, 'icons', 'snapshot-language.svg'))).toBe(
+      false
+    );
+    const originalRust = readFileSync(
+      join(fixture, 'icons', 'rust.svg'),
+      'utf8'
+    );
+    await generateIconSnapshot(config, manifestPath, version);
+    const manifest = readManifest();
+    expect(manifest.fileExtensions?.alias).toBe('snapshot-file');
+    expect(manifest.folderNames?.aliases).toBe('folder-snapshot-folder');
+    expect(manifest.folderNamesExpanded?.aliases).toBe(
+      'folder-snapshot-folder-open'
+    );
+    expect(manifest.languageIds?.['alias-language']).toBe('snapshot-language');
+    expect(manifest.fileNames?.['override.rs']).toBe('rust');
+    expect(readAsset(manifest, 'rust')).toContain('#ef5350');
+    expect(readFileSync(join(fixture, 'icons', 'rust.svg'), 'utf8')).toBe(
+      originalRust
+    );
+    for (const id of [
+      'snapshot-file',
+      'folder-snapshot-folder',
+      'folder-snapshot-folder-open',
+      'snapshot-language',
+    ])
+      expect(readAsset(manifest, id)).toContain('#42a5f5');
+    allAssets(manifest);
+    expect(await isIconSnapshotCurrent(config, manifestPath, version)).toBe(
+      true
+    );
+  });
+
+  it('preserves native opacity and filters in external SVGs with default settings', async () => {
+    const config = padWithDefaultConfig({
+      files: { associations: { '*.shadow': '../custom/shadow' } },
+    });
+    const source = join(fixture, 'custom', 'shadow.svg');
+    const svg =
+      '<svg xmlns="http://www.w3.org/2000/svg" opacity="0.5" filter="url(#shadow)"><defs><filter id="shadow"><feGaussianBlur stdDeviation="2"/></filter></defs><path fill="#123456" d="M0 0h16v16H0z"/></svg>';
+    mkdirSync(dirname(source), { recursive: true });
+    writeFileSync(source, svg);
+    await generateIconSnapshot(config, manifestPath, version);
+    expect(readAsset(readManifest(), '../custom/shadow')).toBe(svg);
+    expect(readFileSync(source, 'utf8')).toBe(svg);
+    expect(await isIconSnapshotCurrent(config, manifestPath, version)).toBe(
+      true
+    );
+    writeFileSync(source, `${svg}\n`);
+    expect(await isIconSnapshotCurrent(config, manifestPath, version)).toBe(
+      false
+    );
+    await generateIconSnapshot(config, manifestPath, version);
+    expect(readAsset(readManifest(), '../custom/shadow')).toBe(`${svg}\n`);
+  });
+
+  it('preserves the published manifest and assets when a source asset is unavailable', async () => {
+    const config = padWithDefaultConfig({ opacity: 0.5 });
+    await generateIconSnapshot(config, manifestPath, version);
+    const previousJson = readFileSync(manifestPath, 'utf8');
+    const previousAssets = allAssets(readManifest());
+    unlinkSync(join(fixture, 'icons', 'typescript.svg'));
+    await expect(
+      generateIconSnapshot(
+        padWithDefaultConfig({ opacity: 0.8 }),
+        manifestPath,
+        version
+      )
+    ).rejects.toThrow();
+    expect(readFileSync(manifestPath, 'utf8')).toBe(previousJson);
+    for (const [path, content] of previousAssets)
+      expect(readFileSync(path, 'utf8')).toBe(content);
+  });
+
+  it('rejects clone names that could write outside their own snapshot', async () => {
+    const previousJson = readFileSync(manifestPath, 'utf8');
+    const previousAssets = allAssets(readManifest());
+    for (const name of [
+      '../../../snapshot-escape',
+      '..\\..\\..\\snapshot-escape',
+    ]) {
+      const config = padWithDefaultConfig({
+        files: {
+          customClones: [
+            {
+              name,
+              base: 'rust',
+              color: '#42a5f5',
+              fileNames: ['unsafe.rs'],
+            },
+          ],
+        },
+      });
+      await expect(
+        generateIconSnapshot(config, manifestPath, version)
+      ).rejects.toThrow();
+      expect(readFileSync(manifestPath, 'utf8')).toBe(previousJson);
+      expect(readdirSync(join(fixture, 'icons', 'generated'))).toEqual([]);
+    }
+    for (const [path, content] of previousAssets)
+      expect(readFileSync(path, 'utf8')).toBe(content);
+  });
+
+  it('publishes complete snapshots from independent processes while keeping old references valid', async () => {
+    const initial = padWithDefaultConfig();
+    await generateIconSnapshot(initial, manifestPath, version);
+    const retained = allAssets(readManifest());
+    const workerPath = join(fixture, 'snapshot-worker.cjs');
+    await build({
+      entryPoints: [resolve('src/core/tests/icons/iconSnapshot.worker.ts')],
+      outfile: workerPath,
+      bundle: true,
+      platform: 'node',
+      format: 'cjs',
+      logLevel: 'silent',
+    });
+    const observed = new Map<string, Manifest>();
+    const failures: unknown[] = [];
+    const observe = () => {
+      try {
+        const json = readFileSync(manifestPath, 'utf8');
+        if (!observed.has(json)) observed.set(json, JSON.parse(json));
+      } catch (error) {
+        failures.push(error);
+      }
+    };
+    const workers = [0.5, 0.8].map((opacity) => {
+      const child = fork(
+        workerPath,
+        [
+          manifestPath,
+          JSON.stringify(padWithDefaultConfig({ opacity })),
+          version,
+        ],
+        { silent: true }
+      );
+      let ready!: () => void;
+      const started = new Promise<void>((done) => {
+        ready = done;
+      });
+      let stderr = '';
+      child.stderr?.on('data', (chunk) => {
+        stderr += String(chunk);
+      });
+      const finished = new Promise<void>((done, reject) => {
+        child.on(
+          'message',
+          (message: { ready?: boolean; manifest?: string; error?: string }) => {
+            if (message.ready) ready();
+            if (message.manifest)
+              observed.set(message.manifest, JSON.parse(message.manifest));
+            if (message.error) reject(new Error(message.error));
+          }
+        );
+        child.on('error', reject);
+        child.on('exit', (code) =>
+          code === 0
+            ? done()
+            : reject(new Error(`Snapshot worker exited ${code}: ${stderr}`))
+        );
+      });
+      return { child, started, finished };
+    });
+    const timer = setInterval(observe, 10);
+    const finished = Promise.all(workers.map((worker) => worker.finished));
+    try {
+      await Promise.race([
+        Promise.all(workers.map((worker) => worker.started)),
+        finished,
+      ]);
+      for (const worker of workers) worker.child.send('start');
+      await finished;
+      observe();
+    } finally {
+      clearInterval(timer);
+      for (const worker of workers)
+        if (worker.child.exitCode === null) worker.child.kill();
+    }
+    expect(failures).toEqual([]);
+    expect(observed.size).toBeGreaterThanOrEqual(2);
+    for (const manifest of observed.values()) allAssets(manifest);
+    for (const [path, content] of retained)
+      expect(readFileSync(path, 'utf8')).toBe(content);
+    const finalSvg = readAsset(readManifest(), 'typescript');
+    expect(finalSvg).toMatch(/opacity="0\.(5|8)"/);
+    expect(existsSync(join(fixture, 'icons', 'typescript.svg'))).toBe(true);
+  });
+});
