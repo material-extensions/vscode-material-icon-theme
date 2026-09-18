@@ -39,6 +39,18 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-css',
         folderNames: ['css', 'stylesheet', 'stylesheets', 'style', 'styles'],
       },
+      {
+        name: 'folder-cpp',
+        folderNames: ['cpp', 'cplusplus', 'c++'],
+      },
+      {
+        name: 'folder-csharp',
+        folderNames: ['csharp', 'c#', 'cs'],
+      },
+      {
+        name: 'folder-c',
+        folderNames: ['c'],
+      },
       { name: 'folder-sass', folderNames: ['sass', 'scss'] },
       { name: 'folder-television', folderNames: ['tv', 'television'] },
       { name: 'folder-desktop', folderNames: ['desktop', 'display'] },
