@@ -467,7 +467,7 @@
     "chroma-js": "^3.2.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.5.10",
+    "@biomejs/biome": "^2.5.14",
     "@commitlint/config-conventional": "^21.2.2",
     "@softarc/sheriff-core": "^0.19.6",
     "@typescript/native": "npm:typescript@^7.0.2",
