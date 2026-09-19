@@ -1,24 +1,15 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "helpers:pinGitHubActionDigests",
-    "customManagers:biomeVersions"
-  ],
-  "ignoreDeps": [
-    "@types/vscode"
-  ],
+  "extends": ["helpers:pinGitHubActionDigests", "customManagers:biomeVersions"],
+  "ignoreDeps": ["@types/vscode"],
   "packageRules": [
     {
-      "matchManagers": [
-        "github-actions"
-      ],
+      "matchManagers": ["github-actions"],
       "groupName": "GitHub Actions workflows",
       "groupSlug": "github-actions"
     },
     {
-      "matchManagers": [
-        "npm"
-      ],
+      "matchManagers": ["npm"],
       "groupName": "npm packages",
       "groupSlug": "npm-packages"
     }
