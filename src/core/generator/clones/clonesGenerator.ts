@@ -33,7 +33,8 @@ import { cloneIcon, createCloneManifest } from './utils/cloning';
  */
 export const customClonesIcons = async (
   manifest: Manifest,
-  config: Config
+  config: Config,
+  strict = false
 ): Promise<Manifest> => {
   let clonedIconsManifest = merge<Manifest>({}, manifest);
   const hash = getFileConfigHash(config);
@@ -47,7 +48,10 @@ export const customClonesIcons = async (
         clone.activeForPacks === undefined ||
         clone.activeForPacks.includes(config.activeIconPack)
       ) {
-        const cloneCfg = await createIconClone(clone, manifest, hash);
+        if (strict && /[/\\]/.test(clone.name)) {
+          throw new Error('Clone names must not contain path separators.');
+        }
+        const cloneCfg = await createIconClone(clone, manifest, hash, strict);
         clonedIconsManifest = merge(clonedIconsManifest, cloneCfg);
       }
     }
@@ -169,7 +173,8 @@ export const hasCustomClones = (config: Config): boolean => {
 const createIconClone = async (
   iconClone: FolderIconClone | FileIconClone | LanguageIconClone,
   manifest: Manifest,
-  hash: string
+  hash: string,
+  strict = false
 ): Promise<Manifest> => {
   // get clones to be created
   const clones = getCloneData(iconClone, manifest, clonesFolder, hash);
@@ -188,6 +193,7 @@ const createIconClone = async (
         // write the new .svg file to the disk
         await writeToFile(clone.path, content);
       } catch (error) {
+        if (strict) throw error;
         logger.error(error);
         return manifest;
       }
@@ -218,6 +224,7 @@ const createIconClone = async (
         assignFileNamesAndFileExtensions(iconClone, clone, clonesManifest);
       }
     } catch (error) {
+      if (strict) throw error;
       logger.error(error);
     }
   }

@@ -22,6 +22,16 @@ depRules: {
 }
 ```
 
+## Runtime icon publication
+
+The desktop extension keeps packaged SVGs unchanged. Each configuration generation writes a complete, isolated snapshot under `icons/generated/`, including custom clones. Only after all referenced files exist is `dist/material-icons.json` replaced by a same-directory rename. Configuration events are queued within each extension host; different hosts can prepare independent snapshots concurrently without renaming or deleting one another's assets.
+
+Before skipping generation, the extension checks the manifest's configuration/version signature, manifest integrity, referenced files, and external source timestamps. Profile-local `globalState` is not evidence that the shared installation is current. Failed generations do not replace the previous manifest or update saved configuration.
+
+Published snapshots are retained because other windows can still reference their URLs. Storage therefore grows with configuration changes until the extension installation is removed; build cleanup excludes runtime snapshots from new packages. Safe reuse and garbage collection require a separate lifecycle design. A hard process termination before publication can leave an unused snapshot, but not a partially published manifest.
+
+This guarantees consistent assets, not per-window configuration isolation: all windows still consume the single statically contributed theme manifest, so the last successful publication wins. Workspace-specific theme selection remains a separate limitation.
+
 ## Npm module
 
 The npm module exposes some of the functions so that the icon manifest can be generated programmatically. More information can be found in the [README.md](./module/README.md) of the module.
