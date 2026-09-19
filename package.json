@@ -495,6 +495,6 @@
   },
   "allowScripts": {
     "esbuild@0.28.2": true,
-    "puppeteer@25.8.0": true
+    "puppeteer@25.11.0": true
   }
 }
