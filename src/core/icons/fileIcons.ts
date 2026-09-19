@@ -2270,8 +2270,11 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'prisma',
-      fileNames: ['prisma.yml', 'prisma.config.ts'],
+      fileNames: ['prisma.yml'],
       fileExtensions: ['prisma'],
+      patterns: {
+        'prisma.config': FileNamePattern.Ecmascript,
+      },
     },
     { name: 'razor', fileExtensions: ['cshtml', 'vbhtml', 'razor'] },
     { name: 'abc', fileExtensions: ['abc'] },
