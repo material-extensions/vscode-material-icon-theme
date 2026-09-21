@@ -7,9 +7,12 @@ import {
   readdirSync,
   readFileSync,
   rmSync,
+  statSync,
   unlinkSync,
+  utimesSync,
   writeFileSync,
 } from 'node:fs';
+import { rename } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { basename, dirname, join, resolve, sep } from 'node:path';
 import { promisify } from 'node:util';
@@ -22,6 +25,7 @@ import {
   describe,
   expect,
   it,
+  vi,
 } from 'vitest';
 import {
   generateConfiguredFileIconClones,
@@ -39,11 +43,19 @@ import {
   isIconSnapshotCurrent,
 } from '../../generator/generateIconSnapshot';
 import { generateManifest } from '../../generator/generateManifest';
+import { iconContentHash } from '../../generator/iconContentStore';
 import { withIconRoot } from '../../helpers/resolvePath';
 import { fileIcons } from '../../icons/fileIcons';
 import { folderIcons } from '../../icons/folderIcons';
 import { languageIcons } from '../../icons/languageIcons';
 import type { Manifest } from '../../models/manifest';
+
+vi.mock('node:fs/promises', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('node:fs/promises')>();
+  return { ...actual, rename: vi.fn(actual.rename) };
+});
+const actualFs =
+  await vi.importActual<typeof import('node:fs/promises')>('node:fs/promises');
 
 const version = 'snapshot-test-version';
 let fixture: string;
@@ -139,6 +151,7 @@ afterAll(() => {
 });
 
 beforeEach(() => {
+  vi.mocked(rename).mockReset().mockImplementation(actualFs.rename);
   fixture = mkdtempSync(join(tmpdir(), 'material-snapshot-test-'));
   mkdirSync(join(fixture, 'dist'));
   manifestPath = join(fixture, 'dist', 'material-icons.json');
@@ -155,6 +168,114 @@ afterEach(() => {
 });
 
 describe('immutable icon snapshots', { timeout: 60000 }, () => {
+  it('reuses final SVG bytes across A-B-A, manifest-only changes and version checks', async () => {
+    const config = padWithDefaultConfig({ opacity: 0.5 });
+    const store = join(fixture, 'icons', 'generated', 'sha256');
+    await generateIconSnapshot(config, manifestPath, version);
+    const first = readManifest();
+    const firstPaths = first.iconDefinitions;
+    const firstCount = readdirSync(store).length;
+    for (const [path, content] of allAssets(first))
+      expect(basename(path)).toBe(
+        `${iconContentHash(Buffer.from(content))}.svg`
+      );
+
+    const associations = padWithDefaultConfig({
+      opacity: 0.5,
+      hidesExplorerArrows: true,
+      files: { associations: { '*.reuse': 'typescript' } },
+    });
+    await generateIconSnapshot(associations, manifestPath, version);
+    expect(readManifest().fileExtensions?.reuse).toBe('typescript');
+    expect(readdirSync(store)).toHaveLength(firstCount);
+    expect(readManifest().iconDefinitions).toEqual(firstPaths);
+
+    await generateIconSnapshot(
+      padWithDefaultConfig({ opacity: 0.8 }),
+      manifestPath,
+      version
+    );
+    const afterB = readdirSync(store).sort();
+    await generateIconSnapshot(config, manifestPath, 'next-version');
+    expect(readManifest().iconDefinitions).toEqual(firstPaths);
+    expect(readdirSync(store).sort()).toEqual(afterB);
+    expect(readdirSync(join(fixture, 'icons', 'generated'))).toEqual([
+      'sha256',
+    ]);
+    expect(
+      await isIconSnapshotCurrent(config, manifestPath, 'next-version')
+    ).toBe(true);
+  });
+
+  it('detects and repairs corrupt content even when configuration is unchanged', async () => {
+    const config = padWithDefaultConfig();
+    await generateIconSnapshot(config, manifestPath, version);
+    const path = assetPath(readManifest(), 'typescript');
+    const original = readFileSync(path);
+    writeFileSync(path, Buffer.alloc(original.length, 'x'));
+    expect(await isIconSnapshotCurrent(config, manifestPath, version)).toBe(
+      false
+    );
+    await generateIconSnapshot(config, manifestPath, version);
+    expect(assetPath(readManifest(), 'typescript')).toBe(path);
+    expect(readFileSync(path)).toEqual(original);
+    expect(await isIconSnapshotCurrent(config, manifestPath, version)).toBe(
+      true
+    );
+  });
+
+  it('migrates old snapshot metadata without deleting old CSS targets', async () => {
+    const config = padWithDefaultConfig();
+    const legacy = join(fixture, 'icons', 'generated', 'theme-legacy', 'icons');
+    mkdirSync(legacy, { recursive: true });
+    const legacyPath = join(legacy, 'old.svg');
+    writeFileSync(legacyPath, '<svg/>');
+    await generateIconSnapshot(config, manifestPath, version);
+    const old = JSON.parse(readFileSync(manifestPath, 'utf8'));
+    delete old._materialIconTheme.format;
+    writeFileSync(manifestPath, JSON.stringify(old));
+    expect(await isIconSnapshotCurrent(config, manifestPath, version)).toBe(
+      false
+    );
+    await generateIconSnapshot(config, manifestPath, version);
+    expect(readFileSync(legacyPath, 'utf8')).toBe('<svg/>');
+    expect(await isIconSnapshotCurrent(config, manifestPath, version)).toBe(
+      true
+    );
+  });
+
+  it('retains shared blobs after failed manifest publication so other readers can use them', async () => {
+    const config = padWithDefaultConfig();
+    await generateIconSnapshot(config, manifestPath, version);
+    const previous = readFileSync(manifestPath, 'utf8');
+    const previousAssets = allAssets(readManifest());
+    const store = join(fixture, 'icons', 'generated', 'sha256');
+    const before = readdirSync(store).length;
+    vi.mocked(rename).mockImplementation(async (from, to) => {
+      if (to === manifestPath)
+        throw Object.assign(new Error('publication failed'), {
+          code: 'EPERM',
+        });
+      await actualFs.rename(from, to);
+    });
+    const next = padWithDefaultConfig({ opacity: 0.5 });
+    await expect(
+      generateIconSnapshot(next, manifestPath, version)
+    ).rejects.toThrow('publication failed');
+    expect(readFileSync(manifestPath, 'utf8')).toBe(previous);
+    const after = readdirSync(store).sort();
+    expect(after.length).toBeGreaterThan(before);
+    for (const [path, content] of previousAssets)
+      expect(readFileSync(path, 'utf8')).toBe(content);
+    expect(readdirSync(join(fixture, 'icons', 'generated'))).toEqual([
+      'sha256',
+    ]);
+    vi.mocked(rename).mockImplementation(actualFs.rename);
+    await generateIconSnapshot(next, manifestPath, version);
+    expect(readdirSync(store).sort()).toEqual(after);
+    allAssets(readManifest());
+  });
+
   it('preserves originals and previously published assets across configuration changes', async () => {
     const originals = allAssets(readManifest());
     const first = padWithDefaultConfig({
@@ -442,6 +563,14 @@ describe('immutable icon snapshots', { timeout: 60000 }, () => {
     expect(await isIconSnapshotCurrent(config, manifestPath, version)).toBe(
       true
     );
+    const sourceInfo = statSync(source);
+    writeFileSync(source, svg.replace('#123456', '#654321'));
+    utimesSync(source, sourceInfo.atime, sourceInfo.mtime);
+    expect(await isIconSnapshotCurrent(config, manifestPath, version)).toBe(
+      false
+    );
+    await generateIconSnapshot(config, manifestPath, version);
+    expect(readAsset(readManifest(), '../custom/shadow')).toContain('#654321');
     writeFileSync(source, `${svg}\n`);
     expect(await isIconSnapshotCurrent(config, manifestPath, version)).toBe(
       false
@@ -474,6 +603,7 @@ describe('immutable icon snapshots', { timeout: 60000 }, () => {
     for (const name of [
       '../../../snapshot-escape',
       '..\\..\\..\\snapshot-escape',
+      'snapshot:alternate-stream',
     ]) {
       const config = padWithDefaultConfig({
         files: {
@@ -497,88 +627,102 @@ describe('immutable icon snapshots', { timeout: 60000 }, () => {
       expect(readFileSync(path, 'utf8')).toBe(content);
   });
 
-  it('publishes complete snapshots from independent processes while keeping old references valid', async () => {
-    const initial = padWithDefaultConfig();
-    await generateIconSnapshot(initial, manifestPath, version);
-    const retained = allAssets(readManifest());
-    const workerPath = join(fixture, 'snapshot-worker.cjs');
-    await build({
-      entryPoints: [resolve('src/core/tests/icons/iconSnapshot.worker.ts')],
-      outfile: workerPath,
-      bundle: true,
-      platform: 'node',
-      format: 'cjs',
-      logLevel: 'silent',
-    });
-    const observed = new Map<string, Manifest>();
-    const failures: unknown[] = [];
-    const observe = () => {
-      try {
-        const json = readFileSync(manifestPath, 'utf8');
-        if (!observed.has(json)) observed.set(json, JSON.parse(json));
-      } catch (error) {
-        failures.push(error);
-      }
-    };
-    const workers = [0.5, 0.8].map((opacity) => {
-      const child = fork(
-        workerPath,
-        [
-          manifestPath,
-          JSON.stringify(padWithDefaultConfig({ opacity })),
-          version,
-        ],
-        { silent: true }
-      );
-      let ready!: () => void;
-      const started = new Promise<void>((done) => {
-        ready = done;
+  it.each([1, 2])(
+    'publishes complete snapshots from independent processes while keeping old references valid (run %s)',
+    async () => {
+      const initial = padWithDefaultConfig();
+      await generateIconSnapshot(initial, manifestPath, version);
+      const retained = allAssets(readManifest());
+      const workerPath = join(fixture, 'snapshot-worker.cjs');
+      await build({
+        entryPoints: [resolve('src/core/tests/icons/iconSnapshot.worker.ts')],
+        outfile: workerPath,
+        bundle: true,
+        platform: 'node',
+        format: 'cjs',
+        logLevel: 'silent',
       });
-      let stderr = '';
-      child.stderr?.on('data', (chunk) => {
-        stderr += String(chunk);
-      });
-      const finished = new Promise<void>((done, reject) => {
-        child.on(
-          'message',
-          (message: { ready?: boolean; manifest?: string; error?: string }) => {
-            if (message.ready) ready();
-            if (message.manifest)
-              observed.set(message.manifest, JSON.parse(message.manifest));
-            if (message.error) reject(new Error(message.error));
+      const observed = new Map<string, Manifest>();
+      const failures: unknown[] = [];
+      const observe = () => {
+        try {
+          const json = readFileSync(manifestPath, 'utf8');
+          if (!observed.has(json)) {
+            const manifest = JSON.parse(json);
+            for (const [path, content] of allAssets(manifest))
+              expect(basename(path)).toBe(
+                `${iconContentHash(Buffer.from(content))}.svg`
+              );
+            observed.set(json, manifest);
           }
+        } catch (error) {
+          failures.push(error);
+        }
+      };
+      const workers = [0.5, 0.5, 0.8].map((opacity) => {
+        const child = fork(
+          workerPath,
+          [
+            manifestPath,
+            JSON.stringify(padWithDefaultConfig({ opacity })),
+            version,
+          ],
+          { silent: true }
         );
-        child.on('error', reject);
-        child.on('exit', (code) =>
-          code === 0
-            ? done()
-            : reject(new Error(`Snapshot worker exited ${code}: ${stderr}`))
-        );
+        let ready!: () => void;
+        const started = new Promise<void>((done) => {
+          ready = done;
+        });
+        let stderr = '';
+        child.stderr?.on('data', (chunk) => {
+          stderr += String(chunk);
+        });
+        const finished = new Promise<void>((done, reject) => {
+          child.on(
+            'message',
+            (message: {
+              ready?: boolean;
+              manifest?: string;
+              error?: string;
+            }) => {
+              if (message.ready) ready();
+              if (message.manifest)
+                observed.set(message.manifest, JSON.parse(message.manifest));
+              if (message.error) reject(new Error(message.error));
+            }
+          );
+          child.on('error', reject);
+          child.on('exit', (code) =>
+            code === 0
+              ? done()
+              : reject(new Error(`Snapshot worker exited ${code}: ${stderr}`))
+          );
+        });
+        return { child, started, finished };
       });
-      return { child, started, finished };
-    });
-    const timer = setInterval(observe, 10);
-    const finished = Promise.all(workers.map((worker) => worker.finished));
-    try {
-      await Promise.race([
-        Promise.all(workers.map((worker) => worker.started)),
-        finished,
-      ]);
-      for (const worker of workers) worker.child.send('start');
-      await finished;
-      observe();
-    } finally {
-      clearInterval(timer);
-      for (const worker of workers)
-        if (worker.child.exitCode === null) worker.child.kill();
+      const timer = setInterval(observe, 10);
+      const finished = Promise.all(workers.map((worker) => worker.finished));
+      try {
+        await Promise.race([
+          Promise.all(workers.map((worker) => worker.started)),
+          finished,
+        ]);
+        for (const worker of workers) worker.child.send('start');
+        await finished;
+        observe();
+      } finally {
+        clearInterval(timer);
+        for (const worker of workers)
+          if (worker.child.exitCode === null) worker.child.kill();
+      }
+      expect(failures).toEqual([]);
+      expect(observed.size).toBeGreaterThanOrEqual(2);
+      for (const manifest of observed.values()) allAssets(manifest);
+      for (const [path, content] of retained)
+        expect(readFileSync(path, 'utf8')).toBe(content);
+      const finalSvg = readAsset(readManifest(), 'typescript');
+      expect(finalSvg).toMatch(/opacity="0\.(5|8)"/);
+      expect(existsSync(join(fixture, 'icons', 'typescript.svg'))).toBe(true);
     }
-    expect(failures).toEqual([]);
-    expect(observed.size).toBeGreaterThanOrEqual(2);
-    for (const manifest of observed.values()) allAssets(manifest);
-    for (const [path, content] of retained)
-      expect(readFileSync(path, 'utf8')).toBe(content);
-    const finalSvg = readAsset(readManifest(), 'typescript');
-    expect(finalSvg).toMatch(/opacity="0\.(5|8)"/);
-    expect(existsSync(join(fixture, 'icons', 'typescript.svg'))).toBe(true);
-  });
+  );
 });

@@ -1,29 +1,29 @@
 import { createHash } from 'node:crypto';
-import {
-  mkdir,
-  mkdtemp,
-  readFile,
-  rename,
-  rm,
-  stat,
-  writeFile,
-} from 'node:fs/promises';
+import { mkdir, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
 import { dirname, join, relative, resolve, sep } from 'node:path';
 import { getFileConfigHash } from '../helpers/configHash';
 import { withIconRoot } from '../helpers/resolvePath';
 import { collectColors, replaceColors } from '../helpers/svgColor';
+import { logger } from '../logging/logger';
 import type { Config } from '../models/icons/config';
 import type { Manifest } from '../models/manifest';
 import { customClonesIcons } from './clones/clonesGenerator';
 import { getCloneData } from './clones/utils/cloneData';
 import { generateManifest } from './generateManifest';
+import {
+  iconContentHash,
+  publishIconContent,
+  readStoredIcon,
+  replaceIconFile,
+} from './iconContentStore';
 import { updateSVGOpacity, validateOpacityValue } from './iconOpacity';
 import { adjustSVGSaturation, validateSaturationValue } from './iconSaturation';
 import { validateHEXColorCode } from './shared/validation';
 
-type Source = { path: string; size: number; mtimeMs: number };
+type Source = { path: string; content: string };
 type SnapshotManifest = Manifest & {
   _materialIconTheme?: {
+    format: number;
     configuration: string;
     content: string;
     sources: Source[];
@@ -52,19 +52,30 @@ export const isIconSnapshotCurrent = async (
     const { _materialIconTheme: metadata, ...manifest } = parsed;
     if (
       !metadata ||
+      metadata.format !== 2 ||
       metadata.configuration !== configurationKey(config, version) ||
       metadata.content !== digest(manifest) ||
       !manifest.iconDefinitions
     )
       return false;
     const base = dirname(manifestPath);
-    for (const definition of Object.values(manifest.iconDefinitions)) {
-      if (!(await stat(resolve(base, definition.iconPath))).isFile())
+    const paths = new Set(
+      Object.values(manifest.iconDefinitions).map((icon) => icon.iconPath)
+    );
+    for (const path of paths) {
+      const match =
+        /^\.\.\/icons\/generated\/sha256\/([a-f0-9]{64})\.svg$/.exec(path);
+      if (
+        !match ||
+        iconContentHash(await readStoredIcon(resolve(base, path))) !== match[1]
+      )
         return false;
     }
     for (const source of metadata.sources) {
-      const current = await stat(resolve(base, source.path));
-      if (current.size !== source.size || current.mtimeMs !== source.mtimeMs)
+      if (
+        iconContentHash(await readFile(resolve(base, source.path))) !==
+        source.content
+      )
         return false;
     }
     return true;
@@ -75,8 +86,8 @@ export const isIconSnapshotCurrent = async (
 
 /**
  * Build from immutable packaged SVGs, then atomically publish one complete manifest.
- * Published generations remain available: other windows may still cache them.
- * Concurrent extension hosts never mutate each other's assets; the last manifest wins.
+ * Final SVGs are shared by content hash; old published paths remain available.
+ * Private staging directories are removed; the last complete manifest wins.
  */
 export const generateIconSnapshot = async (
   config: Config,
@@ -87,11 +98,10 @@ export const generateIconSnapshot = async (
   const sourceRoot = resolve(base, '../icons');
   const generations = join(sourceRoot, 'generated');
   await mkdir(generations, { recursive: true });
-  const generation = await mkdtemp(join(generations, 'theme-'));
+  const generation = await mkdtemp(join(generations, '.tmp-'));
   const stagingBase = join(generation, 'dist');
   const stagingIcons = join(generation, 'icons');
   const temporaryManifest = `${manifestPath}.${generation.slice(generations.length + 1)}.tmp`;
-  let published = false;
   try {
     await mkdir(join(stagingIcons, 'clones'), { recursive: true });
     let manifest = generateManifest(config);
@@ -113,6 +123,7 @@ export const generateIconSnapshot = async (
         )
     );
     const sources: Source[] = [];
+    const inputs = new Map<string, Buffer>();
     const hash = getFileConfigHash(config);
     let index = 0;
     for (const [name, definition] of Object.entries(
@@ -125,7 +136,18 @@ export const generateIconSnapshot = async (
       const source = resolve(base, sourcePath);
       let content: string;
       try {
-        content = await readFile(source, 'utf8');
+        let input = inputs.get(source);
+        if (!input) {
+          input = await readFile(source);
+          inputs.set(source, input);
+          // Record the bytes actually consumed, not a later filesystem timestamp.
+          if (dirname(source) !== sourceRoot)
+            sources.push({
+              path: portablePath(relative(base, source)),
+              content: iconContentHash(input),
+            });
+        }
+        content = input.toString('utf8');
       } catch (error) {
         // Associations may name custom clones whose SVGs are created below.
         // Existing originals are still copied when a clone overrides its base.
@@ -159,28 +181,40 @@ export const generateIconSnapshot = async (
       const iconName = `icon-${index++}${hash}.svg`;
       await writeFile(join(stagingIcons, iconName), content, 'utf8');
       definition.iconPath = `../icons/${iconName}`;
-      // User-owned custom icons can change without a configuration change.
-      if (dirname(source) !== sourceRoot) {
-        const info = await stat(source);
-        sources.push({
-          path: portablePath(relative(base, source)),
-          size: info.size,
-          mtimeMs: info.mtimeMs,
-        });
-      }
     }
     manifest = await withIconRoot(stagingBase, () =>
       customClonesIcons(manifest, config, true)
     );
+    const blobs = new Map<string, Buffer>();
+    const store = join(generations, 'sha256');
     for (const definition of Object.values(manifest.iconDefinitions ?? {})) {
-      const path = resolve(stagingBase, definition.iconPath);
-      if (!(await stat(path)).isFile())
-        throw new Error('Generated icon is missing.');
-      definition.iconPath = portablePath(relative(base, path));
+      // Clone generation may override a base: hash only after all clones finish.
+      const content = await readStoredIcon(
+        resolve(stagingBase, definition.iconPath)
+      );
+      const hash = iconContentHash(content);
+      const previous = blobs.get(hash);
+      if (previous && !previous.equals(content))
+        throw new Error('Icon content hash collision.');
+      blobs.set(hash, content);
+      definition.iconPath = portablePath(
+        relative(base, join(store, `${hash}.svg`))
+      );
     }
+    // A changing user-owned source must not be recorded as a newer input than
+    // the bytes used for this generation. A later activation/change can retry.
+    for (const source of sources)
+      if (
+        iconContentHash(await readFile(resolve(base, source.path))) !==
+        source.content
+      )
+        throw new Error('Custom icon changed during generation.');
+    for (const content of blobs.values())
+      await publishIconContent(content, store, generation);
     const snapshot: SnapshotManifest = {
       ...manifest,
       _materialIconTheme: {
+        format: 2,
         configuration: configurationKey(config, version),
         content: digest(manifest),
         sources,
@@ -191,12 +225,20 @@ export const generateIconSnapshot = async (
       JSON.stringify(snapshot, undefined, 2),
       'utf8'
     );
-    await rename(temporaryManifest, manifestPath);
-    published = true;
+    await replaceIconFile(temporaryManifest, manifestPath);
   } finally {
-    if (!published) {
-      await rm(temporaryManifest, { force: true });
-      await rm(generation, { recursive: true, force: true });
-    }
+    // Only our private staging is disposable. Another publisher may already
+    // reference any shared blob, even when our own manifest publication fails.
+    // Cleanup failures must not turn an already published manifest into a
+    // reported generation failure, nor hide the original publication error.
+    await Promise.all([
+      rm(temporaryManifest, { force: true }).catch(logger.error),
+      rm(generation, {
+        recursive: true,
+        force: true,
+        maxRetries: 3,
+        retryDelay: 50,
+      }).catch(logger.error),
+    ]);
   }
 };

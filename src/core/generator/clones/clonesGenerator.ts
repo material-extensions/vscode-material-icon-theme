@@ -48,8 +48,10 @@ export const customClonesIcons = async (
         clone.activeForPacks === undefined ||
         clone.activeForPacks.includes(config.activeIconPack)
       ) {
-        if (strict && /[/\\]/.test(clone.name)) {
-          throw new Error('Clone names must not contain path separators.');
+        if (strict && /[<>:"/\\|?*\u0000-\u001f]/.test(clone.name)) {
+          throw new Error(
+            'Clone names must not contain unsafe filename characters.'
+          );
         }
         const cloneCfg = await createIconClone(clone, manifest, hash, strict);
         clonedIconsManifest = merge(clonedIconsManifest, cloneCfg);
