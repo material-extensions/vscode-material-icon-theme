@@ -1,6 +1,6 @@
 {
   "files.readonlyInclude": {
-    "bun.lock": true
+    "package-lock.json": true
   },
   "files.exclude": {
     "out": false

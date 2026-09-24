@@ -3,10 +3,10 @@
   "tasks": [
     {
       "type": "shell",
-      "command": "bun run build",
+      "command": "npm run build",
       "problemMatcher": [],
-      "label": "bun: build",
-      "detail": "bun run build",
+      "label": "npm: build",
+      "detail": "npm run build",
       "group": {
         "kind": "build",
         "isDefault": true
@@ -14,10 +14,10 @@
     },
     {
       "type": "shell",
-      "command": "bun run test",
+      "command": "npm run test",
       "problemMatcher": [],
-      "label": "bun: test",
-      "detail": "bun run test",
+      "label": "npm: test",
+      "detail": "npm run test",
       "group": {
         "kind": "test",
         "isDefault": true

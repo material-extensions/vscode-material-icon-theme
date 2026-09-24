@@ -1,14 +1,14 @@
-import { EventEmitter } from 'node:events';
 import { type OutputChannel, window } from 'vscode';
 import {
   createLoggingObserver,
   extensionName,
+  type LoggingObserver,
   type LogLevel,
   toTitleCase,
 } from '../../core';
 import { getThemeConfig } from '../shared/config';
 
-let eventEmitter: EventEmitter | undefined;
+let observer: LoggingObserver | undefined;
 
 /**
  * Observe log events and write them to the output channel.
@@ -26,7 +26,7 @@ export const observeLogs = () => {
     );
   }
 
-  eventEmitter = createLoggingObserver(logLevel, (event) => {
+  observer = createLoggingObserver(logLevel, (event) => {
     if (outputChannel) {
       outputChannel.appendLine(event.message);
     } else {
@@ -36,7 +36,8 @@ export const observeLogs = () => {
 };
 
 export const disableLogObserver = () => {
-  if (eventEmitter) {
-    eventEmitter.removeAllListeners();
+  if (observer) {
+    observer.dispose();
+    observer = undefined;
   }
 };

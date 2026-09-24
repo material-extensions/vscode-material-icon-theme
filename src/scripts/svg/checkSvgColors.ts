@@ -1,5 +1,8 @@
+import { execFile } from 'node:child_process';
 import { existsSync } from 'node:fs';
-import { spawn } from 'bun';
+import { promisify } from 'node:util';
+
+const execFileAsync = promisify(execFile);
 
 /**
  * Check changed (not yet committed) SVG files for correct colors.
@@ -7,43 +10,45 @@ import { spawn } from 'bun';
 const checkColors = async () => {
   try {
     // Execute Git command to get list of modified SVG files
-    const gitProcess = spawn([
-      'git',
+    const { stdout: gitOutput } = await execFileAsync('git', [
       'diff',
       '--cached',
       '--name-only',
       '--',
       '*.svg',
     ]);
-    const { stdout } = await gitProcess;
-    const output = await new Response(stdout).text();
-    const svgFiles = output
+    const svgFiles = gitOutput
       .trim()
       .split('\n')
       .map((s) => s.trim())
       .filter(Boolean)
-      .filter((p) => existsSync(p))
-      .join(' ');
-    console.log('SVG files to check:', svgFiles);
+      .filter((p) => existsSync(p));
+    console.log('SVG files to check:', svgFiles.join(' '));
 
-    if (svgFiles) {
-      const command = [
-        'svg-color-linter',
-        '--config',
-        'material-colors.yml',
-        ...svgFiles.split(' '),
-      ];
-      const linterProcess = spawn(command);
-      const { stdout } = await linterProcess;
-      const linterOutput = await new Response(stdout).text();
-
-      console.log('Colors check output:\n\n', linterOutput);
-
-      // Wait for the sub process to finish with an exit code
-      await linterProcess.exited;
-
-      // Exit script with exit code (0 == no errors, 1 == errors)
-      process.exit(linterProcess.exitCode);
+    if (svgFiles.length > 0) {
+      try {
+        const { stdout: linterOutput } = await execFileAsync('npx', [
+          'svg-color-linter',
+          '--config',
+          'material-colors.yml',
+          ...svgFiles,
+        ]);
+        console.log('Colors check output:\n\n', linterOutput);
+      } catch (error: unknown) {
+        // execFile rejects on non-zero exit code
+        const execError = error as {
+          stdout?: string;
+          stderr?: string;
+          code?: number;
+        };
+        if (execError.stdout) {
+          console.log('Colors check output:\n\n', execError.stdout);
+        }
+        if (execError.stderr) {
+          console.error(execError.stderr);
+        }
+        process.exit(execError.code ?? 1);
+      }
     } else {
       console.log('No SVG files to check.');
     }

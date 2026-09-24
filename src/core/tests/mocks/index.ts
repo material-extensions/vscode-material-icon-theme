@@ -1,6 +1,6 @@
-import { mock } from 'bun:test';
+import { vi } from 'vitest';
 import { vscodeApiMock } from './vscode';
 
-mock.module('vscode', () => {
+vi.mock('vscode', () => {
   return vscodeApiMock;
 });

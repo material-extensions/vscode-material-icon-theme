@@ -2,6 +2,245 @@
 
 # Changelog
 
+## v5.38.1
+
+[compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.38.0...v5.38.1)
+
+### 🩹 Fixes
+
+- Add build step to release workflow in npm publishing part ([c67556cc](https://github.com/material-extensions/vscode-material-icon-theme/commit/c67556cc))
+
+### ❤️ Contributors
+
+- Philipp Kief ([@PKief](https://github.com/PKief))
+
+## v5.38.0
+
+[compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.37.0...v5.38.0)
+
+### 🚀 Enhancements
+
+- Support lint-staged.config.ts ([#3541](https://github.com/material-extensions/vscode-material-icon-theme/pull/3541))
+- Added `AGENTS.md` file icon ([#3437](https://github.com/material-extensions/vscode-material-icon-theme/pull/3437))
+- **fileIcons:** Add .env.preprod to tune icon ([#3558](https://github.com/material-extensions/vscode-material-icon-theme/pull/3558))
+- Associate .xcode-version with swift icon ([#3568](https://github.com/material-extensions/vscode-material-icon-theme/pull/3568))
+- Add deepEqual utility and update change detection ([b3f9bbaa](https://github.com/material-extensions/vscode-material-icon-theme/commit/b3f9bbaa))
+
+### 🩹 Fixes
+
+- **ci:** Add npm ci to the release workflow ([957d82b4](https://github.com/material-extensions/vscode-material-icon-theme/commit/957d82b4))
+- Change Renovate config to use recommended preset ([a440d8ec](https://github.com/material-extensions/vscode-material-icon-theme/commit/a440d8ec))
+- Remove 'brs' from file icon list (Closes #3554) ([#3554](https://github.com/material-extensions/vscode-material-icon-theme/issues/3554))
+- Resolve TypeScript indexing error in deepEqual ([7f109357](https://github.com/material-extensions/vscode-material-icon-theme/commit/7f109357))
+
+### 🏡 Chore
+
+- **deps-dev:** Bump linkify-it from 5.0.1 to 5.0.2 ([#3544](https://github.com/material-extensions/vscode-material-icon-theme/pull/3544))
+- **deps-dev:** Bump svgo from 4.0.1 to 4.0.2 ([#3542](https://github.com/material-extensions/vscode-material-icon-theme/pull/3542))
+- **deps-dev:** Bump postcss from 8.5.15 to 8.5.24 ([#3551](https://github.com/material-extensions/vscode-material-icon-theme/pull/3551))
+- **deps-dev:** Bump fast-uri from 3.1.2 to 3.1.4 ([#3545](https://github.com/material-extensions/vscode-material-icon-theme/pull/3545))
+- **deps-dev:** Bump fast-uri from 3.1.4 to 3.1.5 ([#3557](https://github.com/material-extensions/vscode-material-icon-theme/pull/3557))
+- **deps-dev:** Bump undici from 7.28.0 to 7.29.0 ([#3555](https://github.com/material-extensions/vscode-material-icon-theme/pull/3555))
+
+### ❤️ Contributors
+
+- Philipp Kief ([@PKief](https://github.com/PKief))
+- Soham Mondal ([@sohammondal](https://github.com/sohammondal))
+- Guillaume Valmont ([@gvalmont](https://github.com/gvalmont))
+- Cameron Cowen
+- Kangkangovo12138
+
+## v5.37.0
+
+[compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.36.1...v5.37.0)
+
+### 🚀 Enhancements
+
+- Migrate config file ([c2ebdd35](https://github.com/material-extensions/vscode-material-icon-theme/commit/c2ebdd35))
+
+### 🩹 Fixes
+
+- **ci:** Add contents read permission to publish-npm job ([07a49322](https://github.com/material-extensions/vscode-material-icon-theme/commit/07a49322))
+- Resolves error with merge conflict (Closes #3502) ([#3502](https://github.com/material-extensions/vscode-material-icon-theme/issues/3502))
+- **ci:** Update version of svg-icon-review ([f4d0cdcb](https://github.com/material-extensions/vscode-material-icon-theme/commit/f4d0cdcb))
+- Correct supabase folder icon design ([#3516](https://github.com/material-extensions/vscode-material-icon-theme/pull/3516))
+
+### 🏡 Chore
+
+- Migrate from Bun to Node for better VS Code compatibility ([3fd30b6d](https://github.com/material-extensions/vscode-material-icon-theme/commit/3fd30b6d))
+- **ci:** Remove pr closed workflow ([007e8401](https://github.com/material-extensions/vscode-material-icon-theme/commit/007e8401))
+- Add custom manager for biome versions in renovate config ([4621b7f1](https://github.com/material-extensions/vscode-material-icon-theme/commit/4621b7f1))
+- Fix formatting of renovate.json ([9fd9483e](https://github.com/material-extensions/vscode-material-icon-theme/commit/9fd9483e))
+- Update renovate.json ([7185b66a](https://github.com/material-extensions/vscode-material-icon-theme/commit/7185b66a))
+
+### ❤️ Contributors
+
+- Philipp Kief ([@PKief](https://github.com/PKief))
+- Andrin Haldner ([@AHaldner](https://github.com/AHaldner))
+
+## v5.36.1
+
+[compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.36.0...v5.36.1)
+
+### 🩹 Fixes
+
+- **ci:** Release script failure due to husky ([3dd1e258](https://github.com/material-extensions/vscode-material-icon-theme/commit/3dd1e258))
+- Cloning issue (Closes #3502) ([#3502](https://github.com/material-extensions/vscode-material-icon-theme/issues/3502))
+
+### ❤️ Contributors
+
+- Philipp Kief ([@PKief](https://github.com/PKief))
+
+## v5.36.0
+
+[compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.35.0...v5.36.0)
+
+### 🚀 Enhancements
+
+- Add support for metro.config.ts icon ([#3467](https://github.com/material-extensions/vscode-material-icon-theme/pull/3467))
+- Generate open folder icons ([#3468](https://github.com/material-extensions/vscode-material-icon-theme/pull/3468))
+- Add latex file extensions ([#3474](https://github.com/material-extensions/vscode-material-icon-theme/pull/3474))
+- Add `.cjs` and `.mjs` support for vue.config file ([#3479](https://github.com/material-extensions/vscode-material-icon-theme/pull/3479))
+- Add hip file extension icon mapping ([#3476](https://github.com/material-extensions/vscode-material-icon-theme/pull/3476))
+- Add `.cargo` folder icon mapping ([#3491](https://github.com/material-extensions/vscode-material-icon-theme/pull/3491))
+- **icon:** Add opencode folder icon ([#3492](https://github.com/material-extensions/vscode-material-icon-theme/pull/3492))
+- Add check to disallow dot-prefixed folder names ([0cadc1bf](https://github.com/material-extensions/vscode-material-icon-theme/commit/0cadc1bf))
+
+### 🩹 Fixes
+
+- **ci:** Missing bun installation step ([937f0758](https://github.com/material-extensions/vscode-material-icon-theme/commit/937f0758))
+- **icon:** Normalize folder icons ([#3462](https://github.com/material-extensions/vscode-material-icon-theme/pull/3462))
+- Avoid false positive in open folder filter for names containing 'open' ([69d80496](https://github.com/material-extensions/vscode-material-icon-theme/commit/69d80496))
+
+### ❤️ Contributors
+
+- Philipp Kief ([@PKief](https://github.com/PKief))
+- Harsh Thakur ([@devharshthakur](https://github.com/devharshthakur))
+- Tymon Marek ([@TymonMarek](https://github.com/TymonMarek))
+- Young ([@NTIHS-IT](https://github.com/NTIHS-IT))
+- Muhammad Naufal Kateni ([@NaufalK25](https://github.com/NaufalK25))
+- Ridwan Ikhsan ([@rdnsan](https://github.com/rdnsan))
+- Sayan Shankhari ([@SayanShankhari](https://github.com/SayanShankhari))
+
+## v5.35.0
+
+[compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.34.0...v5.35.0)
+
+### 🚀 Enhancements
+
+- Add CAD file extensions to 3d icon mapping ([#3436](https://github.com/material-extensions/vscode-material-icon-theme/pull/3436))
+- Add tsdown icon ([#3418](https://github.com/material-extensions/vscode-material-icon-theme/pull/3418))
+- Add new icons for mrpack ([#3439](https://github.com/material-extensions/vscode-material-icon-theme/pull/3439))
+- Add support for vercel.ts icon (typed Vercel configuration) ([#3441](https://github.com/material-extensions/vscode-material-icon-theme/pull/3441))
+- Support jxl image file type ([#3444](https://github.com/material-extensions/vscode-material-icon-theme/pull/3444))
+- Add uiua file icon ([#3408](https://github.com/material-extensions/vscode-material-icon-theme/pull/3408))
+- Add folder associations for rust/cargo projects ([#3447](https://github.com/material-extensions/vscode-material-icon-theme/pull/3447))
+- **icon:** Add zed folder icon ([#3442](https://github.com/material-extensions/vscode-material-icon-theme/pull/3442))
+- **icon:** Add redis icon ([#3450](https://github.com/material-extensions/vscode-material-icon-theme/pull/3450))
+- Add more unit tests for writefile helper function ([9e4c98aa](https://github.com/material-extensions/vscode-material-icon-theme/commit/9e4c98aa))
+- Include language IDs into the file icons ([c9a9d2ed](https://github.com/material-extensions/vscode-material-icon-theme/commit/c9a9d2ed))
+- Update dependencies ([d7274c71](https://github.com/material-extensions/vscode-material-icon-theme/commit/d7274c71))
+
+### 🩹 Fixes
+
+- Add rootDir to tsconfig.declarations.json for TypeScript 6 ([4f7f49e9](https://github.com/material-extensions/vscode-material-icon-theme/commit/4f7f49e9))
+- Correct typos in CONTRIBUTING.md ([4de4acf7](https://github.com/material-extensions/vscode-material-icon-theme/commit/4de4acf7))
+
+### 💅 Refactors
+
+- **core:** Rewrite toTitleCase for clarity and add tests ([33c0e614](https://github.com/material-extensions/vscode-material-icon-theme/commit/33c0e614))
+- Remove duplicate toTitleCase, consolidate imports ([e247951d](https://github.com/material-extensions/vscode-material-icon-theme/commit/e247951d))
+
+### 🏡 Chore
+
+- Improve release process ([b959b483](https://github.com/material-extensions/vscode-material-icon-theme/commit/b959b483))
+
+### ✅ Tests
+
+- **core:** Add comprehensive tests for object helpers ([57f476c5](https://github.com/material-extensions/vscode-material-icon-theme/commit/57f476c5))
+
+### ❤️ Contributors
+
+- Philipp Kief ([@PKief](https://github.com/PKief))
+- Sayan Shankhari ([@SayanShankhari](https://github.com/SayanShankhari))
+- Tymon Marek ([@TymonMarek](https://github.com/TymonMarek))
+- Unteksi-ozar ([@Unteksi-ozar](https://github.com/Unteksi-ozar))
+- 锐冰 SharpIce ([@SharpIceX](https://github.com/SharpIceX))
+- El Mahdi Bennajah ([@bennajah](https://github.com/bennajah))
+- Glitch714 ([@glitchplaysgames714](https://github.com/glitchplaysgames714))
+- Andrin Haldner ([@AHaldner](https://github.com/AHaldner))
+- Kaden Gruizenga ([@kgruiz](https://github.com/kgruiz))
+
+## v5.34.0
+
+[compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.33.1...v5.34.0)
+
+### 🚀 Enhancements
+
+- **icon:** Add appwrite icons ([#3392](https://github.com/material-extensions/vscode-material-icon-theme/pull/3392))
+- **icon:** Add go-lang folder icon ([#3391](https://github.com/material-extensions/vscode-material-icon-theme/pull/3391))
+- **icon:** Assembly file/folder icons ([#3397](https://github.com/material-extensions/vscode-material-icon-theme/pull/3397))
+- Added gitea workflows icon ([#3427](https://github.com/material-extensions/vscode-material-icon-theme/pull/3427))
+- Add Postman Folder ([#3376](https://github.com/material-extensions/vscode-material-icon-theme/pull/3376))
+- Add external, externals and thirdparty to folder-lib icons ([#3434](https://github.com/material-extensions/vscode-material-icon-theme/pull/3434))
+- **icon:** Add kotlin folder icon ([#3431](https://github.com/material-extensions/vscode-material-icon-theme/pull/3431))
+- New icons for eas files ([#3425](https://github.com/material-extensions/vscode-material-icon-theme/pull/3425))
+
+### ❤️ Contributors
+
+- Vinicius Celestino De Oliveira Pereira ([@ViniDevBR](https://github.com/ViniDevBR))
+- Sayan Shankhari ([@SayanShankhari](https://github.com/SayanShankhari))
+- Vortex ([@Vortex2Oblivion](https://github.com/Vortex2Oblivion))
+- Cameron Cowen ([@milkyware](https://github.com/milkyware))
+- Aura Herrero Ruiz ([@AuraHerreroRuiz](https://github.com/AuraHerreroRuiz))
+
+## v5.33.1
+
+[compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.33.0...v5.33.1)
+
+### 🩹 Fixes
+
+- **workflows:** Release to npm ([0e16f306](https://github.com/material-extensions/vscode-material-icon-theme/commit/0e16f306))
+
+### ❤️ Contributors
+
+- Philipp Kief ([@PKief](https://github.com/PKief))
+
+## v5.33.0
+
+[compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.32.0...v5.33.0)
+
+### 🚀 Enhancements
+
+- Add `tags` file icon ([#3375](https://github.com/material-extensions/vscode-material-icon-theme/pull/3375))
+- **icon:** Nginx folder icon ([#3197](https://github.com/material-extensions/vscode-material-icon-theme/pull/3197))
+- **icon:** Add R language folder icon ([#3387](https://github.com/material-extensions/vscode-material-icon-theme/pull/3387))
+- **icon:** Add json_schema file icon ([#3380](https://github.com/material-extensions/vscode-material-icon-theme/pull/3380))
+- **icon:** Add deprecated/scrap folder icon ([#3384](https://github.com/material-extensions/vscode-material-icon-theme/pull/3384))
+- Add `oxfmt.config.ts` to icons ([#3398](https://github.com/material-extensions/vscode-material-icon-theme/pull/3398))
+- **i18n:** Add Arabic translation ([#3401](https://github.com/material-extensions/vscode-material-icon-theme/pull/3401))
+- Add additional env icon file names ([f7de1c32](https://github.com/material-extensions/vscode-material-icon-theme/commit/f7de1c32))
+- Add rolldown icon ([#3411](https://github.com/material-extensions/vscode-material-icon-theme/pull/3411))
+- Update file icon patterns for Rspress and Rslint ([#3414](https://github.com/material-extensions/vscode-material-icon-theme/pull/3414))
+- Add folder and icon for skills ([#3367](https://github.com/material-extensions/vscode-material-icon-theme/pull/3367))
+
+### 🩹 Fixes
+
+- Add nuspec to nuget file extensions ([#3377](https://github.com/material-extensions/vscode-material-icon-theme/pull/3377))
+- Add wixproj to visualstudio file extensions ([#3383](https://github.com/material-extensions/vscode-material-icon-theme/pull/3383))
+
+### ❤️ Contributors
+
+- Vinicius Celestino De Oliveira Pereira ([@ViniDevBR](https://github.com/ViniDevBR))
+- Neverland ([@vant-ui](https://github.com/vant-ui))
+- Philipp Kief ([@PKief](https://github.com/PKief))
+- FireMoonStudio ([@FireMoonStudio](https://github.com/FireMoonStudio))
+- Roman ([@gameroman](https://github.com/gameroman))
+- Sayan Shankhari ([@SayanShankhari](https://github.com/SayanShankhari))
+- Hugo Sant'Anna ([@hugosantanna](https://github.com/hugosantanna))
+- LoryPelli ([@lorypelli](https://github.com/lorypelli))
+- Sean Fausett ([@gitfool](https://github.com/gitfool))
+
 ## v5.32.0
 
 [compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.31.0...v5.32.0)

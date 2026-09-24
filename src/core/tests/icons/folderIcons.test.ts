@@ -1,4 +1,4 @@
-import { beforeAll, beforeEach, describe, expect, it } from 'bun:test';
+import { beforeAll, beforeEach, describe, expect, it } from 'vitest';
 import { getDefaultConfig } from '../../generator/config/defaultConfig';
 import { loadFolderIconDefinitions } from '../../generator/folderGenerator';
 import type { Config } from '../../models/icons/config';

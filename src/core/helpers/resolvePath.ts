@@ -1,11 +1,8 @@
 import { join } from 'node:path';
 
-/**
- * Resolves a sequence of path segments into an absolute path.
- *
- * @param paths - A list of path segments to be joined and resolved relative to the module's root directory.
- * @returns The resolved absolute path as a string.
- */
+// @ts-ignore __dirname exists at runtime in the CJS bundle produced by esbuild
+const dir = typeof __dirname !== 'undefined' ? __dirname : import.meta.dirname;
+
 export const resolvePath = (...paths: string[]): string => {
-  return join(__dirname, '..', '..', ...paths);
+  return join(dir, '..', '..', ...paths);
 };

@@ -83,6 +83,7 @@ const getConfigValue = <T>(
   }
   if (
     typeof themeConfig.workspaceValue === 'object' &&
+    !Array.isArray(themeConfig.workspaceValue) &&
     themeConfig.workspaceValue &&
     themeConfig.globalValue
   ) {

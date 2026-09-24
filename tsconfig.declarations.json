@@ -5,7 +5,8 @@
     "emitDeclarationOnly": true,
     "noEmit": false,
     "declarationDir": "./dist/types",
-    "declarationMap": true
+    "declarationMap": true,
+    "rootDir": "./src"
   },
   "include": ["src/module/index.ts"]
 }
