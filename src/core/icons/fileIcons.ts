@@ -3797,5 +3797,9 @@ export const fileIcons: FileIcons = {
       name: 'mrpack',
       fileExtensions: ['mrpack'],
     },
+    {
+      name: 'zizmor',
+      fileExtensions: ['zizmor.yml', 'zizmor.yaml']
+    }
   ]),
 };
