@@ -3799,7 +3799,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'zizmor',
-      fileExtensions: ['zizmor.yml', 'zizmor.yaml']
-    }
+      fileExtensions: ['zizmor.yml', 'zizmor.yaml'],
+    },
   ]),
 };
