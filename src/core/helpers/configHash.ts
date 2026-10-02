@@ -30,6 +30,7 @@ export const getFileConfigHash = (config: Partial<Config>): string => {
           filesColor: config.files?.color,
           fileClones: config.files?.customClones,
           folderClones: config.folders?.customClones,
+          languageClones: config.languages?.customClones,
         })
       )}`;
     }

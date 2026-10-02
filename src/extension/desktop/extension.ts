@@ -19,15 +19,17 @@ export const activate = async (context: ExtensionContext) => {
     // Subscribe to the extension commands
     context.subscriptions.push(...registered);
 
+    // Keep observing even if initial generation fails (e.g. a missing custom SVG).
+    context.subscriptions.push(
+      workspace.onDidChangeConfiguration((event) => {
+        void detectConfigChanges(event, context).catch((error) =>
+          logger.error(error)
+        );
+      })
+    );
+
     // Initially trigger the config change detection
     await detectConfigChanges(undefined, context);
-
-    // Observe changes in the config
-    context.subscriptions.push(
-      workspace.onDidChangeConfiguration(
-        async (event) => await detectConfigChanges(event, context)
-      )
-    );
 
     logger.info('Extension activated!');
   } catch (error) {
