@@ -2273,6 +2273,7 @@ export const fileIcons: FileIcons = {
       fileNames: ['prisma.yml'],
       fileExtensions: ['prisma'],
       patterns: {
+        'prisma7.config': FileNamePattern.Ecmascript,
         'prisma.config': FileNamePattern.Ecmascript,
       },
     },
