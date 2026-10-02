@@ -490,6 +490,11 @@
     "typescript": "npm:@typescript/typescript6@^6.0.2",
     "vitest": "^5.0.0"
   },
+  "overrides": {
+    "markdownlint-cli": {
+      "js-yaml": "5.4.1"
+    }
+  },
   "patchedDependencies": {
     "changelogen@0.6.2": "patches/changelogen@0.6.2.patch"
   },
