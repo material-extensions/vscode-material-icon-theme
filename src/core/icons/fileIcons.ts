@@ -3798,5 +3798,6 @@ export const fileIcons: FileIcons = {
       name: 'mrpack',
       fileExtensions: ['mrpack'],
     },
+    { name: 'plix', fileExtensions: ['px', 'plix'] },
   ]),
 };
