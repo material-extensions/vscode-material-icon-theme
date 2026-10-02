@@ -1340,6 +1340,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['organisms', 'organism'],
       },
       {
+        name: 'folder-anthropic',
+        folderNames: ['anthropic'],
+      },
+      {
         name: 'folder-claude',
         folderNames: ['claude'],
       },
@@ -1351,6 +1355,10 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-gemini-ai',
         folderNames: ['gemini', 'gemini-ai', 'geminiai'],
+      },
+      {
+        name: 'folder-openai',
+        folderNames: ['openai'],
       },
       {
         name: 'folder-opencode',
