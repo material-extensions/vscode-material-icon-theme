@@ -1274,7 +1274,8 @@ export const fileIcons: FileIcons = {
       name: 'clojure',
       fileExtensions: ['clj', 'cljs', 'cljc', 'cljx', 'clojure', 'edn'],
     },
-    { name: 'groovy', fileExtensions: ['groovy', 'gvy', 'nf'] },
+    { name: 'groovy', fileExtensions: ['groovy', 'gvy'] },
+    { name: 'nextflow', fileExtensions: ['nf'] },
     {
       name: 'r',
       fileExtensions: ['r', 'rmd', 'rhistory', 'rprofile', 'rt'],
