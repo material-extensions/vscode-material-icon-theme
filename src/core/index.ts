@@ -25,6 +25,10 @@ export {
   generateFolderIcons,
   generateRootFolderIcons,
 } from './generator/folderGenerator';
+export {
+  generateIconSnapshot,
+  isIconSnapshotCurrent,
+} from './generator/generateIconSnapshot';
 export { generateManifest } from './generator/generateManifest';
 export { validateOpacityValue } from './generator/iconOpacity';
 export { validateSaturationValue } from './generator/iconSaturation';
