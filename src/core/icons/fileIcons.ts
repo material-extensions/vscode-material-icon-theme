@@ -3799,5 +3799,9 @@ export const fileIcons: FileIcons = {
       name: 'mrpack',
       fileExtensions: ['mrpack'],
     },
+    {
+      name: 'devprune',
+      fileNames: ['.devprune.json', 'ignore.devprune.json'],
+    },
   ]),
 };
