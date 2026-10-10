@@ -202,7 +202,7 @@ export const fileIcons: FileIcons = {
       ],
       fileNames: ['.htaccess'],
     },
-    { name: 'toml', fileExtensions: ['toml'], light: true },
+    { name: 'toml', fileExtensions: ['toml', 'tosd'], light: true },
     { name: 'toon', fileExtensions: ['toon'] },
     {
       name: 'image',
