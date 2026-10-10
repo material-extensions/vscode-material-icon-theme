@@ -164,6 +164,7 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['git', 'patches', 'githooks', 'submodules'],
       },
       { name: 'folder-github', folderNames: ['github'] },
+      { name: 'folder-cnb', folderNames: ['cnb'] },
       { name: 'folder-gitea', folderNames: ['gitea'] },
       { name: 'folder-gitlab', folderNames: ['gitlab'] },
       { name: 'folder-forgejo', folderNames: ['forgejo'] },

@@ -3799,5 +3799,16 @@ export const fileIcons: FileIcons = {
       name: 'mrpack',
       fileExtensions: ['mrpack'],
     },
+    {
+      name: 'cnb',
+      fileNames: [
+        '.cnb.yml',
+        '.cnb/settings.yml',
+        '.cnb/web_trigger.yml',
+        '.cnb/security/code_scan_config.yml',
+        '.cnb/tag_deploy.yml',
+        '.scanignore',
+      ],
+    },
   ]),
 };
