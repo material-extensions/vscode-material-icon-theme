@@ -202,7 +202,7 @@ export const fileIcons: FileIcons = {
       ],
       fileNames: ['.htaccess'],
     },
-    { name: 'toml', fileExtensions: ['toml'], light: true },
+    { name: 'toml', fileExtensions: ['toml', 'tosd'], light: true },
     { name: 'toon', fileExtensions: ['toon'] },
     {
       name: 'image',
@@ -1274,7 +1274,8 @@ export const fileIcons: FileIcons = {
       name: 'clojure',
       fileExtensions: ['clj', 'cljs', 'cljc', 'cljx', 'clojure', 'edn'],
     },
-    { name: 'groovy', fileExtensions: ['groovy', 'gvy', 'nf'] },
+    { name: 'groovy', fileExtensions: ['groovy', 'gvy'] },
+    { name: 'nextflow', fileExtensions: ['nf'] },
     {
       name: 'r',
       fileExtensions: ['r', 'rmd', 'rhistory', 'rprofile', 'rt'],
@@ -2273,6 +2274,7 @@ export const fileIcons: FileIcons = {
       fileNames: ['prisma.yml'],
       fileExtensions: ['prisma'],
       patterns: {
+        'prisma7.config': FileNamePattern.Ecmascript,
         'prisma.config': FileNamePattern.Ecmascript,
       },
     },
