@@ -3799,5 +3799,9 @@ export const fileIcons: FileIcons = {
       name: 'mrpack',
       fileExtensions: ['mrpack'],
     },
+    {
+      name: 'zod',
+      fileExtensions: ['zod.ts', 'z.ts'],
+    },
   ]),
 };
