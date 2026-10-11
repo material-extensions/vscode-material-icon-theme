@@ -1,6 +1,5 @@
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
-import deepEqual from 'fast-deep-equal';
 import type { ConfigurationChangeEvent, ExtensionContext } from 'vscode';
 import {
   applyConfigToIcons,
@@ -19,6 +18,7 @@ import {
   writeToFile,
 } from '../../core';
 import { getCurrentConfig } from '../shared/config';
+import { deepEqual } from './utils/deepEqual';
 
 /** Compare the workspace and the user configurations with the current setup of the icons. */
 export const detectConfigChanges = async (
