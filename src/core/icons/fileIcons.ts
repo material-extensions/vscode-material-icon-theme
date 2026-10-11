@@ -1595,6 +1595,7 @@ export const fileIcons: FileIcons = {
     { name: 'cake', fileExtensions: ['cake'] },
     { name: 'cucumber', fileExtensions: ['feature', 'features'] },
     { name: 'nim', fileExtensions: ['nim', 'nimble'] },
+    { name: 'nxd', fileExtensions: ['nxd'] },
     { name: 'apiblueprint', fileExtensions: ['apib', 'apiblueprint'] },
     { name: 'riot', fileExtensions: ['riot', 'tag'] },
     { name: 'vfl', fileExtensions: ['vfl'], fileNames: ['.vfl'] },
