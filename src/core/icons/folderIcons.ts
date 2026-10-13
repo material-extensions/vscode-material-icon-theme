@@ -430,6 +430,21 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['astro'],
       },
       {
+        name: 'folder-embeddings',
+        folderNames: [
+          'embedding',
+          'embeddings',
+          'embed',
+          'embeds',
+          'vector-store',
+          'vector_store',
+          'vectorstore',
+          'faiss',
+          'faiss-index',
+          'faiss_index',
+        ],
+      },
+      {
         name: 'folder-database',
         folderNames: ['db', 'data', 'database', 'databases', 'sql'],
       },
