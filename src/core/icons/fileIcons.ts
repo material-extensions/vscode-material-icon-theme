@@ -3800,6 +3800,10 @@ export const fileIcons: FileIcons = {
       fileExtensions: ['mrpack'],
     },
     {
+      name: 'devprune',
+      fileNames: ['.devprune.json', 'ignore.devprune.json'],
+    },
+    {
       name: 'zizmor',
       fileNames: ['zizmor.yml', 'zizmor.yaml'],
     },
