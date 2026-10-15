@@ -2,6 +2,34 @@
 
 # Changelog
 
+## v5.39.0
+
+[compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.38.1...v5.39.0)
+
+### 🚀 Enhancements
+
+- Add Rstack config file association ([#3574](https://github.com/material-extensions/vscode-material-icon-theme/pull/3574))
+- Additional tsconfig file names ([44bc0bd0](https://github.com/material-extensions/vscode-material-icon-theme/commit/44bc0bd0))
+- Add all supported file extensions for prisma.config ([#3586](https://github.com/material-extensions/vscode-material-icon-theme/pull/3586))
+
+### 🩹 Fixes
+
+- Add missing `message` without `s` to `folder-messages` ([#3569](https://github.com/material-extensions/vscode-material-icon-theme/pull/3569))
+- Commonjs & esm test snap icons ([#3576](https://github.com/material-extensions/vscode-material-icon-theme/pull/3576))
+
+### 🏡 Chore
+
+- **deps-dev:** Bump fast-uri from 3.1.6 to 3.1.8 ([#3602](https://github.com/material-extensions/vscode-material-icon-theme/pull/3602))
+- **deps-dev:** Bump undici from 7.29.0 to 7.30.0 ([#3607](https://github.com/material-extensions/vscode-material-icon-theme/pull/3607))
+
+### ❤️ Contributors
+
+- Leo Aso
+- Maikel Van Dort
+- Philipp Kief
+- Soon
+- Angel Uriot
+
 ## v5.38.1
 
 [compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.38.0...v5.38.1)
