@@ -3803,5 +3803,9 @@ export const fileIcons: FileIcons = {
       name: 'zizmor',
       fileNames: ['zizmor.yml', 'zizmor.yaml'],
     },
+    {
+      name: 'zod',
+      fileExtensions: ['zod.ts', 'z.ts'],
+    },
   ]),
 };
