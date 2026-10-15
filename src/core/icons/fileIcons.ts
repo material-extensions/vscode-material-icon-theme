@@ -3803,5 +3803,6 @@ export const fileIcons: FileIcons = {
       name: 'zizmor',
       fileNames: ['zizmor.yml', 'zizmor.yaml'],
     },
+    { name: 'kelft', fileExtensions: ['kelft'] },
   ]),
 };
