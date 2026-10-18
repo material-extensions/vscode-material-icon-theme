@@ -1508,6 +1508,7 @@ export const fileIcons: FileIcons = {
     { name: 'autoit', fileExtensions: ['au3'] },
     { name: 'haml', fileExtensions: ['haml'] },
     { name: 'yang', fileExtensions: ['yang'] },
+    { name: 'cisco', fileExtensions: ['cisco', 'ios'] },
     {
       name: 'mjml',
       fileExtensions: ['mjml'],
