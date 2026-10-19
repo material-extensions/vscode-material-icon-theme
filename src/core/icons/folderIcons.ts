@@ -1205,6 +1205,76 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['angular'],
       },
       {
+        name: 'folder-frappe',
+        folderNames: ['frappe'],
+        enabledFor: [IconPack.Frappe],
+      },
+      {
+        name: 'folder-erpnext',
+        folderNames: ['erpnext'],
+        enabledFor: [IconPack.Frappe],
+      },
+      {
+        name: 'folder-hrms',
+        folderNames: ['hrms'],
+        enabledFor: [IconPack.Frappe],
+      },
+      {
+        name: 'folder-crm',
+        folderNames: ['crm'],
+        enabledFor: [IconPack.Frappe],
+      },
+      {
+        name: 'folder-helpdesk',
+        folderNames: ['helpdesk'],
+        enabledFor: [IconPack.Frappe],
+      },
+      {
+        name: 'folder-insights',
+        folderNames: ['insights'],
+        enabledFor: [IconPack.Frappe],
+      },
+      {
+        name: 'folder-lending',
+        folderNames: ['lending'],
+        enabledFor: [IconPack.Frappe],
+      },
+      {
+        name: 'folder-education',
+        folderNames: ['education'],
+        enabledFor: [IconPack.Frappe],
+      },
+      {
+        name: 'folder-lms',
+        folderNames: ['lms'],
+        enabledFor: [IconPack.Frappe],
+      },
+      {
+        name: 'folder-wiki',
+        folderNames: ['wiki'],
+        enabledFor: [IconPack.Frappe],
+      },
+      {
+        name: 'folder-drive',
+        folderNames: ['drive'],
+        enabledFor: [IconPack.Frappe],
+      },
+      {
+        name: 'folder-whatsapp',
+        folderNames: ['whatsapp'],
+        enabledFor: [IconPack.Frappe],
+      },
+      {
+        name: 'folder-raven',
+        folderNames: ['raven'],
+        enabledFor: [IconPack.Frappe],
+      },
+      {
+        name: 'folder-gameplan',
+        folderNames: ['gameplan'],
+        enabledFor: [IconPack.Frappe],
+      },
+      {
         name: 'folder-unity',
         folderNames: ['unity'],
       },

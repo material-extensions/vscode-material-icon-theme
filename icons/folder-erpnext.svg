@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <path id="folder" fill="#2979FF"
+    d="m6.922 3.768-.644-.536A1 1 0 0 0 5.638 3H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H7.562a1 1 0 0 1-.64-.232" />
+  <path id="motive" fill="#b3e5fc" fill-rule="evenodd" clip-rule="evenodd"
+    d="M14.82432 9.54698H14.62801H12.07601H10.8V8.5H14.82432V9.54698ZM12.076 12.00083V13.44043H14.85704V14.4874H10.8V10.95385H12.076H14.62801V12.00083H12.076Z" />
+</svg>
