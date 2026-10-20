@@ -1171,7 +1171,6 @@ export const fileIcons: FileIcons = {
         'enc',
         'flac',
         'flp',
-        'gp',
         'gsm',
         'it',
         'm3u',
