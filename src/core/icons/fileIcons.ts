@@ -1226,6 +1226,7 @@ export const fileIcons: FileIcons = {
       },
     },
     { name: 'rust', fileExtensions: ['rs', 'ron'] },
+    { name: 'telvax', fileExtensions: ['tvx'], light: true },
     { name: 'raml', fileExtensions: ['raml'] },
     { name: 'xaml', fileExtensions: ['xaml'], fileNames: ['XamlStyler.json'] },
     { name: 'haskell', fileExtensions: ['hs', 'lhs'] },
