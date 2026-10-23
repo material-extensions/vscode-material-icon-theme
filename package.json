@@ -20,7 +20,6 @@
     "generateClones": "tsx ./src/scripts/icons/generateClones.ts",
     "generateOpenFolders": "tsx ./src/scripts/svg/generateOpenFolderIcons.ts",
     "lint": "biome check",
-    "markdownlint": "markdownlint '**/*.md'",
     "format": "biome format --write ./src",
     "preversion": "npm run contributors && npm run preview && npm run svgo && git add images/*.png icons/*.svg",
     "preview": "tsx ./src/scripts/preview/run.ts",
@@ -470,10 +469,10 @@
     "@biomejs/biome": "^2.5.14",
     "@commitlint/config-conventional": "^21.2.2",
     "@softarc/sheriff-core": "^0.20.0",
-    "@typescript/native": "npm:typescript@^7.0.2",
     "@types/chroma-js": "^3.1.2",
     "@types/node": "^26.2.0",
     "@types/vscode": "~1.55.0",
+    "@typescript/native": "npm:typescript@^7.0.2",
     "axios": "^1.19.0",
     "changelogen": "0.6.2",
     "cheerio": "^1.2.0",
@@ -481,7 +480,6 @@
     "esbuild": "^0.28.2",
     "husky": "^9.1.7",
     "lint-staged": "^17.3.0",
-    "markdownlint-cli": "^0.49.1",
     "puppeteer": "^25.8.0",
     "rimraf": "^6.1.3",
     "svg-color-linter": "^3.1.0",
@@ -489,11 +487,6 @@
     "tsx": "^4.23.12",
     "typescript": "npm:@typescript/typescript6@^6.0.2",
     "vitest": "^5.0.0"
-  },
-  "overrides": {
-    "markdownlint-cli": {
-      "js-yaml": "5.4.2"
-    }
   },
   "patchedDependencies": {
     "changelogen@0.6.2": "patches/changelogen@0.6.2.patch"

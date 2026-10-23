@@ -1,5 +1,3 @@
-<!-- markdownlint-disable no-duplicate-heading strong-style -->
-
 # Changelog
 
 ## v5.39.0

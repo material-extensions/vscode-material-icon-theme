@@ -1,5 +1,3 @@
-<!-- markdownlint-disable -->
-
 <p align="center">
   <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/logo.png" alt="logo" width="120">
 </p>
@@ -35,7 +33,6 @@
 <details><summary>🏞️ <b>Show all available folder icons</b></summary><br/><img src="https://raw.githubusercontent.com/material-extensions/vscode-material-icon-theme/main/images/folderIcons.png" alt="folder icons"></details>
 
 <br /><br />
-<!-- markdownlint-restore -->
 
 ## Description
 
@@ -136,7 +133,6 @@ We welcome contributions of all kinds! Whether you want to add new icons, improv
 - 🌍 **Help with Translations**
   Improve or add translations by editing the files in `src/i18n` and `package.nls.*.json`.
 
-<!-- markdownlint-disable -->
 <br />
 
 
@@ -150,4 +146,3 @@ We welcome contributions of all kinds! Whether you want to add new icons, improv
   <em>Enjoying Material Icon Theme? Support the project by starring it or becoming a sponsor!</em>
 </p>
 
-<!-- markdownlint-restore -->
