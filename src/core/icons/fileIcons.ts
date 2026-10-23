@@ -3588,16 +3588,9 @@ export const fileIcons: FileIcons = {
     { name: 'epub', fileExtensions: ['epub'] },
     { name: 'regedit', fileExtensions: ['reg'] },
     { name: 'cline', fileNames: ['.clinerules'] },
-    { 
-      name: 'gnuplot', 
-      fileExtensions: [
-        'gnu',
-        'gnuplot',
-        'gp',
-        'gpi',
-        'plt',
-        'plot'
-      ] 
+    {
+      name: 'gnuplot',
+      fileExtensions: ['gnu', 'gnuplot', 'gp', 'gpi', 'plt', 'plot'],
     },
     {
       name: 'packship',
