@@ -432,7 +432,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-database',
-        folderNames: ['db', 'data', 'database', 'databases', 'sql'],
+        folderNames: ['db', 'data', 'database', 'databases', 'sql', 'storage'],
       },
       { name: 'folder-migrations', folderNames: ['migrations', 'migration'] },
       { name: 'folder-log', folderNames: ['log', 'logs', 'logging'] },
