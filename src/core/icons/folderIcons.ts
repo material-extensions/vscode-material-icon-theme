@@ -42,7 +42,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-sass', folderNames: ['sass', 'scss'] },
       { name: 'folder-television', folderNames: ['tv', 'television'] },
       { name: 'folder-desktop', folderNames: ['desktop', 'display'] },
-      { name: 'folder-bluetooth', folderNames: ['bluetooth', 'bt', 'ble'] },
+      { name: 'folder-bluetooth', folderNames: ['bluetooth', 'ble'] },
       {
         name: 'folder-console',
         folderNames: [
