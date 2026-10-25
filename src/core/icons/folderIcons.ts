@@ -1374,6 +1374,15 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['metro'],
       },
       {
+        name: 'folder-postgraphile',
+        folderNames: [
+          'graphile',
+          'graphile-plugins',
+          'postgraphile',
+          'postgraphile-plugins',
+        ],
+      },
+      {
         name: 'folder-filter',
         folderNames: ['filter', 'filters'],
       },
