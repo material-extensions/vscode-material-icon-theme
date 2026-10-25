@@ -3759,6 +3759,8 @@ export const fileIcons: FileIcons = {
       light: true,
     },
     { name: 'macaulay2', fileExtensions: ['m2'] },
+    { name: 'llvm', fileExtensions: ['ll'], light: true },
+    { name: 'mlir', fileExtensions: ['mlir', 'pdll', 'td'] },
     { name: 'uiua', fileExtensions: ['ua'] },
     {
       name: 'skill',
