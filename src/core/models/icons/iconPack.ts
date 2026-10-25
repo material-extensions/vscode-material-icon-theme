@@ -12,6 +12,7 @@ export enum IconPack {
   Vue = 'vue',
   Vuex = 'vue_vuex',
   Bashly = 'bashly',
+  Frappe = 'frappe',
 }
 
 export type IconPackValue = `${IconPack}` | '';

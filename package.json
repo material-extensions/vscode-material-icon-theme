@@ -170,6 +170,7 @@
             "%configuration.activeIconPack.vue_vuex%",
             "%configuration.activeIconPack.nest%",
             "%configuration.activeIconPack.bashly%",
+            "%configuration.activeIconPack.frappe%",
             "%configuration.activeIconPack.none%"
           ],
           "enum": [
@@ -183,6 +184,7 @@
             "vue_vuex",
             "nest",
             "bashly",
+            "frappe",
             "none"
           ]
         },
@@ -263,6 +265,7 @@
                     "%configuration.activeIconPack.vue_vuex%",
                     "%configuration.activeIconPack.nest%",
                     "%configuration.activeIconPack.bashly%",
+                    "%configuration.activeIconPack.frappe%",
                     "%configuration.activeIconPack.none%"
                   ],
                   "enum": [
@@ -275,6 +278,7 @@
                     "vue_vuex",
                     "nest",
                     "bashly",
+                    "frappe",
                     "none"
                   ]
                 }
@@ -332,6 +336,7 @@
                     "%configuration.activeIconPack.vue_vuex%",
                     "%configuration.activeIconPack.nest%",
                     "%configuration.activeIconPack.bashly%",
+                    "%configuration.activeIconPack.frappe%",
                     "%configuration.activeIconPack.none%"
                   ],
                   "enum": [
@@ -344,6 +349,7 @@
                     "vue_vuex",
                     "nest",
                     "bashly",
+                    "frappe",
                     "none"
                   ]
                 }
