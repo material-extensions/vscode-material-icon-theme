@@ -580,6 +580,17 @@ export const folderIcons: FolderTheme[] = [
         ],
       },
       {
+        name: 'folder-question',
+        folderNames: [
+          'question',
+          'questions',
+          'faq',
+          'faqs',
+          'qna',
+          'q-and-a',
+        ],
+      },
+      {
         name: 'folder-messages',
         folderNames: [
           'message',
