@@ -1214,7 +1214,11 @@ export const fileIcons: FileIcons = {
       ],
     },
     { name: 'coffee', fileExtensions: ['coffee', 'cson', 'iced'] },
-    { name: 'document', fileExtensions: ['txt'] },
+    {
+      name: 'document',
+      fileNames: ['doc.md', 'docs.md'],
+      fileExtensions: ['txt', 'doc.md', 'docs.md'],
+    },
     { name: 'lyric', fileExtensions: ['lrc'] },
     {
       name: 'graphql',
