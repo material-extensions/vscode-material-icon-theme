@@ -1153,6 +1153,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['prompt', 'prompts'],
       },
       {
+        name: 'folder-profile',
+        folderNames: ['profile', 'profiles'],
+      },
+      {
         name: 'folder-interface',
         folderNames: ['interface', 'interfaces'],
       },
