@@ -94,6 +94,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-node',
         folderNames: ['node', 'nodejs', 'node_modules'],
       },
+      { name: 'folder-vite', folderNames: ['vite'] },
       {
         name: 'folder-javascript',
         folderNames: ['js', 'javascript', 'javascripts', 'cjs', 'mjs'],
