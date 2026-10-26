@@ -1,6 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
-  <circle cx="100" cy="100" r="95" fill="#FF0000" />
-  <path d="M 55,76 A 50,50 0 0,1 145,76 Z" fill="#5B92E5" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round" />
-  <path d="M 55,124 A 50,50 0 0,0 145,124 Z" fill="#5B92E5" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round" />
-  <text x="100" y="112" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-weight="bold" font-size="32" text-anchor="middle" letter-spacing="2">U M L e t</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <circle cx="8" cy="8" r="7" fill="#FF0000" />
+  <path d="M 4,6 A 5,5 0 0,1 12,6 Z" fill="#5B92E5" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" />
+  <path d="M 4,10 A 5,5 0 0,0 12,10 Z" fill="#5B92E5" stroke="#FFFFFF" stroke-width="1" stroke-linejoin="round" />
 </svg>
