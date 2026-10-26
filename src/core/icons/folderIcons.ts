@@ -1124,6 +1124,7 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-quasar', folderNames: ['quasar'] },
       { name: 'folder-next', folderNames: ['next'] },
+      { name: 'folder-tanstack', folderNames: ['tanstack'] },
       {
         name: 'folder-dal',
         folderNames: ['dal', 'data-access', 'data-access-layer'],
