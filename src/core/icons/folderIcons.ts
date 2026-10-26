@@ -42,6 +42,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-sass', folderNames: ['sass', 'scss'] },
       { name: 'folder-television', folderNames: ['tv', 'television'] },
       { name: 'folder-desktop', folderNames: ['desktop', 'display'] },
+      { name: 'folder-bluetooth', folderNames: ['bluetooth', 'ble'] },
       {
         name: 'folder-console',
         folderNames: [
@@ -431,7 +432,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-database',
-        folderNames: ['db', 'data', 'database', 'databases', 'sql'],
+        folderNames: ['db', 'data', 'database', 'databases', 'sql', 'storage'],
       },
       { name: 'folder-migrations', folderNames: ['migrations', 'migration'] },
       { name: 'folder-log', folderNames: ['log', 'logs', 'logging'] },

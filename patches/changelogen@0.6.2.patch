@@ -1,16 +1,13 @@
 diff --git a/dist/chunks/default.mjs b/dist/chunks/default.mjs
-index 1be5098197237c558c3f5bb2cb11649ccc5b7ca9..200a989c111a8b928670b940515642e2c1e70734 100644
+index 1be5098..b46edea 100644
 --- a/dist/chunks/default.mjs
 +++ b/dist/chunks/default.mjs
-@@ -1,18 +1,18 @@
- import { existsSync, promises } from 'node:fs';
- import { resolve } from 'pathe';
+@@ -3,16 +3,16 @@ import { resolve } from 'pathe';
  import consola from 'consola';
--import { r as renamePackage, b as bumpVersion, n as npmPublish } from '../shared/changelogen.Ck48ZmxS.mjs';
-+import { r as renamePackage, b as bumpVersion, n as npmPublish } from '../shared/changelogen.CV10Ge4S.mjs';
+ import { r as renamePackage, b as bumpVersion, n as npmPublish } from '../shared/changelogen.Ck48ZmxS.mjs';
  import { githubRelease } from './github.mjs';
 -import { q as loadChangelogConfig, e as getCurrentGitStatus, f as getGitDiff, p as parseCommits, n as generateMarkDown, z as execCommand } from '../shared/changelogen.D-9f3HTX.mjs';
-+import { t as loadChangelogConfig, e as getCurrentGitStatus, f as getGitDiff, p as parseCommits, o as generateMarkDown, A as execCommand } from '../shared/changelogen.Cv2GeiVd.mjs';
++import { t as loadChangelogConfig, e as getCurrentGitStatus, f as getGitDiff, p as parseCommits, o as generateMarkDown, A as execCommand } from '../shared/changelogen.D-9f3HTX.mjs';
  import 'semver';
  import 'pkg-types';
  import 'std-env';
@@ -36,7 +33,7 @@ index 1be5098197237c558c3f5bb2cb11649ccc5b7ca9..200a989c111a8b928670b940515642e2
    if (args.canary) {
      if (args.bump === void 0) {
 diff --git a/dist/chunks/github.mjs b/dist/chunks/github.mjs
-index 9bc845ab73ee35f40cec50b624d92001ce5a418c..0c539c287125bac3ed2e2f0a17ccfd5282c7c325 100644
+index 9bc845a..b6c4774 100644
 --- a/dist/chunks/github.mjs
 +++ b/dist/chunks/github.mjs
 @@ -2,12 +2,12 @@ import { promises } from 'node:fs';
@@ -47,7 +44,7 @@ index 9bc845ab73ee35f40cec50b624d92001ce5a418c..0c539c287125bac3ed2e2f0a17ccfd52
 -import 'node:os';
 -import 'ofetch';
 -import 'scule';
-+import { t as loadChangelogConfig, j as getGithubChangelog, q as parseChangelogMarkdown, r as resolveGithubToken, s as syncGithubRelease } from '../shared/changelogen.Cv2GeiVd.mjs';
++import { t as loadChangelogConfig, j as getGithubChangelog, q as parseChangelogMarkdown, r as resolveGithubToken, s as syncGithubRelease } from '../shared/changelogen.D-9f3HTX.mjs';
  import 'convert-gitmoji';
  import 'node-fetch-native';
 +import 'scule';
@@ -57,7 +54,7 @@ index 9bc845ab73ee35f40cec50b624d92001ce5a418c..0c539c287125bac3ed2e2f0a17ccfd52
  import 'c12';
  import 'node:child_process';
 diff --git a/dist/index.d.mts b/dist/index.d.mts
-index dc647e74f9da337ea2ce58471d7798a4c2d28a1d..b4a54f91f8e762d849841705e426a0af4d9781fc 100644
+index dc647e7..b4a54f9 100644
 --- a/dist/index.d.mts
 +++ b/dist/index.d.mts
 @@ -125,6 +125,7 @@ declare function githubNewReleaseURL(config: ResolvedChangelogConfig, release: {
@@ -66,24 +63,23 @@ index dc647e74f9da337ea2ce58471d7798a4c2d28a1d..b4a54f91f8e762d849841705e426a0af
  }): string;
 +declare function getPullRequestAuthorLogin(config: ResolvedChangelogConfig, prNumber: number): Promise<string | undefined>;
  declare function resolveGithubToken(config: ResolvedChangelogConfig): Promise<any>;
- 
+
  declare function generateMarkDown(commits: GitCommit[], config: ResolvedChangelogConfig): Promise<string>;
 @@ -135,5 +136,5 @@ declare function parseChangelogMarkdown(contents: string): {
      }[];
  };
- 
+
 -export { bumpVersion, createGithubRelease, determineSemverChange, formatCompareChanges, formatReference, generateMarkDown, getCurrentGitBranch, getCurrentGitRef, getCurrentGitStatus, getCurrentGitTag, getGitDiff, getGitRemoteURL, getGithubChangelog, getGithubReleaseByTag, getLastGitTag, getRepoConfig, githubNewReleaseURL, listGithubReleases, loadChangelogConfig, parseChangelogMarkdown, parseCommits, parseGitCommit, resolveChangelogConfig, resolveGithubToken, resolveRepoConfig, syncGithubRelease, updateGithubRelease };
 +export { bumpVersion, createGithubRelease, determineSemverChange, formatCompareChanges, formatReference, generateMarkDown, getCurrentGitBranch, getCurrentGitRef, getCurrentGitStatus, getCurrentGitTag, getGitDiff, getGitRemoteURL, getGithubChangelog, getGithubReleaseByTag, getLastGitTag, getPullRequestAuthorLogin, getRepoConfig, githubNewReleaseURL, listGithubReleases, loadChangelogConfig, parseChangelogMarkdown, parseCommits, parseGitCommit, resolveChangelogConfig, resolveGithubToken, resolveRepoConfig, syncGithubRelease, updateGithubRelease };
  export type { BumpVersionOptions, ChangelogConfig, GitCommit, GitCommitAuthor, GithubOptions, GithubRelease, RawGitCommit, Reference, RepoConfig, RepoProvider, ResolvedChangelogConfig, SemverBumpType };
 diff --git a/dist/index.mjs b/dist/index.mjs
-index 0e7a947ff18a4afce587876d6d04cf8d3ff03c01..d2452367a39942980bb02acf24cb92321d18c123 100644
+index 0e7a947..7524e94 100644
 --- a/dist/index.mjs
 +++ b/dist/index.mjs
 @@ -1,12 +1,12 @@
 -export { k as createGithubRelease, w as formatCompareChanges, v as formatReference, n as generateMarkDown, a as getCurrentGitBranch, c as getCurrentGitRef, e as getCurrentGitStatus, b as getCurrentGitTag, f as getGitDiff, d as getGitRemoteURL, j as getGithubChangelog, i as getGithubReleaseByTag, g as getLastGitTag, y as getRepoConfig, m as githubNewReleaseURL, l as listGithubReleases, q as loadChangelogConfig, o as parseChangelogMarkdown, p as parseCommits, h as parseGitCommit, t as resolveChangelogConfig, r as resolveGithubToken, x as resolveRepoConfig, s as syncGithubRelease, u as updateGithubRelease } from './shared/changelogen.D-9f3HTX.mjs';
--export { b as bumpVersion, d as determineSemverChange } from './shared/changelogen.Ck48ZmxS.mjs';
-+export { k as createGithubRelease, x as formatCompareChanges, w as formatReference, o as generateMarkDown, a as getCurrentGitBranch, c as getCurrentGitRef, e as getCurrentGitStatus, b as getCurrentGitTag, f as getGitDiff, d as getGitRemoteURL, j as getGithubChangelog, i as getGithubReleaseByTag, g as getLastGitTag, n as getPullRequestAuthorLogin, z as getRepoConfig, m as githubNewReleaseURL, l as listGithubReleases, t as loadChangelogConfig, q as parseChangelogMarkdown, p as parseCommits, h as parseGitCommit, v as resolveChangelogConfig, r as resolveGithubToken, y as resolveRepoConfig, s as syncGithubRelease, u as updateGithubRelease } from './shared/changelogen.Cv2GeiVd.mjs';
-+export { b as bumpVersion, d as determineSemverChange } from './shared/changelogen.CV10Ge4S.mjs';
++export { k as createGithubRelease, x as formatCompareChanges, w as formatReference, o as generateMarkDown, a as getCurrentGitBranch, c as getCurrentGitRef, e as getCurrentGitStatus, b as getCurrentGitTag, f as getGitDiff, d as getGitRemoteURL, j as getGithubChangelog, i as getGithubReleaseByTag, g as getLastGitTag, n as getPullRequestAuthorLogin, z as getRepoConfig, m as githubNewReleaseURL, l as listGithubReleases, t as loadChangelogConfig, q as parseChangelogMarkdown, p as parseCommits, h as parseGitCommit, v as resolveChangelogConfig, r as resolveGithubToken, y as resolveRepoConfig, s as syncGithubRelease, u as updateGithubRelease } from './shared/changelogen.D-9f3HTX.mjs';
+ export { b as bumpVersion, d as determineSemverChange } from './shared/changelogen.Ck48ZmxS.mjs';
 +import 'convert-gitmoji';
 +import 'node-fetch-native';
 +import 'scule';
@@ -97,29 +93,23 @@ index 0e7a947ff18a4afce587876d6d04cf8d3ff03c01..d2452367a39942980bb02acf24cb9232
  import 'node:path';
  import 'c12';
  import 'node:child_process';
-diff --git a/dist/shared/changelogen.Ck48ZmxS.mjs b/dist/shared/changelogen.CV10Ge4S.mjs
-similarity index 98%
-rename from dist/shared/changelogen.Ck48ZmxS.mjs
-rename to dist/shared/changelogen.CV10Ge4S.mjs
-index 1505542eb66a25ece191202cfa30ec1f57d1c2e2..8b03117843752241b96247660da3bbde2a5e88fe 100644
+diff --git a/dist/shared/changelogen.Ck48ZmxS.mjs b/dist/shared/changelogen.Ck48ZmxS.mjs
+index 1505542..9715a1d 100644
 --- a/dist/shared/changelogen.Ck48ZmxS.mjs
-+++ b/dist/shared/changelogen.CV10Ge4S.mjs
++++ b/dist/shared/changelogen.Ck48ZmxS.mjs
 @@ -3,7 +3,7 @@ import consola from 'consola';
  import { resolve } from 'pathe';
  import { readPackageJSON as readPackageJSON$1, writePackageJSON as writePackageJSON$1 } from 'pkg-types';
  import { isCI, provider } from 'std-env';
 -import { z as execCommand } from './changelogen.D-9f3HTX.mjs';
-+import { A as execCommand } from './changelogen.Cv2GeiVd.mjs';
- 
++import { A as execCommand } from './changelogen.D-9f3HTX.mjs';
+
  function readPackageJSON(config) {
    const path = resolve(config.cwd, "package.json");
-diff --git a/dist/shared/changelogen.D-9f3HTX.mjs b/dist/shared/changelogen.Cv2GeiVd.mjs
-similarity index 89%
-rename from dist/shared/changelogen.D-9f3HTX.mjs
-rename to dist/shared/changelogen.Cv2GeiVd.mjs
-index dd70b3f4651f1691c1f4e4cb22862079f8c02c05..fe14c2c5d46781ac7fdd15c08d72d59d876cb661 100644
+diff --git a/dist/shared/changelogen.D-9f3HTX.mjs b/dist/shared/changelogen.D-9f3HTX.mjs
+index dd70b3f..fe14c2c 100644
 --- a/dist/shared/changelogen.D-9f3HTX.mjs
-+++ b/dist/shared/changelogen.Cv2GeiVd.mjs
++++ b/dist/shared/changelogen.D-9f3HTX.mjs
 @@ -1,10 +1,10 @@
 +import { convert } from 'convert-gitmoji';
 +import { fetch } from 'node-fetch-native';
@@ -194,10 +184,10 @@ index dd70b3f4651f1691c1f4e4cb22862079f8c02c05..fe14c2c5d46781ac7fdd15c08d72d59d
 +}
  const CHANGELOG_RELEASE_HEAD_RE = /^#{2,}\s+.*(v?(\d+\.\d+\.\d+(-[a-zA-Z0-9.]+)?)).*$/gm;
  const VERSION_RE = /^v?(\d+\.\d+\.\d+(-[a-zA-Z0-9.]+)?)$/;
- 
+
 @@ -477,4 +517,4 @@ async function resolveChangelogConfig(config, cwd) {
    return config;
  }
- 
+
 -export { getCurrentGitBranch as a, getCurrentGitTag as b, getCurrentGitRef as c, getGitRemoteURL as d, getCurrentGitStatus as e, getGitDiff as f, getLastGitTag as g, parseGitCommit as h, getGithubReleaseByTag as i, getGithubChangelog as j, createGithubRelease as k, listGithubReleases as l, githubNewReleaseURL as m, generateMarkDown as n, parseChangelogMarkdown as o, parseCommits as p, loadChangelogConfig as q, resolveGithubToken as r, syncGithubRelease as s, resolveChangelogConfig as t, updateGithubRelease as u, formatReference as v, formatCompareChanges as w, resolveRepoConfig as x, getRepoConfig as y, execCommand as z };
 +export { execCommand as A, getCurrentGitBranch as a, getCurrentGitTag as b, getCurrentGitRef as c, getGitRemoteURL as d, getCurrentGitStatus as e, getGitDiff as f, getLastGitTag as g, parseGitCommit as h, getGithubReleaseByTag as i, getGithubChangelog as j, createGithubRelease as k, listGithubReleases as l, githubNewReleaseURL as m, getPullRequestAuthorLogin as n, generateMarkDown as o, parseCommits as p, parseChangelogMarkdown as q, resolveGithubToken as r, syncGithubRelease as s, loadChangelogConfig as t, updateGithubRelease as u, resolveChangelogConfig as v, formatReference as w, formatCompareChanges as x, resolveRepoConfig as y, getRepoConfig as z };

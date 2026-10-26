@@ -1,6 +1,36 @@
-<!-- markdownlint-disable no-duplicate-heading strong-style -->
-
 # Changelog
+
+## v5.40.0
+
+[compare changes](https://github.com/material-extensions/vscode-material-icon-theme/compare/v5.39.0...v5.40.0)
+
+### 🚀 Enhancements
+
+- Add the Nextflow icon asset for .nf files ([#3611](https://github.com/material-extensions/vscode-material-icon-theme/pull/3611))
+- Add `.tosd` extension to `toml` scope ([#3618](https://github.com/material-extensions/vscode-material-icon-theme/pull/3618))
+- Added zizmor file icon ([#3599](https://github.com/material-extensions/vscode-material-icon-theme/pull/3599))
+- Add PEG technologies icon ([#3624](https://github.com/material-extensions/vscode-material-icon-theme/pull/3624))
+- Add 'storage' folder name to database icon ([#3634](https://github.com/material-extensions/vscode-material-icon-theme/pull/3634))
+- Add Bluetooth folder icon ([#3636](https://github.com/material-extensions/vscode-material-icon-theme/pull/3636))
+
+### 🩹 Fixes
+
+- Add `prisma7.config` support ([#3586](https://github.com/material-extensions/vscode-material-icon-theme/pull/3586))
+- Update package versions and add overrides for markdownlint-cli ([d92fe906](https://github.com/material-extensions/vscode-material-icon-theme/commit/d92fe906))
+- Allow unsafe PR checkout in icon review workflow ([7f24c399](https://github.com/material-extensions/vscode-material-icon-theme/commit/7f24c399))
+- Add common file extensions for Gnuplot ([#3628](https://github.com/material-extensions/vscode-material-icon-theme/pull/3628))
+- Resolve vulnerabilities ([ba83aeca](https://github.com/material-extensions/vscode-material-icon-theme/commit/ba83aeca))
+- Linting issues ([1a9d4b3d](https://github.com/material-extensions/vscode-material-icon-theme/commit/1a9d4b3d))
+
+### ❤️ Contributors
+
+- Halogly ([@Halogly](https://github.com/Halogly))
+- Philipp Kief
+- Martí
+- ZM
+- Cameron Cowen
+- Thaddeus Crews ([@Repiteo](https://github.com/Repiteo))
+- Kurayi Chawatama
 
 ## v5.39.0
 

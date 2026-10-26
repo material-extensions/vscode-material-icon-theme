@@ -8,18 +8,13 @@
   "search.exclude": {
     "out": true
   },
-
   "editor.defaultFormatter": "biomejs.biome",
   "editor.formatOnSave": true,
-
   "[typescript]": {
     "editor.codeActionsOnSave": {
       "quickfix.biome": "explicit",
       "source.organizeImports.biome": "explicit"
     }
-  },
-  "[markdown]": {
-    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
   },
   "[svg]": {
     "editor.defaultFormatter": "jock.svg"

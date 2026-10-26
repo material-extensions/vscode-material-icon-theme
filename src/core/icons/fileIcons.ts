@@ -1171,7 +1171,6 @@ export const fileIcons: FileIcons = {
         'enc',
         'flac',
         'flp',
-        'gp',
         'gsm',
         'it',
         'm3u',
@@ -3589,7 +3588,10 @@ export const fileIcons: FileIcons = {
     { name: 'epub', fileExtensions: ['epub'] },
     { name: 'regedit', fileExtensions: ['reg'] },
     { name: 'cline', fileNames: ['.clinerules'] },
-    { name: 'gnuplot', fileExtensions: ['gnu'] },
+    {
+      name: 'gnuplot',
+      fileExtensions: ['gnu', 'gnuplot', 'gp', 'gpi', 'plt', 'plot'],
+    },
     {
       name: 'packship',
       fileNames: [
@@ -3802,6 +3804,10 @@ export const fileIcons: FileIcons = {
     {
       name: 'zizmor',
       fileNames: ['zizmor.yml', 'zizmor.yaml'],
+    },
+    {
+      name: 'peg',
+      fileExtensions: ['peg', 'cleanpeg', 'pegjs', 'pest', 'gram'],
     },
   ]),
 };
