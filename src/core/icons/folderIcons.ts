@@ -1358,6 +1358,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['opencode'],
       },
       {
+        name: 'folder-mnema',
+        folderNames: ['mnema'],
+      },
+      {
         name: 'folder-input',
         folderNames: ['input', 'inputs', 'io', 'in'],
       },
