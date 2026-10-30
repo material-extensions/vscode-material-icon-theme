@@ -466,6 +466,12 @@ export const fileIcons: FileIcons = {
         'astro.config.mts',
       ],
     },
+    {
+      name: 'docusaurus',
+      patterns: {
+        'docusaurus.config': FileNamePattern.Ecmascript,
+      },
+    },
     { name: 'pdf', fileExtensions: ['pdf'] },
     {
       name: 'table',
