@@ -1411,6 +1411,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-postman',
         folderNames: ['postman'],
       },
+      { name: 'folder-bruno', folderNames: ['bruno'] },
       {
         name: 'folder-skills',
         folderNames: ['skill', 'skills'],
