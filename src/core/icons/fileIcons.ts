@@ -3810,5 +3810,9 @@ export const fileIcons: FileIcons = {
       name: 'peg',
       fileExtensions: ['peg', 'cleanpeg', 'pegjs', 'pest', 'gram'],
     },
+    {
+      name: 'kivadb',
+      fileExtensions: ['kva'],
+    },
   ]),
 };
