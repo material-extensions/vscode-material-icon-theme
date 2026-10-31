@@ -702,6 +702,10 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-ui',
         folderNames: ['presentation', 'gui', 'ui', 'ux'],
       },
+      {
+        name: 'folder-accessibility',
+        folderNames: ['accessibility', 'a11y'],
+      },
       { name: 'folder-upload', folderNames: ['uploads', 'upload'] },
       {
         name: 'folder-download',
