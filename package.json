@@ -482,7 +482,7 @@
     "husky": "^9.1.7",
     "lint-staged": "^17.3.0",
     "puppeteer": "^25.8.0",
-    "svg-color-linter": "^3.1.0",
+    "svg-color-linter": "^3.1.1",
     "svgo": "^4.0.2",
     "tsx": "^4.23.12",
     "typescript": "npm:@typescript/typescript6@^6.0.2",
