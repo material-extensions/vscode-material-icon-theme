@@ -1773,6 +1773,7 @@ export const fileIcons: FileIcons = {
         '.env.stg.local',
         '.env.staging.local',
         '.env.test.local',
+        '.env.test.example',
         '.env.uat',
         '.vars',
         '.dev.vars',
