@@ -1359,6 +1359,10 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['opencode'],
       },
       {
+        name: 'folder-forge',
+        folderNames: ['forge'],
+      },
+      {
         name: 'folder-input',
         folderNames: ['input', 'inputs', 'io', 'in'],
       },
