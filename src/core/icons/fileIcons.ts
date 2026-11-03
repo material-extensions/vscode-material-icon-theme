@@ -304,6 +304,14 @@ export const fileIcons: FileIcons = {
     },
     { name: 'palette', fileExtensions: ['pal', 'gpl', 'act'] },
     {
+      name: 'accessibility',
+      fileNames: ['accessibility', 'a11y'],
+      patterns: {
+        accessibility: FileNamePattern.Ecmascript,
+        a11y: FileNamePattern.Ecmascript,
+      },
+    },
+    {
       name: 'javascript',
       fileExtensions: ['esx', 'mjs', 'js', 'cjs', 'es6', 'pac'],
       fileNames: ['jakefile'],
