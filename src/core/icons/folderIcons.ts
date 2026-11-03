@@ -1131,6 +1131,7 @@ export const folderIcons: FolderTheme[] = [
       },
       { name: 'folder-cobol', folderNames: ['cobol'] },
       { name: 'folder-yarn', folderNames: ['yarn'] },
+      { name: 'folder-pnpm', folderNames: ['pnpm-store'] },
       { name: 'folder-husky', folderNames: ['husky'] },
       {
         name: 'folder-storybook',
