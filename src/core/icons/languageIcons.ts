@@ -61,6 +61,7 @@ export const languageIcons: LanguageIcon[] = [
   { name: 'cake', ids: ['cake'] },
   { name: 'cucumber', ids: ['cucumber'] },
   { name: 'nim', ids: ['nim', 'nimble'] },
+  { name: 'nxd', ids: ['nxd'] },
   { name: 'apiblueprint', ids: ['apiblueprint'] },
   { name: 'riot', ids: ['riot'] },
   { name: 'postcss', ids: ['postcss'] },
