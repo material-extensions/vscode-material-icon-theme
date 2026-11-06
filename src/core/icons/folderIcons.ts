@@ -10,6 +10,7 @@ export const folderIcons: FolderTheme[] = [
     defaultIcon: { name: 'folder' },
     rootFolder: { name: 'folder-root' },
     icons: [
+      { name: 'folder-swift', folderNames: ['swift'] },
       { name: 'folder-rust', folderNames: ['rust', 'cargo'] },
       {
         name: 'folder-robot',
@@ -1410,6 +1411,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-postman',
         folderNames: ['postman'],
       },
+      { name: 'folder-bruno', folderNames: ['bruno'] },
       {
         name: 'folder-skills',
         folderNames: ['skill', 'skills'],

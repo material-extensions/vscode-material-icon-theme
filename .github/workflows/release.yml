@@ -2,6 +2,10 @@ name: 🚀 Release + Publish
 
 on: [workflow_dispatch]
 
+concurrency:
+  group: release
+  cancel-in-progress: false
+
 permissions:
   id-token: write
   contents: write
@@ -32,6 +36,8 @@ jobs:
           # Required for fetching tags and generating release notes
           fetch-depth: 0
           token: ${{ steps.app-token.outputs.token }}
+          # Resolve the current branch tip, including after waiting for another run.
+          ref: ${{ github.ref_name }}
 
       - name: 🔧 Setup Node.js
         uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
@@ -46,18 +52,14 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
-          git config --global push.followTags true
+
+      - name: 📜 Prepare version and changelog
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx --no-install changelog-machine --bump --resolve-contributors
 
       - name: 🚀 Prepare release
         run: npm run preversion
-
-      - name: 📜 Generate changelog and release notes
-        env:
-          # Don't run husky on `git commit`
-          HUSKY: 0
-        run: |
-          npx changelogen --hideAuthorEmail --release --push
-          npx changelogen github release --token ${{ secrets.GITHUB_TOKEN }}
 
       - name: 📝 Get metadata
         id: metadata
@@ -66,9 +68,11 @@ jobs:
           NAME=$(jq -r '.name' package.json)
 
           EXTENSION_FILE="${NAME}-${VERSION}.vsix"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "extension-file=$EXTENSION_FILE" >> "$GITHUB_OUTPUT"
 
-          echo "version=$VERSION"               >> $GITHUB_OUTPUT
-          echo "extension-file=$EXTENSION_FILE"  >> $GITHUB_OUTPUT
+      - name: 🧪 Test
+        run: npm test
 
       - name: 🛠️ Build extension
         run: npx @vscode/vsce package
@@ -87,17 +91,31 @@ jobs:
           if-no-files-found: error
           retention-days: 3
 
-      - name: ⬆️ Upload VSIX to GitHub release
+      - name: 🏷️ Commit and push release tag
+        env:
+          HUSKY: 0
+          VERSION: ${{ steps.metadata.outputs.version }}
+          BRANCH: ${{ github.ref_name }}
         run: |
-          gh release upload v${{ steps.metadata.outputs.version }} ${{ steps.metadata.outputs.extension-file }}
+          git add package.json package-lock.json CHANGELOG.md images/*.png icons/*.svg
+          git commit -m "chore(release): v${VERSION}"
+          git tag -a "v${VERSION}" -m "v${VERSION}"
+          git push --atomic origin "HEAD:refs/heads/${BRANCH}" "refs/tags/v${VERSION}"
+
+      - name: 🚀 Create GitHub release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VERSION: ${{ steps.metadata.outputs.version }}
+          EXTENSION_FILE: ${{ steps.metadata.outputs.extension-file }}
+        run: |
+          gh release create "v${VERSION}" "$EXTENSION_FILE" \
+            --verify-tag --title "v${VERSION}" \
+            --generate-notes
 
   # ───────────────────────────────────────────────
-  # Phase 2: Publish to registries (parallel, re-runnable)
+  # Phase 2: Publish everywhere (parallel jobs)
   # ───────────────────────────────────────────────
-
-  publish-openvsx:
+  publish-open-vsx:
     needs: release
     runs-on: ubuntu-latest
 
