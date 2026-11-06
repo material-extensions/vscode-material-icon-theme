@@ -10,7 +10,8 @@ export const folderIcons: FolderTheme[] = [
     defaultIcon: { name: 'folder' },
     rootFolder: { name: 'folder-root' },
     icons: [
-      { name: 'folder-rust', folderNames: ['rust'] },
+      { name: 'folder-swift', folderNames: ['swift'] },
+      { name: 'folder-rust', folderNames: ['rust', 'cargo'] },
       {
         name: 'folder-robot',
         folderNames: ['bot', 'bots', 'robot', 'robots', 'agent', 'agents'],
@@ -42,6 +43,7 @@ export const folderIcons: FolderTheme[] = [
       { name: 'folder-sass', folderNames: ['sass', 'scss'] },
       { name: 'folder-television', folderNames: ['tv', 'television'] },
       { name: 'folder-desktop', folderNames: ['desktop', 'display'] },
+      { name: 'folder-bluetooth', folderNames: ['bluetooth', 'ble'] },
       {
         name: 'folder-console',
         folderNames: [
@@ -431,7 +433,7 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-database',
-        folderNames: ['db', 'data', 'database', 'databases', 'sql'],
+        folderNames: ['db', 'data', 'database', 'databases', 'sql', 'storage'],
       },
       { name: 'folder-migrations', folderNames: ['migrations', 'migration'] },
       { name: 'folder-log', folderNames: ['log', 'logs', 'logging'] },
@@ -581,6 +583,7 @@ export const folderIcons: FolderTheme[] = [
       {
         name: 'folder-messages',
         folderNames: [
+          'message',
           'messages',
           'messaging',
           'forum',
@@ -1340,16 +1343,20 @@ export const folderIcons: FolderTheme[] = [
       },
       {
         name: 'folder-claude',
-        folderNames: ['.claude'],
+        folderNames: ['claude'],
       },
       {
         name: 'folder-cursor',
-        folderNames: ['.cursor'],
+        folderNames: ['cursor'],
         light: true,
       },
       {
         name: 'folder-gemini-ai',
-        folderNames: ['.gemini', 'gemini', 'gemini-ai', 'geminiai'],
+        folderNames: ['gemini', 'gemini-ai', 'geminiai'],
+      },
+      {
+        name: 'folder-opencode',
+        folderNames: ['opencode'],
       },
       {
         name: 'folder-input',
@@ -1404,6 +1411,7 @@ export const folderIcons: FolderTheme[] = [
         name: 'folder-postman',
         folderNames: ['postman'],
       },
+      { name: 'folder-bruno', folderNames: ['bruno'] },
       {
         name: 'folder-skills',
         folderNames: ['skill', 'skills'],

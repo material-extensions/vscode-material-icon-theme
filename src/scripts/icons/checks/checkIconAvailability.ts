@@ -1,4 +1,4 @@
-import { readdir } from 'node:fs';
+import { readdir } from 'node:fs/promises';
 import { join, parse } from 'node:path';
 import {
   type CloneOptions,
@@ -18,14 +18,19 @@ import { green, red } from '../../helpers/painter';
 import { similarity } from '../../helpers/similarity';
 
 /**
+ * Pattern matching generated open folder icon names.
+ * These are generated at build time from their closed variants and are
+ * gitignored, so they may not exist on disk during pre-commit checks.
+ *
+ * A generated open folder icon is considered "virtually available" if the
+ * corresponding closed variant exists on disk.
+ */
+const GENERATED_OPEN_FOLDER_RE = /^folder-.+-open(_light|_highContrast)?$/;
+
+/**
  * Defines the folder where all icon files are located.
  */
 const folderPath = join('icons');
-
-/**
- * Defines an array with all icons that can be found in the file system.
- */
-const availableIcons: Record<string, string> = {};
 
 /**
  * Utility type that represents a File or Folder icon that has a clone property
@@ -33,62 +38,50 @@ const availableIcons: Record<string, string> = {};
  */
 type CloneIcon = (FileIcon & FolderIcon) & { clone: CloneOptions };
 
+enum IconType {
+  FileIcons = 'fileIcons',
+  FolderIcons = 'folderIcons',
+  LanguageIcons = 'languageIcons',
+}
+
+enum IconColor {
+  Default = 'default',
+  Light = 'light',
+  HighContrast = 'highContrast',
+}
+
 /**
- * Save the misconfigured icons.
+ * Type guard to check if the icon is a clone icon
  */
-const wrongIconNames: Record<string, string[]> = {
-  fileIcons: [],
-  folderIcons: [],
-  languageIcons: [],
+const isCloneIcon = (icon: DefaultIcon): icon is CloneIcon => {
+  return (
+    (icon as CloneIcon).clone &&
+    (icon as FileIcon | FolderIcon | LanguageIcon).clone?.base !== undefined
+  );
 };
 
 /**
- * Get all icon file names from the file system.
+ * Resolves the expected icon filename for a given icon definition,
+ * color variant, and open/closed state.
+ *
+ * Returns undefined if this variant is not applicable (e.g. light variant
+ * for an icon that doesn't have light: true).
  */
-const fsReadAllIconFiles = (
-  err: NodeJS.ErrnoException | null,
-  files: string[]
-) => {
-  if (err) {
-    throw Error(err.message);
-  }
-
-  files.forEach((file) => {
-    const fileName = file;
-    const iconName = parse(file).name;
-    availableIcons[iconName] = fileName;
-  });
-
-  // check icon configurations
-  checkFileIcons();
-  checkFolderIcons();
-  checkLanguageIcons();
-
-  // show error messages
-  handleErrors();
-};
-
-// read from the file system
-export const check = () => readdir(folderPath, fsReadAllIconFiles);
-
-/**
- * Check if the file icons from the configuration are available on the file system.
- */
-const checkFileIcons = () => {
-  [...fileIcons.icons, fileIcons.defaultIcon].forEach((icon) => {
-    isIconAvailable(icon, IconType.FileIcons, IconColor.Default);
-    isIconAvailable(icon, IconType.FileIcons, IconColor.Light);
-    isIconAvailable(icon, IconType.FileIcons, IconColor.HighContrast);
-  });
-};
-
-const isIconAvailable = (
+export function resolveIconName(
   icon: DefaultIcon,
   iconType: IconType,
   iconColor: IconColor,
   hasOpenedFolder?: boolean
-) => {
+): string | undefined {
   const isClone = isCloneIcon(icon);
+
+  // For non-clone icons, light/highContrast must be enabled
+  if (!isClone && iconColor === IconColor.Light && !icon.light) {
+    return undefined;
+  }
+  if (!isClone && iconColor === IconColor.HighContrast && !icon.highContrast) {
+    return undefined;
+  }
 
   let iconName = isClone
     ? getCloneBaseName(icon, iconType, hasOpenedFolder)
@@ -101,23 +94,19 @@ const isIconAvailable = (
     iconName += highContrastColorFileEnding;
   }
 
-  if (
-    !availableIcons[iconName] &&
-    wrongIconNames[iconType].indexOf(iconName) === -1
-  ) {
-    wrongIconNames[iconType].push(iconName);
-  }
-};
+  return iconName;
+}
 
 /**
- * Type guard to check if the icon is a clone icon
+ * Given a set of available icon names and a set of expected icon names,
+ * returns the list of expected icons that are missing.
  */
-const isCloneIcon = (icon: DefaultIcon): icon is CloneIcon => {
-  return (
-    (icon as CloneIcon).clone &&
-    (icon as FileIcon | FolderIcon | LanguageIcon).clone?.base !== undefined
-  );
-};
+export function findMissingIcons(
+  availableIcons: Set<string>,
+  expectedIcons: string[]
+): string[] {
+  return expectedIcons.filter((icon) => !availableIcons.has(icon));
+}
 
 /**
  * Get the base file name of a clone icon.
@@ -140,62 +129,97 @@ const getCloneBaseName = (
   return `${folderBase}${hasOpenedFolder ? openedFolder : ''}`;
 };
 
-/**
- * Check if the folder icons from the configuration are available on the file system.
- */
-const checkFolderIcons = () => {
-  folderIcons
-    .map((theme) => (theme.name === 'none' ? [] : getAllFolderIcons(theme)))
-    .reduce((a, b) => a.concat(b))
-    .forEach((icon) => {
-      if (icon) {
-        isIconAvailable(icon, IconType.FolderIcons, IconColor.Default);
-        isIconAvailable(icon, IconType.FolderIcons, IconColor.Default, true);
-        isIconAvailable(icon, IconType.FolderIcons, IconColor.Light);
-        isIconAvailable(icon, IconType.FolderIcons, IconColor.Light, true);
-        isIconAvailable(icon, IconType.FolderIcons, IconColor.HighContrast);
-        isIconAvailable(
-          icon,
-          IconType.FolderIcons,
-          IconColor.HighContrast,
-          true
-        );
-      }
-    });
-};
-
 const getAllFolderIcons = (theme: FolderTheme) => {
   const icons = theme.icons ? theme.icons : [];
-
-  // filter undefined root folder icons
   return [theme.defaultIcon, theme.rootFolder, ...icons].filter(
     (icon) => icon !== undefined
   );
 };
 
 /**
- * Check if the language icons from the configuration are available on the file system.
+ * Determines the closed variant name for a generated open folder icon.
+ * E.g. "folder-src-open" -> "folder-src", "folder-git-open_light" -> "folder-git_light"
  */
-const checkLanguageIcons = () => {
-  languageIcons.forEach((icon) => {
-    isIconAvailable(icon, IconType.LanguageIcons, IconColor.Default);
-    isIconAvailable(icon, IconType.LanguageIcons, IconColor.Light);
-    isIconAvailable(icon, IconType.LanguageIcons, IconColor.HighContrast);
-  });
-};
+function getClosedVariant(openIconName: string): string {
+  return openIconName.replace(/-open(_light|_highContrast)?$/, (_, suffix) =>
+    suffix ? suffix : ''
+  );
+}
 
 /**
- * Show error messages in the terminal.
+ * Returns true if the icon is a generated open folder icon whose closed
+ * variant exists on disk (meaning it will be generated at build time).
  */
-const handleErrors = () => {
-  const amountOfErrors =
-    wrongIconNames.fileIcons.length +
-    wrongIconNames.folderIcons.length +
-    wrongIconNames.languageIcons.length;
-  if (amountOfErrors > 0) {
+function isVirtuallyAvailable(
+  iconName: string,
+  availableIcons: Set<string>
+): boolean {
+  if (!GENERATED_OPEN_FOLDER_RE.test(iconName)) return false;
+  const closedVariant = getClosedVariant(iconName);
+  return availableIcons.has(closedVariant);
+}
+
+export const check = async () => {
+  const files = await readdir(folderPath);
+  const availableIcons = new Set(files.map((f) => parse(f).name));
+
+  const expectedIcons: string[] = [];
+
+  // Collect expected file icons
+  for (const icon of [...fileIcons.icons, fileIcons.defaultIcon]) {
+    for (const color of [
+      IconColor.Default,
+      IconColor.Light,
+      IconColor.HighContrast,
+    ]) {
+      const name = resolveIconName(icon, IconType.FileIcons, color);
+      if (name) expectedIcons.push(name);
+    }
+  }
+
+  // Collect expected folder icons
+  const allFolders = folderIcons
+    .map((theme) => (theme.name === 'none' ? [] : getAllFolderIcons(theme)))
+    .reduce((a, b) => a.concat(b));
+
+  for (const icon of allFolders) {
+    if (!icon) continue;
+    for (const color of [
+      IconColor.Default,
+      IconColor.Light,
+      IconColor.HighContrast,
+    ]) {
+      const closed = resolveIconName(icon, IconType.FolderIcons, color, false);
+      if (closed) expectedIcons.push(closed);
+      const open = resolveIconName(icon, IconType.FolderIcons, color, true);
+      if (open) expectedIcons.push(open);
+    }
+  }
+
+  // Collect expected language icons
+  for (const icon of languageIcons) {
+    for (const color of [
+      IconColor.Default,
+      IconColor.Light,
+      IconColor.HighContrast,
+    ]) {
+      const name = resolveIconName(icon, IconType.LanguageIcons, color);
+      if (name) expectedIcons.push(name);
+    }
+  }
+
+  const missing = findMissingIcons(availableIcons, expectedIcons).filter(
+    (icon) => !isVirtuallyAvailable(icon, availableIcons)
+  );
+
+  if (missing.length > 0) {
     console.log(
       '> Material Icon Theme:',
-      red(`Found ${amountOfErrors} error(s) in the icon configuration!`)
+      red(`Found ${missing.length} error(s) in the icon configuration!`)
+    );
+    logIconInformation(missing, availableIcons);
+    throw new Error(
+      'Found some wrong file definitions in the icon configuration.'
     );
   } else {
     console.log(
@@ -203,24 +227,16 @@ const handleErrors = () => {
       green('Passed icon availability checks!')
     );
   }
-  logIconInformation(wrongIconNames.fileIcons, 'File icons');
-  logIconInformation(wrongIconNames.folderIcons, 'Folder icons');
-  logIconInformation(wrongIconNames.languageIcons, 'Language icons');
-
-  if (amountOfErrors > 0) {
-    throw new Error(
-      'Found some wrong file definitions in the icon configuration.'
-    );
-  }
 };
 
-const logIconInformation = (wrongIcons: string[], title: string) => {
-  if (wrongIcons.length === 0) return;
-  console.log(`\n${title}:\n--------------------------------`);
-  wrongIcons.forEach((icon) => {
-    const suggestion = Object.keys(availableIcons).find((i) => {
-      return similarity(icon, i) > 0.75;
-    });
+const logIconInformation = (
+  wrongIcons: string[],
+  availableIcons: Set<string>
+) => {
+  for (const icon of wrongIcons) {
+    const suggestion = [...availableIcons].find(
+      (i) => similarity(icon, i) > 0.75
+    );
     const suggestionString = suggestion
       ? ` (Did you mean ${green(suggestion)}?)`
       : '';
@@ -242,17 +258,5 @@ const logIconInformation = (wrongIcons: string[], title: string) => {
       red(`Icon not found: ${icon}.svg`) +
         `${suggestionString}${isWrongLightVersionString}${isWrongHighContrastVersionString}`
     );
-  });
+  }
 };
-
-enum IconType {
-  FileIcons = 'fileIcons',
-  FolderIcons = 'folderIcons',
-  LanguageIcons = 'languageIcons',
-}
-
-enum IconColor {
-  Default = 'default',
-  Light = 'light',
-  HighContrast = 'highContrast',
-}

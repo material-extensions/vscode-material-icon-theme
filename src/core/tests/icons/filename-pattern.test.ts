@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'bun:test';
+import { describe, expect, it } from 'vitest';
 import type { FileIcon } from '../../models/icons/files/fileIcon';
 import {
   type FileIconWithPatterns,

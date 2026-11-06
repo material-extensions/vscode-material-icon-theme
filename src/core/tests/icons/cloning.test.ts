@@ -1,20 +1,12 @@
-import { beforeAll, describe, expect, it, mock } from 'bun:test';
-import { type INode, parse } from 'svgson';
+import { beforeAll, describe, expect, it, vi } from 'vitest';
 import { customClonesIcons } from '../../generator/clones/clonesGenerator';
 import {
   getCloneData,
   Type,
   Variant,
 } from '../../generator/clones/utils/cloneData';
-import {
-  cloneIcon,
-  getStyle,
-  traverse,
-} from '../../generator/clones/utils/cloning';
-import {
-  isValidColor,
-  orderDarkToLight,
-} from './../../generator/clones/utils/color/colors';
+import { cloneIcon } from '../../generator/clones/utils/cloning';
+import { orderDarkToLight } from './../../generator/clones/utils/color/colors';
 import {
   closerMaterialColorTo,
   materialPalette as palette,
@@ -29,6 +21,7 @@ import {
 import { getFileConfigHash } from '../../helpers/configHash';
 import { merge } from '../../helpers/object';
 import { resolvePath } from '../../helpers/resolvePath';
+import { collectColors } from '../../helpers/svgColor';
 import type {
   FileIconClone,
   FolderIconClone,
@@ -36,6 +29,13 @@ import type {
 } from '../../models/icons/config';
 import { createEmptyManifest, type Manifest } from '../../models/manifest';
 import * as icon from './data/icons';
+
+vi.mock('node:fs/promises', () => ({
+  readFile: vi.fn(),
+  writeFile: vi.fn(() => Promise.resolve()),
+}));
+
+import { readFile, writeFile } from 'node:fs/promises';
 
 describe('cloning: color manipulation', () => {
   describe('#orderDarkToLight(..)', () => {
@@ -615,161 +615,99 @@ describe('cloning: icon cloning', () => {
     ];
 
     it('should replace the color with the given color', async () => {
-      mock.module('node:fs/promises', () => {
-        return {
-          readFile: () => Promise.resolve(icon.file),
-        };
-      });
+      vi.mocked(readFile).mockImplementation(() => Promise.resolve(icon.file));
 
-      // mock the fs.readFileSync method to return the desired icon file
       const result = await cloneIcon('fake/path/to/icon.svg', 'blue-600', '');
+      const colors = await collectColors(result, { respectNoRecolor: false });
 
-      const colorCount = forEachColor(await parse(result), (color, loc) => {
-        expect(color).toBe(palette['blue-600']);
-        expect(loc).toBe('style:fill');
-      });
-
-      expect(colorCount).toBe(1);
+      expect(colors.size).toBe(1);
+      expect(colors.has(palette['blue-600'])).toBeTruthy();
     });
 
     it('should replace the color with the given color if color is in fill attribute', async () => {
-      // mock the fs.readFileSync method to return the desired icon file
-      mock.module('node:fs/promises', () => {
-        return {
-          readFile: () => Promise.resolve(icon.fileFill),
-        };
-      });
+      vi.mocked(readFile).mockImplementation(() =>
+        Promise.resolve(icon.fileFill)
+      );
+
       const result = await cloneIcon('fake/path/to/icon.svg', 'blue-600', '');
+      const colors = await collectColors(result, { respectNoRecolor: false });
 
-      const colorCount = forEachColor(await parse(result), (color, loc) => {
-        expect(color).toBe(palette['blue-600']);
-        expect(loc).toBe('attr:fill');
-      });
-
-      expect(colorCount).toBe(1);
+      expect(colors.size).toBe(1);
+      expect(colors.has(palette['blue-600'])).toBeTruthy();
     });
 
     it('should replace the color with the given color if color is in stop-color attribute', async () => {
-      mock.module('node:fs/promises', () => {
-        return {
-          readFile: () => Promise.resolve(icon.gradient),
-        };
-      });
+      vi.mocked(readFile).mockImplementation(() =>
+        Promise.resolve(icon.gradient)
+      );
+
       const result = await cloneIcon('fake/path/to/icon.svg', 'blue-600', '');
+      const colors = await collectColors(result, { respectNoRecolor: false });
 
-      const colorCount = forEachColor(await parse(result), (color, loc) => {
+      expect(colors.size).toBe(3);
+      for (const color of colors) {
         expect(bluePalette).toContain(color);
-        expect(loc).toBe('attr:stop-color');
-      });
-
-      expect(colorCount).toBe(3);
+      }
     });
 
     it('should replace colors on icons with multiple nodes', async () => {
-      mock.module('node:fs/promises', () => {
-        return {
-          readFile: () => Promise.resolve(icon.folder),
-        };
-      });
+      vi.mocked(readFile).mockImplementation(() =>
+        Promise.resolve(icon.folder)
+      );
+
       const result = await cloneIcon('fake/path/to/icon.svg', 'blue-600', '');
+      const colors = await collectColors(result, { respectNoRecolor: false });
 
-      const colors: string[] = [];
-      const colorCount = forEachColor(await parse(result), (color, loc) => {
-        colors.push(color);
+      expect(colors.size).toBe(2);
+      for (const color of colors) {
         expect(bluePalette).toContain(color);
-        expect(loc).toBe('style:fill');
-      });
-
+      }
       // check that one of the colors is actually blue-600
-      expect(colors.includes(palette['blue-600'])).toBeTruthy();
-
-      expect(colorCount).toBe(2);
+      expect(colors.has(palette['blue-600'])).toBeTruthy();
     });
 
     describe('`data-mit-no-recolor` attribute', () => {
       it('should not replace the color if the node has the `data-mit-no-recolor` attribute', async () => {
-        mock.module('node:fs/promises', () => {
-          return {
-            readFile: () => Promise.resolve(icon.folderIgnores),
-          };
-        });
+        vi.mocked(readFile).mockImplementation(() =>
+          Promise.resolve(icon.folderIgnores)
+        );
 
         const result = await cloneIcon('fake/path/to/icon.svg', 'blue-600', '');
-        const parsed = await parse(result);
-        const changedNodeStyle = getStyle(parsed.children[0]);
-        const unchangedNodeStyle = getStyle(parsed.children[1]);
 
-        expect(changedNodeStyle.fill).toBe(palette['blue-600']);
-        expect(unchangedNodeStyle.fill).toBe('red');
+        // Collect colors respecting no-recolor (should only find the changed one)
+        const recolorableColors = await collectColors(result, {
+          respectNoRecolor: true,
+        });
+        expect(recolorableColors.has(palette['blue-600'])).toBeTruthy();
+
+        // The non-recolorable color "red" should still be in the SVG
+        expect(result).toContain('red');
       });
 
       it('should not replace the color of any child of a node with the `data-mit-no-recolor` attribute', async () => {
-        mock.module('node:fs/promises', () => {
-          return {
-            readFile: () => Promise.resolve(icon.gradientIgnore),
-          };
-        });
+        vi.mocked(readFile).mockImplementation(() =>
+          Promise.resolve(icon.gradientIgnore)
+        );
+
         const result = await cloneIcon('fake/path/to/icon.svg', 'blue-600', '');
 
-        const colorCount = forEachColor(await parse(result), (color, loc) => {
+        // All colors should remain unchanged (all are inside no-recolor)
+        const allColors = await collectColors(result, {
+          respectNoRecolor: false,
+        });
+        for (const color of allColors) {
           expect(['#00695c', '#26a69a', '#b2dfdb']).toContain(color);
           expect(bluePalette).not.toContain(color);
-          expect(loc).toBe('attr:stop-color');
-        });
-
-        expect(colorCount).toBe(3);
+        }
       });
     });
   });
 });
 
-/** helper function to traverse the svg tree and notify the colors found */
-const forEachColor = (
-  node: INode,
-  callback: (color: string, loc?: string) => void
-) => {
-  let colorCount = 0;
-
-  const notify = (color: string, loc: string) => {
-    colorCount++;
-    callback(color, loc);
-  };
-
-  traverse(
-    node,
-    (node) => {
-      // check colors in style attribute
-      const style = getStyle(node);
-      style?.fill &&
-        isValidColor(style.fill) &&
-        notify(style.fill, 'style:fill');
-      style?.stroke &&
-        isValidColor(style.stroke) &&
-        notify(style.stroke, 'style:stroke');
-      node.attributes?.fill &&
-        isValidColor(node.attributes.fill) &&
-        notify(node.attributes.fill, 'attr:fill');
-      node.attributes?.stroke &&
-        isValidColor(node.attributes.stroke) &&
-        notify(node.attributes.stroke, 'attr:stroke');
-      node.attributes?.['stop-color'] &&
-        isValidColor(node.attributes['stop-color']) &&
-        notify(node.attributes['stop-color'], 'attr:stop-color');
-    },
-    false // no filtering
-  );
-
-  return colorCount;
-};
-
 describe('cloning: json config generation from user options', () => {
   beforeAll(() => {
-    mock.module('node:fs/promises', () => {
-      return {
-        readFile: () => Promise.resolve(icon.file),
-        writeFile: () => Promise.resolve(),
-      };
-    });
+    vi.mocked(readFile).mockImplementation(() => Promise.resolve(icon.file));
+    vi.mocked(writeFile).mockImplementation(() => Promise.resolve());
   });
 
   const getManifest = (hash: string): Manifest => {

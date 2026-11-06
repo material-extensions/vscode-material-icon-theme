@@ -1,7 +1,10 @@
-import { join } from 'node:path';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { toTitleCase, writeToFile } from '../../core';
 import { green, red } from '../helpers/painter';
 import { createScreenshot } from '../helpers/screenshots';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const htmlDoctype = '<!DOCTYPE html>';
 const cssFilePath = 'style.css';

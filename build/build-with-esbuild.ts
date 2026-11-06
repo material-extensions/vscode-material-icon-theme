@@ -1,3 +1,4 @@
+import { writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import esbuild from 'esbuild';
 import config from './esbuild.config';
@@ -9,5 +10,5 @@ const output = await esbuild.build(config).catch(() => process.exit(1));
 // https://esbuild.github.io/analyze/
 if (config.metafile) {
   const path = join(process.cwd(), 'dist', 'metafile.json');
-  await Bun.write(path, JSON.stringify(output.metafile, undefined, 2));
+  await writeFile(path, JSON.stringify(output.metafile, undefined, 2));
 }

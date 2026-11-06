@@ -1,5 +1,5 @@
+import { existsSync } from 'node:fs';
 import { join } from 'node:path';
-import deepEqual from 'fast-deep-equal';
 import type { ConfigurationChangeEvent, ExtensionContext } from 'vscode';
 import {
   applyConfigToIcons,
@@ -18,6 +18,7 @@ import {
   writeToFile,
 } from '../../core';
 import { getCurrentConfig } from '../shared/config';
+import { deepEqual } from './utils/deepEqual';
 
 /** Compare the workspace and the user configurations with the current setup of the icons. */
 export const detectConfigChanges = async (
@@ -31,16 +32,31 @@ export const detectConfigChanges = async (
   const config = getCurrentConfig();
 
   // if the configuration has not changed
-  if (deepEqual(config, oldConfig)) return;
+  if (deepEqual(config, oldConfig)) {
+    const isActivation = event === undefined;
+    if (
+      isActivation &&
+      hasCustomClones(config) &&
+      !existsSync(resolvePath('./../icons/clones'))
+    ) {
+      logger.info('Custom clones missing from disk, regenerating...');
+    } else {
+      return;
+    }
+  }
 
   await applyConfigToIcons(config, oldConfig);
 
   logger.info('Configuration changes detected and applied!');
 
-  await renameIconFiles(config);
+  try {
+    await renameIconFiles(config);
+  } catch (error) {
+    logger.error(error);
+  }
+
   const manifest = generateManifest(config);
 
-  // clear the clone folder
   await clearCloneFolder(hasCustomClones(config));
 
   const manifestWithClones = merge(
