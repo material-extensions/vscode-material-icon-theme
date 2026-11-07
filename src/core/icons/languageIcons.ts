@@ -148,6 +148,7 @@ export const languageIcons: LanguageIcon[] = [
   { name: 'pug', ids: ['jade'] },
   { name: 'r', ids: ['r', 'rsweave'] },
   { name: 'rust', ids: ['rust'] },
+  { name: 'rust_ferris', ids: [] },
   { name: 'database', ids: ['sql'] },
   { name: 'kusto', ids: ['kql'] },
   { name: 'lock', ids: ['ssh_config'] },
