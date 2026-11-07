@@ -1442,6 +1442,18 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['redis', 'redis-db', 'redislabs'],
         clone: { base: 'folder-database', color: '#EF5350' },
       },
+      { name: 'folder-login', folderNames: ['login', 'logins'] },
+      {
+        name: 'folder-payment',
+        folderNames: ['payment', 'payments', 'pay'],
+      },
+      { name: 'folder-dashboard', folderNames: ['dashboard', 'dashboards'] },
+      { name: 'folder-products', folderNames: ['products', 'product'] },
+      { name: 'folder-signup', folderNames: ['signup', 'register'] },
+      {
+        name: 'folder-wishlist',
+        folderNames: ['wishlist', 'favorites', 'likes'],
+      },
     ],
   },
   {
