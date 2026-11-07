@@ -3671,6 +3671,11 @@ export const fileIcons: FileIcons = {
       light: true,
     },
     {
+      name: 'kiro',
+      fileNames: ['kiroignore'],
+      fileExtensions: ['kiro', 'kiro.hook', 'kiroignore'],
+    },
+    {
       name: 'metro',
       fileNames: [
         'metro.config.js',
