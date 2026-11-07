@@ -1413,13 +1413,16 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'angular',
-      fileExtensions: ['module.ts', 'module.js', 'ng-template'],
       fileNames: [
         'angular-cli.json',
         '.angular-cli.json',
         'angular.json',
         'ng-package.json',
       ],
+    },
+    {
+      name: 'angular',
+      fileExtensions: ['module.ts', 'module.js', 'ng-template'],
       enabledFor: [IconPack.Angular, IconPack.Ngrx],
     },
     {

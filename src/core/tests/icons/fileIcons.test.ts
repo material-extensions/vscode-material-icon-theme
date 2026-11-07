@@ -1,6 +1,7 @@
 import { beforeEach, describe, expect, it } from 'vitest';
 import { getDefaultConfig } from '../../generator/config/defaultConfig';
 import { loadFileIconDefinitions } from '../../generator/fileGenerator';
+import { fileIcons as themeFileIcons } from '../../icons/fileIcons';
 import type { Config } from '../../models/icons/config';
 import type { FileIcons } from '../../models/icons/files/fileTypes';
 import { IconPack } from '../../models/icons/iconPack';
@@ -109,6 +110,38 @@ describe('file icons', () => {
 
     expect(iconDefinitions).toStrictEqual(expectedManifest);
   });
+
+  it.each(['', IconPack.React, IconPack.Angular, IconPack.Ngrx] as const)(
+    'should always map Angular filenames with active icon pack "%s"',
+    (activeIconPack) => {
+      config.activeIconPack = activeIconPack;
+      const manifest = loadFileIconDefinitions(
+        themeFileIcons,
+        config,
+        createEmptyManifest()
+      );
+
+      for (const fileName of [
+        'angular-cli.json',
+        '.angular-cli.json',
+        'angular.json',
+        'ng-package.json',
+      ]) {
+        expect(manifest.fileNames?.[fileName]).toBe('angular');
+      }
+
+      for (const extension of ['module.ts', 'module.js', 'ng-template']) {
+        if (
+          activeIconPack === IconPack.Angular ||
+          activeIconPack === IconPack.Ngrx
+        ) {
+          expect(manifest.fileExtensions?.[extension]).toBe('angular');
+        } else {
+          expect(manifest.fileExtensions?.[extension]).not.toBe('angular');
+        }
+      }
+    }
+  );
 
   it('should configure custom icon associations', () => {
     const fileIcons: FileIcons = {
