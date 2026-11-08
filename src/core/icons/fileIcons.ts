@@ -207,7 +207,7 @@ export const fileIcons: FileIcons = {
       ],
       fileNames: ['.htaccess'],
     },
-    { name: 'toml', fileExtensions: ['toml'], light: true },
+    { name: 'toml', fileExtensions: ['toml', 'tosd'], light: true },
     { name: 'toon', fileExtensions: ['toon'] },
     {
       name: 'image',
@@ -1176,7 +1176,6 @@ export const fileIcons: FileIcons = {
         'enc',
         'flac',
         'flp',
-        'gp',
         'gsm',
         'it',
         'm3u',
@@ -1279,7 +1278,8 @@ export const fileIcons: FileIcons = {
       name: 'clojure',
       fileExtensions: ['clj', 'cljs', 'cljc', 'cljx', 'clojure', 'edn'],
     },
-    { name: 'groovy', fileExtensions: ['groovy', 'gvy', 'nf'] },
+    { name: 'groovy', fileExtensions: ['groovy', 'gvy'] },
+    { name: 'nextflow', fileExtensions: ['nf'] },
     {
       name: 'r',
       fileExtensions: ['r', 'rmd', 'rhistory', 'rprofile', 'rt'],
@@ -1418,13 +1418,16 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'angular',
-      fileExtensions: ['module.ts', 'module.js', 'ng-template'],
       fileNames: [
         'angular-cli.json',
         '.angular-cli.json',
         'angular.json',
         'ng-package.json',
       ],
+    },
+    {
+      name: 'angular',
+      fileExtensions: ['module.ts', 'module.js', 'ng-template'],
       enabledFor: [IconPack.Angular, IconPack.Ngrx],
     },
     {
@@ -1778,6 +1781,7 @@ export const fileIcons: FileIcons = {
         '.env.stg.local',
         '.env.staging.local',
         '.env.test.local',
+        '.env.test.example',
         '.env.uat',
         '.vars',
         '.dev.vars',
@@ -2275,8 +2279,12 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'prisma',
-      fileNames: ['prisma.yml', 'prisma.config.ts'],
+      fileNames: ['prisma.yml'],
       fileExtensions: ['prisma'],
+      patterns: {
+        'prisma7.config': FileNamePattern.Ecmascript,
+        'prisma.config': FileNamePattern.Ecmascript,
+      },
     },
     { name: 'razor', fileExtensions: ['cshtml', 'vbhtml', 'razor'] },
     { name: 'abc', fileExtensions: ['abc'] },
@@ -3589,7 +3597,10 @@ export const fileIcons: FileIcons = {
     { name: 'epub', fileExtensions: ['epub'] },
     { name: 'regedit', fileExtensions: ['reg'] },
     { name: 'cline', fileNames: ['.clinerules'] },
-    { name: 'gnuplot', fileExtensions: ['gnu'] },
+    {
+      name: 'gnuplot',
+      fileExtensions: ['gnu', 'gnuplot', 'gp', 'gpi', 'plt', 'plot'],
+    },
     {
       name: 'packship',
       fileNames: [
@@ -3798,6 +3809,14 @@ export const fileIcons: FileIcons = {
     {
       name: 'mrpack',
       fileExtensions: ['mrpack'],
+    },
+    {
+      name: 'zizmor',
+      fileNames: ['zizmor.yml', 'zizmor.yaml'],
+    },
+    {
+      name: 'peg',
+      fileExtensions: ['peg', 'cleanpeg', 'pegjs', 'pest', 'gram'],
     },
   ]),
 };

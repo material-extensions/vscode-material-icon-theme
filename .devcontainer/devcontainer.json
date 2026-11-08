@@ -1,6 +1,5 @@
 {
   "name": "vscode-material-icon-theme",
-
   // Use Microsoft's Ubuntu Base image for the dev container
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "features": {
@@ -8,14 +7,11 @@
       "version": "24"
     }
   },
-
   "privileged": true,
-
   "onCreateCommand": {
     // Install dependencies in the dev container
     "install-packages": "npm ci"
   },
-
   "customizations": {
     "vscode": {
       "settings": {
@@ -27,7 +23,6 @@
         "biomejs.biome",
         "jock.svg",
         "editorconfig.editorconfig",
-        "davidanson.vscode-markdownlint",
         "huntertran.auto-markdown-toc"
       ]
     }
