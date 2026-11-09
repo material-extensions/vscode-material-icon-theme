@@ -684,6 +684,10 @@ export const fileIcons: FileIcons = {
       ],
     },
     {
+      name: 'cython',
+      fileExtensions: ['pyx', 'pxd', 'pxi'],
+    }
+    {
       name: 'ruff',
       fileNames: ['ruff.toml', '.ruff.toml'],
     },
