@@ -1,4 +1,3 @@
-import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 import type { ConfigurationChangeEvent, ExtensionContext } from 'vscode';
 import {
@@ -31,19 +30,8 @@ export const detectConfigChanges = async (
   const oldConfig = getConfigFromStorage(context);
   const config = getCurrentConfig();
 
-  // if the configuration has not changed
-  if (deepEqual(config, oldConfig)) {
-    const isActivation = event === undefined;
-    if (
-      isActivation &&
-      hasCustomClones(config) &&
-      !existsSync(resolvePath('./../icons/clones'))
-    ) {
-      logger.info('Custom clones missing from disk, regenerating...');
-    } else {
-      return;
-    }
-  }
+  // Another window or profile may have overwritten the shared manifest since activation.
+  if (event !== undefined && deepEqual(config, oldConfig)) return;
 
   await applyConfigToIcons(config, oldConfig);
 
