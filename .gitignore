@@ -43,3 +43,6 @@ src/scripts/contributors/*.html
 
 # macOS metadata
 .DS_Store
+
+# Claude Code local config
+.claude/
