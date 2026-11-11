@@ -3762,56 +3762,9 @@ export const fileIcons: FileIcons = {
       fileNames: ['warp.md'],
       light: true,
     },
-    { name: 'macaulay2', fileExtensions: ['m2'] },
-    { name: 'uiua', fileExtensions: ['ua'] },
     {
-      name: 'skill',
-      fileNames: ['skill.md'],
-      fileExtensions: ['skill.md', 'skills.md'],
-    },
-    {
-      name: 'instructions',
-      fileNames: ['instructions.md', 'instruction.md'],
-      fileExtensions: ['instructions.md', 'instruction.md'],
-      clone: { base: 'lib', color: 'cyan-A700' },
-    },
-    {
-      name: 'tsdown',
-      fileNames: [
-        'tsdown.config.ts',
-        'tsdown.config.mts',
-        'tsdown.config.cts',
-        'tsdown.config.js',
-        'tsdown.config.mjs',
-        'tsdown.config.cjs',
-        'tsdown.config.json',
-        'tsdown.config',
-      ],
-    },
-    {
-      name: 'appwrite',
-      fileNames: ['appwrite.json', 'appwrite.js', 'appwrite.ts'],
-    },
-    {
-      name: 'expo',
-      fileNames: ['eas.json', '.easignore'],
-      light: true,
-    },
-    {
-      name: 'agent',
-      fileNames: ['agents.md'],
-    },
-    {
-      name: 'mrpack',
-      fileExtensions: ['mrpack'],
-    },
-    {
-      name: 'zizmor',
-      fileNames: ['zizmor.yml', 'zizmor.yaml'],
-    },
-    {
-      name: 'peg',
-      fileExtensions: ['peg', 'cleanpeg', 'pegjs', 'pest', 'gram'],
+      name: 'kdl',
+      fileExtensions: ['kdl'],
     },
   ]),
 };
