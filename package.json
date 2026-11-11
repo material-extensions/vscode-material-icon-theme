@@ -1,7 +1,7 @@
 {
-  "name": "material-icon-theme",
-  "displayName": "Material Icon Theme",
-  "description": "Material Design Icons for Visual Studio Code",
+  "name": "meieluka-material",
+  "displayName": "Meieluka's Material Icon Theme",
+  "description": "Meieluka's Material Design Icons for Visual Studio Code",
   "version": "5.40.0",
   "license": "MIT",
   "type": "module",
@@ -32,7 +32,7 @@
     "postpublish": "git checkout package.json && git checkout README.md",
     "prepare": "husky || true"
   },
-  "publisher": "PKief",
+  "publisher": "meieluka",
   "author": {
     "name": "Material Extensions",
     "email": "material-icons-extensions@googlegroups.com",
@@ -90,7 +90,7 @@
     "iconThemes": [
       {
         "id": "material-icon-theme",
-        "label": "Material Icon Theme",
+        "label": "Meieluka's Material Icon Theme",
         "path": "./dist/material-icons.json",
         "_watch": true
       }
