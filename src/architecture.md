@@ -10,7 +10,7 @@ The project is structured in a way that the core logic is separated from the ext
  ┗ 📂 scripts      <-- Scripts which are executed during build time (in the package.json)
 ```
 
-By using the [sheriff](https://github.com/softarc-consulting/sheriff) library dependencies between the modules can be verified. The command `bun run verify` checks if the imports between the modules are allowed. For instance it's not allowed, that any of the other modules imports something from the `extension` module because of it's dependency to `vscode`. But the `extension` module itself is allowed to import from `core`.
+By using the [sheriff](https://github.com/softarc-consulting/sheriff) library dependencies between the modules can be verified. The command `npm run verify` checks if the imports between the modules are allowed. For instance it's not allowed, that any of the other modules imports something from the `extension` module because of it's dependency to `vscode`. But the `extension` module itself is allowed to import from `core`.
 
 This is realized by using the dependency rules in the sheriff.config.ts file:
 

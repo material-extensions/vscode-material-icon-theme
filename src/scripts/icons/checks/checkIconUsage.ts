@@ -1,4 +1,4 @@
-import { readdir } from 'node:fs';
+import { readdir } from 'node:fs/promises';
 import { join, parse } from 'node:path';
 
 import {
@@ -20,60 +20,59 @@ import { green, red } from '../../helpers/painter';
 const folderPath = join('icons');
 
 /**
- * Defines an array with all icons that can be found in the file system.
+ * Given a set of icon names on disk and a set of used icon names,
+ * returns the list of icons that exist on disk but are not used.
  */
-const availableIcons: { [s: string]: string } = {};
+export function findUnusedIcons(
+  iconsOnDisk: string[],
+  usedIcons: Set<string>
+): string[] {
+  return iconsOnDisk.filter((icon) => !usedIcons.has(icon));
+}
 
 /**
- * Get all icon file names from the file system.
+ * Collects all icon names that are referenced by the icon configuration.
  */
-const fsReadAllIconFiles = (
-  error: NodeJS.ErrnoException | null,
-  files: string[]
-) => {
-  if (error) {
-    throw Error(error.message);
+export function collectUsedIconNames(): Set<string> {
+  const used = new Set<string>();
+
+  // File icons
+  for (const name of getAllUsedFileIcons()) {
+    if (name) used.add(name);
   }
 
-  files.forEach((file) => {
-    const fileName = file;
-    const iconName = parse(file).name.replace('.clone', '');
-    availableIcons[iconName] = fileName;
-  });
+  // Folder icons
+  for (const name of getAllUsedFolderIcons()) {
+    if (name) used.add(name);
+  }
 
-  checkUsageOfAllIcons();
-  handleErrors();
-};
+  // Language icons
+  for (const name of getAllUsedLanguageIcons()) {
+    if (name) used.add(name);
+  }
 
-const checkUsageOfAllIcons = () => {
-  const usedFileIcons: string[] = getAllUsedFileIcons();
-  const usedFolderIcons: string[] = getAllUsedFolderIcons();
-  const usedLanguageIcons: string[] = getAllUsedLanguageIcons();
+  return used;
+}
 
-  [...usedFileIcons, ...usedFolderIcons, ...usedLanguageIcons].forEach(
-    (icon) => {
-      delete availableIcons[icon];
-    }
-  );
-};
+export const check = async () => {
+  const files = await readdir(folderPath);
 
-const handleErrors = () => {
-  const amountOfUnusedIcons = Object.keys(availableIcons).length;
-  if (amountOfUnusedIcons === 0) {
+  const iconsOnDisk = files.map((f) => parse(f).name.replace('.clone', ''));
+  const usedIcons = collectUsedIconNames();
+  const unused = findUnusedIcons(iconsOnDisk, usedIcons);
+
+  if (unused.length === 0) {
     console.log('> Material Icon Theme:', green('Passed icon usage checks!'));
   } else {
     console.log(
-      '> Material Icon Theme: ' + red(`${amountOfUnusedIcons} unused icon(s):`)
+      '> Material Icon Theme: ' + red(`${unused.length} unused icon(s):`)
     );
-    Object.keys(availableIcons).forEach((icon) => {
-      console.log(red(`- ${availableIcons[icon]}`));
-    });
+    for (const icon of unused) {
+      console.log(red(`- ${icon}`));
+    }
     throw new Error('Found unused icon files!');
   }
 };
-
-// read from the file system
-export const check = () => readdir(folderPath, fsReadAllIconFiles);
 
 const getAllUsedFileIcons = (): string[] => {
   return [

@@ -1,10 +1,4 @@
-import { EventEmitter } from 'node:events';
-import { logEventKey } from '../generator/constants';
-
 export type LogLevel = 'info' | 'error' | 'debug';
-const loggerEmitter = new EventEmitter({
-  captureRejections: true,
-});
 
 // Mapping log levels to numeric values for comparison
 const logLevelValues: { [Key in LogLevel]: number } = {
@@ -18,6 +12,10 @@ export type LogEvent = {
   message: string;
 };
 
+type LogListener = (event: LogEvent) => void;
+
+const listeners: Set<LogListener> = new Set();
+
 /**
  * Create a logger that emits log events.
  */
@@ -28,7 +26,9 @@ const createLogger = () => {
       level,
       message: `[${level.toUpperCase()}] ${timestamp} - ${message}`,
     };
-    loggerEmitter.emit(logEventKey, logEvent);
+    for (const listener of listeners) {
+      listener(logEvent);
+    }
   };
 
   return {
@@ -36,6 +36,10 @@ const createLogger = () => {
     error: (message: unknown) => emitLogEvent('error', message),
     debug: (message: unknown) => emitLogEvent('debug', message),
   };
+};
+
+export type LoggingObserver = {
+  dispose: () => void;
 };
 
 /**
@@ -47,14 +51,22 @@ const createLogger = () => {
 export const createLoggingObserver = (
   minLogLevel: LogLevel,
   callback: (event: LogEvent) => void
-): EventEmitter => {
+): LoggingObserver => {
   const minLogLevelValue = logLevelValues[minLogLevel];
 
-  return loggerEmitter.on(logEventKey, (event: LogEvent) => {
+  const listener: LogListener = (event: LogEvent) => {
     if (logLevelValues[event.level] >= minLogLevelValue) {
       callback(event);
     }
-  });
+  };
+
+  listeners.add(listener);
+
+  return {
+    dispose: () => {
+      listeners.delete(listener);
+    },
+  };
 };
 
 export const logger = createLogger();

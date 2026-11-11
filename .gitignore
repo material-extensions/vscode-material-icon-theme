@@ -20,6 +20,11 @@ icons/folder-root-open.svg
 icons/*.clone.svg
 icons/clones
 
+# Generated open folder icons (derived from closed variants at build time)
+icons/folder-*-open.svg
+icons/folder-*-open_light.svg
+icons/folder-*-open_highContrast.svg
+
 # Ignore specific HTML files in scripts directories
 src/scripts/preview/*.html
 src/scripts/contributors/*.html

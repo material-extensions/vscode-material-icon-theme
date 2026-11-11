@@ -2,22 +2,22 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "type": "bun",
-      "script": "bun run build",
+      "type": "shell",
+      "command": "npm run build",
       "problemMatcher": [],
-      "label": "bun: build",
-      "detail": "bun run build",
+      "label": "npm: build",
+      "detail": "npm run build",
       "group": {
         "kind": "build",
         "isDefault": true
       }
     },
     {
-      "type": "bun",
-      "script": "bun run test",
+      "type": "shell",
+      "command": "npm run test",
       "problemMatcher": [],
-      "label": "bun: test",
-      "detail": "bun run test",
+      "label": "npm: test",
+      "detail": "npm run test",
       "group": {
         "kind": "test",
         "isDefault": true

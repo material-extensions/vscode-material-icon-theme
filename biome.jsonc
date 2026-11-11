@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.3.4/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.5.14/schema.json",
   "formatter": {
     "enabled": true,
     "formatWithErrors": false,
@@ -15,27 +15,40 @@
       "!**/dist",
       "!**/node_modules",
       "!**/package.json",
-      "!**/bun.lock"
+      "!**/bun.lock",
+      "!**/images/**/*.svg"
     ]
   },
-  "assist": { "actions": { "source": { "organizeImports": "on" } } },
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": "on"
+      }
+    }
+  },
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": false,
-      "complexity": { "useArrowFunction": "error" },
+      "preset": "none",
+      "complexity": {
+        "useArrowFunction": "error"
+      },
       "correctness": {
         "noUnsafeFinally": "error",
         "noUnusedVariables": "error",
         "noUnusedImports": "error"
       },
-      "security": { "noGlobalEval": "error" },
+      "security": {
+        "noGlobalEval": "error"
+      },
       "style": {
         "useBlockStatements": "off",
         "useConst": "error",
         "useNamingConvention": {
           "level": "error",
-          "options": { "strictCase": false }
+          "options": {
+            "strictCase": false
+          }
         }
       },
       "suspicious": {
