@@ -75,7 +75,7 @@ jobs:
         run: npm test
 
       - name: 🛠️ Build extension
-        run: npx @vscode/vsce package
+        run: npx --no-install vsce package
 
       - name: 🔒 Attest artifacts
         uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8 # v4.2.2
@@ -135,18 +135,34 @@ jobs:
     needs: release
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: read
+      id-token: write
+
     steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: v${{ needs.release.outputs.version }}
+
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: '.node-version'
+          cache: 'npm'
+
+      - name: 📦 Install dependencies
+        run: npm ci
+
       - name: 📥 Download extension artifact
         uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
         with:
           name: vsix
 
       - name: 🌐 Publish to Visual Studio Marketplace
-        uses: HaaLeo/publish-vscode-extension@1b8df468b849f76a143b8c18bf0ffa2075398d12 # v2.1.0
-        with:
-          pat: ${{ secrets.VS_MARKETPLACE_TOKEN }}
-          registryUrl: https://marketplace.visualstudio.com
-          extensionFile: ${{ needs.release.outputs.extension-file }}
+        env:
+          EXTENSION_FILE: ${{ needs.release.outputs.extension-file }}
+        run: npx --no-install vsce publish --oidc --packagePath "$EXTENSION_FILE"
 
   publish-npm:
     needs: release
