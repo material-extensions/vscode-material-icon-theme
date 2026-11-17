@@ -19,6 +19,7 @@ icons/folder-root.svg
 icons/folder-root-open.svg
 icons/*.clone.svg
 icons/clones
+icons/generated
 
 # Generated open folder icons (derived from closed variants at build time)
 icons/folder-*-open.svg

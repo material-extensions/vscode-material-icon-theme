@@ -11,3 +11,6 @@ for (const file of readdirSync(iconsDir)) {
 
 const clonesDir = join(iconsDir, 'clones');
 rmSync(clonesDir, { recursive: true, force: true });
+
+// Runtime snapshots must never be included in a freshly built extension.
+rmSync(join(iconsDir, 'generated'), { recursive: true, force: true });
