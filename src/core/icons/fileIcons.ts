@@ -3587,7 +3587,12 @@ export const fileIcons: FileIcons = {
     { name: 'beancount', fileExtensions: ['beancount', 'bean'] },
     {
       name: 'wrangler',
-      fileNames: ['wrangler.toml', 'wrangler.json', 'wrangler.jsonc'],
+      fileNames: [
+        'wrangler.toml',
+        'wrangler.json',
+        'wrangler.jsonc',
+        '.wranglerignore',
+      ],
     },
     { name: 'epub', fileExtensions: ['epub'] },
     { name: 'regedit', fileExtensions: ['reg'] },
