@@ -1357,6 +1357,18 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['gemini', 'gemini-ai', 'geminiai'],
       },
       {
+        name: 'folder-kiro',
+        folderNames: ['kiro'],
+      },
+      {
+        name: 'folder-steering',
+        folderNames: ['steering'],
+      },
+      {
+        name: 'folder-powers',
+        folderNames: ['powers'],
+      },
+      {
         name: 'folder-opencode',
         folderNames: ['opencode'],
       },
