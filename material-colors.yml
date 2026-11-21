@@ -259,6 +259,15 @@ colors:
   - '#455A64' # blue gray 700
   - '#37474F' # blue gray 800
   - '#263238' # blue gray 900
+  # custom colors used by the Z+ icons
+  - '#7A6EE1' # zplus purple
+  - '#4C2A9D' # zplus dark purple
+  - '#538FBD' # zplus light blue
+  - '#22659F' # zplus blue
+  - '#066388' # zplus dark cyan
+  - '#1A76A0' # zplus cyan blue
+  - '#2791FC' # zplus bright blue
+  - '#4CD5EF' # zplus light cyan
 # - '#000000' # black must not be used
 # - '#FFFFFF' # white must not be used
 
