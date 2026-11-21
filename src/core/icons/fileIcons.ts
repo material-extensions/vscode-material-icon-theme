@@ -2648,7 +2648,6 @@ export const fileIcons: FileIcons = {
         'asset',
         'prefab',
         'anim',
-        'controller',
         'overridecontroller',
         'inputactions',
         'asmdef',
@@ -2667,13 +2666,7 @@ export const fileIcons: FileIcons = {
         'giparams',
         'uxml',
         'uss',
-        'tss',
       ],
-    },
-    {
-      name: 'unity-meta',
-      fileExtensions: ['meta'],
-      clone: { base: 'unity', color: 'blue-gray-400' },
     },
     {
       name: 'roadmap',
