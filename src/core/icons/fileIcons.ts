@@ -3818,5 +3818,18 @@ export const fileIcons: FileIcons = {
       name: 'peg',
       fileExtensions: ['peg', 'cleanpeg', 'pegjs', 'pest', 'gram'],
     },
+    {
+      name: 'minecraft-neoforge',
+      fileNames: ['META-INF/neoforge.mods.toml'],
+    },
+    {
+      name: 'minecraft-forge',
+      fileNames: ['META-INF/mods.toml'],
+      light: true,
+    },
+    {
+      name: 'minecraft-quilt',
+      fileNames: ['quilt.mod.json'],
+    },
   ]),
 };
