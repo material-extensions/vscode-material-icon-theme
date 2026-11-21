@@ -3809,6 +3809,7 @@ export const fileIcons: FileIcons = {
     {
       name: 'mrpack',
       fileExtensions: ['mrpack'],
+      fileNames: ['modrinth.index.json'],
     },
     {
       name: 'zizmor',
@@ -3818,5 +3819,30 @@ export const fileIcons: FileIcons = {
       name: 'peg',
       fileExtensions: ['peg', 'cleanpeg', 'pegjs', 'pest', 'gram'],
     },
+    {
+      name: 'minecraft-paper',
+      fileNames: [
+        'paper-plugin.yml',
+        'paper-global.yml',
+        'paper-world-defaults.yml',
+      ],
+      light: true,
+    },
+    {
+      name: 'minecraft-velocity',
+      fileNames: ['velocity-plugin.json', 'velocity.toml'],
+    },
+    {
+      name: 'minecraft-sponge',
+      fileNames: ['sponge_plugins.json'],
+    },
+    { name: 'minecraft-waterfall', fileNames: ['waterfall.yml'] },
+    {
+      name: 'minecraft-spigot',
+      fileNames: ['spigot.yml', 'bukkit.yml', 'bungee.yml'],
+    },
+    { name: 'minecraft-purpur', fileNames: ['purpur.yml'] },
+    { name: 'blockbench', fileExtensions: ['bbmodel'] },
+    { name: 'minecraft-litematica', fileExtensions: ['litematic'] },
   ]),
 };
