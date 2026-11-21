@@ -3821,6 +3821,7 @@ export const fileIcons: FileIcons = {
     {
       name: 'mergify',
       fileNames: ['.mergify.yml', '.mergify/config.yml', '.github/mergify.yml'],
+      light: true,
     },
   ]),
 };
