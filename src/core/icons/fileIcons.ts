@@ -3549,6 +3549,7 @@ export const fileIcons: FileIcons = {
     {
       name: 'minecraft-fabric',
       fileNames: ['fabric.mod.json'],
+      fileExtensions: ['accesswidener', 'classtweaker'],
     },
     {
       name: 'umi',
@@ -3820,11 +3821,11 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'minecraft-neoforge',
-      fileNames: ['neoforge.mods.toml'],
+      fileNames: ['neoforge.mods.toml', 'accesstransformer.cfg'],
     },
     {
       name: 'minecraft-forge',
-      fileNames: ['META-INF/mods.toml'],
+      fileNames: ['META-INF/mods.toml', 'mcmod.info'],
       light: true,
     },
     {
@@ -3832,11 +3833,11 @@ export const fileIcons: FileIcons = {
       fileNames: ['quilt.mod.json'],
     },
     {
-      name: 'mixin',
+      name: 'minecraft-mixin',
       fileExtensions: ['mixins.json'],
     },
     {
-      name: 'stonecutter',
+      name: 'minecraft-stonecutter',
       fileNames: ['stonecutter.gradle.kts', 'stonecutter.gradle'],
       light: true,
     },
