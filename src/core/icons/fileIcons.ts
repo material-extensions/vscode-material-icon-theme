@@ -3820,7 +3820,7 @@ export const fileIcons: FileIcons = {
     },
     {
       name: 'minecraft-neoforge',
-      fileNames: ['META-INF/neoforge.mods.toml'],
+      fileNames: ['neoforge.mods.toml'],
     },
     {
       name: 'minecraft-forge',
