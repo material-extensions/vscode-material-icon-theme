@@ -3835,5 +3835,10 @@ export const fileIcons: FileIcons = {
       name: 'mixin',
       fileExtensions: ['mixins.json'],
     },
+    {
+      name: 'stonecutter',
+      fileNames: ['stonecutter.gradle.kts', 'stonecutter.gradle'],
+      light: true,
+    },
   ]),
 };
