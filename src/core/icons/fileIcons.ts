@@ -3831,5 +3831,9 @@ export const fileIcons: FileIcons = {
       name: 'minecraft-quilt',
       fileNames: ['quilt.mod.json'],
     },
+    {
+      name: 'mixin',
+      fileExtensions: ['mixins.json'],
+    },
   ]),
 };
