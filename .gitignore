@@ -3,6 +3,7 @@
 # Ignore build output directories
 out
 dist
+temp/
 
 # Ignore node_modules directory
 node_modules
