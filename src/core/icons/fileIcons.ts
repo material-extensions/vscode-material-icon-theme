@@ -2717,7 +2717,6 @@ export const fileIcons: FileIcons = {
         'mcaddon',
         'mctemplate',
         'mcproject',
-        'nbt',
       ],
       fileNames: ['.mcattributes', '.mcdefinitions', '.mcignore'],
     },
