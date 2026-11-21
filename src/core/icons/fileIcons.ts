@@ -3818,5 +3818,10 @@ export const fileIcons: FileIcons = {
       name: 'peg',
       fileExtensions: ['peg', 'cleanpeg', 'pegjs', 'pest', 'gram'],
     },
+    {
+      name: 'flatpak',
+      fileExtensions: ['flatpak', 'flatpakref', 'flatpakrepo'],
+    },
+    { name: 'flathub', fileNames: ['flathub.json'], light: true },
   ]),
 };
