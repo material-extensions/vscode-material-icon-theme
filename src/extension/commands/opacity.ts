@@ -11,7 +11,7 @@ import { getThemeConfig, setThemeConfig } from '../shared/config';
 export const changeOpacity = async () => {
   try {
     const currentOpacityValue = getCurrentOpacityValue();
-    const response = await showInput(currentOpacityValue);
+    const response = await showInputForCustomValue(currentOpacityValue);
     if (response) {
       await setOpacityConfig(+response);
     }
@@ -20,8 +20,7 @@ export const changeOpacity = async () => {
   }
 };
 
-/** Show input to enter the opacity value. */
-const showInput = (opacity: number) => {
+const showInputForCustomValue = (opacity: number) => {
   return codeWindow.showInputBox({
     placeHolder: translate('opacity.inputPlaceholder'),
     ignoreFocusOut: true,
@@ -30,7 +29,6 @@ const showInput = (opacity: number) => {
   });
 };
 
-/** Validate the opacity value which was inserted by the user. */
 const validateOpacityInput = (opacityInput: string) => {
   if (!validateOpacityValue(+opacityInput)) {
     return translate('opacity.wrongValue');
@@ -38,7 +36,6 @@ const validateOpacityInput = (opacityInput: string) => {
   return undefined;
 };
 
-/** Get the current value of the opacity of the icons. */
 export const getCurrentOpacityValue = (): number => {
   const defaultConfig = getDefaultConfig();
   return getThemeConfig<number>('opacity') ?? defaultConfig.opacity;

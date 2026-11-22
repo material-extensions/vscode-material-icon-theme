@@ -14,7 +14,6 @@
 
 <br />
 
-
 <p align="center">Enjoying Material Icon Theme? Support the project by starring it or becoming a sponsor!</p>
 
 <p align="center">
@@ -135,7 +134,6 @@ We welcome contributions of all kinds! Whether you want to add new icons, improv
 
 <br />
 
-
 ---
 
 <p align="center">
@@ -145,4 +143,3 @@ We welcome contributions of all kinds! Whether you want to add new icons, improv
 <p align="center">
   <em>Enjoying Material Icon Theme? Support the project by starring it or becoming a sponsor!</em>
 </p>
-

@@ -6,6 +6,7 @@ import {
   validateHEXColorCode,
 } from '../../core';
 import { getThemeConfig, setThemeConfig } from '../shared/config';
+import { createSelectionItem, showQuickPick } from '../shared/quickPick';
 
 type FileColor = {
   label: string;
@@ -38,21 +39,20 @@ export const changeFileColor = async () => {
 
 /** Show QuickPick items to select preferred color for the file icons. */
 const showQuickPickItems = (currentColor: string) => {
-  const options = iconPalette.map(
-    (color): QuickPickItem => ({
-      description: color.label,
-      label: isColorActive(color, currentColor) ? '\u2714' : '\u25FB',
-    })
+  const options = iconPalette.map((color) =>
+    createSelectionItem(
+      { description: color.label },
+      isColorActive(color, currentColor)
+    )
   );
 
-  return codeWindow.showQuickPick(options, {
+  return showQuickPick(options, {
     placeHolder: translate('colorSelect.color'),
     ignoreFocusOut: false,
     matchOnDescription: true,
   });
 };
 
-/** Handle the actions from the QuickPick. */
 const handleQuickPickActions = async (value: QuickPickItem) => {
   if (!value || !value.description) return;
   if (value.description === 'Custom Color') {
@@ -79,7 +79,6 @@ const validateColorInput = (colorInput: string) => {
   return undefined;
 };
 
-/** Check status of the file color */
 export const checkFileColorStatus = (): string => {
   const defaultConfig = getDefaultConfig();
   return getThemeConfig<string>('files.color') ?? defaultConfig.files.color;

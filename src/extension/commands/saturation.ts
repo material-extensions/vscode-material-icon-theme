@@ -11,7 +11,7 @@ import { getThemeConfig, setThemeConfig } from '../shared/config';
 export const changeSaturation = async () => {
   try {
     const currentSaturationValue = getCurrentSaturationValue();
-    const response = await showInput(currentSaturationValue);
+    const response = await showInputForCustomValue(currentSaturationValue);
     if (response) {
       await setSaturationConfig(+response);
     }
@@ -20,8 +20,7 @@ export const changeSaturation = async () => {
   }
 };
 
-/** Show input to enter the saturation value. */
-const showInput = (saturation: number) => {
+const showInputForCustomValue = (saturation: number) => {
   return codeWindow.showInputBox({
     placeHolder: translate('saturation.inputPlaceholder'),
     ignoreFocusOut: true,
@@ -30,7 +29,6 @@ const showInput = (saturation: number) => {
   });
 };
 
-/** Validate the saturation value which was inserted by the user. */
 const validateSaturationInput = (saturationInput: string) => {
   if (!validateSaturationValue(+saturationInput)) {
     return translate('saturation.wrongValue');
@@ -38,7 +36,6 @@ const validateSaturationInput = (saturationInput: string) => {
   return undefined;
 };
 
-/** Get the current value of the saturation of the icons. */
 export const getCurrentSaturationValue = (): number => {
   const defaultConfig = getDefaultConfig();
   return getThemeConfig<number>('saturation') ?? defaultConfig.saturation;

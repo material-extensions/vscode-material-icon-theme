@@ -18,7 +18,6 @@ export const changeRootFolderColor = async () => {
   }
 };
 
-/** Check status of the folder color */
 const checkRootFolderColorStatus = (): string => {
   const defaultConfig = getDefaultConfig();
   const folderColorConfig = getThemeConfig<string>('folders.color');

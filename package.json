@@ -20,7 +20,7 @@
     "generateJson": "tsx ./src/scripts/icons/generateJson.ts > ./dist/material-icons.json",
     "generateClones": "tsx ./src/scripts/icons/generateClones.ts",
     "generateOpenFolders": "tsx ./src/scripts/svg/generateOpenFolderIcons.ts",
-    "lint": "biome check",
+    "lint": "biome check ./src",
     "format": "biome format --write ./src",
     "preversion": "npm run contributors && npm run preview && npm run svgo && git add images/*.png icons/*.svg",
     "preview": "tsx ./src/scripts/preview/run.ts",

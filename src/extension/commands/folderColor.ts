@@ -6,6 +6,7 @@ import {
   validateHEXColorCode,
 } from '../../core';
 import { getThemeConfig, setThemeConfig } from '../shared/config';
+import { createSelectionItem, showQuickPick } from '../shared/quickPick';
 
 type FolderColor = {
   label: string;
@@ -38,21 +39,20 @@ export const changeFolderColor = async () => {
 
 /** Show QuickPick items to select preferred color for the folder icons. */
 export const showFolderColorQuickPickItems = (currentColor: string) => {
-  const options = iconPalette.map(
-    (color): QuickPickItem => ({
-      description: color.label,
-      label: isColorActive(color, currentColor) ? '\u2714' : '\u25FB',
-    })
+  const options = iconPalette.map((color) =>
+    createSelectionItem(
+      { description: color.label },
+      isColorActive(color, currentColor)
+    )
   );
 
-  return codeWindow.showQuickPick(options, {
+  return showQuickPick(options, {
     placeHolder: translate('colorSelect.color'),
     ignoreFocusOut: false,
     matchOnDescription: true,
   });
 };
 
-/** Handle the actions from the QuickPick. */
 export const handleFolderColorQuickPickActions = async (
   value: QuickPickItem,
   configSection: string
@@ -82,7 +82,6 @@ const validateColorInput = (colorInput: string) => {
   return undefined;
 };
 
-/** Check status of the folder color */
 export const checkFolderColorStatus = (): string => {
   const defaultConfig = getDefaultConfig();
   const folderColorConfig = getThemeConfig<string>('folders.color');

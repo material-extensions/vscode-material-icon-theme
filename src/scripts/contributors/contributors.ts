@@ -8,11 +8,6 @@ import type { Contributor } from '../models/scripts/contributors/contributor';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-/**
- * Parse link header
- * @param linkHeader Link header as string
- * @returns Object that contains the page numbers of `prev`, `next` and `last`.
- */
 const parseLinkHeader = (linkHeader: string) => {
   const nextPagePattern = new RegExp(/\bpage=(\d+)>;\srel="next"/);
   const lastPagePattern = new RegExp(/\bpage=(\d+)>;\srel="last"/);
@@ -25,10 +20,7 @@ const parseLinkHeader = (linkHeader: string) => {
   return { nextPage, lastPage, prevPage };
 };
 
-/**
- * Get all contributors from GitHub API.
- */
-const fetchContributors = (
+const fetchContributorsFromApi = (
   page: string
 ): Promise<{ contributorsOfPage: Contributor[]; nextPage: string }> => {
   return new Promise((resolve, reject) => {
@@ -87,7 +79,7 @@ const init = async () => {
 
   // iterate over the pages of GitHub API
   while (page !== undefined) {
-    const result = await fetchContributors(page);
+    const result = await fetchContributorsFromApi(page);
     contributorsList.push(...result.contributorsOfPage);
     page = result.nextPage;
   }

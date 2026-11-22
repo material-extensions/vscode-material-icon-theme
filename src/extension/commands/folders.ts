@@ -1,4 +1,4 @@
-import { window as codeWindow, type QuickPickItem } from 'vscode';
+import type { QuickPickItem } from 'vscode';
 import {
   capitalizeFirstLetter,
   type FolderThemeName,
@@ -7,11 +7,12 @@ import {
   translate,
 } from '../../core';
 import { getThemeConfig, setThemeConfig } from '../shared/config';
+import { createSelectionItem, showQuickPick } from '../shared/quickPick';
 
 /** Command to toggle the folder icons. */
 export const changeFolderTheme = async () => {
   try {
-    const status = getFolderIconTheme();
+    const status = getCurrentFolderIconTheme();
     const response = await showQuickPickItems(status);
     if (response) {
       handleQuickPickActions(response);
@@ -33,24 +34,22 @@ const showQuickPickItems = (activeTheme: FolderThemeName) => {
               'folders.theme.description',
               capitalizeFirstLetter(theme.name)
             ),
-      label: theme.name === activeTheme ? '\u2714' : '\u25FB',
+      ...createSelectionItem({}, theme.name === activeTheme),
     })
   );
 
-  return codeWindow.showQuickPick(options, {
+  return showQuickPick(options, {
     placeHolder: translate('folders.toggleIcons'),
     ignoreFocusOut: false,
     matchOnDescription: true,
   });
 };
 
-/** Handle the actions from the QuickPick. */
 const handleQuickPickActions = (value: QuickPickItem) => {
   if (!value || !value.description) return;
   return setThemeConfig('folders.theme', value.description.toLowerCase(), true);
 };
 
-/** Get the current folder theme. */
-export const getFolderIconTheme = () => {
+const getCurrentFolderIconTheme = () => {
   return getThemeConfig<FolderThemeName>('folders.theme') ?? 'none';
 };

@@ -1,52 +1,42 @@
-import { describe, expect, it } from 'vitest';
-import { get } from '../../helpers/object';
-import { getTranslationValue, replace } from '../../i18n/translate';
+import { beforeAll, describe, expect, it, vi } from 'vitest';
 import type { Translation } from '../../models/i18n/translation';
 
-describe('i18n', () => {
-  it('should translate key', () => {
-    const result = getTranslationValue('activate', {
-      activate: 'b',
-    } as Translation);
-    expect(result).toBe('b');
+vi.mock('../../i18n/translations/lang-en', () => ({
+  translation: {
+    activate: '%0 with %1',
+    iconPacks: { description: '%0 with %1' },
+  } as Translation,
+}));
+
+import { initTranslations, translate } from '../../i18n/translate';
+
+describe('translations', () => {
+  beforeAll(() => initTranslations('en'));
+
+  it('translates known keys and returns unknown keys unchanged', () => {
+    expect(translate('activate')).toBe('%0 with %1');
+    expect(translate('unknown')).toBe('unknown');
   });
 
-  it('should return undefined if translation is not defined', () => {
-    const result = getTranslationValue(
-      'activate',
-      {} as Translation,
-      {} as Translation
+  it('resolves nested keys and interpolates variables', () => {
+    expect(translate('iconPacks.description', 'test')).toBe('test with %1');
+  });
+
+  it('interpolates multiple numbered placeholders', () => {
+    expect(translate('activate', 'test', 'placeholder')).toBe(
+      'test with placeholder'
     );
-    expect(result).toBeUndefined();
   });
 
-  it('should use fallback if translation is not defined', () => {
-    const result = getTranslationValue(
-      'activate',
-      {} as Translation,
-      { activate: 'fb' } as Translation
-    );
-    expect(result).toBe('fb');
+  it('loads the requested language', async () => {
+    await initTranslations('de');
+
+    expect(translate('activate')).toBe('Aktivieren');
   });
 
-  it('should get the correct translation value of the translation object', () => {
-    const translation = {
-      a: {
-        b: {
-          c: 'c',
-        },
-      },
-    };
+  it('falls back to English for unsupported languages', async () => {
+    await initTranslations('unsupported');
 
-    const result = get(translation, 'a.b.c');
-    expect(result).toBe('c');
-  });
-
-  it('should use placeholder in translation', () => {
-    const result = replace('%0 with placeholder', 'test');
-    expect(result).toBe('test with placeholder');
-
-    const result2 = replace('%0 with %1', 'test', 'placeholder');
-    expect(result2).toBe('test with placeholder');
+    expect(translate('activate')).toBe('%0 with %1');
   });
 });

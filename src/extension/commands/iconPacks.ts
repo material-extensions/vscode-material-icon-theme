@@ -1,8 +1,9 @@
-import { window as codeWindow, type QuickPickItem } from 'vscode';
+import type { QuickPickItem } from 'vscode';
 import { logger, toTitleCase, translate } from '../../core';
 import { availableIconPacks } from '../../core/helpers/iconPacks';
 import type { IconPackValue } from '../../core/models/icons/iconPack';
 import { getThemeConfig, setThemeConfig } from '../shared/config';
+import { createSelectionItem, showQuickPick } from '../shared/quickPick';
 
 /** Command to toggle the icons packs */
 export const toggleIconPacks = async () => {
@@ -28,17 +29,19 @@ const showQuickPickItems = (activePack: IconPackValue) => {
     const active = isPackActive(activePack, pack);
     const iconPacksDeactivated = pack === 'none' && activePack === '';
 
-    return {
-      description: packLabel,
-      detail: translate(
-        `iconPacks.${pack === 'none' ? 'disabled' : 'description'}`,
-        packLabel
-      ),
-      label: iconPacksDeactivated ? '\u2714' : active ? '\u2714' : '\u25FB',
-    };
+    return createSelectionItem(
+      {
+        description: packLabel,
+        detail: translate(
+          `iconPacks.${pack === 'none' ? 'disabled' : 'description'}`,
+          packLabel
+        ),
+      },
+      iconPacksDeactivated || active
+    );
   });
 
-  return codeWindow.showQuickPick(options, {
+  return showQuickPick(options, {
     placeHolder: translate('iconPacks.selectPack'),
     ignoreFocusOut: false,
     matchOnDescription: true,
@@ -46,7 +49,6 @@ const showQuickPickItems = (activePack: IconPackValue) => {
   });
 };
 
-/** Handle the actions from the QuickPick. */
 const handleQuickPickActions = (value: QuickPickItem) => {
   if (!value || !value.description) return;
   const decision = value.description.replace(' + ', '_').toLowerCase() as
