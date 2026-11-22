@@ -3818,5 +3818,15 @@ export const fileIcons: FileIcons = {
       name: 'peg',
       fileExtensions: ['peg', 'cleanpeg', 'pegjs', 'pest', 'gram'],
     },
+    {
+      name: 'crowdin',
+      fileNames: [
+        'crowdin.yml',
+        'crowdin.yaml',
+        '.crowdin.yml',
+        '.crowdin.yaml',
+      ],
+      light: true,
+    },
   ]),
 };
