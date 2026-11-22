@@ -1,4 +1,4 @@
-import { type SheriffConfig } from '@softarc/sheriff-core';
+import { type SheriffConfig } from '@sheriff-arch/sheriff-core';
 
 export const sheriffConfig: SheriffConfig = {
   entryFile: 'src/module/index.ts',
