@@ -155,11 +155,19 @@ const trimIconListToSize = (
   trimmableIcons: string[]
 ) => {
   while (iconList.length % size !== 0) {
-    iconList.splice(
-      iconList.findIndex(
-        (i) => i.iconName === trimmableIcons[iconList.length % size]
-      ),
-      1
+    const preferredIconName = trimmableIcons[iconList.length % size];
+    const preferredIndex = iconList.findIndex(
+      (icon) => icon.iconName === preferredIconName
     );
+    const fallbackIndex = iconList.findIndex((icon) =>
+      trimmableIcons.includes(icon.iconName)
+    );
+    const iconIndex = preferredIndex >= 0 ? preferredIndex : fallbackIndex;
+
+    if (iconIndex < 0) {
+      throw new Error('No trimmable icon available for preview generation');
+    }
+
+    iconList.splice(iconIndex, 1);
   }
 };

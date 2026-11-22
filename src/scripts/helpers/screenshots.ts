@@ -1,4 +1,5 @@
-import { join } from 'node:path';
+import { resolve } from 'node:path';
+import { pathToFileURL } from 'node:url';
 import Puppeteer from 'puppeteer';
 
 /**
@@ -11,7 +12,7 @@ export const createScreenshot = async (filePath: string, fileName: string) => {
     headless: true,
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
   });
-  const htmlFilePath = join('file:', filePath);
+  const htmlFilePath = pathToFileURL(resolve(filePath)).href;
 
   try {
     const page = await browser.newPage();

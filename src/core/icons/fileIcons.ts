@@ -3818,5 +3818,8 @@ export const fileIcons: FileIcons = {
       name: 'peg',
       fileExtensions: ['peg', 'cleanpeg', 'pegjs', 'pest', 'gram'],
     },
+    { name: 'zplus-header', fileExtensions: ['zh'] },
+    { name: 'zplus-source', fileExtensions: ['zp'] },
+    { name: 'zplus-package', fileExtensions: ['zpm'] },
   ]),
 };
