@@ -280,3 +280,5 @@ exclude:
   - 'icons/vue.svg'
   - 'icons/vue-config.svg'
   - 'icons/vuex-store.svg'
+  - 'icons/ets-def.svg'
+  - 'icons/ets.svg'
