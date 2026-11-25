@@ -1361,6 +1361,11 @@ export const folderIcons: FolderTheme[] = [
         folderNames: ['opencode'],
       },
       {
+        name: 'folder-openspec',
+        folderNames: ['openspec'],
+        light: true,
+      },
+      {
         name: 'folder-input',
         folderNames: ['input', 'inputs', 'io', 'in'],
       },
