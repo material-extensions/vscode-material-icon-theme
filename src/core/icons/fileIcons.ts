@@ -646,6 +646,7 @@ export const fileIcons: FileIcons = {
     { name: 'objective-cpp', fileExtensions: ['mm'] },
     { name: 'rc', fileExtensions: ['rc'] },
     { name: 'go', fileExtensions: ['go'] },
+    { name: 'gujarati', fileExtensions: ['gj'] },
     {
       name: 'go-mod',
       fileNames: ['go.mod', 'go.sum', 'go.work', 'go.work.sum'],
