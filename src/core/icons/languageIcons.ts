@@ -55,6 +55,7 @@ export const languageIcons: LanguageIcon[] = [
   { name: 'autoit', ids: ['autoit'] },
   { name: 'haml', ids: ['haml'] },
   { name: 'yang', ids: ['yang'] },
+  { name: 'cisco', ids: ['cisco'] },
   { name: 'terraform', ids: ['terraform'] },
   { name: 'opentofu', ids: ['opentofu'] },
   { name: 'applescript', ids: ['applescript'] },
