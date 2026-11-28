@@ -1342,6 +1342,7 @@ export const fileIcons: FileIcons = {
     { name: 'ocaml', fileExtensions: ['ml', 'mli', 'cmx'] },
     { name: 'odin', fileExtensions: ['odin'] },
     { name: 'onnx', fileExtensions: ['onnx'] },
+    { name: 'safetensors', fileExtensions: ['safetensors'] },
     {
       name: 'javascript-map',
       fileExtensions: ['js.map', 'mjs.map', 'cjs.map'],
