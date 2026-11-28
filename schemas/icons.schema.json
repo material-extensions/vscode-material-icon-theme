@@ -1,0 +1,179 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/material-extensions/vscode-material-icon-theme/main/schemas/icons.schema.json",
+  "title": "Material Icon Theme Project Configuration",
+  "description": "Project-level icon configuration for Material Icon Theme (.vscode/icons.json).",
+  "type": "object",
+  "definitions": {
+    "iconPack": {
+      "type": "string",
+      "description": "Select an icon pack that enables specific icons.",
+      "enum": [
+        "angular",
+        "angular_ngrx",
+        "react",
+        "react_redux",
+        "roblox",
+        "qwik",
+        "vue",
+        "vue_vuex",
+        "nest",
+        "bashly",
+        "none",
+        ""
+      ]
+    },
+    "hexColor": {
+      "type": "string",
+      "pattern": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$"
+    },
+    "customCloneBase": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "base": { "type": "string" },
+        "color": { "type": "string" },
+        "lightColor": { "type": "string" }
+      }
+    },
+    "projectConfig": {
+      "type": "object",
+      "properties": {
+        "activeIconPack": { "$ref": "#/definitions/iconPack" },
+        "hidesExplorerArrows": { "type": "boolean" },
+        "opacity": { "type": "number", "minimum": 0, "maximum": 1 },
+        "saturation": { "type": "number", "minimum": 0, "maximum": 1 },
+        "folders": {
+          "type": "object",
+          "properties": {
+            "theme": {
+              "type": "string",
+              "enum": ["specific", "classic", "none"]
+            },
+            "color": { "$ref": "#/definitions/hexColor" },
+            "associations": {
+              "type": "object",
+              "additionalProperties": { "type": "string" }
+            },
+            "customClones": {
+              "type": "array",
+              "items": {
+                "allOf": [
+                  { "$ref": "#/definitions/customCloneBase" },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "folderNames": {
+                        "type": "array",
+                        "items": { "type": "string" }
+                      },
+                      "rootFolderNames": {
+                        "type": "array",
+                        "items": { "type": "string" }
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "rootFolders": {
+          "type": "object",
+          "properties": {
+            "color": { "$ref": "#/definitions/hexColor" },
+            "associations": {
+              "type": "object",
+              "additionalProperties": { "type": "string" }
+            }
+          }
+        },
+        "files": {
+          "type": "object",
+          "properties": {
+            "color": { "$ref": "#/definitions/hexColor" },
+            "associations": {
+              "type": "object",
+              "additionalProperties": { "type": "string" }
+            },
+            "customClones": {
+              "type": "array",
+              "items": {
+                "allOf": [
+                  { "$ref": "#/definitions/customCloneBase" },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "fileNames": {
+                        "type": "array",
+                        "items": { "type": "string" }
+                      },
+                      "fileExtensions": {
+                        "type": "array",
+                        "items": { "type": "string" }
+                      },
+                      "activeForPacks": {
+                        "type": "array",
+                        "items": { "$ref": "#/definitions/iconPack" }
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "languages": {
+          "type": "object",
+          "properties": {
+            "associations": {
+              "type": "object",
+              "additionalProperties": { "type": "string" }
+            },
+            "customClones": {
+              "type": "array",
+              "items": {
+                "allOf": [
+                  { "$ref": "#/definitions/customCloneBase" },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "ids": {
+                        "type": "array",
+                        "items": { "type": "string" }
+                      },
+                      "activeForPacks": {
+                        "type": "array",
+                        "items": { "$ref": "#/definitions/iconPack" }
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "enableLogging": { "type": "boolean" },
+        "logLevel": {
+          "type": "string",
+          "enum": ["info", "error", "debug"]
+        }
+      }
+    }
+  },
+  "allOf": [
+    { "$ref": "#/definitions/projectConfig" },
+    {
+      "type": "object",
+      "properties": {
+        "projects": {
+          "type": "object",
+          "description": "Optional per-subproject icon configuration overrides keyed by relative folder path (useful for monorepos).",
+          "additionalProperties": {
+            "$ref": "#/definitions/projectConfig"
+          }
+        }
+      }
+    }
+  ]
+}

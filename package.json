@@ -95,6 +95,12 @@
         "_watch": true
       }
     ],
+    "jsonValidation": [
+      {
+        "fileMatch": "**/.vscode/icons.json",
+        "url": "./schemas/icons.schema.json"
+      }
+    ],
     "commands": [
       {
         "command": "material-icon-theme.activateIcons",

@@ -1,4 +1,4 @@
-import { existsSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import type { ConfigurationChangeEvent, ExtensionContext } from 'vscode';
 import {
@@ -20,32 +20,66 @@ import {
 import { getCurrentConfig } from '../shared/config';
 import { deepEqual } from './utils/deepEqual';
 
-/** Compare the workspace and the user configurations with the current setup of the icons. */
-export const detectConfigChanges = async (
+export const appliedConfigFileName = 'material-icons.config.json';
+
+type StoredConfigState = {
+  version: string;
+  config: Config;
+};
+
+let pendingDetection: Promise<void> = Promise.resolve();
+
+/**
+ * Compare the active project, workspace, and user configurations with the
+ * current setup of the icons. Calls are serialized to avoid concurrent races.
+ */
+export const detectConfigChanges = (
+  event: ConfigurationChangeEvent | undefined,
+  context: ExtensionContext
+): Promise<void> => {
+  // if the changed config is not related to the extension
+  if (event?.affectsConfiguration(extensionName) === false) {
+    return Promise.resolve();
+  }
+
+  const run = pendingDetection.then(
+    () => runDetectConfigChanges(event, context),
+    () => runDetectConfigChanges(event, context)
+  );
+  pendingDetection = run;
+  return run;
+};
+
+const runDetectConfigChanges = async (
   event: ConfigurationChangeEvent | undefined,
   context: ExtensionContext
 ) => {
-  // if the changed config is not related to the extension
-  if (event?.affectsConfiguration(extensionName) === false) return;
+  const iconJsonPath = join(resolvePath(manifestName));
+  const appliedConfigPath = join(resolvePath(appliedConfigFileName));
 
-  const oldConfig = getConfigFromStorage(context);
+  const oldConfig = getPreviousAppliedConfig(context, appliedConfigPath);
   const config = getCurrentConfig();
 
-  // if the configuration has not changed
-  if (deepEqual(config, oldConfig)) {
-    const isActivation = event === undefined;
-    if (
-      isActivation &&
-      hasCustomClones(config) &&
-      !existsSync(resolvePath('./../icons/clones'))
-    ) {
-      logger.info('Custom clones missing from disk, regenerating...');
-    } else {
-      return;
-    }
+  const isActivation = event === undefined;
+  const isManifestMissing = isActivation && !existsSync(iconJsonPath);
+  const areClonesMissing =
+    isActivation &&
+    hasCustomClones(config) &&
+    !existsSync(resolvePath('./../icons/clones'));
+
+  // Skip regeneration when the on-disk state already matches the active config
+  if (
+    oldConfig !== undefined &&
+    deepEqual(config, oldConfig) &&
+    !isManifestMissing &&
+    !areClonesMissing
+  ) {
+    return;
   }
 
-  await applyConfigToIcons(config, oldConfig);
+  const baselineConfig = oldConfig ?? getConfigFromStorage(context);
+
+  await applyConfigToIcons(config, baselineConfig);
 
   logger.info('Configuration changes detected and applied!');
 
@@ -64,7 +98,6 @@ export const detectConfigChanges = async (
     await customClonesIcons(manifest, config)
   );
 
-  const iconJsonPath = join(resolvePath(manifestName));
   await writeToFile(
     iconJsonPath,
     JSON.stringify(manifestWithClones, undefined, 2),
@@ -77,20 +110,52 @@ export const detectConfigChanges = async (
     'Applied configuration: ' + JSON.stringify(config, undefined, 2)
   );
 
-  syncConfigWithStorage(config, context);
+  await syncAppliedConfig(config, context, appliedConfigPath);
 };
 
-const syncConfigWithStorage = (config: Config, context: ExtensionContext) => {
-  context.globalState.update('config', {
+const syncAppliedConfig = async (
+  config: Config,
+  context: ExtensionContext,
+  appliedConfigPath: string
+) => {
+  const state: StoredConfigState = {
     version: context.extension.packageJSON.version,
     config,
-  });
+  };
+  context.globalState.update('config', state);
+
+  try {
+    await writeToFile(
+      appliedConfigPath,
+      JSON.stringify(state, undefined, 2),
+      'utf-8'
+    );
+  } catch (error) {
+    logger.error(error);
+  }
+};
+
+const getPreviousAppliedConfig = (
+  context: ExtensionContext,
+  appliedConfigPath: string
+): Config | undefined => {
+  if (!existsSync(appliedConfigPath)) {
+    return undefined;
+  }
+  try {
+    const raw = readFileSync(appliedConfigPath, 'utf-8');
+    const parsed = JSON.parse(raw) as Partial<StoredConfigState>;
+    if (context.extension.packageJSON.version === parsed?.version) {
+      return padWithDefaultConfig(parsed?.config);
+    }
+    return undefined;
+  } catch {
+    return undefined;
+  }
 };
 
 const getConfigFromStorage = (context: ExtensionContext): Config => {
-  const config = context.globalState.get<{ version: string; config: Config }>(
-    'config'
-  );
+  const config = context.globalState.get<StoredConfigState>('config');
   if (context.extension.packageJSON.version === config?.version) {
     return padWithDefaultConfig(config?.config);
   } else {

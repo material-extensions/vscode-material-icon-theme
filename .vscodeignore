@@ -20,5 +20,8 @@
 # Icons
 !icons
 
+# Schemas
+!schemas
+
 # Exclude everything else
 **/*
