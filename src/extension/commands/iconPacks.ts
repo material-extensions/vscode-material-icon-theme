@@ -27,7 +27,9 @@ const showQuickPickItems = (activePack: IconPackValue) => {
   const options = packs.map((pack): QuickPickItem => {
     const packLabel = toTitleCase(pack.replace('_', ' + '));
     const active = isPackActive(activePack, pack);
-    const iconPacksDeactivated = pack === 'none' && activePack === '';
+    const iconPacksDeactivated =
+      pack === 'none' &&
+      (activePack === '' || (activePack as string) === 'none');
 
     return createSelectionItem(
       {
